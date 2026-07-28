@@ -57,55 +57,60 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "\036google/cloud/ces/v1/tool.proto\022\023google"
           + ".cloud.ces.v1\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032$googl"
-          + "e/cloud/ces/v1/agent_tool.proto\032)google/cloud/ces/v1/client_function.proto\032 goog"
-          + "le/cloud/ces/v1/common.proto\032(google/cloud/ces/v1/connector_tool.proto\032)google/c"
-          + "loud/ces/v1/data_store_tool.proto\032\037googl"
-          + "e/cloud/ces/v1/fakes.proto\032*google/cloud/ces/v1/file_search_tool.proto\032,google/c"
-          + "loud/ces/v1/google_search_tool.proto\032\"go"
-          + "ogle/cloud/ces/v1/mcp_tool.proto\032\'google"
-          + "/cloud/ces/v1/open_api_tool.proto\032)google/cloud/ces/v1/python_function.proto\032%go"
-          + "ogle/cloud/ces/v1/system_tool.proto\032%goo"
-          + "gle/cloud/ces/v1/widget_tool.proto\032\037google/protobuf/timestamp.proto\"\231\t\n"
+          + "e/cloud/ces/v1/agent_card.proto\032$google/"
+          + "cloud/ces/v1/agent_tool.proto\032)google/cloud/ces/v1/client_function.proto\032 google"
+          + "/cloud/ces/v1/common.proto\032(google/cloud/ces/v1/connector_tool.proto\032)google/clo"
+          + "ud/ces/v1/data_store_tool.proto\032\037google/"
+          + "cloud/ces/v1/fakes.proto\032*google/cloud/ces/v1/file_search_tool.proto\032,google/clo"
+          + "ud/ces/v1/google_search_tool.proto\032\"goog"
+          + "le/cloud/ces/v1/mcp_tool.proto\032\'google/c"
+          + "loud/ces/v1/open_api_tool.proto\032)google/cloud/ces/v1/python_function.proto\032%goog"
+          + "le/cloud/ces/v1/system_tool.proto\032%googl"
+          + "e/cloud/ces/v1/widget_tool.proto\032\036google"
+          + "/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\"\222\n\n"
           + "\004Tool\022C\n"
           + "\017client_function\030\002"
           + " \001(\0132#.google.cloud.ces.v1.ClientFunctionB\003\340A\001H\000\022>\n\r"
-          + "open_api_tool\030\003 \001(\0132"
-          + " .google.cloud.ces.v1.OpenApiToolB\003\340A\001H\000\022H\n"
-          + "\022google_search_tool\030\005 \001(\0132%."
-          + "google.cloud.ces.v1.GoogleSearchToolB\003\340A\001H\000\022A\n"
+          + "open_api_tool\030\003 \001(\0132 "
+          + ".google.cloud.ces.v1.OpenApiToolB\003\340A\001H\000\022H\n"
+          + "\022google_search_tool\030\005"
+          + " \001(\0132%.google.cloud.ces.v1.GoogleSearchToolB\003\340A\001H\000\022A\n"
           + "\016connector_tool\030\010"
           + " \001(\0132\".google.cloud.ces.v1.ConnectorToolB\003\340A\001H\000\022B\n"
           + "\017data_store_tool\030\n"
           + " \001(\0132\".google.cloud.ces.v1.DataStoreToolB\003\340A\001H\000\022C\n"
-          + "\017python_function\030\013 "
-          + "\001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001H\000\0225\n"
+          + "\017python_function\030\013"
+          + " \001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001H\000\0225\n"
           + "\010mcp_tool\030\020"
           + " \001(\0132\034.google.cloud.ces.v1.McpToolB\003\340A\001H\000\022D\n"
-          + "\020file_search_tool\030\021"
-          + " \001(\0132#.google.cloud.ces.v1.FileSearchToolB\003\340A\001H\000\022;\n"
+          + "\020file_search_tool\030\021 \001(\0132#"
+          + ".google.cloud.ces.v1.FileSearchToolB\003\340A\001H\000\022;\n"
           + "\013system_tool\030\022"
           + " \001(\0132\037.google.cloud.ces.v1.SystemToolB\003\340A\001H\000\0229\n\n"
-          + "agent_tool\030\027"
-          + " \001(\0132\036.google.cloud.ces.v1.AgentToolB\003\340A\001H\000\022;\n"
+          + "agent_tool\030\027 "
+          + "\001(\0132\036.google.cloud.ces.v1.AgentToolB\003\340A\001H\000\022;\n"
           + "\013widget_tool\030\030"
-          + " \001(\0132\037.google.cloud.ces.v1.WidgetToolB\003\340A\001H\000\022\021\n"
+          + " \001(\0132\037.google.cloud.ces.v1.WidgetToolB\003\340A\001H\000\022F\n"
+          + "\021remote_agent_tool\030\031"
+          + " \001(\0132$.google.cloud.ces.v1.RemoteAgentToolB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\r"
           + " \001(\tB\003\340A\003\022?\n"
           + "\016execution_type\030\014"
-          + " \001(\0162\".google.cloud.ces.v1.ExecutionTypeB\003\340A\001\0224\n"
+          + " \001(\0162\".google.cloud.ces.v1.ExecutionTypeB\003\340A\001\022/\n"
+          + "\007timeout\030\026 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0224\n"
           + "\013create_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
           + "\004etag\030\016 \001(\t\022\036\n"
           + "\021generated_summary\030\017 \001(\tB\003\340A\003\022B\n"
-          + "\020tool_fake_config\030\024"
-          + " \001(\0132#.google.cloud.ces.v1.ToolFakeConfigB\003\340A\001:j\352Ag\n"
-          + "\027ces.googleapis.com/Tool\022?pr"
-          + "ojects/{project}/locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
+          + "\020tool_fake_config\030\024 \001(\0132#.go"
+          + "ogle.cloud.ces.v1.ToolFakeConfigB\003\340A\001:j\352Ag\n"
+          + "\027ces.googleapis.com/Tool\022?projects/{p"
+          + "roject}/locations/{location}/apps/{app}/tools/{tool}*\005tools2\004toolB\013\n"
           + "\ttool_typeBQ\n"
-          + "\027com.google.cloud.ces.v1B\tToolProtoP\001Z)cloud.google.com/go/ces/apiv1/c"
-          + "espb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\tToolProtoP\001Z)cloud.google.com/go/ces/apiv1/cespb;cesp"
+          + "bb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,6 +118,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.ces.v1.AgentCardProto.getDescriptor(),
               com.google.cloud.ces.v1.AgentToolProto.getDescriptor(),
               com.google.cloud.ces.v1.ClientFunctionProto.getDescriptor(),
               com.google.cloud.ces.v1.CommonProto.getDescriptor(),
@@ -126,6 +132,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
               com.google.cloud.ces.v1.PythonFunctionProto.getDescriptor(),
               com.google.cloud.ces.v1.SystemToolProto.getDescriptor(),
               com.google.cloud.ces.v1.WidgetToolProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1_Tool_descriptor = getDescriptor().getMessageType(0);
@@ -144,9 +151,11 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
               "SystemTool",
               "AgentTool",
               "WidgetTool",
+              "RemoteAgentTool",
               "Name",
               "DisplayName",
               "ExecutionType",
+              "Timeout",
               "CreateTime",
               "UpdateTime",
               "Etag",
@@ -157,6 +166,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.ces.v1.AgentCardProto.getDescriptor();
     com.google.cloud.ces.v1.AgentToolProto.getDescriptor();
     com.google.cloud.ces.v1.ClientFunctionProto.getDescriptor();
     com.google.cloud.ces.v1.CommonProto.getDescriptor();
@@ -170,6 +180,7 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
     com.google.cloud.ces.v1.PythonFunctionProto.getDescriptor();
     com.google.cloud.ces.v1.SystemToolProto.getDescriptor();
     com.google.cloud.ces.v1.WidgetToolProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

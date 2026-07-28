@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.core;
 
+import org.jspecify.annotations.NullMarked;
+
 /** An exception occurs when some background resource is not able to close properly. */
+@NullMarked
 public class ResourceCloseException extends RuntimeException {
 
   private static final long serialVersionUID = -283748743873637484L;

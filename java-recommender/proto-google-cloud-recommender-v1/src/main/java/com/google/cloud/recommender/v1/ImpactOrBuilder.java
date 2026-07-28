@@ -205,5 +205,31 @@ public interface ImpactOrBuilder
   com.google.cloud.recommender.v1.ReliabilityProjectionOrBuilder
       getReliabilityProjectionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The service that this impact is associated with.
+   * </pre>
+   *
+   * <code>string service = 3;</code>
+   *
+   * @return The service.
+   */
+  java.lang.String getService();
+
+  /**
+   *
+   *
+   * <pre>
+   * The service that this impact is associated with.
+   * </pre>
+   *
+   * <code>string service = 3;</code>
+   *
+   * @return The bytes for service.
+   */
+  com.google.protobuf.ByteString getServiceBytes();
+
   com.google.cloud.recommender.v1.Impact.ProjectionCase getProjectionCase();
 }

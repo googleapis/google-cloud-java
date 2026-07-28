@@ -31,7 +31,7 @@ public interface CreateHttpRouteRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the HttpRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface CreateHttpRouteRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the HttpRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -126,4 +126,34 @@ public interface CreateHttpRouteRequestOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.HttpRouteOrBuilder getHttpRouteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Idempotent request UUID.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  java.lang.String getRequestId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Idempotent request UUID.
+   * </pre>
+   *
+   * <code>
+   * string request_id = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

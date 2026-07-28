@@ -106,6 +106,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -158,6 +160,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -290,6 +294,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -338,6 +344,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 

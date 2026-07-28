@@ -81,10 +81,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dataproc.v1.Batch> getBatchesList() {
@@ -95,10 +97,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dataproc.v1.BatchOrBuilder>
@@ -110,10 +114,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getBatchesCount() {
@@ -124,10 +130,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.Batch getBatches(int index) {
@@ -138,10 +146,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The batches from the specified collection.
+   * Output only. The batches from the specified collection.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.BatchOrBuilder getBatchesOrBuilder(int index) {
@@ -719,10 +729,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Batch> getBatchesList() {
       if (batchesBuilder_ == null) {
@@ -736,10 +748,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getBatchesCount() {
       if (batchesBuilder_ == null) {
@@ -753,10 +767,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Batch getBatches(int index) {
       if (batchesBuilder_ == null) {
@@ -770,10 +786,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBatches(int index, com.google.cloud.dataproc.v1.Batch value) {
       if (batchesBuilder_ == null) {
@@ -793,10 +811,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setBatches(
         int index, com.google.cloud.dataproc.v1.Batch.Builder builderForValue) {
@@ -814,10 +834,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addBatches(com.google.cloud.dataproc.v1.Batch value) {
       if (batchesBuilder_ == null) {
@@ -837,10 +859,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addBatches(int index, com.google.cloud.dataproc.v1.Batch value) {
       if (batchesBuilder_ == null) {
@@ -860,10 +884,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addBatches(com.google.cloud.dataproc.v1.Batch.Builder builderForValue) {
       if (batchesBuilder_ == null) {
@@ -880,10 +906,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addBatches(
         int index, com.google.cloud.dataproc.v1.Batch.Builder builderForValue) {
@@ -901,10 +929,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllBatches(
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.Batch> values) {
@@ -922,10 +952,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearBatches() {
       if (batchesBuilder_ == null) {
@@ -942,10 +974,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeBatches(int index) {
       if (batchesBuilder_ == null) {
@@ -962,10 +996,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Batch.Builder getBatchesBuilder(int index) {
       return internalGetBatchesFieldBuilder().getBuilder(index);
@@ -975,10 +1011,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.BatchOrBuilder getBatchesOrBuilder(int index) {
       if (batchesBuilder_ == null) {
@@ -992,10 +1030,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.dataproc.v1.BatchOrBuilder>
         getBatchesOrBuilderList() {
@@ -1010,10 +1050,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Batch.Builder addBatchesBuilder() {
       return internalGetBatchesFieldBuilder()
@@ -1024,10 +1066,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataproc.v1.Batch.Builder addBatchesBuilder(int index) {
       return internalGetBatchesFieldBuilder()
@@ -1038,10 +1082,12 @@ public final class ListBatchesResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The batches from the specified collection.
+     * Output only. The batches from the specified collection.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1.Batch batches = 1;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1.Batch batches = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.dataproc.v1.Batch.Builder> getBatchesBuilderList() {
       return internalGetBatchesFieldBuilder().getBuilderList();

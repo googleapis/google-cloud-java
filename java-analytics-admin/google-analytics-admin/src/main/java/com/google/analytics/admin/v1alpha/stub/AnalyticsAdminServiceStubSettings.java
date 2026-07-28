@@ -168,6 +168,7 @@ import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaReq
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -272,10 +273,12 @@ import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
 import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
+import com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.UserProvidedDataSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -312,6 +315,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -365,6 +370,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -729,6 +735,10 @@ public class AnalyticsAdminServiceStubSettings
       getSubpropertySyncConfigSettings;
   private final UnaryCallSettings<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsSettings;
+  private final UnaryCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsSettings;
+  private final UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -3600,6 +3610,18 @@ public class AnalyticsAdminServiceStubSettings
     return getReportingIdentitySettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateReportingIdentitySettings. */
+  public UnaryCallSettings<UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      updateReportingIdentitySettingsSettings() {
+    return updateReportingIdentitySettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
+  public UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings() {
+    return getUserProvidedDataSettingsSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -3699,7 +3721,7 @@ public class AnalyticsAdminServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -3908,6 +3930,10 @@ public class AnalyticsAdminServiceStubSettings
     getSubpropertySyncConfigSettings = settingsBuilder.getSubpropertySyncConfigSettings().build();
     getReportingIdentitySettingsSettings =
         settingsBuilder.getReportingIdentitySettingsSettings().build();
+    updateReportingIdentitySettingsSettings =
+        settingsBuilder.updateReportingIdentitySettingsSettings().build();
+    getUserProvidedDataSettingsSettings =
+        settingsBuilder.getUserProvidedDataSettingsSettings().build();
   }
 
   @Override
@@ -4315,6 +4341,12 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -4362,7 +4394,7 @@ public class AnalyticsAdminServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4546,6 +4578,8 @@ public class AnalyticsAdminServiceStubSettings
       updateSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getReportingIdentitySettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateReportingIdentitySettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserProvidedDataSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4702,7 +4736,9 @@ public class AnalyticsAdminServiceStubSettings
               listSubpropertySyncConfigsSettings,
               updateSubpropertySyncConfigSettings,
               getSubpropertySyncConfigSettings,
-              getReportingIdentitySettingsSettings);
+              getReportingIdentitySettingsSettings,
+              updateReportingIdentitySettingsSettings,
+              getUserProvidedDataSettingsSettings);
       initDefaults(this);
     }
 
@@ -4904,6 +4940,10 @@ public class AnalyticsAdminServiceStubSettings
       getSubpropertySyncConfigSettings = settings.getSubpropertySyncConfigSettings.toBuilder();
       getReportingIdentitySettingsSettings =
           settings.getReportingIdentitySettingsSettings.toBuilder();
+      updateReportingIdentitySettingsSettings =
+          settings.updateReportingIdentitySettingsSettings.toBuilder();
+      getUserProvidedDataSettingsSettings =
+          settings.getUserProvidedDataSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -5060,7 +5100,9 @@ public class AnalyticsAdminServiceStubSettings
               listSubpropertySyncConfigsSettings,
               updateSubpropertySyncConfigSettings,
               getSubpropertySyncConfigSettings,
-              getReportingIdentitySettingsSettings);
+              getReportingIdentitySettingsSettings,
+              updateReportingIdentitySettingsSettings,
+              getUserProvidedDataSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -5855,6 +5897,16 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getReportingIdentitySettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateReportingIdentitySettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getUserProvidedDataSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -6925,6 +6977,19 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings() {
       return getReportingIdentitySettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReportingIdentitySettings. */
+    public UnaryCallSettings.Builder<
+            UpdateReportingIdentitySettingsRequest, ReportingIdentitySettings>
+        updateReportingIdentitySettingsSettings() {
+      return updateReportingIdentitySettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */
+    public UnaryCallSettings.Builder<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings() {
+      return getUserProvidedDataSettingsSettings;
     }
 
     @Override

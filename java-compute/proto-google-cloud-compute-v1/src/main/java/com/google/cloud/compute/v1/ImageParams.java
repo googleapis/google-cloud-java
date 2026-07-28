@@ -116,8 +116,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
    * Input only. Resource manager tags to be bound to the image. Tag keys and values have
    * the same definition as resource
    * manager tags. Keys and values can be either in numeric format,
-   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+   * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
    * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
    * PATCH) when empty.
    * </pre>
@@ -146,8 +146,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
    * Input only. Resource manager tags to be bound to the image. Tag keys and values have
    * the same definition as resource
    * manager tags. Keys and values can be either in numeric format,
-   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+   * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
    * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
    * PATCH) when empty.
    * </pre>
@@ -166,8 +166,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
    * Input only. Resource manager tags to be bound to the image. Tag keys and values have
    * the same definition as resource
    * manager tags. Keys and values can be either in numeric format,
-   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+   * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
    * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
    * PATCH) when empty.
    * </pre>
@@ -194,8 +194,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
    * Input only. Resource manager tags to be bound to the image. Tag keys and values have
    * the same definition as resource
    * manager tags. Keys and values can be either in numeric format,
-   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+   * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
    * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
    * PATCH) when empty.
    * </pre>
@@ -601,8 +601,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -631,8 +631,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -651,8 +651,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -679,8 +679,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -713,8 +713,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -743,8 +743,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>
@@ -770,8 +770,8 @@ public final class ImageParams extends com.google.protobuf.GeneratedMessage
      * Input only. Resource manager tags to be bound to the image. Tag keys and values have
      * the same definition as resource
      * manager tags. Keys and values can be either in numeric format,
-     * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
-     * format such as `{org_id|project_id}/{tag_key_short_name}` and
+     * such as `tagKeys/{tag_key_id}` and `tagValues/{tag_value_id}` or in
+     * namespaced format such as `{org_id|project_id}/{tag_key_short_name}` and
      * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
      * PATCH) when empty.
      * </pre>

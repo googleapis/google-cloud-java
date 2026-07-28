@@ -31,7 +31,7 @@ public interface GetEndpointPolicyRequestOrBuilder
    *
    * <pre>
    * Required. A name of the EndpointPolicy to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface GetEndpointPolicyRequestOrBuilder
    *
    * <pre>
    * Required. A name of the EndpointPolicy to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/endpointPolicies/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;endpointPolicies/&#42;`.
    * </pre>
    *
    * <code>

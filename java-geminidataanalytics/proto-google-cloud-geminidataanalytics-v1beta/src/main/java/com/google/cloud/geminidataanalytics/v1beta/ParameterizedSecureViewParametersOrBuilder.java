@@ -31,11 +31,39 @@ public interface ParameterizedSecureViewParametersOrBuilder
    *
    * <pre>
    * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter>
+      getParametersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Named parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter
+      getParameters(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Named parameters for Parameterized Secure Views (PSV).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getParametersCount();
@@ -45,62 +73,29 @@ public interface ParameterizedSecureViewParametersOrBuilder
    *
    * <pre>
    * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  boolean containsParameters(java.lang.String key);
-
-  /** Use {@link #getParametersMap()} instead. */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String> getParameters();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.util.Map<java.lang.String, java.lang.String> getParametersMap();
+  java.util.List<
+          ? extends
+              com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters
+                  .ParameterOrBuilder>
+      getParametersOrBuilderList();
 
   /**
    *
    *
    * <pre>
    * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.Parameter parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  /* nullable */
-  java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      /* nullable */
-      java.lang.String defaultValue);
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Named parameters for Parameterized Secure Views (PSV).
-   * The map keys are parameter names (e.g., `"user_id"`), and values are the
-   * corresponding parameter values (e.g., `"123"`).
-   * </pre>
-   *
-   * <code>map&lt;string, string&gt; parameters = 1 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.lang.String getParametersOrThrow(java.lang.String key);
+  com.google.cloud.geminidataanalytics.v1beta.ParameterizedSecureViewParameters.ParameterOrBuilder
+      getParametersOrBuilder(int index);
 }

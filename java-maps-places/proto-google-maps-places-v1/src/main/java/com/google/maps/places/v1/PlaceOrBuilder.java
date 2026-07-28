@@ -2876,4 +2876,41 @@ public interface PlaceOrBuilder
    * @return The bytes for movedPlaceId.
    */
   com.google.protobuf.ByteString getMovedPlaceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   *
+   * @return Whether the transitStation field is set.
+   */
+  boolean hasTransitStation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   *
+   * @return The transitStation.
+   */
+  com.google.maps.places.v1.TransitStation getTransitStation();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transit station information for the place.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.TransitStation transit_station = 98;</code>
+   */
+  com.google.maps.places.v1.TransitStationOrBuilder getTransitStationOrBuilder();
 }

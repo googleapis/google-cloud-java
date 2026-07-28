@@ -58,13 +58,17 @@ public interface AdUnitOrBuilder
    *
    *
    * <pre>
-   * Output only. AdUnit ID.
+   * Output only. Deprecated: AdUnit ID.
    * </pre>
    *
-   * <code>int64 ad_unit_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 ad_unit_id = 15 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.AdUnit.ad_unit_id is deprecated. See
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=50
    * @return The adUnitId.
    */
+  @java.lang.Deprecated
   long getAdUnitId();
 
   /**
@@ -795,7 +799,7 @@ public interface AdUnitOrBuilder
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return Whether the externalSetTopBoxChannelId field is set.
    */
   @java.lang.Deprecated
@@ -814,7 +818,7 @@ public interface AdUnitOrBuilder
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return The externalSetTopBoxChannelId.
    */
   @java.lang.Deprecated
@@ -833,7 +837,7 @@ public interface AdUnitOrBuilder
    * </code>
    *
    * @deprecated google.ads.admanager.v1.AdUnit.external_set_top_box_channel_id is deprecated. See
-   *     google/ads/admanager/v1/ad_unit_messages.proto;l=139
+   *     google/ads/admanager/v1/ad_unit_messages.proto;l=140
    * @return The bytes for externalSetTopBoxChannelId.
    */
   @java.lang.Deprecated

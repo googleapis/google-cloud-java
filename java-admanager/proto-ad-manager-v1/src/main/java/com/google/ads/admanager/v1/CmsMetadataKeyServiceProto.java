@@ -52,6 +52,22 @@ public final class CmsMetadataKeyServiceProto extends com.google.protobuf.Genera
       internal_static_google_ads_admanager_v1_ListCmsMetadataKeysResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCmsMetadataKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,22 +98,43 @@ public final class CmsMetadataKeyServiceProto extends com.google.protobuf.Genera
           + "\021cms_metadata_keys\030\001"
           + " \003(\0132\'.google.ads.admanager.v1.CmsMetadataKey\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\307\003\n"
+          + "total_size\030\003 \001(\005\"\237\001\n"
+          + "#BatchActivateCmsMetadataKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\005names\030\002 \003(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/CmsMetadataKey\"&\n"
+          + "$BatchActivateCmsMetadataKeysResponse\"\241\001\n"
+          + "%BatchDeactivateCmsMetadataKeysRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\005names\030\002 \003(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/CmsMetadataKey\"(\n"
+          + "&BatchDeactivateCmsMetadataKeysResponse2\340\007\n"
           + "\025CmsMetadataKeyService\022\247\001\n"
-          + "\021GetCmsMetadataKey\0221.google.ads.admanage"
-          + "r.v1.GetCmsMetadataKeyRequest\032\'.google.a"
-          + "ds.admanager.v1.CmsMetadataKey\"6\332A\004name\202"
-          + "\323\344\223\002)\022\'/v1/{name=networks/*/cmsMetadataKeys/*}\022\272\001\n"
-          + "\023ListCmsMetadataKeys\0223.google.ads.admanager.v1.ListCmsMetadataKeysRequ"
-          + "est\0324.google.ads.admanager.v1.ListCmsMet"
-          + "adataKeysResponse\"8\332A\006parent\202\323\344\223\002)\022\'/v1/"
-          + "{parent=networks/*}/cmsMetadataKeys\032G\312A\030"
-          + "admanager.googleapis.com\322A)https://www.googleapis.com/auth/admanagerB\316\001\n"
-          + "\033com.google.ads.admanager.v1B\032CmsMetadataKeyServ"
-          + "iceProtoP\001Z@google.golang.org/genproto/g"
-          + "oogleapis/ads/admanager/v1;admanager\252\002\027G"
-          + "oogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMa"
-          + "nager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\021GetCmsMetadataKey\0221.google.ads.admanager.v1.GetCmsMetadataKeyRequest\032\'."
+          + "google.ads.admanager.v1.CmsMetadataKey\"6"
+          + "\332A\004name\202\323\344\223\002)\022\'/v1/{name=networks/*/cmsMetadataKeys/*}\022\272\001\n"
+          + "\023ListCmsMetadataKeys\0223.google.ads.admanager.v1.ListCmsMetadata"
+          + "KeysRequest\0324.google.ads.admanager.v1.Li"
+          + "stCmsMetadataKeysResponse\"8\332A\006parent\202\323\344\223"
+          + "\002)\022\'/v1/{parent=networks/*}/cmsMetadataKeys\022\354\001\n"
+          + "\034BatchActivateCmsMetadataKeys\022<.google.ads.admanager.v1.BatchActivateCmsM"
+          + "etadataKeysRequest\032=.google.ads.admanager.v1.BatchActivateCmsMetadataKeysRespons"
+          + "e\"O\332A\014parent,names\202\323\344\223\002:\"5/v1/{parent=ne"
+          + "tworks/*}/cmsMetadataKeys:batchActivate:\001*\022\364\001\n"
+          + "\036BatchDeactivateCmsMetadataKeys\022>.google.ads.admanager.v1.BatchDeactivateC"
+          + "msMetadataKeysRequest\032?.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysRe"
+          + "sponse\"Q\332A\014parent,names\202\323\344\223\002<\"7/v1/{pare"
+          + "nt=networks/*}/cmsMetadataKeys:batchDeac"
+          + "tivate:\001*\032z\312A\030admanager.googleapis.com\322A"
+          + "\\https://www.googleapis.com/auth/admanag"
+          + "er,https://www.googleapis.com/auth/admanager.readonlyB\316\001\n"
+          + "\033com.google.ads.admanager.v1B\032CmsMetadataKeyServiceProtoP\001Z@goo"
+          + "gle.golang.org/genproto/googleapis/ads/a"
+          + "dmanager/v1;admanager\252\002\027Google.Ads.AdMan"
+          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goog"
+          + "le::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -133,6 +170,34 @@ public final class CmsMetadataKeyServiceProto extends com.google.protobuf.Genera
             new java.lang.String[] {
               "CmsMetadataKeys", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysResponse_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCmsMetadataKeysResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysResponse_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCmsMetadataKeysResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.CmsMetadataKeyMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

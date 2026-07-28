@@ -34,6 +34,8 @@ import com.google.cloud.compute.v1.stub.RegionCompositeHealthChecksStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -112,6 +114,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionCompositeHealthChecksSettings
     extends ClientSettings<RegionCompositeHealthChecksSettings> {
@@ -140,6 +143,12 @@ public class RegionCompositeHealthChecksSettings
   public UnaryCallSettings<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
       getSettings() {
     return ((RegionCompositeHealthChecksStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthSettings() {
+    return ((RegionCompositeHealthChecksStubSettings) getStubSettings()).getHealthSettings();
   }
 
   /** Returns the object with the settings used for calls to insert. */
@@ -224,7 +233,7 @@ public class RegionCompositeHealthChecksSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -245,7 +254,7 @@ public class RegionCompositeHealthChecksSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RegionCompositeHealthChecksStubSettings.newBuilder(clientContext));
     }
 
@@ -303,6 +312,13 @@ public class RegionCompositeHealthChecksSettings
     public UnaryCallSettings.Builder<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
         getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<
+            GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+        getHealthSettings() {
+      return getStubSettingsBuilder().getHealthSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */

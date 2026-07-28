@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -424,6 +426,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> UpdateKmsKey</td>
+ *      <td><p> Rotates the customer-managed encryption key to the latest version for the specified persistent disk.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(UpdateKmsKeyDiskRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyAsync(String project, String zone, String disk, DiskUpdateKmsKeyRequest diskUpdateKmsKeyRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateKmsKeyOperationCallable()
+ *           <li><p> updateKmsKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -464,9 +485,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DisksClient implements BackgroundResource {
-  private final DisksSettings settings;
+  private final @Nullable DisksSettings settings;
   private final DisksStub stub;
 
   /** Constructs an instance of DisksClient with default settings. */
@@ -504,7 +526,7 @@ public class DisksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DisksSettings getSettings() {
+  public final @Nullable DisksSettings getSettings() {
     return settings;
   }
 
@@ -3067,6 +3089,151 @@ public class DisksClient implements BackgroundResource {
     return stub.updateCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String disk = "disk3083677";
+   *   DiskUpdateKmsKeyRequest diskUpdateKmsKeyRequestResource =
+   *       DiskUpdateKmsKeyRequest.newBuilder().build();
+   *   Operation response =
+   *       disksClient.updateKmsKeyAsync(project, zone, disk, diskUpdateKmsKeyRequestResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param disk Name of the Disk resource, should conform to RFC1035.
+   * @param diskUpdateKmsKeyRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      String project,
+      String zone,
+      String disk,
+      DiskUpdateKmsKeyRequest diskUpdateKmsKeyRequestResource) {
+    UpdateKmsKeyDiskRequest request =
+        UpdateKmsKeyDiskRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setDisk(disk)
+            .setDiskUpdateKmsKeyRequestResource(diskUpdateKmsKeyRequestResource)
+            .build();
+    return updateKmsKeyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   UpdateKmsKeyDiskRequest request =
+   *       UpdateKmsKeyDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskUpdateKmsKeyRequestResource(DiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = disksClient.updateKmsKeyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateKmsKeyAsync(
+      UpdateKmsKeyDiskRequest request) {
+    return updateKmsKeyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   UpdateKmsKeyDiskRequest request =
+   *       UpdateKmsKeyDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskUpdateKmsKeyRequestResource(DiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       disksClient.updateKmsKeyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return stub.updateKmsKeyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rotates the customer-managed encryption key to the latest version for the specified persistent
+   * disk.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DisksClient disksClient = DisksClient.create()) {
+   *   UpdateKmsKeyDiskRequest request =
+   *       UpdateKmsKeyDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskUpdateKmsKeyRequestResource(DiskUpdateKmsKeyRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = disksClient.updateKmsKeyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable() {
+    return stub.updateKmsKeyCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3131,10 +3298,11 @@ public class DisksClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
-        DiskAggregatedList response) {
+        @Nullable DiskAggregatedList response) {
       super(context, response);
     }
 
@@ -3144,16 +3312,18 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
-        DiskAggregatedList response) {
+        @Nullable DiskAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         ApiFuture<DiskAggregatedList> futureResponse) {
@@ -3169,7 +3339,8 @@ public class DisksClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3179,7 +3350,7 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3203,7 +3374,9 @@ public class DisksClient implements BackgroundResource {
 
   public static class ListPage extends AbstractPage<ListDisksRequest, DiskList, Disk, ListPage> {
 
-    private ListPage(PageContext<ListDisksRequest, DiskList, Disk> context, DiskList response) {
+    private ListPage(
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       super(context, response);
     }
 
@@ -3213,13 +3386,15 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListDisksRequest, DiskList, Disk> context, DiskList response) {
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListDisksRequest, DiskList, Disk> context, ApiFuture<DiskList> futureResponse) {
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        ApiFuture<DiskList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
   }
@@ -3228,7 +3403,7 @@ public class DisksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListDisksRequest, DiskList, Disk, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3237,7 +3412,8 @@ public class DisksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -433,5 +433,59 @@ public interface DataAgentOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * DataAgent resources. Cloud KMS CryptoKeys must reside in the same location
+   * as the DataAgent. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
   com.google.cloud.geminidataanalytics.v1beta.DataAgent.TypeCase getTypeCase();
 }

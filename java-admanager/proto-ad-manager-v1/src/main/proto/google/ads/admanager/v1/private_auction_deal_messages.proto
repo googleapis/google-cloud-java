@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ syntax = "proto3";
 package google.ads.admanager.v1;
 
 import "google/ads/admanager/v1/deal_buyer_permission_type_enum.proto";
+import "google/ads/admanager/v1/non_guaranteed_deal_priority.proto";
 import "google/ads/admanager/v1/private_marketplace_enums.proto";
 import "google/ads/admanager/v1/size.proto";
 import "google/ads/admanager/v1/targeting.proto";
@@ -53,9 +54,9 @@ message PrivateAuctionDeal {
   // `networks/{network_code}/privateAuctionDeals/{private_auction_deal_id}`
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // Output only. `PrivateAuctionDeal` ID.
+  // Output only. Deprecated: `PrivateAuctionDeal` ID.
   optional int64 private_auction_deal_id = 2
-      [(google.api.field_behavior) = OUTPUT_ONLY];
+      [deprecated = true, (google.api.field_behavior) = OUTPUT_ONLY];
 
   // Immutable. The ID of the
   // [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
@@ -107,6 +108,10 @@ message PrivateAuctionDeal {
 
   // Optional. The buyer data required by the Marketplace API.
   optional BuyerData buyer_data = 14 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The priority of the deal across all non-guaranteed deals.
+  optional NonGuaranteedDealPriority deal_priority = 22
+      [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. The instant at which the `PrivateAuctionDeal` was created.
   optional google.protobuf.Timestamp create_time = 15

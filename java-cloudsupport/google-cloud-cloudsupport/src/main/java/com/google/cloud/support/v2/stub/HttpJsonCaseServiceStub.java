@@ -52,6 +52,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -59,6 +60,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonCaseServiceStub extends CaseServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -200,7 +202,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), true))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()
@@ -237,7 +239,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), true))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), true))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()

@@ -57,6 +57,11 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     gclid_ = "";
     gbraid_ = "";
     wbraid_ = "";
+    mobileDeviceId_ = "";
+    dclid_ = "";
+    impressionId_ = "";
+    matchId_ = "";
+    encryptedUserIds_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -353,6 +358,307 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         : landingPageDeviceInfo_;
   }
 
+  public static final int MOBILE_DEVICE_ID_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mobileDeviceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mobileDeviceId.
+   */
+  @java.lang.Override
+  public java.lang.String getMobileDeviceId() {
+    java.lang.Object ref = mobileDeviceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mobileDeviceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mobileDeviceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMobileDeviceIdBytes() {
+    java.lang.Object ref = mobileDeviceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mobileDeviceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DCLID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dclid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display click ID associated with this event.
+   * </pre>
+   *
+   * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dclid.
+   */
+  @java.lang.Override
+  public java.lang.String getDclid() {
+    java.lang.Object ref = dclid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dclid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display click ID associated with this event.
+   * </pre>
+   *
+   * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for dclid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDclidBytes() {
+    java.lang.Object ref = dclid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dclid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IMPRESSION_ID_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object impressionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The impression ID associated with this event.
+   * </pre>
+   *
+   * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The impressionId.
+   */
+  @java.lang.Override
+  public java.lang.String getImpressionId() {
+    java.lang.Object ref = impressionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      impressionId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The impression ID associated with this event.
+   * </pre>
+   *
+   * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for impressionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getImpressionIdBytes() {
+    java.lang.Object ref = impressionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      impressionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MATCH_ID_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The match ID field used to join this event with a previous event.
+   * </pre>
+   *
+   * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The matchId.
+   */
+  @java.lang.Override
+  public java.lang.String getMatchId() {
+    java.lang.Object ref = matchId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      matchId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The match ID field used to join this event with a previous event.
+   * </pre>
+   *
+   * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for matchId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMatchIdBytes() {
+    java.lang.Object ref = matchId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      matchId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENCRYPTED_USER_IDS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.datamanager.v1.EncryptedUserId> encryptedUserIds_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.datamanager.v1.EncryptedUserId> getEncryptedUserIdsList() {
+    return encryptedUserIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>
+      getEncryptedUserIdsOrBuilderList() {
+    return encryptedUserIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getEncryptedUserIdsCount() {
+    return encryptedUserIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.EncryptedUserId getEncryptedUserIds(int index) {
+    return encryptedUserIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder getEncryptedUserIdsOrBuilder(
+      int index) {
+    return encryptedUserIds_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -382,6 +688,21 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getLandingPageDeviceInfo());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mobileDeviceId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, mobileDeviceId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dclid_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, dclid_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(impressionId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, impressionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(matchId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, matchId_);
+    }
+    for (int i = 0; i < encryptedUserIds_.size(); i++) {
+      output.writeMessage(10, encryptedUserIds_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -407,6 +728,22 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(5, getLandingPageDeviceInfo());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mobileDeviceId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, mobileDeviceId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dclid_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, dclid_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(impressionId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, impressionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(matchId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, matchId_);
+    }
+    for (int i = 0; i < encryptedUserIds_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, encryptedUserIds_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,6 +768,11 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (hasLandingPageDeviceInfo()) {
       if (!getLandingPageDeviceInfo().equals(other.getLandingPageDeviceInfo())) return false;
     }
+    if (!getMobileDeviceId().equals(other.getMobileDeviceId())) return false;
+    if (!getDclid().equals(other.getDclid())) return false;
+    if (!getImpressionId().equals(other.getImpressionId())) return false;
+    if (!getMatchId().equals(other.getMatchId())) return false;
+    if (!getEncryptedUserIdsList().equals(other.getEncryptedUserIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -453,6 +795,18 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (hasLandingPageDeviceInfo()) {
       hash = (37 * hash) + LANDING_PAGE_DEVICE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getLandingPageDeviceInfo().hashCode();
+    }
+    hash = (37 * hash) + MOBILE_DEVICE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMobileDeviceId().hashCode();
+    hash = (37 * hash) + DCLID_FIELD_NUMBER;
+    hash = (53 * hash) + getDclid().hashCode();
+    hash = (37 * hash) + IMPRESSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getImpressionId().hashCode();
+    hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMatchId().hashCode();
+    if (getEncryptedUserIdsCount() > 0) {
+      hash = (37 * hash) + ENCRYPTED_USER_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptedUserIdsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -597,6 +951,7 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetLandingPageDeviceInfoFieldBuilder();
+        internalGetEncryptedUserIdsFieldBuilder();
       }
     }
 
@@ -613,6 +968,17 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         landingPageDeviceInfoBuilder_.dispose();
         landingPageDeviceInfoBuilder_ = null;
       }
+      mobileDeviceId_ = "";
+      dclid_ = "";
+      impressionId_ = "";
+      matchId_ = "";
+      if (encryptedUserIdsBuilder_ == null) {
+        encryptedUserIds_ = java.util.Collections.emptyList();
+      } else {
+        encryptedUserIds_ = null;
+        encryptedUserIdsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -640,11 +1006,24 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     public com.google.ads.datamanager.v1.AdIdentifiers buildPartial() {
       com.google.ads.datamanager.v1.AdIdentifiers result =
           new com.google.ads.datamanager.v1.AdIdentifiers(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.ads.datamanager.v1.AdIdentifiers result) {
+      if (encryptedUserIdsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          encryptedUserIds_ = java.util.Collections.unmodifiableList(encryptedUserIds_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.encryptedUserIds_ = encryptedUserIds_;
+      } else {
+        result.encryptedUserIds_ = encryptedUserIdsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.ads.datamanager.v1.AdIdentifiers result) {
@@ -668,6 +1047,18 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 ? landingPageDeviceInfo_
                 : landingPageDeviceInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mobileDeviceId_ = mobileDeviceId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.dclid_ = dclid_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.impressionId_ = impressionId_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.matchId_ = matchId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -706,6 +1097,53 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasLandingPageDeviceInfo()) {
         mergeLandingPageDeviceInfo(other.getLandingPageDeviceInfo());
+      }
+      if (!other.getMobileDeviceId().isEmpty()) {
+        mobileDeviceId_ = other.mobileDeviceId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getDclid().isEmpty()) {
+        dclid_ = other.dclid_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getImpressionId().isEmpty()) {
+        impressionId_ = other.impressionId_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getMatchId().isEmpty()) {
+        matchId_ = other.matchId_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (encryptedUserIdsBuilder_ == null) {
+        if (!other.encryptedUserIds_.isEmpty()) {
+          if (encryptedUserIds_.isEmpty()) {
+            encryptedUserIds_ = other.encryptedUserIds_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureEncryptedUserIdsIsMutable();
+            encryptedUserIds_.addAll(other.encryptedUserIds_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.encryptedUserIds_.isEmpty()) {
+          if (encryptedUserIdsBuilder_.isEmpty()) {
+            encryptedUserIdsBuilder_.dispose();
+            encryptedUserIdsBuilder_ = null;
+            encryptedUserIds_ = other.encryptedUserIds_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            encryptedUserIdsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetEncryptedUserIdsFieldBuilder()
+                    : null;
+          } else {
+            encryptedUserIdsBuilder_.addAllMessages(other.encryptedUserIds_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -764,6 +1202,43 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                mobileDeviceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                dclid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                impressionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                matchId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.ads.datamanager.v1.EncryptedUserId m =
+                    input.readMessage(
+                        com.google.ads.datamanager.v1.EncryptedUserId.parser(), extensionRegistry);
+                if (encryptedUserIdsBuilder_ == null) {
+                  ensureEncryptedUserIdsIsMutable();
+                  encryptedUserIds_.add(m);
+                } else {
+                  encryptedUserIdsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1458,6 +1933,868 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         landingPageDeviceInfo_ = null;
       }
       return landingPageDeviceInfoBuilder_;
+    }
+
+    private java.lang.Object mobileDeviceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The mobileDeviceId.
+     */
+    public java.lang.String getMobileDeviceId() {
+      java.lang.Object ref = mobileDeviceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mobileDeviceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for mobileDeviceId.
+     */
+    public com.google.protobuf.ByteString getMobileDeviceIdBytes() {
+      java.lang.Object ref = mobileDeviceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mobileDeviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The mobileDeviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMobileDeviceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      mobileDeviceId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMobileDeviceId() {
+      mobileDeviceId_ = getDefaultInstance().getMobileDeviceId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+     * AdID on Android, or other platforms’ identifiers for advertisers.
+     * </pre>
+     *
+     * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for mobileDeviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMobileDeviceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      mobileDeviceId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dclid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display click ID associated with this event.
+     * </pre>
+     *
+     * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dclid.
+     */
+    public java.lang.String getDclid() {
+      java.lang.Object ref = dclid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dclid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display click ID associated with this event.
+     * </pre>
+     *
+     * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for dclid.
+     */
+    public com.google.protobuf.ByteString getDclidBytes() {
+      java.lang.Object ref = dclid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dclid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display click ID associated with this event.
+     * </pre>
+     *
+     * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dclid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDclid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dclid_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display click ID associated with this event.
+     * </pre>
+     *
+     * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDclid() {
+      dclid_ = getDefaultInstance().getDclid();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display click ID associated with this event.
+     * </pre>
+     *
+     * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for dclid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDclidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dclid_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object impressionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The impression ID associated with this event.
+     * </pre>
+     *
+     * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The impressionId.
+     */
+    public java.lang.String getImpressionId() {
+      java.lang.Object ref = impressionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        impressionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The impression ID associated with this event.
+     * </pre>
+     *
+     * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for impressionId.
+     */
+    public com.google.protobuf.ByteString getImpressionIdBytes() {
+      java.lang.Object ref = impressionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        impressionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The impression ID associated with this event.
+     * </pre>
+     *
+     * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The impressionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImpressionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      impressionId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The impression ID associated with this event.
+     * </pre>
+     *
+     * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImpressionId() {
+      impressionId_ = getDefaultInstance().getImpressionId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The impression ID associated with this event.
+     * </pre>
+     *
+     * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for impressionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImpressionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      impressionId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object matchId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The match ID field used to join this event with a previous event.
+     * </pre>
+     *
+     * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The matchId.
+     */
+    public java.lang.String getMatchId() {
+      java.lang.Object ref = matchId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The match ID field used to join this event with a previous event.
+     * </pre>
+     *
+     * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for matchId.
+     */
+    public com.google.protobuf.ByteString getMatchIdBytes() {
+      java.lang.Object ref = matchId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        matchId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The match ID field used to join this event with a previous event.
+     * </pre>
+     *
+     * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The matchId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      matchId_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The match ID field used to join this event with a previous event.
+     * </pre>
+     *
+     * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMatchId() {
+      matchId_ = getDefaultInstance().getMatchId();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The match ID field used to join this event with a previous event.
+     * </pre>
+     *
+     * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for matchId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      matchId_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.datamanager.v1.EncryptedUserId> encryptedUserIds_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEncryptedUserIdsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        encryptedUserIds_ =
+            new java.util.ArrayList<com.google.ads.datamanager.v1.EncryptedUserId>(
+                encryptedUserIds_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.EncryptedUserId,
+            com.google.ads.datamanager.v1.EncryptedUserId.Builder,
+            com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>
+        encryptedUserIdsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.EncryptedUserId> getEncryptedUserIdsList() {
+      if (encryptedUserIdsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(encryptedUserIds_);
+      } else {
+        return encryptedUserIdsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getEncryptedUserIdsCount() {
+      if (encryptedUserIdsBuilder_ == null) {
+        return encryptedUserIds_.size();
+      } else {
+        return encryptedUserIdsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EncryptedUserId getEncryptedUserIds(int index) {
+      if (encryptedUserIdsBuilder_ == null) {
+        return encryptedUserIds_.get(index);
+      } else {
+        return encryptedUserIdsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptedUserIds(
+        int index, com.google.ads.datamanager.v1.EncryptedUserId value) {
+      if (encryptedUserIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.set(index, value);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptedUserIds(
+        int index, com.google.ads.datamanager.v1.EncryptedUserId.Builder builderForValue) {
+      if (encryptedUserIdsBuilder_ == null) {
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addEncryptedUserIds(com.google.ads.datamanager.v1.EncryptedUserId value) {
+      if (encryptedUserIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.add(value);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addEncryptedUserIds(
+        int index, com.google.ads.datamanager.v1.EncryptedUserId value) {
+      if (encryptedUserIdsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.add(index, value);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addEncryptedUserIds(
+        com.google.ads.datamanager.v1.EncryptedUserId.Builder builderForValue) {
+      if (encryptedUserIdsBuilder_ == null) {
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.add(builderForValue.build());
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addEncryptedUserIds(
+        int index, com.google.ads.datamanager.v1.EncryptedUserId.Builder builderForValue) {
+      if (encryptedUserIdsBuilder_ == null) {
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllEncryptedUserIds(
+        java.lang.Iterable<? extends com.google.ads.datamanager.v1.EncryptedUserId> values) {
+      if (encryptedUserIdsBuilder_ == null) {
+        ensureEncryptedUserIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, encryptedUserIds_);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptedUserIds() {
+      if (encryptedUserIdsBuilder_ == null) {
+        encryptedUserIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeEncryptedUserIds(int index) {
+      if (encryptedUserIdsBuilder_ == null) {
+        ensureEncryptedUserIdsIsMutable();
+        encryptedUserIds_.remove(index);
+        onChanged();
+      } else {
+        encryptedUserIdsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EncryptedUserId.Builder getEncryptedUserIdsBuilder(
+        int index) {
+      return internalGetEncryptedUserIdsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder getEncryptedUserIdsOrBuilder(
+        int index) {
+      if (encryptedUserIdsBuilder_ == null) {
+        return encryptedUserIds_.get(index);
+      } else {
+        return encryptedUserIdsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>
+        getEncryptedUserIdsOrBuilderList() {
+      if (encryptedUserIdsBuilder_ != null) {
+        return encryptedUserIdsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(encryptedUserIds_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EncryptedUserId.Builder addEncryptedUserIdsBuilder() {
+      return internalGetEncryptedUserIdsFieldBuilder()
+          .addBuilder(com.google.ads.datamanager.v1.EncryptedUserId.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.EncryptedUserId.Builder addEncryptedUserIdsBuilder(
+        int index) {
+      return internalGetEncryptedUserIdsFieldBuilder()
+          .addBuilder(index, com.google.ads.datamanager.v1.EncryptedUserId.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any number of encrypted user IDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.EncryptedUserId.Builder>
+        getEncryptedUserIdsBuilderList() {
+      return internalGetEncryptedUserIdsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.EncryptedUserId,
+            com.google.ads.datamanager.v1.EncryptedUserId.Builder,
+            com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>
+        internalGetEncryptedUserIdsFieldBuilder() {
+      if (encryptedUserIdsBuilder_ == null) {
+        encryptedUserIdsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.datamanager.v1.EncryptedUserId,
+                com.google.ads.datamanager.v1.EncryptedUserId.Builder,
+                com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>(
+                encryptedUserIds_,
+                ((bitField0_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        encryptedUserIds_ = null;
+      }
+      return encryptedUserIdsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.AdIdentifiers)

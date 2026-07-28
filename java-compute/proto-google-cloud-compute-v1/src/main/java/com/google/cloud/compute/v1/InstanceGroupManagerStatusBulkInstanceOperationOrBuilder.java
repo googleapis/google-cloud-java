@@ -30,7 +30,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Informs whether bulk instance operation is in progress.
+   * Output only. Informs whether bulk instance operation is in progress.
    * </pre>
    *
    * <code>optional bool in_progress = 320200711;</code>
@@ -43,7 +43,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Informs whether bulk instance operation is in progress.
+   * Output only. Informs whether bulk instance operation is in progress.
    * </pre>
    *
    * <code>optional bool in_progress = 320200711;</code>
@@ -56,7 +56,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Information from the last progress check of bulk instance
+   * Output only. Information from the last progress check of bulk instance
    * operation.
    * </pre>
    *
@@ -72,7 +72,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Information from the last progress check of bulk instance
+   * Output only. Information from the last progress check of bulk instance
    * operation.
    * </pre>
    *
@@ -89,7 +89,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Information from the last progress check of bulk instance
+   * Output only. Information from the last progress check of bulk instance
    * operation.
    * </pre>
    *

@@ -57,6 +57,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     ipv6Address_ = "";
     projectIdOrNum_ = "";
     secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceClassId_ = "";
     status_ = "";
     subnetwork_ = "";
     subnetworkCidrRange_ = "";
@@ -611,6 +612,78 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     return secondaryIpCidrRanges_.getByteString(index);
   }
 
+  public static final int SERVICE_CLASS_ID_FIELD_NUMBER = 422763404;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceClassId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceClassId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceClassId() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceClassId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceClassIdBytes() {
+    java.lang.Object ref = serviceClassId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceClassId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATUS_FIELD_NUMBER = 181260274;
 
   @SuppressWarnings("serial")
@@ -630,7 +703,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -702,7 +775,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasSubnetwork() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -774,7 +847,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasSubnetworkCidrRange() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -845,10 +918,10 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       com.google.protobuf.GeneratedMessage.writeString(
           output, 117184788, secondaryIpCidrRanges_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -857,11 +930,14 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 349783336, projectIdOrNum_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 383249827, subnetworkCidrRange_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 422763404, serviceClassId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -880,10 +956,10 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       size += dataSize;
       size += 5 * getSecondaryIpCidrRangesList().size();
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -892,12 +968,15 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(349783336, projectIdOrNum_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(383249827, subnetworkCidrRange_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(406272220, ipAddress_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(422763404, serviceClassId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -928,6 +1007,10 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       if (!getProjectIdOrNum().equals(other.getProjectIdOrNum())) return false;
     }
     if (!getSecondaryIpCidrRangesList().equals(other.getSecondaryIpCidrRangesList())) return false;
+    if (hasServiceClassId() != other.hasServiceClassId()) return false;
+    if (hasServiceClassId()) {
+      if (!getServiceClassId().equals(other.getServiceClassId())) return false;
+    }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
@@ -966,6 +1049,10 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
     if (getSecondaryIpCidrRangesCount() > 0) {
       hash = (37 * hash) + SECONDARY_IP_CIDR_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryIpCidrRangesList().hashCode();
+    }
+    if (hasServiceClassId()) {
+      hash = (37 * hash) + SERVICE_CLASS_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceClassId().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -1124,6 +1211,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       ipv6Address_ = "";
       projectIdOrNum_ = "";
       secondaryIpCidrRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceClassId_ = "";
       status_ = "";
       subnetwork_ = "";
       subnetworkCidrRange_ = "";
@@ -1183,16 +1271,20 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         result.secondaryIpCidrRanges_ = secondaryIpCidrRanges_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.status_ = status_;
+        result.serviceClassId_ = serviceClassId_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.subnetwork_ = subnetwork_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.subnetworkCidrRange_ = subnetworkCidrRange_;
+        result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.subnetworkCidrRange_ = subnetworkCidrRange_;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1236,19 +1328,24 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         }
         onChanged();
       }
+      if (other.hasServiceClassId()) {
+        serviceClassId_ = other.serviceClassId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSubnetworkCidrRange()) {
         subnetworkCidrRange_ = other.subnetworkCidrRange_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1287,13 +1384,13 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1450082194
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1832345742
             case -1562456862:
@@ -1311,7 +1408,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
             case -1228968678:
               {
                 subnetworkCidrRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1228968678
             case -1044789534:
@@ -1320,6 +1417,12 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1044789534
+            case -912860062:
+              {
+                serviceClassId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -912860062
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1919,6 +2022,138 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       return this;
     }
 
+    private java.lang.Object serviceClassId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return Whether the serviceClassId field is set.
+     */
+    public boolean hasServiceClassId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The serviceClassId.
+     */
+    public java.lang.String getServiceClassId() {
+      java.lang.Object ref = serviceClassId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceClassId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return The bytes for serviceClassId.
+     */
+    public com.google.protobuf.ByteString getServiceClassIdBytes() {
+      java.lang.Object ref = serviceClassId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceClassId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceClassId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceClassId() {
+      serviceClassId_ = getDefaultInstance().getServiceClassId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The service class id of the producer service to which the IP was
+     * assigned.
+     * </pre>
+     *
+     * <code>optional string service_class_id = 422763404;</code>
+     *
+     * @param value The bytes for serviceClassId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceClassIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceClassId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object status_ = "";
 
     /**
@@ -1934,7 +2169,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2003,7 +2238,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2022,7 +2257,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2046,7 +2281,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2066,7 +2301,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2135,7 +2370,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2154,7 +2389,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2178,7 +2413,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2198,7 +2433,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      * @return Whether the subnetworkCidrRange field is set.
      */
     public boolean hasSubnetworkCidrRange() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2267,7 +2502,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
         throw new NullPointerException();
       }
       subnetworkCidrRange_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2286,7 +2521,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      */
     public Builder clearSubnetworkCidrRange() {
       subnetworkCidrRange_ = getDefaultInstance().getSubnetworkCidrRange();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2310,7 +2545,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       subnetworkCidrRange_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

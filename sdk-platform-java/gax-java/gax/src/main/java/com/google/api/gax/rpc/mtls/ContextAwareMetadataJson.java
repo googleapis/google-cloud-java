@@ -34,6 +34,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Data class representing context_aware_metadata.json file.
@@ -43,6 +44,7 @@ import java.util.List;
  *
  * <p>Note: This class is for Google cloud internal use only.
  */
+@NullMarked
 @Deprecated
 public class ContextAwareMetadataJson extends GenericJson {
   /** Cert provider command */

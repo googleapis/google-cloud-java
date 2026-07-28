@@ -127,6 +127,68 @@ public interface GroundingMetadataOrBuilder
    *
    *
    * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the retrievalQueries.
+   */
+  java.util.List<java.lang.String> getRetrievalQueriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of retrievalQueries.
+   */
+  int getRetrievalQueriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The retrievalQueries at the given index.
+   */
+  java.lang.String getRetrievalQueries(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The queries that were executed by the retrieval tools.
+   * This field is populated only when the grounding source is a retrieval tool,
+   * such as Vertex AI Search.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the retrievalQueries at the given index.
+   */
+  com.google.protobuf.ByteString getRetrievalQueriesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * List of supporting references retrieved from specified grounding source.
    * </pre>
    *

@@ -54,10 +54,15 @@ class TableResultTest {
   @Test
   void testNullSchema() {
     TableResult result =
-        TableResult.newBuilder().setTotalRows(3L).setPageNoSchema(INNER_PAGE_0).build();
+        TableResult.newBuilder()
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .build();
     assertThat(result.getSchema()).isNull();
     assertThat(result.hasNextPage()).isTrue();
     assertThat(result.getNextPageToken()).isNotNull();
+    assertThat(result.getRowsInPage()).isEqualTo(2L);
     assertThat(result.getValues())
         .containsExactly(newFieldValueList("0"), newFieldValueList("1"))
         .inOrder();
@@ -66,6 +71,7 @@ class TableResultTest {
     assertThat(next.getSchema()).isNull();
     assertThat(next.hasNextPage()).isFalse();
     assertThat(next.getNextPageToken()).isNull();
+    assertThat(next.getRowsInPage()).isEqualTo(1L);
     assertThat(next.getValues()).containsExactly(newFieldValueList("2"));
     assertThat(next.getNextPage()).isNull();
 
@@ -81,10 +87,12 @@ class TableResultTest {
             .setSchema(SCHEMA)
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
             .build();
     assertThat(result.getSchema()).isEqualTo(SCHEMA);
     assertThat(result.hasNextPage()).isTrue();
     assertThat(result.getNextPageToken()).isNotNull();
+    assertThat(result.getRowsInPage()).isEqualTo(2L);
     assertThat(result.getValues())
         .containsExactly(
             newFieldValueList("0").withSchema(SCHEMA.getFields()),
@@ -95,6 +103,7 @@ class TableResultTest {
     assertThat(next.getSchema()).isEqualTo(SCHEMA);
     assertThat(next.hasNextPage()).isFalse();
     assertThat(next.getNextPageToken()).isNull();
+    assertThat(next.getRowsInPage()).isEqualTo(1L);
     assertThat(next.getValues())
         .containsExactly(newFieldValueList("2").withSchema(SCHEMA.getFields()));
     assertThat(next.getNextPage()).isNull();

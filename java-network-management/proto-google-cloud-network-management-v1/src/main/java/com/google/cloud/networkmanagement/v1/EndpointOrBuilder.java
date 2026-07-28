@@ -439,6 +439,38 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The dmsPrivateConnection.
+   */
+  java.lang.String getDmsPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [DMS Private
+   * Connection](https://docs.cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.privateConnections)
+   * name format:
+   * projects/{project}/locations/{location}/privateConnections/{privateConnection}.
+   * </pre>
+   *
+   * <code>string dms_private_connection = 22;</code>
+   *
+   * @return The bytes for dmsPrivateConnection.
+   */
+  com.google.protobuf.ByteString getDmsPrivateConnectionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
    * source endpoint.
    * </pre>
@@ -578,6 +610,40 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder
       getCloudRunRevisionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [job](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs#Job)
+   * URI.
+   * Applicable only to source endpoint.
+   * The format is: projects/{project}/locations/{location}/jobs/{job}
+   * </pre>
+   *
+   * <code>string cloud_run_job = 24;</code>
+   *
+   * @return The cloudRunJob.
+   */
+  java.lang.String getCloudRunJob();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [job](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs#Job)
+   * URI.
+   * Applicable only to source endpoint.
+   * The format is: projects/{project}/locations/{location}/jobs/{job}
+   * </pre>
+   *
+   * <code>string cloud_run_job = 24;</code>
+   *
+   * @return The bytes for cloudRunJob.
+   */
+  com.google.protobuf.ByteString getCloudRunJobBytes();
 
   /**
    *

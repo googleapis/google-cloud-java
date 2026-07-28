@@ -747,7 +747,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the start of the claim in the answer candidate,
-     * measured in bytes.
+     * measured in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered in the user interface keeping in mind that
+     * some characters may take more than one byte. For example,
+     * if the claim text contains non-ASCII characters, the start and end
+     * positions vary when measured in characters
+     * (programming-language-dependent) and when measured in bytes
+     * (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 start_pos = 1;</code>
@@ -761,7 +767,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the start of the claim in the answer candidate,
-     * measured in bytes.
+     * measured in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered in the user interface keeping in mind that
+     * some characters may take more than one byte. For example,
+     * if the claim text contains non-ASCII characters, the start and end
+     * positions vary when measured in characters
+     * (programming-language-dependent) and when measured in bytes
+     * (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 start_pos = 1;</code>
@@ -775,7 +787,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the end of the claim in the answer candidate,
-     * exclusive.
+     * exclusive, in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered as such. For example, if the claim text
+     * contains non-ASCII characters, the start and end positions vary when
+     * measured in characters (programming-language-dependent) and when measured
+     * in bytes (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 end_pos = 2;</code>
@@ -789,7 +805,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the end of the claim in the answer candidate,
-     * exclusive.
+     * exclusive, in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered as such. For example, if the claim text
+     * contains non-ASCII characters, the start and end positions vary when
+     * measured in characters (programming-language-dependent) and when measured
+     * in bytes (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 end_pos = 2;</code>
@@ -886,10 +906,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * decided this claim doesn't require attribution/grounding check, this
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
-     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-     * and
-     * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
      * should not be returned.
      * </pre>
      *
@@ -907,10 +924,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * decided this claim doesn't require attribution/grounding check, this
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
-     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-     * and
-     * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
      * should not be returned.
      * </pre>
      *
@@ -919,6 +933,36 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * @return The groundingCheckRequired.
      */
     boolean getGroundingCheckRequired();
+
+    /**
+     *
+     *
+     * <pre>
+     * Confidence score for the claim in the answer candidate, in the range of
+     * [0, 1]. This is set only when
+     * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+     * </pre>
+     *
+     * <code>optional double score = 7;</code>
+     *
+     * @return Whether the score field is set.
+     */
+    boolean hasScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * Confidence score for the claim in the answer candidate, in the range of
+     * [0, 1]. This is set only when
+     * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+     * </pre>
+     *
+     * <code>optional double score = 7;</code>
+     *
+     * @return The score.
+     */
+    double getScore();
   }
 
   /**
@@ -980,7 +1024,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the start of the claim in the answer candidate,
-     * measured in bytes.
+     * measured in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered in the user interface keeping in mind that
+     * some characters may take more than one byte. For example,
+     * if the claim text contains non-ASCII characters, the start and end
+     * positions vary when measured in characters
+     * (programming-language-dependent) and when measured in bytes
+     * (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 start_pos = 1;</code>
@@ -997,7 +1047,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the start of the claim in the answer candidate,
-     * measured in bytes.
+     * measured in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered in the user interface keeping in mind that
+     * some characters may take more than one byte. For example,
+     * if the claim text contains non-ASCII characters, the start and end
+     * positions vary when measured in characters
+     * (programming-language-dependent) and when measured in bytes
+     * (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 start_pos = 1;</code>
@@ -1017,7 +1073,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the end of the claim in the answer candidate,
-     * exclusive.
+     * exclusive, in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered as such. For example, if the claim text
+     * contains non-ASCII characters, the start and end positions vary when
+     * measured in characters (programming-language-dependent) and when measured
+     * in bytes (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 end_pos = 2;</code>
@@ -1034,7 +1094,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Position indicating the end of the claim in the answer candidate,
-     * exclusive.
+     * exclusive, in bytes. Note that this is not measured in characters and,
+     * therefore, must be rendered as such. For example, if the claim text
+     * contains non-ASCII characters, the start and end positions vary when
+     * measured in characters (programming-language-dependent) and when measured
+     * in bytes (programming-language-independent).
      * </pre>
      *
      * <code>optional int32 end_pos = 2;</code>
@@ -1178,10 +1242,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * decided this claim doesn't require attribution/grounding check, this
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
-     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-     * and
-     * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
      * should not be returned.
      * </pre>
      *
@@ -1202,10 +1263,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
      * decided this claim doesn't require attribution/grounding check, this
      * field will be set to false. In that case, no grounding check was done for
      * the claim and therefore
-     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-     * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-     * and
-     * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+     * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
      * should not be returned.
      * </pre>
      *
@@ -1216,6 +1274,45 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public boolean getGroundingCheckRequired() {
       return groundingCheckRequired_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 7;
+    private double score_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * Confidence score for the claim in the answer candidate, in the range of
+     * [0, 1]. This is set only when
+     * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+     * </pre>
+     *
+     * <code>optional double score = 7;</code>
+     *
+     * @return Whether the score field is set.
+     */
+    @java.lang.Override
+    public boolean hasScore() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Confidence score for the claim in the answer candidate, in the range of
+     * [0, 1]. This is set only when
+     * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+     * </pre>
+     *
+     * <code>optional double score = 7;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public double getScore() {
+      return score_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1252,6 +1349,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeBool(6, groundingCheckRequired_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeDouble(7, score_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1287,6 +1387,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, groundingCheckRequired_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(7, score_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1317,6 +1420,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       if (hasGroundingCheckRequired()) {
         if (getGroundingCheckRequired() != other.getGroundingCheckRequired()) return false;
       }
+      if (hasScore() != other.hasScore()) return false;
+      if (hasScore()) {
+        if (java.lang.Double.doubleToLongBits(getScore())
+            != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1345,6 +1453,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       if (hasGroundingCheckRequired()) {
         hash = (37 * hash) + GROUNDING_CHECK_REQUIRED_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroundingCheckRequired());
+      }
+      if (hasScore()) {
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getScore()));
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1494,6 +1609,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         claimText_ = "";
         citationIndices_ = emptyIntList();
         groundingCheckRequired_ = false;
+        score_ = 0D;
         return this;
       }
 
@@ -1554,6 +1670,10 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
           result.groundingCheckRequired_ = groundingCheckRequired_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.score_ = score_;
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1597,6 +1717,9 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
         }
         if (other.hasGroundingCheckRequired()) {
           setGroundingCheckRequired(other.getGroundingCheckRequired());
+        }
+        if (other.hasScore()) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1666,6 +1789,12 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 48
+              case 57:
+                {
+                  score_ = input.readDouble();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 57
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1692,7 +1821,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the start of the claim in the answer candidate,
-       * measured in bytes.
+       * measured in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered in the user interface keeping in mind that
+       * some characters may take more than one byte. For example,
+       * if the claim text contains non-ASCII characters, the start and end
+       * positions vary when measured in characters
+       * (programming-language-dependent) and when measured in bytes
+       * (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 start_pos = 1;</code>
@@ -1709,7 +1844,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the start of the claim in the answer candidate,
-       * measured in bytes.
+       * measured in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered in the user interface keeping in mind that
+       * some characters may take more than one byte. For example,
+       * if the claim text contains non-ASCII characters, the start and end
+       * positions vary when measured in characters
+       * (programming-language-dependent) and when measured in bytes
+       * (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 start_pos = 1;</code>
@@ -1726,7 +1867,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the start of the claim in the answer candidate,
-       * measured in bytes.
+       * measured in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered in the user interface keeping in mind that
+       * some characters may take more than one byte. For example,
+       * if the claim text contains non-ASCII characters, the start and end
+       * positions vary when measured in characters
+       * (programming-language-dependent) and when measured in bytes
+       * (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 start_pos = 1;</code>
@@ -1747,7 +1894,13 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the start of the claim in the answer candidate,
-       * measured in bytes.
+       * measured in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered in the user interface keeping in mind that
+       * some characters may take more than one byte. For example,
+       * if the claim text contains non-ASCII characters, the start and end
+       * positions vary when measured in characters
+       * (programming-language-dependent) and when measured in bytes
+       * (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 start_pos = 1;</code>
@@ -1768,7 +1921,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the end of the claim in the answer candidate,
-       * exclusive.
+       * exclusive, in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered as such. For example, if the claim text
+       * contains non-ASCII characters, the start and end positions vary when
+       * measured in characters (programming-language-dependent) and when measured
+       * in bytes (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 end_pos = 2;</code>
@@ -1785,7 +1942,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the end of the claim in the answer candidate,
-       * exclusive.
+       * exclusive, in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered as such. For example, if the claim text
+       * contains non-ASCII characters, the start and end positions vary when
+       * measured in characters (programming-language-dependent) and when measured
+       * in bytes (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 end_pos = 2;</code>
@@ -1802,7 +1963,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the end of the claim in the answer candidate,
-       * exclusive.
+       * exclusive, in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered as such. For example, if the claim text
+       * contains non-ASCII characters, the start and end positions vary when
+       * measured in characters (programming-language-dependent) and when measured
+       * in bytes (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 end_pos = 2;</code>
@@ -1823,7 +1988,11 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        *
        * <pre>
        * Position indicating the end of the claim in the answer candidate,
-       * exclusive.
+       * exclusive, in bytes. Note that this is not measured in characters and,
+       * therefore, must be rendered as such. For example, if the claim text
+       * contains non-ASCII characters, the start and end positions vary when
+       * measured in characters (programming-language-dependent) and when measured
+       * in bytes (programming-language-independent).
        * </pre>
        *
        * <code>optional int32 end_pos = 2;</code>
@@ -2128,10 +2297,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * decided this claim doesn't require attribution/grounding check, this
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
-       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-       * and
-       * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
        * should not be returned.
        * </pre>
        *
@@ -2152,10 +2318,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * decided this claim doesn't require attribution/grounding check, this
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
-       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-       * and
-       * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
        * should not be returned.
        * </pre>
        *
@@ -2176,10 +2339,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * decided this claim doesn't require attribution/grounding check, this
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
-       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-       * and
-       * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
        * should not be returned.
        * </pre>
        *
@@ -2204,10 +2364,7 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
        * decided this claim doesn't require attribution/grounding check, this
        * field will be set to false. In that case, no grounding check was done for
        * the claim and therefore
-       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices],
-       * [anti_citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.anti_citation_indices],
-       * and
-       * [score][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.score]
+       * [citation_indices][google.cloud.discoveryengine.v1beta.CheckGroundingResponse.Claim.citation_indices]
        * should not be returned.
        * </pre>
        *
@@ -2218,6 +2375,86 @@ public final class CheckGroundingResponse extends com.google.protobuf.GeneratedM
       public Builder clearGroundingCheckRequired() {
         bitField0_ = (bitField0_ & ~0x00000010);
         groundingCheckRequired_ = false;
+        onChanged();
+        return this;
+      }
+
+      private double score_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Confidence score for the claim in the answer candidate, in the range of
+       * [0, 1]. This is set only when
+       * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+       * </pre>
+       *
+       * <code>optional double score = 7;</code>
+       *
+       * @return Whether the score field is set.
+       */
+      @java.lang.Override
+      public boolean hasScore() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Confidence score for the claim in the answer candidate, in the range of
+       * [0, 1]. This is set only when
+       * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+       * </pre>
+       *
+       * <code>optional double score = 7;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Confidence score for the claim in the answer candidate, in the range of
+       * [0, 1]. This is set only when
+       * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+       * </pre>
+       *
+       * <code>optional double score = 7;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(double value) {
+
+        score_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Confidence score for the claim in the answer candidate, in the range of
+       * [0, 1]. This is set only when
+       * `CheckGroundingRequest.grounding_spec.enable_claim_level_score` is true.
+       * </pre>
+       *
+       * <code>optional double score = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        score_ = 0D;
         onChanged();
         return this;
       }

@@ -320,100 +320,6 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   }
 
   @Test
-  public void sheetExportAudienceListTest() throws Exception {
-    SheetExportAudienceListResponse expectedResponse =
-        SheetExportAudienceListResponse.newBuilder()
-            .setSpreadsheetUri("spreadsheetUri1336397312")
-            .setSpreadsheetId("spreadsheetId1844224519")
-            .setRowCount(1340416618)
-            .setAudienceList(AudienceList.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-
-    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void sheetExportAudienceListExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-      client.sheetExportAudienceList(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void sheetExportAudienceListTest2() throws Exception {
-    SheetExportAudienceListResponse expectedResponse =
-        SheetExportAudienceListResponse.newBuilder()
-            .setSpreadsheetUri("spreadsheetUri1336397312")
-            .setSpreadsheetId("spreadsheetId1844224519")
-            .setRowCount(1340416618)
-            .setAudienceList(AudienceList.newBuilder().build())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    String name = "properties/propertie-6618/audienceLists/audienceList-6618";
-
-    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void sheetExportAudienceListExceptionTest2() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      String name = "properties/propertie-6618/audienceLists/audienceList-6618";
-      client.sheetExportAudienceList(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void getAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
@@ -1372,6 +1278,192 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
     try {
       String parent = "properties/propertie-2024";
       client.listReportTasks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void runReportTest() throws Exception {
+    RunReportResponse expectedResponse =
+        RunReportResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<DimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<MetricHeader>())
+            .addAllRows(new ArrayList<Row>())
+            .addAllTotals(new ArrayList<Row>())
+            .addAllMaximums(new ArrayList<Row>())
+            .addAllMinimums(new ArrayList<Row>())
+            .setRowCount(1340416618)
+            .setMetadata(ResponseMetaData.newBuilder().build())
+            .setPropertyQuota(PropertyQuota.newBuilder().build())
+            .setKind("kind3292052")
+            .setNextPageToken("nextPageToken-1386094857")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    RunReportRequest request =
+        RunReportRequest.newBuilder()
+            .setProperty("properties/propertie-2179")
+            .addAllDimensions(new ArrayList<Dimension>())
+            .addAllMetrics(new ArrayList<Metric>())
+            .addAllDateRanges(new ArrayList<DateRange>())
+            .setDimensionFilter(FilterExpression.newBuilder().build())
+            .setMetricFilter(FilterExpression.newBuilder().build())
+            .setOffset(-1019779949)
+            .setLimit(102976443)
+            .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+            .addAllOrderBys(new ArrayList<OrderBy>())
+            .setCurrencyCode("currencyCode1004773790")
+            .setCohortSpec(CohortSpec.newBuilder().build())
+            .setKeepEmptyRows(true)
+            .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
+            .setConversionSpec(ConversionSpec.newBuilder().build())
+            .build();
+
+    RunReportResponse actualResponse = client.runReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runReportExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RunReportRequest request =
+          RunReportRequest.newBuilder()
+              .setProperty("properties/propertie-2179")
+              .addAllDimensions(new ArrayList<Dimension>())
+              .addAllMetrics(new ArrayList<Metric>())
+              .addAllDateRanges(new ArrayList<DateRange>())
+              .setDimensionFilter(FilterExpression.newBuilder().build())
+              .setMetricFilter(FilterExpression.newBuilder().build())
+              .setOffset(-1019779949)
+              .setLimit(102976443)
+              .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+              .addAllOrderBys(new ArrayList<OrderBy>())
+              .setCurrencyCode("currencyCode1004773790")
+              .setCohortSpec(CohortSpec.newBuilder().build())
+              .setKeepEmptyRows(true)
+              .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
+              .setConversionSpec(ConversionSpec.newBuilder().build())
+              .build();
+      client.runReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataTest() throws Exception {
+    Metadata expectedResponse =
+        Metadata.newBuilder()
+            .setName(MetadataName.of("[PROPERTY]").toString())
+            .addAllDimensions(new ArrayList<DimensionMetadata>())
+            .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
+            .addAllConversions(new ArrayList<ConversionMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MetadataName name = MetadataName.of("[PROPERTY]");
+
+    Metadata actualResponse = client.getMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMetadataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MetadataName name = MetadataName.of("[PROPERTY]");
+      client.getMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataTest2() throws Exception {
+    Metadata expectedResponse =
+        Metadata.newBuilder()
+            .setName(MetadataName.of("[PROPERTY]").toString())
+            .addAllDimensions(new ArrayList<DimensionMetadata>())
+            .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
+            .addAllConversions(new ArrayList<ConversionMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-8635/metadata";
+
+    Metadata actualResponse = client.getMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMetadataExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-8635/metadata";
+      client.getMetadata(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

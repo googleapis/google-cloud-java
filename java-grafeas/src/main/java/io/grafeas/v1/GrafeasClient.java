@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -384,9 +386,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrafeasClient implements BackgroundResource {
-  private final GrafeasSettings settings;
+  private final @Nullable GrafeasSettings settings;
   private final GrafeasStub stub;
 
   /** Constructs an instance of GrafeasClient with default settings. */
@@ -424,7 +427,7 @@ public class GrafeasClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GrafeasSettings getSettings() {
+  public final @Nullable GrafeasSettings getSettings() {
     return settings;
   }
 
@@ -454,7 +457,7 @@ public class GrafeasClient implements BackgroundResource {
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Occurrence getOccurrence(OccurrenceName name) {
+  public final Occurrence getOccurrence(@Nullable OccurrenceName name) {
     GetOccurrenceRequest request =
         GetOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOccurrence(request);
@@ -568,7 +571,8 @@ public class GrafeasClient implements BackgroundResource {
    * @param filter The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOccurrencesPagedResponse listOccurrences(ProjectName parent, String filter) {
+  public final ListOccurrencesPagedResponse listOccurrences(
+      @Nullable ProjectName parent, String filter) {
     ListOccurrencesRequest request =
         ListOccurrencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -742,7 +746,7 @@ public class GrafeasClient implements BackgroundResource {
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteOccurrence(OccurrenceName name) {
+  public final void deleteOccurrence(@Nullable OccurrenceName name) {
     DeleteOccurrenceRequest request =
         DeleteOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteOccurrence(request);
@@ -857,7 +861,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param occurrence The occurrence to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Occurrence createOccurrence(ProjectName parent, Occurrence occurrence) {
+  public final Occurrence createOccurrence(@Nullable ProjectName parent, Occurrence occurrence) {
     CreateOccurrenceRequest request =
         CreateOccurrenceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -979,7 +983,7 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateOccurrencesResponse batchCreateOccurrences(
-      ProjectName parent, List<Occurrence> occurrences) {
+      @Nullable ProjectName parent, List<Occurrence> occurrences) {
     BatchCreateOccurrencesRequest request =
         BatchCreateOccurrencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1110,7 +1114,7 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Occurrence updateOccurrence(
-      OccurrenceName name, Occurrence occurrence, FieldMask updateMask) {
+      @Nullable OccurrenceName name, Occurrence occurrence, FieldMask updateMask) {
     UpdateOccurrenceRequest request =
         UpdateOccurrenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1239,7 +1243,7 @@ public class GrafeasClient implements BackgroundResource {
    *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Note getOccurrenceNote(OccurrenceName name) {
+  public final Note getOccurrenceNote(@Nullable OccurrenceName name) {
     GetOccurrenceNoteRequest request =
         GetOccurrenceNoteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1353,7 +1357,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Note getNote(NoteName name) {
+  public final Note getNote(@Nullable NoteName name) {
     GetNoteRequest request =
         GetNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNote(request);
@@ -1465,7 +1469,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param filter The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotesPagedResponse listNotes(ProjectName parent, String filter) {
+  public final ListNotesPagedResponse listNotes(@Nullable ProjectName parent, String filter) {
     ListNotesRequest request =
         ListNotesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1633,7 +1637,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNote(NoteName name) {
+  public final void deleteNote(@Nullable NoteName name) {
     DeleteNoteRequest request =
         DeleteNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteNote(request);
@@ -1746,7 +1750,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param note The note to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Note createNote(ProjectName parent, String noteId, Note note) {
+  public final Note createNote(@Nullable ProjectName parent, String noteId, Note note) {
     CreateNoteRequest request =
         CreateNoteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1872,7 +1876,7 @@ public class GrafeasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateNotesResponse batchCreateNotes(
-      ProjectName parent, Map<String, Note> notes) {
+      @Nullable ProjectName parent, Map<String, Note> notes) {
     BatchCreateNotesRequest request =
         BatchCreateNotesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1995,7 +1999,7 @@ public class GrafeasClient implements BackgroundResource {
    * @param updateMask The fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Note updateNote(NoteName name, Note note, FieldMask updateMask) {
+  public final Note updateNote(@Nullable NoteName name, Note note, FieldMask updateMask) {
     UpdateNoteRequest request =
         UpdateNoteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2126,7 +2130,8 @@ public class GrafeasClient implements BackgroundResource {
    * @param filter The filter expression.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNoteOccurrencesPagedResponse listNoteOccurrences(NoteName name, String filter) {
+  public final ListNoteOccurrencesPagedResponse listNoteOccurrences(
+      @Nullable NoteName name, String filter) {
     ListNoteOccurrencesRequest request =
         ListNoteOccurrencesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2339,8 +2344,8 @@ public class GrafeasClient implements BackgroundResource {
           ListOccurrencesRequest, ListOccurrencesResponse, Occurrence, ListOccurrencesPage> {
 
     private ListOccurrencesPage(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
-        ListOccurrencesResponse response) {
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable ListOccurrencesResponse response) {
       super(context, response);
     }
 
@@ -2350,14 +2355,14 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListOccurrencesPage createPage(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
-        ListOccurrencesResponse response) {
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable ListOccurrencesResponse response) {
       return new ListOccurrencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOccurrencesPage> createPageAsync(
-        PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
+        @Nullable PageContext<ListOccurrencesRequest, ListOccurrencesResponse, Occurrence> context,
         ApiFuture<ListOccurrencesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2372,7 +2377,7 @@ public class GrafeasClient implements BackgroundResource {
           ListOccurrencesFixedSizeCollection> {
 
     private ListOccurrencesFixedSizeCollection(
-        List<ListOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListOccurrencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2382,7 +2387,7 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListOccurrencesFixedSizeCollection createCollection(
-        List<ListOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListOccurrencesPage> pages, int collectionSize) {
       return new ListOccurrencesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2409,8 +2414,8 @@ public class GrafeasClient implements BackgroundResource {
       extends AbstractPage<ListNotesRequest, ListNotesResponse, Note, ListNotesPage> {
 
     private ListNotesPage(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
-        ListNotesResponse response) {
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable ListNotesResponse response) {
       super(context, response);
     }
 
@@ -2420,14 +2425,14 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListNotesPage createPage(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
-        ListNotesResponse response) {
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable ListNotesResponse response) {
       return new ListNotesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotesPage> createPageAsync(
-        PageContext<ListNotesRequest, ListNotesResponse, Note> context,
+        @Nullable PageContext<ListNotesRequest, ListNotesResponse, Note> context,
         ApiFuture<ListNotesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2437,7 +2442,7 @@ public class GrafeasClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNotesRequest, ListNotesResponse, Note, ListNotesPage, ListNotesFixedSizeCollection> {
 
-    private ListNotesFixedSizeCollection(List<ListNotesPage> pages, int collectionSize) {
+    private ListNotesFixedSizeCollection(@Nullable List<ListNotesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2447,7 +2452,7 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListNotesFixedSizeCollection createCollection(
-        List<ListNotesPage> pages, int collectionSize) {
+        @Nullable List<ListNotesPage> pages, int collectionSize) {
       return new ListNotesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2484,8 +2489,9 @@ public class GrafeasClient implements BackgroundResource {
           ListNoteOccurrencesPage> {
 
     private ListNoteOccurrencesPage(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
-        ListNoteOccurrencesResponse response) {
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
+        @Nullable ListNoteOccurrencesResponse response) {
       super(context, response);
     }
 
@@ -2495,14 +2501,16 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListNoteOccurrencesPage createPage(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
-        ListNoteOccurrencesResponse response) {
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
+        @Nullable ListNoteOccurrencesResponse response) {
       return new ListNoteOccurrencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNoteOccurrencesPage> createPageAsync(
-        PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence> context,
+        @Nullable PageContext<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, Occurrence>
+            context,
         ApiFuture<ListNoteOccurrencesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2517,7 +2525,7 @@ public class GrafeasClient implements BackgroundResource {
           ListNoteOccurrencesFixedSizeCollection> {
 
     private ListNoteOccurrencesFixedSizeCollection(
-        List<ListNoteOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListNoteOccurrencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2527,7 +2535,7 @@ public class GrafeasClient implements BackgroundResource {
 
     @Override
     protected ListNoteOccurrencesFixedSizeCollection createCollection(
-        List<ListNoteOccurrencesPage> pages, int collectionSize) {
+        @Nullable List<ListNoteOccurrencesPage> pages, int collectionSize) {
       return new ListNoteOccurrencesFixedSizeCollection(pages, collectionSize);
     }
   }

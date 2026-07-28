@@ -28,6 +28,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,6 +159,20 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> RemoveSuggestion</td>
+ *      <td><p> Removes the search history suggestion in an engine for a user. This will remove the suggestion from being returned in the [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions] for this user. If the user searches the same suggestion again, the new history will override and suggest this suggestion again.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeSuggestion(RemoveSuggestionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeSuggestionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -215,10 +231,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CompletionServiceClient implements BackgroundResource {
-  private final CompletionServiceSettings settings;
+  private final @Nullable CompletionServiceSettings settings;
   private final CompletionServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -266,7 +283,7 @@ public class CompletionServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CompletionServiceSettings getSettings() {
+  public final @Nullable CompletionServiceSettings getSettings() {
     return settings;
   }
 
@@ -387,6 +404,9 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setIncludeTailSuggestions(true)
    *           .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
    *           .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+   *           .addAllSuggestionTypeSpecs(
+   *               new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+   *           .addAllExperimentIds(new ArrayList<String>())
    *           .build();
    *   AdvancedCompleteQueryResponse response =
    *       completionServiceClient.advancedCompleteQuery(request);
@@ -427,6 +447,9 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setIncludeTailSuggestions(true)
    *           .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
    *           .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+   *           .addAllSuggestionTypeSpecs(
+   *               new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+   *           .addAllExperimentIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<AdvancedCompleteQueryResponse> future =
    *       completionServiceClient.advancedCompleteQueryCallable().futureCall(request);
@@ -880,6 +903,83 @@ public class CompletionServiceClient implements BackgroundResource {
   public final UnaryCallable<PurgeCompletionSuggestionsRequest, Operation>
       purgeCompletionSuggestionsCallable() {
     return stub.purgeCompletionSuggestionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the search history suggestion in an engine for a user. This will remove the suggestion
+   * from being returned in the
+   * [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions]
+   * for this user. If the user searches the same suggestion again, the new history will override
+   * and suggest this suggestion again.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   RemoveSuggestionRequest request =
+   *       RemoveSuggestionRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationCollectionEngineName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+   *                   .toString())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   RemoveSuggestionResponse response = completionServiceClient.removeSuggestion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveSuggestionResponse removeSuggestion(RemoveSuggestionRequest request) {
+    return removeSuggestionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes the search history suggestion in an engine for a user. This will remove the suggestion
+   * from being returned in the
+   * [AdvancedCompleteQueryResponse.recent_search_suggestions][google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryResponse.recent_search_suggestions]
+   * for this user. If the user searches the same suggestion again, the new history will override
+   * and suggest this suggestion again.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   RemoveSuggestionRequest request =
+   *       RemoveSuggestionRequest.newBuilder()
+   *           .setCompletionConfig(
+   *               CompletionConfigName.ofProjectLocationCollectionEngineName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]")
+   *                   .toString())
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .setUserInfo(UserInfo.newBuilder().build())
+   *           .setRemoveTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RemoveSuggestionResponse> future =
+   *       completionServiceClient.removeSuggestionCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveSuggestionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionCallable() {
+    return stub.removeSuggestionCallable();
   }
 
   @Override

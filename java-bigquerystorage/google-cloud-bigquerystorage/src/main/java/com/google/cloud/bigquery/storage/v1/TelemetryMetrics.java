@@ -53,6 +53,7 @@ public class TelemetryMetrics {
   }
 
   private OpenTelemetryMetrics openTelemetryMetrics = new OpenTelemetryMetrics();
+  // Latency buckets are based on a list of 1.5 ^ n
   private static final List<Long> METRICS_MILLISECONDS_LATENCY_BUCKETS =
       ImmutableList.of(
           0L, 17L, 38L, 86L, 195L, 438L, 985L, 2217L, 4988L, 11223L, 25251L, 56815L, 127834L,

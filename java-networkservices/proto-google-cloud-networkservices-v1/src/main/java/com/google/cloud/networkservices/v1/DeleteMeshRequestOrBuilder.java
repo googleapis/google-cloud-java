@@ -31,7 +31,7 @@ public interface DeleteMeshRequestOrBuilder
    *
    * <pre>
    * Required. A name of the Mesh to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface DeleteMeshRequestOrBuilder
    *
    * <pre>
    * Required. A name of the Mesh to delete. Must be in the format
-   * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
    * </pre>
    *
    * <code>

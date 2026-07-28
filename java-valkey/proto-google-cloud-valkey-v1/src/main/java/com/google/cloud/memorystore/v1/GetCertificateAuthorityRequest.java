@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Request message for [GetCertificateAuthority][].
+ * Request message for `GetCertificateAuthority`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.GetCertificateAuthorityRequest}
@@ -296,7 +296,7 @@ public final class GetCertificateAuthorityRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [GetCertificateAuthority][].
+   * Request message for `GetCertificateAuthority`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.GetCertificateAuthorityRequest}

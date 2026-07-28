@@ -410,4 +410,48 @@ public interface ReasoningEngineOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the trafficConfig field is set.
+   */
+  boolean hasTrafficConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig getTrafficConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Traffic distribution configuration for the Reasoning Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfig traffic_config = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ReasoningEngine.TrafficConfigOrBuilder
+      getTrafficConfigOrBuilder();
 }

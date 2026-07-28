@@ -863,4 +863,36 @@ public interface StoragePoolOrBuilder
    * @return The mode.
    */
   com.google.cloud.netapp.v1.Mode getMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scale type of the storage pool. Defaults to
+   * `SCALE_TYPE_DEFAULT` if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scaleType.
+   */
+  int getScaleTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scale type of the storage pool. Defaults to
+   * `SCALE_TYPE_DEFAULT` if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaleType.
+   */
+  com.google.cloud.netapp.v1.ScaleType getScaleType();
 }

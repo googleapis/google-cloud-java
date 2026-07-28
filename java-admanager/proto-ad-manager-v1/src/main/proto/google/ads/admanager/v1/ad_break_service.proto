@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -36,9 +36,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service AdBreakService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve an `AdBreak` object.
+  // Retrieves an `AdBreak` object.
   //
   // Query an ad break by its resource name or custom asset key. Check the
   // resource's `breakState` field to determine its state.
@@ -55,7 +56,7 @@ service AdBreakService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of `AdBreak` objects.
+  // Lists `AdBreak` objects.
   //
   // By default, when no `orderBy` query parameter is specified, ad breaks are
   // ordered reverse chronologically. However, ad breaks with a 'breakState' of
@@ -73,7 +74,7 @@ service AdBreakService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create an `AdBreak` object.
+  // Creates an `AdBreak` object.
   //
   // Informs DAI of an upcoming ad break for a live stream event, with an
   // optional expected start time. DAI will begin decisioning ads for the break
@@ -112,7 +113,7 @@ service AdBreakService {
     option (google.api.method_signature) = "parent,ad_break";
   }
 
-  // API to update an `AdBreak` object.
+  // Updates an `AdBreak` object.
   //
   // Modify an ad break when its state is
   // [`SCHEDULED`][google.ads.admanager.v1.AdBreakStateEnum.AdBreakState.SCHEDULED].
@@ -124,7 +125,7 @@ service AdBreakService {
     option (google.api.method_signature) = "ad_break,update_mask";
   }
 
-  // API to delete an `AdBreak` object.
+  // Deletes an `AdBreak` object.
   //
   // Deletes and cancels an incomplete ad break, mitigating the need to wait
   // for the current break to serve before recreating an ad break. You can
@@ -249,9 +250,9 @@ message UpdateAdBreakRequest {
   // The `AdBreak`'s `name` is used to identify the `AdBreak` to update.
   AdBreak ad_break = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request object for `DeleteAdBreak` method.

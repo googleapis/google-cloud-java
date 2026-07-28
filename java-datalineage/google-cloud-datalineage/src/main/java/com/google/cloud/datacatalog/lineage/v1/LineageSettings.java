@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStubSettings;
@@ -41,6 +42,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -116,6 +119,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LineageSettings extends ClientSettings<LineageSettings> {
 
@@ -226,6 +230,12 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
     return ((LineageStubSettings) getStubSettings()).batchSearchLinkProcessesSettings();
   }
 
+  /** Returns the object with the settings used for calls to searchLineageStreaming. */
+  public ServerStreamingCallSettings<SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingSettings() {
+    return ((LineageStubSettings) getStubSettings()).searchLineageStreamingSettings();
+  }
+
   public static final LineageSettings create(LineageStubSettings stub) throws IOException {
     return new LineageSettings.Builder(stub.toBuilder()).build();
   }
@@ -281,7 +291,7 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -301,7 +311,7 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(LineageStubSettings.newBuilder(clientContext));
     }
 
@@ -448,6 +458,13 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
             BatchSearchLinkProcessesPagedResponse>
         batchSearchLinkProcessesSettings() {
       return getStubSettingsBuilder().batchSearchLinkProcessesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchLineageStreaming. */
+    public ServerStreamingCallSettings.Builder<
+            SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+        searchLineageStreamingSettings() {
+      return getStubSettingsBuilder().searchLineageStreamingSettings();
     }
 
     @Override

@@ -19,6 +19,7 @@ package com.google.cloud.networksecurity.v1.stub;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointAssociationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListLocationsPagedResponse;
+import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListProjectFirewallEndpointsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -51,6 +52,8 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -58,10 +61,11 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class FirewallActivationStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
@@ -76,8 +80,26 @@ public abstract class FirewallActivationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listFirewallEndpointsCallable()");
   }
 
+  public UnaryCallable<ListFirewallEndpointsRequest, ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listProjectFirewallEndpointsPagedCallable()");
+  }
+
+  public UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse>
+      listProjectFirewallEndpointsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listProjectFirewallEndpointsCallable()");
+  }
+
   public UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint> getFirewallEndpointCallable() {
     throw new UnsupportedOperationException("Not implemented: getFirewallEndpointCallable()");
+  }
+
+  public UnaryCallable<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getProjectFirewallEndpointCallable()");
   }
 
   public OperationCallable<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
@@ -90,6 +112,18 @@ public abstract class FirewallActivationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createFirewallEndpointCallable()");
   }
 
+  public OperationCallable<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createProjectFirewallEndpointOperationCallable()");
+  }
+
+  public UnaryCallable<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createProjectFirewallEndpointCallable()");
+  }
+
   public OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
       deleteFirewallEndpointOperationCallable() {
     throw new UnsupportedOperationException(
@@ -100,6 +134,18 @@ public abstract class FirewallActivationStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteFirewallEndpointCallable()");
   }
 
+  public OperationCallable<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteProjectFirewallEndpointOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteProjectFirewallEndpointCallable()");
+  }
+
   public OperationCallable<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       updateFirewallEndpointOperationCallable() {
     throw new UnsupportedOperationException(
@@ -108,6 +154,18 @@ public abstract class FirewallActivationStub implements BackgroundResource {
 
   public UnaryCallable<UpdateFirewallEndpointRequest, Operation> updateFirewallEndpointCallable() {
     throw new UnsupportedOperationException("Not implemented: updateFirewallEndpointCallable()");
+  }
+
+  public OperationCallable<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateProjectFirewallEndpointOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateProjectFirewallEndpointCallable()");
   }
 
   public UnaryCallable<

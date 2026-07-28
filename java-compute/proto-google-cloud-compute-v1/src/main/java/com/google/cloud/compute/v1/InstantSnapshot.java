@@ -65,6 +65,8 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     selfLinkWithId_ = "";
     sourceDisk_ = "";
     sourceDiskId_ = "";
+    sourceInstantSnapshotGroup_ = "";
+    sourceInstantSnapshotGroupId_ = "";
     status_ = "";
     zone_ = "";
   }
@@ -1794,6 +1796,159 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SOURCE_INSTANT_SNAPSHOT_GROUP_FIELD_NUMBER = 525991686;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshotGroup_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return Whether the sourceInstantSnapshotGroup field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshotGroup() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return The sourceInstantSnapshotGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshotGroup() {
+    java.lang.Object ref = sourceInstantSnapshotGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshotGroup_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotGroupBytes() {
+    java.lang.Object ref = sourceInstantSnapshotGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshotGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_INSTANT_SNAPSHOT_GROUP_ID_FIELD_NUMBER = 167103732;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshotGroupId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return Whether the sourceInstantSnapshotGroupId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshotGroupId() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return The sourceInstantSnapshotGroupId.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshotGroupId() {
+    java.lang.Object ref = sourceInstantSnapshotGroupId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshotGroupId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotGroupId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotGroupIdBytes() {
+    java.lang.Object ref = sourceInstantSnapshotGroupId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshotGroupId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATUS_FIELD_NUMBER = 181260274;
 
   @SuppressWarnings("serial")
@@ -1813,7 +1968,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -1886,7 +2041,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -1964,7 +2119,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1979,10 +2134,14 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 167103732, sourceInstantSnapshotGroupId_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -2014,6 +2173,10 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
+    if (((bitField0_ & 0x00020000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 525991686, sourceInstantSnapshotGroup_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2032,7 +2195,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -2047,10 +2210,15 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              167103732, sourceInstantSnapshotGroupId_);
+    }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
@@ -2090,6 +2258,11 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              525991686, sourceInstantSnapshotGroup_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2175,6 +2348,16 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (hasSourceDiskId() != other.hasSourceDiskId()) return false;
     if (hasSourceDiskId()) {
       if (!getSourceDiskId().equals(other.getSourceDiskId())) return false;
+    }
+    if (hasSourceInstantSnapshotGroup() != other.hasSourceInstantSnapshotGroup()) return false;
+    if (hasSourceInstantSnapshotGroup()) {
+      if (!getSourceInstantSnapshotGroup().equals(other.getSourceInstantSnapshotGroup()))
+        return false;
+    }
+    if (hasSourceInstantSnapshotGroupId() != other.hasSourceInstantSnapshotGroupId()) return false;
+    if (hasSourceInstantSnapshotGroupId()) {
+      if (!getSourceInstantSnapshotGroupId().equals(other.getSourceInstantSnapshotGroupId()))
+        return false;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
@@ -2266,6 +2449,14 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
     if (hasSourceDiskId()) {
       hash = (37 * hash) + SOURCE_DISK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceDiskId().hashCode();
+    }
+    if (hasSourceInstantSnapshotGroup()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshotGroup().hashCode();
+    }
+    if (hasSourceInstantSnapshotGroupId()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshotGroupId().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -2475,6 +2666,8 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       selfLinkWithId_ = "";
       sourceDisk_ = "";
       sourceDiskId_ = "";
+      sourceInstantSnapshotGroup_ = "";
+      sourceInstantSnapshotGroupId_ = "";
       status_ = "";
       zone_ = "";
       return this;
@@ -2588,12 +2781,20 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.status_ = status_;
+        result.sourceInstantSnapshotGroup_ = sourceInstantSnapshotGroup_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.zone_ = zone_;
+        result.sourceInstantSnapshotGroupId_ = sourceInstantSnapshotGroupId_;
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2685,14 +2886,24 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00020000;
         onChanged();
       }
+      if (other.hasSourceInstantSnapshotGroup()) {
+        sourceInstantSnapshotGroup_ = other.sourceInstantSnapshotGroup_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      if (other.hasSourceInstantSnapshotGroupId()) {
+        sourceInstantSnapshotGroupId_ = other.sourceInstantSnapshotGroupId_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2742,7 +2953,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 29957474
             case 244202930:
@@ -2769,6 +2980,12 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 1111570338
+            case 1336829858:
+              {
+                sourceInstantSnapshotGroupId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 1336829858
             case 1424998602:
               {
                 labelFingerprint_ = input.readStringRequireUtf8();
@@ -2778,7 +2995,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1450082194
             case 1995434522:
@@ -2848,6 +3065,12 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case -293404678
+            case -87033806:
+              {
+                sourceInstantSnapshotGroup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case -87033806
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5417,6 +5640,288 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object sourceInstantSnapshotGroup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @return Whether the sourceInstantSnapshotGroup field is set.
+     */
+    public boolean hasSourceInstantSnapshotGroup() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @return The sourceInstantSnapshotGroup.
+     */
+    public java.lang.String getSourceInstantSnapshotGroup() {
+      java.lang.Object ref = sourceInstantSnapshotGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshotGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @return The bytes for sourceInstantSnapshotGroup.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotGroupBytes() {
+      java.lang.Object ref = sourceInstantSnapshotGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshotGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @param value The sourceInstantSnapshotGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshotGroup_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshotGroup() {
+      sourceInstantSnapshotGroup_ = getDefaultInstance().getSourceInstantSnapshotGroup();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+     * part of. Note that the source instant snapshot group must be in the same
+     * zone/region as the instant snapshot to be created. This can be a full or
+     * valid partial URL.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group = 525991686;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshotGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshotGroup_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceInstantSnapshotGroupId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @return Whether the sourceInstantSnapshotGroupId field is set.
+     */
+    public boolean hasSourceInstantSnapshotGroupId() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @return The sourceInstantSnapshotGroupId.
+     */
+    public java.lang.String getSourceInstantSnapshotGroupId() {
+      java.lang.Object ref = sourceInstantSnapshotGroupId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshotGroupId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @return The bytes for sourceInstantSnapshotGroupId.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotGroupIdBytes() {
+      java.lang.Object ref = sourceInstantSnapshotGroupId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshotGroupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @param value The sourceInstantSnapshotGroupId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotGroupId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshotGroupId_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshotGroupId() {
+      sourceInstantSnapshotGroupId_ = getDefaultInstance().getSourceInstantSnapshotGroupId();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The ID value of the source instant snapshot group this
+     * InstantSnapshot is part of. This value may be used to determine whether the
+     * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshotGroupId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotGroupIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshotGroupId_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object status_ = "";
 
     /**
@@ -5432,7 +5937,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5501,7 +6006,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5520,7 +6025,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5544,7 +6049,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5565,7 +6070,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -5637,7 +6142,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5657,7 +6162,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -5682,7 +6187,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

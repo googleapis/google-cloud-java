@@ -31,7 +31,7 @@ public interface GrpcRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the GrpcRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/grpcRoutes/&lt;grpc_route_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;grpcRoutes/&lt;grpc_route_name&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,7 +45,7 @@ public interface GrpcRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the GrpcRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/grpcRoutes/&lt;grpc_route_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;grpcRoutes/&lt;grpc_route_name&gt;`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -433,7 +433,7 @@ public interface GrpcRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    * </pre>
    *
    * <code>
@@ -452,7 +452,7 @@ public interface GrpcRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    * </pre>
    *
    * <code>
@@ -471,7 +471,7 @@ public interface GrpcRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    * </pre>
    *
    * <code>
@@ -491,7 +491,7 @@ public interface GrpcRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    * </pre>
    *
    * <code>
@@ -512,7 +512,7 @@ public interface GrpcRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -532,7 +532,7 @@ public interface GrpcRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -552,7 +552,7 @@ public interface GrpcRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -573,7 +573,7 @@ public interface GrpcRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>

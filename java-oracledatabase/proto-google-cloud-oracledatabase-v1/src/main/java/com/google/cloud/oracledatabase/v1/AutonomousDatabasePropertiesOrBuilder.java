@@ -58,10 +58,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of compute servers for the Autonomous Database.
+   * Optional. Immutable. The number of compute servers for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The computeCount.
    */
@@ -71,10 +74,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The number of CPU cores to be made available to the database.
+   * Optional. Immutable. The number of CPU cores to be made available to the
+   * database.
    * </pre>
    *
-   * <code>int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cpuCoreCount.
    */
@@ -84,10 +90,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The size of the data stored in the database, in terabytes.
+   * Optional. Immutable. The size of the data stored in the database, in
+   * terabytes.
    * </pre>
    *
-   * <code>int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dataStorageSizeTb.
    */
@@ -97,10 +106,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The size of the data stored in the database, in gigabytes.
+   * Optional. Immutable. The size of the data stored in the database, in
+   * gigabytes.
    * </pre>
    *
-   * <code>int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dataStorageSizeGb.
    */
@@ -110,11 +122,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Required. The workload type of the Autonomous Database.
+   * Required. Immutable. The workload type of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for dbWorkload.
@@ -125,11 +137,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Required. The workload type of the Autonomous Database.
+   * Required. Immutable. The workload type of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The dbWorkload.
@@ -140,11 +152,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The edition of the Autonomous Databases.
+   * Optional. Immutable. The edition of the Autonomous Databases.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for dbEdition.
@@ -155,11 +167,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The edition of the Autonomous Databases.
+   * Optional. Immutable. The edition of the Autonomous Databases.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The dbEdition.
@@ -170,11 +182,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The character set for the Autonomous Database. The default is
-   * AL32UTF8.
+   * Optional. Immutable. The character set for the Autonomous Database. The
+   * default is AL32UTF8.
    * </pre>
    *
-   * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The characterSet.
    */
@@ -184,11 +198,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The character set for the Autonomous Database. The default is
-   * AL32UTF8.
+   * Optional. Immutable. The character set for the Autonomous Database. The
+   * default is AL32UTF8.
    * </pre>
    *
-   * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for characterSet.
    */
@@ -198,11 +214,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The national character set for the Autonomous Database. The
-   * default is AL16UTF16.
+   * Optional. Immutable. The national character set for the Autonomous
+   * Database. The default is AL16UTF16.
    * </pre>
    *
-   * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The nCharacterSet.
    */
@@ -212,11 +230,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The national character set for the Autonomous Database. The
-   * default is AL16UTF16.
+   * Optional. Immutable. The national character set for the Autonomous
+   * Database. The default is AL16UTF16.
    * </pre>
    *
-   * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for nCharacterSet.
    */
@@ -226,10 +246,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The private endpoint IP address for the Autonomous Database.
+   * Optional. Immutable. The private endpoint IP address for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The privateEndpointIp.
    */
@@ -239,10 +262,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The private endpoint IP address for the Autonomous Database.
+   * Optional. Immutable. The private endpoint IP address for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for privateEndpointIp.
    */
@@ -252,10 +278,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The private endpoint label for the Autonomous Database.
+   * Optional. Immutable. The private endpoint label for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The privateEndpointLabel.
    */
@@ -265,10 +294,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The private endpoint label for the Autonomous Database.
+   * Optional. Immutable. The private endpoint label for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for privateEndpointLabel.
    */
@@ -278,10 +310,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The Oracle Database version for the Autonomous Database.
+   * Optional. Immutable. The Oracle Database version for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dbVersion.
    */
@@ -291,10 +326,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The Oracle Database version for the Autonomous Database.
+   * Optional. Immutable. The Oracle Database version for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for dbVersion.
    */
@@ -304,11 +342,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. This field indicates if auto scaling is enabled for the
-   * Autonomous Database CPU core count.
+   * Optional. Immutable. This field indicates if auto scaling is enabled for
+   * the Autonomous Database CPU core count.
    * </pre>
    *
-   * <code>bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The isAutoScalingEnabled.
    */
@@ -318,11 +358,12 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. This field indicates if auto scaling is enabled for the
-   * Autonomous Database storage.
+   * Optional. Immutable. This field indicates if auto scaling is enabled for
+   * the Autonomous Database storage.
    * </pre>
    *
-   * <code>bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The isStorageAutoScalingEnabled.
@@ -333,11 +374,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Required. The license type used for the Autonomous Database.
+   * Required. Immutable. The license type used for the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for licenseType.
@@ -348,11 +389,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Required. The license type used for the Autonomous Database.
+   * Required. Immutable. The license type used for the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The licenseType.
@@ -363,11 +404,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact> getCustomerContactsList();
@@ -376,11 +417,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index);
@@ -389,11 +430,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   int getCustomerContactsCount();
@@ -402,11 +443,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder>
@@ -416,11 +457,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder getCustomerContactsOrBuilder(
@@ -430,10 +471,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+   * secret.
    * </pre>
    *
-   * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The secretId.
    */
@@ -443,10 +487,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+   * secret.
    * </pre>
    *
-   * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for secretId.
    */
@@ -456,10 +503,12 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
    * </pre>
    *
-   * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The vaultId.
    */
@@ -469,10 +518,12 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
    * </pre>
    *
-   * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for vaultId.
    */
@@ -482,11 +533,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The maintenance schedule of the Autonomous Database.
+   * Optional. Immutable. The maintenance schedule of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for maintenanceScheduleType.
@@ -497,11 +548,11 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The maintenance schedule of the Autonomous Database.
+   * Optional. Immutable. The maintenance schedule of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The maintenanceScheduleType.
@@ -513,11 +564,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. This field specifies if the Autonomous Database requires mTLS
-   * connections.
+   * Optional. Immutable. This field specifies if the Autonomous Database
+   * requires mTLS connections.
    * </pre>
    *
-   * <code>bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The mtlsConnectionRequired.
    */
@@ -527,12 +580,14 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The retention period for the Autonomous Database. This field is
-   * specified in days, can range from 1 day to 60 days, and has a default value
-   * of 60 days.
+   * Optional. Immutable. The retention period for the Autonomous Database. This
+   * field is specified in days, can range from 1 day to 60 days, and has a
+   * default value of 60 days.
    * </pre>
    *
-   * <code>int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The backupRetentionPeriodDays.
    */
@@ -965,31 +1020,43 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. This field indicates whether the Autonomous Database has local
-   * (in-region) Data Guard enabled.
+   * Output only. Deprecated: Please use `local_data_guard_enabled` instead.
+   * This field indicates whether the Autonomous Database has local (in-region)
+   * Data Guard enabled.
    * </pre>
    *
-   * <code>bool is_local_data_guard_enabled = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * bool is_local_data_guard_enabled = 33 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled is
+   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
    * @return The isLocalDataGuardEnabled.
    */
+  @java.lang.Deprecated
   boolean getIsLocalDataGuardEnabled();
 
   /**
    *
    *
    * <pre>
-   * Output only. This field indicates the maximum data loss limit for an
-   * Autonomous Database, in seconds.
+   * Output only. Deprecated: Please use
+   * `local_adg_auto_failover_max_data_loss_limit_duration` instead.
+   * This field indicates the maximum data loss limit for an Autonomous
+   * Database, in seconds.
    * </pre>
    *
    * <code>
-   * int32 local_adg_auto_failover_max_data_loss_limit = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * int32 local_adg_auto_failover_max_data_loss_limit = 35 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
+   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
    * @return The localAdgAutoFailoverMaxDataLossLimit.
    */
+  @java.lang.Deprecated
   int getLocalAdgAutoFailoverMaxDataLossLimit();
 
   /**
@@ -1869,10 +1936,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return A list containing the allowlistedIps.
    */
@@ -1882,10 +1952,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The count of allowlistedIps.
    */
@@ -1895,10 +1968,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The allowlistedIps at the given index.
@@ -1909,10 +1985,13 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowlistedIps at the given index.
@@ -2069,4 +2148,68 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The bytes for serviceAgentEmail.
    */
   com.google.protobuf.ByteString getServiceAgentEmailBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the Autonomous Database has a local (in-region)
+   * standby database. Not applicable to cross-region Data Guard or dedicated
+   * Exadata infrastructure.
+   * </pre>
+   *
+   * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the localDataGuardEnabled field is set.
+   */
+  boolean hasLocalDataGuardEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the Autonomous Database has a local (in-region)
+   * standby database. Not applicable to cross-region Data Guard or dedicated
+   * Exadata infrastructure.
+   * </pre>
+   *
+   * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The localDataGuardEnabled.
+   */
+  boolean getLocalDataGuardEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field indicates the maximum data loss limit for an
+   * Autonomous Database, in seconds.
+   * </pre>
+   *
+   * <code>
+   * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the localAdgAutoFailoverMaxDataLossLimitDuration field is set.
+   */
+  boolean hasLocalAdgAutoFailoverMaxDataLossLimitDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field indicates the maximum data loss limit for an
+   * Autonomous Database, in seconds.
+   * </pre>
+   *
+   * <code>
+   * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The localAdgAutoFailoverMaxDataLossLimitDuration.
+   */
+  int getLocalAdgAutoFailoverMaxDataLossLimitDuration();
 }

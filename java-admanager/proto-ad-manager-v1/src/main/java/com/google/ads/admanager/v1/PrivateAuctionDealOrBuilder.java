@@ -60,28 +60,36 @@ public interface PrivateAuctionDealOrBuilder
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
    * @return Whether the privateAuctionDealId field is set.
    */
+  @java.lang.Deprecated
   boolean hasPrivateAuctionDealId();
 
   /**
    *
    *
    * <pre>
-   * Output only. `PrivateAuctionDeal` ID.
+   * Output only. Deprecated: `PrivateAuctionDeal` ID.
    * </pre>
    *
-   * <code>optional int64 private_auction_deal_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 private_auction_deal_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
    * @return The privateAuctionDealId.
    */
+  @java.lang.Deprecated
   long getPrivateAuctionDealId();
 
   /**
@@ -597,6 +605,49 @@ public interface PrivateAuctionDealOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerDataOrBuilder getBuyerDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dealPriority field is set.
+   */
+  boolean hasDealPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dealPriority.
+   */
+  com.google.ads.admanager.v1.NonGuaranteedDealPriority getDealPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder getDealPriorityOrBuilder();
 
   /**
    *

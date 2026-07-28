@@ -77,6 +77,22 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_memorystore_v1_Instance_EngineConfigsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_StartMigrationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_StartMigrationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_FinishMigrationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_FinishMigrationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_SelfManagedSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_SelfManagedSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_MigrationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_MigrationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_fieldAccessorTable;
@@ -108,6 +124,14 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_memorystore_v1_CrossInstanceReplicationConfig_Membership_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_memorystore_v1_CrossInstanceReplicationConfig_Membership_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_TokenAuthUser_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_TokenAuthUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_AuthToken_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_AuthToken_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_memorystore_v1_MaintenancePolicy_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -225,6 +249,46 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_memorystore_v1_GetCertificateAuthorityRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_GetTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_GetTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_ListAuthTokensRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_ListAuthTokensRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_ListAuthTokensResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_ListAuthTokensResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_GetAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_GetAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_AddTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_AddTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_DeleteTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_DeleteTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_AddAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_AddAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_memorystore_v1_DeleteAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_memorystore_v1_DeleteAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_memorystore_v1_CertificateAuthority_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_memorystore_v1_CertificateAuthority_fieldAccessorTable;
@@ -279,7 +343,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "/operations.proto\032\036google/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google"
           + "/protobuf/timestamp.proto\032\033google/type/d"
-          + "ayofweek.proto\032\033google/type/timeofday.proto\"\351\'\n"
+          + "ayofweek.proto\032\033google/type/timeofday.proto\"\312)\n"
           + "\010Instance\022S\n\n"
           + "gcs_source\030\027 \001(\01325.g"
           + "oogle.cloud.memorystore.v1.Instance.GcsBackupSourceB\006\340A\001\340A\005H\000\022b\n"
@@ -321,9 +385,9 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\026psc_attachment_details\030\025"
           + " \003(\01320.google.cloud.memorystore.v1.PscAttachmentDetailB\003\340A\003\022N\n"
           + "\tendpoints\030\031"
-          + " \003(\01326.google.cloud.memorystore.v1.Instance.InstanceEndpointB\003\340A\001\022=\n"
+          + " \003(\01326.google.cloud.memorystore.v1.Instance.InstanceEndpointB\003\340A\001\022@\n"
           + "\004mode\030\032"
-          + " \001(\0162*.google.cloud.memorystore.v1.Instance.ModeB\003\340A\001\022/\n"
+          + " \001(\0162*.google.cloud.memorystore.v1.Instance.ModeB\006\340A\001\340A\005\022/\n"
           + "\032simulate_maintenance_event\030\033"
           + " \001(\010B\006\340A\001\340A\004H\003\210\001\001\022+\n"
           + "\024ondemand_maintenance\030\034"
@@ -334,8 +398,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132..google.cloud.memorystore.v1.MaintenancePolicyB\003\340A\001\022S\n"
           + "\024maintenance_schedule\030 "
           + " \001(\01320.google.cloud.memorystore.v1.MaintenanceScheduleB\003\340A\003\022k\n"
-          + "!cross_instance_replication_config\030! \001(\0132;.goo"
-          + "gle.cloud.memorystore.v1.CrossInstanceReplicationConfigB\003\340A\001\022;\n"
+          + "!cross_instance_replication_config\030! \001(\0132;."
+          + "google.cloud.memorystore.v1.CrossInstanceReplicationConfigB\003\340A\001\022;\n"
           + ")async_instance_endpoints_deletion_enabled\030,"
           + " \001(\010B\003\340A\001H\007\210\001\001\022?\n"
           + "\007kms_key\030- \001(\tB)\340A\001\372A#\n"
@@ -344,20 +408,22 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132+.google.cloud.memorystore.v1.EncryptionInfoB\003\340A\003\022S\n"
           + "\021backup_collection\030/ \001(\tB3\340A\003\372A-\n"
           + "+memorystore.googleapis.com/BackupCollectionH\t\210\001\001\022X\n"
-          + "\027automated_backup_config\0300"
-          + " \001(\01322.google.cloud.memorystore.v1.AutomatedBackupConfigB\003\340A\001\022%\n"
+          + "\027automated_backup_config\0300 \001(\01322.google.cloud.me"
+          + "morystore.v1.AutomatedBackupConfigB\003\340A\001\022%\n"
           + "\023maintenance_version\0301 \001(\tB\003\340A\001H\n"
           + "\210\001\001\022/\n"
           + "\035effective_maintenance_version\0302 \001(\tB\003\340A\003H\013\210\001\001\022+\n"
           + "\036available_maintenance_versions\0303 \003(\tB\003\340A\003\022.\n"
           + "\034allow_fewer_zones_deployment\0306 \001(\010B\010\030\001\340A\001\340A\005\022W\n"
-          + "\016server_ca_mode\0308 \001("
-          + "\01622.google.cloud.memorystore.v1.Instance.ServerCaModeB\006\340A\001\340A\005H\014\210\001\001\022G\n"
+          + "\016server_ca_mode\0308"
+          + " \001(\01622.google.cloud.memorystore.v1.Instance.ServerCaModeB\006\340A\001\340A\005H\014\210\001\001\022G\n"
           + "\016server_ca_pool\0309 \001(\tB*\340A\001\340A\005\372A!\n"
           + "\037privateca.googleapis.com/CaPoolH\r"
           + "\210\001\001\022.\n"
           + "\031rotate_server_certificate\030:"
-          + " \001(\010B\006\340A\001\340A\004H\016\210\001\001\032\244\003\n"
+          + " \001(\010B\006\340A\001\340A\004H\016\210\001\001\022K\n"
+          + "\020migration_config\030;"
+          + " \001(\0132,.google.cloud.memorystore.v1.MigrationConfigB\003\340A\003\032\244\003\n"
           + "\tStateInfo\022V\n"
           + "\013update_info\030\001 \001(\0132:.google.cloud.me"
           + "morystore.v1.Instance.StateInfo.UpdateInfoB\003\340A\003H\000\032\266\002\n\n"
@@ -390,27 +456,36 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\005value\030\002 \001(\t:\0028\001\0324\n"
           + "\022EngineConfigsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"T\n"
+          + "\005value\030\002 \001(\t:\0028\001\"c\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010UPDATING\020\003\022\014\n"
-          + "\010DELETING\020\004\"X\n"
+          + "\010DELETING\020\004\022\r\n"
+          + "\tMIGRATING\020\006\"h\n"
           + "\021AuthorizationMode\022\"\n"
           + "\036AUTHORIZATION_MODE_UNSPECIFIED\020\000\022\021\n\r"
           + "AUTH_DISABLED\020\001\022\014\n"
-          + "\010IAM_AUTH\020\002\"|\n"
+          + "\010IAM_AUTH\020\002\022\016\n\n"
+          + "TOKEN_AUTH\020\003\"|\n"
           + "\025TransitEncryptionMode\022\'\n"
           + "#TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\020\000\022\037\n"
           + "\033TRANSIT_ENCRYPTION_DISABLED\020\001\022\031\n"
-          + "\025SERVER_AUTHENTICATION\020\002\"w\n"
+          + "\025SERVER_AUTHENTICATION\020\002\"\350\001\n"
           + "\010NodeType\022\031\n"
           + "\025NODE_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020SHARED_CORE_NANO\020\001\022\022\n"
           + "\016HIGHMEM_MEDIUM\020\002\022\022\n"
           + "\016HIGHMEM_XLARGE\020\003\022\022\n"
-          + "\016STANDARD_SMALL\020\004\"S\n"
+          + "\016STANDARD_SMALL\020\004\022\020\n"
+          + "\014CUSTOM_MICRO\020\005\022\017\n"
+          + "\013CUSTOM_MINI\020\006\022\022\n"
+          + "\016HIGHCPU_MEDIUM\020\007\022\022\n"
+          + "\016STANDARD_LARGE\020\010\022\023\n"
+          + "\017HIGHMEM_2XLARGE\020\t\022\017\n"
+          + "\013CUSTOM_PICO\020\n"
+          + "\"S\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\022\n\n"
           + "STANDALONE\020\001\032\002\010\001\022\013\n"
@@ -423,9 +498,10 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\027CUSTOMER_MANAGED_CAS_CA\020\003\0225\n"
           + "-SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA\020\001\032\002\010\001\022/\n"
           + "\'SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA\020\002\032\002\010\001\022.\n"
-          + "&SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA\020\003\032\002\010\001\032\002\020\001:{\352Ax\n"
-          + "#memorystore.googleapi"
-          + "s.com/Instance\022<projects/{project}/locations/{location}/instances/{instance}*"
+          + "&SERVER_CA_M"
+          + "ODE_CUSTOMER_MANAGED_CAS_CA\020\003\032\002\010\001\032\002\020\001:{\352Ax\n"
+          + "#memorystore.googleapis.com/Instance\022"
+          + "<projects/{project}/locations/{location}/instances/{instance}*"
           + "\tinstances2\010instanceB\020\n"
           + "\016import_sourcesB\020\n"
           + "\016_replica_countB\036\n"
@@ -441,12 +517,41 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\036_effective_maintenance_versionB\021\n"
           + "\017_server_ca_modeB\021\n"
           + "\017_server_ca_poolB\034\n"
-          + "\032_rotate_server_certificate\"\332\003\n"
+          + "\032_rotate_server_certificate\"\260\001\n"
+          + "\025StartMigrationRequest\022R\n"
+          + "\023self_managed_source\030\002 \001(\0132..google.cloud.m"
+          + "emorystore.v1.SelfManagedSourceB\003\340A\002H\000\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#memorystore.googleapis.com/InstanceB\010\n"
+          + "\006source\"g\n"
+          + "\026FinishMigrationRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#memorystore.googleapis.com/Instance\022\022\n"
+          + "\005force\030\002 \001(\010B\003\340A\001\"\225\001\n"
+          + "\021SelfManagedSource\022\037\n\n"
+          + "ip_address\030\001 \001(\tB\013\340A\002\342\214\317\327\010\002\010\002\022\021\n"
+          + "\004port\030\002 \001(\005B\003\340A\002\022L\n"
+          + "\022network_attachment\030\003 \001(\tB0\340A\002\372A*\n"
+          + "(compute.googleapis.com/NetworkAttachment\"\312\002\n"
+          + "\017MigrationConfig\022R\n"
+          + "\023self_managed_source\030\002"
+          + " \001(\0132..google.cloud.memorystore.v1.SelfManagedSourceB\003\340A\003H\000\022F\n"
+          + "\005state\030\001 "
+          + "\001(\01622.google.cloud.memorystore.v1.MigrationConfig.StateB\003\340A\003\022#\n"
+          + "\026force_finish_migration\030\004 \001(\010B\003\340A\003\"l\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\017\n"
+          + "\013ROLLED_BACK\020\001\022\020\n"
+          + "\014ROLLING_BACK\020\005\022\033\n"
+          + "\027REPLICATION_ESTABLISHED\020\006\022\014\n"
+          + "\010MIGRATED\020\004B\010\n"
+          + "\006source\"\332\003\n"
           + "\025AutomatedBackupConfig\022r\n"
-          + "\030fixed_frequency_schedule\030\002 \001(\0132I.google.cloud.memorystore.v1.Automa"
-          + "tedBackupConfig.FixedFrequencyScheduleB\003\340A\001H\000\022j\n"
-          + "\025automated_backup_mode\030\001 \001(\0162F.g"
-          + "oogle.cloud.memorystore.v1.AutomatedBackupConfig.AutomatedBackupModeB\003\340A\001\0221\n"
+          + "\030fixed_frequency_schedule\030\002 \001(\0132I."
+          + "google.cloud.memorystore.v1.AutomatedBac"
+          + "kupConfig.FixedFrequencyScheduleB\003\340A\001H\000\022j\n"
+          + "\025automated_backup_mode\030\001 \001(\0162F.google."
+          + "cloud.memorystore.v1.AutomatedBackupConfig.AutomatedBackupModeB\003\340A\001\0221\n"
           + "\tretention\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A\001\032I\n"
           + "\026FixedFrequencySchedule\022/\n\n"
           + "start_time\030\002 \001(\0132\026.google.type.TimeOfDayB\003\340A\002\"W\n"
@@ -469,9 +574,9 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + " \001(\003B\003\340A\003\0229\n"
           + "\020last_backup_time\030\013"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\245\001\352A\241\001\n"
-          + "+memorystore.googleapis.com/BackupCollection"
-          + "\022Mprojects/{project}/locations/{location"
-          + "}/backupCollections/{backup_collection}*\021backupCollections2\020backupCollection\"\220\010\n"
+          + "+memorystore.googleapis.com/BackupCollection\022Mproj"
+          + "ects/{project}/locations/{location}/back"
+          + "upCollections/{backup_collection}*\021backupCollections2\020backupCollection\"\220\010\n"
           + "\006Backup\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022=\n"
@@ -483,19 +588,19 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\013expire_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n"
           + "\016engine_version\030\007 \001(\tB\003\340A\003\022B\n"
-          + "\014backup_files\030\010 \003(\0132\'.goo"
-          + "gle.cloud.memorystore.v1.BackupFileB\003\340A\003\022F\n"
+          + "\014backup_files\030\010"
+          + " \003(\0132\'.google.cloud.memorystore.v1.BackupFileB\003\340A\003\022F\n"
           + "\tnode_type\030\t"
           + " \001(\0162..google.cloud.memorystore.v1.Instance.NodeTypeB\003\340A\003\022\032\n\r"
           + "replica_count\030\n"
           + " \001(\005B\003\340A\003\022\030\n"
           + "\013shard_count\030\013 \001(\005B\003\340A\003\022H\n"
-          + "\013backup_type\030\014 \001(\0162..google.clo"
-          + "ud.memorystore.v1.Backup.BackupTypeB\003\340A\003\022=\n"
+          + "\013backup_type\030\014"
+          + " \001(\0162..google.cloud.memorystore.v1.Backup.BackupTypeB\003\340A\003\022=\n"
           + "\005state\030\r"
           + " \001(\0162).google.cloud.memorystore.v1.Backup.StateB\003\340A\003\022I\n"
-          + "\017encryption_info\030\016"
-          + " \001(\0132+.google.cloud.memorystore.v1.EncryptionInfoB\003\340A\003\022\030\n"
+          + "\017encryption_info\030\016 \001"
+          + "(\0132+.google.cloud.memorystore.v1.EncryptionInfoB\003\340A\003\022\030\n"
           + "\003uid\030\017 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\"G\n\n"
           + "BackupType\022\033\n"
           + "\027BACKUP_TYPE_UNSPECIFIED\020\000\022\r\n"
@@ -507,40 +612,66 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\r\n"
           + "\tSUSPENDED\020\004:\230\001\352A\224\001\n"
-          + "!memorystore.googleapis.com/Backup\022^projects/{project}/locations/{lo"
-          + "cation}/backupCollections/{backup_collec"
-          + "tion}/backups/{backup}*\007backups2\006backup\"s\n\n"
+          + "!memorystore.googleapis.com/Backup\022^projects/{project}/locations/{location"
+          + "}/backupCollections/{backup_collection}/backups/{backup}*\007backups2\006backup\"s\n\n"
           + "BackupFile\022\026\n"
-          + "\tfile_name\030\001 \001(\tB\003\340A\003\022\027\n"
-          + "\n"
+          + "\tfile_name\030\001 \001(\tB\003\340A\003\022\027\n\n"
           + "size_bytes\030\002 \001(\003B\003\340A\003\0224\n"
           + "\013create_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\236\007\n"
           + "\036CrossInstanceReplicationConfig\022d\n\r"
-          + "instance_role\030\001 \001(\0162H.google.cloud.memorystor"
-          + "e.v1.CrossInstanceReplicationConfig.InstanceRoleB\003\340A\002\022i\n"
-          + "\020primary_instance\030\002 \001(\0132J.google.cloud.memorystore.v1.CrossInsta"
-          + "nceReplicationConfig.RemoteInstanceB\003\340A\001\022l\n"
-          + "\023secondary_instances\030\003 \003(\0132J.google.c"
-          + "loud.memorystore.v1.CrossInstanceReplicationConfig.RemoteInstanceB\003\340A\001\0224\n"
+          + "instance_role\030\001 \001(\0162H.google.cloud.memorystore.v1.C"
+          + "rossInstanceReplicationConfig.InstanceRoleB\003\340A\002\022i\n"
+          + "\020primary_instance\030\002 \001(\0132J.goog"
+          + "le.cloud.memorystore.v1.CrossInstanceReplicationConfig.RemoteInstanceB\003\340A\001\022l\n"
+          + "\023secondary_instances\030\003 \003(\0132J.google.cloud.m"
+          + "emorystore.v1.CrossInstanceReplicationConfig.RemoteInstanceB\003\340A\001\0224\n"
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022_\n\n"
-          + "membership\030\005 \001(\0132F.google.cloud."
-          + "memorystore.v1.CrossInstanceReplicationConfig.MembershipB\003\340A\003\032i\n"
+          + "membership\030\005 \001(\0132F.google.cloud.memory"
+          + "store.v1.CrossInstanceReplicationConfig.MembershipB\003\340A\003\032i\n"
           + "\016RemoteInstance\022=\n"
           + "\010instance\030\001 \001(\tB+\340A\001\372A%\n"
           + "#memorystore.googleapis.com/Instance\022\030\n"
           + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\032\345\001\n\n"
           + "Membership\022i\n"
-          + "\020primary_instance\030\001 \001(\0132J.google.cloud.memorystore.v1."
-          + "CrossInstanceReplicationConfig.RemoteInstanceB\003\340A\003\022l\n"
-          + "\023secondary_instances\030\002 \003(\0132J.google.cloud.memorystore.v1.CrossInsta"
-          + "nceReplicationConfig.RemoteInstanceB\003\340A\003\"S\n"
+          + "\020primary_instance\030\001 \001(\0132J.google.cloud.memorystore.v1.CrossI"
+          + "nstanceReplicationConfig.RemoteInstanceB\003\340A\003\022l\n"
+          + "\023secondary_instances\030\002 \003(\0132J.goog"
+          + "le.cloud.memorystore.v1.CrossInstanceReplicationConfig.RemoteInstanceB\003\340A\003\"S\n"
           + "\014InstanceRole\022\035\n"
           + "\031INSTANCE_ROLE_UNSPECIFIED\020\000\022\010\n"
           + "\004NONE\020\001\022\013\n"
           + "\007PRIMARY\020\002\022\r\n"
-          + "\tSECONDARY\020\003\"\335\001\n"
+          + "\tSECONDARY\020\003\"\355\002\n\r"
+          + "TokenAuthUser\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022D\n"
+          + "\005state\030\002"
+          + " \001(\01620.google.cloud.memorystore.v1.TokenAuthUser.StateB\003\340A\003\"T\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010CREATING\020\002\022\014\n"
+          + "\010UPDATING\020\003\022\014\n"
+          + "\010DELETING\020\004:\254\001\352A\250\001\n"
+          + "(memorystore.googleapis.com/TokenAuthUser\022]projects/{project}/locations/{locatio"
+          + "n}/instances/{instance}/tokenAuthUsers/{token_auth_user}*\016tokenAuthUsers2\r"
+          + "tokenAuthUser\"\255\003\n"
+          + "\tAuthToken\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\022\n"
+          + "\005token\030\002 \001(\tB\003\340A\003\0224\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022@\n"
+          + "\005state\030\004"
+          + " \001(\0162,.google.cloud.memorystore.v1.AuthToken.StateB\003\340A\003\"F\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010CREATING\020\002\022\014\n"
+          + "\010DELETING\020\003:\270\001\352A\264\001\n"
+          + "$memorystore.googleapis.com/AuthToken\022uprojects/{project}/lo"
+          + "cations/{location}/instances/{instance}/"
+          + "tokenAuthUsers/{token_auth_user}/authTokens/{auth_token}*\n"
+          + "authTokens2\tauthToken\"\335\001\n"
           + "\021MaintenancePolicy\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\\\n"
@@ -556,8 +687,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\023PscAttachmentDetail\022L\n"
           + "\022service_attachment\030\001 \001(\tB0\340A\003\372A*\n"
           + "(compute.googleapis.com/ServiceAttachment\022I\n"
-          + "\017connection_type\030\004 \001("
-          + "\0162+.google.cloud.memorystore.v1.ConnectionTypeB\003\340A\003\"\373\003\n"
+          + "\017connection_type\030\004 \001(\0162+.go"
+          + "ogle.cloud.memorystore.v1.ConnectionTypeB\003\340A\003\"\373\003\n"
           + "\021PscAutoConnection\022\023\n"
           + "\004port\030\t \001(\005B\003\340A\001H\000\022\036\n"
           + "\021psc_connection_id\030\001 \001(\tB\003\340A\003\022\037\n\n"
@@ -585,10 +716,10 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\036compute.googleapis.com/Network\022L\n"
           + "\022service_attachment\030\006 \001(\tB0\340A\002\372A*\n"
           + "(compute.googleapis.com/ServiceAttachment\022T\n"
-          + "\025psc_connection_status\030\007"
-          + " \001(\01620.google.cloud.memorystore.v1.PscConnectionStatusB\003\340A\003\022I\n"
-          + "\017connection_type\030\010"
-          + " \001(\0162+.google.cloud.memorystore.v1.ConnectionTypeB\003\340A\003B\007\n"
+          + "\025psc_connection_status\030\007 \001"
+          + "(\01620.google.cloud.memorystore.v1.PscConnectionStatusB\003\340A\003\022I\n"
+          + "\017connection_type\030\010 \001"
+          + "(\0162+.google.cloud.memorystore.v1.ConnectionTypeB\003\340A\003B\007\n"
           + "\005ports\"u\n"
           + "\021DiscoveryEndpoint\022\024\n"
           + "\007address\030\001 \001(\tB\003\340A\003\022\021\n"
@@ -596,15 +727,15 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\007network\030\004 \001(\tB&\340A\003\372A \n"
           + "\036compute.googleapis.com/Network\"\327\006\n"
           + "\021PersistenceConfig\022Q\n"
-          + "\004mode\030\001 \001(\0162>.google.cloud.me"
-          + "morystore.v1.PersistenceConfig.PersistenceModeB\003\340A\001\022Q\n\n"
-          + "rdb_config\030\002 \001(\01328.google"
-          + ".cloud.memorystore.v1.PersistenceConfig.RDBConfigB\003\340A\001\022Q\n\n"
-          + "aof_config\030\003 \001(\01328.goo"
-          + "gle.cloud.memorystore.v1.PersistenceConfig.AOFConfigB\003\340A\001\032\261\002\n"
+          + "\004mode\030\001 \001(\0162>.google.cloud.memoryst"
+          + "ore.v1.PersistenceConfig.PersistenceModeB\003\340A\001\022Q\n\n"
+          + "rdb_config\030\002 \001(\01328.google.cloud"
+          + ".memorystore.v1.PersistenceConfig.RDBConfigB\003\340A\001\022Q\n\n"
+          + "aof_config\030\003 \001(\01328.google.cl"
+          + "oud.memorystore.v1.PersistenceConfig.AOFConfigB\003\340A\001\032\261\002\n"
           + "\tRDBConfig\022i\n"
-          + "\023rdb_snapshot_period\030\001 \001(\0162G.google.cloud.memo"
-          + "rystore.v1.PersistenceConfig.RDBConfig.SnapshotPeriodB\003\340A\001\022@\n"
+          + "\023rdb_snapshot_period\030\001 \001(\0162G.google.cloud.memorystor"
+          + "e.v1.PersistenceConfig.RDBConfig.SnapshotPeriodB\003\340A\001\022@\n"
           + "\027rdb_snapshot_start_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"w\n"
           + "\016SnapshotPeriod\022\037\n"
@@ -614,8 +745,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\014TWELVE_HOURS\020\003\022\025\n"
           + "\021TWENTY_FOUR_HOURS\020\004\032\277\001\n"
           + "\tAOFConfig\022_\n"
-          + "\014append_fsync\030\001 \001("
-          + "\0162D.google.cloud.memorystore.v1.PersistenceConfig.AOFConfig.AppendFsyncB\003\340A\001\"Q\n"
+          + "\014append_fsync\030\001 \001(\0162D.go"
+          + "ogle.cloud.memorystore.v1.PersistenceConfig.AOFConfig.AppendFsyncB\003\340A\001\"Q\n"
           + "\013AppendFsync\022\034\n"
           + "\030APPEND_FSYNC_UNSPECIFIED\020\000\022\t\n"
           + "\005NEVER\020\001\022\r\n"
@@ -630,17 +761,18 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\007size_gb\030\001 \001(\001B\003\340A\003\"\351\001\n"
           + "\026ZoneDistributionConfig\022\021\n"
           + "\004zone\030\002 \001(\tB\003\340A\001\022[\n"
-          + "\004mode\030\001 \001(\0162H.google.cloud.memo"
-          + "rystore.v1.ZoneDistributionConfig.ZoneDistributionModeB\003\340A\001\"_\n"
+          + "\004mode\030\001 \001(\0162H.google.cloud.memorystor"
+          + "e.v1.ZoneDistributionConfig.ZoneDistributionModeB\003\340A\001\"_\n"
           + "\024ZoneDistributionMode\022&\n"
-          + "\"ZONE_DISTRIBUTION_MODE_UNSPECIFIED\020\000\022\016\n\n"
+          + "\"ZONE_DISTRIBUTION_MODE_UNSPECIFIED\020\000\022\016\n"
+          + "\n"
           + "MULTI_ZONE\020\001\022\017\n"
           + "\013SINGLE_ZONE\020\002\"\316\002\n"
           + "\034RescheduleMaintenanceRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#memorystore.googleapis.com/Instance\022f\n"
-          + "\017reschedule_type\030\002 \001(\0162H.goog"
-          + "le.cloud.memorystore.v1.RescheduleMaintenanceRequest.RescheduleTypeB\003\340A\002\0226\n\r"
+          + "\017reschedule_type\030\002 \001(\0162H.google.clo"
+          + "ud.memorystore.v1.RescheduleMaintenanceRequest.RescheduleTypeB\003\340A\002\0226\n\r"
           + "schedule_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"S\n"
           + "\016RescheduleType\022\037\n"
           + "\033RESCHEDULE_TYPE_UNSPECIFIED\020\000\022\r\n"
@@ -649,7 +781,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\024ListInstancesRequest\022;\n"
           + "\006parent\030\001 \001("
           + "\tB+\340A\002\372A%\022#memorystore.googleapis.com/Instance\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\177\n"
@@ -661,8 +794,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#memorystore.googleapis.com/Instance\"\315\001\n"
           + "\025CreateInstanceRequest\022;\n"
-          + "\006parent\030\001 \001("
-          + "\tB+\340A\002\372A%\022#memorystore.googleapis.com/Instance\022\030\n"
+          + "\006parent\030\001 \001(\tB+"
+          + "\340A\002\372A%\022#memorystore.googleapis.com/Instance\022\030\n"
           + "\013instance_id\030\002 \001(\tB\003\340A\002\022<\n"
           + "\010instance\030\003"
           + " \001(\0132%.google.cloud.memorystore.v1.InstanceB\003\340A\002\022\037\n\n"
@@ -677,13 +810,13 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "#memorystore.googleapis.com/Instance\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\224\001\n"
           + "\034ListBackupCollectionsRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022"
-          + "+memorystore.googleapis.com/BackupCollection\022\026\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022+memor"
+          + "ystore.googleapis.com/BackupCollection\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\230\001\n"
           + "\035ListBackupCollectionsResponse\022I\n"
-          + "\022backup_collections\030\001 \003(\0132-.go"
-          + "ogle.cloud.memorystore.v1.BackupCollection\022\027\n"
+          + "\022backup_collections\030\001"
+          + " \003(\0132-.google.cloud.memorystore.v1.BackupCollection\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"_\n"
           + "\032GetBackupCollectionRequest\022A\n"
@@ -718,33 +851,81 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "_backup_id\"[\n"
           + "\036GetCertificateAuthorityRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
-          + "#memorystore.googleapis.com/Instance\"\211\004\n"
+          + "#memorystore.googleapis.com/Instance\"\272\001\n"
+          + "\031ListTokenAuthUsersRequest\022@\n"
+          + "\006parent\030\001 \001("
+          + "\tB0\340A\002\372A*\022(memorystore.googleapis.com/TokenAuthUser\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filte",
+      "r\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\225\001\n"
+          + "\032ListTokenAuthUsersResponse\022D\n"
+          + "\020token_auth_users\030\001"
+          + " \003(\0132*.google.cloud.memorystore.v1.TokenAuthUser\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"Y\n"
+          + "\027GetTokenAuthUserRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(memorystore.googleapis.com/TokenAuthUser\"\262\001\n"
+          + "\025ListAuthTokensRequest\022<\n"
+          + "\006parent\030\001 \001(\t"
+          + "B,\340A\002\372A&\022$memorystore.googleapis.com/AuthToken\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\210\001\n"
+          + "\026ListAuthTokensResponse\022;\n"
+          + "\013auth_tokens\030\001 \003(\0132&.google.cloud.memorystore.v1.AuthToken\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"Q\n"
+          + "\023GetAuthTokenRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$memorystore.googleapis.com/AuthToken\"v\n"
+          + "\027AddTokenAuthUserRequest\022=\n"
+          + "\010instance\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#memorystore.googleapis.com/Instance\022\034\n"
+          + "\017token_auth_user\030\002 \001(\tB\003\340A\002\"\221\001\n"
+          + "\032DeleteTokenAuthUserRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(memorystore.googleapis.com/TokenAuthUser\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\241\001\n"
+          + "\023AddAuthTokenRequest\022I\n"
+          + "\017token_auth_user\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(memorystore.googleapis.com/TokenAuthUser\022?\n\n"
+          + "auth_token\030\002"
+          + " \001(\0132&.google.cloud.memorystore.v1.AuthTokenB\003\340A\002\"T\n"
+          + "\026DeleteAuthTokenRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$memorystore.googleapis.com/AuthToken\"\211\004\n"
           + "\024CertificateAuthority\022j\n"
-          + "\021managed_server_ca\030\002 \001(\0132M.google.cloud."
-          + "memorystore.v1.CertificateAuthority.ManagedCertificateAuthorityH\000\022\021\n"
+          + "\021managed_server_ca\030\002 \001(\0132M.google.cloud.memorystore.v"
+          + "1.CertificateAuthority.ManagedCertificateAuthorityH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\032\253\001\n"
           + "\033ManagedCertificateAuthority\022i\n"
-          + "\010ca_certs\030\001 \003(\0132W.google.cloud.memorystor"
-          + "e.v1.CertificateAuthority.ManagedCertificateAuthority.CertChain\032!\n"
+          + "\010ca_certs\030\001 \003(\0132W.google.cloud.memorystore.v1.Certific"
+          + "ateAuthority.ManagedCertificateAuthority.CertChain\032!\n"
           + "\tCertChain\022\024\n"
           + "\014certificates\030\001 \003(\t:\266\001\352A\262\001\n"
-          + "/memorystore.googleapis.com/CertificateAuthority\022Qproj"
-          + "ects/{project}/locations/{location}/instances/{instance}/certificateAuthority*\026c"
-          + "ertificateAuthorities2\024certificateAuthorityB\013\n"
+          + "/memorystore.googleapis.com/CertificateAuthority\022Qprojects/{project"
+          + "}/locations/{location}/instances/{instan"
+          + "ce}/certificateAuthority*\026certificateAuthorities2\024certificateAuthorityB\013\n"
           + "\tserver_ca\"\200\005\n"
           + "\"SharedRegionalCertificateAuthority\022\200\001\n"
-          + "\021managed_server_ca\030\002 \001(\0132c.google.cloud.memorystore.v1.Shared"
-          + "RegionalCertificateAuthority.RegionalManagedCertificateAuthorityH\000\022\021\n"
+          + "\021managed_server_ca\030\002 \001(\0132c.google."
+          + "cloud.memorystore.v1.SharedRegionalCerti"
+          + "ficateAuthority.RegionalManagedCertificateAuthorityH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\032\332\001\n"
           + "#RegionalManagedCertificateAuthority\022\207\001\n"
-          + "\010ca_certs\030\001 \003(\0132u.google.cloud.memorystore.v1.SharedRegionalCertificate"
-          + "Authority.RegionalManagedCertificateAuthority.RegionalCertChain\032)\n"
+          + "\010ca_certs\030\001 \003(\0132u.google.cloud.memorystore.v"
+          + "1.SharedRegionalCertificateAuthority.Reg"
+          + "ionalManagedCertificateAuthority.RegionalCertChain\032)\n"
           + "\021RegionalCertChain\022\024\n"
           + "\014certificates\030\001 \003(\t:\331\001\352A\325\001\n"
-          + "=memorystore.googleapis.com/SharedRegionalCert"
-          + "ificateAuthority\022Jprojects/{project}/locations/{location}/sharedRegionalCertific"
-          + "ateAuthority*$sharedRegionalCertificateA"
-          + "uthorities2\"sharedRegionalCertificateAuthorityB\013\n"
+          + "=memorystore.googleapis.com/SharedRegionalCertificateAuthor"
+          + "ity\022Jprojects/{project}/locations/{location}/sharedRegionalCertificateAuthority*"
+          + "$sharedRegionalCertificateAuthorities2\"sharedRegionalCertificateAuthorityB\013\n"
           + "\tserver_ca\"\203\001\n"
           + ",GetSharedRegionalCertificateAuthorityRequest\022S\n"
           + "\004name\030\001 \001(\tBE\340A\002\372A?\n"
@@ -758,135 +939,167 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\003\"\366\004\n"
           + "\016EncryptionInfo\022N\n"
-          + "\017encryption_type\030\001"
-          + " \001(\01620.google.cloud.memorystore.v1.EncryptionInfo.TypeB\003\340A\003\022J\n"
+          + "\017encryption_type\030\001 "
+          + "\001(\01620.google.cloud.memorystore.v1.EncryptionInfo.TypeB\003\340A\003\022J\n"
           + "\020kms_key_versions\030\002 \003(\tB0\340A\003\372A*\n"
           + "(cloudkms.googleapis.com/CryptoKeyVersion\022[\n"
-          + "\025kms_key_primary_state\030\003 \001(\01627.google.cloud.memory"
-          + "store.v1.EncryptionInfo.KmsKeyStateB\003\340A\003\0229\n"
+          + "\025kms_key_primary_state\030\003"
+          + " \001(\01627.google.cloud.memorystore.v1.EncryptionInfo.KmsKeyStateB\003\340A\003\0229\n"
           + "\020last_update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\\\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\035\n"
-          + "\031GOOGLE_DEFAULT_ENCRYPTION\020\001",
-      "\022\037\n\033CUSTOMER_MANAGED_ENCRYPTION\020\002\"\321\001\n\013Km"
-          + "sKeyState\022\035\n\031KMS_KEY_STATE_UNSPECIFIED\020\000"
-          + "\022\013\n\007ENABLED\020\001\022\025\n\021PERMISSION_DENIED\020\002\022\014\n\010"
-          + "DISABLED\020\003\022\r\n\tDESTROYED\020\004\022\025\n\021DESTROY_SCH"
-          + "EDULED\020\005\022 \n\034EKM_KEY_UNREACHABLE_DETECTED"
-          + "\020\006\022\024\n\020BILLING_DISABLED\020\007\022\023\n\017UNKNOWN_FAIL"
-          + "URE\020\010*W\n\023PscConnectionStatus\022%\n!PSC_CONN"
-          + "ECTION_STATUS_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022"
-          + "\r\n\tNOT_FOUND\020\002*\211\001\n\016ConnectionType\022\037\n\033CON"
-          + "NECTION_TYPE_UNSPECIFIED\020\000\022\035\n\031CONNECTION"
-          + "_TYPE_DISCOVERY\020\001\022\033\n\027CONNECTION_TYPE_PRI"
-          + "MARY\020\002\022\032\n\026CONNECTION_TYPE_READER\020\0032\343\031\n\013M"
-          + "emorystore\022\266\001\n\rListInstances\0221.google.cl"
-          + "oud.memorystore.v1.ListInstancesRequest\032"
-          + "2.google.cloud.memorystore.v1.ListInstan"
-          + "cesResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{paren"
-          + "t=projects/*/locations/*}/instances\022\243\001\n\013"
-          + "GetInstance\022/.google.cloud.memorystore.v"
-          + "1.GetInstanceRequest\032%.google.cloud.memo"
-          + "rystore.v1.Instance\"<\332A\004name\202\323\344\223\002/\022-/v1/"
-          + "{name=projects/*/locations/*/instances/*"
-          + "}\022\342\001\n\016CreateInstance\0222.google.cloud.memo"
-          + "rystore.v1.CreateInstanceRequest\032\035.googl"
-          + "e.longrunning.Operation\"}\312A\035\n\010Instance\022\021"
-          + "OperationMetadata\332A\033parent,instance,inst"
-          + "ance_id\202\323\344\223\0029\"-/v1/{parent=projects/*/lo"
-          + "cations/*}/instances:\010instance\022\344\001\n\016Updat"
-          + "eInstance\0222.google.cloud.memorystore.v1."
-          + "UpdateInstanceRequest\032\035.google.longrunni"
-          + "ng.Operation\"\177\312A\035\n\010Instance\022\021OperationMe"
-          + "tadata\332A\024instance,update_mask\202\323\344\223\002B26/v1"
-          + "/{instance.name=projects/*/locations/*/i"
-          + "nstances/*}:\010instance\022\316\001\n\016DeleteInstance"
-          + "\0222.google.cloud.memorystore.v1.DeleteIns"
-          + "tanceRequest\032\035.google.longrunning.Operat"
-          + "ion\"i\312A*\n\025google.protobuf.Empty\022\021Operati"
-          + "onMetadata\332A\004name\202\323\344\223\002/*-/v1/{name=proje"
-          + "cts/*/locations/*/instances/*}\022\334\001\n\027GetCe"
-          + "rtificateAuthority\022;.google.cloud.memory"
-          + "store.v1.GetCertificateAuthorityRequest\032"
-          + "1.google.cloud.memorystore.v1.Certificat"
-          + "eAuthority\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=pro"
-          + "jects/*/locations/*/instances/*}/certifi"
-          + "cateAuthority\022\210\002\n%GetSharedRegionalCerti"
-          + "ficateAuthority\022I.google.cloud.memorysto"
-          + "re.v1.GetSharedRegionalCertificateAuthor"
-          + "ityRequest\032?.google.cloud.memorystore.v1"
-          + ".SharedRegionalCertificateAuthority\"S\332A\004"
-          + "name\202\323\344\223\002F\022D/v1/{name=projects/*/locatio"
-          + "ns/*/sharedRegionalCertificateAuthority}"
-          + "\022\207\002\n\025RescheduleMaintenance\0229.google.clou"
-          + "d.memorystore.v1.RescheduleMaintenanceRe"
-          + "quest\032\035.google.longrunning.Operation\"\223\001\312"
-          + "A\035\n\010Instance\022\021OperationMetadata\332A\"name,r"
-          + "eschedule_type,schedule_time\202\323\344\223\002H\"C/v1/"
-          + "{name=projects/*/locations/*/instances/*"
-          + "}:rescheduleMaintenance:\001*\022\326\001\n\025ListBacku"
-          + "pCollections\0229.google.cloud.memorystore."
-          + "v1.ListBackupCollectionsRequest\032:.google"
-          + ".cloud.memorystore.v1.ListBackupCollecti"
-          + "onsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{paren"
-          + "t=projects/*/locations/*}/backupCollecti"
-          + "ons\022\303\001\n\023GetBackupCollection\0227.google.clo"
-          + "ud.memorystore.v1.GetBackupCollectionReq"
-          + "uest\032-.google.cloud.memorystore.v1.Backu"
-          + "pCollection\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=pr"
-          + "ojects/*/locations/*/backupCollections/*"
-          + "}\022\302\001\n\013ListBackups\022/.google.cloud.memorys"
-          + "tore.v1.ListBackupsRequest\0320.google.clou"
-          + "d.memorystore.v1.ListBackupsResponse\"P\332A"
-          + "\006parent\202\323\344\223\002A\022?/v1/{parent=projects/*/lo"
-          + "cations/*/backupCollections/*}/backups\022\257"
-          + "\001\n\tGetBackup\022-.google.cloud.memorystore."
-          + "v1.GetBackupRequest\032#.google.cloud.memor"
-          + "ystore.v1.Backup\"N\332A\004name\202\323\344\223\002A\022?/v1/{na"
-          + "me=projects/*/locations/*/backupCollecti"
-          + "ons/*/backups/*}\022\334\001\n\014DeleteBackup\0220.goog"
-          + "le.cloud.memorystore.v1.DeleteBackupRequ"
-          + "est\032\035.google.longrunning.Operation\"{\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadat"
-          + "a\332A\004name\202\323\344\223\002A*?/v1/{name=projects/*/loc"
-          + "ations/*/backupCollections/*/backups/*}\022"
-          + "\320\001\n\014ExportBackup\0220.google.cloud.memoryst"
-          + "ore.v1.ExportBackupRequest\032\035.google.long"
-          + "running.Operation\"o\312A\033\n\006Backup\022\021Operatio"
-          + "nMetadata\202\323\344\223\002K\"F/v1/{name=projects/*/lo"
-          + "cations/*/backupCollections/*/backups/*}"
-          + ":export:\001*\022\313\001\n\016BackupInstance\0222.google.c"
-          + "loud.memorystore.v1.BackupInstanceReques"
-          + "t\032\035.google.longrunning.Operation\"f\312A\035\n\010I"
-          + "nstance\022\021OperationMetadata\332A\004name\202\323\344\223\0029\""
-          + "4/v1/{name=projects/*/locations/*/instan"
-          + "ces/*}:backup:\001*\032N\312A\032memorystore.googlea"
-          + "pis.com\322A.https://www.googleapis.com/aut"
-          + "h/cloud-platformB\220\007\n\037com.google.cloud.me"
-          + "morystore.v1B\013V1mainProtoP\001ZAcloud.googl"
-          + "e.com/go/memorystore/apiv1/memorystorepb"
-          + ";memorystorepb\252\002\033Google.Cloud.Memorystor"
-          + "e.V1\312\002\033Google\\Cloud\\Memorystore\\V1\352\002\036Goo"
-          + "gle::Cloud::Memorystore::V1\352An\n%compute."
-          + "googleapis.com/ForwardingRule\022Eprojects/"
-          + "{project}/regions/{region}/forwardingRul"
-          + "es/{forwarding_rule}\352AN\n\036compute.googlea"
-          + "pis.com/Network\022,projects/{project}/glob"
-          + "al/networks/{network}\352Aw\n(compute.google"
-          + "apis.com/ServiceAttachment\022Kprojects/{pr"
-          + "oject}/regions/{region}/serviceAttachmen"
-          + "ts/{service_attachment}\352Ax\n!cloudkms.goo"
-          + "gleapis.com/CryptoKey\022Sprojects/{project"
-          + "}/locations/{location}/keyRings/{key_rin"
-          + "g}/cryptoKeys/{crypto_key}\352A\246\001\n(cloudkms"
-          + ".googleapis.com/CryptoKeyVersion\022zprojec"
-          + "ts/{project}/locations/{location}/keyRin"
-          + "gs/{key_ring}/cryptoKeys/{crypto_key}/cr"
-          + "yptoKeyVersions/{crypto_key_version}\352A\\\n"
-          + "\037privateca.googleapis.com/CaPool\0229projec"
-          + "ts/{project}/locations/{location}/caPool"
-          + "s/{ca_pool}b\006proto3"
+          + "\031GOOGLE_DEFAULT_ENCRYPTION\020\001\022\037\n"
+          + "\033CUSTOMER_MANAGED_ENCRYPTION\020\002\"\321\001\n"
+          + "\013KmsKeyState\022\035\n"
+          + "\031KMS_KEY_STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007ENABLED\020\001\022\025\n"
+          + "\021PERMISSION_DENIED\020\002\022\014\n"
+          + "\010DISABLED\020\003\022\r\n"
+          + "\tDESTROYED\020\004\022\025\n"
+          + "\021DESTROY_SCHEDULED\020\005\022 \n"
+          + "\034EKM_KEY_UNREACHABLE_DETECTED\020\006\022\024\n"
+          + "\020BILLING_DISABLED\020\007\022\023\n"
+          + "\017UNKNOWN_FAILURE\020\010*W\n"
+          + "\023PscConnectionStatus\022%\n"
+          + "!PSC_CONNECTION_STATUS_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\r\n"
+          + "\tNOT_FOUND\020\002*\211\001\n"
+          + "\016ConnectionType\022\037\n"
+          + "\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n"
+          + "\031CONNECTION_TYPE_DISCOVERY\020\001\022\033\n"
+          + "\027CONNECTION_TYPE_PRIMARY\020\002\022\032\n"
+          + "\026CONNECTION_TYPE_READER\020\0032\233,\n"
+          + "\013Memorystore\022\266\001\n\r"
+          + "ListInstances\0221.google.cloud.memorystore.v1.ListInstancesRequest\0322.google.clou"
+          + "d.memorystore.v1.ListInstancesResponse\">"
+          + "\332A\006parent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/instances\022\243\001\n"
+          + "\013GetInstance\022/.google.cloud.memorystore.v1.GetInstance"
+          + "Request\032%.google.cloud.memorystore.v1.In"
+          + "stance\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/instances/*}\022\342\001\n"
+          + "\016CreateInstance\0222.google.cloud.memorystore.v1.Cr"
+          + "eateInstanceRequest\032\035.google.longrunning.Operation\"}\312A\035\n"
+          + "\010Instance\022\021OperationMeta"
+          + "data\332A\033parent,instance,instance_id\202\323\344\223\0029"
+          + "\"-/v1/{parent=projects/*/locations/*}/instances:\010instance\022\344\001\n"
+          + "\016UpdateInstance\0222.google.cloud.memorystore.v1.UpdateInstanc"
+          + "eRequest\032\035.google.longrunning.Operation\"\177\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\332A\024inst"
+          + "ance,update_mask\202\323\344\223\002B26/v1/{instance.na"
+          + "me=projects/*/locations/*/instances/*}:\010instance\022\316\001\n"
+          + "\016DeleteInstance\0222.google.clo"
+          + "ud.memorystore.v1.DeleteInstanceRequest\032\035.google.longrunning.Operation\"i\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\002/*-/v1/{name=projects/*/locations/*/instances/*}\022\334\001\n"
+          + "\027GetCertificateAuthority\022;.google.cloud.memorystore.v1.GetC"
+          + "ertificateAuthorityRequest\0321.google.clou"
+          + "d.memorystore.v1.CertificateAuthority\"Q\332"
+          + "A\004name\202\323\344\223\002D\022B/v1/{name=projects/*/locat"
+          + "ions/*/instances/*}/certificateAuthority\022\210\002\n"
+          + "%GetSharedRegionalCertificateAuthority\022I.google.cloud.memorystore.v1.GetShar"
+          + "edRegionalCertificateAuthorityRequest\032?.google.cloud.memorystore.v1.SharedRegion"
+          + "alCertificateAuthority\"S\332A\004name\202\323\344\223\002F\022D/"
+          + "v1/{name=projects/*/locations/*/sharedRegionalCertificateAuthority}\022\207\002\n"
+          + "\025RescheduleMaintenance\0229.google.cloud.memorystore"
+          + ".v1.RescheduleMaintenanceRequest\032\035.google.longrunning.Operation\"\223\001\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\332A\"name,reschedule_typ"
+          + "e,schedule_time\202\323\344\223\002H\"C/v1/{name=project"
+          + "s/*/locations/*/instances/*}:rescheduleMaintenance:\001*\022\326\001\n"
+          + "\025ListBackupCollections\0229.google.cloud.memorystore.v1.ListBackup"
+          + "CollectionsRequest\032:.google.cloud.memorystore.v1.ListBackupCollectionsResponse\"F"
+          + "\332A\006parent\202\323\344\223\0027\0225/v1/{parent=projects/*/locations/*}/backupCollections\022\303\001\n"
+          + "\023GetBackupCollection\0227.google.cloud.memorystor"
+          + "e.v1.GetBackupCollectionRequest\032-.google.cloud.memorystore.v1.BackupCollection\"D"
+          + "\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/*/locations/*/backupCollections/*}\022\302\001\n"
+          + "\013ListBackups\022/.google.cloud.memorystore.v1.ListB"
+          + "ackupsRequest\0320.google.cloud.memorystore"
+          + ".v1.ListBackupsResponse\"P\332A\006parent\202\323\344\223\002A"
+          + "\022?/v1/{parent=projects/*/locations/*/backupCollections/*}/backups\022\257\001\n"
+          + "\tGetBackup\022-.google.cloud.memorystore.v1.GetBackupR"
+          + "equest\032#.google.cloud.memorystore.v1.Bac"
+          + "kup\"N\332A\004name\202\323\344\223\002A\022?/v1/{name=projects/*"
+          + "/locations/*/backupCollections/*/backups/*}\022\334\001\n"
+          + "\014DeleteBackup\0220.google.cloud.memo"
+          + "rystore.v1.DeleteBackupRequest\032\035.google.longrunning.Operation\"{\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "A*?/v1/{name=projects/*/locations/*/backupCollections/*/backups/*}\022\320\001\n"
+          + "\014ExportBackup\0220.google.cloud.memorystore.v1.Export"
+          + "BackupRequest\032\035.google.longrunning.Operation\"o\312A\033\n"
+          + "\006Backup\022\021OperationMetadata\202\323\344\223"
+          + "\002K\"F/v1/{name=projects/*/locations/*/bac"
+          + "kupCollections/*/backups/*}:export:\001*\022\313\001\n"
+          + "\016BackupInstance\0222.google.cloud.memoryst"
+          + "ore.v1.BackupInstanceRequest\032\035.google.longrunning.Operation\"f\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\332A\004name\202\323\344\223\0029\"4/v1/{name=pr"
+          + "ojects/*/locations/*/instances/*}:backup:\001*\022\314\001\n"
+          + "\016StartMigration\0222.google.cloud.me"
+          + "morystore.v1.StartMigrationRequest\032\035.google.longrunning.Operation\"g\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\202\323\344\223\002A\"</v1/{name=pro"
+          + "jects/*/locations/*/instances/*}:startMigration:\001*\022\334\001\n"
+          + "\017FinishMigration\0223.google."
+          + "cloud.memorystore.v1.FinishMigrationRequest\032\035.google.longrunning.Operation\"u\312A\035\n"
+          + "\010Instance\022\021OperationMetadata\332A\n"
+          + "name,forc"
+          + "e\202\323\344\223\002B\"=/v1/{name=projects/*/locations/*/instances/*}:finishMigration:\001*\022\326\001\n"
+          + "\022ListTokenAuthUsers\0226.google.cloud.memoryst"
+          + "ore.v1.ListTokenAuthUsersRequest\0327.google.cloud.memorystore.v1.ListTokenAuthUser"
+          + "sResponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{parent="
+          + "projects/*/locations/*/instances/*}/tokenAuthUsers\022\303\001\n"
+          + "\020GetTokenAuthUser\0224.google.cloud.memorystore.v1.GetTokenAuthUserRe"
+          + "quest\032*.google.cloud.memorystore.v1.Toke"
+          + "nAuthUser\"M\332A\004name\202\323\344\223\002@\022>/v1/{name=proj"
+          + "ects/*/locations/*/instances/*/tokenAuthUsers/*}\022\327\001\n"
+          + "\016ListAuthTokens\0222.google.cloud.memorystore.v1.ListAuthTokensRequest\032"
+          + "3.google.cloud.memorystore.v1.ListAuthTo"
+          + "kensResponse\"\\\332A\006parent\202\323\344\223\002M\022K/v1/{pare"
+          + "nt=projects/*/locations/*/instances/*/tokenAuthUsers/*}/authTokens\022\304\001\n"
+          + "\014GetAuthToken\0220.google.cloud.memorystore.v1.GetAut"
+          + "hTokenRequest\032&.google.cloud.memorystore"
+          + ".v1.AuthToken\"Z\332A\004name\202\323\344\223\002M\022K/v1/{name="
+          + "projects/*/locations/*/instances/*/tokenAuthUsers/*/authTokens/*}\022\362\001\n"
+          + "\020AddTokenAuthUser\0224.google.cloud.memorystore.v1.Add"
+          + "TokenAuthUserRequest\032\035.google.longrunning.Operation\"\210\001\312A\035\n"
+          + "\010Instance\022\021OperationMe"
+          + "tadata\332A\030instance,token_auth_user\202\323\344\223\002G\""
+          + "B/v1/{instance=projects/*/locations/*/instances/*}:addTokenAuthUser:\001*\022\351\001\n"
+          + "\023DeleteTokenAuthUser\0227.google.cloud.memorystor"
+          + "e.v1.DeleteTokenAuthUserRequest\032\035.google.longrunning.Operation\"z\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
+          + "\002@*>/v1/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*}\022\205\002\n"
+          + "\014AddAuthToken\0220.google.cloud.memorystore.v1.AddAut"
+          + "hTokenRequest\032\035.google.longrunning.Operation\"\243\001\312A\"\n\r"
+          + "TokenAuthUser\022\021OperationMeta"
+          + "data\332A\032token_auth_user,auth_token\202\323\344\223\002[\""
+          + "V/v1/{token_auth_user=projects/*/locatio"
+          + "ns/*/instances/*/tokenAuthUsers/*}:addAuthToken:\001*\022\357\001\n"
+          + "\017DeleteAuthToken\0223.google.cloud.memorystore.v1.DeleteAuthTokenRequ"
+          + "est\032\035.google.longrunning.Operation\"\207\001\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetada"
+          + "ta\332A\004name\202\323\344\223\002M*K/v1/{name=projects/*/lo"
+          + "cations/*/instances/*/tokenAuthUsers/*/a"
+          + "uthTokens/*}\032\274\001\312A\032memorystore.googleapis"
+          + ".com\322A\233\001https://www.googleapis.com/auth/"
+          + "cloud-platform,https://www.googleapis.com/auth/memorystore.read-only,https://www"
+          + ".googleapis.com/auth/memorystore.read-writeB\212\010\n"
+          + "\037com.google.cloud.memorystore.v1B\013V1mainProtoP\001ZAcloud.google.com/go/memo"
+          + "rystore/apiv1/memorystorepb;memorystorep"
+          + "b\252\002\033Google.Cloud.Memorystore.V1\312\002\033Google"
+          + "\\Cloud\\Memorystore\\V1\352\002\036Google::Cloud::Memorystore::V1\352An\n"
+          + "%compute.googleapis.com/ForwardingRule\022Eprojects/{project}/reg"
+          + "ions/{region}/forwardingRules/{forwarding_rule}\352AN\n"
+          + "\036compute.googleapis.com/Netwo"
+          + "rk\022,projects/{project}/global/networks/{network}\352Aw\n"
+          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}/region"
+          + "s/{region}/serviceAttachments/{service_attachment}\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{"
+          + "location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/"
+          + "locations/{location}/keyRings/{key_ring}"
+          + "/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\352A\\\n"
+          + "\037privateca.googleapis.com/CaPool\0229projects/{project}/"
+          + "locations/{location}/caPools/{ca_pool}\352Aw\n"
+          + "(compute.googleapis.com/NetworkAttachment\022Kprojects/{project}/regions/{region}"
+          + "/networkAttachments/{network_attachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -955,6 +1168,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "ServerCaMode",
               "ServerCaPool",
               "RotateServerCertificate",
+              "MigrationConfig",
               "ImportSources",
             });
     internal_static_google_cloud_memorystore_v1_Instance_StateInfo_descriptor =
@@ -1021,8 +1235,40 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_descriptor =
+    internal_static_google_cloud_memorystore_v1_StartMigrationRequest_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_cloud_memorystore_v1_StartMigrationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_StartMigrationRequest_descriptor,
+            new java.lang.String[] {
+              "SelfManagedSource", "Name", "Source",
+            });
+    internal_static_google_cloud_memorystore_v1_FinishMigrationRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_memorystore_v1_FinishMigrationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_FinishMigrationRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Force",
+            });
+    internal_static_google_cloud_memorystore_v1_SelfManagedSource_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_memorystore_v1_SelfManagedSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_SelfManagedSource_descriptor,
+            new java.lang.String[] {
+              "IpAddress", "Port", "NetworkAttachment",
+            });
+    internal_static_google_cloud_memorystore_v1_MigrationConfig_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_memorystore_v1_MigrationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_MigrationConfig_descriptor,
+            new java.lang.String[] {
+              "SelfManagedSource", "State", "ForceFinishMigration", "Source",
+            });
+    internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_AutomatedBackupConfig_descriptor,
@@ -1039,7 +1285,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "StartTime",
             });
     internal_static_google_cloud_memorystore_v1_BackupCollection_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_memorystore_v1_BackupCollection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_BackupCollection_descriptor,
@@ -1055,7 +1301,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "LastBackupTime",
             });
     internal_static_google_cloud_memorystore_v1_Backup_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_memorystore_v1_Backup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_Backup_descriptor,
@@ -1077,7 +1323,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Uid",
             });
     internal_static_google_cloud_memorystore_v1_BackupFile_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_memorystore_v1_BackupFile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_BackupFile_descriptor,
@@ -1085,7 +1331,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "FileName", "SizeBytes", "CreateTime",
             });
     internal_static_google_cloud_memorystore_v1_CrossInstanceReplicationConfig_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_memorystore_v1_CrossInstanceReplicationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_CrossInstanceReplicationConfig_descriptor,
@@ -1110,8 +1356,24 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "PrimaryInstance", "SecondaryInstances",
             });
+    internal_static_google_cloud_memorystore_v1_TokenAuthUser_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_memorystore_v1_TokenAuthUser_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_TokenAuthUser_descriptor,
+            new java.lang.String[] {
+              "Name", "State",
+            });
+    internal_static_google_cloud_memorystore_v1_AuthToken_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_memorystore_v1_AuthToken_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_AuthToken_descriptor,
+            new java.lang.String[] {
+              "Name", "Token", "CreateTime", "State",
+            });
     internal_static_google_cloud_memorystore_v1_MaintenancePolicy_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_memorystore_v1_MaintenancePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_MaintenancePolicy_descriptor,
@@ -1119,7 +1381,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "CreateTime", "UpdateTime", "WeeklyMaintenanceWindow",
             });
     internal_static_google_cloud_memorystore_v1_WeeklyMaintenanceWindow_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_memorystore_v1_WeeklyMaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_WeeklyMaintenanceWindow_descriptor,
@@ -1127,7 +1389,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Day", "StartTime",
             });
     internal_static_google_cloud_memorystore_v1_MaintenanceSchedule_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_memorystore_v1_MaintenanceSchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_MaintenanceSchedule_descriptor,
@@ -1135,7 +1397,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "StartTime", "EndTime",
             });
     internal_static_google_cloud_memorystore_v1_PscAttachmentDetail_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_memorystore_v1_PscAttachmentDetail_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_PscAttachmentDetail_descriptor,
@@ -1143,7 +1405,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "ServiceAttachment", "ConnectionType",
             });
     internal_static_google_cloud_memorystore_v1_PscAutoConnection_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_memorystore_v1_PscAutoConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_PscAutoConnection_descriptor,
@@ -1160,7 +1422,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Ports",
             });
     internal_static_google_cloud_memorystore_v1_PscConnection_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_memorystore_v1_PscConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_PscConnection_descriptor,
@@ -1177,7 +1439,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Ports",
             });
     internal_static_google_cloud_memorystore_v1_DiscoveryEndpoint_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_memorystore_v1_DiscoveryEndpoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_DiscoveryEndpoint_descriptor,
@@ -1185,7 +1447,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Address", "Port", "Network",
             });
     internal_static_google_cloud_memorystore_v1_PersistenceConfig_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_memorystore_v1_PersistenceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_PersistenceConfig_descriptor,
@@ -1209,7 +1471,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "AppendFsync",
             });
     internal_static_google_cloud_memorystore_v1_NodeConfig_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_memorystore_v1_NodeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_NodeConfig_descriptor,
@@ -1217,7 +1479,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "SizeGb",
             });
     internal_static_google_cloud_memorystore_v1_ZoneDistributionConfig_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_memorystore_v1_ZoneDistributionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ZoneDistributionConfig_descriptor,
@@ -1225,7 +1487,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Zone", "Mode",
             });
     internal_static_google_cloud_memorystore_v1_RescheduleMaintenanceRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_memorystore_v1_RescheduleMaintenanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_RescheduleMaintenanceRequest_descriptor,
@@ -1233,7 +1495,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name", "RescheduleType", "ScheduleTime",
             });
     internal_static_google_cloud_memorystore_v1_ListInstancesRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_memorystore_v1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListInstancesRequest_descriptor,
@@ -1241,7 +1503,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_memorystore_v1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_memorystore_v1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListInstancesResponse_descriptor,
@@ -1249,7 +1511,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Instances", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_memorystore_v1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_memorystore_v1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_GetInstanceRequest_descriptor,
@@ -1257,7 +1519,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_memorystore_v1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_memorystore_v1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_CreateInstanceRequest_descriptor,
@@ -1265,7 +1527,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Parent", "InstanceId", "Instance", "RequestId",
             });
     internal_static_google_cloud_memorystore_v1_UpdateInstanceRequest_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_memorystore_v1_UpdateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_UpdateInstanceRequest_descriptor,
@@ -1273,7 +1535,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "Instance", "RequestId",
             });
     internal_static_google_cloud_memorystore_v1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_memorystore_v1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_DeleteInstanceRequest_descriptor,
@@ -1281,7 +1543,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId",
             });
     internal_static_google_cloud_memorystore_v1_ListBackupCollectionsRequest_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_memorystore_v1_ListBackupCollectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListBackupCollectionsRequest_descriptor,
@@ -1289,7 +1551,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_memorystore_v1_ListBackupCollectionsResponse_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_memorystore_v1_ListBackupCollectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListBackupCollectionsResponse_descriptor,
@@ -1297,7 +1559,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "BackupCollections", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_memorystore_v1_GetBackupCollectionRequest_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_memorystore_v1_GetBackupCollectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_GetBackupCollectionRequest_descriptor,
@@ -1305,7 +1567,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_memorystore_v1_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_memorystore_v1_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListBackupsRequest_descriptor,
@@ -1313,7 +1575,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_memorystore_v1_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_memorystore_v1_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ListBackupsResponse_descriptor,
@@ -1321,7 +1583,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_memorystore_v1_GetBackupRequest_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_memorystore_v1_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_GetBackupRequest_descriptor,
@@ -1329,7 +1591,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_memorystore_v1_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_memorystore_v1_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_DeleteBackupRequest_descriptor,
@@ -1337,7 +1599,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId",
             });
     internal_static_google_cloud_memorystore_v1_ExportBackupRequest_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_memorystore_v1_ExportBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_ExportBackupRequest_descriptor,
@@ -1345,7 +1607,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "GcsBucket", "Name", "Destination",
             });
     internal_static_google_cloud_memorystore_v1_BackupInstanceRequest_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_memorystore_v1_BackupInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_BackupInstanceRequest_descriptor,
@@ -1353,15 +1615,95 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name", "Ttl", "BackupId",
             });
     internal_static_google_cloud_memorystore_v1_GetCertificateAuthorityRequest_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_memorystore_v1_GetCertificateAuthorityRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_GetCertificateAuthorityRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersRequest_descriptor =
+        getDescriptor().getMessageType(39);
+    internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersResponse_descriptor =
+        getDescriptor().getMessageType(40);
+    internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_ListTokenAuthUsersResponse_descriptor,
+            new java.lang.String[] {
+              "TokenAuthUsers", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_memorystore_v1_GetTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(41);
+    internal_static_google_cloud_memorystore_v1_GetTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_GetTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_memorystore_v1_ListAuthTokensRequest_descriptor =
+        getDescriptor().getMessageType(42);
+    internal_static_google_cloud_memorystore_v1_ListAuthTokensRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_ListAuthTokensRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_memorystore_v1_ListAuthTokensResponse_descriptor =
+        getDescriptor().getMessageType(43);
+    internal_static_google_cloud_memorystore_v1_ListAuthTokensResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_ListAuthTokensResponse_descriptor,
+            new java.lang.String[] {
+              "AuthTokens", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_memorystore_v1_GetAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(44);
+    internal_static_google_cloud_memorystore_v1_GetAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_GetAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_memorystore_v1_AddTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(45);
+    internal_static_google_cloud_memorystore_v1_AddTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_AddTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Instance", "TokenAuthUser",
+            });
+    internal_static_google_cloud_memorystore_v1_DeleteTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(46);
+    internal_static_google_cloud_memorystore_v1_DeleteTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_DeleteTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "Force",
+            });
+    internal_static_google_cloud_memorystore_v1_AddAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(47);
+    internal_static_google_cloud_memorystore_v1_AddAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_AddAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "TokenAuthUser", "AuthToken",
+            });
+    internal_static_google_cloud_memorystore_v1_DeleteAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(48);
+    internal_static_google_cloud_memorystore_v1_DeleteAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_memorystore_v1_DeleteAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_memorystore_v1_CertificateAuthority_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(49);
     internal_static_google_cloud_memorystore_v1_CertificateAuthority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_CertificateAuthority_descriptor,
@@ -1387,7 +1729,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Certificates",
             });
     internal_static_google_cloud_memorystore_v1_SharedRegionalCertificateAuthority_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(50);
     internal_static_google_cloud_memorystore_v1_SharedRegionalCertificateAuthority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_SharedRegionalCertificateAuthority_descriptor,
@@ -1413,7 +1755,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Certificates",
             });
     internal_static_google_cloud_memorystore_v1_GetSharedRegionalCertificateAuthorityRequest_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(51);
     internal_static_google_cloud_memorystore_v1_GetSharedRegionalCertificateAuthorityRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_GetSharedRegionalCertificateAuthorityRequest_descriptor,
@@ -1421,7 +1763,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_memorystore_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(52);
     internal_static_google_cloud_memorystore_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_OperationMetadata_descriptor,
@@ -1435,7 +1777,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               "ApiVersion",
             });
     internal_static_google_cloud_memorystore_v1_EncryptionInfo_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(53);
     internal_static_google_cloud_memorystore_v1_EncryptionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_memorystore_v1_EncryptionInfo_descriptor,

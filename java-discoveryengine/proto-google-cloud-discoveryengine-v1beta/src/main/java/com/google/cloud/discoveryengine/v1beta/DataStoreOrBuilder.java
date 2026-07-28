@@ -30,7 +30,7 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -38,7 +38,9 @@ public interface DataStoreOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -48,7 +50,7 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
-   * Immutable. The full resource name of the data store.
+   * Immutable. Identifier. The full resource name of the data store.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
    *
@@ -56,7 +58,9 @@ public interface DataStoreOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -221,7 +225,7 @@ public interface DataStoreOrBuilder
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+   * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
    * data store.
    * </pre>
    *
@@ -236,7 +240,7 @@ public interface DataStoreOrBuilder
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1beta.Schema] asscociated to this
+   * [Schema][google.cloud.discoveryengine.v1beta.Schema] associated to this
    * data store.
    * </pre>
    *
@@ -327,6 +331,50 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedSiteSearchConfig field is set.
+   */
+  boolean hasAdvancedSiteSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedSiteSearchConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig getAdvancedSiteSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AdvancedSiteSearchConfigOrBuilder
+      getAdvancedSiteSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Language info for DataStore.
    * </pre>
    *
@@ -409,6 +457,89 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The KMS key to be used to protect this DataStore at creation
+   * time.
+   *
+   * Must be set for requests that need to comply with CMEK Org Policy
+   * protections.
+   *
+   * If this field is set and processed successfully, the DataStore will be
+   * protected by the KMS key, as indicated in the cmek_config field.
+   * </pre>
+   *
+   * <code>string kms_key_name = 32 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cmekConfig field is set.
+   */
+  boolean hasCmekConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cmekConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.CmekConfig getCmekConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder getCmekConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Data size estimation for billing.
    * </pre>
    *
@@ -448,6 +579,35 @@ public interface DataStoreOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.DataStore.BillingEstimationOrBuilder
       getBillingEstimationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether data in the
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] has ACL
+   * information. If set to `true`, the source data must have ACL. ACL will be
+   * ingested when data is ingested by
+   * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ImportDocuments]
+   * methods.
+   *
+   * When ACL is enabled for the
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore],
+   * [Document][google.cloud.discoveryengine.v1beta.Document] can't be accessed
+   * by calling
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+   *
+   * Currently ACL is only supported in `GENERIC` industry vertical with
+   * non-`PUBLIC_WEBSITE` content config.
+   * </pre>
+   *
+   * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The aclEnabled.
+   */
+  boolean getAclEnabled();
 
   /**
    *
@@ -551,9 +711,12 @@ public interface DataStoreOrBuilder
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -578,9 +741,12 @@ public interface DataStoreOrBuilder
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -605,9 +771,12 @@ public interface DataStoreOrBuilder
    * provisioning it. If unset, a default vertical specialized schema will be
    * used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1beta.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
    * API instead.
@@ -620,6 +789,50 @@ public interface DataStoreOrBuilder
    * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
    */
   com.google.cloud.discoveryengine.v1beta.SchemaOrBuilder getStartingSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the healthcareFhirConfig field is set.
+   */
+  boolean hasHealthcareFhirConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The healthcareFhirConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfig getHealthcareFhirConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.HealthcareFhirConfig healthcare_fhir_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.HealthcareFhirConfigOrBuilder
+      getHealthcareFhirConfigOrBuilder();
 
   /**
    *
@@ -665,4 +878,177 @@ public interface DataStoreOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.DataStore.ServingConfigDataStoreOrBuilder
       getServingConfigDataStoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The identityMappingStore.
+   */
+  java.lang.String getIdentityMappingStore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The fully qualified resource name of the associated
+   * [IdentityMappingStore][google.cloud.discoveryengine.v1beta.IdentityMappingStore].
+   * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
+   * `GSUITE` IdP. Format:
+   * `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
+   * </pre>
+   *
+   * <code>
+   * string identity_mapping_store = 31 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for identityMappingStore.
+   */
+  com.google.protobuf.ByteString getIdentityMappingStoreBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+   * </pre>
+   *
+   * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isInfobotFaqDataStore.
+   */
+  boolean getIsInfobotFaqDataStore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the federatedSearchConfig field is set.
+   */
+  boolean hasFederatedSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The federatedSearchConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig
+      getFederatedSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.FederatedSearchConfigOrBuilder
+      getFederatedSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for configurableBillingApproach.
+   */
+  int getConfigurableBillingApproachValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configurableBillingApproach.
+   */
+  com.google.cloud.discoveryengine.v1beta.DataStore.ConfigurableBillingApproach
+      getConfigurableBillingApproach();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the configurableBillingApproachUpdateTime field is set.
+   */
+  boolean hasConfigurableBillingApproachUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The configurableBillingApproachUpdateTime.
+   */
+  com.google.protobuf.Timestamp getConfigurableBillingApproachUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getConfigurableBillingApproachUpdateTimeOrBuilder();
 }

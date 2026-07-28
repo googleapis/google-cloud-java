@@ -30,10 +30,10 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-   * "pd-ssd" (Persistent Disk Solid State Drive),
-   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Optional. Type of the boot disk (default is `pd-standard`).
+   * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+   * `pd-ssd` (Persistent Disk Solid State Drive),
+   * or `pd-standard` (Persistent Disk Hard Disk Drive).
    * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
@@ -47,10 +47,10 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Type of the boot disk (default is "pd-standard").
-   * Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive),
-   * "pd-ssd" (Persistent Disk Solid State Drive),
-   * or "pd-standard" (Persistent Disk Hard Disk Drive).
+   * Optional. Type of the boot disk (default is `pd-standard`).
+   * Valid values: `pd-balanced` (Persistent Disk Balanced Solid State Drive),
+   * `pd-ssd` (Persistent Disk Solid State Drive),
+   * or `pd-standard` (Persistent Disk Hard Disk Drive).
    * See [Disk types](https://cloud.google.com/compute/docs/disks#disk-types).
    * </pre>
    *
@@ -98,9 +98,9 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Interface type of local SSDs (default is "scsi").
-   * Valid values: "scsi" (Small Computer System Interface),
-   * "nvme" (Non-Volatile Memory Express).
+   * Optional. Interface type of local SSDs (default is `scsi`).
+   * Valid values: `scsi` (Small Computer System Interface),
+   * `nvme` (Non-Volatile Memory Express).
    * See [local SSD
    * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
@@ -115,9 +115,9 @@ public interface DiskConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Interface type of local SSDs (default is "scsi").
-   * Valid values: "scsi" (Small Computer System Interface),
-   * "nvme" (Non-Volatile Memory Express).
+   * Optional. Interface type of local SSDs (default is `scsi`).
+   * Valid values: `scsi` (Small Computer System Interface),
+   * `nvme` (Non-Volatile Memory Express).
    * See [local SSD
    * performance](https://cloud.google.com/compute/docs/disks/local-ssd#performance).
    * </pre>
@@ -133,8 +133,10 @@ public interface DiskConfigOrBuilder
    *
    * <pre>
    * Optional. Indicates how many IOPS to provision for the disk. This sets the
-   * number of I/O operations per second that the disk can handle. Note: This
-   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * number of I/O operations per second that the disk can handle.
+   * **This field is supported only if
+   * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -149,8 +151,10 @@ public interface DiskConfigOrBuilder
    *
    * <pre>
    * Optional. Indicates how many IOPS to provision for the disk. This sets the
-   * number of I/O operations per second that the disk can handle. Note: This
-   * field is only supported if boot_disk_type is hyperdisk-balanced.
+   * number of I/O operations per second that the disk can handle.
+   * **This field is supported only if
+   * [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>optional int64 boot_disk_provisioned_iops = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -166,8 +170,9 @@ public interface DiskConfigOrBuilder
    * <pre>
    * Optional. Indicates how much throughput to provision for the disk. This
    * sets the number of throughput mb per second that the disk can handle.
-   * Values must be greater than or equal to 1. Note: This field is only
-   * supported if boot_disk_type is hyperdisk-balanced.
+   * Values must be greater than or equal to 1. **This field is supported only
+   * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>
@@ -184,8 +189,9 @@ public interface DiskConfigOrBuilder
    * <pre>
    * Optional. Indicates how much throughput to provision for the disk. This
    * sets the number of throughput mb per second that the disk can handle.
-   * Values must be greater than or equal to 1. Note: This field is only
-   * supported if boot_disk_type is hyperdisk-balanced.
+   * Values must be greater than or equal to 1. **This field is supported only
+   * if [boot_disk_type][google.cloud.dataproc.v1.DiskConfig.boot_disk_type] is
+   * `hyperdisk-balanced`.**
    * </pre>
    *
    * <code>
@@ -195,4 +201,71 @@ public interface DiskConfigOrBuilder
    * @return The bootDiskProvisionedThroughput.
    */
   long getBootDiskProvisionedThroughput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1.AttachedDiskConfig> getAttachedDiskConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.AttachedDiskConfig getAttachedDiskConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAttachedDiskConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder>
+      getAttachedDiskConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of attached disk configs for a group of VM instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.AttachedDiskConfig attached_disk_configs = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.AttachedDiskConfigOrBuilder getAttachedDiskConfigsOrBuilder(
+      int index);
 }

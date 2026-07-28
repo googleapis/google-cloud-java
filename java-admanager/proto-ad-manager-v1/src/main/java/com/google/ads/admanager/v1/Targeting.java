@@ -549,6 +549,66 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         : dataSegmentTargeting_;
   }
 
+  public static final int REQUEST_FORMAT_TARGETING_FIELD_NUMBER = 14;
+  private com.google.ads.admanager.v1.RequestFormatTargeting requestFormatTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestFormatTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestFormatTargeting() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestFormatTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RequestFormatTargeting getRequestFormatTargeting() {
+    return requestFormatTargeting_ == null
+        ? com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()
+        : requestFormatTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder
+      getRequestFormatTargetingOrBuilder() {
+    return requestFormatTargeting_ == null
+        ? com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()
+        : requestFormatTargeting_;
+  }
+
   public static final int CONTENT_TARGETING_FIELD_NUMBER = 15;
   private com.google.ads.admanager.v1.ContentTargeting contentTargeting_;
 
@@ -567,7 +627,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasContentTargeting() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -626,7 +686,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMobileApplicationTargeting() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -707,9 +767,12 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       output.writeMessage(13, getDataSegmentTargeting());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeMessage(15, getContentTargeting());
+      output.writeMessage(14, getRequestFormatTargeting());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(15, getContentTargeting());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(18, getMobileApplicationTargeting());
     }
     getUnknownFields().writeTo(output);
@@ -751,9 +814,13 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDataSegmentTargeting());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getContentTargeting());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRequestFormatTargeting());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getContentTargeting());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getMobileApplicationTargeting());
@@ -804,6 +871,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasDataSegmentTargeting() != other.hasDataSegmentTargeting()) return false;
     if (hasDataSegmentTargeting()) {
       if (!getDataSegmentTargeting().equals(other.getDataSegmentTargeting())) return false;
+    }
+    if (hasRequestFormatTargeting() != other.hasRequestFormatTargeting()) return false;
+    if (hasRequestFormatTargeting()) {
+      if (!getRequestFormatTargeting().equals(other.getRequestFormatTargeting())) return false;
     }
     if (hasContentTargeting() != other.hasContentTargeting()) return false;
     if (hasContentTargeting()) {
@@ -856,6 +927,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasDataSegmentTargeting()) {
       hash = (37 * hash) + DATA_SEGMENT_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getDataSegmentTargeting().hashCode();
+    }
+    if (hasRequestFormatTargeting()) {
+      hash = (37 * hash) + REQUEST_FORMAT_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestFormatTargeting().hashCode();
     }
     if (hasContentTargeting()) {
       hash = (37 * hash) + CONTENT_TARGETING_FIELD_NUMBER;
@@ -1013,6 +1088,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         internalGetUserDomainTargetingFieldBuilder();
         internalGetVideoPositionTargetingFieldBuilder();
         internalGetDataSegmentTargetingFieldBuilder();
+        internalGetRequestFormatTargetingFieldBuilder();
         internalGetContentTargetingFieldBuilder();
         internalGetMobileApplicationTargetingFieldBuilder();
       }
@@ -1061,6 +1137,11 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       if (dataSegmentTargetingBuilder_ != null) {
         dataSegmentTargetingBuilder_.dispose();
         dataSegmentTargetingBuilder_ = null;
+      }
+      requestFormatTargeting_ = null;
+      if (requestFormatTargetingBuilder_ != null) {
+        requestFormatTargetingBuilder_.dispose();
+        requestFormatTargetingBuilder_ = null;
       }
       contentTargeting_ = null;
       if (contentTargetingBuilder_ != null) {
@@ -1162,16 +1243,23 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.contentTargeting_ =
-            contentTargetingBuilder_ == null ? contentTargeting_ : contentTargetingBuilder_.build();
+        result.requestFormatTargeting_ =
+            requestFormatTargetingBuilder_ == null
+                ? requestFormatTargeting_
+                : requestFormatTargetingBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.contentTargeting_ =
+            contentTargetingBuilder_ == null ? contentTargeting_ : contentTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.mobileApplicationTargeting_ =
             mobileApplicationTargetingBuilder_ == null
                 ? mobileApplicationTargeting_
                 : mobileApplicationTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1211,6 +1299,9 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDataSegmentTargeting()) {
         mergeDataSegmentTargeting(other.getDataSegmentTargeting());
+      }
+      if (other.hasRequestFormatTargeting()) {
+        mergeRequestFormatTargeting(other.getRequestFormatTargeting());
       }
       if (other.hasContentTargeting()) {
         mergeContentTargeting(other.getContentTargeting());
@@ -1302,11 +1393,19 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetRequestFormatTargetingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetContentTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 122
             case 146:
@@ -1314,7 +1413,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetMobileApplicationTargetingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 146
             default:
@@ -3070,6 +3169,224 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       return dataSegmentTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.RequestFormatTargeting requestFormatTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.RequestFormatTargeting,
+            com.google.ads.admanager.v1.RequestFormatTargeting.Builder,
+            com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder>
+        requestFormatTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestFormatTargeting field is set.
+     */
+    public boolean hasRequestFormatTargeting() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestFormatTargeting.
+     */
+    public com.google.ads.admanager.v1.RequestFormatTargeting getRequestFormatTargeting() {
+      if (requestFormatTargetingBuilder_ == null) {
+        return requestFormatTargeting_ == null
+            ? com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()
+            : requestFormatTargeting_;
+      } else {
+        return requestFormatTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestFormatTargeting(
+        com.google.ads.admanager.v1.RequestFormatTargeting value) {
+      if (requestFormatTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestFormatTargeting_ = value;
+      } else {
+        requestFormatTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestFormatTargeting(
+        com.google.ads.admanager.v1.RequestFormatTargeting.Builder builderForValue) {
+      if (requestFormatTargetingBuilder_ == null) {
+        requestFormatTargeting_ = builderForValue.build();
+      } else {
+        requestFormatTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRequestFormatTargeting(
+        com.google.ads.admanager.v1.RequestFormatTargeting value) {
+      if (requestFormatTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && requestFormatTargeting_ != null
+            && requestFormatTargeting_
+                != com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()) {
+          getRequestFormatTargetingBuilder().mergeFrom(value);
+        } else {
+          requestFormatTargeting_ = value;
+        }
+      } else {
+        requestFormatTargetingBuilder_.mergeFrom(value);
+      }
+      if (requestFormatTargeting_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRequestFormatTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      requestFormatTargeting_ = null;
+      if (requestFormatTargetingBuilder_ != null) {
+        requestFormatTargetingBuilder_.dispose();
+        requestFormatTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.RequestFormatTargeting.Builder
+        getRequestFormatTargetingBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetRequestFormatTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder
+        getRequestFormatTargetingOrBuilder() {
+      if (requestFormatTargetingBuilder_ != null) {
+        return requestFormatTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return requestFormatTargeting_ == null
+            ? com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()
+            : requestFormatTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target inventory formats.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.RequestFormatTargeting,
+            com.google.ads.admanager.v1.RequestFormatTargeting.Builder,
+            com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder>
+        internalGetRequestFormatTargetingFieldBuilder() {
+      if (requestFormatTargetingBuilder_ == null) {
+        requestFormatTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.RequestFormatTargeting,
+                com.google.ads.admanager.v1.RequestFormatTargeting.Builder,
+                com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder>(
+                getRequestFormatTargeting(), getParentForChildren(), isClean());
+        requestFormatTargeting_ = null;
+      }
+      return requestFormatTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.ContentTargeting contentTargeting_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.admanager.v1.ContentTargeting,
@@ -3091,7 +3408,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the contentTargeting field is set.
      */
     public boolean hasContentTargeting() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3137,7 +3454,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         contentTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3160,7 +3477,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         contentTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3178,7 +3495,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContentTargeting(com.google.ads.admanager.v1.ContentTargeting value) {
       if (contentTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && contentTargeting_ != null
             && contentTargeting_
                 != com.google.ads.admanager.v1.ContentTargeting.getDefaultInstance()) {
@@ -3190,7 +3507,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         contentTargetingBuilder_.mergeFrom(value);
       }
       if (contentTargeting_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3208,7 +3525,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearContentTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       contentTargeting_ = null;
       if (contentTargetingBuilder_ != null) {
         contentTargetingBuilder_.dispose();
@@ -3230,7 +3547,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.ContentTargeting.Builder getContentTargetingBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetContentTargetingFieldBuilder().getBuilder();
     }
@@ -3305,7 +3622,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the mobileApplicationTargeting field is set.
      */
     public boolean hasMobileApplicationTargeting() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3352,7 +3669,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         mobileApplicationTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3375,7 +3692,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         mobileApplicationTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3394,7 +3711,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeMobileApplicationTargeting(
         com.google.ads.admanager.v1.MobileApplicationTargeting value) {
       if (mobileApplicationTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && mobileApplicationTargeting_ != null
             && mobileApplicationTargeting_
                 != com.google.ads.admanager.v1.MobileApplicationTargeting.getDefaultInstance()) {
@@ -3406,7 +3723,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         mobileApplicationTargetingBuilder_.mergeFrom(value);
       }
       if (mobileApplicationTargeting_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3424,7 +3741,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMobileApplicationTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       mobileApplicationTargeting_ = null;
       if (mobileApplicationTargetingBuilder_ != null) {
         mobileApplicationTargetingBuilder_.dispose();
@@ -3447,7 +3764,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.MobileApplicationTargeting.Builder
         getMobileApplicationTargetingBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetMobileApplicationTargetingFieldBuilder().getBuilder();
     }

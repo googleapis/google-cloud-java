@@ -81,7 +81,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. PageToken
+   * Optional. Specify the page_token returned in the previous response to
+   * retrieve the next page of results.
    * </pre>
    *
    * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -105,7 +106,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. PageToken
+   * Optional. Specify the page_token returned in the previous response to
+   * retrieve the next page of results.
    * </pre>
    *
    * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,7 +137,7 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
    * Optional. For servers that support pagination, this signals an upper bound
    * of the number of results that a client will receive. For servers that do
    * not support pagination, clients may receive results larger than the
-   * indicated `pageSize`.
+   * indicated `pageSize`. Defaults to 100 if not set.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -648,7 +650,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. PageToken
+     * Optional. Specify the page_token returned in the previous response to
+     * retrieve the next page of results.
      * </pre>
      *
      * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -671,7 +674,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. PageToken
+     * Optional. Specify the page_token returned in the previous response to
+     * retrieve the next page of results.
      * </pre>
      *
      * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -694,7 +698,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. PageToken
+     * Optional. Specify the page_token returned in the previous response to
+     * retrieve the next page of results.
      * </pre>
      *
      * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -716,7 +721,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. PageToken
+     * Optional. Specify the page_token returned in the previous response to
+     * retrieve the next page of results.
      * </pre>
      *
      * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -734,7 +740,8 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. PageToken
+     * Optional. Specify the page_token returned in the previous response to
+     * retrieve the next page of results.
      * </pre>
      *
      * <code>string page_token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -762,7 +769,7 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      * Optional. For servers that support pagination, this signals an upper bound
      * of the number of results that a client will receive. For servers that do
      * not support pagination, clients may receive results larger than the
-     * indicated `pageSize`.
+     * indicated `pageSize`. Defaults to 100 if not set.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -781,7 +788,7 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      * Optional. For servers that support pagination, this signals an upper bound
      * of the number of results that a client will receive. For servers that do
      * not support pagination, clients may receive results larger than the
-     * indicated `pageSize`.
+     * indicated `pageSize`. Defaults to 100 if not set.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -804,7 +811,7 @@ public final class ListIcebergNamespacesRequest extends com.google.protobuf.Gene
      * Optional. For servers that support pagination, this signals an upper bound
      * of the number of results that a client will receive. For servers that do
      * not support pagination, clients may receive results larger than the
-     * indicated `pageSize`.
+     * indicated `pageSize`. Defaults to 100 if not set.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

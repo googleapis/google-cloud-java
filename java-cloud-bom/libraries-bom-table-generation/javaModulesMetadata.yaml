@@ -1,0 +1,267 @@
+# This file was created by a one-time scrape of each module's .repo-metdata.json file
+# TODO: Create script to update this on an ongoing basis: https://github.com/googleapis/java-cloud-bom/issues/6409
+google-analytics-admin: https://developers.google.com/analytics, Analytics Admin
+google-analytics-data: https://developers.google.com/analytics/trusted-testing/analytics-data,
+  Analytics Data
+google-area120-tables: https://area120.google.com/, Area 120 Tables
+google-auth-library: n/a, Google Auth Library
+google-cloud-accessapproval: https://cloud.google.com/access-approval/docs/, Access
+  Approval
+google-cloud-advisorynotifications: https://cloud.google.com/advisory-notifications/,
+  Advisory Notifications API
+google-cloud-aiplatform: https://cloud.google.com/vertex-ai/docs, Vertex AI
+google-cloud-alloydb: https://cloud.google.com/alloydb/, AlloyDB
+google-cloud-analyticshub: https://cloud.google.com/bigquery/TBD, Analytics Hub API
+google-cloud-api-gateway: https://cloud.google.com/api-gateway/docs, API Gateway
+google-cloud-apigee-connect: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/,
+  Apigee Connect
+google-cloud-apigee-registry: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api,
+  Registry API
+google-cloud-apikeys: https://cloud.google.com/api-keys/, API Keys API
+google-cloud-appengine-admin: https://cloud.google.com/appengine/docs/admin-api/,
+  App Engine Admin API
+google-cloud-artifact-registry: https://cloud.google.com/artifact-registry, Artifact
+  Registry
+google-cloud-asset: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview,
+  Cloud Asset Inventory
+google-cloud-assured-workloads: https://cloud.google.com/assured-workloads/, Assured
+  Workloads for Government
+google-cloud-automl: https://cloud.google.com/automl/docs/, Cloud Auto ML
+google-cloud-bare-metal-solution: https://cloud.google.com/bare-metal/docs, Bare Metal
+  Solution
+google-cloud-batch: https://cloud.google.com/, Cloud Batch
+google-cloud-beyondcorp-appconnections: https://cloud.google.com/beyondcorp-enterprise/,
+  BeyondCorp AppConnections
+google-cloud-beyondcorp-appconnectors: cloud.google.com/beyondcorp-enterprise/, BeyondCorp
+  AppConnectors
+google-cloud-beyondcorp-appgateways: https://cloud.google.com/beyondcorp-enterprise/,
+  BeyondCorp AppGateways
+google-cloud-beyondcorp-clientconnectorservices: https://cloud.google.com/beyondcorp-enterprise/,
+  BeyondCorp ClientConnectorServices
+google-cloud-beyondcorp-clientgateways: https://cloud.google.com/beyondcorp-enterprise/,
+  BeyondCorp ClientGateways
+google-cloud-biglake: https://cloud.google.com/biglake, BigLake
+google-cloud-bigquery: https://cloud.google.com/bigquery, Cloud BigQuery
+google-cloud-bigquery-data-exchange: https://cloud.google.com/analytics-hub, Analytics
+  Hub
+google-cloud-bigqueryconnection: https://cloud.google.com/bigquery/docs/reference/bigqueryconnection/rest,
+  Cloud BigQuery Connection
+google-cloud-bigquerydatapolicy: https://cloud.google.com/bigquery/docs/reference/datapolicy/,
+  BigQuery DataPolicy API
+google-cloud-bigquerydatatransfer: https://cloud.google.com/bigquery/transfer/, BigQuery
+  Data Transfer Service
+google-cloud-bigquerymigration: https://cloud.google.com/bigquery/docs, BigQuery Migration
+google-cloud-bigqueryreservation: https://cloud.google.com/bigquery/docs/reference/reservations/rpc,
+  Cloud BigQuery Reservation
+google-cloud-bigquerystorage: https://cloud.google.com/bigquery/docs/reference/storage/,
+  BigQuery Storage
+google-cloud-bigtable: https://cloud.google.com/bigtable, Cloud Bigtable
+google-cloud-billing: https://cloud.google.com/billing/docs, Cloud Billing
+google-cloud-billingbudgets: https://cloud.google.com/billing/docs/how-to/budgets,
+  Cloud Billing Budgets
+google-cloud-binary-authorization: https://cloud.google.com/binary-authorization/docs,
+  Binary Authorization
+google-cloud-bom: n/a, Google Cloud Bill of Materials
+google-cloud-build: https://cloud.google.com/cloud-build/, Cloud Build
+google-cloud-certificate-manager: https://cloud.google.com/certificate-manager/docs,
+  Certificate Manager
+google-cloud-channel: https://cloud.google.com/channel/docs, Channel Services
+google-cloud-cloudcommerceconsumerprocurement: https://cloud.google.com/marketplace/,
+  Cloud Commerce Consumer Procurement
+google-cloud-cloudsupport: https://cloud.google.com/support/docs/reference/support-api/,
+  Google Cloud Support API
+google-cloud-compute: https://cloud.google.com/compute/, Compute Engine
+google-cloud-confidentialcomputing: https://cloud.google.com/confidential-computing/,
+  Confidential Computing API
+google-cloud-contact-center-insights: https://cloud.google.com/dialogflow/priv/docs/insights/,
+  CCAI Insights
+google-cloud-container: https://cloud.google.com/kubernetes-engine/, Kubernetes Engine
+google-cloud-containeranalysis: https://cloud.google.com/container-registry/docs/container-analysis,
+  Cloud Container Analysis
+google-cloud-contentwarehouse: https://cloud.google.com/document-warehouse/docs/overview,
+  Document AI Warehouse
+google-cloud-core: n/a, Google Cloud Core
+google-cloud-data-fusion: https://cloud.google.com/data-fusion/docs, Cloud Data Fusion
+google-cloud-datacatalog: https://cloud.google.com/data-catalog, Data Catalog
+google-cloud-dataflow: https://cloud.google.com/dataflow/docs, Dataflow
+google-cloud-dataform: https://cloud.google.com/dataform/docs, Cloud Dataform
+google-cloud-datalabeling: https://cloud.google.com/ai-platform/data-labeling/docs/,
+  Data Labeling
+google-cloud-datalineage: https://cloud.google.com/data-catalog/docs/data-lineage/,
+  Data Lineage
+google-cloud-dataplex: https://cloud.google.com/dataplex, Cloud Dataplex
+google-cloud-dataproc: https://cloud.google.com/dataproc, Dataproc
+google-cloud-dataproc-metastore: https://cloud.google.com/dataproc-metastore/docs,
+  Dataproc Metastore
+google-cloud-datastore: https://cloud.google.com/datastore, Cloud Datastore
+google-cloud-datastream: https://cloud.google.com/datastream/docs, Datastream
+google-cloud-debugger-client: https://cloud.google.com/debugger/docs, Cloud Debugger
+google-cloud-deploy: https://cloud.google.com/deploy/docs, Google Cloud Deploy
+google-cloud-dialogflow: https://cloud.google.com/dialogflow-enterprise/, Dialogflow
+  API
+google-cloud-dialogflow-cx: https://cloud.google.com/dialogflow/cx/docs, Dialogflow
+  CX
+google-cloud-discoveryengine: https://cloud.google.com/discovery-engine/media/docs,
+  Discovery Engine API
+google-cloud-distributedcloudedge: https://cloud.google.com/distributed-cloud/edge/latest/,
+  Google Distributed Cloud Edge
+google-cloud-dlp: https://cloud.google.com/dlp/docs/, Cloud Data Loss Prevention
+google-cloud-dms: https://cloud.google.com/database-migration/docs, Database Migration
+  Service
+google-cloud-dns: https://cloud.google.com/dns, Cloud DNS
+google-cloud-document-ai: https://cloud.google.com/compute/docs/documentai/, Document
+  AI
+google-cloud-domains: https://cloud.google.com/domains, Cloud Domains
+google-cloud-enterpriseknowledgegraph: https://cloud.google.com/enterprise-knowledge-graph/docs/overview,
+  Enterprise Knowledge Graph
+google-cloud-errorreporting: https://cloud.google.com/error-reporting, Error Reporting
+google-cloud-essential-contacts: https://cloud.google.com/resource-manager/docs/managing-notification-contacts/,
+  Essential Contacts API
+google-cloud-eventarc: https://cloud.google.com/eventarc/docs, Eventarc
+google-cloud-eventarc-publishing: https://cloud.google.com/eventarc/docs, Eventarc
+  Publishing
+google-cloud-filestore: https://cloud.google.com/filestore/docs, Cloud Filestore API
+google-cloud-firestore: https://cloud.google.com/firestore, Cloud Firestore
+google-cloud-functions: https://cloud.google.com/functions, Cloud Functions
+google-cloud-gke-backup: https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke,
+  Backup for GKE
+google-cloud-gke-connect-gateway: https://cloud.google.com/anthos/multicluster-management/gateway/,
+  Connect Gateway API
+google-cloud-gke-multi-cloud: https://cloud.google.com/anthos/clusters/docs/multi-cloud,
+  Anthos Multicloud
+google-cloud-gkehub: https://cloud.google.com/anthos/gke/docs/, GKE Hub API
+google-cloud-gsuite-addons: https://developers.google.com/workspace/add-ons/overview,
+  Google Workspace Add-ons API
+google-cloud-iamcredentials: https://cloud.google.com/iam/credentials/reference/rest/,
+  IAM Service Account Credentials API
+google-cloud-ids: https://cloud.google.com/intrusion-detection-system/docs, Intrusion
+  Detection System
+google-cloud-iot: https://cloud.google.com/iot, Cloud Internet of Things (IoT) Core
+google-cloud-kms: https://cloud.google.com/kms, Cloud Key Management Service
+google-cloud-kmsinventory: https://cloud.google.com/kms/docs/, KMS Inventory API
+google-cloud-language: https://cloud.google.com/natural-language/docs/, Natural Language
+google-cloud-life-sciences: https://cloud.google.com/life-sciences/docs, Cloud Life
+  Sciences
+google-cloud-live-stream: https://cloud.google.com/livestream/, Live Stream API
+google-cloud-logging: https://cloud.google.com/logging/docs, Cloud Logging
+google-cloud-logging-logback: https://cloud.google.com/logging/docs/setup/java#logback_appender_for,
+  Cloud Logging Logback Appender
+google-cloud-managed-identities: https://cloud.google.com/managed-microsoft-ad/, Managed
+  Service for Microsoft Active Directory
+google-cloud-mediatranslation: https://cloud.google.com/, Media Translation API
+google-cloud-memcache: https://cloud.google.com/memorystore/, Cloud Memcache
+google-cloud-migrationcenter: https://cloud.google.com/migration-center/docs/migration-center-overview,
+  Migration Center API
+google-cloud-monitoring: https://cloud.google.com/monitoring/docs, Stackdriver Monitoring
+google-cloud-monitoring-dashboard: https://cloud.google.com/monitoring/charts/dashboards,
+  Monitoring Dashboards
+google-cloud-monitoring-metricsscope: https://cloud.google.com/monitoring/api/ref_v3/rest/v1/locations.global.metricsScopes,
+  Monitoring Metrics Scopes
+google-cloud-network-management: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/,
+  Network Management API
+google-cloud-network-security: https://cloud.google.com/traffic-director/docs/reference/network-security/rest,
+  Network Security API
+google-cloud-networkconnectivity: https://cloud.google.com/network-connectivity/docs,
+  Network Connectivity Center
+google-cloud-nio: https://cloud.google.com/storage/docs, NIO Filesystem Provider for
+  Google Cloud Storage
+google-cloud-notebooks: https://cloud.google.com/ai-platform-notebooks, AI Platform
+  Notebooks
+google-cloud-notification: n/a, Google Cloud Pub/Sub Notifications for GCS
+google-cloud-optimization: https://cloud.google.com/optimization/docs, Cloud Fleet
+  Routing
+google-cloud-orchestration-airflow: https://cloud.google.com/composer/docs, Cloud
+  Composer
+google-cloud-orgpolicy: n/a, Cloud Organization Policy
+google-cloud-os-config: https://cloud.google.com/compute/docs/os-patch-management,
+  OS Config API
+google-cloud-os-login: https://cloud.google.com/compute/docs/oslogin/, Cloud OS Login
+google-cloud-phishingprotection: https://cloud.google.com/phishing-protection/docs/,
+  Phishing Protection
+google-cloud-policy-troubleshooter: https://cloud.google.com/iam/docs/troubleshooting-access,
+  IAM Policy Troubleshooter API
+google-cloud-private-catalog: https://cloud.google.com/private-catalog/docs, Private
+  Catalog
+google-cloud-profiler: https://cloud.google.com/profiler/docs, Cloud Profiler
+google-cloud-publicca: https://cloud.google.com/certificate-manager/docs/public-ca/,
+  Public Certificate Authority
+google-cloud-pubsub: https://cloud.google.com/pubsub/docs/, Cloud Pub/Sub
+google-cloud-pubsublite: https://cloud.google.com/pubsub/lite/docs, Cloud Pub/Sub
+  Lite
+google-cloud-rapidmigrationassessment: https://cloud.google.com/migration-center/docs,
+  Rapid Migration Assessment API
+google-cloud-recaptchaenterprise: https://cloud.google.com/recaptcha-enterprise/docs/,
+  reCAPTCHA Enterprise
+google-cloud-recommendations-ai: https://cloud.google.com/recommendations-ai/, Recommendations
+  AI
+google-cloud-recommender: https://cloud.google.com/recommendations/, Recommender
+google-cloud-redis: https://cloud.google.com/memorystore/docs/redis/, Cloud Redis
+google-cloud-resource-settings: https://cloud.google.com/resource-manager/docs/reference/resource-settings/rest,
+  Resource Settings API
+google-cloud-resourcemanager: https://cloud.google.com/resource-manager, Resource
+  Manager API
+google-cloud-retail: https://cloud.google.com/solutions/retail, Cloud Retail
+google-cloud-run: https://cloud.google.com/run/docs, Cloud Run
+google-cloud-scheduler: https://cloud.google.com/scheduler/docs, Google Cloud Scheduler
+google-cloud-secretmanager: https://cloud.google.com/solutions/secrets-management/,
+  Secret Management
+google-cloud-security-private-ca: https://cloud.google.com/certificate-authority-service/docs,
+  Certificate Authority Service
+google-cloud-securitycenter: https://cloud.google.com/security-command-center, Security
+  Command Center
+google-cloud-securitycenter-settings: https://cloud.google.com/security-command-center/,
+  Security Command Center Settings API
+google-cloud-service-control: https://cloud.google.com/service-infrastructure/docs/overview/,
+  Service Control API
+google-cloud-service-management: https://cloud.google.com/service-infrastructure/docs/overview/,
+  Service Management API
+google-cloud-service-usage: https://cloud.google.com/service-usage/docs/overview,
+  Service Usage
+google-cloud-servicedirectory: https://cloud.google.com/service-directory/, Service
+  Directory
+google-cloud-shell: https://cloud.google.com/shell/docs, Cloud Shell
+google-cloud-spanner: https://cloud.google.com/spanner/docs/, Cloud Spanner
+google-cloud-spanner-jdbc: https://cloud.google.com/spanner/docs/use-oss-jdbc, Google
+  Cloud Spanner JDBC
+google-cloud-speech: https://cloud.google.com/speech-to-text/docs/, Cloud Speech
+google-cloud-storage: https://cloud.google.com/storage, Cloud Storage
+google-cloud-storage-transfer: https://cloud.google.com/storage-transfer-service,
+  Storage Transfer Service
+google-cloud-storageinsights: https://cloud.google.com/storage/docs/insights/storage-insights/,
+  Storage Insights API
+google-cloud-talent: https://cloud.google.com/solutions/talent-solution/, Talent Solution
+google-cloud-tasks: https://cloud.google.com/tasks/docs/, Cloud Tasks
+google-cloud-texttospeech: https://cloud.google.com/text-to-speech, Cloud Text-to-Speech
+google-cloud-tpu: https://cloud.google.com/tpu/docs, Cloud TPU
+google-cloud-trace: https://cloud.google.com/trace/docs/, Stackdriver Trace
+google-cloud-translate: https://cloud.google.com/translate/docs/, Cloud Translation
+google-cloud-video-intelligence: https://cloud.google.com/video-intelligence/docs/,
+  Cloud Video Intelligence
+google-cloud-video-stitcher: https://cloud.google.com/video-stitcher/, Video Stitcher
+  API
+google-cloud-video-transcoder: https://cloud.google.com/transcoder/docs, Video Transcoder
+google-cloud-vision: https://cloud.google.com/vision/docs/, Cloud Vision
+google-cloud-vmmigration: n/a, VM Migration
+google-cloud-vmwareengine: https://cloud.google.com/vmware-engine/, Google Cloud VMware
+  Engine
+google-cloud-vpcaccess: https://cloud.google.com/vpc/docs/serverless-vpc-access, Serverless
+  VPC Access
+google-cloud-webrisk: https://cloud.google.com/web-risk/docs/, Web Risk
+google-cloud-websecurityscanner: https://cloud.google.com/security-scanner/docs/,
+  Cloud Security Scanner
+google-cloud-workflow-executions: https://cloud.google.com/workflows, Cloud Workflow
+  Executions
+google-cloud-workflows: https://cloud.google.com/workflows, Cloud Workflows
+google-cloud-workstations: https://cloud.google.com/workstations, Cloud Workstations
+google-iam-admin: https://cloud.google.com/iam/docs/apis, IAM Admin API
+google-iam-policy: n/a, IAM
+google-identity-accesscontextmanager: n/a, Identity Access Context Manager
+google-maps-addressvalidation: https://developers.google.com/maps/documentation/address-validation/,
+  Address Validation API
+google-maps-mapsplatformdatasets: https://developers.google.com/maps/documentation,
+  Maps Platform Datasets API
+google-maps-routing: https://developers.google.com/maps/documentation/routes, Routes
+  API
+grafeas: https://grafeas.io, Grafeas
+proto-google-common-protos: n/a, Common Protos
+proto-google-iam-v1: n/a, IAM

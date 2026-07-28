@@ -19,6 +19,7 @@ package com.google.cloud.networksecurity.v1;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointAssociationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListLocationsPagedResponse;
+import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListProjectFirewallEndpointsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -243,6 +244,144 @@ public class FirewallActivationClientTest {
   }
 
   @Test
+  public void listProjectFirewallEndpointsTest() throws Exception {
+    FirewallEndpoint responsesElement = FirewallEndpoint.newBuilder().build();
+    ListFirewallEndpointsResponse expectedResponse =
+        ListFirewallEndpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFirewallEndpoints(Arrays.asList(responsesElement))
+            .build();
+    mockFirewallActivation.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListProjectFirewallEndpointsPagedResponse pagedListResponse =
+        client.listProjectFirewallEndpoints(parent);
+
+    List<FirewallEndpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirewallEndpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFirewallEndpointsRequest actualRequest =
+        ((ListFirewallEndpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProjectFirewallEndpointsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listProjectFirewallEndpoints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProjectFirewallEndpointsTest2() throws Exception {
+    FirewallEndpoint responsesElement = FirewallEndpoint.newBuilder().build();
+    ListFirewallEndpointsResponse expectedResponse =
+        ListFirewallEndpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFirewallEndpoints(Arrays.asList(responsesElement))
+            .build();
+    mockFirewallActivation.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListProjectFirewallEndpointsPagedResponse pagedListResponse =
+        client.listProjectFirewallEndpoints(parent);
+
+    List<FirewallEndpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirewallEndpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFirewallEndpointsRequest actualRequest =
+        ((ListFirewallEndpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProjectFirewallEndpointsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listProjectFirewallEndpoints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProjectFirewallEndpointsTest3() throws Exception {
+    FirewallEndpoint responsesElement = FirewallEndpoint.newBuilder().build();
+    ListFirewallEndpointsResponse expectedResponse =
+        ListFirewallEndpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFirewallEndpoints(Arrays.asList(responsesElement))
+            .build();
+    mockFirewallActivation.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListProjectFirewallEndpointsPagedResponse pagedListResponse =
+        client.listProjectFirewallEndpoints(parent);
+
+    List<FirewallEndpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirewallEndpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFirewallEndpointsRequest actualRequest =
+        ((ListFirewallEndpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProjectFirewallEndpointsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listProjectFirewallEndpoints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getFirewallEndpointTest() throws Exception {
     FirewallEndpoint expectedResponse =
         FirewallEndpoint.newBuilder()
@@ -344,6 +483,114 @@ public class FirewallActivationClientTest {
     try {
       String name = "name3373707";
       client.getFirewallEndpoint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectFirewallEndpointTest() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+                        "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    mockFirewallActivation.addResponse(expectedResponse);
+
+    FirewallEndpointName name =
+        FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+            "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+
+    FirewallEndpoint actualResponse = client.getProjectFirewallEndpoint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFirewallEndpointRequest actualRequest = ((GetFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProjectFirewallEndpointExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      FirewallEndpointName name =
+          FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+              "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+      client.getProjectFirewallEndpoint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectFirewallEndpointTest2() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+                        "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    mockFirewallActivation.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FirewallEndpoint actualResponse = client.getProjectFirewallEndpoint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFirewallEndpointRequest actualRequest = ((GetFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getProjectFirewallEndpointExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getProjectFirewallEndpoint(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -555,6 +802,216 @@ public class FirewallActivationClientTest {
   }
 
   @Test
+  public void createProjectFirewallEndpointTest() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofOrganizationLocationFirewallEndpointName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+    String firewallEndpointId = "firewallEndpointId-993710416";
+
+    FirewallEndpoint actualResponse =
+        client
+            .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFirewallEndpointRequest actualRequest =
+        ((CreateFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(firewallEndpoint, actualRequest.getFirewallEndpoint());
+    Assert.assertEquals(firewallEndpointId, actualRequest.getFirewallEndpointId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createProjectFirewallEndpointExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+      String firewallEndpointId = "firewallEndpointId-993710416";
+      client.createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createProjectFirewallEndpointTest2() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofOrganizationLocationFirewallEndpointName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+    String firewallEndpointId = "firewallEndpointId-993710416";
+
+    FirewallEndpoint actualResponse =
+        client
+            .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFirewallEndpointRequest actualRequest =
+        ((CreateFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(firewallEndpoint, actualRequest.getFirewallEndpoint());
+    Assert.assertEquals(firewallEndpointId, actualRequest.getFirewallEndpointId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createProjectFirewallEndpointExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+      String firewallEndpointId = "firewallEndpointId-993710416";
+      client.createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createProjectFirewallEndpointTest3() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofOrganizationLocationFirewallEndpointName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+    String firewallEndpointId = "firewallEndpointId-993710416";
+
+    FirewallEndpoint actualResponse =
+        client
+            .createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFirewallEndpointRequest actualRequest =
+        ((CreateFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(firewallEndpoint, actualRequest.getFirewallEndpoint());
+    Assert.assertEquals(firewallEndpointId, actualRequest.getFirewallEndpointId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createProjectFirewallEndpointExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+      String firewallEndpointId = "firewallEndpointId-993710416";
+      client.createProjectFirewallEndpointAsync(parent, firewallEndpoint, firewallEndpointId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteFirewallEndpointTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -645,6 +1102,96 @@ public class FirewallActivationClientTest {
   }
 
   @Test
+  public void deleteProjectFirewallEndpointTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    FirewallEndpointName name =
+        FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+            "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+
+    client.deleteProjectFirewallEndpointAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFirewallEndpointRequest actualRequest =
+        ((DeleteFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteProjectFirewallEndpointExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      FirewallEndpointName name =
+          FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+              "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]");
+      client.deleteProjectFirewallEndpointAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteProjectFirewallEndpointTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteProjectFirewallEndpointAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFirewallEndpointRequest actualRequest =
+        ((DeleteFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteProjectFirewallEndpointExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteProjectFirewallEndpointAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void updateFirewallEndpointTest() throws Exception {
     FirewallEndpoint expectedResponse =
         FirewallEndpoint.newBuilder()
@@ -701,6 +1248,71 @@ public class FirewallActivationClientTest {
       FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFirewallEndpointAsync(firewallEndpoint, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateProjectFirewallEndpointTest() throws Exception {
+    FirewallEndpoint expectedResponse =
+        FirewallEndpoint.newBuilder()
+            .setName(
+                FirewallEndpointName.ofProjectLocationFirewallEndpointName(
+                        "[PROJECT]", "[LOCATION]", "[FIREWALL_ENDPOINT]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setReconciling(true)
+            .addAllAssociatedNetworks(new ArrayList<String>())
+            .addAllAssociations(new ArrayList<FirewallEndpoint.AssociationReference>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setBillingProjectId("billingProjectId-881358375")
+            .setEndpointSettings(FirewallEndpoint.EndpointSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateProjectFirewallEndpointTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirewallActivation.addResponse(resultOperation);
+
+    FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    FirewallEndpoint actualResponse =
+        client.updateProjectFirewallEndpointAsync(firewallEndpoint, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirewallActivation.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFirewallEndpointRequest actualRequest =
+        ((UpdateFirewallEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(firewallEndpoint, actualRequest.getFirewallEndpoint());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateProjectFirewallEndpointExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirewallActivation.addException(exception);
+
+    try {
+      FirewallEndpoint firewallEndpoint = FirewallEndpoint.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateProjectFirewallEndpointAsync(firewallEndpoint, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

@@ -751,6 +751,48 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindGroupChats",
+      requestType = com.google.chat.v1.FindGroupChatsRequest.class,
+      responseType = com.google.chat.v1.FindGroupChatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+        getFindGroupChatsMethod;
+    if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+          ChatServiceGrpc.getFindGroupChatsMethod =
+              getFindGroupChatsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.FindGroupChatsRequest,
+                          com.google.chat.v1.FindGroupChatsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindGroupChats"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("FindGroupChats"))
+                      .build();
+        }
+      }
+    }
+    return getFindGroupChatsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.CreateMembershipRequest, com.google.chat.v1.Membership>
       getCreateMembershipMethod;
 
@@ -1284,6 +1326,210 @@ public final class ChatServiceGrpc {
       }
     }
     return getGetThreadReadStateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetAvailabilityRequest, com.google.chat.v1.Availability>
+      getGetAvailabilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAvailability",
+      requestType = com.google.chat.v1.GetAvailabilityRequest.class,
+      responseType = com.google.chat.v1.Availability.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.GetAvailabilityRequest, com.google.chat.v1.Availability>
+      getGetAvailabilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.GetAvailabilityRequest, com.google.chat.v1.Availability>
+        getGetAvailabilityMethod;
+    if ((getGetAvailabilityMethod = ChatServiceGrpc.getGetAvailabilityMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getGetAvailabilityMethod = ChatServiceGrpc.getGetAvailabilityMethod) == null) {
+          ChatServiceGrpc.getGetAvailabilityMethod =
+              getGetAvailabilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.GetAvailabilityRequest, com.google.chat.v1.Availability>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAvailability"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.GetAvailabilityRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Availability.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("GetAvailability"))
+                      .build();
+        }
+      }
+    }
+    return getGetAvailabilityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsActiveRequest, com.google.chat.v1.Availability>
+      getMarkAsActiveMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MarkAsActive",
+      requestType = com.google.chat.v1.MarkAsActiveRequest.class,
+      responseType = com.google.chat.v1.Availability.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsActiveRequest, com.google.chat.v1.Availability>
+      getMarkAsActiveMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.MarkAsActiveRequest, com.google.chat.v1.Availability>
+        getMarkAsActiveMethod;
+    if ((getMarkAsActiveMethod = ChatServiceGrpc.getMarkAsActiveMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getMarkAsActiveMethod = ChatServiceGrpc.getMarkAsActiveMethod) == null) {
+          ChatServiceGrpc.getMarkAsActiveMethod =
+              getMarkAsActiveMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.MarkAsActiveRequest, com.google.chat.v1.Availability>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MarkAsActive"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MarkAsActiveRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Availability.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("MarkAsActive"))
+                      .build();
+        }
+      }
+    }
+    return getMarkAsActiveMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsAwayRequest, com.google.chat.v1.Availability>
+      getMarkAsAwayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MarkAsAway",
+      requestType = com.google.chat.v1.MarkAsAwayRequest.class,
+      responseType = com.google.chat.v1.Availability.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsAwayRequest, com.google.chat.v1.Availability>
+      getMarkAsAwayMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.MarkAsAwayRequest, com.google.chat.v1.Availability>
+        getMarkAsAwayMethod;
+    if ((getMarkAsAwayMethod = ChatServiceGrpc.getMarkAsAwayMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getMarkAsAwayMethod = ChatServiceGrpc.getMarkAsAwayMethod) == null) {
+          ChatServiceGrpc.getMarkAsAwayMethod =
+              getMarkAsAwayMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.MarkAsAwayRequest, com.google.chat.v1.Availability>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MarkAsAway"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MarkAsAwayRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Availability.getDefaultInstance()))
+                      .setSchemaDescriptor(new ChatServiceMethodDescriptorSupplier("MarkAsAway"))
+                      .build();
+        }
+      }
+    }
+    return getMarkAsAwayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsDoNotDisturbRequest, com.google.chat.v1.Availability>
+      getMarkAsDoNotDisturbMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MarkAsDoNotDisturb",
+      requestType = com.google.chat.v1.MarkAsDoNotDisturbRequest.class,
+      responseType = com.google.chat.v1.Availability.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.MarkAsDoNotDisturbRequest, com.google.chat.v1.Availability>
+      getMarkAsDoNotDisturbMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.MarkAsDoNotDisturbRequest, com.google.chat.v1.Availability>
+        getMarkAsDoNotDisturbMethod;
+    if ((getMarkAsDoNotDisturbMethod = ChatServiceGrpc.getMarkAsDoNotDisturbMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getMarkAsDoNotDisturbMethod = ChatServiceGrpc.getMarkAsDoNotDisturbMethod) == null) {
+          ChatServiceGrpc.getMarkAsDoNotDisturbMethod =
+              getMarkAsDoNotDisturbMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.MarkAsDoNotDisturbRequest,
+                          com.google.chat.v1.Availability>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MarkAsDoNotDisturb"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MarkAsDoNotDisturbRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Availability.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("MarkAsDoNotDisturb"))
+                      .build();
+        }
+      }
+    }
+    return getMarkAsDoNotDisturbMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateAvailabilityRequest, com.google.chat.v1.Availability>
+      getUpdateAvailabilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAvailability",
+      requestType = com.google.chat.v1.UpdateAvailabilityRequest.class,
+      responseType = com.google.chat.v1.Availability.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateAvailabilityRequest, com.google.chat.v1.Availability>
+      getUpdateAvailabilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.UpdateAvailabilityRequest, com.google.chat.v1.Availability>
+        getUpdateAvailabilityMethod;
+    if ((getUpdateAvailabilityMethod = ChatServiceGrpc.getUpdateAvailabilityMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateAvailabilityMethod = ChatServiceGrpc.getUpdateAvailabilityMethod) == null) {
+          ChatServiceGrpc.getUpdateAvailabilityMethod =
+              getUpdateAvailabilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateAvailabilityRequest,
+                          com.google.chat.v1.Availability>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAvailability"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateAvailabilityRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.Availability.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("UpdateAvailability"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAvailabilityMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2472,6 +2718,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    default void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFindGroupChatsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -2836,6 +3111,118 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetThreadReadStateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns availability information for a human user in Google Chat. For
+     * example, this can be used to check if a user is online or away, or to
+     * retrieve their custom status message.
+     * This method only retrieves the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability.readonly`
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    default void getAvailability(
+        com.google.chat.v1.GetAvailabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAvailabilityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `ACTIVE` in Google Chat.
+     * Sets the user's availability state to `ACTIVE`. The `ACTIVE` state
+     * lasts until the specified expiration, at which point the user's state
+     * becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE`
+     * state duration may extend beyond the provided expiration.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    default void markAsActive(
+        com.google.chat.v1.MarkAsActiveRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMarkAsActiveMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `AWAY` in Google Chat.
+     * Sets the user's state to away and is not affected by the user's
+     * activity.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    default void markAsAway(
+        com.google.chat.v1.MarkAsAwayRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMarkAsAwayMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `DO_NOT_DISTURB` in Google Chat.
+     * Sets a user's availability state to `DO_NOT_DISTURB` until a specified
+     * expiration time.
+     * When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    default void markAsDoNotDisturb(
+        com.google.chat.v1.MarkAsDoNotDisturbRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMarkAsDoNotDisturbMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates availability information for a human user. Only the `custom_status`
+     * field can be updated through this method.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    default void updateAvailability(
+        com.google.chat.v1.UpdateAvailabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAvailabilityMethod(), responseObserver);
     }
 
     /**
@@ -3861,6 +4248,37 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -4249,6 +4667,127 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetThreadReadStateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns availability information for a human user in Google Chat. For
+     * example, this can be used to check if a user is online or away, or to
+     * retrieve their custom status message.
+     * This method only retrieves the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability.readonly`
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public void getAvailability(
+        com.google.chat.v1.GetAvailabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAvailabilityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `ACTIVE` in Google Chat.
+     * Sets the user's availability state to `ACTIVE`. The `ACTIVE` state
+     * lasts until the specified expiration, at which point the user's state
+     * becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE`
+     * state duration may extend beyond the provided expiration.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public void markAsActive(
+        com.google.chat.v1.MarkAsActiveRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMarkAsActiveMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `AWAY` in Google Chat.
+     * Sets the user's state to away and is not affected by the user's
+     * activity.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public void markAsAway(
+        com.google.chat.v1.MarkAsAwayRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMarkAsAwayMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `DO_NOT_DISTURB` in Google Chat.
+     * Sets a user's availability state to `DO_NOT_DISTURB` until a specified
+     * expiration time.
+     * When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public void markAsDoNotDisturb(
+        com.google.chat.v1.MarkAsDoNotDisturbRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMarkAsDoNotDisturbMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates availability information for a human user. Only the `custom_status`
+     * field can be updated through this method.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public void updateAvailability(
+        com.google.chat.v1.UpdateAvailabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.Availability> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAvailabilityMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5235,6 +5774,34 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -5586,6 +6153,114 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.GetThreadReadStateRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetThreadReadStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns availability information for a human user in Google Chat. For
+     * example, this can be used to check if a user is online or away, or to
+     * retrieve their custom status message.
+     * This method only retrieves the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability.readonly`
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability getAvailability(
+        com.google.chat.v1.GetAvailabilityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAvailabilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `ACTIVE` in Google Chat.
+     * Sets the user's availability state to `ACTIVE`. The `ACTIVE` state
+     * lasts until the specified expiration, at which point the user's state
+     * becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE`
+     * state duration may extend beyond the provided expiration.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsActive(
+        com.google.chat.v1.MarkAsActiveRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMarkAsActiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `AWAY` in Google Chat.
+     * Sets the user's state to away and is not affected by the user's
+     * activity.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsAway(com.google.chat.v1.MarkAsAwayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMarkAsAwayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `DO_NOT_DISTURB` in Google Chat.
+     * Sets a user's availability state to `DO_NOT_DISTURB` until a specified
+     * expiration time.
+     * When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsDoNotDisturb(
+        com.google.chat.v1.MarkAsDoNotDisturbRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getMarkAsDoNotDisturbMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates availability information for a human user. Only the `custom_status`
+     * field can be updated through this method.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability updateAvailability(
+        com.google.chat.v1.UpdateAvailabilityRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAvailabilityMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6533,6 +7208,34 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -6884,6 +7587,114 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.GetThreadReadStateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetThreadReadStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns availability information for a human user in Google Chat. For
+     * example, this can be used to check if a user is online or away, or to
+     * retrieve their custom status message.
+     * This method only retrieves the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability.readonly`
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability getAvailability(
+        com.google.chat.v1.GetAvailabilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAvailabilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `ACTIVE` in Google Chat.
+     * Sets the user's availability state to `ACTIVE`. The `ACTIVE` state
+     * lasts until the specified expiration, at which point the user's state
+     * becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE`
+     * state duration may extend beyond the provided expiration.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsActive(
+        com.google.chat.v1.MarkAsActiveRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMarkAsActiveMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `AWAY` in Google Chat.
+     * Sets the user's state to away and is not affected by the user's
+     * activity.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsAway(
+        com.google.chat.v1.MarkAsAwayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMarkAsAwayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `DO_NOT_DISTURB` in Google Chat.
+     * Sets a user's availability state to `DO_NOT_DISTURB` until a specified
+     * expiration time.
+     * When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability markAsDoNotDisturb(
+        com.google.chat.v1.MarkAsDoNotDisturbRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMarkAsDoNotDisturbMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates availability information for a human user. Only the `custom_status`
+     * field can be updated through this method.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.chat.v1.Availability updateAvailability(
+        com.google.chat.v1.UpdateAvailabilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAvailabilityMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7840,6 +8651,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.FindGroupChatsResponse>
+        findGroupChats(com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -8199,6 +9039,114 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns availability information for a human user in Google Chat. For
+     * example, this can be used to check if a user is online or away, or to
+     * retrieve their custom status message.
+     * This method only retrieves the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability.readonly`
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Availability>
+        getAvailability(com.google.chat.v1.GetAvailabilityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAvailabilityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `ACTIVE` in Google Chat.
+     * Sets the user's availability state to `ACTIVE`. The `ACTIVE` state
+     * lasts until the specified expiration, at which point the user's state
+     * becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE`
+     * state duration may extend beyond the provided expiration.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Availability>
+        markAsActive(com.google.chat.v1.MarkAsActiveRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMarkAsActiveMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `AWAY` in Google Chat.
+     * Sets the user's state to away and is not affected by the user's
+     * activity.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Availability>
+        markAsAway(com.google.chat.v1.MarkAsAwayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMarkAsAwayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Marks user as `DO_NOT_DISTURB` in Google Chat.
+     * Sets a user's availability state to `DO_NOT_DISTURB` until a specified
+     * expiration time.
+     * When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Availability>
+        markAsDoNotDisturb(com.google.chat.v1.MarkAsDoNotDisturbRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMarkAsDoNotDisturbMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates availability information for a human user. Only the `custom_status`
+     * field can be updated through this method.
+     * This method only updates the authenticated user's availability.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.availability`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.Availability>
+        updateAvailability(com.google.chat.v1.UpdateAvailabilityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAvailabilityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns an event from a Google Chat space. The [event
      * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
      * contains the most recent version of the resource that changed. For example,
@@ -8510,30 +9458,36 @@ public final class ChatServiceGrpc {
   private static final int METHODID_DELETE_SPACE = 15;
   private static final int METHODID_COMPLETE_IMPORT_SPACE = 16;
   private static final int METHODID_FIND_DIRECT_MESSAGE = 17;
-  private static final int METHODID_CREATE_MEMBERSHIP = 18;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 19;
-  private static final int METHODID_DELETE_MEMBERSHIP = 20;
-  private static final int METHODID_CREATE_REACTION = 21;
-  private static final int METHODID_LIST_REACTIONS = 22;
-  private static final int METHODID_DELETE_REACTION = 23;
-  private static final int METHODID_CREATE_CUSTOM_EMOJI = 24;
-  private static final int METHODID_GET_CUSTOM_EMOJI = 25;
-  private static final int METHODID_LIST_CUSTOM_EMOJIS = 26;
-  private static final int METHODID_DELETE_CUSTOM_EMOJI = 27;
-  private static final int METHODID_GET_SPACE_READ_STATE = 28;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 29;
-  private static final int METHODID_GET_THREAD_READ_STATE = 30;
-  private static final int METHODID_GET_SPACE_EVENT = 31;
-  private static final int METHODID_LIST_SPACE_EVENTS = 32;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 33;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 34;
-  private static final int METHODID_CREATE_SECTION = 35;
-  private static final int METHODID_DELETE_SECTION = 36;
-  private static final int METHODID_UPDATE_SECTION = 37;
-  private static final int METHODID_LIST_SECTIONS = 38;
-  private static final int METHODID_POSITION_SECTION = 39;
-  private static final int METHODID_LIST_SECTION_ITEMS = 40;
-  private static final int METHODID_MOVE_SECTION_ITEM = 41;
+  private static final int METHODID_FIND_GROUP_CHATS = 18;
+  private static final int METHODID_CREATE_MEMBERSHIP = 19;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 20;
+  private static final int METHODID_DELETE_MEMBERSHIP = 21;
+  private static final int METHODID_CREATE_REACTION = 22;
+  private static final int METHODID_LIST_REACTIONS = 23;
+  private static final int METHODID_DELETE_REACTION = 24;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 25;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 26;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 27;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 28;
+  private static final int METHODID_GET_SPACE_READ_STATE = 29;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 30;
+  private static final int METHODID_GET_THREAD_READ_STATE = 31;
+  private static final int METHODID_GET_AVAILABILITY = 32;
+  private static final int METHODID_MARK_AS_ACTIVE = 33;
+  private static final int METHODID_MARK_AS_AWAY = 34;
+  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 35;
+  private static final int METHODID_UPDATE_AVAILABILITY = 36;
+  private static final int METHODID_GET_SPACE_EVENT = 37;
+  private static final int METHODID_LIST_SPACE_EVENTS = 38;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 39;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 40;
+  private static final int METHODID_CREATE_SECTION = 41;
+  private static final int METHODID_DELETE_SECTION = 42;
+  private static final int METHODID_UPDATE_SECTION = 43;
+  private static final int METHODID_LIST_SECTIONS = 44;
+  private static final int METHODID_POSITION_SECTION = 45;
+  private static final int METHODID_LIST_SECTION_ITEMS = 46;
+  private static final int METHODID_MOVE_SECTION_ITEM = 47;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8648,6 +9602,12 @@ public final class ChatServiceGrpc {
               (com.google.chat.v1.FindDirectMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.Space>) responseObserver);
           break;
+        case METHODID_FIND_GROUP_CHATS:
+          serviceImpl.findGroupChats(
+              (com.google.chat.v1.FindGroupChatsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_MEMBERSHIP:
           serviceImpl.createMembership(
               (com.google.chat.v1.CreateMembershipRequest) request,
@@ -8714,6 +9674,31 @@ public final class ChatServiceGrpc {
           serviceImpl.getThreadReadState(
               (com.google.chat.v1.GetThreadReadStateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState>) responseObserver);
+          break;
+        case METHODID_GET_AVAILABILITY:
+          serviceImpl.getAvailability(
+              (com.google.chat.v1.GetAvailabilityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Availability>) responseObserver);
+          break;
+        case METHODID_MARK_AS_ACTIVE:
+          serviceImpl.markAsActive(
+              (com.google.chat.v1.MarkAsActiveRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Availability>) responseObserver);
+          break;
+        case METHODID_MARK_AS_AWAY:
+          serviceImpl.markAsAway(
+              (com.google.chat.v1.MarkAsAwayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Availability>) responseObserver);
+          break;
+        case METHODID_MARK_AS_DO_NOT_DISTURB:
+          serviceImpl.markAsDoNotDisturb(
+              (com.google.chat.v1.MarkAsDoNotDisturbRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Availability>) responseObserver);
+          break;
+        case METHODID_UPDATE_AVAILABILITY:
+          serviceImpl.updateAvailability(
+              (com.google.chat.v1.UpdateAvailabilityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.Availability>) responseObserver);
           break;
         case METHODID_GET_SPACE_EVENT:
           serviceImpl.getSpaceEvent(
@@ -8903,6 +9888,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.FindDirectMessageRequest, com.google.chat.v1.Space>(
                     service, METHODID_FIND_DIRECT_MESSAGE)))
         .addMethod(
+            getFindGroupChatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.FindGroupChatsRequest,
+                    com.google.chat.v1.FindGroupChatsResponse>(service, METHODID_FIND_GROUP_CHATS)))
+        .addMethod(
             getCreateMembershipMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -8981,6 +9972,36 @@ public final class ChatServiceGrpc {
                 new MethodHandlers<
                     com.google.chat.v1.GetThreadReadStateRequest,
                     com.google.chat.v1.ThreadReadState>(service, METHODID_GET_THREAD_READ_STATE)))
+        .addMethod(
+            getGetAvailabilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.GetAvailabilityRequest, com.google.chat.v1.Availability>(
+                    service, METHODID_GET_AVAILABILITY)))
+        .addMethod(
+            getMarkAsActiveMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.MarkAsActiveRequest, com.google.chat.v1.Availability>(
+                    service, METHODID_MARK_AS_ACTIVE)))
+        .addMethod(
+            getMarkAsAwayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.MarkAsAwayRequest, com.google.chat.v1.Availability>(
+                    service, METHODID_MARK_AS_AWAY)))
+        .addMethod(
+            getMarkAsDoNotDisturbMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.MarkAsDoNotDisturbRequest, com.google.chat.v1.Availability>(
+                    service, METHODID_MARK_AS_DO_NOT_DISTURB)))
+        .addMethod(
+            getUpdateAvailabilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateAvailabilityRequest, com.google.chat.v1.Availability>(
+                    service, METHODID_UPDATE_AVAILABILITY)))
         .addMethod(
             getGetSpaceEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -9122,6 +10143,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getDeleteSpaceMethod())
                       .addMethod(getCompleteImportSpaceMethod())
                       .addMethod(getFindDirectMessageMethod())
+                      .addMethod(getFindGroupChatsMethod())
                       .addMethod(getCreateMembershipMethod())
                       .addMethod(getUpdateMembershipMethod())
                       .addMethod(getDeleteMembershipMethod())
@@ -9135,6 +10157,11 @@ public final class ChatServiceGrpc {
                       .addMethod(getGetSpaceReadStateMethod())
                       .addMethod(getUpdateSpaceReadStateMethod())
                       .addMethod(getGetThreadReadStateMethod())
+                      .addMethod(getGetAvailabilityMethod())
+                      .addMethod(getMarkAsActiveMethod())
+                      .addMethod(getMarkAsAwayMethod())
+                      .addMethod(getMarkAsDoNotDisturbMethod())
+                      .addMethod(getUpdateAvailabilityMethod())
                       .addMethod(getGetSpaceEventMethod())
                       .addMethod(getListSpaceEventsMethod())
                       .addMethod(getGetSpaceNotificationSettingMethod())

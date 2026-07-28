@@ -82,6 +82,7 @@ public interface StorageRpc extends ServiceRpc {
     INCLUDE_TRAILING_DELIMITER("includeTrailingDelimiter"),
     X_UPLOAD_CONTENT_LENGTH("x-upload-content-length"),
     OBJECT_FILTER("objectFilter"),
+    DELETE_SOURCE_OBJECTS("deleteSourceObjects"),
     /**
      * An {@link com.google.common.collect.ImmutableMap ImmutableMap&lt;String, String>} of values
      * which will be set as additional headers on the request.

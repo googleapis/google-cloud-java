@@ -139,6 +139,48 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getGoogleGroupBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    boolean hasServiceAccount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    java.lang.String getServiceAccount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    com.google.protobuf.ByteString getServiceAccountBytes();
+
     com.google.cloud.dataplex.v1.DataProduct.Principal.TypeCase getTypeCase();
   }
 
@@ -173,7 +215,9 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       super(builder);
     }
 
-    private Principal() {}
+    private Principal() {
+      serviceAccount_ = "";
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dataplex.v1.DataProductsProto
@@ -190,6 +234,7 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dataplex.v1.DataProduct.Principal.Builder.class);
     }
 
+    private int bitField0_;
     private int typeCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -313,6 +358,78 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email of the producer service account, as per
+     * https://cloud.google.com/iam/docs/principals-overview#service-account.
+     * </pre>
+     *
+     * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -330,6 +447,9 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       if (typeCase_ == 1) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, type_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, serviceAccount_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -341,6 +461,9 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (typeCase_ == 1) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, type_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, serviceAccount_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -358,6 +481,10 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       com.google.cloud.dataplex.v1.DataProduct.Principal other =
           (com.google.cloud.dataplex.v1.DataProduct.Principal) obj;
 
+      if (hasServiceAccount() != other.hasServiceAccount()) return false;
+      if (hasServiceAccount()) {
+        if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+      }
       if (!getTypeCase().equals(other.getTypeCase())) return false;
       switch (typeCase_) {
         case 1:
@@ -377,6 +504,10 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasServiceAccount()) {
+        hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceAccount().hashCode();
+      }
       switch (typeCase_) {
         case 1:
           hash = (37 * hash) + GOOGLE_GROUP_FIELD_NUMBER;
@@ -526,6 +657,7 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        serviceAccount_ = "";
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -565,6 +697,12 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
 
       private void buildPartial0(com.google.cloud.dataplex.v1.DataProduct.Principal result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceAccount_ = serviceAccount_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       private void buildPartialOneofs(com.google.cloud.dataplex.v1.DataProduct.Principal result) {
@@ -585,6 +723,11 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       public Builder mergeFrom(com.google.cloud.dataplex.v1.DataProduct.Principal other) {
         if (other == com.google.cloud.dataplex.v1.DataProduct.Principal.getDefaultInstance())
           return this;
+        if (other.hasServiceAccount()) {
+          serviceAccount_ = other.serviceAccount_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         switch (other.getTypeCase()) {
           case GOOGLE_GROUP:
             {
@@ -631,6 +774,12 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
                   type_ = s;
                   break;
                 } // case 10
+              case 18:
+                {
+                  serviceAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -805,6 +954,138 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         typeCase_ = 1;
         type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceAccount_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the serviceAccount field is set.
+       */
+      public boolean hasServiceAccount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The serviceAccount.
+       */
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      public com.google.protobuf.ByteString getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The serviceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAccount() {
+        serviceAccount_ = getDefaultInstance().getServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email of the producer service account, as per
+       * https://cloud.google.com/iam/docs/principals-overview#service-account.
+       * </pre>
+       *
+       * <code>optional string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for serviceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2282,6 +2563,784 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface AccessApprovalConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the approverEmails.
+     */
+    java.util.List<java.lang.String> getApproverEmailsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of approverEmails.
+     */
+    int getApproverEmailsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The approverEmails at the given index.
+     */
+    java.lang.String getApproverEmails(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the approverEmails at the given index.
+     */
+    com.google.protobuf.ByteString getApproverEmailsBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for access approval for the data product.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig}
+   */
+  public static final class AccessApprovalConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)
+      AccessApprovalConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AccessApprovalConfig");
+    }
+
+    // Use AccessApprovalConfig.newBuilder() to construct.
+    private AccessApprovalConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccessApprovalConfig() {
+      approverEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataProductsProto
+          .internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataProductsProto
+          .internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.class,
+              com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder.class);
+    }
+
+    public static final int APPROVER_EMAILS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList approverEmails_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the approverEmails.
+     */
+    public com.google.protobuf.ProtocolStringList getApproverEmailsList() {
+      return approverEmails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of approverEmails.
+     */
+    public int getApproverEmailsCount() {
+      return approverEmails_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The approverEmails at the given index.
+     */
+    public java.lang.String getApproverEmails(int index) {
+      return approverEmails_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the email addresses of users who are potential
+     * approvers and are notified when an access request is made for the data
+     * product. The maximum number of emails allowed is 10.
+     * </pre>
+     *
+     * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the approverEmails at the given index.
+     */
+    public com.google.protobuf.ByteString getApproverEmailsBytes(int index) {
+      return approverEmails_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < approverEmails_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, approverEmails_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < approverEmails_.size(); i++) {
+          dataSize += computeStringSizeNoTag(approverEmails_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getApproverEmailsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig other =
+          (com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig) obj;
+
+      if (!getApproverEmailsList().equals(other.getApproverEmailsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getApproverEmailsCount() > 0) {
+        hash = (37 * hash) + APPROVER_EMAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getApproverEmailsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for access approval for the data product.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataProductsProto
+            .internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataProductsProto
+            .internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.class,
+                com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        approverEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataProductsProto
+            .internal_static_google_cloud_dataplex_v1_DataProduct_AccessApprovalConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig build() {
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig buildPartial() {
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig result =
+            new com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          approverEmails_.makeImmutable();
+          result.approverEmails_ = approverEmails_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig) {
+          return mergeFrom((com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance())
+          return this;
+        if (!other.approverEmails_.isEmpty()) {
+          if (approverEmails_.isEmpty()) {
+            approverEmails_ = other.approverEmails_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureApproverEmailsIsMutable();
+            approverEmails_.addAll(other.approverEmails_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureApproverEmailsIsMutable();
+                  approverEmails_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList approverEmails_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureApproverEmailsIsMutable() {
+        if (!approverEmails_.isModifiable()) {
+          approverEmails_ = new com.google.protobuf.LazyStringArrayList(approverEmails_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the approverEmails.
+       */
+      public com.google.protobuf.ProtocolStringList getApproverEmailsList() {
+        approverEmails_.makeImmutable();
+        return approverEmails_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of approverEmails.
+       */
+      public int getApproverEmailsCount() {
+        return approverEmails_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The approverEmails at the given index.
+       */
+      public java.lang.String getApproverEmails(int index) {
+        return approverEmails_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the approverEmails at the given index.
+       */
+      public com.google.protobuf.ByteString getApproverEmailsBytes(int index) {
+        return approverEmails_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The approverEmails to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApproverEmails(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureApproverEmailsIsMutable();
+        approverEmails_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The approverEmails to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApproverEmails(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureApproverEmailsIsMutable();
+        approverEmails_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The approverEmails to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllApproverEmails(java.lang.Iterable<java.lang.String> values) {
+        ensureApproverEmailsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, approverEmails_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearApproverEmails() {
+        approverEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the email addresses of users who are potential
+       * approvers and are notified when an access request is made for the data
+       * product. The maximum number of emails allowed is 10.
+       * </pre>
+       *
+       * <code>repeated string approver_emails = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the approverEmails to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApproverEmailsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureApproverEmailsIsMutable();
+        approverEmails_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig)
+    private static final com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccessApprovalConfig> PARSER =
+        new com.google.protobuf.AbstractParser<AccessApprovalConfig>() {
+          @java.lang.Override
+          public AccessApprovalConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccessApprovalConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccessApprovalConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3115,6 +4174,66 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int ACCESS_APPROVAL_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig accessApprovalConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessApprovalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessApprovalConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessApprovalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig getAccessApprovalConfig() {
+    return accessApprovalConfig_ == null
+        ? com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance()
+        : accessApprovalConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for access approval for the data product.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder
+      getAccessApprovalConfigOrBuilder() {
+    return accessApprovalConfig_ == null
+        ? com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance()
+        : accessApprovalConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3163,6 +4282,9 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetAccessGroups(), AccessGroupsDefaultEntryHolder.defaultEntry, 14);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getAccessApprovalConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3229,6 +4351,10 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, accessGroups__);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(15, getAccessApprovalConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3262,6 +4388,10 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
     if (!getOwnerEmailsList().equals(other.getOwnerEmailsList())) return false;
     if (getAssetCount() != other.getAssetCount()) return false;
     if (!internalGetAccessGroups().equals(other.internalGetAccessGroups())) return false;
+    if (hasAccessApprovalConfig() != other.hasAccessApprovalConfig()) return false;
+    if (hasAccessApprovalConfig()) {
+      if (!getAccessApprovalConfig().equals(other.getAccessApprovalConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3306,6 +4436,10 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
     if (!internalGetAccessGroups().getMap().isEmpty()) {
       hash = (37 * hash) + ACCESS_GROUPS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAccessGroups().hashCode();
+    }
+    if (hasAccessApprovalConfig()) {
+      hash = (37 * hash) + ACCESS_APPROVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessApprovalConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3478,6 +4612,7 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetAccessApprovalConfigFieldBuilder();
       }
     }
 
@@ -3505,6 +4640,11 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       ownerEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
       assetCount_ = 0;
       internalGetMutableAccessGroups().clear();
+      accessApprovalConfig_ = null;
+      if (accessApprovalConfigBuilder_ != null) {
+        accessApprovalConfigBuilder_.dispose();
+        accessApprovalConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -3583,6 +4723,13 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
         result.accessGroups_ =
             internalGetAccessGroups().build(AccessGroupsDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.accessApprovalConfig_ =
+            accessApprovalConfigBuilder_ == null
+                ? accessApprovalConfig_
+                : accessApprovalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3649,6 +4796,9 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableAccessGroups().mergeFrom(other.internalGetAccessGroups());
       bitField0_ |= 0x00000800;
+      if (other.hasAccessApprovalConfig()) {
+        mergeAccessApprovalConfig(other.getAccessApprovalConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3764,6 +4914,13 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    internalGetAccessApprovalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5739,6 +6896,225 @@ public final class DataProduct extends com.google.protobuf.GeneratedMessage
         builderMap.put(key, entry);
       }
       return (com.google.cloud.dataplex.v1.DataProduct.AccessGroup.Builder) entry;
+    }
+
+    private com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig accessApprovalConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig,
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder,
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder>
+        accessApprovalConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accessApprovalConfig field is set.
+     */
+    public boolean hasAccessApprovalConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accessApprovalConfig.
+     */
+    public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig getAccessApprovalConfig() {
+      if (accessApprovalConfigBuilder_ == null) {
+        return accessApprovalConfig_ == null
+            ? com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance()
+            : accessApprovalConfig_;
+      } else {
+        return accessApprovalConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccessApprovalConfig(
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig value) {
+      if (accessApprovalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessApprovalConfig_ = value;
+      } else {
+        accessApprovalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccessApprovalConfig(
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder builderForValue) {
+      if (accessApprovalConfigBuilder_ == null) {
+        accessApprovalConfig_ = builderForValue.build();
+      } else {
+        accessApprovalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAccessApprovalConfig(
+        com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig value) {
+      if (accessApprovalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && accessApprovalConfig_ != null
+            && accessApprovalConfig_
+                != com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig
+                    .getDefaultInstance()) {
+          getAccessApprovalConfigBuilder().mergeFrom(value);
+        } else {
+          accessApprovalConfig_ = value;
+        }
+      } else {
+        accessApprovalConfigBuilder_.mergeFrom(value);
+      }
+      if (accessApprovalConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAccessApprovalConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      accessApprovalConfig_ = null;
+      if (accessApprovalConfigBuilder_ != null) {
+        accessApprovalConfigBuilder_.dispose();
+        accessApprovalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder
+        getAccessApprovalConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetAccessApprovalConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder
+        getAccessApprovalConfigOrBuilder() {
+      if (accessApprovalConfigBuilder_ != null) {
+        return accessApprovalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return accessApprovalConfig_ == null
+            ? com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.getDefaultInstance()
+            : accessApprovalConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for access approval for the data product.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig access_approval_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig,
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder,
+            com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder>
+        internalGetAccessApprovalConfigFieldBuilder() {
+      if (accessApprovalConfigBuilder_ == null) {
+        accessApprovalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig,
+                com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfig.Builder,
+                com.google.cloud.dataplex.v1.DataProduct.AccessApprovalConfigOrBuilder>(
+                getAccessApprovalConfig(), getParentForChildren(), isClean());
+        accessApprovalConfig_ = null;
+      }
+      return accessApprovalConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataProduct)

@@ -70,6 +70,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.UsageMetrics.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MILLI_DCU_SECONDS_FIELD_NUMBER = 1;
   private long milliDcuSeconds_ = 0L;
 
@@ -119,8 +120,8 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-   * [Dataproc Serverless pricing]
+   * Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+   * `seconds`) (see [Dataproc Serverless pricing]
    * (https://cloud.google.com/dataproc-serverless/pricing)).
    * </pre>
    *
@@ -142,7 +143,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Accelerator type being used, if any
+   * Optional. [DEPRECATED] Accelerator type being used, if any
    * </pre>
    *
    * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -166,7 +167,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Accelerator type being used, if any
+   * Optional. [DEPRECATED] Accelerator type being used, if any
    * </pre>
    *
    * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -184,6 +185,58 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp of the usage metrics.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -212,6 +265,9 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(acceleratorType_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, acceleratorType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -233,6 +289,9 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(acceleratorType_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, acceleratorType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -253,6 +312,10 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     if (getShuffleStorageGbSeconds() != other.getShuffleStorageGbSeconds()) return false;
     if (getMilliAcceleratorSeconds() != other.getMilliAcceleratorSeconds()) return false;
     if (!getAcceleratorType().equals(other.getAcceleratorType())) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -272,6 +335,10 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMilliAcceleratorSeconds());
     hash = (37 * hash) + ACCELERATOR_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getAcceleratorType().hashCode();
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -402,10 +469,19 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dataproc.v1.UsageMetrics.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUpdateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -416,6 +492,11 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
       shuffleStorageGbSeconds_ = 0L;
       milliAcceleratorSeconds_ = 0L;
       acceleratorType_ = "";
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -464,6 +545,12 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.acceleratorType_ = acceleratorType_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -491,6 +578,9 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
         acceleratorType_ = other.acceleratorType_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -542,6 +632,13 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -691,8 +788,8 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-     * [Dataproc Serverless pricing]
+     * Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+     * `seconds`) (see [Dataproc Serverless pricing]
      * (https://cloud.google.com/dataproc-serverless/pricing)).
      * </pre>
      *
@@ -709,8 +806,8 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-     * [Dataproc Serverless pricing]
+     * Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+     * `seconds`) (see [Dataproc Serverless pricing]
      * (https://cloud.google.com/dataproc-serverless/pricing)).
      * </pre>
      *
@@ -731,8 +828,8 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator usage in (`milliAccelerator` x `seconds`) (see
-     * [Dataproc Serverless pricing]
+     * Optional. [DEPRECATED] Accelerator usage in (`milliAccelerator` x
+     * `seconds`) (see [Dataproc Serverless pricing]
      * (https://cloud.google.com/dataproc-serverless/pricing)).
      * </pre>
      *
@@ -753,7 +850,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator type being used, if any
+     * Optional. [DEPRECATED] Accelerator type being used, if any
      * </pre>
      *
      * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -776,7 +873,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator type being used, if any
+     * Optional. [DEPRECATED] Accelerator type being used, if any
      * </pre>
      *
      * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -799,7 +896,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator type being used, if any
+     * Optional. [DEPRECATED] Accelerator type being used, if any
      * </pre>
      *
      * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -821,7 +918,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator type being used, if any
+     * Optional. [DEPRECATED] Accelerator type being used, if any
      * </pre>
      *
      * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -839,7 +936,7 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Accelerator type being used, if any
+     * Optional. [DEPRECATED] Accelerator type being used, if any
      * </pre>
      *
      * <code>string accelerator_type = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -856,6 +953,209 @@ public final class UsageMetrics extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000008;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp of the usage metrics.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.UsageMetrics)

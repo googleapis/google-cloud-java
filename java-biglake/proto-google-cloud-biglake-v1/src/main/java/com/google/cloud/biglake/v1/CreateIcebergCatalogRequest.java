@@ -54,6 +54,7 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
   private CreateIcebergCatalogRequest() {
     parent_ = "";
     icebergCatalogId_ = "";
+    primaryLocation_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -259,6 +260,85 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
         : icebergCatalog_;
   }
 
+  public static final int PRIMARY_LOCATION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryLocation_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary location where the catalog metadata will be stored.
+   *
+   * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+   * is not specified, then the region is inferred from the bucket's region
+   * (`default_location` bucket for BigLake catalogs). If specified, the region
+   * must be in jurisdiction (near the `default_location` bucket's region and
+   * the `restricted_locations` buckets' regions for BigLake catalogs).
+   *
+   * For federated catalogs, this must be specified and be a Lakehouse-supported
+   * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+   * should be close to the remote catalog's location for the best
+   * performance and cost.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The primaryLocation.
+   */
+  @java.lang.Override
+  public java.lang.String getPrimaryLocation() {
+    java.lang.Object ref = primaryLocation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      primaryLocation_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The primary location where the catalog metadata will be stored.
+   *
+   * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+   * is not specified, then the region is inferred from the bucket's region
+   * (`default_location` bucket for BigLake catalogs). If specified, the region
+   * must be in jurisdiction (near the `default_location` bucket's region and
+   * the `restricted_locations` buckets' regions for BigLake catalogs).
+   *
+   * For federated catalogs, this must be specified and be a Lakehouse-supported
+   * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+   * should be close to the remote catalog's location for the best
+   * performance and cost.
+   * </pre>
+   *
+   * <code>
+   * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for primaryLocation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrimaryLocationBytes() {
+    java.lang.Object ref = primaryLocation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      primaryLocation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -282,6 +362,9 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(icebergCatalogId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, icebergCatalogId_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(primaryLocation_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, primaryLocation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -299,6 +382,9 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(icebergCatalogId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, icebergCatalogId_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(primaryLocation_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, primaryLocation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -322,6 +408,7 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
     if (hasIcebergCatalog()) {
       if (!getIcebergCatalog().equals(other.getIcebergCatalog())) return false;
     }
+    if (!getPrimaryLocation().equals(other.getPrimaryLocation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -341,6 +428,8 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
       hash = (37 * hash) + ICEBERG_CATALOG_FIELD_NUMBER;
       hash = (53 * hash) + getIcebergCatalog().hashCode();
     }
+    hash = (37 * hash) + PRIMARY_LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getPrimaryLocation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -498,6 +587,7 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
         icebergCatalogBuilder_.dispose();
         icebergCatalogBuilder_ = null;
       }
+      primaryLocation_ = "";
       return this;
     }
 
@@ -546,6 +636,9 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
             icebergCatalogBuilder_ == null ? icebergCatalog_ : icebergCatalogBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.primaryLocation_ = primaryLocation_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -574,6 +667,11 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
       }
       if (other.hasIcebergCatalog()) {
         mergeIcebergCatalog(other.getIcebergCatalog());
+      }
+      if (!other.getPrimaryLocation().isEmpty()) {
+        primaryLocation_ = other.primaryLocation_;
+        bitField0_ |= 0x00000008;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -620,6 +718,12 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                primaryLocation_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1133,6 +1237,182 @@ public final class CreateIcebergCatalogRequest extends com.google.protobuf.Gener
         icebergCatalog_ = null;
       }
       return icebergCatalogBuilder_;
+    }
+
+    private java.lang.Object primaryLocation_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary location where the catalog metadata will be stored.
+     *
+     * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+     * is not specified, then the region is inferred from the bucket's region
+     * (`default_location` bucket for BigLake catalogs). If specified, the region
+     * must be in jurisdiction (near the `default_location` bucket's region and
+     * the `restricted_locations` buckets' regions for BigLake catalogs).
+     *
+     * For federated catalogs, this must be specified and be a Lakehouse-supported
+     * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+     * should be close to the remote catalog's location for the best
+     * performance and cost.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The primaryLocation.
+     */
+    public java.lang.String getPrimaryLocation() {
+      java.lang.Object ref = primaryLocation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        primaryLocation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary location where the catalog metadata will be stored.
+     *
+     * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+     * is not specified, then the region is inferred from the bucket's region
+     * (`default_location` bucket for BigLake catalogs). If specified, the region
+     * must be in jurisdiction (near the `default_location` bucket's region and
+     * the `restricted_locations` buckets' regions for BigLake catalogs).
+     *
+     * For federated catalogs, this must be specified and be a Lakehouse-supported
+     * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+     * should be close to the remote catalog's location for the best
+     * performance and cost.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for primaryLocation.
+     */
+    public com.google.protobuf.ByteString getPrimaryLocationBytes() {
+      java.lang.Object ref = primaryLocation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        primaryLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary location where the catalog metadata will be stored.
+     *
+     * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+     * is not specified, then the region is inferred from the bucket's region
+     * (`default_location` bucket for BigLake catalogs). If specified, the region
+     * must be in jurisdiction (near the `default_location` bucket's region and
+     * the `restricted_locations` buckets' regions for BigLake catalogs).
+     *
+     * For federated catalogs, this must be specified and be a Lakehouse-supported
+     * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+     * should be close to the remote catalog's location for the best
+     * performance and cost.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The primaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      primaryLocation_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary location where the catalog metadata will be stored.
+     *
+     * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+     * is not specified, then the region is inferred from the bucket's region
+     * (`default_location` bucket for BigLake catalogs). If specified, the region
+     * must be in jurisdiction (near the `default_location` bucket's region and
+     * the `restricted_locations` buckets' regions for BigLake catalogs).
+     *
+     * For federated catalogs, this must be specified and be a Lakehouse-supported
+     * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+     * should be close to the remote catalog's location for the best
+     * performance and cost.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrimaryLocation() {
+      primaryLocation_ = getDefaultInstance().getPrimaryLocation();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The primary location where the catalog metadata will be stored.
+     *
+     * For Google Cloud Storage bucket catalogs and BigLake catalogs, if this
+     * is not specified, then the region is inferred from the bucket's region
+     * (`default_location` bucket for BigLake catalogs). If specified, the region
+     * must be in jurisdiction (near the `default_location` bucket's region and
+     * the `restricted_locations` buckets' regions for BigLake catalogs).
+     *
+     * For federated catalogs, this must be specified and be a Lakehouse-supported
+     * location (https://docs.cloud.google.com/lakehouse/docs/locations). It
+     * should be close to the remote catalog's location for the best
+     * performance and cost.
+     * </pre>
+     *
+     * <code>
+     * string primary_location = 4 [json_name = "primary_location", (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for primaryLocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrimaryLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      primaryLocation_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.biglake.v1.CreateIcebergCatalogRequest)

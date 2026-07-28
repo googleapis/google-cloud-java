@@ -21,8 +21,12 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.aiplatform.v1beta1.AutoraterConfig;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
+import com.google.cloud.aiplatform.v1beta1.EvaluationInstance;
 import com.google.cloud.aiplatform.v1beta1.EvaluationServiceClient;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
+import com.google.cloud.aiplatform.v1beta1.Metric;
+import com.google.cloud.aiplatform.v1beta1.MetricSource;
+import java.util.ArrayList;
 
 public class AsyncEvaluateInstances {
 
@@ -40,6 +44,9 @@ public class AsyncEvaluateInstances {
       EvaluateInstancesRequest request =
           EvaluateInstancesRequest.newBuilder()
               .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllMetrics(new ArrayList<Metric>())
+              .addAllMetricSources(new ArrayList<MetricSource>())
+              .setInstance(EvaluationInstance.newBuilder().build())
               .setAutoraterConfig(AutoraterConfig.newBuilder().build())
               .build();
       ApiFuture<EvaluateInstancesResponse> future =

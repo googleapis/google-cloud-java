@@ -57,6 +57,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     additionalNodeNetworkConfigs_ = java.util.Collections.emptyList();
     additionalPodNetworkConfigs_ = java.util.Collections.emptyList();
     subnetwork_ = "";
+    acceleratorNetworkProfile_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1184,7 +1185,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -1212,7 +1213,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -1242,7 +1243,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * [PRIVATE FIELD]
-   * Pod CIDR size overprovisioning config for the nodepool.
+   * Pod CIDR size overprovisioning config for the node pool.
    *
    * Pod CIDR size per node depends on max_pods_per_node. By default, the value
    * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -1491,10 +1492,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
    * If the cluster is associated with multiple subnetworks, the subnetwork can
    * be either:
-   * 1. A user supplied subnetwork name/full path during node pool creation.
-   * Example1: my-subnet
-   * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-   * 2. A subnetwork path picked based on the IP utilization during node pool
+   * - A user supplied subnetwork name during node pool creation (e.g.,
+   * `my-subnet`). The name must be between 1 and 63 characters long, start
+   * with a letter, contain only letters, numbers, and hyphens, and end with a
+   * letter or a number.
+   * - A full subnetwork path during node pool creation, such as
+   * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+   * - A subnetwork path picked based on the IP utilization during node pool
    * creation and is immutable.
    * </pre>
    *
@@ -1525,10 +1529,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
    * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
    * If the cluster is associated with multiple subnetworks, the subnetwork can
    * be either:
-   * 1. A user supplied subnetwork name/full path during node pool creation.
-   * Example1: my-subnet
-   * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-   * 2. A subnetwork path picked based on the IP utilization during node pool
+   * - A user supplied subnetwork name during node pool creation (e.g.,
+   * `my-subnet`). The name must be between 1 and 63 characters long, start
+   * with a letter, contain only letters, numbers, and hyphens, and end with a
+   * letter or a number.
+   * - A full subnetwork path during node pool creation, such as
+   * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+   * - A subnetwork path picked based on the IP utilization during node pool
    * creation and is immutable.
    * </pre>
    *
@@ -1616,6 +1623,67 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         : networkTierConfig_;
   }
 
+  public static final int ACCELERATOR_NETWORK_PROFILE_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorNetworkProfile_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The acceleratorNetworkProfile.
+   */
+  @java.lang.Override
+  public java.lang.String getAcceleratorNetworkProfile() {
+    java.lang.Object ref = acceleratorNetworkProfile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      acceleratorNetworkProfile_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for acceleratorNetworkProfile.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes() {
+    java.lang.Object ref = acceleratorNetworkProfile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      acceleratorNetworkProfile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1662,6 +1730,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(20, getNetworkTierConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(acceleratorNetworkProfile_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 21, acceleratorNetworkProfile_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1713,6 +1784,10 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getNetworkTierConfig());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(acceleratorNetworkProfile_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(21, acceleratorNetworkProfile_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1756,6 +1831,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
     if (hasNetworkTierConfig()) {
       if (!getNetworkTierConfig().equals(other.getNetworkTierConfig())) return false;
     }
+    if (!getAcceleratorNetworkProfile().equals(other.getAcceleratorNetworkProfile())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1804,6 +1880,8 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + NETWORK_TIER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkTierConfig().hashCode();
     }
+    hash = (37 * hash) + ACCELERATOR_NETWORK_PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + getAcceleratorNetworkProfile().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1992,6 +2070,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         networkTierConfigBuilder_.dispose();
         networkTierConfigBuilder_ = null;
       }
+      acceleratorNetworkProfile_ = "";
       return this;
     }
 
@@ -2092,6 +2171,9 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 ? networkTierConfig_
                 : networkTierConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.acceleratorNetworkProfile_ = acceleratorNetworkProfile_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2195,6 +2277,11 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasNetworkTierConfig()) {
         mergeNetworkTierConfig(other.getNetworkTierConfig());
+      }
+      if (!other.getAcceleratorNetworkProfile().isEmpty()) {
+        acceleratorNetworkProfile_ = other.acceleratorNetworkProfile_;
+        bitField0_ |= 0x00000800;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2309,6 +2396,12 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000400;
                 break;
               } // case 162
+            case 170:
+              {
+                acceleratorNetworkProfile_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3062,7 +3155,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3089,7 +3182,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3122,7 +3215,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3158,7 +3251,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3191,7 +3284,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3233,7 +3326,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3265,7 +3358,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3293,7 +3386,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -3325,7 +3418,7 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * [PRIVATE FIELD]
-     * Pod CIDR size overprovisioning config for the nodepool.
+     * Pod CIDR size overprovisioning config for the node pool.
      *
      * Pod CIDR size per node depends on max_pods_per_node. By default, the value
      * of max_pods_per_node is rounded off to next power of 2 and we then double
@@ -4307,10 +4400,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * If the cluster is associated with multiple subnetworks, the subnetwork can
      * be either:
-     * 1. A user supplied subnetwork name/full path during node pool creation.
-     * Example1: my-subnet
-     * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-     * 2. A subnetwork path picked based on the IP utilization during node pool
+     * - A user supplied subnetwork name during node pool creation (e.g.,
+     * `my-subnet`). The name must be between 1 and 63 characters long, start
+     * with a letter, contain only letters, numbers, and hyphens, and end with a
+     * letter or a number.
+     * - A full subnetwork path during node pool creation, such as
+     * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+     * - A subnetwork path picked based on the IP utilization during node pool
      * creation and is immutable.
      * </pre>
      *
@@ -4340,10 +4436,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * If the cluster is associated with multiple subnetworks, the subnetwork can
      * be either:
-     * 1. A user supplied subnetwork name/full path during node pool creation.
-     * Example1: my-subnet
-     * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-     * 2. A subnetwork path picked based on the IP utilization during node pool
+     * - A user supplied subnetwork name during node pool creation (e.g.,
+     * `my-subnet`). The name must be between 1 and 63 characters long, start
+     * with a letter, contain only letters, numbers, and hyphens, and end with a
+     * letter or a number.
+     * - A full subnetwork path during node pool creation, such as
+     * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+     * - A subnetwork path picked based on the IP utilization during node pool
      * creation and is immutable.
      * </pre>
      *
@@ -4373,10 +4472,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * If the cluster is associated with multiple subnetworks, the subnetwork can
      * be either:
-     * 1. A user supplied subnetwork name/full path during node pool creation.
-     * Example1: my-subnet
-     * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-     * 2. A subnetwork path picked based on the IP utilization during node pool
+     * - A user supplied subnetwork name during node pool creation (e.g.,
+     * `my-subnet`). The name must be between 1 and 63 characters long, start
+     * with a letter, contain only letters, numbers, and hyphens, and end with a
+     * letter or a number.
+     * - A full subnetwork path during node pool creation, such as
+     * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+     * - A subnetwork path picked based on the IP utilization during node pool
      * creation and is immutable.
      * </pre>
      *
@@ -4405,10 +4507,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * If the cluster is associated with multiple subnetworks, the subnetwork can
      * be either:
-     * 1. A user supplied subnetwork name/full path during node pool creation.
-     * Example1: my-subnet
-     * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-     * 2. A subnetwork path picked based on the IP utilization during node pool
+     * - A user supplied subnetwork name during node pool creation (e.g.,
+     * `my-subnet`). The name must be between 1 and 63 characters long, start
+     * with a letter, contain only letters, numbers, and hyphens, and end with a
+     * letter or a number.
+     * - A full subnetwork path during node pool creation, such as
+     * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+     * - A subnetwork path picked based on the IP utilization during node pool
      * creation and is immutable.
      * </pre>
      *
@@ -4433,10 +4538,13 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
      * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
      * If the cluster is associated with multiple subnetworks, the subnetwork can
      * be either:
-     * 1. A user supplied subnetwork name/full path during node pool creation.
-     * Example1: my-subnet
-     * Example2: projects/gke-project/regions/us-central1/subnetworks/my-subnet
-     * 2. A subnetwork path picked based on the IP utilization during node pool
+     * - A user supplied subnetwork name during node pool creation (e.g.,
+     * `my-subnet`). The name must be between 1 and 63 characters long, start
+     * with a letter, contain only letters, numbers, and hyphens, and end with a
+     * letter or a number.
+     * - A full subnetwork path during node pool creation, such as
+     * `projects/gke-project/regions/us-central1/subnetworks/my-subnet`
+     * - A subnetwork path picked based on the IP utilization during node pool
      * creation and is immutable.
      * </pre>
      *
@@ -4688,6 +4796,137 @@ public final class NodeNetworkConfig extends com.google.protobuf.GeneratedMessag
         networkTierConfig_ = null;
       }
       return networkTierConfigBuilder_;
+    }
+
+    private java.lang.Object acceleratorNetworkProfile_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The acceleratorNetworkProfile.
+     */
+    public java.lang.String getAcceleratorNetworkProfile() {
+      java.lang.Object ref = acceleratorNetworkProfile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        acceleratorNetworkProfile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for acceleratorNetworkProfile.
+     */
+    public com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes() {
+      java.lang.Object ref = acceleratorNetworkProfile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        acceleratorNetworkProfile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The acceleratorNetworkProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorNetworkProfile(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      acceleratorNetworkProfile_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAcceleratorNetworkProfile() {
+      acceleratorNetworkProfile_ = getDefaultInstance().getAcceleratorNetworkProfile();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The accelerator network profile for the node pool. For now the
+     * only valid value is "auto". If specified, the network configuration of the
+     * nodes in this node pool will be managed by this profile for the supported
+     * machine types, zone, etc.
+     * </pre>
+     *
+     * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for acceleratorNetworkProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAcceleratorNetworkProfileBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      acceleratorNetworkProfile_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodeNetworkConfig)

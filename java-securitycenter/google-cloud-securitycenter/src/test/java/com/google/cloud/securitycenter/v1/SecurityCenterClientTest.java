@@ -464,6 +464,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -558,6 +561,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4262,6 +4268,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4358,6 +4367,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4452,6 +4464,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4545,6 +4560,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4904,6 +4922,9 @@ public class SecurityCenterClientTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

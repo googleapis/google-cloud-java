@@ -123,6 +123,26 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      * <code>INTENT = 3;</code>
      */
     INTENT(3),
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from Playbook.
+     * </pre>
+     *
+     * <code>PLAYBOOK = 4;</code>
+     */
+    PLAYBOOK(4),
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from event.
+     * </pre>
+     *
+     * <code>EVENT = 5;</code>
+     */
+    EVENT(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -180,6 +200,28 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
      */
     public static final int INTENT_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from Playbook.
+     * </pre>
+     *
+     * <code>PLAYBOOK = 4;</code>
+     */
+    public static final int PLAYBOOK_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * The answer is from event.
+     * </pre>
+     *
+     * <code>EVENT = 5;</code>
+     */
+    public static final int EVENT_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -212,6 +254,10 @@ public final class SearchKnowledgeAnswer extends com.google.protobuf.GeneratedMe
           return GENERATIVE;
         case 3:
           return INTENT;
+        case 4:
+          return PLAYBOOK;
+        case 5:
+          return EVENT;
         default:
           return null;
       }

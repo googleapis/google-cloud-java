@@ -35,7 +35,8 @@ public class SyncDeleteCloudControlCloudcontrolname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ConfigClient configClient = ConfigClient.create()) {
       CloudControlName name =
-          CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+          CloudControlName.ofOrganizationLocationCloudControlName(
+              "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
       configClient.deleteCloudControl(name);
     }
   }

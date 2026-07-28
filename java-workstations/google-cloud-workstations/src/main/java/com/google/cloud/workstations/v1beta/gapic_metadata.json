@@ -58,6 +58,9 @@
             "ListWorkstations": {
               "methods": ["listWorkstations", "listWorkstations", "listWorkstations", "listWorkstationsPagedCallable", "listWorkstationsCallable"]
             },
+            "PushCredentials": {
+              "methods": ["pushCredentialsAsync", "pushCredentialsAsync", "pushCredentialsAsync", "pushCredentialsOperationCallable", "pushCredentialsCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

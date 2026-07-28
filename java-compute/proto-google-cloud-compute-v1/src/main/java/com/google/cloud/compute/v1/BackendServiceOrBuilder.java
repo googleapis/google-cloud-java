@@ -338,7 +338,7 @@ public interface BackendServiceOrBuilder
    *
    * This field is applicable to either:
    *
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -366,7 +366,7 @@ public interface BackendServiceOrBuilder
    *
    * This field is applicable to either:
    *
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -394,7 +394,7 @@ public interface BackendServiceOrBuilder
    *
    * This field is applicable to either:
    *
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -1674,7 +1674,7 @@ public interface BackendServiceOrBuilder
    * metrics to use for computing the weights are specified via thecustomMetrics field.
    *
    * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -1737,7 +1737,7 @@ public interface BackendServiceOrBuilder
    * metrics to use for computing the weights are specified via thecustomMetrics field.
    *
    * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -1800,7 +1800,7 @@ public interface BackendServiceOrBuilder
    * metrics to use for computing the weights are specified via thecustomMetrics field.
    *
    * This field is applicable to either:
-   * - A regional backend service with the service_protocol set to HTTP,
+   * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
@@ -2261,7 +2261,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the loadBalancingScheme set to
    * INTERNAL_SELF_MANAGED or EXTERNAL_MANAGED.
    * - A regional backend
-   * service with the serviceProtocol set to HTTP, HTTPS, HTTP2 or H2C, and
+   * service with the service protocol set to HTTP, HTTPS, HTTP2 or H2C, and
    * loadBalancingScheme set to INTERNAL_MANAGED or EXTERNAL_MANAGED. Not
    * supported for Serverless NEGs.
    *
@@ -2313,7 +2313,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the loadBalancingScheme set to
    * INTERNAL_SELF_MANAGED or EXTERNAL_MANAGED.
    * - A regional backend
-   * service with the serviceProtocol set to HTTP, HTTPS, HTTP2 or H2C, and
+   * service with the service protocol set to HTTP, HTTPS, HTTP2 or H2C, and
    * loadBalancingScheme set to INTERNAL_MANAGED or EXTERNAL_MANAGED. Not
    * supported for Serverless NEGs.
    *
@@ -2365,7 +2365,7 @@ public interface BackendServiceOrBuilder
    * - A global backend service with the loadBalancingScheme set to
    * INTERNAL_SELF_MANAGED or EXTERNAL_MANAGED.
    * - A regional backend
-   * service with the serviceProtocol set to HTTP, HTTPS, HTTP2 or H2C, and
+   * service with the service protocol set to HTTP, HTTPS, HTTP2 or H2C, and
    * loadBalancingScheme set to INTERNAL_MANAGED or EXTERNAL_MANAGED. Not
    * supported for Serverless NEGs.
    *

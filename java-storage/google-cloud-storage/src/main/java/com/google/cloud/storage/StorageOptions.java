@@ -112,7 +112,9 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   public abstract static class Builder
       extends ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
-    Builder() {}
+    Builder() {
+      setUseJwtAccessWithScope(false);
+    }
 
     Builder(StorageOptions options) {
       super(options);

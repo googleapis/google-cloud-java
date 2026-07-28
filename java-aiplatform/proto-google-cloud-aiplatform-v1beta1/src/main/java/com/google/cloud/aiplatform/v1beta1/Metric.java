@@ -427,6 +427,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Metric.AggregationMetric)
   }
 
+  private int bitField0_;
   private int metricSpecCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -439,6 +440,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     PREDEFINED_METRIC_SPEC(8),
     COMPUTATION_BASED_METRIC_SPEC(9),
     LLM_BASED_METRIC_SPEC(10),
+    CUSTOM_CODE_EXECUTION_SPEC(11),
     POINTWISE_METRIC_SPEC(2),
     PAIRWISE_METRIC_SPEC(3),
     EXACT_MATCH_SPEC(4),
@@ -469,6 +471,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
           return COMPUTATION_BASED_METRIC_SPEC;
         case 10:
           return LLM_BASED_METRIC_SPEC;
+        case 11:
+          return CUSTOM_CODE_EXECUTION_SPEC;
         case 2:
           return POINTWISE_METRIC_SPEC;
         case 3:
@@ -665,6 +669,64 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_;
     }
     return com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.getDefaultInstance();
+  }
+
+  public static final int CUSTOM_CODE_EXECUTION_SPEC_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   *
+   * @return Whether the customCodeExecutionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomCodeExecutionSpec() {
+    return metricSpecCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   *
+   * @return The customCodeExecutionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec getCustomCodeExecutionSpec() {
+    if (metricSpecCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder
+      getCustomCodeExecutionSpecOrBuilder() {
+    if (metricSpecCase_ == 11) {
+      return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
   }
 
   public static final int POINTWISE_METRIC_SPEC_FIELD_NUMBER = 2;
@@ -1056,6 +1118,68 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
 
   private int aggregationMetricsMemoizedSerializedSize;
 
+  public static final int METADATA_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1beta1.MetricMetadata metadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricMetadata getMetadata() {
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MetricMetadata.getDefaultInstance()
+        : metadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder getMetadataOrBuilder() {
+    return metadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.MetricMetadata.getDefaultInstance()
+        : metadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1103,6 +1227,13 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     }
     if (metricSpecCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_);
+    }
+    if (metricSpecCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(13, getMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1167,6 +1298,14 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec) metricSpec_);
     }
+    if (metricSpecCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1184,6 +1323,10 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.aiplatform.v1beta1.Metric) obj;
 
     if (!aggregationMetrics_.equals(other.aggregationMetrics_)) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!getMetricSpecCase().equals(other.getMetricSpecCase())) return false;
     switch (metricSpecCase_) {
       case 8:
@@ -1195,6 +1338,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         break;
       case 10:
         if (!getLlmBasedMetricSpec().equals(other.getLlmBasedMetricSpec())) return false;
+        break;
+      case 11:
+        if (!getCustomCodeExecutionSpec().equals(other.getCustomCodeExecutionSpec())) return false;
         break;
       case 2:
         if (!getPointwiseMetricSpec().equals(other.getPointwiseMetricSpec())) return false;
@@ -1229,6 +1375,10 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + AGGREGATION_METRICS_FIELD_NUMBER;
       hash = (53 * hash) + aggregationMetrics_.hashCode();
     }
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     switch (metricSpecCase_) {
       case 8:
         hash = (37 * hash) + PREDEFINED_METRIC_SPEC_FIELD_NUMBER;
@@ -1241,6 +1391,10 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       case 10:
         hash = (37 * hash) + LLM_BASED_METRIC_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getLlmBasedMetricSpec().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + CUSTOM_CODE_EXECUTION_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomCodeExecutionSpec().hashCode();
         break;
       case 2:
         hash = (37 * hash) + POINTWISE_METRIC_SPEC_FIELD_NUMBER;
@@ -1395,10 +1549,19 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.Metric.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMetadataFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1413,6 +1576,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       }
       if (llmBasedMetricSpecBuilder_ != null) {
         llmBasedMetricSpecBuilder_.clear();
+      }
+      if (customCodeExecutionSpecBuilder_ != null) {
+        customCodeExecutionSpecBuilder_.clear();
       }
       if (pointwiseMetricSpecBuilder_ != null) {
         pointwiseMetricSpecBuilder_.clear();
@@ -1430,6 +1596,11 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         rougeSpecBuilder_.clear();
       }
       aggregationMetrics_ = emptyIntList();
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
       metricSpecCase_ = 0;
       metricSpec_ = null;
       return this;
@@ -1469,10 +1640,16 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Metric result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         aggregationMetrics_.makeImmutable();
         result.aggregationMetrics_ = aggregationMetrics_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Metric result) {
@@ -1486,6 +1663,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       }
       if (metricSpecCase_ == 10 && llmBasedMetricSpecBuilder_ != null) {
         result.metricSpec_ = llmBasedMetricSpecBuilder_.build();
+      }
+      if (metricSpecCase_ == 11 && customCodeExecutionSpecBuilder_ != null) {
+        result.metricSpec_ = customCodeExecutionSpecBuilder_.build();
       }
       if (metricSpecCase_ == 2 && pointwiseMetricSpecBuilder_ != null) {
         result.metricSpec_ = pointwiseMetricSpecBuilder_.build();
@@ -1520,12 +1700,15 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         if (aggregationMetrics_.isEmpty()) {
           aggregationMetrics_ = other.aggregationMetrics_;
           aggregationMetrics_.makeImmutable();
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureAggregationMetricsIsMutable();
           aggregationMetrics_.addAll(other.aggregationMetrics_);
         }
         onChanged();
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
       }
       switch (other.getMetricSpecCase()) {
         case PREDEFINED_METRIC_SPEC:
@@ -1541,6 +1724,11 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
         case LLM_BASED_METRIC_SPEC:
           {
             mergeLlmBasedMetricSpec(other.getLlmBasedMetricSpec());
+            break;
+          }
+        case CUSTOM_CODE_EXECUTION_SPEC:
+          {
+            mergeCustomCodeExecutionSpec(other.getCustomCodeExecutionSpec());
             break;
           }
         case POINTWISE_METRIC_SPEC:
@@ -1674,6 +1862,21 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
                 metricSpecCase_ = 10;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetCustomCodeExecutionSpecFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                metricSpecCase_ = 11;
+                break;
+              } // case 90
+            case 106:
+              {
+                input.readMessage(
+                    internalGetMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2405,6 +2608,250 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       metricSpecCase_ = 10;
       onChanged();
       return llmBasedMetricSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder>
+        customCodeExecutionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     *
+     * @return Whether the customCodeExecutionSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomCodeExecutionSpec() {
+      return metricSpecCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     *
+     * @return The customCodeExecutionSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec
+        getCustomCodeExecutionSpec() {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        if (metricSpecCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
+      } else {
+        if (metricSpecCase_ == 11) {
+          return customCodeExecutionSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    public Builder setCustomCodeExecutionSpec(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec value) {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metricSpec_ = value;
+        onChanged();
+      } else {
+        customCodeExecutionSpecBuilder_.setMessage(value);
+      }
+      metricSpecCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    public Builder setCustomCodeExecutionSpec(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.Builder builderForValue) {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        metricSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        customCodeExecutionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      metricSpecCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    public Builder mergeCustomCodeExecutionSpec(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec value) {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        if (metricSpecCase_ == 11
+            && metricSpec_
+                != com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec
+                    .getDefaultInstance()) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metricSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (metricSpecCase_ == 11) {
+          customCodeExecutionSpecBuilder_.mergeFrom(value);
+        } else {
+          customCodeExecutionSpecBuilder_.setMessage(value);
+        }
+      }
+      metricSpecCase_ = 11;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    public Builder clearCustomCodeExecutionSpec() {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        if (metricSpecCase_ == 11) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (metricSpecCase_ == 11) {
+          metricSpecCase_ = 0;
+          metricSpec_ = null;
+        }
+        customCodeExecutionSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.Builder
+        getCustomCodeExecutionSpecBuilder() {
+      return internalGetCustomCodeExecutionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder
+        getCustomCodeExecutionSpecOrBuilder() {
+      if ((metricSpecCase_ == 11) && (customCodeExecutionSpecBuilder_ != null)) {
+        return customCodeExecutionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (metricSpecCase_ == 11) {
+          return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spec for Custom Code Execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder>
+        internalGetCustomCodeExecutionSpecFieldBuilder() {
+      if (customCodeExecutionSpecBuilder_ == null) {
+        if (!(metricSpecCase_ == 11)) {
+          metricSpec_ =
+              com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.getDefaultInstance();
+        }
+        customCodeExecutionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec,
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec) metricSpec_,
+                getParentForChildren(),
+                isClean());
+        metricSpec_ = null;
+      }
+      metricSpecCase_ = 11;
+      onChanged();
+      return customCodeExecutionSpecBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -3516,7 +3963,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       if (!aggregationMetrics_.isModifiable()) {
         aggregationMetrics_ = makeMutableCopy(aggregationMetrics_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -3666,7 +4113,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAggregationMetrics() {
       aggregationMetrics_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3771,6 +4218,229 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.MetricMetadata metadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricMetadata,
+            com.google.cloud.aiplatform.v1beta1.MetricMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder>
+        metadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricMetadata getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MetricMetadata.getDefaultInstance()
+            : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadata(com.google.cloud.aiplatform.v1beta1.MetricMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadata(
+        com.google.cloud.aiplatform.v1beta1.MetricMetadata.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMetadata(com.google.cloud.aiplatform.v1beta1.MetricMetadata value) {
+      if (metadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.cloud.aiplatform.v1beta1.MetricMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
+        } else {
+          metadata_ = value;
+        }
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+      if (metadata_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricMetadata.Builder getMetadataBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.MetricMetadata.getDefaultInstance()
+            : metadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Metadata about the metric, used for visualization and
+     * organization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricMetadata,
+            com.google.cloud.aiplatform.v1beta1.MetricMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder>
+        internalGetMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.MetricMetadata,
+                com.google.cloud.aiplatform.v1beta1.MetricMetadata.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Metric)

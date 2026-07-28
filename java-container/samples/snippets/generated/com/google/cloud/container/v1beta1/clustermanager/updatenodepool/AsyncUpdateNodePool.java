@@ -36,6 +36,7 @@ import com.google.container.v1beta1.NodeTaints;
 import com.google.container.v1beta1.Operation;
 import com.google.container.v1beta1.ResourceLabels;
 import com.google.container.v1beta1.ResourceManagerTags;
+import com.google.container.v1beta1.TaintConfig;
 import com.google.container.v1beta1.UpdateNodePoolRequest;
 import com.google.container.v1beta1.VirtualNIC;
 import com.google.container.v1beta1.WindowsNodeConfig;
@@ -64,6 +65,8 @@ public class AsyncUpdateNodePool {
               .setNodePoolId("nodePoolId1121557241")
               .setNodeVersion("nodeVersion1155309686")
               .setImageType("imageType-878147787")
+              .setImage("image100313435")
+              .setImageProject("imageProject288951614")
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setName("name3373707")
@@ -95,6 +98,7 @@ public class AsyncUpdateNodePool {
               .setBootDisk(BootDisk.newBuilder().build())
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
+              .setTaintConfig(TaintConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

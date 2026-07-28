@@ -60,6 +60,18 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
         .internal_static_google_spanner_executor_v1_ExecutePartitionAction_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 2:
+        return internalGetSecureContext();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -124,6 +136,122 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
         : partition_;
   }
 
+  public static final int SECURE_CONTEXT_FIELD_NUMBER = 2;
+
+  private static final class SecureContextDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.spanner.executor.v1.Value>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.spanner.executor.v1.Value>newDefaultInstance(
+                    com.google.spanner.executor.v1.CloudExecutorProto
+                        .internal_static_google_spanner_executor_v1_ExecutePartitionAction_SecureContextEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.spanner.executor.v1.Value.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.spanner.executor.v1.Value>
+      secureContext_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.spanner.executor.v1.Value>
+      internalGetSecureContext() {
+    if (secureContext_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SecureContextDefaultEntryHolder.defaultEntry);
+    }
+    return secureContext_;
+  }
+
+  public int getSecureContextCount() {
+    return internalGetSecureContext().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  @java.lang.Override
+  public boolean containsSecureContext(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSecureContext().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getSecureContextMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContext() {
+    return getSecureContextMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+      getSecureContextMap() {
+    return internalGetSecureContext().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.spanner.executor.v1.Value defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> map =
+        internalGetSecureContext().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> map =
+        internalGetSecureContext().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -141,6 +269,8 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getPartition());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetSecureContext(), SecureContextDefaultEntryHolder.defaultEntry, 2);
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +282,17 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPartition());
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.spanner.executor.v1.Value> entry :
+        internalGetSecureContext().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+          secureContext__ =
+              SecureContextDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, secureContext__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -173,6 +314,7 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
     if (hasPartition()) {
       if (!getPartition().equals(other.getPartition())) return false;
     }
+    if (!internalGetSecureContext().equals(other.internalGetSecureContext())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +329,10 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
     if (hasPartition()) {
       hash = (37 * hash) + PARTITION_FIELD_NUMBER;
       hash = (53 * hash) + getPartition().hashCode();
+    }
+    if (!internalGetSecureContext().getMap().isEmpty()) {
+      hash = (37 * hash) + SECURE_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSecureContext().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -310,6 +456,28 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
           .internal_static_google_spanner_executor_v1_ExecutePartitionAction_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetSecureContext();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableSecureContext();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -345,6 +513,7 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
         partitionBuilder_.dispose();
         partitionBuilder_ = null;
       }
+      internalGetMutableSecureContext().clear();
       return this;
     }
 
@@ -386,6 +555,10 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
         result.partition_ = partitionBuilder_ == null ? partition_ : partitionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secureContext_ =
+            internalGetSecureContext().build(SecureContextDefaultEntryHolder.defaultEntry);
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -405,6 +578,8 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
       if (other.hasPartition()) {
         mergePartition(other.getPartition());
       }
+      internalGetMutableSecureContext().mergeFrom(other.internalGetSecureContext());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -438,6 +613,19 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+                    secureContext__ =
+                        input.readMessage(
+                            SecureContextDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSecureContext()
+                    .ensureBuilderMap()
+                    .put(secureContext__.getKey(), secureContext__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -650,6 +838,252 @@ public final class ExecutePartitionAction extends com.google.protobuf.GeneratedM
         partition_ = null;
       }
       return partitionBuilder_;
+    }
+
+    private static final class SecureContextConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value> {
+      @java.lang.Override
+      public com.google.spanner.executor.v1.Value build(
+          com.google.spanner.executor.v1.ValueOrBuilder val) {
+        if (val instanceof com.google.spanner.executor.v1.Value) {
+          return (com.google.spanner.executor.v1.Value) val;
+        }
+        return ((com.google.spanner.executor.v1.Value.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+          defaultEntry() {
+        return SecureContextDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final SecureContextConverter secureContextConverter =
+        new SecureContextConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        secureContext_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        internalGetSecureContext() {
+      if (secureContext_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(secureContextConverter);
+      }
+      return secureContext_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        internalGetMutableSecureContext() {
+      if (secureContext_ == null) {
+        secureContext_ = new com.google.protobuf.MapFieldBuilder<>(secureContextConverter);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return secureContext_;
+    }
+
+    public int getSecureContextCount() {
+      return internalGetSecureContext().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    @java.lang.Override
+    public boolean containsSecureContext(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSecureContext().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getSecureContextMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getSecureContext() {
+      return getSecureContextMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getSecureContextMap() {
+      return internalGetSecureContext().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.spanner.executor.v1.Value defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> map =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      return map.containsKey(key) ? secureContextConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> map =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return secureContextConverter.build(map.get(key));
+    }
+
+    public Builder clearSecureContext() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableSecureContext().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    public Builder removeSecureContext(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getMutableSecureContext() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableSecureContext().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    public Builder putSecureContext(
+        java.lang.String key, com.google.spanner.executor.v1.Value value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    public Builder putAllSecureContext(
+        java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.spanner.executor.v1.Value> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+     */
+    public com.google.spanner.executor.v1.Value.Builder putSecureContextBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> builderMap =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      com.google.spanner.executor.v1.ValueOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.spanner.executor.v1.Value.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.spanner.executor.v1.Value) {
+        entry = ((com.google.spanner.executor.v1.Value) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.spanner.executor.v1.Value.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.spanner.executor.v1.ExecutePartitionAction)

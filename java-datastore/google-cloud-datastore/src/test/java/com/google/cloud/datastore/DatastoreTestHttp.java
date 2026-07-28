@@ -17,7 +17,7 @@
 package com.google.cloud.datastore;
 
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
-import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Arrays;
@@ -46,7 +46,10 @@ public class DatastoreTestHttp extends AbstractDatastoreTest {
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
     helper.start();
-    options = helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
+    options =
+        helper.getOptions().toBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .build();
     datastore = options.getService();
   }
 

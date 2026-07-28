@@ -31,6 +31,9 @@ public abstract class Field {
   // resolution behavior. For more context, please see the invocation site of the setter method.
   public abstract String originalName();
 
+  @Nullable
+  public abstract String jsonName();
+
   public abstract TypeNode type();
 
   // If the field is annotated with google.api.field_behavior = REQUIRED, then this is true. This is
@@ -92,6 +95,7 @@ public abstract class Field {
     Field other = (Field) o;
     return name().equals(other.name())
         && originalName().equals(other.originalName())
+        && Objects.equals(jsonName(), other.jsonName())
         && type().equals(other.type())
         && isRequired() == other.isRequired()
         && fieldInfoFormat() == other.fieldInfoFormat()
@@ -109,6 +113,7 @@ public abstract class Field {
   public int hashCode() {
     return 17 * name().hashCode()
         + 31 * originalName().hashCode()
+        + (jsonName() == null ? 0 : jsonName().hashCode())
         + 19 * type().hashCode()
         + (isMessage() ? 1 : 0) * 23
         + (isEnum() ? 1 : 0) * 29
@@ -140,6 +145,8 @@ public abstract class Field {
     public abstract Builder setName(String name);
 
     public abstract Builder setOriginalName(String originalName);
+
+    public abstract Builder setJsonName(String jsonName);
 
     public abstract Builder setType(TypeNode type);
 

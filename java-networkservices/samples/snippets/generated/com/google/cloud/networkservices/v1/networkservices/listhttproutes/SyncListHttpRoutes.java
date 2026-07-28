@@ -41,6 +41,7 @@ public class SyncListHttpRoutes {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setReturnPartialSuccess(true)
+              .setFilter("filter-1274492040")
               .build();
       for (HttpRoute element : networkServicesClient.listHttpRoutes(request).iterateAll()) {
         // doThingsWith(element);

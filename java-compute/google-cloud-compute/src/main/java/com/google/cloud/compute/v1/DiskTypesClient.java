@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -162,9 +164,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DiskTypesClient implements BackgroundResource {
-  private final DiskTypesSettings settings;
+  private final @Nullable DiskTypesSettings settings;
   private final DiskTypesStub stub;
 
   /** Constructs an instance of DiskTypesClient with default settings. */
@@ -202,7 +205,7 @@ public class DiskTypesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DiskTypesSettings getSettings() {
+  public final @Nullable DiskTypesSettings getSettings() {
     return settings;
   }
 
@@ -676,12 +679,13 @@ public class DiskTypesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDiskTypesRequest,
                 DiskTypeAggregatedList,
                 Map.Entry<String, DiskTypesScopedList>>
             context,
-        DiskTypeAggregatedList response) {
+        @Nullable DiskTypeAggregatedList response) {
       super(context, response);
     }
 
@@ -691,18 +695,20 @@ public class DiskTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDiskTypesRequest,
                 DiskTypeAggregatedList,
                 Map.Entry<String, DiskTypesScopedList>>
             context,
-        DiskTypeAggregatedList response) {
+        @Nullable DiskTypeAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDiskTypesRequest,
                 DiskTypeAggregatedList,
                 Map.Entry<String, DiskTypesScopedList>>
@@ -720,7 +726,8 @@ public class DiskTypesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -730,7 +737,7 @@ public class DiskTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -757,7 +764,8 @@ public class DiskTypesClient implements BackgroundResource {
       extends AbstractPage<ListDiskTypesRequest, DiskTypeList, DiskType, ListPage> {
 
     private ListPage(
-        PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context, DiskTypeList response) {
+        @Nullable PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context,
+        @Nullable DiskTypeList response) {
       super(context, response);
     }
 
@@ -767,13 +775,14 @@ public class DiskTypesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context, DiskTypeList response) {
+        @Nullable PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context,
+        @Nullable DiskTypeList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context,
+        @Nullable PageContext<ListDiskTypesRequest, DiskTypeList, DiskType> context,
         ApiFuture<DiskTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -783,7 +792,7 @@ public class DiskTypesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListDiskTypesRequest, DiskTypeList, DiskType, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -792,7 +801,8 @@ public class DiskTypesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

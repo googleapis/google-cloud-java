@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -338,10 +340,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BetaAnalyticsDataClient implements BackgroundResource {
-  private final BetaAnalyticsDataSettings settings;
+  private final @Nullable BetaAnalyticsDataSettings settings;
   private final BetaAnalyticsDataStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -389,7 +392,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BetaAnalyticsDataSettings getSettings() {
+  public final @Nullable BetaAnalyticsDataSettings getSettings() {
     return settings;
   }
 
@@ -754,7 +757,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *     special mode, this method will not return custom dimensions and metrics.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Metadata getMetadata(MetadataName name) {
+  public final Metadata getMetadata(@Nullable MetadataName name) {
     GetMetadataRequest request =
         GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetadata(request);
@@ -1086,7 +1089,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AudienceExport, AudienceExportMetadata> createAudienceExportAsync(
-      PropertyName parent, AudienceExport audienceExport) {
+      @Nullable PropertyName parent, AudienceExport audienceExport) {
     CreateAudienceExportRequest request =
         CreateAudienceExportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1474,7 +1477,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *     `properties/{property}/audienceExports/{audience_export}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AudienceExport getAudienceExport(AudienceExportName name) {
+  public final AudienceExport getAudienceExport(@Nullable AudienceExportName name) {
     GetAudienceExportRequest request =
         GetAudienceExportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1632,7 +1635,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
    *     Format: `properties/{property}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAudienceExportsPagedResponse listAudienceExports(PropertyName parent) {
+  public final ListAudienceExportsPagedResponse listAudienceExports(@Nullable PropertyName parent) {
     ListAudienceExportsRequest request =
         ListAudienceExportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1889,9 +1892,10 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
           ListAudienceExportsPage> {
 
     private ListAudienceExportsPage(
-        PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
+        @Nullable
+            PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
             context,
-        ListAudienceExportsResponse response) {
+        @Nullable ListAudienceExportsResponse response) {
       super(context, response);
     }
 
@@ -1901,15 +1905,17 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListAudienceExportsPage createPage(
-        PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
+        @Nullable
+            PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
             context,
-        ListAudienceExportsResponse response) {
+        @Nullable ListAudienceExportsResponse response) {
       return new ListAudienceExportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAudienceExportsPage> createPageAsync(
-        PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
+        @Nullable
+            PageContext<ListAudienceExportsRequest, ListAudienceExportsResponse, AudienceExport>
             context,
         ApiFuture<ListAudienceExportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1925,7 +1931,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
           ListAudienceExportsFixedSizeCollection> {
 
     private ListAudienceExportsFixedSizeCollection(
-        List<ListAudienceExportsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceExportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1935,7 +1941,7 @@ public class BetaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListAudienceExportsFixedSizeCollection createCollection(
-        List<ListAudienceExportsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceExportsPage> pages, int collectionSize) {
       return new ListAudienceExportsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -30,7 +30,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Contents of the error.
+   * Output only. Contents of the error.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Contents of the error.
+   * Output only. Contents of the error.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Contents of the error.
+   * Output only. Contents of the error.
    * </pre>
    *
    * <code>
@@ -74,7 +74,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Details of the instance action that triggered this error.
+   * Output only. Details of the instance action that triggered this error.
    * May be null, if the error was not caused by an action on an instance.
    * This field is optional.
    * </pre>
@@ -91,7 +91,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Details of the instance action that triggered this error.
+   * Output only. Details of the instance action that triggered this error.
    * May be null, if the error was not caused by an action on an instance.
    * This field is optional.
    * </pre>
@@ -109,7 +109,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Details of the instance action that triggered this error.
+   * Output only. Details of the instance action that triggered this error.
    * May be null, if the error was not caused by an action on an instance.
    * This field is optional.
    * </pre>
@@ -125,8 +125,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The time that this error occurred.
-   * This value is in RFC3339 text format.
+   * Output only. The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -139,8 +138,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The time that this error occurred.
-   * This value is in RFC3339 text format.
+   * Output only. The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -153,8 +151,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The time that this error occurred.
-   * This value is in RFC3339 text format.
+   * Output only. The time that this error occurred. This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>

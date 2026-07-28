@@ -45,6 +45,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -63,6 +65,9 @@ import javax.annotation.Generated;
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllMetrics(new ArrayList<Metric>())
+ *           .addAllMetricSources(new ArrayList<MetricSource>())
+ *           .setInstance(EvaluationInstance.newBuilder().build())
  *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
@@ -106,6 +111,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> evaluateDatasetOperationCallable()
  *           <li><p> evaluateDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateInstanceRubrics</td>
+ *      <td><p> Generates rubrics for a given prompt. A rubric represents a single testable criterion for evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested rubrics based on provided prompt, which can then be reviewed and used for subsequent evaluations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubrics(GenerateInstanceRubricsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -225,10 +244,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
-  private final EvaluationServiceSettings settings;
+  private final @Nullable EvaluationServiceSettings settings;
   private final EvaluationServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -271,7 +291,7 @@ public class EvaluationServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final EvaluationServiceSettings getSettings() {
+  public final @Nullable EvaluationServiceSettings getSettings() {
     return settings;
   }
 
@@ -303,6 +323,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
    *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
@@ -332,6 +355,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
    *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<EvaluateInstancesResponse> future =
@@ -444,6 +470,79 @@ public class EvaluationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
     return stub.evaluateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   GenerateInstanceRubricsResponse response =
+   *       evaluationServiceClient.generateInstanceRubrics(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateInstanceRubricsResponse generateInstanceRubrics(
+      GenerateInstanceRubricsRequest request) {
+    return generateInstanceRubricsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateInstanceRubricsResponse> future =
+   *       evaluationServiceClient.generateInstanceRubricsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateInstanceRubricsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable() {
+    return stub.generateInstanceRubricsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -871,8 +970,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -882,14 +981,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -903,7 +1002,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -913,7 +1013,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

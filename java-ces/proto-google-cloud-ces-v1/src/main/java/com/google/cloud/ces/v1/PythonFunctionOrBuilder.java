@@ -109,4 +109,47 @@ public interface PythonFunctionOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceDirectoryConfig field is set.
+   */
+  boolean hasServiceDirectoryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceDirectoryConfig.
+   */
+  com.google.cloud.ces.v1.ServiceDirectoryConfig getServiceDirectoryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.ServiceDirectoryConfigOrBuilder getServiceDirectoryConfigOrBuilder();
 }

@@ -43,7 +43,9 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public interface GrpcStubCallableFactory {
 
   /**

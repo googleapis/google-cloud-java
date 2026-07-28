@@ -88,10 +88,16 @@ public class IcebergCatalogServiceClientTest {
         IcebergCatalog.newBuilder()
             .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
             .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
             .setDefaultLocation("defaultLocation-395835114")
-            .addAllCatalogRegions(new ArrayList<String>())
+            .addAllStorageRegions(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
             .build();
     mockIcebergCatalogService.addResponse(expectedResponse);
 
@@ -131,10 +137,16 @@ public class IcebergCatalogServiceClientTest {
         IcebergCatalog.newBuilder()
             .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
             .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
             .setDefaultLocation("defaultLocation-395835114")
-            .addAllCatalogRegions(new ArrayList<String>())
+            .addAllStorageRegions(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
             .build();
     mockIcebergCatalogService.addResponse(expectedResponse);
 
@@ -262,10 +274,16 @@ public class IcebergCatalogServiceClientTest {
         IcebergCatalog.newBuilder()
             .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
             .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
             .setDefaultLocation("defaultLocation-395835114")
-            .addAllCatalogRegions(new ArrayList<String>())
+            .addAllStorageRegions(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
             .build();
     mockIcebergCatalogService.addResponse(expectedResponse);
 
@@ -309,10 +327,16 @@ public class IcebergCatalogServiceClientTest {
         IcebergCatalog.newBuilder()
             .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
             .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
             .setDefaultLocation("defaultLocation-395835114")
-            .addAllCatalogRegions(new ArrayList<String>())
+            .addAllStorageRegions(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
             .build();
     mockIcebergCatalogService.addResponse(expectedResponse);
 
@@ -360,10 +384,16 @@ public class IcebergCatalogServiceClientTest {
         IcebergCatalog.newBuilder()
             .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
             .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
             .setDefaultLocation("defaultLocation-395835114")
-            .addAllCatalogRegions(new ArrayList<String>())
+            .addAllStorageRegions(new ArrayList<String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
             .build();
     mockIcebergCatalogService.addResponse(expectedResponse);
 
@@ -399,6 +429,126 @@ public class IcebergCatalogServiceClientTest {
       IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
       String icebergCatalogId = "icebergCatalogId504062865";
       client.createIcebergCatalog(parent, icebergCatalog, icebergCatalogId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createIcebergCatalogTest3() throws Exception {
+    IcebergCatalog expectedResponse =
+        IcebergCatalog.newBuilder()
+            .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
+            .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
+            .setDefaultLocation("defaultLocation-395835114")
+            .addAllStorageRegions(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
+            .build();
+    mockIcebergCatalogService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+    String icebergCatalogId = "icebergCatalogId504062865";
+    String primaryLocation = "primaryLocation-1140723753";
+
+    IcebergCatalog actualResponse =
+        client.createIcebergCatalog(parent, icebergCatalog, icebergCatalogId, primaryLocation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIcebergCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateIcebergCatalogRequest actualRequest =
+        ((CreateIcebergCatalogRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(icebergCatalog, actualRequest.getIcebergCatalog());
+    Assert.assertEquals(icebergCatalogId, actualRequest.getIcebergCatalogId());
+    Assert.assertEquals(primaryLocation, actualRequest.getPrimaryLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createIcebergCatalogExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIcebergCatalogService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+      String icebergCatalogId = "icebergCatalogId504062865";
+      String primaryLocation = "primaryLocation-1140723753";
+      client.createIcebergCatalog(parent, icebergCatalog, icebergCatalogId, primaryLocation);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createIcebergCatalogTest4() throws Exception {
+    IcebergCatalog expectedResponse =
+        IcebergCatalog.newBuilder()
+            .setName(CatalogName.of("[PROJECT]", "[CATALOG]").toString())
+            .setBiglakeServiceAccount("biglakeServiceAccount-779711961")
+            .setBiglakeServiceAccountUniqueId("biglakeServiceAccountUniqueId1477884947")
+            .setDefaultLocation("defaultLocation-395835114")
+            .addAllStorageRegions(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllReplicas(new ArrayList<IcebergCatalog.Replica>())
+            .setDescription("description-1724546052")
+            .setRestrictedLocationsConfig(
+                IcebergCatalog.RestrictedLocationsConfig.newBuilder().build())
+            .setFederatedCatalogOptions(IcebergCatalog.FederatedCatalogOptions.newBuilder().build())
+            .build();
+    mockIcebergCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+    String icebergCatalogId = "icebergCatalogId504062865";
+    String primaryLocation = "primaryLocation-1140723753";
+
+    IcebergCatalog actualResponse =
+        client.createIcebergCatalog(parent, icebergCatalog, icebergCatalogId, primaryLocation);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIcebergCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateIcebergCatalogRequest actualRequest =
+        ((CreateIcebergCatalogRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(icebergCatalog, actualRequest.getIcebergCatalog());
+    Assert.assertEquals(icebergCatalogId, actualRequest.getIcebergCatalogId());
+    Assert.assertEquals(primaryLocation, actualRequest.getPrimaryLocation());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createIcebergCatalogExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIcebergCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      IcebergCatalog icebergCatalog = IcebergCatalog.newBuilder().build();
+      String icebergCatalogId = "icebergCatalogId504062865";
+      String primaryLocation = "primaryLocation-1140723753";
+      client.createIcebergCatalog(parent, icebergCatalog, icebergCatalogId, primaryLocation);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

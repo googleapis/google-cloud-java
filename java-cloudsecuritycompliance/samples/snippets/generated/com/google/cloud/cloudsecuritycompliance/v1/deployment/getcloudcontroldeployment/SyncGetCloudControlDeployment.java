@@ -38,7 +38,7 @@ public class SyncGetCloudControlDeployment {
       GetCloudControlDeploymentRequest request =
           GetCloudControlDeploymentRequest.newBuilder()
               .setName(
-                  CloudControlDeploymentName.of(
+                  CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
                           "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
                       .toString())
               .build();

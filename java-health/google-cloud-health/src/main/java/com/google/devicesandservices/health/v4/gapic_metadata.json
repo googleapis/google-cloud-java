@@ -1,0 +1,111 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.devicesandservices.health.v4",
+  "libraryPackage": "com.google.devicesandservices.health.v4",
+  "services": {
+    "DataPointsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataPointsServiceClient",
+          "rpcs": {
+            "BatchDeleteDataPoints": {
+              "methods": ["batchDeleteDataPointsAsync", "batchDeleteDataPointsOperationCallable", "batchDeleteDataPointsCallable"]
+            },
+            "CreateDataPoint": {
+              "methods": ["createDataPointAsync", "createDataPointAsync", "createDataPointAsync", "createDataPointOperationCallable", "createDataPointCallable"]
+            },
+            "DailyRollUpDataPoints": {
+              "methods": ["dailyRollUpDataPoints", "dailyRollUpDataPointsCallable"]
+            },
+            "ExportExerciseTcx": {
+              "methods": ["exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcxCallable"]
+            },
+            "GetDataPoint": {
+              "methods": ["getDataPoint", "getDataPoint", "getDataPoint", "getDataPointCallable"]
+            },
+            "ListDataPoints": {
+              "methods": ["listDataPoints", "listDataPoints", "listDataPoints", "listDataPointsPagedCallable", "listDataPointsCallable"]
+            },
+            "ReconcileDataPoints": {
+              "methods": ["reconcileDataPoints", "reconcileDataPointsPagedCallable", "reconcileDataPointsCallable"]
+            },
+            "RollUpDataPoints": {
+              "methods": ["rollUpDataPoints", "rollUpDataPointsPagedCallable", "rollUpDataPointsCallable"]
+            },
+            "UpdateDataPoint": {
+              "methods": ["updateDataPointAsync", "updateDataPointAsync", "updateDataPointOperationCallable", "updateDataPointCallable"]
+            }
+          }
+        }
+      }
+    },
+    "DataSubscriptionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataSubscriptionServiceClient",
+          "rpcs": {
+            "CreateSubscriber": {
+              "methods": ["createSubscriberAsync", "createSubscriberAsync", "createSubscriberAsync", "createSubscriberOperationCallable", "createSubscriberCallable"]
+            },
+            "CreateSubscription": {
+              "methods": ["createSubscription", "createSubscription", "createSubscription", "createSubscriptionCallable"]
+            },
+            "DeleteSubscriber": {
+              "methods": ["deleteSubscriberAsync", "deleteSubscriberAsync", "deleteSubscriberAsync", "deleteSubscriberOperationCallable", "deleteSubscriberCallable"]
+            },
+            "DeleteSubscription": {
+              "methods": ["deleteSubscription", "deleteSubscription", "deleteSubscription", "deleteSubscriptionCallable"]
+            },
+            "ListSubscribers": {
+              "methods": ["listSubscribers", "listSubscribers", "listSubscribers", "listSubscribersPagedCallable", "listSubscribersCallable"]
+            },
+            "ListSubscriptions": {
+              "methods": ["listSubscriptions", "listSubscriptions", "listSubscriptions", "listSubscriptionsPagedCallable", "listSubscriptionsCallable"]
+            },
+            "UpdateSubscriber": {
+              "methods": ["updateSubscriberAsync", "updateSubscriberAsync", "updateSubscriberOperationCallable", "updateSubscriberCallable"]
+            },
+            "UpdateSubscription": {
+              "methods": ["updateSubscription", "updateSubscription", "updateSubscriptionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "HealthProfileService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HealthProfileServiceClient",
+          "rpcs": {
+            "GetIdentity": {
+              "methods": ["getIdentity", "getIdentity", "getIdentity", "getIdentityCallable"]
+            },
+            "GetIrnProfile": {
+              "methods": ["getIrnProfile", "getIrnProfile", "getIrnProfile", "getIrnProfileCallable"]
+            },
+            "GetPairedDevice": {
+              "methods": ["getPairedDevice", "getPairedDevice", "getPairedDevice", "getPairedDeviceCallable"]
+            },
+            "GetProfile": {
+              "methods": ["getProfile", "getProfile", "getProfile", "getProfileCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "ListPairedDevices": {
+              "methods": ["listPairedDevices", "listPairedDevices", "listPairedDevices", "listPairedDevicesPagedCallable", "listPairedDevicesCallable"]
+            },
+            "UpdateProfile": {
+              "methods": ["updateProfile", "updateProfile", "updateProfileCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettings", "updateSettings", "updateSettingsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

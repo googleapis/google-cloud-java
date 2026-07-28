@@ -56,6 +56,7 @@ public final class FetchFrameworkComplianceReportRequest
 
   private FetchFrameworkComplianceReportRequest() {
     name_ = "";
+    filter_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -181,6 +182,59 @@ public final class FetchFrameworkComplianceReportRequest
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int FILTER_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filtering results.
+   * </pre>
+   *
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filtering results.
+   * </pre>
+   *
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -201,6 +255,9 @@ public final class FetchFrameworkComplianceReportRequest
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getEndTime());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -215,6 +272,9 @@ public final class FetchFrameworkComplianceReportRequest
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -239,6 +299,7 @@ public final class FetchFrameworkComplianceReportRequest
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -256,6 +317,8 @@ public final class FetchFrameworkComplianceReportRequest
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -422,6 +485,7 @@ public final class FetchFrameworkComplianceReportRequest
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      filter_ = "";
       return this;
     }
 
@@ -473,6 +537,9 @@ public final class FetchFrameworkComplianceReportRequest
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.filter_ = filter_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -502,6 +569,11 @@ public final class FetchFrameworkComplianceReportRequest
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -541,6 +613,12 @@ public final class FetchFrameworkComplianceReportRequest
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -878,6 +956,117 @@ public final class FetchFrameworkComplianceReportRequest
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private java.lang.Object filter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filtering results.
+     * </pre>
+     *
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filtering results.
+     * </pre>
+     *
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filtering results.
+     * </pre>
+     *
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filtering results.
+     * </pre>
+     *
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filtering results.
+     * </pre>
+     *
+     * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.cloudsecuritycompliance.v1.FetchFrameworkComplianceReportRequest)

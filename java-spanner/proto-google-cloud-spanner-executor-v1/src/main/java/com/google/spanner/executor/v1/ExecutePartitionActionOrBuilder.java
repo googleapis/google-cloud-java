@@ -62,4 +62,67 @@ public interface ExecutePartitionActionOrBuilder
    * <code>.google.spanner.executor.v1.BatchPartition partition = 1;</code>
    */
   com.google.spanner.executor.v1.BatchPartitionOrBuilder getPartitionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  int getSecureContextCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  boolean containsSecureContext(java.lang.String key);
+
+  /** Use {@link #getSecureContextMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContextMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  /* nullable */
+  com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.spanner.executor.v1.Value defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 2;</code>
+   */
+  com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key);
 }

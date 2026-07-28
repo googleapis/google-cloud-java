@@ -11,7 +11,7 @@
           "libraryClient": "IcebergCatalogServiceClient",
           "rpcs": {
             "CreateIcebergCatalog": {
-              "methods": ["createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalogCallable"]
+              "methods": ["createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalogCallable"]
             },
             "FailoverIcebergCatalog": {
               "methods": ["failoverIcebergCatalog", "failoverIcebergCatalog", "failoverIcebergCatalogCallable"]

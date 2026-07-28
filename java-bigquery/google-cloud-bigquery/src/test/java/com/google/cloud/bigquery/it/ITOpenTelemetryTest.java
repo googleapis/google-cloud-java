@@ -99,10 +99,14 @@ public class ITOpenTelemetryTest {
         assertEquals(200L, attrs.get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
         assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
-            "https://bigquery.googleapis.com/bigquery/v2/projects/gcloud-devel/datasets?prettyPrint=false",
+            "https://bigquery.googleapis.com/bigquery/v2/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets?prettyPrint=false",
             attrs.get(HttpTracingRequestInitializer.URL_FULL));
         assertEquals(
-            "//bigquery.googleapis.com/projects/gcloud-devel/datasets",
+            "//bigquery.googleapis.com/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets",
             attrs.get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
         assertEquals(
             "projects/{+projectId}/datasets", attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
@@ -146,19 +150,25 @@ public class ITOpenTelemetryTest {
             "projects/{+projectId}/datasets/{+datasetId}",
             attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
         assertEquals(
-            "https://bigquery.googleapis.com/bigquery/v2/projects/gcloud-devel/datasets/non_existent_dataset?prettyPrint=false",
+            "https://bigquery.googleapis.com/bigquery/v2/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets/non_existent_dataset?prettyPrint=false",
             attrs.get(HttpTracingRequestInitializer.URL_FULL));
         assertEquals(
             "bigquery.googleapis.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
         assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
-            "//bigquery.googleapis.com/projects/gcloud-devel/datasets/non_existent_dataset",
+            "//bigquery.googleapis.com/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets/non_existent_dataset",
             attrs.get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
 
         // Error attributes
         assertEquals("notFound", attrs.get(BigQueryTelemetryTracer.ERROR_TYPE));
         assertEquals(
-            "Not found: Dataset gcloud-devel:non_existent_dataset",
+            "Not found: Dataset "
+                + bigqueryHelper.getOptions().getProjectId()
+                + ":non_existent_dataset",
             attrs.get(BigQueryTelemetryTracer.STATUS_MESSAGE));
       }
     }
@@ -197,7 +207,9 @@ public class ITOpenTelemetryTest {
         Map<AttributeKey<?>, Object> attrs = span.getAttributes().asMap();
         checkGeneralAttributes(attrs);
         assertEquals(
-            "https://invalid-host-name-12345.com:8080/bigquery/v2/projects/gcloud-devel/datasets?prettyPrint=false",
+            "https://invalid-host-name-12345.com:8080/bigquery/v2/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets?prettyPrint=false",
             (String) attrs.get(HttpTracingRequestInitializer.URL_FULL));
         assertEquals(
             "invalid-host-name-12345.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
@@ -206,7 +218,9 @@ public class ITOpenTelemetryTest {
         assertEquals(
             "projects/{+projectId}/datasets", attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
         assertEquals(
-            "//bigquery.googleapis.com/projects/gcloud-devel/datasets",
+            "//bigquery.googleapis.com/projects/"
+                + bigqueryHelper.getOptions().getProjectId()
+                + "/datasets",
             attrs.get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
         checkRetryAttribute(span, rpcSpanCount);
 

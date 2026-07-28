@@ -762,11 +762,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Resource name for this CustomMetric resource.
+   * Identifier. Resource name for this CustomMetric resource.
    * Format: properties/{property}/customMetrics/{customMetric}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -787,11 +787,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Resource name for this CustomMetric resource.
+   * Identifier. Resource name for this CustomMetric resource.
    * Format: properties/{property}/customMetrics/{customMetric}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1712,11 +1712,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Resource name for this CustomMetric resource.
+     * Identifier. Resource name for this CustomMetric resource.
      * Format: properties/{property}/customMetrics/{customMetric}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1736,11 +1736,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Resource name for this CustomMetric resource.
+     * Identifier. Resource name for this CustomMetric resource.
      * Format: properties/{property}/customMetrics/{customMetric}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1760,11 +1760,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Resource name for this CustomMetric resource.
+     * Identifier. Resource name for this CustomMetric resource.
      * Format: properties/{property}/customMetrics/{customMetric}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1783,11 +1783,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Resource name for this CustomMetric resource.
+     * Identifier. Resource name for this CustomMetric resource.
      * Format: properties/{property}/customMetrics/{customMetric}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1802,11 +1802,11 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Resource name for this CustomMetric resource.
+     * Identifier. Resource name for this CustomMetric resource.
      * Format: properties/{property}/customMetrics/{customMetric}
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

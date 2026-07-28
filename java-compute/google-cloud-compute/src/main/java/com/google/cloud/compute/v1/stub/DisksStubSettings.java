@@ -72,6 +72,7 @@ import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
+import com.google.cloud.compute.v1.UpdateKmsKeyDiskRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -81,6 +82,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -156,6 +159,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class DisksStubSettings extends StubSettings<DisksStubSettings> {
@@ -219,6 +223,9 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
   private final UnaryCallSettings<UpdateDiskRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateDiskRequest, Operation, Operation>
       updateOperationSettings;
+  private final UnaryCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings;
+  private final OperationCallSettings<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
@@ -507,6 +514,17 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return updateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+    return updateKmsKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return updateKmsKeyOperationSettings;
+  }
+
   public DisksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -576,7 +594,7 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -625,6 +643,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+    updateKmsKeySettings = settingsBuilder.updateKmsKeySettings().build();
+    updateKmsKeyOperationSettings = settingsBuilder.updateKmsKeyOperationSettings().build();
   }
 
   @Override
@@ -700,6 +720,10 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     private final UnaryCallSettings.Builder<UpdateDiskRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
         updateOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation>
+        updateKmsKeySettings;
+    private final OperationCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -747,7 +771,7 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       addResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -782,6 +806,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
+      updateKmsKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKmsKeyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -803,7 +829,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               stopAsyncReplicationSettings,
               stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
-              updateSettings);
+              updateSettings,
+              updateKmsKeySettings);
       initDefaults(this);
     }
 
@@ -847,6 +874,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
+      updateKmsKeySettings = settings.updateKmsKeySettings.toBuilder();
+      updateKmsKeyOperationSettings = settings.updateKmsKeyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -868,7 +897,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               stopAsyncReplicationSettings,
               stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
-              updateSettings);
+              updateSettings,
+              updateKmsKeySettings);
     }
 
     private static Builder createDefault() {
@@ -976,6 +1006,11 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
 
       builder
           .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateKmsKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1290,6 +1325,30 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .updateKmsKeyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateKmsKeyDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1488,6 +1547,17 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+      return updateKmsKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return updateKmsKeyOperationSettings;
     }
 
     @Override

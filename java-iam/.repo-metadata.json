@@ -1,0 +1,14 @@
+{
+  "api_shortname": "iam",
+  "name_pretty": "IAM",
+  "product_documentation": "https://cloud.google.com/iam",
+  "api_description": "Manages access control for Google Cloud Platform resources",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview",
+  "release_level": "stable",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-iam",
+  "distribution_name": "com.google.api.grpc:proto-google-iam-v1",
+  "library_type": "OTHER"
+}

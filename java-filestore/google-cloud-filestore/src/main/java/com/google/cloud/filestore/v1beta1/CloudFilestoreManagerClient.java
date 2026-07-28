@@ -39,6 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -591,10 +593,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudFilestoreManagerClient implements BackgroundResource {
-  private final CloudFilestoreManagerSettings settings;
+  private final @Nullable CloudFilestoreManagerSettings settings;
   private final CloudFilestoreManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -642,7 +645,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudFilestoreManagerSettings getSettings() {
+  public final @Nullable CloudFilestoreManagerSettings getSettings() {
     return settings;
   }
 
@@ -698,7 +701,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -878,7 +881,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1005,7 +1008,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1604,7 +1607,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1755,7 +1759,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSnapshotsPagedResponse listSnapshots(InstanceName parent) {
+  public final ListSnapshotsPagedResponse listSnapshots(@Nullable InstanceName parent) {
     ListSnapshotsRequest request =
         ListSnapshotsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1932,7 +1936,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot getSnapshot(SnapshotName name) {
+  public final Snapshot getSnapshot(@Nullable SnapshotName name) {
     GetSnapshotRequest request =
         GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnapshot(request);
@@ -2059,7 +2063,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
-      InstanceName parent, Snapshot snapshot, String snapshotId) {
+      @Nullable InstanceName parent, Snapshot snapshot, String snapshotId) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2229,7 +2233,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}/snapshots/{snapshot_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(SnapshotName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(
+      @Nullable SnapshotName name) {
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSnapshotAsync(request);
@@ -2512,7 +2517,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(LocationName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable LocationName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2692,7 +2697,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -2817,7 +2822,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
-      LocationName parent, Backup backup, String backupId) {
+      @Nullable LocationName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2988,7 +2993,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -3260,7 +3266,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSharesPagedResponse listShares(InstanceName parent) {
+  public final ListSharesPagedResponse listShares(@Nullable InstanceName parent) {
     ListSharesRequest request =
         ListSharesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listShares(request);
@@ -3431,7 +3437,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}/shares/{share_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Share getShare(ShareName name) {
+  public final Share getShare(@Nullable ShareName name) {
     GetShareRequest request =
         GetShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getShare(request);
@@ -3553,7 +3559,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Share, OperationMetadata> createShareAsync(
-      InstanceName parent, Share share, String shareId) {
+      @Nullable InstanceName parent, Share share, String shareId) {
     CreateShareRequest request =
         CreateShareRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3722,7 +3728,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance_id}/share/{share_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteShareAsync(ShareName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteShareAsync(
+      @Nullable ShareName name) {
     DeleteShareRequest request =
         DeleteShareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteShareAsync(request);
@@ -4035,8 +4042,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -4046,14 +4053,14 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4067,7 +4074,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4077,7 +4085,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4111,8 +4119,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
 
     private ListSnapshotsPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -4122,14 +4130,14 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsPage createPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       return new ListSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSnapshotsPage> createPageAsync(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
         ApiFuture<ListSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4143,7 +4151,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
-    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+    private ListSnapshotsFixedSizeCollection(
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4153,7 +4162,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsFixedSizeCollection createCollection(
-        List<ListSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4184,8 +4193,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -4195,14 +4204,14 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4216,7 +4225,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4226,7 +4236,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4257,8 +4267,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
       extends AbstractPage<ListSharesRequest, ListSharesResponse, Share, ListSharesPage> {
 
     private ListSharesPage(
-        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
-        ListSharesResponse response) {
+        @Nullable PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        @Nullable ListSharesResponse response) {
       super(context, response);
     }
 
@@ -4268,14 +4278,14 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListSharesPage createPage(
-        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
-        ListSharesResponse response) {
+        @Nullable PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        @Nullable ListSharesResponse response) {
       return new ListSharesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSharesPage> createPageAsync(
-        PageContext<ListSharesRequest, ListSharesResponse, Share> context,
+        @Nullable PageContext<ListSharesRequest, ListSharesResponse, Share> context,
         ApiFuture<ListSharesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4289,7 +4299,8 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListSharesPage,
           ListSharesFixedSizeCollection> {
 
-    private ListSharesFixedSizeCollection(List<ListSharesPage> pages, int collectionSize) {
+    private ListSharesFixedSizeCollection(
+        @Nullable List<ListSharesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4299,7 +4310,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
 
     @Override
     protected ListSharesFixedSizeCollection createCollection(
-        List<ListSharesPage> pages, int collectionSize) {
+        @Nullable List<ListSharesPage> pages, int collectionSize) {
       return new ListSharesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -316,6 +316,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -377,6 +379,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -438,6 +442,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -501,6 +507,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -564,6 +572,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -630,6 +640,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -681,8 +693,12 @@ public class EvaluationServiceClientHttpJsonTest {
     ImportEvaluationsResponse expectedResponse =
         ImportEvaluationsResponse.newBuilder()
             .addAllEvaluations(new ArrayList<Evaluation>())
+            .addAllEvaluationResults(new ArrayList<EvaluationResult>())
+            .addAllEvaluationRuns(new ArrayList<EvaluationRun>())
             .addAllErrorMessages(new ArrayList<String>())
             .setImportFailureCount(663262976)
+            .setEvaluationResultImportFailureCount(432529247)
+            .setEvaluationRunImportFailureCount(-1483443241)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -732,8 +748,12 @@ public class EvaluationServiceClientHttpJsonTest {
     ImportEvaluationsResponse expectedResponse =
         ImportEvaluationsResponse.newBuilder()
             .addAllEvaluations(new ArrayList<Evaluation>())
+            .addAllEvaluationResults(new ArrayList<EvaluationResult>())
+            .addAllEvaluationRuns(new ArrayList<EvaluationRun>())
             .addAllErrorMessages(new ArrayList<String>())
             .setImportFailureCount(663262976)
+            .setEvaluationResultImportFailureCount(432529247)
+            .setEvaluationRunImportFailureCount(-1483443241)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1028,6 +1048,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1049,6 +1071,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1096,6 +1120,9 @@ public class EvaluationServiceClientHttpJsonTest {
               .setLastCompletedResult(EvaluationResult.newBuilder().build())
               .setInvalid(true)
               .addAllLastTenResults(new ArrayList<EvaluationResult>())
+              .setEvaluationMetricsThresholdOverride(
+                  EvaluationMetricsThresholds.newBuilder().build())
+              .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEvaluation(evaluation, updateMask);
@@ -1555,6 +1582,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1614,6 +1643,8 @@ public class EvaluationServiceClientHttpJsonTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1938,6 +1969,7 @@ public class EvaluationServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[APP]", "[SCHEDULED_EVALUATION_RUN]")
                     .toString())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setOperation("operation1662702951")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2014,6 +2046,7 @@ public class EvaluationServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[APP]", "[SCHEDULED_EVALUATION_RUN]")
                     .toString())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setOperation("operation1662702951")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3828,6 +3861,408 @@ public class EvaluationServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportEvaluationsTest() throws Exception {
+    ExportEvaluationsResponse expectedResponse =
+        ExportEvaluationsResponse.newBuilder()
+            .putAllFailedEvaluations(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+
+    ExportEvaluationsResponse actualResponse = client.exportEvaluationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      client.exportEvaluationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportEvaluationsTest2() throws Exception {
+    ExportEvaluationsResponse expectedResponse =
+        ExportEvaluationsResponse.newBuilder()
+            .putAllFailedEvaluations(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+
+    ExportEvaluationsResponse actualResponse = client.exportEvaluationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+      client.exportEvaluationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportEvaluationRunsTest() throws Exception {
+    ExportEvaluationRunsResponse expectedResponse =
+        ExportEvaluationRunsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationRunsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationRunsResponse actualResponse =
+        client.exportEvaluationRunsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationRunsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationRunsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportEvaluationRunsTest2() throws Exception {
+    ExportEvaluationRunsResponse expectedResponse =
+        ExportEvaluationRunsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationRunsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationRunsResponse actualResponse =
+        client.exportEvaluationRunsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationRunsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationRunsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportEvaluationResultsTest() throws Exception {
+    ExportEvaluationResultsResponse expectedResponse =
+        ExportEvaluationResultsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationResultsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EvaluationName parent = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationResultsResponse actualResponse =
+        client.exportEvaluationResultsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationResultsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EvaluationName parent = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationResultsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportEvaluationResultsTest2() throws Exception {
+    ExportEvaluationResultsResponse expectedResponse =
+        ExportEvaluationResultsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationResultsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-1142/locations/location-1142/apps/app-1142/evaluations/evaluation-1142";
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationResultsResponse actualResponse =
+        client.exportEvaluationResultsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportEvaluationResultsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-1142/locations/location-1142/apps/app-1142/evaluations/evaluation-1142";
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationResultsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runEvaluationResultMetricsTest() throws Exception {
+    RunEvaluationResultMetricsResponse expectedResponse =
+        RunEvaluationResultMetricsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runEvaluationResultMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    EvaluationResultName evaluationResultId =
+        EvaluationResultName.of(
+            "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]");
+
+    RunEvaluationResultMetricsResponse actualResponse =
+        client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runEvaluationResultMetricsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EvaluationResultName evaluationResultId =
+          EvaluationResultName.of(
+              "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]");
+      client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runEvaluationResultMetricsTest2() throws Exception {
+    RunEvaluationResultMetricsResponse expectedResponse =
+        RunEvaluationResultMetricsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runEvaluationResultMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String evaluationResultId =
+        "projects/project-1518/locations/location-1518/apps/app-1518/evaluations/evaluation-1518/results/result-1518";
+
+    RunEvaluationResultMetricsResponse actualResponse =
+        client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runEvaluationResultMetricsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String evaluationResultId =
+          "projects/project-1518/locations/location-1518/apps/app-1518/evaluations/evaluation-1518/results/result-1518";
+      client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

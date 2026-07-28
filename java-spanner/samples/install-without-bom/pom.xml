@@ -33,7 +33,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-spanner</artifactId>
-      <version>6.110.0</version>
+      <version>6.116.1</version>
     </dependency>
     <!-- [END spanner_install_without_bom] -->
     

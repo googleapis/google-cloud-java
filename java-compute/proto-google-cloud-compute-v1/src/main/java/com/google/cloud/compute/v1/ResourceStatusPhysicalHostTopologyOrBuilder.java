@@ -30,6 +30,51 @@ public interface ResourceStatusPhysicalHostTopologyOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   *
+   * @return Whether the additionalAttributes field is set.
+   */
+  boolean hasAdditionalAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   *
+   * @return The additionalAttributes.
+   */
+  com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+      getAdditionalAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder
+      getAdditionalAttributesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The ID of the block in which the running instance is
    * located. Instances within the same block experience low network latency.
    * </pre>

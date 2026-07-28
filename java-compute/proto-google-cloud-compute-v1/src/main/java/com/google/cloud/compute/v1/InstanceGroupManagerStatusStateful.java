@@ -76,7 +76,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group
+   * Output only. A bit indicating whether the managed instance group
    * has stateful configuration, that is, if you have configured any items
    * in a stateful policy or in per-instance configs.
    * The group might report that it has no stateful configuration even when
@@ -97,7 +97,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group
+   * Output only. A bit indicating whether the managed instance group
    * has stateful configuration, that is, if you have configured any items
    * in a stateful policy or in per-instance configs.
    * The group might report that it has no stateful configuration even when
@@ -122,7 +122,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    *
    *
    * <pre>
-   * Output only. [Output Only] Status of per-instance configurations on the instances.
+   * Output only. Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>
@@ -140,7 +140,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    *
    *
    * <pre>
-   * Output only. [Output Only] Status of per-instance configurations on the instances.
+   * Output only. Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>
@@ -162,7 +162,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    *
    *
    * <pre>
-   * Output only. [Output Only] Status of per-instance configurations on the instances.
+   * Output only. Status of per-instance configurations on the instances.
    * </pre>
    *
    * <code>
@@ -550,7 +550,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group
+     * Output only. A bit indicating whether the managed instance group
      * has stateful configuration, that is, if you have configured any items
      * in a stateful policy or in per-instance configs.
      * The group might report that it has no stateful configuration even when
@@ -571,7 +571,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group
+     * Output only. A bit indicating whether the managed instance group
      * has stateful configuration, that is, if you have configured any items
      * in a stateful policy or in per-instance configs.
      * The group might report that it has no stateful configuration even when
@@ -592,7 +592,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group
+     * Output only. A bit indicating whether the managed instance group
      * has stateful configuration, that is, if you have configured any items
      * in a stateful policy or in per-instance configs.
      * The group might report that it has no stateful configuration even when
@@ -617,7 +617,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group
+     * Output only. A bit indicating whether the managed instance group
      * has stateful configuration, that is, if you have configured any items
      * in a stateful policy or in per-instance configs.
      * The group might report that it has no stateful configuration even when
@@ -650,7 +650,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -667,7 +667,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -692,7 +692,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -718,7 +718,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -742,7 +742,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -775,7 +775,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -797,7 +797,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -815,7 +815,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>
@@ -838,7 +838,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      *
      *
      * <pre>
-     * Output only. [Output Only] Status of per-instance configurations on the instances.
+     * Output only. Status of per-instance configurations on the instances.
      * </pre>
      *
      * <code>

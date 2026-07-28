@@ -118,7 +118,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
-    RSA_PSS_3072_SHA256(2, 2),
+    RSA_PSS_3072_SHA256(3, 2),
     /**
      *
      *
@@ -128,7 +128,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_PSS_4096_SHA256 = 3;</code>
      */
-    RSA_PSS_4096_SHA256(3, 3),
+    RSA_PSS_4096_SHA256(5, 3),
     /**
      *
      *
@@ -138,7 +138,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_PSS_4096_SHA512 = 4;</code>
      */
-    RSA_PSS_4096_SHA512(4, 4),
+    RSA_PSS_4096_SHA512(7, 4),
     /**
      *
      *
@@ -148,7 +148,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
      */
-    RSA_SIGN_PKCS1_2048_SHA256(5, 5),
+    RSA_SIGN_PKCS1_2048_SHA256(9, 5),
     /**
      *
      *
@@ -158,7 +158,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
      */
-    RSA_SIGN_PKCS1_3072_SHA256(6, 6),
+    RSA_SIGN_PKCS1_3072_SHA256(10, 6),
     /**
      *
      *
@@ -168,7 +168,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
      */
-    RSA_SIGN_PKCS1_4096_SHA256(7, 7),
+    RSA_SIGN_PKCS1_4096_SHA256(11, 7),
     /**
      *
      *
@@ -178,7 +178,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>RSA_SIGN_PKCS1_4096_SHA512 = 8;</code>
      */
-    RSA_SIGN_PKCS1_4096_SHA512(8, 8),
+    RSA_SIGN_PKCS1_4096_SHA512(12, 8),
     /**
      *
      *
@@ -188,7 +188,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>ECDSA_P256_SHA256 = 9;</code>
      */
-    ECDSA_P256_SHA256(9, 9),
+    ECDSA_P256_SHA256(13, 9),
     /**
      *
      *
@@ -198,7 +198,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>ECDSA_P384_SHA384 = 10;</code>
      */
-    ECDSA_P384_SHA384(11, 10),
+    ECDSA_P384_SHA384(15, 10),
     /**
      *
      *
@@ -208,7 +208,17 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      * <code>ECDSA_P521_SHA512 = 11;</code>
      */
-    ECDSA_P521_SHA512(13, 11),
+    ECDSA_P521_SHA512(17, 11),
+    /**
+     *
+     *
+     * <pre>
+     * ML-DSA-65 Post-Quantum Cryptography signature algorithm.
+     * </pre>
+     *
+     * <code>ML_DSA_65 = 13;</code>
+     */
+    ML_DSA_65(19, 13),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -221,6 +231,50 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
           /* suffix= */ "",
           "SignatureAlgorithm");
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_2048_SHA256 = 1;</code>
+     */
+    public static final SignatureAlgorithm RSA_SIGN_PSS_2048_SHA256 = RSA_PSS_2048_SHA256;
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_3072_SHA256 = 2;</code>
+     */
+    public static final SignatureAlgorithm RSA_SIGN_PSS_3072_SHA256 = RSA_PSS_3072_SHA256;
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA256 = 3;</code>
+     */
+    public static final SignatureAlgorithm RSA_SIGN_PSS_4096_SHA256 = RSA_PSS_4096_SHA256;
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA512 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA512 = 4;</code>
+     */
+    public static final SignatureAlgorithm RSA_SIGN_PSS_4096_SHA512 = RSA_PSS_4096_SHA512;
 
     /**
      *
@@ -281,12 +335,34 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSASSA-PSS 2048 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_2048_SHA256 = 1;</code>
+     */
+    public static final int RSA_SIGN_PSS_2048_SHA256_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 3072 bit key with a SHA256 digest.
      * </pre>
      *
      * <code>RSA_PSS_3072_SHA256 = 2;</code>
      */
     public static final int RSA_PSS_3072_SHA256_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 3072 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_3072_SHA256 = 2;</code>
+     */
+    public static final int RSA_SIGN_PSS_3072_SHA256_VALUE = 2;
 
     /**
      *
@@ -303,12 +379,34 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA256 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA256 = 3;</code>
+     */
+    public static final int RSA_SIGN_PSS_4096_SHA256_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 4096 bit key with a SHA512 digest.
      * </pre>
      *
      * <code>RSA_PSS_4096_SHA512 = 4;</code>
      */
     public static final int RSA_PSS_4096_SHA512_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * RSASSA-PSS 4096 bit key with a SHA512 digest.
+     * </pre>
+     *
+     * <code>RSA_SIGN_PSS_4096_SHA512 = 4;</code>
+     */
+    public static final int RSA_SIGN_PSS_4096_SHA512_VALUE = 4;
 
     /**
      *
@@ -420,6 +518,17 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
      */
     public static final int EC_SIGN_P521_SHA512_VALUE = 11;
 
+    /**
+     *
+     *
+     * <pre>
+     * ML-DSA-65 Post-Quantum Cryptography signature algorithm.
+     * </pre>
+     *
+     * <code>ML_DSA_65 = 13;</code>
+     */
+    public static final int ML_DSA_65_VALUE = 13;
+
     public final int getNumber() {
       if (index == -1) {
         throw new java.lang.IllegalArgumentException(
@@ -468,6 +577,8 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
           return ECDSA_P384_SHA384;
         case 11:
           return ECDSA_P521_SHA512;
+        case 13:
+          return ML_DSA_65;
         default:
           return null;
       }
@@ -510,9 +621,13 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
       return new SignatureAlgorithm[] {
         SIGNATURE_ALGORITHM_UNSPECIFIED,
         RSA_PSS_2048_SHA256,
+        RSA_SIGN_PSS_2048_SHA256,
         RSA_PSS_3072_SHA256,
+        RSA_SIGN_PSS_3072_SHA256,
         RSA_PSS_4096_SHA256,
+        RSA_SIGN_PSS_4096_SHA256,
         RSA_PSS_4096_SHA512,
+        RSA_SIGN_PSS_4096_SHA512,
         RSA_SIGN_PKCS1_2048_SHA256,
         RSA_SIGN_PKCS1_3072_SHA256,
         RSA_SIGN_PKCS1_4096_SHA256,
@@ -523,6 +638,7 @@ public final class PkixPublicKey extends com.google.protobuf.GeneratedMessage
         EC_SIGN_P384_SHA384,
         ECDSA_P521_SHA512,
         EC_SIGN_P521_SHA512,
+        ML_DSA_65,
       };
     }
 

@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -242,9 +244,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PublicAdvertisedPrefixesClient implements BackgroundResource {
-  private final PublicAdvertisedPrefixesSettings settings;
+  private final @Nullable PublicAdvertisedPrefixesSettings settings;
   private final PublicAdvertisedPrefixesStub stub;
 
   /** Constructs an instance of PublicAdvertisedPrefixesClient with default settings. */
@@ -286,7 +289,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PublicAdvertisedPrefixesSettings getSettings() {
+  public final @Nullable PublicAdvertisedPrefixesSettings getSettings() {
     return settings;
   }
 
@@ -1274,12 +1277,13 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicAdvertisedPrefixesRequest,
                 PublicAdvertisedPrefixList,
                 PublicAdvertisedPrefix>
             context,
-        PublicAdvertisedPrefixList response) {
+        @Nullable PublicAdvertisedPrefixList response) {
       super(context, response);
     }
 
@@ -1289,18 +1293,20 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicAdvertisedPrefixesRequest,
                 PublicAdvertisedPrefixList,
                 PublicAdvertisedPrefix>
             context,
-        PublicAdvertisedPrefixList response) {
+        @Nullable PublicAdvertisedPrefixList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPublicAdvertisedPrefixesRequest,
                 PublicAdvertisedPrefixList,
                 PublicAdvertisedPrefix>
@@ -1318,7 +1324,7 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1327,7 +1333,8 @@ public class PublicAdvertisedPrefixesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

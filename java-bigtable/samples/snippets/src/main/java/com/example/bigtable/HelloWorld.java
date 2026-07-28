@@ -1,0 +1,310 @@
+/*
+ * Copyright 2019 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.example.bigtable;
+
+// [START bigtable_hw_imports]
+
+import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
+
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.api.gax.rpc.ServerStream;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
+import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
+import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
+
+// [END bigtable_hw_imports]
+
+/**
+ * An example of using Google Cloud Bigtable.
+ *
+ * <p>This example is a very simple "hello world" application, that illustrates how to create a new
+ * table, write to the table, read the data back, and delete the table.
+ *
+ * <ul>
+ *   <li>create table
+ *   <li>read single row
+ *   <li>read table
+ *   <li>delete table
+ * </ul>
+ */
+public class HelloWorld {
+
+  private static final String COLUMN_FAMILY = "cf1";
+  private static final String COLUMN_QUALIFIER_GREETING = "greeting";
+  private static final String COLUMN_QUALIFIER_NAME = "name";
+  private static final String ROW_KEY_PREFIX = "rowKey";
+  private final String projectId;
+  private final String instanceId;
+  private final String tableId;
+  private final BigtableDataClient dataClient;
+  private final BigtableTableAdminClientV2 adminClient;
+
+  public static void main(String[] args) throws Exception {
+
+    if (args.length != 2) {
+      System.out.println("Missing required project id or instance id");
+      return;
+    }
+    String projectId = args[0];
+    String instanceId = args[1];
+
+    HelloWorld helloWorld = new HelloWorld(projectId, instanceId, "test-table");
+    helloWorld.run();
+  }
+
+  public HelloWorld(String projectId, String instanceId, String tableId) throws IOException {
+    this.projectId = projectId;
+    this.instanceId = instanceId;
+    this.tableId = tableId;
+
+    // [START bigtable_hw_connect]
+    // Creates the settings to configure a bigtable data client.
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
+
+    // Creates a bigtable data client.
+    dataClient = BigtableDataClient.create(settings);
+
+    // Creates a bigtable table admin client.
+    adminClient = BigtableTableAdminClientV2.create();
+    // [END bigtable_hw_connect]
+  }
+
+  public void run() throws Exception {
+    createTable();
+    writeToTable();
+    readSingleRow();
+    readSpecificCells();
+    readTable();
+    filterLimitCellsPerCol(tableId);
+    deleteTable();
+    close();
+  }
+
+  public void close() {
+    dataClient.close();
+    adminClient.close();
+  }
+
+  /** Demonstrates how to create a table. */
+  public void createTable() {
+    // [START bigtable_hw_create_table]
+    // Checks if table exists, creates table if does not exist.
+    boolean exists = false;
+    try {
+      adminClient.getTable(
+          GetTableRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId)
+              .setView(Table.View.NAME_ONLY)
+              .build());
+      exists = true;
+    } catch (NotFoundException e) {
+      // ignore
+    }
+    if (!exists) {
+      System.out.println("Creating table: " + tableId);
+      String parent = "projects/" + projectId + "/instances/" + instanceId;
+      CreateTableRequest request =
+          CreateTableRequest.newBuilder()
+              .setParent(parent)
+              .setTableId(tableId)
+              .setTable(
+                  Table.newBuilder()
+                      .putColumnFamilies(COLUMN_FAMILY, ColumnFamily.getDefaultInstance())
+                      .build())
+              .build();
+      adminClient.createTable(request);
+      System.out.printf("Table %s created successfully%n", tableId);
+    }
+    // [END bigtable_hw_create_table]
+  }
+
+  /** Demonstrates how to write some rows to a table. */
+  public void writeToTable() {
+    // [START bigtable_hw_write_rows]
+    try {
+      System.out.println("\nWriting some greetings to the table");
+      String[] names = {"World", "Bigtable", "Java"};
+      for (int i = 0; i < names.length; i++) {
+        String greeting = "Hello " + names[i] + "!";
+        RowMutation rowMutation =
+            RowMutation.create(TableId.of(tableId), ROW_KEY_PREFIX + i)
+                .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME, names[i])
+                .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_GREETING, greeting);
+        dataClient.mutateRow(rowMutation);
+        System.out.println(greeting);
+      }
+    } catch (NotFoundException e) {
+      System.err.println("Failed to write to non-existent table: " + e.getMessage());
+    }
+    // [END bigtable_hw_write_rows]
+  }
+
+  /** Demonstrates how to read a single row from a table. */
+  public Row readSingleRow() {
+    // [START bigtable_hw_get_by_key]
+    try {
+      System.out.println("\nReading a single row by row key");
+      Row row = dataClient.readRow(TableId.of(tableId), ROW_KEY_PREFIX + 0);
+      System.out.println("Row: " + row.getKey().toStringUtf8());
+      for (RowCell cell : row.getCells()) {
+        System.out.printf(
+            "Family: %s    Qualifier: %s    Value: %s%n",
+            cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+      }
+      return row;
+    } catch (NotFoundException e) {
+      System.err.println("Failed to read from a non-existent table: " + e.getMessage());
+      return null;
+    }
+    // [END bigtable_hw_get_by_key]
+  }
+
+  /** Demonstrates how to access specific cells by family and qualifier. */
+  public List<RowCell> readSpecificCells() {
+    // [START bigtable_hw_get_by_key]
+    try {
+      System.out.println("\nReading specific cells by family and qualifier");
+      Row row = dataClient.readRow(TableId.of(tableId), ROW_KEY_PREFIX + 0);
+      System.out.println("Row: " + row.getKey().toStringUtf8());
+      List<RowCell> cells = row.getCells(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME);
+      for (RowCell cell : cells) {
+        System.out.printf(
+            "Family: %s    Qualifier: %s    Value: %s%n",
+            cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+      }
+      return cells;
+    } catch (NotFoundException e) {
+      System.err.println("Failed to read from a non-existent table: " + e.getMessage());
+      return null;
+    }
+    // [END bigtable_hw_get_by_key]
+  }
+
+  /** Demonstrates how to read an entire table. */
+  public List<Row> readTable() {
+    // [START bigtable_hw_scan_all]
+    try {
+      System.out.println("\nReading the entire table");
+      Query query = Query.create(TableId.of(tableId));
+      ServerStream<Row> rowStream = dataClient.readRows(query);
+      List<Row> tableRows = new ArrayList<>();
+      for (Row r : rowStream) {
+        System.out.println("Row Key: " + r.getKey().toStringUtf8());
+        tableRows.add(r);
+        for (RowCell cell : r.getCells()) {
+          System.out.printf(
+              "Family: %s    Qualifier: %s    Value: %s%n",
+              cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+        }
+      }
+      return tableRows;
+    } catch (NotFoundException e) {
+      System.err.println("Failed to read a non-existent table: " + e.getMessage());
+      return null;
+    }
+    // [END bigtable_hw_scan_all]
+  }
+
+  // [START bigtable_hw_create_filter]
+  public void filterLimitCellsPerCol(String tableId) {
+    // A filter that matches only the most recent cell within each column
+    Filter filter = FILTERS.limit().cellsPerColumn(1);
+    readRowFilter(tableId, filter);
+    readFilter(tableId, filter);
+  }
+
+  // [END bigtable_hw_create_filter]
+
+  // [START bigtable_hw_get_with_filter]
+  private void readRowFilter(String tableId, Filter filter) {
+    String rowKey =
+        Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
+    Row row = dataClient.readRow(TableId.of(tableId), rowKey, filter);
+    printRow(row);
+    System.out.println("Row filter completed.");
+  }
+
+  // [END bigtable_hw_get_with_filter]
+
+  // [START bigtable_hw_scan_with_filter]
+  private void readFilter(String tableId, Filter filter) {
+    Query query = Query.create(TableId.of(tableId)).filter(filter);
+    ServerStream<Row> rows = dataClient.readRows(query);
+    for (Row row : rows) {
+      printRow(row);
+    }
+    System.out.println("Table filter completed.");
+  }
+
+  // [END bigtable_hw_scan_with_filter]
+
+  /** Demonstrates how to delete a table. */
+  public void deleteTable() {
+    // [START bigtable_hw_delete_table]
+    System.out.println("\nDeleting table: " + tableId);
+    try {
+      String tableName =
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId;
+      adminClient.deleteTable(tableName);
+      System.out.printf("Table %s deleted successfully%n", tableId);
+    } catch (NotFoundException e) {
+      System.err.println("Failed to delete a non-existent table: " + e.getMessage());
+    }
+    // [END bigtable_hw_delete_table]
+  }
+
+  // [START bigtable_print_row]
+  private static void printRow(Row row) {
+    if (row == null) {
+      return;
+    }
+    System.out.printf("Reading data for %s%n", row.getKey().toStringUtf8());
+    String colFamily = "";
+    for (RowCell cell : row.getCells()) {
+      if (!cell.getFamily().equals(colFamily)) {
+        colFamily = cell.getFamily();
+        System.out.printf("Column Family %s%n", colFamily);
+      }
+      String labels =
+          cell.getLabels().size() == 0 ? "" : " [" + String.join(",", cell.getLabels()) + "]";
+      System.out.printf(
+          "\t%s: %s @%s%s%n",
+          cell.getQualifier().toStringUtf8(),
+          cell.getValue().toStringUtf8(),
+          cell.getTimestamp(),
+          labels);
+    }
+    System.out.println();
+  }
+  // [END bigtable_print_row]
+}

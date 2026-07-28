@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ParticipantSessionName implements ResourceName {
   private static final PathTemplate CONFERENCE_RECORD_PARTICIPANT_PARTICIPANT_SESSION =
@@ -89,7 +92,7 @@ public class ParticipantSessionName implements ResourceName {
         .toString();
   }
 
-  public static ParticipantSessionName parse(String formattedString) {
+  public static @Nullable ParticipantSessionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -110,7 +113,7 @@ public class ParticipantSessionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ParticipantSessionName> values) {
+  public static List<String> toStringList(List<@Nullable ParticipantSessionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ParticipantSessionName value : values) {
       if (value == null) {
@@ -164,7 +167,7 @@ public class ParticipantSessionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

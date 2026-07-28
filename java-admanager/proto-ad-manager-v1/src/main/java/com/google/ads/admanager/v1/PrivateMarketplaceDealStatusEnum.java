@@ -141,6 +141,16 @@ public final class PrivateMarketplaceDealStatusEnum extends com.google.protobuf.
      * <code>BUYER_PAUSED = 5;</code>
      */
     BUYER_PAUSED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The deal is past its end date.
+     * </pre>
+     *
+     * <code>COMPLETED = 6;</code>
+     */
+    COMPLETED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -220,6 +230,17 @@ public final class PrivateMarketplaceDealStatusEnum extends com.google.protobuf.
      */
     public static final int BUYER_PAUSED_VALUE = 5;
 
+    /**
+     *
+     *
+     * <pre>
+     * The deal is past its end date.
+     * </pre>
+     *
+     * <code>COMPLETED = 6;</code>
+     */
+    public static final int COMPLETED_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -256,6 +277,8 @@ public final class PrivateMarketplaceDealStatusEnum extends com.google.protobuf.
           return SELLER_PAUSED;
         case 5:
           return BUYER_PAUSED;
+        case 6:
+          return COMPLETED;
         default:
           return null;
       }

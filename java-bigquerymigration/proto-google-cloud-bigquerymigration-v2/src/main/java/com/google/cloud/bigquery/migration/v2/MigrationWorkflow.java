@@ -607,10 +607,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -623,10 +624,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -639,10 +641,11 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was created.
+   * Output only. Time when the workflow was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 4;</code>
+   * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -656,10 +659,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -672,10 +677,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -690,10 +697,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Time when the workflow was last updated.
+   * Output only. Time when the workflow was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
@@ -1839,10 +1848,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1854,10 +1865,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1875,10 +1888,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1898,10 +1913,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1918,10 +1935,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1946,10 +1965,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1966,10 +1987,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000010;
@@ -1981,10 +2004,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2000,10 +2025,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was created.
+     * Output only. Time when the workflow was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 4;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -2033,10 +2060,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the lastUpdateTime field is set.
      */
@@ -2048,10 +2077,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lastUpdateTime.
      */
@@ -2069,10 +2100,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -2092,10 +2125,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -2112,10 +2147,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -2140,10 +2177,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLastUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -2160,10 +2199,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
       bitField0_ |= 0x00000020;
@@ -2175,10 +2216,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
       if (lastUpdateTimeBuilder_ != null) {
@@ -2194,10 +2237,12 @@ public final class MigrationWorkflow extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Time when the workflow was last updated.
+     * Output only. Time when the workflow was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 5;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,

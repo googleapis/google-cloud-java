@@ -832,6 +832,65 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int SIP_CONFIG_FIELD_NUMBER = 16;
+  private com.google.cloud.dialogflow.v2.SipConfig sipConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sipConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSipConfig() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sipConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SipConfig getSipConfig() {
+    return sipConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SipConfig.getDefaultInstance()
+        : sipConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for SIP connections.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SipConfigOrBuilder getSipConfigOrBuilder() {
+    return sipConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SipConfig.getDefaultInstance()
+        : sipConfig_;
+  }
+
   public static final int TIME_ZONE_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
@@ -965,7 +1024,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasTtsConfig() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1065,6 +1124,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       com.google.protobuf.GeneratedMessage.writeString(output, 14, timeZone_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(16, getSipConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(18, getTtsConfig());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1128,6 +1190,9 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       size += com.google.protobuf.GeneratedMessage.computeStringSize(14, timeZone_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSipConfig());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getTtsConfig());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
@@ -1199,6 +1264,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       if (!getSttConfig().equals(other.getSttConfig())) return false;
     }
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (hasSipConfig() != other.hasSipConfig()) return false;
+    if (hasSipConfig()) {
+      if (!getSipConfig().equals(other.getSipConfig())) return false;
+    }
     if (!getTimeZone().equals(other.getTimeZone())) return false;
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (hasTtsConfig() != other.hasTtsConfig()) return false;
@@ -1262,6 +1331,10 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
+    if (hasSipConfig()) {
+      hash = (37 * hash) + SIP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSipConfig().hashCode();
+    }
     hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getTimeZone().hashCode();
     hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
@@ -1421,6 +1494,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         internalGetNewMessageEventNotificationConfigFieldBuilder();
         internalGetNewRecognitionResultNotificationConfigFieldBuilder();
         internalGetSttConfigFieldBuilder();
+        internalGetSipConfigFieldBuilder();
         internalGetTtsConfigFieldBuilder();
       }
     }
@@ -1482,6 +1556,11 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         sttConfigBuilder_ = null;
       }
       languageCode_ = "";
+      sipConfig_ = null;
+      if (sipConfigBuilder_ != null) {
+        sipConfigBuilder_.dispose();
+        sipConfigBuilder_ = null;
+      }
       timeZone_ = "";
       securitySettings_ = "";
       ttsConfig_ = null;
@@ -1595,14 +1674,18 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         result.languageCode_ = languageCode_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.timeZone_ = timeZone_;
+        result.sipConfig_ = sipConfigBuilder_ == null ? sipConfig_ : sipConfigBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.securitySettings_ = securitySettings_;
+        result.timeZone_ = timeZone_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.securitySettings_ = securitySettings_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.ttsConfig_ = ttsConfigBuilder_ == null ? ttsConfig_ : ttsConfigBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1666,14 +1749,17 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasSipConfig()) {
+        mergeSipConfig(other.getSipConfig());
+      }
       if (!other.getTimeZone().isEmpty()) {
         timeZone_ = other.timeZone_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getSecuritySettings().isEmpty()) {
         securitySettings_ = other.securitySettings_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasTtsConfig()) {
@@ -1792,20 +1878,27 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
             case 106:
               {
                 securitySettings_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 106
             case 114:
               {
                 timeZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    internalGetSipConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
             case 146:
               {
                 input.readMessage(
                     internalGetTtsConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 146
             case 170:
@@ -4378,6 +4471,218 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private com.google.cloud.dialogflow.v2.SipConfig sipConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SipConfig,
+            com.google.cloud.dialogflow.v2.SipConfig.Builder,
+            com.google.cloud.dialogflow.v2.SipConfigOrBuilder>
+        sipConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sipConfig field is set.
+     */
+    public boolean hasSipConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sipConfig.
+     */
+    public com.google.cloud.dialogflow.v2.SipConfig getSipConfig() {
+      if (sipConfigBuilder_ == null) {
+        return sipConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SipConfig.getDefaultInstance()
+            : sipConfig_;
+      } else {
+        return sipConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSipConfig(com.google.cloud.dialogflow.v2.SipConfig value) {
+      if (sipConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sipConfig_ = value;
+      } else {
+        sipConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSipConfig(com.google.cloud.dialogflow.v2.SipConfig.Builder builderForValue) {
+      if (sipConfigBuilder_ == null) {
+        sipConfig_ = builderForValue.build();
+      } else {
+        sipConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSipConfig(com.google.cloud.dialogflow.v2.SipConfig value) {
+      if (sipConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && sipConfig_ != null
+            && sipConfig_ != com.google.cloud.dialogflow.v2.SipConfig.getDefaultInstance()) {
+          getSipConfigBuilder().mergeFrom(value);
+        } else {
+          sipConfig_ = value;
+        }
+      } else {
+        sipConfigBuilder_.mergeFrom(value);
+      }
+      if (sipConfig_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSipConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      sipConfig_ = null;
+      if (sipConfigBuilder_ != null) {
+        sipConfigBuilder_.dispose();
+        sipConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SipConfig.Builder getSipConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return internalGetSipConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SipConfigOrBuilder getSipConfigOrBuilder() {
+      if (sipConfigBuilder_ != null) {
+        return sipConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sipConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SipConfig.getDefaultInstance()
+            : sipConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for SIP connections.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SipConfig sip_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SipConfig,
+            com.google.cloud.dialogflow.v2.SipConfig.Builder,
+            com.google.cloud.dialogflow.v2.SipConfigOrBuilder>
+        internalGetSipConfigFieldBuilder() {
+      if (sipConfigBuilder_ == null) {
+        sipConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.SipConfig,
+                com.google.cloud.dialogflow.v2.SipConfig.Builder,
+                com.google.cloud.dialogflow.v2.SipConfigOrBuilder>(
+                getSipConfig(), getParentForChildren(), isClean());
+        sipConfig_ = null;
+      }
+      return sipConfigBuilder_;
+    }
+
     private java.lang.Object timeZone_ = "";
 
     /**
@@ -4449,7 +4754,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       timeZone_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4469,7 +4774,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder clearTimeZone() {
       timeZone_ = getDefaultInstance().getTimeZone();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4494,7 +4799,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       timeZone_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4570,7 +4875,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       securitySettings_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4590,7 +4895,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSecuritySettings() {
       securitySettings_ = getDefaultInstance().getSecuritySettings();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4615,7 +4920,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       securitySettings_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4642,7 +4947,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * @return Whether the ttsConfig field is set.
      */
     public boolean hasTtsConfig() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4690,7 +4995,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         ttsConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4714,7 +5019,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
       } else {
         ttsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4733,7 +5038,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTtsConfig(com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig value) {
       if (ttsConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && ttsConfig_ != null
             && ttsConfig_
                 != com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.getDefaultInstance()) {
@@ -4745,7 +5050,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
         ttsConfigBuilder_.mergeFrom(value);
       }
       if (ttsConfig_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4764,7 +5069,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig tts_config = 18;</code>
      */
     public Builder clearTtsConfig() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       ttsConfig_ = null;
       if (ttsConfigBuilder_ != null) {
         ttsConfigBuilder_.dispose();
@@ -4787,7 +5092,7 @@ public final class ConversationProfile extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.dialogflow.v2.SynthesizeSpeechConfig tts_config = 18;</code>
      */
     public com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.Builder getTtsConfigBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetTtsConfigFieldBuilder().getBuilder();
     }

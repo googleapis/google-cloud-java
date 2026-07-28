@@ -1173,6 +1173,7 @@ public class VectorSearchServiceClientHttpJsonTest {
     ExportDataObjectsRequest request =
         ExportDataObjectsRequest.newBuilder()
             .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+            .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
             .build();
 
     ExportDataObjectsResponse actualResponse = client.exportDataObjectsAsync(request).get();
@@ -1204,6 +1205,7 @@ public class VectorSearchServiceClientHttpJsonTest {
       ExportDataObjectsRequest request =
           ExportDataObjectsRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
               .build();
       client.exportDataObjectsAsync(request).get();
       Assert.fail("No exception raised");

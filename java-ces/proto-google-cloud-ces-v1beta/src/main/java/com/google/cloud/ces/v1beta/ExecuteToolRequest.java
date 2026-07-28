@@ -545,6 +545,71 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     return args_ == null ? com.google.protobuf.Struct.getDefaultInstance() : args_;
   }
 
+  public static final int MOCK_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.ces.v1beta.MockConfig mockConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mockConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMockConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mockConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.MockConfig getMockConfig() {
+    return mockConfig_ == null
+        ? com.google.cloud.ces.v1beta.MockConfig.getDefaultInstance()
+        : mockConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.MockConfigOrBuilder getMockConfigOrBuilder() {
+    return mockConfig_ == null
+        ? com.google.cloud.ces.v1beta.MockConfig.getDefaultInstance()
+        : mockConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -576,6 +641,9 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     }
     if (toolExecutionContextCase_ == 6) {
       output.writeMessage(6, (com.google.protobuf.Struct) toolExecutionContext_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getMockConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -610,6 +678,9 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.protobuf.Struct) toolExecutionContext_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMockConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -630,6 +701,10 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     if (hasArgs() != other.hasArgs()) return false;
     if (hasArgs()) {
       if (!getArgs().equals(other.getArgs())) return false;
+    }
+    if (hasMockConfig() != other.hasMockConfig()) return false;
+    if (hasMockConfig()) {
+      if (!getMockConfig().equals(other.getMockConfig())) return false;
     }
     if (!getToolIdentifierCase().equals(other.getToolIdentifierCase())) return false;
     switch (toolIdentifierCase_) {
@@ -669,6 +744,10 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     if (hasArgs()) {
       hash = (37 * hash) + ARGS_FIELD_NUMBER;
       hash = (53 * hash) + getArgs().hashCode();
+    }
+    if (hasMockConfig()) {
+      hash = (37 * hash) + MOCK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMockConfig().hashCode();
     }
     switch (toolIdentifierCase_) {
       case 1:
@@ -837,6 +916,7 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetArgsFieldBuilder();
+        internalGetMockConfigFieldBuilder();
       }
     }
 
@@ -858,6 +938,11 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       if (argsBuilder_ != null) {
         argsBuilder_.dispose();
         argsBuilder_ = null;
+      }
+      mockConfig_ = null;
+      if (mockConfigBuilder_ != null) {
+        mockConfigBuilder_.dispose();
+        mockConfigBuilder_ = null;
       }
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
@@ -908,6 +993,10 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
         result.args_ = argsBuilder_ == null ? args_ : argsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mockConfig_ = mockConfigBuilder_ == null ? mockConfig_ : mockConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -946,6 +1035,9 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasArgs()) {
         mergeArgs(other.getArgs());
+      }
+      if (other.hasMockConfig()) {
+        mergeMockConfig(other.getMockConfig());
       }
       switch (other.getToolIdentifierCase()) {
         case TOOL:
@@ -1046,6 +1138,13 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
                 toolExecutionContextCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetMockConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2274,6 +2373,236 @@ public final class ExecuteToolRequest extends com.google.protobuf.GeneratedMessa
         args_ = null;
       }
       return argsBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.MockConfig mockConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.MockConfig,
+            com.google.cloud.ces.v1beta.MockConfig.Builder,
+            com.google.cloud.ces.v1beta.MockConfigOrBuilder>
+        mockConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the mockConfig field is set.
+     */
+    public boolean hasMockConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mockConfig.
+     */
+    public com.google.cloud.ces.v1beta.MockConfig getMockConfig() {
+      if (mockConfigBuilder_ == null) {
+        return mockConfig_ == null
+            ? com.google.cloud.ces.v1beta.MockConfig.getDefaultInstance()
+            : mockConfig_;
+      } else {
+        return mockConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMockConfig(com.google.cloud.ces.v1beta.MockConfig value) {
+      if (mockConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mockConfig_ = value;
+      } else {
+        mockConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMockConfig(com.google.cloud.ces.v1beta.MockConfig.Builder builderForValue) {
+      if (mockConfigBuilder_ == null) {
+        mockConfig_ = builderForValue.build();
+      } else {
+        mockConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMockConfig(com.google.cloud.ces.v1beta.MockConfig value) {
+      if (mockConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && mockConfig_ != null
+            && mockConfig_ != com.google.cloud.ces.v1beta.MockConfig.getDefaultInstance()) {
+          getMockConfigBuilder().mergeFrom(value);
+        } else {
+          mockConfig_ = value;
+        }
+      } else {
+        mockConfigBuilder_.mergeFrom(value);
+      }
+      if (mockConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMockConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mockConfig_ = null;
+      if (mockConfigBuilder_ != null) {
+        mockConfigBuilder_.dispose();
+        mockConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.MockConfig.Builder getMockConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetMockConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.MockConfigOrBuilder getMockConfigOrBuilder() {
+      if (mockConfigBuilder_ != null) {
+        return mockConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return mockConfig_ == null
+            ? com.google.cloud.ces.v1beta.MockConfig.getDefaultInstance()
+            : mockConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Mock configuration for the tool execution.
+     * If this field is set, tools that call other tools will be
+     * mocked based on the provided patterns and responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.MockConfig,
+            com.google.cloud.ces.v1beta.MockConfig.Builder,
+            com.google.cloud.ces.v1beta.MockConfigOrBuilder>
+        internalGetMockConfigFieldBuilder() {
+      if (mockConfigBuilder_ == null) {
+        mockConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.MockConfig,
+                com.google.cloud.ces.v1beta.MockConfig.Builder,
+                com.google.cloud.ces.v1beta.MockConfigOrBuilder>(
+                getMockConfig(), getParentForChildren(), isClean());
+        mockConfig_ = null;
+      }
+      return mockConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ExecuteToolRequest)

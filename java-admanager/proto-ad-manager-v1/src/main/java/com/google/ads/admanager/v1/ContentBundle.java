@@ -59,6 +59,7 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
   private ContentBundle() {
     name_ = "";
     displayName_ = "";
+    status_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -76,6 +77,7 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.ContentBundle.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -190,6 +192,105 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int STATUS_FIELD_NUMBER = 4;
+  private int status_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ContentBundleStatus of the
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override
+  public int getStatusValue() {
+    return status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ContentBundleStatus of the
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus getStatus() {
+    com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus result =
+        com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.forNumber(status_);
+    return result == null
+        ? com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -210,6 +311,15 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, displayName_);
     }
+    if (status_
+        != com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus
+            .CONTENT_BUNDLE_STATUS_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, status_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -224,6 +334,15 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayName_);
+    }
+    if (status_
+        != com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus
+            .CONTENT_BUNDLE_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -243,6 +362,11 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (status_ != other.status_) return false;
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -258,6 +382,12 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -393,10 +523,19 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.ads.admanager.v1.ContentBundle.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUpdateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -405,6 +544,12 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       displayName_ = "";
+      status_ = 0;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -447,6 +592,15 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -470,6 +624,12 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -509,6 +669,19 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 32:
+              {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+            case 58:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -768,6 +941,337 @@ public final class ContentBundle extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ContentBundleStatus of the
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+     * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      return status_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ContentBundleStatus of the
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+     * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ContentBundleStatus of the
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+     * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus getStatus() {
+      com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus result =
+          com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.forNumber(
+              status_);
+      return result == null
+          ? com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ContentBundleStatus of the
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+     * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ContentBundleStatus of the
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+     * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time the `ContentBundle` was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.ContentBundle)

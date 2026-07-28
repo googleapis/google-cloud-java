@@ -43,6 +43,7 @@ public class SyncFetchFrameworkComplianceReport {
                           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_COMPLIANCE_REPORT]")
                       .toString())
               .setEndTime(Timestamp.newBuilder().build())
+              .setFilter("filter-1274492040")
               .build();
       FrameworkComplianceReport response = monitoringClient.fetchFrameworkComplianceReport(request);
     }

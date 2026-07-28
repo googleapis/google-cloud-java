@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -612,8 +614,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -742,9 +745,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataplexServiceClient implements BackgroundResource {
-  private final DataplexServiceSettings settings;
+  private final @Nullable DataplexServiceSettings settings;
   private final DataplexServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -792,7 +796,7 @@ public class DataplexServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataplexServiceSettings getSettings() {
+  public final @Nullable DataplexServiceSettings getSettings() {
     return settings;
   }
 
@@ -854,7 +858,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Lake, OperationMetadata> createLakeAsync(
-      LocationName parent, Lake lake, String lakeId) {
+      @Nullable LocationName parent, Lake lake, String lakeId) {
     CreateLakeRequest request =
         CreateLakeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1143,7 +1147,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteLakeAsync(LakeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteLakeAsync(@Nullable LakeName name) {
     DeleteLakeRequest request =
         DeleteLakeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteLakeAsync(request);
@@ -1290,7 +1294,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLakesPagedResponse listLakes(LocationName parent) {
+  public final ListLakesPagedResponse listLakes(@Nullable LocationName parent) {
     ListLakesRequest request =
         ListLakesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLakes(request);
@@ -1455,7 +1459,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Lake getLake(LakeName name) {
+  public final Lake getLake(@Nullable LakeName name) {
     GetLakeRequest request =
         GetLakeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLake(request);
@@ -1567,7 +1571,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLakeActionsPagedResponse listLakeActions(LakeName parent) {
+  public final ListLakeActionsPagedResponse listLakeActions(@Nullable LakeName parent) {
     ListLakeActionsRequest request =
         ListLakeActionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1746,7 +1750,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Zone, OperationMetadata> createZoneAsync(
-      LakeName parent, Zone zone, String zoneId) {
+      @Nullable LakeName parent, Zone zone, String zoneId) {
     CreateZoneRequest request =
         CreateZoneRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2035,7 +2039,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteZoneAsync(ZoneName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteZoneAsync(@Nullable ZoneName name) {
     DeleteZoneRequest request =
         DeleteZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteZoneAsync(request);
@@ -2181,7 +2185,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListZonesPagedResponse listZones(LakeName parent) {
+  public final ListZonesPagedResponse listZones(@Nullable LakeName parent) {
     ListZonesRequest request =
         ListZonesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listZones(request);
@@ -2345,7 +2349,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Zone getZone(ZoneName name) {
+  public final Zone getZone(@Nullable ZoneName name) {
     GetZoneRequest request =
         GetZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getZone(request);
@@ -2457,7 +2461,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListZoneActionsPagedResponse listZoneActions(ZoneName parent) {
+  public final ListZoneActionsPagedResponse listZoneActions(@Nullable ZoneName parent) {
     ListZoneActionsRequest request =
         ListZoneActionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2635,7 +2639,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Asset, OperationMetadata> createAssetAsync(
-      ZoneName parent, Asset asset, String assetId) {
+      @Nullable ZoneName parent, Asset asset, String assetId) {
     CreateAssetRequest request =
         CreateAssetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2929,7 +2933,8 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(AssetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteAssetAsync(
+      @Nullable AssetName name) {
     DeleteAssetRequest request =
         DeleteAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAssetAsync(request);
@@ -3079,7 +3084,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(ZoneName parent) {
+  public final ListAssetsPagedResponse listAssets(@Nullable ZoneName parent) {
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
@@ -3243,7 +3248,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Asset getAsset(AssetName name) {
+  public final Asset getAsset(@Nullable AssetName name) {
     GetAssetRequest request =
         GetAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAsset(request);
@@ -3358,7 +3363,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetActionsPagedResponse listAssetActions(AssetName parent) {
+  public final ListAssetActionsPagedResponse listAssetActions(@Nullable AssetName parent) {
     ListAssetActionsRequest request =
         ListAssetActionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3532,7 +3537,7 @@ public class DataplexServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Task, OperationMetadata> createTaskAsync(
-      LakeName parent, Task task, String taskId) {
+      @Nullable LakeName parent, Task task, String taskId) {
     CreateTaskRequest request =
         CreateTaskRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3810,7 +3815,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/task/{task_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteTaskAsync(TaskName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteTaskAsync(@Nullable TaskName name) {
     DeleteTaskRequest request =
         DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTaskAsync(request);
@@ -3952,7 +3957,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(LakeName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable LakeName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -4116,7 +4121,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{tasks_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -4228,7 +4233,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(TaskName parent) {
+  public final ListJobsPagedResponse listJobs(@Nullable TaskName parent) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listJobs(request);
@@ -4386,7 +4391,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RunTaskResponse runTask(TaskName name) {
+  public final RunTaskResponse runTask(@Nullable TaskName name) {
     RunTaskRequest request =
         RunTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runTask(request);
@@ -4501,7 +4506,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -4613,7 +4618,7 @@ public class DataplexServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/task/{task_id}/job/{job_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelJob(JobName name) {
+  public final void cancelJob(@Nullable JobName name) {
     CancelJobRequest request =
         CancelJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     cancelJob(request);
@@ -4705,13 +4710,19 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -4744,13 +4755,19 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -4784,13 +4801,19 @@ public class DataplexServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -5120,8 +5143,8 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractPage<ListLakesRequest, ListLakesResponse, Lake, ListLakesPage> {
 
     private ListLakesPage(
-        PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
-        ListLakesResponse response) {
+        @Nullable PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
+        @Nullable ListLakesResponse response) {
       super(context, response);
     }
 
@@ -5131,14 +5154,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLakesPage createPage(
-        PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
-        ListLakesResponse response) {
+        @Nullable PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
+        @Nullable ListLakesResponse response) {
       return new ListLakesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLakesPage> createPageAsync(
-        PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
+        @Nullable PageContext<ListLakesRequest, ListLakesResponse, Lake> context,
         ApiFuture<ListLakesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5148,7 +5171,7 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListLakesRequest, ListLakesResponse, Lake, ListLakesPage, ListLakesFixedSizeCollection> {
 
-    private ListLakesFixedSizeCollection(List<ListLakesPage> pages, int collectionSize) {
+    private ListLakesFixedSizeCollection(@Nullable List<ListLakesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5158,7 +5181,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLakesFixedSizeCollection createCollection(
-        List<ListLakesPage> pages, int collectionSize) {
+        @Nullable List<ListLakesPage> pages, int collectionSize) {
       return new ListLakesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5192,8 +5215,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListLakeActionsRequest, ListActionsResponse, Action, ListLakeActionsPage> {
 
     private ListLakeActionsPage(
-        PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       super(context, response);
     }
 
@@ -5203,14 +5226,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLakeActionsPage createPage(
-        PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       return new ListLakeActionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLakeActionsPage> createPageAsync(
-        PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
+        @Nullable PageContext<ListLakeActionsRequest, ListActionsResponse, Action> context,
         ApiFuture<ListActionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5225,7 +5248,7 @@ public class DataplexServiceClient implements BackgroundResource {
           ListLakeActionsFixedSizeCollection> {
 
     private ListLakeActionsFixedSizeCollection(
-        List<ListLakeActionsPage> pages, int collectionSize) {
+        @Nullable List<ListLakeActionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5235,7 +5258,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLakeActionsFixedSizeCollection createCollection(
-        List<ListLakeActionsPage> pages, int collectionSize) {
+        @Nullable List<ListLakeActionsPage> pages, int collectionSize) {
       return new ListLakeActionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5262,8 +5285,8 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractPage<ListZonesRequest, ListZonesResponse, Zone, ListZonesPage> {
 
     private ListZonesPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       super(context, response);
     }
 
@@ -5273,14 +5296,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListZonesPage createPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       return new ListZonesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListZonesPage> createPageAsync(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
         ApiFuture<ListZonesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5290,7 +5313,7 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListZonesRequest, ListZonesResponse, Zone, ListZonesPage, ListZonesFixedSizeCollection> {
 
-    private ListZonesFixedSizeCollection(List<ListZonesPage> pages, int collectionSize) {
+    private ListZonesFixedSizeCollection(@Nullable List<ListZonesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5300,7 +5323,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListZonesFixedSizeCollection createCollection(
-        List<ListZonesPage> pages, int collectionSize) {
+        @Nullable List<ListZonesPage> pages, int collectionSize) {
       return new ListZonesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5334,8 +5357,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListZoneActionsRequest, ListActionsResponse, Action, ListZoneActionsPage> {
 
     private ListZoneActionsPage(
-        PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       super(context, response);
     }
 
@@ -5345,14 +5368,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListZoneActionsPage createPage(
-        PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       return new ListZoneActionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListZoneActionsPage> createPageAsync(
-        PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
+        @Nullable PageContext<ListZoneActionsRequest, ListActionsResponse, Action> context,
         ApiFuture<ListActionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5367,7 +5390,7 @@ public class DataplexServiceClient implements BackgroundResource {
           ListZoneActionsFixedSizeCollection> {
 
     private ListZoneActionsFixedSizeCollection(
-        List<ListZoneActionsPage> pages, int collectionSize) {
+        @Nullable List<ListZoneActionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5377,7 +5400,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListZoneActionsFixedSizeCollection createCollection(
-        List<ListZoneActionsPage> pages, int collectionSize) {
+        @Nullable List<ListZoneActionsPage> pages, int collectionSize) {
       return new ListZoneActionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5408,8 +5431,8 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -5419,14 +5442,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5440,7 +5463,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5450,7 +5474,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5484,8 +5508,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListAssetActionsRequest, ListActionsResponse, Action, ListAssetActionsPage> {
 
     private ListAssetActionsPage(
-        PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       super(context, response);
     }
 
@@ -5495,14 +5519,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetActionsPage createPage(
-        PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
-        ListActionsResponse response) {
+        @Nullable PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
+        @Nullable ListActionsResponse response) {
       return new ListAssetActionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetActionsPage> createPageAsync(
-        PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
+        @Nullable PageContext<ListAssetActionsRequest, ListActionsResponse, Action> context,
         ApiFuture<ListActionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5517,7 +5541,7 @@ public class DataplexServiceClient implements BackgroundResource {
           ListAssetActionsFixedSizeCollection> {
 
     private ListAssetActionsFixedSizeCollection(
-        List<ListAssetActionsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetActionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5527,7 +5551,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetActionsFixedSizeCollection createCollection(
-        List<ListAssetActionsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetActionsPage> pages, int collectionSize) {
       return new ListAssetActionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5554,8 +5578,8 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -5565,14 +5589,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5582,7 +5606,7 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5592,7 +5616,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5619,7 +5643,8 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -5629,13 +5654,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5645,7 +5671,7 @@ public class DataplexServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5655,7 +5681,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5689,8 +5715,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5700,14 +5726,14 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5721,7 +5747,8 @@ public class DataplexServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5731,7 +5758,7 @@ public class DataplexServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

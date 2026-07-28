@@ -55,6 +55,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     serviceAccount_ = "";
     classMethods_ = java.util.Collections.emptyList();
     agentFramework_ = "";
+    identityType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,185 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.class,
             com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The identity type to use for the Reasoning Engine.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType}
+   */
+  public enum IdentityType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Use a custom service account if the `service_account`
+     * field is set, otherwise use the default Vertex AI Reasoning Engine
+     * Service Agent in the project. Same behavior as SERVICE_ACCOUNT.
+     * </pre>
+     *
+     * <code>IDENTITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    IDENTITY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use a custom service account if the `service_account` field is set,
+     * otherwise use the default Vertex AI Reasoning Engine Service Agent in the
+     * project.
+     * </pre>
+     *
+     * <code>SERVICE_ACCOUNT = 2;</code>
+     */
+    SERVICE_ACCOUNT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Use Agent Identity. The `service_account` field must not be set.
+     * </pre>
+     *
+     * <code>AGENT_IDENTITY = 3;</code>
+     */
+    AGENT_IDENTITY(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "IdentityType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Use a custom service account if the `service_account`
+     * field is set, otherwise use the default Vertex AI Reasoning Engine
+     * Service Agent in the project. Same behavior as SERVICE_ACCOUNT.
+     * </pre>
+     *
+     * <code>IDENTITY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int IDENTITY_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use a custom service account if the `service_account` field is set,
+     * otherwise use the default Vertex AI Reasoning Engine Service Agent in the
+     * project.
+     * </pre>
+     *
+     * <code>SERVICE_ACCOUNT = 2;</code>
+     */
+    public static final int SERVICE_ACCOUNT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use Agent Identity. The `service_account` field must not be set.
+     * </pre>
+     *
+     * <code>AGENT_IDENTITY = 3;</code>
+     */
+    public static final int AGENT_IDENTITY_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IdentityType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IdentityType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return IDENTITY_TYPE_UNSPECIFIED;
+        case 2:
+          return SERVICE_ACCOUNT;
+        case 3:
+          return AGENT_IDENTITY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IdentityType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IdentityType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IdentityType>() {
+          public IdentityType findValueByNumber(int number) {
+            return IdentityType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final IdentityType[] VALUES = values();
+
+    public static IdentityType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IdentityType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType)
   }
 
   public interface PackageSpecOrBuilder
@@ -13053,6 +13233,56 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int IDENTITY_TYPE_FIELD_NUMBER = 12;
+  private int identityType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity type to use for the Reasoning Engine. If not
+   * specified, the `service_account` field will be used if set, otherwise the
+   * default Vertex AI Reasoning Engine Service Agent in the project will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for identityType.
+   */
+  @java.lang.Override
+  public int getIdentityTypeValue() {
+    return identityType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity type to use for the Reasoning Engine. If not
+   * specified, the `service_account` field will be used if set, otherwise the
+   * default Vertex AI Reasoning Engine Service Agent in the project will be
+   * used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The identityType.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType getIdentityType() {
+    com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType result =
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType.forNumber(
+            identityType_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13087,6 +13317,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           11,
           (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec)
               deploymentSource_);
+    }
+    if (identityType_
+        != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType
+            .IDENTITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, identityType_);
     }
     if (deploymentSourceCase_ == 15) {
       output.writeMessage(
@@ -13125,6 +13361,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
               (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.SourceCodeSpec)
                   deploymentSource_);
     }
+    if (identityType_
+        != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType
+            .IDENTITY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, identityType_);
+    }
     if (deploymentSourceCase_ == 15) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -13162,6 +13404,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     if (!getClassMethodsList().equals(other.getClassMethodsList())) return false;
     if (!getAgentFramework().equals(other.getAgentFramework())) return false;
+    if (identityType_ != other.identityType_) return false;
     if (!getDeploymentSourceCase().equals(other.getDeploymentSourceCase())) return false;
     switch (deploymentSourceCase_) {
       case 11:
@@ -13202,6 +13445,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + AGENT_FRAMEWORK_FIELD_NUMBER;
     hash = (53 * hash) + getAgentFramework().hashCode();
+    hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + identityType_;
     switch (deploymentSourceCase_) {
       case 11:
         hash = (37 * hash) + SOURCE_CODE_SPEC_FIELD_NUMBER;
@@ -13391,6 +13636,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       agentFramework_ = "";
+      identityType_ = 0;
       deploymentSourceCase_ = 0;
       deploymentSource_ = null;
       return this;
@@ -13462,6 +13708,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.agentFramework_ = agentFramework_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.identityType_ = identityType_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -13532,6 +13781,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         agentFramework_ = other.agentFramework_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.identityType_ != 0) {
+        setIdentityTypeValue(other.getIdentityTypeValue());
       }
       switch (other.getDeploymentSourceCase()) {
         case SOURCE_CODE_SPEC:
@@ -13620,6 +13872,12 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 deploymentSourceCase_ = 11;
                 break;
               } // case 90
+            case 96:
+              {
+                identityType_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 96
             case 122:
               {
                 input.readMessage(
@@ -15331,6 +15589,130 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       agentFramework_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int identityType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity type to use for the Reasoning Engine. If not
+     * specified, the `service_account` field will be used if set, otherwise the
+     * default Vertex AI Reasoning Engine Service Agent in the project will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for identityType.
+     */
+    @java.lang.Override
+    public int getIdentityTypeValue() {
+      return identityType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity type to use for the Reasoning Engine. If not
+     * specified, the `service_account` field will be used if set, otherwise the
+     * default Vertex AI Reasoning Engine Service Agent in the project will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for identityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityTypeValue(int value) {
+      identityType_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity type to use for the Reasoning Engine. If not
+     * specified, the `service_account` field will be used if set, otherwise the
+     * default Vertex AI Reasoning Engine Service Agent in the project will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The identityType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType getIdentityType() {
+      com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType result =
+          com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType.forNumber(
+              identityType_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity type to use for the Reasoning Engine. If not
+     * specified, the `service_account` field will be used if set, otherwise the
+     * default Vertex AI Reasoning Engine Service Agent in the project will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The identityType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdentityType(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      identityType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity type to use for the Reasoning Engine. If not
+     * specified, the `service_account` field will be used if set, otherwise the
+     * default Vertex AI Reasoning Engine Service Agent in the project will be
+     * used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.IdentityType identity_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIdentityType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      identityType_ = 0;
       onChanged();
       return this;
     }

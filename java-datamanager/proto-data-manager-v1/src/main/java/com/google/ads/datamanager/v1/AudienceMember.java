@@ -85,6 +85,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
     MOBILE_DATA(5),
     USER_ID_DATA(6),
     PPID_DATA(7),
+    COMPOSITE_DATA(8),
     DATA_NOT_SET(0);
     private final int value;
 
@@ -114,6 +115,8 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
           return USER_ID_DATA;
         case 7:
           return PPID_DATA;
+        case 8:
+          return COMPOSITE_DATA;
         case 0:
           return DATA_NOT_SET;
         default:
@@ -498,6 +501,60 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
     return com.google.ads.datamanager.v1.PpidData.getDefaultInstance();
   }
 
+  public static final int COMPOSITE_DATA_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   *
+   * @return Whether the compositeData field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompositeData() {
+    return dataCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   *
+   * @return The compositeData.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CompositeData getCompositeData() {
+    if (dataCase_ == 8) {
+      return (com.google.ads.datamanager.v1.CompositeData) data_;
+    }
+    return com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Group of multiple identifier types.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.CompositeDataOrBuilder getCompositeDataOrBuilder() {
+    if (dataCase_ == 8) {
+      return (com.google.ads.datamanager.v1.CompositeData) data_;
+    }
+    return com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+  }
+
   public static final int CONSENT_FIELD_NUMBER = 3;
   private com.google.ads.datamanager.v1.Consent consent_;
 
@@ -585,6 +642,9 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 7) {
       output.writeMessage(7, (com.google.ads.datamanager.v1.PpidData) data_);
     }
+    if (dataCase_ == 8) {
+      output.writeMessage(8, (com.google.ads.datamanager.v1.CompositeData) data_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -630,6 +690,11 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.ads.datamanager.v1.PpidData) data_);
     }
+    if (dataCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.ads.datamanager.v1.CompositeData) data_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -667,6 +732,9 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         break;
       case 7:
         if (!getPpidData().equals(other.getPpidData())) return false;
+        break;
+      case 8:
+        if (!getCompositeData().equals(other.getCompositeData())) return false;
         break;
       case 0:
       default:
@@ -710,6 +778,10 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       case 7:
         hash = (37 * hash) + PPID_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getPpidData().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + COMPOSITE_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getCompositeData().hashCode();
         break;
       case 0:
       default:
@@ -879,6 +951,9 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       if (ppidDataBuilder_ != null) {
         ppidDataBuilder_.clear();
       }
+      if (compositeDataBuilder_ != null) {
+        compositeDataBuilder_.clear();
+      }
       consent_ = null;
       if (consentBuilder_ != null) {
         consentBuilder_.dispose();
@@ -928,7 +1003,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         result.destinationReferences_ = destinationReferences_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.consent_ = consentBuilder_ == null ? consent_ : consentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -952,6 +1027,9 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       }
       if (dataCase_ == 7 && ppidDataBuilder_ != null) {
         result.data_ = ppidDataBuilder_.build();
+      }
+      if (dataCase_ == 8 && compositeDataBuilder_ != null) {
+        result.data_ = compositeDataBuilder_.build();
       }
     }
 
@@ -1006,6 +1084,11 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
             mergePpidData(other.getPpidData());
             break;
           }
+        case COMPOSITE_DATA:
+          {
+            mergeCompositeData(other.getCompositeData());
+            break;
+          }
         case DATA_NOT_SET:
           {
             break;
@@ -1054,7 +1137,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 input.readMessage(internalGetConsentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
@@ -1085,6 +1168,13 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetCompositeDataFieldBuilder().getBuilder(), extensionRegistry);
+                dataCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2462,6 +2552,224 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       return ppidDataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CompositeData,
+            com.google.ads.datamanager.v1.CompositeData.Builder,
+            com.google.ads.datamanager.v1.CompositeDataOrBuilder>
+        compositeDataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     *
+     * @return Whether the compositeData field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompositeData() {
+      return dataCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     *
+     * @return The compositeData.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.CompositeData getCompositeData() {
+      if (compositeDataBuilder_ == null) {
+        if (dataCase_ == 8) {
+          return (com.google.ads.datamanager.v1.CompositeData) data_;
+        }
+        return com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+      } else {
+        if (dataCase_ == 8) {
+          return compositeDataBuilder_.getMessage();
+        }
+        return com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    public Builder setCompositeData(com.google.ads.datamanager.v1.CompositeData value) {
+      if (compositeDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        onChanged();
+      } else {
+        compositeDataBuilder_.setMessage(value);
+      }
+      dataCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    public Builder setCompositeData(
+        com.google.ads.datamanager.v1.CompositeData.Builder builderForValue) {
+      if (compositeDataBuilder_ == null) {
+        data_ = builderForValue.build();
+        onChanged();
+      } else {
+        compositeDataBuilder_.setMessage(builderForValue.build());
+      }
+      dataCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    public Builder mergeCompositeData(com.google.ads.datamanager.v1.CompositeData value) {
+      if (compositeDataBuilder_ == null) {
+        if (dataCase_ == 8
+            && data_ != com.google.ads.datamanager.v1.CompositeData.getDefaultInstance()) {
+          data_ =
+              com.google.ads.datamanager.v1.CompositeData.newBuilder(
+                      (com.google.ads.datamanager.v1.CompositeData) data_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          data_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataCase_ == 8) {
+          compositeDataBuilder_.mergeFrom(value);
+        } else {
+          compositeDataBuilder_.setMessage(value);
+        }
+      }
+      dataCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    public Builder clearCompositeData() {
+      if (compositeDataBuilder_ == null) {
+        if (dataCase_ == 8) {
+          dataCase_ = 0;
+          data_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataCase_ == 8) {
+          dataCase_ = 0;
+          data_ = null;
+        }
+        compositeDataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    public com.google.ads.datamanager.v1.CompositeData.Builder getCompositeDataBuilder() {
+      return internalGetCompositeDataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.CompositeDataOrBuilder getCompositeDataOrBuilder() {
+      if ((dataCase_ == 8) && (compositeDataBuilder_ != null)) {
+        return compositeDataBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataCase_ == 8) {
+          return (com.google.ads.datamanager.v1.CompositeData) data_;
+        }
+        return com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Group of multiple identifier types.
+     * </pre>
+     *
+     * <code>.google.ads.datamanager.v1.CompositeData composite_data = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.CompositeData,
+            com.google.ads.datamanager.v1.CompositeData.Builder,
+            com.google.ads.datamanager.v1.CompositeDataOrBuilder>
+        internalGetCompositeDataFieldBuilder() {
+      if (compositeDataBuilder_ == null) {
+        if (!(dataCase_ == 8)) {
+          data_ = com.google.ads.datamanager.v1.CompositeData.getDefaultInstance();
+        }
+        compositeDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.CompositeData,
+                com.google.ads.datamanager.v1.CompositeData.Builder,
+                com.google.ads.datamanager.v1.CompositeDataOrBuilder>(
+                (com.google.ads.datamanager.v1.CompositeData) data_,
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      dataCase_ = 8;
+      onChanged();
+      return compositeDataBuilder_;
+    }
+
     private com.google.ads.datamanager.v1.Consent consent_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.datamanager.v1.Consent,
@@ -2483,7 +2791,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * @return Whether the consent field is set.
      */
     public boolean hasConsent() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2529,7 +2837,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       } else {
         consentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2551,7 +2859,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
       } else {
         consentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2569,7 +2877,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConsent(com.google.ads.datamanager.v1.Consent value) {
       if (consentBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && consent_ != null
             && consent_ != com.google.ads.datamanager.v1.Consent.getDefaultInstance()) {
           getConsentBuilder().mergeFrom(value);
@@ -2580,7 +2888,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
         consentBuilder_.mergeFrom(value);
       }
       if (consent_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2598,7 +2906,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearConsent() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       consent_ = null;
       if (consentBuilder_ != null) {
         consentBuilder_.dispose();
@@ -2620,7 +2928,7 @@ public final class AudienceMember extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.Consent.Builder getConsentBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetConsentFieldBuilder().getBuilder();
     }

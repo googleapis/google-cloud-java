@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -308,9 +310,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GSuiteAddOnsClient implements BackgroundResource {
-  private final GSuiteAddOnsSettings settings;
+  private final @Nullable GSuiteAddOnsSettings settings;
   private final GSuiteAddOnsStub stub;
 
   /** Constructs an instance of GSuiteAddOnsClient with default settings. */
@@ -349,7 +352,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GSuiteAddOnsSettings getSettings() {
+  public final @Nullable GSuiteAddOnsSettings getSettings() {
     return settings;
   }
 
@@ -380,7 +383,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/authorization`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Authorization getAuthorization(AuthorizationName name) {
+  public final Authorization getAuthorization(@Nullable AuthorizationName name) {
     GetAuthorizationRequest request =
         GetAuthorizationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAuthorization(request);
@@ -498,7 +501,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment createDeployment(
-      ProjectName parent, Deployment deployment, String deploymentId) {
+      @Nullable ProjectName parent, Deployment deployment, String deploymentId) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -711,7 +714,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/deployments/my_deployment`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -823,7 +826,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(ProjectName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(@Nullable ProjectName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -987,7 +990,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/deployments/my_deployment`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeployment(DeploymentName name) {
+  public final void deleteDeployment(@Nullable DeploymentName name) {
     DeleteDeploymentRequest request =
         DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDeployment(request);
@@ -1100,7 +1103,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/deployments/my_deployment`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void installDeployment(DeploymentName name) {
+  public final void installDeployment(@Nullable DeploymentName name) {
     InstallDeploymentRequest request =
         InstallDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1216,7 +1219,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/deployments/my_deployment`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void uninstallDeployment(DeploymentName name) {
+  public final void uninstallDeployment(@Nullable DeploymentName name) {
     UninstallDeploymentRequest request =
         UninstallDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1333,7 +1336,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
    *     <p>Example: `projects/my_project/deployments/my_deployment/installStatus`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InstallStatus getInstallStatus(InstallStatusName name) {
+  public final InstallStatus getInstallStatus(@Nullable InstallStatusName name) {
     GetInstallStatusRequest request =
         GetInstallStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstallStatus(request);
@@ -1481,8 +1484,8 @@ public class GSuiteAddOnsClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -1492,14 +1495,14 @@ public class GSuiteAddOnsClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1514,7 +1517,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1524,7 +1527,7 @@ public class GSuiteAddOnsClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }

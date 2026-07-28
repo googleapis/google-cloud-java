@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service CustomFieldService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve a `CustomField` object.
+  // Retrieves a `CustomField` object.
   rpc GetCustomField(GetCustomFieldRequest) returns (CustomField) {
     option (google.api.http) = {
       get: "/v1/{name=networks/*/customFields/*}"
@@ -45,7 +46,7 @@ service CustomFieldService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of `CustomField` objects.
+  // Lists `CustomField` objects.
   rpc ListCustomFields(ListCustomFieldsRequest)
       returns (ListCustomFieldsResponse) {
     option (google.api.http) = {
@@ -54,7 +55,7 @@ service CustomFieldService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create a `CustomField` object.
+  // Creates a `CustomField` object.
   rpc CreateCustomField(CreateCustomFieldRequest) returns (CustomField) {
     option (google.api.http) = {
       post: "/v1/{parent=networks/*}/customFields"
@@ -63,7 +64,7 @@ service CustomFieldService {
     option (google.api.method_signature) = "parent,custom_field";
   }
 
-  // API to batch create `CustomField` objects.
+  // Creates `CustomField` objects.
   rpc BatchCreateCustomFields(BatchCreateCustomFieldsRequest)
       returns (BatchCreateCustomFieldsResponse) {
     option (google.api.http) = {
@@ -73,7 +74,7 @@ service CustomFieldService {
     option (google.api.method_signature) = "parent,requests";
   }
 
-  // API to update a `CustomField` object.
+  // Updates a `CustomField` object.
   rpc UpdateCustomField(UpdateCustomFieldRequest) returns (CustomField) {
     option (google.api.http) = {
       patch: "/v1/{custom_field.name=networks/*/customFields/*}"
@@ -82,7 +83,7 @@ service CustomFieldService {
     option (google.api.method_signature) = "custom_field,update_mask";
   }
 
-  // API to batch update `CustomField` objects.
+  // Batch updates `CustomField` objects.
   rpc BatchUpdateCustomFields(BatchUpdateCustomFieldsRequest)
       returns (BatchUpdateCustomFieldsResponse) {
     option (google.api.http) = {
@@ -150,8 +151,21 @@ message ListCustomFieldsRequest {
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to filter the response.
-  // See syntax details at
-  // https://developers.google.com/ad-manager/api/beta/filters
+  //  See syntax details at
+  //  https://developers.google.com/ad-manager/api/beta/filters
+  //
+  // <b>Filterable fields:</b>
+  // <ul style="list-style-type:none">
+  //   <li><code>dataType</code></li>
+  //   <li><code>description</code></li>
+  //   <li><code>displayName</code></li>
+  //   <li><code>entityType</code></li>
+  //   <li><code>name</code></li>
+  //   <li><code>options.customFieldOptionId</code></li>
+  //   <li><code>options.displayName</code></li>
+  //   <li><code>status</code></li>
+  //   <li><code>visibility</code></li>
+  // </ul>
   string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to specify sorting order.
@@ -234,9 +248,9 @@ message UpdateCustomFieldRequest {
   // The `CustomField`'s `name` is used to identify the `CustomField` to update.
   CustomField custom_field = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request object for `BatchUpdateCustomFields` method.

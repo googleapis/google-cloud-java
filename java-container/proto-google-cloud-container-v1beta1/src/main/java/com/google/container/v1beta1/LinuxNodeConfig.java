@@ -1444,6 +1444,2212 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface CustomNodeInitOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the initScript field is set.
+     */
+    boolean hasInitScript();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The initScript.
+     */
+    com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript getInitScript();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder
+        getInitScriptOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Support for running custom init code while bootstrapping nodes.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.CustomNodeInit}
+   */
+  public static final class CustomNodeInit extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)
+      CustomNodeInitOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "CustomNodeInit");
+    }
+
+    // Use CustomNodeInit.newBuilder() to construct.
+    private CustomNodeInit(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CustomNodeInit() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.class,
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder.class);
+    }
+
+    public interface InitScriptOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage URI for storing the init script.
+       * Format: gs://BUCKET_NAME/OBJECT_NAME
+       * The service account on the node pool must have read access to the
+       * object.
+       * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+       * </pre>
+       *
+       * <code>string gcs_uri = 1;</code>
+       *
+       * @return The gcsUri.
+       */
+      java.lang.String getGcsUri();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage URI for storing the init script.
+       * Format: gs://BUCKET_NAME/OBJECT_NAME
+       * The service account on the node pool must have read access to the
+       * object.
+       * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+       * </pre>
+       *
+       * <code>string gcs_uri = 1;</code>
+       *
+       * @return The bytes for gcsUri.
+       */
+      com.google.protobuf.ByteString getGcsUriBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The generation of the init script stored in Gloud Storage.
+       * This is the required field to identify the version of the
+       * init script.
+       * User can get the genetaion from
+       * `gcloud storage objects describe gs://BUCKET_NAME/OBJECT_NAME
+       * --format="value(generation)"` or from the "Version history" tab of the
+       * object in the Cloud Console UI.
+       * </pre>
+       *
+       * <code>int64 gcs_generation = 2;</code>
+       *
+       * @return The gcsGeneration.
+       */
+      long getGcsGeneration();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the args.
+       */
+      java.util.List<java.lang.String> getArgsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of args.
+       */
+      int getArgsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The args at the given index.
+       */
+      java.lang.String getArgs(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the args at the given index.
+       */
+      com.google.protobuf.ByteString getArgsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the secret manager secret hosting the init script.
+       * Both global and regional secrets are supported with format below:
+       * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+       * Regional secret:
+       * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+       * Example: projects/1234567890/secrets/script_1/versions/1.
+       * Accept version number only, not support version alias.
+       * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+       * </pre>
+       *
+       * <code>string gcp_secret_manager_secret_uri = 4;</code>
+       *
+       * @return The gcpSecretManagerSecretUri.
+       */
+      java.lang.String getGcpSecretManagerSecretUri();
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the secret manager secret hosting the init script.
+       * Both global and regional secrets are supported with format below:
+       * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+       * Regional secret:
+       * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+       * Example: projects/1234567890/secrets/script_1/versions/1.
+       * Accept version number only, not support version alias.
+       * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+       * </pre>
+       *
+       * <code>string gcp_secret_manager_secret_uri = 4;</code>
+       *
+       * @return The bytes for gcpSecretManagerSecretUri.
+       */
+      com.google.protobuf.ByteString getGcpSecretManagerSecretUriBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitScript provide a simply bash script to be executed on the node.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript}
+     */
+    public static final class InitScript extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)
+        InitScriptOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "InitScript");
+      }
+
+      // Use InitScript.newBuilder() to construct.
+      private InitScript(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private InitScript() {
+        gcsUri_ = "";
+        args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        gcpSecretManagerSecretUri_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_InitScript_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_InitScript_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.class,
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder
+                    .class);
+      }
+
+      public static final int GCS_URI_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gcsUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage URI for storing the init script.
+       * Format: gs://BUCKET_NAME/OBJECT_NAME
+       * The service account on the node pool must have read access to the
+       * object.
+       * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+       * </pre>
+       *
+       * <code>string gcs_uri = 1;</code>
+       *
+       * @return The gcsUri.
+       */
+      @java.lang.Override
+      public java.lang.String getGcsUri() {
+        java.lang.Object ref = gcsUri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcsUri_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage URI for storing the init script.
+       * Format: gs://BUCKET_NAME/OBJECT_NAME
+       * The service account on the node pool must have read access to the
+       * object.
+       * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+       * </pre>
+       *
+       * <code>string gcs_uri = 1;</code>
+       *
+       * @return The bytes for gcsUri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGcsUriBytes() {
+        java.lang.Object ref = gcsUri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcsUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int GCS_GENERATION_FIELD_NUMBER = 2;
+      private long gcsGeneration_ = 0L;
+
+      /**
+       *
+       *
+       * <pre>
+       * The generation of the init script stored in Gloud Storage.
+       * This is the required field to identify the version of the
+       * init script.
+       * User can get the genetaion from
+       * `gcloud storage objects describe gs://BUCKET_NAME/OBJECT_NAME
+       * --format="value(generation)"` or from the "Version history" tab of the
+       * object in the Cloud Console UI.
+       * </pre>
+       *
+       * <code>int64 gcs_generation = 2;</code>
+       *
+       * @return The gcsGeneration.
+       */
+      @java.lang.Override
+      public long getGcsGeneration() {
+        return gcsGeneration_;
+      }
+
+      public static final int ARGS_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList args_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the args.
+       */
+      public com.google.protobuf.ProtocolStringList getArgsList() {
+        return args_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of args.
+       */
+      public int getArgsCount() {
+        return args_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The args at the given index.
+       */
+      public java.lang.String getArgs(int index) {
+        return args_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The optional arguments line to be passed to the init script.
+       * </pre>
+       *
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the args at the given index.
+       */
+      public com.google.protobuf.ByteString getArgsBytes(int index) {
+        return args_.getByteString(index);
+      }
+
+      public static final int GCP_SECRET_MANAGER_SECRET_URI_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object gcpSecretManagerSecretUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the secret manager secret hosting the init script.
+       * Both global and regional secrets are supported with format below:
+       * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+       * Regional secret:
+       * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+       * Example: projects/1234567890/secrets/script_1/versions/1.
+       * Accept version number only, not support version alias.
+       * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+       * </pre>
+       *
+       * <code>string gcp_secret_manager_secret_uri = 4;</code>
+       *
+       * @return The gcpSecretManagerSecretUri.
+       */
+      @java.lang.Override
+      public java.lang.String getGcpSecretManagerSecretUri() {
+        java.lang.Object ref = gcpSecretManagerSecretUri_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gcpSecretManagerSecretUri_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The resource name of the secret manager secret hosting the init script.
+       * Both global and regional secrets are supported with format below:
+       * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+       * Regional secret:
+       * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+       * Example: projects/1234567890/secrets/script_1/versions/1.
+       * Accept version number only, not support version alias.
+       * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+       * </pre>
+       *
+       * <code>string gcp_secret_manager_secret_uri = 4;</code>
+       *
+       * @return The bytes for gcpSecretManagerSecretUri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGcpSecretManagerSecretUriBytes() {
+        java.lang.Object ref = gcpSecretManagerSecretUri_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gcpSecretManagerSecretUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcsUri_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, gcsUri_);
+        }
+        if (gcsGeneration_ != 0L) {
+          output.writeInt64(2, gcsGeneration_);
+        }
+        for (int i = 0; i < args_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, args_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcpSecretManagerSecretUri_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 4, gcpSecretManagerSecretUri_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcsUri_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, gcsUri_);
+        }
+        if (gcsGeneration_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, gcsGeneration_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < args_.size(); i++) {
+            dataSize += computeStringSizeNoTag(args_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getArgsList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(gcpSecretManagerSecretUri_)) {
+          size +=
+              com.google.protobuf.GeneratedMessage.computeStringSize(4, gcpSecretManagerSecretUri_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)) {
+          return super.equals(obj);
+        }
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript other =
+            (com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript) obj;
+
+        if (!getGcsUri().equals(other.getGcsUri())) return false;
+        if (getGcsGeneration() != other.getGcsGeneration()) return false;
+        if (!getArgsList().equals(other.getArgsList())) return false;
+        if (!getGcpSecretManagerSecretUri().equals(other.getGcpSecretManagerSecretUri()))
+          return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsUri().hashCode();
+        hash = (37 * hash) + GCS_GENERATION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGcsGeneration());
+        if (getArgsCount() > 0) {
+          hash = (37 * hash) + ARGS_FIELD_NUMBER;
+          hash = (53 * hash) + getArgsList().hashCode();
+        }
+        hash = (37 * hash) + GCP_SECRET_MANAGER_SECRET_URI_FIELD_NUMBER;
+        hash = (53 * hash) + getGcpSecretManagerSecretUri().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * InitScript provide a simply bash script to be executed on the node.
+       * </pre>
+       *
+       * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_InitScript_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_InitScript_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.class,
+                  com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          gcsUri_ = "";
+          gcsGeneration_ = 0L;
+          args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          gcpSecretManagerSecretUri_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.container.v1beta1.ClusterServiceProto
+              .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_InitScript_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+            getDefaultInstanceForType() {
+          return com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript build() {
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+            buildPartial() {
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript result =
+              new com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.gcsUri_ = gcsUri_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.gcsGeneration_ = gcsGeneration_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            args_.makeImmutable();
+            result.args_ = args_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.gcpSecretManagerSecretUri_ = gcpSecretManagerSecretUri_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript) {
+            return mergeFrom(
+                (com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript other) {
+          if (other
+              == com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+                  .getDefaultInstance()) return this;
+          if (!other.getGcsUri().isEmpty()) {
+            gcsUri_ = other.gcsUri_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.getGcsGeneration() != 0L) {
+            setGcsGeneration(other.getGcsGeneration());
+          }
+          if (!other.args_.isEmpty()) {
+            if (args_.isEmpty()) {
+              args_ = other.args_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureArgsIsMutable();
+              args_.addAll(other.args_);
+            }
+            onChanged();
+          }
+          if (!other.getGcpSecretManagerSecretUri().isEmpty()) {
+            gcpSecretManagerSecretUri_ = other.gcpSecretManagerSecretUri_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    gcsUri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    gcsGeneration_ = input.readInt64();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureArgsIsMutable();
+                    args_.add(s);
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    gcpSecretManagerSecretUri_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object gcsUri_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Storage URI for storing the init script.
+         * Format: gs://BUCKET_NAME/OBJECT_NAME
+         * The service account on the node pool must have read access to the
+         * object.
+         * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+         * </pre>
+         *
+         * <code>string gcs_uri = 1;</code>
+         *
+         * @return The gcsUri.
+         */
+        public java.lang.String getGcsUri() {
+          java.lang.Object ref = gcsUri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gcsUri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Storage URI for storing the init script.
+         * Format: gs://BUCKET_NAME/OBJECT_NAME
+         * The service account on the node pool must have read access to the
+         * object.
+         * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+         * </pre>
+         *
+         * <code>string gcs_uri = 1;</code>
+         *
+         * @return The bytes for gcsUri.
+         */
+        public com.google.protobuf.ByteString getGcsUriBytes() {
+          java.lang.Object ref = gcsUri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            gcsUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Storage URI for storing the init script.
+         * Format: gs://BUCKET_NAME/OBJECT_NAME
+         * The service account on the node pool must have read access to the
+         * object.
+         * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+         * </pre>
+         *
+         * <code>string gcs_uri = 1;</code>
+         *
+         * @param value The gcsUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGcsUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gcsUri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Storage URI for storing the init script.
+         * Format: gs://BUCKET_NAME/OBJECT_NAME
+         * The service account on the node pool must have read access to the
+         * object.
+         * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+         * </pre>
+         *
+         * <code>string gcs_uri = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGcsUri() {
+          gcsUri_ = getDefaultInstance().getGcsUri();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Storage URI for storing the init script.
+         * Format: gs://BUCKET_NAME/OBJECT_NAME
+         * The service account on the node pool must have read access to the
+         * object.
+         * User can't configure both gcs_uri and gcp_secret_manager_secret_uri.
+         * </pre>
+         *
+         * <code>string gcs_uri = 1;</code>
+         *
+         * @param value The bytes for gcsUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGcsUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          gcsUri_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private long gcsGeneration_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The generation of the init script stored in Gloud Storage.
+         * This is the required field to identify the version of the
+         * init script.
+         * User can get the genetaion from
+         * `gcloud storage objects describe gs://BUCKET_NAME/OBJECT_NAME
+         * --format="value(generation)"` or from the "Version history" tab of the
+         * object in the Cloud Console UI.
+         * </pre>
+         *
+         * <code>int64 gcs_generation = 2;</code>
+         *
+         * @return The gcsGeneration.
+         */
+        @java.lang.Override
+        public long getGcsGeneration() {
+          return gcsGeneration_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The generation of the init script stored in Gloud Storage.
+         * This is the required field to identify the version of the
+         * init script.
+         * User can get the genetaion from
+         * `gcloud storage objects describe gs://BUCKET_NAME/OBJECT_NAME
+         * --format="value(generation)"` or from the "Version history" tab of the
+         * object in the Cloud Console UI.
+         * </pre>
+         *
+         * <code>int64 gcs_generation = 2;</code>
+         *
+         * @param value The gcsGeneration to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGcsGeneration(long value) {
+
+          gcsGeneration_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The generation of the init script stored in Gloud Storage.
+         * This is the required field to identify the version of the
+         * init script.
+         * User can get the genetaion from
+         * `gcloud storage objects describe gs://BUCKET_NAME/OBJECT_NAME
+         * --format="value(generation)"` or from the "Version history" tab of the
+         * object in the Cloud Console UI.
+         * </pre>
+         *
+         * <code>int64 gcs_generation = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGcsGeneration() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          gcsGeneration_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList args_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureArgsIsMutable() {
+          if (!args_.isModifiable()) {
+            args_ = new com.google.protobuf.LazyStringArrayList(args_);
+          }
+          bitField0_ |= 0x00000004;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the args.
+         */
+        public com.google.protobuf.ProtocolStringList getArgsList() {
+          args_.makeImmutable();
+          return args_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of args.
+         */
+        public int getArgsCount() {
+          return args_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The args at the given index.
+         */
+        public java.lang.String getArgs(int index) {
+          return args_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the args at the given index.
+         */
+        public com.google.protobuf.ByteString getArgsBytes(int index) {
+          return args_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The args to set.
+         * @return This builder for chaining.
+         */
+        public Builder setArgs(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureArgsIsMutable();
+          args_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The args to add.
+         * @return This builder for chaining.
+         */
+        public Builder addArgs(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureArgsIsMutable();
+          args_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The args to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
+          ensureArgsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearArgs() {
+          args_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The optional arguments line to be passed to the init script.
+         * </pre>
+         *
+         * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the args to add.
+         * @return This builder for chaining.
+         */
+        public Builder addArgsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureArgsIsMutable();
+          args_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object gcpSecretManagerSecretUri_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The resource name of the secret manager secret hosting the init script.
+         * Both global and regional secrets are supported with format below:
+         * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+         * Regional secret:
+         * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+         * Example: projects/1234567890/secrets/script_1/versions/1.
+         * Accept version number only, not support version alias.
+         * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+         * </pre>
+         *
+         * <code>string gcp_secret_manager_secret_uri = 4;</code>
+         *
+         * @return The gcpSecretManagerSecretUri.
+         */
+        public java.lang.String getGcpSecretManagerSecretUri() {
+          java.lang.Object ref = gcpSecretManagerSecretUri_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            gcpSecretManagerSecretUri_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The resource name of the secret manager secret hosting the init script.
+         * Both global and regional secrets are supported with format below:
+         * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+         * Regional secret:
+         * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+         * Example: projects/1234567890/secrets/script_1/versions/1.
+         * Accept version number only, not support version alias.
+         * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+         * </pre>
+         *
+         * <code>string gcp_secret_manager_secret_uri = 4;</code>
+         *
+         * @return The bytes for gcpSecretManagerSecretUri.
+         */
+        public com.google.protobuf.ByteString getGcpSecretManagerSecretUriBytes() {
+          java.lang.Object ref = gcpSecretManagerSecretUri_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            gcpSecretManagerSecretUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The resource name of the secret manager secret hosting the init script.
+         * Both global and regional secrets are supported with format below:
+         * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+         * Regional secret:
+         * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+         * Example: projects/1234567890/secrets/script_1/versions/1.
+         * Accept version number only, not support version alias.
+         * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+         * </pre>
+         *
+         * <code>string gcp_secret_manager_secret_uri = 4;</code>
+         *
+         * @param value The gcpSecretManagerSecretUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGcpSecretManagerSecretUri(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gcpSecretManagerSecretUri_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The resource name of the secret manager secret hosting the init script.
+         * Both global and regional secrets are supported with format below:
+         * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+         * Regional secret:
+         * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+         * Example: projects/1234567890/secrets/script_1/versions/1.
+         * Accept version number only, not support version alias.
+         * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+         * </pre>
+         *
+         * <code>string gcp_secret_manager_secret_uri = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGcpSecretManagerSecretUri() {
+          gcpSecretManagerSecretUri_ = getDefaultInstance().getGcpSecretManagerSecretUri();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The resource name of the secret manager secret hosting the init script.
+         * Both global and regional secrets are supported with format below:
+         * Global secret: projects/{project}/secrets/{secret}/versions/{version}
+         * Regional secret:
+         * projects/{project}/locations/{location}/secrets/{secret}/versions/{version}
+         * Example: projects/1234567890/secrets/script_1/versions/1.
+         * Accept version number only, not support version alias.
+         * User can't configure both gcp_secret_manager_secret_uri and gcs_uri.
+         * </pre>
+         *
+         * <code>string gcp_secret_manager_secret_uri = 4;</code>
+         *
+         * @param value The bytes for gcpSecretManagerSecretUri to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGcpSecretManagerSecretUriBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          gcpSecretManagerSecretUri_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript)
+      private static final com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript();
+      }
+
+      public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<InitScript> PARSER =
+          new com.google.protobuf.AbstractParser<InitScript>() {
+            @java.lang.Override
+            public InitScript parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<InitScript> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<InitScript> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int INIT_SCRIPT_FIELD_NUMBER = 1;
+    private com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript initScript_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the initScript field is set.
+     */
+    @java.lang.Override
+    public boolean hasInitScript() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The initScript.
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript getInitScript() {
+      return initScript_ == null
+          ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+              .getDefaultInstance()
+          : initScript_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The init script to be executed on the node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder
+        getInitScriptOrBuilder() {
+      return initScript_ == null
+          ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+              .getDefaultInstance()
+          : initScript_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getInitScript());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInitScript());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit other =
+          (com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit) obj;
+
+      if (hasInitScript() != other.hasInitScript()) return false;
+      if (hasInitScript()) {
+        if (!getInitScript().equals(other.getInitScript())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasInitScript()) {
+        hash = (37 * hash) + INIT_SCRIPT_FIELD_NUMBER;
+        hash = (53 * hash) + getInitScript().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Support for running custom init code while bootstrapping nodes.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.CustomNodeInit}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.class,
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder.class);
+      }
+
+      // Construct using com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetInitScriptFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        initScript_ = null;
+        if (initScriptBuilder_ != null) {
+          initScriptBuilder_.dispose();
+          initScriptBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_CustomNodeInit_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit build() {
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit buildPartial() {
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit result =
+            new com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.initScript_ =
+              initScriptBuilder_ == null ? initScript_ : initScriptBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit) {
+          return mergeFrom((com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit other) {
+        if (other
+            == com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance())
+          return this;
+        if (other.hasInitScript()) {
+          mergeInitScript(other.getInitScript());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetInitScriptFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript initScript_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript,
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder,
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder>
+          initScriptBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the initScript field is set.
+       */
+      public boolean hasInitScript() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The initScript.
+       */
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+          getInitScript() {
+        if (initScriptBuilder_ == null) {
+          return initScript_ == null
+              ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+                  .getDefaultInstance()
+              : initScript_;
+        } else {
+          return initScriptBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInitScript(
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript value) {
+        if (initScriptBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          initScript_ = value;
+        } else {
+          initScriptBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setInitScript(
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder
+              builderForValue) {
+        if (initScriptBuilder_ == null) {
+          initScript_ = builderForValue.build();
+        } else {
+          initScriptBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeInitScript(
+          com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript value) {
+        if (initScriptBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && initScript_ != null
+              && initScript_
+                  != com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+                      .getDefaultInstance()) {
+            getInitScriptBuilder().mergeFrom(value);
+          } else {
+            initScript_ = value;
+          }
+        } else {
+          initScriptBuilder_.mergeFrom(value);
+        }
+        if (initScript_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearInitScript() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        initScript_ = null;
+        if (initScriptBuilder_ != null) {
+          initScriptBuilder_.dispose();
+          initScriptBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder
+          getInitScriptBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetInitScriptFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder
+          getInitScriptOrBuilder() {
+        if (initScriptBuilder_ != null) {
+          return initScriptBuilder_.getMessageOrBuilder();
+        } else {
+          return initScript_ == null
+              ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript
+                  .getDefaultInstance()
+              : initScript_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The init script to be executed on the node.
+       * </pre>
+       *
+       * <code>
+       * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript init_script = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript,
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder,
+              com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder>
+          internalGetInitScriptFieldBuilder() {
+        if (initScriptBuilder_ == null) {
+          initScriptBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript,
+                  com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScript.Builder,
+                  com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.InitScriptOrBuilder>(
+                  getInitScript(), getParentForChildren(), isClean());
+          initScript_ = null;
+        }
+        return initScriptBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.LinuxNodeConfig.CustomNodeInit)
+    private static final com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit();
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CustomNodeInit> PARSER =
+        new com.google.protobuf.AbstractParser<CustomNodeInit>() {
+          @java.lang.Override
+          public CustomNodeInit parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CustomNodeInit> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CustomNodeInit> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface SwapConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.container.v1beta1.LinuxNodeConfig.SwapConfig)
@@ -6625,7 +8831,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Defines the kernel module loading policy for nodes in the nodepool.
+     * Defines the kernel module loading policy for nodes in the node pool.
      * </pre>
      *
      * Protobuf enum {@code google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading.Policy}
@@ -7343,6 +9549,573 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface AccurateTimeConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables enhanced time synchronization using PTP-KVM.
+     * </pre>
+     *
+     * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+     *
+     * @return Whether the enablePtpKvmTimeSync field is set.
+     */
+    boolean hasEnablePtpKvmTimeSync();
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables enhanced time synchronization using PTP-KVM.
+     * </pre>
+     *
+     * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+     *
+     * @return The enablePtpKvmTimeSync.
+     */
+    boolean getEnablePtpKvmTimeSync();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * AccurateTimeConfig contains configuration for the accurate time
+   * synchronization feature.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig}
+   */
+  public static final class AccurateTimeConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)
+      AccurateTimeConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AccurateTimeConfig");
+    }
+
+    // Use AccurateTimeConfig.newBuilder() to construct.
+    private AccurateTimeConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccurateTimeConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_LinuxNodeConfig_AccurateTimeConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_LinuxNodeConfig_AccurateTimeConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.class,
+              com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ENABLE_PTP_KVM_TIME_SYNC_FIELD_NUMBER = 1;
+    private boolean enablePtpKvmTimeSync_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables enhanced time synchronization using PTP-KVM.
+     * </pre>
+     *
+     * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+     *
+     * @return Whether the enablePtpKvmTimeSync field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnablePtpKvmTimeSync() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables enhanced time synchronization using PTP-KVM.
+     * </pre>
+     *
+     * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+     *
+     * @return The enablePtpKvmTimeSync.
+     */
+    @java.lang.Override
+    public boolean getEnablePtpKvmTimeSync() {
+      return enablePtpKvmTimeSync_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, enablePtpKvmTimeSync_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enablePtpKvmTimeSync_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig other =
+          (com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig) obj;
+
+      if (hasEnablePtpKvmTimeSync() != other.hasEnablePtpKvmTimeSync()) return false;
+      if (hasEnablePtpKvmTimeSync()) {
+        if (getEnablePtpKvmTimeSync() != other.getEnablePtpKvmTimeSync()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEnablePtpKvmTimeSync()) {
+        hash = (37 * hash) + ENABLE_PTP_KVM_TIME_SYNC_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePtpKvmTimeSync());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AccurateTimeConfig contains configuration for the accurate time
+     * synchronization feature.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_AccurateTimeConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_AccurateTimeConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.class,
+                com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enablePtpKvmTimeSync_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_LinuxNodeConfig_AccurateTimeConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig build() {
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig buildPartial() {
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig result =
+            new com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enablePtpKvmTimeSync_ = enablePtpKvmTimeSync_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig) {
+          return mergeFrom((com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig other) {
+        if (other
+            == com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance())
+          return this;
+        if (other.hasEnablePtpKvmTimeSync()) {
+          setEnablePtpKvmTimeSync(other.getEnablePtpKvmTimeSync());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enablePtpKvmTimeSync_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enablePtpKvmTimeSync_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Enables enhanced time synchronization using PTP-KVM.
+       * </pre>
+       *
+       * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+       *
+       * @return Whether the enablePtpKvmTimeSync field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnablePtpKvmTimeSync() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Enables enhanced time synchronization using PTP-KVM.
+       * </pre>
+       *
+       * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+       *
+       * @return The enablePtpKvmTimeSync.
+       */
+      @java.lang.Override
+      public boolean getEnablePtpKvmTimeSync() {
+        return enablePtpKvmTimeSync_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Enables enhanced time synchronization using PTP-KVM.
+       * </pre>
+       *
+       * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+       *
+       * @param value The enablePtpKvmTimeSync to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablePtpKvmTimeSync(boolean value) {
+
+        enablePtpKvmTimeSync_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Enables enhanced time synchronization using PTP-KVM.
+       * </pre>
+       *
+       * <code>optional bool enable_ptp_kvm_time_sync = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablePtpKvmTimeSync() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enablePtpKvmTimeSync_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig)
+    private static final com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig();
+    }
+
+    public static com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccurateTimeConfig> PARSER =
+        new com.google.protobuf.AbstractParser<AccurateTimeConfig>() {
+          @java.lang.Override
+          public AccurateTimeConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccurateTimeConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccurateTimeConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SYSCTLS_FIELD_NUMBER = 1;
 
@@ -7389,6 +10162,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -7404,6 +10180,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -7469,6 +10247,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -7484,6 +10265,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -7539,6 +10322,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -7554,6 +10340,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -7616,6 +10404,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.core.wmem_max
    * net.core.optmem_max
    * net.core.somaxconn
+   * net.ipv4.neigh.default.gc_thresh1
+   * net.ipv4.neigh.default.gc_thresh2
+   * net.ipv4.neigh.default.gc_thresh3
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
@@ -7631,6 +10422,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * net.netfilter.nf_conntrack_tcp_timeout_time_wait
    * net.netfilter.nf_conntrack_tcp_timeout_established
    * net.netfilter.nf_conntrack_acct
+   * kernel.keys.maxkeys
+   * kernel.keys.maxbytes
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
@@ -7888,6 +10681,69 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int CUSTOM_NODE_INIT_FIELD_NUMBER = 11;
+  private com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit customNodeInit_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customNodeInit field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomNodeInit() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customNodeInit.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit getCustomNodeInit() {
+    return customNodeInit_ == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance()
+        : customNodeInit_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Allow users to run arbitrary bash script or container on the
+   * node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder
+      getCustomNodeInitOrBuilder() {
+    return customNodeInit_ == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance()
+        : customNodeInit_;
+  }
+
   public static final int SWAP_CONFIG_FIELD_NUMBER = 12;
   private com.google.container.v1beta1.LinuxNodeConfig.SwapConfig swapConfig_;
 
@@ -7907,7 +10763,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSwapConfig() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -7971,7 +10827,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNodeKernelModuleLoading() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -8018,6 +10874,66 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         : nodeKernelModuleLoading_;
   }
 
+  public static final int ACCURATE_TIME_CONFIG_FIELD_NUMBER = 14;
+  private com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurateTimeConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accurateTimeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccurateTimeConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accurateTimeConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig getAccurateTimeConfig() {
+    return accurateTimeConfig_ == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance()
+        : accurateTimeConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The accurate time configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder
+      getAccurateTimeConfigOrBuilder() {
+    return accurateTimeConfig_ == null
+        ? com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance()
+        : accurateTimeConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8055,10 +10971,16 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       output.writeEnum(5, transparentHugepageDefrag_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(12, getSwapConfig());
+      output.writeMessage(11, getCustomNodeInit());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(12, getSwapConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(13, getNodeKernelModuleLoading());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(14, getAccurateTimeConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8100,12 +11022,18 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, transparentHugepageDefrag_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSwapConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCustomNodeInit());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSwapConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, getNodeKernelModuleLoading());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAccurateTimeConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8131,6 +11059,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     }
     if (transparentHugepageEnabled_ != other.transparentHugepageEnabled_) return false;
     if (transparentHugepageDefrag_ != other.transparentHugepageDefrag_) return false;
+    if (hasCustomNodeInit() != other.hasCustomNodeInit()) return false;
+    if (hasCustomNodeInit()) {
+      if (!getCustomNodeInit().equals(other.getCustomNodeInit())) return false;
+    }
     if (hasSwapConfig() != other.hasSwapConfig()) return false;
     if (hasSwapConfig()) {
       if (!getSwapConfig().equals(other.getSwapConfig())) return false;
@@ -8138,6 +11070,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasNodeKernelModuleLoading() != other.hasNodeKernelModuleLoading()) return false;
     if (hasNodeKernelModuleLoading()) {
       if (!getNodeKernelModuleLoading().equals(other.getNodeKernelModuleLoading())) return false;
+    }
+    if (hasAccurateTimeConfig() != other.hasAccurateTimeConfig()) return false;
+    if (hasAccurateTimeConfig()) {
+      if (!getAccurateTimeConfig().equals(other.getAccurateTimeConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -8164,6 +11100,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + transparentHugepageEnabled_;
     hash = (37 * hash) + TRANSPARENT_HUGEPAGE_DEFRAG_FIELD_NUMBER;
     hash = (53 * hash) + transparentHugepageDefrag_;
+    if (hasCustomNodeInit()) {
+      hash = (37 * hash) + CUSTOM_NODE_INIT_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomNodeInit().hashCode();
+    }
     if (hasSwapConfig()) {
       hash = (37 * hash) + SWAP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSwapConfig().hashCode();
@@ -8171,6 +11111,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasNodeKernelModuleLoading()) {
       hash = (37 * hash) + NODE_KERNEL_MODULE_LOADING_FIELD_NUMBER;
       hash = (53 * hash) + getNodeKernelModuleLoading().hashCode();
+    }
+    if (hasAccurateTimeConfig()) {
+      hash = (37 * hash) + ACCURATE_TIME_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAccurateTimeConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8336,8 +11280,10 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetHugepagesFieldBuilder();
+        internalGetCustomNodeInitFieldBuilder();
         internalGetSwapConfigFieldBuilder();
         internalGetNodeKernelModuleLoadingFieldBuilder();
+        internalGetAccurateTimeConfigFieldBuilder();
       }
     }
 
@@ -8354,6 +11300,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       }
       transparentHugepageEnabled_ = 0;
       transparentHugepageDefrag_ = 0;
+      customNodeInit_ = null;
+      if (customNodeInitBuilder_ != null) {
+        customNodeInitBuilder_.dispose();
+        customNodeInitBuilder_ = null;
+      }
       swapConfig_ = null;
       if (swapConfigBuilder_ != null) {
         swapConfigBuilder_.dispose();
@@ -8363,6 +11314,11 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       if (nodeKernelModuleLoadingBuilder_ != null) {
         nodeKernelModuleLoadingBuilder_.dispose();
         nodeKernelModuleLoadingBuilder_ = null;
+      }
+      accurateTimeConfig_ = null;
+      if (accurateTimeConfigBuilder_ != null) {
+        accurateTimeConfigBuilder_.dispose();
+        accurateTimeConfigBuilder_ = null;
       }
       return this;
     }
@@ -8419,15 +11375,27 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         result.transparentHugepageDefrag_ = transparentHugepageDefrag_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.swapConfig_ = swapConfigBuilder_ == null ? swapConfig_ : swapConfigBuilder_.build();
+        result.customNodeInit_ =
+            customNodeInitBuilder_ == null ? customNodeInit_ : customNodeInitBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.swapConfig_ = swapConfigBuilder_ == null ? swapConfig_ : swapConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.nodeKernelModuleLoading_ =
             nodeKernelModuleLoadingBuilder_ == null
                 ? nodeKernelModuleLoading_
                 : nodeKernelModuleLoadingBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.accurateTimeConfig_ =
+            accurateTimeConfigBuilder_ == null
+                ? accurateTimeConfig_
+                : accurateTimeConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8458,11 +11426,17 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       if (other.transparentHugepageDefrag_ != 0) {
         setTransparentHugepageDefragValue(other.getTransparentHugepageDefragValue());
       }
+      if (other.hasCustomNodeInit()) {
+        mergeCustomNodeInit(other.getCustomNodeInit());
+      }
       if (other.hasSwapConfig()) {
         mergeSwapConfig(other.getSwapConfig());
       }
       if (other.hasNodeKernelModuleLoading()) {
         mergeNodeKernelModuleLoading(other.getNodeKernelModuleLoading());
+      }
+      if (other.hasAccurateTimeConfig()) {
+        mergeAccurateTimeConfig(other.getAccurateTimeConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8527,11 +11501,18 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 90:
+              {
+                input.readMessage(
+                    internalGetCustomNodeInitFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetSwapConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 98
             case 106:
@@ -8539,9 +11520,16 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetNodeKernelModuleLoadingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetAccurateTimeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8605,6 +11593,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -8620,6 +11611,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -8685,6 +11678,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -8700,6 +11696,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -8755,6 +11753,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -8770,6 +11771,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -8832,6 +11835,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -8847,6 +11853,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -8915,6 +11923,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -8930,6 +11941,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -8995,6 +12008,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -9010,6 +12026,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -9072,6 +12090,9 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.core.wmem_max
      * net.core.optmem_max
      * net.core.somaxconn
+     * net.ipv4.neigh.default.gc_thresh1
+     * net.ipv4.neigh.default.gc_thresh2
+     * net.ipv4.neigh.default.gc_thresh3
      * net.ipv4.tcp_rmem
      * net.ipv4.tcp_wmem
      * net.ipv4.tcp_tw_reuse
@@ -9087,6 +12108,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * net.netfilter.nf_conntrack_tcp_timeout_time_wait
      * net.netfilter.nf_conntrack_tcp_timeout_established
      * net.netfilter.nf_conntrack_acct
+     * kernel.keys.maxkeys
+     * kernel.keys.maxbytes
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
@@ -9721,6 +12744,234 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit customNodeInit_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit,
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder,
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder>
+        customNodeInitBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customNodeInit field is set.
+     */
+    public boolean hasCustomNodeInit() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customNodeInit.
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit getCustomNodeInit() {
+      if (customNodeInitBuilder_ == null) {
+        return customNodeInit_ == null
+            ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance()
+            : customNodeInit_;
+      } else {
+        return customNodeInitBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomNodeInit(
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit value) {
+      if (customNodeInitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customNodeInit_ = value;
+      } else {
+        customNodeInitBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomNodeInit(
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder builderForValue) {
+      if (customNodeInitBuilder_ == null) {
+        customNodeInit_ = builderForValue.build();
+      } else {
+        customNodeInitBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomNodeInit(
+        com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit value) {
+      if (customNodeInitBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && customNodeInit_ != null
+            && customNodeInit_
+                != com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit
+                    .getDefaultInstance()) {
+          getCustomNodeInitBuilder().mergeFrom(value);
+        } else {
+          customNodeInit_ = value;
+        }
+      } else {
+        customNodeInitBuilder_.mergeFrom(value);
+      }
+      if (customNodeInit_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomNodeInit() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      customNodeInit_ = null;
+      if (customNodeInitBuilder_ != null) {
+        customNodeInitBuilder_.dispose();
+        customNodeInitBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder
+        getCustomNodeInitBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetCustomNodeInitFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder
+        getCustomNodeInitOrBuilder() {
+      if (customNodeInitBuilder_ != null) {
+        return customNodeInitBuilder_.getMessageOrBuilder();
+      } else {
+        return customNodeInit_ == null
+            ? com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.getDefaultInstance()
+            : customNodeInit_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow users to run arbitrary bash script or container on the
+     * node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.LinuxNodeConfig.CustomNodeInit custom_node_init = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit,
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder,
+            com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder>
+        internalGetCustomNodeInitFieldBuilder() {
+      if (customNodeInitBuilder_ == null) {
+        customNodeInitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit,
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInit.Builder,
+                com.google.container.v1beta1.LinuxNodeConfig.CustomNodeInitOrBuilder>(
+                getCustomNodeInit(), getParentForChildren(), isClean());
+        customNodeInit_ = null;
+      }
+      return customNodeInitBuilder_;
+    }
+
     private com.google.container.v1beta1.LinuxNodeConfig.SwapConfig swapConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.container.v1beta1.LinuxNodeConfig.SwapConfig,
@@ -9743,7 +12994,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the swapConfig field is set.
      */
     public boolean hasSwapConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -9791,7 +13042,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         swapConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9815,7 +13066,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         swapConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -9834,7 +13085,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSwapConfig(com.google.container.v1beta1.LinuxNodeConfig.SwapConfig value) {
       if (swapConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && swapConfig_ != null
             && swapConfig_
                 != com.google.container.v1beta1.LinuxNodeConfig.SwapConfig.getDefaultInstance()) {
@@ -9846,7 +13097,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         swapConfigBuilder_.mergeFrom(value);
       }
       if (swapConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -9865,7 +13116,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSwapConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       swapConfig_ = null;
       if (swapConfigBuilder_ != null) {
         swapConfigBuilder_.dispose();
@@ -9888,7 +13139,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.container.v1beta1.LinuxNodeConfig.SwapConfig.Builder getSwapConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetSwapConfigFieldBuilder().getBuilder();
     }
@@ -9969,7 +13220,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the nodeKernelModuleLoading field is set.
      */
     public boolean hasNodeKernelModuleLoading() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -10022,7 +13273,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         nodeKernelModuleLoadingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10048,7 +13299,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       } else {
         nodeKernelModuleLoadingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -10069,7 +13320,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeNodeKernelModuleLoading(
         com.google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading value) {
       if (nodeKernelModuleLoadingBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && nodeKernelModuleLoading_ != null
             && nodeKernelModuleLoading_
                 != com.google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading
@@ -10082,7 +13333,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         nodeKernelModuleLoadingBuilder_.mergeFrom(value);
       }
       if (nodeKernelModuleLoading_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -10102,7 +13353,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNodeKernelModuleLoading() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       nodeKernelModuleLoading_ = null;
       if (nodeKernelModuleLoadingBuilder_ != null) {
         nodeKernelModuleLoadingBuilder_.dispose();
@@ -10127,7 +13378,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1beta1.LinuxNodeConfig.NodeKernelModuleLoading.Builder
         getNodeKernelModuleLoadingBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetNodeKernelModuleLoadingFieldBuilder().getBuilder();
     }
@@ -10185,6 +13436,225 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         nodeKernelModuleLoading_ = null;
       }
       return nodeKernelModuleLoadingBuilder_;
+    }
+
+    private com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurateTimeConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig,
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder,
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder>
+        accurateTimeConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accurateTimeConfig field is set.
+     */
+    public boolean hasAccurateTimeConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accurateTimeConfig.
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig getAccurateTimeConfig() {
+      if (accurateTimeConfigBuilder_ == null) {
+        return accurateTimeConfig_ == null
+            ? com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance()
+            : accurateTimeConfig_;
+      } else {
+        return accurateTimeConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccurateTimeConfig(
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig value) {
+      if (accurateTimeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accurateTimeConfig_ = value;
+      } else {
+        accurateTimeConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccurateTimeConfig(
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder builderForValue) {
+      if (accurateTimeConfigBuilder_ == null) {
+        accurateTimeConfig_ = builderForValue.build();
+      } else {
+        accurateTimeConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAccurateTimeConfig(
+        com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig value) {
+      if (accurateTimeConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && accurateTimeConfig_ != null
+            && accurateTimeConfig_
+                != com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig
+                    .getDefaultInstance()) {
+          getAccurateTimeConfigBuilder().mergeFrom(value);
+        } else {
+          accurateTimeConfig_ = value;
+        }
+      } else {
+        accurateTimeConfigBuilder_.mergeFrom(value);
+      }
+      if (accurateTimeConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAccurateTimeConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      accurateTimeConfig_ = null;
+      if (accurateTimeConfigBuilder_ != null) {
+        accurateTimeConfigBuilder_.dispose();
+        accurateTimeConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder
+        getAccurateTimeConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetAccurateTimeConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder
+        getAccurateTimeConfigOrBuilder() {
+      if (accurateTimeConfigBuilder_ != null) {
+        return accurateTimeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return accurateTimeConfig_ == null
+            ? com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.getDefaultInstance()
+            : accurateTimeConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The accurate time configuration for the node pool.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig accurate_time_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig,
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder,
+            com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder>
+        internalGetAccurateTimeConfigFieldBuilder() {
+      if (accurateTimeConfigBuilder_ == null) {
+        accurateTimeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig,
+                com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfig.Builder,
+                com.google.container.v1beta1.LinuxNodeConfig.AccurateTimeConfigOrBuilder>(
+                getAccurateTimeConfig(), getParentForChildren(), isClean());
+        accurateTimeConfig_ = null;
+      }
+      return accurateTimeConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1beta1.LinuxNodeConfig)

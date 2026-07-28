@@ -1391,6 +1391,1237 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface ParallelAiSearchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.ParallelAiSearch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The API key for ParallelAiSearch.
+     * If an API key is not provided, the system will attempt to verify access
+     * by checking for an active Parallel.ai subscription through the Google
+     * Cloud Marketplace.
+     * See https://docs.parallel.ai/search/search-quickstart for more details.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The apiKey.
+     */
+    java.lang.String getApiKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The API key for ParallelAiSearch.
+     * If an API key is not provided, the system will attempt to verify access
+     * by checking for an active Parallel.ai subscription through the Google
+     * Cloud Marketplace.
+     * See https://docs.parallel.ai/search/search-quickstart for more details.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for apiKey.
+     */
+    com.google.protobuf.ByteString getApiKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customConfigs field is set.
+     */
+    boolean hasCustomConfigs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customConfigs.
+     */
+    com.google.protobuf.Struct getCustomConfigs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ParallelAiSearch tool type.
+   * A tool that uses the Parallel.ai search engine for grounding.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ParallelAiSearch}
+   */
+  public static final class ParallelAiSearch extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Tool.ParallelAiSearch)
+      ParallelAiSearchOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ParallelAiSearch");
+    }
+
+    // Use ParallelAiSearch.newBuilder() to construct.
+    private ParallelAiSearch(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ParallelAiSearch() {
+      apiKey_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ParallelAiSearch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ParallelAiSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.class,
+              com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int API_KEY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object apiKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The API key for ParallelAiSearch.
+     * If an API key is not provided, the system will attempt to verify access
+     * by checking for an active Parallel.ai subscription through the Google
+     * Cloud Marketplace.
+     * See https://docs.parallel.ai/search/search-quickstart for more details.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The apiKey.
+     */
+    @java.lang.Override
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiKey_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The API key for ParallelAiSearch.
+     * If an API key is not provided, the system will attempt to verify access
+     * by checking for an active Parallel.ai subscription through the Google
+     * Cloud Marketplace.
+     * See https://docs.parallel.ai/search/search-quickstart for more details.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for apiKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        apiKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CUSTOM_CONFIGS_FIELD_NUMBER = 3;
+    private com.google.protobuf.Struct customConfigs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customConfigs field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomConfigs() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customConfigs.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getCustomConfigs() {
+      return customConfigs_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : customConfigs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom configs for ParallelAiSearch.
+     * This field can be used to pass any parameter from the Parallel.ai
+     * Search API.
+     * See the Parallel.ai documentation for the full list of available
+     * parameters and their usage:
+     * https://docs.parallel.ai/api-reference/search-beta/search
+     * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+     * `fetch_policy` can be set via this field. For example:
+     * {
+     * "source_policy": {
+     * "include_domains": ["google.com", "wikipedia.org"],
+     * "exclude_domains": ["example.com"]
+     * },
+     * "fetch_policy": {
+     * "max_age_seconds": 3600
+     * }
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder() {
+      return customConfigs_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : customConfigs_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiKey_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, apiKey_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getCustomConfigs());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiKey_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, apiKey_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomConfigs());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch other =
+          (com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch) obj;
+
+      if (!getApiKey().equals(other.getApiKey())) return false;
+      if (hasCustomConfigs() != other.hasCustomConfigs()) return false;
+      if (hasCustomConfigs()) {
+        if (!getCustomConfigs().equals(other.getCustomConfigs())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
+      if (hasCustomConfigs()) {
+        hash = (37 * hash) + CUSTOM_CONFIGS_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomConfigs().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ParallelAiSearch tool type.
+     * A tool that uses the Parallel.ai search engine for grounding.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ParallelAiSearch}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Tool.ParallelAiSearch)
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ParallelAiSearch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ParallelAiSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.class,
+                com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetCustomConfigsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        apiKey_ = "";
+        customConfigs_ = null;
+        if (customConfigsBuilder_ != null) {
+          customConfigsBuilder_.dispose();
+          customConfigsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ParallelAiSearch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch build() {
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch buildPartial() {
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch result =
+            new com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.apiKey_ = apiKey_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.customConfigs_ =
+              customConfigsBuilder_ == null ? customConfigs_ : customConfigsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch other) {
+        if (other == com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance())
+          return this;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasCustomConfigs()) {
+          mergeCustomConfigs(other.getCustomConfigs());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  apiKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetCustomConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object apiKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The API key for ParallelAiSearch.
+       * If an API key is not provided, the system will attempt to verify access
+       * by checking for an active Parallel.ai subscription through the Google
+       * Cloud Marketplace.
+       * See https://docs.parallel.ai/search/search-quickstart for more details.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The apiKey.
+       */
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The API key for ParallelAiSearch.
+       * If an API key is not provided, the system will attempt to verify access
+       * by checking for an active Parallel.ai subscription through the Google
+       * Cloud Marketplace.
+       * See https://docs.parallel.ai/search/search-quickstart for more details.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for apiKey.
+       */
+      public com.google.protobuf.ByteString getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          apiKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The API key for ParallelAiSearch.
+       * If an API key is not provided, the system will attempt to verify access
+       * by checking for an active Parallel.ai subscription through the Google
+       * Cloud Marketplace.
+       * See https://docs.parallel.ai/search/search-quickstart for more details.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The apiKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The API key for ParallelAiSearch.
+       * If an API key is not provided, the system will attempt to verify access
+       * by checking for an active Parallel.ai subscription through the Google
+       * Cloud Marketplace.
+       * See https://docs.parallel.ai/search/search-quickstart for more details.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearApiKey() {
+        apiKey_ = getDefaultInstance().getApiKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The API key for ParallelAiSearch.
+       * If an API key is not provided, the system will attempt to verify access
+       * by checking for an active Parallel.ai subscription through the Google
+       * Cloud Marketplace.
+       * See https://docs.parallel.ai/search/search-quickstart for more details.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for apiKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        apiKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct customConfigs_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          customConfigsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the customConfigs field is set.
+       */
+      public boolean hasCustomConfigs() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The customConfigs.
+       */
+      public com.google.protobuf.Struct getCustomConfigs() {
+        if (customConfigsBuilder_ == null) {
+          return customConfigs_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : customConfigs_;
+        } else {
+          return customConfigsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomConfigs(com.google.protobuf.Struct value) {
+        if (customConfigsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          customConfigs_ = value;
+        } else {
+          customConfigsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomConfigs(com.google.protobuf.Struct.Builder builderForValue) {
+        if (customConfigsBuilder_ == null) {
+          customConfigs_ = builderForValue.build();
+        } else {
+          customConfigsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeCustomConfigs(com.google.protobuf.Struct value) {
+        if (customConfigsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && customConfigs_ != null
+              && customConfigs_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getCustomConfigsBuilder().mergeFrom(value);
+          } else {
+            customConfigs_ = value;
+          }
+        } else {
+          customConfigsBuilder_.mergeFrom(value);
+        }
+        if (customConfigs_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearCustomConfigs() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        customConfigs_ = null;
+        if (customConfigsBuilder_ != null) {
+          customConfigsBuilder_.dispose();
+          customConfigsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getCustomConfigsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetCustomConfigsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder() {
+        if (customConfigsBuilder_ != null) {
+          return customConfigsBuilder_.getMessageOrBuilder();
+        } else {
+          return customConfigs_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : customConfigs_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Custom configs for ParallelAiSearch.
+       * This field can be used to pass any parameter from the Parallel.ai
+       * Search API.
+       * See the Parallel.ai documentation for the full list of available
+       * parameters and their usage:
+       * https://docs.parallel.ai/api-reference/search-beta/search
+       * Currently only `source_policy`, `excerpts`, `max_results`, `mode`,
+       * `fetch_policy` can be set via this field. For example:
+       * {
+       * "source_policy": {
+       * "include_domains": ["google.com", "wikipedia.org"],
+       * "exclude_domains": ["example.com"]
+       * },
+       * "fetch_policy": {
+       * "max_age_seconds": 3600
+       * }
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          internalGetCustomConfigsFieldBuilder() {
+        if (customConfigsBuilder_ == null) {
+          customConfigsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getCustomConfigs(), getParentForChildren(), isClean());
+          customConfigs_ = null;
+        }
+        return customConfigsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Tool.ParallelAiSearch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Tool.ParallelAiSearch)
+    private static final com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ParallelAiSearch> PARSER =
+        new com.google.protobuf.AbstractParser<ParallelAiSearch>() {
+          @java.lang.Override
+          public ParallelAiSearch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ParallelAiSearch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ParallelAiSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface CodeExecutionOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.CodeExecution)
@@ -3442,6 +4673,72 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         : enterpriseWebSearch_;
   }
 
+  public static final int PARALLEL_AI_SEARCH_FIELD_NUMBER = 13;
+  private com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallelAiSearch_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parallelAiSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasParallelAiSearch() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parallelAiSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getParallelAiSearch() {
+    return parallelAiSearch_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance()
+        : parallelAiSearch_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder
+      getParallelAiSearchOrBuilder() {
+    return parallelAiSearch_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance()
+        : parallelAiSearch_;
+  }
+
   public static final int CODE_EXECUTION_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.Tool.CodeExecution codeExecution_;
 
@@ -3461,7 +4758,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCodeExecution() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -3522,7 +4819,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlContext() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -3583,7 +4880,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasComputerUse() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -3651,7 +4948,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3663,11 +4960,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(10, getUrlContext());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(11, getComputerUse());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getParallelAiSearch());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3689,7 +4989,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3701,11 +5001,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUrlContext());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getParallelAiSearch());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3742,6 +5045,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (hasEnterpriseWebSearch() != other.hasEnterpriseWebSearch()) return false;
     if (hasEnterpriseWebSearch()) {
       if (!getEnterpriseWebSearch().equals(other.getEnterpriseWebSearch())) return false;
+    }
+    if (hasParallelAiSearch() != other.hasParallelAiSearch()) return false;
+    if (hasParallelAiSearch()) {
+      if (!getParallelAiSearch().equals(other.getParallelAiSearch())) return false;
     }
     if (hasCodeExecution() != other.hasCodeExecution()) return false;
     if (hasCodeExecution()) {
@@ -3789,6 +5096,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (hasEnterpriseWebSearch()) {
       hash = (37 * hash) + ENTERPRISE_WEB_SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getEnterpriseWebSearch().hashCode();
+    }
+    if (hasParallelAiSearch()) {
+      hash = (37 * hash) + PARALLEL_AI_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getParallelAiSearch().hashCode();
     }
     if (hasCodeExecution()) {
       hash = (37 * hash) + CODE_EXECUTION_FIELD_NUMBER;
@@ -3954,6 +5265,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         internalGetGoogleSearchRetrievalFieldBuilder();
         internalGetGoogleMapsFieldBuilder();
         internalGetEnterpriseWebSearchFieldBuilder();
+        internalGetParallelAiSearchFieldBuilder();
         internalGetCodeExecutionFieldBuilder();
         internalGetUrlContextFieldBuilder();
         internalGetComputerUseFieldBuilder();
@@ -3995,6 +5307,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (enterpriseWebSearchBuilder_ != null) {
         enterpriseWebSearchBuilder_.dispose();
         enterpriseWebSearchBuilder_ = null;
+      }
+      parallelAiSearch_ = null;
+      if (parallelAiSearchBuilder_ != null) {
+        parallelAiSearchBuilder_.dispose();
+        parallelAiSearchBuilder_ = null;
       }
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
@@ -4088,18 +5405,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.codeExecution_ =
-            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
+        result.parallelAiSearch_ =
+            parallelAiSearchBuilder_ == null ? parallelAiSearch_ : parallelAiSearchBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        result.codeExecution_ =
+            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.computerUse_ =
             computerUseBuilder_ == null ? computerUse_ : computerUseBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4157,6 +5479,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEnterpriseWebSearch()) {
         mergeEnterpriseWebSearch(other.getEnterpriseWebSearch());
+      }
+      if (other.hasParallelAiSearch()) {
+        mergeParallelAiSearch(other.getParallelAiSearch());
       }
       if (other.hasCodeExecution()) {
         mergeCodeExecution(other.getCodeExecution());
@@ -4225,7 +5550,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 42:
@@ -4253,16 +5578,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetUrlContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetComputerUseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(
+                    internalGetParallelAiSearchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5981,6 +7313,241 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       return enterpriseWebSearchBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallelAiSearch_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch,
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder>
+        parallelAiSearchBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the parallelAiSearch field is set.
+     */
+    public boolean hasParallelAiSearch() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The parallelAiSearch.
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getParallelAiSearch() {
+      if (parallelAiSearchBuilder_ == null) {
+        return parallelAiSearch_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance()
+            : parallelAiSearch_;
+      } else {
+        return parallelAiSearchBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParallelAiSearch(com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch value) {
+      if (parallelAiSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parallelAiSearch_ = value;
+      } else {
+        parallelAiSearchBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParallelAiSearch(
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder builderForValue) {
+      if (parallelAiSearchBuilder_ == null) {
+        parallelAiSearch_ = builderForValue.build();
+      } else {
+        parallelAiSearchBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeParallelAiSearch(
+        com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch value) {
+      if (parallelAiSearchBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && parallelAiSearch_ != null
+            && parallelAiSearch_
+                != com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance()) {
+          getParallelAiSearchBuilder().mergeFrom(value);
+        } else {
+          parallelAiSearch_ = value;
+        }
+      } else {
+        parallelAiSearchBuilder_.mergeFrom(value);
+      }
+      if (parallelAiSearch_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearParallelAiSearch() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      parallelAiSearch_ = null;
+      if (parallelAiSearchBuilder_ != null) {
+        parallelAiSearchBuilder_.dispose();
+        parallelAiSearchBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder
+        getParallelAiSearchBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetParallelAiSearchFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder
+        getParallelAiSearchOrBuilder() {
+      if (parallelAiSearchBuilder_ != null) {
+        return parallelAiSearchBuilder_.getMessageOrBuilder();
+      } else {
+        return parallelAiSearch_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.getDefaultInstance()
+            : parallelAiSearch_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, Vertex AI will use Parallel.ai to search for
+     * information to answer user queries. The search results will be grounded on
+     * Parallel.ai and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch,
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder>
+        internalGetParallelAiSearchFieldBuilder() {
+      if (parallelAiSearchBuilder_ == null) {
+        parallelAiSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch,
+                com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch.Builder,
+                com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder>(
+                getParallelAiSearch(), getParentForChildren(), isClean());
+        parallelAiSearch_ = null;
+      }
+      return parallelAiSearchBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.Tool.CodeExecution codeExecution_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1.Tool.CodeExecution,
@@ -6003,7 +7570,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the codeExecution field is set.
      */
     public boolean hasCodeExecution() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -6051,7 +7618,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         codeExecutionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6075,7 +7642,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         codeExecutionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6094,7 +7661,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCodeExecution(com.google.cloud.aiplatform.v1.Tool.CodeExecution value) {
       if (codeExecutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && codeExecution_ != null
             && codeExecution_
                 != com.google.cloud.aiplatform.v1.Tool.CodeExecution.getDefaultInstance()) {
@@ -6106,7 +7673,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         codeExecutionBuilder_.mergeFrom(value);
       }
       if (codeExecution_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -6125,7 +7692,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCodeExecution() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
         codeExecutionBuilder_.dispose();
@@ -6148,7 +7715,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Tool.CodeExecution.Builder getCodeExecutionBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetCodeExecutionFieldBuilder().getBuilder();
     }
@@ -6225,7 +7792,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlContext field is set.
      */
     public boolean hasUrlContext() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -6271,7 +7838,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         urlContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6294,7 +7861,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         urlContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6312,7 +7879,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1.UrlContext value) {
       if (urlContextBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && urlContext_ != null
             && urlContext_ != com.google.cloud.aiplatform.v1.UrlContext.getDefaultInstance()) {
           getUrlContextBuilder().mergeFrom(value);
@@ -6323,7 +7890,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         urlContextBuilder_.mergeFrom(value);
       }
       if (urlContext_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -6341,7 +7908,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUrlContext() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       urlContext_ = null;
       if (urlContextBuilder_ != null) {
         urlContextBuilder_.dispose();
@@ -6363,7 +7930,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.UrlContext.Builder getUrlContextBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetUrlContextFieldBuilder().getBuilder();
     }
@@ -6440,7 +8007,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the computerUse field is set.
      */
     public boolean hasComputerUse() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -6490,7 +8057,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         computerUseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6515,7 +8082,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         computerUseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6535,7 +8102,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeComputerUse(com.google.cloud.aiplatform.v1.Tool.ComputerUse value) {
       if (computerUseBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && computerUse_ != null
             && computerUse_
                 != com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()) {
@@ -6547,7 +8114,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         computerUseBuilder_.mergeFrom(value);
       }
       if (computerUse_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -6567,7 +8134,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearComputerUse() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       computerUse_ = null;
       if (computerUseBuilder_ != null) {
         computerUseBuilder_.dispose();
@@ -6591,7 +8158,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder getComputerUseBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetComputerUseFieldBuilder().getBuilder();
     }

@@ -38,7 +38,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4041
+   *     google/container/v1/cluster_service.proto;l=4335
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4041
+   *     google/container/v1/cluster_service.proto;l=4335
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -75,7 +75,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4047
+   *     google/container/v1/cluster_service.proto;l=4341
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -94,7 +94,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4047
+   *     google/container/v1/cluster_service.proto;l=4341
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4051
+   *     google/container/v1/cluster_service.proto;l=4345
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -128,7 +128,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4051
+   *     google/container/v1/cluster_service.proto;l=4345
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -145,7 +145,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4055
+   *     google/container/v1/cluster_service.proto;l=4349
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -162,7 +162,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4055
+   *     google/container/v1/cluster_service.proto;l=4349
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -273,6 +273,62 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image name to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image = 10;</code>
+   *
+   * @return The image.
+   */
+  java.lang.String getImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image name to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image = 10;</code>
+   *
+   * @return The bytes for image.
+   */
+  com.google.protobuf.ByteString getImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node pool.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image_project = 11;</code>
+   *
+   * @return The imageProject.
+   */
+  java.lang.String getImageProject();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node pool.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string image_project = 11;</code>
+   *
+   * @return The bytes for imageProject.
+   */
+  com.google.protobuf.ByteString getImageProjectBytes();
 
   /**
    *
@@ -1505,4 +1561,41 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.protobuf.Duration consolidation_delay = 49;</code>
    */
   com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.TaintConfig taint_config = 51;</code>
+   *
+   * @return Whether the taintConfig field is set.
+   */
+  boolean hasTaintConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.TaintConfig taint_config = 51;</code>
+   *
+   * @return The taintConfig.
+   */
+  com.google.container.v1.TaintConfig getTaintConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>.google.container.v1.TaintConfig taint_config = 51;</code>
+   */
+  com.google.container.v1.TaintConfigOrBuilder getTaintConfigOrBuilder();
 }

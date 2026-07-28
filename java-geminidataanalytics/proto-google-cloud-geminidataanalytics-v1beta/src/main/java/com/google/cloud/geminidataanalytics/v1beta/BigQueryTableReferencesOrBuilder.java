@@ -94,4 +94,90 @@ public interface BigQueryTableReferencesOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder
       getTableReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference>
+      getPropertyGraphReferencesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+      getPropertyGraphReferences(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPropertyGraphReferencesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+      getPropertyGraphReferencesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Preview feature. References to BigQuery property graphs.
+   * Note: Data sources must exclusively use either tables or property graphs,
+   * not both. When using property graphs, a maximum of one graph reference is
+   * supported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+      getPropertyGraphReferencesOrBuilder(int index);
 }

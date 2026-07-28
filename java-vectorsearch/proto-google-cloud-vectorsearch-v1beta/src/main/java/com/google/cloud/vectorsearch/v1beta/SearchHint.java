@@ -2319,7 +2319,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
    * @return Whether the useIndex field is set.
    */
   @java.lang.Override
@@ -2341,7 +2341,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
    * @return The useIndex.
    */
   @java.lang.Override
@@ -2388,7 +2388,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
    * @return Whether the useKnn field is set.
    */
   @java.lang.Override
@@ -2409,7 +2409,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
    * @return The useKnn.
    */
   @java.lang.Override
@@ -3013,7 +3013,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
      * @return Whether the useIndex field is set.
      */
     @java.lang.Override
@@ -3035,7 +3035,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=142
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
      * @return The useIndex.
      */
     @java.lang.Override
@@ -3266,7 +3266,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
      * @return Whether the useKnn field is set.
      */
     @java.lang.Deprecated
@@ -3286,7 +3286,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
      * @return The useKnn.
      */
     @java.lang.Deprecated
@@ -3309,7 +3309,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
      * @param value The useKnn to set.
      * @return This builder for chaining.
      */
@@ -3334,7 +3334,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=148
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

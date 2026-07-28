@@ -17,8 +17,10 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.common.AttributeKey;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -31,17 +33,46 @@ import java.util.Set;
 @InternalApi
 public class TelemetryConstants {
 
-  // The Firestore namespace has not been deployed yet. Must target the custom namespace
-  // until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must target the
+  // custom namespace until this is implemented.
   public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
   public static final String DATASTORE_METER_NAME = "java-datastore";
+
+  // Short names used to build GAX_METRICS and metric full-path constants below.
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCY = "operation_latency";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCY = "attempt_latency";
+  public static final String METRIC_NAME_SHORT_OPERATION_COUNT = "operation_count";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_COUNT = "attempt_count";
+
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCIES = "operation_latencies";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCIES = "attempt_latencies";
+
+  /**
+   * Mapping from the singular metric names recorded by the GAX library to the pluralized metric
+   * names required by the internal Cloud Monitoring metric descriptors.
+   */
+  public static final Map<String, String> GAX_METRIC_NAME_MAP =
+      ImmutableMap.of(
+          METRIC_NAME_SHORT_OPERATION_LATENCY, METRIC_NAME_SHORT_OPERATION_LATENCIES,
+          METRIC_NAME_SHORT_ATTEMPT_LATENCY, METRIC_NAME_SHORT_ATTEMPT_LATENCIES,
+          METRIC_NAME_SHORT_OPERATION_COUNT, METRIC_NAME_SHORT_OPERATION_COUNT,
+          METRIC_NAME_SHORT_ATTEMPT_COUNT, METRIC_NAME_SHORT_ATTEMPT_COUNT);
+
+  // Short metric names (without prefix) for the four metrics recorded by the GAX layer.
+  // Used by DatastoreBuiltInMetricsView to register OTel views that capture and rename
+  // GAX-emitted metrics for the built-in Cloud Monitoring export pipeline.
+  public static final Set<String> GAX_METRICS = GAX_METRIC_NAME_MAP.keySet();
+
+  // The subset of GAX_METRICS that are histograms (e.g. latency metrics)
+  public static final Set<String> GAX_HISTOGRAM_METRICS =
+      ImmutableSet.of(METRIC_NAME_SHORT_OPERATION_LATENCY, METRIC_NAME_SHORT_ATTEMPT_LATENCY);
 
   // Monitored resource type for Cloud Monitoring
   public static final String DATASTORE_RESOURCE_TYPE = "global";
 
   // Resource label keys for the monitored resource
-  // The Firestore namespace has not been deployed yet. Must target the global
-  // Monitored Resource until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must
+  // target the global Monitored Resource until this is implemented.
   public static final String RESOURCE_LABEL_PROJECT_ID = "project_id";
   public static final String RESOURCE_LABEL_DATABASE_ID = "database_id";
   public static final String RESOURCE_LABEL_LOCATION = "location";
@@ -109,26 +140,32 @@ public class TelemetryConstants {
   /**
    * Metric name for the total latency of an operation (one full RPC call including retries).
    *
-   * <p>The plural form ({@code operation_latencies}) is intentional: it matches the internal Cloud
-   * Monitoring metric descriptor name. {@link OpenTelemetryDatastoreMetricsRecorder} overrides the
-   * inherited GAX method to record to this name rather than the singular GAX default.
+   * <p><b>Singular/plural naming:</b> This constant uses the singular form ({@code
+   * operation_latency}) to match the name recorded by the GAX layer and used by custom OTel
+   * backends (e.g., an in-memory reader in tests). The built-in Cloud Monitoring export path
+   * renames the metric to the plural form ({@code operation_latencies}) via an OTel View in {@link
+   * DatastoreBuiltInMetricsView}. This split is intentional and consistent with other Google Cloud
+   * client libraries.
    */
-  public static final String METRIC_NAME_OPERATION_LATENCY = METRIC_PREFIX + "/operation_latencies";
+  public static final String METRIC_NAME_OPERATION_LATENCY =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_OPERATION_LATENCY;
 
   /**
    * Metric name for the latency of a single RPC attempt.
    *
-   * <p>The plural form ({@code attempt_latencies}) is intentional: it matches the internal Cloud
-   * Monitoring metric descriptor name. {@link OpenTelemetryDatastoreMetricsRecorder} overrides the
-   * inherited GAX method to record to this name rather than the singular GAX default.
+   * <p>See {@link #METRIC_NAME_OPERATION_LATENCY} for the singular/plural naming rationale. The
+   * built-in Cloud Monitoring export renames this to {@code attempt_latencies} via an OTel View.
    */
-  public static final String METRIC_NAME_ATTEMPT_LATENCY = METRIC_PREFIX + "/attempt_latencies";
+  public static final String METRIC_NAME_ATTEMPT_LATENCY =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_LATENCY;
 
   /** Metric name for the count of operations. */
-  public static final String METRIC_NAME_OPERATION_COUNT = METRIC_PREFIX + "/operation_count";
+  public static final String METRIC_NAME_OPERATION_COUNT =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_OPERATION_COUNT;
 
   /** Metric name for the count of RPC attempts. */
-  public static final String METRIC_NAME_ATTEMPT_COUNT = METRIC_PREFIX + "/attempt_count";
+  public static final String METRIC_NAME_ATTEMPT_COUNT =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_COUNT;
 
   static final String METHOD_SERVICE_NAME = "Datastore";
 

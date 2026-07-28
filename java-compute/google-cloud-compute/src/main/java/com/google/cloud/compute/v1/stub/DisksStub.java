@@ -47,7 +47,9 @@ import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
+import com.google.cloud.compute.v1.UpdateKmsKeyDiskRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -55,6 +57,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class DisksStub implements BackgroundResource {
 
@@ -211,6 +214,15 @@ public abstract class DisksStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDiskRequest, Operation> updateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCallable()");
+  }
+
+  public OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateKmsKeyCallable()");
   }
 
   @Override

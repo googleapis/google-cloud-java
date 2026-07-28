@@ -420,6 +420,53 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   *
+   * @return Whether the templateReference field is set.
+   */
+  boolean hasTemplateReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   *
+   * @return The templateReference.
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.TemplateReference getTemplateReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Aggregate rule which references a rule template and provides the
+   * parameters to be substituted in the template. If any rows are returned,
+   * this rule fails.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataQualityRule.TemplateReference template_reference = 5;
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.TemplateReferenceOrBuilder
+      getTemplateReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The unnested column which this rule is evaluated against.
    * </pre>
    *
@@ -593,6 +640,130 @@ public interface DataQualityRuleOrBuilder
    * @return The suspended.
    */
   boolean getSuspended();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAttributesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAttributes(java.lang.String key);
+
+  /** Use {@link #getAttributesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAttributesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of attribute name and value linked to the rule. The rules to
+   * evaluate can be filtered based on attributes provided here and a filter
+   * expression provided in the DataQualitySpec.filter field.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; attributes = 507 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAttributesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ruleSource field is set.
+   */
+  boolean hasRuleSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ruleSource.
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.RuleSource getRuleSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains information about the source of the rule and its
+   * relationship with the BigQuery table, where applicable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityRule.RuleSource rule_source = 508 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityRule.RuleSourceOrBuilder getRuleSourceOrBuilder();
 
   /**
    *

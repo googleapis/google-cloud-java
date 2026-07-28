@@ -26,6 +26,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.RequestMetadataCallback;
@@ -45,10 +46,14 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutableCredentialsTest {
-  ServiceAccountCredentials initialCredentials = mock(ServiceAccountCredentials.class);
-  ServiceAccountCredentials initialScopedCredentials = mock(ServiceAccountCredentials.class);
-  ServiceAccountCredentials updatedCredentials = mock(ServiceAccountCredentials.class);
-  ServiceAccountCredentials updatedScopedCredentials = mock(ServiceAccountCredentials.class);
+  ServiceAccountCredentials initialCredentials =
+      mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
+  ServiceAccountCredentials initialScopedCredentials =
+      mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
+  ServiceAccountCredentials updatedCredentials =
+      mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
+  ServiceAccountCredentials updatedScopedCredentials =
+      mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
   Set<String> scopes = new HashSet<>(Arrays.asList("scope-a", "scope-b"));
   Map<String, List<String>> initialMetadata =
       Collections.singletonMap("Authorization", Collections.singletonList("v1"));
@@ -70,7 +75,8 @@ public class MutableCredentialsTest {
     MutableCredentials credentials = new MutableCredentials(initialCredentials, scopes);
     URI testUri = URI.create("https://spanner.googleapis.com");
     Executor executor = mock(Executor.class);
-    RequestMetadataCallback callback = mock(RequestMetadataCallback.class);
+    RequestMetadataCallback callback =
+        mock(RequestMetadataCallback.class, withSettings().withoutAnnotations());
 
     validateInitialDelegatedCredentialsAreSet(credentials, testUri);
 
@@ -86,6 +92,8 @@ public class MutableCredentialsTest {
   public void testCreateMutableCredentialsWithDefaultScopes() throws IOException {
     Set<String> defaultScopes = SpannerOptions.SCOPES;
     when(initialCredentials.createScoped(defaultScopes)).thenReturn(initialScopedCredentials);
+    when(initialScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(initialScopedCredentials);
     when(initialScopedCredentials.getAuthenticationType()).thenReturn(initialAuthType);
     when(initialScopedCredentials.getRequestMetadata(any(URI.class))).thenReturn(initialMetadata);
     when(initialScopedCredentials.getUniverseDomain()).thenReturn(initialUniverseDomain);
@@ -109,7 +117,8 @@ public class MutableCredentialsTest {
     MutableCredentials credentials = new MutableCredentials(initialCredentials, scopes);
     URI testUri = URI.create("https://example.com");
     Executor executor = mock(Executor.class);
-    RequestMetadataCallback callback = mock(RequestMetadataCallback.class);
+    RequestMetadataCallback callback =
+        mock(RequestMetadataCallback.class, withSettings().withoutAnnotations());
 
     validateInitialDelegatedCredentialsAreSet(credentials, testUri);
 
@@ -172,6 +181,8 @@ public class MutableCredentialsTest {
 
   private void setupInitialCredentials() throws IOException {
     when(initialCredentials.createScoped(scopes)).thenReturn(initialScopedCredentials);
+    when(initialScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(initialScopedCredentials);
     when(initialCredentials.createScoped(Collections.emptyList()))
         .thenReturn(initialScopedCredentials);
     when(initialScopedCredentials.getAuthenticationType()).thenReturn(initialAuthType);
@@ -185,6 +196,8 @@ public class MutableCredentialsTest {
 
   private void setupUpdatedCredentials() throws IOException {
     when(updatedCredentials.createScoped(scopes)).thenReturn(updatedScopedCredentials);
+    when(updatedScopedCredentials.createWithUseJwtAccessWithScope(true))
+        .thenReturn(updatedScopedCredentials);
     when(updatedScopedCredentials.getAuthenticationType()).thenReturn(updatedAuthType);
     when(updatedScopedCredentials.getRequestMetadata(any(URI.class))).thenReturn(updatedMetadata);
     when(updatedScopedCredentials.getUniverseDomain()).thenReturn(updatedUniverseDomain);

@@ -24,7 +24,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * NodePoolUpgradeInfo contains the upgrade information of a nodepool.
+ * NodePoolUpgradeInfo contains the upgrade information of a node pool.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.NodePoolUpgradeInfo}
@@ -962,7 +962,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -978,7 +978,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -1002,7 +1002,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of standard support timestamp.
+   * The node pool's current minor version's end of standard support timestamp.
    * </pre>
    *
    * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -1031,7 +1031,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -1047,7 +1047,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -1071,7 +1071,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The nodepool's current minor version's end of extended support timestamp.
+   * The node pool's current minor version's end of extended support timestamp.
    * </pre>
    *
    * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -1371,7 +1371,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * NodePoolUpgradeInfo contains the upgrade information of a nodepool.
+   * NodePoolUpgradeInfo contains the upgrade information of a node pool.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.NodePoolUpgradeInfo}
@@ -2856,7 +2856,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2871,7 +2871,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2894,7 +2894,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2917,7 +2917,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2939,7 +2939,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2957,7 +2957,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of standard support timestamp.
+     * The node pool's current minor version's end of standard support timestamp.
      * </pre>
      *
      * <code>optional string end_of_standard_support_timestamp = 6;</code>
@@ -2982,7 +2982,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -2997,7 +2997,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -3020,7 +3020,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -3043,7 +3043,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -3065,7 +3065,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>
@@ -3083,7 +3083,7 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The nodepool's current minor version's end of extended support timestamp.
+     * The node pool's current minor version's end of extended support timestamp.
      * </pre>
      *
      * <code>optional string end_of_extended_support_timestamp = 7;</code>

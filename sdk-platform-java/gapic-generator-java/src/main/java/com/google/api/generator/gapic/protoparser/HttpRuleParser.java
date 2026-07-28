@@ -21,6 +21,7 @@ import com.google.api.generator.gapic.model.Field;
 import com.google.api.generator.gapic.model.HttpBindings;
 import com.google.api.generator.gapic.model.HttpBindings.HttpBinding;
 import com.google.api.generator.gapic.model.Message;
+import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -29,8 +30,10 @@ import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Sets;
 import com.google.protobuf.DescriptorProtos.MethodOptions;
 import com.google.protobuf.Descriptors.MethodDescriptor;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -144,10 +147,24 @@ public class HttpRuleParser {
         continue;
       }
       Message nestedMessage = inputMessage;
+      List<String> jsonNameParts = new ArrayList<>();
       for (int i = 0; i < subFields.length; i++) {
         String subFieldName = subFields[i];
+        Field field = nestedMessage.fieldMap().get(subFieldName);
+        Preconditions.checkState(
+            field != null,
+            "Expected message %s to contain field %s but none found",
+            nestedMessage.name(),
+            subFieldName);
+
+        // Each component of the JSON name uses the json_name annotation of the field,
+        // or default to the field name
+        jsonNameParts.add(
+            !Strings.isNullOrEmpty(field.jsonName())
+                ? field.jsonName()
+                : JavaStyle.toLowerCamelCase(field.name()));
+
         if (i < subFields.length - 1) {
-          Field field = nestedMessage.fieldMap().get(subFieldName);
           nestedMessage = messageTypes.get(field.type().reference().fullName());
           Preconditions.checkNotNull(
               nestedMessage,
@@ -160,9 +177,12 @@ public class HttpRuleParser {
             checkHttpFieldIsValid(subFieldName, nestedMessage, false);
             patternSampleValue = patternSampleValues.get(paramName);
           }
-          Field field = nestedMessage.fieldMap().get(subFieldName);
           httpBindings.add(
-              httpBindingBuilder.setValuePattern(patternSampleValue).setField(field).build());
+              httpBindingBuilder
+                  .setValuePattern(patternSampleValue)
+                  .setField(field)
+                  .setJsonName(String.join(".", jsonNameParts))
+                  .build());
         }
       }
     }

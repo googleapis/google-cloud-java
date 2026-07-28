@@ -397,6 +397,44 @@ public interface ImportJobOrBuilder
    *
    *
    * <pre>
+   * Output only. Specifies the
+   * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+   * provided by the customer in the
+   * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  int getPublicKeyFormatValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the
+   * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+   * provided by the customer in the
+   * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The publicKeyFormat.
+   */
+  com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Statement that was generated and signed by the key creator
    * (for example, an HSM) at key creation time. Use this statement to verify
    * attributes of the key as stored on the HSM, independently of Google.

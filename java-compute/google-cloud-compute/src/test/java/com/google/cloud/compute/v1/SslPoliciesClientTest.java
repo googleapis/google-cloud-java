@@ -219,6 +219,7 @@ public class SslPoliciesClientTest {
             .setKind("kind3292052")
             .setMinTlsVersion("minTlsVersion-2026358961")
             .setName("name3373707")
+            .setPostQuantumKeyExchange("postQuantumKeyExchange-471952313")
             .setProfile("profile-309425751")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")

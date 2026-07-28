@@ -137,14 +137,19 @@ public final class User extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `User` ID.
+   * Output only. Deprecated: `User` ID.
    * </pre>
    *
-   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+   *     google/ads/admanager/v1/user_messages.proto;l=43
    * @return Whether the userId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUserId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -153,14 +158,19 @@ public final class User extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `User` ID.
+   * Output only. Deprecated: `User` ID.
    * </pre>
    *
-   * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+   *     google/ads/admanager/v1/user_messages.proto;l=43
    * @return The userId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getUserId() {
     return userId_;
   }
@@ -1278,14 +1288,19 @@ public final class User extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `User` ID.
+     * Output only. Deprecated: `User` ID.
      * </pre>
      *
-     * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+     *     google/ads/admanager/v1/user_messages.proto;l=43
      * @return Whether the userId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasUserId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1294,14 +1309,19 @@ public final class User extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `User` ID.
+     * Output only. Deprecated: `User` ID.
      * </pre>
      *
-     * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+     *     google/ads/admanager/v1/user_messages.proto;l=43
      * @return The userId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getUserId() {
       return userId_;
     }
@@ -1310,14 +1330,19 @@ public final class User extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `User` ID.
+     * Output only. Deprecated: `User` ID.
      * </pre>
      *
-     * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+     *     google/ads/admanager/v1/user_messages.proto;l=43
      * @param value The userId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setUserId(long value) {
 
       userId_ = value;
@@ -1330,13 +1355,18 @@ public final class User extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `User` ID.
+     * Output only. Deprecated: `User` ID.
      * </pre>
      *
-     * <code>optional int64 user_id = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 user_id = 10 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.User.user_id is deprecated. See
+     *     google/ads/admanager/v1/user_messages.proto;l=43
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearUserId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       userId_ = 0L;

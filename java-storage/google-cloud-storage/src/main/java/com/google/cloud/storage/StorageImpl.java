@@ -492,8 +492,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           .forEach(
               field -> {
                 String jsonName = field.getApiaryName();
-                if (tmp.containsKey(jsonName)) {
-                  bucketPb.put(jsonName, tmp.get(jsonName));
+                Object value = tmp.get(jsonName);
+                if (value != null) {
+                  bucketPb.put(jsonName, value);
                 } else {
                   BucketField lookup = BucketField.lookup(field);
                   if (lookup != null) {
@@ -577,8 +578,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             } else {
               checkState(subFields.size() <= 1, "unexpected nested field(s) %s", subFields);
               String jsonName = topLevelField.getApiaryName();
-              if (tmp.containsKey(jsonName)) {
-                pb.put(jsonName, tmp.get(jsonName));
+              Object value = tmp.get(jsonName);
+              if (value != null) {
+                pb.put(jsonName, value);
               } else {
                 BlobField lookup = BlobField.lookup(topLevelField);
                 if (lookup != null) {
@@ -651,7 +653,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     }
     Opts<ObjectTargetOpt> targetOpts = composeRequest.getTargetOpts();
     StorageObject targetPb = codecs.blobInfo().encode(composeRequest.getTarget());
-    Map<StorageRpc.Option, ?> targetOptions = targetOpts.getRpcOptions();
+    Map<StorageRpc.Option, Object> targetOptions = Maps.newHashMap(targetOpts.getRpcOptions());
+    if (composeRequest.isDeleteSourceObjects()) {
+      targetOptions.put(StorageRpc.Option.DELETE_SOURCE_OBJECTS, true);
+    }
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsCompose(sources, targetPb, targetOptions);
     return run(

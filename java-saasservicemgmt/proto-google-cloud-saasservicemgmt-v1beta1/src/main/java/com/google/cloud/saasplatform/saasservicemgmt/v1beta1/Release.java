@@ -1484,6 +1484,71 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     return inputVariableDefaults_.get(index);
   }
 
+  public static final int APPLICATION_TEMPLATE_COMPONENT_FIELD_NUMBER = 9;
+  private com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+      applicationTemplateComponent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationTemplateComponent field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationTemplateComponent() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationTemplateComponent.
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+      getApplicationTemplateComponent() {
+    return applicationTemplateComponent_ == null
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.getDefaultInstance()
+        : applicationTemplateComponent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder
+      getApplicationTemplateComponentOrBuilder() {
+    return applicationTemplateComponent_ == null
+        ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.getDefaultInstance()
+        : applicationTemplateComponent_;
+  }
+
   public static final int LABELS_FIELD_NUMBER = 10401;
 
   private static final class LabelsDefaultEntryHolder {
@@ -1871,7 +1936,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -1928,7 +1993,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -2004,16 +2069,19 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < inputVariableDefaults_.size(); i++) {
       output.writeMessage(7, inputVariableDefaults_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getApplicationTemplateComponent());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10201, uid_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10202, etag_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10303, getCreateTime());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(10304, getUpdateTime());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
@@ -2052,16 +2120,21 @@ public final class Release extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, inputVariableDefaults_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getApplicationTemplateComponent());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10201, uid_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10202, etag_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10303, getCreateTime());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10304, getUpdateTime());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2113,6 +2186,11 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     if (!getInputVariablesList().equals(other.getInputVariablesList())) return false;
     if (!getOutputVariablesList().equals(other.getOutputVariablesList())) return false;
     if (!getInputVariableDefaultsList().equals(other.getInputVariableDefaultsList())) return false;
+    if (hasApplicationTemplateComponent() != other.hasApplicationTemplateComponent()) return false;
+    if (hasApplicationTemplateComponent()) {
+      if (!getApplicationTemplateComponent().equals(other.getApplicationTemplateComponent()))
+        return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
@@ -2159,6 +2237,10 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     if (getInputVariableDefaultsCount() > 0) {
       hash = (37 * hash) + INPUT_VARIABLE_DEFAULTS_FIELD_NUMBER;
       hash = (53 * hash) + getInputVariableDefaultsList().hashCode();
+    }
+    if (hasApplicationTemplateComponent()) {
+      hash = (37 * hash) + APPLICATION_TEMPLATE_COMPONENT_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationTemplateComponent().hashCode();
     }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
@@ -2355,6 +2437,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         internalGetInputVariablesFieldBuilder();
         internalGetOutputVariablesFieldBuilder();
         internalGetInputVariableDefaultsFieldBuilder();
+        internalGetApplicationTemplateComponentFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
       }
@@ -2397,6 +2480,11 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         inputVariableDefaultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      applicationTemplateComponent_ = null;
+      if (applicationTemplateComponentBuilder_ != null) {
+        applicationTemplateComponentBuilder_.dispose();
+        applicationTemplateComponentBuilder_ = null;
+      }
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       uid_ = "";
@@ -2500,26 +2588,33 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.applicationTemplateComponent_ =
+            applicationTemplateComponentBuilder_ == null
+                ? applicationTemplateComponent_
+                : applicationTemplateComponentBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000004;
-      }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2635,18 +2730,21 @@ public final class Release extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasApplicationTemplateComponent()) {
+        mergeApplicationTemplateComponent(other.getApplicationTemplateComponent());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000080;
-      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00000100;
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000200;
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2749,30 +2847,38 @@ public final class Release extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(
+                    internalGetApplicationTemplateComponentFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             case 81610:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 81610
             case 81618:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 81618
             case 82426:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 82426
             case 82434:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 82434
             case 83210:
@@ -2784,7 +2890,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 83210
             case 83218:
@@ -2796,7 +2902,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 83218
             default:
@@ -4870,6 +4976,239 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       return inputVariableDefaultsBuilder_;
     }
 
+    private com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+        applicationTemplateComponent_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder>
+        applicationTemplateComponentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the applicationTemplateComponent field is set.
+     */
+    public boolean hasApplicationTemplateComponent() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The applicationTemplateComponent.
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+        getApplicationTemplateComponent() {
+      if (applicationTemplateComponentBuilder_ == null) {
+        return applicationTemplateComponent_ == null
+            ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+                .getDefaultInstance()
+            : applicationTemplateComponent_;
+      } else {
+        return applicationTemplateComponentBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApplicationTemplateComponent(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef value) {
+      if (applicationTemplateComponentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        applicationTemplateComponent_ = value;
+      } else {
+        applicationTemplateComponentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setApplicationTemplateComponent(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.Builder
+            builderForValue) {
+      if (applicationTemplateComponentBuilder_ == null) {
+        applicationTemplateComponent_ = builderForValue.build();
+      } else {
+        applicationTemplateComponentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeApplicationTemplateComponent(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef value) {
+      if (applicationTemplateComponentBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && applicationTemplateComponent_ != null
+            && applicationTemplateComponent_
+                != com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+                    .getDefaultInstance()) {
+          getApplicationTemplateComponentBuilder().mergeFrom(value);
+        } else {
+          applicationTemplateComponent_ = value;
+        }
+      } else {
+        applicationTemplateComponentBuilder_.mergeFrom(value);
+      }
+      if (applicationTemplateComponent_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearApplicationTemplateComponent() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      applicationTemplateComponent_ = null;
+      if (applicationTemplateComponentBuilder_ != null) {
+        applicationTemplateComponentBuilder_.dispose();
+        applicationTemplateComponentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.Builder
+        getApplicationTemplateComponentBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetApplicationTemplateComponentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder
+        getApplicationTemplateComponentOrBuilder() {
+      if (applicationTemplateComponentBuilder_ != null) {
+        return applicationTemplateComponentBuilder_.getMessageOrBuilder();
+      } else {
+        return applicationTemplateComponent_ == null
+            ? com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+                .getDefaultInstance()
+            : applicationTemplateComponent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reference to component and revision in a composite
+     * ApplicationTemplate.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.Builder,
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder>
+        internalGetApplicationTemplateComponentFieldBuilder() {
+      if (applicationTemplateComponentBuilder_ == null) {
+        applicationTemplateComponentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef.Builder,
+                com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder>(
+                getApplicationTemplateComponent(), getParentForChildren(), isClean());
+        applicationTemplateComponent_ = null;
+      }
+      return applicationTemplateComponentBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -4887,7 +5226,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return labels_;
     }
@@ -4985,7 +5324,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5012,7 +5351,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -5035,7 +5374,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -5052,7 +5391,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -5076,7 +5415,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return annotations_;
     }
@@ -5194,7 +5533,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -5226,7 +5565,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -5254,7 +5593,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -5276,7 +5615,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -5363,7 +5702,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5387,7 +5726,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5416,7 +5755,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5492,7 +5831,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5512,7 +5851,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5537,7 +5876,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5563,7 +5902,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5609,7 +5948,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5631,7 +5970,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5649,7 +5988,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5660,7 +5999,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5678,7 +6017,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5700,7 +6039,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5777,7 +6116,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5827,7 +6166,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5851,7 +6190,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5871,7 +6210,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5882,7 +6221,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5902,7 +6241,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5926,7 +6265,7 @@ public final class Release extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }

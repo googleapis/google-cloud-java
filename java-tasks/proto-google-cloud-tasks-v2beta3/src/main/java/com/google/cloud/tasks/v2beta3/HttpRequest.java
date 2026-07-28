@@ -314,7 +314,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
    *
    * * Any header that is prefixed with "X-CloudTasks-" will be treated
    * as service header. Service headers define properties of the task and are
-   * predefined in CloudTask.
+   * predefined in Cloud Tasks.
    * * Host: This will be computed by Cloud Tasks and derived from
    * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
@@ -368,7 +368,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
    *
    * * Any header that is prefixed with "X-CloudTasks-" will be treated
    * as service header. Service headers define properties of the task and are
-   * predefined in CloudTask.
+   * predefined in Cloud Tasks.
    * * Host: This will be computed by Cloud Tasks and derived from
    * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
@@ -412,7 +412,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
    *
    * * Any header that is prefixed with "X-CloudTasks-" will be treated
    * as service header. Service headers define properties of the task and are
-   * predefined in CloudTask.
+   * predefined in Cloud Tasks.
    * * Host: This will be computed by Cloud Tasks and derived from
    * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
@@ -463,7 +463,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
    *
    * * Any header that is prefixed with "X-CloudTasks-" will be treated
    * as service header. Service headers define properties of the task and are
-   * predefined in CloudTask.
+   * predefined in Cloud Tasks.
    * * Host: This will be computed by Cloud Tasks and derived from
    * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
    * * Content-Length: This will be computed by Cloud Tasks.
@@ -1503,7 +1503,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1557,7 +1557,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1601,7 +1601,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1652,7 +1652,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1709,7 +1709,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1763,7 +1763,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.
@@ -1814,7 +1814,7 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessage
      *
      * * Any header that is prefixed with "X-CloudTasks-" will be treated
      * as service header. Service headers define properties of the task and are
-     * predefined in CloudTask.
+     * predefined in Cloud Tasks.
      * * Host: This will be computed by Cloud Tasks and derived from
      * [HttpRequest.url][google.cloud.tasks.v2beta3.HttpRequest.url].
      * * Content-Length: This will be computed by Cloud Tasks.

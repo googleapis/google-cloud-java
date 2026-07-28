@@ -115,6 +115,53 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
     return RankerCase.forNumber(rankerCase_);
   }
 
+  private int rerankerCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object reranker_;
+
+  public enum RerankerCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VERTEX_RANKER(2),
+    RERANKER_NOT_SET(0);
+    private final int value;
+
+    private RerankerCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RerankerCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RerankerCase forNumber(int value) {
+      switch (value) {
+        case 2:
+          return VERTEX_RANKER;
+        case 0:
+          return RERANKER_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RerankerCase getRerankerCase() {
+    return RerankerCase.forNumber(rerankerCase_);
+  }
+
   public static final int RRF_FIELD_NUMBER = 1;
 
   /**
@@ -169,6 +216,66 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.vectorsearch.v1beta.ReciprocalRankFusion.getDefaultInstance();
   }
 
+  public static final int VERTEX_RANKER_FIELD_NUMBER = 2;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vertexRanker field is set.
+   */
+  @java.lang.Override
+  public boolean hasVertexRanker() {
+    return rerankerCase_ == 2;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vertexRanker.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.VertexRanker getVertexRanker() {
+    if (rerankerCase_ == 2) {
+      return (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.VertexRankerOrBuilder getVertexRankerOrBuilder() {
+    if (rerankerCase_ == 2) {
+      return (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_;
+    }
+    return com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -186,6 +293,9 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
     if (rankerCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.vectorsearch.v1beta.ReciprocalRankFusion) ranker_);
     }
+    if (rerankerCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +309,11 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.vectorsearch.v1beta.ReciprocalRankFusion) ranker_);
+    }
+    if (rerankerCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,6 +339,14 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       case 0:
       default:
     }
+    if (!getRerankerCase().equals(other.getRerankerCase())) return false;
+    switch (rerankerCase_) {
+      case 2:
+        if (!getVertexRanker().equals(other.getVertexRanker())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -239,6 +362,14 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       case 1:
         hash = (37 * hash) + RRF_FIELD_NUMBER;
         hash = (53 * hash) + getRrf().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (rerankerCase_) {
+      case 2:
+        hash = (37 * hash) + VERTEX_RANKER_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexRanker().hashCode();
         break;
       case 0:
       default:
@@ -386,8 +517,13 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       if (rrfBuilder_ != null) {
         rrfBuilder_.clear();
       }
+      if (vertexRankerBuilder_ != null) {
+        vertexRankerBuilder_.clear();
+      }
       rankerCase_ = 0;
       ranker_ = null;
+      rerankerCase_ = 0;
+      reranker_ = null;
       return this;
     }
 
@@ -433,6 +569,11 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       if (rankerCase_ == 1 && rrfBuilder_ != null) {
         result.ranker_ = rrfBuilder_.build();
       }
+      result.rerankerCase_ = rerankerCase_;
+      result.reranker_ = this.reranker_;
+      if (rerankerCase_ == 2 && vertexRankerBuilder_ != null) {
+        result.reranker_ = vertexRankerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -454,6 +595,17 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
             break;
           }
         case RANKER_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getRerankerCase()) {
+        case VERTEX_RANKER:
+          {
+            mergeVertexRanker(other.getVertexRanker());
+            break;
+          }
+        case RERANKER_NOT_SET:
           {
             break;
           }
@@ -490,6 +642,13 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
                 rankerCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetVertexRankerFieldBuilder().getBuilder(), extensionRegistry);
+                rerankerCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -517,6 +676,20 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
     public Builder clearRanker() {
       rankerCase_ = 0;
       ranker_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int rerankerCase_ = 0;
+    private java.lang.Object reranker_;
+
+    public RerankerCase getRerankerCase() {
+      return RerankerCase.forNumber(rerankerCase_);
+    }
+
+    public Builder clearReranker() {
+      rerankerCase_ = 0;
+      reranker_ = null;
       onChanged();
       return this;
     }
@@ -740,6 +913,243 @@ public final class Ranker extends com.google.protobuf.GeneratedMessage
       rankerCase_ = 1;
       onChanged();
       return rrfBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.VertexRanker,
+            com.google.cloud.vectorsearch.v1beta.VertexRanker.Builder,
+            com.google.cloud.vectorsearch.v1beta.VertexRankerOrBuilder>
+        vertexRankerBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vertexRanker field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexRanker() {
+      return rerankerCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vertexRanker.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.VertexRanker getVertexRanker() {
+      if (vertexRankerBuilder_ == null) {
+        if (rerankerCase_ == 2) {
+          return (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+      } else {
+        if (rerankerCase_ == 2) {
+          return vertexRankerBuilder_.getMessage();
+        }
+        return com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVertexRanker(com.google.cloud.vectorsearch.v1beta.VertexRanker value) {
+      if (vertexRankerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reranker_ = value;
+        onChanged();
+      } else {
+        vertexRankerBuilder_.setMessage(value);
+      }
+      rerankerCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVertexRanker(
+        com.google.cloud.vectorsearch.v1beta.VertexRanker.Builder builderForValue) {
+      if (vertexRankerBuilder_ == null) {
+        reranker_ = builderForValue.build();
+        onChanged();
+      } else {
+        vertexRankerBuilder_.setMessage(builderForValue.build());
+      }
+      rerankerCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVertexRanker(com.google.cloud.vectorsearch.v1beta.VertexRanker value) {
+      if (vertexRankerBuilder_ == null) {
+        if (rerankerCase_ == 2
+            && reranker_
+                != com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance()) {
+          reranker_ =
+              com.google.cloud.vectorsearch.v1beta.VertexRanker.newBuilder(
+                      (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reranker_ = value;
+        }
+        onChanged();
+      } else {
+        if (rerankerCase_ == 2) {
+          vertexRankerBuilder_.mergeFrom(value);
+        } else {
+          vertexRankerBuilder_.setMessage(value);
+        }
+      }
+      rerankerCase_ = 2;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVertexRanker() {
+      if (vertexRankerBuilder_ == null) {
+        if (rerankerCase_ == 2) {
+          rerankerCase_ = 0;
+          reranker_ = null;
+          onChanged();
+        }
+      } else {
+        if (rerankerCase_ == 2) {
+          rerankerCase_ = 0;
+          reranker_ = null;
+        }
+        vertexRankerBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.VertexRanker.Builder getVertexRankerBuilder() {
+      return internalGetVertexRankerFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.VertexRankerOrBuilder getVertexRankerOrBuilder() {
+      if ((rerankerCase_ == 2) && (vertexRankerBuilder_ != null)) {
+        return vertexRankerBuilder_.getMessageOrBuilder();
+      } else {
+        if (rerankerCase_ == 2) {
+          return (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_;
+        }
+        return com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Vertex AI ranking.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.VertexRanker,
+            com.google.cloud.vectorsearch.v1beta.VertexRanker.Builder,
+            com.google.cloud.vectorsearch.v1beta.VertexRankerOrBuilder>
+        internalGetVertexRankerFieldBuilder() {
+      if (vertexRankerBuilder_ == null) {
+        if (!(rerankerCase_ == 2)) {
+          reranker_ = com.google.cloud.vectorsearch.v1beta.VertexRanker.getDefaultInstance();
+        }
+        vertexRankerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.VertexRanker,
+                com.google.cloud.vectorsearch.v1beta.VertexRanker.Builder,
+                com.google.cloud.vectorsearch.v1beta.VertexRankerOrBuilder>(
+                (com.google.cloud.vectorsearch.v1beta.VertexRanker) reranker_,
+                getParentForChildren(),
+                isClean());
+        reranker_ = null;
+      }
+      rerankerCase_ = 2;
+      onChanged();
+      return vertexRankerBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.Ranker)

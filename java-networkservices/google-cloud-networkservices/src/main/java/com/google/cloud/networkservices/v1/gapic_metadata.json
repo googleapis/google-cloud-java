@@ -94,6 +94,9 @@
         "grpc": {
           "libraryClient": "NetworkServicesClient",
           "rpcs": {
+            "CreateAgentGateway": {
+              "methods": ["createAgentGatewayAsync", "createAgentGatewayAsync", "createAgentGatewayAsync", "createAgentGatewayOperationCallable", "createAgentGatewayCallable"]
+            },
             "CreateEndpointPolicy": {
               "methods": ["createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyOperationCallable", "createEndpointPolicyCallable"]
             },
@@ -127,6 +130,9 @@
             "CreateWasmPluginVersion": {
               "methods": ["createWasmPluginVersionAsync", "createWasmPluginVersionAsync", "createWasmPluginVersionAsync", "createWasmPluginVersionOperationCallable", "createWasmPluginVersionCallable"]
             },
+            "DeleteAgentGateway": {
+              "methods": ["deleteAgentGatewayAsync", "deleteAgentGatewayAsync", "deleteAgentGatewayAsync", "deleteAgentGatewayOperationCallable", "deleteAgentGatewayCallable"]
+            },
             "DeleteEndpointPolicy": {
               "methods": ["deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyOperationCallable", "deleteEndpointPolicyCallable"]
             },
@@ -159,6 +165,9 @@
             },
             "DeleteWasmPluginVersion": {
               "methods": ["deleteWasmPluginVersionAsync", "deleteWasmPluginVersionAsync", "deleteWasmPluginVersionAsync", "deleteWasmPluginVersionOperationCallable", "deleteWasmPluginVersionCallable"]
+            },
+            "GetAgentGateway": {
+              "methods": ["getAgentGateway", "getAgentGateway", "getAgentGateway", "getAgentGatewayCallable"]
             },
             "GetEndpointPolicy": {
               "methods": ["getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicyCallable"]
@@ -204,6 +213,9 @@
             },
             "GetWasmPluginVersion": {
               "methods": ["getWasmPluginVersion", "getWasmPluginVersion", "getWasmPluginVersion", "getWasmPluginVersionCallable"]
+            },
+            "ListAgentGateways": {
+              "methods": ["listAgentGateways", "listAgentGateways", "listAgentGateways", "listAgentGatewaysPagedCallable", "listAgentGatewaysCallable"]
             },
             "ListEndpointPolicies": {
               "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
@@ -252,6 +264,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAgentGateway": {
+              "methods": ["updateAgentGatewayAsync", "updateAgentGatewayAsync", "updateAgentGatewayOperationCallable", "updateAgentGatewayCallable"]
             },
             "UpdateEndpointPolicy": {
               "methods": ["updateEndpointPolicyAsync", "updateEndpointPolicyAsync", "updateEndpointPolicyOperationCallable", "updateEndpointPolicyCallable"]

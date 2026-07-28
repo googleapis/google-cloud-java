@@ -4269,6 +4269,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     UNDEFINED_FIREWALL_POLICY_TYPES(0),
     /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
     RDMA_ROCE_POLICY(148757145),
+    /** <code>ULL_POLICY = 100494364;</code> */
+    ULL_POLICY(100494364),
     /** <code>VPC_POLICY = 74319208;</code> */
     VPC_POLICY(74319208),
     UNRECOGNIZED(-1),
@@ -4297,6 +4299,9 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
     /** <code>RDMA_ROCE_POLICY = 148757145;</code> */
     public static final int RDMA_ROCE_POLICY_VALUE = 148757145;
+
+    /** <code>ULL_POLICY = 100494364;</code> */
+    public static final int ULL_POLICY_VALUE = 100494364;
 
     /** <code>VPC_POLICY = 74319208;</code> */
     public static final int VPC_POLICY_VALUE = 74319208;
@@ -4329,6 +4334,8 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
           return UNDEFINED_FIREWALL_POLICY_TYPES;
         case 148757145:
           return RDMA_ROCE_POLICY;
+        case 100494364:
+          return ULL_POLICY;
         case 74319208:
           return VPC_POLICY;
         default:

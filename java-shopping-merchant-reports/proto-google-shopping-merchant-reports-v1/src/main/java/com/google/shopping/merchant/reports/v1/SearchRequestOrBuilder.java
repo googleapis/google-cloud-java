@@ -63,7 +63,7 @@ public interface SearchRequestOrBuilder
    * For details on how to construct your query, see the [Query Language
    * guide](/merchant/api/guides/reports/query-language). For the full list of
    * available tables and fields, see the [Available
-   * fields](/merchant/api/reference/rest/reports_v1/accounts.reports).
+   * fields][google.shopping.merchant.reports.v1.ReportRow].
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -81,7 +81,7 @@ public interface SearchRequestOrBuilder
    * For details on how to construct your query, see the [Query Language
    * guide](/merchant/api/guides/reports/query-language). For the full list of
    * available tables and fields, see the [Available
-   * fields](/merchant/api/reference/rest/reports_v1/accounts.reports).
+   * fields][google.shopping.merchant.reports.v1.ReportRow].
    * </pre>
    *
    * <code>string query = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -95,7 +95,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Optional. Number of `ReportRows` to retrieve in a single page. Defaults to
-   * 1000. Values above 5000 are coerced to 5000.
+   * 1000. Values above 100,000 are coerced to 100,000.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

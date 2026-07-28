@@ -92,7 +92,81 @@ public class DeploymentClientHttpJsonTest {
     FrameworkDeployment expectedResponse =
         FrameworkDeployment.newBuilder()
             .setName(
-                FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+                FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+                    .toString())
+            .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
+            .setComputedTargetResource("computedTargetResource-479139540")
+            .setFramework(FrameworkReference.newBuilder().build())
+            .setDescription("description-1724546052")
+            .addAllCloudControlMetadata(new ArrayList<CloudControlMetadata>())
+            .setDeploymentState(DeploymentState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setTargetResourceDisplayName("targetResourceDisplayName-1474402258")
+            .addAllCloudControlDeploymentReferences(
+                new ArrayList<CloudControlDeploymentReference>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createFrameworkDeploymentTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    FrameworkDeployment frameworkDeployment = FrameworkDeployment.newBuilder().build();
+    String frameworkDeploymentId = "frameworkDeploymentId-1244700706";
+
+    FrameworkDeployment actualResponse =
+        client
+            .createFrameworkDeploymentAsync(parent, frameworkDeployment, frameworkDeploymentId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createFrameworkDeploymentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      FrameworkDeployment frameworkDeployment = FrameworkDeployment.newBuilder().build();
+      String frameworkDeploymentId = "frameworkDeploymentId-1244700706";
+      client
+          .createFrameworkDeploymentAsync(parent, frameworkDeployment, frameworkDeploymentId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createFrameworkDeploymentTest2() throws Exception {
+    FrameworkDeployment expectedResponse =
+        FrameworkDeployment.newBuilder()
+            .setName(
+                FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
             .setComputedTargetResource("computedTargetResource-479139540")
@@ -141,7 +215,7 @@ public class DeploymentClientHttpJsonTest {
   }
 
   @Test
-  public void createFrameworkDeploymentExceptionTest() throws Exception {
+  public void createFrameworkDeploymentExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -160,11 +234,12 @@ public class DeploymentClientHttpJsonTest {
   }
 
   @Test
-  public void createFrameworkDeploymentTest2() throws Exception {
+  public void createFrameworkDeploymentTest3() throws Exception {
     FrameworkDeployment expectedResponse =
         FrameworkDeployment.newBuilder()
             .setName(
-                FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+                FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
             .setComputedTargetResource("computedTargetResource-479139540")
@@ -213,7 +288,7 @@ public class DeploymentClientHttpJsonTest {
   }
 
   @Test
-  public void createFrameworkDeploymentExceptionTest2() throws Exception {
+  public void createFrameworkDeploymentExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -243,7 +318,8 @@ public class DeploymentClientHttpJsonTest {
     mockService.addResponse(resultOperation);
 
     FrameworkDeploymentName name =
-        FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+        FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+            "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
 
     client.deleteFrameworkDeploymentAsync(name).get();
 
@@ -271,7 +347,8 @@ public class DeploymentClientHttpJsonTest {
 
     try {
       FrameworkDeploymentName name =
-          FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+          FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+              "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
       client.deleteFrameworkDeploymentAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -330,7 +407,8 @@ public class DeploymentClientHttpJsonTest {
     FrameworkDeployment expectedResponse =
         FrameworkDeployment.newBuilder()
             .setName(
-                FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+                FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
             .setComputedTargetResource("computedTargetResource-479139540")
@@ -348,7 +426,8 @@ public class DeploymentClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     FrameworkDeploymentName name =
-        FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+        FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+            "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
 
     FrameworkDeployment actualResponse = client.getFrameworkDeployment(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -377,7 +456,8 @@ public class DeploymentClientHttpJsonTest {
 
     try {
       FrameworkDeploymentName name =
-          FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+          FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+              "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
       client.getFrameworkDeployment(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -390,7 +470,8 @@ public class DeploymentClientHttpJsonTest {
     FrameworkDeployment expectedResponse =
         FrameworkDeployment.newBuilder()
             .setName(
-                FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+                FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
             .setComputedTargetResource("computedTargetResource-479139540")
@@ -455,7 +536,7 @@ public class DeploymentClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListFrameworkDeploymentsPagedResponse pagedListResponse =
         client.listFrameworkDeployments(parent);
@@ -488,7 +569,7 @@ public class DeploymentClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listFrameworkDeployments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -498,6 +579,57 @@ public class DeploymentClientHttpJsonTest {
 
   @Test
   public void listFrameworkDeploymentsTest2() throws Exception {
+    FrameworkDeployment responsesElement = FrameworkDeployment.newBuilder().build();
+    ListFrameworkDeploymentsResponse expectedResponse =
+        ListFrameworkDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFrameworkDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListFrameworkDeploymentsPagedResponse pagedListResponse =
+        client.listFrameworkDeployments(parent);
+
+    List<FrameworkDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFrameworkDeploymentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFrameworkDeploymentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listFrameworkDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFrameworkDeploymentsTest3() throws Exception {
     FrameworkDeployment responsesElement = FrameworkDeployment.newBuilder().build();
     ListFrameworkDeploymentsResponse expectedResponse =
         ListFrameworkDeploymentsResponse.newBuilder()
@@ -532,7 +664,7 @@ public class DeploymentClientHttpJsonTest {
   }
 
   @Test
-  public void listFrameworkDeploymentsExceptionTest2() throws Exception {
+  public void listFrameworkDeploymentsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -552,7 +684,7 @@ public class DeploymentClientHttpJsonTest {
     CloudControlDeployment expectedResponse =
         CloudControlDeployment.newBuilder()
             .setName(
-                CloudControlDeploymentName.of(
+                CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
                         "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
@@ -570,7 +702,8 @@ public class DeploymentClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     CloudControlDeploymentName name =
-        CloudControlDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]");
+        CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
+            "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]");
 
     CloudControlDeployment actualResponse = client.getCloudControlDeployment(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -599,7 +732,7 @@ public class DeploymentClientHttpJsonTest {
 
     try {
       CloudControlDeploymentName name =
-          CloudControlDeploymentName.of(
+          CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
               "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]");
       client.getCloudControlDeployment(name);
       Assert.fail("No exception raised");
@@ -613,7 +746,7 @@ public class DeploymentClientHttpJsonTest {
     CloudControlDeployment expectedResponse =
         CloudControlDeployment.newBuilder()
             .setName(
-                CloudControlDeploymentName.of(
+                CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
                         "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
                     .toString())
             .setTargetResourceConfig(TargetResourceConfig.newBuilder().build())
@@ -678,7 +811,7 @@ public class DeploymentClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListCloudControlDeploymentsPagedResponse pagedListResponse =
         client.listCloudControlDeployments(parent);
@@ -711,7 +844,7 @@ public class DeploymentClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listCloudControlDeployments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -721,6 +854,57 @@ public class DeploymentClientHttpJsonTest {
 
   @Test
   public void listCloudControlDeploymentsTest2() throws Exception {
+    CloudControlDeployment responsesElement = CloudControlDeployment.newBuilder().build();
+    ListCloudControlDeploymentsResponse expectedResponse =
+        ListCloudControlDeploymentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCloudControlDeployments(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListCloudControlDeploymentsPagedResponse pagedListResponse =
+        client.listCloudControlDeployments(parent);
+
+    List<CloudControlDeployment> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCloudControlDeploymentsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listCloudControlDeploymentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listCloudControlDeployments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCloudControlDeploymentsTest3() throws Exception {
     CloudControlDeployment responsesElement = CloudControlDeployment.newBuilder().build();
     ListCloudControlDeploymentsResponse expectedResponse =
         ListCloudControlDeploymentsResponse.newBuilder()
@@ -755,7 +939,7 @@ public class DeploymentClientHttpJsonTest {
   }
 
   @Test
-  public void listCloudControlDeploymentsExceptionTest2() throws Exception {
+  public void listCloudControlDeploymentsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);

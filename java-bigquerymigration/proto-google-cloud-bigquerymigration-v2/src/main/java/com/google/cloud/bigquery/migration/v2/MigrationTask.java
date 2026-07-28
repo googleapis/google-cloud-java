@@ -129,7 +129,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Tha task is paused. Assigned subtasks can continue, but no new subtasks
+     * The task is paused. Assigned subtasks can continue, but no new subtasks
      * will be scheduled.
      * </pre>
      *
@@ -217,7 +217,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Tha task is paused. Assigned subtasks can continue, but no new subtasks
+     * The task is paused. Assigned subtasks can continue, but no new subtasks
      * will be scheduled.
      * </pre>
      *
@@ -350,6 +350,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ASSESSMENT_TASK_DETAILS(12),
     TRANSLATION_CONFIG_DETAILS(14),
     TRANSLATION_DETAILS(16),
     TASKDETAILS_NOT_SET(0);
@@ -371,6 +372,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
 
     public static TaskDetailsCase forNumber(int value) {
       switch (value) {
+        case 12:
+          return ASSESSMENT_TASK_DETAILS;
         case 14:
           return TRANSLATION_CONFIG_DETAILS;
         case 16:
@@ -389,6 +392,64 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
 
   public TaskDetailsCase getTaskDetailsCase() {
     return TaskDetailsCase.forNumber(taskDetailsCase_);
+  }
+
+  public static final int ASSESSMENT_TASK_DETAILS_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return Whether the assessmentTaskDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasAssessmentTaskDetails() {
+    return taskDetailsCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return The assessmentTaskDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails getAssessmentTaskDetails() {
+    if (taskDetailsCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder
+      getAssessmentTaskDetailsOrBuilder() {
+    if (taskDetailsCase_ == 12) {
+      return (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_;
+    }
+    return com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
   }
 
   public static final int TRANSLATION_CONFIG_DETAILS_FIELD_NUMBER = 14;
@@ -576,13 +637,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the task. This must be one of the supported task types:
-   * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-   * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+   * The type of the task. This must be one of the supported task types.
+   *
+   * Assessment:
+   *
+   * - `Assessment_Hive` - Assessment for Hive.
+   * - `Assessment_Redshift` - Assessment for Redshift.
+   * - `Assessment_Snowflake` - Assessment for Snowflake.
+   * - `Assessment_Teradata_v2` - Assessment for Teradata.
+   * - `Assessment_Oracle` - Assessment for Oracle.
+   * - `Assessment_Hadoop` - Assessment for Hadoop.
+   * - `Assessment_Informatica` - Assessment for Informatica.
+   *
+   * Translation:
+   * See [Supported Task
+   * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+   * for a list of supported task types.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -606,13 +676,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The type of the task. This must be one of the supported task types:
-   * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-   * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+   * The type of the task. This must be one of the supported task types.
+   *
+   * Assessment:
+   *
+   * - `Assessment_Hive` - Assessment for Hive.
+   * - `Assessment_Redshift` - Assessment for Redshift.
+   * - `Assessment_Snowflake` - Assessment for Snowflake.
+   * - `Assessment_Teradata_v2` - Assessment for Teradata.
+   * - `Assessment_Oracle` - Assessment for Oracle.
+   * - `Assessment_Hadoop` - Assessment for Hadoop.
+   * - `Assessment_Informatica` - Assessment for Informatica.
+   *
+   * Translation:
+   * See [Supported Task
+   * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+   * for a list of supported task types.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -741,10 +820,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -757,10 +837,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -773,10 +854,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -790,10 +872,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -806,10 +890,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -824,10 +910,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
@@ -944,13 +1032,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The number or resources with errors. Note: This is not the total
-   * number of errors as each resource can have more than one error.
-   * This is used to indicate truncation by having a `resource_error_count`
-   * that is higher than the size of `resource_error_details`.
+   * Output only. The number or resources with errors. Note: This is not the
+   * total number of errors as each resource can have more than one error. This
+   * is used to indicate truncation by having a `resource_error_count` that is
+   * higher than the size of `resource_error_details`.
    * </pre>
    *
-   * <code>int32 resource_error_count = 18;</code>
+   * <code>int32 resource_error_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resourceErrorCount.
    */
@@ -968,10 +1056,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList() {
@@ -982,10 +1072,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
@@ -997,10 +1089,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getMetricsCount() {
@@ -1011,10 +1105,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index) {
@@ -1025,10 +1121,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(int index) {
@@ -1102,10 +1200,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Count of all the processing errors in this task and its subtasks.
+   * Output only. Count of all the processing errors in this task and its
+   * subtasks.
    * </pre>
    *
-   * <code>int32 total_processing_error_count = 21;</code>
+   * <code>int32 total_processing_error_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalProcessingErrorCount.
    */
@@ -1121,10 +1221,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Count of all the resource errors in this task and its subtasks.
+   * Output only. Count of all the resource errors in this task and its
+   * subtasks.
    * </pre>
    *
-   * <code>int32 total_resource_error_count = 22;</code>
+   * <code>int32 total_resource_error_count = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalResourceErrorCount.
    */
@@ -1166,6 +1268,10 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getLastUpdateTime());
+    }
+    if (taskDetailsCase_ == 12) {
+      output.writeMessage(
+          12, (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_);
     }
     if (taskDetailsCase_ == 14) {
       output.writeMessage(
@@ -1221,6 +1327,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLastUpdateTime());
+    }
+    if (taskDetailsCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_);
     }
     if (taskDetailsCase_ == 14) {
       size +=
@@ -1295,6 +1406,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     if (getTotalResourceErrorCount() != other.getTotalResourceErrorCount()) return false;
     if (!getTaskDetailsCase().equals(other.getTaskDetailsCase())) return false;
     switch (taskDetailsCase_) {
+      case 12:
+        if (!getAssessmentTaskDetails().equals(other.getAssessmentTaskDetails())) return false;
+        break;
       case 14:
         if (!getTranslationConfigDetails().equals(other.getTranslationConfigDetails()))
           return false;
@@ -1353,6 +1467,10 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     hash = (37 * hash) + TOTAL_RESOURCE_ERROR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalResourceErrorCount();
     switch (taskDetailsCase_) {
+      case 12:
+        hash = (37 * hash) + ASSESSMENT_TASK_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getAssessmentTaskDetails().hashCode();
+        break;
       case 14:
         hash = (37 * hash) + TRANSLATION_CONFIG_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getTranslationConfigDetails().hashCode();
@@ -1519,6 +1637,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (assessmentTaskDetailsBuilder_ != null) {
+        assessmentTaskDetailsBuilder_.clear();
+      }
       if (translationConfigDetailsBuilder_ != null) {
         translationConfigDetailsBuilder_.clear();
       }
@@ -1549,7 +1670,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         resourceErrorDetails_ = null;
         resourceErrorDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       resourceErrorCount_ = 0;
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
@@ -1557,7 +1678,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       taskResult_ = null;
       if (taskResultBuilder_ != null) {
         taskResultBuilder_.dispose();
@@ -1606,18 +1727,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.bigquery.migration.v2.MigrationTask result) {
       if (resourceErrorDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           resourceErrorDetails_ = java.util.Collections.unmodifiableList(resourceErrorDetails_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.resourceErrorDetails_ = resourceErrorDetails_;
       } else {
         result.resourceErrorDetails_ = resourceErrorDetailsBuilder_.build();
       }
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.metrics_ = metrics_;
       } else {
@@ -1627,41 +1748,41 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.bigquery.migration.v2.MigrationTask result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.id_ = id_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.type_ = type_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.processingError_ =
             processingErrorBuilder_ == null ? processingError_ : processingErrorBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.lastUpdateTime_ =
             lastUpdateTimeBuilder_ == null ? lastUpdateTime_ : lastUpdateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.resourceErrorCount_ = resourceErrorCount_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.taskResult_ = taskResultBuilder_ == null ? taskResult_ : taskResultBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.totalProcessingErrorCount_ = totalProcessingErrorCount_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.totalResourceErrorCount_ = totalResourceErrorCount_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1670,6 +1791,9 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     private void buildPartialOneofs(com.google.cloud.bigquery.migration.v2.MigrationTask result) {
       result.taskDetailsCase_ = taskDetailsCase_;
       result.taskDetails_ = this.taskDetails_;
+      if (taskDetailsCase_ == 12 && assessmentTaskDetailsBuilder_ != null) {
+        result.taskDetails_ = assessmentTaskDetailsBuilder_.build();
+      }
       if (taskDetailsCase_ == 14 && translationConfigDetailsBuilder_ != null) {
         result.taskDetails_ = translationConfigDetailsBuilder_.build();
       }
@@ -1693,12 +1817,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1717,7 +1841,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         if (!other.resourceErrorDetails_.isEmpty()) {
           if (resourceErrorDetails_.isEmpty()) {
             resourceErrorDetails_ = other.resourceErrorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureResourceErrorDetailsIsMutable();
             resourceErrorDetails_.addAll(other.resourceErrorDetails_);
@@ -1730,7 +1854,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
             resourceErrorDetailsBuilder_.dispose();
             resourceErrorDetailsBuilder_ = null;
             resourceErrorDetails_ = other.resourceErrorDetails_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             resourceErrorDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetResourceErrorDetailsFieldBuilder()
@@ -1747,7 +1871,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -1760,7 +1884,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetMetricsFieldBuilder()
@@ -1780,6 +1904,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         setTotalResourceErrorCount(other.getTotalResourceErrorCount());
       }
       switch (other.getTaskDetailsCase()) {
+        case ASSESSMENT_TASK_DETAILS:
+          {
+            mergeAssessmentTaskDetails(other.getAssessmentTaskDetails());
+            break;
+          }
         case TRANSLATION_CONFIG_DETAILS:
           {
             mergeTranslationConfigDetails(other.getTranslationConfigDetails());
@@ -1824,42 +1953,49 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     internalGetProcessingErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetLastUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
+            case 98:
+              {
+                input.readMessage(
+                    internalGetAssessmentTaskDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                taskDetailsCase_ = 12;
+                break;
+              } // case 98
             case 114:
               {
                 input.readMessage(
@@ -1892,7 +2028,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
             case 144:
               {
                 resourceErrorCount_ = input.readInt32();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 144
             case 154:
@@ -1913,19 +2049,19 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetTaskResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 162
             case 168:
               {
                 totalProcessingErrorCount_ = input.readInt32();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 168
             case 176:
               {
                 totalResourceErrorCount_ = input.readInt32();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 176
             default:
@@ -1960,6 +2096,240 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails,
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder>
+        assessmentTaskDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     *
+     * @return Whether the assessmentTaskDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssessmentTaskDetails() {
+      return taskDetailsCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     *
+     * @return The assessmentTaskDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails getAssessmentTaskDetails() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          return assessmentTaskDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder setAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails value) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        taskDetails_ = value;
+        onChanged();
+      } else {
+        assessmentTaskDetailsBuilder_.setMessage(value);
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder setAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.Builder builderForValue) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        taskDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        assessmentTaskDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder mergeAssessmentTaskDetails(
+        com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails value) {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12
+            && taskDetails_
+                != com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails
+                    .getDefaultInstance()) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.newBuilder(
+                      (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          taskDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          assessmentTaskDetailsBuilder_.mergeFrom(value);
+        } else {
+          assessmentTaskDetailsBuilder_.setMessage(value);
+        }
+      }
+      taskDetailsCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public Builder clearAssessmentTaskDetails() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (taskDetailsCase_ == 12) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskDetailsCase_ == 12) {
+          taskDetailsCase_ = 0;
+          taskDetails_ = null;
+        }
+        assessmentTaskDetailsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.Builder
+        getAssessmentTaskDetailsBuilder() {
+      return internalGetAssessmentTaskDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder
+        getAssessmentTaskDetailsOrBuilder() {
+      if ((taskDetailsCase_ == 12) && (assessmentTaskDetailsBuilder_ != null)) {
+        return assessmentTaskDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskDetailsCase_ == 12) {
+          return (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_;
+        }
+        return com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Task configuration for Assessment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails,
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.Builder,
+            com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder>
+        internalGetAssessmentTaskDetailsFieldBuilder() {
+      if (assessmentTaskDetailsBuilder_ == null) {
+        if (!(taskDetailsCase_ == 12)) {
+          taskDetails_ =
+              com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.getDefaultInstance();
+        }
+        assessmentTaskDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails,
+                com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails.Builder,
+                com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder>(
+                (com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails) taskDetails_,
+                getParentForChildren(),
+                isClean());
+        taskDetails_ = null;
+      }
+      taskDetailsCase_ = 12;
+      onChanged();
+      return assessmentTaskDetailsBuilder_;
+    }
 
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.bigquery.migration.v2.TranslationConfigDetails,
@@ -2504,7 +2874,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       id_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2525,7 +2895,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearId() {
       id_ = getDefaultInstance().getId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2551,7 +2921,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       id_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2562,13 +2932,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the task. This must be one of the supported task types:
-     * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-     * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-     * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+     * The type of the task. This must be one of the supported task types.
+     *
+     * Assessment:
+     *
+     * - `Assessment_Hive` - Assessment for Hive.
+     * - `Assessment_Redshift` - Assessment for Redshift.
+     * - `Assessment_Snowflake` - Assessment for Snowflake.
+     * - `Assessment_Teradata_v2` - Assessment for Teradata.
+     * - `Assessment_Oracle` - Assessment for Oracle.
+     * - `Assessment_Hadoop` - Assessment for Hadoop.
+     * - `Assessment_Informatica` - Assessment for Informatica.
+     *
+     * Translation:
+     * See [Supported Task
+     * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+     * for a list of supported task types.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -2591,13 +2970,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the task. This must be one of the supported task types:
-     * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-     * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-     * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+     * The type of the task. This must be one of the supported task types.
+     *
+     * Assessment:
+     *
+     * - `Assessment_Hive` - Assessment for Hive.
+     * - `Assessment_Redshift` - Assessment for Redshift.
+     * - `Assessment_Snowflake` - Assessment for Snowflake.
+     * - `Assessment_Teradata_v2` - Assessment for Teradata.
+     * - `Assessment_Oracle` - Assessment for Oracle.
+     * - `Assessment_Hadoop` - Assessment for Hadoop.
+     * - `Assessment_Informatica` - Assessment for Informatica.
+     *
+     * Translation:
+     * See [Supported Task
+     * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+     * for a list of supported task types.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -2620,13 +3008,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the task. This must be one of the supported task types:
-     * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-     * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-     * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+     * The type of the task. This must be one of the supported task types.
+     *
+     * Assessment:
+     *
+     * - `Assessment_Hive` - Assessment for Hive.
+     * - `Assessment_Redshift` - Assessment for Redshift.
+     * - `Assessment_Snowflake` - Assessment for Snowflake.
+     * - `Assessment_Teradata_v2` - Assessment for Teradata.
+     * - `Assessment_Oracle` - Assessment for Oracle.
+     * - `Assessment_Hadoop` - Assessment for Hadoop.
+     * - `Assessment_Informatica` - Assessment for Informatica.
+     *
+     * Translation:
+     * See [Supported Task
+     * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+     * for a list of supported task types.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -2639,7 +3036,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       type_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2648,13 +3045,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the task. This must be one of the supported task types:
-     * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-     * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-     * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+     * The type of the task. This must be one of the supported task types.
+     *
+     * Assessment:
+     *
+     * - `Assessment_Hive` - Assessment for Hive.
+     * - `Assessment_Redshift` - Assessment for Redshift.
+     * - `Assessment_Snowflake` - Assessment for Snowflake.
+     * - `Assessment_Teradata_v2` - Assessment for Teradata.
+     * - `Assessment_Oracle` - Assessment for Oracle.
+     * - `Assessment_Hadoop` - Assessment for Hadoop.
+     * - `Assessment_Informatica` - Assessment for Informatica.
+     *
+     * Translation:
+     * See [Supported Task
+     * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+     * for a list of supported task types.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -2663,7 +3069,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2672,13 +3078,22 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the task. This must be one of the supported task types:
-     * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-     * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-     * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-     * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-     * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+     * The type of the task. This must be one of the supported task types.
+     *
+     * Assessment:
+     *
+     * - `Assessment_Hive` - Assessment for Hive.
+     * - `Assessment_Redshift` - Assessment for Redshift.
+     * - `Assessment_Snowflake` - Assessment for Snowflake.
+     * - `Assessment_Teradata_v2` - Assessment for Teradata.
+     * - `Assessment_Oracle` - Assessment for Oracle.
+     * - `Assessment_Hadoop` - Assessment for Hadoop.
+     * - `Assessment_Informatica` - Assessment for Informatica.
+     *
+     * Translation:
+     * See [Supported Task
+     * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+     * for a list of supported task types.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -2692,7 +3107,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2733,7 +3148,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2778,7 +3193,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2798,7 +3213,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2826,7 +3241,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * @return Whether the processingError field is set.
      */
     public boolean hasProcessingError() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2874,7 +3289,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         processingErrorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2897,7 +3312,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         processingErrorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2916,7 +3331,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeProcessingError(com.google.rpc.ErrorInfo value) {
       if (processingErrorBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && processingError_ != null
             && processingError_ != com.google.rpc.ErrorInfo.getDefaultInstance()) {
           getProcessingErrorBuilder().mergeFrom(value);
@@ -2927,7 +3342,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         processingErrorBuilder_.mergeFrom(value);
       }
       if (processingError_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2946,7 +3361,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearProcessingError() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       processingError_ = null;
       if (processingErrorBuilder_ != null) {
         processingErrorBuilder_.dispose();
@@ -2969,7 +3384,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.rpc.ErrorInfo.Builder getProcessingErrorBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetProcessingErrorFieldBuilder().getBuilder();
     }
@@ -3036,25 +3451,29 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -3072,10 +3491,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -3086,7 +3507,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3095,10 +3516,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -3106,7 +3529,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3115,14 +3538,16 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3133,7 +3558,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3143,13 +3568,15 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3163,13 +3590,15 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -3178,10 +3607,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -3197,10 +3628,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was created.
+     * Output only. Time when the task was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 6;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -3230,25 +3663,29 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the lastUpdateTime field is set.
      */
     public boolean hasLastUpdateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lastUpdateTime.
      */
@@ -3266,10 +3703,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -3280,7 +3719,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         lastUpdateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3289,10 +3728,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -3300,7 +3741,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         lastUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3309,14 +3750,16 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && lastUpdateTime_ != null
             && lastUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastUpdateTimeBuilder().mergeFrom(value);
@@ -3327,7 +3770,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         lastUpdateTimeBuilder_.mergeFrom(value);
       }
       if (lastUpdateTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3337,13 +3780,15 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLastUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       lastUpdateTime_ = null;
       if (lastUpdateTimeBuilder_ != null) {
         lastUpdateTimeBuilder_.dispose();
@@ -3357,13 +3802,15 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetLastUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3372,10 +3819,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
       if (lastUpdateTimeBuilder_ != null) {
@@ -3391,10 +3840,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the task was last updated.
+     * Output only. Time when the task was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -3417,11 +3868,11 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         resourceErrorDetails_ = java.util.Collections.emptyList();
 
     private void ensureResourceErrorDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         resourceErrorDetails_ =
             new java.util.ArrayList<com.google.cloud.bigquery.migration.v2.ResourceErrorDetail>(
                 resourceErrorDetails_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3699,7 +4150,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder clearResourceErrorDetails() {
       if (resourceErrorDetailsBuilder_ == null) {
         resourceErrorDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         resourceErrorDetailsBuilder_.clear();
@@ -3865,7 +4316,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.bigquery.migration.v2.ResourceErrorDetail.Builder,
                 com.google.cloud.bigquery.migration.v2.ResourceErrorDetailOrBuilder>(
                 resourceErrorDetails_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         resourceErrorDetails_ = null;
@@ -3879,13 +4330,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 18;</code>
+     * <code>int32 resource_error_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The resourceErrorCount.
      */
@@ -3898,13 +4349,13 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 18;</code>
+     * <code>int32 resource_error_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The resourceErrorCount to set.
      * @return This builder for chaining.
@@ -3912,7 +4363,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder setResourceErrorCount(int value) {
 
       resourceErrorCount_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3921,18 +4372,18 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 18;</code>
+     * <code>int32 resource_error_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearResourceErrorCount() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       resourceErrorCount_ = 0;
       onChanged();
       return this;
@@ -3942,10 +4393,10 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         metrics_ =
             new java.util.ArrayList<com.google.cloud.bigquery.migration.v2.TimeSeries>(metrics_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3959,10 +4410,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList() {
       if (metricsBuilder_ == null) {
@@ -3976,10 +4429,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getMetricsCount() {
       if (metricsBuilder_ == null) {
@@ -3993,10 +4448,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -4010,10 +4467,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(int index, com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -4033,10 +4492,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(
         int index, com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -4054,10 +4515,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -4077,10 +4540,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(int index, com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -4100,10 +4565,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(
         com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -4121,10 +4588,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(
         int index, com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -4142,10 +4611,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllMetrics(
         java.lang.Iterable<? extends com.google.cloud.bigquery.migration.v2.TimeSeries> values) {
@@ -4163,15 +4634,17 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -4183,10 +4656,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -4203,10 +4678,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder getMetricsBuilder(int index) {
       return internalGetMetricsFieldBuilder().getBuilder(index);
@@ -4216,10 +4693,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(
         int index) {
@@ -4234,10 +4713,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
         getMetricsOrBuilderList() {
@@ -4252,10 +4733,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder addMetricsBuilder() {
       return internalGetMetricsFieldBuilder()
@@ -4266,10 +4749,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder addMetricsBuilder(int index) {
       return internalGetMetricsFieldBuilder()
@@ -4281,10 +4766,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the task.
+     * Output only. The metrics for the task.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries.Builder>
         getMetricsBuilderList() {
@@ -4302,7 +4789,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.bigquery.migration.v2.TimeSeries,
                 com.google.cloud.bigquery.migration.v2.TimeSeries.Builder,
                 com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
@@ -4329,7 +4816,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * @return Whether the taskResult field is set.
      */
     public boolean hasTaskResult() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4375,7 +4862,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         taskResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4398,7 +4885,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
       } else {
         taskResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4417,7 +4904,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder mergeTaskResult(
         com.google.cloud.bigquery.migration.v2.MigrationTaskResult value) {
       if (taskResultBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && taskResult_ != null
             && taskResult_
                 != com.google.cloud.bigquery.migration.v2.MigrationTaskResult
@@ -4430,7 +4917,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
         taskResultBuilder_.mergeFrom(value);
       }
       if (taskResult_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4448,7 +4935,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTaskResult() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       taskResult_ = null;
       if (taskResultBuilder_ != null) {
         taskResultBuilder_.dispose();
@@ -4471,7 +4958,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.bigquery.migration.v2.MigrationTaskResult.Builder
         getTaskResultBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetTaskResultFieldBuilder().getBuilder();
     }
@@ -4532,10 +5019,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the processing errors in this task and its subtasks.
+     * Output only. Count of all the processing errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_processing_error_count = 21;</code>
+     * <code>int32 total_processing_error_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The totalProcessingErrorCount.
      */
@@ -4548,10 +5037,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the processing errors in this task and its subtasks.
+     * Output only. Count of all the processing errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_processing_error_count = 21;</code>
+     * <code>int32 total_processing_error_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The totalProcessingErrorCount to set.
      * @return This builder for chaining.
@@ -4559,7 +5050,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder setTotalProcessingErrorCount(int value) {
 
       totalProcessingErrorCount_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4568,15 +5059,17 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the processing errors in this task and its subtasks.
+     * Output only. Count of all the processing errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_processing_error_count = 21;</code>
+     * <code>int32 total_processing_error_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTotalProcessingErrorCount() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       totalProcessingErrorCount_ = 0;
       onChanged();
       return this;
@@ -4588,10 +5081,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the resource errors in this task and its subtasks.
+     * Output only. Count of all the resource errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_resource_error_count = 22;</code>
+     * <code>int32 total_resource_error_count = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The totalResourceErrorCount.
      */
@@ -4604,10 +5099,12 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the resource errors in this task and its subtasks.
+     * Output only. Count of all the resource errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_resource_error_count = 22;</code>
+     * <code>int32 total_resource_error_count = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The totalResourceErrorCount to set.
      * @return This builder for chaining.
@@ -4615,7 +5112,7 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
     public Builder setTotalResourceErrorCount(int value) {
 
       totalResourceErrorCount_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4624,15 +5121,17 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Count of all the resource errors in this task and its subtasks.
+     * Output only. Count of all the resource errors in this task and its
+     * subtasks.
      * </pre>
      *
-     * <code>int32 total_resource_error_count = 22;</code>
+     * <code>int32 total_resource_error_count = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearTotalResourceErrorCount() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       totalResourceErrorCount_ = 0;
       onChanged();
       return this;

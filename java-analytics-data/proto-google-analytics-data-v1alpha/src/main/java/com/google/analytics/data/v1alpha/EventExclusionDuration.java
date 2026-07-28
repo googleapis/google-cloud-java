@@ -150,7 +150,7 @@ public enum EventExclusionDuration implements com.google.protobuf.ProtocolMessag
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(5);
+        .get(6);
   }
 
   private static final EventExclusionDuration[] VALUES = values();

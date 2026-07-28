@@ -26,6 +26,7 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -54,6 +55,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -61,6 +63,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcConversationalSearchServiceStub extends ConversationalSearchServiceStub {
@@ -150,6 +153,18 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryMethodDescriptor =
+          MethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.ConversationalSearchService/StreamAnswerQuery")
+              .setRequestMarshaller(ProtoUtils.marshaller(AnswerQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnswerQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetAnswerRequest, Answer> getAnswerMethodDescriptor =
       MethodDescriptor.<GetAnswerRequest, Answer>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -227,6 +242,8 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
   private final UnaryCallable<ListConversationsRequest, ListConversationsPagedResponse>
       listConversationsPagedCallable;
   private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
+  private final ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable;
   private final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable;
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;
   private final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable;
@@ -362,6 +379,17 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
                 })
             .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
+    GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> streamAnswerQueryTransportSettings =
+        GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+            .setMethodDescriptor(streamAnswerQueryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("serving_config", String.valueOf(request.getServingConfig()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getServingConfig())
+            .build();
     GrpcCallSettings<GetAnswerRequest, Answer> getAnswerTransportSettings =
         GrpcCallSettings.<GetAnswerRequest, Answer>newBuilder()
             .setMethodDescriptor(getAnswerMethodDescriptor)
@@ -464,6 +492,11 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
     this.answerQueryCallable =
         callableFactory.createUnaryCallable(
             answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
+    this.streamAnswerQueryCallable =
+        callableFactory.createServerStreamingCallable(
+            streamAnswerQueryTransportSettings,
+            settings.streamAnswerQuerySettings(),
+            clientContext);
     this.getAnswerCallable =
         callableFactory.createUnaryCallable(
             getAnswerTransportSettings, settings.getAnswerSettings(), clientContext);
@@ -535,6 +568,12 @@ public class GrpcConversationalSearchServiceStub extends ConversationalSearchSer
   @Override
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     return answerQueryCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    return streamAnswerQueryCallable;
   }
 
   @Override

@@ -1014,6 +1014,58 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return The rank.
      */
     int getRank();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the diskConfig field is set.
+     */
+    boolean hasDiskConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The diskConfig.
+     */
+    com.google.cloud.dataproc.v1.DiskConfig getDiskConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder();
   }
 
   /**
@@ -1066,6 +1118,7 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
                   .class);
     }
 
+    private int bitField0_;
     public static final int MACHINE_TYPES_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -1157,6 +1210,74 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       return rank_;
     }
 
+    public static final int DISK_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.dataproc.v1.DiskConfig diskConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the diskConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The diskConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.DiskConfig getDiskConfig() {
+      return diskConfig_ == null
+          ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
+          : diskConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disk configuration to apply to the instances in this instance
+     * selection. If specified on any entry in instanceSelectionList, then it
+     * must be specified on every entry in instanceSelectionList and the
+     * instanceGroupConfig must not specify any diskConfig.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder() {
+      return diskConfig_ == null
+          ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
+          : diskConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1176,6 +1297,9 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       if (rank_ != 0) {
         output.writeInt32(2, rank_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getDiskConfig());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1197,6 +1321,9 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       if (rank_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rank_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDiskConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1216,6 +1343,10 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
       if (!getMachineTypesList().equals(other.getMachineTypesList())) return false;
       if (getRank() != other.getRank()) return false;
+      if (hasDiskConfig() != other.hasDiskConfig()) return false;
+      if (hasDiskConfig()) {
+        if (!getDiskConfig().equals(other.getDiskConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1233,6 +1364,10 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       hash = (37 * hash) + RANK_FIELD_NUMBER;
       hash = (53 * hash) + getRank();
+      if (hasDiskConfig()) {
+        hash = (37 * hash) + DISK_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1372,10 +1507,19 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
       // Construct using
       // com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetDiskConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1384,6 +1528,11 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         bitField0_ = 0;
         machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         rank_ = 0;
+        diskConfig_ = null;
+        if (diskConfigBuilder_ != null) {
+          diskConfigBuilder_.dispose();
+          diskConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -1432,6 +1581,13 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.rank_ = rank_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.diskConfig_ =
+              diskConfigBuilder_ == null ? diskConfig_ : diskConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1463,6 +1619,9 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         }
         if (other.getRank() != 0) {
           setRank(other.getRank());
+        }
+        if (other.hasDiskConfig()) {
+          mergeDiskConfig(other.getDiskConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1503,6 +1662,13 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetDiskConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1771,6 +1937,246 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         rank_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.dataproc.v1.DiskConfig diskConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataproc.v1.DiskConfig,
+              com.google.cloud.dataproc.v1.DiskConfig.Builder,
+              com.google.cloud.dataproc.v1.DiskConfigOrBuilder>
+          diskConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the diskConfig field is set.
+       */
+      public boolean hasDiskConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The diskConfig.
+       */
+      public com.google.cloud.dataproc.v1.DiskConfig getDiskConfig() {
+        if (diskConfigBuilder_ == null) {
+          return diskConfig_ == null
+              ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
+              : diskConfig_;
+        } else {
+          return diskConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDiskConfig(com.google.cloud.dataproc.v1.DiskConfig value) {
+        if (diskConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          diskConfig_ = value;
+        } else {
+          diskConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDiskConfig(
+          com.google.cloud.dataproc.v1.DiskConfig.Builder builderForValue) {
+        if (diskConfigBuilder_ == null) {
+          diskConfig_ = builderForValue.build();
+        } else {
+          diskConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDiskConfig(com.google.cloud.dataproc.v1.DiskConfig value) {
+        if (diskConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && diskConfig_ != null
+              && diskConfig_ != com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()) {
+            getDiskConfigBuilder().mergeFrom(value);
+          } else {
+            diskConfig_ = value;
+          }
+        } else {
+          diskConfigBuilder_.mergeFrom(value);
+        }
+        if (diskConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDiskConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        diskConfig_ = null;
+        if (diskConfigBuilder_ != null) {
+          diskConfigBuilder_.dispose();
+          diskConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataproc.v1.DiskConfig.Builder getDiskConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetDiskConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder() {
+        if (diskConfigBuilder_ != null) {
+          return diskConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return diskConfig_ == null
+              ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
+              : diskConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disk configuration to apply to the instances in this instance
+       * selection. If specified on any entry in instanceSelectionList, then it
+       * must be specified on every entry in instanceSelectionList and the
+       * instanceGroupConfig must not specify any diskConfig.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataproc.v1.DiskConfig disk_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataproc.v1.DiskConfig,
+              com.google.cloud.dataproc.v1.DiskConfig.Builder,
+              com.google.cloud.dataproc.v1.DiskConfigOrBuilder>
+          internalGetDiskConfigFieldBuilder() {
+        if (diskConfigBuilder_ == null) {
+          diskConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataproc.v1.DiskConfig,
+                  com.google.cloud.dataproc.v1.DiskConfig.Builder,
+                  com.google.cloud.dataproc.v1.DiskConfigOrBuilder>(
+                  getDiskConfig(), getParentForChildren(), isClean());
+          diskConfig_ = null;
+        }
+        return diskConfigBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection)

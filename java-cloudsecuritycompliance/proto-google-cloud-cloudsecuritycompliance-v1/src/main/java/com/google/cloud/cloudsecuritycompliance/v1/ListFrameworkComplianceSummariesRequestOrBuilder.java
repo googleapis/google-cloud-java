@@ -123,4 +123,34 @@ public interface ListFrameworkComplianceSummariesRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the level of detail to return in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the level of detail to return in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView getView();
 }

@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.stub.SnapshotsStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -108,6 +110,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
 
@@ -170,6 +173,17 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     return ((SnapshotsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeySettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final SnapshotsSettings create(SnapshotsStubSettings stub) throws IOException {
     return new SnapshotsSettings.Builder(stub.toBuilder()).build();
   }
@@ -214,7 +228,7 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -234,7 +248,7 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(SnapshotsStubSettings.newBuilder(clientContext));
     }
 
@@ -324,6 +338,18 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation>
+        updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

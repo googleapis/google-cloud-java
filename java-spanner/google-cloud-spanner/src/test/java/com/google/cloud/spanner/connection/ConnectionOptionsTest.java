@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner.connection;
 
-import static com.google.cloud.spanner.connection.ConnectionOptions.Builder.EXTERNAL_HOST_PATTERN;
+import static com.google.cloud.spanner.connection.ConnectionOptions.Builder.SPANNER_OMNI_PATTERN;
 import static com.google.cloud.spanner.connection.ConnectionOptions.Builder.SPANNER_URI_PATTERN;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.determineHost;
@@ -40,6 +40,7 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
@@ -1227,18 +1228,18 @@ public class ConnectionOptionsTest {
   @Test
   public void testExternalHostPatterns() {
     Matcher matcherWithoutInstance =
-        EXTERNAL_HOST_PATTERN.matcher("cloudspanner://localhost:15000/databases/test-db");
+        SPANNER_OMNI_PATTERN.matcher("cloudspanner://localhost:15000/databases/test-db");
     assertTrue(matcherWithoutInstance.matches());
     assertNull(matcherWithoutInstance.group("INSTANCEGROUP"));
     assertEquals("test-db", matcherWithoutInstance.group("DATABASEGROUP"));
     Matcher matcherWithProperty =
-        EXTERNAL_HOST_PATTERN.matcher(
+        SPANNER_OMNI_PATTERN.matcher(
             "cloudspanner://localhost:15000/instances/default/databases/singers-db?usePlainText=true");
     assertTrue(matcherWithProperty.matches());
     assertEquals("default", matcherWithProperty.group("INSTANCEGROUP"));
     assertEquals("singers-db", matcherWithProperty.group("DATABASEGROUP"));
     Matcher matcherWithoutPort =
-        EXTERNAL_HOST_PATTERN.matcher(
+        SPANNER_OMNI_PATTERN.matcher(
             "cloudspanner://localhost/instances/default/databases/test-db");
     assertTrue(matcherWithoutPort.matches());
     assertEquals("default", matcherWithoutPort.group("INSTANCEGROUP"));
@@ -1252,14 +1253,14 @@ public class ConnectionOptionsTest {
             /* usePlainText= */ true,
             ImmutableMap.of()));
     Matcher matcherWithProject =
-        EXTERNAL_HOST_PATTERN.matcher(
+        SPANNER_OMNI_PATTERN.matcher(
             "cloudspanner://localhost:15000/projects/default/instances/default/databases/singers-db");
     assertFalse(matcherWithProject.matches());
     Matcher matcherWithoutHost =
-        EXTERNAL_HOST_PATTERN.matcher("cloudspanner:/instances/default/databases/singers-db");
+        SPANNER_OMNI_PATTERN.matcher("cloudspanner:/instances/default/databases/singers-db");
     assertFalse(matcherWithoutHost.matches());
     Matcher matcherWithPrefixSpanner =
-        EXTERNAL_HOST_PATTERN.matcher("spanner://localhost:15000/databases/test-db");
+        SPANNER_OMNI_PATTERN.matcher("spanner://localhost:15000/databases/test-db");
     assertTrue(matcherWithPrefixSpanner.matches());
     assertNull(matcherWithPrefixSpanner.group("INSTANCEGROUP"));
     assertEquals("test-db", matcherWithPrefixSpanner.group("DATABASEGROUP"));
@@ -1289,7 +1290,9 @@ public class ConnectionOptionsTest {
         "spanner://localhost:15000/instances/default/databases/singers-db;usePlainText=true");
     ConnectionOptions optionsWithoutExperimentalHostParam =
         builderWithoutExperimentalHostParam.build();
-    assertFalse(optionsWithoutExperimentalHostParam.isExperimentalHost());
+    assertFalse(optionsWithoutExperimentalHostParam.isSpannerOmni());
+    assertEquals(
+        SpannerOptions.InstanceType.CLOUD, optionsWithoutExperimentalHostParam.getInstanceType());
     assertEquals(0, optionsWithoutExperimentalHostParam.getSessionPoolOptions().getMinSessions());
     assertTrue(
         optionsWithoutExperimentalHostParam.getSessionPoolOptions().getUseMultiplexedSession());
@@ -1306,7 +1309,9 @@ public class ConnectionOptionsTest {
     builderWithExperimentalHostParam.setUri(
         "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;isExperimentalHost=true");
     ConnectionOptions optionsWithExperimentalHostParam = builderWithExperimentalHostParam.build();
-    assertTrue(optionsWithExperimentalHostParam.isExperimentalHost());
+    assertTrue(optionsWithExperimentalHostParam.isSpannerOmni());
+    assertEquals(
+        SpannerOptions.InstanceType.OMNI, optionsWithExperimentalHostParam.getInstanceType());
     assertEquals(0, optionsWithExperimentalHostParam.getSessionPoolOptions().getMinSessions());
     assertTrue(optionsWithExperimentalHostParam.getSessionPoolOptions().getUseMultiplexedSession());
     assertTrue(
@@ -1315,6 +1320,71 @@ public class ConnectionOptionsTest {
         optionsWithExperimentalHostParam
             .getSessionPoolOptions()
             .getUseMultiplexedSessionPartitionedOps());
+  }
+
+  @Test
+  public void testInstanceType() {
+    ConnectionOptions optionsWithCloudType =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=cloud")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.CLOUD, optionsWithCloudType.getInstanceType());
+    assertFalse(optionsWithCloudType.isSpannerOmni());
+
+    ConnectionOptions optionsWithOmniType =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, optionsWithOmniType.getInstanceType());
+    assertTrue(optionsWithOmniType.isSpannerOmni());
+    assertEquals(0, optionsWithOmniType.getSessionPoolOptions().getMinSessions());
+    assertTrue(optionsWithOmniType.getSessionPoolOptions().getUseMultiplexedSession());
+    assertTrue(optionsWithOmniType.getSessionPoolOptions().getUseMultiplexedSessionForRW());
+    assertTrue(
+        optionsWithOmniType.getSessionPoolOptions().getUseMultiplexedSessionPartitionedOps());
+  }
+
+  @Test
+  public void testBuildWithOmniCredentialsProperties() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user;password=test_pass")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
+    assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
+  }
+
+  @Test
+  public void testBuildWithOmniCredentialsPropertiesMissingPassword() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
+  }
+
+  @Test
+  public void testInvalidInstanceType() {
+    assertThrows(
+        SpannerException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;type=unspecified")
+                .build());
+    assertThrows(
+        SpannerException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;type=invalid_type")
+                .build());
   }
 
   @Test
@@ -1526,5 +1596,45 @@ public class ConnectionOptionsTest {
     assertEquals(Integer.valueOf(3), options.getDcpMinChannels());
     assertEquals(Integer.valueOf(15), options.getDcpMaxChannels());
     assertEquals(Integer.valueOf(5), options.getDcpInitialChannels());
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTime='20s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(20), options.getGrpcKeepAliveTime());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTime());
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeoutOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTimeout='15s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(15), options.getGrpcKeepAliveTimeout());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTimeout());
   }
 }

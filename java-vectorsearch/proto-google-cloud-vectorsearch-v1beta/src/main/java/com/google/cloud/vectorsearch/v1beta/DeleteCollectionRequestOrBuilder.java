@@ -109,4 +109,19 @@ public interface DeleteCollectionRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any Indexes and DataObjects from this Collection
+   * will also be deleted. (Otherwise, the request will only work if the
+   * Collection has no Indexes and DataObjects.)
+   * </pre>
+   *
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

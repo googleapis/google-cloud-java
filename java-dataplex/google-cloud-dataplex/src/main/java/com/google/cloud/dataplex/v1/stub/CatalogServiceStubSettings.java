@@ -102,6 +102,7 @@ import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
 import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
+import com.google.cloud.dataplex.v1.ModifyEntryRequest;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -131,6 +132,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -208,6 +211,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubSettings> {
@@ -266,6 +270,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listEntriesSettings;
   private final UnaryCallSettings<GetEntryRequest, Entry> getEntrySettings;
   private final UnaryCallSettings<LookupEntryRequest, Entry> lookupEntrySettings;
+  private final UnaryCallSettings<ModifyEntryRequest, Entry> modifyEntrySettings;
   private final PagedCallSettings<
           SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings;
@@ -962,6 +967,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return lookupEntrySettings;
   }
 
+  /** Returns the object with the settings used for calls to modifyEntry. */
+  public UnaryCallSettings<ModifyEntryRequest, Entry> modifyEntrySettings() {
+    return modifyEntrySettings;
+  }
+
   /** Returns the object with the settings used for calls to searchEntries. */
   public PagedCallSettings<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
       searchEntriesSettings() {
@@ -1199,7 +1209,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1241,6 +1251,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     listEntriesSettings = settingsBuilder.listEntriesSettings().build();
     getEntrySettings = settingsBuilder.getEntrySettings().build();
     lookupEntrySettings = settingsBuilder.lookupEntrySettings().build();
+    modifyEntrySettings = settingsBuilder.modifyEntrySettings().build();
     searchEntriesSettings = settingsBuilder.searchEntriesSettings().build();
     createMetadataJobSettings = settingsBuilder.createMetadataJobSettings().build();
     createMetadataJobOperationSettings =
@@ -1346,6 +1357,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         listEntriesSettings;
     private final UnaryCallSettings.Builder<GetEntryRequest, Entry> getEntrySettings;
     private final UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings;
+    private final UnaryCallSettings.Builder<ModifyEntryRequest, Entry> modifyEntrySettings;
     private final PagedCallSettings.Builder<
             SearchEntriesRequest, SearchEntriesResponse, SearchEntriesPagedResponse>
         searchEntriesSettings;
@@ -1492,7 +1504,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createEntryTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1525,6 +1537,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listEntriesSettings = PagedCallSettings.newBuilder(LIST_ENTRIES_PAGE_STR_FACT);
       getEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       lookupEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      modifyEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchEntriesSettings = PagedCallSettings.newBuilder(SEARCH_ENTRIES_PAGE_STR_FACT);
       createMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMetadataJobOperationSettings = OperationCallSettings.newBuilder();
@@ -1574,6 +1587,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               listEntriesSettings,
               getEntrySettings,
               lookupEntrySettings,
+              modifyEntrySettings,
               searchEntriesSettings,
               createMetadataJobSettings,
               getMetadataJobSettings,
@@ -1631,6 +1645,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       listEntriesSettings = settings.listEntriesSettings.toBuilder();
       getEntrySettings = settings.getEntrySettings.toBuilder();
       lookupEntrySettings = settings.lookupEntrySettings.toBuilder();
+      modifyEntrySettings = settings.modifyEntrySettings.toBuilder();
       searchEntriesSettings = settings.searchEntriesSettings.toBuilder();
       createMetadataJobSettings = settings.createMetadataJobSettings.toBuilder();
       createMetadataJobOperationSettings = settings.createMetadataJobOperationSettings.toBuilder();
@@ -1683,6 +1698,7 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               listEntriesSettings,
               getEntrySettings,
               lookupEntrySettings,
+              modifyEntrySettings,
               searchEntriesSettings,
               createMetadataJobSettings,
               getMetadataJobSettings,
@@ -1837,6 +1853,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
+          .modifyEntrySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .searchEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_12_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_12_params"));
@@ -1863,23 +1884,23 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .createEntryLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .updateEntryLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_10_params"));
 
       builder
           .deleteEntryLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
 
       builder
           .lookupEntryLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
           .lookupContextSettings()
@@ -1888,8 +1909,8 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .getEntryLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_9_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_9_params"));
 
       builder
           .createMetadataFeedSettings()
@@ -2442,6 +2463,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     /** Returns the builder for the settings used for calls to lookupEntry. */
     public UnaryCallSettings.Builder<LookupEntryRequest, Entry> lookupEntrySettings() {
       return lookupEntrySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to modifyEntry. */
+    public UnaryCallSettings.Builder<ModifyEntryRequest, Entry> modifyEntrySettings() {
+      return modifyEntrySettings;
     }
 
     /** Returns the builder for the settings used for calls to searchEntries. */

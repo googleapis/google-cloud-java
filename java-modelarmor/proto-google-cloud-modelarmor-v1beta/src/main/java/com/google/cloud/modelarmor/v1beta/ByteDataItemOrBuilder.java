@@ -68,4 +68,32 @@ public interface ByteDataItemOrBuilder
    * @return The byteData.
    */
   com.google.protobuf.ByteString getByteData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Label of the file. This is used to identify the file in the
+   * response.
+   * </pre>
+   *
+   * <code>string file_label = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fileLabel.
+   */
+  java.lang.String getFileLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Label of the file. This is used to identify the file in the
+   * response.
+   * </pre>
+   *
+   * <code>string file_label = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for fileLabel.
+   */
+  com.google.protobuf.ByteString getFileLabelBytes();
 }

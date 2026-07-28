@@ -840,6 +840,30 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         : automatedDiscounts_;
   }
 
+  public static final int ARCHIVED_FIELD_NUMBER = 14;
+  private boolean archived_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Determines whether the product is
+   * [archived](https://support.google.com/merchants/answer/11909930).
+   *
+   * To archive or restore your product, visit Merchant Center products page.
+   * Learn also more about [offer
+   * visibility](https://support.google.com/merchants/answer/12488713).
+   * </pre>
+   *
+   * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  @java.lang.Override
+  public boolean getArchived() {
+    return archived_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -887,6 +911,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(13, getProductAttributes());
     }
+    if (archived_ != false) {
+      output.writeBool(14, archived_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 15, base64EncodedName_);
     }
@@ -932,6 +959,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getProductAttributes());
     }
+    if (archived_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, archived_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(15, base64EncodedName_);
     }
@@ -975,6 +1005,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     if (hasAutomatedDiscounts()) {
       if (!getAutomatedDiscounts().equals(other.getAutomatedDiscounts())) return false;
     }
+    if (getArchived() != other.getArchived()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1020,6 +1051,8 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + AUTOMATED_DISCOUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getAutomatedDiscounts().hashCode();
     }
+    hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1214,6 +1247,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         automatedDiscountsBuilder_.dispose();
         automatedDiscountsBuilder_ = null;
       }
+      archived_ = false;
       return this;
     }
 
@@ -1309,6 +1343,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
                 : automatedDiscountsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.archived_ = archived_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1396,6 +1433,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAutomatedDiscounts()) {
         mergeAutomatedDiscounts(other.getAutomatedDiscounts());
+      }
+      if (other.getArchived() != false) {
+        setArchived(other.getArchived());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1499,6 +1539,12 @@ public final class Product extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 112:
+              {
+                archived_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
             case 122:
               {
                 base64EncodedName_ = input.readStringRequireUtf8();
@@ -3680,6 +3726,77 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         automatedDiscounts_ = null;
       }
       return automatedDiscountsBuilder_;
+    }
+
+    private boolean archived_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Determines whether the product is
+     * [archived](https://support.google.com/merchants/answer/11909930).
+     *
+     * To archive or restore your product, visit Merchant Center products page.
+     * Learn also more about [offer
+     * visibility](https://support.google.com/merchants/answer/12488713).
+     * </pre>
+     *
+     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The archived.
+     */
+    @java.lang.Override
+    public boolean getArchived() {
+      return archived_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Determines whether the product is
+     * [archived](https://support.google.com/merchants/answer/11909930).
+     *
+     * To archive or restore your product, visit Merchant Center products page.
+     * Learn also more about [offer
+     * visibility](https://support.google.com/merchants/answer/12488713).
+     * </pre>
+     *
+     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The archived to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchived(boolean value) {
+
+      archived_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Determines whether the product is
+     * [archived](https://support.google.com/merchants/answer/11909930).
+     *
+     * To archive or restore your product, visit Merchant Center products page.
+     * Learn also more about [offer
+     * visibility](https://support.google.com/merchants/answer/12488713).
+     * </pre>
+     *
+     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchived() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      archived_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.Product)

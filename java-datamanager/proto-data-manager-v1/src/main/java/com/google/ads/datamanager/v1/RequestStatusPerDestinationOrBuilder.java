@@ -96,7 +96,16 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -110,7 +119,16 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -124,7 +142,16 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * An error info error containing the error reason and error counts related to
-   * the upload.
+   * the upload. Only populated if the
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * is
+   * [`FAILED`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.FAILED]
+   * or
+   * [`PARTIAL_SUCCESS`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PARTIAL_SUCCESS].
+   * This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.ErrorInfo error_info = 3;</code>
@@ -136,7 +163,10 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -150,7 +180,10 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>
@@ -164,7 +197,10 @@ public interface RequestStatusPerDestinationOrBuilder
    *
    * <pre>
    * A warning info containing the warning reason and warning counts related to
-   * the upload.
+   * the upload. This field isn't populated while the request has
+   * [`request_status`][google.ads.datamanager.v1.RequestStatusPerDestination.request_status]
+   * of
+   * [`PROCESSING`][google.ads.datamanager.v1.RequestStatusPerDestination.RequestStatus.PROCESSING].
    * </pre>
    *
    * <code>.google.ads.datamanager.v1.WarningInfo warning_info = 7;</code>

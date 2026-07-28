@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
+import com.google.chat.v1.Availability;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
@@ -55,7 +57,10 @@ import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetAvailabilityRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
@@ -80,6 +85,9 @@ import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
+import com.google.chat.v1.MarkAsActiveRequest;
+import com.google.chat.v1.MarkAsAwayRequest;
+import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MoveSectionItemRequest;
@@ -96,6 +104,7 @@ import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateAvailabilityRequest;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSectionRequest;
@@ -113,6 +122,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -120,6 +130,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonChatServiceStub extends ChatServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -146,6 +157,10 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMessageRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "createMessageNotificationOptions",
+                                request.getCreateMessageNotificationOptions());
                             serializer.putQueryParam(fields, "messageId", request.getMessageId());
                             serializer.putQueryParam(
                                 fields, "messageReplyOption", request.getMessageReplyOptionValue());
@@ -789,6 +804,44 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FindGroupChatsRequest, FindGroupChatsResponse>
+      findGroupChatsMethodDescriptor =
+          ApiMethodDescriptor.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/FindGroupChats")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FindGroupChatsRequest>newBuilder()
+                      .setPath(
+                          "/v1/spaces:findGroupChats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "spaceView", request.getSpaceViewValue());
+                            serializer.putQueryParam(fields, "users", request.getUsersList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FindGroupChatsResponse>newBuilder()
+                      .setDefaultInstance(FindGroupChatsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<CreateMembershipRequest, Membership>
       createMembershipMethodDescriptor =
           ApiMethodDescriptor.<CreateMembershipRequest, Membership>newBuilder()
@@ -1262,6 +1315,190 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAvailabilityRequest, Availability>
+      getAvailabilityMethodDescriptor =
+          ApiMethodDescriptor.<GetAvailabilityRequest, Availability>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/GetAvailability")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAvailabilityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/availability}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAvailabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAvailabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Availability>newBuilder()
+                      .setDefaultInstance(Availability.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MarkAsActiveRequest, Availability>
+      markAsActiveMethodDescriptor =
+          ApiMethodDescriptor.<MarkAsActiveRequest, Availability>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsActive")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MarkAsActiveRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/availability}:markAsActive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsActiveRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsActiveRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Availability>newBuilder()
+                      .setDefaultInstance(Availability.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MarkAsAwayRequest, Availability>
+      markAsAwayMethodDescriptor =
+          ApiMethodDescriptor.<MarkAsAwayRequest, Availability>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsAway")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MarkAsAwayRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/availability}:markAsAway",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsAwayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsAwayRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Availability>newBuilder()
+                      .setDefaultInstance(Availability.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MarkAsDoNotDisturbRequest, Availability>
+      markAsDoNotDisturbMethodDescriptor =
+          ApiMethodDescriptor.<MarkAsDoNotDisturbRequest, Availability>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsDoNotDisturb")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MarkAsDoNotDisturbRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/availability}:markAsDoNotDisturb",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsDoNotDisturbRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkAsDoNotDisturbRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Availability>newBuilder()
+                      .setDefaultInstance(Availability.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAvailabilityRequest, Availability>
+      updateAvailabilityMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAvailabilityRequest, Availability>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateAvailability")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAvailabilityRequest>newBuilder()
+                      .setPath(
+                          "/v1/{availability.name=users/*/availability}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAvailabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "availability.name", request.getAvailability().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAvailabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("availability", request.getAvailability(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Availability>newBuilder()
+                      .setDefaultInstance(Availability.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetSpaceEventRequest, SpaceEvent>
       getSpaceEventMethodDescriptor =
           ApiMethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
@@ -1700,6 +1937,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
   private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
@@ -1720,6 +1960,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       updateSpaceReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
+  private final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable;
+  private final UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable;
+  private final UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable;
+  private final UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable;
+  private final UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable;
   private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
   private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
       listSpaceEventsCallable;
@@ -1969,6 +2214,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             .setMethodDescriptor(findDirectMessageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<FindGroupChatsRequest, FindGroupChatsResponse>
+        findGroupChatsTransportSettings =
+            HttpJsonCallSettings.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+                .setMethodDescriptor(findGroupChatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<CreateMembershipRequest, Membership> createMembershipTransportSettings =
         HttpJsonCallSettings.<CreateMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
@@ -2115,6 +2366,68 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetAvailabilityRequest, Availability> getAvailabilityTransportSettings =
+        HttpJsonCallSettings.<GetAvailabilityRequest, Availability>newBuilder()
+            .setMethodDescriptor(getAvailabilityMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<MarkAsActiveRequest, Availability> markAsActiveTransportSettings =
+        HttpJsonCallSettings.<MarkAsActiveRequest, Availability>newBuilder()
+            .setMethodDescriptor(markAsActiveMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<MarkAsAwayRequest, Availability> markAsAwayTransportSettings =
+        HttpJsonCallSettings.<MarkAsAwayRequest, Availability>newBuilder()
+            .setMethodDescriptor(markAsAwayMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbTransportSettings =
+            HttpJsonCallSettings.<MarkAsDoNotDisturbRequest, Availability>newBuilder()
+                .setMethodDescriptor(markAsDoNotDisturbMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<UpdateAvailabilityRequest, Availability>
+        updateAvailabilityTransportSettings =
+            HttpJsonCallSettings.<UpdateAvailabilityRequest, Availability>newBuilder()
+                .setMethodDescriptor(updateAvailabilityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "availability.name", String.valueOf(request.getAvailability().getName()));
+                      return builder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
         HttpJsonCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
@@ -2327,6 +2640,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             findDirectMessageTransportSettings,
             settings.findDirectMessageSettings(),
             clientContext);
+    this.findGroupChatsCallable =
+        callableFactory.createUnaryCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
+    this.findGroupChatsPagedCallable =
+        callableFactory.createPagedCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
@@ -2381,6 +2700,25 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
         callableFactory.createUnaryCallable(
             getThreadReadStateTransportSettings,
             settings.getThreadReadStateSettings(),
+            clientContext);
+    this.getAvailabilityCallable =
+        callableFactory.createUnaryCallable(
+            getAvailabilityTransportSettings, settings.getAvailabilitySettings(), clientContext);
+    this.markAsActiveCallable =
+        callableFactory.createUnaryCallable(
+            markAsActiveTransportSettings, settings.markAsActiveSettings(), clientContext);
+    this.markAsAwayCallable =
+        callableFactory.createUnaryCallable(
+            markAsAwayTransportSettings, settings.markAsAwaySettings(), clientContext);
+    this.markAsDoNotDisturbCallable =
+        callableFactory.createUnaryCallable(
+            markAsDoNotDisturbTransportSettings,
+            settings.markAsDoNotDisturbSettings(),
+            clientContext);
+    this.updateAvailabilityCallable =
+        callableFactory.createUnaryCallable(
+            updateAvailabilityTransportSettings,
+            settings.updateAvailabilitySettings(),
             clientContext);
     this.getSpaceEventCallable =
         callableFactory.createUnaryCallable(
@@ -2454,6 +2792,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(deleteSpaceMethodDescriptor);
     methodDescriptors.add(completeImportSpaceMethodDescriptor);
     methodDescriptors.add(findDirectMessageMethodDescriptor);
+    methodDescriptors.add(findGroupChatsMethodDescriptor);
     methodDescriptors.add(createMembershipMethodDescriptor);
     methodDescriptors.add(updateMembershipMethodDescriptor);
     methodDescriptors.add(deleteMembershipMethodDescriptor);
@@ -2467,6 +2806,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getSpaceReadStateMethodDescriptor);
     methodDescriptors.add(updateSpaceReadStateMethodDescriptor);
     methodDescriptors.add(getThreadReadStateMethodDescriptor);
+    methodDescriptors.add(getAvailabilityMethodDescriptor);
+    methodDescriptors.add(markAsActiveMethodDescriptor);
+    methodDescriptors.add(markAsAwayMethodDescriptor);
+    methodDescriptors.add(markAsDoNotDisturbMethodDescriptor);
+    methodDescriptors.add(updateAvailabilityMethodDescriptor);
     methodDescriptors.add(getSpaceEventMethodDescriptor);
     methodDescriptors.add(listSpaceEventsMethodDescriptor);
     methodDescriptors.add(getSpaceNotificationSettingMethodDescriptor);
@@ -2595,6 +2939,17 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   }
 
   @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    return findGroupChatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    return findGroupChatsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {
     return createMembershipCallable;
   }
@@ -2670,6 +3025,31 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable() {
+    return getAvailabilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable() {
+    return markAsActiveCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable() {
+    return markAsAwayCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable() {
+    return markAsDoNotDisturbCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable() {
+    return updateAvailabilityCallable;
   }
 
   @Override

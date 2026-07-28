@@ -576,6 +576,54 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *

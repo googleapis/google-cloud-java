@@ -80,11 +80,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -97,11 +97,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -115,11 +115,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -131,11 +131,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -148,11 +148,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -554,11 +554,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference>
@@ -574,11 +574,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getStudioReferencesCount() {
@@ -593,11 +593,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference
@@ -613,11 +613,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setStudioReferences(
@@ -639,11 +639,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setStudioReferences(
@@ -664,11 +664,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addStudioReferences(
@@ -690,11 +690,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addStudioReferences(
@@ -716,11 +716,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addStudioReferences(
@@ -740,11 +740,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addStudioReferences(
@@ -765,11 +765,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllStudioReferences(
@@ -790,11 +790,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearStudioReferences() {
@@ -812,11 +812,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeStudioReferences(int index) {
@@ -834,11 +834,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference.Builder
@@ -850,11 +850,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferenceOrBuilder
@@ -870,11 +870,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -892,11 +892,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference.Builder
@@ -911,11 +911,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference.Builder
@@ -931,11 +931,11 @@ public final class StudioDatasourceReferences extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The references to the studio datasources.
+     * Optional. The references to the studio datasources.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+     * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<

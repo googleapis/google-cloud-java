@@ -45,9 +45,7 @@ import java.security.KeyStore;
 
 /**
  * This class implements {@link MtlsProvider} for the Google Auth library transport layer via {@link
- * WorkloadCertificateConfiguration}. This is only meant to be used internally by Google Cloud
- * libraries, and the public facing methods may be changed without notice, and have no guarantee of
- * backwards compatibility.
+ * WorkloadCertificateConfiguration}.
  */
 @InternalApi
 public class X509Provider implements MtlsProvider {

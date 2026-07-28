@@ -30,7 +30,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Errors encountered during bulk instance operation.
+   * Output only. Errors encountered during bulk instance operation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -43,7 +43,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Errors encountered during bulk instance operation.
+   * Output only. Errors encountered during bulk instance operation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -56,7 +56,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Errors encountered during bulk instance operation.
+   * Output only. Errors encountered during bulk instance operation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -67,7 +67,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp of the last progress check of bulk instance
+   * Output only. Timestamp of the last progress check of bulk instance
    * operation. Timestamp is in RFC3339 text format.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp of the last progress check of bulk instance
+   * Output only. Timestamp of the last progress check of bulk instance
    * operation. Timestamp is in RFC3339 text format.
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface InstanceGroupManagerStatusBulkInstanceOperationLastProgressChec
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp of the last progress check of bulk instance
+   * Output only. Timestamp of the last progress check of bulk instance
    * operation. Timestamp is in RFC3339 text format.
    * </pre>
    *

@@ -31,7 +31,7 @@ public interface HttpRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the HttpRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;httpRoutes/http_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,7 +45,7 @@ public interface HttpRouteOrBuilder
    *
    * <pre>
    * Identifier. Name of the HttpRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/httpRoutes/http_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;httpRoutes/http_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -342,7 +342,7 @@ public interface HttpRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -363,7 +363,7 @@ public interface HttpRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -384,7 +384,7 @@ public interface HttpRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -406,7 +406,7 @@ public interface HttpRouteOrBuilder
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -429,7 +429,7 @@ public interface HttpRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -449,7 +449,7 @@ public interface HttpRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public interface HttpRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -490,7 +490,7 @@ public interface HttpRouteOrBuilder
    * gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>

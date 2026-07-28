@@ -30,7 +30,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -74,7 +74,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -89,7 +89,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -135,7 +135,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -164,7 +164,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -178,7 +178,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -192,7 +192,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -207,7 +207,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -223,7 +223,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -237,7 +237,58 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   *
+   * @return Whether the currentInstanceStatuses field is set.
+   */
+  boolean hasCurrentInstanceStatuses();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   *
+   * @return The currentInstanceStatuses.
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+      getCurrentInstanceStatuses();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder
+      getCurrentInstanceStatusesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A bit indicating whether the managed instance group is in a
    * stable state. A stable state means that: none of the instances in the
    * managed instance group is currently undergoing any type of change (for
    * example, creation, restart, or deletion); no future changes are scheduled
@@ -255,7 +306,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * Output only. A bit indicating whether the managed instance group is in a
    * stable state. A stable state means that: none of the instances in the
    * managed instance group is currently undergoing any type of change (for
    * example, creation, restart, or deletion); no future changes are scheduled
@@ -273,7 +324,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -288,7 +339,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -303,7 +354,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -316,7 +367,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>
@@ -333,7 +384,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>
@@ -350,7 +401,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>

@@ -25,8 +25,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionCompositeHealthChecksRequest;
 import com.google.cloud.compute.v1.CompositeHealthCheck;
 import com.google.cloud.compute.v1.CompositeHealthCheckAggregatedList;
+import com.google.cloud.compute.v1.CompositeHealthCheckHealth;
 import com.google.cloud.compute.v1.CompositeHealthCheckList;
 import com.google.cloud.compute.v1.DeleteRegionCompositeHealthCheckRequest;
+import com.google.cloud.compute.v1.GetHealthRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.GetRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.InsertRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.ListRegionCompositeHealthChecksRequest;
@@ -35,6 +37,7 @@ import com.google.cloud.compute.v1.PatchRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -42,6 +45,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RegionCompositeHealthChecksStub implements BackgroundResource {
 
@@ -68,6 +72,11 @@ public abstract class RegionCompositeHealthChecksStub implements BackgroundResou
 
   public UnaryCallable<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthCallable() {
+    throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
   public OperationCallable<InsertRegionCompositeHealthCheckRequest, Operation, Operation>

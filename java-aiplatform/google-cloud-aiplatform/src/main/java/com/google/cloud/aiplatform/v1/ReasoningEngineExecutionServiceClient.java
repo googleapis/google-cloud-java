@@ -20,9 +20,11 @@ import com.google.api.HttpBody;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -38,10 +40,14 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -103,6 +109,35 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> streamQueryReasoningEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AsyncQueryReasoningEngine</td>
+ *      <td><p> Async query using a reasoning engine.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> asyncQueryReasoningEngineAsync(AsyncQueryReasoningEngineRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> asyncQueryReasoningEngineOperationCallable()
+ *           <li><p> asyncQueryReasoningEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelAsyncQueryReasoningEngine</td>
+ *      <td><p> Cancels an AsyncQueryReasoningEngine operation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelAsyncQueryReasoningEngine(CancelAsyncQueryReasoningEngineRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelAsyncQueryReasoningEngineCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -222,10 +257,12 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReasoningEngineExecutionServiceClient implements BackgroundResource {
-  private final ReasoningEngineExecutionServiceSettings settings;
+  private final @Nullable ReasoningEngineExecutionServiceSettings settings;
   private final ReasoningEngineExecutionServiceStub stub;
+  private final OperationsClient operationsClient;
 
   /** Constructs an instance of ReasoningEngineExecutionServiceClient with default settings. */
   public static final ReasoningEngineExecutionServiceClient create() throws IOException {
@@ -262,19 +299,29 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
     this.settings = settings;
     this.stub =
         ((ReasoningEngineExecutionServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
   protected ReasoningEngineExecutionServiceClient(ReasoningEngineExecutionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ReasoningEngineExecutionServiceSettings getSettings() {
+  public final @Nullable ReasoningEngineExecutionServiceSettings getSettings() {
     return settings;
   }
 
   public ReasoningEngineExecutionServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -379,6 +426,188 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
   public final ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
       streamQueryReasoningEngineCallable() {
     return stub.streamQueryReasoningEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Async query using a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   AsyncQueryReasoningEngineRequest request =
+   *       AsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setInputGcsUri("inputGcsUri-665217217")
+   *           .setOutputGcsUri("outputGcsUri-489598154")
+   *           .build();
+   *   AsyncQueryReasoningEngineResponse response =
+   *       reasoningEngineExecutionServiceClient.asyncQueryReasoningEngineAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          AsyncQueryReasoningEngineResponse, AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineAsync(AsyncQueryReasoningEngineRequest request) {
+    return asyncQueryReasoningEngineOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Async query using a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   AsyncQueryReasoningEngineRequest request =
+   *       AsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setInputGcsUri("inputGcsUri-665217217")
+   *           .setOutputGcsUri("outputGcsUri-489598154")
+   *           .build();
+   *   OperationFuture<AsyncQueryReasoningEngineResponse, AsyncQueryReasoningEngineOperationMetadata>
+   *       future =
+   *           reasoningEngineExecutionServiceClient
+   *               .asyncQueryReasoningEngineOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   AsyncQueryReasoningEngineResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable() {
+    return stub.asyncQueryReasoningEngineOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Async query using a reasoning engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   AsyncQueryReasoningEngineRequest request =
+   *       AsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setInputGcsUri("inputGcsUri-665217217")
+   *           .setOutputGcsUri("outputGcsUri-489598154")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       reasoningEngineExecutionServiceClient
+   *           .asyncQueryReasoningEngineCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable() {
+    return stub.asyncQueryReasoningEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AsyncQueryReasoningEngine operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   CancelAsyncQueryReasoningEngineRequest request =
+   *       CancelAsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setOperationName("operationName91797650")
+   *           .build();
+   *   CancelAsyncQueryReasoningEngineResponse response =
+   *       reasoningEngineExecutionServiceClient.cancelAsyncQueryReasoningEngine(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAsyncQueryReasoningEngineResponse cancelAsyncQueryReasoningEngine(
+      CancelAsyncQueryReasoningEngineRequest request) {
+    return cancelAsyncQueryReasoningEngineCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an AsyncQueryReasoningEngine operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+   *     ReasoningEngineExecutionServiceClient.create()) {
+   *   CancelAsyncQueryReasoningEngineRequest request =
+   *       CancelAsyncQueryReasoningEngineRequest.newBuilder()
+   *           .setName(
+   *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+   *                   .toString())
+   *           .setOperationName("operationName91797650")
+   *           .build();
+   *   ApiFuture<CancelAsyncQueryReasoningEngineResponse> future =
+   *       reasoningEngineExecutionServiceClient
+   *           .cancelAsyncQueryReasoningEngineCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CancelAsyncQueryReasoningEngineResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    return stub.cancelAsyncQueryReasoningEngineCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -821,8 +1050,8 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -832,14 +1061,14 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -853,7 +1082,8 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -863,7 +1093,7 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

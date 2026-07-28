@@ -33,7 +33,7 @@ public interface UpdateIcebergNamespaceRequestOrBuilder
    * Required. The namespace to update.
    *
    * The namespace's `name` field is used to identify the namespace to update.
-   * Format: projects/{project_id}/namespaces/{namespace}
+   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
    * </pre>
    *
    * <code>
@@ -51,7 +51,7 @@ public interface UpdateIcebergNamespaceRequestOrBuilder
    * Required. The namespace to update.
    *
    * The namespace's `name` field is used to identify the namespace to update.
-   * Format: projects/{project_id}/namespaces/{namespace}
+   * Format: projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}
    * </pre>
    *
    * <code>

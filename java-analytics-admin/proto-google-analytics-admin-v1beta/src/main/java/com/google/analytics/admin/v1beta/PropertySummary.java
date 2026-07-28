@@ -281,6 +281,26 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CAN_EDIT_FIELD_NUMBER = 5;
+  private boolean canEdit_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, then the user has a Google Analytics role that permits them to
+   * edit the property.
+   * </pre>
+   *
+   * <code>bool can_edit = 5;</code>
+   *
+   * @return The canEdit.
+   */
+  @java.lang.Override
+  public boolean getCanEdit() {
+    return canEdit_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +328,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, parent_);
     }
+    if (canEdit_ != false) {
+      output.writeBool(5, canEdit_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -330,6 +353,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, parent_);
     }
+    if (canEdit_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, canEdit_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +376,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (propertyType_ != other.propertyType_) return false;
     if (!getParent().equals(other.getParent())) return false;
+    if (getCanEdit() != other.getCanEdit()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -369,6 +396,8 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + propertyType_;
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + CAN_EDIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCanEdit());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +542,7 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
       displayName_ = "";
       propertyType_ = 0;
       parent_ = "";
+      canEdit_ = false;
       return this;
     }
 
@@ -561,6 +591,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.parent_ = parent_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.canEdit_ = canEdit_;
+      }
     }
 
     @java.lang.Override
@@ -593,6 +626,9 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
         parent_ = other.parent_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getCanEdit() != false) {
+        setCanEdit(other.getCanEdit());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -644,6 +680,12 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                canEdit_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1117,6 +1159,65 @@ public final class PropertySummary extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       parent_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean canEdit_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, then the user has a Google Analytics role that permits them to
+     * edit the property.
+     * </pre>
+     *
+     * <code>bool can_edit = 5;</code>
+     *
+     * @return The canEdit.
+     */
+    @java.lang.Override
+    public boolean getCanEdit() {
+      return canEdit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, then the user has a Google Analytics role that permits them to
+     * edit the property.
+     * </pre>
+     *
+     * <code>bool can_edit = 5;</code>
+     *
+     * @param value The canEdit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCanEdit(boolean value) {
+
+      canEdit_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, then the user has a Google Analytics role that permits them to
+     * edit the property.
+     * </pre>
+     *
+     * <code>bool can_edit = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCanEdit() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      canEdit_ = false;
       onChanged();
       return this;
     }

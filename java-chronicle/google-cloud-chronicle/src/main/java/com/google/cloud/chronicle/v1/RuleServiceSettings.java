@@ -40,6 +40,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -115,6 +117,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
 
@@ -142,6 +145,11 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
   /** Returns the object with the settings used for calls to deleteRule. */
   public UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings() {
     return ((RuleServiceStubSettings) getStubSettings()).deleteRuleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyRuleText. */
+  public UnaryCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextSettings() {
+    return ((RuleServiceStubSettings) getStubSettings()).verifyRuleTextSettings();
   }
 
   /** Returns the object with the settings used for calls to listRuleRevisions. */
@@ -247,7 +255,7 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -267,7 +275,7 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RuleServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -327,6 +335,12 @@ public class RuleServiceSettings extends ClientSettings<RuleServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteRule. */
     public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
       return getStubSettingsBuilder().deleteRuleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyRuleText. */
+    public UnaryCallSettings.Builder<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextSettings() {
+      return getStubSettingsBuilder().verifyRuleTextSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRuleRevisions. */

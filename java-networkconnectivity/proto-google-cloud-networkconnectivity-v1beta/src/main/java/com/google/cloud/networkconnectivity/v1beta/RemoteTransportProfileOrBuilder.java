@@ -405,4 +405,34 @@ public interface RemoteTransportProfileOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provider type for this profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for providerType.
+   */
+  int getProviderTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provider type for this profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The providerType.
+   */
+  com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType getProviderType();
 }

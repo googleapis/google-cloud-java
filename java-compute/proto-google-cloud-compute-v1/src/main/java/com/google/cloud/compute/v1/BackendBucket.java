@@ -64,6 +64,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     kind_ = "";
     loadBalancingScheme_ = "";
     name_ = "";
+    region_ = "";
     selfLink_ = "";
     usedBy_ = java.util.Collections.emptyList();
   }
@@ -288,6 +289,17 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Signifies that this will be used for regional external Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>EXTERNAL_MANAGED = 512006923;</code>
+     */
+    EXTERNAL_MANAGED(512006923),
+    /**
+     *
+     *
+     * <pre>
      * Signifies that this will be used for internal Application Load Balancers.
      * </pre>
      *
@@ -317,6 +329,18 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_LOAD_BALANCING_SCHEME = 0;</code>
      */
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Signifies that this will be used for regional external Application Load
+     * Balancers.
+     * </pre>
+     *
+     * <code>EXTERNAL_MANAGED = 512006923;</code>
+     */
+    public static final int EXTERNAL_MANAGED_VALUE = 512006923;
 
     /**
      *
@@ -355,6 +379,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return UNDEFINED_LOAD_BALANCING_SCHEME;
+        case 512006923:
+          return EXTERNAL_MANAGED;
         case 37350397:
           return INTERNAL_MANAGED;
         default:
@@ -1264,6 +1290,84 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         : params_;
   }
 
+  public static final int REGION_FIELD_NUMBER = 138946292;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the regional backend bucket
+   * resides. This field is not applicable to global backend buckets.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
 
   @SuppressWarnings("serial")
@@ -1282,7 +1386,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1444,6 +1548,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 95520988, compressionMode_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(213976452, getCdnPolicy());
     }
@@ -1466,7 +1573,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     getUnknownFields().writeTo(output);
@@ -1499,6 +1606,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(95520988, compressionMode_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
     }
@@ -1526,7 +1636,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1593,6 +1703,10 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (hasParams() != other.hasParams()) return false;
     if (hasParams()) {
       if (!getParams().equals(other.getParams())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1661,6 +1775,10 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     if (hasParams()) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParams().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1845,6 +1963,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         paramsBuilder_.dispose();
         paramsBuilder_ = null;
       }
+      region_ = "";
       selfLink_ = "";
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
@@ -1852,7 +1971,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         usedBy_ = null;
         usedByBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1890,9 +2009,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.BackendBucket result) {
       if (usedByBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.usedBy_ = usedBy_;
       } else {
@@ -1956,8 +2075,12 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2036,16 +2159,21 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
       if (other.hasParams()) {
         mergeParams(other.getParams());
       }
+      if (other.hasRegion()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (usedByBuilder_ == null) {
         if (!other.usedBy_.isEmpty()) {
           if (usedBy_.isEmpty()) {
             usedBy_ = other.usedBy_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureUsedByIsMutable();
             usedBy_.addAll(other.usedBy_);
@@ -2058,7 +2186,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
             usedByBuilder_.dispose();
             usedByBuilder_ = null;
             usedBy_ = other.usedBy_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             usedByBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetUsedByFieldBuilder()
@@ -2136,6 +2264,12 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 764167906
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 1111570338
             case 1711811618:
               {
                 input.readMessage(
@@ -2191,7 +2325,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case -645248918
             default:
@@ -4051,6 +4185,150 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
       return paramsBuilder_;
     }
 
+    private java.lang.Object region_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] URL of the region where the regional backend bucket
+     * resides. This field is not applicable to global backend buckets.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
 
     /**
@@ -4065,7 +4343,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4131,7 +4409,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4149,7 +4427,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4172,7 +4450,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4181,9 +4459,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureUsedByIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         usedBy_ = new java.util.ArrayList<com.google.cloud.compute.v1.BackendBucketUsedBy>(usedBy_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -4409,7 +4687,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
     public Builder clearUsedBy() {
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         usedByBuilder_.clear();
@@ -4538,7 +4816,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.BackendBucketUsedBy,
                 com.google.cloud.compute.v1.BackendBucketUsedBy.Builder,
                 com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>(
-                usedBy_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                usedBy_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         usedBy_ = null;
       }
       return usedByBuilder_;

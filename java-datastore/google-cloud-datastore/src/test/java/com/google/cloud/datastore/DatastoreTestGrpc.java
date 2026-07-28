@@ -17,7 +17,6 @@
 package com.google.cloud.datastore;
 
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
-import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.truth.Truth;
 import java.io.IOException;
 import java.time.Duration;
@@ -32,8 +31,7 @@ public class DatastoreTestGrpc extends AbstractDatastoreTest {
 
   private static final LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0, 9090);
 
-  private static DatastoreOptions options =
-      helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
+  private static DatastoreOptions options = helper.getOptions();
   private static Datastore datastore = options.getService();
 
   public DatastoreTestGrpc(DatastoreOptions options, Datastore datastore) {
@@ -48,7 +46,7 @@ public class DatastoreTestGrpc extends AbstractDatastoreTest {
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
     helper.start();
-    options = helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
+    options = helper.getOptions();
     datastore = options.getService();
   }
 

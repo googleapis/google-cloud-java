@@ -31,7 +31,7 @@ public interface DeleteIcebergNamespaceRequestOrBuilder
    *
    * <pre>
    * Required. Iceberg namespace to delete in the format:
-   * `projects/{project_id}/namespaces/{namespace}`.
+   * `projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface DeleteIcebergNamespaceRequestOrBuilder
    *
    * <pre>
    * Required. Iceberg namespace to delete in the format:
-   * `projects/{project_id}/namespaces/{namespace}`.
+   * `projects/{project_id}/catalogs/{catalog_id}/namespaces/{namespace}`.
    * </pre>
    *
    * <code>

@@ -58,6 +58,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     displayName_ = "";
     entitlementId_ = "";
     adminPassword_ = "";
+    adminPasswordSecretVersion_ = "";
     network_ = "";
     cidr_ = "";
     odbNetwork_ = "";
@@ -160,12 +161,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the Autonomous Database. The database name must be
-   * unique in the project. The name must begin with a letter and can contain a
-   * maximum of 30 alphanumeric characters.
+   * Optional. Immutable. The name of the Autonomous Database. The database name
+   * must be unique in the project. The name must begin with a letter and can
+   * contain a maximum of 30 alphanumeric characters.
    * </pre>
    *
-   * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The database.
    */
@@ -186,12 +189,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the Autonomous Database. The database name must be
-   * unique in the project. The name must begin with a letter and can contain a
-   * maximum of 30 alphanumeric characters.
+   * Optional. Immutable. The name of the Autonomous Database. The database name
+   * must be unique in the project. The name must begin with a letter and can
+   * contain a maximum of 30 alphanumeric characters.
    * </pre>
    *
-   * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for database.
    */
@@ -217,11 +222,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The display name for the Autonomous Database. The name does not
-   * have to be unique within your project.
+   * Optional. Immutable. The display name for the Autonomous Database. The name
+   * does not have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The displayName.
    */
@@ -242,11 +249,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The display name for the Autonomous Database. The name does not
-   * have to be unique within your project.
+   * Optional. Immutable. The display name for the Autonomous Database. The name
+   * does not have to be unique within your project.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for displayName.
    */
@@ -327,10 +336,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Immutable. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The adminPassword.
    */
@@ -351,10 +364,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The password for the default ADMIN user.
+   * Optional. Immutable. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for adminPassword.
    */
@@ -365,6 +382,69 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       adminPassword_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ADMIN_PASSWORD_SECRET_VERSION_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object adminPasswordSecretVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adminPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getAdminPasswordSecretVersion() {
+    java.lang.Object ref = adminPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      adminPasswordSecretVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The resource name of a secret version in Secret
+   * Manager which contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adminPasswordSecretVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes() {
+    java.lang.Object ref = adminPasswordSecretVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      adminPasswordSecretVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -547,12 +627,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the VPC network used by the Autonomous Database in
-   * the following format: projects/{project}/global/networks/{network}
+   * Optional. Immutable. The name of the VPC network used by the Autonomous
+   * Database in the following format:
+   * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -574,12 +655,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the VPC network used by the Autonomous Database in
-   * the following format: projects/{project}/global/networks/{network}
+   * Optional. Immutable. The name of the VPC network used by the Autonomous
+   * Database in the following format:
+   * projects/{project}/global/networks/{network}
    * </pre>
    *
    * <code>
-   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -606,10 +688,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonomous Database.
+   * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cidr.
    */
@@ -630,10 +714,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The subnet CIDR range for the Autonomous Database.
+   * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
    * </pre>
    *
-   * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for cidr.
    */
@@ -659,15 +745,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
    * optional but if specified, this should match the parent ODBNetwork of the
    * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbNetwork.
@@ -689,15 +775,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the OdbNetwork associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbNetwork associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
    * optional but if specified, this should match the parent ODBNetwork of the
    * OdbSubnet.
    * </pre>
    *
    * <code>
-   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbNetwork.
@@ -724,13 +810,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The odbSubnet.
@@ -752,13 +838,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The name of the OdbSubnet associated with the Autonomous
-   * Database. Format:
+   * Optional. Immutable. The name of the OdbSubnet associated with the
+   * Autonomous Database. Format:
    * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
    * </pre>
    *
    * <code>
-   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for odbSubnet.
@@ -783,13 +869,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the sourceConfig field is set.
@@ -803,13 +890,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The sourceConfig.
@@ -825,13 +913,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The source Autonomous Database configuration for the standby
-   * Autonomous Database. The source Autonomous Database is configured while
-   * creating the Peer Autonomous Database and can't be updated after creation.
+   * Optional. Immutable. The source Autonomous Database configuration for the
+   * standby Autonomous Database. The source Autonomous Database is configured
+   * while creating the Peer Autonomous Database and can't be updated after
+   * creation.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -1113,6 +1202,9 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbSubnet_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 17, odbSubnet_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(adminPasswordSecretVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 18, adminPasswordSecretVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1184,6 +1276,10 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbSubnet_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(17, odbSubnet_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(adminPasswordSecretVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(18, adminPasswordSecretVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1205,6 +1301,8 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getEntitlementId().equals(other.getEntitlementId())) return false;
     if (!getAdminPassword().equals(other.getAdminPassword())) return false;
+    if (!getAdminPasswordSecretVersion().equals(other.getAdminPasswordSecretVersion()))
+      return false;
     if (hasProperties() != other.hasProperties()) return false;
     if (hasProperties()) {
       if (!getProperties().equals(other.getProperties())) return false;
@@ -1247,6 +1345,8 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getEntitlementId().hashCode();
     hash = (37 * hash) + ADMIN_PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getAdminPassword().hashCode();
+    hash = (37 * hash) + ADMIN_PASSWORD_SECRET_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getAdminPasswordSecretVersion().hashCode();
     if (hasProperties()) {
       hash = (37 * hash) + PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getProperties().hashCode();
@@ -1459,6 +1559,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       displayName_ = "";
       entitlementId_ = "";
       adminPassword_ = "";
+      adminPasswordSecretVersion_ = "";
       properties_ = null;
       if (propertiesBuilder_ != null) {
         propertiesBuilder_.dispose();
@@ -1532,41 +1633,44 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.adminPassword_ = adminPassword_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adminPasswordSecretVersion_ = adminPasswordSecretVersion_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.properties_ = propertiesBuilder_ == null ? properties_ : propertiesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.cidr_ = cidr_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.odbNetwork_ = odbNetwork_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.odbSubnet_ = odbSubnet_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.sourceConfig_ =
             sourceConfigBuilder_ == null ? sourceConfig_ : sourceConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         peerAutonomousDatabases_.makeImmutable();
         result.peerAutonomousDatabases_ = peerAutonomousDatabases_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         disasterRecoverySupportedLocations_.makeImmutable();
         result.disasterRecoverySupportedLocations_ = disasterRecoverySupportedLocations_;
       }
@@ -1611,29 +1715,34 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getAdminPasswordSecretVersion().isEmpty()) {
+        adminPasswordSecretVersion_ = other.adminPasswordSecretVersion_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (other.hasProperties()) {
         mergeProperties(other.getProperties());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getCidr().isEmpty()) {
         cidr_ = other.cidr_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getOdbNetwork().isEmpty()) {
         odbNetwork_ = other.odbNetwork_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getOdbSubnet().isEmpty()) {
         odbSubnet_ = other.odbSubnet_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasSourceConfig()) {
@@ -1642,7 +1751,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       if (!other.peerAutonomousDatabases_.isEmpty()) {
         if (peerAutonomousDatabases_.isEmpty()) {
           peerAutonomousDatabases_ = other.peerAutonomousDatabases_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensurePeerAutonomousDatabasesIsMutable();
           peerAutonomousDatabases_.addAll(other.peerAutonomousDatabases_);
@@ -1655,7 +1764,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       if (!other.disasterRecoverySupportedLocations_.isEmpty()) {
         if (disasterRecoverySupportedLocations_.isEmpty()) {
           disasterRecoverySupportedLocations_ = other.disasterRecoverySupportedLocations_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00008000;
         } else {
           ensureDisasterRecoverySupportedLocationsIsMutable();
           disasterRecoverySupportedLocations_.addAll(other.disasterRecoverySupportedLocations_);
@@ -1722,7 +1831,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     internalGetPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1734,26 +1843,26 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 cidr_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
@@ -1767,7 +1876,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 122:
@@ -1780,15 +1889,21 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
             case 130:
               {
                 odbNetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 130
             case 138:
               {
                 odbSubnet_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 138
+            case 146:
+              {
+                adminPasswordSecretVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1935,12 +2050,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the Autonomous Database. The database name must be
-     * unique in the project. The name must begin with a letter and can contain a
-     * maximum of 30 alphanumeric characters.
+     * Optional. Immutable. The name of the Autonomous Database. The database name
+     * must be unique in the project. The name must begin with a letter and can
+     * contain a maximum of 30 alphanumeric characters.
      * </pre>
      *
-     * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The database.
      */
@@ -1960,12 +2077,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the Autonomous Database. The database name must be
-     * unique in the project. The name must begin with a letter and can contain a
-     * maximum of 30 alphanumeric characters.
+     * Optional. Immutable. The name of the Autonomous Database. The database name
+     * must be unique in the project. The name must begin with a letter and can
+     * contain a maximum of 30 alphanumeric characters.
      * </pre>
      *
-     * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for database.
      */
@@ -1985,12 +2104,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the Autonomous Database. The database name must be
-     * unique in the project. The name must begin with a letter and can contain a
-     * maximum of 30 alphanumeric characters.
+     * Optional. Immutable. The name of the Autonomous Database. The database name
+     * must be unique in the project. The name must begin with a letter and can
+     * contain a maximum of 30 alphanumeric characters.
      * </pre>
      *
-     * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The database to set.
      * @return This builder for chaining.
@@ -2009,12 +2130,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the Autonomous Database. The database name must be
-     * unique in the project. The name must begin with a letter and can contain a
-     * maximum of 30 alphanumeric characters.
+     * Optional. Immutable. The name of the Autonomous Database. The database name
+     * must be unique in the project. The name must begin with a letter and can
+     * contain a maximum of 30 alphanumeric characters.
      * </pre>
      *
-     * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2029,12 +2152,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the Autonomous Database. The database name must be
-     * unique in the project. The name must begin with a letter and can contain a
-     * maximum of 30 alphanumeric characters.
+     * Optional. Immutable. The name of the Autonomous Database. The database name
+     * must be unique in the project. The name must begin with a letter and can
+     * contain a maximum of 30 alphanumeric characters.
      * </pre>
      *
-     * <code>string database = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for database to set.
      * @return This builder for chaining.
@@ -2056,11 +2181,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The display name for the Autonomous Database. The name does not
-     * have to be unique within your project.
+     * Optional. Immutable. The display name for the Autonomous Database. The name
+     * does not have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The displayName.
      */
@@ -2080,11 +2207,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The display name for the Autonomous Database. The name does not
-     * have to be unique within your project.
+     * Optional. Immutable. The display name for the Autonomous Database. The name
+     * does not have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for displayName.
      */
@@ -2104,11 +2233,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The display name for the Autonomous Database. The name does not
-     * have to be unique within your project.
+     * Optional. Immutable. The display name for the Autonomous Database. The name
+     * does not have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2127,11 +2258,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The display name for the Autonomous Database. The name does not
-     * have to be unique within your project.
+     * Optional. Immutable. The display name for the Autonomous Database. The name
+     * does not have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2146,11 +2279,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The display name for the Autonomous Database. The name does not
-     * have to be unique within your project.
+     * Optional. Immutable. The display name for the Autonomous Database. The name
+     * does not have to be unique within your project.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string display_name = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -2288,10 +2423,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The password for the default ADMIN user.
+     * Optional. Immutable. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The adminPassword.
      */
@@ -2311,10 +2450,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The password for the default ADMIN user.
+     * Optional. Immutable. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for adminPassword.
      */
@@ -2334,10 +2477,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The password for the default ADMIN user.
+     * Optional. Immutable. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The adminPassword to set.
      * @return This builder for chaining.
@@ -2356,10 +2503,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The password for the default ADMIN user.
+     * Optional. Immutable. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2374,10 +2525,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The password for the default ADMIN user.
+     * Optional. Immutable. The password for the default ADMIN user.
+     * Note: Only one of `admin_password_secret_version` or `admin_password` can
+     * be populated.
      * </pre>
      *
-     * <code>string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string admin_password = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for adminPassword to set.
      * @return This builder for chaining.
@@ -2389,6 +2544,142 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       adminPassword_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object adminPasswordSecretVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The resource name of a secret version in Secret
+     * Manager which contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The adminPasswordSecretVersion.
+     */
+    public java.lang.String getAdminPasswordSecretVersion() {
+      java.lang.Object ref = adminPasswordSecretVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adminPasswordSecretVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The resource name of a secret version in Secret
+     * Manager which contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for adminPasswordSecretVersion.
+     */
+    public com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes() {
+      java.lang.Object ref = adminPasswordSecretVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        adminPasswordSecretVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The resource name of a secret version in Secret
+     * Manager which contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The adminPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminPasswordSecretVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      adminPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The resource name of a secret version in Secret
+     * Manager which contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdminPasswordSecretVersion() {
+      adminPasswordSecretVersion_ = getDefaultInstance().getAdminPasswordSecretVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The resource name of a secret version in Secret
+     * Manager which contains the database admin user's password. Format:
+     * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+     * `admin_password_secret_version` or `admin_password` can be populated.
+     * </pre>
+     *
+     * <code>
+     * string admin_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for adminPasswordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminPasswordSecretVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      adminPasswordSecretVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2414,7 +2705,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * @return Whether the properties field is set.
      */
     public boolean hasProperties() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2461,7 +2752,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         propertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2484,7 +2775,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         propertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2503,7 +2794,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public Builder mergeProperties(
         com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties value) {
       if (propertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && properties_ != null
             && properties_
                 != com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties
@@ -2516,7 +2807,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         propertiesBuilder_.mergeFrom(value);
       }
       if (properties_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2534,7 +2825,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearProperties() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       properties_ = null;
       if (propertiesBuilder_ != null) {
         propertiesBuilder_.dispose();
@@ -2557,7 +2848,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.Builder
         getPropertiesBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetPropertiesFieldBuilder().getBuilder();
     }
@@ -2629,7 +2920,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -2719,7 +3010,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2744,7 +3035,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -2765,7 +3056,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2780,7 +3071,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2790,12 +3081,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the VPC network used by the Autonomous Database in
-     * the following format: projects/{project}/global/networks/{network}
+     * Optional. Immutable. The name of the VPC network used by the Autonomous
+     * Database in the following format:
+     * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -2816,12 +3108,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the VPC network used by the Autonomous Database in
-     * the following format: projects/{project}/global/networks/{network}
+     * Optional. Immutable. The name of the VPC network used by the Autonomous
+     * Database in the following format:
+     * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -2842,12 +3135,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the VPC network used by the Autonomous Database in
-     * the following format: projects/{project}/global/networks/{network}
+     * Optional. Immutable. The name of the VPC network used by the Autonomous
+     * Database in the following format:
+     * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The network to set.
@@ -2858,7 +3152,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2867,19 +3161,20 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the VPC network used by the Autonomous Database in
-     * the following format: projects/{project}/global/networks/{network}
+     * Optional. Immutable. The name of the VPC network used by the Autonomous
+     * Database in the following format:
+     * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2888,12 +3183,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the VPC network used by the Autonomous Database in
-     * the following format: projects/{project}/global/networks/{network}
+     * Optional. Immutable. The name of the VPC network used by the Autonomous
+     * Database in the following format:
+     * projects/{project}/global/networks/{network}
      * </pre>
      *
      * <code>
-     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for network to set.
@@ -2905,7 +3201,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2916,10 +3212,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonomous Database.
+     * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
-     * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The cidr.
      */
@@ -2939,10 +3237,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonomous Database.
+     * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
-     * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for cidr.
      */
@@ -2962,10 +3262,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonomous Database.
+     * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
-     * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The cidr to set.
      * @return This builder for chaining.
@@ -2975,7 +3277,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       cidr_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2984,16 +3286,18 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonomous Database.
+     * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
-     * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCidr() {
       cidr_ = getDefaultInstance().getCidr();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3002,10 +3306,12 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The subnet CIDR range for the Autonomous Database.
+     * Optional. Immutable. The subnet CIDR range for the Autonomous Database.
      * </pre>
      *
-     * <code>string cidr = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string cidr = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for cidr to set.
      * @return This builder for chaining.
@@ -3016,7 +3322,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       cidr_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3027,15 +3333,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
      * optional but if specified, this should match the parent ODBNetwork of the
      * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbNetwork.
@@ -3056,15 +3362,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
      * optional but if specified, this should match the parent ODBNetwork of the
      * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbNetwork.
@@ -3085,15 +3391,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
      * optional but if specified, this should match the parent ODBNetwork of the
      * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbNetwork to set.
@@ -3104,7 +3410,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       odbNetwork_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3113,22 +3419,22 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
      * optional but if specified, this should match the parent ODBNetwork of the
      * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearOdbNetwork() {
       odbNetwork_ = getDefaultInstance().getOdbNetwork();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3137,15 +3443,15 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbNetwork associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbNetwork associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network} It is
      * optional but if specified, this should match the parent ODBNetwork of the
      * OdbSubnet.
      * </pre>
      *
      * <code>
-     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_network = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbNetwork to set.
@@ -3157,7 +3463,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       odbNetwork_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3168,13 +3474,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The odbSubnet.
@@ -3195,13 +3501,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for odbSubnet.
@@ -3222,13 +3528,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The odbSubnet to set.
@@ -3239,7 +3545,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       odbSubnet_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3248,20 +3554,20 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearOdbSubnet() {
       odbSubnet_ = getDefaultInstance().getOdbSubnet();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3270,13 +3576,13 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The name of the OdbSubnet associated with the Autonomous
-     * Database. Format:
+     * Optional. Immutable. The name of the OdbSubnet associated with the
+     * Autonomous Database. Format:
      * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
      * </pre>
      *
      * <code>
-     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string odb_subnet = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for odbSubnet to set.
@@ -3288,7 +3594,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       odbSubnet_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3304,32 +3610,34 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the sourceConfig field is set.
      */
     public boolean hasSourceConfig() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The sourceConfig.
@@ -3348,13 +3656,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setSourceConfig(com.google.cloud.oracledatabase.v1.SourceConfig value) {
@@ -3366,7 +3675,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         sourceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3375,13 +3684,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setSourceConfig(
@@ -3391,7 +3701,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         sourceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3400,18 +3710,19 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeSourceConfig(com.google.cloud.oracledatabase.v1.SourceConfig value) {
       if (sourceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && sourceConfig_ != null
             && sourceConfig_
                 != com.google.cloud.oracledatabase.v1.SourceConfig.getDefaultInstance()) {
@@ -3423,7 +3734,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         sourceConfigBuilder_.mergeFrom(value);
       }
       if (sourceConfig_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3433,17 +3744,18 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearSourceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       sourceConfig_ = null;
       if (sourceConfigBuilder_ != null) {
         sourceConfigBuilder_.dispose();
@@ -3457,17 +3769,18 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.SourceConfig.Builder getSourceConfigBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetSourceConfigFieldBuilder().getBuilder();
     }
@@ -3476,13 +3789,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.SourceConfigOrBuilder getSourceConfigOrBuilder() {
@@ -3499,13 +3813,14 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The source Autonomous Database configuration for the standby
-     * Autonomous Database. The source Autonomous Database is configured while
-     * creating the Peer Autonomous Database and can't be updated after creation.
+     * Optional. Immutable. The source Autonomous Database configuration for the
+     * standby Autonomous Database. The source Autonomous Database is configured
+     * while creating the Peer Autonomous Database and can't be updated after
+     * creation.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.SourceConfig source_config = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -3533,7 +3848,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         peerAutonomousDatabases_ =
             new com.google.protobuf.LazyStringArrayList(peerAutonomousDatabases_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
 
     /**
@@ -3633,7 +3948,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       ensurePeerAutonomousDatabasesIsMutable();
       peerAutonomousDatabases_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3659,7 +3974,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       ensurePeerAutonomousDatabasesIsMutable();
       peerAutonomousDatabases_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3682,7 +3997,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
     public Builder addAllPeerAutonomousDatabases(java.lang.Iterable<java.lang.String> values) {
       ensurePeerAutonomousDatabasesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, peerAutonomousDatabases_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3703,7 +4018,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearPeerAutonomousDatabases() {
       peerAutonomousDatabases_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       ;
       onChanged();
       return this;
@@ -3731,7 +4046,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensurePeerAutonomousDatabasesIsMutable();
       peerAutonomousDatabases_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3757,7 +4072,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3803,7 +4118,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3825,7 +4140,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3843,7 +4158,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3854,7 +4169,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -3872,7 +4187,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3894,7 +4209,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -3956,7 +4271,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
         disasterRecoverySupportedLocations_ =
             new com.google.protobuf.LazyStringArrayList(disasterRecoverySupportedLocations_);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
     }
 
     /**
@@ -4056,7 +4371,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       ensureDisasterRecoverySupportedLocationsIsMutable();
       disasterRecoverySupportedLocations_.set(index, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4082,7 +4397,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       }
       ensureDisasterRecoverySupportedLocationsIsMutable();
       disasterRecoverySupportedLocations_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4107,7 +4422,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       ensureDisasterRecoverySupportedLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, disasterRecoverySupportedLocations_);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4128,7 +4443,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearDisasterRecoverySupportedLocations() {
       disasterRecoverySupportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       ;
       onChanged();
       return this;
@@ -4157,7 +4472,7 @@ public final class AutonomousDatabase extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureDisasterRecoverySupportedLocationsIsMutable();
       disasterRecoverySupportedLocations_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

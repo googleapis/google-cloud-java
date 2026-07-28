@@ -125,4 +125,62 @@ public interface ListExascaleDbStorageVaultsResponseOrBuilder
    * @return The bytes for nextPageToken.
    */
   com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  java.util.List<java.lang.String> getUnreachableList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
+   */
+  int getUnreachableCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  java.lang.String getUnreachable(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  com.google.protobuf.ByteString getUnreachableBytes(int index);
 }

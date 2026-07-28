@@ -53,9 +53,17 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_CloudExadataInfrastructureProperties_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_ExascaleConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_ExascaleConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_ConfigureExascaleCloudExadataInfrastructureRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_ConfigureExascaleCloudExadataInfrastructureRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,37 +75,37 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
     java.lang.String[] descriptorData = {
       "\n"
           + "2google/cloud/oracledatabase/v1/exadata_infra.proto\022\036google.cloud.oracledatabas"
-          + "e.v1\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\032+google/cloud/o"
-          + "racledatabase/v1/common.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\032\033google/type/dayofweek.proto\032\027google/type/month.proto\"\204\005\n"
+          + "e.v1\032\037google/api/field_behavior.proto\032\033g"
+          + "oogle/api/field_info.proto\032\031google/api/r"
+          + "esource.proto\032+google/cloud/oracledataba"
+          + "se/v1/common.proto\032\037google/protobuf/time"
+          + "stamp.proto\032\033google/type/dayofweek.proto\032\027google/type/month.proto\"\204\005\n"
           + "\032CloudExadataInfrastructure\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\034\n"
           + "\017gcp_oracle_zone\030\010 \001(\tB\003\340A\001\022\033\n"
           + "\016entitlement_id\030\004 \001(\tB\003\340A\003\022]\n\n"
-          + "properties\030\005 \001(\0132D.googl"
-          + "e.cloud.oracledatabase.v1.CloudExadataInfrastructurePropertiesB\003\340A\001\022[\n"
-          + "\006labels\030\006 \003(\0132F.google.cloud.oracledatabase.v1.Clo"
-          + "udExadataInfrastructure.LabelsEntryB\003\340A\001\0224\n"
+          + "properties\030\005 \001(\0132D.google.cloud.ora"
+          + "cledatabase.v1.CloudExadataInfrastructurePropertiesB\003\340A\001\022[\n"
+          + "\006labels\030\006 \003(\0132F.googl"
+          + "e.cloud.oracledatabase.v1.CloudExadataInfrastructure.LabelsEntryB\003\340A\001\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\333\001\352A\327\001\n"
-          + "8oracledatabase.googleapis.com/CloudExadataInfrastr"
-          + "ucture\022bprojects/{project}/locations/{location}/cloudExadataInfrastructures/{clo"
-          + "ud_exadata_infrastructure}*\033cloudExadata"
-          + "Infrastructures2\032cloudExadataInfrastructure\"\265\013\n"
+          + "8oracledatabase.googleapis.com/CloudExadataInfrastructure\022bpro"
+          + "jects/{project}/locations/{location}/cloudExadataInfrastructures/{cloud_exadata_"
+          + "infrastructure}*\033cloudExadataInfrastructures2\032cloudExadataInfrastructure\"\203\014\n"
           + "$CloudExadataInfrastructureProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022\032\n\r"
           + "compute_count\030\002 \001(\005B\003\340A\001\022\032\n\r"
           + "storage_count\030\003 \001(\005B\003\340A\001\022\"\n"
           + "\025total_storage_size_gb\030\004 \001(\005B\003\340A\001\022&\n"
           + "\031available_storage_size_gb\030\005 \001(\005B\003\340A\003\022R\n"
-          + "\022maintenance_window\030\006 \001(\01321.google.cloud.o"
-          + "racledatabase.v1.MaintenanceWindowB\003\340A\001\022^\n"
-          + "\005state\030\007 \001(\0162J.google.cloud.oracledata"
-          + "base.v1.CloudExadataInfrastructureProperties.StateB\003\340A\003\022\022\n"
+          + "\022maintenance_window\030\006"
+          + " \001(\01321.google.cloud.oracledatabase.v1.MaintenanceWindowB\003\340A\001\022^\n"
+          + "\005state\030\007 \001(\0162J.google.cloud.oracledatabase.v1.Clo"
+          + "udExadataInfrastructureProperties.StateB\003\340A\003\022\022\n"
           + "\005shape\030\010 \001(\tB\003\340A\002\022\024\n"
           + "\007oci_url\030\t \001(\tB\003\340A\003\022\026\n"
           + "\tcpu_count\030\n"
@@ -119,33 +127,39 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
           + "\"next_security_maintenance_run_time\030\030"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022O\n"
-          + "\021customer_contacts\030\031 \003(\0132/.google"
-          + ".cloud.oracledatabase.v1.CustomerContactB\003\340A\001\022+\n"
+          + "\021customer_contacts\030\031"
+          + " \003(\0132/.google.cloud.oracledatabase.v1.CustomerContactB\003\340A\001\022+\n"
           + "\036monthly_storage_server_version\030\032 \001(\tB\003\340A\003\022&\n"
           + "\031monthly_db_server_version\030\033 \001(\tB\003\340A\003\022H\n\r"
-          + "compute_model\030\037 \001(\0162,.goog"
-          + "le.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\022!\n"
+          + "compute_model\030\037"
+          + " \001(\0162,.google.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\022!\n"
           + "\024database_server_type\030\035 \001(\tB\003\340A\003\022 \n"
-          + "\023storage_server_type\030\036 \001(\tB\003\340A\003\"\227\001\n"
+          + "\023storage_server_type\030\036 \001(\tB\003\340A\003\022L\n"
+          + "\017exascale_config\030 "
+          + " \001(\0132..google.cloud.oracledatabase.v1.ExascaleConfigB\003\340A\003\"\227\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014PROVISIONING\020\001\022\r\n"
           + "\tAVAILABLE\020\002\022\014\n"
           + "\010UPDATING\020\003\022\017\n"
-          + "\013TERMINATING\020\004\022\016\n\n"
+          + "\013TERMINATING\020\004\022\016\n"
+          + "\n"
           + "TERMINATED\020\005\022\n\n"
           + "\006FAILED\020\006\022\033\n"
-          + "\027MAINTENANCE_IN_PROGRESS\020\007\"\245\005\n"
+          + "\027MAINTENANCE_IN_PROGRESS\020\007\"\\\n"
+          + "\016ExascaleConfig\022\"\n"
+          + "\025total_storage_size_gb\030\001 \001(\005B\003\340A\003\022&\n"
+          + "\031available_storage_size_gb\030\002 \001(\005B\003\340A\003\"\245\005\n"
           + "\021MaintenanceWindow\022f\n\n"
-          + "preference\030\001 \001(\0162M.google.c"
-          + "loud.oracledatabase.v1.MaintenanceWindow.MaintenanceWindowPreferenceB\003\340A\001\022\'\n"
+          + "preference\030\001 \001(\0162M.google."
+          + "cloud.oracledatabase.v1.MaintenanceWindow.MaintenanceWindowPreferenceB\003\340A\001\022\'\n"
           + "\006months\030\002 \003(\0162\022.google.type.MonthB\003\340A\001\022\033\n"
           + "\016weeks_of_month\030\003 \003(\005B\003\340A\001\0221\n"
           + "\014days_of_week\030\004 \003(\0162\026.google.type.DayOfWeekB\003\340A\001\022\031\n"
           + "\014hours_of_day\030\005 \003(\005B\003\340A\001\022\033\n"
           + "\016lead_time_week\030\006 \001(\005B\003\340A\001\022Z\n\r"
-          + "patching_mode\030\007 \001(\0162>.goog"
-          + "le.cloud.oracledatabase.v1.MaintenanceWindow.PatchingModeB\003\340A\001\022\'\n"
+          + "patching_mode\030\007 \001(\0162>.goo"
+          + "gle.cloud.oracledatabase.v1.MaintenanceWindow.PatchingModeB\003\340A\001\022\'\n"
           + "\032custom_action_timeout_mins\030\010 \001(\005B\003\340A\001\022-\n"
           + " is_custom_action_timeout_enabled\030\t \001(\010B\003\340A\001\"v\n"
           + "\033MaintenanceWindowPreference\022-\n"
@@ -155,18 +169,24 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
           + "\014PatchingMode\022\035\n"
           + "\031PATCHING_MODE_UNSPECIFIED\020\000\022\013\n"
           + "\007ROLLING\020\001\022\017\n"
-          + "\013NON_ROLLING\020\002B\371\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\037CloudExadata"
-          + "InfrastructureProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb"
-          + ";oracledatabasepb\252\002\036Google.Cloud.OracleD"
-          + "atabase.V1\312\002\036Google\\Cloud\\OracleDatabase"
-          + "\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\013NON_ROLLING\020\002\"\311\001\n"
+          + "2ConfigureExascaleCloudExadataInfrastructureRequest\022N\n"
+          + "\004name\030\001 \001(\tB@\340A\002\372A:\n"
+          + "8oracledatabase.googleapis.com/CloudExadataInfrastructure\022\"\n"
+          + "\025total_storage_size_gb\030\002 \001(\005B\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001B\371\001\n"
+          + "\"com.google.cloud.oracledatabase.v1B\037CloudEx"
+          + "adataInfrastructureProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatab"
+          + "asepb;oracledatabasepb\252\002\036Google.Cloud.Or"
+          + "acleDatabase.V1\312\002\036Google\\Cloud\\OracleDat"
+          + "abase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.oracledatabase.v1.CommonProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -232,9 +252,18 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
               "ComputeModel",
               "DatabaseServerType",
               "StorageServerType",
+              "ExascaleConfig",
+            });
+    internal_static_google_cloud_oracledatabase_v1_ExascaleConfig_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_oracledatabase_v1_ExascaleConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_ExascaleConfig_descriptor,
+            new java.lang.String[] {
+              "TotalStorageSizeGb", "AvailableStorageSizeGb",
             });
     internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_MaintenanceWindow_descriptor,
@@ -249,8 +278,17 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
               "CustomActionTimeoutMins",
               "IsCustomActionTimeoutEnabled",
             });
+    internal_static_google_cloud_oracledatabase_v1_ConfigureExascaleCloudExadataInfrastructureRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_oracledatabase_v1_ConfigureExascaleCloudExadataInfrastructureRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_ConfigureExascaleCloudExadataInfrastructureRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "TotalStorageSizeGb", "RequestId",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.oracledatabase.v1.CommonProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
@@ -259,7 +297,9 @@ public final class CloudExadataInfrastructureProto extends com.google.protobuf.G
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

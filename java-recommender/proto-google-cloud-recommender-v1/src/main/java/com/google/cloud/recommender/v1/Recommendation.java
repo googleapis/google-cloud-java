@@ -61,6 +61,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     etag_ = "";
     associatedInsights_ = java.util.Collections.emptyList();
     xorGroupId_ = "";
+    targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -929,10 +930,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of recommendation.
+   * Identifier. Name of recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -953,10 +954,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of recommendation.
+   * Identifier. Name of recommendation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1645,6 +1646,74 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TARGET_RESOURCES_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList targetResources_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @return A list containing the targetResources.
+   */
+  public com.google.protobuf.ProtocolStringList getTargetResourcesList() {
+    return targetResources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @return The count of targetResources.
+   */
+  public int getTargetResourcesCount() {
+    return targetResources_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetResources at the given index.
+   */
+  public java.lang.String getTargetResources(int index) {
+    return targetResources_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Fully qualified resource names that this recommendation is targeting.
+   * </pre>
+   *
+   * <code>repeated string target_resources = 19;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetResources at the given index.
+   */
+  public com.google.protobuf.ByteString getTargetResourcesBytes(int index) {
+    return targetResources_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1697,6 +1766,9 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xorGroupId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, xorGroupId_);
     }
+    for (int i = 0; i < targetResources_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 19, targetResources_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1745,6 +1817,14 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xorGroupId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, xorGroupId_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetResources_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetResources_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getTargetResourcesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1785,6 +1865,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getAssociatedInsightsList().equals(other.getAssociatedInsightsList())) return false;
     if (!getXorGroupId().equals(other.getXorGroupId())) return false;
+    if (!getTargetResourcesList().equals(other.getTargetResourcesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1832,6 +1913,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + XOR_GROUP_ID_FIELD_NUMBER;
     hash = (53 * hash) + getXorGroupId().hashCode();
+    if (getTargetResourcesCount() > 0) {
+      hash = (37 * hash) + TARGET_RESOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetResourcesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2027,6 +2112,7 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000400);
       xorGroupId_ = "";
+      targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -2121,6 +2207,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.xorGroupId_ = xorGroupId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        targetResources_.makeImmutable();
+        result.targetResources_ = targetResources_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2229,6 +2319,16 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
       if (!other.getXorGroupId().isEmpty()) {
         xorGroupId_ = other.xorGroupId_;
         bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.targetResources_.isEmpty()) {
+        if (targetResources_.isEmpty()) {
+          targetResources_ = other.targetResources_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureTargetResourcesIsMutable();
+          targetResources_.addAll(other.targetResources_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2347,6 +2447,13 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 146
+            case 154:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTargetResourcesIsMutable();
+                targetResources_.add(s);
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2372,10 +2479,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of recommendation.
+     * Identifier. Name of recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2395,10 +2502,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of recommendation.
+     * Identifier. Name of recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2418,10 +2525,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of recommendation.
+     * Identifier. Name of recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2440,10 +2547,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of recommendation.
+     * Identifier. Name of recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2458,10 +2565,10 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of recommendation.
+     * Identifier. Name of recommendation.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4712,6 +4819,189 @@ public final class Recommendation extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       xorGroupId_ = value;
       bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList targetResources_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTargetResourcesIsMutable() {
+      if (!targetResources_.isModifiable()) {
+        targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @return A list containing the targetResources.
+     */
+    public com.google.protobuf.ProtocolStringList getTargetResourcesList() {
+      targetResources_.makeImmutable();
+      return targetResources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @return The count of targetResources.
+     */
+    public int getTargetResourcesCount() {
+      return targetResources_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetResources at the given index.
+     */
+    public java.lang.String getTargetResources(int index) {
+      return targetResources_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the targetResources at the given index.
+     */
+    public com.google.protobuf.ByteString getTargetResourcesBytes(int index) {
+      return targetResources_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetResources to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetResources(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetResourcesIsMutable();
+      targetResources_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param value The targetResources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetResources(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetResourcesIsMutable();
+      targetResources_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param values The targetResources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTargetResources(java.lang.Iterable<java.lang.String> values) {
+      ensureTargetResourcesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetResources_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetResources() {
+      targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully qualified resource names that this recommendation is targeting.
+     * </pre>
+     *
+     * <code>repeated string target_resources = 19;</code>
+     *
+     * @param value The bytes of the targetResources to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetResourcesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTargetResourcesIsMutable();
+      targetResources_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

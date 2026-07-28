@@ -193,7 +193,7 @@ public interface ConditionOrBuilder
    * Optional. Query regex to match the whole search query.
    * Cannot be set when
    * [Condition.query_terms][google.cloud.discoveryengine.v1beta.Condition.query_terms]
-   * is set. This is currently supporting promotion use case.
+   * is set. Only supported for Basic Site Search promotion serving controls.
    * </pre>
    *
    * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,7 +209,7 @@ public interface ConditionOrBuilder
    * Optional. Query regex to match the whole search query.
    * Cannot be set when
    * [Condition.query_terms][google.cloud.discoveryengine.v1beta.Condition.query_terms]
-   * is set. This is currently supporting promotion use case.
+   * is set. Only supported for Basic Site Search promotion serving controls.
    * </pre>
    *
    * <code>string query_regex = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

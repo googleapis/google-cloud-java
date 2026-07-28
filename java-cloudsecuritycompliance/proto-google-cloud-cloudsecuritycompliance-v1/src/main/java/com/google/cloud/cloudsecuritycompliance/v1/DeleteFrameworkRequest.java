@@ -79,8 +79,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the resource, in the format
-   * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * Required. The name of the resource, in one of the following formats:
+   * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+   * or
+   * `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -107,8 +110,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the resource, in the format
-   * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * Required. The name of the resource, in one of the following formats:
+   * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+   * or
+   * `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -456,8 +462,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the resource, in the format
-     * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+     * Required. The name of the resource, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+     * or
+     * `projects/{project}/locations/{location}/frameworks/{framework}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -483,8 +492,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the resource, in the format
-     * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+     * Required. The name of the resource, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+     * or
+     * `projects/{project}/locations/{location}/frameworks/{framework}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -510,8 +522,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the resource, in the format
-     * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+     * Required. The name of the resource, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+     * or
+     * `projects/{project}/locations/{location}/frameworks/{framework}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -536,8 +551,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the resource, in the format
-     * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+     * Required. The name of the resource, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+     * or
+     * `projects/{project}/locations/{location}/frameworks/{framework}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -558,8 +576,11 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the resource, in the format
-     * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+     * Required. The name of the resource, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/frameworks/{framework}`
+     * or
+     * `projects/{project}/locations/{location}/frameworks/{framework}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *

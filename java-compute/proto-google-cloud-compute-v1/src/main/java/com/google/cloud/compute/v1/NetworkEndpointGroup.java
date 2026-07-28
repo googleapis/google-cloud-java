@@ -1102,7 +1102,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The URL of the network to which all network endpoints in the NEG belong.
-   * Uses default project network if unspecified.
+   * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+   * if this field is not specified, a default network will be used.
+   * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+   * global NEGs.
+   * For all other network endpoint types, this field is required.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1119,7 +1123,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The URL of the network to which all network endpoints in the NEG belong.
-   * Uses default project network if unspecified.
+   * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+   * if this field is not specified, a default network will be used.
+   * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+   * global NEGs.
+   * For all other network endpoint types, this field is required.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -1144,7 +1152,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The URL of the network to which all network endpoints in the NEG belong.
-   * Uses default project network if unspecified.
+   * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+   * if this field is not specified, a default network will be used.
+   * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+   * global NEGs.
+   * For all other network endpoint types, this field is required.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -4143,7 +4155,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4159,7 +4175,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4183,7 +4203,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4207,7 +4231,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4230,7 +4258,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -4249,7 +4281,11 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The URL of the network to which all network endpoints in the NEG belong.
-     * Uses default project network if unspecified.
+     * For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT,
+     * if this field is not specified, a default network will be used.
+     * This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for
+     * global NEGs.
+     * For all other network endpoint types, this field is required.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>

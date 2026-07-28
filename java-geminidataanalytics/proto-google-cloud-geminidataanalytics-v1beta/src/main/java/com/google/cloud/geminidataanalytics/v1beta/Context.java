@@ -191,11 +191,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the sources.
@@ -207,11 +207,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of sources.
@@ -222,11 +222,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -239,11 +239,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for sources.
@@ -254,11 +254,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -270,11 +270,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A confidence score for the suggested relationship.
+     * Optional. A confidence score for the suggested relationship.
      * Manually added edges have the highest confidence score.
      * </pre>
      *
-     * <code>float confidence_score = 4;</code>
+     * <code>float confidence_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The confidenceScore.
      */
@@ -1731,11 +1731,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the sources.
@@ -1753,11 +1753,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The count of sources.
@@ -1771,11 +1771,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the element to return.
@@ -1791,11 +1791,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return A list containing the enum numeric values on the wire for sources.
@@ -1809,11 +1809,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Sources which generated the schema relation edge.
+     * Optional. Sources which generated the schema relation edge.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+     * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param index The index of the value to return.
@@ -1833,11 +1833,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A confidence score for the suggested relationship.
+     * Optional. A confidence score for the suggested relationship.
      * Manually added edges have the highest confidence score.
      * </pre>
      *
-     * <code>float confidence_score = 4;</code>
+     * <code>float confidence_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The confidenceScore.
      */
@@ -2849,11 +2849,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return A list containing the sources.
@@ -2870,11 +2870,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The count of sources.
@@ -2887,11 +2887,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param index The index of the element to return.
@@ -2906,11 +2906,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param index The index to set the value at.
@@ -2933,11 +2933,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The sources to add.
@@ -2958,11 +2958,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param values The sources to add.
@@ -2986,11 +2986,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return This builder for chaining.
@@ -3006,11 +3006,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return A list containing the enum numeric values on the wire for sources.
@@ -3024,11 +3024,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param index The index of the value to return.
@@ -3042,11 +3042,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param index The index to set the value at.
@@ -3064,11 +3064,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param value The enum numeric value on the wire for sources to add.
@@ -3085,11 +3085,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Sources which generated the schema relation edge.
+       * Optional. Sources which generated the schema relation edge.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3;
+       * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship.Source sources = 3 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @param values The enum numeric values on the wire for sources to add.
@@ -3110,11 +3110,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A confidence score for the suggested relationship.
+       * Optional. A confidence score for the suggested relationship.
        * Manually added edges have the highest confidence score.
        * </pre>
        *
-       * <code>float confidence_score = 4;</code>
+       * <code>float confidence_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The confidenceScore.
        */
@@ -3127,11 +3127,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A confidence score for the suggested relationship.
+       * Optional. A confidence score for the suggested relationship.
        * Manually added edges have the highest confidence score.
        * </pre>
        *
-       * <code>float confidence_score = 4;</code>
+       * <code>float confidence_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The confidenceScore to set.
        * @return This builder for chaining.
@@ -3148,11 +3148,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A confidence score for the suggested relationship.
+       * Optional. A confidence score for the suggested relationship.
        * Manually added edges have the highest confidence score.
        * </pre>
        *
-       * <code>float confidence_score = 4;</code>
+       * <code>float confidence_score = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3415,7 +3415,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3434,7 +3435,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3453,7 +3455,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3471,7 +3474,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3489,7 +3493,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present. Currently only used for BigQuery data sources.
+   * optionally present. Currently only used for BigQuery data sources and
+   * databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3514,7 +3519,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -3533,7 +3538,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -3553,7 +3558,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -3571,7 +3576,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -3590,7 +3595,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A list of golden queries, providing examples of relevant and
    * commonly used Looker queries and their corresponding natural language
-   * queries optionally present.
+   * queries optionally present. Only supported for Looker data sources.
    * </pre>
    *
    * <code>
@@ -3613,6 +3618,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3630,6 +3636,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3647,6 +3654,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3663,6 +3671,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3679,6 +3688,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Term definitions (currently, only user authored)
+   * Not supported for databases (alloydb, cloudsql, spanner) data sources.
    * </pre>
    *
    * <code>
@@ -3787,6 +3797,66 @@ public final class Context extends com.google.protobuf.GeneratedMessage
     return schemaRelationships_.get(index);
   }
 
+  public static final int USER_FUNCTIONS_FIELD_NUMBER = 10;
+  private com.google.cloud.geminidataanalytics.v1beta.UserFunctions userFunctions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userFunctions field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserFunctions() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userFunctions.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.UserFunctions getUserFunctions() {
+    return userFunctions_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.UserFunctions.getDefaultInstance()
+        : userFunctions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of user functions to be included in context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder
+      getUserFunctionsOrBuilder() {
+    return userFunctions_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.UserFunctions.getDefaultInstance()
+        : userFunctions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3819,6 +3889,9 @@ public final class Context extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < schemaRelationships_.size(); i++) {
       output.writeMessage(9, schemaRelationships_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getUserFunctions());
+    }
     for (int i = 0; i < lookerGoldenQueries_.size(); i++) {
       output.writeMessage(11, lookerGoldenQueries_.get(i));
     }
@@ -3850,6 +3923,9 @@ public final class Context extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < schemaRelationships_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, schemaRelationships_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUserFunctions());
     }
     for (int i = 0; i < lookerGoldenQueries_.size(); i++) {
       size +=
@@ -3884,6 +3960,10 @@ public final class Context extends com.google.protobuf.GeneratedMessage
     if (!getLookerGoldenQueriesList().equals(other.getLookerGoldenQueriesList())) return false;
     if (!getGlossaryTermsList().equals(other.getGlossaryTermsList())) return false;
     if (!getSchemaRelationshipsList().equals(other.getSchemaRelationshipsList())) return false;
+    if (hasUserFunctions() != other.hasUserFunctions()) return false;
+    if (hasUserFunctions()) {
+      if (!getUserFunctions().equals(other.getUserFunctions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3920,6 +4000,10 @@ public final class Context extends com.google.protobuf.GeneratedMessage
     if (getSchemaRelationshipsCount() > 0) {
       hash = (37 * hash) + SCHEMA_RELATIONSHIPS_FIELD_NUMBER;
       hash = (53 * hash) + getSchemaRelationshipsList().hashCode();
+    }
+    if (hasUserFunctions()) {
+      hash = (37 * hash) + USER_FUNCTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getUserFunctions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4068,6 +4152,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
         internalGetLookerGoldenQueriesFieldBuilder();
         internalGetGlossaryTermsFieldBuilder();
         internalGetSchemaRelationshipsFieldBuilder();
+        internalGetUserFunctionsFieldBuilder();
       }
     }
 
@@ -4114,6 +4199,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
         schemaRelationshipsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      userFunctions_ = null;
+      if (userFunctionsBuilder_ != null) {
+        userFunctionsBuilder_.dispose();
+        userFunctionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4205,6 +4295,11 @@ public final class Context extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.options_ = optionsBuilder_ == null ? options_ : optionsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.userFunctions_ =
+            userFunctionsBuilder_ == null ? userFunctions_ : userFunctionsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4341,6 +4436,9 @@ public final class Context extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasUserFunctions()) {
+        mergeUserFunctions(other.getUserFunctions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4429,6 +4527,13 @@ public final class Context extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetUserFunctionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             case 90:
               {
                 com.google.cloud.geminidataanalytics.v1beta.LookerGoldenQuery m =
@@ -5061,7 +5166,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5083,7 +5189,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5104,7 +5211,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5125,7 +5233,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5153,7 +5262,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5179,7 +5289,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5207,7 +5318,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5235,7 +5347,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5260,7 +5373,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5286,7 +5400,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5312,7 +5427,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5336,7 +5452,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5360,7 +5477,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5378,7 +5496,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5400,7 +5519,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5423,7 +5543,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5443,7 +5564,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5463,7 +5585,8 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of example queries, providing examples of relevant and
      * commonly used SQL queries and their corresponding natural language queries
-     * optionally present. Currently only used for BigQuery data sources.
+     * optionally present. Currently only used for BigQuery data sources and
+     * databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5519,7 +5642,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5541,7 +5664,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5562,7 +5685,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5584,7 +5707,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5612,7 +5735,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5638,7 +5761,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5666,7 +5789,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5694,7 +5817,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5719,7 +5842,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5745,7 +5868,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5771,7 +5894,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5795,7 +5918,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5819,7 +5942,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5837,7 +5960,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5859,7 +5982,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5882,7 +6005,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5902,7 +6025,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5923,7 +6046,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A list of golden queries, providing examples of relevant and
      * commonly used Looker queries and their corresponding natural language
-     * queries optionally present.
+     * queries optionally present. Only supported for Looker data sources.
      * </pre>
      *
      * <code>
@@ -5978,6 +6101,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -5998,6 +6122,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6017,6 +6142,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6036,6 +6162,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6062,6 +6189,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6086,6 +6214,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6112,6 +6241,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6138,6 +6268,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6161,6 +6292,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6185,6 +6317,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6209,6 +6342,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6231,6 +6365,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6253,6 +6388,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6269,6 +6405,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6289,6 +6426,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6310,6 +6448,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6328,6 +6467,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6346,6 +6486,7 @@ public final class Context extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Term definitions (currently, only user authored)
+     * Not supported for databases (alloydb, cloudsql, spanner) data sources.
      * </pre>
      *
      * <code>
@@ -6826,6 +6967,224 @@ public final class Context extends com.google.protobuf.GeneratedMessage
         schemaRelationships_ = null;
       }
       return schemaRelationshipsBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.UserFunctions userFunctions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctions,
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctions.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder>
+        userFunctionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the userFunctions field is set.
+     */
+    public boolean hasUserFunctions() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The userFunctions.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.UserFunctions getUserFunctions() {
+      if (userFunctionsBuilder_ == null) {
+        return userFunctions_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.UserFunctions.getDefaultInstance()
+            : userFunctions_;
+      } else {
+        return userFunctionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserFunctions(
+        com.google.cloud.geminidataanalytics.v1beta.UserFunctions value) {
+      if (userFunctionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userFunctions_ = value;
+      } else {
+        userFunctionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserFunctions(
+        com.google.cloud.geminidataanalytics.v1beta.UserFunctions.Builder builderForValue) {
+      if (userFunctionsBuilder_ == null) {
+        userFunctions_ = builderForValue.build();
+      } else {
+        userFunctionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUserFunctions(
+        com.google.cloud.geminidataanalytics.v1beta.UserFunctions value) {
+      if (userFunctionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && userFunctions_ != null
+            && userFunctions_
+                != com.google.cloud.geminidataanalytics.v1beta.UserFunctions.getDefaultInstance()) {
+          getUserFunctionsBuilder().mergeFrom(value);
+        } else {
+          userFunctions_ = value;
+        }
+      } else {
+        userFunctionsBuilder_.mergeFrom(value);
+      }
+      if (userFunctions_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUserFunctions() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      userFunctions_ = null;
+      if (userFunctionsBuilder_ != null) {
+        userFunctionsBuilder_.dispose();
+        userFunctionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.UserFunctions.Builder
+        getUserFunctionsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetUserFunctionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder
+        getUserFunctionsOrBuilder() {
+      if (userFunctionsBuilder_ != null) {
+        return userFunctionsBuilder_.getMessageOrBuilder();
+      } else {
+        return userFunctions_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.UserFunctions.getDefaultInstance()
+            : userFunctions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of user functions to be included in context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.UserFunctions user_functions = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctions,
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctions.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder>
+        internalGetUserFunctionsFieldBuilder() {
+      if (userFunctionsBuilder_ == null) {
+        userFunctionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.UserFunctions,
+                com.google.cloud.geminidataanalytics.v1beta.UserFunctions.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.UserFunctionsOrBuilder>(
+                getUserFunctions(), getParentForChildren(), isClean());
+        userFunctions_ = null;
+      }
+      return userFunctionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.Context)

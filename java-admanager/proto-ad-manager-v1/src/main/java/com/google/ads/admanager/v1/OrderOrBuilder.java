@@ -58,26 +58,36 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. Order ID.
+   * Output only. Deprecated: Order ID.
    * </pre>
    *
-   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=47
    * @return Whether the orderId field is set.
    */
+  @java.lang.Deprecated
   boolean hasOrderId();
 
   /**
    *
    *
    * <pre>
-   * Output only. Order ID.
+   * Output only. Deprecated: Order ID.
    * </pre>
    *
-   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 order_id = 4 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Order.order_id is deprecated. See
+   *     google/ads/admanager/v1/order_messages.proto;l=47
    * @return The orderId.
    */
+  @java.lang.Deprecated
   long getOrderId();
 
   /**
@@ -840,8 +850,7 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -855,8 +864,7 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -870,8 +878,7 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Output only. The application which modified this order. This attribute is
-   * assigned by Google.
+   * Output only. The application which modified this order.
    * </pre>
    *
    * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];

@@ -32,6 +32,8 @@ import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -48,6 +50,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -55,6 +58,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
@@ -80,6 +84,21 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EvaluateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsMethodDescriptor =
+          MethodDescriptor
+              .<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.EvaluationService/GenerateInstanceRubrics")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateInstanceRubricsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateInstanceRubricsResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -140,6 +159,8 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
   private final OperationCallable<
           EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
       evaluateDatasetOperationCallable;
+  private final UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -216,6 +237,19 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getLocation())
             .build();
+    GrpcCallSettings<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+        generateInstanceRubricsTransportSettings =
+            GrpcCallSettings
+                .<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>newBuilder()
+                .setMethodDescriptor(generateInstanceRubricsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("location", String.valueOf(request.getLocation()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getLocation())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -285,6 +319,11 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
             settings.evaluateDatasetOperationSettings(),
             clientContext,
             operationsStub);
+    this.generateInstanceRubricsCallable =
+        callableFactory.createUnaryCallable(
+            generateInstanceRubricsTransportSettings,
+            settings.generateInstanceRubricsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -330,6 +369,12 @@ public class GrpcEvaluationServiceStub extends EvaluationServiceStub {
           EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
       evaluateDatasetOperationCallable() {
     return evaluateDatasetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable() {
+    return generateInstanceRubricsCallable;
   }
 
   @Override

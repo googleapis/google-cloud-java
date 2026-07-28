@@ -114,10 +114,12 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The password for the default ADMIN user.
+   * Optional. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The adminPassword.
    */
@@ -127,10 +129,12 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Required. The password for the default ADMIN user.
+   * Optional. The password for the default ADMIN user.
+   * Note: Only one of `admin_password_secret_version` or `admin_password` can
+   * be populated.
    * </pre>
    *
-   * <code>string admin_password = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string admin_password = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for adminPassword.
    */
@@ -140,7 +144,45 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The adminPasswordSecretVersion.
+   */
+  java.lang.String getAdminPasswordSecretVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the database admin user's password. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `admin_password_secret_version` or `admin_password` can be populated.
+   * </pre>
+   *
+   * <code>
+   * string admin_password_secret_version = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for adminPasswordSecretVersion.
+   */
+  com.google.protobuf.ByteString getAdminPasswordSecretVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The TDE wallet password for the database.
+   * Note: Only one of `tde_wallet_password_secret_version` or
+   * `tde_wallet_password` can be populated.
    * </pre>
    *
    * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,6 +196,8 @@ public interface DatabaseOrBuilder
    *
    * <pre>
    * Optional. The TDE wallet password for the database.
+   * Note: Only one of `tde_wallet_password_secret_version` or
+   * `tde_wallet_password` can be populated.
    * </pre>
    *
    * <code>string tde_wallet_password = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -161,6 +205,44 @@ public interface DatabaseOrBuilder
    * @return The bytes for tdeWalletPassword.
    */
   com.google.protobuf.ByteString getTdeWalletPasswordBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the TDE wallet password for the database. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+   * populated.
+   * </pre>
+   *
+   * <code>
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The tdeWalletPasswordSecretVersion.
+   */
+  java.lang.String getTdeWalletPasswordSecretVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a secret version in Secret Manager which
+   * contains the TDE wallet password for the database. Format:
+   * projects/{project}/secrets/{secret}/versions/{version}. Note: Only one of
+   * `tde_wallet_password_secret_version` or `tde_wallet_password` can be
+   * populated.
+   * </pre>
+   *
+   * <code>
+   * string tde_wallet_password_secret_version = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for tdeWalletPasswordSecretVersion.
+   */
+  com.google.protobuf.ByteString getTdeWalletPasswordSecretVersionBytes();
 
   /**
    *
@@ -434,4 +516,62 @@ public interface DatabaseOrBuilder
    * @return The opsInsightsStatus.
    */
   com.google.cloud.oracledatabase.v1.Database.OperationsInsightsStatus getOpsInsightsStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the pluggable database associated with the Database.
+   * The ID must be unique within the project and location.
+   * </pre>
+   *
+   * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pluggableDatabaseId.
+   */
+  java.lang.String getPluggableDatabaseId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ID of the pluggable database associated with the Database.
+   * The ID must be unique within the project and location.
+   * </pre>
+   *
+   * <code>string pluggable_database_id = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pluggableDatabaseId.
+   */
+  com.google.protobuf.ByteString getPluggableDatabaseIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pluggable database associated with the Database. The name
+   * must begin with an alphabetic character and can contain a maximum of thirty
+   * alphanumeric characters.
+   * </pre>
+   *
+   * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pluggableDatabaseName.
+   */
+  java.lang.String getPluggableDatabaseName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pluggable database associated with the Database. The name
+   * must begin with an alphabetic character and can contain a maximum of thirty
+   * alphanumeric characters.
+   * </pre>
+   *
+   * <code>string pluggable_database_name = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pluggableDatabaseName.
+   */
+  com.google.protobuf.ByteString getPluggableDatabaseNameBytes();
 }

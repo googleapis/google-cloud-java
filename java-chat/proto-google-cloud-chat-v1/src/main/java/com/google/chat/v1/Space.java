@@ -2430,6 +2430,59 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * @return The bytes for audience.
      */
     com.google.protobuf.ByteString getAudienceBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accessPermissionSettings field is set.
+     */
+    boolean hasAccessPermissionSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accessPermissionSettings.
+     */
+    com.google.chat.v1.Space.AccessPermissionSettings getAccessPermissionSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder
+        getAccessPermissionSettingsOrBuilder();
   }
 
   /**
@@ -2670,6 +2723,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(enum_scope:google.chat.v1.Space.AccessSettings.AccessState)
     }
 
+    private int bitField0_;
     public static final int ACCESS_STATE_FIELD_NUMBER = 1;
     private int accessState_ = 0;
 
@@ -2822,6 +2876,75 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ACCESS_PERMISSION_SETTINGS_FIELD_NUMBER = 5;
+    private com.google.chat.v1.Space.AccessPermissionSettings accessPermissionSettings_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accessPermissionSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessPermissionSettings() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accessPermissionSettings.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettings getAccessPermissionSettings() {
+      return accessPermissionSettings_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance()
+          : accessPermissionSettings_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission settings for the space.
+     *
+     * To set the target audience when creating a space, specify the
+     * `accessSettings.audience` field in your request.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder
+        getAccessPermissionSettingsOrBuilder() {
+      return accessPermissionSettings_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance()
+          : accessPermissionSettings_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2844,6 +2967,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(audience_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, audience_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getAccessPermissionSettings());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2860,6 +2986,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(audience_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, audience_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getAccessPermissionSettings());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2878,6 +3009,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
 
       if (accessState_ != other.accessState_) return false;
       if (!getAudience().equals(other.getAudience())) return false;
+      if (hasAccessPermissionSettings() != other.hasAccessPermissionSettings()) return false;
+      if (hasAccessPermissionSettings()) {
+        if (!getAccessPermissionSettings().equals(other.getAccessPermissionSettings()))
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2893,6 +3029,10 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + accessState_;
       hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
       hash = (53 * hash) + getAudience().hashCode();
+      if (hasAccessPermissionSettings()) {
+        hash = (37 * hash) + ACCESS_PERMISSION_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessPermissionSettings().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3024,10 +3164,19 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.chat.v1.Space.AccessSettings.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetAccessPermissionSettingsFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -3036,6 +3185,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         accessState_ = 0;
         audience_ = "";
+        accessPermissionSettings_ = null;
+        if (accessPermissionSettingsBuilder_ != null) {
+          accessPermissionSettingsBuilder_.dispose();
+          accessPermissionSettingsBuilder_ = null;
+        }
         return this;
       }
 
@@ -3078,6 +3232,15 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.audience_ = audience_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.accessPermissionSettings_ =
+              accessPermissionSettingsBuilder_ == null
+                  ? accessPermissionSettings_
+                  : accessPermissionSettingsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3099,6 +3262,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
           audience_ = other.audience_;
           bitField0_ |= 0x00000002;
           onChanged();
+        }
+        if (other.hasAccessPermissionSettings()) {
+          mergeAccessPermissionSettings(other.getAccessPermissionSettings());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3138,6 +3304,14 @@ public final class Space extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 26
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetAccessPermissionSettingsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3515,6 +3689,251 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private com.google.chat.v1.Space.AccessPermissionSettings accessPermissionSettings_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSettings,
+              com.google.chat.v1.Space.AccessPermissionSettings.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder>
+          accessPermissionSettingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the accessPermissionSettings field is set.
+       */
+      public boolean hasAccessPermissionSettings() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The accessPermissionSettings.
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettings getAccessPermissionSettings() {
+        if (accessPermissionSettingsBuilder_ == null) {
+          return accessPermissionSettings_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance()
+              : accessPermissionSettings_;
+        } else {
+          return accessPermissionSettingsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAccessPermissionSettings(
+          com.google.chat.v1.Space.AccessPermissionSettings value) {
+        if (accessPermissionSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          accessPermissionSettings_ = value;
+        } else {
+          accessPermissionSettingsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAccessPermissionSettings(
+          com.google.chat.v1.Space.AccessPermissionSettings.Builder builderForValue) {
+        if (accessPermissionSettingsBuilder_ == null) {
+          accessPermissionSettings_ = builderForValue.build();
+        } else {
+          accessPermissionSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAccessPermissionSettings(
+          com.google.chat.v1.Space.AccessPermissionSettings value) {
+        if (accessPermissionSettingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && accessPermissionSettings_ != null
+              && accessPermissionSettings_
+                  != com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance()) {
+            getAccessPermissionSettingsBuilder().mergeFrom(value);
+          } else {
+            accessPermissionSettings_ = value;
+          }
+        } else {
+          accessPermissionSettingsBuilder_.mergeFrom(value);
+        }
+        if (accessPermissionSettings_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAccessPermissionSettings() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        accessPermissionSettings_ = null;
+        if (accessPermissionSettingsBuilder_ != null) {
+          accessPermissionSettingsBuilder_.dispose();
+          accessPermissionSettingsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettings.Builder
+          getAccessPermissionSettingsBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetAccessPermissionSettingsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder
+          getAccessPermissionSettingsOrBuilder() {
+        if (accessPermissionSettingsBuilder_ != null) {
+          return accessPermissionSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          return accessPermissionSettings_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance()
+              : accessPermissionSettings_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission settings for the space.
+       *
+       * To set the target audience when creating a space, specify the
+       * `accessSettings.audience` field in your request.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSettings access_permission_settings = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSettings,
+              com.google.chat.v1.Space.AccessPermissionSettings.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder>
+          internalGetAccessPermissionSettingsFieldBuilder() {
+        if (accessPermissionSettingsBuilder_ == null) {
+          accessPermissionSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Space.AccessPermissionSettings,
+                  com.google.chat.v1.Space.AccessPermissionSettings.Builder,
+                  com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder>(
+                  getAccessPermissionSettings(), getParentForChildren(), isClean());
+          accessPermissionSettings_ = null;
+        }
+        return accessPermissionSettingsBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.AccessSettings)
     }
 
@@ -3563,6 +3982,2952 @@ public final class Space extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.chat.v1.Space.AccessSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AccessPermissionSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.chat.v1.Space.AccessPermissionSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the discoverSpaceSetting field is set.
+     */
+    boolean hasDiscoverSpaceSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The discoverSpaceSetting.
+     */
+    com.google.chat.v1.Space.AccessPermissionSetting getDiscoverSpaceSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.chat.v1.Space.AccessPermissionSettingOrBuilder getDiscoverSpaceSettingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the joinSpaceSetting field is set.
+     */
+    boolean hasJoinSpaceSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The joinSpaceSetting.
+     */
+    com.google.chat.v1.Space.AccessPermissionSetting getJoinSpaceSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.chat.v1.Space.AccessPermissionSettingOrBuilder getJoinSpaceSettingOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Access permission settings for a space.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.Space.AccessPermissionSettings}
+   */
+  public static final class AccessPermissionSettings extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.chat.v1.Space.AccessPermissionSettings)
+      AccessPermissionSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AccessPermissionSettings");
+    }
+
+    // Use AccessPermissionSettings.newBuilder() to construct.
+    private AccessPermissionSettings(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccessPermissionSettings() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_AccessPermissionSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_AccessPermissionSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.chat.v1.Space.AccessPermissionSettings.class,
+              com.google.chat.v1.Space.AccessPermissionSettings.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DISCOVER_SPACE_SETTING_FIELD_NUMBER = 1;
+    private com.google.chat.v1.Space.AccessPermissionSetting discoverSpaceSetting_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the discoverSpaceSetting field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiscoverSpaceSetting() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The discoverSpaceSetting.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSetting getDiscoverSpaceSetting() {
+      return discoverSpaceSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : discoverSpaceSetting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for discovering the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+        getDiscoverSpaceSettingOrBuilder() {
+      return discoverSpaceSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : discoverSpaceSetting_;
+    }
+
+    public static final int JOIN_SPACE_SETTING_FIELD_NUMBER = 2;
+    private com.google.chat.v1.Space.AccessPermissionSetting joinSpaceSetting_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the joinSpaceSetting field is set.
+     */
+    @java.lang.Override
+    public boolean hasJoinSpaceSetting() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The joinSpaceSetting.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSetting getJoinSpaceSetting() {
+      return joinSpaceSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : joinSpaceSetting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for joining the space.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+        getJoinSpaceSettingOrBuilder() {
+      return joinSpaceSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : joinSpaceSetting_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getDiscoverSpaceSetting());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getJoinSpaceSetting());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDiscoverSpaceSetting());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getJoinSpaceSetting());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.chat.v1.Space.AccessPermissionSettings)) {
+        return super.equals(obj);
+      }
+      com.google.chat.v1.Space.AccessPermissionSettings other =
+          (com.google.chat.v1.Space.AccessPermissionSettings) obj;
+
+      if (hasDiscoverSpaceSetting() != other.hasDiscoverSpaceSetting()) return false;
+      if (hasDiscoverSpaceSetting()) {
+        if (!getDiscoverSpaceSetting().equals(other.getDiscoverSpaceSetting())) return false;
+      }
+      if (hasJoinSpaceSetting() != other.hasJoinSpaceSetting()) return false;
+      if (hasJoinSpaceSetting()) {
+        if (!getJoinSpaceSetting().equals(other.getJoinSpaceSetting())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDiscoverSpaceSetting()) {
+        hash = (37 * hash) + DISCOVER_SPACE_SETTING_FIELD_NUMBER;
+        hash = (53 * hash) + getDiscoverSpaceSetting().hashCode();
+      }
+      if (hasJoinSpaceSetting()) {
+        hash = (37 * hash) + JOIN_SPACE_SETTING_FIELD_NUMBER;
+        hash = (53 * hash) + getJoinSpaceSetting().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.chat.v1.Space.AccessPermissionSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access permission settings for a space.
+     * </pre>
+     *
+     * Protobuf type {@code google.chat.v1.Space.AccessPermissionSettings}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.chat.v1.Space.AccessPermissionSettings)
+        com.google.chat.v1.Space.AccessPermissionSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.chat.v1.Space.AccessPermissionSettings.class,
+                com.google.chat.v1.Space.AccessPermissionSettings.Builder.class);
+      }
+
+      // Construct using com.google.chat.v1.Space.AccessPermissionSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetDiscoverSpaceSettingFieldBuilder();
+          internalGetJoinSpaceSettingFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        discoverSpaceSetting_ = null;
+        if (discoverSpaceSettingBuilder_ != null) {
+          discoverSpaceSettingBuilder_.dispose();
+          discoverSpaceSettingBuilder_ = null;
+        }
+        joinSpaceSetting_ = null;
+        if (joinSpaceSettingBuilder_ != null) {
+          joinSpaceSettingBuilder_.dispose();
+          joinSpaceSettingBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSettings getDefaultInstanceForType() {
+        return com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSettings build() {
+        com.google.chat.v1.Space.AccessPermissionSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSettings buildPartial() {
+        com.google.chat.v1.Space.AccessPermissionSettings result =
+            new com.google.chat.v1.Space.AccessPermissionSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.chat.v1.Space.AccessPermissionSettings result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.discoverSpaceSetting_ =
+              discoverSpaceSettingBuilder_ == null
+                  ? discoverSpaceSetting_
+                  : discoverSpaceSettingBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.joinSpaceSetting_ =
+              joinSpaceSettingBuilder_ == null
+                  ? joinSpaceSetting_
+                  : joinSpaceSettingBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.chat.v1.Space.AccessPermissionSettings) {
+          return mergeFrom((com.google.chat.v1.Space.AccessPermissionSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.chat.v1.Space.AccessPermissionSettings other) {
+        if (other == com.google.chat.v1.Space.AccessPermissionSettings.getDefaultInstance())
+          return this;
+        if (other.hasDiscoverSpaceSetting()) {
+          mergeDiscoverSpaceSetting(other.getDiscoverSpaceSetting());
+        }
+        if (other.hasJoinSpaceSetting()) {
+          mergeJoinSpaceSetting(other.getJoinSpaceSetting());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetDiscoverSpaceSettingFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetJoinSpaceSettingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.chat.v1.Space.AccessPermissionSetting discoverSpaceSetting_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          discoverSpaceSettingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the discoverSpaceSetting field is set.
+       */
+      public boolean hasDiscoverSpaceSetting() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The discoverSpaceSetting.
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting getDiscoverSpaceSetting() {
+        if (discoverSpaceSettingBuilder_ == null) {
+          return discoverSpaceSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : discoverSpaceSetting_;
+        } else {
+          return discoverSpaceSettingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDiscoverSpaceSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (discoverSpaceSettingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          discoverSpaceSetting_ = value;
+        } else {
+          discoverSpaceSettingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDiscoverSpaceSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting.Builder builderForValue) {
+        if (discoverSpaceSettingBuilder_ == null) {
+          discoverSpaceSetting_ = builderForValue.build();
+        } else {
+          discoverSpaceSettingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDiscoverSpaceSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (discoverSpaceSettingBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && discoverSpaceSetting_ != null
+              && discoverSpaceSetting_
+                  != com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()) {
+            getDiscoverSpaceSettingBuilder().mergeFrom(value);
+          } else {
+            discoverSpaceSetting_ = value;
+          }
+        } else {
+          discoverSpaceSettingBuilder_.mergeFrom(value);
+        }
+        if (discoverSpaceSetting_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDiscoverSpaceSetting() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        discoverSpaceSetting_ = null;
+        if (discoverSpaceSettingBuilder_ != null) {
+          discoverSpaceSettingBuilder_.dispose();
+          discoverSpaceSettingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting.Builder
+          getDiscoverSpaceSettingBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetDiscoverSpaceSettingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+          getDiscoverSpaceSettingOrBuilder() {
+        if (discoverSpaceSettingBuilder_ != null) {
+          return discoverSpaceSettingBuilder_.getMessageOrBuilder();
+        } else {
+          return discoverSpaceSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : discoverSpaceSetting_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for discovering the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting discover_space_setting = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          internalGetDiscoverSpaceSettingFieldBuilder() {
+        if (discoverSpaceSettingBuilder_ == null) {
+          discoverSpaceSettingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Space.AccessPermissionSetting,
+                  com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+                  com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>(
+                  getDiscoverSpaceSetting(), getParentForChildren(), isClean());
+          discoverSpaceSetting_ = null;
+        }
+        return discoverSpaceSettingBuilder_;
+      }
+
+      private com.google.chat.v1.Space.AccessPermissionSetting joinSpaceSetting_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          joinSpaceSettingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the joinSpaceSetting field is set.
+       */
+      public boolean hasJoinSpaceSetting() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The joinSpaceSetting.
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting getJoinSpaceSetting() {
+        if (joinSpaceSettingBuilder_ == null) {
+          return joinSpaceSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : joinSpaceSetting_;
+        } else {
+          return joinSpaceSettingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setJoinSpaceSetting(com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (joinSpaceSettingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          joinSpaceSetting_ = value;
+        } else {
+          joinSpaceSettingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setJoinSpaceSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting.Builder builderForValue) {
+        if (joinSpaceSettingBuilder_ == null) {
+          joinSpaceSetting_ = builderForValue.build();
+        } else {
+          joinSpaceSettingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeJoinSpaceSetting(com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (joinSpaceSettingBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && joinSpaceSetting_ != null
+              && joinSpaceSetting_
+                  != com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()) {
+            getJoinSpaceSettingBuilder().mergeFrom(value);
+          } else {
+            joinSpaceSetting_ = value;
+          }
+        } else {
+          joinSpaceSettingBuilder_.mergeFrom(value);
+        }
+        if (joinSpaceSetting_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearJoinSpaceSetting() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        joinSpaceSetting_ = null;
+        if (joinSpaceSettingBuilder_ != null) {
+          joinSpaceSettingBuilder_.dispose();
+          joinSpaceSettingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting.Builder getJoinSpaceSettingBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetJoinSpaceSettingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+          getJoinSpaceSettingOrBuilder() {
+        if (joinSpaceSettingBuilder_ != null) {
+          return joinSpaceSettingBuilder_.getMessageOrBuilder();
+        } else {
+          return joinSpaceSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : joinSpaceSetting_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for joining the space.
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting join_space_setting = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          internalGetJoinSpaceSettingFieldBuilder() {
+        if (joinSpaceSettingBuilder_ == null) {
+          joinSpaceSettingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Space.AccessPermissionSetting,
+                  com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+                  com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>(
+                  getJoinSpaceSetting(), getParentForChildren(), isClean());
+          joinSpaceSetting_ = null;
+        }
+        return joinSpaceSettingBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.AccessPermissionSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.chat.v1.Space.AccessPermissionSettings)
+    private static final com.google.chat.v1.Space.AccessPermissionSettings DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.chat.v1.Space.AccessPermissionSettings();
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccessPermissionSettings> PARSER =
+        new com.google.protobuf.AbstractParser<AccessPermissionSettings>() {
+          @java.lang.Override
+          public AccessPermissionSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccessPermissionSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccessPermissionSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AccessPermissionSettingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.chat.v1.Space.AccessPermissionSetting)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<com.google.chat.v1.Space.Principal> getPrincipalsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.chat.v1.Space.Principal getPrincipals(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    int getPrincipalsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<? extends com.google.chat.v1.Space.PrincipalOrBuilder>
+        getPrincipalsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.chat.v1.Space.PrincipalOrBuilder getPrincipalsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An access permission setting.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.Space.AccessPermissionSetting}
+   */
+  public static final class AccessPermissionSetting extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.chat.v1.Space.AccessPermissionSetting)
+      AccessPermissionSettingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AccessPermissionSetting");
+    }
+
+    // Use AccessPermissionSetting.newBuilder() to construct.
+    private AccessPermissionSetting(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccessPermissionSetting() {
+      principals_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_AccessPermissionSetting_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_AccessPermissionSetting_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.chat.v1.Space.AccessPermissionSetting.class,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder.class);
+    }
+
+    public static final int PRINCIPALS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.chat.v1.Space.Principal> principals_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.chat.v1.Space.Principal> getPrincipalsList() {
+      return principals_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.chat.v1.Space.PrincipalOrBuilder>
+        getPrincipalsOrBuilderList() {
+      return principals_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public int getPrincipalsCount() {
+      return principals_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.Principal getPrincipals(int index) {
+      return principals_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Unordered list. Allowed principals for this permission.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.PrincipalOrBuilder getPrincipalsOrBuilder(int index) {
+      return principals_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < principals_.size(); i++) {
+        output.writeMessage(1, principals_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < principals_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, principals_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.chat.v1.Space.AccessPermissionSetting)) {
+        return super.equals(obj);
+      }
+      com.google.chat.v1.Space.AccessPermissionSetting other =
+          (com.google.chat.v1.Space.AccessPermissionSetting) obj;
+
+      if (!getPrincipalsList().equals(other.getPrincipalsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPrincipalsCount() > 0) {
+        hash = (37 * hash) + PRINCIPALS_FIELD_NUMBER;
+        hash = (53 * hash) + getPrincipalsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.chat.v1.Space.AccessPermissionSetting prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An access permission setting.
+     * </pre>
+     *
+     * Protobuf type {@code google.chat.v1.Space.AccessPermissionSetting}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.chat.v1.Space.AccessPermissionSetting)
+        com.google.chat.v1.Space.AccessPermissionSettingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSetting_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSetting_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.chat.v1.Space.AccessPermissionSetting.class,
+                com.google.chat.v1.Space.AccessPermissionSetting.Builder.class);
+      }
+
+      // Construct using com.google.chat.v1.Space.AccessPermissionSetting.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (principalsBuilder_ == null) {
+          principals_ = java.util.Collections.emptyList();
+        } else {
+          principals_ = null;
+          principalsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_AccessPermissionSetting_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSetting getDefaultInstanceForType() {
+        return com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSetting build() {
+        com.google.chat.v1.Space.AccessPermissionSetting result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.AccessPermissionSetting buildPartial() {
+        com.google.chat.v1.Space.AccessPermissionSetting result =
+            new com.google.chat.v1.Space.AccessPermissionSetting(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.chat.v1.Space.AccessPermissionSetting result) {
+        if (principalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            principals_ = java.util.Collections.unmodifiableList(principals_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.principals_ = principals_;
+        } else {
+          result.principals_ = principalsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.chat.v1.Space.AccessPermissionSetting result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.chat.v1.Space.AccessPermissionSetting) {
+          return mergeFrom((com.google.chat.v1.Space.AccessPermissionSetting) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.chat.v1.Space.AccessPermissionSetting other) {
+        if (other == com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance())
+          return this;
+        if (principalsBuilder_ == null) {
+          if (!other.principals_.isEmpty()) {
+            if (principals_.isEmpty()) {
+              principals_ = other.principals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePrincipalsIsMutable();
+              principals_.addAll(other.principals_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.principals_.isEmpty()) {
+            if (principalsBuilder_.isEmpty()) {
+              principalsBuilder_.dispose();
+              principalsBuilder_ = null;
+              principals_ = other.principals_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              principalsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetPrincipalsFieldBuilder()
+                      : null;
+            } else {
+              principalsBuilder_.addAllMessages(other.principals_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.chat.v1.Space.Principal m =
+                      input.readMessage(
+                          com.google.chat.v1.Space.Principal.parser(), extensionRegistry);
+                  if (principalsBuilder_ == null) {
+                    ensurePrincipalsIsMutable();
+                    principals_.add(m);
+                  } else {
+                    principalsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.chat.v1.Space.Principal> principals_ =
+          java.util.Collections.emptyList();
+
+      private void ensurePrincipalsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          principals_ = new java.util.ArrayList<com.google.chat.v1.Space.Principal>(principals_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.chat.v1.Space.Principal,
+              com.google.chat.v1.Space.Principal.Builder,
+              com.google.chat.v1.Space.PrincipalOrBuilder>
+          principalsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<com.google.chat.v1.Space.Principal> getPrincipalsList() {
+        if (principalsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(principals_);
+        } else {
+          return principalsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public int getPrincipalsCount() {
+        if (principalsBuilder_ == null) {
+          return principals_.size();
+        } else {
+          return principalsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.chat.v1.Space.Principal getPrincipals(int index) {
+        if (principalsBuilder_ == null) {
+          return principals_.get(index);
+        } else {
+          return principalsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setPrincipals(int index, com.google.chat.v1.Space.Principal value) {
+        if (principalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePrincipalsIsMutable();
+          principals_.set(index, value);
+          onChanged();
+        } else {
+          principalsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setPrincipals(
+          int index, com.google.chat.v1.Space.Principal.Builder builderForValue) {
+        if (principalsBuilder_ == null) {
+          ensurePrincipalsIsMutable();
+          principals_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          principalsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addPrincipals(com.google.chat.v1.Space.Principal value) {
+        if (principalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePrincipalsIsMutable();
+          principals_.add(value);
+          onChanged();
+        } else {
+          principalsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addPrincipals(int index, com.google.chat.v1.Space.Principal value) {
+        if (principalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePrincipalsIsMutable();
+          principals_.add(index, value);
+          onChanged();
+        } else {
+          principalsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addPrincipals(com.google.chat.v1.Space.Principal.Builder builderForValue) {
+        if (principalsBuilder_ == null) {
+          ensurePrincipalsIsMutable();
+          principals_.add(builderForValue.build());
+          onChanged();
+        } else {
+          principalsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addPrincipals(
+          int index, com.google.chat.v1.Space.Principal.Builder builderForValue) {
+        if (principalsBuilder_ == null) {
+          ensurePrincipalsIsMutable();
+          principals_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          principalsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAllPrincipals(
+          java.lang.Iterable<? extends com.google.chat.v1.Space.Principal> values) {
+        if (principalsBuilder_ == null) {
+          ensurePrincipalsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, principals_);
+          onChanged();
+        } else {
+          principalsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder clearPrincipals() {
+        if (principalsBuilder_ == null) {
+          principals_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          principalsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder removePrincipals(int index) {
+        if (principalsBuilder_ == null) {
+          ensurePrincipalsIsMutable();
+          principals_.remove(index);
+          onChanged();
+        } else {
+          principalsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.chat.v1.Space.Principal.Builder getPrincipalsBuilder(int index) {
+        return internalGetPrincipalsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.chat.v1.Space.PrincipalOrBuilder getPrincipalsOrBuilder(int index) {
+        if (principalsBuilder_ == null) {
+          return principals_.get(index);
+        } else {
+          return principalsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<? extends com.google.chat.v1.Space.PrincipalOrBuilder>
+          getPrincipalsOrBuilderList() {
+        if (principalsBuilder_ != null) {
+          return principalsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(principals_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.chat.v1.Space.Principal.Builder addPrincipalsBuilder() {
+        return internalGetPrincipalsFieldBuilder()
+            .addBuilder(com.google.chat.v1.Space.Principal.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.chat.v1.Space.Principal.Builder addPrincipalsBuilder(int index) {
+        return internalGetPrincipalsFieldBuilder()
+            .addBuilder(index, com.google.chat.v1.Space.Principal.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Unordered list. Allowed principals for this permission.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.chat.v1.Space.Principal principals = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<com.google.chat.v1.Space.Principal.Builder> getPrincipalsBuilderList() {
+        return internalGetPrincipalsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.chat.v1.Space.Principal,
+              com.google.chat.v1.Space.Principal.Builder,
+              com.google.chat.v1.Space.PrincipalOrBuilder>
+          internalGetPrincipalsFieldBuilder() {
+        if (principalsBuilder_ == null) {
+          principalsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.chat.v1.Space.Principal,
+                  com.google.chat.v1.Space.Principal.Builder,
+                  com.google.chat.v1.Space.PrincipalOrBuilder>(
+                  principals_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          principals_ = null;
+        }
+        return principalsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.AccessPermissionSetting)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.chat.v1.Space.AccessPermissionSetting)
+    private static final com.google.chat.v1.Space.AccessPermissionSetting DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.chat.v1.Space.AccessPermissionSetting();
+    }
+
+    public static com.google.chat.v1.Space.AccessPermissionSetting getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccessPermissionSetting> PARSER =
+        new com.google.protobuf.AbstractParser<AccessPermissionSetting>() {
+          @java.lang.Override
+          public AccessPermissionSetting parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccessPermissionSetting> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccessPermissionSetting> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSetting getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PrincipalOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.chat.v1.Space.Principal)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     *
+     * @return Whether the audience field is set.
+     */
+    boolean hasAudience();
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     *
+     * @return The audience.
+     */
+    com.google.chat.v1.Audience getAudience();
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     */
+    com.google.chat.v1.AudienceOrBuilder getAudienceOrBuilder();
+
+    com.google.chat.v1.Space.Principal.PrincipalTypeCase getPrincipalTypeCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A principal representing an entity granted access.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.Space.Principal}
+   */
+  public static final class Principal extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.chat.v1.Space.Principal)
+      PrincipalOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Principal");
+    }
+
+    // Use Principal.newBuilder() to construct.
+    private Principal(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Principal() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_Principal_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.chat.v1.SpaceProto
+          .internal_static_google_chat_v1_Space_Principal_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.chat.v1.Space.Principal.class,
+              com.google.chat.v1.Space.Principal.Builder.class);
+    }
+
+    private int principalTypeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object principalType_;
+
+    public enum PrincipalTypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      AUDIENCE(1),
+      PRINCIPALTYPE_NOT_SET(0);
+      private final int value;
+
+      private PrincipalTypeCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PrincipalTypeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static PrincipalTypeCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return AUDIENCE;
+          case 0:
+            return PRINCIPALTYPE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public PrincipalTypeCase getPrincipalTypeCase() {
+      return PrincipalTypeCase.forNumber(principalTypeCase_);
+    }
+
+    public static final int AUDIENCE_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     *
+     * @return Whether the audience field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudience() {
+      return principalTypeCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     *
+     * @return The audience.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Audience getAudience() {
+      if (principalTypeCase_ == 1) {
+        return (com.google.chat.v1.Audience) principalType_;
+      }
+      return com.google.chat.v1.Audience.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An audience.
+     * </pre>
+     *
+     * <code>.google.chat.v1.Audience audience = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.AudienceOrBuilder getAudienceOrBuilder() {
+      if (principalTypeCase_ == 1) {
+        return (com.google.chat.v1.Audience) principalType_;
+      }
+      return com.google.chat.v1.Audience.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (principalTypeCase_ == 1) {
+        output.writeMessage(1, (com.google.chat.v1.Audience) principalType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (principalTypeCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.chat.v1.Audience) principalType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.chat.v1.Space.Principal)) {
+        return super.equals(obj);
+      }
+      com.google.chat.v1.Space.Principal other = (com.google.chat.v1.Space.Principal) obj;
+
+      if (!getPrincipalTypeCase().equals(other.getPrincipalTypeCase())) return false;
+      switch (principalTypeCase_) {
+        case 1:
+          if (!getAudience().equals(other.getAudience())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (principalTypeCase_) {
+        case 1:
+          hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
+          hash = (53 * hash) + getAudience().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.chat.v1.Space.Principal parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.chat.v1.Space.Principal prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A principal representing an entity granted access.
+     * </pre>
+     *
+     * Protobuf type {@code google.chat.v1.Space.Principal}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.chat.v1.Space.Principal)
+        com.google.chat.v1.Space.PrincipalOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_Principal_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_Principal_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.chat.v1.Space.Principal.class,
+                com.google.chat.v1.Space.Principal.Builder.class);
+      }
+
+      // Construct using com.google.chat.v1.Space.Principal.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (audienceBuilder_ != null) {
+          audienceBuilder_.clear();
+        }
+        principalTypeCase_ = 0;
+        principalType_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.chat.v1.SpaceProto
+            .internal_static_google_chat_v1_Space_Principal_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.Principal getDefaultInstanceForType() {
+        return com.google.chat.v1.Space.Principal.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.Principal build() {
+        com.google.chat.v1.Space.Principal result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.chat.v1.Space.Principal buildPartial() {
+        com.google.chat.v1.Space.Principal result = new com.google.chat.v1.Space.Principal(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.chat.v1.Space.Principal result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.chat.v1.Space.Principal result) {
+        result.principalTypeCase_ = principalTypeCase_;
+        result.principalType_ = this.principalType_;
+        if (principalTypeCase_ == 1 && audienceBuilder_ != null) {
+          result.principalType_ = audienceBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.chat.v1.Space.Principal) {
+          return mergeFrom((com.google.chat.v1.Space.Principal) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.chat.v1.Space.Principal other) {
+        if (other == com.google.chat.v1.Space.Principal.getDefaultInstance()) return this;
+        switch (other.getPrincipalTypeCase()) {
+          case AUDIENCE:
+            {
+              mergeAudience(other.getAudience());
+              break;
+            }
+          case PRINCIPALTYPE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetAudienceFieldBuilder().getBuilder(), extensionRegistry);
+                  principalTypeCase_ = 1;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int principalTypeCase_ = 0;
+      private java.lang.Object principalType_;
+
+      public PrincipalTypeCase getPrincipalTypeCase() {
+        return PrincipalTypeCase.forNumber(principalTypeCase_);
+      }
+
+      public Builder clearPrincipalType() {
+        principalTypeCase_ = 0;
+        principalType_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Audience,
+              com.google.chat.v1.Audience.Builder,
+              com.google.chat.v1.AudienceOrBuilder>
+          audienceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       *
+       * @return Whether the audience field is set.
+       */
+      @java.lang.Override
+      public boolean hasAudience() {
+        return principalTypeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       *
+       * @return The audience.
+       */
+      @java.lang.Override
+      public com.google.chat.v1.Audience getAudience() {
+        if (audienceBuilder_ == null) {
+          if (principalTypeCase_ == 1) {
+            return (com.google.chat.v1.Audience) principalType_;
+          }
+          return com.google.chat.v1.Audience.getDefaultInstance();
+        } else {
+          if (principalTypeCase_ == 1) {
+            return audienceBuilder_.getMessage();
+          }
+          return com.google.chat.v1.Audience.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      public Builder setAudience(com.google.chat.v1.Audience value) {
+        if (audienceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          principalType_ = value;
+          onChanged();
+        } else {
+          audienceBuilder_.setMessage(value);
+        }
+        principalTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      public Builder setAudience(com.google.chat.v1.Audience.Builder builderForValue) {
+        if (audienceBuilder_ == null) {
+          principalType_ = builderForValue.build();
+          onChanged();
+        } else {
+          audienceBuilder_.setMessage(builderForValue.build());
+        }
+        principalTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      public Builder mergeAudience(com.google.chat.v1.Audience value) {
+        if (audienceBuilder_ == null) {
+          if (principalTypeCase_ == 1
+              && principalType_ != com.google.chat.v1.Audience.getDefaultInstance()) {
+            principalType_ =
+                com.google.chat.v1.Audience.newBuilder((com.google.chat.v1.Audience) principalType_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            principalType_ = value;
+          }
+          onChanged();
+        } else {
+          if (principalTypeCase_ == 1) {
+            audienceBuilder_.mergeFrom(value);
+          } else {
+            audienceBuilder_.setMessage(value);
+          }
+        }
+        principalTypeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      public Builder clearAudience() {
+        if (audienceBuilder_ == null) {
+          if (principalTypeCase_ == 1) {
+            principalTypeCase_ = 0;
+            principalType_ = null;
+            onChanged();
+          }
+        } else {
+          if (principalTypeCase_ == 1) {
+            principalTypeCase_ = 0;
+            principalType_ = null;
+          }
+          audienceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      public com.google.chat.v1.Audience.Builder getAudienceBuilder() {
+        return internalGetAudienceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.chat.v1.AudienceOrBuilder getAudienceOrBuilder() {
+        if ((principalTypeCase_ == 1) && (audienceBuilder_ != null)) {
+          return audienceBuilder_.getMessageOrBuilder();
+        } else {
+          if (principalTypeCase_ == 1) {
+            return (com.google.chat.v1.Audience) principalType_;
+          }
+          return com.google.chat.v1.Audience.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An audience.
+       * </pre>
+       *
+       * <code>.google.chat.v1.Audience audience = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Audience,
+              com.google.chat.v1.Audience.Builder,
+              com.google.chat.v1.AudienceOrBuilder>
+          internalGetAudienceFieldBuilder() {
+        if (audienceBuilder_ == null) {
+          if (!(principalTypeCase_ == 1)) {
+            principalType_ = com.google.chat.v1.Audience.getDefaultInstance();
+          }
+          audienceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Audience,
+                  com.google.chat.v1.Audience.Builder,
+                  com.google.chat.v1.AudienceOrBuilder>(
+                  (com.google.chat.v1.Audience) principalType_, getParentForChildren(), isClean());
+          principalType_ = null;
+        }
+        principalTypeCase_ = 1;
+        onChanged();
+        return audienceBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.Principal)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.chat.v1.Space.Principal)
+    private static final com.google.chat.v1.Space.Principal DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.chat.v1.Space.Principal();
+    }
+
+    public static com.google.chat.v1.Space.Principal getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Principal> PARSER =
+        new com.google.protobuf.AbstractParser<Principal>() {
+          @java.lang.Override
+          public Principal parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Principal> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Principal> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.chat.v1.Space.Principal getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -7767,7 +11132,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -7788,7 +11153,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
    * @return The type.
    */
   @java.lang.Override
@@ -7874,7 +11239,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
    * @return The threaded.
    */
   @java.lang.Override
@@ -9964,7 +13329,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -9985,7 +13350,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -10009,7 +13374,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
      * @return The type.
      */
     @java.lang.Override
@@ -10031,7 +13396,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -10058,7 +13423,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10251,7 +13616,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
      * @return The threaded.
      */
     @java.lang.Override
@@ -10271,7 +13636,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -10295,7 +13660,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

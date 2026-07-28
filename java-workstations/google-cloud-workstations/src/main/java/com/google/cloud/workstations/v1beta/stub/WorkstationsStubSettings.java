@@ -75,6 +75,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -97,6 +99,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -174,6 +178,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -257,6 +262,9 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
       stopWorkstationOperationSettings;
   private final UnaryCallSettings<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenSettings;
+  private final UnaryCallSettings<PushCredentialsRequest, Operation> pushCredentialsSettings;
+  private final OperationCallSettings<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -797,6 +805,17 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     return generateAccessTokenSettings;
   }
 
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public UnaryCallSettings<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+    return pushCredentialsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public OperationCallSettings<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationSettings() {
+    return pushCredentialsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
@@ -912,7 +931,7 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -965,6 +984,8 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     stopWorkstationSettings = settingsBuilder.stopWorkstationSettings().build();
     stopWorkstationOperationSettings = settingsBuilder.stopWorkstationOperationSettings().build();
     generateAccessTokenSettings = settingsBuilder.generateAccessTokenSettings().build();
+    pushCredentialsSettings = settingsBuilder.pushCredentialsSettings().build();
+    pushCredentialsOperationSettings = settingsBuilder.pushCredentialsOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -1068,6 +1089,11 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
         stopWorkstationOperationSettings;
     private final UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings;
+    private final UnaryCallSettings.Builder<PushCredentialsRequest, Operation>
+        pushCredentialsSettings;
+    private final OperationCallSettings.Builder<
+            PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+        pushCredentialsOperationSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -1120,7 +1146,7 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getWorkstationClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1158,6 +1184,8 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
       stopWorkstationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stopWorkstationOperationSettings = OperationCallSettings.newBuilder();
       generateAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pushCredentialsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      pushCredentialsOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1184,6 +1212,7 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
               startWorkstationSettings,
               stopWorkstationSettings,
               generateAccessTokenSettings,
+              pushCredentialsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -1231,6 +1260,8 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
       stopWorkstationSettings = settings.stopWorkstationSettings.toBuilder();
       stopWorkstationOperationSettings = settings.stopWorkstationOperationSettings.toBuilder();
       generateAccessTokenSettings = settings.generateAccessTokenSettings.toBuilder();
+      pushCredentialsSettings = settings.pushCredentialsSettings.toBuilder();
+      pushCredentialsOperationSettings = settings.pushCredentialsOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -1257,6 +1288,7 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
               startWorkstationSettings,
               stopWorkstationSettings,
               generateAccessTokenSettings,
+              pushCredentialsSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -1386,6 +1418,11 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
           .generateAccessTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .pushCredentialsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setIamPolicySettings()
@@ -1666,6 +1703,30 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .pushCredentialsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PushCredentialsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Workstation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(PushCredentialsMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1885,6 +1946,18 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     public UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings() {
       return generateAccessTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public UnaryCallSettings.Builder<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+      return pushCredentialsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public OperationCallSettings.Builder<
+            PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+        pushCredentialsOperationSettings() {
+      return pushCredentialsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

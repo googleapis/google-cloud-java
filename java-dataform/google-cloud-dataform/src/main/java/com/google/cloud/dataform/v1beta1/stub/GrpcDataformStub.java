@@ -62,9 +62,15 @@ import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningResponse;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
@@ -175,6 +181,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -182,6 +189,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcDataformStub extends DataformStub {
@@ -226,6 +234,17 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTeamFolderRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeMethodDescriptor =
+          MethodDescriptor.<DeleteTeamFolderTreeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteTeamFolderTree")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTeamFolderTreeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -290,6 +309,17 @@ public class GrpcDataformStub extends DataformStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<DeleteFolderTreeRequest, Operation>
+      deleteFolderTreeMethodDescriptor =
+          MethodDescriptor.<DeleteFolderTreeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteFolderTree")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteFolderTreeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<QueryFolderContentsRequest, QueryFolderContentsResponse>
       queryFolderContentsMethodDescriptor =
@@ -377,6 +407,18 @@ public class GrpcDataformStub extends DataformStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRepositoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningMethodDescriptor =
+          MethodDescriptor.<DeleteRepositoryLongRunningRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/DeleteRepositoryLongRunning")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteRepositoryLongRunningRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1038,6 +1080,9 @@ public class GrpcDataformStub extends DataformStub {
   private final UnaryCallable<CreateTeamFolderRequest, TeamFolder> createTeamFolderCallable;
   private final UnaryCallable<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderCallable;
   private final UnaryCallable<DeleteTeamFolderRequest, Empty> deleteTeamFolderCallable;
+  private final UnaryCallable<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeCallable;
+  private final OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable;
   private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
       queryTeamFolderContentsCallable;
   private final UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsPagedResponse>
@@ -1050,6 +1095,9 @@ public class GrpcDataformStub extends DataformStub {
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<UpdateFolderRequest, Folder> updateFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
+  private final UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable;
+  private final OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable;
   private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsResponse>
       queryFolderContentsCallable;
   private final UnaryCallable<QueryFolderContentsRequest, QueryFolderContentsPagedResponse>
@@ -1069,6 +1117,13 @@ public class GrpcDataformStub extends DataformStub {
   private final UnaryCallable<CreateRepositoryRequest, Repository> createRepositoryCallable;
   private final UnaryCallable<UpdateRepositoryRequest, Repository> updateRepositoryCallable;
   private final UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable;
+  private final UnaryCallable<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningCallable;
+  private final OperationCallable<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationCallable;
   private final UnaryCallable<MoveRepositoryRequest, Operation> moveRepositoryCallable;
   private final OperationCallable<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
       moveRepositoryOperationCallable;
@@ -1271,6 +1326,17 @@ public class GrpcDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeTransportSettings =
+        GrpcCallSettings.<DeleteTeamFolderTreeRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteTeamFolderTreeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
         queryTeamFolderContentsTransportSettings =
             GrpcCallSettings
@@ -1331,6 +1397,17 @@ public class GrpcDataformStub extends DataformStub {
     GrpcCallSettings<DeleteFolderRequest, Empty> deleteFolderTransportSettings =
         GrpcCallSettings.<DeleteFolderRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteFolderMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeTransportSettings =
+        GrpcCallSettings.<DeleteFolderTreeRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteFolderTreeMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1430,6 +1507,18 @@ public class GrpcDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningTransportSettings =
+            GrpcCallSettings.<DeleteRepositoryLongRunningRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteRepositoryLongRunningMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<MoveRepositoryRequest, Operation> moveRepositoryTransportSettings =
         GrpcCallSettings.<MoveRepositoryRequest, Operation>newBuilder()
             .setMethodDescriptor(moveRepositoryMethodDescriptor)
@@ -2099,6 +2188,17 @@ public class GrpcDataformStub extends DataformStub {
     this.deleteTeamFolderCallable =
         callableFactory.createUnaryCallable(
             deleteTeamFolderTransportSettings, settings.deleteTeamFolderSettings(), clientContext);
+    this.deleteTeamFolderTreeCallable =
+        callableFactory.createUnaryCallable(
+            deleteTeamFolderTreeTransportSettings,
+            settings.deleteTeamFolderTreeSettings(),
+            clientContext);
+    this.deleteTeamFolderTreeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTeamFolderTreeTransportSettings,
+            settings.deleteTeamFolderTreeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.queryTeamFolderContentsCallable =
         callableFactory.createUnaryCallable(
             queryTeamFolderContentsTransportSettings,
@@ -2131,6 +2231,15 @@ public class GrpcDataformStub extends DataformStub {
     this.deleteFolderCallable =
         callableFactory.createUnaryCallable(
             deleteFolderTransportSettings, settings.deleteFolderSettings(), clientContext);
+    this.deleteFolderTreeCallable =
+        callableFactory.createUnaryCallable(
+            deleteFolderTreeTransportSettings, settings.deleteFolderTreeSettings(), clientContext);
+    this.deleteFolderTreeOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFolderTreeTransportSettings,
+            settings.deleteFolderTreeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.queryFolderContentsCallable =
         callableFactory.createUnaryCallable(
             queryFolderContentsTransportSettings,
@@ -2178,6 +2287,17 @@ public class GrpcDataformStub extends DataformStub {
     this.deleteRepositoryCallable =
         callableFactory.createUnaryCallable(
             deleteRepositoryTransportSettings, settings.deleteRepositorySettings(), clientContext);
+    this.deleteRepositoryLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            deleteRepositoryLongRunningTransportSettings,
+            settings.deleteRepositoryLongRunningSettings(),
+            clientContext);
+    this.deleteRepositoryLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteRepositoryLongRunningTransportSettings,
+            settings.deleteRepositoryLongRunningOperationSettings(),
+            clientContext,
+            operationsStub);
     this.moveRepositoryCallable =
         callableFactory.createUnaryCallable(
             moveRepositoryTransportSettings, settings.moveRepositorySettings(), clientContext);
@@ -2497,6 +2617,17 @@ public class GrpcDataformStub extends DataformStub {
   }
 
   @Override
+  public UnaryCallable<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeCallable() {
+    return deleteTeamFolderTreeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationCallable() {
+    return deleteTeamFolderTreeOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<QueryTeamFolderContentsRequest, QueryTeamFolderContentsResponse>
       queryTeamFolderContentsCallable() {
     return queryTeamFolderContentsCallable;
@@ -2538,6 +2669,17 @@ public class GrpcDataformStub extends DataformStub {
   @Override
   public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
     return deleteFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFolderTreeRequest, Operation> deleteFolderTreeCallable() {
+    return deleteFolderTreeCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationCallable() {
+    return deleteFolderTreeOperationCallable;
   }
 
   @Override
@@ -2605,6 +2747,21 @@ public class GrpcDataformStub extends DataformStub {
   @Override
   public UnaryCallable<DeleteRepositoryRequest, Empty> deleteRepositoryCallable() {
     return deleteRepositoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningCallable() {
+    return deleteRepositoryLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationCallable() {
+    return deleteRepositoryLongRunningOperationCallable;
   }
 
   @Override

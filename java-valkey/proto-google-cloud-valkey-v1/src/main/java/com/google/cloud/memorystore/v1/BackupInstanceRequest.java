@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Request for [BackupInstance].
+ * Request for `BackupInstance`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.BackupInstanceRequest}
@@ -450,7 +450,7 @@ public final class BackupInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request for [BackupInstance].
+   * Request for `BackupInstance`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.BackupInstanceRequest}

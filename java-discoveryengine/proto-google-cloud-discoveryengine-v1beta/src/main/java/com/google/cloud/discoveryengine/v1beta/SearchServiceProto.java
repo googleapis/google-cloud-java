@@ -97,6 +97,10 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_MultiModalSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_MultiModalSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_fieldAccessorTable;
@@ -129,13 +133,41 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAsYouTypeSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DisplaySpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DisplaySpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CrowdingSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CrowdingSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_PersonalizationSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_PersonalizationSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceScoreSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceScoreSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAddonSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAddonSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CustomRankingParams_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CustomRankingParams_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -153,10 +185,6 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_fieldAccessorTable;
@@ -164,6 +192,10 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Facet_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -208,6 +240,14 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_Reference_ChunkContent_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_Reference_ChunkContent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SummaryWithMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -276,21 +316,23 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032/google/cloud/discoveryengine/v1beta/chunk.proto\0320google/cloud/discov"
           + "eryengine/v1beta/common.proto\0322google/cl"
-          + "oud/discoveryengine/v1beta/document.proto\032\034google/protobuf/struct.proto\"\2327\n\r"
+          + "oud/discoveryengine/v1beta/document.proto\032\034google/protobuf/struct.proto\"\364L\n\r"
           + "SearchRequest\022L\n"
           + "\016serving_config\030\001 \001(\tB4\340A\002\372A.\n"
           + ",discoveryengine.googleapis.com/ServingConfig\022:\n"
           + "\006branch\030\002 \001(\tB*\372A\'\n"
           + "%discoveryengine.googleapis.com/Branch\022\r\n"
-          + "\005query\030\003 \001(\t\022R\n"
-          + "\013image_query\030\023 \001(\0132=.google.cloud.d"
-          + "iscoveryengine.v1beta.SearchRequest.ImageQuery\022\021\n"
+          + "\005query\030\003 \001(\t\022\034\n"
+          + "\017page_categories\030? \003(\tB\003\340A\001\022R\n"
+          + "\013image_query\030\023"
+          + " \001(\0132=.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery\022\021\n"
           + "\tpage_size\030\004 \001(\005\022\022\n\n"
           + "page_token\030\005 \001(\t\022\016\n"
           + "\006offset\030\006 \001(\005\022\031\n"
           + "\021one_box_page_size\030/ \001(\005\022Z\n"
-          + "\020data_store_specs\030  \003(\0132@.goo"
-          + "gle.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec\022\016\n"
+          + "\020data_store_specs\030  \003(\0132@.google.cloud."
+          + "discoveryengine.v1beta.SearchRequest.DataStoreSpec\022\'\n"
+          + "\032num_results_per_data_store\030A \001(\005B\003\340A\001\022\016\n"
           + "\006filter\030\007 \001(\t\022\030\n"
           + "\020canonical_filter\030\035 \001(\t\022\020\n"
           + "\010order_by\030\010 \001(\t\022@\n"
@@ -298,54 +340,69 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + " \001(\0132-.google.cloud.discoveryengine.v1beta.UserInfo\022\025\n\r"
           + "language_code\030# \001(\t\022\023\n"
           + "\013region_code\030$ \001(\t\022Q\n"
-          + "\013facet_specs\030\t"
-          + " \003(\0132<.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec\022P\n\n"
+          + "\013facet_specs\030\t \003"
+          + "(\0132<.google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec\022P\n\n"
           + "boost_spec\030\n"
           + " \001(\0132<.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec\022N\n"
-          + "\006params\030\013"
-          + " \003(\0132>.google.cloud.discoveryengine.v1beta.SearchRequest.ParamsEntry\022c\n"
+          + "\006params\030\013 \003"
+          + "(\0132>.google.cloud.discoveryengine.v1beta.SearchRequest.ParamsEntry\022c\n"
           + "\024query_expansion_spec\030\r"
-          + " \001(\0132E.google.cloud"
-          + ".discoveryengine.v1beta.SearchRequest.QueryExpansionSpec\022e\n"
-          + "\025spell_correction_spec\030\016 \001(\0132F.google.cloud.discoveryengine.v"
-          + "1beta.SearchRequest.SpellCorrectionSpec\022\026\n"
-          + "\016user_pseudo_id\030\017 \001(\t\022a\n"
-          + "\023content_search_spec\030\030 \001(\0132D.google.cloud.discoveryeng"
-          + "ine.v1beta.SearchRequest.ContentSearchSpec\022X\n"
-          + "\016embedding_spec\030\027 \001(\0132@.google.clou"
-          + "d.discoveryengine.v1beta.SearchRequest.EmbeddingSpec\022\032\n"
-          + "\022ranking_expression\030\032 \001(\t\022t\n"
-          + "\032ranking_expression_backend\0305 \001(\0162K.g"
-          + "oogle.cloud.discoveryengine.v1beta.Searc"
-          + "hRequest.RankingExpressionBackendB\003\340A\001\022\023\n"
+          + " \001(\0132E.google.cloud.discover"
+          + "yengine.v1beta.SearchRequest.QueryExpansionSpec\022e\n"
+          + "\025spell_correction_spec\030\016 \001(\0132F"
+          + ".google.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec\022\033\n"
+          + "\016user_pseudo_id\030\017 \001(\tB\003\340A\001\022a\n"
+          + "\023content_search_spec\030\030 \001(\0132D.google.cloud.discoveryengine."
+          + "v1beta.SearchRequest.ContentSearchSpec\022X\n"
+          + "\016embedding_spec\030\027 \001(\0132@.google.cloud.di"
+          + "scoveryengine.v1beta.SearchRequest.EmbeddingSpec\022\037\n"
+          + "\022ranking_expression\030\032 \001(\tB\003\340A\001\022t\n"
+          + "\032ranking_expression_backend\0305 \001(\0162K."
+          + "google.cloud.discoveryengine.v1beta.Sear"
+          + "chRequest.RankingExpressionBackendB\003\340A\001\022\023\n"
           + "\013safe_search\030\024 \001(\010\022W\n"
-          + "\013user_labels\030\026 \003(\013"
-          + "2B.google.cloud.discoveryengine.v1beta.SearchRequest.UserLabelsEntry\022\213\001\n"
-          + ")natural_language_query_understanding_spec\030\034 \001(\013"
-          + "2X.google.cloud.discoveryengine.v1beta.S"
-          + "earchRequest.NaturalLanguageQueryUnderstandingSpec\022g\n"
-          + "\027search_as_you_type_spec\030\037 "
-          + "\001(\0132F.google.cloud.discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec\022<\n"
+          + "\013user_labels\030\026 \003("
+          + "\0132B.google.cloud.discoveryengine.v1beta.SearchRequest.UserLabelsEntry\022\220\001\n"
+          + ")natural_language_query_understanding_spec\030\034 \001("
+          + "\0132X.google.cloud.discoveryengine.v1beta."
+          + "SearchRequest.NaturalLanguageQueryUnderstandingSpecB\003\340A\001\022g\n"
+          + "\027search_as_you_type_spec\030\037 \001(\0132F.google.cloud.discoveryengine"
+          + ".v1beta.SearchRequest.SearchAsYouTypeSpec\022Y\n"
+          + "\014display_spec\030& \001(\0132>.google.cloud.d"
+          + "iscoveryengine.v1beta.SearchRequest.DisplaySpecB\003\340A\001\022\\\n"
+          + "\016crowding_specs\030( \003(\0132?.g"
+          + "oogle.cloud.discoveryengine.v1beta.SearchRequest.CrowdingSpecB\003\340A\001\022<\n"
           + "\007session\030) \001(\tB+\372A(\n"
           + "&discoveryengine.googleapis.com/Session\022T\n"
-          + "\014session_spec\030* \001(\0132"
-          + ">.google.cloud.discoveryengine.v1beta.SearchRequest.SessionSpec\022b\n"
-          + "\023relevance_threshold\030, \001(\0162E.google.cloud.discoveryeng"
-          + "ine.v1beta.SearchRequest.RelevanceThreshold\022d\n"
-          + "\024personalization_spec\030. \001(\0132F.goog"
-          + "le.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec\032,\n\n"
+          + "\014session_spec\030* \001(\0132>.google."
+          + "cloud.discoveryengine.v1beta.SearchRequest.SessionSpec\022b\n"
+          + "\023relevance_threshold\030, "
+          + "\001(\0162E.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThreshold\022j\n"
+          + "\025relevance_filter_spec\030V \001(\0132F.google.cloud"
+          + ".discoveryengine.v1beta.SearchRequest.RelevanceFilterSpecB\003\340A\001\022d\n"
+          + "\024personalization_spec\030. \001(\0132F.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchRequest.PersonalizationSpec\022h\n"
+          + "\024relevance_score_spec\0304 \001(\0132E.goo"
+          + "gle.cloud.discoveryengine.v1beta.SearchRequest.RelevanceScoreSpecB\003\340A\001\022b\n"
+          + "\021search_addon_spec\030> \001(\0132B.google.cloud.discove"
+          + "ryengine.v1beta.SearchRequest.SearchAddonSpecB\003\340A\001\022j\n"
+          + "\025custom_ranking_params\030@ \001(\0132F.google.cloud.discoveryengine.v1beta."
+          + "SearchRequest.CustomRankingParamsB\003\340A\001\022\023\n"
+          + "\006entity\030B \001(\tB\003\340A\001\032,\n\n"
           + "ImageQuery\022\025\n"
           + "\013image_bytes\030\001 \001(\tH\000B\007\n"
-          + "\005image\032\301\001\n\r"
+          + "\005image\032\201\002\n\r"
           + "DataStoreSpec\022D\n\n"
           + "data_store\030\001 \001(\tB0\340A\002\372A*\n"
           + "(discoveryengine.googleapis.com/DataStore\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\022U\n\n"
-          + "boost_spec\030\006 \001(\013"
-          + "2<.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecB\003\340A\001\032\204\003\n"
+          + "boost_spec\030\006 \001(\0132<.goo"
+          + "gle.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecB\003\340A\001\022$\n"
+          + "\027custom_search_operators\030\007 \001(\tB\003\340A\001\022\030\n"
+          + "\013num_results\030\t \001(\005B\003\340A\001\032\204\003\n"
           + "\tFacetSpec\022]\n"
-          + "\tfacet_key\030\001 \001(\0132E.google.cloud.disc"
-          + "overyengine.v1beta.SearchRequest.FacetSpec.FacetKeyB\003\340A\002\022\r\n"
+          + "\tfacet_key\030\001 \001(\0132E"
+          + ".google.cloud.discoveryengine.v1beta.SearchRequest.FacetSpec.FacetKeyB\003\340A\002\022\r\n"
           + "\005limit\030\002 \001(\005\022\034\n"
           + "\024excluded_filter_keys\030\003 \003(\t\022\037\n"
           + "\027enable_dynamic_position\030\004 \001(\010\032\311\001\n"
@@ -358,23 +415,24 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\020case_insensitive\030\006 \001(\010\022\020\n"
           + "\010order_by\030\007 \001(\t\032\320\007\n"
           + "\tBoostSpec\022n\n"
-          + "\025condition_boost_specs\030\001 \003(\0132O.google.cloud.d"
-          + "iscoveryengine.v1beta.SearchRequest.BoostSpec.ConditionBoostSpec\032\322\006\n"
+          + "\025condition_boost_specs\030\001 \003(\0132O.google.cloud.discoveryengine.v1beta."
+          + "SearchRequest.BoostSpec.ConditionBoostSpec\032\322\006\n"
           + "\022ConditionBoostSpec\022\021\n"
           + "\tcondition\030\001 \001(\t\022\r\n"
           + "\005boost\030\002 \001(\002\022|\n"
-          + "\022boost_control_spec\030\003 \001(\0132`.google.c"
-          + "loud.discoveryengine.v1beta.SearchReques"
-          + "t.BoostSpec.ConditionBoostSpec.BoostControlSpec\032\233\005\n"
+          + "\022boost_control_spec\030\003 \001(\0132`.google.cloud.discoveryengine.v"
+          + "1beta.SearchRequest.BoostSpec.ConditionBoostSpec.BoostControlSpec\032\233\005\n"
           + "\020BoostControlSpec\022\022\n\n"
           + "field_name\030\001 \001(\t\022\206\001\n"
-          + "\016attribute_type\030\002 \001(\0162n.google.cloud.discoveryengine.v1beta.SearchRe"
-          + "quest.BoostSpec.ConditionBoostSpec.BoostControlSpec.AttributeType\022\216\001\n"
-          + "\022interpolation_type\030\003 \001(\0162r.google.cloud.discoverye"
-          + "ngine.v1beta.SearchRequest.BoostSpec.Con"
-          + "ditionBoostSpec.BoostControlSpec.InterpolationType\022\205\001\n"
-          + "\016control_points\030\004 \003(\0132m.google.cloud.discoveryengine.v1beta.Search"
-          + "Request.BoostSpec.ConditionBoostSpec.BoostControlSpec.ControlPoint\032=\n"
+          + "\016attribute_type\030\002 \001(\0162n.google.cloud.discoveryengi"
+          + "ne.v1beta.SearchRequest.BoostSpec.Condit"
+          + "ionBoostSpec.BoostControlSpec.AttributeType\022\216\001\n"
+          + "\022interpolation_type\030\003 \001(\0162r.googl"
+          + "e.cloud.discoveryengine.v1beta.SearchReq"
+          + "uest.BoostSpec.ConditionBoostSpec.BoostControlSpec.InterpolationType\022\205\001\n"
+          + "\016control_points\030\004 \003(\0132m.google.cloud.discoveryen"
+          + "gine.v1beta.SearchRequest.BoostSpec.Cond"
+          + "itionBoostSpec.BoostControlSpec.ControlPoint\032=\n"
           + "\014ControlPoint\022\027\n"
           + "\017attribute_value\030\001 \001(\t\022\024\n"
           + "\014boost_amount\030\002 \001(\002\"M\n\r"
@@ -386,35 +444,37 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\036INTERPOLATION_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006LINEAR\020\001\032\330\001\n"
           + "\022QueryExpansionSpec\022b\n"
-          + "\tcondition\030\001 \001(\0162O.google.cloud.discoveryengine.v1beta.Se"
-          + "archRequest.QueryExpansionSpec.Condition\022\036\n"
+          + "\tcondition\030\001 \001(\0162O.google.cloud.discove"
+          + "ryengine.v1beta.SearchRequest.QueryExpansionSpec.Condition\022\036\n"
           + "\026pin_unexpanded_results\030\002 \001(\010\">\n"
           + "\tCondition\022\031\n"
           + "\025CONDITION_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\010\n"
           + "\004AUTO\020\002\032\255\001\n"
           + "\023SpellCorrectionSpec\022Y\n"
-          + "\004mode\030\001 \001(\0162K.google.cloud.discoverye"
-          + "ngine.v1beta.SearchRequest.SpellCorrectionSpec.Mode\";\n"
+          + "\004mode\030\001 \001(\0162K.googl"
+          + "e.cloud.discoveryengine.v1beta.SearchRequest.SpellCorrectionSpec.Mode\";\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\023\n"
           + "\017SUGGESTION_ONLY\020\001\022\010\n"
-          + "\004AUTO\020\002\032\276\014\n"
+          + "\004AUTO\020\002\032\324\017\n"
           + "\021ContentSearchSpec\022f\n"
-          + "\014snippet_spec\030\001 \001(\0132P.google.cloud.discoveryengine.v1beta.Searc"
-          + "hRequest.ContentSearchSpec.SnippetSpec\022f\n"
-          + "\014summary_spec\030\002 \001(\0132P.google.cloud.disc"
-          + "overyengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec\022{\n"
-          + "\027extractive_content_spec\030\003 \001(\0132Z.google.cloud.discovery"
-          + "engine.v1beta.SearchRequest.ContentSearchSpec.ExtractiveContentSpec\022q\n"
-          + "\022search_result_mode\030\004 \001(\0162U.google.cloud.discovery"
-          + "engine.v1beta.SearchRequest.ContentSearchSpec.SearchResultMode\022b\n\n"
-          + "chunk_spec\030\005 \001(\0132N.google.cloud.discoveryengine.v1beta"
-          + ".SearchRequest.ContentSearchSpec.ChunkSpec\032`\n"
+          + "\014snippet_spec\030\001 \001(\0132P.google.cloud.discoverye"
+          + "ngine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec\022f\n"
+          + "\014summary_spec\030\002 \001(\0132P.google.cloud.discoveryengine.v1beta.Sea"
+          + "rchRequest.ContentSearchSpec.SummarySpec\022{\n"
+          + "\027extractive_content_spec\030\003 \001(\0132Z.goog"
+          + "le.cloud.discoveryengine.v1beta.SearchRe"
+          + "quest.ContentSearchSpec.ExtractiveContentSpec\022q\n"
+          + "\022search_result_mode\030\004 \001(\0162U.goog"
+          + "le.cloud.discoveryengine.v1beta.SearchRe"
+          + "quest.ContentSearchSpec.SearchResultMode\022b\n\n"
+          + "chunk_spec\030\005 \001(\0132N.google.cloud.disc"
+          + "overyengine.v1beta.SearchRequest.ContentSearchSpec.ChunkSpec\032`\n"
           + "\013SnippetSpec\022\035\n"
           + "\021max_snippet_count\030\001 \001(\005B\002\030\001\022\032\n"
           + "\016reference_only\030\002 \001(\010B\002\030\001\022\026\n"
-          + "\016return_snippet\030\003 \001(\010\032\304\004\n"
+          + "\016return_snippet\030\003 \001(\010\032\332\007\n"
           + "\013SummarySpec\022\034\n"
           + "\024summary_result_count\030\001 \001(\005\022\031\n"
           + "\021include_citations\030\002 \001(\010\022 \n"
@@ -422,13 +482,24 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + " ignore_non_summary_seeking_query\030\004 \001(\010\022#\n"
           + "\033ignore_low_relevant_content\030\t \001(\010\022\'\n"
           + "\032ignore_jail_breaking_query\030\n"
-          + " \001(\010B\003\340A\001\022{\n"
-          + "\021model_prompt_spec\030\005 \001(\0132`.google.cloud.discoveryengine.v1beta.SearchR"
-          + "equest.ContentSearchSpec.SummarySpec.ModelPromptSpec\022\025\n\r"
+          + " \001(\010B\003\340A\001\022}\n"
+          + "\017multimodal_spec\030\013 \001(\0132_.google.cloud.discoveryengin"
+          + "e.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.MultiModalSpecB\003\340A\001\022{\n"
+          + "\021model_prompt_spec\030\005 \001(\0132`.google.cloud.disco"
+          + "veryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec\022\025\n"
+          + "\r"
           + "language_code\030\006 \001(\t\022n\n\n"
-          + "model_spec\030\007 \001(\0132Z.google.cloud.discovery"
-          + "engine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec\022\033\n"
-          + "\023use_semantic_chunks\030\010 \001(\010\032#\n"
+          + "model_spec\030\007 \001(\0132Z.google.cloud.discoveryengine.v1beta.S"
+          + "earchRequest.ContentSearchSpec.SummarySpec.ModelSpec\022\033\n"
+          + "\023use_semantic_chunks\030\010 \001(\010\032\224\002\n"
+          + "\016MultiModalSpec\022\206\001\n"
+          + "\014image_source\030\003 \001(\0162k.google.cloud.discoveryengine.v1bet"
+          + "a.SearchRequest.ContentSearchSpec.SummarySpec.MultiModalSpec.ImageSourceB\003\340A\001\"y\n"
+          + "\013ImageSource\022\034\n"
+          + "\030IMAGE_SOURCE_UNSPECIFIED\020\000\022\031\n"
+          + "\025ALL_AVAILABLE_SOURCES\020\001\022\025\n"
+          + "\021CORPUS_IMAGE_ONLY\020\002\022\032\n"
+          + "\026FIGURE_GENERATION_ONLY\020\003\032#\n"
           + "\017ModelPromptSpec\022\020\n"
           + "\010preamble\030\001 \001(\t\032\034\n"
           + "\tModelSpec\022\017\n"
@@ -447,93 +518,143 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\tDOCUMENTS\020\001\022\n\n"
           + "\006CHUNKS\020\002\032\263\001\n\r"
           + "EmbeddingSpec\022k\n"
-          + "\021embedding_vectors\030\001 \003(\0132P.google.cloud.discoveryengine.v1beta.Sea"
-          + "rchRequest.EmbeddingSpec.EmbeddingVector\0325\n"
+          + "\021embedding_vectors\030\001 \003(\0132P.google.cloud.di"
+          + "scoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector\0325\n"
           + "\017EmbeddingVector\022\022\n\n"
           + "field_path\030\001 \001(\t\022\016\n"
-          + "\006vector\030\002 \003(\002\032\304\002\n"
+          + "\006vector\030\002 \003(\002\032\350\004\n"
           + "%NaturalLanguageQueryUnderstandingSpec\022\227\001\n"
-          + "\033filter_extraction_condition\030\001 \001(\0162r.google.cloud.discovery"
-          + "engine.v1beta.SearchRequest.NaturalLangu"
-          + "ageQueryUnderstandingSpec.FilterExtractionCondition\022.\n"
-          + "&geo_search_query_detection_field_names\030\002 \003(\t\"Q\n"
+          + "\033filter_extraction_condition\030\001 \001(\0162"
+          + "r.google.cloud.discoveryengine.v1beta.Se"
+          + "archRequest.NaturalLanguageQueryUnderstandingSpec.FilterExtractionCondition\022.\n"
+          + "&geo_search_query_detection_field_names\030\002 \003(\t\022\230\001\n"
+          + "\031extracted_filter_behavior\030\003 \001(\0162"
+          + "p.google.cloud.discoveryengine.v1beta.Se"
+          + "archRequest.NaturalLanguageQueryUnderstandingSpec.ExtractedFilterBehaviorB\003\340A\001\022"
+          + " \n"
+          + "\023allowed_field_names\030\004 \003(\tB\003\340A\001\"Q\n"
           + "\031FilterExtractionCondition\022\031\n"
           + "\025CONDITION_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\013\n"
-          + "\007ENABLED\020\002\032\307\001\n"
+          + "\007ENABLED\020\002\"e\n"
+          + "\027ExtractedFilterBehavior\022)\n"
+          + "%EXTRACTED_FILTER_BEHAVIOR_UNSPECIFIED\020\000\022\017\n"
+          + "\013HARD_FILTER\020\001\022\016\n\n"
+          + "SOFT_BOOST\020\002\032\307\001\n"
           + "\023SearchAsYouTypeSpec\022c\n"
-          + "\tcondition\030\001 \001(\0162P.google.cloud"
-          + ".discoveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec.Condition\"K\n"
+          + "\tcondition\030\001 \001(\0162P.google.cloud.dis"
+          + "coveryengine.v1beta.SearchRequest.SearchAsYouTypeSpec.Condition\"K\n"
           + "\tCondition\022\031\n"
           + "\025CONDITION_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\013\n"
           + "\007ENABLED\020\002\022\010\n"
-          + "\004AUTO\020\003\032q\n"
+          + "\004AUTO\020\003\032\234\002\n"
+          + "\013DisplaySpec\022\177\n"
+          + "\034match_highlighting_condition\030\001 \001(\0162Y.goo"
+          + "gle.cloud.discoveryengine.v1beta.SearchR"
+          + "equest.DisplaySpec.MatchHighlightingCondition\"\213\001\n"
+          + "\032MatchHighlightingCondition\022,\n"
+          + "(MATCH_HIGHLIGHTING_CONDITION_UNSPECIFIED\020\000\022\037\n"
+          + "\033MATCH_HIGHLIGHTING_DISABLED\020\001\022\036\n"
+          + "\032MATCH_HIGHLIGHTING_ENABLED\020\002\032\337\001\n"
+          + "\014CrowdingSpec\022\r\n"
+          + "\005field\030\001 \001(\t\022\021\n"
+          + "\tmax_count\030\002 \001(\005\022R\n"
+          + "\004mode\030\003 \001(\0162D.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchRequest.CrowdingSpec.Mode\"Y\n"
+          + "\004Mode\022\024\n"
+          + "\020MODE_UNSPECIFIED\020\000\022\030\n"
+          + "\024DROP_CROWDED_RESULTS\020\001\022!\n"
+          + "\035DEMOTE_CROWDED_RESULTS_TO_END\020\002\032q\n"
           + "\013SessionSpec\022\020\n"
           + "\010query_id\030\001 \001(\t\022,\n"
           + "\037search_result_persistence_count\030\002 \001(\005H\000\210\001\001B\"\n"
-          + " _search_result_persistence_count\032\246\001\n"
+          + " _search_result_persistence_count\032\351\003\n"
+          + "\023RelevanceFilterSpec\022\204\001\n"
+          + "\030keyword_search_threshold\030\001 \001(\0132].google.clo"
+          + "ud.discoveryengine.v1beta.SearchRequest."
+          + "RelevanceFilterSpec.RelevanceThresholdSpecB\003\340A\001\022\205\001\n"
+          + "\031semantic_search_threshold\030\002 \001(\0132].google.cloud.discoveryengine.v1bet"
+          + "a.SearchRequest.RelevanceFilterSpec.RelevanceThresholdSpecB\003\340A\001\032\302\001\n"
+          + "\026RelevanceThresholdSpec\022d\n"
+          + "\023relevance_threshold\030\001 \001(\0162"
+          + "E.google.cloud.discoveryengine.v1beta.SearchRequest.RelevanceThresholdH\000\022&\n"
+          + "\034semantic_relevance_threshold\030\002 \001(\002H\000B\032\n"
+          + "\030relevance_threshold_spec\032\246\001\n"
           + "\023PersonalizationSpec\022Y\n"
-          + "\004mode\030\001 \001(\0162K.google.cloud.discove"
-          + "ryengine.v1beta.SearchRequest.PersonalizationSpec.Mode\"4\n"
+          + "\004mode\030\001 \001(\0162K.google.cloud.discov"
+          + "eryengine.v1beta.SearchRequest.PersonalizationSpec.Mode\"4\n"
           + "\004Mode\022\024\n"
           + "\020MODE_UNSPECIFIED\020\000\022\010\n"
           + "\004AUTO\020\001\022\014\n"
-          + "\010DISABLED\020\002\032E\n"
+          + "\010DISABLED\020\002\0329\n"
+          + "\022RelevanceScoreSpec\022#\n"
+          + "\026return_relevance_score\030\001 \001(\010B\003\340A\001\032\227\001\n"
+          + "\017SearchAddonSpec\022$\n"
+          + "\027disable_semantic_add_on\030\001 \001(\010B\003\340A\001\022/\n"
+          + "\"disable_kpi_personalization_add_on\030\002 \001(\010B\003\340A\001\022-\n"
+          + " disable_generative_answer_add_on\030\003 \001(\010B\003\340A\001\032=\n"
+          + "\023CustomRankingParams\022&\n"
+          + "\031expressions_to_precompute\030\001 \003(\tB\003\340A\001\032E\n"
           + "\013ParamsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022%\n"
           + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\0321\n"
           + "\017UserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"d\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\222\001\n"
+          + "\030RankingExpressionBackend\022*\n"
+          + "&RANKING_EXPRESSION_BACKEND_UNSPECIFIED\020\000\022\014\n"
+          + "\004BYOE\020\001\032\002\010\001\022\020\n"
+          + "\010CLEARBOX\020\002\032\002\010\001\022\025\n"
+          + "\021RANK_BY_EMBEDDING\020\003\022\023\n"
+          + "\017RANK_BY_FORMULA\020\004\"d\n"
           + "\022RelevanceThreshold\022#\n"
           + "\037RELEVANCE_THRESHOLD_UNSPECIFIED\020\000\022\n\n"
           + "\006LOWEST\020\001\022\007\n"
           + "\003LOW\020\002\022\n\n"
           + "\006MEDIUM\020\003\022\010\n"
-          + "\004HIGH\020\004\"~\n"
-          + "\030RankingExpressionBackend\022*\n"
-          + "&RANKING_EXPRESSION_BACKEND_UNSPECIFIED\020\000\022\025\n"
-          + "\021RANK_BY_EMBEDDING\020\003\022\023\n"
-          + "\017RANK_BY_FORMULA\020\004\"\004\010\001\020\001\"\004\010\002\020\002\"\3715\n"
+          + "\004HIGH\020\004\"\370<\n"
           + "\016SearchResponse\022Q\n"
-          + "\007results\030\001 \003(\0132@.google.cloud.discover"
-          + "yengine.v1beta.SearchResponse.SearchResult\022I\n"
-          + "\006facets\030\002"
-          + " \003(\01329.google.cloud.discoveryengine.v1beta.SearchResponse.Facet\022d\n"
-          + "\024guided_search_result\030\010 \001(\0132F.google.clo"
-          + "ud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult\022\022\n\n"
+          + "\007results\030\001 \003(\0132@.goo"
+          + "gle.cloud.discoveryengine.v1beta.SearchResponse.SearchResult\022I\n"
+          + "\006facets\030\002 \003(\01329.g"
+          + "oogle.cloud.discoveryengine.v1beta.SearchResponse.Facet\022d\n"
+          + "\024guided_search_result\030\010"
+          + " \001(\0132F.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult\022\022\n"
+          + "\n"
           + "total_size\030\003 \001(\005\022\031\n"
           + "\021attribution_token\030\004 \001(\t\022\024\n"
           + "\014redirect_uri\030\014 \001(\t\022\027\n"
           + "\017next_page_token\030\005 \001(\t\022\027\n"
-          + "\017corrected_query\030\007 \001(\t\022L\n"
-          + "\007summary\030\t \001(\0132;.go"
-          + "ogle.cloud.discoveryengine.v1beta.SearchResponse.Summary\022\030\n"
+          + "\017corrected_query\030\007 \001(\t\022\027\n"
+          + "\017suggested_query\030\030 \001(\t\022L\n"
+          + "\007summary\030\t \001(\0132;"
+          + ".google.cloud.discoveryengine.v1beta.SearchResponse.Summary\022\030\n"
           + "\020applied_controls\030\n"
           + " \003(\t\022e\n"
-          + "\025geo_search_debug_info\030\020 \003(\0132F.goog"
-          + "le.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo\022d\n"
-          + "\024query_expansion_info\030\016 \001(\0132F.google.cloud.discovery"
-          + "engine.v1beta.SearchResponse.QueryExpansionInfo\022\214\001\n"
-          + ")natural_language_query_understanding_info\030\017 \001(\0132Y.google.cloud.disco"
-          + "veryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo\022U\n"
-          + "\014session_info\030\023"
-          + " \001(\0132?.google.cloud.discoveryengine.v1beta.SearchResponse.SessionInfo\022Y\n"
-          + "\017one_box_results\030\024 \003(\0132@.google.cloud.di"
-          + "scoveryengine.v1beta.SearchResponse.OneBoxResult\032\302\010\n"
+          + "\025geo_search_debug_info\030\020 \003(\0132F.g"
+          + "oogle.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo\022d\n"
+          + "\024query_expansion_info\030\016 \001(\0132F.google.cloud.discov"
+          + "eryengine.v1beta.SearchResponse.QueryExpansionInfo\022\221\001\n"
+          + ")natural_language_query_understanding_info\030\017 \001(\0132Y.google.cloud.di"
+          + "scoveryengine.v1beta.SearchResponse.Natu"
+          + "ralLanguageQueryUnderstandingInfoB\003\340A\003\022U\n"
+          + "\014session_info\030\023 \001(\0132?.google.cloud.disc"
+          + "overyengine.v1beta.SearchResponse.SessionInfo\022Y\n"
+          + "\017one_box_results\030\024 \003(\0132@.google."
+          + "cloud.discoveryengine.v1beta.SearchResponse.OneBoxResult\022X\n"
+          + "\026search_link_promotions\030\027"
+          + " \003(\01328.google.cloud.discoveryengine.v1beta.SearchLinkPromotion\022^\n"
+          + "\016semantic_state\030$ \001(\0162A.google.cloud.discoveryengin"
+          + "e.v1beta.SearchResponse.SemanticStateB\003\340A\003\032\355\010\n"
           + "\014SearchResult\022\n\n"
           + "\002id\030\001 \001(\t\022?\n"
           + "\010document\030\002 \001(\0132-.google.cloud.discoveryengine.v1beta.Document\0229\n"
-          + "\005chunk\030\022 \001(\0132*.google.cloud.discoveryengine.v1beta.Chunk\022g\n"
-          + "\014model_scores\030\004 \003(\0132Q.google.cloud.d"
-          + "iscoveryengine.v1beta.SearchResponse.SearchResult.ModelScoresEntry\022g\n"
-          + "\014rank_signals\030\007 \001(\0132L.google.cloud.discoveryengine."
-          + "v1beta.SearchResponse.SearchResult.RankSignalsB\003\340A\001\032c\n"
-          + "\020ModelScoresEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022>\n"
-          + "\005value\030\002"
-          + " \001(\0132/.google.cloud.discoveryengine.v1beta.DoubleList:\0028\001\032\362\004\n"
+          + "\005chunk\030\022 \001(\0132*.google.cloud.discoveryengine.v1beta.Chunk\022l\n"
+          + "\014model_scores\030\004 \003(\0132Q.google.cloud.discove"
+          + "ryengine.v1beta.SearchResponse.SearchResult.ModelScoresEntryB\003\340A\003\022g\n"
+          + "\014rank_signals\030\007 \001(\0132L.google.cloud.discoveryengine.v"
+          + "1beta.SearchResponse.SearchResult.RankSignalsB\003\340A\001\032\230\005\n"
           + "\013RankSignals\022*\n"
           + "\030keyword_similarity_score\030\001 \001(\002B\003\340A\001H\000\210\001\001\022!\n"
           + "\017relevance_score\030\002 \001(\002B\003\340A\001H\001\210\001\001\022+\n"
@@ -544,8 +665,9 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\014document_age\030\007 \001(\002B\003\340A\001H\005\210\001\001\022!\n"
           + "\017boosting_factor\030\010 \001(\002B\003\340A\001H\006\210\001\001\022\031\n"
           + "\014default_rank\030  \001(\002B\003\340A\001\022v\n"
-          + "\016custom_signals\030! \003(\0132Y.google.cloud.discoveryengine.v1beta.SearchR"
-          + "esponse.SearchResult.RankSignals.CustomSignalB\003\340A\001\0325\n"
+          + "\016custom_signals\030! \003(\0132Y.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignalB\003\340A\001\022*\n"
+          + "\035precomputed_expression_values\030\" \003(\002B\003\340A\001\0325\n"
           + "\014CustomSignal\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\022\n"
           + "\005value\030\002 \001(\002B\003\340A\001B\033\n"
@@ -555,62 +677,82 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "_pctr_rankB\022\n"
           + "\020_topicality_rankB\017\n\r"
           + "_document_ageB\022\n"
-          + "\020_boosting_factorJ\004\010\005\020\006\032\201\002\n"
+          + "\020_boosting_factor\032c\n"
+          + "\020ModelScoresEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022>\n"
+          + "\005value\030\002"
+          + " \001(\0132/.google.cloud.discoveryengine.v1beta.DoubleList:\0028\001\032\201\002\n"
           + "\005Facet\022\013\n"
           + "\003key\030\001 \001(\t\022T\n"
-          + "\006values\030\002 \003(\0132D.google.cloud.disc"
-          + "overyengine.v1beta.SearchResponse.Facet.FacetValue\022\025\n\r"
+          + "\006values\030\002 \003(\0132D.google.cloud.discove"
+          + "ryengine.v1beta.SearchResponse.Facet.FacetValue\022\025\n\r"
           + "dynamic_facet\030\003 \001(\010\032~\n\n"
           + "FacetValue\022\017\n"
           + "\005value\030\001 \001(\tH\000\022A\n"
-          + "\010interval\030\002 \001"
-          + "(\0132-.google.cloud.discoveryengine.v1beta.IntervalH\000\022\r\n"
+          + "\010interval\030\002 \001(\0132"
+          + "-.google.cloud.discoveryengine.v1beta.IntervalH\000\022\r\n"
           + "\005count\030\003 \001(\003B\r\n"
           + "\013facet_value\032\363\001\n"
           + "\022GuidedSearchResult\022y\n"
-          + "\025refinement_attributes\030\001 \003(\0132Z.google.cloud.discovery"
-          + "engine.v1beta.SearchResponse.GuidedSearchResult.RefinementAttribute\022\033\n"
+          + "\025refinement_attributes\030\001 \003(\0132Z.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchResponse.GuidedSearchResult.RefinementAttribute\022\033\n"
           + "\023follow_up_questions\030\002 \003(\t\032E\n"
           + "\023RefinementAttribute\022\025\n\r"
           + "attribute_key\030\001 \001(\t\022\027\n"
-          + "\017attribute_value\030\002 \001(\t\032\263\014\n"
+          + "\017attribute_value\030\002 \001(\t\032\307\020\n"
           + "\007Summary\022\024\n"
           + "\014summary_text\030\001 \001(\t\022q\n"
-          + "\027summary_skipped_reasons\030\002 \003(\0162P.goo"
-          + "gle.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason\022g\n"
-          + "\021safety_attributes\030\003 \001(\0132L.google.cloud.d"
-          + "iscoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes\022n\n"
-          + "\025summary_with_metadata\030\004 \001(\0132O.google.cloud.discoveryeng"
-          + "ine.v1beta.SearchResponse.Summary.SummaryWithMetadata\0326\n"
+          + "\027summary_skipped_reasons\030\002 \003(\0162P.google"
+          + ".cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason\022g\n"
+          + "\021safety_attributes\030\003 \001(\0132L.google.cloud.disc"
+          + "overyengine.v1beta.SearchResponse.Summary.SafetyAttributes\022n\n"
+          + "\025summary_with_metadata\030\004 \001(\0132O.google.cloud.discoveryengine"
+          + ".v1beta.SearchResponse.Summary.SummaryWithMetadata\0326\n"
           + "\020SafetyAttributes\022\022\n\n"
           + "categories\030\001 \003(\t\022\016\n"
           + "\006scores\030\002 \003(\002\032k\n"
           + "\020CitationMetadata\022W\n"
-          + "\tcitations\030\001 \003(\0132D.google.cl"
-          + "oud.discoveryengine.v1beta.SearchResponse.Summary.Citation\032\217\001\n"
+          + "\tcitations\030\001 \003(\0132D.google.cloud"
+          + ".discoveryengine.v1beta.SearchResponse.Summary.Citation\032\217\001\n"
           + "\010Citation\022\023\n"
           + "\013start_index\030\001 \001(\003\022\021\n"
           + "\tend_index\030\002 \001(\003\022[\n"
-          + "\007sources\030\003 \003(\0132J.google.cloud.discoveryengine."
-          + "v1beta.SearchResponse.Summary.CitationSource\032)\n"
+          + "\007sources\030\003 \003(\0132J.google.cloud.discoveryengine.v1b"
+          + "eta.SearchResponse.Summary.CitationSource\032)\n"
           + "\016CitationSource\022\027\n"
-          + "\017reference_index\030\004 \001(\003\032\220\002\n"
+          + "\017reference_index\030\004 \001(\003\032\266\002\n"
           + "\tReference\022\r\n"
           + "\005title\030\001 \001(\t\022A\n"
           + "\010document\030\002 \001(\tB/\340A\002\372A)\n"
           + "\'discoveryengine.googleapis.com/Document\022\013\n"
           + "\003uri\030\003 \001(\t\022j\n"
-          + "\016chunk_contents\030\004 \003(\0132R.google.cloud.disc"
-          + "overyengine.v1beta.SearchResponse.Summary.Reference.ChunkContent\0328\n"
+          + "\016chunk_contents\030\004 \003(\0132R.google.cloud.discove"
+          + "ryengine.v1beta.SearchResponse.Summary.Reference.ChunkContent\032^\n"
           + "\014ChunkContent\022\017\n"
           + "\007content\030\001 \001(\t\022\027\n"
-          + "\017page_identifier\030\002 \001(\t\032\352\001\n"
+          + "\017page_identifier\030\002 \001(\t\022$\n"
+          + "\027blob_attachment_indexes\030\004 \003(\003B\003\340A\003\032\362\002\n"
+          + "\016BlobAttachment\022b\n"
+          + "\004data\030\001 \001(\0132O.google."
+          + "cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachment.BlobB\003\340A\003\022y\n"
+          + "\020attribution_type\030\002 \001(\0162Z.google.cloud.di"
+          + "scoveryengine.v1beta.SearchResponse.Summ"
+          + "ary.BlobAttachment.AttributionTypeB\003\340A\003\0321\n"
+          + "\004Blob\022\026\n"
+          + "\tmime_type\030\001 \001(\tB\003\340A\003\022\021\n"
+          + "\004data\030\002 \001(\014B\003\340A\003\"N\n"
+          + "\017AttributionType\022 \n"
+          + "\034ATTRIBUTION_TYPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006CORPUS\020\001\022\r\n"
+          + "\tGENERATED\020\002\032\325\002\n"
           + "\023SummaryWithMetadata\022\017\n"
           + "\007summary\030\001 \001(\t\022g\n"
-          + "\021citation_metadata\030\002 \001(\0132L.google."
-          + "cloud.discoveryengine.v1beta.SearchResponse.Summary.CitationMetadata\022Y\n\n"
-          + "references\030\003 \003(\0132E.google.cloud.discoveryengine."
-          + "v1beta.SearchResponse.Summary.Reference\"\343\002\n"
+          + "\021citation_metadata\030\002 \001(\0132L"
+          + ".google.cloud.discoveryengine.v1beta.SearchResponse.Summary.CitationMetadata\022Y\n\n"
+          + "references\030\003 \003(\0132E.google.cloud.discover"
+          + "yengine.v1beta.SearchResponse.Summary.Reference\022i\n"
+          + "\020blob_attachments\030\004 \003(\0132J.goog"
+          + "le.cloud.discoveryengine.v1beta.SearchResponse.Summary.BlobAttachmentB\003\340A\003\"\361\002\n"
           + "\024SummarySkippedReason\022&\n"
           + "\"SUMMARY_SKIPPED_REASON_UNSPECIFIED\020\000\022\035\n"
           + "\031ADVERSARIAL_QUERY_IGNORED\020\001\022%\n"
@@ -621,34 +763,35 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\023NO_RELEVANT_CONTENT\020\006\022\037\n"
           + "\033JAIL_BREAKING_QUERY_IGNORED\020\007\022\035\n"
           + "\031CUSTOMER_POLICY_VIOLATION\020\010\022(\n"
-          + "$NON_SUMMARY_SEEKING_QUERY_IGNORED_V2\020\t\032K\n"
+          + "$NON_SUMMARY_SEEKING_QUERY_IGNORED_V2\020\t\022\014\n"
+          + "\010TIME_OUT\020\n"
+          + "\032K\n"
           + "\022GeoSearchDebugInfo\022\036\n"
           + "\026original_address_query\030\001 \001(\t\022\025\n\r"
           + "error_message\030\002 \001(\t\032I\n"
           + "\022QueryExpansionInfo\022\026\n"
           + "\016expanded_query\030\001 \001(\010\022\033\n"
-          + "\023pinned_result_count\030\002 \001(\003\032\201\021\n"
+          + "\023pinned_result_count\030\002 \001(\003\032\235\021\n"
           + "%NaturalLanguageQueryUnderstandingInfo\022\031\n"
           + "\021extracted_filters\030\001 \001(\t\022\027\n"
-          + "\017rewritten_query\030\002 \001(\t\022\230\001\n"
-          + "\033structured_extracted_filter\030\003 \001("
-          + "\0132s.google.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnder"
-          + "standingInfo.StructuredExtractedFilter\032\210\017\n"
+          + "\017rewritten_query\030\002 \001(\t\022\032\n"
+          + "\022classified_intents\030\005 \003(\t\022\230\001\n"
+          + "\033structured_extracted_filter\030\003 \001(\0132s"
+          + ".google.cloud.discoveryengine.v1beta.Sea"
+          + "rchResponse.NaturalLanguageQueryUnderstandingInfo.StructuredExtractedFilter\032\210\017\n"
           + "\031StructuredExtractedFilter\022\222\001\n\n"
-          + "expression\030\001 \001(\0132~.google.cloud.discoveryengine"
-          + ".v1beta.SearchResponse.NaturalLanguageQu"
-          + "eryUnderstandingInfo.StructuredExtractedFilter.Expression\032M\n"
-          + "\020StringConstraint\022\022\n"
-          + "\n"
+          + "expression\030\001 \001(\0132~.google.cloud.discoveryengine.v1"
+          + "beta.SearchResponse.NaturalLanguageQuery"
+          + "UnderstandingInfo.StructuredExtractedFilter.Expression\032M\n"
+          + "\020StringConstraint\022\022\n\n"
           + "field_name\030\001 \001(\t\022\016\n"
           + "\006values\030\002 \003(\t\022\025\n\r"
           + "query_segment\030\003 \001(\t\032\372\002\n"
-          + "\020NumberConstraint\022\022\n"
-          + "\n"
+          + "\020NumberConstraint\022\022\n\n"
           + "field_name\030\001 \001(\t\022\244\001\n\n"
-          + "comparison\030\002 \001(\0162\217\001.google.cloud.discoveryengine.v1beta.Se"
-          + "archResponse.NaturalLanguageQueryUnderst"
-          + "andingInfo.StructuredExtractedFilter.NumberConstraint.Comparison\022\r\n"
+          + "comparison\030\002 \001(\0162\217\001.g",
+      "oogle.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstand"
+          + "ingInfo.StructuredExtractedFilter.NumberConstraint.Comparison\022\r\n"
           + "\005value\030\003 \001(\001\022\025\n\r"
           + "query_segment\030\004 \001(\t\"\204\001\n\n"
           + "Comparison\022\032\n"
@@ -665,66 +808,73 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
           + "\tlongitude\030\005 \001(\001\022\030\n"
           + "\020radius_in_meters\030\003 \001(\002\032\245\001\n\r"
           + "AndExpression\022\223\001\n"
-          + "\013expressions\030\001 \003(\0132~.google.cloud.discoveryengine.v1beta"
-          + ".SearchResponse.NaturalLanguageQueryUnde"
-          + "rstandingInfo.StructuredExtractedFilter.Expression\032\244\001\n"
+          + "\013expressions\030\001 \003(\0132~.google.cloud.discoveryengine.v1beta.Se"
+          + "archResponse.NaturalLanguageQueryUnderst"
+          + "andingInfo.StructuredExtractedFilter.Expression\032\244\001\n"
           + "\014OrExpression\022\223\001\n"
-          + "\013expressions\030\001 \003(\0132~.google.cloud.discoveryengine"
-          + ".v1beta.SearchResponse.NaturalLanguageQu"
-          + "eryUnderstandingInfo.StructuredExtractedFilter.Expression\032\275\006\n\n"
+          + "\013expressions\030\001 \003(\0132~.google.cloud.discoveryengine.v1"
+          + "beta.SearchResponse.NaturalLanguageQuery"
+          + "UnderstandingInfo.StructuredExtractedFilter.Expression\032\275\006\n\n"
           + "Expression\022\242\001\n"
-          + "\021string_constraint\030\001 \001(\0132\204\001.google.cloud.dis"
-          + "coveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.Structu"
-          + "redExtractedFilter.StringConstraintH\000\022\242\001\n"
-          + "\021number_constraint\030\002 \001(\0132\204\001.google.clou"
+          + "\021string_constraint\030\001 \001(\0132\204\001.google.cloud.discov"
+          + "eryengine.v1beta.SearchResponse.NaturalL"
+          + "anguageQueryUnderstandingInfo.StructuredExtractedFilter.StringConstraintH\000\022\242\001\n"
+          + "\021number_constraint\030\002 \001(\0132\204\001.google.cloud.d"
+          + "iscoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.Struc"
+          + "turedExtractedFilter.NumberConstraintH\000\022\254\001\n"
+          + "\026geolocation_constraint\030\003 \001(\0132\211\001.goog"
+          + "le.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstanding"
+          + "Info.StructuredExtractedFilter.GeolocationConstraintH\000\022\226\001\n"
+          + "\010and_expr\030\004 \001(\0132\201\001.google.cloud.discoveryengine.v1beta.SearchR"
+          + "esponse.NaturalLanguageQueryUnderstandin"
+          + "gInfo.StructuredExtractedFilter.AndExpressionH\000\022\224\001\n"
+          + "\007or_expr\030\005 \001(\0132\200\001.google.clou"
           + "d.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo.St"
-          + "ructuredExtractedFilter.NumberConstraintH\000\022\254\001\n"
-          + "\026geolocation_constraint\030\003 \001(\0132\211\001.g"
-          + "oogle.cloud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstand"
-          + "ingInfo.StructuredExtractedFilter.GeolocationConstraintH\000\022\226\001\n"
-          + "\010and_expr\030\004 \001(\0132\201\001.google.cloud.discoveryengine.v1beta.Sear"
-          + "chResponse.NaturalLanguageQueryUnderstan"
-          + "dingInfo.StructuredExtractedFilter.AndExpressionH\000\022\224\001\n"
-          + "\007or_expr\030\005 \001(\0132\200\001.google.c"
-          + "loud.discoveryengine.v1beta.SearchResponse.NaturalLanguageQueryUnderstandingInfo"
-          + ".StructuredExtractedFilter.OrExpressionH\000B\006\n"
+          + "ructuredExtractedFilter.OrExpressionH\000B\006\n"
           + "\004expr\032-\n"
           + "\013SessionInfo\022\014\n"
           + "\004name\030\001 \001(\t\022\020\n"
           + "\010query_id\030\002 \001(\t\032\265\002\n"
           + "\014OneBoxResult\022a\n"
-          + "\014one_box_type\030\001 \001(\0162K.google.cloud.discovery"
-          + "engine.v1beta.SearchResponse.OneBoxResult.OneBoxType\022X\n"
-          + "\016search_results\030\002 \003(\0132@.g"
-          + "oogle.cloud.discoveryengine.v1beta.SearchResponse.SearchResult\"h\n\n"
+          + "\014one_box_type\030\001 \001(\0162K.google.cloud.discoveryeng"
+          + "ine.v1beta.SearchResponse.OneBoxResult.OneBoxType\022X\n"
+          + "\016search_results\030\002 \003(\0132@.goog"
+          + "le.cloud.discoveryengine.v1beta.SearchResponse.SearchResult\"h\n\n"
           + "OneBoxType\022\034\n"
           + "\030ONE_BOX_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006PEOPLE\020\001\022\020\n"
           + "\014ORGANIZATION\020\002\022\t\n"
           + "\005SLACK\020\003\022\023\n"
-          + "\017KNOWLEDGE_GRAPH\020\0042\277\007\n\r"
+          + "\017KNOWLEDGE_GRAPH\020\004\"J\n\r"
+          + "SemanticState\022\036\n"
+          + "\032SEMANTIC_STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DISABLED\020\001\022\013\n"
+          + "\007ENABLED\020\0022\376\010\n\r"
           + "SearchService\022\243\003\n"
-          + "\006Search\0222.google.cloud.discoveryengine.v1beta.Sear"
-          + "chRequest\0323.google.cloud.discoveryengine"
-          + ".v1beta.SearchResponse\"\257\002\202\323\344\223\002\250\002\"T/v1bet"
-          + "a/{serving_config=projects/*/locations/*/dataStores/*/servingConfigs/*}:search:\001"
-          + "*Zg\"b/v1beta/{serving_config=projects/*/locations/*/collections/*/dataStores/*/s"
-          + "ervingConfigs/*}:search:\001*Zd\"_/v1beta/{serving_config=projects/*/locations/*/col"
-          + "lections/*/engines/*/servingConfigs/*}:search:\001*\022\263\003\n\n"
-          + "SearchLite\0222.google.cloud.discoveryengine.v1beta.SearchRequest\0323.go"
-          + "ogle.cloud.discoveryengine.v1beta.Search"
-          + "Response\"\273\002\202\323\344\223\002\264\002\"X/v1beta/{serving_con"
-          + "fig=projects/*/locations/*/dataStores/*/servingConfigs/*}:searchLite:\001*Zk\"f/v1be"
-          + "ta/{serving_config=projects/*/locations/*/collections/*/dataStores/*/servingConf"
-          + "igs/*}:searchLite:\001*Zh\"c/v1beta/{serving_config=projects/*/locations/*/collectio"
-          + "ns/*/engines/*/servingConfigs/*}:searchL"
-          + "ite:\001*\032R\312A\036discoveryengine.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/cloud-platformB\231\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\022SearchServiceProtoP\001ZQcl"
-          + "oud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb;discoveryenginepb\242"
-          + "\002\017DISCOVERYENGINE\252\002#Google.Cloud.Discove"
-          + "ryEngine.V1Beta\312\002#Google\\Cloud\\Discovery"
-          + "Engine\\V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "\006Search\0222.google.cloud.discoveryengine.v1beta.SearchReque"
+          + "st\0323.google.cloud.discoveryengine.v1beta"
+          + ".SearchResponse\"\257\002\202\323\344\223\002\250\002\"T/v1beta/{serv"
+          + "ing_config=projects/*/locations/*/dataStores/*/servingConfigs/*}:search:\001*Zg\"b/v"
+          + "1beta/{serving_config=projects/*/locations/*/collections/*/dataStores/*/servingC"
+          + "onfigs/*}:search:\001*Zd\"_/v1beta/{serving_config=projects/*/locations/*/collection"
+          + "s/*/engines/*/servingConfigs/*}:search:\001*\022\263\003\n\n"
+          + "SearchLite\0222.google.cloud.discoveryengine.v1beta.SearchRequest\0323.google.cl"
+          + "oud.discoveryengine.v1beta.SearchRespons"
+          + "e\"\273\002\202\323\344\223\002\264\002\"X/v1beta/{serving_config=pro"
+          + "jects/*/locations/*/dataStores/*/servingConfigs/*}:searchLite:\001*Zk\"f/v1beta/{ser"
+          + "ving_config=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:"
+          + "searchLite:\001*Zh\"c/v1beta/{serving_config=projects/*/locations/*/collections/*/en"
+          + "gines/*/servingConfigs/*}:searchLite:\001*\032"
+          + "\220\002\312A\036discoveryengine.googleapis.com\322A\353\001h"
+          + "ttps://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/di"
+          + "scoveryengine.assist.readwrite,https://www.googleapis.com/auth/discoveryengine.r"
+          + "eadwrite,https://www.googleapis.com/auth/discoveryengine.serving.readwriteB\231\002\n"
+          + "\'com.google.cloud.discoveryengine.v1betaB\022"
+          + "SearchServiceProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryeng"
+          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
+          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
+          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
+          + "Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -748,12 +898,14 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "ServingConfig",
               "Branch",
               "Query",
+              "PageCategories",
               "ImageQuery",
               "PageSize",
               "PageToken",
               "Offset",
               "OneBoxPageSize",
               "DataStoreSpecs",
+              "NumResultsPerDataStore",
               "Filter",
               "CanonicalFilter",
               "OrderBy",
@@ -774,10 +926,17 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "UserLabels",
               "NaturalLanguageQueryUnderstandingSpec",
               "SearchAsYouTypeSpec",
+              "DisplaySpec",
+              "CrowdingSpecs",
               "Session",
               "SessionSpec",
               "RelevanceThreshold",
+              "RelevanceFilterSpec",
               "PersonalizationSpec",
+              "RelevanceScoreSpec",
+              "SearchAddonSpec",
+              "CustomRankingParams",
+              "Entity",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ImageQuery_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
@@ -795,7 +954,7 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DataStoreSpec_descriptor,
             new java.lang.String[] {
-              "DataStore", "Filter", "BoostSpec",
+              "DataStore", "Filter", "BoostSpec", "CustomSearchOperators", "NumResults",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_FacetSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
@@ -910,14 +1069,24 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "IgnoreNonSummarySeekingQuery",
               "IgnoreLowRelevantContent",
               "IgnoreJailBreakingQuery",
+              "MultimodalSpec",
               "ModelPromptSpec",
               "LanguageCode",
               "ModelSpec",
               "UseSemanticChunks",
             });
-    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_MultiModalSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_descriptor
             .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_MultiModalSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_MultiModalSpec_descriptor,
+            new java.lang.String[] {
+              "ImageSource",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_descriptor
+            .getNestedType(1);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpec_descriptor,
@@ -926,7 +1095,7 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_descriptor
-            .getNestedType(1);
+            .getNestedType(2);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpec_descriptor,
@@ -980,7 +1149,10 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_NaturalLanguageQueryUnderstandingSpec_descriptor,
             new java.lang.String[] {
-              "FilterExtractionCondition", "GeoSearchQueryDetectionFieldNames",
+              "FilterExtractionCondition",
+              "GeoSearchQueryDetectionFieldNames",
+              "ExtractedFilterBehavior",
+              "AllowedFieldNames",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAsYouTypeSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
@@ -991,27 +1163,92 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "Condition",
             });
-    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DisplaySpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
             10);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DisplaySpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_DisplaySpec_descriptor,
+            new java.lang.String[] {
+              "MatchHighlightingCondition",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CrowdingSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            11);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CrowdingSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CrowdingSpec_descriptor,
+            new java.lang.String[] {
+              "Field", "MaxCount", "Mode",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            12);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SessionSpec_descriptor,
             new java.lang.String[] {
               "QueryId", "SearchResultPersistenceCount",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            13);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_descriptor,
+            new java.lang.String[] {
+              "KeywordSearchThreshold", "SemanticSearchThreshold",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceFilterSpec_RelevanceThresholdSpec_descriptor,
+            new java.lang.String[] {
+              "RelevanceThreshold", "SemanticRelevanceThreshold", "RelevanceThresholdSpec",
+            });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_PersonalizationSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
-            11);
+            14);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_PersonalizationSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_PersonalizationSpec_descriptor,
             new java.lang.String[] {
               "Mode",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceScoreSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            15);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceScoreSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_RelevanceScoreSpec_descriptor,
+            new java.lang.String[] {
+              "ReturnRelevanceScore",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAddonSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            16);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAddonSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_SearchAddonSpec_descriptor,
+            new java.lang.String[] {
+              "DisableSemanticAddOn",
+              "DisableKpiPersonalizationAddOn",
+              "DisableGenerativeAnswerAddOn",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CustomRankingParams_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
+            17);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CustomRankingParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_CustomRankingParams_descriptor,
+            new java.lang.String[] {
+              "ExpressionsToPrecompute",
+            });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
-            12);
+            18);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_ParamsEntry_descriptor,
@@ -1020,7 +1257,7 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelsEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_descriptor.getNestedType(
-            13);
+            19);
     internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_UserLabelsEntry_descriptor,
@@ -1041,6 +1278,7 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "RedirectUri",
               "NextPageToken",
               "CorrectedQuery",
+              "SuggestedQuery",
               "Summary",
               "AppliedControls",
               "GeoSearchDebugInfo",
@@ -1048,6 +1286,8 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "NaturalLanguageQueryUnderstandingInfo",
               "SessionInfo",
               "OneBoxResults",
+              "SearchLinkPromotions",
+              "SemanticState",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_descriptor.getNestedType(
@@ -1058,18 +1298,9 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "Id", "Document", "Chunk", "ModelScores", "RankSignals",
             });
-    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor =
-        internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor
-            .getNestedType(0);
-    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor,
-            new java.lang.String[] {
-              "Key", "Value",
-            });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor
-            .getNestedType(1);
+            .getNestedType(0);
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor,
@@ -1083,6 +1314,7 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
               "BoostingFactor",
               "DefaultRank",
               "CustomSignals",
+              "PrecomputedExpressionValues",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor
@@ -1092,6 +1324,15 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
             internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor,
             new java.lang.String[] {
               "Name", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Facet_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_descriptor.getNestedType(
@@ -1190,16 +1431,34 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_Reference_ChunkContent_descriptor,
             new java.lang.String[] {
-              "Content", "PageIdentifier",
+              "Content", "PageIdentifier", "BlobAttachmentIndexes",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_descriptor
+            .getNestedType(5);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor,
+            new java.lang.String[] {
+              "Data", "AttributionType",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_BlobAttachment_Blob_descriptor,
+            new java.lang.String[] {
+              "MimeType", "Data",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SummaryWithMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_descriptor
-            .getNestedType(5);
+            .getNestedType(6);
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SummaryWithMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SummaryWithMetadata_descriptor,
             new java.lang.String[] {
-              "Summary", "CitationMetadata", "References",
+              "Summary", "CitationMetadata", "References", "BlobAttachments",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_GeoSearchDebugInfo_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_descriptor.getNestedType(
@@ -1226,7 +1485,10 @@ public final class SearchServiceProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_descriptor,
             new java.lang.String[] {
-              "ExtractedFilters", "RewrittenQuery", "StructuredExtractedFilter",
+              "ExtractedFilters",
+              "RewrittenQuery",
+              "ClassifiedIntents",
+              "StructuredExtractedFilter",
             });
     internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_StructuredExtractedFilter_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_NaturalLanguageQueryUnderstandingInfo_descriptor

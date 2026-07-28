@@ -76,7 +76,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -94,7 +94,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -114,7 +114,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Config to update.
+   * Required. Workstation configuration to update.
    * </pre>
    *
    * <code>
@@ -191,7 +191,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -652,7 +652,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -669,7 +669,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -692,7 +692,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -717,7 +717,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -772,7 +772,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -794,7 +794,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -812,7 +812,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -834,7 +834,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Config to update.
+     * Required. Workstation configuration to update.
      * </pre>
      *
      * <code>
@@ -1076,7 +1076,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1093,7 +1093,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1114,7 +1114,7 @@ public final class UpdateWorkstationConfigRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *

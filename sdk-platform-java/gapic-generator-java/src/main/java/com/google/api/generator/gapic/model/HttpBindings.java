@@ -16,6 +16,7 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -41,6 +42,11 @@ public abstract class HttpBindings {
     public abstract String name();
 
     abstract String lowerCamelName();
+
+    // The dot-separated json_name of the field.
+    // e.g. parent.iceberg-catalog-id
+    @Nullable
+    public abstract String jsonName();
 
     // An object that contains all info of the leaf level field
     @Nullable
@@ -69,6 +75,8 @@ public abstract class HttpBindings {
     public abstract static class Builder {
 
       public abstract HttpBindings.HttpBinding.Builder setName(String name);
+
+      public abstract HttpBindings.HttpBinding.Builder setJsonName(String jsonName);
 
       public abstract HttpBindings.HttpBinding.Builder setField(Field field);
 
@@ -133,9 +141,11 @@ public abstract class HttpBindings {
   private static String lowerCamelPattern(String originalPattern, Set<HttpBinding> pathParameters) {
     String lowerCamelPattern = originalPattern;
     for (HttpBinding pathParam : pathParameters) {
-      lowerCamelPattern =
-          lowerCamelPattern.replaceAll(
-              "\\{" + pathParam.name(), "{" + JavaStyle.toLowerCamelCase(pathParam.name()));
+      String replacement =
+          !Strings.isNullOrEmpty(pathParam.jsonName())
+              ? pathParam.jsonName()
+              : JavaStyle.toLowerCamelCase(pathParam.name());
+      lowerCamelPattern = lowerCamelPattern.replaceAll("\\{" + pathParam.name(), "{" + replacement);
     }
     return lowerCamelPattern;
   }

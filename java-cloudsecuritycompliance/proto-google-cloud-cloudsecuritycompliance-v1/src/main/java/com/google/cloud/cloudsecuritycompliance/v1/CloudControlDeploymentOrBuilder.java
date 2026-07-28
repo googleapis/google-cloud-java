@@ -31,7 +31,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Identifier. The name for the cloud control deployment, in the format
-   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -46,7 +48,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Identifier. The name for the cloud control deployment, in the format
-   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *

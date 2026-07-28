@@ -101,7 +101,7 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
           + "/google/cloud/networkservices/v1/tls_route.proto\022\037google.cloud.networkservices."
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\324\010\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\233\t\n"
           + "\010TlsRoute\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\tself_link\030\010 \001(\tB\003\340A\003\0224\n"
@@ -114,9 +114,12 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
           + "\006meshes\030\006 \003(\tB+\340A\001\372A%\n"
           + "#networkservices.googleapis.com/Mesh\022@\n"
           + "\010gateways\030\007 \003(\tB.\340A\001\372A(\n"
-          + "&networkservices.googleapis.com/Gateway\022J\n"
-          + "\006labels\030\013"
-          + " \003(\01325.google.cloud.networkservices.v1.TlsRoute.LabelsEntryB\003\340A\001\032\243\001\n"
+          + "&networkservices.googleapis.com/Gateway\022E\n"
+          + "\016target_proxies\030\r"
+          + " \003(\tB-\340A\001\372A\'\n"
+          + "%compute.googleapis.com/TargetTcpProxy\022J\n"
+          + "\006labels\030\013 \003(\01325"
+          + ".google.cloud.networkservices.v1.TlsRoute.LabelsEntryB\003\340A\001\032\243\001\n"
           + "\tRouteRule\022J\n"
           + "\007matches\030\001"
           + " \003(\01324.google.cloud.networkservices.v1.TlsRoute.RouteMatchB\003\340A\002\022J\n"
@@ -126,8 +129,8 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
           + "\010sni_host\030\001 \003(\tB\003\340A\001\022\021\n"
           + "\004alpn\030\002 \003(\tB\003\340A\001\032\232\001\n"
           + "\013RouteAction\022U\n"
-          + "\014destinations\030\001"
-          + " \003(\0132:.google.cloud.networkservices.v1.TlsRoute.RouteDestinationB\003\340A\002\0224\n"
+          + "\014destinations\030\001 \003(\0132:"
+          + ".google.cloud.networkservices.v1.TlsRoute.RouteDestinationB\003\340A\002\0224\n"
           + "\014idle_timeout\030\004 \001(\0132\031.google.protobuf.DurationB\003\340A\001\032l\n"
           + "\020RouteDestination\022C\n"
           + "\014service_name\030\001 \001(\tB-\340A\002\372A\'\n"
@@ -136,11 +139,11 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:k\352Ah\n"
-          + "\'networkservices.googleapis.com"
-          + "/TlsRoute\022=projects/{project}/locations/{location}/tlsRoutes/{tls_route}\"\243\001\n"
+          + "\'networkservices.googleapis.com/TlsRoute"
+          + "\022=projects/{project}/locations/{location}/tlsRoutes/{tls_route}\"\243\001\n"
           + "\024ListTlsRoutesRequest\022?\n"
-          + "\006parent\030\001 \001(\tB/\340A\002\372A"
-          + ")\022\'networkservices.googleapis.com/TlsRoute\022\021\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'networkservices.googleapis.com/TlsRoute\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022#\n"
           + "\026return_partial_success\030\004 \001(\010B\003\340A\001\"\204\001\n"
@@ -155,20 +158,22 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB/\340A\002\372A)\022\'networkservices.googleapis.com/TlsRoute\022\031\n"
           + "\014tls_route_id\030\002 \001(\tB\003\340A\002\022A\n"
-          + "\ttls_route\030\003 \001(\0132).go"
-          + "ogle.cloud.networkservices.v1.TlsRouteB\003\340A\002\"\220\001\n"
+          + "\ttls_route\030\003"
+          + " \001(\0132).google.cloud.networkservices.v1.TlsRouteB\003\340A\002\"\220\001\n"
           + "\025UpdateTlsRouteRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022A\n"
           + "\ttls_route\030\002"
           + " \001(\0132).google.cloud.networkservices.v1.TlsRouteB\003\340A\002\"V\n"
           + "\025DeleteTlsRouteRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'networkservices.googleapis.com/TlsRouteB\356\001\n"
+          + "\'networkservices.googleapis.com/TlsRouteB\345\002\n"
           + "#com.google.cloud.networkservices.v1B\r"
-          + "TlsRouteProtoP\001ZMcloud.google.com/go/networkservices/apiv1/networkservicespb;net"
-          + "workservicespb\252\002\037Google.Cloud.NetworkSer"
-          + "vices.V1\312\002\037Google\\Cloud\\NetworkServices\\"
-          + "V1\352\002\"Google::Cloud::NetworkServices::V1b\006proto3"
+          + "TlsRouteProtoP\001ZMcloud.google.com/go/networkservi"
+          + "ces/apiv1/networkservicespb;networkservi"
+          + "cespb\252\002\037Google.Cloud.NetworkServices.V1\312"
+          + "\002\037Google\\Cloud\\NetworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1\352At\n"
+          + "%compute.googleapis.com/TargetTcpProxy\022Kprojec"
+          + "ts/{project}/locations/{location}/targetTcpProxies/{target_tcp_proxy}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -194,6 +199,7 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
               "Rules",
               "Meshes",
               "Gateways",
+              "TargetProxies",
               "Labels",
             });
     internal_static_google_cloud_networkservices_v1_TlsRoute_RouteRule_descriptor =
@@ -294,6 +300,7 @@ public final class TlsRouteProto extends com.google.protobuf.GeneratedFile {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

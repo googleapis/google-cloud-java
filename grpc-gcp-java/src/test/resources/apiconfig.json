@@ -1,0 +1,29 @@
+{
+  "channelPool": {
+    "maxSize": 3,
+    "maxConcurrentStreamsLowWatermark": 2
+  },
+  "method": [
+    {
+      "name": [ "google.spanner.v1.Spanner/CreateSession" ],
+      "affinity": {
+        "command": "BIND",
+        "affinityKey": "name"
+      }
+    },
+    {
+      "name": [ "google.spanner.v1.Spanner/GetSession" ],
+      "affinity": {
+        "command": "BOUND",
+        "affinityKey": "name"
+      }
+    },
+    {
+      "name": [ "google.spanner.v1.Spanner/DeleteSession" ],
+      "affinity": {
+        "command": "UNBIND",
+        "affinityKey": "name"
+      }
+    }
+  ]
+}

@@ -102,19 +102,22 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   }
 
   @Test
-  public void testCreateSessionDeadlineExceeded() {
+  public void testCreateSessionDeadlineExceededWithNoSessionCreateWaitTime() throws Exception {
     // Simulate a problem with the CreateSession RPC making it slow.
     mockSpanner.setCreateSessionExecutionTime(
         SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+    mockSpanner.freezeAfter(1);
 
     Spanner testSpanner =
         SpannerOptions.newBuilder()
             .setProjectId("test-project")
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
             .build()
             .getService();
-    DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client =
+        (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
 
     // The first attempt should lead to a DEADLINE_EXCEEDED error being propagated from the
     // CreateSession attempt.
@@ -123,13 +126,23 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
       assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
     }
 
-    // Remove the simulated problem on the mock server.
     // The next attempt should then succeed.
-    mockSpanner.removeAllExecutionTimes();
+    mockSpanner.unfreeze();
+    assertNotNull(client.multiplexedSessionDatabaseClient.getCurrentSessionReference());
+
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
       //noinspection StatementWithEmptyBody
       while (resultSet.next()) {}
     }
+
+    List<CreateSessionRequest> createSessionRequests =
+        mockSpanner.getRequestsOfType(CreateSessionRequest.class);
+    assertEquals(2, createSessionRequests.size());
+
+    List<ExecuteSqlRequest> requests = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
+    assertEquals(1, requests.size());
+
+    testSpanner.close();
   }
 
   @Test
@@ -330,68 +343,6 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
     List<ExecuteSqlRequest> requests = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
     assertEquals(0, requests.size());
-
-    testSpanner.close();
-  }
-
-  @Test
-  public void testRetryWithNoSessionCreationWaitTime() {
-    mockSpanner.setCreateSessionExecutionTime(
-        SimulatedExecutionTime.ofExceptions(
-            Collections.singletonList(
-                Status.DEADLINE_EXCEEDED
-                    .withDescription(
-                        "CallOptions deadline exceeded after 22.986872393s. "
-                            + "Name resolution delay 6.911918521 seconds. [closed=[], "
-                            + "open=[[connecting_and_lb_delay=32445014148ns, was_still_waiting]]]")
-                    .asRuntimeException())));
-
-    Spanner testSpanner =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project")
-            .setChannelProvider(channelProvider)
-            .setCredentials(NoCredentials.getInstance())
-            .setSessionPoolOption(
-                SessionPoolOptions.newBuilder()
-                    .setUseMultiplexedSession(true)
-                    .setUseMultiplexedSessionForRW(true)
-                    .setUseMultiplexedSessionPartitionedOps(true)
-                    .setFailOnSessionLeak()
-                    .build())
-            .build()
-            .getService();
-
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
-
-    SpannerException spannerException =
-        assertThrows(
-            SpannerException.class,
-            () -> {
-              try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
-                //noinspection StatementWithEmptyBody
-                while (resultSet.next()) {
-                  // ignore
-                }
-              }
-            });
-    assertEquals(ErrorCode.DEADLINE_EXCEEDED, spannerException.getErrorCode());
-
-    // The CreateSession RPC will be retried, and as the exception is removed by the first call,
-    // the second attempt will succeed.
-    try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
-      //noinspection StatementWithEmptyBody
-      while (resultSet.next()) {
-        // ignore
-      }
-    }
-
-    List<CreateSessionRequest> createSessionRequests =
-        mockSpanner.getRequestsOfType(CreateSessionRequest.class);
-    assertEquals(2, createSessionRequests.size());
-
-    List<ExecuteSqlRequest> requests = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class);
-    assertEquals(1, requests.size());
 
     testSpanner.close();
   }

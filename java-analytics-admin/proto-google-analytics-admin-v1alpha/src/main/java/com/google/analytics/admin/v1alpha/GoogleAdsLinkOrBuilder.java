@@ -30,13 +30,13 @@ public interface GoogleAdsLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Format:
+   * Identifier. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -46,13 +46,13 @@ public interface GoogleAdsLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Format:
+   * Identifier. Format:
    * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    *
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

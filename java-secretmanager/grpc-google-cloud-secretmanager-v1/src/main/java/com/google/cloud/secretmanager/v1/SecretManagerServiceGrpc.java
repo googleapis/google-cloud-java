@@ -728,6 +728,102 @@ public final class SecretManagerServiceGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.secretmanager.v1.EnableManagedRotationRequest,
+          com.google.cloud.secretmanager.v1.SecretVersion>
+      getEnableManagedRotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableManagedRotation",
+      requestType = com.google.cloud.secretmanager.v1.EnableManagedRotationRequest.class,
+      responseType = com.google.cloud.secretmanager.v1.SecretVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.secretmanager.v1.EnableManagedRotationRequest,
+          com.google.cloud.secretmanager.v1.SecretVersion>
+      getEnableManagedRotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest,
+            com.google.cloud.secretmanager.v1.SecretVersion>
+        getEnableManagedRotationMethod;
+    if ((getEnableManagedRotationMethod = SecretManagerServiceGrpc.getEnableManagedRotationMethod)
+        == null) {
+      synchronized (SecretManagerServiceGrpc.class) {
+        if ((getEnableManagedRotationMethod =
+                SecretManagerServiceGrpc.getEnableManagedRotationMethod)
+            == null) {
+          SecretManagerServiceGrpc.getEnableManagedRotationMethod =
+              getEnableManagedRotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.secretmanager.v1.EnableManagedRotationRequest,
+                          com.google.cloud.secretmanager.v1.SecretVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "EnableManagedRotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.secretmanager.v1.EnableManagedRotationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.secretmanager.v1.SecretVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecretManagerServiceMethodDescriptorSupplier("EnableManagedRotation"))
+                      .build();
+        }
+      }
+    }
+    return getEnableManagedRotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.secretmanager.v1.RotateSecretRequest,
+          com.google.cloud.secretmanager.v1.SecretVersion>
+      getRotateSecretMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RotateSecret",
+      requestType = com.google.cloud.secretmanager.v1.RotateSecretRequest.class,
+      responseType = com.google.cloud.secretmanager.v1.SecretVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.secretmanager.v1.RotateSecretRequest,
+          com.google.cloud.secretmanager.v1.SecretVersion>
+      getRotateSecretMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.secretmanager.v1.RotateSecretRequest,
+            com.google.cloud.secretmanager.v1.SecretVersion>
+        getRotateSecretMethod;
+    if ((getRotateSecretMethod = SecretManagerServiceGrpc.getRotateSecretMethod) == null) {
+      synchronized (SecretManagerServiceGrpc.class) {
+        if ((getRotateSecretMethod = SecretManagerServiceGrpc.getRotateSecretMethod) == null) {
+          SecretManagerServiceGrpc.getRotateSecretMethod =
+              getRotateSecretMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.secretmanager.v1.RotateSecretRequest,
+                          com.google.cloud.secretmanager.v1.SecretVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RotateSecret"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.secretmanager.v1.RotateSecretRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.secretmanager.v1.SecretVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecretManagerServiceMethodDescriptorSupplier("RotateSecret"))
+                      .build();
+        }
+      }
+    }
+    return getRotateSecretMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SecretManagerServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SecretManagerServiceStub> factory =
@@ -1043,6 +1139,42 @@ public final class SecretManagerServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the managed rotation feature for a
+     * [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be
+     * triggered once for a secret. In order to do further rotations, RotateSecret
+     * should be used. This method will add a secret version and update the
+     * password in Cloud SQL.
+     * </pre>
+     */
+    default void enableManagedRotation(
+        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableManagedRotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret].
+     * This can only be triggered after Managed rotation has been enabled.
+     * This method will add a secret version and update the password in Cloud SQL.
+     * </pre>
+     */
+    default void rotateSecret(
+        com.google.cloud.secretmanager.v1.RotateSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRotateSecretMethod(), responseObserver);
     }
   }
 
@@ -1367,6 +1499,46 @@ public final class SecretManagerServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the managed rotation feature for a
+     * [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be
+     * triggered once for a secret. In order to do further rotations, RotateSecret
+     * should be used. This method will add a secret version and update the
+     * password in Cloud SQL.
+     * </pre>
+     */
+    public void enableManagedRotation(
+        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableManagedRotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret].
+     * This can only be triggered after Managed rotation has been enabled.
+     * This method will add a secret version and update the password in Cloud SQL.
+     * </pre>
+     */
+    public void rotateSecret(
+        com.google.cloud.secretmanager.v1.RotateSecretRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRotateSecretMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1630,6 +1802,40 @@ public final class SecretManagerServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the managed rotation feature for a
+     * [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be
+     * triggered once for a secret. In order to do further rotations, RotateSecret
+     * should be used. This method will add a secret version and update the
+     * password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1.SecretVersion enableManagedRotation(
+        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getEnableManagedRotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret].
+     * This can only be triggered after Managed rotation has been enabled.
+     * This method will add a secret version and update the password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1.SecretVersion rotateSecret(
+        com.google.cloud.secretmanager.v1.RotateSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRotateSecretMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1879,6 +2085,38 @@ public final class SecretManagerServiceGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the managed rotation feature for a
+     * [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be
+     * triggered once for a secret. In order to do further rotations, RotateSecret
+     * should be used. This method will add a secret version and update the
+     * password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1.SecretVersion enableManagedRotation(
+        com.google.cloud.secretmanager.v1.EnableManagedRotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableManagedRotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret].
+     * This can only be triggered after Managed rotation has been enabled.
+     * This method will add a secret version and update the password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.cloud.secretmanager.v1.SecretVersion rotateSecret(
+        com.google.cloud.secretmanager.v1.RotateSecretRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRotateSecretMethod(), getCallOptions(), request);
     }
   }
 
@@ -2146,6 +2384,41 @@ public final class SecretManagerServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables the managed rotation feature for a
+     * [Secret][google.cloud.secretmanager.v1.Secret]. This method can only be
+     * triggered once for a secret. In order to do further rotations, RotateSecret
+     * should be used. This method will add a secret version and update the
+     * password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.secretmanager.v1.SecretVersion>
+        enableManagedRotation(
+            com.google.cloud.secretmanager.v1.EnableManagedRotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableManagedRotationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Do a managed rotation for a [Secret][google.cloud.secretmanager.v1.Secret].
+     * This can only be triggered after Managed rotation has been enabled.
+     * This method will add a secret version and update the password in Cloud SQL.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.secretmanager.v1.SecretVersion>
+        rotateSecret(com.google.cloud.secretmanager.v1.RotateSecretRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRotateSecretMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_SECRETS = 0;
@@ -2163,6 +2436,8 @@ public final class SecretManagerServiceGrpc {
   private static final int METHODID_SET_IAM_POLICY = 12;
   private static final int METHODID_GET_IAM_POLICY = 13;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 14;
+  private static final int METHODID_ENABLE_MANAGED_ROTATION = 15;
+  private static final int METHODID_ROTATE_SECRET = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2268,6 +2543,18 @@ public final class SecretManagerServiceGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ENABLE_MANAGED_ROTATION:
+          serviceImpl.enableManagedRotation(
+              (com.google.cloud.secretmanager.v1.EnableManagedRotationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>)
+                  responseObserver);
+          break;
+        case METHODID_ROTATE_SECRET:
+          serviceImpl.rotateSecret(
+              (com.google.cloud.secretmanager.v1.RotateSecretRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.secretmanager.v1.SecretVersion>)
                   responseObserver);
           break;
         default:
@@ -2385,6 +2672,20 @@ public final class SecretManagerServiceGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getEnableManagedRotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1.EnableManagedRotationRequest,
+                    com.google.cloud.secretmanager.v1.SecretVersion>(
+                    service, METHODID_ENABLE_MANAGED_ROTATION)))
+        .addMethod(
+            getRotateSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.secretmanager.v1.RotateSecretRequest,
+                    com.google.cloud.secretmanager.v1.SecretVersion>(
+                    service, METHODID_ROTATE_SECRET)))
         .build();
   }
 
@@ -2451,6 +2752,8 @@ public final class SecretManagerServiceGrpc {
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getEnableManagedRotationMethod())
+                      .addMethod(getRotateSecretMethod())
                       .build();
         }
       }

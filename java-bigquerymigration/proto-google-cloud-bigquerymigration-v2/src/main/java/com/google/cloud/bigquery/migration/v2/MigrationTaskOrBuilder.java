@@ -30,6 +30,47 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return Whether the assessmentTaskDetails field is set.
+   */
+  boolean hasAssessmentTaskDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   *
+   * @return The assessmentTaskDetails.
+   */
+  com.google.cloud.bigquery.migration.v2.AssessmentTaskDetails getAssessmentTaskDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Task configuration for Assessment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.AssessmentTaskDetails assessment_task_details = 12;
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2.AssessmentTaskDetailsOrBuilder
+      getAssessmentTaskDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Task configuration for CW Batch/Offline SQL Translation.
    * </pre>
    *
@@ -144,13 +185,22 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The type of the task. This must be one of the supported task types:
-   * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-   * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+   * The type of the task. This must be one of the supported task types.
+   *
+   * Assessment:
+   *
+   * - `Assessment_Hive` - Assessment for Hive.
+   * - `Assessment_Redshift` - Assessment for Redshift.
+   * - `Assessment_Snowflake` - Assessment for Snowflake.
+   * - `Assessment_Teradata_v2` - Assessment for Teradata.
+   * - `Assessment_Oracle` - Assessment for Oracle.
+   * - `Assessment_Hadoop` - Assessment for Hadoop.
+   * - `Assessment_Informatica` - Assessment for Informatica.
+   *
+   * Translation:
+   * See [Supported Task
+   * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+   * for a list of supported task types.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -163,13 +213,22 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The type of the task. This must be one of the supported task types:
-   * Translation_Teradata2BQ, Translation_Redshift2BQ, Translation_Bteq2BQ,
-   * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
-   * Translation_Snowflake2BQ, Translation_Netezza2BQ,
-   * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
-   * Translation_Postgresql2BQ, Translation_SQLite2BQ, Translation_Greenplum2BQ.
+   * The type of the task. This must be one of the supported task types.
+   *
+   * Assessment:
+   *
+   * - `Assessment_Hive` - Assessment for Hive.
+   * - `Assessment_Redshift` - Assessment for Redshift.
+   * - `Assessment_Snowflake` - Assessment for Snowflake.
+   * - `Assessment_Teradata_v2` - Assessment for Teradata.
+   * - `Assessment_Oracle` - Assessment for Oracle.
+   * - `Assessment_Hadoop` - Assessment for Hadoop.
+   * - `Assessment_Informatica` - Assessment for Informatica.
+   *
+   * Translation:
+   * See [Supported Task
+   * Types](https://docs.cloud.google.com/bigquery/docs/api-sql-translator#supported_task_types)
+   * for a list of supported task types.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -255,10 +314,11 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -268,10 +328,11 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -281,10 +342,11 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was created.
+   * Output only. Time when the task was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -292,10 +354,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -305,10 +369,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -318,10 +384,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Time when the task was last updated.
+   * Output only. Time when the task was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 7;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 
@@ -407,13 +475,13 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The number or resources with errors. Note: This is not the total
-   * number of errors as each resource can have more than one error.
-   * This is used to indicate truncation by having a `resource_error_count`
-   * that is higher than the size of `resource_error_details`.
+   * Output only. The number or resources with errors. Note: This is not the
+   * total number of errors as each resource can have more than one error. This
+   * is used to indicate truncation by having a `resource_error_count` that is
+   * higher than the size of `resource_error_details`.
    * </pre>
    *
-   * <code>int32 resource_error_count = 18;</code>
+   * <code>int32 resource_error_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resourceErrorCount.
    */
@@ -423,10 +491,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList();
 
@@ -434,10 +504,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index);
 
@@ -445,10 +517,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getMetricsCount();
 
@@ -456,10 +530,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
       getMetricsOrBuilderList();
@@ -468,10 +544,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the task.
+   * Output only. The metrics for the task.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(int index);
 
@@ -522,10 +600,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Count of all the processing errors in this task and its subtasks.
+   * Output only. Count of all the processing errors in this task and its
+   * subtasks.
    * </pre>
    *
-   * <code>int32 total_processing_error_count = 21;</code>
+   * <code>int32 total_processing_error_count = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalProcessingErrorCount.
    */
@@ -535,10 +615,12 @@ public interface MigrationTaskOrBuilder
    *
    *
    * <pre>
-   * Count of all the resource errors in this task and its subtasks.
+   * Output only. Count of all the resource errors in this task and its
+   * subtasks.
    * </pre>
    *
-   * <code>int32 total_resource_error_count = 22;</code>
+   * <code>int32 total_resource_error_count = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The totalResourceErrorCount.
    */

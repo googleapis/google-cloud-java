@@ -30,9 +30,18 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the location associated with the
+   * Required. The resource name of the parent associated with the
    * [Certificates][google.cloud.security.privateca.v1.Certificate], in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`. The parent resource name can be
+   * in one of two forms:
+   *
+   * 1.  **Specific CA Pool:** To list certificates within a single CA Pool:
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`
+   *
+   * 2.  **All CA Pools in a Location:** To list certificates across *all* CA
+   * Pools in a given project and location, use the wildcard character (`-`)
+   * in place of the CA Pool ID.
+   * Example: `projects/&#42;&#47;locations/&#42;&#47;caPools/-`
    * </pre>
    *
    * <code>
@@ -47,9 +56,18 @@ public interface ListCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the location associated with the
+   * Required. The resource name of the parent associated with the
    * [Certificates][google.cloud.security.privateca.v1.Certificate], in the
-   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`.
+   * format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`. The parent resource name can be
+   * in one of two forms:
+   *
+   * 1.  **Specific CA Pool:** To list certificates within a single CA Pool:
+   * `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;`
+   *
+   * 2.  **All CA Pools in a Location:** To list certificates across *all* CA
+   * Pools in a given project and location, use the wildcard character (`-`)
+   * in place of the CA Pool ID.
+   * Example: `projects/&#42;&#47;locations/&#42;&#47;caPools/-`
    * </pre>
    *
    * <code>

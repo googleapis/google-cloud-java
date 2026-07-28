@@ -69,15 +69,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Internal utilities for the com.google.auth.oauth2 namespace.
- *
- * <p>These classes are marked public but should be treated effectively as internal classes only.
- * They are not subject to any backwards compatibility guarantees and might change or be removed at
- * any time. They are provided only as a convenience for other libraries within the {@code
- * com.google.auth} family. Application developers should avoid using these classes directly; they
- * are not part of the public API.
- */
+/** Internal utilities for the com.google.auth.oauth2 namespace. */
 @InternalApi
 public class OAuth2Utils {
 

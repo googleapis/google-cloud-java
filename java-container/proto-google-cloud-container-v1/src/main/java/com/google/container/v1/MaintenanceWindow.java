@@ -91,6 +91,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DAILY_MAINTENANCE_WINDOW(2),
     RECURRING_WINDOW(3),
+    RECURRING_MAINTENANCE_WINDOW(5),
     POLICY_NOT_SET(0);
     private final int value;
 
@@ -114,6 +115,8 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
           return DAILY_MAINTENANCE_WINDOW;
         case 3:
           return RECURRING_WINDOW;
+        case 5:
+          return RECURRING_MAINTENANCE_WINDOW;
         case 0:
           return POLICY_NOT_SET;
         default:
@@ -243,6 +246,70 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return (com.google.container.v1.RecurringTimeWindow) policy_;
     }
     return com.google.container.v1.RecurringTimeWindow.getDefaultInstance();
+  }
+
+  public static final int RECURRING_MAINTENANCE_WINDOW_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   *
+   * @return Whether the recurringMaintenanceWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecurringMaintenanceWindow() {
+    return policyCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   *
+   * @return The recurringMaintenanceWindow.
+   */
+  @java.lang.Override
+  public com.google.container.v1.RecurringMaintenanceWindow getRecurringMaintenanceWindow() {
+    if (policyCase_ == 5) {
+      return (com.google.container.v1.RecurringMaintenanceWindow) policy_;
+    }
+    return com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * RecurringMaintenanceWindow specifies some number of recurring time
+   * periods for maintenance to occur. The time windows may be overlapping.
+   * If no maintenance windows are set, maintenance can occur at any time.
+   * Alternative to RecurringWindow, with renamed fields.
+   * </pre>
+   *
+   * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.RecurringMaintenanceWindowOrBuilder
+      getRecurringMaintenanceWindowOrBuilder() {
+    if (policyCase_ == 5) {
+      return (com.google.container.v1.RecurringMaintenanceWindow) policy_;
+    }
+    return com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
   }
 
   public static final int MAINTENANCE_EXCLUSIONS_FIELD_NUMBER = 4;
@@ -390,6 +457,9 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         internalGetMaintenanceExclusions(),
         MaintenanceExclusionsDefaultEntryHolder.defaultEntry,
         4);
+    if (policyCase_ == 5) {
+      output.writeMessage(5, (com.google.container.v1.RecurringMaintenanceWindow) policy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -420,6 +490,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, maintenanceExclusions__);
     }
+    if (policyCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.container.v1.RecurringMaintenanceWindow) policy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -445,6 +520,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         break;
       case 3:
         if (!getRecurringWindow().equals(other.getRecurringWindow())) return false;
+        break;
+      case 5:
+        if (!getRecurringMaintenanceWindow().equals(other.getRecurringMaintenanceWindow()))
+          return false;
         break;
       case 0:
       default:
@@ -472,6 +551,10 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       case 3:
         hash = (37 * hash) + RECURRING_WINDOW_FIELD_NUMBER;
         hash = (53 * hash) + getRecurringWindow().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + RECURRING_MAINTENANCE_WINDOW_FIELD_NUMBER;
+        hash = (53 * hash) + getRecurringMaintenanceWindow().hashCode();
         break;
       case 0:
       default:
@@ -644,6 +727,9 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       if (recurringWindowBuilder_ != null) {
         recurringWindowBuilder_.clear();
       }
+      if (recurringMaintenanceWindowBuilder_ != null) {
+        recurringMaintenanceWindowBuilder_.clear();
+      }
       internalGetMutableMaintenanceExclusions().clear();
       policyCase_ = 0;
       policy_ = null;
@@ -684,7 +770,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.container.v1.MaintenanceWindow result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.maintenanceExclusions_ =
             internalGetMaintenanceExclusions()
                 .build(MaintenanceExclusionsDefaultEntryHolder.defaultEntry);
@@ -699,6 +785,9 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       if (policyCase_ == 3 && recurringWindowBuilder_ != null) {
         result.policy_ = recurringWindowBuilder_.build();
+      }
+      if (policyCase_ == 5 && recurringMaintenanceWindowBuilder_ != null) {
+        result.policy_ = recurringMaintenanceWindowBuilder_.build();
       }
     }
 
@@ -715,7 +804,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public Builder mergeFrom(com.google.container.v1.MaintenanceWindow other) {
       if (other == com.google.container.v1.MaintenanceWindow.getDefaultInstance()) return this;
       internalGetMutableMaintenanceExclusions().mergeFrom(other.internalGetMaintenanceExclusions());
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       switch (other.getPolicyCase()) {
         case DAILY_MAINTENANCE_WINDOW:
           {
@@ -725,6 +814,11 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         case RECURRING_WINDOW:
           {
             mergeRecurringWindow(other.getRecurringWindow());
+            break;
+          }
+        case RECURRING_MAINTENANCE_WINDOW:
+          {
+            mergeRecurringMaintenanceWindow(other.getRecurringMaintenanceWindow());
             break;
           }
         case POLICY_NOT_SET:
@@ -783,9 +877,17 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
                 internalGetMutableMaintenanceExclusions()
                     .ensureBuilderMap()
                     .put(maintenanceExclusions__.getKey(), maintenanceExclusions__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetRecurringMaintenanceWindowFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                policyCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1276,6 +1378,264 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       return recurringWindowBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RecurringMaintenanceWindow,
+            com.google.container.v1.RecurringMaintenanceWindow.Builder,
+            com.google.container.v1.RecurringMaintenanceWindowOrBuilder>
+        recurringMaintenanceWindowBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     *
+     * @return Whether the recurringMaintenanceWindow field is set.
+     */
+    @java.lang.Override
+    public boolean hasRecurringMaintenanceWindow() {
+      return policyCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     *
+     * @return The recurringMaintenanceWindow.
+     */
+    @java.lang.Override
+    public com.google.container.v1.RecurringMaintenanceWindow getRecurringMaintenanceWindow() {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        if (policyCase_ == 5) {
+          return (com.google.container.v1.RecurringMaintenanceWindow) policy_;
+        }
+        return com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
+      } else {
+        if (policyCase_ == 5) {
+          return recurringMaintenanceWindowBuilder_.getMessage();
+        }
+        return com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    public Builder setRecurringMaintenanceWindow(
+        com.google.container.v1.RecurringMaintenanceWindow value) {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policy_ = value;
+        onChanged();
+      } else {
+        recurringMaintenanceWindowBuilder_.setMessage(value);
+      }
+      policyCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    public Builder setRecurringMaintenanceWindow(
+        com.google.container.v1.RecurringMaintenanceWindow.Builder builderForValue) {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        policy_ = builderForValue.build();
+        onChanged();
+      } else {
+        recurringMaintenanceWindowBuilder_.setMessage(builderForValue.build());
+      }
+      policyCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    public Builder mergeRecurringMaintenanceWindow(
+        com.google.container.v1.RecurringMaintenanceWindow value) {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        if (policyCase_ == 5
+            && policy_ != com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance()) {
+          policy_ =
+              com.google.container.v1.RecurringMaintenanceWindow.newBuilder(
+                      (com.google.container.v1.RecurringMaintenanceWindow) policy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          policy_ = value;
+        }
+        onChanged();
+      } else {
+        if (policyCase_ == 5) {
+          recurringMaintenanceWindowBuilder_.mergeFrom(value);
+        } else {
+          recurringMaintenanceWindowBuilder_.setMessage(value);
+        }
+      }
+      policyCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    public Builder clearRecurringMaintenanceWindow() {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        if (policyCase_ == 5) {
+          policyCase_ = 0;
+          policy_ = null;
+          onChanged();
+        }
+      } else {
+        if (policyCase_ == 5) {
+          policyCase_ = 0;
+          policy_ = null;
+        }
+        recurringMaintenanceWindowBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    public com.google.container.v1.RecurringMaintenanceWindow.Builder
+        getRecurringMaintenanceWindowBuilder() {
+      return internalGetRecurringMaintenanceWindowFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.container.v1.RecurringMaintenanceWindowOrBuilder
+        getRecurringMaintenanceWindowOrBuilder() {
+      if ((policyCase_ == 5) && (recurringMaintenanceWindowBuilder_ != null)) {
+        return recurringMaintenanceWindowBuilder_.getMessageOrBuilder();
+      } else {
+        if (policyCase_ == 5) {
+          return (com.google.container.v1.RecurringMaintenanceWindow) policy_;
+        }
+        return com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RecurringMaintenanceWindow specifies some number of recurring time
+     * periods for maintenance to occur. The time windows may be overlapping.
+     * If no maintenance windows are set, maintenance can occur at any time.
+     * Alternative to RecurringWindow, with renamed fields.
+     * </pre>
+     *
+     * <code>.google.container.v1.RecurringMaintenanceWindow recurring_maintenance_window = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RecurringMaintenanceWindow,
+            com.google.container.v1.RecurringMaintenanceWindow.Builder,
+            com.google.container.v1.RecurringMaintenanceWindowOrBuilder>
+        internalGetRecurringMaintenanceWindowFieldBuilder() {
+      if (recurringMaintenanceWindowBuilder_ == null) {
+        if (!(policyCase_ == 5)) {
+          policy_ = com.google.container.v1.RecurringMaintenanceWindow.getDefaultInstance();
+        }
+        recurringMaintenanceWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.RecurringMaintenanceWindow,
+                com.google.container.v1.RecurringMaintenanceWindow.Builder,
+                com.google.container.v1.RecurringMaintenanceWindowOrBuilder>(
+                (com.google.container.v1.RecurringMaintenanceWindow) policy_,
+                getParentForChildren(),
+                isClean());
+        policy_ = null;
+      }
+      policyCase_ = 5;
+      onChanged();
+      return recurringMaintenanceWindowBuilder_;
+    }
+
     private static final class MaintenanceExclusionsConverter
         implements com.google.protobuf.MapFieldBuilder.Converter<
             java.lang.String,
@@ -1330,7 +1690,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         maintenanceExclusions_ =
             new com.google.protobuf.MapFieldBuilder<>(maintenanceExclusionsConverter);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return maintenanceExclusions_;
     }
@@ -1431,7 +1791,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearMaintenanceExclusions() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableMaintenanceExclusions().clear();
       return this;
     }
@@ -1458,7 +1818,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.container.v1.TimeWindow>
         getMutableMaintenanceExclusions() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return internalGetMutableMaintenanceExclusions().ensureMessageMap();
     }
 
@@ -1481,7 +1841,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException("map value");
       }
       internalGetMutableMaintenanceExclusions().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1504,7 +1864,7 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         }
       }
       internalGetMutableMaintenanceExclusions().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       return this;
     }
 

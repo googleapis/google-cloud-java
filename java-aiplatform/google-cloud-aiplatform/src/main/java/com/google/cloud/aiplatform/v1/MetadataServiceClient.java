@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -811,9 +813,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MetadataServiceClient implements BackgroundResource {
-  private final MetadataServiceSettings settings;
+  private final @Nullable MetadataServiceSettings settings;
   private final MetadataServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -856,7 +859,7 @@ public class MetadataServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final MetadataServiceSettings getSettings() {
+  public final @Nullable MetadataServiceSettings getSettings() {
     return settings;
   }
 
@@ -908,7 +911,7 @@ public class MetadataServiceClient implements BackgroundResource {
    */
   public final OperationFuture<MetadataStore, CreateMetadataStoreOperationMetadata>
       createMetadataStoreAsync(
-          LocationName parent, MetadataStore metadataStore, String metadataStoreId) {
+          @Nullable LocationName parent, MetadataStore metadataStore, String metadataStoreId) {
     CreateMetadataStoreRequest request =
         CreateMetadataStoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1078,7 +1081,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetadataStore getMetadataStore(MetadataStoreName name) {
+  public final MetadataStore getMetadataStore(@Nullable MetadataStoreName name) {
     GetMetadataStoreRequest request =
         GetMetadataStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetadataStore(request);
@@ -1193,7 +1196,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetadataStoresPagedResponse listMetadataStores(LocationName parent) {
+  public final ListMetadataStoresPagedResponse listMetadataStores(@Nullable LocationName parent) {
     ListMetadataStoresRequest request =
         ListMetadataStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1361,7 +1364,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteMetadataStoreOperationMetadata>
-      deleteMetadataStoreAsync(MetadataStoreName name) {
+      deleteMetadataStoreAsync(@Nullable MetadataStoreName name) {
     DeleteMetadataStoreRequest request =
         DeleteMetadataStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1528,7 +1531,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Artifact createArtifact(
-      MetadataStoreName parent, Artifact artifact, String artifactId) {
+      @Nullable MetadataStoreName parent, Artifact artifact, String artifactId) {
     CreateArtifactRequest request =
         CreateArtifactRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1665,7 +1668,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Artifact getArtifact(ArtifactName name) {
+  public final Artifact getArtifact(@Nullable ArtifactName name) {
     GetArtifactRequest request =
         GetArtifactRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getArtifact(request);
@@ -1783,7 +1786,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListArtifactsPagedResponse listArtifacts(MetadataStoreName parent) {
+  public final ListArtifactsPagedResponse listArtifacts(@Nullable MetadataStoreName parent) {
     ListArtifactsRequest request =
         ListArtifactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2050,7 +2053,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteArtifactAsync(
-      ArtifactName name) {
+      @Nullable ArtifactName name) {
     DeleteArtifactRequest request =
         DeleteArtifactRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteArtifactAsync(request);
@@ -2203,7 +2206,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PurgeArtifactsResponse, PurgeArtifactsMetadata> purgeArtifactsAsync(
-      MetadataStoreName parent) {
+      @Nullable MetadataStoreName parent) {
     PurgeArtifactsRequest request =
         PurgeArtifactsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2368,7 +2371,8 @@ public class MetadataServiceClient implements BackgroundResource {
    *     or PERMISSION_DENIED if the caller can't view the preexisting Context.)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Context createContext(MetadataStoreName parent, Context context, String contextId) {
+  public final Context createContext(
+      @Nullable MetadataStoreName parent, Context context, String contextId) {
     CreateContextRequest request =
         CreateContextRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2503,7 +2507,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Context getContext(ContextName name) {
+  public final Context getContext(@Nullable ContextName name) {
     GetContextRequest request =
         GetContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getContext(request);
@@ -2621,7 +2625,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListContextsPagedResponse listContexts(MetadataStoreName parent) {
+  public final ListContextsPagedResponse listContexts(@Nullable MetadataStoreName parent) {
     ListContextsRequest request =
         ListContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2885,7 +2889,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteContextAsync(
-      ContextName name) {
+      @Nullable ContextName name) {
     DeleteContextRequest request =
         DeleteContextRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteContextAsync(request);
@@ -3041,7 +3045,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PurgeContextsResponse, PurgeContextsMetadata> purgeContextsAsync(
-      MetadataStoreName parent) {
+      @Nullable MetadataStoreName parent) {
     PurgeContextsRequest request =
         PurgeContextsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3208,7 +3212,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddContextArtifactsAndExecutionsResponse addContextArtifactsAndExecutions(
-      ContextName context, List<String> artifacts, List<String> executions) {
+      @Nullable ContextName context, List<String> artifacts, List<String> executions) {
     AddContextArtifactsAndExecutionsRequest request =
         AddContextArtifactsAndExecutionsRequest.newBuilder()
             .setContext(context == null ? null : context.toString())
@@ -3364,7 +3368,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddContextChildrenResponse addContextChildren(
-      ContextName context, List<String> childContexts) {
+      @Nullable ContextName context, List<String> childContexts) {
     AddContextChildrenRequest request =
         AddContextChildrenRequest.newBuilder()
             .setContext(context == null ? null : context.toString())
@@ -3511,7 +3515,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RemoveContextChildrenResponse removeContextChildren(
-      ContextName context, List<String> childContexts) {
+      @Nullable ContextName context, List<String> childContexts) {
     RemoveContextChildrenRequest request =
         RemoveContextChildrenRequest.newBuilder()
             .setContext(context == null ? null : context.toString())
@@ -3651,7 +3655,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Executions, or the number of Events that would be returned for the Context exceeds 1000.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageSubgraph queryContextLineageSubgraph(ContextName context) {
+  public final LineageSubgraph queryContextLineageSubgraph(@Nullable ContextName context) {
     QueryContextLineageSubgraphRequest request =
         QueryContextLineageSubgraphRequest.newBuilder()
             .setContext(context == null ? null : context.toString())
@@ -3789,7 +3793,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Execution createExecution(
-      MetadataStoreName parent, Execution execution, String executionId) {
+      @Nullable MetadataStoreName parent, Execution execution, String executionId) {
     CreateExecutionRequest request =
         CreateExecutionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3926,7 +3930,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Execution getExecution(ExecutionName name) {
+  public final Execution getExecution(@Nullable ExecutionName name) {
     GetExecutionRequest request =
         GetExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExecution(request);
@@ -4045,7 +4049,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExecutionsPagedResponse listExecutions(MetadataStoreName parent) {
+  public final ListExecutionsPagedResponse listExecutions(@Nullable MetadataStoreName parent) {
     ListExecutionsRequest request =
         ListExecutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4316,7 +4320,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteExecutionAsync(
-      ExecutionName name) {
+      @Nullable ExecutionName name) {
     DeleteExecutionRequest request =
         DeleteExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteExecutionAsync(request);
@@ -4469,7 +4473,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PurgeExecutionsResponse, PurgeExecutionsMetadata>
-      purgeExecutionsAsync(MetadataStoreName parent) {
+      purgeExecutionsAsync(@Nullable MetadataStoreName parent) {
     PurgeExecutionsRequest request =
         PurgeExecutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4632,7 +4636,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddExecutionEventsResponse addExecutionEvents(
-      ExecutionName execution, List<Event> events) {
+      @Nullable ExecutionName execution, List<Event> events) {
     AddExecutionEventsRequest request =
         AddExecutionEventsRequest.newBuilder()
             .setExecution(execution == null ? null : execution.toString())
@@ -4768,7 +4772,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageSubgraph queryExecutionInputsAndOutputs(ExecutionName execution) {
+  public final LineageSubgraph queryExecutionInputsAndOutputs(@Nullable ExecutionName execution) {
     QueryExecutionInputsAndOutputsRequest request =
         QueryExecutionInputsAndOutputsRequest.newBuilder()
             .setExecution(execution == null ? null : execution.toString())
@@ -4907,7 +4911,7 @@ public class MetadataServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetadataSchema createMetadataSchema(
-      MetadataStoreName parent, MetadataSchema metadataSchema, String metadataSchemaId) {
+      @Nullable MetadataStoreName parent, MetadataSchema metadataSchema, String metadataSchemaId) {
     CreateMetadataSchemaRequest request =
         CreateMetadataSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5049,7 +5053,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}/metadataSchemas/{metadataschema}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetadataSchema getMetadataSchema(MetadataSchemaName name) {
+  public final MetadataSchema getMetadataSchema(@Nullable MetadataSchemaName name) {
     GetMetadataSchemaRequest request =
         GetMetadataSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5174,7 +5178,8 @@ public class MetadataServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetadataSchemasPagedResponse listMetadataSchemas(MetadataStoreName parent) {
+  public final ListMetadataSchemasPagedResponse listMetadataSchemas(
+      @Nullable MetadataStoreName parent) {
     ListMetadataSchemasRequest request =
         ListMetadataSchemasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5354,7 +5359,7 @@ public class MetadataServiceClient implements BackgroundResource {
    *     Executions, or the number of Events that would be returned for the Context exceeds 1000.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageSubgraph queryArtifactLineageSubgraph(ArtifactName artifact) {
+  public final LineageSubgraph queryArtifactLineageSubgraph(@Nullable ArtifactName artifact) {
     QueryArtifactLineageSubgraphRequest request =
         QueryArtifactLineageSubgraphRequest.newBuilder()
             .setArtifact(artifact == null ? null : artifact.toString())
@@ -5890,8 +5895,9 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataStoresPage> {
 
     private ListMetadataStoresPage(
-        PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore> context,
-        ListMetadataStoresResponse response) {
+        @Nullable PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore>
+            context,
+        @Nullable ListMetadataStoresResponse response) {
       super(context, response);
     }
 
@@ -5901,14 +5907,16 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataStoresPage createPage(
-        PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore> context,
-        ListMetadataStoresResponse response) {
+        @Nullable PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore>
+            context,
+        @Nullable ListMetadataStoresResponse response) {
       return new ListMetadataStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetadataStoresPage> createPageAsync(
-        PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore> context,
+        @Nullable PageContext<ListMetadataStoresRequest, ListMetadataStoresResponse, MetadataStore>
+            context,
         ApiFuture<ListMetadataStoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5923,7 +5931,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataStoresFixedSizeCollection> {
 
     private ListMetadataStoresFixedSizeCollection(
-        List<ListMetadataStoresPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5933,7 +5941,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataStoresFixedSizeCollection createCollection(
-        List<ListMetadataStoresPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataStoresPage> pages, int collectionSize) {
       return new ListMetadataStoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5967,8 +5975,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListArtifactsRequest, ListArtifactsResponse, Artifact, ListArtifactsPage> {
 
     private ListArtifactsPage(
-        PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
-        ListArtifactsResponse response) {
+        @Nullable PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
+        @Nullable ListArtifactsResponse response) {
       super(context, response);
     }
 
@@ -5978,14 +5986,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListArtifactsPage createPage(
-        PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
-        ListArtifactsResponse response) {
+        @Nullable PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
+        @Nullable ListArtifactsResponse response) {
       return new ListArtifactsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListArtifactsPage> createPageAsync(
-        PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
+        @Nullable PageContext<ListArtifactsRequest, ListArtifactsResponse, Artifact> context,
         ApiFuture<ListArtifactsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5999,7 +6007,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListArtifactsPage,
           ListArtifactsFixedSizeCollection> {
 
-    private ListArtifactsFixedSizeCollection(List<ListArtifactsPage> pages, int collectionSize) {
+    private ListArtifactsFixedSizeCollection(
+        @Nullable List<ListArtifactsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6009,7 +6018,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListArtifactsFixedSizeCollection createCollection(
-        List<ListArtifactsPage> pages, int collectionSize) {
+        @Nullable List<ListArtifactsPage> pages, int collectionSize) {
       return new ListArtifactsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6042,8 +6051,8 @@ public class MetadataServiceClient implements BackgroundResource {
       extends AbstractPage<ListContextsRequest, ListContextsResponse, Context, ListContextsPage> {
 
     private ListContextsPage(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
-        ListContextsResponse response) {
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable ListContextsResponse response) {
       super(context, response);
     }
 
@@ -6053,14 +6062,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListContextsPage createPage(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
-        ListContextsResponse response) {
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable ListContextsResponse response) {
       return new ListContextsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListContextsPage> createPageAsync(
-        PageContext<ListContextsRequest, ListContextsResponse, Context> context,
+        @Nullable PageContext<ListContextsRequest, ListContextsResponse, Context> context,
         ApiFuture<ListContextsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6074,7 +6083,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListContextsPage,
           ListContextsFixedSizeCollection> {
 
-    private ListContextsFixedSizeCollection(List<ListContextsPage> pages, int collectionSize) {
+    private ListContextsFixedSizeCollection(
+        @Nullable List<ListContextsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6084,7 +6094,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListContextsFixedSizeCollection createCollection(
-        List<ListContextsPage> pages, int collectionSize) {
+        @Nullable List<ListContextsPage> pages, int collectionSize) {
       return new ListContextsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6118,8 +6128,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage> {
 
     private ListExecutionsPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       super(context, response);
     }
 
@@ -6129,14 +6139,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsPage createPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       return new ListExecutionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExecutionsPage> createPageAsync(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
         ApiFuture<ListExecutionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6150,7 +6160,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
-    private ListExecutionsFixedSizeCollection(List<ListExecutionsPage> pages, int collectionSize) {
+    private ListExecutionsFixedSizeCollection(
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6160,7 +6171,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsFixedSizeCollection createCollection(
-        List<ListExecutionsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       return new ListExecutionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6198,9 +6209,10 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataSchemasPage> {
 
     private ListMetadataSchemasPage(
-        PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
+        @Nullable
+            PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
             context,
-        ListMetadataSchemasResponse response) {
+        @Nullable ListMetadataSchemasResponse response) {
       super(context, response);
     }
 
@@ -6210,15 +6222,17 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataSchemasPage createPage(
-        PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
+        @Nullable
+            PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
             context,
-        ListMetadataSchemasResponse response) {
+        @Nullable ListMetadataSchemasResponse response) {
       return new ListMetadataSchemasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetadataSchemasPage> createPageAsync(
-        PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
+        @Nullable
+            PageContext<ListMetadataSchemasRequest, ListMetadataSchemasResponse, MetadataSchema>
             context,
         ApiFuture<ListMetadataSchemasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6234,7 +6248,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataSchemasFixedSizeCollection> {
 
     private ListMetadataSchemasFixedSizeCollection(
-        List<ListMetadataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataSchemasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6244,7 +6258,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataSchemasFixedSizeCollection createCollection(
-        List<ListMetadataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataSchemasPage> pages, int collectionSize) {
       return new ListMetadataSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6278,8 +6292,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6289,14 +6303,14 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6310,7 +6324,8 @@ public class MetadataServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6320,7 +6335,7 @@ public class MetadataServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -34,6 +34,12 @@ public interface AnswerQueryRequestOrBuilder
    * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
    * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/&#42;&#47;servingConfigs/default_serving_config`.
+   *
+   * Or the resource name of the agent engine serving config, such as:
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_agent_answer`.
+   * (use when `enable_agent_invocation` set to true, and you have custom
+   * `AI_MODE` agent engine configured)
+   *
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
    * </pre>
@@ -54,6 +60,12 @@ public interface AnswerQueryRequestOrBuilder
    * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_serving_config`,
    * or
    * `projects/&#42;&#47;locations/global/collections/default_collection/dataStores/&#42;&#47;servingConfigs/default_serving_config`.
+   *
+   * Or the resource name of the agent engine serving config, such as:
+   * `projects/&#42;&#47;locations/global/collections/default_collection/engines/&#42;&#47;servingConfigs/default_agent_answer`.
+   * (use when `enable_agent_invocation` set to true, and you have custom
+   * `AI_MODE` agent engine configured)
+   *
    * This field is used to identify the serving configuration name, set
    * of models used to make the search.
    * </pre>
@@ -428,7 +440,7 @@ public interface AnswerQueryRequestOrBuilder
    *
    * @deprecated google.cloud.discoveryengine.v1beta.AnswerQueryRequest.asynchronous_mode is
    *     deprecated. See
-   *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=861
+   *     google/cloud/discoveryengine/v1beta/conversational_search_service.proto;l=1021
    * @return The asynchronousMode.
    */
   @java.lang.Deprecated
@@ -618,4 +630,48 @@ public interface AnswerQueryRequestOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 13;</code>
    */
   java.lang.String getUserLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserSpec field is set.
+   */
+  boolean hasEndUserSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpec getEndUserSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. End user specification.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpec end_user_spec = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.EndUserSpecOrBuilder
+      getEndUserSpecOrBuilder();
 }

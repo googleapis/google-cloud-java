@@ -51,7 +51,9 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @InternalApi
 public class GrpcLoggingInterceptor implements ClientInterceptor {
 

@@ -56,6 +56,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     parent_ = "";
     messages_ = java.util.Collections.emptyList();
     thinkingMode_ = 0;
+    model_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -244,6 +245,157 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Model selection for the agent.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.geminidataanalytics.v1beta.ChatRequest.Model}
+   */
+  public enum Model implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No model specified. The default model will be used.
+     * </pre>
+     *
+     * <code>MODEL_UNSPECIFIED = 0;</code>
+     */
+    MODEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
+     * </pre>
+     *
+     * <code>LATEST_GA_MODEL = 1;</code>
+     */
+    LATEST_GA_MODEL(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Model");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * No model specified. The default model will be used.
+     * </pre>
+     *
+     * <code>MODEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
+     * </pre>
+     *
+     * <code>LATEST_GA_MODEL = 1;</code>
+     */
+    public static final int LATEST_GA_MODEL_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Model valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Model forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_UNSPECIFIED;
+        case 1:
+          return LATEST_GA_MODEL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Model> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Model> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Model>() {
+          public Model findValueByNumber(int number) {
+            return Model.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.geminidataanalytics.v1beta.ChatRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final Model[] VALUES = values();
+
+    public static Model valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Model(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.geminidataanalytics.v1beta.ChatRequest.Model)
+  }
+
+  private int bitField0_;
   private int contextProviderCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -298,6 +450,53 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
 
   public ContextProviderCase getContextProviderCase() {
     return ContextProviderCase.forNumber(contextProviderCase_);
+  }
+
+  private int datasourceSettingsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object datasourceSettings_;
+
+  public enum DatasourceSettingsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    LOOKER_SETTINGS(13),
+    DATASOURCESETTINGS_NOT_SET(0);
+    private final int value;
+
+    private DatasourceSettingsCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DatasourceSettingsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DatasourceSettingsCase forNumber(int value) {
+      switch (value) {
+        case 13:
+          return LOOKER_SETTINGS;
+        case 0:
+          return DATASOURCESETTINGS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DatasourceSettingsCase getDatasourceSettingsCase() {
+    return DatasourceSettingsCase.forNumber(datasourceSettingsCase_);
   }
 
   public static final int INLINE_CONTEXT_FIELD_NUMBER = 101;
@@ -570,6 +769,67 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         .getDefaultInstance();
   }
 
+  public static final int LOOKER_SETTINGS_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the lookerSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasLookerSettings() {
+    return datasourceSettingsCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The lookerSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerSettings getLookerSettings() {
+    if (datasourceSettingsCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker specific settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder
+      getLookerSettingsOrBuilder() {
+    if (datasourceSettingsCase_ == 13) {
+      return (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -579,7 +839,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The Google Cloud project to be used for quota and billing.
+   * Optional. Deprecated: Use `parent` field instead.
+   * The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -587,7 +848,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
    * @return The project.
    */
   @java.lang.Override
@@ -608,7 +869,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The Google Cloud project to be used for quota and billing.
+   * Optional. Deprecated: Use `parent` field instead.
+   * The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -616,7 +878,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -775,6 +1037,87 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     return messages_.get(index);
   }
 
+  public static final int CREDENTIALS_FIELD_NUMBER = 7;
+  private com.google.cloud.geminidataanalytics.v1beta.Credentials credentials_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the credentials field is set.
+   */
+  @java.lang.Override
+  public boolean hasCredentials() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The credentials.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials() {
+    return credentials_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()
+        : credentials_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The credentials to use when calling the data source(s) specified
+   * in the context.
+   *
+   * This field can be used to provide credentials for various data sources.
+   * For example, when connecting to Looker, it currently supports both OAuth
+   * token and API key-based credentials, as described in
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder
+      getCredentialsOrBuilder() {
+    return credentials_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()
+        : credentials_;
+  }
+
   public static final int THINKING_MODE_FIELD_NUMBER = 9;
   private int thinkingMode_ = 0;
 
@@ -821,6 +1164,51 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int MODEL_FIELD_NUMBER = 11;
+  private int model_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop when processing the request.
+   * This setting only has an effect when context.options.model is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for model.
+   */
+  @java.lang.Override
+  public int getModelValue() {
+    return model_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop when processing the request.
+   * This setting only has an effect when context.options.model is not set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model getModel() {
+    com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model result =
+        com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.forNumber(model_);
+    return result == null
+        ? com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -844,11 +1232,23 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, parent_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getCredentials());
+    }
     if (thinkingMode_
         != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode
             .THINKING_MODE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(9, thinkingMode_);
+    }
+    if (model_
+        != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.MODEL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, model_);
+    }
+    if (datasourceSettingsCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_);
     }
     if (contextProviderCase_ == 101) {
       output.writeMessage(
@@ -887,11 +1287,24 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, parent_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCredentials());
+    }
     if (thinkingMode_
         != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.ThinkingMode
             .THINKING_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, thinkingMode_);
+    }
+    if (model_
+        != com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.MODEL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, model_);
+    }
+    if (datasourceSettingsCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_);
     }
     if (contextProviderCase_ == 101) {
       size +=
@@ -935,7 +1348,12 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     if (!getProject().equals(other.getProject())) return false;
     if (!getParent().equals(other.getParent())) return false;
     if (!getMessagesList().equals(other.getMessagesList())) return false;
+    if (hasCredentials() != other.hasCredentials()) return false;
+    if (hasCredentials()) {
+      if (!getCredentials().equals(other.getCredentials())) return false;
+    }
     if (thinkingMode_ != other.thinkingMode_) return false;
+    if (model_ != other.model_) return false;
     if (!getContextProviderCase().equals(other.getContextProviderCase())) return false;
     switch (contextProviderCase_) {
       case 101:
@@ -950,6 +1368,14 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       case 105:
         if (!getClientManagedResourceContext().equals(other.getClientManagedResourceContext()))
           return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getDatasourceSettingsCase().equals(other.getDatasourceSettingsCase())) return false;
+    switch (datasourceSettingsCase_) {
+      case 13:
+        if (!getLookerSettings().equals(other.getLookerSettings())) return false;
         break;
       case 0:
       default:
@@ -973,8 +1399,14 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getMessagesList().hashCode();
     }
+    if (hasCredentials()) {
+      hash = (37 * hash) + CREDENTIALS_FIELD_NUMBER;
+      hash = (53 * hash) + getCredentials().hashCode();
+    }
     hash = (37 * hash) + THINKING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + thinkingMode_;
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + model_;
     switch (contextProviderCase_) {
       case 101:
         hash = (37 * hash) + INLINE_CONTEXT_FIELD_NUMBER;
@@ -991,6 +1423,14 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       case 105:
         hash = (37 * hash) + CLIENT_MANAGED_RESOURCE_CONTEXT_FIELD_NUMBER;
         hash = (53 * hash) + getClientManagedResourceContext().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (datasourceSettingsCase_) {
+      case 13:
+        hash = (37 * hash) + LOOKER_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getLookerSettings().hashCode();
         break;
       case 0:
       default:
@@ -1126,10 +1566,20 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.geminidataanalytics.v1beta.ChatRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMessagesFieldBuilder();
+        internalGetCredentialsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1148,6 +1598,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       if (clientManagedResourceContextBuilder_ != null) {
         clientManagedResourceContextBuilder_.clear();
       }
+      if (lookerSettingsBuilder_ != null) {
+        lookerSettingsBuilder_.clear();
+      }
       project_ = "";
       parent_ = "";
       if (messagesBuilder_ == null) {
@@ -1156,10 +1609,18 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         messages_ = null;
         messagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
+      credentials_ = null;
+      if (credentialsBuilder_ != null) {
+        credentialsBuilder_.dispose();
+        credentialsBuilder_ = null;
+      }
       thinkingMode_ = 0;
+      model_ = 0;
       contextProviderCase_ = 0;
       contextProvider_ = null;
+      datasourceSettingsCase_ = 0;
+      datasourceSettings_ = null;
       return this;
     }
 
@@ -1199,9 +1660,9 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.geminidataanalytics.v1beta.ChatRequest result) {
       if (messagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           messages_ = java.util.Collections.unmodifiableList(messages_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.messages_ = messages_;
       } else {
@@ -1211,15 +1672,25 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.ChatRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.project_ = project_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.credentials_ =
+            credentialsBuilder_ == null ? credentials_ : credentialsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.thinkingMode_ = thinkingMode_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.model_ = model_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -1238,6 +1709,11 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       if (contextProviderCase_ == 105 && clientManagedResourceContextBuilder_ != null) {
         result.contextProvider_ = clientManagedResourceContextBuilder_.build();
       }
+      result.datasourceSettingsCase_ = datasourceSettingsCase_;
+      result.datasourceSettings_ = this.datasourceSettings_;
+      if (datasourceSettingsCase_ == 13 && lookerSettingsBuilder_ != null) {
+        result.datasourceSettings_ = lookerSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1255,19 +1731,19 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (messagesBuilder_ == null) {
         if (!other.messages_.isEmpty()) {
           if (messages_.isEmpty()) {
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureMessagesIsMutable();
             messages_.addAll(other.messages_);
@@ -1280,7 +1756,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
             messagesBuilder_.dispose();
             messagesBuilder_ = null;
             messages_ = other.messages_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             messagesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetMessagesFieldBuilder()
@@ -1290,8 +1766,14 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasCredentials()) {
+        mergeCredentials(other.getCredentials());
+      }
       if (other.thinkingMode_ != 0) {
         setThinkingModeValue(other.getThinkingModeValue());
+      }
+      if (other.model_ != 0) {
+        setModelValue(other.getModelValue());
       }
       switch (other.getContextProviderCase()) {
         case INLINE_CONTEXT:
@@ -1315,6 +1797,17 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
             break;
           }
         case CONTEXTPROVIDER_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getDatasourceSettingsCase()) {
+        case LOOKER_SETTINGS:
+          {
+            mergeLookerSettings(other.getLookerSettings());
+            break;
+          }
+        case DATASOURCESETTINGS_NOT_SET:
           {
             break;
           }
@@ -1348,7 +1841,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
@@ -1368,15 +1861,35 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
+            case 58:
+              {
+                input.readMessage(
+                    internalGetCredentialsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 58
             case 72:
               {
                 thinkingMode_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
+            case 88:
+              {
+                model_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+            case 106:
+              {
+                input.readMessage(
+                    internalGetLookerSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                datasourceSettingsCase_ = 13;
+                break;
+              } // case 106
             case 810:
               {
                 input.readMessage(
@@ -1433,6 +1946,20 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     public Builder clearContextProvider() {
       contextProviderCase_ = 0;
       contextProvider_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int datasourceSettingsCase_ = 0;
+    private java.lang.Object datasourceSettings_;
+
+    public DatasourceSettingsCase getDatasourceSettingsCase() {
+      return DatasourceSettingsCase.forNumber(datasourceSettingsCase_);
+    }
+
+    public Builder clearDatasourceSettings() {
+      datasourceSettingsCase_ = 0;
+      datasourceSettings_ = null;
       onChanged();
       return this;
     }
@@ -2490,13 +3017,258 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       return clientManagedResourceContextBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettings,
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettings.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder>
+        lookerSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the lookerSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasLookerSettings() {
+      return datasourceSettingsCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The lookerSettings.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.LookerSettings getLookerSettings() {
+      if (lookerSettingsBuilder_ == null) {
+        if (datasourceSettingsCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+      } else {
+        if (datasourceSettingsCase_ == 13) {
+          return lookerSettingsBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookerSettings(
+        com.google.cloud.geminidataanalytics.v1beta.LookerSettings value) {
+      if (lookerSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasourceSettings_ = value;
+        onChanged();
+      } else {
+        lookerSettingsBuilder_.setMessage(value);
+      }
+      datasourceSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLookerSettings(
+        com.google.cloud.geminidataanalytics.v1beta.LookerSettings.Builder builderForValue) {
+      if (lookerSettingsBuilder_ == null) {
+        datasourceSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        lookerSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      datasourceSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLookerSettings(
+        com.google.cloud.geminidataanalytics.v1beta.LookerSettings value) {
+      if (lookerSettingsBuilder_ == null) {
+        if (datasourceSettingsCase_ == 13
+            && datasourceSettings_
+                != com.google.cloud.geminidataanalytics.v1beta.LookerSettings
+                    .getDefaultInstance()) {
+          datasourceSettings_ =
+              com.google.cloud.geminidataanalytics.v1beta.LookerSettings.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.LookerSettings)
+                          datasourceSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          datasourceSettings_ = value;
+        }
+        onChanged();
+      } else {
+        if (datasourceSettingsCase_ == 13) {
+          lookerSettingsBuilder_.mergeFrom(value);
+        } else {
+          lookerSettingsBuilder_.setMessage(value);
+        }
+      }
+      datasourceSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLookerSettings() {
+      if (lookerSettingsBuilder_ == null) {
+        if (datasourceSettingsCase_ == 13) {
+          datasourceSettingsCase_ = 0;
+          datasourceSettings_ = null;
+          onChanged();
+        }
+      } else {
+        if (datasourceSettingsCase_ == 13) {
+          datasourceSettingsCase_ = 0;
+          datasourceSettings_ = null;
+        }
+        lookerSettingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.LookerSettings.Builder
+        getLookerSettingsBuilder() {
+      return internalGetLookerSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder
+        getLookerSettingsOrBuilder() {
+      if ((datasourceSettingsCase_ == 13) && (lookerSettingsBuilder_ != null)) {
+        return lookerSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        if (datasourceSettingsCase_ == 13) {
+          return (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker specific settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.LookerSettings looker_settings = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettings,
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettings.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder>
+        internalGetLookerSettingsFieldBuilder() {
+      if (lookerSettingsBuilder_ == null) {
+        if (!(datasourceSettingsCase_ == 13)) {
+          datasourceSettings_ =
+              com.google.cloud.geminidataanalytics.v1beta.LookerSettings.getDefaultInstance();
+        }
+        lookerSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.LookerSettings,
+                com.google.cloud.geminidataanalytics.v1beta.LookerSettings.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.LookerSettingsOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.LookerSettings) datasourceSettings_,
+                getParentForChildren(),
+                isClean());
+        datasourceSettings_ = null;
+      }
+      datasourceSettingsCase_ = 13;
+      onChanged();
+      return lookerSettingsBuilder_;
+    }
+
     private java.lang.Object project_ = "";
 
     /**
      *
      *
      * <pre>
-     * Optional. The Google Cloud project to be used for quota and billing.
+     * Optional. Deprecated: Use `parent` field instead.
+     * The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -2504,7 +3276,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
      * @return The project.
      */
     @java.lang.Deprecated
@@ -2524,7 +3296,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The Google Cloud project to be used for quota and billing.
+     * Optional. Deprecated: Use `parent` field instead.
+     * The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -2532,7 +3305,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -2552,7 +3325,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The Google Cloud project to be used for quota and billing.
+     * Optional. Deprecated: Use `parent` field instead.
+     * The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -2560,7 +3334,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -2570,7 +3344,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2579,7 +3353,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The Google Cloud project to be used for quota and billing.
+     * Optional. Deprecated: Use `parent` field instead.
+     * The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -2587,13 +3362,13 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2602,7 +3377,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The Google Cloud project to be used for quota and billing.
+     * Optional. Deprecated: Use `parent` field instead.
+     * The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -2610,7 +3386,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=342
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=369
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */
@@ -2621,7 +3397,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2694,7 +3470,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2713,7 +3489,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2737,7 +3513,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2746,10 +3522,10 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureMessagesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         messages_ =
             new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.Message>(messages_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2999,7 +3775,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
     public Builder clearMessages() {
       if (messagesBuilder_ == null) {
         messages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         messagesBuilder_.clear();
@@ -3146,10 +3922,288 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.geminidataanalytics.v1beta.Message,
                 com.google.cloud.geminidataanalytics.v1beta.Message.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.MessageOrBuilder>(
-                messages_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                messages_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         messages_ = null;
       }
       return messagesBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.Credentials credentials_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.Credentials,
+            com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder>
+        credentialsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the credentials field is set.
+     */
+    public boolean hasCredentials() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The credentials.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials() {
+      if (credentialsBuilder_ == null) {
+        return credentials_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()
+            : credentials_;
+      } else {
+        return credentialsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCredentials(com.google.cloud.geminidataanalytics.v1beta.Credentials value) {
+      if (credentialsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credentials_ = value;
+      } else {
+        credentialsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCredentials(
+        com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder builderForValue) {
+      if (credentialsBuilder_ == null) {
+        credentials_ = builderForValue.build();
+      } else {
+        credentialsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCredentials(com.google.cloud.geminidataanalytics.v1beta.Credentials value) {
+      if (credentialsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && credentials_ != null
+            && credentials_
+                != com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()) {
+          getCredentialsBuilder().mergeFrom(value);
+        } else {
+          credentials_ = value;
+        }
+      } else {
+        credentialsBuilder_.mergeFrom(value);
+      }
+      if (credentials_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCredentials() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      credentials_ = null;
+      if (credentialsBuilder_ != null) {
+        credentialsBuilder_.dispose();
+        credentialsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder getCredentialsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetCredentialsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder
+        getCredentialsOrBuilder() {
+      if (credentialsBuilder_ != null) {
+        return credentialsBuilder_.getMessageOrBuilder();
+      } else {
+        return credentials_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()
+            : credentials_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The credentials to use when calling the data source(s) specified
+     * in the context.
+     *
+     * This field can be used to provide credentials for various data sources.
+     * For example, when connecting to Looker, it currently supports both OAuth
+     * token and API key-based credentials, as described in
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.Credentials,
+            com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder>
+        internalGetCredentialsFieldBuilder() {
+      if (credentialsBuilder_ == null) {
+        credentialsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.Credentials,
+                com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder>(
+                getCredentials(), getParentForChildren(), isClean());
+        credentials_ = null;
+      }
+      return credentialsBuilder_;
     }
 
     private int thinkingMode_ = 0;
@@ -3190,7 +4244,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder setThinkingModeValue(int value) {
       thinkingMode_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3239,7 +4293,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       thinkingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -3260,8 +4314,120 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearThinkingMode() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       thinkingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int model_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop when processing the request.
+     * This setting only has an effect when context.options.model is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for model.
+     */
+    @java.lang.Override
+    public int getModelValue() {
+      return model_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop when processing the request.
+     * This setting only has an effect when context.options.model is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelValue(int value) {
+      model_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop when processing the request.
+     * This setting only has an effect when context.options.model is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The model.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model getModel() {
+      com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model result =
+          com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.forNumber(model_);
+      return result == null
+          ? com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop when processing the request.
+     * This setting only has an effect when context.options.model is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(com.google.cloud.geminidataanalytics.v1beta.ChatRequest.Model value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      model_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop when processing the request.
+     * This setting only has an effect when context.options.model is not set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.ChatRequest.Model model = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      model_ = 0;
       onChanged();
       return this;
     }

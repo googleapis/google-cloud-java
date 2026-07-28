@@ -44,6 +44,7 @@ public class AsyncFetchFrameworkComplianceReport {
                           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_COMPLIANCE_REPORT]")
                       .toString())
               .setEndTime(Timestamp.newBuilder().build())
+              .setFilter("filter-1274492040")
               .build();
       ApiFuture<FrameworkComplianceReport> future =
           monitoringClient.fetchFrameworkComplianceReportCallable().futureCall(request);

@@ -1,9 +1,11 @@
 import unittest
+import tempfile
+import json
+from pathlib import Path
 
 # Unit tests for split_release_note.py
 
-from split_release_note import LibraryModule, create_changelog_entry, group_changes_by_api, ChangesOnApi
-from pathlib import Path
+from split_release_note import LibraryModule, create_changelog_entry, group_changes_by_api, ChangesOnApi, detect_modules
 
 dummy_module = LibraryModule(
     Path('release-note-generation/test/java-analyics-admin'),
@@ -80,6 +82,31 @@ class TestCase(unittest.TestCase):
         self.assertEqual(changes_by_api.get('nonexistent',
                                      ['No change']),
                          ['No change'])
+
+    def test_detect_modules_fallback(self):
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            tmp_path = Path(tmpdirname)
+            module_path = tmp_path / "java-spanner"
+            module_path.mkdir()
+            
+            # Create minimal pom.xml
+            pom_path = module_path / "pom.xml"
+            with open(pom_path, "w") as f:
+                f.write('<project xmlns:mvn="http://maven.apache.org/POM/4.0.0"><mvn:version>1.0.0</mvn:version></project>')
+                
+            # Create .repo-metadata.json with api_shortname
+            metadata_path = module_path / ".repo-metadata.json"
+            with open(metadata_path, "w") as f:
+                json.dump({"api_shortname": "spanner"}, f)
+                
+            # Create CHANGELOG.md
+            changelog_path = module_path / "CHANGELOG.md"
+            changelog_path.touch()
+            
+            modules = detect_modules(tmp_path)
+            self.assertEqual(len(modules), 1)
+            self.assertEqual(modules[0].api_name, "spanner")
+            self.assertEqual(modules[0].version, "1.0.0")
 
 
 if __name__ == "__main__":

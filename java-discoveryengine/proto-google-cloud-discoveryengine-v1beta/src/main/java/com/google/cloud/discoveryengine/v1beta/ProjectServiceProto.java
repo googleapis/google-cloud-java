@@ -45,6 +45,10 @@ public final class ProjectServiceProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectMetadata_fieldAccessorTable;
@@ -57,36 +61,41 @@ public final class ProjectServiceProto extends com.google.protobuf.GeneratedFile
 
   static {
     java.lang.String[] descriptorData = {
-      "\n9google/cloud/discoveryengine/v1beta/pr"
-          + "oject_service.proto\022#google.cloud.discov"
+      "\n"
+          + "9google/cloud/discoveryengine/v1beta/project_service.proto\022#google.cloud.discov"
           + "eryengine.v1beta\032\034google/api/annotations"
           + ".proto\032\027google/api/client.proto\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
           + "ource.proto\0321google/cloud/discoveryengin"
-          + "e/v1beta/project.proto\032#google/longrunni"
-          + "ng/operations.proto\"\240\001\n\027ProvisionProject"
-          + "Request\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&discovery"
-          + "engine.googleapis.com/Project\022\"\n\025accept_"
-          + "data_use_terms\030\002 \001(\010B\003\340A\002\022#\n\026data_use_te"
-          + "rms_version\030\003 \001(\tB\003\340A\002\"\032\n\030ProvisionProje"
-          + "ctMetadata2\374\002\n\016ProjectService\022\225\002\n\020Provis"
-          + "ionProject\022<.google.cloud.discoveryengin"
-          + "e.v1beta.ProvisionProjectRequest\032\035.googl"
-          + "e.longrunning.Operation\"\243\001\312Ak\n+google.cl"
-          + "oud.discoveryengine.v1beta.Project\022<goog"
-          + "le.cloud.discoveryengine.v1beta.Provisio"
-          + "nProjectMetadata\332A\004name\202\323\344\223\002(\"#/v1beta/{"
-          + "name=projects/*}:provision:\001*\032R\312A\036discov"
-          + "eryengine.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\232\002\n\'co"
-          + "m.google.cloud.discoveryengine.v1betaB\023P"
-          + "rojectServiceProtoP\001ZQcloud.google.com/g"
-          + "o/discoveryengine/apiv1beta/discoveryeng"
-          + "inepb;discoveryenginepb\242\002\017DISCOVERYENGIN"
-          + "E\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312"
-          + "\002#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&"
-          + "Google::Cloud::DiscoveryEngine::V1betab\006"
-          + "proto3"
+          + "e/v1beta/project.proto\032#google/longrunning/operations.proto\"\303\002\n"
+          + "\027ProvisionProjectRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&discoveryengine.googleapis.com/Project\022\"\n"
+          + "\025accept_data_use_terms\030\002 \001(\010B\003\340A\002\022#\n"
+          + "\026data_use_terms_version\030\003 \001(\tB\003\340A\002\022a\n"
+          + "\013saas_params\030\004 \001(\0132G.google.cloud.discoveryengine.v1bet"
+          + "a.ProvisionProjectRequest.SaasParamsB\003\340A\001\032>\n\n"
+          + "SaasParams\022\033\n"
+          + "\016accept_biz_qos\030\001 \001(\010B\003\340A\001\022\023\n"
+          + "\006is_biz\030\002 \001(\010B\003\340A\001\"\032\n"
+          + "\030ProvisionProjectMetadata2\372\003\n"
+          + "\016ProjectService\022\225\002\n"
+          + "\020ProvisionProject\022<.google.cloud.discoveryen"
+          + "gine.v1beta.ProvisionProjectRequest\032\035.google.longrunning.Operation\"\243\001\312Ak\n"
+          + "+google.cloud.discoveryengine.v1beta.Project\022<g"
+          + "oogle.cloud.discoveryengine.v1beta.Provi"
+          + "sionProjectMetadata\332A\004name\202\323\344\223\002(\"#/v1bet"
+          + "a/{name=projects/*}:provision:\001*\032\317\001\312A\036di"
+          + "scoveryengine.googleapis.com\322A\252\001https://"
+          + "www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/discovery"
+          + "engine.readwrite,https://www.googleapis."
+          + "com/auth/discoveryengine.serving.readwriteB\232\002\n"
+          + "\'com.google.cloud.discoveryengine.v1betaB\023ProjectServiceProtoP\001ZQcloud.goo"
+          + "gle.com/go/discoveryengine/apiv1beta/dis"
+          + "coveryenginepb;discoveryenginepb\242\002\017DISCO"
+          + "VERYENGINE\252\002#Google.Cloud.DiscoveryEngin"
+          + "e.V1Beta\312\002#Google\\Cloud\\DiscoveryEngine\\"
+          + "V1beta\352\002&Google::Cloud::DiscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,7 +114,16 @@ public final class ProjectServiceProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_descriptor,
             new java.lang.String[] {
-              "Name", "AcceptDataUseTerms", "DataUseTermsVersion",
+              "Name", "AcceptDataUseTerms", "DataUseTermsVersion", "SaasParams",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor,
+            new java.lang.String[] {
+              "AcceptBizQos", "IsBiz",
             });
     internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectMetadata_descriptor =
         getDescriptor().getMessageType(1);

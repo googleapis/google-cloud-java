@@ -19,7 +19,6 @@ import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.cloud.Structs;
 import com.google.common.base.Objects;
 import java.util.Map;
@@ -53,8 +52,12 @@ public class ExecutionStats {
     return debugStats;
   }
 
-  /** This method is obsolete. Use {@link #getExecutionDurationJavaTime()} instead. */
-  @ObsoleteApi("Use getExecutionDurationJavaTime() instead")
+  /**
+   * This method is obsolete. Use {@link #getExecutionDurationJavaTime()} instead.
+   *
+   * @deprecated Use {@link #getExecutionDurationJavaTime()} instead.
+   */
+  @Deprecated
   public org.threeten.bp.Duration getExecutionDuration() {
     return toThreetenDuration(getExecutionDurationJavaTime());
   }

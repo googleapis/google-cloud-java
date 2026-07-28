@@ -126,7 +126,8 @@ public interface ListIcebergCatalogsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -139,7 +140,8 @@ public interface ListIcebergCatalogsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -152,7 +154,8 @@ public interface ListIcebergCatalogsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -166,7 +169,8 @@ public interface ListIcebergCatalogsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The list of unreachable cloud regions for router fanout.
+   * Output only. The list of unreachable cloud regions. If non-empty, the
+   * result set might be incomplete.
    * </pre>
    *
    * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

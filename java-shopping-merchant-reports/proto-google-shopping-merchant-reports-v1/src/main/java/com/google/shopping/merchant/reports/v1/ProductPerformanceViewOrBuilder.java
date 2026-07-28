@@ -209,6 +209,60 @@ public interface ProductPerformanceViewOrBuilder
    *
    *
    * <pre>
+   * Store type to which metrics apply. Can be `ONLINE_STORE` or
+   * `LOCAL_STORES`. Segment.
+   *
+   * For `LOCAL_STORES` store type, further segmentation by a specific store
+   * is not available.
+   * </pre>
+   *
+   * <code>optional .google.shopping.merchant.reports.v1.StoreType.StoreTypeEnum store_type = 32;
+   * </code>
+   *
+   * @return Whether the storeType field is set.
+   */
+  boolean hasStoreType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Store type to which metrics apply. Can be `ONLINE_STORE` or
+   * `LOCAL_STORES`. Segment.
+   *
+   * For `LOCAL_STORES` store type, further segmentation by a specific store
+   * is not available.
+   * </pre>
+   *
+   * <code>optional .google.shopping.merchant.reports.v1.StoreType.StoreTypeEnum store_type = 32;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for storeType.
+   */
+  int getStoreTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Store type to which metrics apply. Can be `ONLINE_STORE` or
+   * `LOCAL_STORES`. Segment.
+   *
+   * For `LOCAL_STORES` store type, further segmentation by a specific store
+   * is not available.
+   * </pre>
+   *
+   * <code>optional .google.shopping.merchant.reports.v1.StoreType.StoreTypeEnum store_type = 32;
+   * </code>
+   *
+   * @return The storeType.
+   */
+  com.google.shopping.merchant.reports.v1.StoreType.StoreTypeEnum getStoreType();
+
+  /**
+   *
+   *
+   * <pre>
    * Merchant-provided id of the product. Segment.
    * </pre>
    *

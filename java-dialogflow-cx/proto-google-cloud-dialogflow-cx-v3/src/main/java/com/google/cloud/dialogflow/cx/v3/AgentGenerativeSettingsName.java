@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AgentGenerativeSettingsName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AGENT =
@@ -83,7 +86,7 @@ public class AgentGenerativeSettingsName implements ResourceName {
         .toString();
   }
 
-  public static AgentGenerativeSettingsName parse(String formattedString) {
+  public static @Nullable AgentGenerativeSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -102,7 +105,7 @@ public class AgentGenerativeSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AgentGenerativeSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable AgentGenerativeSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AgentGenerativeSettingsName value : values) {
       if (value == null) {
@@ -151,7 +154,7 @@ public class AgentGenerativeSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

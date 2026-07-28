@@ -124,10 +124,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Git remote's default branch name.
+     * Optional. The Git remote's default branch name.
+     * If not set, `main` will be used.
      * </pre>
      *
-     * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The defaultBranch.
      */
@@ -137,14 +138,47 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Git remote's default branch name.
+     * Optional. The Git remote's default branch name.
+     * If not set, `main` will be used.
      * </pre>
      *
-     * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for defaultBranch.
      */
     com.google.protobuf.ByteString getDefaultBranchBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Git remote's effective default branch name.
+     * This is the default branch name of the Git remote if it is set,
+     * otherwise it is `main`.
+     * </pre>
+     *
+     * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveDefaultBranch.
+     */
+    java.lang.String getEffectiveDefaultBranch();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Git remote's effective default branch name.
+     * This is the default branch name of the Git remote if it is set,
+     * otherwise it is `main`.
+     * </pre>
+     *
+     * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for effectiveDefaultBranch.
+     */
+    com.google.protobuf.ByteString getEffectiveDefaultBranchBytes();
 
     /**
      *
@@ -229,6 +263,57 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the gitRepositoryLink field is set.
+     */
+    boolean hasGitRepositoryLink();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The gitRepositoryLink.
+     */
+    java.lang.String getGitRepositoryLink();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for gitRepositoryLink.
+     */
+    com.google.protobuf.ByteString getGitRepositoryLinkBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Output only. Deprecated: The field does not contain any token status
      * information. Instead use
      * https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories/computeAccessTokenStatus
@@ -239,7 +324,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Deprecated
@@ -259,7 +344,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
      * @return The tokenStatus.
      */
     @java.lang.Deprecated
@@ -299,7 +384,9 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     private GitRemoteSettings() {
       url_ = "";
       defaultBranch_ = "";
+      effectiveDefaultBranch_ = "";
       authenticationTokenSecretVersion_ = "";
+      gitRepositoryLink_ = "";
       tokenStatus_ = 0;
     }
 
@@ -1513,10 +1600,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Git remote's default branch name.
+     * Optional. The Git remote's default branch name.
+     * If not set, `main` will be used.
      * </pre>
      *
-     * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The defaultBranch.
      */
@@ -1537,10 +1625,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The Git remote's default branch name.
+     * Optional. The Git remote's default branch name.
+     * If not set, `main` will be used.
      * </pre>
      *
-     * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for defaultBranch.
      */
@@ -1551,6 +1640,65 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         defaultBranch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EFFECTIVE_DEFAULT_BRANCH_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object effectiveDefaultBranch_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Git remote's effective default branch name.
+     * This is the default branch name of the Git remote if it is set,
+     * otherwise it is `main`.
+     * </pre>
+     *
+     * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveDefaultBranch.
+     */
+    @java.lang.Override
+    public java.lang.String getEffectiveDefaultBranch() {
+      java.lang.Object ref = effectiveDefaultBranch_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveDefaultBranch_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Git remote's effective default branch name.
+     * This is the default branch name of the Git remote if it is set,
+     * otherwise it is `main`.
+     * </pre>
+     *
+     * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for effectiveDefaultBranch.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEffectiveDefaultBranchBytes() {
+      java.lang.Object ref = effectiveDefaultBranch_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveDefaultBranch_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1683,6 +1831,87 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           : sshAuthenticationConfig_;
     }
 
+    public static final int GIT_REPOSITORY_LINK_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gitRepositoryLink_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the gitRepositoryLink field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitRepositoryLink() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The gitRepositoryLink.
+     */
+    @java.lang.Override
+    public java.lang.String getGitRepositoryLink() {
+      java.lang.Object ref = gitRepositoryLink_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gitRepositoryLink_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource name for the `GitRepositoryLink` used for machine
+     * credentials. Must be in the format
+     * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+     * </pre>
+     *
+     * <code>
+     * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for gitRepositoryLink.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGitRepositoryLinkBytes() {
+      java.lang.Object ref = gitRepositoryLink_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gitRepositoryLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int TOKEN_STATUS_FIELD_NUMBER = 4;
     private int tokenStatus_ = 0;
 
@@ -1700,7 +1929,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
      * @return The enum numeric value on the wire for tokenStatus.
      */
     @java.lang.Override
@@ -1723,7 +1952,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+     *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
      * @return The tokenStatus.
      */
     @java.lang.Override
@@ -1771,6 +2000,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(5, getSshAuthenticationConfig());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, gitRepositoryLink_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveDefaultBranch_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, effectiveDefaultBranch_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1802,6 +2037,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, getSshAuthenticationConfig());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, gitRepositoryLink_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(effectiveDefaultBranch_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, effectiveDefaultBranch_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1820,11 +2061,16 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
 
       if (!getUrl().equals(other.getUrl())) return false;
       if (!getDefaultBranch().equals(other.getDefaultBranch())) return false;
+      if (!getEffectiveDefaultBranch().equals(other.getEffectiveDefaultBranch())) return false;
       if (!getAuthenticationTokenSecretVersion()
           .equals(other.getAuthenticationTokenSecretVersion())) return false;
       if (hasSshAuthenticationConfig() != other.hasSshAuthenticationConfig()) return false;
       if (hasSshAuthenticationConfig()) {
         if (!getSshAuthenticationConfig().equals(other.getSshAuthenticationConfig())) return false;
+      }
+      if (hasGitRepositoryLink() != other.hasGitRepositoryLink()) return false;
+      if (hasGitRepositoryLink()) {
+        if (!getGitRepositoryLink().equals(other.getGitRepositoryLink())) return false;
       }
       if (tokenStatus_ != other.tokenStatus_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1842,11 +2088,17 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + DEFAULT_BRANCH_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultBranch().hashCode();
+      hash = (37 * hash) + EFFECTIVE_DEFAULT_BRANCH_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveDefaultBranch().hashCode();
       hash = (37 * hash) + AUTHENTICATION_TOKEN_SECRET_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getAuthenticationTokenSecretVersion().hashCode();
       if (hasSshAuthenticationConfig()) {
         hash = (37 * hash) + SSH_AUTHENTICATION_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSshAuthenticationConfig().hashCode();
+      }
+      if (hasGitRepositoryLink()) {
+        hash = (37 * hash) + GIT_REPOSITORY_LINK_FIELD_NUMBER;
+        hash = (53 * hash) + getGitRepositoryLink().hashCode();
       }
       hash = (37 * hash) + TOKEN_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + tokenStatus_;
@@ -2002,12 +2254,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         url_ = "";
         defaultBranch_ = "";
+        effectiveDefaultBranch_ = "";
         authenticationTokenSecretVersion_ = "";
         sshAuthenticationConfig_ = null;
         if (sshAuthenticationConfigBuilder_ != null) {
           sshAuthenticationConfigBuilder_.dispose();
           sshAuthenticationConfigBuilder_ = null;
         }
+        gitRepositoryLink_ = "";
         tokenStatus_ = 0;
         return this;
       }
@@ -2054,17 +2308,24 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           result.defaultBranch_ = defaultBranch_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.effectiveDefaultBranch_ = effectiveDefaultBranch_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.authenticationTokenSecretVersion_ = authenticationTokenSecretVersion_;
         }
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.sshAuthenticationConfig_ =
               sshAuthenticationConfigBuilder_ == null
                   ? sshAuthenticationConfig_
                   : sshAuthenticationConfigBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.gitRepositoryLink_ = gitRepositoryLink_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.tokenStatus_ = tokenStatus_;
         }
         result.bitField0_ |= to_bitField0_;
@@ -2095,13 +2356,23 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getEffectiveDefaultBranch().isEmpty()) {
+          effectiveDefaultBranch_ = other.effectiveDefaultBranch_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         if (!other.getAuthenticationTokenSecretVersion().isEmpty()) {
           authenticationTokenSecretVersion_ = other.authenticationTokenSecretVersion_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.hasSshAuthenticationConfig()) {
           mergeSshAuthenticationConfig(other.getSshAuthenticationConfig());
+        }
+        if (other.hasGitRepositoryLink()) {
+          gitRepositoryLink_ = other.gitRepositoryLink_;
+          bitField0_ |= 0x00000020;
+          onChanged();
         }
         if (other.tokenStatus_ != 0) {
           setTokenStatusValue(other.getTokenStatusValue());
@@ -2147,13 +2418,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
               case 26:
                 {
                   authenticationTokenSecretVersion_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
               case 32:
                 {
                   tokenStatus_ = input.readEnum();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 32
               case 42:
@@ -2161,9 +2432,21 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                   input.readMessage(
                       internalGetSshAuthenticationConfigFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 58:
+                {
+                  gitRepositoryLink_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 58
+              case 74:
+                {
+                  effectiveDefaultBranch_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2300,10 +2583,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The Git remote's default branch name.
+       * Optional. The Git remote's default branch name.
+       * If not set, `main` will be used.
        * </pre>
        *
-       * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The defaultBranch.
        */
@@ -2323,10 +2607,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The Git remote's default branch name.
+       * Optional. The Git remote's default branch name.
+       * If not set, `main` will be used.
        * </pre>
        *
-       * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for defaultBranch.
        */
@@ -2346,10 +2631,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The Git remote's default branch name.
+       * Optional. The Git remote's default branch name.
+       * If not set, `main` will be used.
        * </pre>
        *
-       * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The defaultBranch to set.
        * @return This builder for chaining.
@@ -2368,10 +2654,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The Git remote's default branch name.
+       * Optional. The Git remote's default branch name.
+       * If not set, `main` will be used.
        * </pre>
        *
-       * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2386,10 +2673,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The Git remote's default branch name.
+       * Optional. The Git remote's default branch name.
+       * If not set, `main` will be used.
        * </pre>
        *
-       * <code>string default_branch = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string default_branch = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for defaultBranch to set.
        * @return This builder for chaining.
@@ -2401,6 +2689,132 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         defaultBranch_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object effectiveDefaultBranch_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Git remote's effective default branch name.
+       * This is the default branch name of the Git remote if it is set,
+       * otherwise it is `main`.
+       * </pre>
+       *
+       * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The effectiveDefaultBranch.
+       */
+      public java.lang.String getEffectiveDefaultBranch() {
+        java.lang.Object ref = effectiveDefaultBranch_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          effectiveDefaultBranch_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Git remote's effective default branch name.
+       * This is the default branch name of the Git remote if it is set,
+       * otherwise it is `main`.
+       * </pre>
+       *
+       * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for effectiveDefaultBranch.
+       */
+      public com.google.protobuf.ByteString getEffectiveDefaultBranchBytes() {
+        java.lang.Object ref = effectiveDefaultBranch_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          effectiveDefaultBranch_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Git remote's effective default branch name.
+       * This is the default branch name of the Git remote if it is set,
+       * otherwise it is `main`.
+       * </pre>
+       *
+       * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The effectiveDefaultBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEffectiveDefaultBranch(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        effectiveDefaultBranch_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Git remote's effective default branch name.
+       * This is the default branch name of the Git remote if it is set,
+       * otherwise it is `main`.
+       * </pre>
+       *
+       * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEffectiveDefaultBranch() {
+        effectiveDefaultBranch_ = getDefaultInstance().getEffectiveDefaultBranch();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Git remote's effective default branch name.
+       * This is the default branch name of the Git remote if it is set,
+       * otherwise it is `main`.
+       * </pre>
+       *
+       * <code>string effective_default_branch = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for effectiveDefaultBranch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEffectiveDefaultBranchBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        effectiveDefaultBranch_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2482,7 +2896,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         authenticationTokenSecretVersion_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2505,7 +2919,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       public Builder clearAuthenticationTokenSecretVersion() {
         authenticationTokenSecretVersion_ =
             getDefaultInstance().getAuthenticationTokenSecretVersion();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2533,7 +2947,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         authenticationTokenSecretVersion_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2563,7 +2977,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * @return Whether the sshAuthenticationConfig field is set.
        */
       public boolean hasSshAuthenticationConfig() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
 
       /**
@@ -2613,7 +3027,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         } else {
           sshAuthenticationConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2638,7 +3052,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         } else {
           sshAuthenticationConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2658,7 +3072,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.SshAuthenticationConfig
               value) {
         if (sshAuthenticationConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && sshAuthenticationConfig_ != null
               && sshAuthenticationConfig_
                   != com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings
@@ -2671,7 +3085,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
           sshAuthenticationConfigBuilder_.mergeFrom(value);
         }
         if (sshAuthenticationConfig_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -2689,7 +3103,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearSshAuthenticationConfig() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         sshAuthenticationConfig_ = null;
         if (sshAuthenticationConfigBuilder_ != null) {
           sshAuthenticationConfigBuilder_.dispose();
@@ -2713,7 +3127,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.SshAuthenticationConfig
               .Builder
           getSshAuthenticationConfigBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return internalGetSshAuthenticationConfigFieldBuilder().getBuilder();
       }
@@ -2776,6 +3190,156 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         return sshAuthenticationConfigBuilder_;
       }
 
+      private java.lang.Object gitRepositoryLink_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return Whether the gitRepositoryLink field is set.
+       */
+      public boolean hasGitRepositoryLink() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The gitRepositoryLink.
+       */
+      public java.lang.String getGitRepositoryLink() {
+        java.lang.Object ref = gitRepositoryLink_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          gitRepositoryLink_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for gitRepositoryLink.
+       */
+      public com.google.protobuf.ByteString getGitRepositoryLinkBytes() {
+        java.lang.Object ref = gitRepositoryLink_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          gitRepositoryLink_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The gitRepositoryLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGitRepositoryLink(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gitRepositoryLink_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGitRepositoryLink() {
+        gitRepositoryLink_ = getDefaultInstance().getGitRepositoryLink();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource name for the `GitRepositoryLink` used for machine
+       * credentials. Must be in the format
+       * `projects/&#42;&#47;locations/&#42;&#47;connections/&#42;&#47;gitRepositoryLinks/&#42;`
+       * </pre>
+       *
+       * <code>
+       * optional string git_repository_link = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for gitRepositoryLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGitRepositoryLinkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        gitRepositoryLink_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
       private int tokenStatus_ = 0;
 
       /**
@@ -2792,7 +3356,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
        * @return The enum numeric value on the wire for tokenStatus.
        */
       @java.lang.Override
@@ -2815,14 +3379,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
        * @param value The enum numeric value on the wire for tokenStatus to set.
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder setTokenStatusValue(int value) {
         tokenStatus_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2841,7 +3405,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
        * @return The tokenStatus.
        */
       @java.lang.Override
@@ -2871,7 +3435,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
        * @param value The tokenStatus to set.
        * @return This builder for chaining.
        */
@@ -2881,7 +3445,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         tokenStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -2901,12 +3465,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.dataform.v1beta1.Repository.GitRemoteSettings.token_status is
-       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=839
+       *     deprecated. See google/cloud/dataform/v1beta1/dataform.proto;l=921
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
       public Builder clearTokenStatus() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000040);
         tokenStatus_ = 0;
         onChanged();
         return this;

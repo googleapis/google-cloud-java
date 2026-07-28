@@ -33,27 +33,31 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This callable wraps a callable chain in a {@link ApiTracer}.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @BetaApi("The surface for tracing is not stable and might change in the future")
 @InternalApi("For internal use by google-cloud-java clients only")
 public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
   private final ApiTracerFactory tracerFactory;
   private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
-  @Nullable private final ResourceNameExtractor<RequestT> resourceNameExtractor;
+  private final @Nullable ApiTracerContext apiTracerContext;
+  private final @Nullable ResourceNameExtractor<RequestT> resourceNameExtractor;
 
+  @ObsoleteApi("Use constructor with ApiTracerContext instead")
   public TracedUnaryCallable(
       UnaryCallable<RequestT, ResponseT> innerCallable,
       ApiTracerFactory tracerFactory,
@@ -76,6 +80,13 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
         apiTracerContext.toBuilder().setOperationType(OperationType.Unary).build();
     this.spanName = SpanName.of(apiTracerContext);
     this.resourceNameExtractor = resourceNameExtractor;
+  }
+
+  TracedUnaryCallable(
+      UnaryCallable<RequestT, ResponseT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      ApiTracerContext apiTracerContext) {
+    this(innerCallable, tracerFactory, apiTracerContext, null);
   }
 
   /**

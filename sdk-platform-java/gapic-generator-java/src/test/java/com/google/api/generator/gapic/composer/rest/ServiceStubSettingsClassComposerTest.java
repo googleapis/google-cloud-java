@@ -36,7 +36,9 @@ class ServiceStubSettingsClassComposerTest {
             "ComplianceStubSettings.golden", RestTestProtoLoader.instance().parseCompliance()),
         Arguments.of(
             "HttpJsonApiVersionTestingStubSettings.golden",
-            RestTestProtoLoader.instance().parseApiVersionTesting()));
+            RestTestProtoLoader.instance().parseApiVersionTesting().toBuilder()
+                .setGenerateVersionJava(true)
+                .build()));
   }
 
   @ParameterizedTest

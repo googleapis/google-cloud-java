@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -195,8 +197,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -282,9 +283,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataObjectServiceClient implements BackgroundResource {
-  private final DataObjectServiceSettings settings;
+  private final @Nullable DataObjectServiceSettings settings;
   private final DataObjectServiceStub stub;
 
   /** Constructs an instance of DataObjectServiceClient with default settings. */
@@ -324,7 +326,7 @@ public class DataObjectServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataObjectServiceSettings getSettings() {
+  public final @Nullable DataObjectServiceSettings getSettings() {
     return settings;
   }
 
@@ -363,7 +365,7 @@ public class DataObjectServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataObject createDataObject(
-      CollectionName parent, DataObject dataObject, String dataObjectId) {
+      @Nullable CollectionName parent, DataObject dataObject, String dataObjectId) {
     CreateDataObjectRequest request =
         CreateDataObjectRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -558,7 +560,7 @@ public class DataObjectServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataObjects/{dataObject}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataObject getDataObject(DataObjectName name) {
+  public final DataObject getDataObject(@Nullable DataObjectName name) {
     GetDataObjectRequest request =
         GetDataObjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataObject(request);
@@ -771,7 +773,7 @@ public class DataObjectServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateDataObjectsResponse batchUpdateDataObjects(
-      CollectionName parent, List<UpdateDataObjectRequest> requests) {
+      @Nullable CollectionName parent, List<UpdateDataObjectRequest> requests) {
     BatchUpdateDataObjectsRequest request =
         BatchUpdateDataObjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -901,7 +903,7 @@ public class DataObjectServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataObjects/{dataObject}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataObject(DataObjectName name) {
+  public final void deleteDataObject(@Nullable DataObjectName name) {
     DeleteDataObjectRequest request =
         DeleteDataObjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataObject(request);
@@ -1023,7 +1025,7 @@ public class DataObjectServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void batchDeleteDataObjects(
-      CollectionName parent, List<DeleteDataObjectRequest> requests) {
+      @Nullable CollectionName parent, List<DeleteDataObjectRequest> requests) {
     BatchDeleteDataObjectsRequest request =
         BatchDeleteDataObjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1130,9 +1132,8 @@ public class DataObjectServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1176,9 +1177,8 @@ public class DataObjectServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1223,9 +1223,8 @@ public class DataObjectServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1380,8 +1379,8 @@ public class DataObjectServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1391,14 +1390,14 @@ public class DataObjectServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1412,7 +1411,8 @@ public class DataObjectServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1422,7 +1422,7 @@ public class DataObjectServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

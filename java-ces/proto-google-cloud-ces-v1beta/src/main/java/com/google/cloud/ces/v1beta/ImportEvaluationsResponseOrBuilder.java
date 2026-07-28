@@ -86,6 +86,118 @@ public interface ImportEvaluationsResponseOrBuilder
    *
    *
    * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  java.util.List<com.google.cloud.ces.v1beta.EvaluationResult> getEvaluationResultsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationResult getEvaluationResults(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  int getEvaluationResultsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationResultOrBuilder>
+      getEvaluationResultsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation results that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationResult evaluation_results = 4;</code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationResultOrBuilder getEvaluationResultsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  java.util.List<com.google.cloud.ces.v1beta.EvaluationRun> getEvaluationRunsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationRun getEvaluationRuns(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  int getEvaluationRunsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  java.util.List<? extends com.google.cloud.ces.v1beta.EvaluationRunOrBuilder>
+      getEvaluationRunsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The list of evaluation runs that were imported into the app.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.ces.v1beta.EvaluationRun evaluation_runs = 5;</code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationRunOrBuilder getEvaluationRunsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of error messages associated with evaluations that failed
    * to be imported.
    * </pre>
@@ -144,7 +256,8 @@ public interface ImportEvaluationsResponseOrBuilder
    *
    *
    * <pre>
-   * The number of evaluations that were not imported due to errors.
+   * The number of evaluations that either failed to import entirely or
+   * completed import with one or more errors.
    * </pre>
    *
    * <code>int32 import_failure_count = 3;</code>
@@ -152,4 +265,32 @@ public interface ImportEvaluationsResponseOrBuilder
    * @return The importFailureCount.
    */
   int getImportFailureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of evaluation results that either failed to import entirely or
+   * completed import with one or more errors.
+   * </pre>
+   *
+   * <code>int32 evaluation_result_import_failure_count = 6;</code>
+   *
+   * @return The evaluationResultImportFailureCount.
+   */
+  int getEvaluationResultImportFailureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of evaluation runs that either failed to import entirely or
+   * completed import with one or more errors.
+   * </pre>
+   *
+   * <code>int32 evaluation_run_import_failure_count = 7;</code>
+   *
+   * @return The evaluationRunImportFailureCount.
+   */
+  int getEvaluationRunImportFailureCount();
 }

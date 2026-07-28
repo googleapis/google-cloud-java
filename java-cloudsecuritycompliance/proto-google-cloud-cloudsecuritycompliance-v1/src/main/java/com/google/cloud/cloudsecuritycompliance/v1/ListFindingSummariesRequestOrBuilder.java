@@ -136,7 +136,7 @@ public interface ListFindingSummariesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesRequest.end_time is
-   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=295
+   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=320
    * @return Whether the endTime field is set.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public interface ListFindingSummariesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.cloudsecuritycompliance.v1.ListFindingSummariesRequest.end_time is
-   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=295
+   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=320
    * @return The endTime.
    */
   @java.lang.Deprecated

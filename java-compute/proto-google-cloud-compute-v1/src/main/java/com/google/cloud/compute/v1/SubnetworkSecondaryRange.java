@@ -53,6 +53,8 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
 
   private SubnetworkSecondaryRange() {
     ipCidrRange_ = "";
+    ipCollection_ = "";
+    ipVersion_ = "";
     rangeName_ = "";
     reservedInternalRange_ = "";
   }
@@ -70,6 +72,167 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.SubnetworkSecondaryRange.class,
             com.google.cloud.compute.v1.SubnetworkSecondaryRange.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.SubnetworkSecondaryRange.IpVersion}
+   */
+  public enum IpVersion implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IP_VERSION = 0;</code>
+     */
+    UNDEFINED_IP_VERSION(0),
+    /** <code>IPV4 = 2254341;</code> */
+    IPV4(2254341),
+    /** <code>IPV6 = 2254343;</code> */
+    IPV6(2254343),
+    /**
+     *
+     *
+     * <pre>
+     * Treated as IPV4 for backward-compatibility.
+     * </pre>
+     *
+     * <code>IP_VERSION_UNSPECIFIED = 92360440;</code>
+     */
+    IP_VERSION_UNSPECIFIED(92360440),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "IpVersion");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IP_VERSION = 0;</code>
+     */
+    public static final int UNDEFINED_IP_VERSION_VALUE = 0;
+
+    /** <code>IPV4 = 2254341;</code> */
+    public static final int IPV4_VALUE = 2254341;
+
+    /** <code>IPV6 = 2254343;</code> */
+    public static final int IPV6_VALUE = 2254343;
+
+    /**
+     *
+     *
+     * <pre>
+     * Treated as IPV4 for backward-compatibility.
+     * </pre>
+     *
+     * <code>IP_VERSION_UNSPECIFIED = 92360440;</code>
+     */
+    public static final int IP_VERSION_UNSPECIFIED_VALUE = 92360440;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IpVersion valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static IpVersion forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IP_VERSION;
+        case 2254341:
+          return IPV4;
+        case 2254343:
+          return IPV6;
+        case 92360440:
+          return IP_VERSION_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<IpVersion> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<IpVersion>() {
+          public IpVersion findValueByNumber(int number) {
+            return IpVersion.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SubnetworkSecondaryRange.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final IpVersion[] VALUES = values();
+
+    public static IpVersion valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private IpVersion(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SubnetworkSecondaryRange.IpVersion)
   }
 
   private int bitField0_;
@@ -196,6 +359,165 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     }
   }
 
+  public static final int IP_COLLECTION_FIELD_NUMBER = 176818358;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipCollection_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpCollection() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  @java.lang.Override
+  public java.lang.String getIpCollection() {
+    java.lang.Object ref = ipCollection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipCollection_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+   * This field should be specified for configuring BYOGUA internal IPv6
+   * secondary range.
+   * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+   * within the PDP referenced by the `ipCollection` field.
+   * When specified without the ip_cidr_range, the range is auto-allocated
+   * from the PDP referenced by the `ipCollection` field.
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpCollectionBytes() {
+    java.lang.Object ref = ipCollection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipCollection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IP_VERSION_FIELD_NUMBER = 294959552;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return Whether the ipVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpVersion() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The ipVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getIpVersion() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the IpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ip_version = 294959552;</code>
+   *
+   * @return The bytes for ipVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpVersionBytes() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RANGE_NAME_FIELD_NUMBER = 332216397;
 
   @SuppressWarnings("serial")
@@ -217,7 +539,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasRangeName() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -292,7 +614,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasReservedInternalRange() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -360,10 +682,16 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 176818358, ipCollection_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 286248754, reservedInternalRange_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 294959552, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 332216397, rangeName_);
     }
     getUnknownFields().writeTo(output);
@@ -378,11 +706,17 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(176818358, ipCollection_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(286248754, reservedInternalRange_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(294959552, ipVersion_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(332216397, rangeName_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -404,6 +738,14 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
     if (hasIpCidrRange()) {
       if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasIpCollection() != other.hasIpCollection()) return false;
+    if (hasIpCollection()) {
+      if (!getIpCollection().equals(other.getIpCollection())) return false;
+    }
+    if (hasIpVersion() != other.hasIpVersion()) return false;
+    if (hasIpVersion()) {
+      if (!getIpVersion().equals(other.getIpVersion())) return false;
     }
     if (hasRangeName() != other.hasRangeName()) return false;
     if (hasRangeName()) {
@@ -427,6 +769,14 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
     if (hasIpCidrRange()) {
       hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasIpCollection()) {
+      hash = (37 * hash) + IP_COLLECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getIpCollection().hashCode();
+    }
+    if (hasIpVersion()) {
+      hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getIpVersion().hashCode();
     }
     if (hasRangeName()) {
       hash = (37 * hash) + RANGE_NAME_FIELD_NUMBER;
@@ -577,6 +927,8 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       ipCidrRange_ = "";
+      ipCollection_ = "";
+      ipVersion_ = "";
       rangeName_ = "";
       reservedInternalRange_ = "";
       return this;
@@ -621,12 +973,20 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.rangeName_ = rangeName_;
+        result.ipCollection_ = ipCollection_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.reservedInternalRange_ = reservedInternalRange_;
+        result.ipVersion_ = ipVersion_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rangeName_ = rangeName_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reservedInternalRange_ = reservedInternalRange_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -649,14 +1009,24 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasIpCollection()) {
+        ipCollection_ = other.ipCollection_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasIpVersion()) {
+        ipVersion_ = other.ipVersion_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasRangeName()) {
         rangeName_ = other.rangeName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasReservedInternalRange()) {
         reservedInternalRange_ = other.reservedInternalRange_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -691,16 +1061,28 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 784938578
+            case 1414546866:
+              {
+                ipCollection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1414546866
             case -2004977262:
               {
                 reservedInternalRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -2004977262
+            case -1935290878:
+              {
+                ipVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1935290878
             case -1637236118:
               {
                 rangeName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1637236118
             default:
@@ -956,6 +1338,300 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       return this;
     }
 
+    private java.lang.Object ipCollection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return Whether the ipCollection field is set.
+     */
+    public boolean hasIpCollection() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return The ipCollection.
+     */
+    public java.lang.String getIpCollection() {
+      java.lang.Object ref = ipCollection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipCollection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return The bytes for ipCollection.
+     */
+    public com.google.protobuf.ByteString getIpCollectionBytes() {
+      java.lang.Object ref = ipCollection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipCollection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @param value The ipCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpCollection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipCollection_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpCollection() {
+      ipCollection_ = getDefaultInstance().getIpCollection();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reference to a Public Delegated Prefix (PDP) for BYOIP.
+     * This field should be specified for configuring BYOGUA internal IPv6
+     * secondary range.
+     * When specified along with the ip_cidr_range, the ip_cidr_range must lie
+     * within the PDP referenced by the `ipCollection` field.
+     * When specified without the ip_cidr_range, the range is auto-allocated
+     * from the PDP referenced by the `ipCollection` field.
+     * </pre>
+     *
+     * <code>optional string ip_collection = 176818358;</code>
+     *
+     * @param value The bytes for ipCollection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpCollectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipCollection_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return Whether the ipVersion field is set.
+     */
+    public boolean hasIpVersion() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return The ipVersion.
+     */
+    public java.lang.String getIpVersion() {
+      java.lang.Object ref = ipVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return The bytes for ipVersion.
+     */
+    public com.google.protobuf.ByteString getIpVersionBytes() {
+      java.lang.Object ref = ipVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @param value The ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipVersion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpVersion() {
+      ipVersion_ = getDefaultInstance().getIpVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     *
+     * @param value The bytes for ipVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipVersion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object rangeName_ = "";
 
     /**
@@ -973,7 +1649,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * @return Whether the rangeName field is set.
      */
     public boolean hasRangeName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1048,7 +1724,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       rangeName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1069,7 +1745,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      */
     public Builder clearRangeName() {
       rangeName_ = getDefaultInstance().getRangeName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1095,7 +1771,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       rangeName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1114,7 +1790,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      * @return Whether the reservedInternalRange field is set.
      */
     public boolean hasReservedInternalRange() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1180,7 +1856,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       reservedInternalRange_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1198,7 +1874,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
      */
     public Builder clearReservedInternalRange() {
       reservedInternalRange_ = getDefaultInstance().getReservedInternalRange();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1221,7 +1897,7 @@ public final class SubnetworkSecondaryRange extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       reservedInternalRange_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

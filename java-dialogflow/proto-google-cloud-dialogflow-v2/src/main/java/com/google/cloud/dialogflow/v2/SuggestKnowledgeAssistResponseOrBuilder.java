@@ -115,4 +115,87 @@ public interface SuggestKnowledgeAssistResponseOrBuilder
    * @return The contextSize.
    */
   int getContextSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult>
+      getAdditionalSuggestedQueryResultsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+      getAdditionalSuggestedQueryResults(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAdditionalSuggestedQueryResultsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+                  .AdditionalSuggestedQueryResultOrBuilder>
+      getAdditionalSuggestedQueryResultsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of additional suggested queries based on the context.
+   * This is used for the cases when we want to generate multiple queries
+   * for a single request.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult additional_suggested_query_results = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResultOrBuilder
+      getAdditionalSuggestedQueryResultsOrBuilder(int index);
 }

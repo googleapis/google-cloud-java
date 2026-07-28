@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,9 +246,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GroupServiceClient implements BackgroundResource {
-  private final GroupServiceSettings settings;
+  private final @Nullable GroupServiceSettings settings;
   private final GroupServiceStub stub;
 
   /** Constructs an instance of GroupServiceClient with default settings. */
@@ -285,7 +288,7 @@ public class GroupServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GroupServiceSettings getSettings() {
+  public final @Nullable GroupServiceSettings getSettings() {
     return settings;
   }
 
@@ -318,7 +321,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(ResourceName name) {
+  public final ListGroupsPagedResponse listGroups(@Nullable ResourceName name) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listGroups(request);
@@ -349,7 +352,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(OrganizationName name) {
+  public final ListGroupsPagedResponse listGroups(@Nullable OrganizationName name) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listGroups(request);
@@ -380,7 +383,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(ProjectName name) {
+  public final ListGroupsPagedResponse listGroups(@Nullable ProjectName name) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listGroups(request);
@@ -539,7 +542,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group getGroup(GroupName name) {
+  public final Group getGroup(@Nullable GroupName name) {
     GetGroupRequest request =
         GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGroup(request);
@@ -653,7 +656,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     the system assigns the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group createGroup(ResourceName name, Group group) {
+  public final Group createGroup(@Nullable ResourceName name, Group group) {
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -688,7 +691,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     the system assigns the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group createGroup(OrganizationName name, Group group) {
+  public final Group createGroup(@Nullable OrganizationName name, Group group) {
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -723,7 +726,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     the system assigns the name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group createGroup(ProjectName name, Group group) {
+  public final Group createGroup(@Nullable ProjectName name, Group group) {
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -929,7 +932,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGroup(GroupName name) {
+  public final void deleteGroup(@Nullable GroupName name) {
     DeleteGroupRequest request =
         DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteGroup(request);
@@ -1043,7 +1046,7 @@ public class GroupServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupMembersPagedResponse listGroupMembers(GroupName name) {
+  public final ListGroupMembersPagedResponse listGroupMembers(@Nullable GroupName name) {
     ListGroupMembersRequest request =
         ListGroupMembersRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listGroupMembers(request);
@@ -1245,8 +1248,8 @@ public class GroupServiceClient implements BackgroundResource {
       extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
 
     private ListGroupsPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       super(context, response);
     }
 
@@ -1256,14 +1259,14 @@ public class GroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupsPage createPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       return new ListGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupsPage> createPageAsync(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
         ApiFuture<ListGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1277,7 +1280,8 @@ public class GroupServiceClient implements BackgroundResource {
           ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
-    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+    private ListGroupsFixedSizeCollection(
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1287,7 +1291,7 @@ public class GroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupsFixedSizeCollection createCollection(
-        List<ListGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       return new ListGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1324,8 +1328,9 @@ public class GroupServiceClient implements BackgroundResource {
           ListGroupMembersPage> {
 
     private ListGroupMembersPage(
-        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
-        ListGroupMembersResponse response) {
+        @Nullable PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+            context,
+        @Nullable ListGroupMembersResponse response) {
       super(context, response);
     }
 
@@ -1335,14 +1340,16 @@ public class GroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupMembersPage createPage(
-        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
-        ListGroupMembersResponse response) {
+        @Nullable PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+            context,
+        @Nullable ListGroupMembersResponse response) {
       return new ListGroupMembersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupMembersPage> createPageAsync(
-        PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
+        @Nullable PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+            context,
         ApiFuture<ListGroupMembersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1357,7 +1364,7 @@ public class GroupServiceClient implements BackgroundResource {
           ListGroupMembersFixedSizeCollection> {
 
     private ListGroupMembersFixedSizeCollection(
-        List<ListGroupMembersPage> pages, int collectionSize) {
+        @Nullable List<ListGroupMembersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1367,7 +1374,7 @@ public class GroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupMembersFixedSizeCollection createCollection(
-        List<ListGroupMembersPage> pages, int collectionSize) {
+        @Nullable List<ListGroupMembersPage> pages, int collectionSize) {
       return new ListGroupMembersFixedSizeCollection(pages, collectionSize);
     }
   }

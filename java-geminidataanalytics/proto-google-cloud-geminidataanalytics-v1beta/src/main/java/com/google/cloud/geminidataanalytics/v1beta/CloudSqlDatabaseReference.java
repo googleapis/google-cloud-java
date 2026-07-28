@@ -58,6 +58,7 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     instanceId_ = "";
     databaseId_ = "";
     tableIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    databaseTableReferences_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -570,6 +571,107 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     return tableIds_.getByteString(index);
   }
 
+  public static final int DATABASE_TABLE_REFERENCES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      databaseTableReferences_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      getDatabaseTableReferencesList() {
+    return databaseTableReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+      getDatabaseTableReferencesOrBuilderList() {
+    return databaseTableReferences_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDatabaseTableReferencesCount() {
+    return databaseTableReferences_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+      getDatabaseTableReferences(int index) {
+    return databaseTableReferences_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+      getDatabaseTableReferencesOrBuilder(int index) {
+    return databaseTableReferences_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -604,6 +706,9 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     }
     for (int i = 0; i < tableIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, tableIds_.getRaw(i));
+    }
+    for (int i = 0; i < databaseTableReferences_.size(); i++) {
+      output.writeMessage(8, databaseTableReferences_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -640,6 +745,11 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
       size += dataSize;
       size += 1 * getTableIdsList().size();
     }
+    for (int i = 0; i < databaseTableReferences_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, databaseTableReferences_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -662,6 +772,8 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     if (!getInstanceId().equals(other.getInstanceId())) return false;
     if (!getDatabaseId().equals(other.getDatabaseId())) return false;
     if (!getTableIdsList().equals(other.getTableIdsList())) return false;
+    if (!getDatabaseTableReferencesList().equals(other.getDatabaseTableReferencesList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -686,6 +798,10 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     if (getTableIdsCount() > 0) {
       hash = (37 * hash) + TABLE_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTableIdsList().hashCode();
+    }
+    if (getDatabaseTableReferencesCount() > 0) {
+      hash = (37 * hash) + DATABASE_TABLE_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabaseTableReferencesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -836,6 +952,13 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
       instanceId_ = "";
       databaseId_ = "";
       tableIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferences_ = java.util.Collections.emptyList();
+      } else {
+        databaseTableReferences_ = null;
+        databaseTableReferencesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -865,11 +988,26 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
     public com.google.cloud.geminidataanalytics.v1beta.CloudSqlDatabaseReference buildPartial() {
       com.google.cloud.geminidataanalytics.v1beta.CloudSqlDatabaseReference result =
           new com.google.cloud.geminidataanalytics.v1beta.CloudSqlDatabaseReference(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.geminidataanalytics.v1beta.CloudSqlDatabaseReference result) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          databaseTableReferences_ =
+              java.util.Collections.unmodifiableList(databaseTableReferences_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.databaseTableReferences_ = databaseTableReferences_;
+      } else {
+        result.databaseTableReferences_ = databaseTableReferencesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -945,6 +1083,33 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
         }
         onChanged();
       }
+      if (databaseTableReferencesBuilder_ == null) {
+        if (!other.databaseTableReferences_.isEmpty()) {
+          if (databaseTableReferences_.isEmpty()) {
+            databaseTableReferences_ = other.databaseTableReferences_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureDatabaseTableReferencesIsMutable();
+            databaseTableReferences_.addAll(other.databaseTableReferences_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.databaseTableReferences_.isEmpty()) {
+          if (databaseTableReferencesBuilder_.isEmpty()) {
+            databaseTableReferencesBuilder_.dispose();
+            databaseTableReferencesBuilder_ = null;
+            databaseTableReferences_ = other.databaseTableReferences_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            databaseTableReferencesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDatabaseTableReferencesFieldBuilder()
+                    : null;
+          } else {
+            databaseTableReferencesBuilder_.addAllMessages(other.databaseTableReferences_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1008,6 +1173,20 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
                 tableIds_.add(s);
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.parser(),
+                        extensionRegistry);
+                if (databaseTableReferencesBuilder_ == null) {
+                  ensureDatabaseTableReferencesIsMutable();
+                  databaseTableReferences_.add(m);
+                } else {
+                  databaseTableReferencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1763,6 +1942,474 @@ public final class CloudSqlDatabaseReference extends com.google.protobuf.Generat
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+        databaseTableReferences_ = java.util.Collections.emptyList();
+
+    private void ensureDatabaseTableReferencesIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        databaseTableReferences_ =
+            new java.util.ArrayList<
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>(
+                databaseTableReferences_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        databaseTableReferencesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+        getDatabaseTableReferencesList() {
+      if (databaseTableReferencesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(databaseTableReferences_);
+      } else {
+        return databaseTableReferencesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDatabaseTableReferencesCount() {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.size();
+      } else {
+        return databaseTableReferencesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+        getDatabaseTableReferences(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.get(index);
+      } else {
+        return databaseTableReferencesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseTableReferences(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.set(index, value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseTableReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference value) {
+      if (databaseTableReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(index, value);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDatabaseTableReferences(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+            builderForValue) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDatabaseTableReferences(
+        java.lang.Iterable<
+                ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+            values) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, databaseTableReferences_);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDatabaseTableReferences() {
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDatabaseTableReferences(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        ensureDatabaseTableReferencesIsMutable();
+        databaseTableReferences_.remove(index);
+        onChanged();
+      } else {
+        databaseTableReferencesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        getDatabaseTableReferencesBuilder(int index) {
+      return internalGetDatabaseTableReferencesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+        getDatabaseTableReferencesOrBuilder(int index) {
+      if (databaseTableReferencesBuilder_ == null) {
+        return databaseTableReferences_.get(index);
+      } else {
+        return databaseTableReferencesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        getDatabaseTableReferencesOrBuilderList() {
+      if (databaseTableReferencesBuilder_ != null) {
+        return databaseTableReferencesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(databaseTableReferences_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        addDatabaseTableReferencesBuilder() {
+      return internalGetDatabaseTableReferencesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder
+        addDatabaseTableReferencesBuilder(int index) {
+      return internalGetDatabaseTableReferencesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. References to tables within the database. Each reference
+     * specifies a table and can optionally include the table's schema to provide
+     * context for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder>
+        getDatabaseTableReferencesBuilderList() {
+      return internalGetDatabaseTableReferencesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+        internalGetDatabaseTableReferencesFieldBuilder() {
+      if (databaseTableReferencesBuilder_ == null) {
+        databaseTableReferencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference,
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>(
+                databaseTableReferences_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        databaseTableReferences_ = null;
+      }
+      return databaseTableReferencesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.CloudSqlDatabaseReference)

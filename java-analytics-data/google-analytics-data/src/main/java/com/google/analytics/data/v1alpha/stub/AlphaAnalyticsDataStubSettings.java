@@ -26,6 +26,7 @@ import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
 import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetReportTaskRequest;
@@ -35,6 +36,7 @@ import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListReportTasksRequest;
 import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
@@ -45,8 +47,8 @@ import com.google.analytics.data.v1alpha.ReportTask;
 import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.RunReportRequest;
+import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -87,6 +89,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,6 +169,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -174,9 +179,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/analytics")
           .add("https://www.googleapis.com/auth/analytics.readonly")
-          .add("https://www.googleapis.com/auth/drive")
-          .add("https://www.googleapis.com/auth/drive.file")
-          .add("https://www.googleapis.com/auth/spreadsheets")
           .build();
 
   private final UnaryCallSettings<RunFunnelReportRequest, RunFunnelReportResponse>
@@ -186,8 +188,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings;
   private final UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings;
-  private final UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListSettings;
   private final UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings;
   private final PagedCallSettings<
           ListAudienceListsRequest, ListAudienceListsResponse, ListAudienceListsPagedResponse>
@@ -212,6 +212,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   private final PagedCallSettings<
           ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
       listReportTasksSettings;
+  private final UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings;
+  private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
 
   private static final PagedListDescriptor<
           ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
@@ -424,12 +426,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return queryAudienceListSettings;
   }
 
-  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
-  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListSettings() {
-    return sheetExportAudienceListSettings;
-  }
-
   /** Returns the object with the settings used for calls to getAudienceList. */
   public UnaryCallSettings<GetAudienceListRequest, AudienceList> getAudienceListSettings() {
     return getAudienceListSettings;
@@ -496,6 +492,16 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
           ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
       listReportTasksSettings() {
     return listReportTasksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runReport. */
+  public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
+    return runReportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMetadata. */
+  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
+    return getMetadataSettings;
   }
 
   public AlphaAnalyticsDataStub createStub() throws IOException {
@@ -597,7 +603,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -614,7 +620,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     createAudienceListOperationSettings =
         settingsBuilder.createAudienceListOperationSettings().build();
     queryAudienceListSettings = settingsBuilder.queryAudienceListSettings().build();
-    sheetExportAudienceListSettings = settingsBuilder.sheetExportAudienceListSettings().build();
     getAudienceListSettings = settingsBuilder.getAudienceListSettings().build();
     listAudienceListsSettings = settingsBuilder.listAudienceListsSettings().build();
     createRecurringAudienceListSettings =
@@ -628,6 +633,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     queryReportTaskSettings = settingsBuilder.queryReportTaskSettings().build();
     getReportTaskSettings = settingsBuilder.getReportTaskSettings().build();
     listReportTasksSettings = settingsBuilder.listReportTasksSettings().build();
+    runReportSettings = settingsBuilder.runReportSettings().build();
+    getMetadataSettings = settingsBuilder.getMetadataSettings().build();
   }
 
   @Override
@@ -652,9 +659,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
         createAudienceListOperationSettings;
     private final UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings;
-    private final UnaryCallSettings.Builder<
-            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListSettings;
     private final UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings;
     private final PagedCallSettings.Builder<
@@ -684,6 +688,8 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     private final PagedCallSettings.Builder<
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings;
+    private final UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings;
+    private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -729,14 +735,13 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       runFunnelReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAudienceListOperationSettings = OperationCallSettings.newBuilder();
       queryAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      sheetExportAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAudienceListsSettings = PagedCallSettings.newBuilder(LIST_AUDIENCE_LISTS_PAGE_STR_FACT);
       createRecurringAudienceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -749,13 +754,14 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       queryReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReportTasksSettings = PagedCallSettings.newBuilder(LIST_REPORT_TASKS_PAGE_STR_FACT);
+      runReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
-              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings,
               createRecurringAudienceListSettings,
@@ -765,7 +771,9 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               createReportTaskSettings,
               queryReportTaskSettings,
               getReportTaskSettings,
-              listReportTasksSettings);
+              listReportTasksSettings,
+              runReportSettings,
+              getMetadataSettings);
       initDefaults(this);
     }
 
@@ -777,7 +785,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       createAudienceListOperationSettings =
           settings.createAudienceListOperationSettings.toBuilder();
       queryAudienceListSettings = settings.queryAudienceListSettings.toBuilder();
-      sheetExportAudienceListSettings = settings.sheetExportAudienceListSettings.toBuilder();
       getAudienceListSettings = settings.getAudienceListSettings.toBuilder();
       listAudienceListsSettings = settings.listAudienceListsSettings.toBuilder();
       createRecurringAudienceListSettings =
@@ -790,13 +797,14 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       queryReportTaskSettings = settings.queryReportTaskSettings.toBuilder();
       getReportTaskSettings = settings.getReportTaskSettings.toBuilder();
       listReportTasksSettings = settings.listReportTasksSettings.toBuilder();
+      runReportSettings = settings.runReportSettings.toBuilder();
+      getMetadataSettings = settings.getMetadataSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               runFunnelReportSettings,
               createAudienceListSettings,
               queryAudienceListSettings,
-              sheetExportAudienceListSettings,
               getAudienceListSettings,
               listAudienceListsSettings,
               createRecurringAudienceListSettings,
@@ -806,7 +814,9 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               createReportTaskSettings,
               queryReportTaskSettings,
               getReportTaskSettings,
-              listReportTasksSettings);
+              listReportTasksSettings,
+              runReportSettings,
+              getMetadataSettings);
     }
 
     private static Builder createDefault() {
@@ -846,11 +856,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       builder
           .queryAudienceListSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .sheetExportAudienceListSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -901,6 +906,16 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       builder
           .listReportTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getMetadataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -995,13 +1010,6 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       return queryAudienceListSettings;
     }
 
-    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
-    public UnaryCallSettings.Builder<
-            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListSettings() {
-      return sheetExportAudienceListSettings;
-    }
-
     /** Returns the builder for the settings used for calls to getAudienceList. */
     public UnaryCallSettings.Builder<GetAudienceListRequest, AudienceList>
         getAudienceListSettings() {
@@ -1070,6 +1078,16 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings() {
       return listReportTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runReport. */
+    public UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings() {
+      return runReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadata. */
+    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
+      return getMetadataSettings;
     }
 
     @Override

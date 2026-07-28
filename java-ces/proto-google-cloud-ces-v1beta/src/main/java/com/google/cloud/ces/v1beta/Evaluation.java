@@ -365,6 +365,32 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Check that no tools were called during this turn.
+     * </pre>
+     *
+     * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the noToolCalls field is set.
+     */
+    boolean hasNoToolCalls();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Check that no tools were called during this turn.
+     * </pre>
+     *
+     * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The noToolCalls.
+     */
+    boolean getNoToolCalls();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. A note for this requirement, useful in reporting when specific
      * checks fail. E.g., "Check_Payment_Tool_Called".
      * </pre>
@@ -388,6 +414,187 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * @return The bytes for note.
      */
     com.google.protobuf.ByteString getNoteBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, this specific expectation will not be
+     * evaluated.
+     * </pre>
+     *
+     * <code>bool skip_evaluation = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipEvaluation.
+     */
+    boolean getSkipEvaluation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expectationLevelMetricsThresholdsOverride field is set.
+     */
+    boolean hasExpectationLevelMetricsThresholdsOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expectationLevelMetricsThresholdsOverride.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .ExpectationLevelMetricsThresholds
+        getExpectationLevelMetricsThresholdsOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .ExpectationLevelMetricsThresholdsOrBuilder
+        getExpectationLevelMetricsThresholdsOverrideOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentResponseSemanticSimilarityMetricsConfigOverride field is set.
+     */
+    boolean hasAgentResponseSemanticSimilarityMetricsConfigOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentResponseSemanticSimilarityMetricsConfigOverride.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+        getAgentResponseSemanticSimilarityMetricsConfigOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfigOrBuilder
+        getAgentResponseSemanticSimilarityMetricsConfigOverrideOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentResponseHallucinationMetricsConfigOverride field is set.
+     */
+    boolean hasAgentResponseHallucinationMetricsConfigOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentResponseHallucinationMetricsConfigOverride.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+        getAgentResponseHallucinationMetricsConfigOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfigOrBuilder
+        getAgentResponseHallucinationMetricsConfigOverrideOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The comparison type to use for the expectation check.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for comparisonType.
+     */
+    int getComparisonTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The comparison type to use for the expectation check.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The comparisonType.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType getComparisonType();
 
     com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation.ConditionCase getConditionCase();
   }
@@ -424,6 +631,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
 
     private GoldenExpectation() {
       note_ = "";
+      comparisonType_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -441,6 +649,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
               com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation.Builder.class);
     }
 
+    private int bitField0_;
     private int conditionCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -456,6 +665,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       AGENT_TRANSFER(5),
       UPDATED_VARIABLES(6),
       MOCK_TOOL_RESPONSE(7),
+      NO_TOOL_CALLS(13),
       CONDITION_NOT_SET(0);
       private final int value;
 
@@ -487,6 +697,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
             return UPDATED_VARIABLES;
           case 7:
             return MOCK_TOOL_RESPONSE;
+          case 13:
+            return NO_TOOL_CALLS;
           case 0:
             return CONDITION_NOT_SET;
           default:
@@ -881,6 +1093,43 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.ces.v1beta.ToolResponse.getDefaultInstance();
     }
 
+    public static final int NO_TOOL_CALLS_FIELD_NUMBER = 13;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Check that no tools were called during this turn.
+     * </pre>
+     *
+     * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the noToolCalls field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoToolCalls() {
+      return conditionCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Check that no tools were called during this turn.
+     * </pre>
+     *
+     * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The noToolCalls.
+     */
+    @java.lang.Override
+    public boolean getNoToolCalls() {
+      if (conditionCase_ == 13) {
+        return (java.lang.Boolean) condition_;
+      }
+      return false;
+    }
+
     public static final int NOTE_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -936,6 +1185,269 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int SKIP_EVALUATION_FIELD_NUMBER = 8;
+    private boolean skipEvaluation_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, this specific expectation will not be
+     * evaluated.
+     * </pre>
+     *
+     * <code>bool skip_evaluation = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipEvaluation.
+     */
+    @java.lang.Override
+    public boolean getSkipEvaluation() {
+      return skipEvaluation_;
+    }
+
+    public static final int EXPECTATION_LEVEL_METRICS_THRESHOLDS_OVERRIDE_FIELD_NUMBER = 9;
+    private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+            .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+        expectationLevelMetricsThresholdsOverride_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expectationLevelMetricsThresholdsOverride field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpectationLevelMetricsThresholdsOverride() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expectationLevelMetricsThresholdsOverride.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .ExpectationLevelMetricsThresholds
+        getExpectationLevelMetricsThresholdsOverride() {
+      return expectationLevelMetricsThresholdsOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+              .getDefaultInstance()
+          : expectationLevelMetricsThresholdsOverride_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics at the step level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .ExpectationLevelMetricsThresholdsOrBuilder
+        getExpectationLevelMetricsThresholdsOverrideOrBuilder() {
+      return expectationLevelMetricsThresholdsOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+              .getDefaultInstance()
+          : expectationLevelMetricsThresholdsOverride_;
+    }
+
+    public static final int
+        AGENT_RESPONSE_SEMANTIC_SIMILARITY_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER = 10;
+    private com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+        agentResponseSemanticSimilarityMetricsConfigOverride_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentResponseSemanticSimilarityMetricsConfigOverride field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentResponseSemanticSimilarityMetricsConfigOverride() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentResponseSemanticSimilarityMetricsConfigOverride.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+        getAgentResponseSemanticSimilarityMetricsConfigOverride() {
+      return agentResponseSemanticSimilarityMetricsConfigOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+              .getDefaultInstance()
+          : agentResponseSemanticSimilarityMetricsConfigOverride_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response semantic similarity metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+            .SemanticSimilarityMetricsConfigOrBuilder
+        getAgentResponseSemanticSimilarityMetricsConfigOverrideOrBuilder() {
+      return agentResponseSemanticSimilarityMetricsConfigOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+              .getDefaultInstance()
+          : agentResponseSemanticSimilarityMetricsConfigOverride_;
+    }
+
+    public static final int AGENT_RESPONSE_HALLUCINATION_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER = 11;
+    private com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+        agentResponseHallucinationMetricsConfigOverride_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentResponseHallucinationMetricsConfigOverride field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentResponseHallucinationMetricsConfigOverride() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentResponseHallucinationMetricsConfigOverride.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+        getAgentResponseHallucinationMetricsConfigOverride() {
+      return agentResponseHallucinationMetricsConfigOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+              .getDefaultInstance()
+          : agentResponseHallucinationMetricsConfigOverride_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for agent_response hallucination metrics.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfigOrBuilder
+        getAgentResponseHallucinationMetricsConfigOverrideOrBuilder() {
+      return agentResponseHallucinationMetricsConfigOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+              .getDefaultInstance()
+          : agentResponseHallucinationMetricsConfigOverride_;
+    }
+
+    public static final int COMPARISON_TYPE_FIELD_NUMBER = 12;
+    private int comparisonType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The comparison type to use for the expectation check.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for comparisonType.
+     */
+    @java.lang.Override
+    public int getComparisonTypeValue() {
+      return comparisonType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The comparison type to use for the expectation check.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The comparisonType.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType getComparisonType() {
+      com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType result =
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType.forNumber(
+              comparisonType_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -970,6 +1482,27 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       }
       if (conditionCase_ == 7) {
         output.writeMessage(7, (com.google.cloud.ces.v1beta.ToolResponse) condition_);
+      }
+      if (skipEvaluation_ != false) {
+        output.writeBool(8, skipEvaluation_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(9, getExpectationLevelMetricsThresholdsOverride());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(10, getAgentResponseSemanticSimilarityMetricsConfigOverride());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(11, getAgentResponseHallucinationMetricsConfigOverride());
+      }
+      if (comparisonType_
+          != com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType
+              .COMPARISON_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(12, comparisonType_);
+      }
+      if (conditionCase_ == 13) {
+        output.writeBool(13, (boolean) ((java.lang.Boolean) condition_));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1013,6 +1546,35 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 7, (com.google.cloud.ces.v1beta.ToolResponse) condition_);
       }
+      if (skipEvaluation_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, skipEvaluation_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, getExpectationLevelMetricsThresholdsOverride());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, getAgentResponseSemanticSimilarityMetricsConfigOverride());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, getAgentResponseHallucinationMetricsConfigOverride());
+      }
+      if (comparisonType_
+          != com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType
+              .COMPARISON_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, comparisonType_);
+      }
+      if (conditionCase_ == 13) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                13, (boolean) ((java.lang.Boolean) condition_));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1030,6 +1592,26 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation) obj;
 
       if (!getNote().equals(other.getNote())) return false;
+      if (getSkipEvaluation() != other.getSkipEvaluation()) return false;
+      if (hasExpectationLevelMetricsThresholdsOverride()
+          != other.hasExpectationLevelMetricsThresholdsOverride()) return false;
+      if (hasExpectationLevelMetricsThresholdsOverride()) {
+        if (!getExpectationLevelMetricsThresholdsOverride()
+            .equals(other.getExpectationLevelMetricsThresholdsOverride())) return false;
+      }
+      if (hasAgentResponseSemanticSimilarityMetricsConfigOverride()
+          != other.hasAgentResponseSemanticSimilarityMetricsConfigOverride()) return false;
+      if (hasAgentResponseSemanticSimilarityMetricsConfigOverride()) {
+        if (!getAgentResponseSemanticSimilarityMetricsConfigOverride()
+            .equals(other.getAgentResponseSemanticSimilarityMetricsConfigOverride())) return false;
+      }
+      if (hasAgentResponseHallucinationMetricsConfigOverride()
+          != other.hasAgentResponseHallucinationMetricsConfigOverride()) return false;
+      if (hasAgentResponseHallucinationMetricsConfigOverride()) {
+        if (!getAgentResponseHallucinationMetricsConfigOverride()
+            .equals(other.getAgentResponseHallucinationMetricsConfigOverride())) return false;
+      }
+      if (comparisonType_ != other.comparisonType_) return false;
       if (!getConditionCase().equals(other.getConditionCase())) return false;
       switch (conditionCase_) {
         case 2:
@@ -1050,6 +1632,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         case 7:
           if (!getMockToolResponse().equals(other.getMockToolResponse())) return false;
           break;
+        case 13:
+          if (getNoToolCalls() != other.getNoToolCalls()) return false;
+          break;
         case 0:
         default:
       }
@@ -1066,6 +1651,23 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NOTE_FIELD_NUMBER;
       hash = (53 * hash) + getNote().hashCode();
+      hash = (37 * hash) + SKIP_EVALUATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipEvaluation());
+      if (hasExpectationLevelMetricsThresholdsOverride()) {
+        hash = (37 * hash) + EXPECTATION_LEVEL_METRICS_THRESHOLDS_OVERRIDE_FIELD_NUMBER;
+        hash = (53 * hash) + getExpectationLevelMetricsThresholdsOverride().hashCode();
+      }
+      if (hasAgentResponseSemanticSimilarityMetricsConfigOverride()) {
+        hash =
+            (37 * hash) + AGENT_RESPONSE_SEMANTIC_SIMILARITY_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentResponseSemanticSimilarityMetricsConfigOverride().hashCode();
+      }
+      if (hasAgentResponseHallucinationMetricsConfigOverride()) {
+        hash = (37 * hash) + AGENT_RESPONSE_HALLUCINATION_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentResponseHallucinationMetricsConfigOverride().hashCode();
+      }
+      hash = (37 * hash) + COMPARISON_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + comparisonType_;
       switch (conditionCase_) {
         case 2:
           hash = (37 * hash) + TOOL_CALL_FIELD_NUMBER;
@@ -1090,6 +1692,10 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         case 7:
           hash = (37 * hash) + MOCK_TOOL_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getMockToolResponse().hashCode();
+          break;
+        case 13:
+          hash = (37 * hash) + NO_TOOL_CALLS_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoToolCalls());
           break;
         case 0:
         default:
@@ -1225,10 +1831,21 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetExpectationLevelMetricsThresholdsOverrideFieldBuilder();
+          internalGetAgentResponseSemanticSimilarityMetricsConfigOverrideFieldBuilder();
+          internalGetAgentResponseHallucinationMetricsConfigOverrideFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1254,6 +1871,23 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           mockToolResponseBuilder_.clear();
         }
         note_ = "";
+        skipEvaluation_ = false;
+        expectationLevelMetricsThresholdsOverride_ = null;
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ != null) {
+          expectationLevelMetricsThresholdsOverrideBuilder_.dispose();
+          expectationLevelMetricsThresholdsOverrideBuilder_ = null;
+        }
+        agentResponseSemanticSimilarityMetricsConfigOverride_ = null;
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ != null) {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.dispose();
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ = null;
+        }
+        agentResponseHallucinationMetricsConfigOverride_ = null;
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ != null) {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_.dispose();
+          agentResponseHallucinationMetricsConfigOverrideBuilder_ = null;
+        }
+        comparisonType_ = 0;
         conditionCase_ = 0;
         condition_ = null;
         return this;
@@ -1293,9 +1927,38 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
 
       private void buildPartial0(com.google.cloud.ces.v1beta.Evaluation.GoldenExpectation result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.note_ = note_;
         }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.skipEvaluation_ = skipEvaluation_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.expectationLevelMetricsThresholdsOverride_ =
+              expectationLevelMetricsThresholdsOverrideBuilder_ == null
+                  ? expectationLevelMetricsThresholdsOverride_
+                  : expectationLevelMetricsThresholdsOverrideBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.agentResponseSemanticSimilarityMetricsConfigOverride_ =
+              agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null
+                  ? agentResponseSemanticSimilarityMetricsConfigOverride_
+                  : agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.agentResponseHallucinationMetricsConfigOverride_ =
+              agentResponseHallucinationMetricsConfigOverrideBuilder_ == null
+                  ? agentResponseHallucinationMetricsConfigOverride_
+                  : agentResponseHallucinationMetricsConfigOverrideBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.comparisonType_ = comparisonType_;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       private void buildPartialOneofs(
@@ -1337,8 +2000,26 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           return this;
         if (!other.getNote().isEmpty()) {
           note_ = other.note_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
+        }
+        if (other.getSkipEvaluation() != false) {
+          setSkipEvaluation(other.getSkipEvaluation());
+        }
+        if (other.hasExpectationLevelMetricsThresholdsOverride()) {
+          mergeExpectationLevelMetricsThresholdsOverride(
+              other.getExpectationLevelMetricsThresholdsOverride());
+        }
+        if (other.hasAgentResponseSemanticSimilarityMetricsConfigOverride()) {
+          mergeAgentResponseSemanticSimilarityMetricsConfigOverride(
+              other.getAgentResponseSemanticSimilarityMetricsConfigOverride());
+        }
+        if (other.hasAgentResponseHallucinationMetricsConfigOverride()) {
+          mergeAgentResponseHallucinationMetricsConfigOverride(
+              other.getAgentResponseHallucinationMetricsConfigOverride());
+        }
+        if (other.comparisonType_ != 0) {
+          setComparisonTypeValue(other.getComparisonTypeValue());
         }
         switch (other.getConditionCase()) {
           case TOOL_CALL:
@@ -1369,6 +2050,11 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           case MOCK_TOOL_RESPONSE:
             {
               mergeMockToolResponse(other.getMockToolResponse());
+              break;
+            }
+          case NO_TOOL_CALLS:
+            {
+              setNoToolCalls(other.getNoToolCalls());
               break;
             }
           case CONDITION_NOT_SET:
@@ -1405,7 +2091,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
               case 10:
                 {
                   note_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000040;
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 10
               case 18:
@@ -1450,6 +2136,51 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
                   conditionCase_ = 7;
                   break;
                 } // case 58
+              case 64:
+                {
+                  skipEvaluation_ = input.readBool();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 64
+              case 74:
+                {
+                  input.readMessage(
+                      internalGetExpectationLevelMetricsThresholdsOverrideFieldBuilder()
+                          .getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 74
+              case 82:
+                {
+                  input.readMessage(
+                      internalGetAgentResponseSemanticSimilarityMetricsConfigOverrideFieldBuilder()
+                          .getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 82
+              case 90:
+                {
+                  input.readMessage(
+                      internalGetAgentResponseHallucinationMetricsConfigOverrideFieldBuilder()
+                          .getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 90
+              case 96:
+                {
+                  comparisonType_ = input.readEnum();
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 96
+              case 104:
+                {
+                  condition_ = input.readBool();
+                  conditionCase_ = 13;
+                  break;
+                } // case 104
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2947,6 +3678,79 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         return mockToolResponseBuilder_;
       }
 
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Check that no tools were called during this turn.
+       * </pre>
+       *
+       * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the noToolCalls field is set.
+       */
+      public boolean hasNoToolCalls() {
+        return conditionCase_ == 13;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Check that no tools were called during this turn.
+       * </pre>
+       *
+       * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The noToolCalls.
+       */
+      public boolean getNoToolCalls() {
+        if (conditionCase_ == 13) {
+          return (java.lang.Boolean) condition_;
+        }
+        return false;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Check that no tools were called during this turn.
+       * </pre>
+       *
+       * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The noToolCalls to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNoToolCalls(boolean value) {
+
+        conditionCase_ = 13;
+        condition_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Check that no tools were called during this turn.
+       * </pre>
+       *
+       * <code>bool no_tool_calls = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNoToolCalls() {
+        if (conditionCase_ == 13) {
+          conditionCase_ = 0;
+          condition_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
       private java.lang.Object note_ = "";
 
       /**
@@ -3015,7 +3819,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         note_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -3034,7 +3838,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearNote() {
         note_ = getDefaultInstance().getNote();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -3058,7 +3862,898 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         note_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private boolean skipEvaluation_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, this specific expectation will not be
+       * evaluated.
+       * </pre>
+       *
+       * <code>bool skip_evaluation = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The skipEvaluation.
+       */
+      @java.lang.Override
+      public boolean getSkipEvaluation() {
+        return skipEvaluation_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, this specific expectation will not be
+       * evaluated.
+       * </pre>
+       *
+       * <code>bool skip_evaluation = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The skipEvaluation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkipEvaluation(boolean value) {
+
+        skipEvaluation_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, this specific expectation will not be
+       * evaluated.
+       * </pre>
+       *
+       * <code>bool skip_evaluation = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkipEvaluation() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        skipEvaluation_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+          expectationLevelMetricsThresholdsOverride_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds.Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholdsOrBuilder>
+          expectationLevelMetricsThresholdsOverrideBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the expectationLevelMetricsThresholdsOverride field is set.
+       */
+      public boolean hasExpectationLevelMetricsThresholdsOverride() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The expectationLevelMetricsThresholdsOverride.
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+          getExpectationLevelMetricsThresholdsOverride() {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ == null) {
+          return expectationLevelMetricsThresholdsOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+                  .getDefaultInstance()
+              : expectationLevelMetricsThresholdsOverride_;
+        } else {
+          return expectationLevelMetricsThresholdsOverrideBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExpectationLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .ExpectationLevelMetricsThresholds
+              value) {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expectationLevelMetricsThresholdsOverride_ = value;
+        } else {
+          expectationLevelMetricsThresholdsOverrideBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExpectationLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .ExpectationLevelMetricsThresholds.Builder
+              builderForValue) {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ == null) {
+          expectationLevelMetricsThresholdsOverride_ = builderForValue.build();
+        } else {
+          expectationLevelMetricsThresholdsOverrideBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeExpectationLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .ExpectationLevelMetricsThresholds
+              value) {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && expectationLevelMetricsThresholdsOverride_ != null
+              && expectationLevelMetricsThresholdsOverride_
+                  != com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+                      .getDefaultInstance()) {
+            getExpectationLevelMetricsThresholdsOverrideBuilder().mergeFrom(value);
+          } else {
+            expectationLevelMetricsThresholdsOverride_ = value;
+          }
+        } else {
+          expectationLevelMetricsThresholdsOverrideBuilder_.mergeFrom(value);
+        }
+        if (expectationLevelMetricsThresholdsOverride_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearExpectationLevelMetricsThresholdsOverride() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        expectationLevelMetricsThresholdsOverride_ = null;
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ != null) {
+          expectationLevelMetricsThresholdsOverrideBuilder_.dispose();
+          expectationLevelMetricsThresholdsOverrideBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds.Builder
+          getExpectationLevelMetricsThresholdsOverrideBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return internalGetExpectationLevelMetricsThresholdsOverrideFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholdsOrBuilder
+          getExpectationLevelMetricsThresholdsOverrideOrBuilder() {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ != null) {
+          return expectationLevelMetricsThresholdsOverrideBuilder_.getMessageOrBuilder();
+        } else {
+          return expectationLevelMetricsThresholdsOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds
+                  .getDefaultInstance()
+              : expectationLevelMetricsThresholdsOverride_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides metrics at the step level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds expectation_level_metrics_thresholds_override = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds.Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholdsOrBuilder>
+          internalGetExpectationLevelMetricsThresholdsOverrideFieldBuilder() {
+        if (expectationLevelMetricsThresholdsOverrideBuilder_ == null) {
+          expectationLevelMetricsThresholdsOverrideBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.ExpectationLevelMetricsThresholds.Builder,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds
+                      .ExpectationLevelMetricsThresholdsOrBuilder>(
+                  getExpectationLevelMetricsThresholdsOverride(),
+                  getParentForChildren(),
+                  isClean());
+          expectationLevelMetricsThresholdsOverride_ = null;
+        }
+        return expectationLevelMetricsThresholdsOverrideBuilder_;
+      }
+
+      private com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+          agentResponseSemanticSimilarityMetricsConfigOverride_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+                  .Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                  .SemanticSimilarityMetricsConfigOrBuilder>
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the agentResponseSemanticSimilarityMetricsConfigOverride field is set.
+       */
+      public boolean hasAgentResponseSemanticSimilarityMetricsConfigOverride() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The agentResponseSemanticSimilarityMetricsConfigOverride.
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+          getAgentResponseSemanticSimilarityMetricsConfigOverride() {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null) {
+          return agentResponseSemanticSimilarityMetricsConfigOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+                  .getDefaultInstance()
+              : agentResponseSemanticSimilarityMetricsConfigOverride_;
+        } else {
+          return agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentResponseSemanticSimilarityMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+              value) {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentResponseSemanticSimilarityMetricsConfigOverride_ = value;
+        } else {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentResponseSemanticSimilarityMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+                  .Builder
+              builderForValue) {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null) {
+          agentResponseSemanticSimilarityMetricsConfigOverride_ = builderForValue.build();
+        } else {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.setMessage(
+              builderForValue.build());
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAgentResponseSemanticSimilarityMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+              value) {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) != 0)
+              && agentResponseSemanticSimilarityMetricsConfigOverride_ != null
+              && agentResponseSemanticSimilarityMetricsConfigOverride_
+                  != com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                      .SemanticSimilarityMetricsConfig.getDefaultInstance()) {
+            getAgentResponseSemanticSimilarityMetricsConfigOverrideBuilder().mergeFrom(value);
+          } else {
+            agentResponseSemanticSimilarityMetricsConfigOverride_ = value;
+          }
+        } else {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.mergeFrom(value);
+        }
+        if (agentResponseSemanticSimilarityMetricsConfigOverride_ != null) {
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAgentResponseSemanticSimilarityMetricsConfigOverride() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        agentResponseSemanticSimilarityMetricsConfigOverride_ = null;
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ != null) {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.dispose();
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+              .Builder
+          getAgentResponseSemanticSimilarityMetricsConfigOverrideBuilder() {
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return internalGetAgentResponseSemanticSimilarityMetricsConfigOverrideFieldBuilder()
+            .getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+              .SemanticSimilarityMetricsConfigOrBuilder
+          getAgentResponseSemanticSimilarityMetricsConfigOverrideOrBuilder() {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ != null) {
+          return agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_.getMessageOrBuilder();
+        } else {
+          return agentResponseSemanticSimilarityMetricsConfigOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+                  .getDefaultInstance()
+              : agentResponseSemanticSimilarityMetricsConfigOverride_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response semantic similarity metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig agent_response_semantic_similarity_metrics_config_override = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.SemanticSimilarityMetricsConfig
+                  .Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                  .SemanticSimilarityMetricsConfigOrBuilder>
+          internalGetAgentResponseSemanticSimilarityMetricsConfigOverrideFieldBuilder() {
+        if (agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ == null) {
+          agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                      .SemanticSimilarityMetricsConfig,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                      .SemanticSimilarityMetricsConfig.Builder,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                      .SemanticSimilarityMetricsConfigOrBuilder>(
+                  getAgentResponseSemanticSimilarityMetricsConfigOverride(),
+                  getParentForChildren(),
+                  isClean());
+          agentResponseSemanticSimilarityMetricsConfigOverride_ = null;
+        }
+        return agentResponseSemanticSimilarityMetricsConfigOverrideBuilder_;
+      }
+
+      private com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+          agentResponseHallucinationMetricsConfigOverride_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                  .Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                  .HallucinationMetricsConfigOrBuilder>
+          agentResponseHallucinationMetricsConfigOverrideBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the agentResponseHallucinationMetricsConfigOverride field is set.
+       */
+      public boolean hasAgentResponseHallucinationMetricsConfigOverride() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The agentResponseHallucinationMetricsConfigOverride.
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+          getAgentResponseHallucinationMetricsConfigOverride() {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ == null) {
+          return agentResponseHallucinationMetricsConfigOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                  .getDefaultInstance()
+              : agentResponseHallucinationMetricsConfigOverride_;
+        } else {
+          return agentResponseHallucinationMetricsConfigOverrideBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentResponseHallucinationMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig value) {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentResponseHallucinationMetricsConfigOverride_ = value;
+        } else {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentResponseHallucinationMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig.Builder
+              builderForValue) {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ == null) {
+          agentResponseHallucinationMetricsConfigOverride_ = builderForValue.build();
+        } else {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_.setMessage(
+              builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAgentResponseHallucinationMetricsConfigOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig value) {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)
+              && agentResponseHallucinationMetricsConfigOverride_ != null
+              && agentResponseHallucinationMetricsConfigOverride_
+                  != com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                      .getDefaultInstance()) {
+            getAgentResponseHallucinationMetricsConfigOverrideBuilder().mergeFrom(value);
+          } else {
+            agentResponseHallucinationMetricsConfigOverride_ = value;
+          }
+        } else {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_.mergeFrom(value);
+        }
+        if (agentResponseHallucinationMetricsConfigOverride_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAgentResponseHallucinationMetricsConfigOverride() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        agentResponseHallucinationMetricsConfigOverride_ = null;
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ != null) {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_.dispose();
+          agentResponseHallucinationMetricsConfigOverrideBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig.Builder
+          getAgentResponseHallucinationMetricsConfigOverrideBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return internalGetAgentResponseHallucinationMetricsConfigOverrideFieldBuilder()
+            .getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfigOrBuilder
+          getAgentResponseHallucinationMetricsConfigOverrideOrBuilder() {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ != null) {
+          return agentResponseHallucinationMetricsConfigOverrideBuilder_.getMessageOrBuilder();
+        } else {
+          return agentResponseHallucinationMetricsConfigOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                  .getDefaultInstance()
+              : agentResponseHallucinationMetricsConfigOverride_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for agent_response hallucination metrics.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig agent_response_hallucination_metrics_config_override = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                  .Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                  .HallucinationMetricsConfigOrBuilder>
+          internalGetAgentResponseHallucinationMetricsConfigOverrideFieldBuilder() {
+        if (agentResponseHallucinationMetricsConfigOverrideBuilder_ == null) {
+          agentResponseHallucinationMetricsConfigOverrideBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig.HallucinationMetricsConfig
+                      .Builder,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+                      .HallucinationMetricsConfigOrBuilder>(
+                  getAgentResponseHallucinationMetricsConfigOverride(),
+                  getParentForChildren(),
+                  isClean());
+          agentResponseHallucinationMetricsConfigOverride_ = null;
+        }
+        return agentResponseHallucinationMetricsConfigOverrideBuilder_;
+      }
+
+      private int comparisonType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The comparison type to use for the expectation check.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for comparisonType.
+       */
+      @java.lang.Override
+      public int getComparisonTypeValue() {
+        return comparisonType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The comparison type to use for the expectation check.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for comparisonType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComparisonTypeValue(int value) {
+        comparisonType_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The comparison type to use for the expectation check.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The comparisonType.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType
+          getComparisonType() {
+        com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType result =
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType.forNumber(
+                comparisonType_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The comparison type to use for the expectation check.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The comparisonType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComparisonType(
+          com.google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00001000;
+        comparisonType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The comparison type to use for the expectation check.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsConfig.ComparisonType comparison_type = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearComparisonType() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        comparisonType_ = 0;
         onChanged();
         return this;
       }
@@ -4796,7 +6491,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4811,7 +6507,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4826,13 +6523,92 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the turnLevelMetricsThresholdsOverride field is set.
+     */
+    boolean hasTurnLevelMetricsThresholdsOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The turnLevelMetricsThresholdsOverride.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .TurnLevelMetricsThresholds
+        getTurnLevelMetricsThresholdsOverride();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .TurnLevelMetricsThresholdsOrBuilder
+        getTurnLevelMetricsThresholdsOverrideOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override for turn-level hallucination metric behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for hallucinationMetricBehaviorOverride.
+     */
+    int getHallucinationMetricBehaviorOverrideValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override for turn-level hallucination metric behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hallucinationMetricBehaviorOverride.
+     */
+    com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+        getHallucinationMetricBehaviorOverride();
   }
 
   /**
@@ -4867,6 +6643,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
 
     private GoldenTurn() {
       steps_ = java.util.Collections.emptyList();
+      hallucinationMetricBehaviorOverride_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4979,7 +6756,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -4997,7 +6775,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -5015,7 +6794,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The root span of the golden turn for processing and maintaining
-     * audio information.
+     * audio information. The uri for the audio must contain audio saved in
+     * 16Khz sample rate.
      * </pre>
      *
      * <code>.google.cloud.ces.v1beta.Span root_span = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -5024,6 +6804,119 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder() {
       return rootSpan_ == null ? com.google.cloud.ces.v1beta.Span.getDefaultInstance() : rootSpan_;
+    }
+
+    public static final int TURN_LEVEL_METRICS_THRESHOLDS_OVERRIDE_FIELD_NUMBER = 3;
+    private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+            .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds
+        turnLevelMetricsThresholdsOverride_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the turnLevelMetricsThresholdsOverride field is set.
+     */
+    @java.lang.Override
+    public boolean hasTurnLevelMetricsThresholdsOverride() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The turnLevelMetricsThresholdsOverride.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .TurnLevelMetricsThresholds
+        getTurnLevelMetricsThresholdsOverride() {
+      return turnLevelMetricsThresholdsOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.getDefaultInstance()
+          : turnLevelMetricsThresholdsOverride_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for turn-level metric thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+            .TurnLevelMetricsThresholdsOrBuilder
+        getTurnLevelMetricsThresholdsOverrideOrBuilder() {
+      return turnLevelMetricsThresholdsOverride_ == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.getDefaultInstance()
+          : turnLevelMetricsThresholdsOverride_;
+    }
+
+    public static final int HALLUCINATION_METRIC_BEHAVIOR_OVERRIDE_FIELD_NUMBER = 4;
+    private int hallucinationMetricBehaviorOverride_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override for turn-level hallucination metric behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for hallucinationMetricBehaviorOverride.
+     */
+    @java.lang.Override
+    public int getHallucinationMetricBehaviorOverrideValue() {
+      return hallucinationMetricBehaviorOverride_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override for turn-level hallucination metric behavior.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hallucinationMetricBehaviorOverride.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+        getHallucinationMetricBehaviorOverride() {
+      com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior result =
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+              .forNumber(hallucinationMetricBehaviorOverride_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+              .UNRECOGNIZED
+          : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5046,6 +6939,15 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getRootSpan());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getTurnLevelMetricsThresholdsOverride());
+      }
+      if (hallucinationMetricBehaviorOverride_
+          != com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+              .HALLUCINATION_METRIC_BEHAVIOR_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, hallucinationMetricBehaviorOverride_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5060,6 +6962,19 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRootSpan());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getTurnLevelMetricsThresholdsOverride());
+      }
+      if (hallucinationMetricBehaviorOverride_
+          != com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+              .HALLUCINATION_METRIC_BEHAVIOR_UNSPECIFIED
+              .getNumber()) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(
+                4, hallucinationMetricBehaviorOverride_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5082,6 +6997,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       if (hasRootSpan()) {
         if (!getRootSpan().equals(other.getRootSpan())) return false;
       }
+      if (hasTurnLevelMetricsThresholdsOverride() != other.hasTurnLevelMetricsThresholdsOverride())
+        return false;
+      if (hasTurnLevelMetricsThresholdsOverride()) {
+        if (!getTurnLevelMetricsThresholdsOverride()
+            .equals(other.getTurnLevelMetricsThresholdsOverride())) return false;
+      }
+      if (hallucinationMetricBehaviorOverride_ != other.hallucinationMetricBehaviorOverride_)
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5101,6 +7024,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + ROOT_SPAN_FIELD_NUMBER;
         hash = (53 * hash) + getRootSpan().hashCode();
       }
+      if (hasTurnLevelMetricsThresholdsOverride()) {
+        hash = (37 * hash) + TURN_LEVEL_METRICS_THRESHOLDS_OVERRIDE_FIELD_NUMBER;
+        hash = (53 * hash) + getTurnLevelMetricsThresholdsOverride().hashCode();
+      }
+      hash = (37 * hash) + HALLUCINATION_METRIC_BEHAVIOR_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + hallucinationMetricBehaviorOverride_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5244,6 +7173,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetStepsFieldBuilder();
           internalGetRootSpanFieldBuilder();
+          internalGetTurnLevelMetricsThresholdsOverrideFieldBuilder();
         }
       }
 
@@ -5263,6 +7193,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           rootSpanBuilder_.dispose();
           rootSpanBuilder_ = null;
         }
+        turnLevelMetricsThresholdsOverride_ = null;
+        if (turnLevelMetricsThresholdsOverrideBuilder_ != null) {
+          turnLevelMetricsThresholdsOverrideBuilder_.dispose();
+          turnLevelMetricsThresholdsOverrideBuilder_ = null;
+        }
+        hallucinationMetricBehaviorOverride_ = 0;
         return this;
       }
 
@@ -5318,6 +7254,16 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           result.rootSpan_ = rootSpanBuilder_ == null ? rootSpan_ : rootSpanBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.turnLevelMetricsThresholdsOverride_ =
+              turnLevelMetricsThresholdsOverrideBuilder_ == null
+                  ? turnLevelMetricsThresholdsOverride_
+                  : turnLevelMetricsThresholdsOverrideBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hallucinationMetricBehaviorOverride_ = hallucinationMetricBehaviorOverride_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -5363,6 +7309,13 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasRootSpan()) {
           mergeRootSpan(other.getRootSpan());
+        }
+        if (other.hasTurnLevelMetricsThresholdsOverride()) {
+          mergeTurnLevelMetricsThresholdsOverride(other.getTurnLevelMetricsThresholdsOverride());
+        }
+        if (other.hallucinationMetricBehaviorOverride_ != 0) {
+          setHallucinationMetricBehaviorOverrideValue(
+              other.getHallucinationMetricBehaviorOverrideValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5410,6 +7363,20 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetTurnLevelMetricsThresholdsOverrideFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  hallucinationMetricBehaviorOverride_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5843,7 +7810,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5861,7 +7829,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5885,7 +7854,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5911,7 +7881,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5934,7 +7905,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5965,7 +7937,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -5988,7 +7961,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -6006,7 +7980,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -6028,7 +8003,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The root span of the golden turn for processing and maintaining
-       * audio information.
+       * audio information. The uri for the audio must contain audio saved in
+       * 16Khz sample rate.
        * </pre>
        *
        * <code>
@@ -6050,6 +8026,362 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           rootSpan_ = null;
         }
         return rootSpanBuilder_;
+      }
+
+      private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds
+          turnLevelMetricsThresholdsOverride_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholdsOrBuilder>
+          turnLevelMetricsThresholdsOverrideBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the turnLevelMetricsThresholdsOverride field is set.
+       */
+      public boolean hasTurnLevelMetricsThresholdsOverride() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The turnLevelMetricsThresholdsOverride.
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds
+          getTurnLevelMetricsThresholdsOverride() {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ == null) {
+          return turnLevelMetricsThresholdsOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.getDefaultInstance()
+              : turnLevelMetricsThresholdsOverride_;
+        } else {
+          return turnLevelMetricsThresholdsOverrideBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTurnLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .TurnLevelMetricsThresholds
+              value) {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          turnLevelMetricsThresholdsOverride_ = value;
+        } else {
+          turnLevelMetricsThresholdsOverrideBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setTurnLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .TurnLevelMetricsThresholds.Builder
+              builderForValue) {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ == null) {
+          turnLevelMetricsThresholdsOverride_ = builderForValue.build();
+        } else {
+          turnLevelMetricsThresholdsOverrideBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeTurnLevelMetricsThresholdsOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds
+                  .TurnLevelMetricsThresholds
+              value) {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && turnLevelMetricsThresholdsOverride_ != null
+              && turnLevelMetricsThresholdsOverride_
+                  != com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds
+                      .getDefaultInstance()) {
+            getTurnLevelMetricsThresholdsOverrideBuilder().mergeFrom(value);
+          } else {
+            turnLevelMetricsThresholdsOverride_ = value;
+          }
+        } else {
+          turnLevelMetricsThresholdsOverrideBuilder_.mergeFrom(value);
+        }
+        if (turnLevelMetricsThresholdsOverride_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearTurnLevelMetricsThresholdsOverride() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        turnLevelMetricsThresholdsOverride_ = null;
+        if (turnLevelMetricsThresholdsOverrideBuilder_ != null) {
+          turnLevelMetricsThresholdsOverrideBuilder_.dispose();
+          turnLevelMetricsThresholdsOverrideBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.Builder
+          getTurnLevelMetricsThresholdsOverrideBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetTurnLevelMetricsThresholdsOverrideFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+              .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholdsOrBuilder
+          getTurnLevelMetricsThresholdsOverrideOrBuilder() {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ != null) {
+          return turnLevelMetricsThresholdsOverrideBuilder_.getMessageOrBuilder();
+        } else {
+          return turnLevelMetricsThresholdsOverride_ == null
+              ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.getDefaultInstance()
+              : turnLevelMetricsThresholdsOverride_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Overrides for turn-level metric thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds turn_level_metrics_thresholds_override = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.Builder,
+              com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                  .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholdsOrBuilder>
+          internalGetTurnLevelMetricsThresholdsOverrideFieldBuilder() {
+        if (turnLevelMetricsThresholdsOverrideBuilder_ == null) {
+          turnLevelMetricsThresholdsOverrideBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholds.Builder,
+                  com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+                      .GoldenEvaluationMetricsThresholds.TurnLevelMetricsThresholdsOrBuilder>(
+                  getTurnLevelMetricsThresholdsOverride(), getParentForChildren(), isClean());
+          turnLevelMetricsThresholdsOverride_ = null;
+        }
+        return turnLevelMetricsThresholdsOverrideBuilder_;
+      }
+
+      private int hallucinationMetricBehaviorOverride_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Override for turn-level hallucination metric behavior.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for hallucinationMetricBehaviorOverride.
+       */
+      @java.lang.Override
+      public int getHallucinationMetricBehaviorOverrideValue() {
+        return hallucinationMetricBehaviorOverride_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Override for turn-level hallucination metric behavior.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for hallucinationMetricBehaviorOverride to
+       *     set.
+       * @return This builder for chaining.
+       */
+      public Builder setHallucinationMetricBehaviorOverrideValue(int value) {
+        hallucinationMetricBehaviorOverride_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Override for turn-level hallucination metric behavior.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The hallucinationMetricBehaviorOverride.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+          getHallucinationMetricBehaviorOverride() {
+        com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior result =
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+                .forNumber(hallucinationMetricBehaviorOverride_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Override for turn-level hallucination metric behavior.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The hallucinationMetricBehaviorOverride to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHallucinationMetricBehaviorOverride(
+          com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        hallucinationMetricBehaviorOverride_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Override for turn-level hallucination metric behavior.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationMetricsThresholds.HallucinationMetricBehavior hallucination_metric_behavior_override = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHallucinationMetricBehaviorOverride() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        hallucinationMetricBehaviorOverride_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Evaluation.GoldenTurn)
@@ -6114,6 +8446,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6127,6 +8460,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6140,6 +8474,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6153,6 +8488,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6167,6 +8503,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6306,6 +8643,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6322,6 +8660,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6339,6 +8678,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6355,6 +8695,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6371,6 +8712,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The golden turns required to replay a golden conversation.
+     * The maximum number of allowed turns is 100.
      * </pre>
      *
      * <code>
@@ -6887,6 +9229,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -6906,6 +9249,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -6925,6 +9269,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -6944,6 +9289,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -6969,6 +9315,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -6992,6 +9339,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7017,6 +9365,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7042,6 +9391,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7065,6 +9415,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7088,6 +9439,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7111,6 +9463,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7133,6 +9486,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7155,6 +9509,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7170,6 +9525,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7190,6 +9546,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7210,6 +9567,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7226,6 +9584,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -7243,6 +9602,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The golden turns required to replay a golden conversation.
+       * The maximum number of allowed turns is 100.
        * </pre>
        *
        * <code>
@@ -10107,8 +12467,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The maximum number of turns to simulate. If not specified, the
-     * simulation will continue until the task is complete.
+     * Optional. The maximum number of turns to simulate. The maximum allowed
+     * value is 100. The default value is 100.
      * </pre>
      *
      * <code>int32 max_turns = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10317,7 +12677,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
      * @return The enum numeric value on the wire for taskCompletionBehavior.
      */
     @java.lang.Deprecated
@@ -10335,7 +12695,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
      * @return The taskCompletionBehavior.
      */
     @java.lang.Deprecated
@@ -10441,6 +12801,36 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * @return The bytes of the evaluationExpectations at the given index.
      */
     com.google.protobuf.ByteString getEvaluationExpectationsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scenarioExecutionMode.
+     */
+    int getScenarioExecutionModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scenarioExecutionMode.
+     */
+    com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode getScenarioExecutionMode();
   }
 
   /**
@@ -10481,6 +12871,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       taskCompletionBehavior_ = 0;
       userGoalBehavior_ = 0;
       evaluationExpectations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      scenarioExecutionMode_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11850,8 +14241,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The maximum number of turns to simulate. If not specified, the
-     * simulation will continue until the task is complete.
+     * Optional. The maximum number of turns to simulate. The maximum allowed
+     * value is 100. The default value is 100.
      * </pre>
      *
      * <code>int32 max_turns = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -12119,7 +14510,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
      * @return The enum numeric value on the wire for taskCompletionBehavior.
      */
     @java.lang.Override
@@ -12140,7 +14531,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+     *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
      * @return The taskCompletionBehavior.
      */
     @java.lang.Override
@@ -12283,6 +14674,51 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       return evaluationExpectations_.getByteString(index);
     }
 
+    public static final int SCENARIO_EXECUTION_MODE_FIELD_NUMBER = 12;
+    private int scenarioExecutionMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scenarioExecutionMode.
+     */
+    @java.lang.Override
+    public int getScenarioExecutionModeValue() {
+      return scenarioExecutionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for scenario evaluations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scenarioExecutionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+        getScenarioExecutionMode() {
+      com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode result =
+          com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.forNumber(
+              scenarioExecutionMode_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12330,6 +14766,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < evaluationExpectations_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(
             output, 10, evaluationExpectations_.getRaw(i));
+      }
+      if (scenarioExecutionMode_
+          != com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+              .SCENARIO_EXECUTION_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(12, scenarioExecutionMode_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -12385,6 +14827,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         size += dataSize;
         size += 1 * getEvaluationExpectationsList().size();
       }
+      if (scenarioExecutionMode_
+          != com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+              .SCENARIO_EXECUTION_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, scenarioExecutionMode_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -12414,6 +14862,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       if (userGoalBehavior_ != other.userGoalBehavior_) return false;
       if (!getEvaluationExpectationsList().equals(other.getEvaluationExpectationsList()))
         return false;
+      if (scenarioExecutionMode_ != other.scenarioExecutionMode_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -12453,6 +14902,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + EVALUATION_EXPECTATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getEvaluationExpectationsList().hashCode();
       }
+      hash = (37 * hash) + SCENARIO_EXECUTION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + scenarioExecutionMode_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12629,6 +15080,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         taskCompletionBehavior_ = 0;
         userGoalBehavior_ = 0;
         evaluationExpectations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        scenarioExecutionMode_ = 0;
         return this;
       }
 
@@ -12715,6 +15167,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000100) != 0)) {
           evaluationExpectations_.makeImmutable();
           result.evaluationExpectations_ = evaluationExpectations_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.scenarioExecutionMode_ = scenarioExecutionMode_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -12823,6 +15278,9 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
           }
           onChanged();
         }
+        if (other.scenarioExecutionMode_ != 0) {
+          setScenarioExecutionModeValue(other.getScenarioExecutionModeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -12922,6 +15380,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
                   evaluationExpectations_.add(s);
                   break;
                 } // case 82
+              case 96:
+                {
+                  scenarioExecutionMode_ = input.readEnum();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 96
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13477,8 +15941,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The maximum number of turns to simulate. If not specified, the
-       * simulation will continue until the task is complete.
+       * Optional. The maximum number of turns to simulate. The maximum allowed
+       * value is 100. The default value is 100.
        * </pre>
        *
        * <code>int32 max_turns = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13494,8 +15958,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The maximum number of turns to simulate. If not specified, the
-       * simulation will continue until the task is complete.
+       * Optional. The maximum number of turns to simulate. The maximum allowed
+       * value is 100. The default value is 100.
        * </pre>
        *
        * <code>int32 max_turns = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -13515,8 +15979,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. The maximum number of turns to simulate. If not specified, the
-       * simulation will continue until the task is complete.
+       * Optional. The maximum number of turns to simulate. The maximum allowed
+       * value is 100. The default value is 100.
        * </pre>
        *
        * <code>int32 max_turns = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -14435,7 +16899,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
        * @return The enum numeric value on the wire for taskCompletionBehavior.
        */
       @java.lang.Override
@@ -14456,7 +16920,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
        * @param value The enum numeric value on the wire for taskCompletionBehavior to set.
        * @return This builder for chaining.
        */
@@ -14480,7 +16944,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
        * @return The taskCompletionBehavior.
        */
       @java.lang.Override
@@ -14507,7 +16971,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
        * @param value The taskCompletionBehavior to set.
        * @return This builder for chaining.
        */
@@ -14535,7 +16999,7 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.ces.v1beta.Evaluation.Scenario.task_completion_behavior is
-       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=337
+       *     deprecated. See google/cloud/ces/v1beta/evaluation.proto;l=377
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -14872,6 +17336,116 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         ensureEvaluationExpectationsIsMutable();
         evaluationExpectations_.add(value);
         bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private int scenarioExecutionMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The execution mode for scenario evaluations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for scenarioExecutionMode.
+       */
+      @java.lang.Override
+      public int getScenarioExecutionModeValue() {
+        return scenarioExecutionMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The execution mode for scenario evaluations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for scenarioExecutionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScenarioExecutionModeValue(int value) {
+        scenarioExecutionMode_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The execution mode for scenario evaluations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The scenarioExecutionMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode
+          getScenarioExecutionMode() {
+        com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode result =
+            com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.forNumber(
+                scenarioExecutionMode_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The execution mode for scenario evaluations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The scenarioExecutionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScenarioExecutionMode(
+          com.google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        scenarioExecutionMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The execution mode for scenario evaluations.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.EvaluationSettings.ScenarioExecutionMode scenario_execution_mode = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScenarioExecutionMode() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        scenarioExecutionMode_ = 0;
         onChanged();
         return this;
       }
@@ -15995,6 +18569,128 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     return lastTenResults_.get(index);
   }
 
+  public static final int EVALUATION_METRICS_THRESHOLD_OVERRIDE_FIELD_NUMBER = 20;
+  private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+      evaluationMetricsThresholdOverride_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationMetricsThresholdOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvaluationMetricsThresholdOverride() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationMetricsThresholdOverride.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+      getEvaluationMetricsThresholdOverride() {
+    return evaluationMetricsThresholdOverride_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.getDefaultInstance()
+        : evaluationMetricsThresholdOverride_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics thresholds for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder
+      getEvaluationMetricsThresholdOverrideOrBuilder() {
+    return evaluationMetricsThresholdOverride_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.getDefaultInstance()
+        : evaluationMetricsThresholdOverride_;
+  }
+
+  public static final int EVALUATION_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER = 21;
+  private com.google.cloud.ces.v1beta.EvaluationMetricsConfig evaluationMetricsConfigOverride_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationMetricsConfigOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvaluationMetricsConfigOverride() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationMetricsConfigOverride.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsConfig getEvaluationMetricsConfigOverride() {
+    return evaluationMetricsConfigOverride_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+        : evaluationMetricsConfigOverride_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides metrics config for this specific evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder
+      getEvaluationMetricsConfigOverrideOrBuilder() {
+    return evaluationMetricsConfigOverride_ == null
+        ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+        : evaluationMetricsConfigOverride_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -16059,6 +18755,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < lastTenResults_.size(); i++) {
       output.writeMessage(19, lastTenResults_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(20, getEvaluationMetricsThresholdOverride());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(21, getEvaluationMetricsConfigOverride());
     }
     getUnknownFields().writeTo(output);
   }
@@ -16140,6 +18842,16 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < lastTenResults_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, lastTenResults_.get(i));
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, getEvaluationMetricsThresholdOverride());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, getEvaluationMetricsConfigOverride());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -16182,6 +18894,18 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     }
     if (getInvalid() != other.getInvalid()) return false;
     if (!getLastTenResultsList().equals(other.getLastTenResultsList())) return false;
+    if (hasEvaluationMetricsThresholdOverride() != other.hasEvaluationMetricsThresholdOverride())
+      return false;
+    if (hasEvaluationMetricsThresholdOverride()) {
+      if (!getEvaluationMetricsThresholdOverride()
+          .equals(other.getEvaluationMetricsThresholdOverride())) return false;
+    }
+    if (hasEvaluationMetricsConfigOverride() != other.hasEvaluationMetricsConfigOverride())
+      return false;
+    if (hasEvaluationMetricsConfigOverride()) {
+      if (!getEvaluationMetricsConfigOverride().equals(other.getEvaluationMetricsConfigOverride()))
+        return false;
+    }
     if (!getInputsCase().equals(other.getInputsCase())) return false;
     switch (inputsCase_) {
       case 11:
@@ -16249,6 +18973,14 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
     if (getLastTenResultsCount() > 0) {
       hash = (37 * hash) + LAST_TEN_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getLastTenResultsList().hashCode();
+    }
+    if (hasEvaluationMetricsThresholdOverride()) {
+      hash = (37 * hash) + EVALUATION_METRICS_THRESHOLD_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationMetricsThresholdOverride().hashCode();
+    }
+    if (hasEvaluationMetricsConfigOverride()) {
+      hash = (37 * hash) + EVALUATION_METRICS_CONFIG_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluationMetricsConfigOverride().hashCode();
     }
     switch (inputsCase_) {
       case 11:
@@ -16409,6 +19141,8 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         internalGetAggregatedMetricsFieldBuilder();
         internalGetLastCompletedResultFieldBuilder();
         internalGetLastTenResultsFieldBuilder();
+        internalGetEvaluationMetricsThresholdOverrideFieldBuilder();
+        internalGetEvaluationMetricsConfigOverrideFieldBuilder();
       }
     }
 
@@ -16459,6 +19193,16 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         lastTenResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00010000);
+      evaluationMetricsThresholdOverride_ = null;
+      if (evaluationMetricsThresholdOverrideBuilder_ != null) {
+        evaluationMetricsThresholdOverrideBuilder_.dispose();
+        evaluationMetricsThresholdOverrideBuilder_ = null;
+      }
+      evaluationMetricsConfigOverride_ = null;
+      if (evaluationMetricsConfigOverrideBuilder_ != null) {
+        evaluationMetricsConfigOverrideBuilder_.dispose();
+        evaluationMetricsConfigOverrideBuilder_ = null;
+      }
       inputsCase_ = 0;
       inputs_ = null;
       return this;
@@ -16566,6 +19310,20 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.invalid_ = invalid_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.evaluationMetricsThresholdOverride_ =
+            evaluationMetricsThresholdOverrideBuilder_ == null
+                ? evaluationMetricsThresholdOverride_
+                : evaluationMetricsThresholdOverrideBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.evaluationMetricsConfigOverride_ =
+            evaluationMetricsConfigOverrideBuilder_ == null
+                ? evaluationMetricsConfigOverride_
+                : evaluationMetricsConfigOverrideBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -16694,6 +19452,12 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
             lastTenResultsBuilder_.addAllMessages(other.lastTenResults_);
           }
         }
+      }
+      if (other.hasEvaluationMetricsThresholdOverride()) {
+        mergeEvaluationMetricsThresholdOverride(other.getEvaluationMetricsThresholdOverride());
+      }
+      if (other.hasEvaluationMetricsConfigOverride()) {
+        mergeEvaluationMetricsConfigOverride(other.getEvaluationMetricsConfigOverride());
       }
       switch (other.getInputsCase()) {
         case GOLDEN:
@@ -16854,6 +19618,22 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetEvaluationMetricsThresholdOverrideFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetEvaluationMetricsConfigOverrideFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20013,6 +22793,445 @@ public final class Evaluation extends com.google.protobuf.GeneratedMessage
         lastTenResults_ = null;
       }
       return lastTenResultsBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+        evaluationMetricsThresholdOverride_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholds,
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder>
+        evaluationMetricsThresholdOverrideBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evaluationMetricsThresholdOverride field is set.
+     */
+    public boolean hasEvaluationMetricsThresholdOverride() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evaluationMetricsThresholdOverride.
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds
+        getEvaluationMetricsThresholdOverride() {
+      if (evaluationMetricsThresholdOverrideBuilder_ == null) {
+        return evaluationMetricsThresholdOverride_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.getDefaultInstance()
+            : evaluationMetricsThresholdOverride_;
+      } else {
+        return evaluationMetricsThresholdOverrideBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationMetricsThresholdOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsThresholds value) {
+      if (evaluationMetricsThresholdOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationMetricsThresholdOverride_ = value;
+      } else {
+        evaluationMetricsThresholdOverrideBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationMetricsThresholdOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.Builder builderForValue) {
+      if (evaluationMetricsThresholdOverrideBuilder_ == null) {
+        evaluationMetricsThresholdOverride_ = builderForValue.build();
+      } else {
+        evaluationMetricsThresholdOverrideBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvaluationMetricsThresholdOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsThresholds value) {
+      if (evaluationMetricsThresholdOverrideBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && evaluationMetricsThresholdOverride_ != null
+            && evaluationMetricsThresholdOverride_
+                != com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.getDefaultInstance()) {
+          getEvaluationMetricsThresholdOverrideBuilder().mergeFrom(value);
+        } else {
+          evaluationMetricsThresholdOverride_ = value;
+        }
+      } else {
+        evaluationMetricsThresholdOverrideBuilder_.mergeFrom(value);
+      }
+      if (evaluationMetricsThresholdOverride_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvaluationMetricsThresholdOverride() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      evaluationMetricsThresholdOverride_ = null;
+      if (evaluationMetricsThresholdOverrideBuilder_ != null) {
+        evaluationMetricsThresholdOverrideBuilder_.dispose();
+        evaluationMetricsThresholdOverrideBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.Builder
+        getEvaluationMetricsThresholdOverrideBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetEvaluationMetricsThresholdOverrideFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder
+        getEvaluationMetricsThresholdOverrideOrBuilder() {
+      if (evaluationMetricsThresholdOverrideBuilder_ != null) {
+        return evaluationMetricsThresholdOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return evaluationMetricsThresholdOverride_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.getDefaultInstance()
+            : evaluationMetricsThresholdOverride_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics thresholds for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsThresholds evaluation_metrics_threshold_override = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholds,
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder>
+        internalGetEvaluationMetricsThresholdOverrideFieldBuilder() {
+      if (evaluationMetricsThresholdOverrideBuilder_ == null) {
+        evaluationMetricsThresholdOverrideBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationMetricsThresholds,
+                com.google.cloud.ces.v1beta.EvaluationMetricsThresholds.Builder,
+                com.google.cloud.ces.v1beta.EvaluationMetricsThresholdsOrBuilder>(
+                getEvaluationMetricsThresholdOverride(), getParentForChildren(), isClean());
+        evaluationMetricsThresholdOverride_ = null;
+      }
+      return evaluationMetricsThresholdOverrideBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.EvaluationMetricsConfig evaluationMetricsConfigOverride_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>
+        evaluationMetricsConfigOverrideBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the evaluationMetricsConfigOverride field is set.
+     */
+    public boolean hasEvaluationMetricsConfigOverride() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evaluationMetricsConfigOverride.
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig
+        getEvaluationMetricsConfigOverride() {
+      if (evaluationMetricsConfigOverrideBuilder_ == null) {
+        return evaluationMetricsConfigOverride_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+            : evaluationMetricsConfigOverride_;
+      } else {
+        return evaluationMetricsConfigOverrideBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationMetricsConfigOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsConfig value) {
+      if (evaluationMetricsConfigOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluationMetricsConfigOverride_ = value;
+      } else {
+        evaluationMetricsConfigOverrideBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEvaluationMetricsConfigOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder builderForValue) {
+      if (evaluationMetricsConfigOverrideBuilder_ == null) {
+        evaluationMetricsConfigOverride_ = builderForValue.build();
+      } else {
+        evaluationMetricsConfigOverrideBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEvaluationMetricsConfigOverride(
+        com.google.cloud.ces.v1beta.EvaluationMetricsConfig value) {
+      if (evaluationMetricsConfigOverrideBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && evaluationMetricsConfigOverride_ != null
+            && evaluationMetricsConfigOverride_
+                != com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()) {
+          getEvaluationMetricsConfigOverrideBuilder().mergeFrom(value);
+        } else {
+          evaluationMetricsConfigOverride_ = value;
+        }
+      } else {
+        evaluationMetricsConfigOverrideBuilder_.mergeFrom(value);
+      }
+      if (evaluationMetricsConfigOverride_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEvaluationMetricsConfigOverride() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      evaluationMetricsConfigOverride_ = null;
+      if (evaluationMetricsConfigOverrideBuilder_ != null) {
+        evaluationMetricsConfigOverrideBuilder_.dispose();
+        evaluationMetricsConfigOverrideBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder
+        getEvaluationMetricsConfigOverrideBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return internalGetEvaluationMetricsConfigOverrideFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder
+        getEvaluationMetricsConfigOverrideOrBuilder() {
+      if (evaluationMetricsConfigOverrideBuilder_ != null) {
+        return evaluationMetricsConfigOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return evaluationMetricsConfigOverride_ == null
+            ? com.google.cloud.ces.v1beta.EvaluationMetricsConfig.getDefaultInstance()
+            : evaluationMetricsConfigOverride_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides metrics config for this specific evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationMetricsConfig evaluation_metrics_config_override = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+            com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>
+        internalGetEvaluationMetricsConfigOverrideFieldBuilder() {
+      if (evaluationMetricsConfigOverrideBuilder_ == null) {
+        evaluationMetricsConfigOverrideBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfig,
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfig.Builder,
+                com.google.cloud.ces.v1beta.EvaluationMetricsConfigOrBuilder>(
+                getEvaluationMetricsConfigOverride(), getParentForChildren(), isClean());
+        evaluationMetricsConfigOverride_ = null;
+      }
+      return evaluationMetricsConfigOverrideBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Evaluation)

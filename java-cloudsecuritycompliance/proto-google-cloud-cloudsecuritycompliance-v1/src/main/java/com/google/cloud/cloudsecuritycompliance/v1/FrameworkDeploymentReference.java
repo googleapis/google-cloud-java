@@ -82,7 +82,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. The name of the framework deployment, in the format
-   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -110,7 +112,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    * <pre>
    * Output only. The name of the framework deployment, in the format
-   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -146,7 +150,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```
@@ -175,7 +179,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```
@@ -206,7 +210,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```
@@ -682,7 +686,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The name of the framework deployment, in the format
-     * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -709,7 +715,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The name of the framework deployment, in the format
-     * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -736,7 +744,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The name of the framework deployment, in the format
-     * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -762,7 +772,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The name of the framework deployment, in the format
-     * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -784,7 +796,9 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      * <pre>
      * Output only. The name of the framework deployment, in the format
-     * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -823,7 +837,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -851,7 +865,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -885,7 +899,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -922,7 +936,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -956,7 +970,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -1000,7 +1014,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -1033,7 +1047,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -1062,7 +1076,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```
@@ -1095,7 +1109,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      * ```
      * {
      * framework:
-     * "organizations/{org}/locations/{location}/frameworks/{framework}",
+     * "organizations/{organization}/locations/{location}/frameworks/{framework}",
      * major_revision_id: 1
      * }
      * ```

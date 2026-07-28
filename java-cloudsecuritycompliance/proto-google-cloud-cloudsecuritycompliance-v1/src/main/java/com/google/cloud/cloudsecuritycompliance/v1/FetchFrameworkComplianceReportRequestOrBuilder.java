@@ -92,4 +92,30 @@ public interface FetchFrameworkComplianceReportRequestOrBuilder
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filtering results.
+   * </pre>
+   *
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filtering results.
+   * </pre>
+   *
+   * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

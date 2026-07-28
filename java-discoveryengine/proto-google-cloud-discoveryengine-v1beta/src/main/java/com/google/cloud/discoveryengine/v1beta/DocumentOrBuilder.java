@@ -157,7 +157,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -173,7 +173,7 @@ public interface DocumentOrBuilder
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -212,9 +212,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -227,9 +226,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -242,9 +240,8 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -335,11 +332,51 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Access control information for the document.
+   * </pre>
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return Whether the aclInfo field is set.
+   */
+  boolean hasAclInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return The aclInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.Document.AclInfo getAclInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder getAclInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the document was last indexed.
+   *
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -353,11 +390,14 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -371,11 +411,14 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -392,7 +435,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>
@@ -412,7 +456,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>
@@ -432,7 +477,8 @@ public interface DocumentOrBuilder
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>

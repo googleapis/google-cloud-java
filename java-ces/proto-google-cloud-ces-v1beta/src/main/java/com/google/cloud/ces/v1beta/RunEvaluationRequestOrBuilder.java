@@ -493,4 +493,48 @@ public interface RunEvaluationRequestOrBuilder
    * @return The generateLatencyReport.
    */
   boolean getGenerateLatencyReport();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationRunCachingSettings field is set.
+   */
+  boolean hasEvaluationRunCachingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationRunCachingSettings.
+   */
+  com.google.cloud.ces.v1beta.EvaluationRunCachingSettings getEvaluationRunCachingSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caching settings to use for the evaluation run.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationRunCachingSettings evaluation_run_caching_settings = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.EvaluationRunCachingSettingsOrBuilder
+      getEvaluationRunCachingSettingsOrBuilder();
 }

@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1131,10 +1133,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AnalyticsAdminServiceClient implements BackgroundResource {
-  private final AnalyticsAdminServiceSettings settings;
+  private final @Nullable AnalyticsAdminServiceSettings settings;
   private final AnalyticsAdminServiceStub stub;
 
   /** Constructs an instance of AnalyticsAdminServiceClient with default settings. */
@@ -1174,7 +1177,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AnalyticsAdminServiceSettings getSettings() {
+  public final @Nullable AnalyticsAdminServiceSettings getSettings() {
     return settings;
   }
 
@@ -1205,7 +1208,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     "accounts/100"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Account getAccount(AccountName name) {
+  public final Account getAccount(@Nullable AccountName name) {
     GetAccountRequest request =
         GetAccountRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccount(request);
@@ -1444,7 +1447,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     Example: "accounts/100"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAccount(AccountName name) {
+  public final void deleteAccount(@Nullable AccountName name) {
     DeleteAccountRequest request =
         DeleteAccountRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAccount(request);
@@ -1845,7 +1848,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Property getProperty(PropertyName name) {
+  public final Property getProperty(@Nullable PropertyName name) {
     GetPropertyRequest request =
         GetPropertyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProperty(request);
@@ -2168,7 +2171,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Property deleteProperty(PropertyName name) {
+  public final Property deleteProperty(@Nullable PropertyName name) {
     DeletePropertyRequest request =
         DeletePropertyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProperty(request);
@@ -2407,7 +2410,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FirebaseLink createFirebaseLink(PropertyName parent, FirebaseLink firebaseLink) {
+  public final FirebaseLink createFirebaseLink(
+      @Nullable PropertyName parent, FirebaseLink firebaseLink) {
     CreateFirebaseLinkRequest request =
         CreateFirebaseLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2539,7 +2543,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     <p>Example: `properties/1234/firebaseLinks/5678`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFirebaseLink(FirebaseLinkName name) {
+  public final void deleteFirebaseLink(@Nullable FirebaseLinkName name) {
     DeleteFirebaseLinkRequest request =
         DeleteFirebaseLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2660,7 +2664,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     <p>Example: `properties/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirebaseLinksPagedResponse listFirebaseLinks(PropertyName parent) {
+  public final ListFirebaseLinksPagedResponse listFirebaseLinks(@Nullable PropertyName parent) {
     ListFirebaseLinksRequest request =
         ListFirebaseLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2834,7 +2838,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param googleAdsLink Required. The GoogleAdsLink to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GoogleAdsLink createGoogleAdsLink(PropertyName parent, GoogleAdsLink googleAdsLink) {
+  public final GoogleAdsLink createGoogleAdsLink(
+      @Nullable PropertyName parent, GoogleAdsLink googleAdsLink) {
     CreateGoogleAdsLinkRequest request =
         CreateGoogleAdsLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3058,7 +3063,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param name Required. Example format: properties/1234/googleAdsLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGoogleAdsLink(GoogleAdsLinkName name) {
+  public final void deleteGoogleAdsLink(@Nullable GoogleAdsLinkName name) {
     DeleteGoogleAdsLinkRequest request =
         DeleteGoogleAdsLinkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3177,7 +3182,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGoogleAdsLinksPagedResponse listGoogleAdsLinks(PropertyName parent) {
+  public final ListGoogleAdsLinksPagedResponse listGoogleAdsLinks(@Nullable PropertyName parent) {
     ListGoogleAdsLinksRequest request =
         ListGoogleAdsLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3350,7 +3355,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     <p>Example: `accounts/1000/dataSharingSettings`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSharingSettings getDataSharingSettings(DataSharingSettingsName name) {
+  public final DataSharingSettings getDataSharingSettings(@Nullable DataSharingSettingsName name) {
     GetDataSharingSettingsRequest request =
         GetDataSharingSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3474,7 +3479,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MeasurementProtocolSecret getMeasurementProtocolSecret(
-      MeasurementProtocolSecretName name) {
+      @Nullable MeasurementProtocolSecretName name) {
     GetMeasurementProtocolSecretRequest request =
         GetMeasurementProtocolSecretRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3609,7 +3614,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMeasurementProtocolSecretsPagedResponse listMeasurementProtocolSecrets(
-      DataStreamName parent) {
+      @Nullable DataStreamName parent) {
     ListMeasurementProtocolSecretsRequest request =
         ListMeasurementProtocolSecretsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3793,7 +3798,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MeasurementProtocolSecret createMeasurementProtocolSecret(
-      DataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret) {
+      @Nullable DataStreamName parent, MeasurementProtocolSecret measurementProtocolSecret) {
     CreateMeasurementProtocolSecretRequest request =
         CreateMeasurementProtocolSecretRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3928,7 +3933,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMeasurementProtocolSecret(MeasurementProtocolSecretName name) {
+  public final void deleteMeasurementProtocolSecret(@Nullable MeasurementProtocolSecretName name) {
     DeleteMeasurementProtocolSecretRequest request =
         DeleteMeasurementProtocolSecretRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4373,7 +4378,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final ConversionEvent createConversionEvent(
-      PropertyName parent, ConversionEvent conversionEvent) {
+      @Nullable PropertyName parent, ConversionEvent conversionEvent) {
     CreateConversionEventRequest request =
         CreateConversionEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4624,7 +4629,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ConversionEvent getConversionEvent(ConversionEventName name) {
+  public final ConversionEvent getConversionEvent(@Nullable ConversionEventName name) {
     GetConversionEventRequest request =
         GetConversionEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4754,7 +4759,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final void deleteConversionEvent(ConversionEventName name) {
+  public final void deleteConversionEvent(@Nullable ConversionEventName name) {
     DeleteConversionEventRequest request =
         DeleteConversionEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4887,7 +4892,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListConversionEventsPagedResponse listConversionEvents(PropertyName parent) {
+  public final ListConversionEventsPagedResponse listConversionEvents(
+      @Nullable PropertyName parent) {
     ListConversionEventsRequest request =
         ListConversionEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5083,7 +5089,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param keyEvent Required. The Key Event to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyEvent createKeyEvent(PropertyName parent, KeyEvent keyEvent) {
+  public final KeyEvent createKeyEvent(@Nullable PropertyName parent, KeyEvent keyEvent) {
     CreateKeyEventRequest request =
         CreateKeyEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5299,7 +5305,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyEvent getKeyEvent(KeyEventName name) {
+  public final KeyEvent getKeyEvent(@Nullable KeyEventName name) {
     GetKeyEventRequest request =
         GetKeyEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKeyEvent(request);
@@ -5414,7 +5420,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/{property}/keyEvents/{key_event} Example: "properties/123/keyEvents/456"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteKeyEvent(KeyEventName name) {
+  public final void deleteKeyEvent(@Nullable KeyEventName name) {
     DeleteKeyEventRequest request =
         DeleteKeyEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteKeyEvent(request);
@@ -5531,7 +5537,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent property. Example: 'properties/123'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyEventsPagedResponse listKeyEvents(PropertyName parent) {
+  public final ListKeyEventsPagedResponse listKeyEvents(@Nullable PropertyName parent) {
     ListKeyEventsRequest request =
         ListKeyEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5705,7 +5711,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomDimension createCustomDimension(
-      PropertyName parent, CustomDimension customDimension) {
+      @Nullable PropertyName parent, CustomDimension customDimension) {
     CreateCustomDimensionRequest request =
         CreateCustomDimensionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5933,7 +5939,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomDimensionsPagedResponse listCustomDimensions(PropertyName parent) {
+  public final ListCustomDimensionsPagedResponse listCustomDimensions(
+      @Nullable PropertyName parent) {
     ListCustomDimensionsRequest request =
         ListCustomDimensionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6105,7 +6112,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/customDimensions/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void archiveCustomDimension(CustomDimensionName name) {
+  public final void archiveCustomDimension(@Nullable CustomDimensionName name) {
     ArchiveCustomDimensionRequest request =
         ArchiveCustomDimensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6224,7 +6231,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/customDimensions/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomDimension getCustomDimension(CustomDimensionName name) {
+  public final CustomDimension getCustomDimension(@Nullable CustomDimensionName name) {
     GetCustomDimensionRequest request =
         GetCustomDimensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6344,7 +6351,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param customMetric Required. The CustomMetric to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomMetric createCustomMetric(PropertyName parent, CustomMetric customMetric) {
+  public final CustomMetric createCustomMetric(
+      @Nullable PropertyName parent, CustomMetric customMetric) {
     CreateCustomMetricRequest request =
         CreateCustomMetricRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6567,7 +6575,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomMetricsPagedResponse listCustomMetrics(PropertyName parent) {
+  public final ListCustomMetricsPagedResponse listCustomMetrics(@Nullable PropertyName parent) {
     ListCustomMetricsRequest request =
         ListCustomMetricsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6738,7 +6746,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/customMetrics/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void archiveCustomMetric(CustomMetricName name) {
+  public final void archiveCustomMetric(@Nullable CustomMetricName name) {
     ArchiveCustomMetricRequest request =
         ArchiveCustomMetricRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6856,7 +6864,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/customMetrics/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomMetric getCustomMetric(CustomMetricName name) {
+  public final CustomMetric getCustomMetric(@Nullable CustomMetricName name) {
     GetCustomMetricRequest request =
         GetCustomMetricRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomMetric(request);
@@ -6972,7 +6980,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     "properties/1000/dataRetentionSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataRetentionSettings getDataRetentionSettings(DataRetentionSettingsName name) {
+  public final DataRetentionSettings getDataRetentionSettings(
+      @Nullable DataRetentionSettingsName name) {
     GetDataRetentionSettingsRequest request =
         GetDataRetentionSettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7197,7 +7206,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param dataStream Required. The DataStream to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataStream createDataStream(PropertyName parent, DataStream dataStream) {
+  public final DataStream createDataStream(@Nullable PropertyName parent, DataStream dataStream) {
     CreateDataStreamRequest request =
         CreateDataStreamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7319,7 +7328,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/dataStreams/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataStream(DataStreamName name) {
+  public final void deleteDataStream(@Nullable DataStreamName name) {
     DeleteDataStreamRequest request =
         DeleteDataStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataStream(request);
@@ -7530,7 +7539,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataStreamsPagedResponse listDataStreams(PropertyName parent) {
+  public final ListDataStreamsPagedResponse listDataStreams(@Nullable PropertyName parent) {
     ListDataStreamsRequest request =
         ListDataStreamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7698,7 +7707,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *     properties/1234/dataStreams/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataStream getDataStream(DataStreamName name) {
+  public final DataStream getDataStream(@Nullable DataStreamName name) {
     GetDataStreamRequest request =
         GetDataStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataStream(request);
@@ -7961,8 +7970,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
       extends AbstractPage<ListAccountsRequest, ListAccountsResponse, Account, ListAccountsPage> {
 
     private ListAccountsPage(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
-        ListAccountsResponse response) {
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable ListAccountsResponse response) {
       super(context, response);
     }
 
@@ -7972,14 +7981,14 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountsPage createPage(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
-        ListAccountsResponse response) {
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable ListAccountsResponse response) {
       return new ListAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountsPage> createPageAsync(
-        PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
+        @Nullable PageContext<ListAccountsRequest, ListAccountsResponse, Account> context,
         ApiFuture<ListAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7993,7 +8002,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAccountsPage,
           ListAccountsFixedSizeCollection> {
 
-    private ListAccountsFixedSizeCollection(List<ListAccountsPage> pages, int collectionSize) {
+    private ListAccountsFixedSizeCollection(
+        @Nullable List<ListAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8003,7 +8013,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountsFixedSizeCollection createCollection(
-        List<ListAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountsPage> pages, int collectionSize) {
       return new ListAccountsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8041,9 +8051,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAccountSummariesPage> {
 
     private ListAccountSummariesPage(
-        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+        @Nullable
+            PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
             context,
-        ListAccountSummariesResponse response) {
+        @Nullable ListAccountSummariesResponse response) {
       super(context, response);
     }
 
@@ -8053,15 +8064,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountSummariesPage createPage(
-        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+        @Nullable
+            PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
             context,
-        ListAccountSummariesResponse response) {
+        @Nullable ListAccountSummariesResponse response) {
       return new ListAccountSummariesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountSummariesPage> createPageAsync(
-        PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
+        @Nullable
+            PageContext<ListAccountSummariesRequest, ListAccountSummariesResponse, AccountSummary>
             context,
         ApiFuture<ListAccountSummariesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -8077,7 +8090,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListAccountSummariesFixedSizeCollection> {
 
     private ListAccountSummariesFixedSizeCollection(
-        List<ListAccountSummariesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountSummariesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8087,7 +8100,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountSummariesFixedSizeCollection createCollection(
-        List<ListAccountSummariesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountSummariesPage> pages, int collectionSize) {
       return new ListAccountSummariesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8121,8 +8134,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListPropertiesRequest, ListPropertiesResponse, Property, ListPropertiesPage> {
 
     private ListPropertiesPage(
-        PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
-        ListPropertiesResponse response) {
+        @Nullable PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
+        @Nullable ListPropertiesResponse response) {
       super(context, response);
     }
 
@@ -8132,14 +8145,14 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListPropertiesPage createPage(
-        PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
-        ListPropertiesResponse response) {
+        @Nullable PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
+        @Nullable ListPropertiesResponse response) {
       return new ListPropertiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPropertiesPage> createPageAsync(
-        PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
+        @Nullable PageContext<ListPropertiesRequest, ListPropertiesResponse, Property> context,
         ApiFuture<ListPropertiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8153,7 +8166,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListPropertiesPage,
           ListPropertiesFixedSizeCollection> {
 
-    private ListPropertiesFixedSizeCollection(List<ListPropertiesPage> pages, int collectionSize) {
+    private ListPropertiesFixedSizeCollection(
+        @Nullable List<ListPropertiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8163,7 +8177,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListPropertiesFixedSizeCollection createCollection(
-        List<ListPropertiesPage> pages, int collectionSize) {
+        @Nullable List<ListPropertiesPage> pages, int collectionSize) {
       return new ListPropertiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8200,8 +8214,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListFirebaseLinksPage> {
 
     private ListFirebaseLinksPage(
-        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
-        ListFirebaseLinksResponse response) {
+        @Nullable PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>
+            context,
+        @Nullable ListFirebaseLinksResponse response) {
       super(context, response);
     }
 
@@ -8211,14 +8226,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListFirebaseLinksPage createPage(
-        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
-        ListFirebaseLinksResponse response) {
+        @Nullable PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>
+            context,
+        @Nullable ListFirebaseLinksResponse response) {
       return new ListFirebaseLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFirebaseLinksPage> createPageAsync(
-        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
+        @Nullable PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>
+            context,
         ApiFuture<ListFirebaseLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8233,7 +8250,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListFirebaseLinksFixedSizeCollection> {
 
     private ListFirebaseLinksFixedSizeCollection(
-        List<ListFirebaseLinksPage> pages, int collectionSize) {
+        @Nullable List<ListFirebaseLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8243,7 +8260,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListFirebaseLinksFixedSizeCollection createCollection(
-        List<ListFirebaseLinksPage> pages, int collectionSize) {
+        @Nullable List<ListFirebaseLinksPage> pages, int collectionSize) {
       return new ListFirebaseLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8280,8 +8297,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListGoogleAdsLinksPage> {
 
     private ListGoogleAdsLinksPage(
-        PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink> context,
-        ListGoogleAdsLinksResponse response) {
+        @Nullable PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
+            context,
+        @Nullable ListGoogleAdsLinksResponse response) {
       super(context, response);
     }
 
@@ -8291,14 +8309,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListGoogleAdsLinksPage createPage(
-        PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink> context,
-        ListGoogleAdsLinksResponse response) {
+        @Nullable PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
+            context,
+        @Nullable ListGoogleAdsLinksResponse response) {
       return new ListGoogleAdsLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGoogleAdsLinksPage> createPageAsync(
-        PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink> context,
+        @Nullable PageContext<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
+            context,
         ApiFuture<ListGoogleAdsLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8313,7 +8333,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListGoogleAdsLinksFixedSizeCollection> {
 
     private ListGoogleAdsLinksFixedSizeCollection(
-        List<ListGoogleAdsLinksPage> pages, int collectionSize) {
+        @Nullable List<ListGoogleAdsLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8323,7 +8343,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListGoogleAdsLinksFixedSizeCollection createCollection(
-        List<ListGoogleAdsLinksPage> pages, int collectionSize) {
+        @Nullable List<ListGoogleAdsLinksPage> pages, int collectionSize) {
       return new ListGoogleAdsLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8365,12 +8385,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListMeasurementProtocolSecretsPage> {
 
     private ListMeasurementProtocolSecretsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMeasurementProtocolSecretsRequest,
                 ListMeasurementProtocolSecretsResponse,
                 MeasurementProtocolSecret>
             context,
-        ListMeasurementProtocolSecretsResponse response) {
+        @Nullable ListMeasurementProtocolSecretsResponse response) {
       super(context, response);
     }
 
@@ -8380,18 +8401,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListMeasurementProtocolSecretsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMeasurementProtocolSecretsRequest,
                 ListMeasurementProtocolSecretsResponse,
                 MeasurementProtocolSecret>
             context,
-        ListMeasurementProtocolSecretsResponse response) {
+        @Nullable ListMeasurementProtocolSecretsResponse response) {
       return new ListMeasurementProtocolSecretsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMeasurementProtocolSecretsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMeasurementProtocolSecretsRequest,
                 ListMeasurementProtocolSecretsResponse,
                 MeasurementProtocolSecret>
@@ -8410,7 +8433,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListMeasurementProtocolSecretsFixedSizeCollection> {
 
     private ListMeasurementProtocolSecretsFixedSizeCollection(
-        List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
+        @Nullable List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8420,7 +8443,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListMeasurementProtocolSecretsFixedSizeCollection createCollection(
-        List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
+        @Nullable List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
       return new ListMeasurementProtocolSecretsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8461,12 +8484,13 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           SearchChangeHistoryEventsPage> {
 
     private SearchChangeHistoryEventsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchChangeHistoryEventsRequest,
                 SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
-        SearchChangeHistoryEventsResponse response) {
+        @Nullable SearchChangeHistoryEventsResponse response) {
       super(context, response);
     }
 
@@ -8476,18 +8500,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected SearchChangeHistoryEventsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchChangeHistoryEventsRequest,
                 SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
             context,
-        SearchChangeHistoryEventsResponse response) {
+        @Nullable SearchChangeHistoryEventsResponse response) {
       return new SearchChangeHistoryEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchChangeHistoryEventsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchChangeHistoryEventsRequest,
                 SearchChangeHistoryEventsResponse,
                 ChangeHistoryEvent>
@@ -8506,7 +8532,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           SearchChangeHistoryEventsFixedSizeCollection> {
 
     private SearchChangeHistoryEventsFixedSizeCollection(
-        List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
+        @Nullable List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8516,7 +8542,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected SearchChangeHistoryEventsFixedSizeCollection createCollection(
-        List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
+        @Nullable List<SearchChangeHistoryEventsPage> pages, int collectionSize) {
       return new SearchChangeHistoryEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8554,9 +8580,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListConversionEventsPage> {
 
     private ListConversionEventsPage(
-        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+        @Nullable
+            PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
             context,
-        ListConversionEventsResponse response) {
+        @Nullable ListConversionEventsResponse response) {
       super(context, response);
     }
 
@@ -8566,15 +8593,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionEventsPage createPage(
-        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+        @Nullable
+            PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
             context,
-        ListConversionEventsResponse response) {
+        @Nullable ListConversionEventsResponse response) {
       return new ListConversionEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversionEventsPage> createPageAsync(
-        PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
+        @Nullable
+            PageContext<ListConversionEventsRequest, ListConversionEventsResponse, ConversionEvent>
             context,
         ApiFuture<ListConversionEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -8590,7 +8619,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListConversionEventsFixedSizeCollection> {
 
     private ListConversionEventsFixedSizeCollection(
-        List<ListConversionEventsPage> pages, int collectionSize) {
+        @Nullable List<ListConversionEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8600,7 +8629,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionEventsFixedSizeCollection createCollection(
-        List<ListConversionEventsPage> pages, int collectionSize) {
+        @Nullable List<ListConversionEventsPage> pages, int collectionSize) {
       return new ListConversionEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8634,8 +8663,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent, ListKeyEventsPage> {
 
     private ListKeyEventsPage(
-        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
-        ListKeyEventsResponse response) {
+        @Nullable PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        @Nullable ListKeyEventsResponse response) {
       super(context, response);
     }
 
@@ -8645,14 +8674,14 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeyEventsPage createPage(
-        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
-        ListKeyEventsResponse response) {
+        @Nullable PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        @Nullable ListKeyEventsResponse response) {
       return new ListKeyEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKeyEventsPage> createPageAsync(
-        PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
+        @Nullable PageContext<ListKeyEventsRequest, ListKeyEventsResponse, KeyEvent> context,
         ApiFuture<ListKeyEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8666,7 +8695,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListKeyEventsPage,
           ListKeyEventsFixedSizeCollection> {
 
-    private ListKeyEventsFixedSizeCollection(List<ListKeyEventsPage> pages, int collectionSize) {
+    private ListKeyEventsFixedSizeCollection(
+        @Nullable List<ListKeyEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8676,7 +8706,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeyEventsFixedSizeCollection createCollection(
-        List<ListKeyEventsPage> pages, int collectionSize) {
+        @Nullable List<ListKeyEventsPage> pages, int collectionSize) {
       return new ListKeyEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8714,9 +8744,10 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomDimensionsPage> {
 
     private ListCustomDimensionsPage(
-        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+        @Nullable
+            PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
             context,
-        ListCustomDimensionsResponse response) {
+        @Nullable ListCustomDimensionsResponse response) {
       super(context, response);
     }
 
@@ -8726,15 +8757,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomDimensionsPage createPage(
-        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+        @Nullable
+            PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
             context,
-        ListCustomDimensionsResponse response) {
+        @Nullable ListCustomDimensionsResponse response) {
       return new ListCustomDimensionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomDimensionsPage> createPageAsync(
-        PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
+        @Nullable
+            PageContext<ListCustomDimensionsRequest, ListCustomDimensionsResponse, CustomDimension>
             context,
         ApiFuture<ListCustomDimensionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -8750,7 +8783,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomDimensionsFixedSizeCollection> {
 
     private ListCustomDimensionsFixedSizeCollection(
-        List<ListCustomDimensionsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomDimensionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8760,7 +8793,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomDimensionsFixedSizeCollection createCollection(
-        List<ListCustomDimensionsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomDimensionsPage> pages, int collectionSize) {
       return new ListCustomDimensionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8797,8 +8830,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomMetricsPage> {
 
     private ListCustomMetricsPage(
-        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
-        ListCustomMetricsResponse response) {
+        @Nullable PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>
+            context,
+        @Nullable ListCustomMetricsResponse response) {
       super(context, response);
     }
 
@@ -8808,14 +8842,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomMetricsPage createPage(
-        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
-        ListCustomMetricsResponse response) {
+        @Nullable PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>
+            context,
+        @Nullable ListCustomMetricsResponse response) {
       return new ListCustomMetricsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomMetricsPage> createPageAsync(
-        PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric> context,
+        @Nullable PageContext<ListCustomMetricsRequest, ListCustomMetricsResponse, CustomMetric>
+            context,
         ApiFuture<ListCustomMetricsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8830,7 +8866,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListCustomMetricsFixedSizeCollection> {
 
     private ListCustomMetricsFixedSizeCollection(
-        List<ListCustomMetricsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomMetricsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8840,7 +8876,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomMetricsFixedSizeCollection createCollection(
-        List<ListCustomMetricsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomMetricsPage> pages, int collectionSize) {
       return new ListCustomMetricsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8874,8 +8910,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListDataStreamsRequest, ListDataStreamsResponse, DataStream, ListDataStreamsPage> {
 
     private ListDataStreamsPage(
-        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
-        ListDataStreamsResponse response) {
+        @Nullable PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        @Nullable ListDataStreamsResponse response) {
       super(context, response);
     }
 
@@ -8885,14 +8921,14 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataStreamsPage createPage(
-        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
-        ListDataStreamsResponse response) {
+        @Nullable PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        @Nullable ListDataStreamsResponse response) {
       return new ListDataStreamsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataStreamsPage> createPageAsync(
-        PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
+        @Nullable PageContext<ListDataStreamsRequest, ListDataStreamsResponse, DataStream> context,
         ApiFuture<ListDataStreamsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8907,7 +8943,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           ListDataStreamsFixedSizeCollection> {
 
     private ListDataStreamsFixedSizeCollection(
-        List<ListDataStreamsPage> pages, int collectionSize) {
+        @Nullable List<ListDataStreamsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8917,7 +8953,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataStreamsFixedSizeCollection createCollection(
-        List<ListDataStreamsPage> pages, int collectionSize) {
+        @Nullable List<ListDataStreamsPage> pages, int collectionSize) {
       return new ListDataStreamsFixedSizeCollection(pages, collectionSize);
     }
   }

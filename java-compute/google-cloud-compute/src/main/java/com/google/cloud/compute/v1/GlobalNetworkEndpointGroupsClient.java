@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,9 +246,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
-  private final GlobalNetworkEndpointGroupsSettings settings;
+  private final @Nullable GlobalNetworkEndpointGroupsSettings settings;
   private final GlobalNetworkEndpointGroupsStub stub;
 
   /** Constructs an instance of GlobalNetworkEndpointGroupsClient with default settings. */
@@ -289,7 +292,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GlobalNetworkEndpointGroupsSettings getSettings() {
+  public final @Nullable GlobalNetworkEndpointGroupsSettings getSettings() {
     return settings;
   }
 
@@ -1384,12 +1387,13 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupList,
                 NetworkEndpointGroup>
             context,
-        NetworkEndpointGroupList response) {
+        @Nullable NetworkEndpointGroupList response) {
       super(context, response);
     }
 
@@ -1399,18 +1403,20 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupList,
                 NetworkEndpointGroup>
             context,
-        NetworkEndpointGroupList response) {
+        @Nullable NetworkEndpointGroupList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupList,
                 NetworkEndpointGroup>
@@ -1428,7 +1434,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1437,7 +1443,8 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1478,12 +1485,13 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
           ListNetworkEndpointsPage> {
 
     private ListNetworkEndpointsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupsListNetworkEndpoints,
                 NetworkEndpointWithHealthStatus>
             context,
-        NetworkEndpointGroupsListNetworkEndpoints response) {
+        @Nullable NetworkEndpointGroupsListNetworkEndpoints response) {
       super(context, response);
     }
 
@@ -1493,18 +1501,20 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
     @Override
     protected ListNetworkEndpointsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupsListNetworkEndpoints,
                 NetworkEndpointWithHealthStatus>
             context,
-        NetworkEndpointGroupsListNetworkEndpoints response) {
+        @Nullable NetworkEndpointGroupsListNetworkEndpoints response) {
       return new ListNetworkEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworkEndpointsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest,
                 NetworkEndpointGroupsListNetworkEndpoints,
                 NetworkEndpointWithHealthStatus>
@@ -1523,7 +1533,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
           ListNetworkEndpointsFixedSizeCollection> {
 
     private ListNetworkEndpointsFixedSizeCollection(
-        List<ListNetworkEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1533,7 +1543,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
     @Override
     protected ListNetworkEndpointsFixedSizeCollection createCollection(
-        List<ListNetworkEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkEndpointsPage> pages, int collectionSize) {
       return new ListNetworkEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }

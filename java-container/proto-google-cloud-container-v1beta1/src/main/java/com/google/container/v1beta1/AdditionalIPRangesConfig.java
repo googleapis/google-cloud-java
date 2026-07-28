@@ -79,7 +79,7 @@ public final class AdditionalIPRangesConfig extends com.google.protobuf.Generate
    * <pre>
    * Additional subnet with DRAINING status will not be selected during new node
    * pool creation. To undrain the draining status, update the cluster to set
-   * the sunbet to ACTIVE status. To remove the additional subnet, use the
+   * the subnet to ACTIVE status. To remove the additional subnet, use the
    * update cluster API to remove the subnet from the
    * desired_additional_ip_ranges list. IP ranges can be removed regardless of
    * its status, as long as no node pools are using them.

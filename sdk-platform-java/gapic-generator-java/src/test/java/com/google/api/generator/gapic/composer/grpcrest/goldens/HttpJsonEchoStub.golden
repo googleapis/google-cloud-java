@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -53,6 +54,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonEchoStub extends EchoStub {
@@ -362,7 +364,7 @@ public class HttpJsonEchoStub extends EchoStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), false))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()

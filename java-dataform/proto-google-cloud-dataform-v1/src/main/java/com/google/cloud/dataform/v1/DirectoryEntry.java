@@ -125,7 +125,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -140,7 +141,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -168,7 +170,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A file in the directory.
+   * A file in the directory. The path is returned including the full
+   * folder structure from the root.
    * </pre>
    *
    * <code>string file = 1;</code>
@@ -198,7 +201,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -213,7 +217,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -241,7 +246,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A child directory in the directory.
+   * A child directory in the directory. The path is returned including
+   * the full folder structure from the root.
    * </pre>
    *
    * <code>string directory = 2;</code>
@@ -742,7 +748,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -758,7 +765,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -787,7 +795,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -816,7 +825,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -838,7 +848,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -858,7 +869,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A file in the directory.
+     * A file in the directory. The path is returned including the full
+     * folder structure from the root.
      * </pre>
      *
      * <code>string file = 1;</code>
@@ -881,7 +893,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>
@@ -897,7 +910,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>
@@ -926,7 +940,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>
@@ -955,7 +970,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>
@@ -977,7 +993,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>
@@ -997,7 +1014,8 @@ public final class DirectoryEntry extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A child directory in the directory.
+     * A child directory in the directory. The path is returned including
+     * the full folder structure from the root.
      * </pre>
      *
      * <code>string directory = 2;</code>

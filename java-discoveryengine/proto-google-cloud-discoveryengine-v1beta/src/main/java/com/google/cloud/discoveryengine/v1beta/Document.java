@@ -172,9 +172,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `text/plain` (TXT)
+     * * `application/xml` or `text/xml` (XML)
+     * * `application/json` (JSON)
      * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
      * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-     * * `text/plain` (TXT)
+     * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+     * (XLSX)
+     * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+     *
+     * The following types are supported only if layout parser is enabled in the
+     * data store:
+     *
+     * * `image/bmp` (BMP)
+     * * `image/gif` (GIF)
+     * * `image/jpeg` (JPEG)
+     * * `image/png` (PNG)
+     * * `image/tiff` (TIFF)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -193,9 +207,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `text/plain` (TXT)
+     * * `application/xml` or `text/xml` (XML)
+     * * `application/json` (JSON)
      * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
      * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-     * * `text/plain` (TXT)
+     * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+     * (XLSX)
+     * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+     *
+     * The following types are supported only if layout parser is enabled in the
+     * data store:
+     *
+     * * `image/bmp` (BMP)
+     * * `image/gif` (GIF)
+     * * `image/jpeg` (JPEG)
+     * * `image/png` (PNG)
+     * * `image/tiff` (TIFF)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -451,9 +479,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `text/plain` (TXT)
+     * * `application/xml` or `text/xml` (XML)
+     * * `application/json` (JSON)
      * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
      * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-     * * `text/plain` (TXT)
+     * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+     * (XLSX)
+     * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+     *
+     * The following types are supported only if layout parser is enabled in the
+     * data store:
+     *
+     * * `image/bmp` (BMP)
+     * * `image/gif` (GIF)
+     * * `image/jpeg` (JPEG)
+     * * `image/png` (PNG)
+     * * `image/tiff` (TIFF)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -483,9 +525,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * * `application/pdf` (PDF, only native PDFs are supported for now)
      * * `text/html` (HTML)
+     * * `text/plain` (TXT)
+     * * `application/xml` or `text/xml` (XML)
+     * * `application/json` (JSON)
      * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
      * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-     * * `text/plain` (TXT)
+     * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+     * (XLSX)
+     * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+     *
+     * The following types are supported only if layout parser is enabled in the
+     * data store:
+     *
+     * * `image/bmp` (BMP)
+     * * `image/gif` (GIF)
+     * * `image/jpeg` (JPEG)
+     * * `image/png` (PNG)
+     * * `image/tiff` (TIFF)
      *
      * See https://www.iana.org/assignments/media-types/media-types.xhtml.
      * </pre>
@@ -1173,9 +1229,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `text/plain` (TXT)
+       * * `application/xml` or `text/xml` (XML)
+       * * `application/json` (JSON)
        * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
        * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-       * * `text/plain` (TXT)
+       * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+       * (XLSX)
+       * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+       *
+       * The following types are supported only if layout parser is enabled in the
+       * data store:
+       *
+       * * `image/bmp` (BMP)
+       * * `image/gif` (GIF)
+       * * `image/jpeg` (JPEG)
+       * * `image/png` (PNG)
+       * * `image/tiff` (TIFF)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1204,9 +1274,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `text/plain` (TXT)
+       * * `application/xml` or `text/xml` (XML)
+       * * `application/json` (JSON)
        * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
        * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-       * * `text/plain` (TXT)
+       * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+       * (XLSX)
+       * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+       *
+       * The following types are supported only if layout parser is enabled in the
+       * data store:
+       *
+       * * `image/bmp` (BMP)
+       * * `image/gif` (GIF)
+       * * `image/jpeg` (JPEG)
+       * * `image/png` (PNG)
+       * * `image/tiff` (TIFF)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1235,9 +1319,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `text/plain` (TXT)
+       * * `application/xml` or `text/xml` (XML)
+       * * `application/json` (JSON)
        * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
        * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-       * * `text/plain` (TXT)
+       * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+       * (XLSX)
+       * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+       *
+       * The following types are supported only if layout parser is enabled in the
+       * data store:
+       *
+       * * `image/bmp` (BMP)
+       * * `image/gif` (GIF)
+       * * `image/jpeg` (JPEG)
+       * * `image/png` (PNG)
+       * * `image/tiff` (TIFF)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1265,9 +1363,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `text/plain` (TXT)
+       * * `application/xml` or `text/xml` (XML)
+       * * `application/json` (JSON)
        * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
        * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-       * * `text/plain` (TXT)
+       * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+       * (XLSX)
+       * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+       *
+       * The following types are supported only if layout parser is enabled in the
+       * data store:
+       *
+       * * `image/bmp` (BMP)
+       * * `image/gif` (GIF)
+       * * `image/jpeg` (JPEG)
+       * * `image/png` (PNG)
+       * * `image/tiff` (TIFF)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1291,9 +1403,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * * `application/pdf` (PDF, only native PDFs are supported for now)
        * * `text/html` (HTML)
+       * * `text/plain` (TXT)
+       * * `application/xml` or `text/xml` (XML)
+       * * `application/json` (JSON)
        * * `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX)
        * * `application/vnd.openxmlformats-officedocument.presentationml.presentation` (PPTX)
-       * * `text/plain` (TXT)
+       * * `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+       * (XLSX)
+       * * `application/vnd.ms-excel.sheet.macroenabled.12` (XLSM)
+       *
+       * The following types are supported only if layout parser is enabled in the
+       * data store:
+       *
+       * * `image/bmp` (BMP)
+       * * `image/gif` (GIF)
+       * * `image/jpeg` (JPEG)
+       * * `image/png` (PNG)
+       * * `image/tiff` (TIFF)
        *
        * See https://www.iana.org/assignments/media-types/media-types.xhtml.
        * </pre>
@@ -1366,6 +1492,2314 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface AclInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Document.AclInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+        getReadersList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction getReaders(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    int getReadersCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder>
+        getReadersOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder
+        getReadersOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ACL Information of the Document.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.AclInfo}
+   */
+  public static final class AclInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Document.AclInfo)
+      AclInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AclInfo");
+    }
+
+    // Use AclInfo.newBuilder() to construct.
+    private AclInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AclInfo() {
+      readers_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.class,
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder.class);
+    }
+
+    public interface AccessRestrictionOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      java.util.List<com.google.cloud.discoveryengine.v1beta.Principal> getPrincipalsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      com.google.cloud.discoveryengine.v1beta.Principal getPrincipals(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      int getPrincipalsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>
+          getPrincipalsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder getPrincipalsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * All users within the Identity Provider.
+       * </pre>
+       *
+       * <code>bool idp_wide = 2;</code>
+       *
+       * @return The idpWide.
+       */
+      boolean getIdpWide();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * AclRestriction to model complex inheritance restrictions.
+     *
+     * Example: Modeling a "Both Permit" inheritance, where to access a
+     * child document, user needs to have access to parent document.
+     *
+     * Document Hierarchy - Space_S --&gt; Page_P.
+     *
+     * Readers:
+     * Space_S: group_1, user_1
+     * Page_P: group_2, group_3, user_2
+     *
+     * Space_S ACL Restriction -
+     * {
+     * "acl_info": {
+     * "readers": [
+     * {
+     * "principals": [
+     * {
+     * "group_id": "group_1"
+     * },
+     * {
+     * "user_id": "user_1"
+     * }
+     * ]
+     * }
+     * ]
+     * }
+     * }
+     *
+     * Page_P ACL Restriction.
+     * {
+     * "acl_info": {
+     * "readers": [
+     * {
+     * "principals": [
+     * {
+     * "group_id": "group_2"
+     * },
+     * {
+     * "group_id": "group_3"
+     * },
+     * {
+     * "user_id": "user_2"
+     * }
+     * ],
+     * },
+     * {
+     * "principals": [
+     * {
+     * "group_id": "group_1"
+     * },
+     * {
+     * "user_id": "user_1"
+     * }
+     * ],
+     * }
+     * ]
+     * }
+     * }
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction}
+     */
+    public static final class AccessRestriction extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)
+        AccessRestrictionOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "AccessRestriction");
+      }
+
+      // Use AccessRestriction.newBuilder() to construct.
+      private AccessRestriction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AccessRestriction() {
+        principals_ = java.util.Collections.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.class,
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+                    .class);
+      }
+
+      public static final int PRINCIPALS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<com.google.cloud.discoveryengine.v1beta.Principal> principals_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      @java.lang.Override
+      public java.util.List<com.google.cloud.discoveryengine.v1beta.Principal> getPrincipalsList() {
+        return principals_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      @java.lang.Override
+      public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>
+          getPrincipalsOrBuilderList() {
+        return principals_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      @java.lang.Override
+      public int getPrincipalsCount() {
+        return principals_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Principal getPrincipals(int index) {
+        return principals_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of principals.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder getPrincipalsOrBuilder(
+          int index) {
+        return principals_.get(index);
+      }
+
+      public static final int IDP_WIDE_FIELD_NUMBER = 2;
+      private boolean idpWide_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * All users within the Identity Provider.
+       * </pre>
+       *
+       * <code>bool idp_wide = 2;</code>
+       *
+       * @return The idpWide.
+       */
+      @java.lang.Override
+      public boolean getIdpWide() {
+        return idpWide_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < principals_.size(); i++) {
+          output.writeMessage(1, principals_.get(i));
+        }
+        if (idpWide_ != false) {
+          output.writeBool(2, idpWide_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < principals_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, principals_.get(i));
+        }
+        if (idpWide_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, idpWide_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction other =
+            (com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction) obj;
+
+        if (!getPrincipalsList().equals(other.getPrincipalsList())) return false;
+        if (getIdpWide() != other.getIdpWide()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getPrincipalsCount() > 0) {
+          hash = (37 * hash) + PRINCIPALS_FIELD_NUMBER;
+          hash = (53 * hash) + getPrincipalsList().hashCode();
+        }
+        hash = (37 * hash) + IDP_WIDE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIdpWide());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * AclRestriction to model complex inheritance restrictions.
+       *
+       * Example: Modeling a "Both Permit" inheritance, where to access a
+       * child document, user needs to have access to parent document.
+       *
+       * Document Hierarchy - Space_S --&gt; Page_P.
+       *
+       * Readers:
+       * Space_S: group_1, user_1
+       * Page_P: group_2, group_3, user_2
+       *
+       * Space_S ACL Restriction -
+       * {
+       * "acl_info": {
+       * "readers": [
+       * {
+       * "principals": [
+       * {
+       * "group_id": "group_1"
+       * },
+       * {
+       * "user_id": "user_1"
+       * }
+       * ]
+       * }
+       * ]
+       * }
+       * }
+       *
+       * Page_P ACL Restriction.
+       * {
+       * "acl_info": {
+       * "readers": [
+       * {
+       * "principals": [
+       * {
+       * "group_id": "group_2"
+       * },
+       * {
+       * "group_id": "group_3"
+       * },
+       * {
+       * "user_id": "user_2"
+       * }
+       * ],
+       * },
+       * {
+       * "principals": [
+       * {
+       * "group_id": "group_1"
+       * },
+       * {
+       * "user_id": "user_1"
+       * }
+       * ],
+       * }
+       * ]
+       * }
+       * }
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.DocumentProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.DocumentProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.class,
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (principalsBuilder_ == null) {
+            principals_ = java.util.Collections.emptyList();
+          } else {
+            principals_ = null;
+            principalsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          idpWide_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.DocumentProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_AccessRestriction_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction build() {
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction result =
+              new com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction result) {
+          if (principalsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              principals_ = java.util.Collections.unmodifiableList(principals_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.principals_ = principals_;
+          } else {
+            result.principals_ = principalsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.idpWide_ = idpWide_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+                  .getDefaultInstance()) return this;
+          if (principalsBuilder_ == null) {
+            if (!other.principals_.isEmpty()) {
+              if (principals_.isEmpty()) {
+                principals_ = other.principals_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensurePrincipalsIsMutable();
+                principals_.addAll(other.principals_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.principals_.isEmpty()) {
+              if (principalsBuilder_.isEmpty()) {
+                principalsBuilder_.dispose();
+                principalsBuilder_ = null;
+                principals_ = other.principals_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                principalsBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetPrincipalsFieldBuilder()
+                        : null;
+              } else {
+                principalsBuilder_.addAllMessages(other.principals_);
+              }
+            }
+          }
+          if (other.getIdpWide() != false) {
+            setIdpWide(other.getIdpWide());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.discoveryengine.v1beta.Principal m =
+                        input.readMessage(
+                            com.google.cloud.discoveryengine.v1beta.Principal.parser(),
+                            extensionRegistry);
+                    if (principalsBuilder_ == null) {
+                      ensurePrincipalsIsMutable();
+                      principals_.add(m);
+                    } else {
+                      principalsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    idpWide_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<com.google.cloud.discoveryengine.v1beta.Principal> principals_ =
+            java.util.Collections.emptyList();
+
+        private void ensurePrincipalsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            principals_ =
+                new java.util.ArrayList<com.google.cloud.discoveryengine.v1beta.Principal>(
+                    principals_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Principal,
+                com.google.cloud.discoveryengine.v1beta.Principal.Builder,
+                com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>
+            principalsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public java.util.List<com.google.cloud.discoveryengine.v1beta.Principal>
+            getPrincipalsList() {
+          if (principalsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(principals_);
+          } else {
+            return principalsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public int getPrincipalsCount() {
+          if (principalsBuilder_ == null) {
+            return principals_.size();
+          } else {
+            return principalsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Principal getPrincipals(int index) {
+          if (principalsBuilder_ == null) {
+            return principals_.get(index);
+          } else {
+            return principalsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder setPrincipals(
+            int index, com.google.cloud.discoveryengine.v1beta.Principal value) {
+          if (principalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensurePrincipalsIsMutable();
+            principals_.set(index, value);
+            onChanged();
+          } else {
+            principalsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder setPrincipals(
+            int index, com.google.cloud.discoveryengine.v1beta.Principal.Builder builderForValue) {
+          if (principalsBuilder_ == null) {
+            ensurePrincipalsIsMutable();
+            principals_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            principalsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder addPrincipals(com.google.cloud.discoveryengine.v1beta.Principal value) {
+          if (principalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensurePrincipalsIsMutable();
+            principals_.add(value);
+            onChanged();
+          } else {
+            principalsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder addPrincipals(
+            int index, com.google.cloud.discoveryengine.v1beta.Principal value) {
+          if (principalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensurePrincipalsIsMutable();
+            principals_.add(index, value);
+            onChanged();
+          } else {
+            principalsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder addPrincipals(
+            com.google.cloud.discoveryengine.v1beta.Principal.Builder builderForValue) {
+          if (principalsBuilder_ == null) {
+            ensurePrincipalsIsMutable();
+            principals_.add(builderForValue.build());
+            onChanged();
+          } else {
+            principalsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder addPrincipals(
+            int index, com.google.cloud.discoveryengine.v1beta.Principal.Builder builderForValue) {
+          if (principalsBuilder_ == null) {
+            ensurePrincipalsIsMutable();
+            principals_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            principalsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder addAllPrincipals(
+            java.lang.Iterable<? extends com.google.cloud.discoveryengine.v1beta.Principal>
+                values) {
+          if (principalsBuilder_ == null) {
+            ensurePrincipalsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, principals_);
+            onChanged();
+          } else {
+            principalsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder clearPrincipals() {
+          if (principalsBuilder_ == null) {
+            principals_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            principalsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public Builder removePrincipals(int index) {
+          if (principalsBuilder_ == null) {
+            ensurePrincipalsIsMutable();
+            principals_.remove(index);
+            onChanged();
+          } else {
+            principalsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Principal.Builder getPrincipalsBuilder(
+            int index) {
+          return internalGetPrincipalsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder getPrincipalsOrBuilder(
+            int index) {
+          if (principalsBuilder_ == null) {
+            return principals_.get(index);
+          } else {
+            return principalsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public java.util.List<? extends com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>
+            getPrincipalsOrBuilderList() {
+          if (principalsBuilder_ != null) {
+            return principalsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(principals_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Principal.Builder addPrincipalsBuilder() {
+          return internalGetPrincipalsFieldBuilder()
+              .addBuilder(com.google.cloud.discoveryengine.v1beta.Principal.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Principal.Builder addPrincipalsBuilder(
+            int index) {
+          return internalGetPrincipalsFieldBuilder()
+              .addBuilder(
+                  index, com.google.cloud.discoveryengine.v1beta.Principal.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * List of principals.
+         * </pre>
+         *
+         * <code>repeated .google.cloud.discoveryengine.v1beta.Principal principals = 1;</code>
+         */
+        public java.util.List<com.google.cloud.discoveryengine.v1beta.Principal.Builder>
+            getPrincipalsBuilderList() {
+          return internalGetPrincipalsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Principal,
+                com.google.cloud.discoveryengine.v1beta.Principal.Builder,
+                com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>
+            internalGetPrincipalsFieldBuilder() {
+          if (principalsBuilder_ == null) {
+            principalsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.Principal,
+                    com.google.cloud.discoveryengine.v1beta.Principal.Builder,
+                    com.google.cloud.discoveryengine.v1beta.PrincipalOrBuilder>(
+                    principals_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            principals_ = null;
+          }
+          return principalsBuilder_;
+        }
+
+        private boolean idpWide_;
+
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @return The idpWide.
+         */
+        @java.lang.Override
+        public boolean getIdpWide() {
+          return idpWide_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @param value The idpWide to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIdpWide(boolean value) {
+
+          idpWide_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * All users within the Identity Provider.
+         * </pre>
+         *
+         * <code>bool idp_wide = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearIdpWide() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          idpWide_ = false;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction)
+      private static final com.google.cloud.discoveryengine.v1beta.Document.AclInfo
+              .AccessRestriction
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AccessRestriction> PARSER =
+          new com.google.protobuf.AbstractParser<AccessRestriction>() {
+            @java.lang.Override
+            public AccessRestriction parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AccessRestriction> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AccessRestriction> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int READERS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+        readers_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+        getReadersList() {
+      return readers_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder>
+        getReadersOrBuilderList() {
+      return readers_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getReadersCount() {
+      return readers_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction getReaders(
+        int index) {
+      return readers_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Readers of the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder
+        getReadersOrBuilder(int index) {
+      return readers_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < readers_.size(); i++) {
+        output.writeMessage(1, readers_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < readers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, readers_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.Document.AclInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.Document.AclInfo other =
+          (com.google.cloud.discoveryengine.v1beta.Document.AclInfo) obj;
+
+      if (!getReadersList().equals(other.getReadersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getReadersCount() > 0) {
+        hash = (37 * hash) + READERS_FIELD_NUMBER;
+        hash = (53 * hash) + getReadersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ACL Information of the Document.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.AclInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Document.AclInfo)
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.class,
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1beta.Document.AclInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (readersBuilder_ == null) {
+          readers_ = java.util.Collections.emptyList();
+        } else {
+          readers_ = null;
+          readersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_AclInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo build() {
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfo result =
+            new com.google.cloud.discoveryengine.v1beta.Document.AclInfo(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo result) {
+        if (readersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            readers_ = java.util.Collections.unmodifiableList(readers_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.readers_ = readers_;
+        } else {
+          result.readers_ = readersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.discoveryengine.v1beta.Document.AclInfo result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.Document.AclInfo) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1beta.Document.AclInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1beta.Document.AclInfo other) {
+        if (other == com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance())
+          return this;
+        if (readersBuilder_ == null) {
+          if (!other.readers_.isEmpty()) {
+            if (readers_.isEmpty()) {
+              readers_ = other.readers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureReadersIsMutable();
+              readers_.addAll(other.readers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.readers_.isEmpty()) {
+            if (readersBuilder_.isEmpty()) {
+              readersBuilder_.dispose();
+              readersBuilder_ = null;
+              readers_ = other.readers_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              readersBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetReadersFieldBuilder()
+                      : null;
+            } else {
+              readersBuilder_.addAllMessages(other.readers_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction m =
+                      input.readMessage(
+                          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+                              .parser(),
+                          extensionRegistry);
+                  if (readersBuilder_ == null) {
+                    ensureReadersIsMutable();
+                    readers_.add(m);
+                  } else {
+                    readersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+          readers_ = java.util.Collections.emptyList();
+
+      private void ensureReadersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          readers_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>(
+                  readers_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction,
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder,
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder>
+          readersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+          getReadersList() {
+        if (readersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(readers_);
+        } else {
+          return readersBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public int getReadersCount() {
+        if (readersBuilder_ == null) {
+          return readers_.size();
+        } else {
+          return readersBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction getReaders(
+          int index) {
+        if (readersBuilder_ == null) {
+          return readers_.get(index);
+        } else {
+          return readersBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder setReaders(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction value) {
+        if (readersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReadersIsMutable();
+          readers_.set(index, value);
+          onChanged();
+        } else {
+          readersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder setReaders(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+              builderForValue) {
+        if (readersBuilder_ == null) {
+          ensureReadersIsMutable();
+          readers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          readersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder addReaders(
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction value) {
+        if (readersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReadersIsMutable();
+          readers_.add(value);
+          onChanged();
+        } else {
+          readersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder addReaders(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction value) {
+        if (readersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureReadersIsMutable();
+          readers_.add(index, value);
+          onChanged();
+        } else {
+          readersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder addReaders(
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+              builderForValue) {
+        if (readersBuilder_ == null) {
+          ensureReadersIsMutable();
+          readers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          readersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder addReaders(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+              builderForValue) {
+        if (readersBuilder_ == null) {
+          ensureReadersIsMutable();
+          readers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          readersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder addAllReaders(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction>
+              values) {
+        if (readersBuilder_ == null) {
+          ensureReadersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, readers_);
+          onChanged();
+        } else {
+          readersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder clearReaders() {
+        if (readersBuilder_ == null) {
+          readers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          readersBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public Builder removeReaders(int index) {
+        if (readersBuilder_ == null) {
+          ensureReadersIsMutable();
+          readers_.remove(index);
+          onChanged();
+        } else {
+          readersBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+          getReadersBuilder(int index) {
+        return internalGetReadersFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder
+          getReadersOrBuilder(int index) {
+        if (readersBuilder_ == null) {
+          return readers_.get(index);
+        } else {
+          return readersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo
+                      .AccessRestrictionOrBuilder>
+          getReadersOrBuilderList() {
+        if (readersBuilder_ != null) {
+          return readersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(readers_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+          addReadersBuilder() {
+        return internalGetReadersFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder
+          addReadersBuilder(int index) {
+        return internalGetReadersFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Readers of the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction readers = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder>
+          getReadersBuilderList() {
+        return internalGetReadersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction,
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction.Builder,
+              com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestrictionOrBuilder>
+          internalGetReadersFieldBuilder() {
+        if (readersBuilder_ == null) {
+          readersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction,
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo.AccessRestriction
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.Document.AclInfo
+                      .AccessRestrictionOrBuilder>(
+                  readers_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          readers_ = null;
+        }
+        return readersBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Document.AclInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Document.AclInfo)
+    private static final com.google.cloud.discoveryengine.v1beta.Document.AclInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.Document.AclInfo();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.AclInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AclInfo> PARSER =
+        new com.google.protobuf.AbstractParser<AclInfo>() {
+          @java.lang.Override
+          public AclInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AclInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AclInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface IndexStatusOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
@@ -1377,6 +3811,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1391,6 +3827,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1405,6 +3843,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1470,6 +3910,34 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.rpc.Status error_samples = 2;</code>
      */
     com.google.rpc.StatusOrBuilder getErrorSamplesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The pendingMessage.
+     */
+    java.lang.String getPendingMessage();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for pendingMessage.
+     */
+    com.google.protobuf.ByteString getPendingMessageBytes();
   }
 
   /**
@@ -1504,6 +3972,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
 
     private IndexStatus() {
       errorSamples_ = java.util.Collections.emptyList();
+      pendingMessage_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1531,6 +4000,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1548,6 +4019,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1565,6 +4038,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The time when the document was indexed.
      * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -1654,6 +4129,61 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       return errorSamples_.get(index);
     }
 
+    public static final int PENDING_MESSAGE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pendingMessage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The pendingMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getPendingMessage() {
+      java.lang.Object ref = pendingMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pendingMessage_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The message indicates the document index is in progress.
+     * If this field is populated, the document index is pending.
+     * </pre>
+     *
+     * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for pendingMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPendingMessageBytes() {
+      java.lang.Object ref = pendingMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pendingMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1674,6 +4204,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < errorSamples_.size(); i++) {
         output.writeMessage(2, errorSamples_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pendingMessage_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, pendingMessage_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1688,6 +4221,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
       for (int i = 0; i < errorSamples_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, errorSamples_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pendingMessage_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, pendingMessage_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1710,6 +4246,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (!getIndexTime().equals(other.getIndexTime())) return false;
       }
       if (!getErrorSamplesList().equals(other.getErrorSamplesList())) return false;
+      if (!getPendingMessage().equals(other.getPendingMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1729,6 +4266,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + ERROR_SAMPLES_FIELD_NUMBER;
         hash = (53 * hash) + getErrorSamplesList().hashCode();
       }
+      hash = (37 * hash) + PENDING_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPendingMessage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1892,6 +4431,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           errorSamplesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        pendingMessage_ = "";
         return this;
       }
 
@@ -1949,6 +4489,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pendingMessage_ = pendingMessage_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1996,6 +4539,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             }
           }
         }
+        if (!other.getPendingMessage().isEmpty()) {
+          pendingMessage_ = other.pendingMessage_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2041,6 +4589,12 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  pendingMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2073,6 +4627,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2089,6 +4645,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2111,6 +4669,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2135,6 +4695,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2156,6 +4718,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2185,6 +4749,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2206,6 +4772,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2222,6 +4790,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2242,6 +4812,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * The time when the document was indexed.
        * If this field is populated, it means the document has been indexed.
+       * While documents typically become searchable within seconds of indexing,
+       * it can sometimes take up to a few hours.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp index_time = 1;</code>
@@ -2643,6 +5215,122 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         return errorSamplesBuilder_;
       }
 
+      private java.lang.Object pendingMessage_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The pendingMessage.
+       */
+      public java.lang.String getPendingMessage() {
+        java.lang.Object ref = pendingMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pendingMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for pendingMessage.
+       */
+      public com.google.protobuf.ByteString getPendingMessageBytes() {
+        java.lang.Object ref = pendingMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pendingMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The pendingMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pendingMessage_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPendingMessage() {
+        pendingMessage_ = getDefaultInstance().getPendingMessage();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The message indicates the document index is in progress.
+       * If this field is populated, the document index is pending.
+       * </pre>
+       *
+       * <code>string pending_message = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for pendingMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pendingMessage_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Document.IndexStatus)
     }
 
@@ -2963,7 +5651,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2990,7 +5678,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * Immutable. The identifier of the document.
    *
    * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-   * standard with a length limit of 63 characters.
+   * standard with a length limit of 128 characters.
    * </pre>
    *
    * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -3070,9 +5758,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -3088,9 +5775,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -3108,9 +5794,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The unstructured data linked to this document. Content must be set if this
-   * document is under a
-   * `CONTENT_REQUIRED` data store.
+   * The unstructured data linked to this document. Content can only be set
+   * and must be set if this document is under a `CONTENT_REQUIRED` data store.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -3245,6 +5930,59 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         : derivedStructData_;
   }
 
+  public static final int ACL_INFO_FIELD_NUMBER = 11;
+  private com.google.cloud.discoveryengine.v1beta.Document.AclInfo aclInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return Whether the aclInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasAclInfo() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   *
+   * @return The aclInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.AclInfo getAclInfo() {
+    return aclInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance()
+        : aclInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Access control information for the document.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder getAclInfoOrBuilder() {
+    return aclInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance()
+        : aclInfo_;
+  }
+
   public static final int INDEX_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp indexTime_;
 
@@ -3252,11 +5990,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3266,18 +6007,21 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIndexTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3294,11 +6038,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The last time the document was indexed. If this field is set,
-   * the document could be returned in search results.
+   * Output only. The time when the document was last indexed.
    *
-   * This field is OUTPUT_ONLY. If this field is not populated, it means the
-   * document has never been indexed.
+   * If this field is populated, it means the document has been indexed.
+   * While documents typically become searchable within seconds of indexing,
+   * it can sometimes take up to a few hours.
+   *
+   * If this field is not populated, it means the document has never been
+   * indexed.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3321,7 +6068,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>
@@ -3332,7 +6080,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIndexStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -3344,7 +6092,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>
@@ -3369,7 +6118,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * * If document is indexed successfully, the index_time field is populated.
    * * Otherwise, if document is not indexed due to errors, the error_samples
    * field is populated.
-   * * Otherwise, index_status is unset.
+   * * Otherwise, if document's index is in progress, the pending_message field
+   * is populated.
    * </pre>
    *
    * <code>
@@ -3423,9 +6173,12 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       output.writeMessage(10, getContent());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(13, getIndexTime());
+      output.writeMessage(11, getAclInfo());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(13, getIndexTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(15, getIndexStatus());
     }
     getUnknownFields().writeTo(output);
@@ -3464,9 +6217,12 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getContent());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getIndexTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getAclInfo());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getIndexTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getIndexStatus());
     }
     size += getUnknownFields().getSerializedSize();
@@ -3496,6 +6252,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (hasDerivedStructData() != other.hasDerivedStructData()) return false;
     if (hasDerivedStructData()) {
       if (!getDerivedStructData().equals(other.getDerivedStructData())) return false;
+    }
+    if (hasAclInfo() != other.hasAclInfo()) return false;
+    if (hasAclInfo()) {
+      if (!getAclInfo().equals(other.getAclInfo())) return false;
     }
     if (hasIndexTime() != other.hasIndexTime()) return false;
     if (hasIndexTime()) {
@@ -3542,6 +6302,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (hasDerivedStructData()) {
       hash = (37 * hash) + DERIVED_STRUCT_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDerivedStructData().hashCode();
+    }
+    if (hasAclInfo()) {
+      hash = (37 * hash) + ACL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAclInfo().hashCode();
     }
     if (hasIndexTime()) {
       hash = (37 * hash) + INDEX_TIME_FIELD_NUMBER;
@@ -3707,6 +6471,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetContentFieldBuilder();
         internalGetDerivedStructDataFieldBuilder();
+        internalGetAclInfoFieldBuilder();
         internalGetIndexTimeFieldBuilder();
         internalGetIndexStatusFieldBuilder();
       }
@@ -3732,6 +6497,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (derivedStructDataBuilder_ != null) {
         derivedStructDataBuilder_.dispose();
         derivedStructDataBuilder_ = null;
+      }
+      aclInfo_ = null;
+      if (aclInfoBuilder_ != null) {
+        aclInfoBuilder_.dispose();
+        aclInfoBuilder_ = null;
       }
       indexTime_ = null;
       if (indexTimeBuilder_ != null) {
@@ -3807,13 +6577,17 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
+        result.aclInfo_ = aclInfoBuilder_ == null ? aclInfo_ : aclInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.indexStatus_ =
             indexStatusBuilder_ == null ? indexStatus_ : indexStatusBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3864,6 +6638,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDerivedStructData()) {
         mergeDerivedStructData(other.getDerivedStructData());
+      }
+      if (other.hasAclInfo()) {
+        mergeAclInfo(other.getAclInfo());
       }
       if (other.hasIndexTime()) {
         mergeIndexTime(other.getIndexTime());
@@ -3966,18 +6743,24 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(internalGetAclInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             case 106:
               {
                 input.readMessage(
                     internalGetIndexTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(
                     internalGetIndexStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
             default:
@@ -4540,7 +7323,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4566,7 +7349,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4592,7 +7375,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4617,7 +7400,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4638,7 +7421,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * Immutable. The identifier of the document.
      *
      * Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034)
-     * standard with a length limit of 63 characters.
+     * standard with a length limit of 128 characters.
      * </pre>
      *
      * <code>string id = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4779,9 +7562,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4796,9 +7578,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4819,9 +7600,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4844,9 +7624,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4867,9 +7646,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4898,9 +7676,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4920,9 +7697,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4937,9 +7713,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -4958,9 +7733,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unstructured data linked to this document. Content must be set if this
-     * document is under a
-     * `CONTENT_REQUIRED` data store.
+     * The unstructured data linked to this document. Content can only be set
+     * and must be set if this document is under a `CONTENT_REQUIRED` data store.
      * </pre>
      *
      * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
@@ -5334,6 +8108,202 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       return derivedStructDataBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.Document.AclInfo aclInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo,
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder>
+        aclInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     *
+     * @return Whether the aclInfo field is set.
+     */
+    public boolean hasAclInfo() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     *
+     * @return The aclInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfo getAclInfo() {
+      if (aclInfoBuilder_ == null) {
+        return aclInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance()
+            : aclInfo_;
+      } else {
+        return aclInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public Builder setAclInfo(com.google.cloud.discoveryengine.v1beta.Document.AclInfo value) {
+      if (aclInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aclInfo_ = value;
+      } else {
+        aclInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public Builder setAclInfo(
+        com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder builderForValue) {
+      if (aclInfoBuilder_ == null) {
+        aclInfo_ = builderForValue.build();
+      } else {
+        aclInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public Builder mergeAclInfo(com.google.cloud.discoveryengine.v1beta.Document.AclInfo value) {
+      if (aclInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && aclInfo_ != null
+            && aclInfo_
+                != com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance()) {
+          getAclInfoBuilder().mergeFrom(value);
+        } else {
+          aclInfo_ = value;
+        }
+      } else {
+        aclInfoBuilder_.mergeFrom(value);
+      }
+      if (aclInfo_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public Builder clearAclInfo() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      aclInfo_ = null;
+      if (aclInfoBuilder_ != null) {
+        aclInfoBuilder_.dispose();
+        aclInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder getAclInfoBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetAclInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder getAclInfoOrBuilder() {
+      if (aclInfoBuilder_ != null) {
+        return aclInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return aclInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.AclInfo.getDefaultInstance()
+            : aclInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Access control information for the document.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.AclInfo acl_info = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo,
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder>
+        internalGetAclInfoFieldBuilder() {
+      if (aclInfoBuilder_ == null) {
+        aclInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo,
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.Document.AclInfoOrBuilder>(
+                getAclInfo(), getParentForChildren(), isClean());
+        aclInfo_ = null;
+      }
+      return aclInfoBuilder_;
+    }
+
     private com.google.protobuf.Timestamp indexTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -5345,11 +8315,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5359,18 +8332,21 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * @return Whether the indexTime field is set.
      */
     public boolean hasIndexTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5391,11 +8367,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5411,7 +8390,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         indexTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5420,11 +8399,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5437,7 +8419,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         indexTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5446,11 +8428,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5459,7 +8444,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeIndexTime(com.google.protobuf.Timestamp value) {
       if (indexTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && indexTime_ != null
             && indexTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getIndexTimeBuilder().mergeFrom(value);
@@ -5470,7 +8455,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         indexTimeBuilder_.mergeFrom(value);
       }
       if (indexTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -5480,11 +8465,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5492,7 +8480,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearIndexTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       indexTime_ = null;
       if (indexTimeBuilder_ != null) {
         indexTimeBuilder_.dispose();
@@ -5506,11 +8494,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5518,7 +8509,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getIndexTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetIndexTimeFieldBuilder().getBuilder();
     }
@@ -5527,11 +8518,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5550,11 +8544,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The last time the document was indexed. If this field is set,
-     * the document could be returned in search results.
+     * Output only. The time when the document was last indexed.
      *
-     * This field is OUTPUT_ONLY. If this field is not populated, it means the
-     * document has never been indexed.
+     * If this field is populated, it means the document has been indexed.
+     * While documents typically become searchable within seconds of indexing,
+     * it can sometimes take up to a few hours.
+     *
+     * If this field is not populated, it means the document has never been
+     * indexed.
      * </pre>
      *
      * <code>
@@ -5594,7 +8591,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5604,7 +8602,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * @return Whether the indexStatus field is set.
      */
     public boolean hasIndexStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -5616,7 +8614,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5644,7 +8643,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5661,7 +8661,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         indexStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5675,7 +8675,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5689,7 +8690,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         indexStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5703,7 +8704,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5713,7 +8715,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     public Builder mergeIndexStatus(
         com.google.cloud.discoveryengine.v1beta.Document.IndexStatus value) {
       if (indexStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && indexStatus_ != null
             && indexStatus_
                 != com.google.cloud.discoveryengine.v1beta.Document.IndexStatus
@@ -5726,7 +8728,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         indexStatusBuilder_.mergeFrom(value);
       }
       if (indexStatus_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -5741,7 +8743,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5749,7 +8752,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearIndexStatus() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       indexStatus_ = null;
       if (indexStatusBuilder_ != null) {
         indexStatusBuilder_.dispose();
@@ -5768,7 +8771,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5777,7 +8781,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.Document.IndexStatus.Builder
         getIndexStatusBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetIndexStatusFieldBuilder().getBuilder();
     }
@@ -5791,7 +8795,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>
@@ -5818,7 +8823,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * * If document is indexed successfully, the index_time field is populated.
      * * Otherwise, if document is not indexed due to errors, the error_samples
      * field is populated.
-     * * Otherwise, index_status is unset.
+     * * Otherwise, if document's index is in progress, the pending_message field
+     * is populated.
      * </pre>
      *
      * <code>

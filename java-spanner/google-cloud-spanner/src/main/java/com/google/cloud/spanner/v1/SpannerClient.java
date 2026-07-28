@@ -35,6 +35,7 @@ import com.google.spanner.v1.BatchCreateSessionsResponse;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.BeginTransactionRequest;
+import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -43,6 +44,7 @@ import com.google.spanner.v1.DeleteSessionRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.FetchCacheUpdateRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
 import com.google.spanner.v1.ListSessionsResponse;
@@ -62,6 +64,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -368,6 +372,18 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> FetchCacheUpdate</td>
+ *      <td><p> Retrieves a cache update for a given database.
+ * <p>  This RPC can be used to warm up the client cache by fetching key recipes and server information for a given database. It is recommended to call this RPC at the beginning of the client's lifecycle, prior to any other data plane operations.
+ * <p>  The cache update is returned as a stream because the response can be too large to fit into a single `CacheUpdate` message.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchCacheUpdateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -421,9 +437,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SpannerClient implements BackgroundResource {
-  private final SpannerSettings settings;
+  private final @Nullable SpannerSettings settings;
   private final SpannerStub stub;
 
   /** Constructs an instance of SpannerClient with default settings. */
@@ -461,7 +478,7 @@ public class SpannerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SpannerSettings getSettings() {
+  public final @Nullable SpannerSettings getSettings() {
     return settings;
   }
 
@@ -504,7 +521,7 @@ public class SpannerClient implements BackgroundResource {
    * @param database Required. The database in which the new session is created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session createSession(DatabaseName database) {
+  public final Session createSession(@Nullable DatabaseName database) {
     CreateSessionRequest request =
         CreateSessionRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -669,7 +686,7 @@ public class SpannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateSessionsResponse batchCreateSessions(
-      DatabaseName database, int sessionCount) {
+      @Nullable DatabaseName database, int sessionCount) {
     BatchCreateSessionsRequest request =
         BatchCreateSessionsRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -807,7 +824,7 @@ public class SpannerClient implements BackgroundResource {
    * @param name Required. The name of the session to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session getSession(SessionName name) {
+  public final Session getSession(@Nullable SessionName name) {
     GetSessionRequest request =
         GetSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSession(request);
@@ -922,7 +939,7 @@ public class SpannerClient implements BackgroundResource {
    * @param database Required. The database in which to list sessions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSessionsPagedResponse listSessions(DatabaseName database) {
+  public final ListSessionsPagedResponse listSessions(@Nullable DatabaseName database) {
     ListSessionsRequest request =
         ListSessionsRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -1085,7 +1102,7 @@ public class SpannerClient implements BackgroundResource {
    * @param name Required. The name of the session to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSession(SessionName name) {
+  public final void deleteSession(@Nullable SessionName name) {
     DeleteSessionRequest request =
         DeleteSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSession(request);
@@ -1591,7 +1608,8 @@ public class SpannerClient implements BackgroundResource {
    * @param options Required. Options for the new transaction.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Transaction beginTransaction(SessionName session, TransactionOptions options) {
+  public final Transaction beginTransaction(
+      @Nullable SessionName session, TransactionOptions options) {
     BeginTransactionRequest request =
         BeginTransactionRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -1739,7 +1757,7 @@ public class SpannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CommitResponse commit(
-      SessionName session, ByteString transactionId, List<Mutation> mutations) {
+      @Nullable SessionName session, ByteString transactionId, List<Mutation> mutations) {
     CommitRequest request =
         CommitRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -1793,7 +1811,9 @@ public class SpannerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CommitResponse commit(
-      SessionName session, TransactionOptions singleUseTransaction, List<Mutation> mutations) {
+      @Nullable SessionName session,
+      TransactionOptions singleUseTransaction,
+      List<Mutation> mutations) {
     CommitRequest request =
         CommitRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -2027,7 +2047,7 @@ public class SpannerClient implements BackgroundResource {
    * @param transactionId Required. The transaction to roll back.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void rollback(SessionName session, ByteString transactionId) {
+  public final void rollback(@Nullable SessionName session, ByteString transactionId) {
     RollbackRequest request =
         RollbackRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -2363,6 +2383,44 @@ public class SpannerClient implements BackgroundResource {
     return stub.batchWriteCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a cache update for a given database.
+   *
+   * <p>This RPC can be used to warm up the client cache by fetching key recipes and server
+   * information for a given database. It is recommended to call this RPC at the beginning of the
+   * client's lifecycle, prior to any other data plane operations.
+   *
+   * <p>The cache update is returned as a stream because the response can be too large to fit into a
+   * single `CacheUpdate` message.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   FetchCacheUpdateRequest request =
+   *       FetchCacheUpdateRequest.newBuilder()
+   *           .setDatabase(DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]").toString())
+   *           .setMaxRecipeCount(-423637479)
+   *           .setMaxRangeCount(1695701298)
+   *           .build();
+   *   ServerStream<CacheUpdate> stream = spannerClient.fetchCacheUpdateCallable().call(request);
+   *   for (CacheUpdate response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<FetchCacheUpdateRequest, CacheUpdate>
+      fetchCacheUpdateCallable() {
+    return stub.fetchCacheUpdateCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2421,8 +2479,8 @@ public class SpannerClient implements BackgroundResource {
       extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
 
     private ListSessionsPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       super(context, response);
     }
 
@@ -2432,14 +2490,14 @@ public class SpannerClient implements BackgroundResource {
 
     @Override
     protected ListSessionsPage createPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       return new ListSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionsPage> createPageAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
         ApiFuture<ListSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2453,7 +2511,8 @@ public class SpannerClient implements BackgroundResource {
           ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
-    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
+    private ListSessionsFixedSizeCollection(
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2463,7 +2522,7 @@ public class SpannerClient implements BackgroundResource {
 
     @Override
     protected ListSessionsFixedSizeCollection createCollection(
-        List<ListSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -142,4 +142,26 @@ public class MockReferenceListServiceImpl extends ReferenceListServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void verifyReferenceList(
+      VerifyReferenceListRequest request,
+      StreamObserver<VerifyReferenceListResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VerifyReferenceListResponse) {
+      requests.add(request);
+      responseObserver.onNext(((VerifyReferenceListResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifyReferenceList, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VerifyReferenceListResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -13,12 +13,22 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
       [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
       [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
+      [[ "${pomFile}" =~ .*java-common-protos.* ]] || \
+      [[ "${pomFile}" =~ .*java-showcase.* ]] || \
+      [[ "${pomFile}" =~ .*java-iam.* ]] || \
       [[ "${pomFile}" =~ .*java-spanner.* ]] || \
       [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
       [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
+      [[ "${pomFile}" =~ .*grpc-gcp.* ]] || \
       [[ "${pomFile}" =~ .*java-storage.* ]] || \
       [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
+      [[ "${pomFile}" =~ .*java-pubsub.* ]] || \
+      [[ "${pomFile}" =~ .*java-bigtable.* ]] || \
+      [[ "${pomFile}" =~ .*java-firestore.* ]] || \
+      [[ "${pomFile}" =~ .*java-cloud-bom.* ]] || \
+      [[ "${pomFile}" =~ .*java-shared-config.* ]] || \
       [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
+      [[ "${pomFile}" =~ .*java-compute.* ]] || \
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi

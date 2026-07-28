@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +86,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CmsMetadataValueServiceSettings
     extends ClientSettings<CmsMetadataValueServiceSettings> {
@@ -102,6 +105,22 @@ public class CmsMetadataValueServiceSettings
       listCmsMetadataValuesSettings() {
     return ((CmsMetadataValueServiceStubSettings) getStubSettings())
         .listCmsMetadataValuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesSettings() {
+    return ((CmsMetadataValueServiceStubSettings) getStubSettings())
+        .batchActivateCmsMetadataValuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesSettings() {
+    return ((CmsMetadataValueServiceStubSettings) getStubSettings())
+        .batchDeactivateCmsMetadataValuesSettings();
   }
 
   public static final CmsMetadataValueServiceSettings create(
@@ -149,7 +168,7 @@ public class CmsMetadataValueServiceSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -170,7 +189,7 @@ public class CmsMetadataValueServiceSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(CmsMetadataValueServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -215,6 +234,20 @@ public class CmsMetadataValueServiceSettings
             ListCmsMetadataValuesPagedResponse>
         listCmsMetadataValuesSettings() {
       return getStubSettingsBuilder().listCmsMetadataValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+        batchActivateCmsMetadataValuesSettings() {
+      return getStubSettingsBuilder().batchActivateCmsMetadataValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+        batchDeactivateCmsMetadataValuesSettings() {
+      return getStubSettingsBuilder().batchDeactivateCmsMetadataValuesSettings();
     }
 
     @Override

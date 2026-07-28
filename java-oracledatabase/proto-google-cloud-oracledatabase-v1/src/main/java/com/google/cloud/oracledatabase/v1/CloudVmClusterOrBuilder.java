@@ -525,4 +525,38 @@ public interface CloudVmClusterOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.IdentityConnectorOrBuilder getIdentityConnectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of ExascaleDbStorageVault associated with the VM
+   * Cluster. Format:
+   * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+   * </pre>
+   *
+   * <code>
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The exascaleDbStorageVault.
+   */
+  java.lang.String getExascaleDbStorageVault();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of ExascaleDbStorageVault associated with the VM
+   * Cluster. Format:
+   * projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
+   * </pre>
+   *
+   * <code>
+   * string exascale_db_storage_vault = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for exascaleDbStorageVault.
+   */
+  com.google.protobuf.ByteString getExascaleDbStorageVaultBytes();
 }

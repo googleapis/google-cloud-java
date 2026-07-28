@@ -264,8 +264,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * Highcpu machine with 8 CPUs.
      * </pre>
      *
-     * <code>N1_HIGHCPU_8 = 1;</code>
+     * <code>N1_HIGHCPU_8 = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     N1_HIGHCPU_8(1),
     /**
      *
@@ -274,8 +275,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * Highcpu machine with 32 CPUs.
      * </pre>
      *
-     * <code>N1_HIGHCPU_32 = 2;</code>
+     * <code>N1_HIGHCPU_32 = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     N1_HIGHCPU_32(2),
     /**
      *
@@ -307,6 +309,16 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>E2_MEDIUM = 7;</code>
      */
     E2_MEDIUM(7),
+    /**
+     *
+     *
+     * <pre>
+     * E2 machine with 2 CPUs.
+     * </pre>
+     *
+     * <code>E2_STANDARD_2 = 11;</code>
+     */
+    E2_STANDARD_2(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -338,9 +350,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * Highcpu machine with 8 CPUs.
      * </pre>
      *
-     * <code>N1_HIGHCPU_8 = 1;</code>
+     * <code>N1_HIGHCPU_8 = 1 [deprecated = true];</code>
      */
-    public static final int N1_HIGHCPU_8_VALUE = 1;
+    @java.lang.Deprecated public static final int N1_HIGHCPU_8_VALUE = 1;
 
     /**
      *
@@ -349,9 +361,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * Highcpu machine with 32 CPUs.
      * </pre>
      *
-     * <code>N1_HIGHCPU_32 = 2;</code>
+     * <code>N1_HIGHCPU_32 = 2 [deprecated = true];</code>
      */
-    public static final int N1_HIGHCPU_32_VALUE = 2;
+    @java.lang.Deprecated public static final int N1_HIGHCPU_32_VALUE = 2;
 
     /**
      *
@@ -385,6 +397,17 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>E2_MEDIUM = 7;</code>
      */
     public static final int E2_MEDIUM_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * E2 machine with 2 CPUs.
+     * </pre>
+     *
+     * <code>E2_STANDARD_2 = 11;</code>
+     */
+    public static final int E2_STANDARD_2_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -422,6 +445,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
           return E2_HIGHCPU_32;
         case 7:
           return E2_MEDIUM;
+        case 11:
+          return E2_STANDARD_2;
         default:
           return null;
       }
@@ -2227,7 +2252,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2254,7 +2279,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -4416,7 +4441,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4442,7 +4467,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4468,7 +4493,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4493,7 +4518,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4514,7 +4539,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2569
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2573
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */

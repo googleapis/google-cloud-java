@@ -157,6 +157,67 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.AliasIpRange> getAliasIpv6RangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  com.google.cloud.compute.v1.AliasIpRange getAliasIpv6Ranges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  int getAliasIpv6RangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
+      getAliasIpv6RangesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  com.google.cloud.compute.v1.AliasIpRangeOrBuilder getAliasIpv6RangesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If true, DNS resolution will be enabled over this interface. Only valid
    * with network_attachment.
    * </pre>
@@ -838,6 +899,54 @@ public interface NetworkInterfaceOrBuilder
    * @return The queueCount.
    */
   int getQueueCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  boolean hasServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  java.lang.String getServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  com.google.protobuf.ByteString getServiceClassIdBytes();
 
   /**
    *

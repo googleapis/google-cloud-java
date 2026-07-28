@@ -56,6 +56,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     timeZone_ = "";
     emptyReason_ = "";
     samplingMetadatas_ = java.util.Collections.emptyList();
+    section_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2961,12 +2962,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -2983,12 +2984,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -3005,12 +3006,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -3026,12 +3027,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -3047,12 +3048,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -3063,6 +3064,43 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
   public com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder getSamplingMetadatasOrBuilder(
       int index) {
     return samplingMetadatas_.get(index);
+  }
+
+  public static final int SECTION_FIELD_NUMBER = 10;
+  private int section_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the type of data in the report.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+   *
+   * @return The enum numeric value on the wire for section.
+   */
+  @java.lang.Override
+  public int getSectionValue() {
+    return section_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the type of data in the report.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+   *
+   * @return The section.
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1alpha.Section getSection() {
+    com.google.analytics.data.v1alpha.Section result =
+        com.google.analytics.data.v1alpha.Section.forNumber(section_);
+    return result == null ? com.google.analytics.data.v1alpha.Section.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3100,6 +3138,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < samplingMetadatas_.size(); i++) {
       output.writeMessage(9, samplingMetadatas_.get(i));
     }
+    if (section_ != com.google.analytics.data.v1alpha.Section.SECTION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, section_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3132,6 +3173,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < samplingMetadatas_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, samplingMetadatas_.get(i));
+    }
+    if (section_ != com.google.analytics.data.v1alpha.Section.SECTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, section_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3172,6 +3216,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (getSubjectToThresholding() != other.getSubjectToThresholding()) return false;
     }
     if (!getSamplingMetadatasList().equals(other.getSamplingMetadatasList())) return false;
+    if (section_ != other.section_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3209,6 +3254,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SAMPLING_METADATAS_FIELD_NUMBER;
       hash = (53 * hash) + getSamplingMetadatasList().hashCode();
     }
+    hash = (37 * hash) + SECTION_FIELD_NUMBER;
+    hash = (53 * hash) + section_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3376,6 +3423,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         samplingMetadatasBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      section_ = 0;
       return this;
     }
 
@@ -3453,6 +3501,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         result.subjectToThresholding_ = subjectToThresholding_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.section_ = section_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3519,6 +3570,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
             samplingMetadatasBuilder_.addAllMessages(other.samplingMetadatas_);
           }
         }
+      }
+      if (other.section_ != 0) {
+        setSectionValue(other.getSectionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3598,6 +3652,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 74
+            case 80:
+              {
+                section_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4528,12 +4588,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4553,12 +4613,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4577,12 +4637,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4601,12 +4661,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4632,12 +4692,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4660,12 +4720,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4690,12 +4750,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4721,12 +4781,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4749,12 +4809,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4777,12 +4837,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4805,12 +4865,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4832,12 +4892,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4859,12 +4919,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4880,12 +4940,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4905,12 +4965,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4930,12 +4990,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4952,12 +5012,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -4975,12 +5035,12 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If this report's results are
+     * If this report results is
      * [sampled](https://support.google.com/analytics/answer/13331292), this
      * describes the percentage of events used in this report. One
      * `samplingMetadatas` is populated for each date range. Each
-     * `samplingMetadatas` corresponds to a date range in the order that date
-     * ranges were specified in the request.
+     * `samplingMetadatas` corresponds to a date range in order that date ranges
+     * were specified in the request.
      *
      * However if the results are not sampled, this field will not be defined.
      * </pre>
@@ -5010,6 +5070,101 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         samplingMetadatas_ = null;
       }
       return samplingMetadatasBuilder_;
+    }
+
+    private int section_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the type of data in the report.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+     *
+     * @return The enum numeric value on the wire for section.
+     */
+    @java.lang.Override
+    public int getSectionValue() {
+      return section_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the type of data in the report.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+     *
+     * @param value The enum numeric value on the wire for section to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSectionValue(int value) {
+      section_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the type of data in the report.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+     *
+     * @return The section.
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1alpha.Section getSection() {
+      com.google.analytics.data.v1alpha.Section result =
+          com.google.analytics.data.v1alpha.Section.forNumber(section_);
+      return result == null ? com.google.analytics.data.v1alpha.Section.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the type of data in the report.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+     *
+     * @param value The section to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSection(com.google.analytics.data.v1alpha.Section value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      section_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies the type of data in the report.
+     * </pre>
+     *
+     * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSection() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      section_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.analytics.data.v1alpha.ResponseMetaData)

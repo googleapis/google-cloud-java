@@ -100,6 +100,79 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      * @return The bytes for queryText.
      */
     com.google.protobuf.ByteString getQueryTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext>
+        getSearchContextsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+        getSearchContexts(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getSearchContextsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                    .SearchContextOrBuilder>
+        getSearchContextsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContextOrBuilder
+        getSearchContextsOrBuilder(int index);
   }
 
   /**
@@ -134,6 +207,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
     private SuggestedQuery() {
       queryText_ = "";
+      searchContexts_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -149,6 +223,895 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           .ensureFieldAccessorsInitialized(
               com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.class,
               com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder.class);
+    }
+
+    public interface SearchContextOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The key of the search context, e.g. "application name".
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The key.
+       */
+      java.lang.String getKey();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The key of the search context, e.g. "application name".
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for key.
+       */
+      com.google.protobuf.ByteString getKeyBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the search context, e.g. "DesignApp".
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The value.
+       */
+      java.lang.String getValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the search context, e.g. "DesignApp".
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for value.
+       */
+      com.google.protobuf.ByteString getValueBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Search context is information useful for knowledge search that helps
+     * enrich the query.
+     * Example:
+     * search_context {
+     * key: "application name"
+     * value: "DesignApp"
+     * }
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext}
+     */
+    public static final class SearchContext extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+        SearchContextOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SearchContext");
+      }
+
+      // Use SearchContext.newBuilder() to construct.
+      private SearchContext(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SearchContext() {
+        key_ = "";
+        value_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                    .class,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                    .Builder.class);
+      }
+
+      public static final int KEY_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object key_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The key of the search context, e.g. "application name".
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The key.
+       */
+      @java.lang.Override
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The key of the search context, e.g. "application name".
+       * </pre>
+       *
+       * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for key.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VALUE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object value_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the search context, e.g. "DesignApp".
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The value of the search context, e.g. "DesignApp".
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext other =
+            (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext) obj;
+
+        if (!getKey().equals(other.getKey())) return false;
+        if (!getValue().equals(other.getValue())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getKey().hashCode();
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getValue().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Search context is information useful for knowledge search that helps
+       * enrich the query.
+       * Example:
+       * search_context {
+       * key: "application name"
+       * value: "DesignApp"
+       * }
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContextOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                      .class,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          key_ = "";
+          value_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+            build() {
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext result =
+              new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.key_ = key_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.value_ = value_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                  .getDefaultInstance()) return this;
+          if (!other.getKey().isEmpty()) {
+            key_ = other.key_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getValue().isEmpty()) {
+            value_ = other.value_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    key_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    value_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object key_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The key of the search context, e.g. "application name".
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The key.
+         */
+        public java.lang.String getKey() {
+          java.lang.Object ref = key_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            key_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The key of the search context, e.g. "application name".
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for key.
+         */
+        public com.google.protobuf.ByteString getKeyBytes() {
+          java.lang.Object ref = key_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            key_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The key of the search context, e.g. "application name".
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          key_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The key of the search context, e.g. "application name".
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearKey() {
+          key_ = getDefaultInstance().getKey();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The key of the search context, e.g. "application name".
+         * </pre>
+         *
+         * <code>string key = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for key to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          key_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object value_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the search context, e.g. "DesignApp".
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The value.
+         */
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the search context, e.g. "DesignApp".
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for value.
+         */
+        public com.google.protobuf.ByteString getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the search context, e.g. "DesignApp".
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValue(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          value_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the search context, e.g. "DesignApp".
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearValue() {
+          value_ = getDefaultInstance().getValue();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The value of the search context, e.g. "DesignApp".
+         * </pre>
+         *
+         * <code>string value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for value to set.
+         * @return This builder for chaining.
+         */
+        public Builder setValueBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          value_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext)
+      private static final com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext();
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContext
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SearchContext> PARSER =
+          new com.google.protobuf.AbstractParser<SearchContext>() {
+            @java.lang.Override
+            public SearchContext parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SearchContext> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SearchContext> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int QUERY_TEXT_FIELD_NUMBER = 1;
@@ -204,6 +1167,102 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       }
     }
 
+    public static final int SEARCH_CONTEXTS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext>
+        searchContexts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext>
+        getSearchContextsList() {
+      return searchContexts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                    .SearchContextOrBuilder>
+        getSearchContextsOrBuilderList() {
+      return searchContexts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSearchContextsCount() {
+      return searchContexts_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+        getSearchContexts(int index) {
+      return searchContexts_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The search contexts for the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+            .SearchContextOrBuilder
+        getSearchContextsOrBuilder(int index) {
+      return searchContexts_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -221,6 +1280,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(queryText_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, queryText_);
       }
+      for (int i = 0; i < searchContexts_.size(); i++) {
+        output.writeMessage(4, searchContexts_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -232,6 +1294,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(queryText_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, queryText_);
+      }
+      for (int i = 0; i < searchContexts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, searchContexts_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -250,6 +1315,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery) obj;
 
       if (!getQueryText().equals(other.getQueryText())) return false;
+      if (!getSearchContextsList().equals(other.getSearchContextsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -263,6 +1329,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + QUERY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryText().hashCode();
+      if (getSearchContextsCount() > 0) {
+        hash = (37 * hash) + SEARCH_CONTEXTS_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchContextsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -407,6 +1477,13 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         super.clear();
         bitField0_ = 0;
         queryText_ = "";
+        if (searchContextsBuilder_ == null) {
+          searchContexts_ = java.util.Collections.emptyList();
+        } else {
+          searchContexts_ = null;
+          searchContextsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -436,11 +1513,25 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery buildPartial() {
         com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery result =
             new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery result) {
+        if (searchContextsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            searchContexts_ = java.util.Collections.unmodifiableList(searchContexts_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.searchContexts_ = searchContexts_;
+        } else {
+          result.searchContexts_ = searchContextsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -471,6 +1562,33 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           queryText_ = other.queryText_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (searchContextsBuilder_ == null) {
+          if (!other.searchContexts_.isEmpty()) {
+            if (searchContexts_.isEmpty()) {
+              searchContexts_ = other.searchContexts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSearchContextsIsMutable();
+              searchContexts_.addAll(other.searchContexts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.searchContexts_.isEmpty()) {
+            if (searchContextsBuilder_.isEmpty()) {
+              searchContextsBuilder_.dispose();
+              searchContextsBuilder_ = null;
+              searchContexts_ = other.searchContexts_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              searchContextsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSearchContextsFieldBuilder()
+                      : null;
+            } else {
+              searchContextsBuilder_.addAllMessages(other.searchContexts_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -504,6 +1622,22 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 34:
+                {
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                                  .SearchContext.parser(),
+                              extensionRegistry);
+                  if (searchContextsBuilder_ == null) {
+                    ensureSearchContextsIsMutable();
+                    searchContexts_.add(m);
+                  } else {
+                    searchContextsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -634,6 +1768,457 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         return this;
       }
 
+      private java.util.List<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext>
+          searchContexts_ = java.util.Collections.emptyList();
+
+      private void ensureSearchContextsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          searchContexts_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                      .SearchContext>(searchContexts_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                  .SearchContextOrBuilder>
+          searchContextsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext>
+          getSearchContextsList() {
+        if (searchContextsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(searchContexts_);
+        } else {
+          return searchContextsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getSearchContextsCount() {
+        if (searchContextsBuilder_ == null) {
+          return searchContexts_.size();
+        } else {
+          return searchContextsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+          getSearchContexts(int index) {
+        if (searchContextsBuilder_ == null) {
+          return searchContexts_.get(index);
+        } else {
+          return searchContextsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSearchContexts(
+          int index,
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext value) {
+        if (searchContextsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchContextsIsMutable();
+          searchContexts_.set(index, value);
+          onChanged();
+        } else {
+          searchContextsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSearchContexts(
+          int index,
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext.Builder
+              builderForValue) {
+        if (searchContextsBuilder_ == null) {
+          ensureSearchContextsIsMutable();
+          searchContexts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchContextsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSearchContexts(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext value) {
+        if (searchContextsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchContextsIsMutable();
+          searchContexts_.add(value);
+          onChanged();
+        } else {
+          searchContextsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSearchContexts(
+          int index,
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext value) {
+        if (searchContextsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchContextsIsMutable();
+          searchContexts_.add(index, value);
+          onChanged();
+        } else {
+          searchContextsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSearchContexts(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext.Builder
+              builderForValue) {
+        if (searchContextsBuilder_ == null) {
+          ensureSearchContextsIsMutable();
+          searchContexts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          searchContextsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSearchContexts(
+          int index,
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext.Builder
+              builderForValue) {
+        if (searchContextsBuilder_ == null) {
+          ensureSearchContextsIsMutable();
+          searchContexts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchContextsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllSearchContexts(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                          .SearchContext>
+              values) {
+        if (searchContextsBuilder_ == null) {
+          ensureSearchContextsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchContexts_);
+          onChanged();
+        } else {
+          searchContextsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSearchContexts() {
+        if (searchContextsBuilder_ == null) {
+          searchContexts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          searchContextsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeSearchContexts(int index) {
+        if (searchContextsBuilder_ == null) {
+          ensureSearchContextsIsMutable();
+          searchContexts_.remove(index);
+          onChanged();
+        } else {
+          searchContextsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+              .Builder
+          getSearchContextsBuilder(int index) {
+        return internalGetSearchContextsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+              .SearchContextOrBuilder
+          getSearchContextsOrBuilder(int index) {
+        if (searchContextsBuilder_ == null) {
+          return searchContexts_.get(index);
+        } else {
+          return searchContextsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                      .SearchContextOrBuilder>
+          getSearchContextsOrBuilderList() {
+        if (searchContextsBuilder_ != null) {
+          return searchContextsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(searchContexts_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+              .Builder
+          addSearchContextsBuilder() {
+        return internalGetSearchContextsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+              .Builder
+          addSearchContextsBuilder(int index) {
+        return internalGetSearchContextsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The search contexts for the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext search_contexts = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                  .Builder>
+          getSearchContextsBuilderList() {
+        return internalGetSearchContextsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                  .SearchContextOrBuilder>
+          internalGetSearchContextsFieldBuilder() {
+        if (searchContextsBuilder_ == null) {
+          searchContextsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContext
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                      .SearchContextOrBuilder>(
+                  searchContexts_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          searchContexts_ = null;
+        }
+        return searchContextsBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery)
     }
 
@@ -684,6 +2269,1075 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AdditionalSuggestedQueryResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the suggestedQuery field is set.
+     */
+    boolean hasSuggestedQuery();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The suggestedQuery.
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery getSuggestedQuery();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder
+        getSuggestedQueryOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the answer record.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * </pre>
+     *
+     * <code>
+     * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The answerRecord.
+     */
+    java.lang.String getAnswerRecord();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the answer record.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * </pre>
+     *
+     * <code>
+     * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for answerRecord.
+     */
+    com.google.protobuf.ByteString getAnswerRecordBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a single suggested query result.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult}
+   */
+  public static final class AdditionalSuggestedQueryResult
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+      AdditionalSuggestedQueryResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AdditionalSuggestedQueryResult");
+    }
+
+    // Use AdditionalSuggestedQueryResult.newBuilder() to construct.
+    private AdditionalSuggestedQueryResult(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AdditionalSuggestedQueryResult() {
+      answerRecord_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.ParticipantProto
+          .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.ParticipantProto
+          .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                  .class,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                  .Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SUGGESTED_QUERY_FIELD_NUMBER = 1;
+    private com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggestedQuery_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the suggestedQuery field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestedQuery() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The suggestedQuery.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery getSuggestedQuery() {
+      return suggestedQuery_ == null
+          ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.getDefaultInstance()
+          : suggestedQuery_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The suggested query based on the context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder
+        getSuggestedQueryOrBuilder() {
+      return suggestedQuery_ == null
+          ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.getDefaultInstance()
+          : suggestedQuery_;
+    }
+
+    public static final int ANSWER_RECORD_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object answerRecord_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the answer record.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * </pre>
+     *
+     * <code>
+     * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The answerRecord.
+     */
+    @java.lang.Override
+    public java.lang.String getAnswerRecord() {
+      java.lang.Object ref = answerRecord_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answerRecord_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the answer record.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * </pre>
+     *
+     * <code>
+     * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for answerRecord.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAnswerRecordBytes() {
+      java.lang.Object ref = answerRecord_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        answerRecord_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getSuggestedQuery());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answerRecord_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, answerRecord_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSuggestedQuery());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answerRecord_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, answerRecord_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult other =
+          (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult) obj;
+
+      if (hasSuggestedQuery() != other.hasSuggestedQuery()) return false;
+      if (hasSuggestedQuery()) {
+        if (!getSuggestedQuery().equals(other.getSuggestedQuery())) return false;
+      }
+      if (!getAnswerRecord().equals(other.getAnswerRecord())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSuggestedQuery()) {
+        hash = (37 * hash) + SUGGESTED_QUERY_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestedQuery().hashCode();
+      }
+      hash = (37 * hash) + ANSWER_RECORD_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerRecord().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a single suggested query result.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                    .class,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetSuggestedQueryFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        suggestedQuery_ = null;
+        if (suggestedQueryBuilder_ != null) {
+          suggestedQueryBuilder_.dispose();
+          suggestedQueryBuilder_ = null;
+        }
+        answerRecord_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+          build() {
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+          buildPartial() {
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult result =
+            new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+              result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.suggestedQuery_ =
+              suggestedQueryBuilder_ == null ? suggestedQuery_ : suggestedQueryBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.answerRecord_ = answerRecord_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+              other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
+                .getDefaultInstance()) return this;
+        if (other.hasSuggestedQuery()) {
+          mergeSuggestedQuery(other.getSuggestedQuery());
+        }
+        if (!other.getAnswerRecord().isEmpty()) {
+          answerRecord_ = other.answerRecord_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetSuggestedQueryFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 42:
+                {
+                  answerRecord_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggestedQuery_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder>
+          suggestedQueryBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the suggestedQuery field is set.
+       */
+      public boolean hasSuggestedQuery() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The suggestedQuery.
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+          getSuggestedQuery() {
+        if (suggestedQueryBuilder_ == null) {
+          return suggestedQuery_ == null
+              ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                  .getDefaultInstance()
+              : suggestedQuery_;
+        } else {
+          return suggestedQueryBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSuggestedQuery(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery value) {
+        if (suggestedQueryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          suggestedQuery_ = value;
+        } else {
+          suggestedQueryBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSuggestedQuery(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder
+              builderForValue) {
+        if (suggestedQueryBuilder_ == null) {
+          suggestedQuery_ = builderForValue.build();
+        } else {
+          suggestedQueryBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeSuggestedQuery(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery value) {
+        if (suggestedQueryBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && suggestedQuery_ != null
+              && suggestedQuery_
+                  != com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                      .getDefaultInstance()) {
+            getSuggestedQueryBuilder().mergeFrom(value);
+          } else {
+            suggestedQuery_ = value;
+          }
+        } else {
+          suggestedQueryBuilder_.mergeFrom(value);
+        }
+        if (suggestedQuery_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSuggestedQuery() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        suggestedQuery_ = null;
+        if (suggestedQueryBuilder_ != null) {
+          suggestedQueryBuilder_.dispose();
+          suggestedQueryBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder
+          getSuggestedQueryBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetSuggestedQueryFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder
+          getSuggestedQueryOrBuilder() {
+        if (suggestedQueryBuilder_ != null) {
+          return suggestedQueryBuilder_.getMessageOrBuilder();
+        } else {
+          return suggestedQuery_ == null
+              ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery
+                  .getDefaultInstance()
+              : suggestedQuery_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The suggested query based on the context.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery suggested_query = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder>
+          internalGetSuggestedQueryFieldBuilder() {
+        if (suggestedQueryBuilder_ == null) {
+          suggestedQueryBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery.Builder,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQueryOrBuilder>(
+                  getSuggestedQuery(), getParentForChildren(), isClean());
+          suggestedQuery_ = null;
+        }
+        return suggestedQueryBuilder_;
+      }
+
+      private java.lang.Object answerRecord_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the answer record.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+       * </pre>
+       *
+       * <code>
+       * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The answerRecord.
+       */
+      public java.lang.String getAnswerRecord() {
+        java.lang.Object ref = answerRecord_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          answerRecord_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the answer record.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+       * </pre>
+       *
+       * <code>
+       * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for answerRecord.
+       */
+      public com.google.protobuf.ByteString getAnswerRecordBytes() {
+        java.lang.Object ref = answerRecord_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          answerRecord_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the answer record.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+       * </pre>
+       *
+       * <code>
+       * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The answerRecord to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnswerRecord(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answerRecord_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the answer record.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+       * </pre>
+       *
+       * <code>
+       * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAnswerRecord() {
+        answerRecord_ = getDefaultInstance().getAnswerRecord();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The name of the answer record.
+       * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+       * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+       * </pre>
+       *
+       * <code>
+       * string answer_record = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for answerRecord to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnswerRecordBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        answerRecord_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult)
+    private static final com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult();
+    }
+
+    public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer
+            .AdditionalSuggestedQueryResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdditionalSuggestedQueryResult> PARSER =
+        new com.google.protobuf.AbstractParser<AdditionalSuggestedQueryResult>() {
+          @java.lang.Override
+          public AdditionalSuggestedQueryResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AdditionalSuggestedQueryResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdditionalSuggestedQueryResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.AdditionalSuggestedQueryResult
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -808,6 +3462,96 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
      */
     com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceOrBuilder
         getGenerativeSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     *
+     * @return Whether the playbookSource field is set.
+     */
+    boolean hasPlaybookSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     *
+     * @return The playbookSource.
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+        getPlaybookSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceOrBuilder
+        getPlaybookSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     *
+     * @return Whether the eventSource field is set.
+     */
+    boolean hasEventSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     *
+     * @return The eventSource.
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+        getEventSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSourceOrBuilder
+        getEventSourceOrBuilder();
 
     com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.SourceCase getSourceCase();
   }
@@ -4143,6 +6887,1049 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       }
     }
 
+    public interface EventSourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Name of the triggered event.
+       * </pre>
+       *
+       * <code>string event = 1;</code>
+       *
+       * @return The event.
+       */
+      java.lang.String getEvent();
+
+      /**
+       *
+       *
+       * <pre>
+       * Name of the triggered event.
+       * </pre>
+       *
+       * <code>string event = 1;</code>
+       *
+       * @return The bytes for event.
+       */
+      com.google.protobuf.ByteString getEventBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       *
+       * @return Whether the snippets field is set.
+       */
+      boolean hasSnippets();
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       *
+       * @return The snippets.
+       */
+      com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          getSnippets();
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceOrBuilder
+          getSnippetsOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about source of Event answer.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource}
+     */
+    public static final class EventSource extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+        EventSourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "EventSource");
+      }
+
+      // Use EventSource.newBuilder() to construct.
+      private EventSource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EventSource() {
+        event_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.ParticipantProto
+            .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                    .class,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                    .Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int EVENT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object event_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Name of the triggered event.
+       * </pre>
+       *
+       * <code>string event = 1;</code>
+       *
+       * @return The event.
+       */
+      @java.lang.Override
+      public java.lang.String getEvent() {
+        java.lang.Object ref = event_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          event_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name of the triggered event.
+       * </pre>
+       *
+       * <code>string event = 1;</code>
+       *
+       * @return The bytes for event.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEventBytes() {
+        java.lang.Object ref = event_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          event_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SNIPPETS_FIELD_NUMBER = 2;
+      private com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          snippets_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       *
+       * @return Whether the snippets field is set.
+       */
+      @java.lang.Override
+      public boolean hasSnippets() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       *
+       * @return The snippets.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          getSnippets() {
+        return snippets_ == null
+            ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                .getDefaultInstance()
+            : snippets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used in event fulfillment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .GenerativeSourceOrBuilder
+          getSnippetsOrBuilder() {
+        return snippets_ == null
+            ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                .getDefaultInstance()
+            : snippets_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, event_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getSnippets());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, event_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSnippets());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource other =
+            (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource) obj;
+
+        if (!getEvent().equals(other.getEvent())) return false;
+        if (hasSnippets() != other.hasSnippets()) return false;
+        if (hasSnippets()) {
+          if (!getSnippets().equals(other.getSnippets())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getEvent().hashCode();
+        if (hasSnippets()) {
+          hash = (37 * hash) + SNIPPETS_FIELD_NUMBER;
+          hash = (53 * hash) + getSnippets().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Details about source of Event answer.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .EventSourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                      .class,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetSnippetsFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          event_ = "";
+          snippets_ = null;
+          if (snippetsBuilder_ != null) {
+            snippetsBuilder_.dispose();
+            snippetsBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.v2.ParticipantProto
+              .internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+            build() {
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+            buildPartial() {
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource result =
+              new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.event_ = event_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.snippets_ = snippetsBuilder_ == null ? snippets_ : snippetsBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                  .getDefaultInstance()) return this;
+          if (!other.getEvent().isEmpty()) {
+            event_ = other.event_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasSnippets()) {
+            mergeSnippets(other.getSnippets());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    event_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetSnippetsFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object event_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the triggered event.
+         * </pre>
+         *
+         * <code>string event = 1;</code>
+         *
+         * @return The event.
+         */
+        public java.lang.String getEvent() {
+          java.lang.Object ref = event_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            event_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the triggered event.
+         * </pre>
+         *
+         * <code>string event = 1;</code>
+         *
+         * @return The bytes for event.
+         */
+        public com.google.protobuf.ByteString getEventBytes() {
+          java.lang.Object ref = event_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            event_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the triggered event.
+         * </pre>
+         *
+         * <code>string event = 1;</code>
+         *
+         * @param value The event to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEvent(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the triggered event.
+         * </pre>
+         *
+         * <code>string event = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEvent() {
+          event_ = getDefaultInstance().getEvent();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the triggered event.
+         * </pre>
+         *
+         * <code>string event = 1;</code>
+         *
+         * @param value The bytes for event to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEventBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          event_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                .GenerativeSource
+            snippets_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.Builder,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSourceOrBuilder>
+            snippetsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         *
+         * @return Whether the snippets field is set.
+         */
+        public boolean hasSnippets() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         *
+         * @return The snippets.
+         */
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+            getSnippets() {
+          if (snippetsBuilder_ == null) {
+            return snippets_ == null
+                ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.getDefaultInstance()
+                : snippets_;
+          } else {
+            return snippetsBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public Builder setSnippets(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                value) {
+          if (snippetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            snippets_ = value;
+          } else {
+            snippetsBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public Builder setSnippets(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                    .Builder
+                builderForValue) {
+          if (snippetsBuilder_ == null) {
+            snippets_ = builderForValue.build();
+          } else {
+            snippetsBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public Builder mergeSnippets(
+            com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                value) {
+          if (snippetsBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && snippets_ != null
+                && snippets_
+                    != com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                        .GenerativeSource.getDefaultInstance()) {
+              getSnippetsBuilder().mergeFrom(value);
+            } else {
+              snippets_ = value;
+            }
+          } else {
+            snippetsBuilder_.mergeFrom(value);
+          }
+          if (snippets_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public Builder clearSnippets() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          snippets_ = null;
+          if (snippetsBuilder_ != null) {
+            snippetsBuilder_.dispose();
+            snippetsBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                .Builder
+            getSnippetsBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return internalGetSnippetsFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                .GenerativeSourceOrBuilder
+            getSnippetsOrBuilder() {
+          if (snippetsBuilder_ != null) {
+            return snippetsBuilder_.getMessageOrBuilder();
+          } else {
+            return snippets_ == null
+                ? com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.getDefaultInstance()
+                : snippets_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Sources used in event fulfillment.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource snippets = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.Builder,
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSourceOrBuilder>
+            internalGetSnippetsFieldBuilder() {
+          if (snippetsBuilder_ == null) {
+            snippetsBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                        .GenerativeSource,
+                    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                        .GenerativeSource.Builder,
+                    com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                        .GenerativeSourceOrBuilder>(
+                    getSnippets(), getParentForChildren(), isClean());
+            snippets_ = null;
+          }
+          return snippetsBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+      private static final com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .EventSource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource();
+      }
+
+      public static com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EventSource> PARSER =
+          new com.google.protobuf.AbstractParser<EventSource>() {
+            @java.lang.Override
+            public EventSource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EventSource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EventSource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int sourceCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -4154,6 +7941,8 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       FAQ_SOURCE(3),
       GENERATIVE_SOURCE(4),
+      PLAYBOOK_SOURCE(7),
+      EVENT_SOURCE(8),
       SOURCE_NOT_SET(0);
       private final int value;
 
@@ -4177,6 +7966,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             return FAQ_SOURCE;
           case 4:
             return GENERATIVE_SOURCE;
+          case 7:
+            return PLAYBOOK_SOURCE;
+          case 8:
+            return EVENT_SOURCE;
           case 0:
             return SOURCE_NOT_SET;
           default:
@@ -4381,6 +8174,141 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           .getDefaultInstance();
     }
 
+    public static final int PLAYBOOK_SOURCE_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     *
+     * @return Whether the playbookSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlaybookSource() {
+      return sourceCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     *
+     * @return The playbookSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+        getPlaybookSource() {
+      if (sourceCase_ == 7) {
+        return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                .GenerativeSource)
+            source_;
+      }
+      return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from Playbook.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+            .GenerativeSourceOrBuilder
+        getPlaybookSourceOrBuilder() {
+      if (sourceCase_ == 7) {
+        return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                .GenerativeSource)
+            source_;
+      }
+      return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          .getDefaultInstance();
+    }
+
+    public static final int EVENT_SOURCE_FIELD_NUMBER = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     *
+     * @return Whether the eventSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasEventSource() {
+      return sourceCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     *
+     * @return The eventSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+        getEventSource() {
+      if (sourceCase_ == 8) {
+        return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+            source_;
+      }
+      return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Populated if the prediction was from an event.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSourceOrBuilder
+        getEventSourceOrBuilder() {
+      if (sourceCase_ == 8) {
+        return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+            source_;
+      }
+      return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4410,6 +8338,18 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
             (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource)
                 source_);
       }
+      if (sourceCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource)
+                source_);
+      }
+      if (sourceCase_ == 8) {
+        output.writeMessage(
+            8,
+            (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+                source_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4437,6 +8377,21 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                         .GenerativeSource)
                     source_);
       }
+      if (sourceCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                        .GenerativeSource)
+                    source_);
+      }
+      if (sourceCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8,
+                (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+                    source_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4462,6 +8417,12 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         case 4:
           if (!getGenerativeSource().equals(other.getGenerativeSource())) return false;
           break;
+        case 7:
+          if (!getPlaybookSource().equals(other.getPlaybookSource())) return false;
+          break;
+        case 8:
+          if (!getEventSource().equals(other.getEventSource())) return false;
+          break;
         case 0:
         default:
       }
@@ -4486,6 +8447,14 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         case 4:
           hash = (37 * hash) + GENERATIVE_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getGenerativeSource().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + PLAYBOOK_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getPlaybookSource().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + EVENT_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getEventSource().hashCode();
           break;
         case 0:
         default:
@@ -4641,6 +8610,12 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         if (generativeSourceBuilder_ != null) {
           generativeSourceBuilder_.clear();
         }
+        if (playbookSourceBuilder_ != null) {
+          playbookSourceBuilder_.clear();
+        }
+        if (eventSourceBuilder_ != null) {
+          eventSourceBuilder_.clear();
+        }
         sourceCase_ = 0;
         source_ = null;
         return this;
@@ -4699,6 +8674,12 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         if (sourceCase_ == 4 && generativeSourceBuilder_ != null) {
           result.source_ = generativeSourceBuilder_.build();
         }
+        if (sourceCase_ == 7 && playbookSourceBuilder_ != null) {
+          result.source_ = playbookSourceBuilder_.build();
+        }
+        if (sourceCase_ == 8 && eventSourceBuilder_ != null) {
+          result.source_ = eventSourceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4731,6 +8712,16 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
           case GENERATIVE_SOURCE:
             {
               mergeGenerativeSource(other.getGenerativeSource());
+              break;
+            }
+          case PLAYBOOK_SOURCE:
+            {
+              mergePlaybookSource(other.getPlaybookSource());
+              break;
+            }
+          case EVENT_SOURCE:
+            {
+              mergeEventSource(other.getEventSource());
               break;
             }
           case SOURCE_NOT_SET:
@@ -4784,6 +8775,20 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                   sourceCase_ = 4;
                   break;
                 } // case 34
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetPlaybookSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      internalGetEventSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5457,6 +9462,541 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         sourceCase_ = 4;
         onChanged();
         return generativeSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                  .GenerativeSourceOrBuilder>
+          playbookSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       *
+       * @return Whether the playbookSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasPlaybookSource() {
+        return sourceCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       *
+       * @return The playbookSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+          getPlaybookSource() {
+        if (playbookSourceBuilder_ == null) {
+          if (sourceCase_ == 7) {
+            return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource)
+                source_;
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .GenerativeSource.getDefaultInstance();
+        } else {
+          if (sourceCase_ == 7) {
+            return playbookSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .GenerativeSource.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      public Builder setPlaybookSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+              value) {
+        if (playbookSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          playbookSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      public Builder setPlaybookSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                  .Builder
+              builderForValue) {
+        if (playbookSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          playbookSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      public Builder mergePlaybookSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+              value) {
+        if (playbookSourceBuilder_ == null) {
+          if (sourceCase_ == 7
+              && source_
+                  != com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .GenerativeSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.newBuilder(
+                        (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                                .GenerativeSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 7) {
+            playbookSourceBuilder_.mergeFrom(value);
+          } else {
+            playbookSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      public Builder clearPlaybookSource() {
+        if (playbookSourceBuilder_ == null) {
+          if (sourceCase_ == 7) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 7) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          playbookSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+              .Builder
+          getPlaybookSourceBuilder() {
+        return internalGetPlaybookSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .GenerativeSourceOrBuilder
+          getPlaybookSourceOrBuilder() {
+        if ((sourceCase_ == 7) && (playbookSourceBuilder_ != null)) {
+          return playbookSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 7) {
+            return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource)
+                source_;
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .GenerativeSource.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from Playbook.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource playbook_source = 7;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                  .GenerativeSourceOrBuilder>
+          internalGetPlaybookSourceFieldBuilder() {
+        if (playbookSourceBuilder_ == null) {
+          if (!(sourceCase_ == 7)) {
+            source_ =
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .GenerativeSource.getDefaultInstance();
+          }
+          playbookSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .GenerativeSource,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .GenerativeSource.Builder,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .GenerativeSourceOrBuilder>(
+                  (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                          .GenerativeSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 7;
+        onChanged();
+        return playbookSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                  .EventSourceOrBuilder>
+          eventSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       *
+       * @return Whether the eventSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasEventSource() {
+        return sourceCase_ == 8;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       *
+       * @return The eventSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+          getEventSource() {
+        if (eventSourceBuilder_ == null) {
+          if (sourceCase_ == 8) {
+            return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .EventSource)
+                source_;
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              .getDefaultInstance();
+        } else {
+          if (sourceCase_ == 8) {
+            return eventSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      public Builder setEventSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource value) {
+        if (eventSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          eventSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      public Builder setEventSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource.Builder
+              builderForValue) {
+        if (eventSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          eventSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      public Builder mergeEventSource(
+          com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource value) {
+        if (eventSourceBuilder_ == null) {
+          if (sourceCase_ == 8
+              && source_
+                  != com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .EventSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                                .EventSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 8) {
+            eventSourceBuilder_.mergeFrom(value);
+          } else {
+            eventSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      public Builder clearEventSource() {
+        if (eventSourceBuilder_ == null) {
+          if (sourceCase_ == 8) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 8) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          eventSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              .Builder
+          getEventSourceBuilder() {
+        return internalGetEventSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+              .EventSourceOrBuilder
+          getEventSourceOrBuilder() {
+        if ((sourceCase_ == 8) && (eventSourceBuilder_ != null)) {
+          return eventSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 8) {
+            return (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                    .EventSource)
+                source_;
+          }
+          return com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Populated if the prediction was from an event.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource event_source = 8;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                  .Builder,
+              com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                  .EventSourceOrBuilder>
+          internalGetEventSourceFieldBuilder() {
+        if (eventSourceBuilder_ == null) {
+          if (!(sourceCase_ == 8)) {
+            source_ =
+                com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                    .getDefaultInstance();
+          }
+          eventSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource
+                      .Builder,
+                  com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer
+                      .EventSourceOrBuilder>(
+                  (com.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 8;
+        onChanged();
+        return eventSourceBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer)

@@ -45,6 +45,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -120,6 +122,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
@@ -326,6 +329,17 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
     return ((WorkstationsStubSettings) getStubSettings()).generateAccessTokenSettings();
   }
 
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public UnaryCallSettings<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+    return ((WorkstationsStubSettings) getStubSettings()).pushCredentialsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pushCredentials. */
+  public OperationCallSettings<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationSettings() {
+    return ((WorkstationsStubSettings) getStubSettings()).pushCredentialsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return ((WorkstationsStubSettings) getStubSettings()).setIamPolicySettings();
@@ -398,7 +412,7 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -418,7 +432,7 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(WorkstationsStubSettings.newBuilder(clientContext));
     }
 
@@ -655,6 +669,18 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
     public UnaryCallSettings.Builder<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
         generateAccessTokenSettings() {
       return getStubSettingsBuilder().generateAccessTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public UnaryCallSettings.Builder<PushCredentialsRequest, Operation> pushCredentialsSettings() {
+      return getStubSettingsBuilder().pushCredentialsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pushCredentials. */
+    public OperationCallSettings.Builder<
+            PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+        pushCredentialsOperationSettings() {
+      return getStubSettingsBuilder().pushCredentialsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

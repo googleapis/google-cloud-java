@@ -42,7 +42,6 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.core.InternalApi;
 import com.google.common.base.Joiner;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
@@ -77,22 +76,12 @@ public final class StsRequestHandler {
   @Nullable private final HttpHeaders headers;
   @Nullable private final String internalOptions;
 
-  private final int connectTimeout;
-  private final int readTimeout;
-
-  /**
-   * Internal constructor.
-   *
-   * @return an StsTokenExchangeResponse instance if the request was successful
-   */
   private StsRequestHandler(Builder builder) {
     this.tokenExchangeEndpoint = builder.tokenExchangeEndpoint;
     this.request = builder.request;
     this.httpRequestFactory = builder.httpRequestFactory;
     this.headers = builder.headers;
     this.internalOptions = builder.internalOptions;
-    this.connectTimeout = builder.connectTimeout;
-    this.readTimeout = builder.readTimeout;
   }
 
   /**
@@ -125,8 +114,6 @@ public final class StsRequestHandler {
     if (headers != null) {
       httpRequest.setHeaders(headers);
     }
-    httpRequest.setConnectTimeout(connectTimeout);
-    httpRequest.setReadTimeout(readTimeout);
 
     try {
       LoggingUtils.logRequest(httpRequest, LOGGER_PROVIDER, "Sending request for token exchange");
@@ -225,9 +212,6 @@ public final class StsRequestHandler {
     @Nullable private HttpHeaders headers;
     @Nullable private String internalOptions;
 
-    private int connectTimeout = 20000; // Default to 20000ms = 20s
-    private int readTimeout = 20000; // Default to 20000ms = 20s
-
     private Builder(
         String tokenExchangeEndpoint,
         StsTokenExchangeRequest stsTokenExchangeRequest,
@@ -246,20 +230,6 @@ public final class StsRequestHandler {
     @CanIgnoreReturnValue
     public StsRequestHandler.Builder setInternalOptions(String internalOptions) {
       this.internalOptions = internalOptions;
-      return this;
-    }
-
-    /** Warning: Not for public use and can be removed at any time. */
-    @InternalApi
-    public StsRequestHandler.Builder setConnectTimeout(int connectTimeout) {
-      this.connectTimeout = connectTimeout;
-      return this;
-    }
-
-    /** Warning: Not for public use and can be removed at any time. */
-    @InternalApi
-    public StsRequestHandler.Builder setReadTimeout(int readTimeout) {
-      this.readTimeout = readTimeout;
       return this;
     }
 

@@ -35,7 +35,8 @@ public class SyncDeleteFrameworkDeploymentFrameworkdeploymentname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DeploymentClient deploymentClient = DeploymentClient.create()) {
       FrameworkDeploymentName name =
-          FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+          FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+              "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
       deploymentClient.deleteFrameworkDeploymentAsync(name).get();
     }
   }

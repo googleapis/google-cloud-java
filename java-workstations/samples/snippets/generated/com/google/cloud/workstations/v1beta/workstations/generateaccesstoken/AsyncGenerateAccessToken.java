@@ -46,6 +46,7 @@ public class AsyncGenerateAccessToken {
                           "[WORKSTATION_CONFIG]",
                           "[WORKSTATION]")
                       .toString())
+              .setPort(3446913)
               .build();
       ApiFuture<GenerateAccessTokenResponse> future =
           workstationsClient.generateAccessTokenCallable().futureCall(request);

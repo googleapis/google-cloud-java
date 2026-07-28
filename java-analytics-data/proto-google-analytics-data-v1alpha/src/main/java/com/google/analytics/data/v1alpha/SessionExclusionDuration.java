@@ -175,7 +175,7 @@ public enum SessionExclusionDuration implements com.google.protobuf.ProtocolMess
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(4);
   }
 
   private static final SessionExclusionDuration[] VALUES = values();

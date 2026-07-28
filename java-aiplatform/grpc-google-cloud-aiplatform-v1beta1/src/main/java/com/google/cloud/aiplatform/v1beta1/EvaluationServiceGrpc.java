@@ -127,6 +127,57 @@ public final class EvaluationServiceGrpc {
     return getEvaluateDatasetMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+      getGenerateInstanceRubricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateInstanceRubrics",
+      requestType = com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest,
+          com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+      getGenerateInstanceRubricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest,
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+        getGenerateInstanceRubricsMethod;
+    if ((getGenerateInstanceRubricsMethod = EvaluationServiceGrpc.getGenerateInstanceRubricsMethod)
+        == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getGenerateInstanceRubricsMethod =
+                EvaluationServiceGrpc.getGenerateInstanceRubricsMethod)
+            == null) {
+          EvaluationServiceGrpc.getGenerateInstanceRubricsMethod =
+              getGenerateInstanceRubricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest,
+                          com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateInstanceRubrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier("GenerateInstanceRubrics"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateInstanceRubricsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EvaluationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceStub> factory =
@@ -218,6 +269,26 @@ public final class EvaluationServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getEvaluateDatasetMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates rubrics for a given prompt.
+     * A rubric represents a single testable criterion for evaluation.
+     * One input prompt could have multiple rubrics
+     * This RPC allows users to get suggested rubrics based on provided prompt,
+     * which can then be reviewed and used for subsequent evaluations.
+     * </pre>
+     */
+    default void generateInstanceRubrics(
+        com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateInstanceRubricsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -287,6 +358,28 @@ public final class EvaluationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates rubrics for a given prompt.
+     * A rubric represents a single testable criterion for evaluation.
+     * One input prompt could have multiple rubrics
+     * This RPC allows users to get suggested rubrics based on provided prompt,
+     * which can then be reviewed and used for subsequent evaluations.
+     * </pre>
+     */
+    public void generateInstanceRubrics(
+        com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateInstanceRubricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -336,6 +429,25 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEvaluateDatasetMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates rubrics for a given prompt.
+     * A rubric represents a single testable criterion for evaluation.
+     * One input prompt could have multiple rubrics
+     * This RPC allows users to get suggested rubrics based on provided prompt,
+     * which can then be reviewed and used for subsequent evaluations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse
+        generateInstanceRubrics(
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateInstanceRubricsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -382,6 +494,24 @@ public final class EvaluationServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEvaluateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates rubrics for a given prompt.
+     * A rubric represents a single testable criterion for evaluation.
+     * One input prompt could have multiple rubrics
+     * This RPC allows users to get suggested rubrics based on provided prompt,
+     * which can then be reviewed and used for subsequent evaluations.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse
+        generateInstanceRubrics(
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateInstanceRubricsMethod(), getCallOptions(), request);
     }
   }
 
@@ -430,10 +560,30 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEvaluateDatasetMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates rubrics for a given prompt.
+     * A rubric represents a single testable criterion for evaluation.
+     * One input prompt could have multiple rubrics
+     * This RPC allows users to get suggested rubrics based on provided prompt,
+     * which can then be reviewed and used for subsequent evaluations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>
+        generateInstanceRubrics(
+            com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateInstanceRubricsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_EVALUATE_INSTANCES = 0;
   private static final int METHODID_EVALUATE_DATASET = 1;
+  private static final int METHODID_GENERATE_INSTANCE_RUBRICS = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -463,6 +613,13 @@ public final class EvaluationServiceGrpc {
           serviceImpl.evaluateDataset(
               (com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_INSTANCE_RUBRICS:
+          serviceImpl.generateInstanceRubrics(
+              (com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -495,6 +652,13 @@ public final class EvaluationServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest,
                     com.google.longrunning.Operation>(service, METHODID_EVALUATE_DATASET)))
+        .addMethod(
+            getGenerateInstanceRubricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest,
+                    com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse>(
+                    service, METHODID_GENERATE_INSTANCE_RUBRICS)))
         .build();
   }
 
@@ -548,6 +712,7 @@ public final class EvaluationServiceGrpc {
                       .setSchemaDescriptor(new EvaluationServiceFileDescriptorSupplier())
                       .addMethod(getEvaluateInstancesMethod())
                       .addMethod(getEvaluateDatasetMethod())
+                      .addMethod(getGenerateInstanceRubricsMethod())
                       .build();
         }
       }

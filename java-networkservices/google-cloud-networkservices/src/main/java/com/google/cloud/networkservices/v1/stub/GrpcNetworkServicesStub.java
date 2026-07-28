@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -43,6 +44,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AgentGateway;
+import com.google.cloud.networkservices.v1.CreateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
@@ -54,6 +57,7 @@ import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
+import com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -68,6 +72,7 @@ import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
+import com.google.cloud.networkservices.v1.GetAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
@@ -83,6 +88,8 @@ import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
 import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysRequest;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
@@ -116,6 +123,7 @@ import com.google.cloud.networkservices.v1.ServiceBinding;
 import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
+import com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
@@ -141,6 +149,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +157,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private static final MethodDescriptor<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse>
@@ -806,6 +816,66 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysMethodDescriptor =
+          MethodDescriptor.<ListAgentGatewaysRequest, ListAgentGatewaysResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListAgentGateways")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAgentGatewaysRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAgentGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAgentGatewayRequest, AgentGateway>
+      getAgentGatewayMethodDescriptor =
+          MethodDescriptor.<GetAgentGatewayRequest, AgentGateway>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetAgentGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAgentGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AgentGateway.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateAgentGatewayRequest, Operation>
+      createAgentGatewayMethodDescriptor =
+          MethodDescriptor.<CreateAgentGatewayRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateAgentGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAgentGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAgentGatewayRequest, Operation>
+      updateAgentGatewayMethodDescriptor =
+          MethodDescriptor.<UpdateAgentGatewayRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateAgentGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAgentGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAgentGatewayRequest, Operation>
+      deleteAgentGatewayMethodDescriptor =
+          MethodDescriptor.<DeleteAgentGatewayRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteAgentGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAgentGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1020,6 +1090,20 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
       listMeshRouteViewsCallable;
   private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsPagedCallable;
+  private final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable;
+  private final UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable;
+  private final UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable;
+  private final UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable;
+  private final OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable;
+  private final UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable;
+  private final OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable;
+  private final UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable;
+  private final OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1728,6 +1812,62 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+        listAgentGatewaysTransportSettings =
+            GrpcCallSettings.<ListAgentGatewaysRequest, ListAgentGatewaysResponse>newBuilder()
+                .setMethodDescriptor(listAgentGatewaysMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetAgentGatewayRequest, AgentGateway> getAgentGatewayTransportSettings =
+        GrpcCallSettings.<GetAgentGatewayRequest, AgentGateway>newBuilder()
+            .setMethodDescriptor(getAgentGatewayMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateAgentGatewayRequest, Operation> createAgentGatewayTransportSettings =
+        GrpcCallSettings.<CreateAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAgentGatewayMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateAgentGatewayRequest, Operation> updateAgentGatewayTransportSettings =
+        GrpcCallSettings.<UpdateAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAgentGatewayMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "agent_gateway.name", String.valueOf(request.getAgentGateway().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayTransportSettings =
+        GrpcCallSettings.<DeleteAgentGatewayRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAgentGatewayMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -2244,6 +2384,52 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             listMeshRouteViewsTransportSettings,
             settings.listMeshRouteViewsSettings(),
             clientContext);
+    this.listAgentGatewaysCallable =
+        callableFactory.createUnaryCallable(
+            listAgentGatewaysTransportSettings,
+            settings.listAgentGatewaysSettings(),
+            clientContext);
+    this.listAgentGatewaysPagedCallable =
+        callableFactory.createPagedCallable(
+            listAgentGatewaysTransportSettings,
+            settings.listAgentGatewaysSettings(),
+            clientContext);
+    this.getAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            getAgentGatewayTransportSettings, settings.getAgentGatewaySettings(), clientContext);
+    this.createAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            createAgentGatewayTransportSettings,
+            settings.createAgentGatewaySettings(),
+            clientContext);
+    this.createAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            createAgentGatewayTransportSettings,
+            settings.createAgentGatewayOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            updateAgentGatewayTransportSettings,
+            settings.updateAgentGatewaySettings(),
+            clientContext);
+    this.updateAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAgentGatewayTransportSettings,
+            settings.updateAgentGatewayOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAgentGatewayCallable =
+        callableFactory.createUnaryCallable(
+            deleteAgentGatewayTransportSettings,
+            settings.deleteAgentGatewaySettings(),
+            clientContext);
+    this.deleteAgentGatewayOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAgentGatewayTransportSettings,
+            settings.deleteAgentGatewayOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2838,6 +3024,56 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
       listMeshRouteViewsPagedCallable() {
     return listMeshRouteViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable() {
+    return listAgentGatewaysCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable() {
+    return listAgentGatewaysPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable() {
+    return getAgentGatewayCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable() {
+    return createAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable() {
+    return createAgentGatewayOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable() {
+    return updateAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable() {
+    return updateAgentGatewayOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable() {
+    return deleteAgentGatewayCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable() {
+    return deleteAgentGatewayOperationCallable;
   }
 
   @Override

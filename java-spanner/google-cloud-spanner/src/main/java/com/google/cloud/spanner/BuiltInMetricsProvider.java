@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.opentelemetry.detection.GCPPlatformDetector.SupportedPlatform.GOOGLE_KUBERNETES_ENGINE;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_HASH_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_NAME_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_UID_KEY;
@@ -29,17 +28,17 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
-import com.google.cloud.opentelemetry.detection.AttributeKeys;
-import com.google.cloud.opentelemetry.detection.DetectedPlatform;
-import com.google.cloud.opentelemetry.detection.GCPPlatformDetector;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
@@ -75,10 +74,13 @@ final class BuiltInMetricsProvider {
   private static final String default_location = "global";
 
   private OpenTelemetry openTelemetry;
+  private String projectId;
+  private boolean mismatchedProjectIdLogged;
+  private Thread shutdownHook;
 
   private BuiltInMetricsProvider() {}
 
-  OpenTelemetry getOrCreateOpenTelemetry(
+  synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
@@ -88,12 +90,13 @@ final class BuiltInMetricsProvider {
         SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
         BuiltInMetricsView.registerBuiltinMetrics(
             SpannerCloudMonitoringExporter.create(
-                projectId, credentials, monitoringHost, universeDomain),
+                this::getProjectId, credentials, monitoringHost, universeDomain),
             sdkMeterProviderBuilder);
         sdkMeterProviderBuilder.setResource(Resource.create(createResourceAttributes(projectId)));
         SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
         this.openTelemetry = OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-        Runtime.getRuntime().addShutdownHook(new Thread(sdkMeterProvider::close));
+        this.shutdownHook = new Thread(sdkMeterProvider::close);
+        Runtime.getRuntime().addShutdownHook(this.shutdownHook);
       }
       return this.openTelemetry;
     } catch (IOException ex) {
@@ -104,6 +107,47 @@ final class BuiltInMetricsProvider {
           ex);
       return null;
     }
+  }
+
+  synchronized void setProjectIdIfAbsent(String projectId) {
+    if (this.projectId == null) {
+      this.projectId = projectId;
+    } else if (!this.projectId.equals(projectId) && !mismatchedProjectIdLogged) {
+      mismatchedProjectIdLogged = true;
+      logger.log(
+          Level.WARNING,
+          "Built-in metrics fallback project is already initialized to project {0}. Non-Spanner"
+              + " metrics without project information will be exported using that project instead"
+              + " of project {1}.",
+          new Object[] {this.projectId, projectId});
+    }
+  }
+
+  @Nullable
+  synchronized OpenTelemetry getOpenTelemetry() {
+    return this.openTelemetry;
+  }
+
+  synchronized String getProjectId() {
+    return this.projectId;
+  }
+
+  @VisibleForTesting
+  synchronized void reset() {
+    if (this.openTelemetry instanceof OpenTelemetrySdk) {
+      ((OpenTelemetrySdk) this.openTelemetry).getSdkMeterProvider().close();
+    }
+    if (this.shutdownHook != null) {
+      try {
+        Runtime.getRuntime().removeShutdownHook(this.shutdownHook);
+      } catch (IllegalStateException ignored) {
+        // The JVM is already shutting down.
+      }
+    }
+    this.openTelemetry = null;
+    this.projectId = null;
+    this.mismatchedProjectIdLogged = false;
+    this.shutdownHook = null;
   }
 
   // TODO: Remove when
@@ -218,12 +262,14 @@ final class BuiltInMetricsProvider {
     if (location == null) {
       location = default_location;
       if (quickCheckIsRunningOnGcp()) {
-        GCPPlatformDetector detector = GCPPlatformDetector.DEFAULT_INSTANCE;
-        DetectedPlatform detectedPlatform = detector.detectPlatform();
-        // All platform except GKE uses "cloud_region" for region attribute.
-        String region = detectedPlatform.getAttributes().get("cloud_region");
-        if (detectedPlatform.getSupportedPlatform() == GOOGLE_KUBERNETES_ENGINE) {
-          region = detectedPlatform.getAttributes().get(AttributeKeys.GKE_CLUSTER_LOCATION);
+        Attributes detectedResourceAttributes = new GCPResourceProvider().getAttributes();
+        // All platform except GKE uses "cloud.region" for region attribute.
+        // GKE could either use "cloud.region" or "cloud.availability_zone" for region attribute.
+        String region = detectedResourceAttributes.get(AttributeKey.stringKey("cloud.region"));
+        String gkeZonalClusterLocation =
+            detectedResourceAttributes.get(AttributeKey.stringKey("cloud.availability_zone"));
+        if (region == null && gkeZonalClusterLocation != null) {
+          region = gkeZonalClusterLocation;
         }
         location = region == null ? location : region;
       }

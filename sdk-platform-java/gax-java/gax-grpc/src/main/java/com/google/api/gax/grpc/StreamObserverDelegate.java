@@ -31,12 +31,14 @@ package com.google.api.gax.grpc;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import io.grpc.stub.StreamObserver;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A delegate class that transfers calls to the StreamObserver object.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class StreamObserverDelegate<V> implements ApiStreamObserver<V> {
 
   private final StreamObserver<V> delegate;

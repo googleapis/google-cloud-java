@@ -55,6 +55,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
   private VerifyAttestationRequest() {
     challenge_ = "";
     attester_ = "";
+    instance_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -719,6 +720,67 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int INSTANCE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional resource link of the Compute Engine instance.
+   * Format:
+   * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+   * </pre>
+   *
+   * <code>
+   * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The instance.
+   */
+  @java.lang.Override
+  public java.lang.String getInstance() {
+    java.lang.Object ref = instance_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instance_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional resource link of the Compute Engine instance.
+   * Format:
+   * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+   * </pre>
+   *
+   * <code>
+   * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for instance.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInstanceBytes() {
+    java.lang.Object ref = instance_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -763,6 +825,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       output.writeMessage(
           9, (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, instance_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -806,6 +871,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.confidentialcomputing.v1.NvidiaAttestation) deviceAttestation_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, instance_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -840,6 +908,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (!getTokenOptions().equals(other.getTokenOptions())) return false;
     }
     if (!getAttester().equals(other.getAttester())) return false;
+    if (!getInstance().equals(other.getInstance())) return false;
     if (!getTeeAttestationCase().equals(other.getTeeAttestationCase())) return false;
     switch (teeAttestationCase_) {
       case 6:
@@ -890,6 +959,8 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + ATTESTER_FIELD_NUMBER;
     hash = (53 * hash) + getAttester().hashCode();
+    hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + getInstance().hashCode();
     switch (teeAttestationCase_) {
       case 6:
         hash = (37 * hash) + TD_CCEL_FIELD_NUMBER;
@@ -1097,6 +1168,7 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tokenOptionsBuilder_ = null;
       }
       attester_ = "";
+      instance_ = "";
       teeAttestationCase_ = 0;
       teeAttestation_ = null;
       deviceAttestationCase_ = 0;
@@ -1170,6 +1242,9 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.attester_ = attester_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.instance_ = instance_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1226,6 +1301,11 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (!other.getAttester().isEmpty()) {
         attester_ = other.attester_;
         bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getInstance().isEmpty()) {
+        instance_ = other.instance_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getTeeAttestationCase()) {
@@ -1341,6 +1421,12 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
                 deviceAttestationCase_ = 9;
                 break;
               } // case 74
+            case 82:
+              {
+                instance_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3257,6 +3343,137 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       attester_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object instance_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional resource link of the Compute Engine instance.
+     * Format:
+     * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+     * </pre>
+     *
+     * <code>
+     * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The instance.
+     */
+    public java.lang.String getInstance() {
+      java.lang.Object ref = instance_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instance_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional resource link of the Compute Engine instance.
+     * Format:
+     * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+     * </pre>
+     *
+     * <code>
+     * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for instance.
+     */
+    public com.google.protobuf.ByteString getInstanceBytes() {
+      java.lang.Object ref = instance_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional resource link of the Compute Engine instance.
+     * Format:
+     * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+     * </pre>
+     *
+     * <code>
+     * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The instance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstance(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      instance_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional resource link of the Compute Engine instance.
+     * Format:
+     * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+     * </pre>
+     *
+     * <code>
+     * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstance() {
+      instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional resource link of the Compute Engine instance.
+     * Format:
+     * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+     * </pre>
+     *
+     * <code>
+     * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for instance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstanceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      instance_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

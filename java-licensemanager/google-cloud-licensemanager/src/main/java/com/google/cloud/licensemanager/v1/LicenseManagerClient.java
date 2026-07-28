@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -412,9 +414,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LicenseManagerClient implements BackgroundResource {
-  private final LicenseManagerSettings settings;
+  private final @Nullable LicenseManagerSettings settings;
   private final LicenseManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -462,7 +465,7 @@ public class LicenseManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final LicenseManagerSettings getSettings() {
+  public final @Nullable LicenseManagerSettings getSettings() {
     return settings;
   }
 
@@ -510,7 +513,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListConfigurationsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConfigurationsPagedResponse listConfigurations(LocationName parent) {
+  public final ListConfigurationsPagedResponse listConfigurations(@Nullable LocationName parent) {
     ListConfigurationsRequest request =
         ListConfigurationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -680,7 +683,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Configuration getConfiguration(ConfigurationName name) {
+  public final Configuration getConfiguration(@Nullable ConfigurationName name) {
     GetConfigurationRequest request =
         GetConfigurationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConfiguration(request);
@@ -799,7 +802,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Configuration, OperationMetadata> createConfigurationAsync(
-      LocationName parent, Configuration configuration, String configurationId) {
+      @Nullable LocationName parent, Configuration configuration, String configurationId) {
     CreateConfigurationRequest request =
         CreateConfigurationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1094,7 +1097,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConfigurationAsync(
-      ConfigurationName name) {
+      @Nullable ConfigurationName name) {
     DeleteConfigurationRequest request =
         DeleteConfigurationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1244,7 +1247,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListInstancesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1410,7 +1413,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1519,7 +1522,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Configuration, OperationMetadata> deactivateConfigurationAsync(
-      ConfigurationName name) {
+      @Nullable ConfigurationName name) {
     DeactivateConfigurationRequest request =
         DeactivateConfigurationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1670,7 +1673,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Configuration, OperationMetadata> reactivateConfigurationAsync(
-      ConfigurationName name) {
+      @Nullable ConfigurationName name) {
     ReactivateConfigurationRequest request =
         ReactivateConfigurationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1828,7 +1831,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QueryConfigurationLicenseUsageResponse queryConfigurationLicenseUsage(
-      ConfigurationName name, Timestamp startTime, Timestamp endTime) {
+      @Nullable ConfigurationName name, Timestamp startTime, Timestamp endTime) {
     QueryConfigurationLicenseUsageRequest request =
         QueryConfigurationLicenseUsageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1974,7 +1977,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AggregateUsagePagedResponse aggregateUsage(
-      ConfigurationName name, Timestamp startTime, Timestamp endTime) {
+      @Nullable ConfigurationName name, Timestamp startTime, Timestamp endTime) {
     AggregateUsageRequest request =
         AggregateUsageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2168,7 +2171,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListProductsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProductsPagedResponse listProducts(LocationName parent) {
+  public final ListProductsPagedResponse listProducts(@Nullable LocationName parent) {
     ListProductsRequest request =
         ListProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2334,7 +2337,7 @@ public class LicenseManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Product getProduct(ProductName name) {
+  public final Product getProduct(@Nullable ProductName name) {
     GetProductRequest request =
         GetProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProduct(request);
@@ -2638,8 +2641,9 @@ public class LicenseManagerClient implements BackgroundResource {
           ListConfigurationsPage> {
 
     private ListConfigurationsPage(
-        PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration> context,
-        ListConfigurationsResponse response) {
+        @Nullable PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration>
+            context,
+        @Nullable ListConfigurationsResponse response) {
       super(context, response);
     }
 
@@ -2649,14 +2653,16 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListConfigurationsPage createPage(
-        PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration> context,
-        ListConfigurationsResponse response) {
+        @Nullable PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration>
+            context,
+        @Nullable ListConfigurationsResponse response) {
       return new ListConfigurationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConfigurationsPage> createPageAsync(
-        PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration> context,
+        @Nullable PageContext<ListConfigurationsRequest, ListConfigurationsResponse, Configuration>
+            context,
         ApiFuture<ListConfigurationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2671,7 +2677,7 @@ public class LicenseManagerClient implements BackgroundResource {
           ListConfigurationsFixedSizeCollection> {
 
     private ListConfigurationsFixedSizeCollection(
-        List<ListConfigurationsPage> pages, int collectionSize) {
+        @Nullable List<ListConfigurationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2681,7 +2687,7 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListConfigurationsFixedSizeCollection createCollection(
-        List<ListConfigurationsPage> pages, int collectionSize) {
+        @Nullable List<ListConfigurationsPage> pages, int collectionSize) {
       return new ListConfigurationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2715,8 +2721,8 @@ public class LicenseManagerClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -2726,14 +2732,14 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2747,7 +2753,8 @@ public class LicenseManagerClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2757,7 +2764,7 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2791,8 +2798,8 @@ public class LicenseManagerClient implements BackgroundResource {
           AggregateUsageRequest, AggregateUsageResponse, Usage, AggregateUsagePage> {
 
     private AggregateUsagePage(
-        PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
-        AggregateUsageResponse response) {
+        @Nullable PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
+        @Nullable AggregateUsageResponse response) {
       super(context, response);
     }
 
@@ -2802,14 +2809,14 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected AggregateUsagePage createPage(
-        PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
-        AggregateUsageResponse response) {
+        @Nullable PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
+        @Nullable AggregateUsageResponse response) {
       return new AggregateUsagePage(context, response);
     }
 
     @Override
     public ApiFuture<AggregateUsagePage> createPageAsync(
-        PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
+        @Nullable PageContext<AggregateUsageRequest, AggregateUsageResponse, Usage> context,
         ApiFuture<AggregateUsageResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2823,7 +2830,8 @@ public class LicenseManagerClient implements BackgroundResource {
           AggregateUsagePage,
           AggregateUsageFixedSizeCollection> {
 
-    private AggregateUsageFixedSizeCollection(List<AggregateUsagePage> pages, int collectionSize) {
+    private AggregateUsageFixedSizeCollection(
+        @Nullable List<AggregateUsagePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2833,7 +2841,7 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected AggregateUsageFixedSizeCollection createCollection(
-        List<AggregateUsagePage> pages, int collectionSize) {
+        @Nullable List<AggregateUsagePage> pages, int collectionSize) {
       return new AggregateUsageFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2866,8 +2874,8 @@ public class LicenseManagerClient implements BackgroundResource {
       extends AbstractPage<ListProductsRequest, ListProductsResponse, Product, ListProductsPage> {
 
     private ListProductsPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       super(context, response);
     }
 
@@ -2877,14 +2885,14 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListProductsPage createPage(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
-        ListProductsResponse response) {
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable ListProductsResponse response) {
       return new ListProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProductsPage> createPageAsync(
-        PageContext<ListProductsRequest, ListProductsResponse, Product> context,
+        @Nullable PageContext<ListProductsRequest, ListProductsResponse, Product> context,
         ApiFuture<ListProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2898,7 +2906,8 @@ public class LicenseManagerClient implements BackgroundResource {
           ListProductsPage,
           ListProductsFixedSizeCollection> {
 
-    private ListProductsFixedSizeCollection(List<ListProductsPage> pages, int collectionSize) {
+    private ListProductsFixedSizeCollection(
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2908,7 +2917,7 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListProductsFixedSizeCollection createCollection(
-        List<ListProductsPage> pages, int collectionSize) {
+        @Nullable List<ListProductsPage> pages, int collectionSize) {
       return new ListProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2942,8 +2951,8 @@ public class LicenseManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2953,14 +2962,14 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2974,7 +2983,8 @@ public class LicenseManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2984,7 +2994,7 @@ public class LicenseManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

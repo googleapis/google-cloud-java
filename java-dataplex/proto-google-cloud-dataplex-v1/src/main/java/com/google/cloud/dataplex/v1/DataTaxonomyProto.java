@@ -324,7 +324,7 @@ public final class DataTaxonomyProto extends com.google.protobuf.GeneratedFile {
           + "!DeleteDataAttributeBindingRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",dataplex.googleapis.com/DataAttributeBinding\022\021\n"
-          + "\004etag\030\002 \001(\tB\003\340A\0022\273\035\n"
+          + "\004etag\030\002 \001(\tB\003\340A\0022\360\035\n"
           + "\023DataTaxonomyService\022\203\002\n"
           + "\022CreateDataTaxonomy\0223.google.cloud.datapl"
           + "ex.v1.CreateDataTaxonomyRequest\032\035.google.longrunning.Operation\"\230\001\210\002\001\312A!\n"
@@ -399,10 +399,11 @@ public final class DataTaxonomyProto extends com.google.protobuf.GeneratedFile {
           + "tDataAttributeRequest\032\'.google.cloud.dat"
           + "aplex.v1.DataAttribute\"Q\210\002\001\332A\004name\202\323\344\223\002A"
           + "\022?/v1/{name=projects/*/locations/*/dataT"
-          + "axonomies/*/attributes/*}\032N\210\002\001\312A\027dataple"
-          + "x.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBm\n"
-          + "\034com.google.cloud.dataplex.v1B\021DataTaxonomyProtoP\001Z8"
-          + "cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "axonomies/*/attributes/*}\032\202\001\210\002\001\312A\027datapl"
+          + "ex.googleapis.com\322Abhttps://www.googleapis.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/dataplex.read-writeBm\n"
+          + "\034com.google.cloud.dataplex.v1B\021DataTaxo"
+          + "nomyProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -20,6 +20,7 @@ steps:
   ]
   env:
   - 'JOB_TYPE=samples'
+  - 'BUILD_SUBDIR=java-bigquery'
   - 'BIGQUERY_PROJECT_ID=cloud-java-ci-sample'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
   - 'GCS_BUCKET=java-samples-bigquery'

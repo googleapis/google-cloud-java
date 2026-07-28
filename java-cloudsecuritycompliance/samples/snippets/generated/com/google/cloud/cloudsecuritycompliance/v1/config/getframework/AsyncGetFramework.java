@@ -38,7 +38,10 @@ public class AsyncGetFramework {
     try (ConfigClient configClient = ConfigClient.create()) {
       GetFrameworkRequest request =
           GetFrameworkRequest.newBuilder()
-              .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+              .setName(
+                  FrameworkName.ofOrganizationLocationFrameworkName(
+                          "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                      .toString())
               .setMajorRevisionId(612576889)
               .build();
       ApiFuture<Framework> future = configClient.getFrameworkCallable().futureCall(request);

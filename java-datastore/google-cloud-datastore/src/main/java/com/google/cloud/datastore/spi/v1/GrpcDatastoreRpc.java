@@ -24,7 +24,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
-import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.ClientContext;
@@ -80,14 +79,11 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
           DatastoreStubSettings.newBuilder(clientContext)
               .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions));
       if (!isEmulator(datastoreOptions)) {
+        // Use the TransportChannelProvider configured in DatastoreOptions. For gRPC transport, this
+        // will
+        // be configured with a default ChannelPool configuration
         datastoreStubSettingsBuilder.setTransportChannelProvider(
-            DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                .setChannelPoolSettings(
-                    ChannelPoolSettings.builder()
-                        .setInitialChannelCount(DatastoreOptions.INIT_CHANNEL_COUNT)
-                        .setMinChannelCount(DatastoreOptions.MIN_CHANNEL_COUNT)
-                        .build())
-                .build());
+            datastoreOptions.getTransportChannelProvider());
       }
 
       datastoreStub = GrpcDatastoreStub.create(datastoreStubSettingsBuilder.build());

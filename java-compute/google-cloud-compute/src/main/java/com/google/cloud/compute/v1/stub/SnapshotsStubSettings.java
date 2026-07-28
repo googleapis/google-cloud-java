@@ -58,6 +58,7 @@ import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
 import com.google.cloud.compute.v1.TestIamPermissionsSnapshotRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateKmsKeySnapshotRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -66,6 +67,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,6 +144,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
@@ -167,6 +171,9 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeySettings;
+  private final OperationCallSettings<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationSettings;
 
   private static final PagedListDescriptor<ListSnapshotsRequest, SnapshotList, Snapshot>
       LIST_PAGE_STR_DESC =
@@ -277,6 +284,17 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeySettings() {
+    return updateKmsKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return updateKmsKeyOperationSettings;
+  }
+
   public SnapshotsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -346,7 +364,7 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -369,6 +387,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateKmsKeySettings = settingsBuilder.updateKmsKeySettings().build();
+    updateKmsKeyOperationSettings = settingsBuilder.updateKmsKeyOperationSettings().build();
   }
 
   @Override
@@ -402,6 +422,10 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     private final UnaryCallSettings.Builder<
             TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation>
+        updateKmsKeySettings;
+    private final OperationCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation, Operation>
+        updateKmsKeyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -449,7 +473,7 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -463,6 +487,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKmsKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKmsKeyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -473,7 +499,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
               listSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateKmsKeySettings);
       initDefaults(this);
     }
 
@@ -491,6 +518,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateKmsKeySettings = settings.updateKmsKeySettings.toBuilder();
+      updateKmsKeyOperationSettings = settings.updateKmsKeyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -501,7 +530,8 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
               listSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateKmsKeySettings);
     }
 
     private static Builder createDefault() {
@@ -558,6 +588,11 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateKmsKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -610,6 +645,30 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SetLabelsSnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateKmsKeyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateKmsKeySnapshotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -705,6 +764,18 @@ public class SnapshotsStubSettings extends StubSettings<SnapshotsStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation>
+        updateKmsKeySettings() {
+      return updateKmsKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return updateKmsKeyOperationSettings;
     }
 
     @Override

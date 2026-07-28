@@ -21,13 +21,14 @@ excluded_modules=(
   'java-vertexai'
   'java-logging'
   'java-bigquery'
+  'java-bigquery-jdbc'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
   'sdk-platform-java'
   'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
   'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
-  'sdk-platform-java/java-showcase'
+  'java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
   'java-spanner'
@@ -36,6 +37,13 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-cloud-bom'
+  'java-shared-config'
+  'java-firestore'
+  'java-bigtable'
+  'java-pubsub'
+  'java-common-protos'
+  'java-iam'
 )
 
 function retry_with_backoff {
@@ -399,6 +407,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
@@ -406,25 +416,30 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      'java-monitoring/google-cloud-monitoring'
+      'java-monitoring/google-cloud-monitoring-bom'
       'google-auth-library-java/appengine'
       'google-auth-library-java/bom'
       'google-auth-library-java/cab-token-generator'
       'google-auth-library-java/credentials'
       'google-auth-library-java/oauth2_http'
+      'java-common-protos/grpc-google-common-protos'
+      'java-common-protos/proto-google-common-protos'
+      'java-iam/grpc-google-iam-v1'
+      'java-iam/grpc-google-iam-v2'
+      'java-iam/grpc-google-iam-v2beta'
+      'java-iam/grpc-google-iam-v3'
+      'java-iam/grpc-google-iam-v3beta'
+      'java-iam/proto-google-iam-v1'
+      'java-iam/proto-google-iam-v2'
+      'java-iam/proto-google-iam-v2beta'
+      'java-iam/proto-google-iam-v3'
+      'java-iam/proto-google-iam-v3beta'
+      'gapic-libraries-bom'
       'sdk-platform-java/java-shared-dependencies'
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
       'sdk-platform-java/gapic-generator-java-bom'
-      'sdk-platform-java/java-iam/grpc-google-iam-v1'
-      'sdk-platform-java/java-iam/grpc-google-iam-v2'
-      'sdk-platform-java/java-iam/grpc-google-iam-v2beta'
-      'sdk-platform-java/java-iam/grpc-google-iam-v3'
-      'sdk-platform-java/java-iam/grpc-google-iam-v3beta'
-      'sdk-platform-java/java-iam/proto-google-iam-v1'
-      'sdk-platform-java/java-iam/proto-google-iam-v2'
-      'sdk-platform-java/java-iam/proto-google-iam-v2beta'
-      'sdk-platform-java/java-iam/proto-google-iam-v3'
-      'sdk-platform-java/java-iam/proto-google-iam-v3beta'
       'sdk-platform-java/java-core/google-cloud-core-bom'
       'sdk-platform-java/java-core/google-cloud-core'
       'sdk-platform-java/java-core/google-cloud-core-grpc'
@@ -462,6 +477,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   fi
 }

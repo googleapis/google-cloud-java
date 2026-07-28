@@ -82,7 +82,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The parent resource of the EndpointPolicy. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -109,7 +109,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
    *
    * <pre>
    * Required. The parent resource of the EndpointPolicy. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -636,7 +636,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource of the EndpointPolicy. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -662,7 +662,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource of the EndpointPolicy. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -688,7 +688,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource of the EndpointPolicy. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -713,7 +713,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource of the EndpointPolicy. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -734,7 +734,7 @@ public final class CreateEndpointPolicyRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Required. The parent resource of the EndpointPolicy. Must be in the
-     * format `projects/&#42;&#47;locations/global`.
+     * format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>

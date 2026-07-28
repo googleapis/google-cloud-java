@@ -226,7 +226,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -245,7 +250,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -271,7 +281,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -293,7 +308,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -318,7 +338,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -338,8 +363,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -352,8 +378,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -373,8 +400,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -390,8 +418,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -410,8 +439,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -426,7 +456,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -440,7 +470,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -461,7 +491,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -478,7 +508,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -498,7 +528,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -514,9 +544,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -531,9 +561,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -555,9 +585,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -575,9 +605,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -598,9 +628,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -700,13 +730,44 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * </code>
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    java.lang.String getEtag();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    com.google.protobuf.ByteString getEtagBytes();
   }
 
   /**
    *
    *
    * <pre>
-   * A [policy][google.cloud.binaryauthorization.v1.Policy] for container image binary authorization.
+   * A [policy][google.cloud.binaryauthorization.v1.Policy] for container image
+   * binary authorization.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.Policy}
@@ -737,6 +798,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       description_ = "";
       globalPolicyEvaluationMode_ = 0;
       admissionWhitelistPatterns_ = java.util.Collections.emptyList();
+      etag_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -780,7 +842,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Not specified: DISABLE is assumed.
+       * Not specified: `DISABLE` is assumed.
        * </pre>
        *
        * <code>GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0;</code>
@@ -823,7 +885,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Not specified: DISABLE is assumed.
+       * Not specified: `DISABLE` is assumed.
        * </pre>
        *
        * <code>GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED = 0;</code>
@@ -1258,7 +1320,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -1293,7 +1360,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -1318,7 +1390,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -1353,7 +1430,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-cluster admission rules. Cluster spec format:
+     * Optional. A valid policy has only one of the following rule maps non-empty,
+     * i.e. only one of `cluster_admission_rules`,
+     * `kubernetes_namespace_admission_rules`,
+     * `kubernetes_service_account_admission_rules`,
+     * or `istio_service_identity_admission_rules` can be non-empty.
+     * Per-cluster admission rules. Cluster spec format:
      * `location.clusterId`. There can be at most one admission rule per cluster
      * spec.
      * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -1427,8 +1509,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -1457,8 +1540,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -1477,8 +1561,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -1507,8 +1592,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-     * [a-z.-]+, e.g. 'some-namespace'
+     * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+     * format:
+     * `[a-z.-]+`, e.g. `some-namespace`
      * </pre>
      *
      * <code>
@@ -1577,7 +1663,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -1607,7 +1693,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -1627,7 +1713,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -1657,7 +1743,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Optional. Per-kubernetes-service-account admission rules. Service account
-     * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+     * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
      * </pre>
      *
      * <code>
@@ -1727,9 +1813,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -1760,9 +1846,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -1783,9 +1869,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -1816,9 +1902,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * <pre>
      * Optional. Per-istio-service-identity admission rules. Istio service
      * identity spec format:
-     * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-     * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-     * e.g. spiffe://example.com/ns/test-ns/sa/default
+     * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+     * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+     * e.g. `spiffe://example.com/ns/test-ns/sa/default`
      * </pre>
      *
      * <code>
@@ -1963,6 +2049,63 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
+    public static final int ETAG_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    @java.lang.Override
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the policy has an up-to-date value before attempting to
+     * update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2018,6 +2161,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           internalGetKubernetesNamespaceAdmissionRules(),
           KubernetesNamespaceAdmissionRulesDefaultEntryHolder.defaultEntry,
           10);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, etag_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2119,6 +2265,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, kubernetesNamespaceAdmissionRules__);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, etag_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2157,6 +2306,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       if (hasUpdateTime()) {
         if (!getUpdateTime().equals(other.getUpdateTime())) return false;
       }
+      if (!getEtag().equals(other.getEtag())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2202,6 +2352,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateTime().hashCode();
       }
+      hash = (37 * hash) + ETAG_FIELD_NUMBER;
+      hash = (53 * hash) + getEtag().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2309,7 +2461,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * A [policy][google.cloud.binaryauthorization.v1.Policy] for container image binary authorization.
+     * A [policy][google.cloud.binaryauthorization.v1.Policy] for container image
+     * binary authorization.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.Policy}
@@ -2415,6 +2568,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
+        etag_ = "";
         return this;
       }
 
@@ -2512,6 +2666,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
               updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.etag_ = etag_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2589,6 +2746,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         }
         if (other.hasUpdateTime()) {
           mergeUpdateTime(other.getUpdateTime());
+        }
+        if (!other.getEtag().isEmpty()) {
+          etag_ = other.etag_;
+          bitField0_ |= 0x00000400;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2740,6 +2902,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
                   bitField0_ |= 0x00000020;
                   break;
                 } // case 82
+              case 90:
+                {
+                  etag_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3697,7 +3865,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3732,7 +3905,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3757,7 +3935,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3795,7 +3978,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3835,7 +4023,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3870,7 +4063,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3901,7 +4099,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -3936,7 +4139,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-cluster admission rules. Cluster spec format:
+       * Optional. A valid policy has only one of the following rule maps non-empty,
+       * i.e. only one of `cluster_admission_rules`,
+       * `kubernetes_namespace_admission_rules`,
+       * `kubernetes_service_account_admission_rules`,
+       * or `istio_service_identity_admission_rules` can be non-empty.
+       * Per-cluster admission rules. Cluster spec format:
        * `location.clusterId`. There can be at most one admission rule per cluster
        * spec.
        * A `location` is either a compute zone (e.g. us-central1-a) or a region
@@ -4060,8 +4268,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4090,8 +4299,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4110,8 +4320,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4143,8 +4354,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4178,8 +4390,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4208,8 +4421,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4234,8 +4448,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4264,8 +4479,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec format:
-       * [a-z.-]+, e.g. 'some-namespace'
+       * Optional. Per-kubernetes-namespace admission rules. K8s namespace spec
+       * format:
+       * `[a-z.-]+`, e.g. `some-namespace`
        * </pre>
        *
        * <code>
@@ -4385,7 +4601,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4417,7 +4633,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4437,7 +4653,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4470,7 +4686,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4505,7 +4721,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4535,7 +4751,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4563,7 +4779,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4595,7 +4811,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Optional. Per-kubernetes-service-account admission rules. Service account
-       * spec format: `namespace:serviceaccount`. e.g. 'test-ns:default'
+       * spec format: `namespace:serviceaccount`. e.g. `test-ns:default`
        * </pre>
        *
        * <code>
@@ -4717,9 +4933,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4750,9 +4966,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4773,9 +4989,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4809,9 +5025,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4847,9 +5063,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4880,9 +5096,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4909,9 +5125,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -4942,9 +5158,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * <pre>
        * Optional. Per-istio-service-identity admission rules. Istio service
        * identity spec format:
-       * spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt; or
-       * &lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;
-       * e.g. spiffe://example.com/ns/test-ns/sa/default
+       * `spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;` or
+       * `&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;`
+       * e.g. `spiffe://example.com/ns/test-ns/sa/default`
        * </pre>
        *
        * <code>
@@ -5429,6 +5645,127 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         return updateTimeBuilder_;
       }
 
+      private java.lang.Object etag_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the policy has an up-to-date value before attempting to
+       * update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The etag.
+       */
+      public java.lang.String getEtag() {
+        java.lang.Object ref = etag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          etag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the policy has an up-to-date value before attempting to
+       * update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for etag.
+       */
+      public com.google.protobuf.ByteString getEtagBytes() {
+        java.lang.Object ref = etag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          etag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the policy has an up-to-date value before attempting to
+       * update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtag(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        etag_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the policy has an up-to-date value before attempting to
+       * update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEtag() {
+        etag_ = getDefaultInstance().getEtag();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the policy has an up-to-date value before attempting to
+       * update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        etag_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1.Policy)
     }
 
@@ -5527,8 +5864,10 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * An [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern] exempts images
-   * from checks by [admission rules][google.cloud.binaryauthorization.v1.AdmissionRule].
+   * An [admission allowlist
+   * pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
+   * exempts images from checks by [admission
+   * rules][google.cloud.binaryauthorization.v1.AdmissionRule].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern}
@@ -5824,8 +6163,10 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * An [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern] exempts images
-     * from checks by [admission rules][google.cloud.binaryauthorization.v1.AdmissionRule].
+     * An [admission allowlist
+     * pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
+     * exempts images from checks by [admission
+     * rules][google.cloud.binaryauthorization.v1.AdmissionRule].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern}
@@ -6227,8 +6568,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6248,8 +6589,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6269,8 +6610,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6291,8 +6632,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6339,13 +6680,15 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * An [admission rule][google.cloud.binaryauthorization.v1.AdmissionRule] specifies either that all container images
-   * used in a pod creation request must be attested to by one or more
-   * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod creations will be allowed, or that all
-   * pod creations will be denied.
+   * An [admission rule][google.cloud.binaryauthorization.v1.AdmissionRule]
+   * specifies either that all container images used in a pod creation request
+   * must be attested to by one or more
+   * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod
+   * creations will be allowed, or that all pod creations will be denied.
    *
-   * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
-   * are exempted from admission rules and will never block a pod creation.
+   * Images matching an [admission allowlist
+   * pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern] are
+   * exempted from admission rules and will never block a pod creation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.AdmissionRule}
@@ -6409,7 +6752,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * This rule allows all all pod creations.
+       * This rule allows all pod creations.
        * </pre>
        *
        * <code>ALWAYS_ALLOW = 1;</code>
@@ -6420,7 +6763,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * This rule allows a pod creation if all the attestors listed in
-       * 'require_attestations_by' have valid attestations for all of the
+       * `require_attestations_by` have valid attestations for all of the
        * images in the pod spec.
        * </pre>
        *
@@ -6465,7 +6808,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * This rule allows all all pod creations.
+       * This rule allows all pod creations.
        * </pre>
        *
        * <code>ALWAYS_ALLOW = 1;</code>
@@ -6477,7 +6820,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * This rule allows a pod creation if all the attestors listed in
-       * 'require_attestations_by' have valid attestations for all of the
+       * `require_attestations_by` have valid attestations for all of the
        * images in the pod spec.
        * </pre>
        *
@@ -6828,8 +7171,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6851,8 +7194,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6874,8 +7217,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -6898,8 +7241,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * to a policy the principal issuing the policy change request must be able
      * to read the attestor resource.
      *
-     * Note: this field must be non-empty when the evaluation_mode field specifies
-     * REQUIRE_ATTESTATION, otherwise it must be empty.
+     * Note: this field must be non-empty when the `evaluation_mode` field
+     * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
      * </pre>
      *
      * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -7172,13 +7515,15 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * An [admission rule][google.cloud.binaryauthorization.v1.AdmissionRule] specifies either that all container images
-     * used in a pod creation request must be attested to by one or more
-     * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod creations will be allowed, or that all
-     * pod creations will be denied.
+     * An [admission rule][google.cloud.binaryauthorization.v1.AdmissionRule]
+     * specifies either that all container images used in a pod creation request
+     * must be attested to by one or more
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor], that all pod
+     * creations will be allowed, or that all pod creations will be denied.
      *
-     * Images matching an [admission allowlist pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern]
-     * are exempted from admission rules and will never block a pod creation.
+     * Images matching an [admission allowlist
+     * pattern][google.cloud.binaryauthorization.v1.AdmissionWhitelistPattern] are
+     * exempted from admission rules and will never block a pod creation.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.AdmissionRule}
@@ -7506,8 +7851,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7531,8 +7876,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7555,8 +7900,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7580,8 +7925,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7605,8 +7950,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7638,8 +7983,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7670,8 +8015,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7699,8 +8044,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -7727,8 +8072,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * to a policy the principal issuing the policy change request must be able
        * to read the attestor resource.
        *
-       * Note: this field must be non-empty when the evaluation_mode field specifies
-       * REQUIRE_ATTESTATION, otherwise it must be empty.
+       * Note: this field must be non-empty when the `evaluation_mode` field
+       * specifies `REQUIRE_ATTESTATION`, otherwise it must be empty.
        * </pre>
        *
        * <code>
@@ -8072,6 +8417,36 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    java.lang.String getEtag();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    com.google.protobuf.ByteString getEtagBytes();
+
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.Attestor.AttestorTypeCase
         getAttestorTypeCase();
   }
@@ -8080,9 +8455,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * An [attestor][google.cloud.binaryauthorization.v1.Attestor] that attests to container image
-   * artifacts. An existing attestor cannot be modified except where
-   * indicated.
+   * An [attestor][google.cloud.binaryauthorization.v1.Attestor] that attests to
+   * container image artifacts. An existing attestor cannot be modified except
+   * where indicated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.Attestor}
@@ -8111,6 +8486,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
     private Attestor() {
       name_ = "";
       description_ = "";
+      etag_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8411,6 +8787,63 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
+    public static final int ETAG_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    @java.lang.Override
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A checksum, returned by the server, that can be sent on update
+     * requests to ensure the attestor has an up-to-date value before attempting
+     * to update it. See https://google.aip.dev/154.
+     * </pre>
+     *
+     * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8440,6 +8873,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, description_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, etag_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8466,6 +8902,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, description_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, etag_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8489,6 +8928,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       if (hasUpdateTime()) {
         if (!getUpdateTime().equals(other.getUpdateTime())) return false;
       }
+      if (!getEtag().equals(other.getEtag())) return false;
       if (!getAttestorTypeCase().equals(other.getAttestorTypeCase())) return false;
       switch (attestorTypeCase_) {
         case 3:
@@ -8516,6 +8956,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateTime().hashCode();
       }
+      hash = (37 * hash) + ETAG_FIELD_NUMBER;
+      hash = (53 * hash) + getEtag().hashCode();
       switch (attestorTypeCase_) {
         case 3:
           hash = (37 * hash) + USER_OWNED_GRAFEAS_NOTE_FIELD_NUMBER;
@@ -8636,9 +9078,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * An [attestor][google.cloud.binaryauthorization.v1.Attestor] that attests to container image
-     * artifacts. An existing attestor cannot be modified except where
-     * indicated.
+     * An [attestor][google.cloud.binaryauthorization.v1.Attestor] that attests to
+     * container image artifacts. An existing attestor cannot be modified except
+     * where indicated.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.Attestor}
@@ -8694,6 +9136,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
+        etag_ = "";
         attestorTypeCase_ = 0;
         attestorType_ = null;
         return this;
@@ -8750,6 +9193,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
               updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.etag_ = etag_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -8791,6 +9237,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         }
         if (other.hasUpdateTime()) {
           mergeUpdateTime(other.getUpdateTime());
+        }
+        if (!other.getEtag().isEmpty()) {
+          etag_ = other.etag_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
         switch (other.getAttestorTypeCase()) {
           case USER_OWNED_GRAFEAS_NOTE:
@@ -8856,6 +9307,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 50
+              case 58:
+                {
+                  etag_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9612,6 +10069,127 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         return updateTimeBuilder_;
       }
 
+      private java.lang.Object etag_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the attestor has an up-to-date value before attempting
+       * to update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The etag.
+       */
+      public java.lang.String getEtag() {
+        java.lang.Object ref = etag_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          etag_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the attestor has an up-to-date value before attempting
+       * to update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for etag.
+       */
+      public com.google.protobuf.ByteString getEtagBytes() {
+        java.lang.Object ref = etag_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          etag_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the attestor has an up-to-date value before attempting
+       * to update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtag(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        etag_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the attestor has an up-to-date value before attempting
+       * to update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEtag() {
+        etag_ = getDefaultInstance().getEtag();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A checksum, returned by the server, that can be sent on update
+       * requests to ensure the attestor has an up-to-date value before attempting
+       * to update it. See https://google.aip.dev/154.
+       * </pre>
+       *
+       * <code>string etag = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for etag to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        etag_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1.Attestor)
     }
 
@@ -9678,8 +10256,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The Grafeas resource name of a Attestation.Authority Note,
-     * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-     * not be updated.
+     * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+     * field may not be updated. A project ID must be used, not a project number.
      *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
@@ -9697,8 +10275,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The Grafeas resource name of a Attestation.Authority Note,
-     * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-     * not be updated.
+     * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+     * field may not be updated. A project ID must be used, not a project number.
      *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
@@ -9829,12 +10407,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Output only. This field will contain the service account email address
-     * that this Attestor will use as the principal when querying Container
+     * that this attestor will use as the principal when querying Container
      * Analysis. Attestor administrators must grant this service account the
-     * IAM role needed to read attestations from the [note_reference][Note] in
-     * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     * IAM role needed to read attestations from the
+     * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+     * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
      *
-     * This email address is fixed for the lifetime of the Attestor, but callers
+     * This email address is fixed for the lifetime of the attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
      * </pre>
@@ -9852,12 +10431,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Output only. This field will contain the service account email address
-     * that this Attestor will use as the principal when querying Container
+     * that this attestor will use as the principal when querying Container
      * Analysis. Attestor administrators must grant this service account the
-     * IAM role needed to read attestations from the [note_reference][Note] in
-     * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     * IAM role needed to read attestations from the
+     * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+     * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
      *
-     * This email address is fixed for the lifetime of the Attestor, but callers
+     * This email address is fixed for the lifetime of the attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
      * </pre>
@@ -9875,8 +10455,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * An [user owned Grafeas note][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote] references a Grafeas
-   * Attestation.Authority Note created by the user.
+   * An [user owned Grafeas
+   * note][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote] references a
+   * Grafeas Attestation.Authority Note created by the user.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote}
@@ -9935,8 +10516,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The Grafeas resource name of a Attestation.Authority Note,
-     * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-     * not be updated.
+     * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+     * field may not be updated. A project ID must be used, not a project number.
      *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
@@ -9965,8 +10546,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The Grafeas resource name of a Attestation.Authority Note,
-     * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-     * not be updated.
+     * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+     * field may not be updated. A project ID must be used, not a project number.
      *
      * An attestation by this attestor is stored as a Grafeas
      * Attestation.Authority Occurrence that names a container image and that
@@ -10136,12 +10717,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Output only. This field will contain the service account email address
-     * that this Attestor will use as the principal when querying Container
+     * that this attestor will use as the principal when querying Container
      * Analysis. Attestor administrators must grant this service account the
-     * IAM role needed to read attestations from the [note_reference][Note] in
-     * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     * IAM role needed to read attestations from the
+     * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+     * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
      *
-     * This email address is fixed for the lifetime of the Attestor, but callers
+     * This email address is fixed for the lifetime of the attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
      * </pre>
@@ -10170,12 +10752,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Output only. This field will contain the service account email address
-     * that this Attestor will use as the principal when querying Container
+     * that this attestor will use as the principal when querying Container
      * Analysis. Attestor administrators must grant this service account the
-     * IAM role needed to read attestations from the [note_reference][Note] in
-     * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+     * IAM role needed to read attestations from the
+     * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+     * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
      *
-     * This email address is fixed for the lifetime of the Attestor, but callers
+     * This email address is fixed for the lifetime of the attestor, but callers
      * should not make any other assumptions about the service account email;
      * future versions may use an email based on a different naming pattern.
      * </pre>
@@ -10409,8 +10992,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * An [user owned Grafeas note][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote] references a Grafeas
-     * Attestation.Authority Note created by the user.
+     * An [user owned Grafeas
+     * note][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote] references a
+     * Grafeas Attestation.Authority Note created by the user.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote}
@@ -10663,8 +11247,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The Grafeas resource name of a Attestation.Authority Note,
-       * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-       * not be updated.
+       * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+       * field may not be updated. A project ID must be used, not a project number.
        *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
@@ -10692,8 +11276,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The Grafeas resource name of a Attestation.Authority Note,
-       * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-       * not be updated.
+       * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+       * field may not be updated. A project ID must be used, not a project number.
        *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
@@ -10721,8 +11305,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The Grafeas resource name of a Attestation.Authority Note,
-       * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-       * not be updated.
+       * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+       * field may not be updated. A project ID must be used, not a project number.
        *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
@@ -10749,8 +11333,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The Grafeas resource name of a Attestation.Authority Note,
-       * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-       * not be updated.
+       * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+       * field may not be updated. A project ID must be used, not a project number.
        *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
@@ -10773,8 +11357,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The Grafeas resource name of a Attestation.Authority Note,
-       * created by the user, in the format: `projects/&#42;&#47;notes/&#42;`. This field may
-       * not be updated.
+       * created by the user, in the format: `projects/[PROJECT_ID]/notes/&#42;`. This
+       * field may not be updated. A project ID must be used, not a project number.
        *
        * An attestation by this attestor is stored as a Grafeas
        * Attestation.Authority Occurrence that names a container image and that
@@ -11396,12 +11980,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Output only. This field will contain the service account email address
-       * that this Attestor will use as the principal when querying Container
+       * that this attestor will use as the principal when querying Container
        * Analysis. Attestor administrators must grant this service account the
-       * IAM role needed to read attestations from the [note_reference][Note] in
-       * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       * IAM role needed to read attestations from the
+       * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+       * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
        *
-       * This email address is fixed for the lifetime of the Attestor, but callers
+       * This email address is fixed for the lifetime of the attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
        * </pre>
@@ -11429,12 +12014,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Output only. This field will contain the service account email address
-       * that this Attestor will use as the principal when querying Container
+       * that this attestor will use as the principal when querying Container
        * Analysis. Attestor administrators must grant this service account the
-       * IAM role needed to read attestations from the [note_reference][Note] in
-       * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       * IAM role needed to read attestations from the
+       * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+       * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
        *
-       * This email address is fixed for the lifetime of the Attestor, but callers
+       * This email address is fixed for the lifetime of the attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
        * </pre>
@@ -11462,12 +12048,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Output only. This field will contain the service account email address
-       * that this Attestor will use as the principal when querying Container
+       * that this attestor will use as the principal when querying Container
        * Analysis. Attestor administrators must grant this service account the
-       * IAM role needed to read attestations from the [note_reference][Note] in
-       * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       * IAM role needed to read attestations from the
+       * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+       * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
        *
-       * This email address is fixed for the lifetime of the Attestor, but callers
+       * This email address is fixed for the lifetime of the attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
        * </pre>
@@ -11494,12 +12081,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Output only. This field will contain the service account email address
-       * that this Attestor will use as the principal when querying Container
+       * that this attestor will use as the principal when querying Container
        * Analysis. Attestor administrators must grant this service account the
-       * IAM role needed to read attestations from the [note_reference][Note] in
-       * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       * IAM role needed to read attestations from the
+       * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+       * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
        *
-       * This email address is fixed for the lifetime of the Attestor, but callers
+       * This email address is fixed for the lifetime of the attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
        * </pre>
@@ -11522,12 +12110,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Output only. This field will contain the service account email address
-       * that this Attestor will use as the principal when querying Container
+       * that this attestor will use as the principal when querying Container
        * Analysis. Attestor administrators must grant this service account the
-       * IAM role needed to read attestations from the [note_reference][Note] in
-       * Container Analysis (`containeranalysis.notes.occurrences.viewer`).
+       * IAM role needed to read attestations from the
+       * [note_reference][google.cloud.binaryauthorization.v1.UserOwnedGrafeasNote.note_reference]
+       * in Container Analysis (`containeranalysis.notes.occurrences.viewer`).
        *
-       * This email address is fixed for the lifetime of the Attestor, but callers
+       * This email address is fixed for the lifetime of the attestor, but callers
        * should not make any other assumptions about the service account email;
        * future versions may use an email based on a different naming pattern.
        * </pre>
@@ -11680,16 +12269,67 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      */
     com.google.protos.google.cloud.binaryauthorization.v1.Resources.PkixPublicKey.SignatureAlgorithm
         getSignatureAlgorithm();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of this public key.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them. The ID must match exactly
+     * contents of the `key_id` field exactly.
+     *
+     * The ID may be explicitly provided by the caller, but it MUST be a valid
+     * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+     * in the context of a wrapper (see next paragraph), a default key ID will be
+     * computed based on the digest of the DER encoding of the public key.
+     *
+     * If this `PkixPublicKey` is used in the context of a wrapper that has its
+     * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+     * either match that value exactly, or be left blank, in which case it behaves
+     * exactly as though it is equal to that wrapper value.
+     * </pre>
+     *
+     * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The keyId.
+     */
+    java.lang.String getKeyId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of this public key.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them. The ID must match exactly
+     * contents of the `key_id` field exactly.
+     *
+     * The ID may be explicitly provided by the caller, but it MUST be a valid
+     * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+     * in the context of a wrapper (see next paragraph), a default key ID will be
+     * computed based on the digest of the DER encoding of the public key.
+     *
+     * If this `PkixPublicKey` is used in the context of a wrapper that has its
+     * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+     * either match that value exactly, or be left blank, in which case it behaves
+     * exactly as though it is equal to that wrapper value.
+     * </pre>
+     *
+     * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for keyId.
+     */
+    com.google.protobuf.ByteString getKeyIdBytes();
   }
 
   /**
    *
    *
    * <pre>
-   * A public key in the PkixPublicKey format (see
-   * https://tools.ietf.org/html/rfc5280#section-4.1.2.7 for details).
-   * Public keys of this type are typically textually encoded using the PEM
-   * format.
+   * A public key in the PkixPublicKey
+   * [format](https://tools.ietf.org/html/rfc5280#section-4.1.2.7). Public keys of
+   * this type are typically textually encoded using the PEM format.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.PkixPublicKey}
@@ -11718,6 +12358,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
     private PkixPublicKey() {
       publicKeyPem_ = "";
       signatureAlgorithm_ = 0;
+      keyId_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -11743,9 +12384,10 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * Represents a signature algorithm and other information necessary to verify
      * signatures with a given public key.
      * This is based primarily on the public key types supported by Tink's
-     * PemKeyType, which is in turn based on KMS's supported signing algorithms.
-     * See https://cloud.google.com/kms/docs/algorithms. In the future, BinAuthz
-     * might support additional public key types independently of Tink and/or KMS.
+     * PemKeyType, which is in turn based on KMS's supported signing
+     * [algorithms](https://cloud.google.com/kms/docs/algorithms). In the future,
+     * Binary Authorization might support additional public key types
+     * independently of Tink and/or KMS.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.binaryauthorization.v1.PkixPublicKey.SignatureAlgorithm}
@@ -11780,7 +12422,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_PSS_3072_SHA256 = 2;</code>
        */
-      RSA_PSS_3072_SHA256(2, 2),
+      RSA_PSS_3072_SHA256(3, 2),
       /**
        *
        *
@@ -11790,7 +12432,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_PSS_4096_SHA256 = 3;</code>
        */
-      RSA_PSS_4096_SHA256(3, 3),
+      RSA_PSS_4096_SHA256(5, 3),
       /**
        *
        *
@@ -11800,7 +12442,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_PSS_4096_SHA512 = 4;</code>
        */
-      RSA_PSS_4096_SHA512(4, 4),
+      RSA_PSS_4096_SHA512(7, 4),
       /**
        *
        *
@@ -11810,7 +12452,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_SIGN_PKCS1_2048_SHA256 = 5;</code>
        */
-      RSA_SIGN_PKCS1_2048_SHA256(5, 5),
+      RSA_SIGN_PKCS1_2048_SHA256(9, 5),
       /**
        *
        *
@@ -11820,7 +12462,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_SIGN_PKCS1_3072_SHA256 = 6;</code>
        */
-      RSA_SIGN_PKCS1_3072_SHA256(6, 6),
+      RSA_SIGN_PKCS1_3072_SHA256(10, 6),
       /**
        *
        *
@@ -11830,7 +12472,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_SIGN_PKCS1_4096_SHA256 = 7;</code>
        */
-      RSA_SIGN_PKCS1_4096_SHA256(7, 7),
+      RSA_SIGN_PKCS1_4096_SHA256(11, 7),
       /**
        *
        *
@@ -11840,7 +12482,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>RSA_SIGN_PKCS1_4096_SHA512 = 8;</code>
        */
-      RSA_SIGN_PKCS1_4096_SHA512(8, 8),
+      RSA_SIGN_PKCS1_4096_SHA512(12, 8),
       /**
        *
        *
@@ -11850,7 +12492,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>ECDSA_P256_SHA256 = 9;</code>
        */
-      ECDSA_P256_SHA256(9, 9),
+      ECDSA_P256_SHA256(13, 9),
       /**
        *
        *
@@ -11860,7 +12502,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>ECDSA_P384_SHA384 = 10;</code>
        */
-      ECDSA_P384_SHA384(11, 10),
+      ECDSA_P384_SHA384(15, 10),
       /**
        *
        *
@@ -11870,7 +12512,17 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <code>ECDSA_P521_SHA512 = 11;</code>
        */
-      ECDSA_P521_SHA512(13, 11),
+      ECDSA_P521_SHA512(17, 11),
+      /**
+       *
+       *
+       * <pre>
+       * ML-DSA-65 Post-Quantum Cryptography signature algorithm.
+       * </pre>
+       *
+       * <code>ML_DSA_65 = 13;</code>
+       */
+      ML_DSA_65(19, 13),
       UNRECOGNIZED(-1, -1),
       ;
 
@@ -11883,6 +12535,50 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
             /* suffix= */ "",
             "SignatureAlgorithm");
       }
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 2048 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_2048_SHA256 = 1;</code>
+       */
+      public static final SignatureAlgorithm RSA_SIGN_PSS_2048_SHA256 = RSA_PSS_2048_SHA256;
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 3072 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_3072_SHA256 = 2;</code>
+       */
+      public static final SignatureAlgorithm RSA_SIGN_PSS_3072_SHA256 = RSA_PSS_3072_SHA256;
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 4096 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_4096_SHA256 = 3;</code>
+       */
+      public static final SignatureAlgorithm RSA_SIGN_PSS_4096_SHA256 = RSA_PSS_4096_SHA256;
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 4096 bit key with a SHA512 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_4096_SHA512 = 4;</code>
+       */
+      public static final SignatureAlgorithm RSA_SIGN_PSS_4096_SHA512 = RSA_PSS_4096_SHA512;
 
       /**
        *
@@ -11943,12 +12639,34 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
+       * RSASSA-PSS 2048 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_2048_SHA256 = 1;</code>
+       */
+      public static final int RSA_SIGN_PSS_2048_SHA256_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
        * RSASSA-PSS 3072 bit key with a SHA256 digest.
        * </pre>
        *
        * <code>RSA_PSS_3072_SHA256 = 2;</code>
        */
       public static final int RSA_PSS_3072_SHA256_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 3072 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_3072_SHA256 = 2;</code>
+       */
+      public static final int RSA_SIGN_PSS_3072_SHA256_VALUE = 2;
 
       /**
        *
@@ -11965,12 +12683,34 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
+       * RSASSA-PSS 4096 bit key with a SHA256 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_4096_SHA256 = 3;</code>
+       */
+      public static final int RSA_SIGN_PSS_4096_SHA256_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
        * RSASSA-PSS 4096 bit key with a SHA512 digest.
        * </pre>
        *
        * <code>RSA_PSS_4096_SHA512 = 4;</code>
        */
       public static final int RSA_PSS_4096_SHA512_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * RSASSA-PSS 4096 bit key with a SHA512 digest.
+       * </pre>
+       *
+       * <code>RSA_SIGN_PSS_4096_SHA512 = 4;</code>
+       */
+      public static final int RSA_SIGN_PSS_4096_SHA512_VALUE = 4;
 
       /**
        *
@@ -12082,6 +12822,17 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        */
       public static final int EC_SIGN_P521_SHA512_VALUE = 11;
 
+      /**
+       *
+       *
+       * <pre>
+       * ML-DSA-65 Post-Quantum Cryptography signature algorithm.
+       * </pre>
+       *
+       * <code>ML_DSA_65 = 13;</code>
+       */
+      public static final int ML_DSA_65_VALUE = 13;
+
       public final int getNumber() {
         if (index == -1) {
           throw new java.lang.IllegalArgumentException(
@@ -12130,6 +12881,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
             return ECDSA_P384_SHA384;
           case 11:
             return ECDSA_P521_SHA512;
+          case 13:
+            return ML_DSA_65;
           default:
             return null;
         }
@@ -12173,9 +12926,13 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         return new SignatureAlgorithm[] {
           SIGNATURE_ALGORITHM_UNSPECIFIED,
           RSA_PSS_2048_SHA256,
+          RSA_SIGN_PSS_2048_SHA256,
           RSA_PSS_3072_SHA256,
+          RSA_SIGN_PSS_3072_SHA256,
           RSA_PSS_4096_SHA256,
+          RSA_SIGN_PSS_4096_SHA256,
           RSA_PSS_4096_SHA512,
+          RSA_SIGN_PSS_4096_SHA512,
           RSA_SIGN_PKCS1_2048_SHA256,
           RSA_SIGN_PKCS1_3072_SHA256,
           RSA_SIGN_PKCS1_4096_SHA256,
@@ -12186,6 +12943,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           EC_SIGN_P384_SHA384,
           ECDSA_P521_SHA512,
           EC_SIGN_P521_SHA512,
+          ML_DSA_65,
         };
       }
 
@@ -12323,6 +13081,85 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           : result;
     }
 
+    public static final int KEY_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object keyId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of this public key.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them. The ID must match exactly
+     * contents of the `key_id` field exactly.
+     *
+     * The ID may be explicitly provided by the caller, but it MUST be a valid
+     * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+     * in the context of a wrapper (see next paragraph), a default key ID will be
+     * computed based on the digest of the DER encoding of the public key.
+     *
+     * If this `PkixPublicKey` is used in the context of a wrapper that has its
+     * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+     * either match that value exactly, or be left blank, in which case it behaves
+     * exactly as though it is equal to that wrapper value.
+     * </pre>
+     *
+     * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The keyId.
+     */
+    @java.lang.Override
+    public java.lang.String getKeyId() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        keyId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID of this public key.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them. The ID must match exactly
+     * contents of the `key_id` field exactly.
+     *
+     * The ID may be explicitly provided by the caller, but it MUST be a valid
+     * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+     * in the context of a wrapper (see next paragraph), a default key ID will be
+     * computed based on the digest of the DER encoding of the public key.
+     *
+     * If this `PkixPublicKey` is used in the context of a wrapper that has its
+     * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+     * either match that value exactly, or be left blank, in which case it behaves
+     * exactly as though it is equal to that wrapper value.
+     * </pre>
+     *
+     * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for keyId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKeyIdBytes() {
+      java.lang.Object ref = keyId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        keyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -12346,6 +13183,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
               .getNumber()) {
         output.writeEnum(2, signatureAlgorithm_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(keyId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, keyId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -12363,6 +13203,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
               .SignatureAlgorithm.SIGNATURE_ALGORITHM_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, signatureAlgorithm_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(keyId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, keyId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -12384,6 +13227,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
 
       if (!getPublicKeyPem().equals(other.getPublicKeyPem())) return false;
       if (signatureAlgorithm_ != other.signatureAlgorithm_) return false;
+      if (!getKeyId().equals(other.getKeyId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -12399,6 +13243,8 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       hash = (53 * hash) + getPublicKeyPem().hashCode();
       hash = (37 * hash) + SIGNATURE_ALGORITHM_FIELD_NUMBER;
       hash = (53 * hash) + signatureAlgorithm_;
+      hash = (37 * hash) + KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -12511,10 +13357,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * A public key in the PkixPublicKey format (see
-     * https://tools.ietf.org/html/rfc5280#section-4.1.2.7 for details).
-     * Public keys of this type are typically textually encoded using the PEM
-     * format.
+     * A public key in the PkixPublicKey
+     * [format](https://tools.ietf.org/html/rfc5280#section-4.1.2.7). Public keys of
+     * this type are typically textually encoded using the PEM format.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.PkixPublicKey}
@@ -12553,6 +13398,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         bitField0_ = 0;
         publicKeyPem_ = "";
         signatureAlgorithm_ = 0;
+        keyId_ = "";
         return this;
       }
 
@@ -12600,6 +13446,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.signatureAlgorithm_ = signatureAlgorithm_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.keyId_ = keyId_;
+        }
       }
 
       @java.lang.Override
@@ -12628,6 +13477,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         }
         if (other.signatureAlgorithm_ != 0) {
           setSignatureAlgorithmValue(other.getSignatureAlgorithmValue());
+        }
+        if (!other.getKeyId().isEmpty()) {
+          keyId_ = other.keyId_;
+          bitField0_ |= 0x00000004;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -12667,6 +13521,12 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  keyId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12938,6 +13798,182 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         return this;
       }
 
+      private java.lang.Object keyId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID of this public key.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them. The ID must match exactly
+       * contents of the `key_id` field exactly.
+       *
+       * The ID may be explicitly provided by the caller, but it MUST be a valid
+       * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+       * in the context of a wrapper (see next paragraph), a default key ID will be
+       * computed based on the digest of the DER encoding of the public key.
+       *
+       * If this `PkixPublicKey` is used in the context of a wrapper that has its
+       * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+       * either match that value exactly, or be left blank, in which case it behaves
+       * exactly as though it is equal to that wrapper value.
+       * </pre>
+       *
+       * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The keyId.
+       */
+      public java.lang.String getKeyId() {
+        java.lang.Object ref = keyId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          keyId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID of this public key.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them. The ID must match exactly
+       * contents of the `key_id` field exactly.
+       *
+       * The ID may be explicitly provided by the caller, but it MUST be a valid
+       * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+       * in the context of a wrapper (see next paragraph), a default key ID will be
+       * computed based on the digest of the DER encoding of the public key.
+       *
+       * If this `PkixPublicKey` is used in the context of a wrapper that has its
+       * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+       * either match that value exactly, or be left blank, in which case it behaves
+       * exactly as though it is equal to that wrapper value.
+       * </pre>
+       *
+       * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for keyId.
+       */
+      public com.google.protobuf.ByteString getKeyIdBytes() {
+        java.lang.Object ref = keyId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          keyId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID of this public key.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them. The ID must match exactly
+       * contents of the `key_id` field exactly.
+       *
+       * The ID may be explicitly provided by the caller, but it MUST be a valid
+       * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+       * in the context of a wrapper (see next paragraph), a default key ID will be
+       * computed based on the digest of the DER encoding of the public key.
+       *
+       * If this `PkixPublicKey` is used in the context of a wrapper that has its
+       * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+       * either match that value exactly, or be left blank, in which case it behaves
+       * exactly as though it is equal to that wrapper value.
+       * </pre>
+       *
+       * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The keyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        keyId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID of this public key.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them. The ID must match exactly
+       * contents of the `key_id` field exactly.
+       *
+       * The ID may be explicitly provided by the caller, but it MUST be a valid
+       * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+       * in the context of a wrapper (see next paragraph), a default key ID will be
+       * computed based on the digest of the DER encoding of the public key.
+       *
+       * If this `PkixPublicKey` is used in the context of a wrapper that has its
+       * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+       * either match that value exactly, or be left blank, in which case it behaves
+       * exactly as though it is equal to that wrapper value.
+       * </pre>
+       *
+       * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyId() {
+        keyId_ = getDefaultInstance().getKeyId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID of this public key.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them. The ID must match exactly
+       * contents of the `key_id` field exactly.
+       *
+       * The ID may be explicitly provided by the caller, but it MUST be a valid
+       * RFC3986 URI. If `key_id` is left blank and this `PkixPublicKey` is not used
+       * in the context of a wrapper (see next paragraph), a default key ID will be
+       * computed based on the digest of the DER encoding of the public key.
+       *
+       * If this `PkixPublicKey` is used in the context of a wrapper that has its
+       * own notion of key ID (e.g. `AttestorPublicKey`), then this field can
+       * either match that value exactly, or be left blank, in which case it behaves
+       * exactly as though it is equal to that wrapper value.
+       * </pre>
+       *
+       * <code>string key_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for keyId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        keyId_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.binaryauthorization.v1.PkixPublicKey)
     }
 
@@ -13031,12 +14067,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * The ID of this public key.
-     * Signatures verified by BinAuthz must include the ID of the public key that
-     * can be used to verify them, and that ID must match the contents of this
-     * field exactly.
-     * Additional restrictions on this field can be imposed based on which public
-     * key type is encapsulated. See the documentation on `public_key` cases below
-     * for details.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them, and that ID must match the
+     * contents of this field exactly. Additional restrictions on this field can
+     * be imposed based on which public key type is encapsulated. See the
+     * documentation on `public_key` cases below for details.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13050,12 +14085,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * The ID of this public key.
-     * Signatures verified by BinAuthz must include the ID of the public key that
-     * can be used to verify them, and that ID must match the contents of this
-     * field exactly.
-     * Additional restrictions on this field can be imposed based on which public
-     * key type is encapsulated. See the documentation on `public_key` cases below
-     * for details.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them, and that ID must match the
+     * contents of this field exactly. Additional restrictions on this field can
+     * be imposed based on which public key type is encapsulated. See the
+     * documentation on `public_key` cases below for details.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13071,11 +14105,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13091,11 +14125,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13111,11 +14145,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13186,8 +14220,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * An [attestor public key][google.cloud.binaryauthorization.v1.AttestorPublicKey] that will be used to verify
-   * attestations signed by this attestor.
+   * An [attestor public
+   * key][google.cloud.binaryauthorization.v1.AttestorPublicKey] that will be used
+   * to verify attestations signed by this attestor.
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.AttestorPublicKey}
@@ -13348,12 +14383,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * The ID of this public key.
-     * Signatures verified by BinAuthz must include the ID of the public key that
-     * can be used to verify them, and that ID must match the contents of this
-     * field exactly.
-     * Additional restrictions on this field can be imposed based on which public
-     * key type is encapsulated. See the documentation on `public_key` cases below
-     * for details.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them, and that ID must match the
+     * contents of this field exactly. Additional restrictions on this field can
+     * be imposed based on which public key type is encapsulated. See the
+     * documentation on `public_key` cases below for details.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13378,12 +14412,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * The ID of this public key.
-     * Signatures verified by BinAuthz must include the ID of the public key that
-     * can be used to verify them, and that ID must match the contents of this
-     * field exactly.
-     * Additional restrictions on this field can be imposed based on which public
-     * key type is encapsulated. See the documentation on `public_key` cases below
-     * for details.
+     * Signatures verified by Binary Authorization must include the ID of the
+     * public key that can be used to verify them, and that ID must match the
+     * contents of this field exactly. Additional restrictions on this field can
+     * be imposed based on which public key type is encapsulated. See the
+     * documentation on `public_key` cases below for details.
      * </pre>
      *
      * <code>string id = 2;</code>
@@ -13412,11 +14445,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13434,11 +14467,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13469,11 +14502,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      * ASCII-armored representation of a PGP public key, as the entire output by
      * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
      * line endings).
-     * When using this field, `id` should be left blank.  The BinAuthz API
-     * handlers will calculate the ID and fill it in automatically.  BinAuthz
-     * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-     * upper-case hex.  If `id` is provided by the caller, it will be
-     * overwritten by the API-calculated ID.
+     * When using this field, `id` should be left blank.  The Binary
+     * Authorization API handlers will calculate the ID and fill it in
+     * automatically.  Binary Authorization computes this ID as the OpenPGP
+     * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+     * provided by the caller, it will be overwritten by the API-calculated ID.
      * </pre>
      *
      * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -13798,8 +14831,9 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * An [attestor public key][google.cloud.binaryauthorization.v1.AttestorPublicKey] that will be used to verify
-     * attestations signed by this attestor.
+     * An [attestor public
+     * key][google.cloud.binaryauthorization.v1.AttestorPublicKey] that will be used
+     * to verify attestations signed by this attestor.
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.AttestorPublicKey}
@@ -14157,12 +15191,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * The ID of this public key.
-       * Signatures verified by BinAuthz must include the ID of the public key that
-       * can be used to verify them, and that ID must match the contents of this
-       * field exactly.
-       * Additional restrictions on this field can be imposed based on which public
-       * key type is encapsulated. See the documentation on `public_key` cases below
-       * for details.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them, and that ID must match the
+       * contents of this field exactly. Additional restrictions on this field can
+       * be imposed based on which public key type is encapsulated. See the
+       * documentation on `public_key` cases below for details.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -14186,12 +15219,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * The ID of this public key.
-       * Signatures verified by BinAuthz must include the ID of the public key that
-       * can be used to verify them, and that ID must match the contents of this
-       * field exactly.
-       * Additional restrictions on this field can be imposed based on which public
-       * key type is encapsulated. See the documentation on `public_key` cases below
-       * for details.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them, and that ID must match the
+       * contents of this field exactly. Additional restrictions on this field can
+       * be imposed based on which public key type is encapsulated. See the
+       * documentation on `public_key` cases below for details.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -14215,12 +15247,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * The ID of this public key.
-       * Signatures verified by BinAuthz must include the ID of the public key that
-       * can be used to verify them, and that ID must match the contents of this
-       * field exactly.
-       * Additional restrictions on this field can be imposed based on which public
-       * key type is encapsulated. See the documentation on `public_key` cases below
-       * for details.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them, and that ID must match the
+       * contents of this field exactly. Additional restrictions on this field can
+       * be imposed based on which public key type is encapsulated. See the
+       * documentation on `public_key` cases below for details.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -14243,12 +15274,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * The ID of this public key.
-       * Signatures verified by BinAuthz must include the ID of the public key that
-       * can be used to verify them, and that ID must match the contents of this
-       * field exactly.
-       * Additional restrictions on this field can be imposed based on which public
-       * key type is encapsulated. See the documentation on `public_key` cases below
-       * for details.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them, and that ID must match the
+       * contents of this field exactly. Additional restrictions on this field can
+       * be imposed based on which public key type is encapsulated. See the
+       * documentation on `public_key` cases below for details.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -14267,12 +15297,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * The ID of this public key.
-       * Signatures verified by BinAuthz must include the ID of the public key that
-       * can be used to verify them, and that ID must match the contents of this
-       * field exactly.
-       * Additional restrictions on this field can be imposed based on which public
-       * key type is encapsulated. See the documentation on `public_key` cases below
-       * for details.
+       * Signatures verified by Binary Authorization must include the ID of the
+       * public key that can be used to verify them, and that ID must match the
+       * contents of this field exactly. Additional restrictions on this field can
+       * be imposed based on which public key type is encapsulated. See the
+       * documentation on `public_key` cases below for details.
        * </pre>
        *
        * <code>string id = 2;</code>
@@ -14298,11 +15327,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14321,11 +15350,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14357,11 +15386,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14393,11 +15422,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14422,11 +15451,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14449,11 +15478,11 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
        * ASCII-armored representation of a PGP public key, as the entire output by
        * the command `gpg --export --armor foo&#64;example.com` (either LF or CRLF
        * line endings).
-       * When using this field, `id` should be left blank.  The BinAuthz API
-       * handlers will calculate the ID and fill it in automatically.  BinAuthz
-       * computes this ID as the OpenPGP RFC4880 V4 fingerprint, represented as
-       * upper-case hex.  If `id` is provided by the caller, it will be
-       * overwritten by the API-calculated ID.
+       * When using this field, `id` should be left blank.  The Binary
+       * Authorization API handlers will calculate the ID and fill it in
+       * automatically.  Binary Authorization computes this ID as the OpenPGP
+       * RFC4880 V4 fingerprint, represented as upper-case hex.  If `id` is
+       * provided by the caller, it will be overwritten by the API-calculated ID.
        * </pre>
        *
        * <code>string ascii_armored_pgp_public_key = 3;</code>
@@ -14871,7 +15900,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
       "\n"
           + "3google/cloud/binaryauthorization/v1/resources.proto\022#google.cloud.binaryauthor"
           + "ization.v1\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\370\014\n"
+          + "oto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\213\r\n"
           + "\006Policy\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\006 \001(\tB\003\340A\001\022r\n"
@@ -14891,37 +15920,39 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           + "binaryauthorization.v1.Policy.IstioServiceIdentityAdmissionRulesEntryB\003\340A\001\022W\n"
           + "\026default_admission_rule\030\004 \001(\01322.google.clou"
           + "d.binaryauthorization.v1.AdmissionRuleB\003\340A\002\0224\n"
-          + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032p\n"
+          + "\013update_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004etag\030\013 \001(\tB\003\340A\001\032p\n"
           + "\032ClusterAdmissionRulesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002 \001(\01322.go"
-          + "ogle.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032|\n"
+          + "\005value\030\002"
+          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032|\n"
           + "&KubernetesNamespaceAdmissionRulesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002 \001("
-          + "\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032\201\001\n"
+          + "\005value\030\002"
+          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032\201\001\n"
           + "+KubernetesServiceAccountAdmissionRulesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032}\n"
+          + "\005value\030\002 \001(\01322.googl"
+          + "e.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\032}\n"
           + "\'IstioServiceIdentityAdmissionRulesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022A\n"
-          + "\005value\030\002"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\"d\n"
+          + "\005value\030\002 \001(\0132"
+          + "2.google.cloud.binaryauthorization.v1.AdmissionRule:\0028\001\"d\n"
           + "\032GlobalPolicyEvaluationMode\022-\n"
           + ")GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED\020\000\022\n\n"
           + "\006ENABLE\020\001\022\013\n"
           + "\007DISABLE\020\002:f\352Ac\n"
-          + ")binaryauthorization.googleapis.com/Policy\022\031projects/{pr"
-          + "oject}/policy\022\033locations/{location}/policy\"1\n"
+          + ")binaryauthorization.googleapis.com/P"
+          + "olicy\022\031projects/{project}/policy\022\033locations/{location}/policy\"1\n"
           + "\031AdmissionWhitelistPattern\022\024\n"
           + "\014name_pattern\030\001 \001(\t\"\332\003\n\r"
           + "AdmissionRule\022_\n"
-          + "\017evaluation_mode\030\001 \001(\0162A.google.cloud.binaryau"
-          + "thorization.v1.AdmissionRule.EvaluationModeB\003\340A\002\022$\n"
+          + "\017evaluation_mode\030\001 \001(\0162A.go"
+          + "ogle.cloud.binaryauthorization.v1.AdmissionRule.EvaluationModeB\003\340A\002\022$\n"
           + "\027require_attestations_by\030\002 \003(\tB\003\340A\001\022a\n"
-          + "\020enforcement_mode\030\003 \001(\0162B.googl"
-          + "e.cloud.binaryauthorization.v1.AdmissionRule.EnforcementModeB\003\340A\002\"m\n"
+          + "\020enforcement_mode\030\003 \001(\0162B.google.cloud.binaryauthori"
+          + "zation.v1.AdmissionRule.EnforcementModeB\003\340A\002\"m\n"
           + "\016EvaluationMode\022\037\n"
           + "\033EVALUATION_MODE_UNSPECIFIED\020\000\022\020\n"
           + "\014ALWAYS_ALLOW\020\001\022\027\n"
@@ -14930,32 +15961,38 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           + "\017EnforcementMode\022 \n"
           + "\034ENFORCEMENT_MODE_UNSPECIFIED\020\000\022 \n"
           + "\034ENFORCED_BLOCK_AND_AUDIT_LOG\020\001\022\031\n"
-          + "\025DRYRUN_AUDIT_LOG_ONLY\020\002\"\267\002\n"
+          + "\025DRYRUN_AUDIT_LOG_ONLY\020\002\"\312\002\n"
           + "\010Attestor\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\006 \001(\tB\003\340A\001\022\\\n"
-          + "\027user_owned_grafeas_note\030\003 \001(\01329.google.cloud.bin"
-          + "aryauthorization.v1.UserOwnedGrafeasNoteH\000\0224\n"
+          + "\027user_owned_grafeas_note\030\003 \001(\013"
+          + "29.google.cloud.binaryauthorization.v1.UserOwnedGrafeasNoteH\000\0224\n"
           + "\013update_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:Y\352AV\n"
-          + "+binaryauthorizati"
-          + "on.googleapis.com/Attestor\022\'projects/{project}/attestors/{attestor}B\017\n\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
+          + "\004etag\030\007 \001(\tB\003\340A\001:Y\352AV\n"
+          + "+binaryauthorization"
+          + ".googleapis.com/Attestor\022\'projects/{project}/attestors/{attestor}B\017\n\r"
           + "attestor_type\"\264\001\n"
           + "\024UserOwnedGrafeasNote\022\033\n"
           + "\016note_reference\030\001 \001(\tB\003\340A\002\022P\n"
-          + "\013public_keys\030\002 \003(\0132"
-          + "6.google.cloud.binaryauthorization.v1.AttestorPublicKeyB\003\340A\001\022-\n"
-          + " delegation_service_account_email\030\003 \001(\tB\003\340A\003\"\277\004\n\r"
+          + "\013public_keys\030\002 \003(\01326."
+          + "google.cloud.binaryauthorization.v1.AttestorPublicKeyB\003\340A\001\022-\n"
+          + " delegation_service_account_email\030\003 \001(\tB\003\340A\003\"\333\005\n\r"
           + "PkixPublicKey\022\026\n"
           + "\016public_key_pem\030\001 \001(\t\022b\n"
-          + "\023signature_algorithm\030\002 \001(\0162E.google.cloud.binary"
-          + "authorization.v1.PkixPublicKey.SignatureAlgorithm\"\261\003\n"
+          + "\023signature_algorithm\030\002 \001(\0162E.google.cloud.binaryau"
+          + "thorization.v1.PkixPublicKey.SignatureAlgorithm\022\023\n"
+          + "\006key_id\030\003 \001(\tB\003\340A\001\"\270\004\n"
           + "\022SignatureAlgorithm\022#\n"
           + "\037SIGNATURE_ALGORITHM_UNSPECIFIED\020\000\022\027\n"
-          + "\023RSA_PSS_2048_SHA256\020\001\022\027\n"
-          + "\023RSA_PSS_3072_SHA256\020\002\022\027\n"
-          + "\023RSA_PSS_4096_SHA256\020\003\022\027\n"
-          + "\023RSA_PSS_4096_SHA512\020\004\022\036\n"
+          + "\023RSA_PSS_2048_SHA256\020\001\022\034\n"
+          + "\030RSA_SIGN_PSS_2048_SHA256\020\001\022\027\n"
+          + "\023RSA_PSS_3072_SHA256\020\002\022\034\n"
+          + "\030RSA_SIGN_PSS_3072_SHA256\020\002\022\027\n"
+          + "\023RSA_PSS_4096_SHA256\020\003\022\034\n"
+          + "\030RSA_SIGN_PSS_4096_SHA256\020\003\022\027\n"
+          + "\023RSA_PSS_4096_SHA512\020\004\022\034\n"
+          + "\030RSA_SIGN_PSS_4096_SHA512\020\004\022\036\n"
           + "\032RSA_SIGN_PKCS1_2048_SHA256\020\005\022\036\n"
           + "\032RSA_SIGN_PKCS1_3072_SHA256\020\006\022\036\n"
           + "\032RSA_SIGN_PKCS1_4096_SHA256\020\007\022\036\n"
@@ -14967,19 +16004,21 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
           + "\023EC_SIGN_P384_SHA384\020\n"
           + "\022\025\n"
           + "\021ECDSA_P521_SHA512\020\013\022\027\n"
-          + "\023EC_SIGN_P521_SHA512\020\013\032\002\020\001\"\272\001\n"
+          + "\023EC_SIGN_P521_SHA512\020\013\022\r\n"
+          + "\tML_DSA_65\020\r"
+          + "\032\002\020\001\"\272\001\n"
           + "\021AttestorPublicKey\022\024\n"
           + "\007comment\030\001 \001(\tB\003\340A\001\022\n\n"
           + "\002id\030\002 \001(\t\022&\n"
           + "\034ascii_armored_pgp_public_key\030\003 \001(\tH\000\022M\n"
-          + "\017pkix_public_key\030\005"
-          + " \001(\01322.google.cloud.binaryauthorization.v1.PkixPublicKeyH\000B\014\n\n"
-          + "public_keyB\214\002\n"
-          + "5com.google.protos.google.cloud.binaryauthorization.v1P\000ZYcloud.google.com/go/bina"
-          + "ryauthorization/apiv1/binaryauthorizatio"
-          + "npb;binaryauthorizationpb\370\001\001\252\002#Google.Cl"
-          + "oud.BinaryAuthorization.V1\312\002#Google\\Clou"
-          + "d\\BinaryAuthorization\\V1\352\002&Google::Cloud::BinaryAuthorization::V1b\006proto3"
+          + "\017pkix_public_key\030\005 \001(\013"
+          + "22.google.cloud.binaryauthorization.v1.PkixPublicKeyH\000B\014\n\n"
+          + "public_keyB\211\002\n"
+          + "5com.google.protos.google.cloud.binaryauthorizat"
+          + "ion.v1P\000ZYcloud.google.com/go/binaryauthorization/apiv1/binaryauthorizationpb;bi"
+          + "naryauthorizationpb\252\002#Google.Cloud.Binar"
+          + "yAuthorization.V1\312\002#Google\\Cloud\\BinaryA"
+          + "uthorization\\V1\352\002&Google::Cloud::BinaryAuthorization::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -15005,6 +16044,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
               "IstioServiceIdentityAdmissionRules",
               "DefaultAdmissionRule",
               "UpdateTime",
+              "Etag",
             });
     internal_static_google_cloud_binaryauthorization_v1_Policy_ClusterAdmissionRulesEntry_descriptor =
         internal_static_google_cloud_binaryauthorization_v1_Policy_descriptor.getNestedType(0);
@@ -15060,7 +16100,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1_Attestor_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "UserOwnedGrafeasNote", "UpdateTime", "AttestorType",
+              "Name", "Description", "UserOwnedGrafeasNote", "UpdateTime", "Etag", "AttestorType",
             });
     internal_static_google_cloud_binaryauthorization_v1_UserOwnedGrafeasNote_descriptor =
         getDescriptor().getMessageType(4);
@@ -15076,7 +16116,7 @@ public final class Resources extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_binaryauthorization_v1_PkixPublicKey_descriptor,
             new java.lang.String[] {
-              "PublicKeyPem", "SignatureAlgorithm",
+              "PublicKeyPem", "SignatureAlgorithm", "KeyId",
             });
     internal_static_google_cloud_binaryauthorization_v1_AttestorPublicKey_descriptor =
         getDescriptor().getMessageType(6);

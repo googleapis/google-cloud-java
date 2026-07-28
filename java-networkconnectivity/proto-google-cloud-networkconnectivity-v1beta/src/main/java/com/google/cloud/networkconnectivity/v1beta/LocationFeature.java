@@ -71,6 +71,16 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GATEWAY_SPOKES = 3;</code>
    */
   GATEWAY_SPOKES(3),
+  /**
+   *
+   *
+   * <pre>
+   * Supports transports in this location.
+   * </pre>
+   *
+   * <code>TRANSPORTS = 4;</code>
+   */
+  TRANSPORTS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -128,6 +138,17 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int GATEWAY_SPOKES_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Supports transports in this location.
+   * </pre>
+   *
+   * <code>TRANSPORTS = 4;</code>
+   */
+  public static final int TRANSPORTS_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -160,6 +181,8 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
         return SITE_TO_SITE_SPOKES;
       case 3:
         return GATEWAY_SPOKES;
+      case 4:
+        return TRANSPORTS;
       default:
         return null;
     }

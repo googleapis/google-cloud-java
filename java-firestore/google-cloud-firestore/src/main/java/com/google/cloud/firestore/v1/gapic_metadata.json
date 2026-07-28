@@ -1,0 +1,69 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.firestore.v1",
+  "libraryPackage": "com.google.cloud.firestore.v1",
+  "services": {
+    "Firestore": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FirestoreClient",
+          "rpcs": {
+            "BatchGetDocuments": {
+              "methods": ["batchGetDocumentsCallable"]
+            },
+            "BatchWrite": {
+              "methods": ["batchWrite", "batchWriteCallable"]
+            },
+            "BeginTransaction": {
+              "methods": ["beginTransaction", "beginTransaction", "beginTransactionCallable"]
+            },
+            "Commit": {
+              "methods": ["commit", "commit", "commitCallable"]
+            },
+            "CreateDocument": {
+              "methods": ["createDocument", "createDocumentCallable"]
+            },
+            "DeleteDocument": {
+              "methods": ["deleteDocument", "deleteDocument", "deleteDocumentCallable"]
+            },
+            "ExecutePipeline": {
+              "methods": ["executePipelineCallable"]
+            },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocumentCallable"]
+            },
+            "ListCollectionIds": {
+              "methods": ["listCollectionIds", "listCollectionIds", "listCollectionIdsPagedCallable", "listCollectionIdsCallable"]
+            },
+            "ListDocuments": {
+              "methods": ["listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
+            },
+            "Listen": {
+              "methods": ["listenCallable"]
+            },
+            "PartitionQuery": {
+              "methods": ["partitionQuery", "partitionQueryPagedCallable", "partitionQueryCallable"]
+            },
+            "Rollback": {
+              "methods": ["rollback", "rollback", "rollbackCallable"]
+            },
+            "RunAggregationQuery": {
+              "methods": ["runAggregationQueryCallable"]
+            },
+            "RunQuery": {
+              "methods": ["runQueryCallable"]
+            },
+            "UpdateDocument": {
+              "methods": ["updateDocument", "updateDocument", "updateDocumentCallable"]
+            },
+            "Write": {
+              "methods": ["writeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

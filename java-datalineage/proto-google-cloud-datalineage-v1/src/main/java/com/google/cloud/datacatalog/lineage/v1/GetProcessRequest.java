@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [GetProcess][google.cloud.datacatalog.lineage.v1.GetProcess].
+ * [GetProcess][google.cloud.datacatalog.lineage.v1.Lineage.GetProcess].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetProcessRequest}
@@ -294,7 +294,7 @@ public final class GetProcessRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Request message for
-   * [GetProcess][google.cloud.datacatalog.lineage.v1.GetProcess].
+   * [GetProcess][google.cloud.datacatalog.lineage.v1.Lineage.GetProcess].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.GetProcessRequest}

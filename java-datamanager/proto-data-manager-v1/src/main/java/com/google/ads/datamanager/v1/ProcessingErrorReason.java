@@ -25,6 +25,7 @@ package com.google.ads.datamanager.v1;
  *
  * <pre>
  * The processing error reason.
+ * New reasons may be added in the future.
  * </pre>
  *
  * Protobuf enum {@code google.ads.datamanager.v1.ProcessingErrorReason}
@@ -321,6 +322,170 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    * <code>PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER = 26;</code>
    */
   PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER(26),
+  /**
+   *
+   *
+   * <pre>
+   * One-per-click conversion actions cannot be used with BRAIDs.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 28;
+   * </code>
+   */
+  PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID(28),
+  /**
+   *
+   *
+   * <pre>
+   * The match ID can not be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_MATCH_ID_NOT_FOUND = 29;</code>
+   */
+  PROCESSING_ERROR_REASON_MATCH_ID_NOT_FOUND(29),
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the match ID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_MATCH_ID = 30;</code>
+   */
+  PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_MATCH_ID(30),
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the GCLID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_GCLID = 31;</code>
+   */
+  PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_GCLID(31),
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the DCLID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_DCLID = 32;</code>
+   */
+  PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_DCLID(32),
+  /**
+   *
+   *
+   * <pre>
+   * There are ad identifiers that are invalid.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_AD_IDENTIFIERS = 33;</code>
+   */
+  PROCESSING_ERROR_REASON_INVALID_AD_IDENTIFIERS(33),
+  /**
+   *
+   *
+   * <pre>
+   * The mobile ID format is invalid.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_MOBILE_ID_FORMAT = 34;</code>
+   */
+  PROCESSING_ERROR_REASON_INVALID_MOBILE_ID_FORMAT(34),
+  /**
+   *
+   *
+   * <pre>
+   * The original conversions can't be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ORIGINAL_CONVERSIONS_NOT_FOUND = 35;</code>
+   */
+  PROCESSING_ERROR_REASON_ORIGINAL_CONVERSIONS_NOT_FOUND(35),
+  /**
+   *
+   *
+   * <pre>
+   * The event ID (dclid or impression ID) cannot be decoded.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EVENT_ID_DECODE_ERROR = 36;</code>
+   */
+  PROCESSING_ERROR_REASON_EVENT_ID_DECODE_ERROR(36),
+  /**
+   *
+   *
+   * <pre>
+   * The user ID cannot be found for the given impression ID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_IMPRESSION_ID = 37;</code>
+   */
+  PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_IMPRESSION_ID(37),
+  /**
+   *
+   *
+   * <pre>
+   * The user ID cannot be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND = 38;</code>
+   */
+  PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND(38),
+  /**
+   *
+   *
+   * <pre>
+   * The event timestamp on the event was earlier than the associated click.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_CONVERSION_PRECEDES_CLICK = 39;</code>
+   */
+  PROCESSING_ERROR_REASON_CONVERSION_PRECEDES_CLICK(39),
+  /**
+   *
+   *
+   * <pre>
+   * The click occurred too recently.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_TOO_RECENT_CLICK = 40;</code>
+   */
+  PROCESSING_ERROR_REASON_TOO_RECENT_CLICK(40),
+  /**
+   *
+   *
+   * <pre>
+   * The event can't be attributed to a click (GCLID). This may be because the
+   * click did not come from a Google Ads campaign, for example.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_CLICK = 41;</code>
+   */
+  PROCESSING_ERROR_REASON_INVALID_CLICK(41),
+  /**
+   *
+   *
+   * <pre>
+   * The click from the event isn't associated with the
+   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * of the destination.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK = 42;</code>
+   */
+  PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK(42),
+  /**
+   *
+   *
+   * <pre>
+   * A corresponding click can't be found that matches the provided attributes.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_CLICK_NOT_FOUND = 43;</code>
+   */
+  PROCESSING_ERROR_REASON_CLICK_NOT_FOUND(43),
   UNRECOGNIZED(-1),
   ;
 
@@ -653,6 +818,187 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    */
   public static final int PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER_VALUE = 26;
 
+  /**
+   *
+   *
+   * <pre>
+   * One-per-click conversion actions cannot be used with BRAIDs.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID = 28;
+   * </code>
+   */
+  public static final int
+      PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID_VALUE = 28;
+
+  /**
+   *
+   *
+   * <pre>
+   * The match ID can not be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_MATCH_ID_NOT_FOUND = 29;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_MATCH_ID_NOT_FOUND_VALUE = 29;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the match ID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_MATCH_ID = 30;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_MATCH_ID_VALUE = 30;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the GCLID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_GCLID = 31;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_GCLID_VALUE = 31;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user ID can not be found for the DCLID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_DCLID = 32;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_DCLID_VALUE = 32;
+
+  /**
+   *
+   *
+   * <pre>
+   * There are ad identifiers that are invalid.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_AD_IDENTIFIERS = 33;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_INVALID_AD_IDENTIFIERS_VALUE = 33;
+
+  /**
+   *
+   *
+   * <pre>
+   * The mobile ID format is invalid.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_MOBILE_ID_FORMAT = 34;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_INVALID_MOBILE_ID_FORMAT_VALUE = 34;
+
+  /**
+   *
+   *
+   * <pre>
+   * The original conversions can't be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_ORIGINAL_CONVERSIONS_NOT_FOUND = 35;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_ORIGINAL_CONVERSIONS_NOT_FOUND_VALUE = 35;
+
+  /**
+   *
+   *
+   * <pre>
+   * The event ID (dclid or impression ID) cannot be decoded.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EVENT_ID_DECODE_ERROR = 36;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_EVENT_ID_DECODE_ERROR_VALUE = 36;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user ID cannot be found for the given impression ID.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_IMPRESSION_ID = 37;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_IMPRESSION_ID_VALUE = 37;
+
+  /**
+   *
+   *
+   * <pre>
+   * The user ID cannot be found.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND = 38;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_VALUE = 38;
+
+  /**
+   *
+   *
+   * <pre>
+   * The event timestamp on the event was earlier than the associated click.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_CONVERSION_PRECEDES_CLICK = 39;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_CONVERSION_PRECEDES_CLICK_VALUE = 39;
+
+  /**
+   *
+   *
+   * <pre>
+   * The click occurred too recently.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_TOO_RECENT_CLICK = 40;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_TOO_RECENT_CLICK_VALUE = 40;
+
+  /**
+   *
+   *
+   * <pre>
+   * The event can't be attributed to a click (GCLID). This may be because the
+   * click did not come from a Google Ads campaign, for example.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_CLICK = 41;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_INVALID_CLICK_VALUE = 41;
+
+  /**
+   *
+   *
+   * <pre>
+   * The click from the event isn't associated with the
+   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * of the destination.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK = 42;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK_VALUE = 42;
+
+  /**
+   *
+   *
+   * <pre>
+   * A corresponding click can't be found that matches the provided attributes.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_CLICK_NOT_FOUND = 43;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_CLICK_NOT_FOUND_VALUE = 43;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -733,6 +1079,38 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
         return PROCESSING_ERROR_REASON_USER_IDENTIFIER_DECRYPTION_ERROR;
       case 26:
         return PROCESSING_ERROR_OPERATING_ACCOUNT_MISMATCH_FOR_AD_IDENTIFIER;
+      case 28:
+        return PROCESSING_ERROR_REASON_ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID;
+      case 29:
+        return PROCESSING_ERROR_REASON_MATCH_ID_NOT_FOUND;
+      case 30:
+        return PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_MATCH_ID;
+      case 31:
+        return PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_GCLID;
+      case 32:
+        return PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_DCLID;
+      case 33:
+        return PROCESSING_ERROR_REASON_INVALID_AD_IDENTIFIERS;
+      case 34:
+        return PROCESSING_ERROR_REASON_INVALID_MOBILE_ID_FORMAT;
+      case 35:
+        return PROCESSING_ERROR_REASON_ORIGINAL_CONVERSIONS_NOT_FOUND;
+      case 36:
+        return PROCESSING_ERROR_REASON_EVENT_ID_DECODE_ERROR;
+      case 37:
+        return PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND_FOR_IMPRESSION_ID;
+      case 38:
+        return PROCESSING_ERROR_REASON_USER_ID_NOT_FOUND;
+      case 39:
+        return PROCESSING_ERROR_REASON_CONVERSION_PRECEDES_CLICK;
+      case 40:
+        return PROCESSING_ERROR_REASON_TOO_RECENT_CLICK;
+      case 41:
+        return PROCESSING_ERROR_REASON_INVALID_CLICK;
+      case 42:
+        return PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK;
+      case 43:
+        return PROCESSING_ERROR_REASON_CLICK_NOT_FOUND;
       default:
         return null;
     }

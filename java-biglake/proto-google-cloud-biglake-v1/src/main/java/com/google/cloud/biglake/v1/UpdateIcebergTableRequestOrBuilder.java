@@ -31,7 +31,7 @@ public interface UpdateIcebergTableRequestOrBuilder
    *
    * <pre>
    * Required. Table to commit in the format:
-   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+   * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface UpdateIcebergTableRequestOrBuilder
    *
    * <pre>
    * Required. Table to commit in the format:
-   * `projects/{project_id}/namespaces/{namespace}/tables/{table}`.
+   * `projects/{projectId}/catalogs/{catalogId}/namespaces/{namespace}/tables/{table}`.
    * </pre>
    *
    * <code>
@@ -62,14 +62,10 @@ public interface UpdateIcebergTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the httpBody field is set.
    */
@@ -79,14 +75,10 @@ public interface UpdateIcebergTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The httpBody.
    */
@@ -96,14 +88,10 @@ public interface UpdateIcebergTableRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The request body that should be in the format of Apache Iceberg's
-   * `#/components/schemas/CommitTableRequest`. Content type is expected to be
-   * `application/json`. Added this field for easier json parsing.
+   * Required.
    * </pre>
    *
-   * <code>
-   * .google.api.HttpBody http_body = 2 [json_name = "updates", (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.api.HttpBody http_body = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.api.HttpBodyOrBuilder getHttpBodyOrBuilder();
 }

@@ -39,7 +39,6 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -50,6 +49,10 @@ public interface UserEventOrBuilder
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -71,7 +74,6 @@ public interface UserEventOrBuilder
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -82,6 +84,10 @@ public interface UserEventOrBuilder
    *
    * * `media-play`: Start/resume watching a video, playing a song, etc.
    * * `media-complete`: Finished or stopped midway through a video, song, etc.
+   *
+   * Custom conversion value:
+   *
+   * * `conversion`: Customer defined conversion event.
    * </pre>
    *
    * <code>string event_type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -89,6 +95,52 @@ public interface UserEventOrBuilder
    * @return The bytes for eventType.
    */
   com.google.protobuf.ByteString getEventTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The conversionType.
+   */
+  java.lang.String getConversionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Conversion type.
+   *
+   * Required if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is `conversion`. This is a customer-defined conversion name in lowercase
+   * letters or numbers separated by "-", such as "watch", "good-visit" etc.
+   *
+   * Do not set the field if
+   * [UserEvent.event_type][google.cloud.discoveryengine.v1beta.UserEvent.event_type]
+   * is not `conversion`. This mixes the custom conversion event with predefined
+   * events like `search`, `view-item` etc.
+   * </pre>
+   *
+   * <code>string conversion_type = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for conversionType.
+   */
+  com.google.protobuf.ByteString getConversionTypeBytes();
 
   /**
    *
@@ -491,8 +543,9 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -510,7 +563,7 @@ public interface UserEventOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -520,8 +573,9 @@ public interface UserEventOrBuilder
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
@@ -539,7 +593,7 @@ public interface UserEventOrBuilder
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -1278,4 +1332,81 @@ public interface UserEventOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.PanelInfoOrBuilder getPanelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the feedback field is set.
+   */
+  boolean hasFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The feedback.
+   */
+  com.google.cloud.discoveryengine.v1beta.Feedback getFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.FeedbackOrBuilder getFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The entity.
+   */
+  java.lang.String getEntity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for entity.
+   */
+  com.google.protobuf.ByteString getEntityBytes();
 }

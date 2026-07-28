@@ -149,6 +149,47 @@ public interface MetricOrBuilder
    *
    *
    * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   *
+   * @return Whether the customCodeExecutionSpec field is set.
+   */
+  boolean hasCustomCodeExecutionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   *
+   * @return The customCodeExecutionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec getCustomCodeExecutionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spec for Custom Code Execution metric.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpec custom_code_execution_spec = 11;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionSpecOrBuilder
+      getCustomCodeExecutionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Spec for pointwise metric.
    * </pre>
    *
@@ -408,6 +449,52 @@ public interface MetricOrBuilder
    * @return The enum numeric value on the wire of aggregationMetrics at the given index.
    */
   int getAggregationMetricsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricMetadata getMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata about the metric, used for visualization and
+   * organization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MetricMetadata metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricMetadataOrBuilder getMetadataOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.Metric.MetricSpecCase getMetricSpecCase();
 }

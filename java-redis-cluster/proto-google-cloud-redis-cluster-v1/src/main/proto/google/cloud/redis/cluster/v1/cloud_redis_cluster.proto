@@ -319,6 +319,15 @@ enum NodeType {
 
   // Redis standard small node_type.
   REDIS_STANDARD_SMALL = 4;
+
+  // Redis highcpu medium node_type.
+  REDIS_HIGHCPU_MEDIUM = 7;
+
+  // Redis standard large node_type.
+  REDIS_STANDARD_LARGE = 8;
+
+  // Redis highmem 2xlarge node_type.
+  REDIS_HIGHMEM_2XLARGE = 9;
 }
 
 // Available mode of in-transit encryption.
@@ -866,6 +875,13 @@ message Cluster {
   // Output only. Encryption information of the data at rest of the cluster.
   EncryptionInfo encryption_info = 43
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. If true, cluster endpoints that are created and registered by
+  // customers can be deleted asynchronously. That is, such a cluster endpoint
+  // can be de-registered before the forwarding rules in the cluster endpoint
+  // are deleted.
+  optional bool async_cluster_endpoints_deletion_enabled = 44
+      [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Server CA mode for the cluster.
   optional ServerCaMode server_ca_mode = 53

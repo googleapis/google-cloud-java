@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.stub.RegionDisksStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -108,6 +110,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
 
@@ -275,6 +278,17 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     return ((RegionDisksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyRegionDiskRequest, Operation> updateKmsKeySettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final RegionDisksSettings create(RegionDisksStubSettings stub) throws IOException {
     return new RegionDisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -319,7 +333,7 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -339,7 +353,7 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RegionDisksStubSettings.newBuilder(clientContext));
     }
 
@@ -538,6 +552,18 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     public OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation>
+        updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

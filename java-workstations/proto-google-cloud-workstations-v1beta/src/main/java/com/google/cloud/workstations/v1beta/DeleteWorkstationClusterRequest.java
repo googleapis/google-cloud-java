@@ -135,7 +135,7 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * apply it.
    * </pre>
    *
@@ -738,7 +738,7 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * apply it.
      * </pre>
      *
@@ -755,7 +755,7 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * apply it.
      * </pre>
      *
@@ -776,7 +776,7 @@ public final class DeleteWorkstationClusterRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * apply it.
      * </pre>
      *

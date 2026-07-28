@@ -548,6 +548,92 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   *
+   * @return Whether the scheduling field is set.
+   */
+  boolean hasScheduling();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   *
+   * @return The scheduling.
+   */
+  com.google.cloud.compute.v1.ManagedInstanceScheduling getScheduling();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the termination timestamp of the instance, if applicable.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ManagedInstanceScheduling scheduling = 386688404;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ManagedInstanceSchedulingOrBuilder getSchedulingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return Whether the shutdownDetails field is set.
+   */
+  boolean hasShutdownDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return The shutdownDetails.
+   */
+  com.google.cloud.compute.v1.ManagedInstanceShutdownDetails getShutdownDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the graceful shutdown details if the instance is in
+   * `PENDING_STOP` state or there is a programmed stop scheduled.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ManagedInstanceShutdownDetails shutdown_details = 15198553;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ManagedInstanceShutdownDetailsOrBuilder getShutdownDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *

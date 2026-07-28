@@ -250,6 +250,53 @@ public class IngestionServiceClientTest {
   }
 
   @Test
+  public void ingestAdEventsTest() throws Exception {
+    IngestAdEventsResponse expectedResponse = IngestAdEventsResponse.newBuilder().build();
+    mockIngestionService.addResponse(expectedResponse);
+
+    IngestAdEventsRequest request =
+        IngestAdEventsRequest.newBuilder()
+            .addAllAdEvents(new ArrayList<AdEvent>())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    IngestAdEventsResponse actualResponse = client.ingestAdEvents(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIngestionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestAdEventsRequest actualRequest = ((IngestAdEventsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAdEventsList(), actualRequest.getAdEventsList());
+    Assert.assertEquals(request.getEncryptionInfo(), actualRequest.getEncryptionInfo());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestAdEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIngestionService.addException(exception);
+
+    try {
+      IngestAdEventsRequest request =
+          IngestAdEventsRequest.newBuilder()
+              .addAllAdEvents(new ArrayList<AdEvent>())
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.ingestAdEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void retrieveRequestStatusTest() throws Exception {
     RetrieveRequestStatusResponse expectedResponse =
         RetrieveRequestStatusResponse.newBuilder()

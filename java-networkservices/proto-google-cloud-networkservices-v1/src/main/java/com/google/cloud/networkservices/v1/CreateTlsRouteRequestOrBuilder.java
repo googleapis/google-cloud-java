@@ -31,7 +31,7 @@ public interface CreateTlsRouteRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the TlsRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface CreateTlsRouteRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the TlsRoute. Must be in the
-   * format `projects/&#42;&#47;locations/global`.
+   * format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>

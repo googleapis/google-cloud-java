@@ -97,6 +97,7 @@
  *       ExecuteToolRequest.newBuilder()
  *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
  *           .setArgs(Struct.newBuilder().build())
+ *           .setMockConfig(MockConfig.newBuilder().build())
  *           .build();
  *   ExecuteToolResponse response = toolServiceClient.executeTool(request);
  * }

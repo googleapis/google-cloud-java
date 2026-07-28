@@ -56,6 +56,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     httpRules_ = java.util.Collections.emptyList();
+    networkRules_ = java.util.Collections.emptyList();
     action_ = 0;
     policyProfile_ = 0;
   }
@@ -680,7 +681,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. All gateways and forwarding rules referenced by this policy and
-     * extensions must share the same load balancing scheme. Supported values:
+     * extensions must share the same load balancing scheme. Required only when
+     * targeting forwarding rules. If targeting Secure Web Proxy, this field
+     * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+     * when targeting Agent Gateway. Supported values:
      * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
      * to [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -699,7 +703,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. All gateways and forwarding rules referenced by this policy and
-     * extensions must share the same load balancing scheme. Supported values:
+     * extensions must share the same load balancing scheme. Required only when
+     * targeting forwarding rules. If targeting Secure Web Proxy, this field
+     * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+     * when targeting Agent Gateway. Supported values:
      * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
      * to [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -717,8 +724,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -731,8 +738,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -745,8 +752,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -760,8 +767,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,7 +837,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. All gateways and forwarding rules referenced by this policy and
-     * extensions must share the same load balancing scheme. Supported values:
+     * extensions must share the same load balancing scheme. Required only when
+     * targeting forwarding rules. If targeting Secure Web Proxy, this field
+     * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+     * when targeting Agent Gateway. Supported values:
      * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
      * to [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -852,7 +862,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. All gateways and forwarding rules referenced by this policy and
-     * extensions must share the same load balancing scheme. Supported values:
+     * extensions must share the same load balancing scheme. Required only when
+     * targeting forwarding rules. If targeting Secure Web Proxy, this field
+     * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+     * when targeting Agent Gateway. Supported values:
      * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
      * to [Backend services
      * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -885,8 +898,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -901,8 +914,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -917,8 +930,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,8 +947,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. A list of references to the Forwarding Rules on which this
-     * policy will be applied.
+     * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+     * Gateways, or Agent Gateways on which this policy will be applied.
      * </pre>
      *
      * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1307,7 +1320,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. All gateways and forwarding rules referenced by this policy and
-       * extensions must share the same load balancing scheme. Supported values:
+       * extensions must share the same load balancing scheme. Required only when
+       * targeting forwarding rules. If targeting Secure Web Proxy, this field
+       * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+       * when targeting Agent Gateway. Supported values:
        * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
        * to [Backend services
        * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -1329,7 +1345,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. All gateways and forwarding rules referenced by this policy and
-       * extensions must share the same load balancing scheme. Supported values:
+       * extensions must share the same load balancing scheme. Required only when
+       * targeting forwarding rules. If targeting Secure Web Proxy, this field
+       * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+       * when targeting Agent Gateway. Supported values:
        * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
        * to [Backend services
        * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -1354,7 +1373,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. All gateways and forwarding rules referenced by this policy and
-       * extensions must share the same load balancing scheme. Supported values:
+       * extensions must share the same load balancing scheme. Required only when
+       * targeting forwarding rules. If targeting Secure Web Proxy, this field
+       * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+       * when targeting Agent Gateway. Supported values:
        * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
        * to [Backend services
        * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -1382,7 +1404,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. All gateways and forwarding rules referenced by this policy and
-       * extensions must share the same load balancing scheme. Supported values:
+       * extensions must share the same load balancing scheme. Required only when
+       * targeting forwarding rules. If targeting Secure Web Proxy, this field
+       * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+       * when targeting Agent Gateway. Supported values:
        * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
        * to [Backend services
        * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -1411,7 +1436,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. All gateways and forwarding rules referenced by this policy and
-       * extensions must share the same load balancing scheme. Supported values:
+       * extensions must share the same load balancing scheme. Required only when
+       * targeting forwarding rules. If targeting Secure Web Proxy, this field
+       * must be `INTERNAL_MANAGED` or not specified. Must not be specified
+       * when targeting Agent Gateway. Supported values:
        * `INTERNAL_MANAGED` and `EXTERNAL_MANAGED`. For more information, refer
        * to [Backend services
        * overview](https://cloud.google.com/load-balancing/docs/backend-service).
@@ -1444,8 +1472,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1461,8 +1489,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1477,8 +1505,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1494,8 +1522,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1511,8 +1539,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1536,8 +1564,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1560,8 +1588,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1581,8 +1609,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1601,8 +1629,8 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. A list of references to the Forwarding Rules on which this
-       * policy will be applied.
+       * Required. A list of references to the Forwarding Rules, Secure Web Proxy
+       * Gateways, or Agent Gateways on which this policy will be applied.
        * </pre>
        *
        * <code>repeated string resources = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -14332,6 +14360,96 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
          */
         com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.To.RequestOperation.MCPOrBuilder
             getMcpOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+            getSnisList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch getSnis(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        int getSnisCount();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder>
+            getSnisOrBuilderList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder
+            getSnisOrBuilder(int index);
       }
 
       /**
@@ -14369,6 +14487,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
           hosts_ = java.util.Collections.emptyList();
           paths_ = java.util.Collections.emptyList();
           methods_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          snis_ = java.util.Collections.emptyList();
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -19450,6 +19569,119 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
               : mcp_;
         }
 
+        public static final int SNIS_FIELD_NUMBER = 7;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+            snis_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+            getSnisList() {
+          return snis_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder>
+            getSnisOrBuilderList() {
+          return snis_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public int getSnisCount() {
+          return snis_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch getSnis(
+            int index) {
+          return snis_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of SNIs to match against. The match can be one of
+         * exact, prefix, suffix, or contains (substring match). If there is no
+         * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+         * Matches are always case sensitive unless the ignoreCase is set.
+         * Limited to 10 SNIs per Authorization Policy.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder
+            getSnisOrBuilder(int index) {
+          return snis_.get(index);
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -19480,6 +19712,9 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
           if (((bitField0_ & 0x00000002) != 0)) {
             output.writeMessage(5, getMcp());
           }
+          for (int i = 0; i < snis_.size(); i++) {
+            output.writeMessage(7, snis_.get(i));
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -19508,6 +19743,9 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
           }
           if (((bitField0_ & 0x00000002) != 0)) {
             size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMcp());
+          }
+          for (int i = 0; i < snis_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, snis_.get(i));
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -19538,6 +19776,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
           if (hasMcp()) {
             if (!getMcp().equals(other.getMcp())) return false;
           }
+          if (!getSnisList().equals(other.getSnisList())) return false;
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -19568,6 +19807,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
           if (hasMcp()) {
             hash = (37 * hash) + MCP_FIELD_NUMBER;
             hash = (53 * hash) + getMcp().hashCode();
+          }
+          if (getSnisCount() > 0) {
+            hash = (37 * hash) + SNIS_FIELD_NUMBER;
+            hash = (53 * hash) + getSnisList().hashCode();
           }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
@@ -19731,6 +19974,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
               internalGetHostsFieldBuilder();
               internalGetPathsFieldBuilder();
               internalGetMcpFieldBuilder();
+              internalGetSnisFieldBuilder();
             }
           }
 
@@ -19763,6 +20007,13 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
               mcpBuilder_.dispose();
               mcpBuilder_ = null;
             }
+            if (snisBuilder_ == null) {
+              snis_ = java.util.Collections.emptyList();
+            } else {
+              snis_ = null;
+              snisBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000020);
             return this;
           }
 
@@ -19824,6 +20075,15 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
               result.paths_ = paths_;
             } else {
               result.paths_ = pathsBuilder_.build();
+            }
+            if (snisBuilder_ == null) {
+              if (((bitField0_ & 0x00000020) != 0)) {
+                snis_ = java.util.Collections.unmodifiableList(snis_);
+                bitField0_ = (bitField0_ & ~0x00000020);
+              }
+              result.snis_ = snis_;
+            } else {
+              result.snis_ = snisBuilder_.build();
             }
           }
 
@@ -19937,6 +20197,33 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
             if (other.hasMcp()) {
               mergeMcp(other.getMcp());
             }
+            if (snisBuilder_ == null) {
+              if (!other.snis_.isEmpty()) {
+                if (snis_.isEmpty()) {
+                  snis_ = other.snis_;
+                  bitField0_ = (bitField0_ & ~0x00000020);
+                } else {
+                  ensureSnisIsMutable();
+                  snis_.addAll(other.snis_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.snis_.isEmpty()) {
+                if (snisBuilder_.isEmpty()) {
+                  snisBuilder_.dispose();
+                  snisBuilder_ = null;
+                  snis_ = other.snis_;
+                  bitField0_ = (bitField0_ & ~0x00000020);
+                  snisBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                          ? internalGetSnisFieldBuilder()
+                          : null;
+                } else {
+                  snisBuilder_.addAllMessages(other.snis_);
+                }
+              }
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -20014,6 +20301,21 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
                       bitField0_ |= 0x00000010;
                       break;
                     } // case 42
+                  case 58:
+                    {
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch m =
+                          input.readMessage(
+                              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch
+                                  .parser(),
+                              extensionRegistry);
+                      if (snisBuilder_ == null) {
+                        ensureSnisIsMutable();
+                        snis_.add(m);
+                      } else {
+                        snisBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 58
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -21784,6 +22086,514 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
               mcp_ = null;
             }
             return mcpBuilder_;
+          }
+
+          private java.util.List<
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+              snis_ = java.util.Collections.emptyList();
+
+          private void ensureSnisIsMutable() {
+            if (!((bitField0_ & 0x00000020) != 0)) {
+              snis_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>(snis_);
+              bitField0_ |= 0x00000020;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch,
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder,
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder>
+              snisBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+              getSnisList() {
+            if (snisBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(snis_);
+            } else {
+              return snisBuilder_.getMessageList();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public int getSnisCount() {
+            if (snisBuilder_ == null) {
+              return snis_.size();
+            } else {
+              return snisBuilder_.getCount();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch getSnis(
+              int index) {
+            if (snisBuilder_ == null) {
+              return snis_.get(index);
+            } else {
+              return snisBuilder_.getMessage(index);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setSnis(
+              int index,
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch value) {
+            if (snisBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureSnisIsMutable();
+              snis_.set(index, value);
+              onChanged();
+            } else {
+              snisBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder setSnis(
+              int index,
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+                  builderForValue) {
+            if (snisBuilder_ == null) {
+              ensureSnisIsMutable();
+              snis_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              snisBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addSnis(
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch value) {
+            if (snisBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureSnisIsMutable();
+              snis_.add(value);
+              onChanged();
+            } else {
+              snisBuilder_.addMessage(value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addSnis(
+              int index,
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch value) {
+            if (snisBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureSnisIsMutable();
+              snis_.add(index, value);
+              onChanged();
+            } else {
+              snisBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addSnis(
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+                  builderForValue) {
+            if (snisBuilder_ == null) {
+              ensureSnisIsMutable();
+              snis_.add(builderForValue.build());
+              onChanged();
+            } else {
+              snisBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addSnis(
+              int index,
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+                  builderForValue) {
+            if (snisBuilder_ == null) {
+              ensureSnisIsMutable();
+              snis_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              snisBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder addAllSnis(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch>
+                  values) {
+            if (snisBuilder_ == null) {
+              ensureSnisIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, snis_);
+              onChanged();
+            } else {
+              snisBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder clearSnis() {
+            if (snisBuilder_ == null) {
+              snis_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000020);
+              onChanged();
+            } else {
+              snisBuilder_.clear();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public Builder removeSnis(int index) {
+            if (snisBuilder_ == null) {
+              ensureSnisIsMutable();
+              snis_.remove(index);
+              onChanged();
+            } else {
+              snisBuilder_.remove(index);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+              getSnisBuilder(int index) {
+            return internalGetSnisFieldBuilder().getBuilder(index);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder
+              getSnisOrBuilder(int index) {
+            if (snisBuilder_ == null) {
+              return snis_.get(index);
+            } else {
+              return snisBuilder_.getMessageOrBuilder(index);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule
+                          .StringMatchOrBuilder>
+              getSnisOrBuilderList() {
+            if (snisBuilder_ != null) {
+              return snisBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(snis_);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+              addSnisBuilder() {
+            return internalGetSnisFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch
+                        .getDefaultInstance());
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder
+              addSnisBuilder(int index) {
+            return internalGetSnisFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch
+                        .getDefaultInstance());
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. A list of SNIs to match against. The match can be one of
+           * exact, prefix, suffix, or contains (substring match). If there is no
+           * SNI (i.e. plaintext HTTP traffic), the request will be denied.
+           * Matches are always case sensitive unless the ignoreCase is set.
+           * Limited to 10 SNIs per Authorization Policy.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch snis = 7 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder>
+              getSnisBuilderList() {
+            return internalGetSnisFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch,
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder,
+                  com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatchOrBuilder>
+              internalGetSnisFieldBuilder() {
+            if (snisBuilder_ == null) {
+              snisBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilder<
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch,
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.StringMatch.Builder,
+                      com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule
+                          .StringMatchOrBuilder>(
+                      snis_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+              snis_ = null;
+            }
+            return snisBuilder_;
           }
 
           // @@protoc_insertion_point(builder_scope:google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.To.RequestOperation)
@@ -27779,6 +28589,120 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
     return httpRules_.get(index);
   }
 
+  public static final int NETWORK_RULES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule> networkRules_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule>
+      getNetworkRulesList() {
+    return networkRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>
+      getNetworkRulesOrBuilderList() {
+    return networkRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getNetworkRulesCount() {
+    return networkRules_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule getNetworkRules(int index) {
+    return networkRules_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of authorization network rules to match against the
+   * incoming request. A policy match occurs when at least one network rule
+   * matches the request.
+   * At least one network rule is required for Allow or Deny Action if no HTTP
+   * rules are provided. Network rules are mutually exclusive with HTTP rules.
+   * Limited to 5 rules.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder
+      getNetworkRulesOrBuilder(int index) {
+    return networkRules_.get(index);
+  }
+
   public static final int ACTION_FIELD_NUMBER = 8;
   private int action_ = 0;
 
@@ -28028,6 +28952,9 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(11, policyProfile_);
     }
+    for (int i = 0; i < networkRules_.size(); i++) {
+      output.writeMessage(12, networkRules_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -28078,6 +29005,9 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, policyProfile_);
     }
+    for (int i = 0; i < networkRules_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, networkRules_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -28110,6 +29040,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       if (!getTarget().equals(other.getTarget())) return false;
     }
     if (!getHttpRulesList().equals(other.getHttpRulesList())) return false;
+    if (!getNetworkRulesList().equals(other.getNetworkRulesList())) return false;
     if (action_ != other.action_) return false;
     if (hasCustomProvider() != other.hasCustomProvider()) return false;
     if (hasCustomProvider()) {
@@ -28150,6 +29081,10 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
     if (getHttpRulesCount() > 0) {
       hash = (37 * hash) + HTTP_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getHttpRulesList().hashCode();
+    }
+    if (getNetworkRulesCount() > 0) {
+      hash = (37 * hash) + NETWORK_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkRulesList().hashCode();
     }
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + action_;
@@ -28327,6 +29262,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetTargetFieldBuilder();
         internalGetHttpRulesFieldBuilder();
+        internalGetNetworkRulesFieldBuilder();
         internalGetCustomProviderFieldBuilder();
       }
     }
@@ -28360,6 +29296,13 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
         httpRulesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      if (networkRulesBuilder_ == null) {
+        networkRules_ = java.util.Collections.emptyList();
+      } else {
+        networkRules_ = null;
+        networkRulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       action_ = 0;
       customProvider_ = null;
       if (customProviderBuilder_ != null) {
@@ -28413,6 +29356,15 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       } else {
         result.httpRules_ = httpRulesBuilder_.build();
       }
+      if (networkRulesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          networkRules_ = java.util.Collections.unmodifiableList(networkRules_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.networkRules_ = networkRules_;
+      } else {
+        result.networkRules_ = networkRulesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.networksecurity.v1.AuthzPolicy result) {
@@ -28440,15 +29392,15 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
         result.target_ = targetBuilder_ == null ? target_ : targetBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.action_ = action_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.customProvider_ =
             customProviderBuilder_ == null ? customProvider_ : customProviderBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.policyProfile_ = policyProfile_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -28512,6 +29464,33 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
                     : null;
           } else {
             httpRulesBuilder_.addAllMessages(other.httpRules_);
+          }
+        }
+      }
+      if (networkRulesBuilder_ == null) {
+        if (!other.networkRules_.isEmpty()) {
+          if (networkRules_.isEmpty()) {
+            networkRules_ = other.networkRules_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureNetworkRulesIsMutable();
+            networkRules_.addAll(other.networkRules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.networkRules_.isEmpty()) {
+          if (networkRulesBuilder_.isEmpty()) {
+            networkRulesBuilder_.dispose();
+            networkRulesBuilder_ = null;
+            networkRules_ = other.networkRules_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            networkRulesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetNetworkRulesFieldBuilder()
+                    : null;
+          } else {
+            networkRulesBuilder_.addAllMessages(other.networkRules_);
           }
         }
       }
@@ -28611,22 +29590,36 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
             case 64:
               {
                 action_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 64
             case 82:
               {
                 input.readMessage(
                     internalGetCustomProviderFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 policyProfile_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
+            case 98:
+              {
+                com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule m =
+                    input.readMessage(
+                        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.parser(),
+                        extensionRegistry);
+                if (networkRulesBuilder_ == null) {
+                  ensureNetworkRulesIsMutable();
+                  networkRules_.add(m);
+                } else {
+                  networkRulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -30218,6 +31211,516 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       return httpRulesBuilder_;
     }
 
+    private java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule>
+        networkRules_ = java.util.Collections.emptyList();
+
+    private void ensureNetworkRulesIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        networkRules_ =
+            new java.util.ArrayList<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule>(
+                networkRules_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule,
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder,
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>
+        networkRulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule>
+        getNetworkRulesList() {
+      if (networkRulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(networkRules_);
+      } else {
+        return networkRulesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getNetworkRulesCount() {
+      if (networkRulesBuilder_ == null) {
+        return networkRules_.size();
+      } else {
+        return networkRulesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule getNetworkRules(int index) {
+      if (networkRulesBuilder_ == null) {
+        return networkRules_.get(index);
+      } else {
+        return networkRulesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkRules(
+        int index, com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule value) {
+      if (networkRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkRulesIsMutable();
+        networkRules_.set(index, value);
+        onChanged();
+      } else {
+        networkRulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkRules(
+        int index,
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder builderForValue) {
+      if (networkRulesBuilder_ == null) {
+        ensureNetworkRulesIsMutable();
+        networkRules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkRulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkRules(
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule value) {
+      if (networkRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkRulesIsMutable();
+        networkRules_.add(value);
+        onChanged();
+      } else {
+        networkRulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkRules(
+        int index, com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule value) {
+      if (networkRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkRulesIsMutable();
+        networkRules_.add(index, value);
+        onChanged();
+      } else {
+        networkRulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkRules(
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder builderForValue) {
+      if (networkRulesBuilder_ == null) {
+        ensureNetworkRulesIsMutable();
+        networkRules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        networkRulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addNetworkRules(
+        int index,
+        com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder builderForValue) {
+      if (networkRulesBuilder_ == null) {
+        ensureNetworkRulesIsMutable();
+        networkRules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkRulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllNetworkRules(
+        java.lang.Iterable<? extends com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule>
+            values) {
+      if (networkRulesBuilder_ == null) {
+        ensureNetworkRulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkRules_);
+        onChanged();
+      } else {
+        networkRulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkRules() {
+      if (networkRulesBuilder_ == null) {
+        networkRules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        networkRulesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeNetworkRules(int index) {
+      if (networkRulesBuilder_ == null) {
+        ensureNetworkRulesIsMutable();
+        networkRules_.remove(index);
+        onChanged();
+      } else {
+        networkRulesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder getNetworkRulesBuilder(
+        int index) {
+      return internalGetNetworkRulesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder
+        getNetworkRulesOrBuilder(int index) {
+      if (networkRulesBuilder_ == null) {
+        return networkRules_.get(index);
+      } else {
+        return networkRulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>
+        getNetworkRulesOrBuilderList() {
+      if (networkRulesBuilder_ != null) {
+        return networkRulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(networkRules_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder
+        addNetworkRulesBuilder() {
+      return internalGetNetworkRulesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder addNetworkRulesBuilder(
+        int index) {
+      return internalGetNetworkRulesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of authorization network rules to match against the
+     * incoming request. A policy match occurs when at least one network rule
+     * matches the request.
+     * At least one network rule is required for Allow or Deny Action if no HTTP
+     * rules are provided. Network rules are mutually exclusive with HTTP rules.
+     * Limited to 5 rules.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule network_rules = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder>
+        getNetworkRulesBuilderList() {
+      return internalGetNetworkRulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule,
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder,
+            com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>
+        internalGetNetworkRulesFieldBuilder() {
+      if (networkRulesBuilder_ == null) {
+        networkRulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule,
+                com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRule.Builder,
+                com.google.cloud.networksecurity.v1.AuthzPolicy.AuthzRuleOrBuilder>(
+                networkRules_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+        networkRules_ = null;
+      }
+      return networkRulesBuilder_;
+    }
+
     private int action_ = 0;
 
     /**
@@ -30300,7 +31803,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder setActionValue(int value) {
       action_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -30391,7 +31894,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -30434,7 +31937,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       action_ = 0;
       onChanged();
       return this;
@@ -30463,7 +31966,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the customProvider field is set.
      */
     public boolean hasCustomProvider() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -30514,7 +32017,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       } else {
         customProviderBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -30539,7 +32042,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       } else {
         customProviderBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -30560,7 +32063,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
     public Builder mergeCustomProvider(
         com.google.cloud.networksecurity.v1.AuthzPolicy.CustomProvider value) {
       if (customProviderBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && customProvider_ != null
             && customProvider_
                 != com.google.cloud.networksecurity.v1.AuthzPolicy.CustomProvider
@@ -30573,7 +32076,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
         customProviderBuilder_.mergeFrom(value);
       }
       if (customProvider_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -30593,7 +32096,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCustomProvider() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       customProvider_ = null;
       if (customProviderBuilder_ != null) {
         customProviderBuilder_.dispose();
@@ -30618,7 +32121,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networksecurity.v1.AuthzPolicy.CustomProvider.Builder
         getCustomProviderBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetCustomProviderFieldBuilder().getBuilder();
     }
@@ -30717,7 +32220,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder setPolicyProfileValue(int value) {
       policyProfile_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -30767,7 +32270,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       policyProfile_ = value.getNumber();
       onChanged();
       return this;
@@ -30789,7 +32292,7 @@ public final class AuthzPolicy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPolicyProfile() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       policyProfile_ = 0;
       onChanged();
       return this;

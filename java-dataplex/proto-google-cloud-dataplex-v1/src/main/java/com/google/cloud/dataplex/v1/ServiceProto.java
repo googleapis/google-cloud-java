@@ -374,7 +374,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\017next_page_token\030\002 \001(\t\"E\n"
           + "\020CancelJobRequest\0221\n"
           + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
-          + "\033dataplex.googleapis.com/Job2\212(\n"
+          + "\033dataplex.googleapis.com/Job2\253)\n"
           + "\017DataplexService\022\303\001\n"
           + "\n"
           + "CreateLake\022+.google.cloud.dataplex.v1.C"
@@ -479,10 +479,13 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\tCancelJob\022*.google.cloud.dataplex.v1.CancelJobRe"
           + "quest\032\026.google.protobuf.Empty\"Q\332A\004name\202\323"
           + "\344\223\002D\"?/v1/{name=projects/*/locations/*/l"
-          + "akes/*/tasks/*/jobs/*}:cancel:\001*\032K\312A\027dat"
-          + "aplex.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformBh\n"
-          + "\034com.google.cloud.dataplex.v1B\014ServiceProtoP\001Z8c"
-          + "loud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "akes/*/tasks/*/jobs/*}:cancel:\001*\032\353\001\312A\027da"
+          + "taplex.googleapis.com\322A\315\001https://www.goo"
+          + "gleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-platform.r"
+          + "ead-only,https://www.googleapis.com/auth"
+          + "/dataplex.read-write,https://www.googleapis.com/auth/dataplex.readonlyBh\n"
+          + "\034com.google.cloud.dataplex.v1B\014ServiceProtoP\001Z8"
+          + "cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

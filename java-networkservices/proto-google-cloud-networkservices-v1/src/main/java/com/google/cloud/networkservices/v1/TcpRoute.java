@@ -4913,7 +4913,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the TcpRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -4938,7 +4938,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Identifier. Name of the TcpRoute resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -5281,7 +5281,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5304,7 +5304,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5327,7 +5327,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5351,7 +5351,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * one of the routing rules to route the requests served by the mesh.
    *
    * Each mesh reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
    *
    * The attached Mesh should be of a type SIDECAR
    * </pre>
@@ -5381,7 +5381,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5402,7 +5402,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5423,7 +5423,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -5445,7 +5445,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
    * as one of the routing rules to route the requests served by the gateway.
    *
    * Each gateway reference should match the pattern:
-   * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+   * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
    * </pre>
    *
    * <code>
@@ -6216,7 +6216,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TcpRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6240,7 +6240,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TcpRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6264,7 +6264,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TcpRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6287,7 +6287,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TcpRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -6306,7 +6306,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Identifier. Name of the TcpRoute resource. It matches pattern
-     * `projects/&#42;&#47;locations/global/tcpRoutes/tcp_route_name&gt;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;tcpRoutes/tcp_route_name&gt;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -7441,7 +7441,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7465,7 +7465,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7488,7 +7488,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7512,7 +7512,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7536,7 +7536,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7568,7 +7568,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7599,7 +7599,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7627,7 +7627,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7654,7 +7654,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * one of the routing rules to route the requests served by the mesh.
      *
      * Each mesh reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`
      *
      * The attached Mesh should be of a type SIDECAR
      * </pre>
@@ -7696,7 +7696,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7718,7 +7718,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7739,7 +7739,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7761,7 +7761,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7783,7 +7783,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7813,7 +7813,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7842,7 +7842,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7868,7 +7868,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>
@@ -7893,7 +7893,7 @@ public final class TcpRoute extends com.google.protobuf.GeneratedMessage
      * as one of the routing rules to route the requests served by the gateway.
      *
      * Each gateway reference should match the pattern:
-     * `projects/&#42;&#47;locations/global/gateways/&lt;gateway_name&gt;`
+     * `projects/&#42;&#47;locations/&#42;&#47;gateways/&lt;gateway_name&gt;`
      * </pre>
      *
      * <code>

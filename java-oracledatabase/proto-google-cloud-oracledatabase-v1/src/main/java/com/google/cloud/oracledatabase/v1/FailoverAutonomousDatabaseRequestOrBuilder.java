@@ -62,11 +62,12 @@ public interface FailoverAutonomousDatabaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The peer database name to fail over to.
+   * Optional. The peer database name to fail over to. Required for cross-region
+   * standby, and must be omitted for in-region Data Guard.
    * </pre>
    *
    * <code>
-   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The peerAutonomousDatabase.
@@ -77,11 +78,12 @@ public interface FailoverAutonomousDatabaseRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The peer database name to fail over to.
+   * Optional. The peer database name to fail over to. Required for cross-region
+   * standby, and must be omitted for in-region Data Guard.
    * </pre>
    *
    * <code>
-   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string peer_autonomous_database = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for peerAutonomousDatabase.

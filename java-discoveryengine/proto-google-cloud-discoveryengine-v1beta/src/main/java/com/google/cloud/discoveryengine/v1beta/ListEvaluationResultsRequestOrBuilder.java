@@ -33,9 +33,10 @@ public interface ListEvaluationResultsRequestOrBuilder
    * Required. The evaluation resource name, such as
    * `projects/{project}/locations/{location}/evaluations/{evaluation}`.
    *
-   * If the caller does not have permission to list [EvaluationResult][]
-   * under this evaluation, regardless of whether or not this evaluation
-   * set exists, a `PERMISSION_DENIED` error is returned.
+   * If the caller does not have permission to list
+   * [ListEvaluationResultsResponse.EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]
+   * under this evaluation, regardless of whether or not this evaluation set
+   * exists, a `PERMISSION_DENIED` error is returned.
    * </pre>
    *
    * <code>
@@ -53,9 +54,10 @@ public interface ListEvaluationResultsRequestOrBuilder
    * Required. The evaluation resource name, such as
    * `projects/{project}/locations/{location}/evaluations/{evaluation}`.
    *
-   * If the caller does not have permission to list [EvaluationResult][]
-   * under this evaluation, regardless of whether or not this evaluation
-   * set exists, a `PERMISSION_DENIED` error is returned.
+   * If the caller does not have permission to list
+   * [ListEvaluationResultsResponse.EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]
+   * under this evaluation, regardless of whether or not this evaluation set
+   * exists, a `PERMISSION_DENIED` error is returned.
    * </pre>
    *
    * <code>
@@ -70,14 +72,15 @@ public interface ListEvaluationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of [EvaluationResult][] to return. If unspecified,
-   * defaults to 100. The maximum allowed value is 1000. Values above 1000 will
-   * be coerced to 1000.
+   * Optional. Maximum number of
+   * [ListEvaluationResultsResponse.EvaluationResult][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.EvaluationResult]
+   * to return. If unspecified, defaults to 100. The maximum allowed value is
+   * 1000. Values above 1000 will be coerced to 1000.
    *
    * If this field is negative, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -87,7 +90,7 @@ public interface ListEvaluationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token
+   * Optional. A page token
    * [ListEvaluationResultsResponse.next_page_token][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.next_page_token],
    * received from a previous
    * [EvaluationService.ListEvaluationResults][google.cloud.discoveryengine.v1beta.EvaluationService.ListEvaluationResults]
@@ -99,7 +102,7 @@ public interface ListEvaluationResultsRequestOrBuilder
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -109,7 +112,7 @@ public interface ListEvaluationResultsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token
+   * Optional. A page token
    * [ListEvaluationResultsResponse.next_page_token][google.cloud.discoveryengine.v1beta.ListEvaluationResultsResponse.next_page_token],
    * received from a previous
    * [EvaluationService.ListEvaluationResults][google.cloud.discoveryengine.v1beta.EvaluationService.ListEvaluationResults]
@@ -121,7 +124,7 @@ public interface ListEvaluationResultsRequestOrBuilder
    * `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

@@ -3,15 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>3.32.0</version><!-- {x-version-update:google-cloud-logging:current} -->
+  <version>3.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging</name>
-  <url>https://github.com/googleapis/java-logging</url>
   <description>Java idiomatic client for Cloud Logging</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-logging-parent</artifactId>
-    <version>3.32.0</version><!-- {x-version-update:google-cloud-logging:current} -->
+    <version>3.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-logging</site.installationModule>
@@ -62,10 +61,12 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-logging-v2</artifactId>
     </dependency>
+    <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
@@ -140,11 +141,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- {x-generated-grpc-dependencies-start} -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-logging-v2</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- {x-generated-grpc-dependencies-end} -->
     <!-- OpenTelemetry -->
     <dependency>
       <groupId>io.opentelemetry</groupId>

@@ -42,6 +42,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class serializes/deserializes protobuf {@link Message} for REST interactions. It serializes
@@ -49,6 +50,7 @@ import java.util.Map;
  * URL path parameters, and query parameters. It deserializes JSON responses into response protobuf
  * message.
  */
+@NullMarked
 public class ProtoRestSerializer<RequestT extends Message> {
 
   private final TypeRegistry registry;
@@ -101,6 +103,9 @@ public class ProtoRestSerializer<RequestT extends Message> {
   @SuppressWarnings("unchecked")
   RequestT fromJson(Reader json, Message.Builder builder) {
     try {
+      // Supports mapping from both standard proto field names and explicit 'json_name' annotations.
+      // See:
+      // https://github.com/protocolbuffers/protobuf/blob/cecbbf41e43634c7c5b940dd336aa81b31fd4e5d/java/util/src/main/java/com/google/protobuf/util/JsonFormat.java#L1577-L1583
       JsonFormat.parser().usingTypeRegistry(registry).ignoringUnknownFields().merge(json, builder);
       return (RequestT) builder.build();
     } catch (IOException e) {

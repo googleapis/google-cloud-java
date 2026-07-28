@@ -45,6 +45,10 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1_WidgetTool_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1_WidgetTool_TextResponseConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1_WidgetTool_TextResponseConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_fieldAccessorTable;
@@ -65,7 +69,7 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
           + "%google/cloud/ces/v1/widget_tool.proto\022"
           + "\023google.cloud.ces.v1\032\037google/api/field_b"
           + "ehavior.proto\032)google/cloud/ces/v1/python_function.proto\032 google/cloud/ces/v1/sc"
-          + "hema.proto\032\034google/protobuf/struct.proto\"\221\010\n\n"
+          + "hema.proto\032\034google/protobuf/struct.proto\"\324\n\n\n"
           + "WidgetTool\0226\n\n"
           + "parameters\030\004"
           + " \001(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001H\000\022\021\n"
@@ -75,11 +79,23 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0162*.google.cloud.ces.v1.WidgetTool.WidgetTypeB\003\340A\001\022/\n"
           + "\tui_config\030\005 \001(\0132\027.google.protobuf.StructB\003\340A\001\022F\n"
           + "\014data_mapping\030\006"
-          + " \001(\0132+.google.cloud.ces.v1.WidgetTool.DataMappingB\003\340A\001\032\246\003\n"
+          + " \001(\0132+.google.cloud.ces.v1.WidgetTool.DataMappingB\003\340A\001\022U\n"
+          + "\024text_response_config\030\007"
+          + " \001(\01322.google.cloud.ces.v1.WidgetTool.TextResponseConfigB\003\340A\001\032\351\001\n"
+          + "\022TextResponseConfig\022J\n"
+          + "\004type\030\001 \001(\01627.google"
+          + ".cloud.ces.v1.WidgetTool.TextResponseConfig.TypeB\003\340A\001\022\030\n"
+          + "\013static_text\030\002 \001(\tB\003\340A\001\022&\n"
+          + "\031text_response_instruction\030\003 \001(\tB\003\340A\001\"E\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004NONE\020\001\022\021\n\r"
+          + "LLM_GENERATED\020\002\022\n\n"
+          + "\006STATIC\020\003\032\246\003\n"
           + "\013DataMapping\022\035\n"
           + "\020source_tool_name\030\001 \001(\tB\003\340A\001\022[\n"
-          + "\016field_mappings\030\002 \003(\0132>.google.cloud.ces.v1"
-          + ".WidgetTool.DataMapping.FieldMappingsEntryB\003\340A\001\022A\n"
+          + "\016field_mappings\030\002 \003(\0132>.google.cloud.ces"
+          + ".v1.WidgetTool.DataMapping.FieldMappingsEntryB\003\340A\001\022A\n"
           + "\017python_function\030\005"
           + " \001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001\022C\n"
           + "\004mode\030\004"
@@ -108,8 +124,8 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
           + "\025APPOINTMENT_SCHEDULER\020\013\022\020\n"
           + "\014CONTACT_FORM\020\014B\007\n"
           + "\005inputBW\n"
-          + "\027com.google.cloud.ces.v1B\017WidgetToolProtoP\001Z)cloud.google.com/go/ces/apiv"
-          + "1/cespb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\017WidgetToolProtoP\001Z)cloud.google.com/go/ces/a"
+          + "piv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -125,10 +141,25 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_WidgetTool_descriptor,
             new java.lang.String[] {
-              "Parameters", "Name", "Description", "WidgetType", "UiConfig", "DataMapping", "Input",
+              "Parameters",
+              "Name",
+              "Description",
+              "WidgetType",
+              "UiConfig",
+              "DataMapping",
+              "TextResponseConfig",
+              "Input",
+            });
+    internal_static_google_cloud_ces_v1_WidgetTool_TextResponseConfig_descriptor =
+        internal_static_google_cloud_ces_v1_WidgetTool_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1_WidgetTool_TextResponseConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1_WidgetTool_TextResponseConfig_descriptor,
+            new java.lang.String[] {
+              "Type", "StaticText", "TextResponseInstruction",
             });
     internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor =
-        internal_static_google_cloud_ces_v1_WidgetTool_descriptor.getNestedType(0);
+        internal_static_google_cloud_ces_v1_WidgetTool_descriptor.getNestedType(1);
     internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor,

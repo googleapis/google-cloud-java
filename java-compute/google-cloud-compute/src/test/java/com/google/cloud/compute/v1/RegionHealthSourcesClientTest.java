@@ -268,6 +268,56 @@ public class RegionHealthSourcesClientTest {
   }
 
   @Test
+  public void getHealthTest() throws Exception {
+    HealthSourceHealth expectedResponse =
+        HealthSourceHealth.newBuilder()
+            .setHealthState("healthState-1922962539")
+            .setKind("kind3292052")
+            .addAllSources(new ArrayList<HealthSourcesGetHealthResponseSourceInfo>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    String healthSource = "healthSource-6365";
+
+    HealthSourceHealth actualResponse = client.getHealth(project, region, healthSource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getHealthExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      String healthSource = "healthSource-6365";
+      client.getHealth(project, region, healthSource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void insertTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()

@@ -31,6 +31,8 @@ import com.google.cloud.discoveryengine.v1beta.stub.RecommendationServiceStubSet
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +86,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class RecommendationServiceSettings extends ClientSettings<RecommendationServiceSettings> {
@@ -149,7 +152,7 @@ public class RecommendationServiceSettings extends ClientSettings<Recommendation
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -170,7 +173,7 @@ public class RecommendationServiceSettings extends ClientSettings<Recommendation
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RecommendationServiceStubSettings.newBuilder(clientContext));
     }
 

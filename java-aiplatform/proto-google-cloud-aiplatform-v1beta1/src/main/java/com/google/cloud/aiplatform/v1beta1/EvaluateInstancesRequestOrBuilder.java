@@ -1402,6 +1402,185 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> getMetricsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Metric getMetrics(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  int getMetricsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
+      getMetricsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricOrBuilder getMetricsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource> getMetricSourcesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricSource getMetricSources(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMetricSourcesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>
+      getMetricSourcesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder getMetricSourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  boolean hasInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   *
+   * @return The instance.
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationInstance getInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder getInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Autorater config used for evaluation.
    * </pre>
    *

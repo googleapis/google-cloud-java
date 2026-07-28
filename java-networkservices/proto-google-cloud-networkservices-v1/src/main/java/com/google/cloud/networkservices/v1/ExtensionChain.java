@@ -736,15 +736,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name for this extension.
+     * Optional. The name for this extension.
      * The name is logged as part of the HTTP request logs.
      * The name must conform with RFC-1034, is restricted to lower-cased
      * letters, numbers and hyphens, and can have a maximum length of 63
      * characters. Additionally, the first character must be a letter and the
      * last a letter or a number.
+     *
+     * This field is required except for AuthzExtension.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -754,15 +756,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name for this extension.
+     * Optional. The name for this extension.
      * The name is logged as part of the HTTP request logs.
      * The name must conform with RFC-1034, is restricted to lower-cased
      * letters, numbers and hyphens, and can have a maximum length of 63
      * characters. Additionally, the first character must be a letter and the
      * last a letter or a number.
+     *
+     * This field is required except for AuthzExtension.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -886,6 +890,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -910,6 +918,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -934,6 +946,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -959,6 +975,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -983,6 +1003,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1138,11 +1162,104 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the forwardAttributes.
+     */
+    java.util.List<java.lang.String> getForwardAttributesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of forwardAttributes.
+     */
+    int getForwardAttributesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The forwardAttributes at the given index.
+     */
+    java.lang.String getForwardAttributes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the forwardAttributes at the given index.
+     */
+    com.google.protobuf.ByteString getForwardAttributesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. The metadata provided here is included as part of the
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1182,7 +1299,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1222,7 +1342,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1251,6 +1374,133 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Struct metadata = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     com.google.protobuf.StructOrBuilder getMetadataOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for request body processing.
+     *
+     * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+     * If `supported_events` includes `REQUEST_BODY`,
+     * but `request_body_send_mode` is unset, the default value `STREAMED` is
+     * used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` and
+     * `LbRouteExtension` resources, and only when the `service` field of the
+     * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+     * is supported for `LbRouteExtension` resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requestBodySendMode.
+     */
+    int getRequestBodySendModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for request body processing.
+     *
+     * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+     * If `supported_events` includes `REQUEST_BODY`,
+     * but `request_body_send_mode` is unset, the default value `STREAMED` is
+     * used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` and
+     * `LbRouteExtension` resources, and only when the `service` field of the
+     * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+     * is supported for `LbRouteExtension` resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestBodySendMode.
+     */
+    com.google.cloud.networkservices.v1.BodySendMode getRequestBodySendMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for response processing. If
+     * unspecified, the default value `STREAMED` is used.
+     *
+     * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+     * If `supported_events` includes `RESPONSE_BODY`, but
+     * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` resources, and only
+     * when the `service` field of the extension points to a `BackendService`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for responseBodySendMode.
+     */
+    int getResponseBodySendModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for response processing. If
+     * unspecified, the default value `STREAMED` is used.
+     *
+     * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+     * If `supported_events` includes `RESPONSE_BODY`, but
+     * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` resources, and only
+     * when the `service` field of the extension points to a `BackendService`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseBodySendMode.
+     */
+    com.google.cloud.networkservices.v1.BodySendMode getResponseBodySendMode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to `true`, the calls to the extension backend are
+     * performed asynchronously, without pausing the processing of the ongoing
+     * request. In this mode, only `STREAMED` (default) body processing is
+     * supported. Responses, if any, are ignored.
+     *
+     * Supported by regional `LbTrafficExtension` and `LbRouteExtension`
+     * resources.
+     * </pre>
+     *
+     * <code>bool observability_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The observabilityMode.
+     */
+    boolean getObservabilityMode();
   }
 
   /**
@@ -1289,6 +1539,9 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
       service_ = "";
       supportedEvents_ = emptyIntList();
       forwardHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      requestBodySendMode_ = 0;
+      responseBodySendMode_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1316,15 +1569,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name for this extension.
+     * Optional. The name for this extension.
      * The name is logged as part of the HTTP request logs.
      * The name must conform with RFC-1034, is restricted to lower-cased
      * letters, numbers and hyphens, and can have a maximum length of 63
      * characters. Additionally, the first character must be a letter and the
      * last a letter or a number.
+     *
+     * This field is required except for AuthzExtension.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -1345,15 +1600,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name for this extension.
+     * Optional. The name for this extension.
      * The name is logged as part of the HTTP request logs.
      * The name must conform with RFC-1034, is restricted to lower-cased
      * letters, numbers and hyphens, and can have a maximum length of 63
      * characters. Additionally, the first character must be a letter and the
      * last a letter or a number.
+     *
+     * This field is required except for AuthzExtension.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -1561,6 +1818,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1590,6 +1851,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1617,6 +1882,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1645,6 +1914,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1672,6 +1945,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      *
      * For the `LbEdgeExtension` resource, this field is required and must only
      * contain `REQUEST_HEADERS` event.
+     *
+     * For the `AuthzExtension` resource, this field is optional.
+     * `REQUEST_HEADERS` is the only supported event. If unspecified,
+     * `REQUEST_HEADERS` event is assumed as supported.
      * </pre>
      *
      * <code>
@@ -1860,6 +2137,110 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
       return forwardHeaders_.getByteString(index);
     }
 
+    public static final int FORWARD_ATTRIBUTES_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList forwardAttributes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the forwardAttributes.
+     */
+    public com.google.protobuf.ProtocolStringList getForwardAttributesList() {
+      return forwardAttributes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of forwardAttributes.
+     */
+    public int getForwardAttributesCount() {
+      return forwardAttributes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The forwardAttributes at the given index.
+     */
+    public java.lang.String getForwardAttributes(int index) {
+      return forwardAttributes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of the Envoy attributes to forward to the extension
+     * server. The attributes provided here are included as part of the
+     * `ProcessingRequest.attributes` field (of type
+     * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+     * names. Refer to the
+     * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+     * for the names of attributes that can be forwarded. If omitted, no
+     * attributes are sent. Each element is a string indicating the
+     * attribute name.
+     * </pre>
+     *
+     * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the forwardAttributes at the given index.
+     */
+    public com.google.protobuf.ByteString getForwardAttributesBytes(int index) {
+      return forwardAttributes_.getByteString(index);
+    }
+
     public static final int METADATA_FIELD_NUMBER = 9;
     private com.google.protobuf.Struct metadata_;
 
@@ -1871,7 +2252,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1914,7 +2298,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1957,7 +2344,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
      * `metadata_context` (of type `google.protobuf.Struct`) in the
      * `ProcessingRequest` message sent to the extension server.
      *
-     * The metadata is available under the namespace
+     * For `AuthzExtension` resources, the metadata is available under the
+     * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+     * For other types of extensions, the metadata is available under the
+     * namespace
      * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
      * For example:
      * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -1988,6 +2378,165 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.protobuf.StructOrBuilder getMetadataOrBuilder() {
       return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
+    }
+
+    public static final int REQUEST_BODY_SEND_MODE_FIELD_NUMBER = 14;
+    private int requestBodySendMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for request body processing.
+     *
+     * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+     * If `supported_events` includes `REQUEST_BODY`,
+     * but `request_body_send_mode` is unset, the default value `STREAMED` is
+     * used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` and
+     * `LbRouteExtension` resources, and only when the `service` field of the
+     * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+     * is supported for `LbRouteExtension` resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requestBodySendMode.
+     */
+    @java.lang.Override
+    public int getRequestBodySendModeValue() {
+      return requestBodySendMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for request body processing.
+     *
+     * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+     * If `supported_events` includes `REQUEST_BODY`,
+     * but `request_body_send_mode` is unset, the default value `STREAMED` is
+     * used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` and
+     * `LbRouteExtension` resources, and only when the `service` field of the
+     * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+     * is supported for `LbRouteExtension` resources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestBodySendMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.BodySendMode getRequestBodySendMode() {
+      com.google.cloud.networkservices.v1.BodySendMode result =
+          com.google.cloud.networkservices.v1.BodySendMode.forNumber(requestBodySendMode_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.BodySendMode.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int RESPONSE_BODY_SEND_MODE_FIELD_NUMBER = 15;
+    private int responseBodySendMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for response processing. If
+     * unspecified, the default value `STREAMED` is used.
+     *
+     * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+     * If `supported_events` includes `RESPONSE_BODY`, but
+     * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` resources, and only
+     * when the `service` field of the extension points to a `BackendService`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for responseBodySendMode.
+     */
+    @java.lang.Override
+    public int getResponseBodySendModeValue() {
+      return responseBodySendMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configures the send mode for response processing. If
+     * unspecified, the default value `STREAMED` is used.
+     *
+     * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+     * If `supported_events` includes `RESPONSE_BODY`, but
+     * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+     *
+     * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+     * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+     *
+     * This field can be set only for `LbTrafficExtension` resources, and only
+     * when the `service` field of the extension points to a `BackendService`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseBodySendMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.BodySendMode getResponseBodySendMode() {
+      com.google.cloud.networkservices.v1.BodySendMode result =
+          com.google.cloud.networkservices.v1.BodySendMode.forNumber(responseBodySendMode_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.BodySendMode.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int OBSERVABILITY_MODE_FIELD_NUMBER = 16;
+    private boolean observabilityMode_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to `true`, the calls to the extension backend are
+     * performed asynchronously, without pausing the processing of the ongoing
+     * request. In this mode, only `STREAMED` (default) body processing is
+     * supported. Responses, if any, are ignored.
+     *
+     * Supported by regional `LbTrafficExtension` and `LbRouteExtension`
+     * resources.
+     * </pre>
+     *
+     * <code>bool observability_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The observabilityMode.
+     */
+    @java.lang.Override
+    public boolean getObservabilityMode() {
+      return observabilityMode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2030,8 +2579,24 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < forwardHeaders_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, forwardHeaders_.getRaw(i));
       }
+      for (int i = 0; i < forwardAttributes_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, forwardAttributes_.getRaw(i));
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(9, getMetadata());
+      }
+      if (requestBodySendMode_
+          != com.google.cloud.networkservices.v1.BodySendMode.BODY_SEND_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(14, requestBodySendMode_);
+      }
+      if (responseBodySendMode_
+          != com.google.cloud.networkservices.v1.BodySendMode.BODY_SEND_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(15, responseBodySendMode_);
+      }
+      if (observabilityMode_ != false) {
+        output.writeBool(16, observabilityMode_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2079,8 +2644,29 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         size += dataSize;
         size += 1 * getForwardHeadersList().size();
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < forwardAttributes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(forwardAttributes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getForwardAttributesList().size();
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMetadata());
+      }
+      if (requestBodySendMode_
+          != com.google.cloud.networkservices.v1.BodySendMode.BODY_SEND_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, requestBodySendMode_);
+      }
+      if (responseBodySendMode_
+          != com.google.cloud.networkservices.v1.BodySendMode.BODY_SEND_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, responseBodySendMode_);
+      }
+      if (observabilityMode_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, observabilityMode_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2108,10 +2694,14 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
       }
       if (getFailOpen() != other.getFailOpen()) return false;
       if (!getForwardHeadersList().equals(other.getForwardHeadersList())) return false;
+      if (!getForwardAttributesList().equals(other.getForwardAttributesList())) return false;
       if (hasMetadata() != other.hasMetadata()) return false;
       if (hasMetadata()) {
         if (!getMetadata().equals(other.getMetadata())) return false;
       }
+      if (requestBodySendMode_ != other.requestBodySendMode_) return false;
+      if (responseBodySendMode_ != other.responseBodySendMode_) return false;
+      if (getObservabilityMode() != other.getObservabilityMode()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2143,10 +2733,20 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + FORWARD_HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + getForwardHeadersList().hashCode();
       }
+      if (getForwardAttributesCount() > 0) {
+        hash = (37 * hash) + FORWARD_ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getForwardAttributesList().hashCode();
+      }
       if (hasMetadata()) {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
+      hash = (37 * hash) + REQUEST_BODY_SEND_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + requestBodySendMode_;
+      hash = (37 * hash) + RESPONSE_BODY_SEND_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + responseBodySendMode_;
+      hash = (37 * hash) + OBSERVABILITY_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getObservabilityMode());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2309,11 +2909,15 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         }
         failOpen_ = false;
         forwardHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         metadata_ = null;
         if (metadataBuilder_ != null) {
           metadataBuilder_.dispose();
           metadataBuilder_ = null;
         }
+        requestBodySendMode_ = 0;
+        responseBodySendMode_ = 0;
+        observabilityMode_ = false;
         return this;
       }
 
@@ -2378,8 +2982,21 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
           result.forwardHeaders_ = forwardHeaders_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          forwardAttributes_.makeImmutable();
+          result.forwardAttributes_ = forwardAttributes_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.requestBodySendMode_ = requestBodySendMode_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.responseBodySendMode_ = responseBodySendMode_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.observabilityMode_ = observabilityMode_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2440,8 +3057,27 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
           }
           onChanged();
         }
+        if (!other.forwardAttributes_.isEmpty()) {
+          if (forwardAttributes_.isEmpty()) {
+            forwardAttributes_ = other.forwardAttributes_;
+            bitField0_ |= 0x00000080;
+          } else {
+            ensureForwardAttributesIsMutable();
+            forwardAttributes_.addAll(other.forwardAttributes_);
+          }
+          onChanged();
+        }
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
+        }
+        if (other.requestBodySendMode_ != 0) {
+          setRequestBodySendModeValue(other.getRequestBodySendModeValue());
+        }
+        if (other.responseBodySendMode_ != 0) {
+          setResponseBodySendModeValue(other.getResponseBodySendModeValue());
+        }
+        if (other.getObservabilityMode() != false) {
+          setObservabilityMode(other.getObservabilityMode());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2525,13 +3161,38 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
                   forwardHeaders_.add(s);
                   break;
                 } // case 58
+              case 66:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureForwardAttributesIsMutable();
+                  forwardAttributes_.add(s);
+                  break;
+                } // case 66
               case 74:
                 {
                   input.readMessage(
                       internalGetMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000080;
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 74
+              case 112:
+                {
+                  requestBodySendMode_ = input.readEnum();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 112
+              case 120:
+                {
+                  responseBodySendMode_ = input.readEnum();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 120
+              case 128:
+                {
+                  observabilityMode_ = input.readBool();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 128
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2557,15 +3218,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The name for this extension.
+       * Optional. The name for this extension.
        * The name is logged as part of the HTTP request logs.
        * The name must conform with RFC-1034, is restricted to lower-cased
        * letters, numbers and hyphens, and can have a maximum length of 63
        * characters. Additionally, the first character must be a letter and the
        * last a letter or a number.
+       *
+       * This field is required except for AuthzExtension.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The name.
        */
@@ -2585,15 +3248,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The name for this extension.
+       * Optional. The name for this extension.
        * The name is logged as part of the HTTP request logs.
        * The name must conform with RFC-1034, is restricted to lower-cased
        * letters, numbers and hyphens, and can have a maximum length of 63
        * characters. Additionally, the first character must be a letter and the
        * last a letter or a number.
+       *
+       * This field is required except for AuthzExtension.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for name.
        */
@@ -2613,15 +3278,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The name for this extension.
+       * Optional. The name for this extension.
        * The name is logged as part of the HTTP request logs.
        * The name must conform with RFC-1034, is restricted to lower-cased
        * letters, numbers and hyphens, and can have a maximum length of 63
        * characters. Additionally, the first character must be a letter and the
        * last a letter or a number.
+       *
+       * This field is required except for AuthzExtension.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The name to set.
        * @return This builder for chaining.
@@ -2640,15 +3307,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The name for this extension.
+       * Optional. The name for this extension.
        * The name is logged as part of the HTTP request logs.
        * The name must conform with RFC-1034, is restricted to lower-cased
        * letters, numbers and hyphens, and can have a maximum length of 63
        * characters. Additionally, the first character must be a letter and the
        * last a letter or a number.
+       *
+       * This field is required except for AuthzExtension.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -2663,15 +3332,17 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The name for this extension.
+       * Optional. The name for this extension.
        * The name is logged as part of the HTTP request logs.
        * The name must conform with RFC-1034, is restricted to lower-cased
        * letters, numbers and hyphens, and can have a maximum length of 63
        * characters. Additionally, the first character must be a letter and the
        * last a letter or a number.
+       *
+       * This field is required except for AuthzExtension.
        * </pre>
        *
-       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for name to set.
        * @return This builder for chaining.
@@ -3062,6 +3733,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3091,6 +3766,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3117,6 +3796,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3144,6 +3827,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3179,6 +3866,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3212,6 +3903,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3245,6 +3940,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3274,6 +3973,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3301,6 +4004,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3328,6 +4035,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3359,6 +4070,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3389,6 +4104,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        *
        * For the `LbEdgeExtension` resource, this field is required and must only
        * contain `REQUEST_HEADERS` event.
+       *
+       * For the `AuthzExtension` resource, this field is optional.
+       * `REQUEST_HEADERS` is the only supported event. If unspecified,
+       * `REQUEST_HEADERS` event is assumed as supported.
        * </pre>
        *
        * <code>
@@ -3947,6 +4666,270 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private com.google.protobuf.LazyStringArrayList forwardAttributes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureForwardAttributesIsMutable() {
+        if (!forwardAttributes_.isModifiable()) {
+          forwardAttributes_ = new com.google.protobuf.LazyStringArrayList(forwardAttributes_);
+        }
+        bitField0_ |= 0x00000080;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the forwardAttributes.
+       */
+      public com.google.protobuf.ProtocolStringList getForwardAttributesList() {
+        forwardAttributes_.makeImmutable();
+        return forwardAttributes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of forwardAttributes.
+       */
+      public int getForwardAttributesCount() {
+        return forwardAttributes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The forwardAttributes at the given index.
+       */
+      public java.lang.String getForwardAttributes(int index) {
+        return forwardAttributes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the forwardAttributes at the given index.
+       */
+      public com.google.protobuf.ByteString getForwardAttributesBytes(int index) {
+        return forwardAttributes_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The forwardAttributes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForwardAttributes(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureForwardAttributesIsMutable();
+        forwardAttributes_.set(index, value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The forwardAttributes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addForwardAttributes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureForwardAttributesIsMutable();
+        forwardAttributes_.add(value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The forwardAttributes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllForwardAttributes(java.lang.Iterable<java.lang.String> values) {
+        ensureForwardAttributesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, forwardAttributes_);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearForwardAttributes() {
+        forwardAttributes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of the Envoy attributes to forward to the extension
+       * server. The attributes provided here are included as part of the
+       * `ProcessingRequest.attributes` field (of type
+       * `map&lt;string, google.protobuf.Struct&gt;`), where the keys are the attribute
+       * names. Refer to the
+       * [documentation](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference#attributes)
+       * for the names of attributes that can be forwarded. If omitted, no
+       * attributes are sent. Each element is a string indicating the
+       * attribute name.
+       * </pre>
+       *
+       * <code>repeated string forward_attributes = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the forwardAttributes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addForwardAttributesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureForwardAttributesIsMutable();
+        forwardAttributes_.add(value);
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Struct metadata_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Struct,
@@ -3962,7 +4945,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -3994,7 +4980,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
 
       /**
@@ -4005,7 +4991,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4052,7 +5041,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4090,7 +5082,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         } else {
           metadataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4103,7 +5095,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4138,7 +5133,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
         } else {
           metadataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4151,7 +5146,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4182,7 +5180,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeMetadata(com.google.protobuf.Struct value) {
         if (metadataBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)
+          if (((bitField0_ & 0x00000100) != 0)
               && metadata_ != null
               && metadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
             getMetadataBuilder().mergeFrom(value);
@@ -4193,7 +5191,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
           metadataBuilder_.mergeFrom(value);
         }
         if (metadata_ != null) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
@@ -4207,7 +5205,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4237,7 +5238,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearMetadata() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         metadata_ = null;
         if (metadataBuilder_ != null) {
           metadataBuilder_.dispose();
@@ -4255,7 +5256,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4285,7 +5289,7 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public com.google.protobuf.Struct.Builder getMetadataBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return internalGetMetadataFieldBuilder().getBuilder();
       }
@@ -4298,7 +5302,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4343,7 +5350,10 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
        * `metadata_context` (of type `google.protobuf.Struct`) in the
        * `ProcessingRequest` message sent to the extension server.
        *
-       * The metadata is available under the namespace
+       * For `AuthzExtension` resources, the metadata is available under the
+       * namespace `com.google.authz_extension.&lt;resource_name&gt;`.
+       * For other types of extensions, the metadata is available under the
+       * namespace
        * `com.google.&lt;extension_type&gt;.&lt;resource_name&gt;.&lt;extension_chain_name&gt;.&lt;extension_name&gt;`.
        * For example:
        * `com.google.lb_traffic_extension.lbtrafficextension1.chain1.ext1`.
@@ -4387,6 +5397,416 @@ public final class ExtensionChain extends com.google.protobuf.GeneratedMessage
           metadata_ = null;
         }
         return metadataBuilder_;
+      }
+
+      private int requestBodySendMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for request body processing.
+       *
+       * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+       * If `supported_events` includes `REQUEST_BODY`,
+       * but `request_body_send_mode` is unset, the default value `STREAMED` is
+       * used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` and
+       * `LbRouteExtension` resources, and only when the `service` field of the
+       * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+       * is supported for `LbRouteExtension` resources.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for requestBodySendMode.
+       */
+      @java.lang.Override
+      public int getRequestBodySendModeValue() {
+        return requestBodySendMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for request body processing.
+       *
+       * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+       * If `supported_events` includes `REQUEST_BODY`,
+       * but `request_body_send_mode` is unset, the default value `STREAMED` is
+       * used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` and
+       * `LbRouteExtension` resources, and only when the `service` field of the
+       * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+       * is supported for `LbRouteExtension` resources.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for requestBodySendMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestBodySendModeValue(int value) {
+        requestBodySendMode_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for request body processing.
+       *
+       * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+       * If `supported_events` includes `REQUEST_BODY`,
+       * but `request_body_send_mode` is unset, the default value `STREAMED` is
+       * used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` and
+       * `LbRouteExtension` resources, and only when the `service` field of the
+       * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+       * is supported for `LbRouteExtension` resources.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The requestBodySendMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.BodySendMode getRequestBodySendMode() {
+        com.google.cloud.networkservices.v1.BodySendMode result =
+            com.google.cloud.networkservices.v1.BodySendMode.forNumber(requestBodySendMode_);
+        return result == null
+            ? com.google.cloud.networkservices.v1.BodySendMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for request body processing.
+       *
+       * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+       * If `supported_events` includes `REQUEST_BODY`,
+       * but `request_body_send_mode` is unset, the default value `STREAMED` is
+       * used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` and
+       * `LbRouteExtension` resources, and only when the `service` field of the
+       * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+       * is supported for `LbRouteExtension` resources.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The requestBodySendMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequestBodySendMode(
+          com.google.cloud.networkservices.v1.BodySendMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        requestBodySendMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for request body processing.
+       *
+       * The field can only be set if `supported_events` includes `REQUEST_BODY`.
+       * If `supported_events` includes `REQUEST_BODY`,
+       * but `request_body_send_mode` is unset, the default value `STREAMED` is
+       * used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `REQUEST_BODY` and `REQUEST_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` and
+       * `LbRouteExtension` resources, and only when the `service` field of the
+       * extension points to a `BackendService`. Only `FULL_DUPLEX_STREAMED` mode
+       * is supported for `LbRouteExtension` resources.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode request_body_send_mode = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequestBodySendMode() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        requestBodySendMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int responseBodySendMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for response processing. If
+       * unspecified, the default value `STREAMED` is used.
+       *
+       * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+       * If `supported_events` includes `RESPONSE_BODY`, but
+       * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` resources, and only
+       * when the `service` field of the extension points to a `BackendService`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for responseBodySendMode.
+       */
+      @java.lang.Override
+      public int getResponseBodySendModeValue() {
+        return responseBodySendMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for response processing. If
+       * unspecified, the default value `STREAMED` is used.
+       *
+       * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+       * If `supported_events` includes `RESPONSE_BODY`, but
+       * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` resources, and only
+       * when the `service` field of the extension points to a `BackendService`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for responseBodySendMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseBodySendModeValue(int value) {
+        responseBodySendMode_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for response processing. If
+       * unspecified, the default value `STREAMED` is used.
+       *
+       * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+       * If `supported_events` includes `RESPONSE_BODY`, but
+       * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` resources, and only
+       * when the `service` field of the extension points to a `BackendService`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The responseBodySendMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.networkservices.v1.BodySendMode getResponseBodySendMode() {
+        com.google.cloud.networkservices.v1.BodySendMode result =
+            com.google.cloud.networkservices.v1.BodySendMode.forNumber(responseBodySendMode_);
+        return result == null
+            ? com.google.cloud.networkservices.v1.BodySendMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for response processing. If
+       * unspecified, the default value `STREAMED` is used.
+       *
+       * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+       * If `supported_events` includes `RESPONSE_BODY`, but
+       * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` resources, and only
+       * when the `service` field of the extension points to a `BackendService`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The responseBodySendMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResponseBodySendMode(
+          com.google.cloud.networkservices.v1.BodySendMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000400;
+        responseBodySendMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configures the send mode for response processing. If
+       * unspecified, the default value `STREAMED` is used.
+       *
+       * The field can only be set if `supported_events` includes `RESPONSE_BODY`.
+       * If `supported_events` includes `RESPONSE_BODY`, but
+       * `response_body_send_mode` is unset, the default value `STREAMED` is used.
+       *
+       * When this field is set to `FULL_DUPLEX_STREAMED`, `supported_events`
+       * must include both `RESPONSE_BODY` and `RESPONSE_TRAILERS`.
+       *
+       * This field can be set only for `LbTrafficExtension` resources, and only
+       * when the `service` field of the extension points to a `BackendService`.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.networkservices.v1.BodySendMode response_body_send_mode = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResponseBodySendMode() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        responseBodySendMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean observabilityMode_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When set to `true`, the calls to the extension backend are
+       * performed asynchronously, without pausing the processing of the ongoing
+       * request. In this mode, only `STREAMED` (default) body processing is
+       * supported. Responses, if any, are ignored.
+       *
+       * Supported by regional `LbTrafficExtension` and `LbRouteExtension`
+       * resources.
+       * </pre>
+       *
+       * <code>bool observability_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The observabilityMode.
+       */
+      @java.lang.Override
+      public boolean getObservabilityMode() {
+        return observabilityMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When set to `true`, the calls to the extension backend are
+       * performed asynchronously, without pausing the processing of the ongoing
+       * request. In this mode, only `STREAMED` (default) body processing is
+       * supported. Responses, if any, are ignored.
+       *
+       * Supported by regional `LbTrafficExtension` and `LbRouteExtension`
+       * resources.
+       * </pre>
+       *
+       * <code>bool observability_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The observabilityMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setObservabilityMode(boolean value) {
+
+        observabilityMode_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. When set to `true`, the calls to the extension backend are
+       * performed asynchronously, without pausing the processing of the ongoing
+       * request. In this mode, only `STREAMED` (default) body processing is
+       * supported. Responses, if any, are ignored.
+       *
+       * Supported by regional `LbTrafficExtension` and `LbRouteExtension`
+       * resources.
+       * </pre>
+       *
+       * <code>bool observability_mode = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearObservabilityMode() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        observabilityMode_ = false;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.networkservices.v1.ExtensionChain.Extension)

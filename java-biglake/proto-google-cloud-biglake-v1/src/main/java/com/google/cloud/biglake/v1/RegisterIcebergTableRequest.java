@@ -55,7 +55,6 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
     parent_ = "";
     name_ = "";
     metadataLocation_ = "";
-    overwrite_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -243,60 +242,23 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
   }
 
   public static final int OVERWRITE_FIELD_NUMBER = 4;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object overwrite_ = "";
+  private boolean overwrite_ = false;
 
   /**
    *
    *
    * <pre>
    * Optional. Whether to overwrite the table if it already exists. Default is
-   * false. Currently this field is ignored and an error is returned if the
-   * table already exists.
+   * false.
    * </pre>
    *
-   * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The overwrite.
    */
   @java.lang.Override
-  public java.lang.String getOverwrite() {
-    java.lang.Object ref = overwrite_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      overwrite_ = s;
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether to overwrite the table if it already exists. Default is
-   * false. Currently this field is ignored and an error is returned if the
-   * table already exists.
-   * </pre>
-   *
-   * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for overwrite.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getOverwriteBytes() {
-    java.lang.Object ref = overwrite_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      overwrite_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public boolean getOverwrite() {
+    return overwrite_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,8 +284,8 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(metadataLocation_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, metadataLocation_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overwrite_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 4, overwrite_);
+    if (overwrite_ != false) {
+      output.writeBool(4, overwrite_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -343,8 +305,8 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(metadataLocation_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, metadataLocation_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overwrite_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, overwrite_);
+    if (overwrite_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, overwrite_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -365,7 +327,7 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
     if (!getParent().equals(other.getParent())) return false;
     if (!getName().equals(other.getName())) return false;
     if (!getMetadataLocation().equals(other.getMetadataLocation())) return false;
-    if (!getOverwrite().equals(other.getOverwrite())) return false;
+    if (getOverwrite() != other.getOverwrite()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -384,7 +346,7 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
     hash = (37 * hash) + METADATA_LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataLocation().hashCode();
     hash = (37 * hash) + OVERWRITE_FIELD_NUMBER;
-    hash = (53 * hash) + getOverwrite().hashCode();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOverwrite());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -529,7 +491,7 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
       parent_ = "";
       name_ = "";
       metadataLocation_ = "";
-      overwrite_ = "";
+      overwrite_ = false;
       return this;
     }
 
@@ -608,10 +570,8 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (!other.getOverwrite().isEmpty()) {
-        overwrite_ = other.overwrite_;
-        bitField0_ |= 0x00000008;
-        onChanged();
+      if (other.getOverwrite() != false) {
+        setOverwrite(other.getOverwrite());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -657,12 +617,12 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 34:
+            case 32:
               {
-                overwrite_ = input.readStringRequireUtf8();
+                overwrite_ = input.readBool();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 34
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1040,31 +1000,23 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
       return this;
     }
 
-    private java.lang.Object overwrite_ = "";
+    private boolean overwrite_;
 
     /**
      *
      *
      * <pre>
      * Optional. Whether to overwrite the table if it already exists. Default is
-     * false. Currently this field is ignored and an error is returned if the
-     * table already exists.
+     * false.
      * </pre>
      *
-     * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The overwrite.
      */
-    public java.lang.String getOverwrite() {
-      java.lang.Object ref = overwrite_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        overwrite_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public boolean getOverwrite() {
+      return overwrite_;
     }
 
     /**
@@ -1072,44 +1024,16 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. Whether to overwrite the table if it already exists. Default is
-     * false. Currently this field is ignored and an error is returned if the
-     * table already exists.
+     * false.
      * </pre>
      *
-     * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for overwrite.
-     */
-    public com.google.protobuf.ByteString getOverwriteBytes() {
-      java.lang.Object ref = overwrite_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        overwrite_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether to overwrite the table if it already exists. Default is
-     * false. Currently this field is ignored and an error is returned if the
-     * table already exists.
-     * </pre>
-     *
-     * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The overwrite to set.
      * @return This builder for chaining.
      */
-    public Builder setOverwrite(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+    public Builder setOverwrite(boolean value) {
+
       overwrite_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -1121,42 +1045,16 @@ public final class RegisterIcebergTableRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Optional. Whether to overwrite the table if it already exists. Default is
-     * false. Currently this field is ignored and an error is returned if the
-     * table already exists.
+     * false.
      * </pre>
      *
-     * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearOverwrite() {
-      overwrite_ = getDefaultInstance().getOverwrite();
       bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether to overwrite the table if it already exists. Default is
-     * false. Currently this field is ignored and an error is returned if the
-     * table already exists.
-     * </pre>
-     *
-     * <code>string overwrite = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for overwrite to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOverwriteBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      overwrite_ = value;
-      bitField0_ |= 0x00000008;
+      overwrite_ = false;
       onChanged();
       return this;
     }

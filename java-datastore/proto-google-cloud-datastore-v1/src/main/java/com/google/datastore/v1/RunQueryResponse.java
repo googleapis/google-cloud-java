@@ -79,7 +79,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of query results. This is always present unless running a
+   * query under explain-only
+   * mode:
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * was provided and
+   * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+   * set to false.
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -95,7 +101,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of query results. This is always present unless running a
+   * query under explain-only
+   * mode:
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * was provided and
+   * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+   * set to false.
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -111,7 +123,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A batch of query results (always present).
+   * A batch of query results. This is always present unless running a
+   * query under explain-only
+   * mode:
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * was provided and
+   * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+   * set to false.
    * </pre>
    *
    * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -683,7 +701,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -698,7 +722,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -719,7 +749,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -742,7 +778,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -762,7 +804,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -790,7 +838,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -810,7 +864,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -825,7 +885,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>
@@ -844,7 +910,13 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A batch of query results (always present).
+     * A batch of query results. This is always present unless running a
+     * query under explain-only
+     * mode:
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * was provided and
+     * [ExplainOptions.analyze][google.datastore.v1.ExplainOptions.analyze] was
+     * set to false.
      * </pre>
      *
      * <code>.google.datastore.v1.QueryResultBatch batch = 1;</code>

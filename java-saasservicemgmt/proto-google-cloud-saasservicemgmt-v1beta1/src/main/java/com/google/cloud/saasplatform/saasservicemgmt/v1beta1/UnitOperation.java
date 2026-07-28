@@ -34,7 +34,7 @@ package com.google.cloud.saasplatform.saasservicemgmt.v1beta1;
  * unit to focus only on the change they have requested.
  *
  * This is a base object that contains the common fields in all unit operations.
- * Next: 19
+ * Next: 22
  * </pre>
  *
  * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation}
@@ -1600,6 +1600,64 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int DELETE_TIME_FIELD_NUMBER = 10305;
+  private com.google.protobuf.Timestamp deleteTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeleteTime() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDeleteTime() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1674,6 +1732,9 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(10304, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10305, getDeleteTime());
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10401);
@@ -1755,6 +1816,9 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10304, getUpdateTime());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10305, getDeleteTime());
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -1815,6 +1879,10 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasDeleteTime() != other.hasDeleteTime()) return false;
+    if (hasDeleteTime()) {
+      if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
     if (!getUnitOperationTypeCase().equals(other.getUnitOperationTypeCase())) return false;
     switch (unitOperationTypeCase_) {
@@ -1884,6 +1952,10 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasDeleteTime()) {
+      hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeleteTime().hashCode();
     }
     switch (unitOperationTypeCase_) {
       case 8:
@@ -2018,7 +2090,7 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
    * unit to focus only on the change they have requested.
    *
    * This is a base object that contains the common fields in all unit operations.
-   * Next: 19
+   * Next: 22
    * </pre>
    *
    * Protobuf type {@code google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation}
@@ -2085,6 +2157,7 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
         internalGetScheduleFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetDeleteTimeFieldBuilder();
       }
     }
 
@@ -2134,6 +2207,11 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
+      }
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
       }
       unitOperationTypeCase_ = 0;
       unitOperationType_ = null;
@@ -2241,6 +2319,10 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2359,6 +2441,9 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasDeleteTime()) {
+        mergeDeleteTime(other.getDeleteTime());
       }
       switch (other.getUnitOperationTypeCase()) {
         case PROVISION:
@@ -2523,6 +2608,13 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00040000;
                 break;
               } // case 82434
+            case 82442:
+              {
+                input.readMessage(
+                    internalGetDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 82442
             case 83210:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -5889,6 +5981,227 @@ public final class UnitOperation extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp deleteTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        deleteTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the deleteTime field is set.
+     */
+    public boolean hasDeleteTime() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deleteTime.
+     */
+    public com.google.protobuf.Timestamp getDeleteTime() {
+      if (deleteTimeBuilder_ == null) {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      } else {
+        return deleteTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deleteTime_ = value;
+      } else {
+        deleteTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (deleteTimeBuilder_ == null) {
+        deleteTime_ = builderForValue.build();
+      } else {
+        deleteTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
+      if (deleteTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
+        } else {
+          deleteTime_ = value;
+        }
+      } else {
+        deleteTimeBuilder_.mergeFrom(value);
+      }
+      if (deleteTime_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDeleteTime() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
+        deleteTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetDeleteTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
+      if (deleteTimeBuilder_ != null) {
+        return deleteTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp when the resource was marked for deletion
+     * (deletion is an asynchronous operation).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetDeleteTimeFieldBuilder() {
+      if (deleteTimeBuilder_ == null) {
+        deleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDeleteTime(), getParentForChildren(), isClean());
+        deleteTime_ = null;
+      }
+      return deleteTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation)

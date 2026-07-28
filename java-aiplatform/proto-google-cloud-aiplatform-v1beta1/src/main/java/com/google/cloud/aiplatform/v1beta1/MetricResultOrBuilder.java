@@ -58,6 +58,72 @@ public interface MetricResultOrBuilder
    *
    *
    * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict> getRubricVerdictsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricVerdict getRubricVerdicts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getRubricVerdictsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>
+      getRubricVerdictsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder getRubricVerdictsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The explanation for the metric result.
    * </pre>
    *

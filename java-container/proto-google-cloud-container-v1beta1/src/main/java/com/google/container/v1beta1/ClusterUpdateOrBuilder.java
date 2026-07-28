@@ -360,7 +360,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3751
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4001
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -382,7 +382,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3751
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4001
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -679,7 +679,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3792
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4042
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -706,7 +706,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_private_cluster_config is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3792
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4042
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -905,7 +905,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3809
+   *     google/container/v1beta1/cluster_service.proto;l=4059
    * @return Whether the privateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -925,7 +925,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.private_cluster_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3809
+   *     google/container/v1beta1/cluster_service.proto;l=4059
    * @return The privateClusterConfig.
    */
   @java.lang.Deprecated
@@ -959,7 +959,7 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3814
+   *     google/container/v1beta1/cluster_service.proto;l=4064
    * @return Whether the desiredTpuConfig field is set.
    */
   @java.lang.Deprecated
@@ -977,7 +977,7 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.TpuConfig desired_tpu_config = 38 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_tpu_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3814
+   *     google/container/v1beta1/cluster_service.proto;l=4064
    * @return The desiredTpuConfig.
    */
   @java.lang.Deprecated
@@ -1213,6 +1213,62 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.GcfsConfig desired_gcfs_config = 109;</code>
    */
   com.google.container.v1beta1.GcfsConfigOrBuilder getDesiredGcfsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string desired_image = 44;</code>
+   *
+   * @return The desiredImage.
+   */
+  java.lang.String getDesiredImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired name of the image to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string desired_image = 44;</code>
+   *
+   * @return The bytes for desiredImage.
+   */
+  com.google.protobuf.ByteString getDesiredImageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string desired_image_project = 45;</code>
+   *
+   * @return The desiredImageProject.
+   */
+  java.lang.String getDesiredImageProject();
+
+  /**
+   *
+   *
+   * <pre>
+   * The project containing the desired image to use for this node.
+   * This is used to create clusters using a custom image.
+   * </pre>
+   *
+   * <code>string desired_image_project = 45;</code>
+   *
+   * @return The bytes for desiredImageProject.
+   */
+  com.google.protobuf.ByteString getDesiredImageProjectBytes();
 
   /**
    *
@@ -1792,7 +1848,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3898
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4156
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1813,7 +1869,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enable_private_endpoint is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=3898
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4156
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -1956,7 +2012,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3916
+   *     google/container/v1beta1/cluster_service.proto;l=4174
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1975,7 +2031,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3916
+   *     google/container/v1beta1/cluster_service.proto;l=4174
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2809,43 +2865,62 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_compliance_posture_config is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4255
    * @return Whether the desiredCompliancePostureConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredCompliancePostureConfig();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_compliance_posture_config is
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4255
    * @return The desiredCompliancePostureConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.CompliancePostureConfig getDesiredCompliancePostureConfig();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: Compliance Posture is no longer supported.
+   * For more details, see
+   * https://cloud.google.com/kubernetes-engine/docs/deprecations/posture-management-deprecation.
+   *
    * Enable/Disable Compliance Posture features for the cluster.
    * </pre>
    *
    * <code>
-   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140;
+   * optional .google.container.v1beta1.CompliancePostureConfig desired_compliance_posture_config = 140 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.CompliancePostureConfigOrBuilder
       getDesiredCompliancePostureConfigOrBuilder();
 
@@ -2950,7 +3025,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4008
+   *     google/container/v1beta1/cluster_service.proto;l=4271
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Deprecated
@@ -2973,7 +3048,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4008
+   *     google/container/v1beta1/cluster_service.proto;l=4271
    * @return The userManagedKeysConfig.
    */
   @java.lang.Deprecated
@@ -3100,7 +3175,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4021
+   *     google/container/v1beta1/cluster_service.proto;l=4284
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Deprecated
@@ -3121,7 +3196,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=4021
+   *     google/container/v1beta1/cluster_service.proto;l=4284
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Deprecated
@@ -3428,6 +3503,50 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Optional. The desired scheduled upgrades configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig desired_schedule_upgrade_config = 157 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredScheduleUpgradeConfig field is set.
+   */
+  boolean hasDesiredScheduleUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired scheduled upgrades configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig desired_schedule_upgrade_config = 157 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredScheduleUpgradeConfig.
+   */
+  com.google.container.v1beta1.ScheduleUpgradeConfig getDesiredScheduleUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired scheduled upgrades configuration for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ScheduleUpgradeConfig desired_schedule_upgrade_config = 157 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.ScheduleUpgradeConfigOrBuilder
+      getDesiredScheduleUpgradeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for sync Secret Manager secrets as k8s secrets.
    * </pre>
    *
@@ -3509,6 +3628,43 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   *
+   * @return Whether the desiredControlPlaneEgress field is set.
+   */
+  boolean hasDesiredControlPlaneEgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   *
+   * @return The desiredControlPlaneEgress.
+   */
+  com.google.container.v1beta1.ControlPlaneEgress getDesiredControlPlaneEgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired control plane egress control config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ControlPlaneEgress desired_control_plane_egress = 160;</code>
+   */
+  com.google.container.v1beta1.ControlPlaneEgressOrBuilder getDesiredControlPlaneEgressOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired rollback safe upgrade configuration.
    * </pre>
    *
@@ -3542,6 +3698,51 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.RollbackSafeUpgradeOrBuilder
       getDesiredRollbackSafeUpgradeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool upgrade concurrency configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig desired_node_pool_upgrade_concurrency_config = 167;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolUpgradeConcurrencyConfig field is set.
+   */
+  boolean hasDesiredNodePoolUpgradeConcurrencyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool upgrade concurrency configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig desired_node_pool_upgrade_concurrency_config = 167;
+   * </code>
+   *
+   * @return The desiredNodePoolUpgradeConcurrencyConfig.
+   */
+  com.google.container.v1beta1.NodePoolUpgradeConcurrencyConfig
+      getDesiredNodePoolUpgradeConcurrencyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired node pool upgrade concurrency configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodePoolUpgradeConcurrencyConfig desired_node_pool_upgrade_concurrency_config = 167;
+   * </code>
+   */
+  com.google.container.v1beta1.NodePoolUpgradeConcurrencyConfigOrBuilder
+      getDesiredNodePoolUpgradeConcurrencyConfigOrBuilder();
 
   /**
    *
@@ -3586,4 +3787,136 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.ManagedOpenTelemetryConfigOrBuilder
       getDesiredManagedOpentelemetryConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   *
+   * @return Whether the desiredAutopilotClusterPolicyConfig field is set.
+   */
+  boolean hasDesiredAutopilotClusterPolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   *
+   * @return The desiredAutopilotClusterPolicyConfig.
+   */
+  com.google.container.v1beta1.ClusterPolicyConfig getDesiredAutopilotClusterPolicyConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired autopilot cluster policies that to be enforced in the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ClusterPolicyConfig desired_autopilot_cluster_policy_config = 164;
+   * </code>
+   */
+  com.google.container.v1beta1.ClusterPolicyConfigOrBuilder
+      getDesiredAutopilotClusterPolicyConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   *
+   * @return Whether the desiredManagedMachineLearningDiagnosticsConfig field is set.
+   */
+  boolean hasDesiredManagedMachineLearningDiagnosticsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   *
+   * @return The desiredManagedMachineLearningDiagnosticsConfig.
+   */
+  com.google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig
+      getDesiredManagedMachineLearningDiagnosticsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired managed machine learning diagnostics configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ManagedMachineLearningDiagnosticsConfig desired_managed_machine_learning_diagnostics_config = 166;
+   * </code>
+   */
+  com.google.container.v1beta1.ManagedMachineLearningDiagnosticsConfigOrBuilder
+      getDesiredManagedMachineLearningDiagnosticsConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredNodeCreationConfig field is set.
+   */
+  boolean hasDesiredNodeCreationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredNodeCreationConfig.
+   */
+  com.google.container.v1beta1.NodeCreationConfig getDesiredNodeCreationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired NodeCreationConfig for the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NodeCreationConfig desired_node_creation_config = 171 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.NodeCreationConfigOrBuilder getDesiredNodeCreationConfigOrBuilder();
 }

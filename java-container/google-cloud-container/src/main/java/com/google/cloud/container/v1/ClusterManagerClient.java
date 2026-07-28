@@ -85,6 +85,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -737,7 +739,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> FetchNodePoolUpgradeInfo</td>
- *      <td><p> Fetch upgrade information of a specific nodepool.</td>
+ *      <td><p> Fetch upgrade information of a specific node pool.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -808,9 +810,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ClusterManagerClient implements BackgroundResource {
-  private final ClusterManagerSettings settings;
+  private final @Nullable ClusterManagerSettings settings;
   private final ClusterManagerStub stub;
 
   /** Constructs an instance of ClusterManagerClient with default settings. */
@@ -850,7 +853,7 @@ public class ClusterManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ClusterManagerSettings getSettings() {
+  public final @Nullable ClusterManagerSettings getSettings() {
     return settings;
   }
 
@@ -1444,6 +1447,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setNodeVersion("nodeVersion1155309686")
    *           .setImageType("imageType-878147787")
    *           .setName("name3373707")
+   *           .setImage("image100313435")
+   *           .setImageProject("imageProject288951614")
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
@@ -1474,6 +1479,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setBootDisk(BootDisk.newBuilder().build())
    *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
    *           .setConsolidationDelay(Duration.newBuilder().build())
+   *           .setTaintConfig(TaintConfig.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1508,6 +1514,8 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setNodeVersion("nodeVersion1155309686")
    *           .setImageType("imageType-878147787")
    *           .setName("name3373707")
+   *           .setImage("image100313435")
+   *           .setImageProject("imageProject288951614")
    *           .addAllLocations(new ArrayList<String>())
    *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
    *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
@@ -1538,6 +1546,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setBootDisk(BootDisk.newBuilder().build())
    *           .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
    *           .setConsolidationDelay(Duration.newBuilder().build())
+   *           .setTaintConfig(TaintConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
@@ -5048,7 +5057,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *
@@ -5064,7 +5073,7 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name (project, location, cluster, nodepool) of the nodepool to get.
+   * @param name Required. The name (project, location, cluster, node pool) of the node pool to get.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;` or
    *     `projects/&#42;/zones/&#42;/clusters/&#42;/nodePools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -5077,7 +5086,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *
@@ -5107,7 +5116,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetch upgrade information of a specific nodepool.
+   * Fetch upgrade information of a specific node pool.
    *
    * <p>Sample code:
    *
@@ -5198,9 +5207,11 @@ public class ClusterManagerClient implements BackgroundResource {
           ListUsableSubnetworksPage> {
 
     private ListUsableSubnetworksPage(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
-        ListUsableSubnetworksResponse response) {
+        @Nullable ListUsableSubnetworksResponse response) {
       super(context, response);
     }
 
@@ -5210,15 +5221,19 @@ public class ClusterManagerClient implements BackgroundResource {
 
     @Override
     protected ListUsableSubnetworksPage createPage(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
-        ListUsableSubnetworksResponse response) {
+        @Nullable ListUsableSubnetworksResponse response) {
       return new ListUsableSubnetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsableSubnetworksPage> createPageAsync(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
         ApiFuture<ListUsableSubnetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5234,7 +5249,7 @@ public class ClusterManagerClient implements BackgroundResource {
           ListUsableSubnetworksFixedSizeCollection> {
 
     private ListUsableSubnetworksFixedSizeCollection(
-        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+        @Nullable List<ListUsableSubnetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5244,7 +5259,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
     @Override
     protected ListUsableSubnetworksFixedSizeCollection createCollection(
-        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+        @Nullable List<ListUsableSubnetworksPage> pages, int collectionSize) {
       return new ListUsableSubnetworksFixedSizeCollection(pages, collectionSize);
     }
   }

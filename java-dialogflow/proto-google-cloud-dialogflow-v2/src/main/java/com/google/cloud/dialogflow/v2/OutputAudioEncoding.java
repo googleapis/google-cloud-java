@@ -56,11 +56,12 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * MP3 audio at 32kbps.
+   * MP3 audio at 64kbps.
    * </pre>
    *
-   * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2;</code>
+   * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   OUTPUT_AUDIO_ENCODING_MP3(2),
   /**
    *
@@ -145,12 +146,12 @@ public enum OutputAudioEncoding implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * MP3 audio at 32kbps.
+   * MP3 audio at 64kbps.
    * </pre>
    *
-   * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2;</code>
+   * <code>OUTPUT_AUDIO_ENCODING_MP3 = 2 [deprecated = true];</code>
    */
-  public static final int OUTPUT_AUDIO_ENCODING_MP3_VALUE = 2;
+  @java.lang.Deprecated public static final int OUTPUT_AUDIO_ENCODING_MP3_VALUE = 2;
 
   /**
    *

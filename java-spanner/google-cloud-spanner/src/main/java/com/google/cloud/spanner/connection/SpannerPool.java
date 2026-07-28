@@ -32,6 +32,7 @@ import com.google.common.base.Ticker;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -151,13 +152,19 @@ public class SpannerPool {
   static class SpannerPoolKey {
     private final String host;
     private final String projectId;
+    private final Duration grpcKeepAliveTime;
+    private final Duration grpcKeepAliveTimeout;
     private final CredentialsKey credentialsKey;
     private final SessionPoolOptions sessionPoolOptions;
     private final Integer numChannels;
     private final Boolean enableDynamicChannelPool;
+    private final Boolean enableGrpcGcp;
     private final Integer dcpMinChannels;
     private final Integer dcpMaxChannels;
     private final Integer dcpInitialChannels;
+    private final Integer dcpMinRpcPerChannel;
+    private final Integer dcpMaxRpcPerChannel;
+    private final Integer dcpConcurrentStreamsLowWatermark;
     private final boolean usePlainText;
     private final String userAgent;
     private final String databaseRole;
@@ -169,7 +176,7 @@ public class SpannerPool {
     private final boolean enableEndToEndTracing;
     private final String clientCertificate;
     private final String clientCertificateKey;
-    private final boolean isExperimentalHost;
+    private final SpannerOptions.InstanceType instanceType;
     private final Boolean enableDirectAccess;
     private final String universeDomain;
     private final String grpcInterceptorProvider;
@@ -197,9 +204,13 @@ public class SpannerPool {
               : options.getSessionPoolOptions();
       this.numChannels = options.getNumChannels();
       this.enableDynamicChannelPool = options.isEnableDynamicChannelPool();
+      this.enableGrpcGcp = options.isEnableGrpcGcp();
       this.dcpMinChannels = options.getDcpMinChannels();
       this.dcpMaxChannels = options.getDcpMaxChannels();
       this.dcpInitialChannels = options.getDcpInitialChannels();
+      this.dcpMinRpcPerChannel = options.getDcpMinRpcPerChannel();
+      this.dcpMaxRpcPerChannel = options.getDcpMaxRpcPerChannel();
+      this.dcpConcurrentStreamsLowWatermark = options.getDcpConcurrentStreamsLowWatermark();
       this.usePlainText = options.isUsePlainText();
       this.userAgent = options.getUserAgent();
       this.routeToLeader = options.isRouteToLeader();
@@ -210,10 +221,12 @@ public class SpannerPool {
       this.enableEndToEndTracing = options.isEndToEndTracingEnabled();
       this.clientCertificate = options.getClientCertificate();
       this.clientCertificateKey = options.getClientCertificateKey();
-      this.isExperimentalHost = options.isExperimentalHost();
+      this.instanceType = options.getInstanceType();
       this.enableDirectAccess = options.isEnableDirectAccess();
       this.universeDomain = options.getUniverseDomain();
       this.grpcInterceptorProvider = options.getGrpcInterceptorProviderName();
+      this.grpcKeepAliveTime = options.getGrpcKeepAliveTime();
+      this.grpcKeepAliveTimeout = options.getGrpcKeepAliveTimeout();
     }
 
     @Override
@@ -228,9 +241,14 @@ public class SpannerPool {
           && Objects.equals(this.sessionPoolOptions, other.sessionPoolOptions)
           && Objects.equals(this.numChannels, other.numChannels)
           && Objects.equals(this.enableDynamicChannelPool, other.enableDynamicChannelPool)
+          && Objects.equals(this.enableGrpcGcp, other.enableGrpcGcp)
           && Objects.equals(this.dcpMinChannels, other.dcpMinChannels)
           && Objects.equals(this.dcpMaxChannels, other.dcpMaxChannels)
           && Objects.equals(this.dcpInitialChannels, other.dcpInitialChannels)
+          && Objects.equals(this.dcpMinRpcPerChannel, other.dcpMinRpcPerChannel)
+          && Objects.equals(this.dcpMaxRpcPerChannel, other.dcpMaxRpcPerChannel)
+          && Objects.equals(
+              this.dcpConcurrentStreamsLowWatermark, other.dcpConcurrentStreamsLowWatermark)
           && Objects.equals(this.databaseRole, other.databaseRole)
           && Objects.equals(this.usePlainText, other.usePlainText)
           && Objects.equals(this.userAgent, other.userAgent)
@@ -243,10 +261,12 @@ public class SpannerPool {
           && Objects.equals(this.enableEndToEndTracing, other.enableEndToEndTracing)
           && Objects.equals(this.clientCertificate, other.clientCertificate)
           && Objects.equals(this.clientCertificateKey, other.clientCertificateKey)
-          && Objects.equals(this.isExperimentalHost, other.isExperimentalHost)
+          && Objects.equals(this.instanceType, other.instanceType)
           && Objects.equals(this.enableDirectAccess, other.enableDirectAccess)
           && Objects.equals(this.universeDomain, other.universeDomain)
-          && Objects.equals(this.grpcInterceptorProvider, other.grpcInterceptorProvider);
+          && Objects.equals(this.grpcInterceptorProvider, other.grpcInterceptorProvider)
+          && Objects.equals(this.grpcKeepAliveTime, other.grpcKeepAliveTime)
+          && Objects.equals(this.grpcKeepAliveTimeout, other.grpcKeepAliveTimeout);
     }
 
     @Override
@@ -258,9 +278,13 @@ public class SpannerPool {
           this.sessionPoolOptions,
           this.numChannels,
           this.enableDynamicChannelPool,
+          this.enableGrpcGcp,
           this.dcpMinChannels,
           this.dcpMaxChannels,
           this.dcpInitialChannels,
+          this.dcpMinRpcPerChannel,
+          this.dcpMaxRpcPerChannel,
+          this.dcpConcurrentStreamsLowWatermark,
           this.usePlainText,
           this.databaseRole,
           this.userAgent,
@@ -272,10 +296,12 @@ public class SpannerPool {
           this.enableEndToEndTracing,
           this.clientCertificate,
           this.clientCertificateKey,
-          this.isExperimentalHost,
+          this.instanceType,
           this.enableDirectAccess,
           this.universeDomain,
-          this.grpcInterceptorProvider);
+          this.grpcInterceptorProvider,
+          this.grpcKeepAliveTime,
+          this.grpcKeepAliveTimeout);
     }
   }
 
@@ -421,15 +447,27 @@ public class SpannerPool {
     if (key.numChannels != null) {
       builder.setNumChannels(key.numChannels);
     }
+    if (key.enableGrpcGcp != null) {
+      if (Boolean.TRUE.equals(key.enableGrpcGcp)) {
+        builder.enableGrpcGcpExtension();
+      } else {
+        builder.disableGrpcGcpExtension();
+      }
+    }
     // Configure Dynamic Channel Pooling (DCP) based on explicit user setting.
     // Note: Setting numChannels disables DCP even if enableDynamicChannelPool is true.
-    if (key.enableDynamicChannelPool != null && key.numChannels == null) {
+    if (key.enableDynamicChannelPool != null
+        && key.numChannels == null
+        && !Boolean.FALSE.equals(key.enableGrpcGcp)) {
       if (Boolean.TRUE.equals(key.enableDynamicChannelPool)) {
         builder.enableDynamicChannelPool();
         // Build custom GcpChannelPoolOptions if any DCP-specific options are set.
         if (key.dcpMinChannels != null
             || key.dcpMaxChannels != null
-            || key.dcpInitialChannels != null) {
+            || key.dcpInitialChannels != null
+            || key.dcpMinRpcPerChannel != null
+            || key.dcpMaxRpcPerChannel != null
+            || key.dcpConcurrentStreamsLowWatermark != null) {
           // Build GcpChannelPoolOptions from scratch with custom values or Spanner defaults.
           // Note: GcpChannelPoolOptions does not have a toBuilder() method, so we must
           // construct from scratch using SpannerOptions defaults for unspecified values.
@@ -445,19 +483,32 @@ public class SpannerPool {
               key.dcpInitialChannels != null
                   ? key.dcpInitialChannels
                   : SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE;
-          GcpChannelPoolOptions poolOptions =
+
+          int minRpc =
+              key.dcpMinRpcPerChannel != null
+                  ? key.dcpMinRpcPerChannel
+                  : SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC;
+          int maxRpc =
+              key.dcpMaxRpcPerChannel != null
+                  ? key.dcpMaxRpcPerChannel
+                  : SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC;
+
+          GcpChannelPoolOptions.Builder poolOptionsBuilder =
               GcpChannelPoolOptions.newBuilder()
                   .setMinSize(minChannels)
                   .setMaxSize(maxChannels)
                   .setInitSize(initChannels)
                   .setDynamicScaling(
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC,
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC,
-                      SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
+                      minRpc, maxRpc, SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
                   .setAffinityKeyLifetime(SpannerOptions.DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
-                  .setCleanupInterval(SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
-                  .build();
-          builder.setGcpChannelPoolOptions(poolOptions);
+                  .setCleanupInterval(SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL);
+
+          if (key.dcpConcurrentStreamsLowWatermark != null) {
+            poolOptionsBuilder.setConcurrentStreamsLowWatermark(
+                key.dcpConcurrentStreamsLowWatermark);
+          }
+
+          builder.setGcpChannelPoolOptions(poolOptionsBuilder.build());
         }
       } else {
         // Explicitly disable DCP when enableDynamicChannelPool=false.
@@ -467,6 +518,12 @@ public class SpannerPool {
     }
     if (options.getChannelProvider() != null) {
       builder.setChannelProvider(options.getChannelProvider());
+    }
+    if (key.grpcKeepAliveTime != null) {
+      builder.setGrpcKeepAliveTime(key.grpcKeepAliveTime);
+    }
+    if (key.grpcKeepAliveTimeout != null) {
+      builder.setGrpcKeepAliveTimeout(key.grpcKeepAliveTimeout);
     }
     if (!options.isRouteToLeader()) {
       builder.disableLeaderAwareRouting();
@@ -483,8 +540,8 @@ public class SpannerPool {
     if (key.clientCertificate != null && key.clientCertificateKey != null) {
       builder.useClientCert(key.clientCertificate, key.clientCertificateKey);
     }
-    if (key.isExperimentalHost) {
-      builder.setExperimentalHost(key.host);
+    if (key.instanceType != null) {
+      builder.setType(key.instanceType);
     }
     if (key.enableDirectAccess != null) {
       builder.setEnableDirectAccess(key.enableDirectAccess);

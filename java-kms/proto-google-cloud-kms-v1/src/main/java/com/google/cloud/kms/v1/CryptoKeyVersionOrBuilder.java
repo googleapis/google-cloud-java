@@ -654,4 +654,42 @@ public interface CryptoKeyVersionOrBuilder
    * @return The reimportEligible.
    */
   boolean getReimportEligible();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Field indicating that the key may be wrapped by a trusted key.
+   * This field can be set for all key purposes except
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT],
+   * and is only valid for keys with protection level
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field can only be set at creation or import time via
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion],
+   * or
+   * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  boolean getTrustedWrappingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating that the key wrapping key is trusted.
+   * This field is only valid for key purpose
+   * [AES_256_WRAPPING][CryptoKey.CryptoKeyPurpose.AES_256_WRAPPING], and
+   * protection level
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * </pre>
+   *
+   * <code>bool hsm_trusted = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hsmTrusted.
+   */
+  boolean getHsmTrusted();
 }

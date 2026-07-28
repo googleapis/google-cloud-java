@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A request params extractor takes a {@code request} message, extracts specific field values from
@@ -43,6 +44,7 @@ import java.util.Map;
  *
  * @param <RequestT> request message type
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public interface RequestParamsExtractor<RequestT> {
   /**

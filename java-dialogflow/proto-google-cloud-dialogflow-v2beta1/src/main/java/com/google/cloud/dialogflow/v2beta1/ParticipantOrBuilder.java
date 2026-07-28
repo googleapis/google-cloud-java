@@ -105,8 +105,8 @@ public interface ParticipantOrBuilder
    *
    * 2. If you set this field in
    * [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
-   * or
-   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
+   * or [StreamingAnalyzeContent]
+   * [google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    * Dialogflow will update
    * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
    *
@@ -117,6 +117,11 @@ public interface ParticipantOrBuilder
    * Dialogflow also uses this user id for Agent Assist suggestion
    * personalization. For example, Dialogflow can use it to provide personalized
    * smart reply suggestions for this user.
+   *
+   * Additionally, to link an escalated Virtual Agent conversation
+   * with its corresponding Agent Assist conversation for analytics, this field
+   * in Agent Assist conversations should be populated to indicate the user id
+   * of the `END_USER` participant in the escalated conversation.
    *
    * Note:
    *
@@ -150,8 +155,8 @@ public interface ParticipantOrBuilder
    *
    * 2. If you set this field in
    * [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
-   * or
-   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
+   * or [StreamingAnalyzeContent]
+   * [google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
    * Dialogflow will update
    * [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
    *
@@ -162,6 +167,11 @@ public interface ParticipantOrBuilder
    * Dialogflow also uses this user id for Agent Assist suggestion
    * personalization. For example, Dialogflow can use it to provide personalized
    * smart reply suggestions for this user.
+   *
+   * Additionally, to link an escalated Virtual Agent conversation
+   * with its corresponding Agent Assist conversation for analytics, this field
+   * in Agent Assist conversations should be populated to indicate the user id
+   * of the `END_USER` participant in the escalated conversation.
    *
    * Note:
    *

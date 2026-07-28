@@ -243,8 +243,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Cohort identifier. Identifies families of the workloads having
-   * the same shape, e.g. daily ETL jobs.
+   * Optional. Cohort identifier. Identifies families of the workloads that have
+   * the same shape, for example, daily ETL jobs.
    * </pre>
    *
    * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -257,8 +257,8 @@ public interface RuntimeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Cohort identifier. Identifies families of the workloads having
-   * the same shape, e.g. daily ETL jobs.
+   * Optional. Cohort identifier. Identifies families of the workloads that have
+   * the same shape, for example, daily ETL jobs.
    * </pre>
    *
    * <code>string cohort = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

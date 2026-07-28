@@ -61,6 +61,14 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_networkconnectivity_v1beta_GetRemoteTransportProfileRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_networkconnectivity_v1beta_Transport_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_networkconnectivity_v1beta_Transport_fieldAccessorTable;
@@ -117,8 +125,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
           + "le/api/field_info.proto\032\031google/api/reso"
           + "urce.proto\0324google/cloud/networkconnectivity/v1beta/common.proto\032#google/longrun"
           + "ning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\364\n"
-          + "\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\245\014\n"
           + "\026RemoteTransportProfile\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022`\n"
           + "\006labels\030\004 \003(\0132K.google.cloud.netwo"
@@ -136,9 +143,12 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
           + "\013order_state\030\014 \001("
           + "\0162E.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.StateB\003\340A\003\022\031\n"
           + "\014display_name\030\r"
-          + " \001(\tB\003\340A\003\032-\n"
+          + " \001(\tB\003\340A\003\022h\n\r"
+          + "provider_type\030\016 \001(\0162L.google.cloud.networkconnectivi"
+          + "ty.v1beta.RemoteTransportProfile.ProviderTypeB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001\"\322\001\n"
           + "\tBandwidth\022\031\n"
           + "\025BANDWIDTH_UNSPECIFIED\020\000\022\013\n"
@@ -169,51 +179,67 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006CLOSED\020\001\022\010\n"
-          + "\004OPEN\020\002:\314\001\352A\310\001\n"
-          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\022Zprojects/{project}/loca"
-          + "tions/{location}/remoteTransportProfiles"
-          + "/{remote_transport_profile}*\027remoteTransportProfiles2\026remoteTransportProfile\"\324\001\n"
+          + "\004OPEN\020\002\"E\n"
+          + "\014ProviderType\022\035\n"
+          + "\031PROVIDER_TYPE_UNSPECIFIED\020\000\022\t\n"
+          + "\005CLOUD\020\001\022\013\n"
+          + "\007NETWORK\020\002:\314\001\352A\310\001\n"
+          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\022Zprojec"
+          + "ts/{project}/locations/{location}/remoteTransportProfiles/{remote_transport_prof"
+          + "ile}*\027remoteTransportProfiles2\026remoteTransportProfile\"\324\001\n"
           + "\"ListRemoteTransportProfilesRequest\022Q\n"
-          + "\006parent\030\001 \001(\tBA\340A\002\372A;\0229networkconnectivity"
-          + ".googleapis.com/RemoteTransportProfile\022\026\n"
+          + "\006parent\030\001 \001(\tBA\340A\002\372A;\0229ne"
+          + "tworkconnectivity.googleapis.com/RemoteTransportProfile\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\274\001\n"
           + "#ListRemoteTransportProfilesResponse\022b\n"
-          + "\031remote_transport_profiles\030\001"
-          + " \003(\0132?.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile\022\027\n"
+          + "\031remote_transport_profiles\030\001 \003(\0132?.google.cloud.n"
+          + "etworkconnectivity.v1beta.RemoteTransportProfile\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006\"s\n"
           + " GetRemoteTransportProfileRequest\022O\n"
           + "\004name\030\001 \001(\tBA\340A\002\372A;\n"
-          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\"\276\013\n"
+          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\"\217\001\n"
+          + "\035ParseFromActivationKeyRequest\022Q\n"
+          + "\006parent\030\001 \001(\tBA\340A\002\372A;\0229netw"
+          + "orkconnectivity.googleapis.com/RemoteTransportProfile\022\033\n"
+          + "\016activation_key\030\002 \001(\tB\003\340A\002\"\203\001\n"
+          + "\036ParseFromActivationKeyResponse\022a\n"
+          + "\030remote_transport_profile\030\001 \001(\0132?.google"
+          + ".cloud.networkconnectivity.v1beta.RemoteTransportProfile\"\314\014\n"
           + "\tTransport\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022S\n"
-          + "\006labels\030\004 \003(\0132>.g"
-          + "oogle.cloud.networkconnectivity.v1beta.Transport.LabelsEntryB\003\340A\001\022\030\n"
-          + "\013description\030\006 \001(\tB\003\340A\001\022Y\n"
-          + "\016remote_profile\030\007 \001(\tBA\340A\001\372A;\n"
-          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\022$\n"
-          + "\027provided_activation_key\030\010 \001(\tB\003\340A\001\022%\n"
+          + "\006labels\030\004 \003(\0132>.google.cloud.networkconn"
+          + "ectivity.v1beta.Transport.LabelsEntryB\003\340A\001\022\030\n"
+          + "\013description\030\006 \001(\tB\003\340A\001\022\\\n"
+          + "\016remote_profile\030\007 \001(\tBD\340A\001\340A\005\372A;\n"
+          + "9networkconnectivity.googleapis.com/RemoteTransportProfile\022\'\n"
+          + "\027provided_activation_key\030\010 \001(\tB\006\340A\001\340A\005\022%\n"
           + "\030generated_activation_key\030\t \001(\tB\003\340A\003\022T\n"
           + "\tbandwidth\030\n"
-          + " \001(\0162<"
-          + ".google.cloud.networkconnectivity.v1beta.Transport.BandwidthB\003\340A\001\022U\n\n"
-          + "stack_type\030\013"
-          + " \001(\0162<.google.cloud.networkconnectivity.v1beta.Transport.StackTypeB\003\340A\001\022L\n"
-          + "\005state\030\014"
-          + " \001(\01628.google.cloud.networkconnectivity.v1beta.Transport.StateB\003\340A\003\022\026\n"
+          + " \001(\0162<.google.cloud.net"
+          + "workconnectivity.v1beta.Transport.BandwidthB\003\340A\001\022U\n\n"
+          + "stack_type\030\013 \001(\0162<.google.cl"
+          + "oud.networkconnectivity.v1beta.Transport.StackTypeB\003\340A\001\022L\n"
+          + "\005state\030\014 \001(\01628.google."
+          + "cloud.networkconnectivity.v1beta.Transport.StateB\003\340A\003\022\026\n"
           + "\tmtu_limit\030\r"
-          + " \001(\005B\003\340A\003\022\032\n\r"
-          + "admin_enabled\030\016 \001(\010B\003\340A\001\0227\n"
-          + "\007network\030\017 \001(\tB&\340A\001\372A \n"
+          + " \001(\005B\003\340A\003\022\032\n"
+          + "\r"
+          + "admin_enabled\030\016 \001(\010B\003\340A\001\022:\n"
+          + "\007network\030\017 \001(\tB)\340A\001\340A\005\372A \n"
           + "\036compute.googleapis.com/Network\022\036\n"
-          + "\021advertised_routes\030\020 \003(\tB\003\340A\001\022\036\n"
-          + "\021remote_account_id\030\021 \001(\tB\003\340A\001\022\034\n"
-          + "\017peering_network\030\022 \001(\tB\003\340A\003\032-\n"
+          + "\021advertised_routes\030\020 \003(\tB\003\340A\001\022!\n"
+          + "\021remote_account_id\030\021 \001(\tB\006\340A\001\340A\005\022\034\n"
+          + "\017peering_network\030\022 \001(\tB\003\340A\003\022>\n"
+          + "\003hub\030\023 \001(\tB1\340A\001\340A\005\372A(\n"
+          + "&networkconnectivity.googleapis.com/Hub\022#\n"
+          + "\023psc_routing_enabled\030\024 \001(\010B\006\340A\001\340A\005\022\033\n"
+          + "\013auto_accept\030\025 \001(\010B\006\340A\001\340A\005\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\322\001\n"
@@ -246,36 +272,37 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
           + "\006ACTIVE\020\004\022\014\n"
           + "\010DELETING\020\005\022\021\n\r"
           + "DEPROVISIONED\020\006:\211\001\352A\205\001\n"
-          + ",networkconnectivity.googleapis.com/Transport\022>projects/{pro"
-          + "ject}/locations/{location}/transports/{transport}*\n"
+          + ",networkconnectivity.googleapis.com/Transport\022>projects/{proj"
+          + "ect}/locations/{location}/transports/{transport}*\n"
           + "transports2\ttransport\"\272\001\n"
           + "\025ListTransportsRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340A\002\372"
-          + "A.\022,networkconnectivity.googleapis.com/Transport\022\026\n"
+          + "\006parent\030\001 \001(\tB4\340A\002\372A"
+          + ".\022,networkconnectivity.googleapis.com/Transport\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\223\001\n"
           + "\026ListTransportsResponse\022F\n\n"
-          + "transports\030\001 \003(\01322.google.cl"
-          + "oud.networkconnectivity.v1beta.Transport\022\027\n"
+          + "transports\030\001 \003(\01322.google.clo"
+          + "ud.networkconnectivity.v1beta.Transport\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006\"Y\n"
           + "\023GetTransportRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",networkconnectivity.googleapis.com/Transport\"V\n"
+          + ",networkconnectivity.googleapis.com/Transport\"o\n"
           + "\020GetStatusRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",networkconnectivity.googleapis.com/Transport\"\301\007\n"
+          + ",networkconnectivity.googleapis.com/Transport\022\027\n\n"
+          + "skip_cache\030\002 \001(\010B\003\340A\001\"\301\007\n"
           + "\021GetStatusResponse\022`\n"
-          + "\016overall_status\030\001 \001(\0162H.g"
-          + "oogle.cloud.networkconnectivity.v1beta.GetStatusResponse.OverallStatus\022h\n"
-          + "\022operational_status\030\002 \001(\0162L.google.cloud.networ"
-          + "kconnectivity.v1beta.GetStatusResponse.OperationalStatus\022j\n"
-          + "\023connectivity_status\030\003 \001(\0162M.google.cloud.networkconnectivity"
-          + ".v1beta.GetStatusResponse.ConnectivityStatus\022_\n"
-          + "\016mac_sec_status\030\004 \001(\0162G.google.cl"
-          + "oud.networkconnectivity.v1beta.GetStatusResponse.MacSecStatus\"y\n\r"
+          + "\016overall_status\030\001 \001(\0162H.google.cloud.netw"
+          + "orkconnectivity.v1beta.GetStatusResponse.OverallStatus\022h\n"
+          + "\022operational_status\030\002 \001(\0162L.google.cloud.networkconnectivity.v1"
+          + "beta.GetStatusResponse.OperationalStatus\022j\n"
+          + "\023connectivity_status\030\003 \001(\0162M.google.c"
+          + "loud.networkconnectivity.v1beta.GetStatusResponse.ConnectivityStatus\022_\n"
+          + "\016mac_sec_status\030\004 \001(\0162G.google.cloud.networkconne"
+          + "ctivity.v1beta.GetStatusResponse.MacSecStatus\"y\n\r"
           + "OverallStatus\022\036\n"
           + "\032OVERALL_STATUS_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\017\n"
@@ -297,66 +324,70 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
           + "\037MAC_SEC_STATUS_ACTIVE_FAIL_OPEN\020\002\022!\n"
           + "\035MAC_SEC_STATUS_NOT_CONFIGURED\020\003\"\346\001\n"
           + "\026CreateTransportRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340"
-          + "A\002\372A.\022,networkconnectivity.googleapis.com/Transport\022\031\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,networkconnectivity.googleapis.com/Transport\022\031\n"
           + "\014transport_id\030\002 \001(\tB\003\340A\002\022J\n"
-          + "\ttransport\030\003"
-          + " \001(\01322.google.cloud.networkconnectivity.v1beta.TransportB\003\340A\002\022\037\n\n"
+          + "\ttransport\030\003 \001("
+          + "\01322.google.cloud.networkconnectivity.v1beta.TransportB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\273\001\n"
           + "\026UpdateTransportRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022J\n"
-          + "\ttransport\030\002"
-          + " \001(\01322.google.cloud.networkconnectivity.v1beta.TransportB\003\340A\002\022\037\n\n"
+          + "\ttransport\030\002 \001(\01322.google"
+          + ".cloud.networkconnectivity.v1beta.TransportB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"}\n"
           + "\026DeleteTransportRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",networkconnectivity.googleapis.com/Transport\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\0012\302\017\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\0012\341\021\n"
           + "\020TransportManager\022\212\002\n"
-          + "\033ListRemoteTransportProfiles\022K.google.cloud.networkconnectivity.v1beta."
-          + "ListRemoteTransportProfilesRequest\032L.google.cloud.networkconnectivity.v1beta.Lis"
-          + "tRemoteTransportProfilesResponse\"P\332A\006par"
-          + "ent\202\323\344\223\002A\022?/v1beta/{parent=projects/*/locations/*}/remoteTransportProfiles\022\367\001\n"
-          + "\031GetRemoteTransportProfile\022I.google.cloud."
-          + "networkconnectivity.v1beta.GetRemoteTransportProfileRequest\032?.google.cloud.netwo"
-          + "rkconnectivity.v1beta.RemoteTransportPro"
-          + "file\"N\332A\004name\202\323\344\223\002A\022?/v1beta/{name=proje"
-          + "cts/*/locations/*/remoteTransportProfiles/*}\022\326\001\n"
-          + "\016ListTransports\022>.google.cloud.networkconnectivity.v1beta.ListTransports"
-          + "Request\032?.google.cloud.networkconnectivi"
-          + "ty.v1beta.ListTransportsResponse\"C\332A\006par"
-          + "ent\202\323\344\223\0024\0222/v1beta/{parent=projects/*/locations/*}/transports\022\303\001\n"
-          + "\014GetTransport\022<.google.cloud.networkconnectivity.v1beta"
-          + ".GetTransportRequest\0322.google.cloud.netw"
-          + "orkconnectivity.v1beta.Transport\"A\332A\004nam"
-          + "e\202\323\344\223\0024\0222/v1beta/{name=projects/*/locations/*/transports/*}\022\317\001\n"
-          + "\tGetStatus\0229.google.cloud.networkconnectivity.v1beta.GetS"
-          + "tatusRequest\032:.google.cloud.networkconne"
-          + "ctivity.v1beta.GetStatusResponse\"K\332A\004nam"
-          + "e\202\323\344\223\002>\022</v1beta/{name=projects/*/locations/*/transports/*}:getStatus\022\372\001\n"
-          + "\017CreateTransport\022?.google.cloud.networkconnecti"
-          + "vity.v1beta.CreateTransportRequest\032\035.google.longrunning.Operation\"\206\001\312A\036\n"
-          + "\tTransport\022\021OperationMetadata\332A\035parent,transport"
-          + ",transport_id\202\323\344\223\002?\"2/v1beta/{parent=projects/*/locations/*}/transports:"
+          + "\033ListRemoteTransportProfiles\022K.google.cloud.net"
+          + "workconnectivity.v1beta.ListRemoteTransportProfilesRequest\032L.google.cloud.networ"
+          + "kconnectivity.v1beta.ListRemoteTransport"
+          + "ProfilesResponse\"P\332A\006parent\202\323\344\223\002A\022?/v1be"
+          + "ta/{parent=projects/*/locations/*}/remoteTransportProfiles\022\367\001\n"
+          + "\031GetRemoteTransportProfile\022I.google.cloud.networkconnectiv"
+          + "ity.v1beta.GetRemoteTransportProfileRequest\032?.google.cloud.networkconnectivity.v"
+          + "1beta.RemoteTransportProfile\"N\332A\004name\202\323\344"
+          + "\223\002A\022?/v1beta/{name=projects/*/locations/*/remoteTransportProfiles/*}\022\234\002\n"
+          + "\026ParseFromActivationKey\022F.google.cloud.networkco"
+          + "nnectivity.v1beta.ParseFromActivationKeyRequest\032G.google.cloud.networkconnectivi"
+          + "ty.v1beta.ParseFromActivationKeyResponse"
+          + "\"q\332A\025parent,activation_key\202\323\344\223\002S\022Q/v1bet"
+          + "a/{parent=projects/*/locations/*}/remoteTransportProfiles:fromActivationKey\022\326\001\n"
+          + "\016ListTransports\022>.google.cloud.networkcon"
+          + "nectivity.v1beta.ListTransportsRequest\032?.google.cloud.networkconnectivity.v1beta"
+          + ".ListTransportsResponse\"C\332A\006parent\202\323\344\223\0024"
+          + "\0222/v1beta/{parent=projects/*/locations/*}/transports\022\303\001\n"
+          + "\014GetTransport\022<.google.cloud.networkconnectivity.v1beta.GetTrans"
+          + "portRequest\0322.google.cloud.networkconnec"
+          + "tivity.v1beta.Transport\"A\332A\004name\202\323\344\223\0024\0222"
+          + "/v1beta/{name=projects/*/locations/*/transports/*}\022\317\001\n"
+          + "\tGetStatus\0229.google.cloud.networkconnectivity.v1beta.GetStatusRequ"
+          + "est\032:.google.cloud.networkconnectivity.v"
+          + "1beta.GetStatusResponse\"K\332A\004name\202\323\344\223\002>\022<"
+          + "/v1beta/{name=projects/*/locations/*/transports/*}:getStatus\022\372\001\n"
+          + "\017CreateTransport\022?.google.cloud.networkconnectivity.v1be"
+          + "ta.CreateTransportRequest\032\035.google.longrunning.Operation\"\206\001\312A\036\n"
+          + "\tTransport\022\021OperationMetadata\332A\035parent,transport,transpor"
+          + "t_id\202\323\344\223\002?\"2/v1beta/{parent=projects/*/locations/*}/transports:"
           + "\ttransport\022\374\001\n"
-          + "\017UpdateTransport\022?.google.cloud.networkconnectivity.v1beta.UpdateTransport"
-          + "Request\032\035.google.longrunning.Operation\"\210\001\312A\036\n"
-          + "\tTransport\022\021OperationMetadata\332A\025tra"
-          + "nsport,update_mask\202\323\344\223\002I2</v1beta/{trans"
-          + "port.name=projects/*/locations/*/transports/*}:\ttransport\022\341\001\n"
-          + "\017DeleteTransport\022?.google.cloud.networkconnectivity.v1beta."
-          + "DeleteTransportRequest\032\035.google.longrunning.Operation\"n\312A*\n"
-          + "\025google.protobuf.Empt"
-          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\0024*2/v1be"
-          + "ta/{name=projects/*/locations/*/transpor"
-          + "ts/*}\032V\312A\"networkconnectivity.googleapis"
-          + ".com\322A.https://www.googleapis.com/auth/cloud-platformB\246\002\n"
-          + "+com.google.cloud.networkconnectivity.v1betaB\025TransportManagerP"
-          + "rotoP\001Z]cloud.google.com/go/networkconnectivity/apiv1beta/networkconnectivitypb;"
-          + "networkconnectivitypb\252\002\'Google.Cloud.Net"
-          + "workConnectivity.V1Beta\312\002\'Google\\Cloud\\N"
-          + "etworkConnectivity\\V1beta\352\002*Google::Clou"
-          + "d::NetworkConnectivity::V1betab\006proto3"
+          + "\017UpdateTransport\022?.google.cloud.networkconn"
+          + "ectivity.v1beta.UpdateTransportRequest\032\035.google.longrunning.Operation\"\210\001\312A\036\n"
+          + "\tTransport\022\021OperationMetadata\332A\025transport,up"
+          + "date_mask\202\323\344\223\002I2</v1beta/{transport.name=projects/*/locations/*/transports/*}:"
+          + "\ttransport\022\341\001\n"
+          + "\017DeleteTransport\022?.google.cloud.networkconnectivity.v1beta.DeleteTra"
+          + "nsportRequest\032\035.google.longrunning.Operation\"n\312A*\n"
+          + "\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\0024*2/v1beta/{name="
+          + "projects/*/locations/*/transports/*}\032V\312A"
+          + "\"networkconnectivity.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-platformB\246\002\n"
+          + "+com.google.cloud.networkconnectivity.v1betaB\025TransportManagerProtoP\001Z]c"
+          + "loud.google.com/go/networkconnectivity/apiv1beta/networkconnectivitypb;networkco"
+          + "nnectivitypb\252\002\'Google.Cloud.NetworkConne"
+          + "ctivity.V1Beta\312\002\'Google\\Cloud\\NetworkCon"
+          + "nectivity\\V1beta\352\002*Google::Cloud::NetworkConnectivity::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -389,6 +420,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Flow",
               "OrderState",
               "DisplayName",
+              "ProviderType",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_RemoteTransportProfile_LabelsEntry_descriptor =
         internal_static_google_cloud_networkconnectivity_v1beta_RemoteTransportProfile_descriptor
@@ -423,8 +455,24 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_networkconnectivity_v1beta_Transport_descriptor =
+    internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyRequest_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ActivationKey",
+            });
+    internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_networkconnectivity_v1beta_ParseFromActivationKeyResponse_descriptor,
+            new java.lang.String[] {
+              "RemoteTransportProfile",
+            });
+    internal_static_google_cloud_networkconnectivity_v1beta_Transport_descriptor =
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_networkconnectivity_v1beta_Transport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_Transport_descriptor,
@@ -446,6 +494,9 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "AdvertisedRoutes",
               "RemoteAccountId",
               "PeeringNetwork",
+              "Hub",
+              "PscRoutingEnabled",
+              "AutoAccept",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_Transport_LabelsEntry_descriptor =
         internal_static_google_cloud_networkconnectivity_v1beta_Transport_descriptor.getNestedType(
@@ -457,7 +508,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Key", "Value",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsRequest_descriptor,
@@ -465,7 +516,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_ListTransportsResponse_descriptor,
@@ -473,7 +524,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Transports", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_GetTransportRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_networkconnectivity_v1beta_GetTransportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_GetTransportRequest_descriptor,
@@ -481,15 +532,15 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Name",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_GetStatusRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_networkconnectivity_v1beta_GetStatusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_GetStatusRequest_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "SkipCache",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_GetStatusResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_networkconnectivity_v1beta_GetStatusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_GetStatusResponse_descriptor,
@@ -497,7 +548,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "OverallStatus", "OperationalStatus", "ConnectivityStatus", "MacSecStatus",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_CreateTransportRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_networkconnectivity_v1beta_CreateTransportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_CreateTransportRequest_descriptor,
@@ -505,7 +556,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "Parent", "TransportId", "Transport", "RequestId",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_UpdateTransportRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_networkconnectivity_v1beta_UpdateTransportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_UpdateTransportRequest_descriptor,
@@ -513,7 +564,7 @@ public final class TransportManagerProto extends com.google.protobuf.GeneratedFi
               "UpdateMask", "Transport", "RequestId",
             });
     internal_static_google_cloud_networkconnectivity_v1beta_DeleteTransportRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_networkconnectivity_v1beta_DeleteTransportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_networkconnectivity_v1beta_DeleteTransportRequest_descriptor,

@@ -302,6 +302,29 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     }
   }
 
+  public static final int PORT_FIELD_NUMBER = 4;
+  private int port_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Port for which the access token should be generated. If
+   * specified, the generated access token grants access only to the
+   * specified port of the workstation. If specified, values must be within the
+   * range [1 - 65535]. If not specified, the generated access token grants
+   * access to all ports of the workstation.
+   * </pre>
+   *
+   * <code>int32 port = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The port.
+   */
+  @java.lang.Override
+  public int getPort() {
+    return port_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -325,6 +348,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     if (expirationCase_ == 3) {
       output.writeMessage(3, (com.google.protobuf.Duration) expiration_);
     }
+    if (port_ != 0) {
+      output.writeInt32(4, port_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -347,6 +373,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.protobuf.Duration) expiration_);
     }
+    if (port_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, port_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -364,6 +393,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         (com.google.cloud.workstations.v1.GenerateAccessTokenRequest) obj;
 
     if (!getWorkstation().equals(other.getWorkstation())) return false;
+    if (getPort() != other.getPort()) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 2:
@@ -388,6 +418,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + WORKSTATION_FIELD_NUMBER;
     hash = (53 * hash) + getWorkstation().hashCode();
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort();
     switch (expirationCase_) {
       case 2:
         hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
@@ -548,6 +580,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         ttlBuilder_.clear();
       }
       workstation_ = "";
+      port_ = 0;
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -590,6 +623,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.workstation_ = workstation_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.port_ = port_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -621,6 +657,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         workstation_ = other.workstation_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.getPort() != 0) {
+        setPort(other.getPort());
       }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
@@ -683,6 +722,12 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
                 expirationCase_ = 3;
                 break;
               } // case 26
+            case 32:
+              {
+                port_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1311,6 +1356,74 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       workstation_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int port_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Port for which the access token should be generated. If
+     * specified, the generated access token grants access only to the
+     * specified port of the workstation. If specified, values must be within the
+     * range [1 - 65535]. If not specified, the generated access token grants
+     * access to all ports of the workstation.
+     * </pre>
+     *
+     * <code>int32 port = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Port for which the access token should be generated. If
+     * specified, the generated access token grants access only to the
+     * specified port of the workstation. If specified, values must be within the
+     * range [1 - 65535]. If not specified, the generated access token grants
+     * access to all ports of the workstation.
+     * </pre>
+     *
+     * <code>int32 port = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The port to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPort(int value) {
+
+      port_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Port for which the access token should be generated. If
+     * specified, the generated access token grants access only to the
+     * specified port of the workstation. If specified, values must be within the
+     * range [1 - 65535]. If not specified, the generated access token grants
+     * access to all ports of the workstation.
+     * </pre>
+     *
+     * <code>int32 port = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPort() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      port_ = 0;
       onChanged();
       return this;
     }

@@ -53,6 +53,7 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
 
   private DataProfileSpec() {
     rowFilter_ = "";
+    mode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,6 +69,187 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataplex.v1.DataProfileSpec.class,
             com.google.cloud.dataplex.v1.DataProfileSpec.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the execution mode for the profile scan.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.DataProfileSpec.Mode}
+   */
+  public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Performs standard profiling. The behavior is controlled by other fields
+     * such as `sampling_percent`, `row_filter`, and column filters.
+     * This mode allows for full scans or custom sampling.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Specifies lightweight profiling mode. This mode is optimized for
+     * low-latency, low-fidelity profiling.
+     *
+     * When this mode is selected, the following fields must not be set:
+     * `sampling_percent`, `row_filter`, `include_fields`, and `exclude_fields`.
+     * </pre>
+     *
+     * <code>LIGHTWEIGHT = 2;</code>
+     */
+    LIGHTWEIGHT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Mode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs standard profiling. The behavior is controlled by other fields
+     * such as `sampling_percent`, `row_filter`, and column filters.
+     * This mode allows for full scans or custom sampling.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    public static final int STANDARD_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies lightweight profiling mode. This mode is optimized for
+     * low-latency, low-fidelity profiling.
+     *
+     * When this mode is selected, the following fields must not be set:
+     * `sampling_percent`, `row_filter`, `include_fields`, and `exclude_fields`.
+     * </pre>
+     *
+     * <code>LIGHTWEIGHT = 2;</code>
+     */
+    public static final int LIGHTWEIGHT_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Mode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Mode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODE_UNSPECIFIED;
+        case 1:
+          return STANDARD;
+        case 2:
+          return LIGHTWEIGHT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+          public Mode findValueByNumber(int number) {
+            return Mode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataProfileSpec.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Mode[] VALUES = values();
+
+    public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Mode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DataProfileSpec.Mode)
   }
 
   public interface PostScanActionsOrBuilder
@@ -2667,6 +2849,47 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
     return catalogPublishingEnabled_;
   }
 
+  public static final int MODE_FIELD_NUMBER = 9;
+  private int mode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for the profile scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  @java.lang.Override
+  public int getModeValue() {
+    return mode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The execution mode for the profile scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mode.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataProfileSpec.Mode getMode() {
+    com.google.cloud.dataplex.v1.DataProfileSpec.Mode result =
+        com.google.cloud.dataplex.v1.DataProfileSpec.Mode.forNumber(mode_);
+    return result == null ? com.google.cloud.dataplex.v1.DataProfileSpec.Mode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2699,6 +2922,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
     if (catalogPublishingEnabled_ != false) {
       output.writeBool(8, catalogPublishingEnabled_);
     }
+    if (mode_ != com.google.cloud.dataplex.v1.DataProfileSpec.Mode.MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, mode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2725,6 +2951,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
     }
     if (catalogPublishingEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, catalogPublishingEnabled_);
+    }
+    if (mode_ != com.google.cloud.dataplex.v1.DataProfileSpec.Mode.MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, mode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2758,6 +2987,7 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
       if (!getExcludeFields().equals(other.getExcludeFields())) return false;
     }
     if (getCatalogPublishingEnabled() != other.getCatalogPublishingEnabled()) return false;
+    if (mode_ != other.mode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2787,6 +3017,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CATALOG_PUBLISHING_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCatalogPublishingEnabled());
+    hash = (37 * hash) + MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2956,6 +3188,7 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
         excludeFieldsBuilder_ = null;
       }
       catalogPublishingEnabled_ = false;
+      mode_ = 0;
       return this;
     }
 
@@ -3017,6 +3250,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.catalogPublishingEnabled_ = catalogPublishingEnabled_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mode_ = mode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3051,6 +3287,9 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
       }
       if (other.getCatalogPublishingEnabled() != false) {
         setCatalogPublishingEnabled(other.getCatalogPublishingEnabled());
+      }
+      if (other.mode_ != 0) {
+        setModeValue(other.getModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3117,6 +3356,12 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 64
+            case 72:
+              {
+                mode_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4102,6 +4347,113 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessage
     public Builder clearCatalogPublishingEnabled() {
       bitField0_ = (bitField0_ & ~0x00000020);
       catalogPublishingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int mode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for the profile scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for mode.
+     */
+    @java.lang.Override
+    public int getModeValue() {
+      return mode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for the profile scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModeValue(int value) {
+      mode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for the profile scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mode.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataProfileSpec.Mode getMode() {
+      com.google.cloud.dataplex.v1.DataProfileSpec.Mode result =
+          com.google.cloud.dataplex.v1.DataProfileSpec.Mode.forNumber(mode_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.DataProfileSpec.Mode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for the profile scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The mode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMode(com.google.cloud.dataplex.v1.DataProfileSpec.Mode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      mode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The execution mode for the profile scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileSpec.Mode mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mode_ = 0;
       onChanged();
       return this;
     }

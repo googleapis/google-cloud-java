@@ -65,6 +65,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     kind_ = "";
     minTlsVersion_ = "";
     name_ = "";
+    postQuantumKeyExchange_ = "";
     profile_ = "";
     region_ = "";
     selfLink_ = "";
@@ -307,6 +308,207 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.SslPolicy.PostQuantumKeyExchange}
+   */
+  public enum PostQuantumKeyExchange implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POST_QUANTUM_KEY_EXCHANGE = 0;</code>
+     */
+    UNDEFINED_POST_QUANTUM_KEY_EXCHANGE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Default behavior: disabled until October 2026, enabled afterward.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
+    DEFAULT(115302945),
+    /**
+     *
+     *
+     * <pre>
+     * Disabled until October 2027, enabled afterward.
+     * </pre>
+     *
+     * <code>DEFERRED = 356775903;</code>
+     */
+    DEFERRED(356775903),
+    /**
+     *
+     *
+     * <pre>
+     * Enabled now.
+     * </pre>
+     *
+     * <code>ENABLED = 182130465;</code>
+     */
+    ENABLED(182130465),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "PostQuantumKeyExchange");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_POST_QUANTUM_KEY_EXCHANGE = 0;</code>
+     */
+    public static final int UNDEFINED_POST_QUANTUM_KEY_EXCHANGE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default behavior: disabled until October 2026, enabled afterward.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
+    public static final int DEFAULT_VALUE = 115302945;
+
+    /**
+     *
+     *
+     * <pre>
+     * Disabled until October 2027, enabled afterward.
+     * </pre>
+     *
+     * <code>DEFERRED = 356775903;</code>
+     */
+    public static final int DEFERRED_VALUE = 356775903;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enabled now.
+     * </pre>
+     *
+     * <code>ENABLED = 182130465;</code>
+     */
+    public static final int ENABLED_VALUE = 182130465;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PostQuantumKeyExchange valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PostQuantumKeyExchange forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_POST_QUANTUM_KEY_EXCHANGE;
+        case 115302945:
+          return DEFAULT;
+        case 356775903:
+          return DEFERRED;
+        case 182130465:
+          return ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PostQuantumKeyExchange>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PostQuantumKeyExchange>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PostQuantumKeyExchange>() {
+              public PostQuantumKeyExchange findValueByNumber(int number) {
+                return PostQuantumKeyExchange.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SslPolicy.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final PostQuantumKeyExchange[] VALUES = values();
+
+    public static PostQuantumKeyExchange valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PostQuantumKeyExchange(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SslPolicy.PostQuantumKeyExchange)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Profile specifies the set of SSL features that can be used by the load
    * balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in
    * the customFeatures field. If using FIPS_202205,
@@ -532,7 +734,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.SslPolicy.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.SslPolicy.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Profile[] VALUES = values();
@@ -1206,6 +1408,96 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int POST_QUANTUM_KEY_EXCHANGE_FIELD_NUMBER = 245546214;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postQuantumKeyExchange_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return Whether the postQuantumKeyExchange field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostQuantumKeyExchange() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return The postQuantumKeyExchange.
+   */
+  @java.lang.Override
+  public java.lang.String getPostQuantumKeyExchange() {
+    java.lang.Object ref = postQuantumKeyExchange_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      postQuantumKeyExchange_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+   * X25519MLKEM768 key exchange when clients advertise support for it. When set
+   * to DEFAULT, or if no SSL Policy is attached to the target
+   * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+   * October 2026, and allows it afterward. When set to ENABLED,
+   * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+   * exchange until October 2027, and allows it afterward.
+   * Check the PostQuantumKeyExchange enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string post_quantum_key_exchange = 245546214;</code>
+   *
+   * @return The bytes for postQuantumKeyExchange.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPostQuantumKeyExchangeBytes() {
+    java.lang.Object ref = postQuantumKeyExchange_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      postQuantumKeyExchange_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROFILE_FIELD_NUMBER = 227445161;
 
   @SuppressWarnings("serial")
@@ -1228,7 +1520,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProfile() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1306,7 +1598,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1377,7 +1669,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1541,19 +1833,22 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customFeatures_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 34789707, customFeatures_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 234678500, fingerprint_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 245546214, postQuantumKeyExchange_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < enabledFeatures_.size(); i++) {
@@ -1595,19 +1890,24 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getCustomFeaturesList().size();
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(234678500, fingerprint_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              245546214, postQuantumKeyExchange_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     {
@@ -1665,6 +1965,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPostQuantumKeyExchange() != other.hasPostQuantumKeyExchange()) return false;
+    if (hasPostQuantumKeyExchange()) {
+      if (!getPostQuantumKeyExchange().equals(other.getPostQuantumKeyExchange())) return false;
     }
     if (hasProfile() != other.hasProfile()) return false;
     if (hasProfile()) {
@@ -1725,6 +2029,10 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPostQuantumKeyExchange()) {
+      hash = (37 * hash) + POST_QUANTUM_KEY_EXCHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getPostQuantumKeyExchange().hashCode();
     }
     if (hasProfile()) {
       hash = (37 * hash) + PROFILE_FIELD_NUMBER;
@@ -1895,6 +2203,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       kind_ = "";
       minTlsVersion_ = "";
       name_ = "";
+      postQuantumKeyExchange_ = "";
       profile_ = "";
       region_ = "";
       selfLink_ = "";
@@ -1904,7 +2213,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         warnings_ = null;
         warningsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -1942,9 +2251,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.SslPolicy result) {
       if (warningsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           warnings_ = java.util.Collections.unmodifiableList(warnings_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.warnings_ = warnings_;
       } else {
@@ -1992,16 +2301,20 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.profile_ = profile_;
+        result.postQuantumKeyExchange_ = postQuantumKeyExchange_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.region_ = region_;
+        result.profile_ = profile_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2071,26 +2384,31 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasPostQuantumKeyExchange()) {
+        postQuantumKeyExchange_ = other.postQuantumKeyExchange_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
       if (other.hasProfile()) {
         profile_ = other.profile_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (warningsBuilder_ == null) {
         if (!other.warnings_.isEmpty()) {
           if (warnings_.isEmpty()) {
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureWarningsIsMutable();
             warnings_.addAll(other.warnings_);
@@ -2103,7 +2421,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
             warningsBuilder_.dispose();
             warningsBuilder_ = null;
             warnings_ = other.warnings_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             warningsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetWarningsFieldBuilder()
@@ -2179,13 +2497,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1111570338
             case 1819561290:
               {
                 profile_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1819561290
             case 1877428002:
@@ -2194,6 +2512,12 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 1877428002
+            case 1964369714:
+              {
+                postQuantumKeyExchange_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1964369714
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -2203,7 +2527,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -645248918
             case -542827558:
@@ -3569,6 +3893,174 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object postQuantumKeyExchange_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @return Whether the postQuantumKeyExchange field is set.
+     */
+    public boolean hasPostQuantumKeyExchange() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @return The postQuantumKeyExchange.
+     */
+    public java.lang.String getPostQuantumKeyExchange() {
+      java.lang.Object ref = postQuantumKeyExchange_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        postQuantumKeyExchange_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @return The bytes for postQuantumKeyExchange.
+     */
+    public com.google.protobuf.ByteString getPostQuantumKeyExchangeBytes() {
+      java.lang.Object ref = postQuantumKeyExchange_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        postQuantumKeyExchange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @param value The postQuantumKeyExchange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostQuantumKeyExchange(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      postQuantumKeyExchange_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPostQuantumKeyExchange() {
+      postQuantumKeyExchange_ = getDefaultInstance().getPostQuantumKeyExchange();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * One of DEFAULT, ENABLED, orDEFERRED. Controls whether the load balancer negotiates
+     * X25519MLKEM768 key exchange when clients advertise support for it. When set
+     * to DEFAULT, or if no SSL Policy is attached to the target
+     * proxy, the load balancer disallows X25519MLKEM768 key exchange before
+     * October 2026, and allows it afterward. When set to ENABLED,
+     * the load balancer allows X25519MLKEM768 key exchange. When set toDEFERRED, the load balancer disallows X25519MLKEM768 key
+     * exchange until October 2027, and allows it afterward.
+     * Check the PostQuantumKeyExchange enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string post_quantum_key_exchange = 245546214;</code>
+     *
+     * @param value The bytes for postQuantumKeyExchange to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPostQuantumKeyExchangeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      postQuantumKeyExchange_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object profile_ = "";
 
     /**
@@ -3587,7 +4079,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the profile field is set.
      */
     public boolean hasProfile() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3665,7 +4157,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       profile_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3687,7 +4179,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProfile() {
       profile_ = getDefaultInstance().getProfile();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3714,7 +4206,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       profile_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3734,7 +4226,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3803,7 +4295,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3822,7 +4314,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3846,7 +4338,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3865,7 +4357,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3931,7 +4423,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3949,7 +4441,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3972,7 +4464,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3981,9 +4473,9 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>(warnings_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4219,7 +4711,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
         warnings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         warningsBuilder_.clear();
@@ -4354,7 +4846,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.Warnings,
                 com.google.cloud.compute.v1.Warnings.Builder,
                 com.google.cloud.compute.v1.WarningsOrBuilder>(
-                warnings_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+                warnings_, ((bitField0_ & 0x00002000) != 0), getParentForChildren(), isClean());
         warnings_ = null;
       }
       return warningsBuilder_;

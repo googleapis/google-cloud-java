@@ -1677,6 +1677,10 @@ public class InlineBeginTransactionTest {
       }
     }
 
+    static void useShortTransactionWait(TransactionContext transaction) {
+      ((TransactionContextImpl) transaction).waitForTransactionTimeoutMillis = 1L;
+    }
+
     @Test
     public void testQueryWithInlineBeginDidNotReturnTransaction() {
       runWithIgnoreInlineBegin(
@@ -1738,7 +1742,11 @@ public class InlineBeginTransactionTest {
                     () ->
                         client
                             .readWriteTransaction()
-                            .run(transaction -> transaction.executeUpdate(UPDATE_STATEMENT)));
+                            .run(
+                                transaction -> {
+                                  useShortTransactionWait(transaction);
+                                  return transaction.executeUpdate(UPDATE_STATEMENT);
+                                }));
             assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
             assertThat(e.getMessage()).contains(AbstractReadContext.NO_TRANSACTION_RETURNED_MSG);
             assertThat(countRequests(BeginTransactionRequest.class)).isEqualTo(0);
@@ -1760,6 +1768,7 @@ public class InlineBeginTransactionTest {
                             .readWriteTransaction()
                             .run(
                                 transaction -> {
+                                  useShortTransactionWait(transaction);
                                   transaction.batchUpdate(
                                       Collections.singletonList(UPDATE_STATEMENT));
                                   return null;
@@ -1831,9 +1840,11 @@ public class InlineBeginTransactionTest {
                         client
                             .readWriteTransaction()
                             .run(
-                                transaction ->
-                                    SpannerApiFutures.get(
-                                        transaction.executeUpdateAsync(UPDATE_STATEMENT))));
+                                transaction -> {
+                                  useShortTransactionWait(transaction);
+                                  return SpannerApiFutures.get(
+                                      transaction.executeUpdateAsync(UPDATE_STATEMENT));
+                                }));
             assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
             assertThat(e.getMessage()).contains(AbstractReadContext.NO_TRANSACTION_RETURNED_MSG);
             assertThat(countRequests(BeginTransactionRequest.class)).isEqualTo(0);
@@ -1854,10 +1865,12 @@ public class InlineBeginTransactionTest {
                         client
                             .readWriteTransaction()
                             .run(
-                                transaction ->
-                                    SpannerApiFutures.get(
-                                        transaction.batchUpdateAsync(
-                                            Collections.singletonList(UPDATE_STATEMENT)))));
+                                transaction -> {
+                                  useShortTransactionWait(transaction);
+                                  return SpannerApiFutures.get(
+                                      transaction.batchUpdateAsync(
+                                          Collections.singletonList(UPDATE_STATEMENT)));
+                                }));
             assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
             assertThat(e.getMessage()).contains(AbstractReadContext.NO_TRANSACTION_RETURNED_MSG);
             assertThat(countRequests(BeginTransactionRequest.class)).isEqualTo(0);

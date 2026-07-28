@@ -29,9 +29,12 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.CREDENTIALS_
 import static com.google.cloud.spanner.connection.ConnectionOptions.CREDENTIALS_PROVIDER_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DATABASE_ROLE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DATA_BOOST_ENABLED_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_CONCURRENT_STREAMS_LOW_WATERMARK_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_INITIAL_CHANNELS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MAX_CHANNELS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MIN_CHANNELS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DDL_IN_TRANSACTION_MODE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTOCOMMIT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTO_BATCH_DML;
@@ -45,9 +48,12 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CLIE
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DATABASE_ROLE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DATA_BOOST_ENABLED;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_CONCURRENT_STREAMS_LOW_WATERMARK;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_INITIAL_CHANNELS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MAX_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MAX_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MIN_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MIN_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DDL_IN_TRANSACTION_MODE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DEFAULT_SEQUENCE_KIND;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE;
@@ -55,6 +61,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENAB
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_DYNAMIC_CHANNEL_POOL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_END_TO_END_TRACING;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_EXTENDED_TRACING;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_GRPC_GCP;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_KEEP_TRANSACTION_ALIVE;
@@ -75,6 +82,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_RPC_
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_SEQUENCE_KIND_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TRACK_CONNECTION_LEAKS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TRACK_SESSION_LEAKS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_TYPE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USER_AGENT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USE_PLAIN_TEXT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_USE_VIRTUAL_GRPC_TRANSPORT_THREADS;
@@ -85,9 +93,12 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_API_T
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_DYNAMIC_CHANNEL_POOL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_END_TO_END_TRACING_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_EXTENDED_TRACING_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_GCP_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENCODED_CREDENTIALS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENDPOINT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.GRPC_KEEPALIVE_TIME_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.IS_EXPERIMENTAL_HOST_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.KEEP_TRANSACTION_ALIVE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.LENIENT_PROPERTY_NAME;
@@ -105,17 +116,20 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ROUTE_TO_LEA
 import static com.google.cloud.spanner.connection.ConnectionOptions.RPC_PRIORITY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.TRACK_CONNECTION_LEAKS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.TRACK_SESSION_LEAKS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.TYPE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USER_AGENT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_PLAIN_TEXT_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_VIRTUAL_GRPC_TRANSPORT_THREADS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.USE_VIRTUAL_THREADS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionProperty.castProperty;
 
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.DmlBatchUpdateCountVerificationFailedException;
 import com.google.cloud.spanner.Options.RpcPriority;
+import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.AutocommitDmlModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.BooleanConverter;
@@ -124,6 +138,7 @@ import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.Cr
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DdlInTransactionModeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DialectConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DurationConverter;
+import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.InstanceTypeConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.IsolationLevelConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.LongConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.NonNegativeIntegerConverter;
@@ -240,6 +255,30 @@ public class ConnectionProperties {
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);
+  static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIME =
+      create(
+          GRPC_KEEPALIVE_TIME_PROPERTY_NAME,
+          "The keepalive time for gRPC connections (e.g. '120s', '20s'). "
+              + "Setting a lower keep-alive time (minimum 10s enforced by the gRPC library) "
+              + "helps detect disconnected connections faster.",
+          null,
+          DurationConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Duration> GRPC_KEEPALIVE_TIMEOUT =
+      create(
+          GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME,
+          "The keepalive timeout for gRPC connections (e.g. '20s', '5s'). This determines how long"
+              + " the client waits for a keep-alive ping response before terminating the"
+              + " connection. A lower timeout helps speed up recovery during network failures.",
+          null,
+          DurationConverter.INSTANCE,
+          Context.STARTUP);
+
+  /**
+   * @deprecated Use {@link #TYPE} with value "omni" instead.
+   */
+  @ObsoleteApi("Use TYPE with value \"omni\" instead")
+  @Deprecated
   static final ConnectionProperty<Boolean> IS_EXPERIMENTAL_HOST =
       create(
           IS_EXPERIMENTAL_HOST_PROPERTY_NAME,
@@ -247,6 +286,32 @@ public class ConnectionProperties {
           DEFAULT_IS_EXPERIMENTAL_HOST,
           BOOLEANS,
           BooleanConverter.INSTANCE,
+          Context.STARTUP);
+
+  static final ConnectionProperty<SpannerOptions.InstanceType> TYPE =
+      create(
+          TYPE_PROPERTY_NAME,
+          "Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni"
+              + " is mandatory when connecting to a Spanner Omni instance.",
+          DEFAULT_TYPE,
+          new SpannerOptions.InstanceType[] {
+            SpannerOptions.InstanceType.CLOUD, SpannerOptions.InstanceType.OMNI,
+          },
+          InstanceTypeConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> USERNAME =
+      create(
+          ConnectionOptions.USERNAME_PROPERTY_NAME,
+          "The username to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_USERNAME,
+          StringValueConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> PASSWORD =
+      create(
+          ConnectionOptions.PASSWORD_PROPERTY_NAME,
+          "The password to use for OPAQUE login.",
+          ConnectionOptions.DEFAULT_PASSWORD,
+          StringValueConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CLIENT_CERTIFICATE =
       create(
@@ -463,6 +528,18 @@ public class ConnectionProperties {
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);
+  static final ConnectionProperty<Boolean> ENABLE_GRPC_GCP =
+      create(
+          ENABLE_GRPC_GCP_PROPERTY_NAME,
+          "Enable or disable grpc-gcp channel pool (true/false). Setting this to false will disable"
+              + " grpc-gcp and use the Gax gRPC channel pool. Disabling grpc-gcp also automatically"
+              + " disables dynamic channel pooling, regardless of the value of"
+              + " enableDynamicChannelPool, as Spanner only supports dynamic channel pooling in"
+              + " combination with grpc-gcp.",
+          DEFAULT_ENABLE_GRPC_GCP,
+          BOOLEANS,
+          BooleanConverter.INSTANCE,
+          Context.STARTUP);
   static final ConnectionProperty<Integer> DCP_MIN_CHANNELS =
       create(
           DCP_MIN_CHANNELS_PROPERTY_NAME,
@@ -488,6 +565,34 @@ public class ConnectionProperties {
               + "enableDynamicChannelPool is true. The default is "
               + "SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE (4).",
           DEFAULT_DCP_INITIAL_CHANNELS,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_MIN_RPC_PER_CHANNEL =
+      create(
+          DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME,
+          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
+              + DEFAULT_DCP_MIN_RPC_PER_CHANNEL
+              + ".",
+          DEFAULT_DCP_MIN_RPC_PER_CHANNEL,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_MAX_RPC_PER_CHANNEL =
+      create(
+          DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME,
+          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used"
+              + " when enableDynamicChannelPool is true. The default is "
+              + DEFAULT_DCP_MAX_RPC_PER_CHANNEL
+              + ".",
+          DEFAULT_DCP_MAX_RPC_PER_CHANNEL,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_CONCURRENT_STREAMS_LOW_WATERMARK =
+      create(
+          DCP_CONCURRENT_STREAMS_LOW_WATERMARK_PROPERTY_NAME,
+          "The concurrent streams low watermark in the dynamic channel pool. Only used when "
+              + "enableDynamicChannelPool is true.",
+          DEFAULT_DCP_CONCURRENT_STREAMS_LOW_WATERMARK,
           NonNegativeIntegerConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CHANNEL_PROVIDER =

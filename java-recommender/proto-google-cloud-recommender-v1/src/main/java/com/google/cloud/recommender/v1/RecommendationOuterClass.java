@@ -112,27 +112,28 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
       "\n"
           + "0google/cloud/recommender/v1/recommenda"
           + "tion.proto\022\033google.cloud.recommender.v1\032"
-          + "\031google/api/resource.proto\032\036google/proto"
-          + "buf/duration.proto\032\034google/protobuf/stru"
-          + "ct.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\242"
-          + "\t\n"
-          + "\016Recommendation\022\014\n"
-          + "\004name\030\001 \001(\t\022\023\n"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\032\036google/protobuf/dur"
+          + "ation.proto\032\034google/protobuf/struct.prot"
+          + "o\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\301\t\n"
+          + "\016Recommendation\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\013description\030\002 \001(\t\022\033\n"
           + "\023recommender_subtype\030\014 \001(\t\0225\n"
           + "\021last_refresh_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022;\n"
           + "\016primary_impact\030\005 \001(\0132#.google.cloud.recommender.v1.Impact\022>\n"
           + "\021additional_impact\030\006 \003(\0132#.google.cloud.recommender.v1.Impact\022F\n"
-          + "\010priority\030\021 \001(\01624.google.clo"
-          + "ud.recommender.v1.Recommendation.Priority\022C\n"
+          + "\010priority\030\021 \001(\01624.google.cloud"
+          + ".recommender.v1.Recommendation.Priority\022C\n"
           + "\007content\030\007"
           + " \001(\01322.google.cloud.recommender.v1.RecommendationContent\022H\n\n"
           + "state_info\030\n"
           + " \001(\01324.google.cloud.recommender.v1.RecommendationStateInfo\022\014\n"
           + "\004etag\030\013 \001(\t\022Y\n"
-          + "\023associated_insights\030\016 \003(\0132<.google.clo"
-          + "ud.recommender.v1.Recommendation.InsightReference\022\024\n"
-          + "\014xor_group_id\030\022 \001(\t\032#\n"
+          + "\023associated_insights\030\016 \003(\0132<.google.cloud"
+          + ".recommender.v1.Recommendation.InsightReference\022\024\n"
+          + "\014xor_group_id\030\022 \001(\t\022\030\n"
+          + "\020target_resources\030\023 \003(\t\032#\n"
           + "\020InsightReference\022\017\n"
           + "\007insight\030\001 \001(\t\"D\n"
           + "\010Priority\022\030\n"
@@ -141,18 +142,19 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
           + "\002P3\020\002\022\006\n"
           + "\002P2\020\003\022\006\n"
           + "\002P1\020\004:\332\003\352A\326\003\n"
-          + ")recommender.googleapis.com/Recommendation\022cprojects/{"
-          + "project}/locations/{location}/recommenders/{recommender}/recommendations/{recomm"
-          + "endation}\022rbillingAccounts/{billing_account}/locations/{location}/recommenders/{"
-          + "recommender}/recommendations/{recommendation}\022afolders/{folder}/locations/{locat"
-          + "ion}/recommenders/{recommender}/recommendations/{recommendation}\022morganizations/"
-          + "{organization}/locations/{location}/reco"
-          + "mmenders/{recommender}/recommendations/{recommendation}\"\211\001\n"
+          + ")recommender.googleapis.com/Recommendation\022cprojects/{project}/locatio"
+          + "ns/{location}/recommenders/{recommender}/recommendations/{recommendation}\022rbilli"
+          + "ngAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/rec"
+          + "ommendations/{recommendation}\022afolders/{folder}/locations/{location}/recommender"
+          + "s/{recommender}/recommendations/{recommendation}\022morganizations/{organization}/l"
+          + "ocations/{location}/recommenders/{recomm"
+          + "ender}/recommendations/{recommendation}\"\211\001\n"
           + "\025RecommendationContent\022E\n"
           + "\020operation_groups\030\002"
           + " \003(\0132+.google.cloud.recommender.v1.OperationGroup\022)\n"
           + "\010overview\030\003 \001(\0132\027.google.protobuf.Struct\"L\n"
-          + "\016OperationGroup\022:\n\n"
+          + "\016OperationGroup\022:\n"
+          + "\n"
           + "operations\030\001 \003(\0132&.google.cloud.recommender.v1.Operation\"\327\004\n"
           + "\tOperation\022\016\n"
           + "\006action\030\001 \001(\t\022\025\n\r"
@@ -164,17 +166,17 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
           + "\005value\030\007 \001(\0132\026.google.protobuf.ValueH\000\022B\n\r"
           + "value_matcher\030\n"
           + " \001(\0132).google.cloud.recommender.v1.ValueMatcherH\000\022M\n"
-          + "\014path_filters\030\010"
-          + " \003(\01327.google.cloud.recommender.v1.Operation.PathFiltersEntry\022Z\n"
-          + "\023path_value_matchers\030\013 \003(\0132=.google.cloud.rec"
-          + "ommender.v1.Operation.PathValueMatchersEntry\032J\n"
+          + "\014path_filters\030\010 \003(\0132"
+          + "7.google.cloud.recommender.v1.Operation.PathFiltersEntry\022Z\n"
+          + "\023path_value_matchers\030\013"
+          + " \003(\0132=.google.cloud.recommender.v1.Operation.PathValueMatchersEntry\032J\n"
           + "\020PathFiltersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022%\n"
           + "\005value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\032c\n"
           + "\026PathValueMatchersEntry\022\013\n"
           + "\003key\030\001 \001(\t\0228\n"
-          + "\005value\030\002"
-          + " \001(\0132).google.cloud.recommender.v1.ValueMatcher:\0028\001B\014\n\n"
+          + "\005value\030\002 \001(\0132)"
+          + ".google.cloud.recommender.v1.ValueMatcher:\0028\001B\014\n\n"
           + "path_value\":\n"
           + "\014ValueMatcher\022\031\n"
           + "\017matches_pattern\030\001 \001(\tH\000B\017\n\r"
@@ -189,24 +191,25 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
           + "\010kg_c_o2e\030\001 \001(\001\022+\n"
           + "\010duration\030\002 \001(\0132\031.google.protobuf.Duration\"\354\001\n"
           + "\025ReliabilityProjection\022J\n"
-          + "\005risks\030\001 \003("
-          + "\0162;.google.cloud.recommender.v1.ReliabilityProjection.RiskType\022(\n"
+          + "\005risks\030\001 \003(\0162;.google.cloud"
+          + ".recommender.v1.ReliabilityProjection.RiskType\022(\n"
           + "\007details\030\002 \001(\0132\027.google.protobuf.Struct\"]\n"
           + "\010RiskType\022\031\n"
           + "\025RISK_TYPE_UNSPECIFIED\020\000\022\026\n"
           + "\022SERVICE_DISRUPTION\020\001\022\r\n"
           + "\tDATA_LOSS\020\002\022\017\n"
-          + "\013ACCESS_DENY\020\003\"\250\004\n"
+          + "\013ACCESS_DENY\020\003\"\271\004\n"
           + "\006Impact\022>\n"
           + "\010category\030\001 \001(\0162,.google.cloud.recommender.v1.Impact.Category\022F\n"
-          + "\017cost_projection\030d"
-          + " \001(\0132+.google.cloud.recommender.v1.CostProjectionH\000\022N\n"
-          + "\023security_projection\030e"
-          + " \001(\0132/.google.cloud.recommender.v1.SecurityProjectionH\000\022Z\n"
-          + "\031sustainability_projection\030f \001(\01325.google.cloud.rec"
-          + "ommender.v1.SustainabilityProjectionH\000\022T\n"
-          + "\026reliability_projection\030g \001(\01322.google."
-          + "cloud.recommender.v1.ReliabilityProjectionH\000\"\205\001\n"
+          + "\017cost_projection\030d "
+          + "\001(\0132+.google.cloud.recommender.v1.CostProjectionH\000\022N\n"
+          + "\023security_projection\030e \001(\0132"
+          + "/.google.cloud.recommender.v1.SecurityProjectionH\000\022Z\n"
+          + "\031sustainability_projection\030f"
+          + " \001(\01325.google.cloud.recommender.v1.SustainabilityProjectionH\000\022T\n"
+          + "\026reliability_projection\030g"
+          + " \001(\01322.google.cloud.recommender.v1.ReliabilityProjectionH\000\022\017\n"
+          + "\007service\030\003 \001(\t\"\205\001\n"
           + "\010Category\022\030\n"
           + "\024CATEGORY_UNSPECIFIED\020\000\022\010\n"
           + "\004COST\020\001\022\014\n"
@@ -217,10 +220,10 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
           + "\013RELIABILITY\020\006B\014\n\n"
           + "projection\"\336\002\n"
           + "\027RecommendationStateInfo\022I\n"
-          + "\005state\030\001 \001(\0162:."
-          + "google.cloud.recommender.v1.RecommendationStateInfo.State\022_\n"
-          + "\016state_metadata\030\002 \003("
-          + "\0132G.google.cloud.recommender.v1.RecommendationStateInfo.StateMetadataEntry\0324\n"
+          + "\005state\030\001 \001(\0162:"
+          + ".google.cloud.recommender.v1.RecommendationStateInfo.State\022_\n"
+          + "\016state_metadata\030\002 \003"
+          + "(\0132G.google.cloud.recommender.v1.RecommendationStateInfo.StateMetadataEntry\0324\n"
           + "\022StateMetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"a\n"
@@ -231,19 +234,20 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
           + "\tSUCCEEDED\020\003\022\n\n"
           + "\006FAILED\020\004\022\r\n"
           + "\tDISMISSED\020\005B\336\003\n"
-          + "\037com.google.cloud.recommender.v1P\001ZAcloud.google."
-          + "com/go/recommender/apiv1/recommenderpb;r"
-          + "ecommenderpb\242\002\004CREC\252\002\033Google.Cloud.Recommender.V1\352A\317\002\n"
-          + "&recommender.googleapis.com/Recommender\022Bprojects/{project}/locati"
-          + "ons/{location}/recommenders/{recommender}\022QbillingAccounts/{billing_account}/loc"
-          + "ations/{location}/recommenders/{recommender}\022@folders/{folder}/locations/{locati"
-          + "on}/recommenders/{recommender}\022Lorganizations/{organization}/locations/{location"
-          + "}/recommenders/{recommender}b\006proto3"
+          + "\037com.google.cloud.recommender.v1P\001ZAcloud.google"
+          + ".com/go/recommender/apiv1/recommenderpb;"
+          + "recommenderpb\242\002\004CREC\252\002\033Google.Cloud.Recommender.V1\352A\317\002\n"
+          + "&recommender.googleapis.com/Recommender\022Bprojects/{project}/locat"
+          + "ions/{location}/recommenders/{recommender}\022QbillingAccounts/{billing_account}/lo"
+          + "cations/{location}/recommenders/{recommender}\022@folders/{folder}/locations/{locat"
+          + "ion}/recommenders/{recommender}\022Lorganizations/{organization}/locations/{locatio"
+          + "n}/recommenders/{recommender}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -268,6 +272,7 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
               "Etag",
               "AssociatedInsights",
               "XorGroupId",
+              "TargetResources",
             });
     internal_static_google_cloud_recommender_v1_Recommendation_InsightReference_descriptor =
         internal_static_google_cloud_recommender_v1_Recommendation_descriptor.getNestedType(0);
@@ -378,6 +383,7 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
               "SecurityProjection",
               "SustainabilityProjection",
               "ReliabilityProjection",
+              "Service",
               "Projection",
             });
     internal_static_google_cloud_recommender_v1_RecommendationStateInfo_descriptor =
@@ -398,6 +404,7 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
               "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
@@ -405,6 +412,7 @@ public final class RecommendationOuterClass extends com.google.protobuf.Generate
     com.google.type.MoneyProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

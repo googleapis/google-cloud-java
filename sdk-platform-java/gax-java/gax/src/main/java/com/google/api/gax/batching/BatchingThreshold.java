@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * The interface representing a threshold to be used in ThresholdBatcher. Thresholds do not need to
  * be thread-safe if they are only used inside ThresholdBatcher.
  */
+@NullMarked
 public interface BatchingThreshold<E> {
 
   /**

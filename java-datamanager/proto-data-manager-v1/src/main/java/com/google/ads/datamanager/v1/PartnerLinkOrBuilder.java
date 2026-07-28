@@ -167,4 +167,140 @@ public interface PartnerLinkOrBuilder
    * </code>
    */
   com.google.ads.datamanager.v1.ProductAccountOrBuilder getPartnerAccountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The set of features supported for the partner link.
+   * If not specified, the system behavior defaults to
+   * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for featureSet.
+   */
+  int getFeatureSetValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The set of features supported for the partner link.
+   * If not specified, the system behavior defaults to
+   * [FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AUDIENCE_AND_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.FeatureSet feature_set = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The featureSet.
+   */
+  com.google.ads.datamanager.v1.FeatureSet getFeatureSet();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the partnerCustomerAccount field is set.
+   */
+  boolean hasPartnerCustomerAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The partnerCustomerAccount.
+   */
+  com.google.ads.datamanager.v1.PartnerCustomerAccount getPartnerCustomerAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The customer account in the partner system.
+   * This is required for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT]
+   * feature set.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerCustomerAccount partner_customer_account = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.PartnerCustomerAccountOrBuilder
+      getPartnerCustomerAccountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the partnerLinkMetadata field is set.
+   */
+  boolean hasPartnerLinkMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The partnerLinkMetadata.
+   */
+  com.google.ads.datamanager.v1.PartnerLinkMetadata getPartnerLinkMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Metadata associated with the partner link.
+   * This is optional and only accepted for partner links with the
+   * [FEATURE_SET_AD_EVENT_MANAGEMENT][google.ads.datamanager.v1.FeatureSet.FEATURE_SET_AD_EVENT_MANAGEMENT].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.PartnerLinkMetadata partner_link_metadata = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.PartnerLinkMetadataOrBuilder getPartnerLinkMetadataOrBuilder();
 }

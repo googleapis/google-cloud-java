@@ -271,6 +271,1651 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.ErrorHandlingSettings.ErrorHandlingStrategy)
   }
 
+  public interface FallbackResponseConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getCustomFallbackMessagesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsCustomFallbackMessages(java.lang.String key);
+
+    /** Use {@link #getCustomFallbackMessagesMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessages();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessagesMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getCustomFallbackMessagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getCustomFallbackMessagesOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of fallback attempts to make before the
+     * agent emitting [EndSession][google.cloud.ces.v1beta.EndSession] Signal.
+     * </pre>
+     *
+     * <code>int32 max_fallback_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxFallbackAttempts.
+     */
+    int getMaxFallbackAttempts();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for handling fallback responses.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig}
+   */
+  public static final class FallbackResponseConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)
+      FallbackResponseConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "FallbackResponseConfig");
+    }
+
+    // Use FallbackResponseConfig.newBuilder() to construct.
+    private FallbackResponseConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FallbackResponseConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.AppProto
+          .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetCustomFallbackMessages();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.AppProto
+          .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.class,
+              com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder
+                  .class);
+    }
+
+    public static final int CUSTOM_FALLBACK_MESSAGES_FIELD_NUMBER = 1;
+
+    private static final class CustomFallbackMessagesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.ces.v1beta.AppProto
+                  .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_CustomFallbackMessagesEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        customFallbackMessages_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetCustomFallbackMessages() {
+      if (customFallbackMessages_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            CustomFallbackMessagesDefaultEntryHolder.defaultEntry);
+      }
+      return customFallbackMessages_;
+    }
+
+    public int getCustomFallbackMessagesCount() {
+      return internalGetCustomFallbackMessages().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsCustomFallbackMessages(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetCustomFallbackMessages().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getCustomFallbackMessagesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessages() {
+      return getCustomFallbackMessagesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessagesMap() {
+      return internalGetCustomFallbackMessages().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getCustomFallbackMessagesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCustomFallbackMessages().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The fallback messages in case of system errors (e.g. LLM
+     * errors), mapped by [supported language
+     * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getCustomFallbackMessagesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetCustomFallbackMessages().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int MAX_FALLBACK_ATTEMPTS_FIELD_NUMBER = 2;
+    private int maxFallbackAttempts_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of fallback attempts to make before the
+     * agent emitting [EndSession][google.cloud.ces.v1beta.EndSession] Signal.
+     * </pre>
+     *
+     * <code>int32 max_fallback_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxFallbackAttempts.
+     */
+    @java.lang.Override
+    public int getMaxFallbackAttempts() {
+      return maxFallbackAttempts_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+          output,
+          internalGetCustomFallbackMessages(),
+          CustomFallbackMessagesDefaultEntryHolder.defaultEntry,
+          1);
+      if (maxFallbackAttempts_ != 0) {
+        output.writeInt32(2, maxFallbackAttempts_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetCustomFallbackMessages().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> customFallbackMessages__ =
+            CustomFallbackMessagesDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, customFallbackMessages__);
+      }
+      if (maxFallbackAttempts_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxFallbackAttempts_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig other =
+          (com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig) obj;
+
+      if (!internalGetCustomFallbackMessages().equals(other.internalGetCustomFallbackMessages()))
+        return false;
+      if (getMaxFallbackAttempts() != other.getMaxFallbackAttempts()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetCustomFallbackMessages().getMap().isEmpty()) {
+        hash = (37 * hash) + CUSTOM_FALLBACK_MESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetCustomFallbackMessages().hashCode();
+      }
+      hash = (37 * hash) + MAX_FALLBACK_ATTEMPTS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxFallbackAttempts();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for handling fallback responses.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetCustomFallbackMessages();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableCustomFallbackMessages();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.class,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableCustomFallbackMessages().clear();
+        maxFallbackAttempts_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_FallbackResponseConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig build() {
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+          buildPartial() {
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig result =
+            new com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.customFallbackMessages_ = internalGetCustomFallbackMessages();
+          result.customFallbackMessages_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxFallbackAttempts_ = maxFallbackAttempts_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig) {
+          return mergeFrom(
+              (com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig other) {
+        if (other
+            == com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+                .getDefaultInstance()) return this;
+        internalGetMutableCustomFallbackMessages()
+            .mergeFrom(other.internalGetCustomFallbackMessages());
+        bitField0_ |= 0x00000001;
+        if (other.getMaxFallbackAttempts() != 0) {
+          setMaxFallbackAttempts(other.getMaxFallbackAttempts());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                      customFallbackMessages__ =
+                          input.readMessage(
+                              CustomFallbackMessagesDefaultEntryHolder.defaultEntry
+                                  .getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableCustomFallbackMessages()
+                      .getMutableMap()
+                      .put(customFallbackMessages__.getKey(), customFallbackMessages__.getValue());
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  maxFallbackAttempts_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          customFallbackMessages_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetCustomFallbackMessages() {
+        if (customFallbackMessages_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              CustomFallbackMessagesDefaultEntryHolder.defaultEntry);
+        }
+        return customFallbackMessages_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableCustomFallbackMessages() {
+        if (customFallbackMessages_ == null) {
+          customFallbackMessages_ =
+              com.google.protobuf.MapField.newMapField(
+                  CustomFallbackMessagesDefaultEntryHolder.defaultEntry);
+        }
+        if (!customFallbackMessages_.isMutable()) {
+          customFallbackMessages_ = customFallbackMessages_.copy();
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return customFallbackMessages_;
+      }
+
+      public int getCustomFallbackMessagesCount() {
+        return internalGetCustomFallbackMessages().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsCustomFallbackMessages(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetCustomFallbackMessages().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getCustomFallbackMessagesMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessages() {
+        return getCustomFallbackMessagesMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getCustomFallbackMessagesMap() {
+        return internalGetCustomFallbackMessages().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getCustomFallbackMessagesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetCustomFallbackMessages().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getCustomFallbackMessagesOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetCustomFallbackMessages().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearCustomFallbackMessages() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableCustomFallbackMessages().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeCustomFallbackMessages(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableCustomFallbackMessages().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableCustomFallbackMessages() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableCustomFallbackMessages().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putCustomFallbackMessages(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableCustomFallbackMessages().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The fallback messages in case of system errors (e.g. LLM
+       * errors), mapped by [supported language
+       * code](https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/language).
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; custom_fallback_messages = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllCustomFallbackMessages(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableCustomFallbackMessages().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+
+      private int maxFallbackAttempts_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of fallback attempts to make before the
+       * agent emitting [EndSession][google.cloud.ces.v1beta.EndSession] Signal.
+       * </pre>
+       *
+       * <code>int32 max_fallback_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The maxFallbackAttempts.
+       */
+      @java.lang.Override
+      public int getMaxFallbackAttempts() {
+        return maxFallbackAttempts_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of fallback attempts to make before the
+       * agent emitting [EndSession][google.cloud.ces.v1beta.EndSession] Signal.
+       * </pre>
+       *
+       * <code>int32 max_fallback_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The maxFallbackAttempts to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxFallbackAttempts(int value) {
+
+        maxFallbackAttempts_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of fallback attempts to make before the
+       * agent emitting [EndSession][google.cloud.ces.v1beta.EndSession] Signal.
+       * </pre>
+       *
+       * <code>int32 max_fallback_attempts = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxFallbackAttempts() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxFallbackAttempts_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig)
+    private static final com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig();
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FallbackResponseConfig> PARSER =
+        new com.google.protobuf.AbstractParser<FallbackResponseConfig>() {
+          @java.lang.Override
+          public FallbackResponseConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FallbackResponseConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FallbackResponseConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EndSessionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to escalate the session in
+     * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+     * escalated, [metadata in
+     * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+     * `session_escalated = true`. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+     * for details.
+     * </pre>
+     *
+     * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the escalateSession field is set.
+     */
+    boolean hasEscalateSession();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to escalate the session in
+     * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+     * escalated, [metadata in
+     * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+     * `session_escalated = true`. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+     * for details.
+     * </pre>
+     *
+     * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The escalateSession.
+     */
+    boolean getEscalateSession();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for ending the session in case of system errors (e.g. LLM
+   * errors).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig}
+   */
+  public static final class EndSessionConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)
+      EndSessionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EndSessionConfig");
+    }
+
+    // Use EndSessionConfig.newBuilder() to construct.
+    private EndSessionConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EndSessionConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.AppProto
+          .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_EndSessionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.AppProto
+          .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_EndSessionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.class,
+              com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ESCALATE_SESSION_FIELD_NUMBER = 1;
+    private boolean escalateSession_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to escalate the session in
+     * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+     * escalated, [metadata in
+     * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+     * `session_escalated = true`. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+     * for details.
+     * </pre>
+     *
+     * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the escalateSession field is set.
+     */
+    @java.lang.Override
+    public boolean hasEscalateSession() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to escalate the session in
+     * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+     * escalated, [metadata in
+     * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+     * `session_escalated = true`. See
+     * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+     * for details.
+     * </pre>
+     *
+     * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The escalateSession.
+     */
+    @java.lang.Override
+    public boolean getEscalateSession() {
+      return escalateSession_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, escalateSession_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, escalateSession_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig other =
+          (com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig) obj;
+
+      if (hasEscalateSession() != other.hasEscalateSession()) return false;
+      if (hasEscalateSession()) {
+        if (getEscalateSession() != other.getEscalateSession()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEscalateSession()) {
+        hash = (37 * hash) + ESCALATE_SESSION_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEscalateSession());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for ending the session in case of system errors (e.g. LLM
+     * errors).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_EndSessionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_EndSessionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.class,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        escalateSession_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.AppProto
+            .internal_static_google_cloud_ces_v1beta_ErrorHandlingSettings_EndSessionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig build() {
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig buildPartial() {
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig result =
+            new com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.escalateSession_ = escalateSession_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig) {
+          return mergeFrom(
+              (com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig other) {
+        if (other
+            == com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+                .getDefaultInstance()) return this;
+        if (other.hasEscalateSession()) {
+          setEscalateSession(other.getEscalateSession());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  escalateSession_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean escalateSession_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to escalate the session in
+       * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+       * escalated, [metadata in
+       * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+       * `session_escalated = true`. See
+       * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+       * for details.
+       * </pre>
+       *
+       * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the escalateSession field is set.
+       */
+      @java.lang.Override
+      public boolean hasEscalateSession() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to escalate the session in
+       * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+       * escalated, [metadata in
+       * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+       * `session_escalated = true`. See
+       * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+       * for details.
+       * </pre>
+       *
+       * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The escalateSession.
+       */
+      @java.lang.Override
+      public boolean getEscalateSession() {
+        return escalateSession_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to escalate the session in
+       * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+       * escalated, [metadata in
+       * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+       * `session_escalated = true`. See
+       * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+       * for details.
+       * </pre>
+       *
+       * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The escalateSession to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEscalateSession(boolean value) {
+
+        escalateSession_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to escalate the session in
+       * [EndSession][google.cloud.ces.v1beta.EndSession]. If session is
+       * escalated, [metadata in
+       * EndSession][google.cloud.ces.v1beta.EndSession.metadata] will contain
+       * `session_escalated = true`. See
+       * https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/deploy/google-telephony-platform#transfer_a_call_to_a_human_agent
+       * for details.
+       * </pre>
+       *
+       * <code>optional bool escalate_session = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEscalateSession() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        escalateSession_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig)
+    private static final com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig();
+    }
+
+    public static com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EndSessionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EndSessionConfig>() {
+          @java.lang.Override
+          public EndSessionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EndSessionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EndSessionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int ERROR_HANDLING_STRATEGY_FIELD_NUMBER = 1;
   private int errorHandlingStrategy_ = 0;
 
@@ -316,6 +1961,133 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
         : result;
   }
 
+  public static final int FALLBACK_RESPONSE_CONFIG_FIELD_NUMBER = 2;
+  private com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+      fallbackResponseConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fallbackResponseConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasFallbackResponseConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fallbackResponseConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+      getFallbackResponseConfig() {
+    return fallbackResponseConfig_ == null
+        ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+            .getDefaultInstance()
+        : fallbackResponseConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder
+      getFallbackResponseConfigOrBuilder() {
+    return fallbackResponseConfig_ == null
+        ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+            .getDefaultInstance()
+        : fallbackResponseConfig_;
+  }
+
+  public static final int END_SESSION_CONFIG_FIELD_NUMBER = 3;
+  private com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig endSessionConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endSessionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndSessionConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endSessionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig getEndSessionConfig() {
+    return endSessionConfig_ == null
+        ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.getDefaultInstance()
+        : endSessionConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder
+      getEndSessionConfigOrBuilder() {
+    return endSessionConfig_ == null
+        ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.getDefaultInstance()
+        : endSessionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -336,6 +2108,12 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
             .getNumber()) {
       output.writeEnum(1, errorHandlingStrategy_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getFallbackResponseConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getEndSessionConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -350,6 +2128,13 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
             .ERROR_HANDLING_STRATEGY_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, errorHandlingStrategy_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFallbackResponseConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndSessionConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -368,6 +2153,14 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
         (com.google.cloud.ces.v1beta.ErrorHandlingSettings) obj;
 
     if (errorHandlingStrategy_ != other.errorHandlingStrategy_) return false;
+    if (hasFallbackResponseConfig() != other.hasFallbackResponseConfig()) return false;
+    if (hasFallbackResponseConfig()) {
+      if (!getFallbackResponseConfig().equals(other.getFallbackResponseConfig())) return false;
+    }
+    if (hasEndSessionConfig() != other.hasEndSessionConfig()) return false;
+    if (hasEndSessionConfig()) {
+      if (!getEndSessionConfig().equals(other.getEndSessionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -381,6 +2174,14 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ERROR_HANDLING_STRATEGY_FIELD_NUMBER;
     hash = (53 * hash) + errorHandlingStrategy_;
+    if (hasFallbackResponseConfig()) {
+      hash = (37 * hash) + FALLBACK_RESPONSE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getFallbackResponseConfig().hashCode();
+    }
+    if (hasEndSessionConfig()) {
+      hash = (37 * hash) + END_SESSION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEndSessionConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -511,10 +2312,20 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.ces.v1beta.ErrorHandlingSettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetFallbackResponseConfigFieldBuilder();
+        internalGetEndSessionConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -522,6 +2333,16 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       errorHandlingStrategy_ = 0;
+      fallbackResponseConfig_ = null;
+      if (fallbackResponseConfigBuilder_ != null) {
+        fallbackResponseConfigBuilder_.dispose();
+        fallbackResponseConfigBuilder_ = null;
+      }
+      endSessionConfig_ = null;
+      if (endSessionConfigBuilder_ != null) {
+        endSessionConfigBuilder_.dispose();
+        endSessionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -561,6 +2382,20 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.errorHandlingStrategy_ = errorHandlingStrategy_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fallbackResponseConfig_ =
+            fallbackResponseConfigBuilder_ == null
+                ? fallbackResponseConfig_
+                : fallbackResponseConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endSessionConfig_ =
+            endSessionConfigBuilder_ == null ? endSessionConfig_ : endSessionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -578,6 +2413,12 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
         return this;
       if (other.errorHandlingStrategy_ != 0) {
         setErrorHandlingStrategyValue(other.getErrorHandlingStrategyValue());
+      }
+      if (other.hasFallbackResponseConfig()) {
+        mergeFallbackResponseConfig(other.getFallbackResponseConfig());
+      }
+      if (other.hasEndSessionConfig()) {
+        mergeEndSessionConfig(other.getEndSessionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -611,6 +2452,21 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    internalGetFallbackResponseConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetEndSessionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -738,6 +2594,462 @@ public final class ErrorHandlingSettings extends com.google.protobuf.GeneratedMe
       errorHandlingStrategy_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        fallbackResponseConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder>
+        fallbackResponseConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the fallbackResponseConfig field is set.
+     */
+    public boolean hasFallbackResponseConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fallbackResponseConfig.
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+        getFallbackResponseConfig() {
+      if (fallbackResponseConfigBuilder_ == null) {
+        return fallbackResponseConfig_ == null
+            ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+                .getDefaultInstance()
+            : fallbackResponseConfig_;
+      } else {
+        return fallbackResponseConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFallbackResponseConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig value) {
+      if (fallbackResponseConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fallbackResponseConfig_ = value;
+      } else {
+        fallbackResponseConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFallbackResponseConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder
+            builderForValue) {
+      if (fallbackResponseConfigBuilder_ == null) {
+        fallbackResponseConfig_ = builderForValue.build();
+      } else {
+        fallbackResponseConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFallbackResponseConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig value) {
+      if (fallbackResponseConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && fallbackResponseConfig_ != null
+            && fallbackResponseConfig_
+                != com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+                    .getDefaultInstance()) {
+          getFallbackResponseConfigBuilder().mergeFrom(value);
+        } else {
+          fallbackResponseConfig_ = value;
+        }
+      } else {
+        fallbackResponseConfigBuilder_.mergeFrom(value);
+      }
+      if (fallbackResponseConfig_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFallbackResponseConfig() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fallbackResponseConfig_ = null;
+      if (fallbackResponseConfigBuilder_ != null) {
+        fallbackResponseConfigBuilder_.dispose();
+        fallbackResponseConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder
+        getFallbackResponseConfigBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetFallbackResponseConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder
+        getFallbackResponseConfigOrBuilder() {
+      if (fallbackResponseConfigBuilder_ != null) {
+        return fallbackResponseConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return fallbackResponseConfig_ == null
+            ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+                .getDefaultInstance()
+            : fallbackResponseConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for handling fallback responses.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder>
+        internalGetFallbackResponseConfigFieldBuilder() {
+      if (fallbackResponseConfigBuilder_ == null) {
+        fallbackResponseConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig.Builder,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder>(
+                getFallbackResponseConfig(), getParentForChildren(), isClean());
+        fallbackResponseConfig_ = null;
+      }
+      return fallbackResponseConfigBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig endSessionConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder>
+        endSessionConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endSessionConfig field is set.
+     */
+    public boolean hasEndSessionConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endSessionConfig.
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+        getEndSessionConfig() {
+      if (endSessionConfigBuilder_ == null) {
+        return endSessionConfig_ == null
+            ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+                .getDefaultInstance()
+            : endSessionConfig_;
+      } else {
+        return endSessionConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndSessionConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig value) {
+      if (endSessionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endSessionConfig_ = value;
+      } else {
+        endSessionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndSessionConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder
+            builderForValue) {
+      if (endSessionConfigBuilder_ == null) {
+        endSessionConfig_ = builderForValue.build();
+      } else {
+        endSessionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEndSessionConfig(
+        com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig value) {
+      if (endSessionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && endSessionConfig_ != null
+            && endSessionConfig_
+                != com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+                    .getDefaultInstance()) {
+          getEndSessionConfigBuilder().mergeFrom(value);
+        } else {
+          endSessionConfig_ = value;
+        }
+      } else {
+        endSessionConfigBuilder_.mergeFrom(value);
+      }
+      if (endSessionConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEndSessionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endSessionConfig_ = null;
+      if (endSessionConfigBuilder_ != null) {
+        endSessionConfigBuilder_.dispose();
+        endSessionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder
+        getEndSessionConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetEndSessionConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder
+        getEndSessionConfigOrBuilder() {
+      if (endSessionConfigBuilder_ != null) {
+        return endSessionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return endSessionConfig_ == null
+            ? com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig
+                .getDefaultInstance()
+            : endSessionConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for ending the session in case of system errors
+     * (e.g. LLM errors).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder,
+            com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder>
+        internalGetEndSessionConfigFieldBuilder() {
+      if (endSessionConfigBuilder_ == null) {
+        endSessionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig.Builder,
+                com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder>(
+                getEndSessionConfig(), getParentForChildren(), isClean());
+        endSessionConfig_ = null;
+      }
+      return endSessionConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ErrorHandlingSettings)

@@ -42,11 +42,15 @@ public final class TelemetryUtils {
    * @param status The status of the operation or attempt.
    * @return The map of attributes.
    */
-  public static Map<String, String> buildMetricAttributes(String methodName, String status) {
+  public static Map<String, String> buildMetricAttributes(
+      String methodName, String status, String databaseId) {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_SERVICE, TelemetryConstants.SERVICE_VALUE);
+    if (databaseId != null) {
+      attributes.put(TelemetryConstants.ATTRIBUTES_KEY_DATABASE_ID, databaseId);
+    }
     return attributes;
   }
 
@@ -65,9 +69,10 @@ public final class TelemetryUtils {
       DatastoreMetricsRecorder metricsRecorder,
       Stopwatch operationStopwatch,
       String methodName,
-      String status) {
+      String status,
+      String databaseId) {
     if (methodName != null) {
-      Map<String, String> attributes = buildMetricAttributes(methodName, status);
+      Map<String, String> attributes = buildMetricAttributes(methodName, status, databaseId);
       metricsRecorder.recordOperationLatency(
           operationStopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
       metricsRecorder.recordOperationCount(1, attributes);
@@ -87,7 +92,10 @@ public final class TelemetryUtils {
    * @return A wrapped callable that includes attempt-level metrics recording.
    */
   public static <T> Callable<T> attemptMetricsCallable(
-      Callable<T> callable, DatastoreMetricsRecorder metricsRecorder, String methodName) {
+      Callable<T> callable,
+      DatastoreMetricsRecorder metricsRecorder,
+      String methodName,
+      String databaseId) {
     return () -> {
       Stopwatch stopwatch = Stopwatch.createStarted();
       String status = StatusCode.Code.UNKNOWN.toString();
@@ -99,7 +107,7 @@ public final class TelemetryUtils {
         status = DatastoreException.extractStatusCode(e);
         throw e;
       } finally {
-        Map<String, String> attributes = buildMetricAttributes(methodName, status);
+        Map<String, String> attributes = buildMetricAttributes(methodName, status, databaseId);
         metricsRecorder.recordAttemptLatency(stopwatch.elapsed(TimeUnit.MILLISECONDS), attributes);
         metricsRecorder.recordAttemptCount(1, attributes);
       }

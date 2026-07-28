@@ -401,7 +401,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -428,7 +428,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -1712,7 +1712,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The consumer network where the IP address resides, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1738,7 +1738,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The consumer network where the IP address resides, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1764,7 +1764,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The consumer network where the IP address resides, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1789,7 +1789,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The consumer network where the IP address resides, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1810,7 +1810,7 @@ public final class PscConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The consumer network where the IP address resides, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>

@@ -54,6 +54,14 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
   private DeviceInfo() {
     userAgent_ = "";
     ipAddress_ = "";
+    category_ = "";
+    languageCode_ = "";
+    operatingSystem_ = "";
+    operatingSystemVersion_ = "";
+    model_ = "";
+    brand_ = "";
+    browser_ = "";
+    browserVersion_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -146,7 +154,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The ipAddress.
    */
@@ -180,7 +190,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
    * more details.
    * </pre>
    *
-   * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for ipAddress.
    */
@@ -191,6 +203,470 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CATEGORY_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object category_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of device. For example, “desktop”, “tablet”,
+   * “mobile”, “smart TV”.
+   * </pre>
+   *
+   * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The category.
+   */
+  @java.lang.Override
+  public java.lang.String getCategory() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      category_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of device. For example, “desktop”, “tablet”,
+   * “mobile”, “smart TV”.
+   * </pre>
+   *
+   * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for category.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCategoryBytes() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      category_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language the device uses in ISO 639-1 format.
+   * </pre>
+   *
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The language the device uses in ISO 639-1 format.
+   * </pre>
+   *
+   * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SCREEN_HEIGHT_FIELD_NUMBER = 5;
+  private int screenHeight_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The height of the screen in pixels.
+   * </pre>
+   *
+   * <code>int32 screen_height = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The screenHeight.
+   */
+  @java.lang.Override
+  public int getScreenHeight() {
+    return screenHeight_;
+  }
+
+  public static final int SCREEN_WIDTH_FIELD_NUMBER = 6;
+  private int screenWidth_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The width of the screen in pixels.
+   * </pre>
+   *
+   * <code>int32 screen_width = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The screenWidth.
+   */
+  @java.lang.Override
+  public int getScreenWidth() {
+    return screenWidth_;
+  }
+
+  public static final int OPERATING_SYSTEM_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operatingSystem_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operating system or platform of the device.
+   * </pre>
+   *
+   * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operatingSystem.
+   */
+  @java.lang.Override
+  public java.lang.String getOperatingSystem() {
+    java.lang.Object ref = operatingSystem_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operatingSystem_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The operating system or platform of the device.
+   * </pre>
+   *
+   * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operatingSystem.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOperatingSystemBytes() {
+    java.lang.Object ref = operatingSystem_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      operatingSystem_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OPERATING_SYSTEM_VERSION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operatingSystemVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the operating system or platform.
+   * </pre>
+   *
+   * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The operatingSystemVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getOperatingSystemVersion() {
+    java.lang.Object ref = operatingSystemVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operatingSystemVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the operating system or platform.
+   * </pre>
+   *
+   * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for operatingSystemVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOperatingSystemVersionBytes() {
+    java.lang.Object ref = operatingSystemVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      operatingSystemVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model of the device.
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model of the device.
+   * </pre>
+   *
+   * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BRAND_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object brand_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand of the device.
+   * </pre>
+   *
+   * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The brand.
+   */
+  @java.lang.Override
+  public java.lang.String getBrand() {
+    java.lang.Object ref = brand_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      brand_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand of the device.
+   * </pre>
+   *
+   * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for brand.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBrandBytes() {
+    java.lang.Object ref = brand_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      brand_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BROWSER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object browser_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand or type of the browser.
+   * </pre>
+   *
+   * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The browser.
+   */
+  @java.lang.Override
+  public java.lang.String getBrowser() {
+    java.lang.Object ref = browser_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      browser_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The brand or type of the browser.
+   * </pre>
+   *
+   * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for browser.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBrowserBytes() {
+    java.lang.Object ref = browser_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      browser_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BROWSER_VERSION_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object browserVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the browser.
+   * </pre>
+   *
+   * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The browserVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getBrowserVersion() {
+    java.lang.Object ref = browserVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      browserVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The version of the browser.
+   * </pre>
+   *
+   * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for browserVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBrowserVersionBytes() {
+    java.lang.Object ref = browserVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      browserVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -217,6 +693,36 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, ipAddress_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, languageCode_);
+    }
+    if (screenHeight_ != 0) {
+      output.writeInt32(5, screenHeight_);
+    }
+    if (screenWidth_ != 0) {
+      output.writeInt32(6, screenWidth_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operatingSystem_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, operatingSystem_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operatingSystemVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, operatingSystemVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(brand_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, brand_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(browser_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, browser_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(browserVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, browserVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -231,6 +737,36 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, ipAddress_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(category_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, languageCode_);
+    }
+    if (screenHeight_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, screenHeight_);
+    }
+    if (screenWidth_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, screenWidth_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operatingSystem_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, operatingSystem_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(operatingSystemVersion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, operatingSystemVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(brand_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, brand_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(browser_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, browser_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(browserVersion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, browserVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -249,6 +785,16 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
 
     if (!getUserAgent().equals(other.getUserAgent())) return false;
     if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (!getCategory().equals(other.getCategory())) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (getScreenHeight() != other.getScreenHeight()) return false;
+    if (getScreenWidth() != other.getScreenWidth()) return false;
+    if (!getOperatingSystem().equals(other.getOperatingSystem())) return false;
+    if (!getOperatingSystemVersion().equals(other.getOperatingSystemVersion())) return false;
+    if (!getModel().equals(other.getModel())) return false;
+    if (!getBrand().equals(other.getBrand())) return false;
+    if (!getBrowser().equals(other.getBrowser())) return false;
+    if (!getBrowserVersion().equals(other.getBrowserVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -264,6 +810,26 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getUserAgent().hashCode();
     hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getIpAddress().hashCode();
+    hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+    hash = (53 * hash) + getCategory().hashCode();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + SCREEN_HEIGHT_FIELD_NUMBER;
+    hash = (53 * hash) + getScreenHeight();
+    hash = (37 * hash) + SCREEN_WIDTH_FIELD_NUMBER;
+    hash = (53 * hash) + getScreenWidth();
+    hash = (37 * hash) + OPERATING_SYSTEM_FIELD_NUMBER;
+    hash = (53 * hash) + getOperatingSystem().hashCode();
+    hash = (37 * hash) + OPERATING_SYSTEM_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getOperatingSystemVersion().hashCode();
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + BRAND_FIELD_NUMBER;
+    hash = (53 * hash) + getBrand().hashCode();
+    hash = (37 * hash) + BROWSER_FIELD_NUMBER;
+    hash = (53 * hash) + getBrowser().hashCode();
+    hash = (37 * hash) + BROWSER_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getBrowserVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -406,6 +972,16 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       userAgent_ = "";
       ipAddress_ = "";
+      category_ = "";
+      languageCode_ = "";
+      screenHeight_ = 0;
+      screenWidth_ = 0;
+      operatingSystem_ = "";
+      operatingSystemVersion_ = "";
+      model_ = "";
+      brand_ = "";
+      browser_ = "";
+      browserVersion_ = "";
       return this;
     }
 
@@ -448,6 +1024,36 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ipAddress_ = ipAddress_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.screenHeight_ = screenHeight_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.screenWidth_ = screenWidth_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.operatingSystem_ = operatingSystem_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.operatingSystemVersion_ = operatingSystemVersion_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.brand_ = brand_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.browser_ = browser_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.browserVersion_ = browserVersion_;
+      }
     }
 
     @java.lang.Override
@@ -470,6 +1076,52 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getCategory().isEmpty()) {
+        category_ = other.category_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.getScreenHeight() != 0) {
+        setScreenHeight(other.getScreenHeight());
+      }
+      if (other.getScreenWidth() != 0) {
+        setScreenWidth(other.getScreenWidth());
+      }
+      if (!other.getOperatingSystem().isEmpty()) {
+        operatingSystem_ = other.operatingSystem_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getOperatingSystemVersion().isEmpty()) {
+        operatingSystemVersion_ = other.operatingSystemVersion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getBrand().isEmpty()) {
+        brand_ = other.brand_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.getBrowser().isEmpty()) {
+        browser_ = other.browser_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getBrowserVersion().isEmpty()) {
+        browserVersion_ = other.browserVersion_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -510,6 +1162,66 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                category_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 40:
+              {
+                screenHeight_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                screenWidth_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 58:
+              {
+                operatingSystem_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 66:
+              {
+                operatingSystemVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                model_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                brand_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                browser_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                browserVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -659,7 +1371,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The ipAddress.
      */
@@ -692,7 +1406,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return The bytes for ipAddress.
      */
@@ -725,7 +1441,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -757,7 +1475,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -785,7 +1505,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
      * more details.
      * </pre>
      *
-     * <code>string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string ip_address = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -797,6 +1519,1011 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object category_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of device. For example, “desktop”, “tablet”,
+     * “mobile”, “smart TV”.
+     * </pre>
+     *
+     * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The category.
+     */
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of device. For example, “desktop”, “tablet”,
+     * “mobile”, “smart TV”.
+     * </pre>
+     *
+     * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for category.
+     */
+    public com.google.protobuf.ByteString getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of device. For example, “desktop”, “tablet”,
+     * “mobile”, “smart TV”.
+     * </pre>
+     *
+     * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategory(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      category_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of device. For example, “desktop”, “tablet”,
+     * “mobile”, “smart TV”.
+     * </pre>
+     *
+     * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCategory() {
+      category_ = getDefaultInstance().getCategory();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The category of device. For example, “desktop”, “tablet”,
+     * “mobile”, “smart TV”.
+     * </pre>
+     *
+     * <code>string category = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for category to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategoryBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      category_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language the device uses in ISO 639-1 format.
+     * </pre>
+     *
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language the device uses in ISO 639-1 format.
+     * </pre>
+     *
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language the device uses in ISO 639-1 format.
+     * </pre>
+     *
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language the device uses in ISO 639-1 format.
+     * </pre>
+     *
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language the device uses in ISO 639-1 format.
+     * </pre>
+     *
+     * <code>string language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int screenHeight_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The height of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_height = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The screenHeight.
+     */
+    @java.lang.Override
+    public int getScreenHeight() {
+      return screenHeight_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The height of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_height = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The screenHeight to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScreenHeight(int value) {
+
+      screenHeight_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The height of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_height = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScreenHeight() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      screenHeight_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int screenWidth_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The width of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_width = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The screenWidth.
+     */
+    @java.lang.Override
+    public int getScreenWidth() {
+      return screenWidth_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The width of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_width = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The screenWidth to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScreenWidth(int value) {
+
+      screenWidth_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The width of the screen in pixels.
+     * </pre>
+     *
+     * <code>int32 screen_width = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScreenWidth() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      screenWidth_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object operatingSystem_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operating system or platform of the device.
+     * </pre>
+     *
+     * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The operatingSystem.
+     */
+    public java.lang.String getOperatingSystem() {
+      java.lang.Object ref = operatingSystem_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operatingSystem_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operating system or platform of the device.
+     * </pre>
+     *
+     * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for operatingSystem.
+     */
+    public com.google.protobuf.ByteString getOperatingSystemBytes() {
+      java.lang.Object ref = operatingSystem_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        operatingSystem_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operating system or platform of the device.
+     * </pre>
+     *
+     * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The operatingSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperatingSystem(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      operatingSystem_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operating system or platform of the device.
+     * </pre>
+     *
+     * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOperatingSystem() {
+      operatingSystem_ = getDefaultInstance().getOperatingSystem();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The operating system or platform of the device.
+     * </pre>
+     *
+     * <code>string operating_system = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for operatingSystem to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperatingSystemBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      operatingSystem_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object operatingSystemVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the operating system or platform.
+     * </pre>
+     *
+     * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The operatingSystemVersion.
+     */
+    public java.lang.String getOperatingSystemVersion() {
+      java.lang.Object ref = operatingSystemVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operatingSystemVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the operating system or platform.
+     * </pre>
+     *
+     * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for operatingSystemVersion.
+     */
+    public com.google.protobuf.ByteString getOperatingSystemVersionBytes() {
+      java.lang.Object ref = operatingSystemVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        operatingSystemVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the operating system or platform.
+     * </pre>
+     *
+     * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The operatingSystemVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperatingSystemVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      operatingSystemVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the operating system or platform.
+     * </pre>
+     *
+     * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOperatingSystemVersion() {
+      operatingSystemVersion_ = getDefaultInstance().getOperatingSystemVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the operating system or platform.
+     * </pre>
+     *
+     * <code>string operating_system_version = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for operatingSystemVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOperatingSystemVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      operatingSystemVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model of the device.
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model of the device.
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model of the device.
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      model_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model of the device.
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model of the device.
+     * </pre>
+     *
+     * <code>string model = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      model_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object brand_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand of the device.
+     * </pre>
+     *
+     * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The brand.
+     */
+    public java.lang.String getBrand() {
+      java.lang.Object ref = brand_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        brand_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand of the device.
+     * </pre>
+     *
+     * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for brand.
+     */
+    public com.google.protobuf.ByteString getBrandBytes() {
+      java.lang.Object ref = brand_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        brand_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand of the device.
+     * </pre>
+     *
+     * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The brand to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrand(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      brand_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand of the device.
+     * </pre>
+     *
+     * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBrand() {
+      brand_ = getDefaultInstance().getBrand();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand of the device.
+     * </pre>
+     *
+     * <code>string brand = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for brand to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrandBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      brand_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object browser_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand or type of the browser.
+     * </pre>
+     *
+     * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The browser.
+     */
+    public java.lang.String getBrowser() {
+      java.lang.Object ref = browser_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        browser_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand or type of the browser.
+     * </pre>
+     *
+     * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for browser.
+     */
+    public com.google.protobuf.ByteString getBrowserBytes() {
+      java.lang.Object ref = browser_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        browser_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand or type of the browser.
+     * </pre>
+     *
+     * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The browser to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrowser(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      browser_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand or type of the browser.
+     * </pre>
+     *
+     * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBrowser() {
+      browser_ = getDefaultInstance().getBrowser();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The brand or type of the browser.
+     * </pre>
+     *
+     * <code>string browser = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for browser to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrowserBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      browser_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object browserVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the browser.
+     * </pre>
+     *
+     * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The browserVersion.
+     */
+    public java.lang.String getBrowserVersion() {
+      java.lang.Object ref = browserVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        browserVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the browser.
+     * </pre>
+     *
+     * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for browserVersion.
+     */
+    public com.google.protobuf.ByteString getBrowserVersionBytes() {
+      java.lang.Object ref = browserVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        browserVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the browser.
+     * </pre>
+     *
+     * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The browserVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrowserVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      browserVersion_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the browser.
+     * </pre>
+     *
+     * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBrowserVersion() {
+      browserVersion_ = getDefaultInstance().getBrowserVersion();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The version of the browser.
+     * </pre>
+     *
+     * <code>string browser_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for browserVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBrowserVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      browserVersion_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

@@ -83,6 +83,8 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SOURCE(4),
     TARGET(5),
+    SOURCES(6),
+    TARGETS(7),
     CRITERIA_NOT_SET(0);
     private final int value;
 
@@ -106,6 +108,10 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
           return SOURCE;
         case 5:
           return TARGET;
+        case 6:
+          return SOURCES;
+        case 7:
+          return TARGETS;
         case 0:
           return CRITERIA_NOT_SET;
         default:
@@ -305,6 +311,164 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.datacatalog.lineage.v1.EntityReference.getDefaultInstance();
   }
 
+  public static final int SOURCES_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **sources** field to
+   * retrieve all links that lead from the specified assets to downstream
+   * assets. This field is similar to the `source`
+   * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sources field is set.
+   */
+  @java.lang.Override
+  public boolean hasSources() {
+    return criteriaCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **sources** field to
+   * retrieve all links that lead from the specified assets to downstream
+   * assets. This field is similar to the `source`
+   * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sources.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference getSources() {
+    if (criteriaCase_ == 6) {
+      return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+    }
+    return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **sources** field to
+   * retrieve all links that lead from the specified assets to downstream
+   * assets. This field is similar to the `source`
+   * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder
+      getSourcesOrBuilder() {
+    if (criteriaCase_ == 6) {
+      return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+    }
+    return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+  }
+
+  public static final int TARGETS_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **targets** field to
+   * retrieve all links that lead from upstream assets to the specified
+   * assets. This field is similar to the `target`
+   * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the targets field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargets() {
+    return criteriaCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **targets** field to
+   * retrieve all links that lead from upstream assets to the specified
+   * assets. This field is similar to the `target`
+   * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The targets.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference getTargets() {
+    if (criteriaCase_ == 7) {
+      return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+    }
+    return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Send a list of asset information in the **targets** field to
+   * retrieve all links that lead from upstream assets to the specified
+   * assets. This field is similar to the `target`
+   * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+   * field but allows providing multiple entities.
+   * All entities within the `MultipleEntityReference` must have the same
+   * `fully_qualified_name`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder
+      getTargetsOrBuilder() {
+    if (criteriaCase_ == 7) {
+      return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+    }
+    return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
 
@@ -420,6 +584,14 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     if (criteriaCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.datacatalog.lineage.v1.EntityReference) criteria_);
     }
+    if (criteriaCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_);
+    }
+    if (criteriaCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -448,6 +620,16 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.datacatalog.lineage.v1.EntityReference) criteria_);
     }
+    if (criteriaCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_);
+    }
+    if (criteriaCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -474,6 +656,12 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         break;
       case 5:
         if (!getTarget().equals(other.getTarget())) return false;
+        break;
+      case 6:
+        if (!getSources().equals(other.getSources())) return false;
+        break;
+      case 7:
+        if (!getTargets().equals(other.getTargets())) return false;
         break;
       case 0:
       default:
@@ -503,6 +691,14 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       case 5:
         hash = (37 * hash) + TARGET_FIELD_NUMBER;
         hash = (53 * hash) + getTarget().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSources().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + TARGETS_FIELD_NUMBER;
+        hash = (53 * hash) + getTargets().hashCode();
         break;
       case 0:
       default:
@@ -656,6 +852,12 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       if (targetBuilder_ != null) {
         targetBuilder_.clear();
       }
+      if (sourcesBuilder_ != null) {
+        sourcesBuilder_.clear();
+      }
+      if (targetsBuilder_ != null) {
+        targetsBuilder_.clear();
+      }
       pageSize_ = 0;
       pageToken_ = "";
       criteriaCase_ = 0;
@@ -700,10 +902,10 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.pageSize_ = pageSize_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.pageToken_ = pageToken_;
       }
     }
@@ -717,6 +919,12 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       }
       if (criteriaCase_ == 5 && targetBuilder_ != null) {
         result.criteria_ = targetBuilder_.build();
+      }
+      if (criteriaCase_ == 6 && sourcesBuilder_ != null) {
+        result.criteria_ = sourcesBuilder_.build();
+      }
+      if (criteriaCase_ == 7 && targetsBuilder_ != null) {
+        result.criteria_ = targetsBuilder_.build();
       }
     }
 
@@ -743,7 +951,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getCriteriaCase()) {
@@ -755,6 +963,16 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         case TARGET:
           {
             mergeTarget(other.getTarget());
+            break;
+          }
+        case SOURCES:
+          {
+            mergeSources(other.getSources());
+            break;
+          }
+        case TARGETS:
+          {
+            mergeTargets(other.getTargets());
             break;
           }
         case CRITERIA_NOT_SET:
@@ -797,13 +1015,13 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
             case 16:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
@@ -818,6 +1036,18 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
                 criteriaCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(internalGetSourcesFieldBuilder().getBuilder(), extensionRegistry);
+                criteriaCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(internalGetTargetsFieldBuilder().getBuilder(), extensionRegistry);
+                criteriaCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1464,6 +1694,600 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       return targetBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>
+        sourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sources field is set.
+     */
+    @java.lang.Override
+    public boolean hasSources() {
+      return criteriaCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sources.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference getSources() {
+      if (sourcesBuilder_ == null) {
+        if (criteriaCase_ == 6) {
+          return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      } else {
+        if (criteriaCase_ == 6) {
+          return sourcesBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSources(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference value) {
+      if (sourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        criteria_ = value;
+        onChanged();
+      } else {
+        sourcesBuilder_.setMessage(value);
+      }
+      criteriaCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSources(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder builderForValue) {
+      if (sourcesBuilder_ == null) {
+        criteria_ = builderForValue.build();
+        onChanged();
+      } else {
+        sourcesBuilder_.setMessage(builderForValue.build());
+      }
+      criteriaCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSources(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference value) {
+      if (sourcesBuilder_ == null) {
+        if (criteriaCase_ == 6
+            && criteria_
+                != com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference
+                    .getDefaultInstance()) {
+          criteria_ =
+              com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.newBuilder(
+                      (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          criteria_ = value;
+        }
+        onChanged();
+      } else {
+        if (criteriaCase_ == 6) {
+          sourcesBuilder_.mergeFrom(value);
+        } else {
+          sourcesBuilder_.setMessage(value);
+        }
+      }
+      criteriaCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSources() {
+      if (sourcesBuilder_ == null) {
+        if (criteriaCase_ == 6) {
+          criteriaCase_ = 0;
+          criteria_ = null;
+          onChanged();
+        }
+      } else {
+        if (criteriaCase_ == 6) {
+          criteriaCase_ = 0;
+          criteria_ = null;
+        }
+        sourcesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder
+        getSourcesBuilder() {
+      return internalGetSourcesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder
+        getSourcesOrBuilder() {
+      if ((criteriaCase_ == 6) && (sourcesBuilder_ != null)) {
+        return sourcesBuilder_.getMessageOrBuilder();
+      } else {
+        if (criteriaCase_ == 6) {
+          return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **sources** field to
+     * retrieve all links that lead from the specified assets to downstream
+     * assets. This field is similar to the `source`
+     * [source][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.source]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference sources = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>
+        internalGetSourcesFieldBuilder() {
+      if (sourcesBuilder_ == null) {
+        if (!(criteriaCase_ == 6)) {
+          criteria_ =
+              com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+        }
+        sourcesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>(
+                (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_,
+                getParentForChildren(),
+                isClean());
+        criteria_ = null;
+      }
+      criteriaCase_ = 6;
+      onChanged();
+      return sourcesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>
+        targetsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the targets field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargets() {
+      return criteriaCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The targets.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference getTargets() {
+      if (targetsBuilder_ == null) {
+        if (criteriaCase_ == 7) {
+          return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      } else {
+        if (criteriaCase_ == 7) {
+          return targetsBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTargets(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference value) {
+      if (targetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        criteria_ = value;
+        onChanged();
+      } else {
+        targetsBuilder_.setMessage(value);
+      }
+      criteriaCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTargets(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder builderForValue) {
+      if (targetsBuilder_ == null) {
+        criteria_ = builderForValue.build();
+        onChanged();
+      } else {
+        targetsBuilder_.setMessage(builderForValue.build());
+      }
+      criteriaCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTargets(
+        com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference value) {
+      if (targetsBuilder_ == null) {
+        if (criteriaCase_ == 7
+            && criteria_
+                != com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference
+                    .getDefaultInstance()) {
+          criteria_ =
+              com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.newBuilder(
+                      (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          criteria_ = value;
+        }
+        onChanged();
+      } else {
+        if (criteriaCase_ == 7) {
+          targetsBuilder_.mergeFrom(value);
+        } else {
+          targetsBuilder_.setMessage(value);
+        }
+      }
+      criteriaCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTargets() {
+      if (targetsBuilder_ == null) {
+        if (criteriaCase_ == 7) {
+          criteriaCase_ = 0;
+          criteria_ = null;
+          onChanged();
+        }
+      } else {
+        if (criteriaCase_ == 7) {
+          criteriaCase_ = 0;
+          criteria_ = null;
+        }
+        targetsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder
+        getTargetsBuilder() {
+      return internalGetTargetsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder
+        getTargetsOrBuilder() {
+      if ((criteriaCase_ == 7) && (targetsBuilder_ != null)) {
+        return targetsBuilder_.getMessageOrBuilder();
+      } else {
+        if (criteriaCase_ == 7) {
+          return (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_;
+        }
+        return com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Send a list of asset information in the **targets** field to
+     * retrieve all links that lead from upstream assets to the specified
+     * assets. This field is similar to the `target`
+     * [target][google.cloud.datacatalog.lineage.v1.SearchLinksRequest.target]
+     * field but allows providing multiple entities.
+     * All entities within the `MultipleEntityReference` must have the same
+     * `fully_qualified_name`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.lineage.v1.MultipleEntityReference targets = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+            com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>
+        internalGetTargetsFieldBuilder() {
+      if (targetsBuilder_ == null) {
+        if (!(criteriaCase_ == 7)) {
+          criteria_ =
+              com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.getDefaultInstance();
+        }
+        targetsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference,
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference.Builder,
+                com.google.cloud.datacatalog.lineage.v1.MultipleEntityReferenceOrBuilder>(
+                (com.google.cloud.datacatalog.lineage.v1.MultipleEntityReference) criteria_,
+                getParentForChildren(),
+                isClean());
+        criteria_ = null;
+      }
+      criteriaCase_ = 7;
+      onChanged();
+      return targetsBuilder_;
+    }
+
     private int pageSize_;
 
     /**
@@ -1505,7 +2329,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1526,7 +2350,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1612,7 +2436,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1635,7 +2459,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1663,7 +2487,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

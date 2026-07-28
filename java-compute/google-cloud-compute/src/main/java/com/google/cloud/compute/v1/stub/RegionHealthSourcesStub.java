@@ -24,9 +24,11 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionHealthSourcesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthSourceRequest;
+import com.google.cloud.compute.v1.GetHealthRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.HealthSource;
 import com.google.cloud.compute.v1.HealthSourceAggregatedList;
+import com.google.cloud.compute.v1.HealthSourceHealth;
 import com.google.cloud.compute.v1.HealthSourceList;
 import com.google.cloud.compute.v1.InsertRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthSourcesRequest;
@@ -35,6 +37,7 @@ import com.google.cloud.compute.v1.PatchRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -42,6 +45,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RegionHealthSourcesStub implements BackgroundResource {
 
@@ -66,6 +70,10 @@ public abstract class RegionHealthSourcesStub implements BackgroundResource {
 
   public UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth> getHealthCallable() {
+    throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
   public OperationCallable<InsertRegionHealthSourceRequest, Operation, Operation>

@@ -149,6 +149,7 @@ public class RegionCommitmentsClientTest {
             .setLicenseResource(LicenseResourceCommitment.newBuilder().build())
             .addAllMergeSourceCommitments(new ArrayList<String>())
             .setName("name3373707")
+            .setParams(CommitmentParams.newBuilder().build())
             .setPlan("plan3443497")
             .setRegion("region-934795532")
             .addAllReservations(new ArrayList<Reservation>())

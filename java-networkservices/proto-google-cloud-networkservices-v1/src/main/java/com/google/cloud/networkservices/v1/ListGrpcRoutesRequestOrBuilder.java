@@ -31,7 +31,7 @@ public interface ListGrpcRoutesRequestOrBuilder
    *
    * <pre>
    * Required. The project and location from which the GrpcRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface ListGrpcRoutesRequestOrBuilder
    *
    * <pre>
    * Required. The project and location from which the GrpcRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>

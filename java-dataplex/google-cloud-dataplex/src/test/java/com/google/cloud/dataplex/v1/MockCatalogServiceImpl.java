@@ -497,6 +497,26 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
   }
 
   @Override
+  public void modifyEntry(ModifyEntryRequest request, StreamObserver<Entry> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Entry) {
+      requests.add(request);
+      responseObserver.onNext(((Entry) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyEntry, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchEntries(
       SearchEntriesRequest request, StreamObserver<SearchEntriesResponse> responseObserver) {
     Object response = responses.poll();

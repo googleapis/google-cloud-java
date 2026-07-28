@@ -79,8 +79,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -106,8 +107,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the
+   * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -454,8 +456,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -480,8 +483,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -506,8 +510,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -531,8 +536,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -552,8 +558,9 @@ public final class DeleteAttestorRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1beta1.Attestor] to delete,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>

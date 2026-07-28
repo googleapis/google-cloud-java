@@ -84,7 +84,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    * <pre>
    * Required. The name of the framework deployment that you want to delete,
    * in the format
-   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -113,7 +115,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    * <pre>
    * Required. The name of the framework deployment that you want to delete,
    * in the format
-   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -564,7 +568,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the framework deployment that you want to delete,
      * in the format
-     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -592,7 +598,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the framework deployment that you want to delete,
      * in the format
-     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -620,7 +628,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the framework deployment that you want to delete,
      * in the format
-     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -647,7 +657,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the framework deployment that you want to delete,
      * in the format
-     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -670,7 +682,9 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      * <pre>
      * Required. The name of the framework deployment that you want to delete,
      * in the format
-     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *

@@ -71,6 +71,7 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CES_APP_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -175,6 +176,88 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int PROACTIVE_ENABLED_FIELD_NUMBER = 3;
+  private boolean proactiveEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in proactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the proactiveEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasProactiveEnabled() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in proactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The proactiveEnabled.
+   */
+  @java.lang.Override
+  public boolean getProactiveEnabled() {
+    return proactiveEnabled_;
+  }
+
+  public static final int REACTIVE_ENABLED_FIELD_NUMBER = 4;
+  private boolean reactiveEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in reactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the reactiveEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasReactiveEnabled() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only applicable for CompanionAgent.
+   * Indicates whether the ces app is enabled in reactive mode.
+   * At least one of `proactive_enabled` or `reactive_enabled` should be
+   * true; otherwise, the ces app will be ignored.
+   * </pre>
+   *
+   * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reactiveEnabled.
+   */
+  @java.lang.Override
+  public boolean getReactiveEnabled() {
+    return reactiveEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -198,6 +281,12 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(2, confirmationRequirement_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(3, proactiveEnabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(4, reactiveEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -215,6 +304,12 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
             .CONFIRMATION_REQUIREMENT_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, confirmationRequirement_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, proactiveEnabled_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, reactiveEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -234,6 +329,14 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
 
     if (!getCesApp().equals(other.getCesApp())) return false;
     if (confirmationRequirement_ != other.confirmationRequirement_) return false;
+    if (hasProactiveEnabled() != other.hasProactiveEnabled()) return false;
+    if (hasProactiveEnabled()) {
+      if (getProactiveEnabled() != other.getProactiveEnabled()) return false;
+    }
+    if (hasReactiveEnabled() != other.hasReactiveEnabled()) return false;
+    if (hasReactiveEnabled()) {
+      if (getReactiveEnabled() != other.getReactiveEnabled()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -249,6 +352,14 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getCesApp().hashCode();
     hash = (37 * hash) + CONFIRMATION_REQUIREMENT_FIELD_NUMBER;
     hash = (53 * hash) + confirmationRequirement_;
+    if (hasProactiveEnabled()) {
+      hash = (37 * hash) + PROACTIVE_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProactiveEnabled());
+    }
+    if (hasReactiveEnabled()) {
+      hash = (37 * hash) + REACTIVE_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReactiveEnabled());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -391,6 +502,8 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       cesApp_ = "";
       confirmationRequirement_ = 0;
+      proactiveEnabled_ = false;
+      reactiveEnabled_ = false;
       return this;
     }
 
@@ -433,6 +546,16 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.confirmationRequirement_ = confirmationRequirement_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.proactiveEnabled_ = proactiveEnabled_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reactiveEnabled_ = reactiveEnabled_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -454,6 +577,12 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
       }
       if (other.confirmationRequirement_ != 0) {
         setConfirmationRequirementValue(other.getConfirmationRequirementValue());
+      }
+      if (other.hasProactiveEnabled()) {
+        setProactiveEnabled(other.getProactiveEnabled());
+      }
+      if (other.hasReactiveEnabled()) {
+        setReactiveEnabled(other.getReactiveEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -493,6 +622,18 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                proactiveEnabled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 32:
+              {
+                reactiveEnabled_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -744,6 +885,174 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
     public Builder clearConfirmationRequirement() {
       bitField0_ = (bitField0_ & ~0x00000002);
       confirmationRequirement_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean proactiveEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in proactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the proactiveEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasProactiveEnabled() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in proactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The proactiveEnabled.
+     */
+    @java.lang.Override
+    public boolean getProactiveEnabled() {
+      return proactiveEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in proactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The proactiveEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProactiveEnabled(boolean value) {
+
+      proactiveEnabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in proactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool proactive_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProactiveEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      proactiveEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean reactiveEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in reactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the reactiveEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasReactiveEnabled() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in reactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The reactiveEnabled.
+     */
+    @java.lang.Override
+    public boolean getReactiveEnabled() {
+      return reactiveEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in reactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The reactiveEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReactiveEnabled(boolean value) {
+
+      reactiveEnabled_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only applicable for CompanionAgent.
+     * Indicates whether the ces app is enabled in reactive mode.
+     * At least one of `proactive_enabled` or `reactive_enabled` should be
+     * true; otherwise, the ces app will be ignored.
+     * </pre>
+     *
+     * <code>optional bool reactive_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReactiveEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      reactiveEnabled_ = false;
       onChanged();
       return this;
     }

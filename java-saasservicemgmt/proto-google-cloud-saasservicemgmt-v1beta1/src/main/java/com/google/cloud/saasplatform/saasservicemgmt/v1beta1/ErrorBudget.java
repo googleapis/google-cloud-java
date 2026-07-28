@@ -69,6 +69,7 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
             com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudget.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ALLOWED_COUNT_FIELD_NUMBER = 1;
   private int allowedCount_ = 0;
 
@@ -80,7 +81,24 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
    * pausing the rollout.
    * </pre>
    *
-   * <code>int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allowedCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowedCount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum number of failed units allowed in a location without
+   * pausing the rollout.
+   * </pre>
+   *
+   * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowedCount.
    */
@@ -100,7 +118,24 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
    * location without pausing the rollout.
    * </pre>
    *
-   * <code>int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allowedPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowedPercentage() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum percentage of units allowed to fail (0, 100] within a
+   * location without pausing the rollout.
+   * </pre>
+   *
+   * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowedPercentage.
    */
@@ -123,10 +158,10 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (allowedCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(1, allowedCount_);
     }
-    if (allowedPercentage_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(2, allowedPercentage_);
     }
     getUnknownFields().writeTo(output);
@@ -138,10 +173,10 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (allowedCount_ != 0) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, allowedCount_);
     }
-    if (allowedPercentage_ != 0) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, allowedPercentage_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -160,8 +195,14 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
     com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudget other =
         (com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudget) obj;
 
-    if (getAllowedCount() != other.getAllowedCount()) return false;
-    if (getAllowedPercentage() != other.getAllowedPercentage()) return false;
+    if (hasAllowedCount() != other.hasAllowedCount()) return false;
+    if (hasAllowedCount()) {
+      if (getAllowedCount() != other.getAllowedCount()) return false;
+    }
+    if (hasAllowedPercentage() != other.hasAllowedPercentage()) return false;
+    if (hasAllowedPercentage()) {
+      if (getAllowedPercentage() != other.getAllowedPercentage()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -173,10 +214,14 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ALLOWED_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getAllowedCount();
-    hash = (37 * hash) + ALLOWED_PERCENTAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getAllowedPercentage();
+    if (hasAllowedCount()) {
+      hash = (37 * hash) + ALLOWED_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowedCount();
+    }
+    if (hasAllowedPercentage()) {
+      hash = (37 * hash) + ALLOWED_PERCENTAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowedPercentage();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -361,12 +406,16 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(
         com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudget result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.allowedCount_ = allowedCount_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.allowedPercentage_ = allowedPercentage_;
+        to_bitField0_ |= 0x00000002;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -384,10 +433,10 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
       if (other
           == com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ErrorBudget.getDefaultInstance())
         return this;
-      if (other.getAllowedCount() != 0) {
+      if (other.hasAllowedCount()) {
         setAllowedCount(other.getAllowedCount());
       }
-      if (other.getAllowedPercentage() != 0) {
+      if (other.hasAllowedPercentage()) {
         setAllowedPercentage(other.getAllowedPercentage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -457,7 +506,24 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the allowedCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowedCount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of failed units allowed in a location without
+     * pausing the rollout.
+     * </pre>
+     *
+     * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowedCount.
      */
@@ -474,7 +540,7 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowedCount to set.
      * @return This builder for chaining.
@@ -495,7 +561,7 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_count = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -516,7 +582,24 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * location without pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the allowedPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowedPercentage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum percentage of units allowed to fail (0, 100] within a
+     * location without pausing the rollout.
+     * </pre>
+     *
+     * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowedPercentage.
      */
@@ -533,7 +616,7 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * location without pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowedPercentage to set.
      * @return This builder for chaining.
@@ -554,7 +637,7 @@ public final class ErrorBudget extends com.google.protobuf.GeneratedMessage
      * location without pausing the rollout.
      * </pre>
      *
-     * <code>int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 allowed_percentage = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

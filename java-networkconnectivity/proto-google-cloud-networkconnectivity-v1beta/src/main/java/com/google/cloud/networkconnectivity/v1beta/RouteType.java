@@ -75,6 +75,17 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DYNAMIC_ROUTE = 3;</code>
    */
   DYNAMIC_ROUTE(3),
+  /**
+   *
+   *
+   * <pre>
+   * The route leads to a destination within the Private Service Connect
+   * Global Google API range of the VPC network.
+   * </pre>
+   *
+   * <code>PSC_GLOBAL_GAPI = 4;</code>
+   */
+  PSC_GLOBAL_GAPI(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -136,6 +147,18 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int DYNAMIC_ROUTE_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * The route leads to a destination within the Private Service Connect
+   * Global Google API range of the VPC network.
+   * </pre>
+   *
+   * <code>PSC_GLOBAL_GAPI = 4;</code>
+   */
+  public static final int PSC_GLOBAL_GAPI_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -168,6 +191,8 @@ public enum RouteType implements com.google.protobuf.ProtocolMessageEnum {
         return VPC_SECONDARY_SUBNET;
       case 3:
         return DYNAMIC_ROUTE;
+      case 4:
+        return PSC_GLOBAL_GAPI;
       default:
         return null;
     }

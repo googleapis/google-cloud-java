@@ -355,9 +355,8 @@ public interface ServingConfigOrBuilder
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if
-   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-   * is specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if `SearchRequest.ranking_expression` is
+   * specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
@@ -397,9 +396,8 @@ public interface ServingConfigOrBuilder
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if
-   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-   * is specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if `SearchRequest.ranking_expression` is
+   * specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
@@ -1120,6 +1118,68 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @return A list containing the promoteControlIds.
+   */
+  java.util.List<java.lang.String> getPromoteControlIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @return The count of promoteControlIds.
+   */
+  int getPromoteControlIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The promoteControlIds at the given index.
+   */
+  java.lang.String getPromoteControlIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the promoteControlIds at the given index.
+   */
+  com.google.protobuf.ByteString getPromoteControlIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The specification for personalization spec.
    *
    * Notice that if both
@@ -1187,6 +1247,50 @@ public interface ServingConfigOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpecOrBuilder
       getPersonalizationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerGenerationSpec field is set.
+   */
+  boolean hasAnswerGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerGenerationSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec getAnswerGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder
+      getAnswerGenerationSpecOrBuilder();
 
   com.google.cloud.discoveryengine.v1beta.ServingConfig.VerticalConfigCase getVerticalConfigCase();
 }

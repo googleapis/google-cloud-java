@@ -331,6 +331,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>REPORTING_IDENTITY_SETTINGS = 34;</code>
    */
   REPORTING_IDENTITY_SETTINGS(34),
+  /**
+   *
+   *
+   * <pre>
+   * UserProvidedDataSettings resource
+   * </pre>
+   *
+   * <code>USER_PROVIDED_DATA_SETTINGS = 35;</code>
+   */
+  USER_PROVIDED_DATA_SETTINGS(35),
   UNRECOGNIZED(-1),
   ;
 
@@ -674,6 +684,17 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    */
   public static final int REPORTING_IDENTITY_SETTINGS_VALUE = 34;
 
+  /**
+   *
+   *
+   * <pre>
+   * UserProvidedDataSettings resource
+   * </pre>
+   *
+   * <code>USER_PROVIDED_DATA_SETTINGS = 35;</code>
+   */
+  public static final int USER_PROVIDED_DATA_SETTINGS_VALUE = 35;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -758,6 +779,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return SUBPROPERTY_SYNC_CONFIG;
       case 34:
         return REPORTING_IDENTITY_SETTINGS;
+      case 35:
+        return USER_PROVIDED_DATA_SETTINGS;
       default:
         return null;
     }

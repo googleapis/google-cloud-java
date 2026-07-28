@@ -189,7 +189,7 @@ public enum OsType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(7);
+    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(8);
   }
 
   private static final OsType[] VALUES = values();

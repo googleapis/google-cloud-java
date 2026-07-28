@@ -105,27 +105,37 @@ public interface CreateFolderRequestOrBuilder
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the Folder, which will become the final component of
    * the Folder's resource name.
    * </pre>
    *
-   * <code>string folder_id = 3;</code>
+   * <code>string folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateFolderRequest.folder_id is deprecated. See
+   *     google/cloud/dataform/v1beta1/dataform.proto;l=3552
    * @return The folderId.
    */
+  @java.lang.Deprecated
   java.lang.String getFolderId();
 
   /**
    *
    *
    * <pre>
+   * Deprecated: This field is not used. The resource name is generated
+   * automatically.
    * The ID to use for the Folder, which will become the final component of
    * the Folder's resource name.
    * </pre>
    *
-   * <code>string folder_id = 3;</code>
+   * <code>string folder_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.dataform.v1beta1.CreateFolderRequest.folder_id is deprecated. See
+   *     google/cloud/dataform/v1beta1/dataform.proto;l=3552
    * @return The bytes for folderId.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getFolderIdBytes();
 }

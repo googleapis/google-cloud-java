@@ -2028,6 +2028,51 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptionsOrBuilder
         getJsonOptionsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the unstructuredDataOptions field is set.
+     */
+    boolean hasUnstructuredDataOptions();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The unstructuredDataOptions.
+     */
+    com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+        getUnstructuredDataOptions();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptionsOrBuilder
+        getUnstructuredDataOptionsOrBuilder();
   }
 
   /**
@@ -4157,6 +4202,577 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public interface UnstructuredDataOptionsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether deeper semantic inference over the objects'
+       * contents using GenAI is enabled.
+       * </pre>
+       *
+       * <code>bool semantic_inference_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The semanticInferenceEnabled.
+       */
+      boolean getSemanticInferenceEnabled();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes options for unstructured data discovery.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions}
+     */
+    public static final class UnstructuredDataOptions extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+        UnstructuredDataOptionsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "UnstructuredDataOptions");
+      }
+
+      // Use UnstructuredDataOptions.newBuilder() to construct.
+      private UnstructuredDataOptions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private UnstructuredDataOptions() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryProto
+            .internal_static_google_cloud_dataplex_v1_DataDiscoverySpec_StorageConfig_UnstructuredDataOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDiscoveryProto
+            .internal_static_google_cloud_dataplex_v1_DataDiscoverySpec_StorageConfig_UnstructuredDataOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                    .class,
+                com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                    .Builder.class);
+      }
+
+      public static final int SEMANTIC_INFERENCE_ENABLED_FIELD_NUMBER = 2;
+      private boolean semanticInferenceEnabled_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether deeper semantic inference over the objects'
+       * contents using GenAI is enabled.
+       * </pre>
+       *
+       * <code>bool semantic_inference_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The semanticInferenceEnabled.
+       */
+      @java.lang.Override
+      public boolean getSemanticInferenceEnabled() {
+        return semanticInferenceEnabled_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (semanticInferenceEnabled_ != false) {
+          output.writeBool(2, semanticInferenceEnabled_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (semanticInferenceEnabled_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(2, semanticInferenceEnabled_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions other =
+            (com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+                obj;
+
+        if (getSemanticInferenceEnabled() != other.getSemanticInferenceEnabled()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SEMANTIC_INFERENCE_ENABLED_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSemanticInferenceEnabled());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Describes options for unstructured data discovery.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptionsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataDiscoveryProto
+              .internal_static_google_cloud_dataplex_v1_DataDiscoverySpec_StorageConfig_UnstructuredDataOptions_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataDiscoveryProto
+              .internal_static_google_cloud_dataplex_v1_DataDiscoverySpec_StorageConfig_UnstructuredDataOptions_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions.class,
+                  com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          semanticInferenceEnabled_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataDiscoveryProto
+              .internal_static_google_cloud_dataplex_v1_DataDiscoverySpec_StorageConfig_UnstructuredDataOptions_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+            build() {
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              result =
+                  new com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.semanticInferenceEnabled_ = semanticInferenceEnabled_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                  .UnstructuredDataOptions) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                        .UnstructuredDataOptions)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                  .UnstructuredDataOptions.getDefaultInstance()) return this;
+          if (other.getSemanticInferenceEnabled() != false) {
+            setSemanticInferenceEnabled(other.getSemanticInferenceEnabled());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 16:
+                  {
+                    semanticInferenceEnabled_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean semanticInferenceEnabled_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specifies whether deeper semantic inference over the objects'
+         * contents using GenAI is enabled.
+         * </pre>
+         *
+         * <code>bool semantic_inference_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The semanticInferenceEnabled.
+         */
+        @java.lang.Override
+        public boolean getSemanticInferenceEnabled() {
+          return semanticInferenceEnabled_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specifies whether deeper semantic inference over the objects'
+         * contents using GenAI is enabled.
+         * </pre>
+         *
+         * <code>bool semantic_inference_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The semanticInferenceEnabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSemanticInferenceEnabled(boolean value) {
+
+          semanticInferenceEnabled_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Specifies whether deeper semantic inference over the objects'
+         * contents using GenAI is enabled.
+         * </pre>
+         *
+         * <code>bool semantic_inference_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSemanticInferenceEnabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          semanticInferenceEnabled_ = false;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions)
+      private static final com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                .UnstructuredDataOptions();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptions
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<UnstructuredDataOptions> PARSER =
+          new com.google.protobuf.AbstractParser<UnstructuredDataOptions>() {
+            @java.lang.Override
+            public UnstructuredDataOptions parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<UnstructuredDataOptions> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<UnstructuredDataOptions> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int INCLUDE_PATTERNS_FIELD_NUMBER = 1;
 
@@ -4455,6 +5071,71 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           : jsonOptions_;
     }
 
+    public static final int UNSTRUCTURED_DATA_OPTIONS_FIELD_NUMBER = 5;
+    private com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+        unstructuredDataOptions_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the unstructuredDataOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnstructuredDataOptions() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The unstructuredDataOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+        getUnstructuredDataOptions() {
+      return unstructuredDataOptions_ == null
+          ? com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              .getDefaultInstance()
+          : unstructuredDataOptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies configuration for unstructured data discovery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+            .UnstructuredDataOptionsOrBuilder
+        getUnstructuredDataOptionsOrBuilder() {
+      return unstructuredDataOptions_ == null
+          ? com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              .getDefaultInstance()
+          : unstructuredDataOptions_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4480,6 +5161,9 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getJsonOptions());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(5, getUnstructuredDataOptions());
       }
       getUnknownFields().writeTo(output);
     }
@@ -4512,6 +5196,11 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getJsonOptions());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getUnstructuredDataOptions());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4537,6 +5226,10 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (hasJsonOptions() != other.hasJsonOptions()) return false;
       if (hasJsonOptions()) {
         if (!getJsonOptions().equals(other.getJsonOptions())) return false;
+      }
+      if (hasUnstructuredDataOptions() != other.hasUnstructuredDataOptions()) return false;
+      if (hasUnstructuredDataOptions()) {
+        if (!getUnstructuredDataOptions().equals(other.getUnstructuredDataOptions())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -4564,6 +5257,10 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (hasJsonOptions()) {
         hash = (37 * hash) + JSON_OPTIONS_FIELD_NUMBER;
         hash = (53 * hash) + getJsonOptions().hashCode();
+      }
+      if (hasUnstructuredDataOptions()) {
+        hash = (37 * hash) + UNSTRUCTURED_DATA_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getUnstructuredDataOptions().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4709,6 +5406,7 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetCsvOptionsFieldBuilder();
           internalGetJsonOptionsFieldBuilder();
+          internalGetUnstructuredDataOptionsFieldBuilder();
         }
       }
 
@@ -4727,6 +5425,11 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         if (jsonOptionsBuilder_ != null) {
           jsonOptionsBuilder_.dispose();
           jsonOptionsBuilder_ = null;
+        }
+        unstructuredDataOptions_ = null;
+        if (unstructuredDataOptionsBuilder_ != null) {
+          unstructuredDataOptionsBuilder_.dispose();
+          unstructuredDataOptionsBuilder_ = null;
         }
         return this;
       }
@@ -4785,6 +5488,13 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               jsonOptionsBuilder_ == null ? jsonOptions_ : jsonOptionsBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unstructuredDataOptions_ =
+              unstructuredDataOptionsBuilder_ == null
+                  ? unstructuredDataOptions_
+                  : unstructuredDataOptionsBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4827,6 +5537,9 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         if (other.hasJsonOptions()) {
           mergeJsonOptions(other.getJsonOptions());
+        }
+        if (other.hasUnstructuredDataOptions()) {
+          mergeUnstructuredDataOptions(other.getUnstructuredDataOptions());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4882,6 +5595,14 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetUnstructuredDataOptionsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5810,6 +6531,242 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           jsonOptions_ = null;
         }
         return jsonOptionsBuilder_;
+      }
+
+      private com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+          unstructuredDataOptions_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions,
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                  .UnstructuredDataOptionsOrBuilder>
+          unstructuredDataOptionsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the unstructuredDataOptions field is set.
+       */
+      public boolean hasUnstructuredDataOptions() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The unstructuredDataOptions.
+       */
+      public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+          getUnstructuredDataOptions() {
+        if (unstructuredDataOptionsBuilder_ == null) {
+          return unstructuredDataOptions_ == null
+              ? com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                  .getDefaultInstance()
+              : unstructuredDataOptions_;
+        } else {
+          return unstructuredDataOptionsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUnstructuredDataOptions(
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              value) {
+        if (unstructuredDataOptionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          unstructuredDataOptions_ = value;
+        } else {
+          unstructuredDataOptionsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUnstructuredDataOptions(
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                  .Builder
+              builderForValue) {
+        if (unstructuredDataOptionsBuilder_ == null) {
+          unstructuredDataOptions_ = builderForValue.build();
+        } else {
+          unstructuredDataOptionsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeUnstructuredDataOptions(
+          com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              value) {
+        if (unstructuredDataOptionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && unstructuredDataOptions_ != null
+              && unstructuredDataOptions_
+                  != com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions.getDefaultInstance()) {
+            getUnstructuredDataOptionsBuilder().mergeFrom(value);
+          } else {
+            unstructuredDataOptions_ = value;
+          }
+        } else {
+          unstructuredDataOptionsBuilder_.mergeFrom(value);
+        }
+        if (unstructuredDataOptions_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearUnstructuredDataOptions() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        unstructuredDataOptions_ = null;
+        if (unstructuredDataOptionsBuilder_ != null) {
+          unstructuredDataOptionsBuilder_.dispose();
+          unstructuredDataOptionsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+              .Builder
+          getUnstructuredDataOptionsBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetUnstructuredDataOptionsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+              .UnstructuredDataOptionsOrBuilder
+          getUnstructuredDataOptionsOrBuilder() {
+        if (unstructuredDataOptionsBuilder_ != null) {
+          return unstructuredDataOptionsBuilder_.getMessageOrBuilder();
+        } else {
+          return unstructuredDataOptions_ == null
+              ? com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                  .getDefaultInstance()
+              : unstructuredDataOptions_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies configuration for unstructured data discovery.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions unstructured_data_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions,
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.UnstructuredDataOptions
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                  .UnstructuredDataOptionsOrBuilder>
+          internalGetUnstructuredDataOptionsFieldBuilder() {
+        if (unstructuredDataOptionsBuilder_ == null) {
+          unstructuredDataOptionsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions,
+                  com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptions.Builder,
+                  com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig
+                      .UnstructuredDataOptionsOrBuilder>(
+                  getUnstructuredDataOptions(), getParentForChildren(), isClean());
+          unstructuredDataOptions_ = null;
+        }
+        return unstructuredDataOptionsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig)

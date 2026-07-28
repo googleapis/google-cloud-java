@@ -899,6 +899,48 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *
@@ -1067,6 +1109,90 @@ public interface SnapshotOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSnapshotEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return Whether the snapshotGroupId field is set.
+   */
+  boolean hasSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return The snapshotGroupId.
+   */
+  java.lang.String getSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return The bytes for snapshotGroupId.
+   */
+  com.google.protobuf.ByteString getSnapshotGroupIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return Whether the snapshotGroupName field is set.
+   */
+  boolean hasSnapshotGroupName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return The snapshotGroupName.
+   */
+  java.lang.String getSnapshotGroupName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return The bytes for snapshotGroupName.
+   */
+  com.google.protobuf.ByteString getSnapshotGroupNameBytes();
 
   /**
    *
@@ -1606,11 +1732,13 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1624,11 +1752,13 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1642,11 +1772,13 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *

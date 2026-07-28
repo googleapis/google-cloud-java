@@ -124,6 +124,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceStubSettingsClassComposer implements ClassComposer {
   private static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
@@ -138,6 +139,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       "RETRYABLE_CODE_DEFINITIONS";
   private static final String NESTED_RETRY_PARAM_DEFINITIONS_VAR_NAME = "RETRY_PARAM_DEFINITIONS";
   private static final String DOT = ".";
+  private static final String CLIENT_CONTEXT_CLASS_NAME = "ClientContext";
 
   protected static final TypeStore FIXED_TYPESTORE = createStaticTypes();
 
@@ -411,6 +413,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
 
   private List<AnnotationNode> createClassAnnotations(Service service) {
     List<AnnotationNode> annotations = new ArrayList<>();
+    annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("BetaApi")));
     }
@@ -1332,7 +1335,12 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     javaMethods.add(
@@ -1634,7 +1642,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                             .setType(builderType)
                             .setArguments(
                                 CastExpr.builder()
-                                    .setType(FIXED_TYPESTORE.get("ClientContext"))
+                                    .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_CLASS_NAME))
                                     .setExpr(ValueExpr.createNullExpr())
                                     .build())
                             .build())))
@@ -1644,7 +1652,12 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     VariableExpr clientContextVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
-                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                .setType(
+                    TypeNode.withReference(
+                        FIXED_TYPESTORE
+                            .get(CLIENT_CONTEXT_CLASS_NAME)
+                            .reference()
+                            .copyAndSetNullable(true)))
                 .setName("clientContext")
                 .build());
     Reference pagedSettingsBuilderRef =
@@ -1905,7 +1918,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                         .setType(builderType)
                         .setArguments(
                             CastExpr.builder()
-                                .setType(FIXED_TYPESTORE.get("ClientContext"))
+                                .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_CLASS_NAME))
                                 .setExpr(ValueExpr.createNullExpr())
                                 .build())
                         .build())
@@ -2133,22 +2146,24 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
               .build();
     }
 
-    libraryMetadataBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(libraryMetadataBuilderExpr)
-            .setMethodName("setVersion")
-            .setArguments(
-                VariableExpr.builder()
-                    .setStaticReferenceType(
-                        TypeNode.withReference(
-                            VaporReference.builder()
-                                .setName("Version")
-                                .setPakkage(String.format("%s.stub", service.pakkage()))
-                                .build()))
-                    .setVariable(
-                        Variable.builder().setName("VERSION").setType(TypeNode.STRING).build())
-                    .build())
-            .build();
+    if (context.generateVersionJava()) {
+      libraryMetadataBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(libraryMetadataBuilderExpr)
+              .setMethodName("setVersion")
+              .setArguments(
+                  VariableExpr.builder()
+                      .setStaticReferenceType(
+                          TypeNode.withReference(
+                              VaporReference.builder()
+                                  .setName("Version")
+                                  .setPakkage(String.format("%s.stub", service.pakkage()))
+                                  .build()))
+                      .setVariable(
+                          Variable.builder().setName("VERSION").setType(TypeNode.STRING).build())
+                      .build())
+              .build();
+    }
 
     Expr returnExpr =
         MethodInvocationExpr.builder()
@@ -2215,7 +2230,8 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             SuppressWarnings.class,
             TransportChannelProvider.class,
             UnaryCallSettings.class,
-            UnaryCallable.class);
+            UnaryCallable.class,
+            NullMarked.class);
     return new TypeStore(concreteClazzes);
   }
 

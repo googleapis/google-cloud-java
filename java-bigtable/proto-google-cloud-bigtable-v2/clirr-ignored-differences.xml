@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>boolean contains*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/bigtable/v2/*OrBuilder</className>
+    <method>boolean has*(*)</method>
+  </difference>
+
+  <!--  this proto was renamed and not exposed-->
+  <!--  todo: remove after next release-->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/bigtable/v2/RequestStats*</className>
+    <method>**</method>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/bigtable/v2/AllReadStats*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/bigtable/v2/ReadEfficiencyStats*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/bigtable/v2/ReadIteratorStats*</className>
+  </difference>
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/bigtable/v2/RequestStats$StatsCase</className>
+  </difference>
+  <difference>
+    <differenceType>6001</differenceType>
+    <className>com/google/bigtable/v2/ReadRowsRequest$RequestStatsView</className>
+    <field>REQUEST_STATS_EFFICIENCY</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/bigtable/v2/ReadRowsRequest$RequestStatsView</className>
+    <field>REQUEST_STATS_EFFICIENCY_VALUE</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/bigtable/v2/RequestStats</className>
+    <field>ALL_READ_STATS_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/bigtable/v2/RequestStats</className>
+    <field>READ_EFFICIENCY_STATS_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>6003</differenceType>
+    <className>com/google/bigtable/v2/ReadRowsRequest$RequestStatsView</className>
+    <field>REQUEST_STATS_FULL_VALUE</field>
+  </difference>
+
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4+ runtime upgrade -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* getDefaultInstanceForType()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* addRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* clear()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* clearField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* clearOneof(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* clone()</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* mergeUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* setField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* setRepeatedField(*)</method>
+    <to>**</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/bigtable/v2/**</className>
+    <method>* setUnknownFields(*)</method>
+    <to>**</to>
+  </difference>
+</differences>

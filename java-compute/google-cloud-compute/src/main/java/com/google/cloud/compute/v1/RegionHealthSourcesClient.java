@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -121,6 +123,24 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHealth</td>
+ *      <td><p> Gets the most recent health check results for this regional HealthSource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHealth(GetHealthRegionHealthSourceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHealth(String project, String region, String healthSource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHealthCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -242,9 +262,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionHealthSourcesClient implements BackgroundResource {
-  private final RegionHealthSourcesSettings settings;
+  private final @Nullable RegionHealthSourcesSettings settings;
   private final RegionHealthSourcesStub stub;
 
   /** Constructs an instance of RegionHealthSourcesClient with default settings. */
@@ -284,7 +305,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionHealthSourcesSettings getSettings() {
+  public final @Nullable RegionHealthSourcesSettings getSettings() {
     return settings;
   }
 
@@ -683,6 +704,103 @@ public class RegionHealthSourcesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthSource = "healthSource513679767";
+   *   HealthSourceHealth response =
+   *       regionHealthSourcesClient.getHealth(project, region, healthSource);
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @param region Name of the region scoping this request.
+   * @param healthSource Name of the HealthSource resource to get health for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HealthSourceHealth getHealth(String project, String region, String healthSource) {
+    GetHealthRegionHealthSourceRequest request =
+        GetHealthRegionHealthSourceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setHealthSource(healthSource)
+            .build();
+    return getHealth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   GetHealthRegionHealthSourceRequest request =
+   *       GetHealthRegionHealthSourceRequest.newBuilder()
+   *           .setHealthSource("healthSource513679767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   HealthSourceHealth response = regionHealthSourcesClient.getHealth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HealthSourceHealth getHealth(GetHealthRegionHealthSourceRequest request) {
+    return getHealthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   GetHealthRegionHealthSourceRequest request =
+   *       GetHealthRegionHealthSourceRequest.newBuilder()
+   *           .setHealthSource("healthSource513679767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<HealthSourceHealth> future =
+   *       regionHealthSourcesClient.getHealthCallable().futureCall(request);
+   *   // Do something.
+   *   HealthSourceHealth response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthCallable() {
+    return stub.getHealthCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1285,12 +1403,13 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
             context,
-        HealthSourceAggregatedList response) {
+        @Nullable HealthSourceAggregatedList response) {
       super(context, response);
     }
 
@@ -1300,18 +1419,20 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
             context,
-        HealthSourceAggregatedList response) {
+        @Nullable HealthSourceAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
@@ -1329,7 +1450,8 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1339,7 +1461,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1371,8 +1493,9 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           ListRegionHealthSourcesRequest, HealthSourceList, HealthSource, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
-        HealthSourceList response) {
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
+        @Nullable HealthSourceList response) {
       super(context, response);
     }
 
@@ -1382,14 +1505,16 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
-        HealthSourceList response) {
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
+        @Nullable HealthSourceList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
         ApiFuture<HealthSourceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1403,7 +1528,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1412,7 +1537,8 @@ public class RegionHealthSourcesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

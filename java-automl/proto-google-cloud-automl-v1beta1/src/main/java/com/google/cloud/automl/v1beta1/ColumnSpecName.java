@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ColumnSpecName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATASET_TABLE_SPEC_COLUMN_SPEC =
@@ -107,7 +110,7 @@ public class ColumnSpecName implements ResourceName {
         .toString();
   }
 
-  public static ColumnSpecName parse(String formattedString) {
+  public static @Nullable ColumnSpecName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -130,7 +133,7 @@ public class ColumnSpecName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ColumnSpecName> values) {
+  public static List<String> toStringList(List<@Nullable ColumnSpecName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ColumnSpecName value : values) {
       if (value == null) {
@@ -194,7 +197,7 @@ public class ColumnSpecName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

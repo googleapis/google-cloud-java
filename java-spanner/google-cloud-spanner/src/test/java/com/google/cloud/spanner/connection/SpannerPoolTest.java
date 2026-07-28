@@ -24,6 +24,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
@@ -477,7 +478,7 @@ public class SpannerPoolTest {
             .setUri(
                 "cloudspanner://localhost:9010/projects/p1/instances/i/databases/d"
                     + "?minSessions=200;maxSessions=400;numChannels=8;usePlainText=true;userAgent=test-agent")
-            .setCredentials(mock(Credentials.class))
+            .setCredentials(mock(Credentials.class, withSettings().withoutAnnotations()))
             .build();
     // options2 equals the default session pool options, and is therefore equal to ConnectionOptions
     // without any session pool configuration.
@@ -743,6 +744,39 @@ public class SpannerPoolTest {
   }
 
   @Test
+  public void testDynamicChannelPoolWithNewSettings() {
+    SpannerPoolKey keyWithNewDcpSettings =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=10;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithDifferentMinRpc =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=20;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    assertNotEquals(keyWithNewDcpSettings, keyWithDifferentMinRpc);
+
+    // Same configuration should be equal
+    assertEquals(
+        keyWithNewDcpSettings,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=10;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
+
+  @Test
   public void testExplicitlyDisabledDynamicChannelPool() {
     SpannerPoolKey keyWithoutDcpSetting =
         SpannerPoolKey.of(
@@ -768,6 +802,49 @@ public class SpannerPoolTest {
             ConnectionOptions.newBuilder()
                 .setUri(
                     "cloudspanner:/projects/p/instances/i/databases/d?enableDynamicChannelPool=false")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
+
+  @Test
+  public void testGrpcGcpSettings() {
+    SpannerPoolKey keyWithoutGrpcGcp =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithGrpcGcpEnabled =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithGrpcGcpDisabled =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=false")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    // grpcGcp settings should affect the SpannerPoolKey
+    assertNotEquals(keyWithoutGrpcGcp, keyWithGrpcGcpEnabled);
+    assertNotEquals(keyWithoutGrpcGcp, keyWithGrpcGcpDisabled);
+    assertNotEquals(keyWithGrpcGcpEnabled, keyWithGrpcGcpDisabled);
+
+    // Same configuration should create equal keys
+    assertEquals(
+        keyWithGrpcGcpEnabled,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+    assertEquals(
+        keyWithGrpcGcpDisabled,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=false")
                 .setCredentials(NoCredentials.getInstance())
                 .build()));
   }

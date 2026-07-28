@@ -55,6 +55,15 @@ public final class Application extends com.google.protobuf.GeneratedMessage
   private Application() {
     name_ = "";
     displayName_ = "";
+    appStoreId_ = "";
+    appStores_ = emptyIntList();
+    appStoreDisplayName_ = "";
+    applicationCode_ = "";
+    developer_ = "";
+    platform_ = 0;
+    downloadUrl_ = "";
+    approvalStatus_ = 0;
+    webviewClaimingStatus_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -137,11 +146,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the displayName field is set.
    */
@@ -154,11 +162,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -179,11 +186,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The display name of the application. This attribute is required
-   * and has a maximum length of 80 characters.
+   * Required. The display name of the application.
    * </pre>
    *
-   * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -200,6 +206,755 @@ public final class Application extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int APP_STORE_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appStoreId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the appStoreId field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppStoreId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The appStoreId.
+   */
+  @java.lang.Override
+  public java.lang.String getAppStoreId() {
+    java.lang.Object ref = appStoreId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appStoreId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app store ID of the app to claim.
+   * </pre>
+   *
+   * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for appStoreId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAppStoreIdBytes() {
+    java.lang.Object ref = appStoreId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      appStoreId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APP_STORES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList appStores_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>
+      appStores_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>() {
+            public com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore convert(
+                int from) {
+              com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore result =
+                  com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore.forNumber(from);
+              return result == null
+                  ? com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the appStores.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>
+      getAppStoresList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>(
+        appStores_, appStores_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of appStores.
+   */
+  @java.lang.Override
+  public int getAppStoresCount() {
+    return appStores_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The appStores at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore getAppStores(int index) {
+    return appStores_converter_.convert(appStores_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for appStores.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAppStoresValueList() {
+    return appStores_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The app stores the application belongs to. This attribute is
+   * mutable to allow for third party app store linking.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of appStores at the given index.
+   */
+  @java.lang.Override
+  public int getAppStoresValue(int index) {
+    return appStores_.getInt(index);
+  }
+
+  private int appStoresMemoizedSerializedSize;
+
+  public static final int ARCHIVED_FIELD_NUMBER = 8;
+  private boolean archived_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the application.
+   *
+   * When true, an application cannot be targeted and will not serve ads,
+   * regardless of its `status`.
+   * </pre>
+   *
+   * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchived() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the application.
+   *
+   * When true, an application cannot be targeted and will not serve ads,
+   * regardless of its `status`.
+   * </pre>
+   *
+   * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  @java.lang.Override
+  public boolean getArchived() {
+    return archived_;
+  }
+
+  public static final int APP_STORE_DISPLAY_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appStoreDisplayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the appStoreDisplayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppStoreDisplayName() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The appStoreDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getAppStoreDisplayName() {
+    java.lang.Object ref = appStoreDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      appStoreDisplayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the application on the app store.
+   * </pre>
+   *
+   * <code>optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for appStoreDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAppStoreDisplayNameBytes() {
+    java.lang.Object ref = appStoreDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      appStoreDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPLICATION_CODE_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applicationCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasApplicationCode() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationCode.
+   */
+  @java.lang.Override
+  public java.lang.String getApplicationCode() {
+    java.lang.Object ref = applicationCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applicationCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application code used to identify the app in the SDK.
+   *
+   * Note that the UI refers to this as "App ID".
+   * </pre>
+   *
+   * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for applicationCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApplicationCodeBytes() {
+    java.lang.Object ref = applicationCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      applicationCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEVELOPER_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object developer_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the developer field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeveloper() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The developer.
+   */
+  @java.lang.Override
+  public java.lang.String getDeveloper() {
+    java.lang.Object ref = developer_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      developer_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the developer of the application.
+   * </pre>
+   *
+   * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for developer.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDeveloperBytes() {
+    java.lang.Object ref = developer_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      developer_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLATFORM_FIELD_NUMBER = 12;
+  private int platform_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the platform field is set.
+   */
+  @java.lang.Override
+  public boolean hasPlatform() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for platform.
+   */
+  @java.lang.Override
+  public int getPlatformValue() {
+    return platform_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The platform the application runs on.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The platform.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform getPlatform() {
+    com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform result =
+        com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform.forNumber(
+            platform_);
+    return result == null
+        ? com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int FREE_FIELD_NUMBER = 13;
+  private boolean free_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the application is free on the app store it belongs
+   * to.
+   * </pre>
+   *
+   * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the free field is set.
+   */
+  @java.lang.Override
+  public boolean hasFree() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the application is free on the app store it belongs
+   * to.
+   * </pre>
+   *
+   * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The free.
+   */
+  @java.lang.Override
+  public boolean getFree() {
+    return free_;
+  }
+
+  public static final int DOWNLOAD_URL_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object downloadUrl_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the downloadUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasDownloadUrl() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The downloadUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getDownloadUrl() {
+    java.lang.Object ref = downloadUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      downloadUrl_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The download URL of the application on the app store it
+   * belongs to.
+   * </pre>
+   *
+   * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for downloadUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDownloadUrlBytes() {
+    java.lang.Object ref = downloadUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      downloadUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPROVAL_STATUS_FIELD_NUMBER = 15;
+  private int approvalStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approvalStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasApprovalStatus() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for approvalStatus.
+   */
+  @java.lang.Override
+  public int getApprovalStatusValue() {
+    return approvalStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approvalStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+      getApprovalStatus() {
+    com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus result =
+        com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+            .forNumber(approvalStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int WEBVIEW_CLAIMING_STATUS_FIELD_NUMBER = 16;
+  private int webviewClaimingStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the webviewClaimingStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasWebviewClaimingStatus() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for webviewClaimingStatus.
+   */
+  @java.lang.Override
+  public int getWebviewClaimingStatusValue() {
+    return webviewClaimingStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The webview claiming status for the application.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The webviewClaimingStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus
+      getWebviewClaimingStatus() {
+    com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus result =
+        com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus.forNumber(
+            webviewClaimingStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -214,11 +969,49 @@ public final class Application extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, appStoreId_);
+    }
+    if (getAppStoresList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(appStoresMemoizedSerializedSize);
+    }
+    for (int i = 0; i < appStores_.size(); i++) {
+      output.writeEnumNoTag(appStores_.getInt(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(8, archived_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, appStoreDisplayName_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, applicationCode_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, developer_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(12, platform_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(13, free_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, downloadUrl_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeEnum(15, approvalStatus_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeEnum(16, webviewClaimingStatus_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -234,6 +1027,49 @@ public final class Application extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, appStoreId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < appStores_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(appStores_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAppStoresList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      appStoresMemoizedSerializedSize = dataSize;
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, archived_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, appStoreDisplayName_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, applicationCode_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, developer_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, platform_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, free_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, downloadUrl_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, approvalStatus_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, webviewClaimingStatus_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -255,6 +1091,47 @@ public final class Application extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       if (!getDisplayName().equals(other.getDisplayName())) return false;
     }
+    if (hasAppStoreId() != other.hasAppStoreId()) return false;
+    if (hasAppStoreId()) {
+      if (!getAppStoreId().equals(other.getAppStoreId())) return false;
+    }
+    if (!appStores_.equals(other.appStores_)) return false;
+    if (hasArchived() != other.hasArchived()) return false;
+    if (hasArchived()) {
+      if (getArchived() != other.getArchived()) return false;
+    }
+    if (hasAppStoreDisplayName() != other.hasAppStoreDisplayName()) return false;
+    if (hasAppStoreDisplayName()) {
+      if (!getAppStoreDisplayName().equals(other.getAppStoreDisplayName())) return false;
+    }
+    if (hasApplicationCode() != other.hasApplicationCode()) return false;
+    if (hasApplicationCode()) {
+      if (!getApplicationCode().equals(other.getApplicationCode())) return false;
+    }
+    if (hasDeveloper() != other.hasDeveloper()) return false;
+    if (hasDeveloper()) {
+      if (!getDeveloper().equals(other.getDeveloper())) return false;
+    }
+    if (hasPlatform() != other.hasPlatform()) return false;
+    if (hasPlatform()) {
+      if (platform_ != other.platform_) return false;
+    }
+    if (hasFree() != other.hasFree()) return false;
+    if (hasFree()) {
+      if (getFree() != other.getFree()) return false;
+    }
+    if (hasDownloadUrl() != other.hasDownloadUrl()) return false;
+    if (hasDownloadUrl()) {
+      if (!getDownloadUrl().equals(other.getDownloadUrl())) return false;
+    }
+    if (hasApprovalStatus() != other.hasApprovalStatus()) return false;
+    if (hasApprovalStatus()) {
+      if (approvalStatus_ != other.approvalStatus_) return false;
+    }
+    if (hasWebviewClaimingStatus() != other.hasWebviewClaimingStatus()) return false;
+    if (hasWebviewClaimingStatus()) {
+      if (webviewClaimingStatus_ != other.webviewClaimingStatus_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -271,6 +1148,50 @@ public final class Application extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasAppStoreId()) {
+      hash = (37 * hash) + APP_STORE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAppStoreId().hashCode();
+    }
+    if (getAppStoresCount() > 0) {
+      hash = (37 * hash) + APP_STORES_FIELD_NUMBER;
+      hash = (53 * hash) + appStores_.hashCode();
+    }
+    if (hasArchived()) {
+      hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
+    }
+    if (hasAppStoreDisplayName()) {
+      hash = (37 * hash) + APP_STORE_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAppStoreDisplayName().hashCode();
+    }
+    if (hasApplicationCode()) {
+      hash = (37 * hash) + APPLICATION_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getApplicationCode().hashCode();
+    }
+    if (hasDeveloper()) {
+      hash = (37 * hash) + DEVELOPER_FIELD_NUMBER;
+      hash = (53 * hash) + getDeveloper().hashCode();
+    }
+    if (hasPlatform()) {
+      hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + platform_;
+    }
+    if (hasFree()) {
+      hash = (37 * hash) + FREE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFree());
+    }
+    if (hasDownloadUrl()) {
+      hash = (37 * hash) + DOWNLOAD_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getDownloadUrl().hashCode();
+    }
+    if (hasApprovalStatus()) {
+      hash = (37 * hash) + APPROVAL_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + approvalStatus_;
+    }
+    if (hasWebviewClaimingStatus()) {
+      hash = (37 * hash) + WEBVIEW_CLAIMING_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + webviewClaimingStatus_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -415,6 +1336,17 @@ public final class Application extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       displayName_ = "";
+      appStoreId_ = "";
+      appStores_ = emptyIntList();
+      archived_ = false;
+      appStoreDisplayName_ = "";
+      applicationCode_ = "";
+      developer_ = "";
+      platform_ = 0;
+      free_ = false;
+      downloadUrl_ = "";
+      approvalStatus_ = 0;
+      webviewClaimingStatus_ = 0;
       return this;
     }
 
@@ -459,6 +1391,50 @@ public final class Application extends com.google.protobuf.GeneratedMessage
         result.displayName_ = displayName_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appStoreId_ = appStoreId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        appStores_.makeImmutable();
+        result.appStores_ = appStores_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.archived_ = archived_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.appStoreDisplayName_ = appStoreDisplayName_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.applicationCode_ = applicationCode_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.developer_ = developer_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.platform_ = platform_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.free_ = free_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.downloadUrl_ = downloadUrl_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.approvalStatus_ = approvalStatus_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.webviewClaimingStatus_ = webviewClaimingStatus_;
+        to_bitField0_ |= 0x00000400;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -483,6 +1459,57 @@ public final class Application extends com.google.protobuf.GeneratedMessage
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasAppStoreId()) {
+        appStoreId_ = other.appStoreId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.appStores_.isEmpty()) {
+        if (appStores_.isEmpty()) {
+          appStores_ = other.appStores_;
+          appStores_.makeImmutable();
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureAppStoresIsMutable();
+          appStores_.addAll(other.appStores_);
+        }
+        onChanged();
+      }
+      if (other.hasArchived()) {
+        setArchived(other.getArchived());
+      }
+      if (other.hasAppStoreDisplayName()) {
+        appStoreDisplayName_ = other.appStoreDisplayName_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasApplicationCode()) {
+        applicationCode_ = other.applicationCode_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasDeveloper()) {
+        developer_ = other.developer_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.hasPlatform()) {
+        setPlatformValue(other.getPlatformValue());
+      }
+      if (other.hasFree()) {
+        setFree(other.getFree());
+      }
+      if (other.hasDownloadUrl()) {
+        downloadUrl_ = other.downloadUrl_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasApprovalStatus()) {
+        setApprovalStatusValue(other.getApprovalStatusValue());
+      }
+      if (other.hasWebviewClaimingStatus()) {
+        setWebviewClaimingStatusValue(other.getWebviewClaimingStatusValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -522,6 +1549,84 @@ public final class Application extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 34
+            case 42:
+              {
+                appStoreId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+            case 56:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAppStoresIsMutable();
+                appStores_.addInt(tmpRaw);
+                break;
+              } // case 56
+            case 58:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAppStoresIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  appStores_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+            case 64:
+              {
+                archived_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+            case 74:
+              {
+                appStoreDisplayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+            case 82:
+              {
+                applicationCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
+            case 90:
+              {
+                developer_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
+            case 96:
+              {
+                platform_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 96
+            case 104:
+              {
+                free_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 104
+            case 114:
+              {
+                downloadUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 114
+            case 120:
+              {
+                approvalStatus_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 120
+            case 128:
+              {
+                webviewClaimingStatus_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -663,11 +1768,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the displayName field is set.
      */
@@ -679,11 +1783,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -703,11 +1806,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -727,11 +1829,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -750,11 +1851,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -769,11 +1869,10 @@ public final class Application extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The display name of the application. This attribute is required
-     * and has a maximum length of 80 characters.
+     * Required. The display name of the application.
      * </pre>
      *
-     * <code>optional string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string display_name = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -785,6 +1884,1492 @@ public final class Application extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       displayName_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appStoreId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the appStoreId field is set.
+     */
+    public boolean hasAppStoreId() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The appStoreId.
+     */
+    public java.lang.String getAppStoreId() {
+      java.lang.Object ref = appStoreId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appStoreId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for appStoreId.
+     */
+    public com.google.protobuf.ByteString getAppStoreIdBytes() {
+      java.lang.Object ref = appStoreId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        appStoreId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The appStoreId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStoreId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      appStoreId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppStoreId() {
+      appStoreId_ = getDefaultInstance().getAppStoreId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app store ID of the app to claim.
+     * </pre>
+     *
+     * <code>optional string app_store_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for appStoreId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStoreIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      appStoreId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList appStores_ = emptyIntList();
+
+    private void ensureAppStoresIsMutable() {
+      if (!appStores_.isModifiable()) {
+        appStores_ = makeMutableCopy(appStores_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the appStores.
+     */
+    public java.util.List<com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>
+        getAppStoresList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>(
+          appStores_, appStores_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of appStores.
+     */
+    public int getAppStoresCount() {
+      return appStores_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The appStores at the given index.
+     */
+    public com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore getAppStores(
+        int index) {
+      return appStores_converter_.convert(appStores_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The appStores to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStores(
+        int index, com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppStoresIsMutable();
+      appStores_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The appStores to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppStores(
+        com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppStoresIsMutable();
+      appStores_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The appStores to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAppStores(
+        java.lang.Iterable<
+                ? extends com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore>
+            values) {
+      ensureAppStoresIsMutable();
+      for (com.google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore value : values) {
+        appStores_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppStores() {
+      appStores_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for appStores.
+     */
+    public java.util.List<java.lang.Integer> getAppStoresValueList() {
+      appStores_.makeImmutable();
+      return appStores_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of appStores at the given index.
+     */
+    public int getAppStoresValue(int index) {
+      return appStores_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for appStores to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStoresValue(int index, int value) {
+      ensureAppStoresIsMutable();
+      appStores_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for appStores to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppStoresValue(int value) {
+      ensureAppStoresIsMutable();
+      appStores_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The app stores the application belongs to. This attribute is
+     * mutable to allow for third party app store linking.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ApplicationStoreEnum.ApplicationStore app_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for appStores to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAppStoresValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAppStoresIsMutable();
+      for (int value : values) {
+        appStores_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private boolean archived_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the application.
+     *
+     * When true, an application cannot be targeted and will not serve ads,
+     * regardless of its `status`.
+     * </pre>
+     *
+     * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the archived field is set.
+     */
+    @java.lang.Override
+    public boolean hasArchived() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the application.
+     *
+     * When true, an application cannot be targeted and will not serve ads,
+     * regardless of its `status`.
+     * </pre>
+     *
+     * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The archived.
+     */
+    @java.lang.Override
+    public boolean getArchived() {
+      return archived_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the application.
+     *
+     * When true, an application cannot be targeted and will not serve ads,
+     * regardless of its `status`.
+     * </pre>
+     *
+     * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The archived to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchived(boolean value) {
+
+      archived_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the application.
+     *
+     * When true, an application cannot be targeted and will not serve ads,
+     * regardless of its `status`.
+     * </pre>
+     *
+     * <code>optional bool archived = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchived() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      archived_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object appStoreDisplayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the appStoreDisplayName field is set.
+     */
+    public boolean hasAppStoreDisplayName() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The appStoreDisplayName.
+     */
+    public java.lang.String getAppStoreDisplayName() {
+      java.lang.Object ref = appStoreDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appStoreDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for appStoreDisplayName.
+     */
+    public com.google.protobuf.ByteString getAppStoreDisplayNameBytes() {
+      java.lang.Object ref = appStoreDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        appStoreDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The appStoreDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStoreDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      appStoreDisplayName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppStoreDisplayName() {
+      appStoreDisplayName_ = getDefaultInstance().getAppStoreDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the application on the app store.
+     * </pre>
+     *
+     * <code>
+     * optional string app_store_display_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for appStoreDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppStoreDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      appStoreDisplayName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object applicationCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the applicationCode field is set.
+     */
+    public boolean hasApplicationCode() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The applicationCode.
+     */
+    public java.lang.String getApplicationCode() {
+      java.lang.Object ref = applicationCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for applicationCode.
+     */
+    public com.google.protobuf.ByteString getApplicationCodeBytes() {
+      java.lang.Object ref = applicationCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        applicationCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The applicationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      applicationCode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplicationCode() {
+      applicationCode_ = getDefaultInstance().getApplicationCode();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application code used to identify the app in the SDK.
+     *
+     * Note that the UI refers to this as "App ID".
+     * </pre>
+     *
+     * <code>optional string application_code = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for applicationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      applicationCode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object developer_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the developer field is set.
+     */
+    public boolean hasDeveloper() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The developer.
+     */
+    public java.lang.String getDeveloper() {
+      java.lang.Object ref = developer_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        developer_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for developer.
+     */
+    public com.google.protobuf.ByteString getDeveloperBytes() {
+      java.lang.Object ref = developer_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        developer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The developer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeveloper(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      developer_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeveloper() {
+      developer_ = getDefaultInstance().getDeveloper();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the developer of the application.
+     * </pre>
+     *
+     * <code>optional string developer = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for developer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeveloperBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      developer_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private int platform_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the platform field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlatform() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for platform.
+     */
+    @java.lang.Override
+    public int getPlatformValue() {
+      return platform_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatformValue(int value) {
+      platform_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The platform.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform getPlatform() {
+      com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform result =
+          com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform.forNumber(
+              platform_);
+      return result == null
+          ? com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The platform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlatform(
+        com.google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      platform_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The platform the application runs on.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationPlatformEnum.ApplicationPlatform platform = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlatform() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      platform_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean free_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the application is free on the app store it belongs
+     * to.
+     * </pre>
+     *
+     * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the free field is set.
+     */
+    @java.lang.Override
+    public boolean hasFree() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the application is free on the app store it belongs
+     * to.
+     * </pre>
+     *
+     * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The free.
+     */
+    @java.lang.Override
+    public boolean getFree() {
+      return free_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the application is free on the app store it belongs
+     * to.
+     * </pre>
+     *
+     * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The free to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFree(boolean value) {
+
+      free_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the application is free on the app store it belongs
+     * to.
+     * </pre>
+     *
+     * <code>optional bool free = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFree() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      free_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object downloadUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the downloadUrl field is set.
+     */
+    public boolean hasDownloadUrl() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The downloadUrl.
+     */
+    public java.lang.String getDownloadUrl() {
+      java.lang.Object ref = downloadUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        downloadUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for downloadUrl.
+     */
+    public com.google.protobuf.ByteString getDownloadUrlBytes() {
+      java.lang.Object ref = downloadUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        downloadUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The downloadUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDownloadUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      downloadUrl_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDownloadUrl() {
+      downloadUrl_ = getDefaultInstance().getDownloadUrl();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The download URL of the application on the app store it
+     * belongs to.
+     * </pre>
+     *
+     * <code>optional string download_url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for downloadUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDownloadUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      downloadUrl_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private int approvalStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the approvalStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasApprovalStatus() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for approvalStatus.
+     */
+    @java.lang.Override
+    public int getApprovalStatusValue() {
+      return approvalStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for approvalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalStatusValue(int value) {
+      approvalStatus_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The approvalStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+        getApprovalStatus() {
+      com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus result =
+          com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+              .forNumber(approvalStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The approvalStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApprovalStatus(
+        com.google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      approvalStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The approval status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ApplicationApprovalStatusEnum.ApplicationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApprovalStatus() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      approvalStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int webviewClaimingStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the webviewClaimingStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasWebviewClaimingStatus() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for webviewClaimingStatus.
+     */
+    @java.lang.Override
+    public int getWebviewClaimingStatusValue() {
+      return webviewClaimingStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for webviewClaimingStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebviewClaimingStatusValue(int value) {
+      webviewClaimingStatus_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The webviewClaimingStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus
+        getWebviewClaimingStatus() {
+      com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus result =
+          com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus.forNumber(
+              webviewClaimingStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The webviewClaimingStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebviewClaimingStatus(
+        com.google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      webviewClaimingStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The webview claiming status for the application.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.WebviewClaimingStatusEnum.WebviewClaimingStatus webview_claiming_status = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebviewClaimingStatus() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      webviewClaimingStatus_ = 0;
       onChanged();
       return this;
     }

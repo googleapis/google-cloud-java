@@ -1113,7 +1113,10 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -1128,7 +1131,10 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -1143,7 +1149,10 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -1154,6 +1163,189 @@ public interface ProductViewOrBuilder
    */
   com.google.shopping.merchant.reports.v1.ProductView.AggregatedReportingContextStatus
       getAggregatedReportingContextStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+      getStatusPerReportingContextList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+      getStatusPerReportingContext(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  int getStatusPerReportingContextCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.shopping.merchant.reports.v1.ProductView
+                  .StatusPerReportingContextOrBuilder>
+      getStatusPerReportingContextOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder
+      getStatusPerReportingContextOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return Whether the reportingContext field is set.
+   */
+  boolean hasReportingContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reportingContext.
+   */
+  int getReportingContextValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return The reportingContext.
+   */
+  com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext();
 
   /**
    *
@@ -1281,9 +1473,8 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Rank of the product based on its click potential. A product with
-   * `click_potential_rank` 1 has the highest click potential among the
-   * merchant's products that fulfill the search query conditions.
+   * Normalized click potential of the product. Values range from 1 to 1000,
+   * where 1 is the highest click potential and 1000 is the theoretical lowest.
    * </pre>
    *
    * <code>optional int64 click_potential_rank = 30;</code>
@@ -1296,9 +1487,8 @@ public interface ProductViewOrBuilder
    *
    *
    * <pre>
-   * Rank of the product based on its click potential. A product with
-   * `click_potential_rank` 1 has the highest click potential among the
-   * merchant's products that fulfill the search query conditions.
+   * Normalized click potential of the product. Values range from 1 to 1000,
+   * where 1 is the highest click potential and 1000 is the theoretical lowest.
    * </pre>
    *
    * <code>optional int64 click_potential_rank = 30;</code>

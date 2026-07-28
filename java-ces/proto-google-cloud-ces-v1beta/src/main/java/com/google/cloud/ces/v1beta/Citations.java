@@ -152,6 +152,19 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
      * @return The bytes for text.
      */
     com.google.protobuf.ByteString getTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether this citation requires attribution to be shown to the end users.
+     * </pre>
+     *
+     * <code>bool requires_attribution = 4;</code>
+     *
+     * @return The requiresAttribution.
+     */
+    boolean getRequiresAttribution();
   }
 
   /**
@@ -364,6 +377,25 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int REQUIRES_ATTRIBUTION_FIELD_NUMBER = 4;
+    private boolean requiresAttribution_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether this citation requires attribution to be shown to the end users.
+     * </pre>
+     *
+     * <code>bool requires_attribution = 4;</code>
+     *
+     * @return The requiresAttribution.
+     */
+    @java.lang.Override
+    public boolean getRequiresAttribution() {
+      return requiresAttribution_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -387,6 +419,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, text_);
       }
+      if (requiresAttribution_ != false) {
+        output.writeBool(4, requiresAttribution_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -404,6 +439,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(text_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, text_);
+      }
+      if (requiresAttribution_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, requiresAttribution_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -424,6 +462,7 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
       if (!getUri().equals(other.getUri())) return false;
       if (!getTitle().equals(other.getTitle())) return false;
       if (!getText().equals(other.getText())) return false;
+      if (getRequiresAttribution() != other.getRequiresAttribution()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -441,6 +480,8 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getTitle().hashCode();
       hash = (37 * hash) + TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + REQUIRES_ATTRIBUTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRequiresAttribution());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -584,6 +625,7 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         uri_ = "";
         title_ = "";
         text_ = "";
+        requiresAttribution_ = false;
         return this;
       }
 
@@ -629,6 +671,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.text_ = text_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.requiresAttribution_ = requiresAttribution_;
+        }
       }
 
       @java.lang.Override
@@ -658,6 +703,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
           text_ = other.text_;
           bitField0_ |= 0x00000004;
           onChanged();
+        }
+        if (other.getRequiresAttribution() != false) {
+          setRequiresAttribution(other.getRequiresAttribution());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -703,6 +751,12 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  requiresAttribution_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1051,6 +1105,62 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         text_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private boolean requiresAttribution_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether this citation requires attribution to be shown to the end users.
+       * </pre>
+       *
+       * <code>bool requires_attribution = 4;</code>
+       *
+       * @return The requiresAttribution.
+       */
+      @java.lang.Override
+      public boolean getRequiresAttribution() {
+        return requiresAttribution_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether this citation requires attribution to be shown to the end users.
+       * </pre>
+       *
+       * <code>bool requires_attribution = 4;</code>
+       *
+       * @param value The requiresAttribution to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequiresAttribution(boolean value) {
+
+        requiresAttribution_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether this citation requires attribution to be shown to the end users.
+       * </pre>
+       *
+       * <code>bool requires_attribution = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequiresAttribution() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        requiresAttribution_ = false;
         onChanged();
         return this;
       }

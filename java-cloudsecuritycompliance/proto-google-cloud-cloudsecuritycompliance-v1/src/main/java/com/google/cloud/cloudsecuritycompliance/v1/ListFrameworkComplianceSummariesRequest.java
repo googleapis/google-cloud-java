@@ -59,6 +59,7 @@ public final class ListFrameworkComplianceSummariesRequest
     parent_ = "";
     pageToken_ = "";
     filter_ = "";
+    view_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -263,6 +264,49 @@ public final class ListFrameworkComplianceSummariesRequest
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 5;
+  private int view_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the level of detail to return in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the level of detail to return in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView getView() {
+    com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView result =
+        com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView.forNumber(view_);
+    return result == null
+        ? com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -289,6 +333,12 @@ public final class ListFrameworkComplianceSummariesRequest
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, filter_);
     }
+    if (view_
+        != com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView
+            .FRAMEWORK_COMPLIANCE_SUMMARY_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, view_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -309,6 +359,12 @@ public final class ListFrameworkComplianceSummariesRequest
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, filter_);
+    }
+    if (view_
+        != com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView
+            .FRAMEWORK_COMPLIANCE_SUMMARY_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, view_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -332,6 +388,7 @@ public final class ListFrameworkComplianceSummariesRequest
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (view_ != other.view_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -351,6 +408,8 @@ public final class ListFrameworkComplianceSummariesRequest
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -508,6 +567,7 @@ public final class ListFrameworkComplianceSummariesRequest
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
+      view_ = 0;
       return this;
     }
 
@@ -564,6 +624,9 @@ public final class ListFrameworkComplianceSummariesRequest
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -602,6 +665,9 @@ public final class ListFrameworkComplianceSummariesRequest
         filter_ = other.filter_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -653,6 +719,12 @@ public final class ListFrameworkComplianceSummariesRequest
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                view_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1075,6 +1147,115 @@ public final class ListFrameworkComplianceSummariesRequest
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the level of detail to return in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the level of detail to return in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+      view_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the level of detail to return in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView getView() {
+      com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView result =
+          com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView.forNumber(
+              view_);
+      return result == null
+          ? com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the level of detail to return in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(
+        com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the level of detail to return in the response.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView view = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      view_ = 0;
       onChanged();
       return this;
     }

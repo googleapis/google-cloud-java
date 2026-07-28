@@ -30,11 +30,11 @@ public interface CalculatedMetricOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this CalculatedMetric.
+   * Identifier. Resource name for this CalculatedMetric.
    * Format: 'properties/{property_id}/calculatedMetrics/{calculated_metric_id}'
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,11 +44,11 @@ public interface CalculatedMetricOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this CalculatedMetric.
+   * Identifier. Resource name for this CalculatedMetric.
    * Format: 'properties/{property_id}/calculatedMetrics/{calculated_metric_id}'
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

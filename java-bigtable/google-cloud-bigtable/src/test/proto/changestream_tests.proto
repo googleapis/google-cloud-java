@@ -1,0 +1,63 @@
+// Copyright 2022, Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package google.cloud.conformance.bigtable.v2;
+
+import "google/bigtable/v2/bigtable.proto";
+import "google/protobuf/timestamp.proto";
+import "google/bigtable/v2/data.proto";
+
+option csharp_namespace = "Google.Cloud.Bigtable.V2.Tests.Conformance";
+option java_outer_classname = "ChangeStreamTestDefinition";
+option java_package = "com.google.cloud.conformance.bigtable.v2";
+option go_package = "google/cloud/conformance/bigtable/v2";
+
+message ChangeStreamTestFile {
+  repeated ReadChangeStreamTest read_change_stream_tests = 1;
+}
+
+message ReadChangeStreamTest {
+
+  message TestChangeStreamMutation {
+    bytes row_key = 1;
+    google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type type = 2;
+    string source_cluster_id = 3;
+    google.protobuf.Timestamp commit_timestamp = 4;
+    int64 tiebreaker = 5;
+    string token = 6;
+    google.protobuf.Timestamp estimated_low_watermark = 7;
+    repeated google.bigtable.v2.Mutation mutations = 8;
+  }
+
+  message TestChangeStreamRecord {
+    oneof record {
+      google.bigtable.v2.ReadChangeStreamResponse.Heartbeat heartbeat = 1;
+      google.bigtable.v2.ReadChangeStreamResponse.CloseStream close_stream = 2;
+      TestChangeStreamMutation change_stream_mutation = 3;
+    }
+  }
+
+  // Expected results of reading the change stream.
+  // Only the last result can be an error.
+  message Result {
+    TestChangeStreamRecord record = 1;
+    bool error = 2;
+  }
+
+  string description = 1;
+  repeated google.bigtable.v2.ReadChangeStreamResponse api_responses = 2;
+  repeated Result results = 3;
+}

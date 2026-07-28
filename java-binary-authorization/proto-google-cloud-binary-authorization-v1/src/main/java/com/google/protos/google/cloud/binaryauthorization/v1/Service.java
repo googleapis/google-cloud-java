@@ -49,8 +49,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-     * in the format `projects/&#42;&#47;policy`.
+     * Required. The resource name of the
+     * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+     * format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -65,8 +66,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-     * in the format `projects/&#42;&#47;policy`.
+     * Required. The resource name of the
+     * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+     * format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -82,7 +84,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.GetPolicy][].
+   * Request message for
+   * [BinauthzManagementServiceV1.GetPolicy][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.GetPolicyRequest}
@@ -137,8 +140,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-     * in the format `projects/&#42;&#47;policy`.
+     * Required. The resource name of the
+     * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+     * format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -164,8 +168,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-     * in the format `projects/&#42;&#47;policy`.
+     * Required. The resource name of the
+     * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+     * format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -360,7 +365,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.GetPolicy][].
+     * Request message for
+     * [BinauthzManagementServiceV1.GetPolicy][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetPolicy].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.GetPolicyRequest}
@@ -528,8 +534,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-       * in the format `projects/&#42;&#47;policy`.
+       * Required. The resource name of the
+       * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+       * format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -554,8 +561,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-       * in the format `projects/&#42;&#47;policy`.
+       * Required. The resource name of the
+       * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+       * format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -580,8 +588,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-       * in the format `projects/&#42;&#47;policy`.
+       * Required. The resource name of the
+       * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+       * format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -605,8 +614,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-       * in the format `projects/&#42;&#47;policy`.
+       * Required. The resource name of the
+       * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+       * format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -626,8 +636,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve,
-       * in the format `projects/&#42;&#47;policy`.
+       * Required. The resource name of the
+       * [policy][google.cloud.binaryauthorization.v1.Policy] to retrieve, in the
+       * format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -714,9 +725,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -731,9 +744,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -748,9 +763,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -765,7 +782,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.UpdatePolicy][].
+   * Request message for
+   * [BinauthzManagementServiceV1.UpdatePolicy][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdatePolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.UpdatePolicyRequest}
@@ -818,9 +836,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -838,9 +858,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -861,9 +883,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-     * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-     * the request URL, in the format `projects/&#42;&#47;policy`.
+     * Required. A new or updated
+     * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+     * will overwrite the [policy
+     * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
      * </pre>
      *
      * <code>
@@ -1058,7 +1082,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.UpdatePolicy][].
+     * Request message for
+     * [BinauthzManagementServiceV1.UpdatePolicy][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdatePolicy].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.UpdatePolicyRequest}
@@ -1247,9 +1272,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1266,9 +1293,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1292,9 +1321,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1320,9 +1351,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1346,9 +1379,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1381,9 +1416,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1405,9 +1442,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1425,9 +1464,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1450,9 +1491,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. A new or updated [policy][google.cloud.binaryauthorization.v1.Policy] value. The service will
-       * overwrite the [policy name][google.cloud.binaryauthorization.v1.Policy.name] field with the resource name in
-       * the request URL, in the format `projects/&#42;&#47;policy`.
+       * Required. A new or updated
+       * [policy][google.cloud.binaryauthorization.v1.Policy] value. The service
+       * will overwrite the [policy
+       * name][google.cloud.binaryauthorization.v1.Policy.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;policy`.
        * </pre>
        *
        * <code>
@@ -1542,7 +1585,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Required. The parent of this
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor].
      * </pre>
      *
      * <code>
@@ -1557,7 +1601,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Required. The parent of this
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor].
      * </pre>
      *
      * <code>
@@ -1598,9 +1643,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -1615,9 +1662,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -1632,9 +1681,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -1649,7 +1700,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.CreateAttestor][].
+   * Request message for
+   * [BinauthzManagementServiceV1.CreateAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.CreateAttestor].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.CreateAttestorRequest}
@@ -1707,7 +1759,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Required. The parent of this
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor].
      * </pre>
      *
      * <code>
@@ -1733,7 +1786,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+     * Required. The parent of this
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor].
      * </pre>
      *
      * <code>
@@ -1815,9 +1869,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -1835,9 +1891,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -1858,9 +1916,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-     * in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The initial
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -2085,7 +2145,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.CreateAttestor][].
+     * Request message for
+     * [BinauthzManagementServiceV1.CreateAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.CreateAttestor].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.CreateAttestorRequest}
@@ -2301,7 +2362,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+       * Required. The parent of this
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor].
        * </pre>
        *
        * <code>
@@ -2326,7 +2388,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+       * Required. The parent of this
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor].
        * </pre>
        *
        * <code>
@@ -2351,7 +2414,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+       * Required. The parent of this
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor].
        * </pre>
        *
        * <code>
@@ -2375,7 +2439,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+       * Required. The parent of this
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor].
        * </pre>
        *
        * <code>
@@ -2395,7 +2460,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The parent of this [attestor][google.cloud.binaryauthorization.v1.Attestor].
+       * Required. The parent of this
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor].
        * </pre>
        *
        * <code>
@@ -2538,9 +2604,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2557,9 +2625,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2584,9 +2654,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2612,9 +2684,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2638,9 +2712,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2673,9 +2749,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2697,9 +2775,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2717,9 +2797,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2742,9 +2824,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The initial [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name,
-       * in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The initial
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -2835,8 +2919,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+     * the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -2851,8 +2936,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+     * the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -2868,7 +2954,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.GetAttestor][].
+   * Request message for
+   * [BinauthzManagementServiceV1.GetAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetAttestor].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.GetAttestorRequest}
@@ -2924,8 +3011,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+     * the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -2951,8 +3039,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+     * the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3148,7 +3237,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.GetAttestor][].
+     * Request message for
+     * [BinauthzManagementServiceV1.GetAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.GetAttestor].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.GetAttestorRequest}
@@ -3316,8 +3406,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+       * the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -3342,8 +3433,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+       * the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -3368,8 +3460,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+       * the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -3393,8 +3486,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+       * the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -3414,8 +3508,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] to retrieve, in
+       * the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -3502,9 +3597,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3519,9 +3616,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3536,9 +3635,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3553,7 +3654,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.UpdateAttestor][].
+   * Request message for
+   * [BinauthzManagementServiceV1.UpdateAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdateAttestor].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.UpdateAttestorRequest}
@@ -3606,9 +3708,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3626,9 +3730,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3649,9 +3755,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-     * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-     * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The updated
+     * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+     * will overwrite the [attestor
+     * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+     * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -3858,7 +3966,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.UpdateAttestor][].
+     * Request message for
+     * [BinauthzManagementServiceV1.UpdateAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.UpdateAttestor].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.UpdateAttestorRequest}
@@ -4049,9 +4158,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4068,9 +4179,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4095,9 +4208,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4123,9 +4238,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4149,9 +4266,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4184,9 +4303,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4208,9 +4329,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4228,9 +4351,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4253,9 +4378,11 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The updated [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service will
-       * overwrite the [attestor name][google.cloud.binaryauthorization.v1.Attestor.name] field with the resource name
-       * in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The updated
+       * [attestor][google.cloud.binaryauthorization.v1.Attestor] value. The service
+       * will overwrite the [attestor
+       * name][google.cloud.binaryauthorization.v1.Attestor.name] field with the
+       * resource name in the request URL, in the format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -4347,7 +4474,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -4363,7 +4491,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -4393,8 +4522,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -4408,8 +4538,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -4423,7 +4554,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.ListAttestors][].
+   * Request message for
+   * [BinauthzManagementServiceV1.ListAttestors][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.ListAttestors].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.ListAttestorsRequest}
@@ -4481,7 +4613,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -4508,7 +4641,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. The resource name of the project associated with the
-     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+     * `projects/&#42;`.
      * </pre>
      *
      * <code>
@@ -4560,8 +4694,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -4586,8 +4721,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token identifying a page of results the server should return. Typically,
-     * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-     * from the previous call to the `ListAttestors` method.
+     * this is the value of
+     * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+     * returned from the previous call to the `ListAttestors` method.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -4799,7 +4935,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.ListAttestors][].
+     * Request message for
+     * [BinauthzManagementServiceV1.ListAttestors][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.ListAttestors].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.ListAttestorsRequest}
@@ -4999,7 +5136,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The resource name of the project associated with the
-       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -5025,7 +5163,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The resource name of the project associated with the
-       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -5051,7 +5190,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The resource name of the project associated with the
-       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -5076,7 +5216,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The resource name of the project associated with the
-       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -5097,7 +5238,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. The resource name of the project associated with the
-       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format `projects/&#42;`.
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor], in the format
+       * `projects/&#42;`.
        * </pre>
        *
        * <code>
@@ -5184,8 +5326,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token identifying a page of results the server should return. Typically,
-       * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-       * from the previous call to the `ListAttestors` method.
+       * this is the value of
+       * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+       * returned from the previous call to the `ListAttestors` method.
        * </pre>
        *
        * <code>string page_token = 3;</code>
@@ -5209,8 +5352,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token identifying a page of results the server should return. Typically,
-       * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-       * from the previous call to the `ListAttestors` method.
+       * this is the value of
+       * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+       * returned from the previous call to the `ListAttestors` method.
        * </pre>
        *
        * <code>string page_token = 3;</code>
@@ -5234,8 +5378,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token identifying a page of results the server should return. Typically,
-       * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-       * from the previous call to the `ListAttestors` method.
+       * this is the value of
+       * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+       * returned from the previous call to the `ListAttestors` method.
        * </pre>
        *
        * <code>string page_token = 3;</code>
@@ -5258,8 +5403,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token identifying a page of results the server should return. Typically,
-       * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-       * from the previous call to the `ListAttestors` method.
+       * this is the value of
+       * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+       * returned from the previous call to the `ListAttestors` method.
        * </pre>
        *
        * <code>string page_token = 3;</code>
@@ -5278,8 +5424,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token identifying a page of results the server should return. Typically,
-       * this is the value of [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token] returned
-       * from the previous call to the `ListAttestors` method.
+       * this is the value of
+       * [ListAttestorsResponse.next_page_token][google.cloud.binaryauthorization.v1.ListAttestorsResponse.next_page_token]
+       * returned from the previous call to the `ListAttestors` method.
        * </pre>
        *
        * <code>string page_token = 3;</code>
@@ -5426,8 +5573,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in the
-     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-     * `ListAttestors` method to retrieve the next page of results.
+     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+     * field in the subsequent call to the `ListAttestors` method to retrieve the
+     * next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -5441,8 +5589,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in the
-     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-     * `ListAttestors` method to retrieve the next page of results.
+     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+     * field in the subsequent call to the `ListAttestors` method to retrieve the
+     * next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -5456,7 +5605,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Response message for [BinauthzManagementService.ListAttestors][].
+   * Response message for
+   * [BinauthzManagementServiceV1.ListAttestors][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.ListAttestors].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.ListAttestorsResponse}
@@ -5596,8 +5746,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in the
-     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-     * `ListAttestors` method to retrieve the next page of results.
+     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+     * field in the subsequent call to the `ListAttestors` method to retrieve the
+     * next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -5622,8 +5773,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in the
-     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-     * `ListAttestors` method to retrieve the next page of results.
+     * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+     * field in the subsequent call to the `ListAttestors` method to retrieve the
+     * next page of results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -5840,7 +5992,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Response message for [BinauthzManagementService.ListAttestors][].
+     * Response message for
+     * [BinauthzManagementServiceV1.ListAttestors][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.ListAttestors].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.ListAttestorsResponse}
@@ -6476,8 +6629,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token to retrieve the next page of results. Pass this value in the
-       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-       * `ListAttestors` method to retrieve the next page of results.
+       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+       * field in the subsequent call to the `ListAttestors` method to retrieve the
+       * next page of results.
        * </pre>
        *
        * <code>string next_page_token = 2;</code>
@@ -6501,8 +6655,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token to retrieve the next page of results. Pass this value in the
-       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-       * `ListAttestors` method to retrieve the next page of results.
+       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+       * field in the subsequent call to the `ListAttestors` method to retrieve the
+       * next page of results.
        * </pre>
        *
        * <code>string next_page_token = 2;</code>
@@ -6526,8 +6681,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token to retrieve the next page of results. Pass this value in the
-       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-       * `ListAttestors` method to retrieve the next page of results.
+       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+       * field in the subsequent call to the `ListAttestors` method to retrieve the
+       * next page of results.
        * </pre>
        *
        * <code>string next_page_token = 2;</code>
@@ -6550,8 +6706,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token to retrieve the next page of results. Pass this value in the
-       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-       * `ListAttestors` method to retrieve the next page of results.
+       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+       * field in the subsequent call to the `ListAttestors` method to retrieve the
+       * next page of results.
        * </pre>
        *
        * <code>string next_page_token = 2;</code>
@@ -6570,8 +6727,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * A token to retrieve the next page of results. Pass this value in the
-       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token] field in the subsequent call to the
-       * `ListAttestors` method to retrieve the next page of results.
+       * [ListAttestorsRequest.page_token][google.cloud.binaryauthorization.v1.ListAttestorsRequest.page_token]
+       * field in the subsequent call to the `ListAttestors` method to retrieve the
+       * next page of results.
        * </pre>
        *
        * <code>string next_page_token = 2;</code>
@@ -6657,8 +6815,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+     * format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -6673,8 +6832,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+     * format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -6690,7 +6850,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
    *
    *
    * <pre>
-   * Request message for [BinauthzManagementService.DeleteAttestor][].
+   * Request message for
+   * [BinauthzManagementServiceV1.DeleteAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.DeleteAttestor].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1.DeleteAttestorRequest}
@@ -6746,8 +6907,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+     * format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -6773,8 +6935,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+     * format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -6982,7 +7145,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Request message for [BinauthzManagementService.DeleteAttestor][].
+     * Request message for
+     * [BinauthzManagementServiceV1.DeleteAttestor][google.cloud.binaryauthorization.v1.BinauthzManagementServiceV1.DeleteAttestor].
      * </pre>
      *
      * Protobuf type {@code google.cloud.binaryauthorization.v1.DeleteAttestorRequest}
@@ -7153,8 +7317,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+       * format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -7179,8 +7344,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+       * format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -7205,8 +7371,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+       * format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -7230,8 +7397,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+       * format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -7251,8 +7419,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The name of the [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the format
-       * `projects/&#42;&#47;attestors/&#42;`.
+       * Required. The name of the
+       * [attestors][google.cloud.binaryauthorization.v1.Attestor] to delete, in the
+       * format `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
        *
        * <code>
@@ -8026,7 +8195,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+     * Required. The resource name of the
+     * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
      * [occurrence][grafeas.v1.Occurrence], in the format
      * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
@@ -8041,7 +8211,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+     * Required. The resource name of the
+     * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
      * [occurrence][grafeas.v1.Occurrence], in the format
      * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
@@ -8057,9 +8228,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8075,9 +8246,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8093,9 +8264,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8227,7 +8398,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+     * Required. The resource name of the
+     * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
      * [occurrence][grafeas.v1.Occurrence], in the format
      * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
@@ -8253,7 +8425,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+     * Required. The resource name of the
+     * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
      * [occurrence][grafeas.v1.Occurrence], in the format
      * `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
@@ -8283,9 +8456,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8304,9 +8477,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8327,9 +8500,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      * <pre>
      * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-     * be checked that it can be verified by the Attestor. It does not have to be
-     * an existing entity in Container Analysis. It must otherwise be a valid
-     * AttestationOccurrence.
+     * be checked that it can be verified by the `Attestor`. It does not have to
+     * be an existing entity in Container Analysis. It must otherwise be a valid
+     * `AttestationOccurrence`.
      * </pre>
      *
      * <code>
@@ -8921,7 +9094,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+       * Required. The resource name of the
+       * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
        * [occurrence][grafeas.v1.Occurrence], in the format
        * `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
@@ -8946,7 +9120,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+       * Required. The resource name of the
+       * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
        * [occurrence][grafeas.v1.Occurrence], in the format
        * `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
@@ -8971,7 +9146,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+       * Required. The resource name of the
+       * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
        * [occurrence][grafeas.v1.Occurrence], in the format
        * `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
@@ -8995,7 +9171,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+       * Required. The resource name of the
+       * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
        * [occurrence][grafeas.v1.Occurrence], in the format
        * `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
@@ -9015,7 +9192,8 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        *
        * <pre>
-       * Required. The resource name of the [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
+       * Required. The resource name of the
+       * [Attestor][google.cloud.binaryauthorization.v1.Attestor] of the
        * [occurrence][grafeas.v1.Occurrence], in the format
        * `projects/&#42;&#47;attestors/&#42;`.
        * </pre>
@@ -9048,9 +9226,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9068,9 +9246,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9094,9 +9272,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9122,9 +9300,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9147,9 +9325,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9180,9 +9358,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9205,9 +9383,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9225,9 +9403,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9249,9 +9427,9 @@ public final class Service extends com.google.protobuf.GeneratedFile {
        *
        * <pre>
        * Required. An [AttestationOccurrence][grafeas.v1.AttestationOccurrence] to
-       * be checked that it can be verified by the Attestor. It does not have to be
-       * an existing entity in Container Analysis. It must otherwise be a valid
-       * AttestationOccurrence.
+       * be checked that it can be verified by the `Attestor`. It does not have to
+       * be an existing entity in Container Analysis. It must otherwise be a valid
+       * `AttestationOccurrence`.
        * </pre>
        *
        * <code>
@@ -9690,7 +9868,7 @@ public final class Service extends com.google.protobuf.GeneratedFile {
      *
      *
      * <pre>
-     * The enum returned in the "result" field.
+     * The enum returned in the `result` field.
      * </pre>
      *
      * Protobuf enum {@code
@@ -10792,14 +10970,14 @@ public final class Service extends com.google.protobuf.GeneratedFile {
           + "stors/*}:validateAttestationOccurrence:\001"
           + "*\032V\312A\"binaryauthorization.googleapis.com"
           + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\214\002\n5com.google.protos.google.c"
+          + "-platformB\211\002\n5com.google.protos.google.c"
           + "loud.binaryauthorization.v1P\000ZYcloud.goo"
           + "gle.com/go/binaryauthorization/apiv1/bin"
           + "aryauthorizationpb;binaryauthorizationpb"
-          + "\370\001\001\252\002#Google.Cloud.BinaryAuthorization.V"
-          + "1\312\002#Google\\Cloud\\BinaryAuthorization\\V1\352"
-          + "\002&Google::Cloud::BinaryAuthorization::V1"
-          + "b\006proto3"
+          + "\252\002#Google.Cloud.BinaryAuthorization.V1\312\002"
+          + "#Google\\Cloud\\BinaryAuthorization\\V1\352\002&G"
+          + "oogle::Cloud::BinaryAuthorization::V1b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

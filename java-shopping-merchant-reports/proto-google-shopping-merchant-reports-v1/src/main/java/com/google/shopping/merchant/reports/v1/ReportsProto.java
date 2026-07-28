@@ -77,6 +77,10 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_reports_v1_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_reports_v1_PriceCompetitivenessProductView_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_reports_v1_PriceCompetitivenessProductView_fieldAccessorTable;
@@ -112,6 +116,10 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_shopping_merchant_reports_v1_MarketingMethod_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_reports_v1_MarketingMethod_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1_StoreType_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1_StoreType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_reports_v1_ReportGranularity_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -173,43 +181,46 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "gle.shopping.merchant.reports.v1.CompetitiveVisibilityTopMerchantView\022v\n"
           + "%competitive_visibility_benchmark_view\030\n"
           + " \001(\0132G.g"
-          + "oogle.shopping.merchant.reports.v1.CompetitiveVisibilityBenchmarkView\"\275\n\n"
+          + "oogle.shopping.merchant.reports.v1.CompetitiveVisibilityBenchmarkView\"\243\013\n"
           + "\026ProductPerformanceView\022g\n"
           + "\020marketing_method\030\001 \001(\0162H.google.shopping.merchant.reports.v1"
           + ".MarketingMethod.MarketingMethodEnumH\000\210\001\001\022\037\n"
           + "\004date\030\002 \001(\0132\021.google.type.Date\022\037\n"
           + "\004week\030\003 \001(\0132\021.google.type.Date\022\"\n"
-          + "\025customer_country_code\030\004 \001(\tH\001\210\001\001\022\025\n"
-          + "\010offer_id\030\005 \001(\tH\002\210\001\001\022\022\n"
-          + "\005title\030\006 \001(\tH\003\210\001\001\022\022\n"
-          + "\005brand\030\007 \001(\tH\004\210\001\001\022\030\n"
-          + "\013category_l1\030\010 \001(\tH\005\210\001\001\022\030\n"
-          + "\013category_l2\030\t \001(\tH\006\210\001\001\022\030\n"
+          + "\025customer_country_code\030\004 \001(\tH\001\210\001\001\022U\n\n"
+          + "store_type\030  "
+          + "\001(\0162<.google.shopping.merchant.reports.v1.StoreType.StoreTypeEnumH\002\210\001\001\022\025\n"
+          + "\010offer_id\030\005 \001(\tH\003\210\001\001\022\022\n"
+          + "\005title\030\006 \001(\tH\004\210\001\001\022\022\n"
+          + "\005brand\030\007 \001(\tH\005\210\001\001\022\030\n"
+          + "\013category_l1\030\010 \001(\tH\006\210\001\001\022\030\n"
+          + "\013category_l2\030\t \001(\tH\007\210\001\001\022\030\n"
           + "\013category_l3\030\n"
-          + " \001(\tH\007\210\001\001\022\030\n"
-          + "\013category_l4\030\013 \001(\tH\010\210\001\001\022\030\n"
-          + "\013category_l5\030\014 \001(\tH\t\210\001\001\022\034\n"
+          + " \001(\tH\010\210\001\001\022\030\n"
+          + "\013category_l4\030\013 \001(\tH\t\210\001\001\022\030\n"
+          + "\013category_l5\030\014 \001(\tH\n"
+          + "\210\001\001\022\034\n"
           + "\017product_type_l1\030\r"
-          + " \001(\tH\n"
+          + " \001(\tH\013\210\001\001\022\034\n"
+          + "\017product_type_l2\030\016 \001(\tH\014\210\001\001\022\034\n"
+          + "\017product_type_l3\030\017 \001(\tH\r"
           + "\210\001\001\022\034\n"
-          + "\017product_type_l2\030\016 \001(\tH\013\210\001\001\022\034\n"
-          + "\017product_type_l3\030\017 \001(\tH\014\210\001\001\022\034\n"
-          + "\017product_type_l4\030\020 \001(\tH\r"
-          + "\210\001\001\022\034\n"
-          + "\017product_type_l5\030\021 \001(\tH\016\210\001\001\022\032\n\r"
-          + "custom_label0\030\022 \001(\tH\017\210\001\001\022\032\n\r"
-          + "custom_label1\030\023 \001(\tH\020\210\001\001\022\032\n\r"
-          + "custom_label2\030\024 \001(\tH\021\210\001\001\022\032\n\r"
-          + "custom_label3\030\025 \001(\tH\022\210\001\001\022\032\n\r"
-          + "custom_label4\030\026 \001(\tH\023\210\001\001\022\023\n"
-          + "\006clicks\030\027 \001(\003H\024\210\001\001\022\030\n"
-          + "\013impressions\030\030 \001(\003H\025\210\001\001\022\037\n"
-          + "\022click_through_rate\030\031 \001(\001H\026\210\001\001\022\030\n"
-          + "\013conversions\030\032 \001(\001H\027\210\001\001\0225\n"
+          + "\017product_type_l4\030\020 \001(\tH\016\210\001\001\022\034\n"
+          + "\017product_type_l5\030\021 \001(\tH\017\210\001\001\022\032\n\r"
+          + "custom_label0\030\022 \001(\tH\020\210\001\001\022\032\n\r"
+          + "custom_label1\030\023 \001(\tH\021\210\001\001\022\032\n\r"
+          + "custom_label2\030\024 \001(\tH\022\210\001\001\022\032\n\r"
+          + "custom_label3\030\025 \001(\tH\023\210\001\001\022\032\n\r"
+          + "custom_label4\030\026 \001(\tH\024\210\001\001\022\023\n"
+          + "\006clicks\030\027 \001(\003H\025\210\001\001\022\030\n"
+          + "\013impressions\030\030 \001(\003H\026\210\001\001\022\037\n"
+          + "\022click_through_rate\030\031 \001(\001H\027\210\001\001\022\030\n"
+          + "\013conversions\030\032 \001(\001H\030\210\001\001\0225\n"
           + "\020conversion_value\030\033 \001(\0132\033.google.shopping.type.Price\022\034\n"
-          + "\017conversion_rate\030\034 \001(\001H\030\210\001\001B\023\n"
+          + "\017conversion_rate\030\034 \001(\001H\031\210\001\001B\023\n"
           + "\021_marketing_methodB\030\n"
-          + "\026_customer_country_codeB\013\n"
+          + "\026_customer_country_codeB\r\n"
+          + "\013_store_typeB\013\n"
           + "\t_offer_idB\010\n"
           + "\006_titleB\010\n"
           + "\006_brandB\016\n"
@@ -232,7 +243,7 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\014_impressionsB\025\n"
           + "\023_click_through_rateB\016\n"
           + "\014_conversionsB\022\n"
-          + "\020_conversion_rate\"\242\027\n"
+          + "\020_conversion_rate\"\356\032\n"
           + "\013ProductView\022\017\n"
           + "\002id\030\001 \001(\tH\000\210\001\001\022?\n"
           + "\007channel\030\034"
@@ -265,36 +276,39 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\016thumbnail_link\030\027 \001(\tH\025\210\001\001\0221\n\r"
           + "creation_time\030\030 \001(\0132\032.google.protobuf.Timestamp\022*\n"
           + "\017expiration_date\030\031 \001(\0132\021.google.type.Date\022\203\001\n"
-          + "#aggregated_reporting_context_status\030\032 "
-          + "\001(\0162Q.google.shopping.merchant.reports.v"
-          + "1.ProductView.AggregatedReportingContextStatusH\026\210\001\001\022O\n"
-          + "\013item_issues\030\033 \003(\0132:.googl"
-          + "e.shopping.merchant.reports.v1.ProductView.ItemIssue\022X\n"
-          + "\017click_potential\030\035 \001(\0162?."
-          + "google.shopping.merchant.reports.v1.ProductView.ClickPotential\022!\n"
-          + "\024click_potential_rank\030\036 \001(\003H\027\210\001\001\032\237\t\n"
+          + "#aggregated_reporting_context_status\030\032 \001(\0162Q.google.shopp"
+          + "ing.merchant.reports.v1.ProductView.AggregatedReportingContextStatusH\026\210\001\001\022p\n"
+          + "\034status_per_reporting_context\030  \003(\0132J.google"
+          + ".shopping.merchant.reports.v1.ProductView.StatusPerReportingContext\022[\n"
+          + "\021reporting_context\030! \001(\0162;.google.shopping.type.Re"
+          + "portingContext.ReportingContextEnumH\027\210\001\001\022O\n"
+          + "\013item_issues\030\033 \003(\0132:.google.shopping."
+          + "merchant.reports.v1.ProductView.ItemIssue\022X\n"
+          + "\017click_potential\030\035 \001(\0162?.google.shop"
+          + "ping.merchant.reports.v1.ProductView.ClickPotential\022!\n"
+          + "\024click_potential_rank\030\036 \001(\003H\030\210\001\001\032\237\t\n"
           + "\tItemIssue\022V\n"
-          + "\004type\030\001 \001(\0132H.google.shopping.merchant.reports"
-          + ".v1.ProductView.ItemIssue.ItemIssueType\022^\n"
-          + "\010severity\030\002 \001(\0132L.google.shopping.merc"
-          + "hant.reports.v1.ProductView.ItemIssue.ItemIssueSeverity\022g\n\n"
-          + "resolution\030\003 \001(\0162N.google.shopping.merchant.reports.v1.Produc"
-          + "tView.ItemIssue.ItemIssueResolutionH\000\210\001\001\032e\n\r"
+          + "\004type\030\001 \001(\0132H.goo"
+          + "gle.shopping.merchant.reports.v1.ProductView.ItemIssue.ItemIssueType\022^\n"
+          + "\010severity\030\002 \001(\0132L.google.shopping.merchant.report"
+          + "s.v1.ProductView.ItemIssue.ItemIssueSeverity\022g\n\n"
+          + "resolution\030\003 \001(\0162N.google.shoppi"
+          + "ng.merchant.reports.v1.ProductView.ItemIssue.ItemIssueResolutionH\000\210\001\001\032e\n\r"
           + "ItemIssueType\022\021\n"
           + "\004code\030\001 \001(\tH\000\210\001\001\022 \n"
           + "\023canonical_attribute\030\002 \001(\tH\001\210\001\001B\007\n"
           + "\005_codeB\026\n"
           + "\024_canonical_attribute\032\217\005\n"
           + "\021ItemIssueSeverity\022\225\001\n"
-          + "\036severity_per_reporting_context\030\001 \003(\0132m.google.shopping.merchant.report"
-          + "s.v1.ProductView.ItemIssue.ItemIssueSeve"
-          + "rity.IssueSeverityPerReportingContext\022\206\001\n"
-          + "\023aggregated_severity\030\002 \001(\0162d.google.sho"
-          + "pping.merchant.reports.v1.ProductView.It"
-          + "emIssue.ItemIssueSeverity.AggregatedIssueSeverityH\000\210\001\001\032\317\001\n"
+          + "\036severity_per_reporting_context\030\001 \003(\0132m.go"
+          + "ogle.shopping.merchant.reports.v1.Produc"
+          + "tView.ItemIssue.ItemIssueSeverity.IssueSeverityPerReportingContext\022\206\001\n"
+          + "\023aggregated_severity\030\002 \001(\0162d.google.shopping.merch"
+          + "ant.reports.v1.ProductView.ItemIssue.Ite"
+          + "mIssueSeverity.AggregatedIssueSeverityH\000\210\001\001\032\317\001\n"
           + " IssueSeverityPerReportingContext\022[\n"
-          + "\021reporting_context\030\001 \001(\0162;"
-          + ".google.shopping.type.ReportingContext.ReportingContextEnumH\000\210\001\001\022\035\n"
+          + "\021reporting_context\030\001 \001(\0162;.google.sho"
+          + "pping.type.ReportingContext.ReportingContextEnumH\000\210\001\001\022\035\n"
           + "\025disapproved_countries\030\002 \003(\t\022\031\n"
           + "\021demoted_countries\030\003 \003(\tB\024\n"
           + "\022_reporting_context\"o\n"
@@ -308,7 +322,14 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "!ITEM_ISSUE_RESOLUTION_UNSPECIFIED\020\000\022\023\n"
           + "\017MERCHANT_ACTION\020\001\022\026\n"
           + "\022PENDING_PROCESSING\020\002B\r\n"
-          + "\013_resolution\"\251\001\n"
+          + "\013_resolution\032\344\001\n"
+          + "\031StatusPerReportingContext\022[\n"
+          + "\021reporting_context\030\001"
+          + " \001(\0162;.google.shopping.type.ReportingContext.ReportingContextEnumH\000\210\001\001\022\032\n"
+          + "\022approved_countries\030\002 \003(\t\022\035\n"
+          + "\025disapproved_countries\030\003 \003(\t\022\031\n"
+          + "\021pending_countries\030\004 \003(\tB\024\n"
+          + "\022_reporting_context\"\251\001\n"
           + " AggregatedReportingContextStatus\0223\n"
           + "/AGGREGATED_REPORTING_CONTEXT_STATUS_UNSPECIFIED\020\000\022\037\n"
           + "\033NOT_ELIGIBLE_OR_DISAPPROVED\020\001\022\013\n"
@@ -342,7 +363,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\017_shipping_labelB\020\n"
           + "\016_item_group_idB\021\n"
           + "\017_thumbnail_linkB&\n"
-          + "$_aggregated_reporting_context_statusB\027\n"
+          + "$_aggregated_reporting_context_statusB\024\n"
+          + "\022_reporting_contextB\027\n"
           + "\025_click_potential_rank\"\201\006\n"
           + "\037PriceCompetitivenessProductView\022 \n"
           + "\023report_country_code\030\001 \001(\tH\000\210\001\001\022\017\n"
@@ -405,8 +427,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "%predicted_impressions_change_fraction\030\021 \001(\001H\016\210\001\001\022-\n"
           + " predicted_clicks_change_fraction\030\022 \001(\001H\017\210\001\001\0222\n"
           + "%predicted_conversions_change_fraction\030\023 \001(\001H\020\210\001\001\022b\n\r"
-          + "effectiveness\030\026 \001(\0162K.google.sho"
-          + "pping.merchant.reports.v1.PriceInsightsProductView.Effectiveness\"M\n\r"
+          + "effectiveness\030\026 \001(\0162K.google.s"
+          + "hopping.merchant.reports.v1.PriceInsightsProductView.Effectiveness\"M\n\r"
           + "Effectiveness\022\035\n"
           + "\031EFFECTIVENESS_UNSPECIFIED\020\000\022\007\n"
           + "\003LOW\020\001\022\n\n"
@@ -431,8 +453,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "&_predicted_conversions_change_fraction\"\327\013\n"
           + "\035BestSellersProductClusterView\022&\n"
           + "\013report_date\030\001 \001(\0132\021.google.type.Date\022m\n"
-          + "\022report_granularity\030\002 \001(\0162L.google.shop"
-          + "ping.merchant.reports.v1.ReportGranularity.ReportGranularityEnumH\000\210\001\001\022"
+          + "\022report_granularity\030\002 \001(\0162L.google.sh"
+          + "opping.merchant.reports.v1.ReportGranularity.ReportGranularityEnumH\000\210\001\001\022"
           + " \n"
           + "\023report_country_code\030\003 \001(\tH\001\210\001\001\022\037\n"
           + "\022report_category_id\030\004 \001(\003H\002\210\001\001\022\022\n"
@@ -446,21 +468,20 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\013category_l5\030\014 \001(\tH\t\210\001\001\022\025\n\r"
           + "variant_gtins\030\r"
           + " \003(\t\022q\n"
-          + "\020inventory_status\030\016 \001(\0162R.google.shopping.merchant.reports.v1.BestSe"
-          + "llersProductClusterView.InventoryStatusH\n"
+          + "\020inventory_status\030\016 \001(\0162R.google.shopping.merchant.reports.v1.Best"
+          + "SellersProductClusterView.InventoryStatusH\n"
           + "\210\001\001\022w\n"
-          + "\026brand_inventory_status\030\017 \001(\0162R.g"
-          + "oogle.shopping.merchant.reports.v1.BestS"
-          + "ellersProductClusterView.InventoryStatusH\013\210\001\001\022\021\n"
+          + "\026brand_inventory_status\030\017 \001(\0162R.google.shopping.merchant.reports.v1.Bes"
+          + "tSellersProductClusterView.InventoryStatusH\013\210\001\001\022\021\n"
           + "\004rank\030\020 \001(\003H\014\210\001\001\022\032\n\r"
           + "previous_rank\030\021 \001(\003H\r"
           + "\210\001\001\022d\n"
-          + "\017relative_demand\030\022 \001(\0162F."
-          + "google.shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\016\210\001\001\022m\n"
-          + "\030previous_relative_demand\030\023 \001(\0162F.google.sh"
-          + "opping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\017\210\001\001\022\177\n"
-          + "\026relative_demand_change\030\024 \001(\0162Z.google.shopping.merc"
-          + "hant.reports.v1.RelativeDemandChangeType.RelativeDemandChangeTypeEnumH\020\210\001\001\"i\n"
+          + "\017relative_demand\030\022 \001(\0162"
+          + "F.google.shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\016\210\001\001\022m\n"
+          + "\030previous_relative_demand\030\023 \001(\0162F.google."
+          + "shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\017\210\001\001\022\177\n"
+          + "\026relative_demand_change\030\024 \001(\0162Z.google.shopping.me"
+          + "rchant.reports.v1.RelativeDemandChangeType.RelativeDemandChangeTypeEnumH\020\210\001\001\"i\n"
           + "\017InventoryStatus\022 \n"
           + "\034INVENTORY_STATUS_UNSPECIFIED\020\000\022\014\n"
           + "\010IN_STOCK\020\001\022\020\n"
@@ -485,21 +506,20 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\027_relative_demand_change\"\300\006\n"
           + "\024BestSellersBrandView\022&\n"
           + "\013report_date\030\001 \001(\0132\021.google.type.Date\022m\n"
-          + "\022report_granularity\030\002 \001(\0162L.go"
-          + "ogle.shopping.merchant.reports.v1.ReportGranularity.ReportGranularityEnumH\000\210\001\001\022"
-          + " \n"
+          + "\022report_granularity\030\002 \001(\0162L.google.shopping.merchant.reports.v1.Repo"
+          + "rtGranularity.ReportGranularityEnumH\000\210\001\001\022 \n"
           + "\023report_country_code\030\003 \001(\tH\001\210\001\001\022\037\n"
           + "\022report_category_id\030\004 \001(\003H\002\210\001\001\022\022\n"
           + "\005brand\030\006 \001(\tH\003\210\001\001\022\021\n"
           + "\004rank\030\007 \001(\003H\004\210\001\001\022\032\n\r"
           + "previous_rank\030\010 \001(\003H\005\210\001\001\022d\n"
-          + "\017relative_demand\030\t \001(\0162F."
-          + "google.shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\006\210\001\001\022m\n"
+          + "\017relative_demand\030\t \001(\0162"
+          + "F.google.shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\006\210\001\001\022m\n"
           + "\030previous_relative_demand\030\n"
-          + " \001(\0162F.google.sh"
-          + "opping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\007\210\001\001\022\177\n"
-          + "\026relative_demand_change\030\013 \001(\0162Z.google.shopping.merc"
-          + "hant.reports.v1.RelativeDemandChangeType.RelativeDemandChangeTypeEnumH\010\210\001\001B\025\n"
+          + " \001(\0162F.google."
+          + "shopping.merchant.reports.v1.RelativeDemand.RelativeDemandEnumH\007\210\001\001\022\177\n"
+          + "\026relative_demand_change\030\013 \001(\0162Z.google.shopping.me"
+          + "rchant.reports.v1.RelativeDemandChangeType.RelativeDemandChangeTypeEnumH\010\210\001\001B\025\n"
           + "\023_report_granularityB\026\n"
           + "\024_report_country_codeB\025\n"
           + "\023_report_category_idB\010\n"
@@ -524,8 +544,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\016is_your_domain\030\003 \001(\010H\001\210\001\001\022 \n"
           + "\023report_country_code\030\004 \001(\tH\002\210\001\001\022\037\n"
           + "\022report_category_id\030\005 \001(\003H\003\210\001\001\022a\n"
-          + "\016traffic_source\030\006 \001(\0162D.google.shopping.merc"
-          + "hant.reports.v1.TrafficSource.TrafficSourceEnumH\004\210\001\001\022\021\n"
+          + "\016traffic_source\030\006 \001(\0162D.google.shopping.me"
+          + "rchant.reports.v1.TrafficSource.TrafficSourceEnumH\004\210\001\001\022\021\n"
           + "\004rank\030\007 \001(\003H\005\210\001\001\022\036\n"
           + "\021ads_organic_ratio\030\010 \001(\001H\006\210\001\001\022\036\n"
           + "\021page_overlap_rate\030\t \001(\001H\007\210\001\001\022!\n"
@@ -548,8 +568,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\016is_your_domain\030\003 \001(\010H\001\210\001\001\022 \n"
           + "\023report_country_code\030\004 \001(\tH\002\210\001\001\022\037\n"
           + "\022report_category_id\030\005 \001(\003H\003\210\001\001\022a\n"
-          + "\016traffic_source\030\006 \001(\0162D.google.shopping.merc"
-          + "hant.reports.v1.TrafficSource.TrafficSourceEnumH\004\210\001\001\022\021\n"
+          + "\016traffic_source\030\006 \001(\0162D.google.shopping.me"
+          + "rchant.reports.v1.TrafficSource.TrafficSourceEnumH\004\210\001\001\022\021\n"
           + "\004rank\030\007 \001(\003H\005\210\001\001\022\036\n"
           + "\021ads_organic_ratio\030\010 \001(\001H\006\210\001\001\022\036\n"
           + "\021page_overlap_rate\030\t \001(\001H\007\210\001\001\022!\n"
@@ -568,8 +588,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\004date\030\001 \001(\0132\021.google.type.Date\022 \n"
           + "\023report_country_code\030\002 \001(\tH\000\210\001\001\022\037\n"
           + "\022report_category_id\030\003 \001(\003H\001\210\001\001\022a\n"
-          + "\016traffic_source\030\004 \001(\0162D.google.sho"
-          + "pping.merchant.reports.v1.TrafficSource.TrafficSourceEnumH\002\210\001\001\022)\n"
+          + "\016traffic_source\030\004 \001(\0162D.google.s"
+          + "hopping.merchant.reports.v1.TrafficSource.TrafficSourceEnumH\002\210\001\001\022)\n"
           + "\034your_domain_visibility_trend\030\005 \001(\001H\003\210\001\001\0220\n"
           + "#category_benchmark_visibility_trend\030\006 \001(\001H\004\210\001\001B\026\n"
           + "\024_report_country_codeB\025\n"
@@ -581,7 +601,12 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\023MarketingMethodEnum\022%\n"
           + "!MARKETING_METHOD_ENUM_UNSPECIFIED\020\000\022\013\n"
           + "\007ORGANIC\020\001\022\007\n"
-          + "\003ADS\020\002\"n\n"
+          + "\003ADS\020\002\"a\n"
+          + "\tStoreType\"T\n\r"
+          + "StoreTypeEnum\022\037\n"
+          + "\033STORE_TYPE_ENUM_UNSPECIFIED\020\000\022\020\n"
+          + "\014ONLINE_STORE\020\001\022\020\n"
+          + "\014LOCAL_STORES\020\002\"n\n"
           + "\021ReportGranularity\"Y\n"
           + "\025ReportGranularityEnum\022\'\n"
           + "#REPORT_GRANULARITY_ENUM_UNSPECIFIED\020\000\022\n\n"
@@ -609,16 +634,16 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
           + "\003ADS\020\002\022\007\n"
           + "\003ALL\020\0032\220\002\n\r"
           + "ReportService\022\265\001\n"
-          + "\006Search\0222.google.shopping.merchant.repor"
-          + "ts.v1.SearchRequest\0323.google.shopping.me"
-          + "rchant.reports.v1.SearchResponse\"B\332A\006par"
-          + "ent\202\323\344\223\0023\"./reports/v1/{parent=accounts/"
-          + "*}/reports:search:\001*\032G\312A\032merchantapi.goo"
-          + "gleapis.com\322A\'https://www.googleapis.com/auth/contentB\370\001\n"
-          + "\'com.google.shopping.merchant.reports.v1B\014ReportsProtoP\001ZGcloud"
-          + ".google.com/go/shopping/merchant/reports/apiv1/reportspb;reportspb\252\002#Google.Shop"
-          + "ping.Merchant.Reports.V1\312\002#Google\\Shoppi"
-          + "ng\\Merchant\\Reports\\V1\352\002\'Google::Shopping::Merchant::Reports::V1b\006proto3"
+          + "\006Search\0222.google.shopping.merchant.reports.v1.SearchRequest"
+          + "\0323.google.shopping.merchant.reports.v1.S"
+          + "earchResponse\"B\332A\006parent\202\323\344\223\0023\"./reports"
+          + "/v1/{parent=accounts/*}/reports:search:\001"
+          + "*\032G\312A\032merchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\370\001\n"
+          + "\'com.google.shopping.merchant.reports.v1B\014"
+          + "ReportsProtoP\001ZGcloud.google.com/go/shopping/merchant/reports/apiv1/reportspb;re"
+          + "portspb\252\002#Google.Shopping.Merchant.Repor"
+          + "ts.V1\312\002#Google\\Shopping\\Merchant\\Reports"
+          + "\\V1\352\002\'Google::Shopping::Merchant::Reports::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -674,6 +699,7 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
               "Date",
               "Week",
               "CustomerCountryCode",
+              "StoreType",
               "OfferId",
               "Title",
               "Brand",
@@ -732,6 +758,8 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
               "CreationTime",
               "ExpirationDate",
               "AggregatedReportingContextStatus",
+              "StatusPerReportingContext",
+              "ReportingContext",
               "ItemIssues",
               "ClickPotential",
               "ClickPotentialRank",
@@ -770,6 +798,14 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_shopping_merchant_reports_v1_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor,
             new java.lang.String[] {
               "ReportingContext", "DisapprovedCountries", "DemotedCountries",
+            });
+    internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor =
+        internal_static_google_shopping_merchant_reports_v1_ProductView_descriptor.getNestedType(1);
+    internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor,
+            new java.lang.String[] {
+              "ReportingContext", "ApprovedCountries", "DisapprovedCountries", "PendingCountries",
             });
     internal_static_google_shopping_merchant_reports_v1_PriceCompetitivenessProductView_descriptor =
         getDescriptor().getMessageType(5);
@@ -927,26 +963,32 @@ public final class ReportsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1_MarketingMethod_descriptor,
             new java.lang.String[] {});
-    internal_static_google_shopping_merchant_reports_v1_ReportGranularity_descriptor =
+    internal_static_google_shopping_merchant_reports_v1_StoreType_descriptor =
         getDescriptor().getMessageType(14);
+    internal_static_google_shopping_merchant_reports_v1_StoreType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1_StoreType_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_reports_v1_ReportGranularity_descriptor =
+        getDescriptor().getMessageType(15);
     internal_static_google_shopping_merchant_reports_v1_ReportGranularity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1_ReportGranularity_descriptor,
             new java.lang.String[] {});
     internal_static_google_shopping_merchant_reports_v1_RelativeDemand_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_shopping_merchant_reports_v1_RelativeDemand_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1_RelativeDemand_descriptor,
             new java.lang.String[] {});
     internal_static_google_shopping_merchant_reports_v1_RelativeDemandChangeType_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_shopping_merchant_reports_v1_RelativeDemandChangeType_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1_RelativeDemandChangeType_descriptor,
             new java.lang.String[] {});
     internal_static_google_shopping_merchant_reports_v1_TrafficSource_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_shopping_merchant_reports_v1_TrafficSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1_TrafficSource_descriptor,

@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -902,9 +904,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AMLClient implements BackgroundResource {
-  private final AMLSettings settings;
+  private final @Nullable AMLSettings settings;
   private final AMLStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -950,7 +953,7 @@ public class AMLClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AMLSettings getSettings() {
+  public final @Nullable AMLSettings getSettings() {
     return settings;
   }
 
@@ -999,7 +1002,7 @@ public class AMLClient implements BackgroundResource {
    *     location has exactly one instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInstancesPagedResponse listInstances(LocationName parent) {
+  public final ListInstancesPagedResponse listInstances(@Nullable LocationName parent) {
     ListInstancesRequest request =
         ListInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1165,7 +1168,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);
@@ -1279,7 +1282,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1566,7 +1569,8 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1724,7 +1728,7 @@ public class AMLClient implements BackgroundResource {
    */
   public final OperationFuture<ImportRegisteredPartiesResponse, OperationMetadata>
       importRegisteredPartiesAsync(
-          InstanceName name,
+          @Nullable InstanceName name,
           ImportRegisteredPartiesRequest.UpdateMode mode,
           LineOfBusiness lineOfBusiness,
           List<String> partyTables) {
@@ -1924,7 +1928,7 @@ public class AMLClient implements BackgroundResource {
    */
   public final OperationFuture<ExportRegisteredPartiesResponse, OperationMetadata>
       exportRegisteredPartiesAsync(
-          InstanceName name, BigQueryDestination dataset, LineOfBusiness lineOfBusiness) {
+          @Nullable InstanceName name, BigQueryDestination dataset, LineOfBusiness lineOfBusiness) {
     ExportRegisteredPartiesRequest request =
         ExportRegisteredPartiesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2098,7 +2102,7 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the Dataset is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(InstanceName parent) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable InstanceName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2263,7 +2267,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Dataset
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -2381,7 +2385,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
-      InstanceName parent, Dataset dataset, String datasetId) {
+      @Nullable InstanceName parent, Dataset dataset, String datasetId) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2667,7 +2671,8 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Dataset.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
+      @Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
@@ -2817,7 +2822,7 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the Model is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelsPagedResponse listModels(InstanceName parent) {
+  public final ListModelsPagedResponse listModels(@Nullable InstanceName parent) {
     ListModelsRequest request =
         ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
@@ -2979,7 +2984,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Model
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model getModel(ModelName name) {
+  public final Model getModel(@Nullable ModelName name) {
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -3094,7 +3099,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Model, OperationMetadata> createModelAsync(
-      InstanceName parent, Model model, String modelId) {
+      @Nullable InstanceName parent, Model model, String modelId) {
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3387,7 +3392,8 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportModelMetadataResponse, OperationMetadata>
-      exportModelMetadataAsync(ModelName model, BigQueryDestination structuredMetadataDestination) {
+      exportModelMetadataAsync(
+          @Nullable ModelName model, BigQueryDestination structuredMetadataDestination) {
     ExportModelMetadataRequest request =
         ExportModelMetadataRequest.newBuilder()
             .setModel(model == null ? null : model.toString())
@@ -3553,7 +3559,8 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the Model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
+      @Nullable ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
@@ -3699,7 +3706,7 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the EngineConfig is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEngineConfigsPagedResponse listEngineConfigs(InstanceName parent) {
+  public final ListEngineConfigsPagedResponse listEngineConfigs(@Nullable InstanceName parent) {
     ListEngineConfigsRequest request =
         ListEngineConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3868,7 +3875,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the EngineConfig
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EngineConfig getEngineConfig(EngineConfigName name) {
+  public final EngineConfig getEngineConfig(@Nullable EngineConfigName name) {
     GetEngineConfigRequest request =
         GetEngineConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEngineConfig(request);
@@ -3990,7 +3997,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EngineConfig, OperationMetadata> createEngineConfigAsync(
-      InstanceName parent, EngineConfig engineConfig, String engineConfigId) {
+      @Nullable InstanceName parent, EngineConfig engineConfig, String engineConfigId) {
     CreateEngineConfigRequest request =
         CreateEngineConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4291,7 +4298,8 @@ public class AMLClient implements BackgroundResource {
    */
   public final OperationFuture<ExportEngineConfigMetadataResponse, OperationMetadata>
       exportEngineConfigMetadataAsync(
-          EngineConfigName engineConfig, BigQueryDestination structuredMetadataDestination) {
+          @Nullable EngineConfigName engineConfig,
+          BigQueryDestination structuredMetadataDestination) {
     ExportEngineConfigMetadataRequest request =
         ExportEngineConfigMetadataRequest.newBuilder()
             .setEngineConfig(engineConfig == null ? null : engineConfig.toString())
@@ -4472,7 +4480,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEngineConfigAsync(
-      EngineConfigName name) {
+      @Nullable EngineConfigName name) {
     DeleteEngineConfigRequest request =
         DeleteEngineConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4628,7 +4636,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the EngineVersion
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EngineVersion getEngineVersion(EngineVersionName name) {
+  public final EngineVersion getEngineVersion(@Nullable EngineVersionName name) {
     GetEngineVersionRequest request =
         GetEngineVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEngineVersion(request);
@@ -4746,7 +4754,7 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the EngineVersion is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEngineVersionsPagedResponse listEngineVersions(InstanceName parent) {
+  public final ListEngineVersionsPagedResponse listEngineVersions(@Nullable InstanceName parent) {
     ListEngineVersionsRequest request =
         ListEngineVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4917,7 +4925,8 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the PredictionResult is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPredictionResultsPagedResponse listPredictionResults(InstanceName parent) {
+  public final ListPredictionResultsPagedResponse listPredictionResults(
+      @Nullable InstanceName parent) {
     ListPredictionResultsRequest request =
         ListPredictionResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5089,7 +5098,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the PredictionResult
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PredictionResult getPredictionResult(PredictionResultName name) {
+  public final PredictionResult getPredictionResult(@Nullable PredictionResultName name) {
     GetPredictionResultRequest request =
         GetPredictionResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5217,7 +5226,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PredictionResult, OperationMetadata> createPredictionResultAsync(
-      InstanceName parent, PredictionResult predictionResult, String predictionResultId) {
+      @Nullable InstanceName parent, PredictionResult predictionResult, String predictionResultId) {
     CreatePredictionResultRequest request =
         CreatePredictionResultRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5522,7 +5531,7 @@ public class AMLClient implements BackgroundResource {
    */
   public final OperationFuture<ExportPredictionResultMetadataResponse, OperationMetadata>
       exportPredictionResultMetadataAsync(
-          PredictionResultName predictionResult,
+          @Nullable PredictionResultName predictionResult,
           BigQueryDestination structuredMetadataDestination) {
     ExportPredictionResultMetadataRequest request =
         ExportPredictionResultMetadataRequest.newBuilder()
@@ -5708,7 +5717,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePredictionResultAsync(
-      PredictionResultName name) {
+      @Nullable PredictionResultName name) {
     DeletePredictionResultRequest request =
         DeletePredictionResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5867,7 +5876,7 @@ public class AMLClient implements BackgroundResource {
    * @param parent Required. The parent of the BacktestResult is the Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBacktestResultsPagedResponse listBacktestResults(InstanceName parent) {
+  public final ListBacktestResultsPagedResponse listBacktestResults(@Nullable InstanceName parent) {
     ListBacktestResultsRequest request =
         ListBacktestResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6038,7 +6047,7 @@ public class AMLClient implements BackgroundResource {
    * @param name Required. The resource name of the BacktestResult
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BacktestResult getBacktestResult(BacktestResultName name) {
+  public final BacktestResult getBacktestResult(@Nullable BacktestResultName name) {
     GetBacktestResultRequest request =
         GetBacktestResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6162,7 +6171,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BacktestResult, OperationMetadata> createBacktestResultAsync(
-      InstanceName parent, BacktestResult backtestResult, String backtestResultId) {
+      @Nullable InstanceName parent, BacktestResult backtestResult, String backtestResultId) {
     CreateBacktestResultRequest request =
         CreateBacktestResultRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6466,7 +6475,8 @@ public class AMLClient implements BackgroundResource {
    */
   public final OperationFuture<ExportBacktestResultMetadataResponse, OperationMetadata>
       exportBacktestResultMetadataAsync(
-          BacktestResultName backtestResult, BigQueryDestination structuredMetadataDestination) {
+          @Nullable BacktestResultName backtestResult,
+          BigQueryDestination structuredMetadataDestination) {
     ExportBacktestResultMetadataRequest request =
         ExportBacktestResultMetadataRequest.newBuilder()
             .setBacktestResult(backtestResult == null ? null : backtestResult.toString())
@@ -6649,7 +6659,7 @@ public class AMLClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBacktestResultAsync(
-      BacktestResultName name) {
+      @Nullable BacktestResultName name) {
     DeleteBacktestResultRequest request =
         DeleteBacktestResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6997,8 +7007,8 @@ public class AMLClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -7008,14 +7018,14 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7029,7 +7039,8 @@ public class AMLClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7039,7 +7050,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7072,8 +7083,8 @@ public class AMLClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -7083,14 +7094,14 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7104,7 +7115,8 @@ public class AMLClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7114,7 +7126,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7145,8 +7157,8 @@ public class AMLClient implements BackgroundResource {
       extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
 
     private ListModelsPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       super(context, response);
     }
 
@@ -7156,14 +7168,14 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListModelsPage createPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       return new ListModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelsPage> createPageAsync(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
         ApiFuture<ListModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7177,7 +7189,8 @@ public class AMLClient implements BackgroundResource {
           ListModelsPage,
           ListModelsFixedSizeCollection> {
 
-    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+    private ListModelsFixedSizeCollection(
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7187,7 +7200,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListModelsFixedSizeCollection createCollection(
-        List<ListModelsPage> pages, int collectionSize) {
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7224,8 +7237,9 @@ public class AMLClient implements BackgroundResource {
           ListEngineConfigsPage> {
 
     private ListEngineConfigsPage(
-        PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig> context,
-        ListEngineConfigsResponse response) {
+        @Nullable PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig>
+            context,
+        @Nullable ListEngineConfigsResponse response) {
       super(context, response);
     }
 
@@ -7235,14 +7249,16 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListEngineConfigsPage createPage(
-        PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig> context,
-        ListEngineConfigsResponse response) {
+        @Nullable PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig>
+            context,
+        @Nullable ListEngineConfigsResponse response) {
       return new ListEngineConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEngineConfigsPage> createPageAsync(
-        PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig> context,
+        @Nullable PageContext<ListEngineConfigsRequest, ListEngineConfigsResponse, EngineConfig>
+            context,
         ApiFuture<ListEngineConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7257,7 +7273,7 @@ public class AMLClient implements BackgroundResource {
           ListEngineConfigsFixedSizeCollection> {
 
     private ListEngineConfigsFixedSizeCollection(
-        List<ListEngineConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListEngineConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7267,7 +7283,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListEngineConfigsFixedSizeCollection createCollection(
-        List<ListEngineConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListEngineConfigsPage> pages, int collectionSize) {
       return new ListEngineConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7304,8 +7320,9 @@ public class AMLClient implements BackgroundResource {
           ListEngineVersionsPage> {
 
     private ListEngineVersionsPage(
-        PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion> context,
-        ListEngineVersionsResponse response) {
+        @Nullable PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion>
+            context,
+        @Nullable ListEngineVersionsResponse response) {
       super(context, response);
     }
 
@@ -7315,14 +7332,16 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListEngineVersionsPage createPage(
-        PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion> context,
-        ListEngineVersionsResponse response) {
+        @Nullable PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion>
+            context,
+        @Nullable ListEngineVersionsResponse response) {
       return new ListEngineVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEngineVersionsPage> createPageAsync(
-        PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion> context,
+        @Nullable PageContext<ListEngineVersionsRequest, ListEngineVersionsResponse, EngineVersion>
+            context,
         ApiFuture<ListEngineVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7337,7 +7356,7 @@ public class AMLClient implements BackgroundResource {
           ListEngineVersionsFixedSizeCollection> {
 
     private ListEngineVersionsFixedSizeCollection(
-        List<ListEngineVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListEngineVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7347,7 +7366,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListEngineVersionsFixedSizeCollection createCollection(
-        List<ListEngineVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListEngineVersionsPage> pages, int collectionSize) {
       return new ListEngineVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7385,9 +7404,11 @@ public class AMLClient implements BackgroundResource {
           ListPredictionResultsPage> {
 
     private ListPredictionResultsPage(
-        PageContext<ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
+        @Nullable
+            PageContext<
+                ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
             context,
-        ListPredictionResultsResponse response) {
+        @Nullable ListPredictionResultsResponse response) {
       super(context, response);
     }
 
@@ -7397,15 +7418,19 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListPredictionResultsPage createPage(
-        PageContext<ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
+        @Nullable
+            PageContext<
+                ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
             context,
-        ListPredictionResultsResponse response) {
+        @Nullable ListPredictionResultsResponse response) {
       return new ListPredictionResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPredictionResultsPage> createPageAsync(
-        PageContext<ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
+        @Nullable
+            PageContext<
+                ListPredictionResultsRequest, ListPredictionResultsResponse, PredictionResult>
             context,
         ApiFuture<ListPredictionResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7421,7 +7446,7 @@ public class AMLClient implements BackgroundResource {
           ListPredictionResultsFixedSizeCollection> {
 
     private ListPredictionResultsFixedSizeCollection(
-        List<ListPredictionResultsPage> pages, int collectionSize) {
+        @Nullable List<ListPredictionResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7431,7 +7456,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListPredictionResultsFixedSizeCollection createCollection(
-        List<ListPredictionResultsPage> pages, int collectionSize) {
+        @Nullable List<ListPredictionResultsPage> pages, int collectionSize) {
       return new ListPredictionResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7469,9 +7494,10 @@ public class AMLClient implements BackgroundResource {
           ListBacktestResultsPage> {
 
     private ListBacktestResultsPage(
-        PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
+        @Nullable
+            PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
             context,
-        ListBacktestResultsResponse response) {
+        @Nullable ListBacktestResultsResponse response) {
       super(context, response);
     }
 
@@ -7481,15 +7507,17 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListBacktestResultsPage createPage(
-        PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
+        @Nullable
+            PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
             context,
-        ListBacktestResultsResponse response) {
+        @Nullable ListBacktestResultsResponse response) {
       return new ListBacktestResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBacktestResultsPage> createPageAsync(
-        PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
+        @Nullable
+            PageContext<ListBacktestResultsRequest, ListBacktestResultsResponse, BacktestResult>
             context,
         ApiFuture<ListBacktestResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7505,7 +7533,7 @@ public class AMLClient implements BackgroundResource {
           ListBacktestResultsFixedSizeCollection> {
 
     private ListBacktestResultsFixedSizeCollection(
-        List<ListBacktestResultsPage> pages, int collectionSize) {
+        @Nullable List<ListBacktestResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7515,7 +7543,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListBacktestResultsFixedSizeCollection createCollection(
-        List<ListBacktestResultsPage> pages, int collectionSize) {
+        @Nullable List<ListBacktestResultsPage> pages, int collectionSize) {
       return new ListBacktestResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7549,8 +7577,8 @@ public class AMLClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7560,14 +7588,14 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7581,7 +7609,8 @@ public class AMLClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7591,7 +7620,7 @@ public class AMLClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

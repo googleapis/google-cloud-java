@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -38,6 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,8 +232,30 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StreamSanitizeUserPrompt</td>
+ *      <td><p> Streaming version of Sanitize User Prompt.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeUserPromptCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamSanitizeModelResponse</td>
+ *      <td><p> Streaming version of Sanitizes Model Response.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeModelResponseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -311,10 +336,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ModelArmorClient implements BackgroundResource {
-  private final ModelArmorSettings settings;
+  private final @Nullable ModelArmorSettings settings;
   private final ModelArmorStub stub;
 
   /** Constructs an instance of ModelArmorClient with default settings. */
@@ -352,7 +378,7 @@ public class ModelArmorClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ModelArmorSettings getSettings() {
+  public final @Nullable ModelArmorSettings getSettings() {
     return settings;
   }
 
@@ -383,7 +409,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param parent Required. Parent value for ListTemplatesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTemplatesPagedResponse listTemplates(LocationName parent) {
+  public final ListTemplatesPagedResponse listTemplates(@Nullable LocationName parent) {
     ListTemplatesRequest request =
         ListTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -549,7 +575,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Template getTemplate(TemplateName name) {
+  public final Template getTemplate(@Nullable TemplateName name) {
     GetTemplateRequest request =
         GetTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTemplate(request);
@@ -662,7 +688,8 @@ public class ModelArmorClient implements BackgroundResource {
    *     remove this field and template_id from the method_signature of Create RPC
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Template createTemplate(LocationName parent, Template template, String templateId) {
+  public final Template createTemplate(
+      @Nullable LocationName parent, Template template, String templateId) {
     CreateTemplateRequest request =
         CreateTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -881,7 +908,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTemplate(TemplateName name) {
+  public final void deleteTemplate(@Nullable TemplateName name) {
     DeleteTemplateRequest request =
         DeleteTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTemplate(request);
@@ -991,7 +1018,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. The name of the floor setting to get, example projects/123/floorsetting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FloorSetting getFloorSetting(FloorSettingName name) {
+  public final FloorSetting getFloorSetting(@Nullable FloorSettingName name) {
     GetFloorSettingRequest request =
         GetFloorSettingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFloorSetting(request);
@@ -1191,6 +1218,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
    * }
@@ -1222,6 +1250,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeUserPromptResponse> future =
    *       modelArmorClient.sanitizeUserPromptCallable().futureCall(request);
@@ -1255,6 +1284,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeModelResponseResponse response = modelArmorClient.sanitizeModelResponse(request);
    * }
@@ -1288,6 +1318,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeModelResponseResponse> future =
    *       modelArmorClient.sanitizeModelResponseCallable().futureCall(request);
@@ -1303,7 +1334,90 @@ public class ModelArmorClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Streaming version of Sanitize User Prompt.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeUserPromptRequest, SanitizeUserPromptResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeUserPromptCallable().call();
+   *   SanitizeUserPromptRequest request =
+   *       SanitizeUserPromptRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeUserPromptResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    return stub.streamSanitizeUserPromptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Streaming version of Sanitizes Model Response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeModelResponseRequest, SanitizeModelResponseResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeModelResponseCallable().call();
+   *   SanitizeModelResponseRequest request =
+   *       SanitizeModelResponseRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setModelResponseData(DataItem.newBuilder().build())
+   *           .setUserPrompt("userPrompt1504308495")
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeModelResponseResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    return stub.streamSanitizeModelResponseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1338,6 +1452,18 @@ public class ModelArmorClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1371,6 +1497,18 @@ public class ModelArmorClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1515,8 +1653,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListTemplatesRequest, ListTemplatesResponse, Template, ListTemplatesPage> {
 
     private ListTemplatesPage(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
-        ListTemplatesResponse response) {
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
       super(context, response);
     }
 
@@ -1526,14 +1664,14 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListTemplatesPage createPage(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
-        ListTemplatesResponse response) {
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
       return new ListTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTemplatesPage> createPageAsync(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
         ApiFuture<ListTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1547,7 +1685,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListTemplatesPage,
           ListTemplatesFixedSizeCollection> {
 
-    private ListTemplatesFixedSizeCollection(List<ListTemplatesPage> pages, int collectionSize) {
+    private ListTemplatesFixedSizeCollection(
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1557,7 +1696,7 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListTemplatesFixedSizeCollection createCollection(
-        List<ListTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
       return new ListTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1591,8 +1730,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1602,14 +1741,14 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1623,7 +1762,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1633,7 +1773,7 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

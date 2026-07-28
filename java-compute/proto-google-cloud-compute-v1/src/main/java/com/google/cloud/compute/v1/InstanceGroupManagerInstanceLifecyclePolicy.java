@@ -77,16 +77,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM.
-   * A VM is marked as unhealthy when the application running on that
-   * VM fails a health check.
+   * The action that a MIG performs on a failed VM. If the value of the
+   * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+   * applies to the VMs on which your application fails a health check.
    * Valid values are
    *
-   * - REPAIR (default): MIG automatically repairs a failed or
-   * an unhealthy VM by recreating it. For more information, see About
+   * - REPAIR (default): MIG automatically repairs a failed VM
+   * by recreating it. For more information, see About
    * repairing VMs in a MIG.
-   * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-   * VM.
+   * - DO_NOTHING: MIG does not repair a failed VM.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * DO_NOTHING
    * REPAIR
@@ -558,16 +557,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM.
-   * A VM is marked as unhealthy when the application running on that
-   * VM fails a health check.
+   * The action that a MIG performs on a failed VM. If the value of the
+   * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+   * applies to the VMs on which your application fails a health check.
    * Valid values are
    *
-   * - REPAIR (default): MIG automatically repairs a failed or
-   * an unhealthy VM by recreating it. For more information, see About
+   * - REPAIR (default): MIG automatically repairs a failed VM
+   * by recreating it. For more information, see About
    * repairing VMs in a MIG.
-   * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-   * VM.
+   * - DO_NOTHING: MIG does not repair a failed VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -584,16 +582,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM.
-   * A VM is marked as unhealthy when the application running on that
-   * VM fails a health check.
+   * The action that a MIG performs on a failed VM. If the value of the
+   * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+   * applies to the VMs on which your application fails a health check.
    * Valid values are
    *
-   * - REPAIR (default): MIG automatically repairs a failed or
-   * an unhealthy VM by recreating it. For more information, see About
+   * - REPAIR (default): MIG automatically repairs a failed VM
+   * by recreating it. For more information, see About
    * repairing VMs in a MIG.
-   * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-   * VM.
+   * - DO_NOTHING: MIG does not repair a failed VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -618,16 +615,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    *
    *
    * <pre>
-   * The action that a MIG performs on a failed or an unhealthy VM.
-   * A VM is marked as unhealthy when the application running on that
-   * VM fails a health check.
+   * The action that a MIG performs on a failed VM. If the value of the
+   * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+   * applies to the VMs on which your application fails a health check.
    * Valid values are
    *
-   * - REPAIR (default): MIG automatically repairs a failed or
-   * an unhealthy VM by recreating it. For more information, see About
+   * - REPAIR (default): MIG automatically repairs a failed VM
+   * by recreating it. For more information, see About
    * repairing VMs in a MIG.
-   * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-   * VM.
+   * - DO_NOTHING: MIG does not repair a failed VM.
    * Check the DefaultActionOnFailure enum for the list of possible values.
    * </pre>
    *
@@ -852,6 +848,69 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     }
   }
 
+  public static final int ON_REPAIR_FIELD_NUMBER = 371820013;
+  private com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair onRepair_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for VM repairs in the MIG.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+   * </code>
+   *
+   * @return Whether the onRepair field is set.
+   */
+  @java.lang.Override
+  public boolean hasOnRepair() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for VM repairs in the MIG.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+   * </code>
+   *
+   * @return The onRepair.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+      getOnRepair() {
+    return onRepair_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+            .getDefaultInstance()
+        : onRepair_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for VM repairs in the MIG.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepairOrBuilder
+      getOnRepairOrBuilder() {
+    return onRepair_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+            .getDefaultInstance()
+        : onRepair_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -875,6 +934,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 356302027, forceUpdateOnRepair_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(371820013, getOnRepair());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -895,6 +957,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(356302027, forceUpdateOnRepair_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(371820013, getOnRepair());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -924,6 +989,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (hasOnFailedHealthCheck()) {
       if (!getOnFailedHealthCheck().equals(other.getOnFailedHealthCheck())) return false;
     }
+    if (hasOnRepair() != other.hasOnRepair()) return false;
+    if (hasOnRepair()) {
+      if (!getOnRepair().equals(other.getOnRepair())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -946,6 +1015,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     if (hasOnFailedHealthCheck()) {
       hash = (37 * hash) + ON_FAILED_HEALTH_CHECK_FIELD_NUMBER;
       hash = (53 * hash) + getOnFailedHealthCheck().hashCode();
+    }
+    if (hasOnRepair()) {
+      hash = (37 * hash) + ON_REPAIR_FIELD_NUMBER;
+      hash = (53 * hash) + getOnRepair().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1080,10 +1153,19 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
     // Construct using
     // com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetOnRepairFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1093,6 +1175,11 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       defaultActionOnFailure_ = "";
       forceUpdateOnRepair_ = "";
       onFailedHealthCheck_ = "";
+      onRepair_ = null;
+      if (onRepairBuilder_ != null) {
+        onRepairBuilder_.dispose();
+        onRepairBuilder_ = null;
+      }
       return this;
     }
 
@@ -1146,6 +1233,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         result.onFailedHealthCheck_ = onFailedHealthCheck_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.onRepair_ = onRepairBuilder_ == null ? onRepair_ : onRepairBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1180,6 +1271,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         onFailedHealthCheck_ = other.onFailedHealthCheck_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasOnRepair()) {
+        mergeOnRepair(other.getOnRepair());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1225,6 +1319,13 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
                 bitField0_ |= 0x00000002;
                 break;
               } // case -1444551078
+            case -1320407190:
+              {
+                input.readMessage(
+                    internalGetOnRepairFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1320407190
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1250,16 +1351,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1275,16 +1375,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1308,16 +1407,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1341,16 +1439,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1373,16 +1470,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1401,16 +1497,15 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      *
      *
      * <pre>
-     * The action that a MIG performs on a failed or an unhealthy VM.
-     * A VM is marked as unhealthy when the application running on that
-     * VM fails a health check.
+     * The action that a MIG performs on a failed VM. If the value of the
+     * onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also
+     * applies to the VMs on which your application fails a health check.
      * Valid values are
      *
-     * - REPAIR (default): MIG automatically repairs a failed or
-     * an unhealthy VM by recreating it. For more information, see About
+     * - REPAIR (default): MIG automatically repairs a failed VM
+     * by recreating it. For more information, see About
      * repairing VMs in a MIG.
-     * - DO_NOTHING: MIG does not repair a failed or an unhealthy
-     * VM.
+     * - DO_NOTHING: MIG does not repair a failed VM.
      * Check the DefaultActionOnFailure enum for the list of possible values.
      * </pre>
      *
@@ -1812,6 +1907,234 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+        onRepair_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair,
+            com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair.Builder,
+            com.google.cloud.compute.v1
+                .InstanceGroupManagerInstanceLifecyclePolicyOnRepairOrBuilder>
+        onRepairBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     *
+     * @return Whether the onRepair field is set.
+     */
+    public boolean hasOnRepair() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     *
+     * @return The onRepair.
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+        getOnRepair() {
+      if (onRepairBuilder_ == null) {
+        return onRepair_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+                .getDefaultInstance()
+            : onRepair_;
+      } else {
+        return onRepairBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public Builder setOnRepair(
+        com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair value) {
+      if (onRepairBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        onRepair_ = value;
+      } else {
+        onRepairBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public Builder setOnRepair(
+        com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair.Builder
+            builderForValue) {
+      if (onRepairBuilder_ == null) {
+        onRepair_ = builderForValue.build();
+      } else {
+        onRepairBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public Builder mergeOnRepair(
+        com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair value) {
+      if (onRepairBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && onRepair_ != null
+            && onRepair_
+                != com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+                    .getDefaultInstance()) {
+          getOnRepairBuilder().mergeFrom(value);
+        } else {
+          onRepair_ = value;
+        }
+      } else {
+        onRepairBuilder_.mergeFrom(value);
+      }
+      if (onRepair_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public Builder clearOnRepair() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onRepair_ = null;
+      if (onRepairBuilder_ != null) {
+        onRepairBuilder_.dispose();
+        onRepairBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair.Builder
+        getOnRepairBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetOnRepairFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepairOrBuilder
+        getOnRepairOrBuilder() {
+      if (onRepairBuilder_ != null) {
+        return onRepairBuilder_.getMessageOrBuilder();
+      } else {
+        return onRepair_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+                .getDefaultInstance()
+            : onRepair_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for VM repairs in the MIG.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair on_repair = 371820013;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair,
+            com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair.Builder,
+            com.google.cloud.compute.v1
+                .InstanceGroupManagerInstanceLifecyclePolicyOnRepairOrBuilder>
+        internalGetOnRepairFieldBuilder() {
+      if (onRepairBuilder_ == null) {
+        onRepairBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair,
+                com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicyOnRepair
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .InstanceGroupManagerInstanceLifecyclePolicyOnRepairOrBuilder>(
+                getOnRepair(), getParentForChildren(), isClean());
+        onRepair_ = null;
+      }
+      return onRepairBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy)

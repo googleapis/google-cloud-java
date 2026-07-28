@@ -30,10 +30,10 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation.
+   * Identifier. Full name of this workstation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation.
+   * Identifier. Full name of this workstation.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -85,7 +85,9 @@ public interface WorkstationOrBuilder
    * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -98,7 +100,9 @@ public interface WorkstationOrBuilder
    * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -461,6 +465,77 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory>
+      getPersistentDirectoriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory
+      getPersistentDirectories(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPersistentDirectoriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder>
+      getPersistentDirectoriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Directories to persist across workstation sessions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectory persistent_directories = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.Workstation.WorkstationPersistentDirectoryOrBuilder
+      getPersistentDirectoriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Current state of the workstation.
    * </pre>
    *
@@ -520,4 +595,178 @@ public interface WorkstationOrBuilder
    * @return The bytes for host.
    */
   com.google.protobuf.ByteString getHostBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getEnvCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsEnv(java.lang.String key);
+
+  /** Use {@link #getEnvMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getEnv();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getEnvMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getEnvOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getEnvOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Google Cloud KMS encryption key used to
+   * encrypt this workstation. The KMS key can only be configured in the
+   * WorkstationConfig. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Google Cloud KMS encryption key used to
+   * encrypt this workstation. The KMS key can only be configured in the
+   * WorkstationConfig. The expected format is
+   * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
+   * </pre>
+   *
+   * <code>string kms_key = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source workstation from which this workstation's persistent
+   * directories were cloned on creation.
+   * </pre>
+   *
+   * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceWorkstation.
+   */
+  java.lang.String getSourceWorkstation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source workstation from which this workstation's persistent
+   * directories were cloned on creation.
+   * </pre>
+   *
+   * <code>string source_workstation = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceWorkstation.
+   */
+  com.google.protobuf.ByteString getSourceWorkstationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the runtimeHost field is set.
+   */
+  boolean hasRuntimeHost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The runtimeHost.
+   */
+  com.google.cloud.workstations.v1.Workstation.RuntimeHost getRuntimeHost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Runtime host for the workstation when in
+   * STATE_RUNNING.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1.Workstation.RuntimeHost runtime_host = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.workstations.v1.Workstation.RuntimeHostOrBuilder getRuntimeHostOrBuilder();
 }

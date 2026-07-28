@@ -88,11 +88,12 @@ public interface UpdateRunRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -102,11 +103,12 @@ public interface UpdateRunRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -116,11 +118,12 @@ public interface UpdateRunRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
@@ -128,10 +131,10 @@ public interface UpdateRunRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true and the run is not found, the request creates it.
+   * Optional. If set to true and the run is not found, the request creates it.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */

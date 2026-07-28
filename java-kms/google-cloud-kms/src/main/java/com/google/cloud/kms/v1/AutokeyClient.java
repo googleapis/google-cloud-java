@@ -45,6 +45,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -151,8 +153,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -277,9 +278,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AutokeyClient implements BackgroundResource {
-  private final AutokeySettings settings;
+  private final @Nullable AutokeySettings settings;
   private final AutokeyStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -325,7 +327,7 @@ public class AutokeyClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AutokeySettings getSettings() {
+  public final @Nullable AutokeySettings getSettings() {
     return settings;
   }
 
@@ -385,7 +387,7 @@ public class AutokeyClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KeyHandle, CreateKeyHandleMetadata> createKeyHandleAsync(
-      LocationName parent, KeyHandle keyHandle, String keyHandleId) {
+      @Nullable LocationName parent, KeyHandle keyHandle, String keyHandleId) {
     CreateKeyHandleRequest request =
         CreateKeyHandleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -568,7 +570,7 @@ public class AutokeyClient implements BackgroundResource {
    *     `projects/{PROJECT_ID}/locations/{LOCATION}/keyHandles/{KEY_HANDLE_ID}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KeyHandle getKeyHandle(KeyHandleName name) {
+  public final KeyHandle getKeyHandle(@Nullable KeyHandleName name) {
     GetKeyHandleRequest request =
         GetKeyHandleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKeyHandle(request);
@@ -681,7 +683,7 @@ public class AutokeyClient implements BackgroundResource {
    *     `projects/{PROJECT_ID}/locations/{LOCATION}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeyHandlesPagedResponse listKeyHandles(LocationName parent) {
+  public final ListKeyHandlesPagedResponse listKeyHandles(@Nullable LocationName parent) {
     ListKeyHandlesRequest request =
         ListKeyHandlesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -830,9 +832,8 @@ public class AutokeyClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -876,9 +877,8 @@ public class AutokeyClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -922,9 +922,8 @@ public class AutokeyClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1280,8 +1279,8 @@ public class AutokeyClient implements BackgroundResource {
           ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle, ListKeyHandlesPage> {
 
     private ListKeyHandlesPage(
-        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
-        ListKeyHandlesResponse response) {
+        @Nullable PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        @Nullable ListKeyHandlesResponse response) {
       super(context, response);
     }
 
@@ -1291,14 +1290,14 @@ public class AutokeyClient implements BackgroundResource {
 
     @Override
     protected ListKeyHandlesPage createPage(
-        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
-        ListKeyHandlesResponse response) {
+        @Nullable PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        @Nullable ListKeyHandlesResponse response) {
       return new ListKeyHandlesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKeyHandlesPage> createPageAsync(
-        PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
+        @Nullable PageContext<ListKeyHandlesRequest, ListKeyHandlesResponse, KeyHandle> context,
         ApiFuture<ListKeyHandlesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1312,7 +1311,8 @@ public class AutokeyClient implements BackgroundResource {
           ListKeyHandlesPage,
           ListKeyHandlesFixedSizeCollection> {
 
-    private ListKeyHandlesFixedSizeCollection(List<ListKeyHandlesPage> pages, int collectionSize) {
+    private ListKeyHandlesFixedSizeCollection(
+        @Nullable List<ListKeyHandlesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1322,7 +1322,7 @@ public class AutokeyClient implements BackgroundResource {
 
     @Override
     protected ListKeyHandlesFixedSizeCollection createCollection(
-        List<ListKeyHandlesPage> pages, int collectionSize) {
+        @Nullable List<ListKeyHandlesPage> pages, int collectionSize) {
       return new ListKeyHandlesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1356,8 +1356,8 @@ public class AutokeyClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1367,14 +1367,14 @@ public class AutokeyClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1388,7 +1388,8 @@ public class AutokeyClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1398,7 +1399,7 @@ public class AutokeyClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

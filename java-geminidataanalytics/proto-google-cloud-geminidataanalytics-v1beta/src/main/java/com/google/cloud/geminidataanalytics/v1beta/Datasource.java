@@ -84,6 +84,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     ALLOY_DB_REFERENCE(12),
     SPANNER_REFERENCE(13),
     CLOUD_SQL_REFERENCE(14),
+    BIGQUERY_PROPERTY_GRAPH_REFERENCE(16),
     REFERENCE_NOT_SET(0);
     private final int value;
 
@@ -115,6 +116,8 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
           return SPANNER_REFERENCE;
         case 14:
           return CLOUD_SQL_REFERENCE;
+        case 16:
+          return BIGQUERY_PROPERTY_GRAPH_REFERENCE;
         case 0:
           return REFERENCE_NOT_SET;
         default:
@@ -496,6 +499,72 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
   }
 
+  public static final int BIGQUERY_PROPERTY_GRAPH_REFERENCE_FIELD_NUMBER = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   *
+   * @return Whether the bigqueryPropertyGraphReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryPropertyGraphReference() {
+    return referenceCase_ == 16;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   *
+   * @return The bigqueryPropertyGraphReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+      getBigqueryPropertyGraphReference() {
+    if (referenceCase_ == 16) {
+      return (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+          reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a BigQuery property graph.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+      getBigqueryPropertyGraphReferenceOrBuilder() {
+    if (referenceCase_ == 16) {
+      return (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+          reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+        .getDefaultInstance();
+  }
+
   public static final int SCHEMA_FIELD_NUMBER = 7;
   private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
 
@@ -665,6 +734,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
     }
+    if (referenceCase_ == 16) {
+      output.writeMessage(
+          16,
+          (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference) reference_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -707,6 +781,13 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
+    }
+    if (referenceCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16,
+              (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+                  reference_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -751,6 +832,10 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         break;
       case 14:
         if (!getCloudSqlReference().equals(other.getCloudSqlReference())) return false;
+        break;
+      case 16:
+        if (!getBigqueryPropertyGraphReference().equals(other.getBigqueryPropertyGraphReference()))
+          return false;
         break;
       case 0:
       default:
@@ -798,6 +883,10 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       case 14:
         hash = (37 * hash) + CLOUD_SQL_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlReference().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + BIGQUERY_PROPERTY_GRAPH_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryPropertyGraphReference().hashCode();
         break;
       case 0:
       default:
@@ -968,6 +1057,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       if (cloudSqlReferenceBuilder_ != null) {
         cloudSqlReferenceBuilder_.clear();
       }
+      if (bigqueryPropertyGraphReferenceBuilder_ != null) {
+        bigqueryPropertyGraphReferenceBuilder_.clear();
+      }
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -1018,11 +1110,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.Datasource result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.structSchema_ =
             structSchemaBuilder_ == null ? structSchema_ : structSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -1047,6 +1139,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       }
       if (referenceCase_ == 14 && cloudSqlReferenceBuilder_ != null) {
         result.reference_ = cloudSqlReferenceBuilder_.build();
+      }
+      if (referenceCase_ == 16 && bigqueryPropertyGraphReferenceBuilder_ != null) {
+        result.reference_ = bigqueryPropertyGraphReferenceBuilder_.build();
       }
     }
 
@@ -1100,6 +1195,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         case CLOUD_SQL_REFERENCE:
           {
             mergeCloudSqlReference(other.getCloudSqlReference());
+            break;
+          }
+        case BIGQUERY_PROPERTY_GRAPH_REFERENCE:
+          {
+            mergeBigqueryPropertyGraphReference(other.getBigqueryPropertyGraphReference());
             break;
           }
         case REFERENCE_NOT_SET:
@@ -1159,14 +1259,14 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 input.readMessage(internalGetSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 82:
               {
                 input.readMessage(
                     internalGetStructSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 98:
@@ -1190,6 +1290,14 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
                 referenceCase_ = 14;
                 break;
               } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    internalGetBigqueryPropertyGraphReferenceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                referenceCase_ = 16;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2564,6 +2672,260 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       return cloudSqlReferenceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+        bigqueryPropertyGraphReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     *
+     * @return Whether the bigqueryPropertyGraphReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryPropertyGraphReference() {
+      return referenceCase_ == 16;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     *
+     * @return The bigqueryPropertyGraphReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+        getBigqueryPropertyGraphReference() {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        if (referenceCase_ == 16) {
+          return (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+              reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+            .getDefaultInstance();
+      } else {
+        if (referenceCase_ == 16) {
+          return bigqueryPropertyGraphReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    public Builder setBigqueryPropertyGraphReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference value) {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        bigqueryPropertyGraphReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    public Builder setBigqueryPropertyGraphReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+            builderForValue) {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigqueryPropertyGraphReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    public Builder mergeBigqueryPropertyGraphReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference value) {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        if (referenceCase_ == 16
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+                          reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 16) {
+          bigqueryPropertyGraphReferenceBuilder_.mergeFrom(value);
+        } else {
+          bigqueryPropertyGraphReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    public Builder clearBigqueryPropertyGraphReference() {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        if (referenceCase_ == 16) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 16) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        bigqueryPropertyGraphReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder
+        getBigqueryPropertyGraphReferenceBuilder() {
+      return internalGetBigqueryPropertyGraphReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
+        getBigqueryPropertyGraphReferenceOrBuilder() {
+      if ((referenceCase_ == 16) && (bigqueryPropertyGraphReferenceBuilder_ != null)) {
+        return bigqueryPropertyGraphReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 16) {
+          return (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+              reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a BigQuery property graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference bigquery_property_graph_reference = 16;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
+        internalGetBigqueryPropertyGraphReferenceFieldBuilder() {
+      if (bigqueryPropertyGraphReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 16)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
+                  .getDefaultInstance();
+        }
+        bigqueryPropertyGraphReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta
+                    .BigQueryPropertyGraphReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
+                    reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 16;
+      onChanged();
+      return bigqueryPropertyGraphReferenceBuilder_;
+    }
+
     private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.geminidataanalytics.v1beta.Schema,
@@ -2585,7 +2947,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2631,7 +2993,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2654,7 +3016,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2672,7 +3034,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSchema(com.google.cloud.geminidataanalytics.v1beta.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -2683,7 +3045,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         schemaBuilder_.mergeFrom(value);
       }
       if (schema_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2701,7 +3063,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -2723,7 +3085,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetSchemaFieldBuilder().getBuilder();
     }
@@ -2802,7 +3164,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * @return Whether the structSchema field is set.
      */
     public boolean hasStructSchema() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2856,7 +3218,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         structSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2882,7 +3244,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         structSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2904,7 +3266,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStructSchema(com.google.protobuf.Struct value) {
       if (structSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && structSchema_ != null
             && structSchema_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getStructSchemaBuilder().mergeFrom(value);
@@ -2915,7 +3277,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         structSchemaBuilder_.mergeFrom(value);
       }
       if (structSchema_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2937,7 +3299,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStructSchema() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       structSchema_ = null;
       if (structSchemaBuilder_ != null) {
         structSchemaBuilder_.dispose();
@@ -2963,7 +3325,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Struct.Builder getStructSchemaBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetStructSchemaFieldBuilder().getBuilder();
     }

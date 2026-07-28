@@ -808,6 +808,52 @@ public interface DataScanOrBuilder
   com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder
       getDataDocumentationResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the executionIdentity field is set.
+   */
+  boolean hasExecutionIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The executionIdentity.
+   */
+  com.google.cloud.dataplex.v1.ExecutionIdentity getExecutionIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The identity to run the datascan.
+   * If not specified, defaults to the Dataplex Service Agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.ExecutionIdentity execution_identity = 300 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.ExecutionIdentityOrBuilder getExecutionIdentityOrBuilder();
+
   com.google.cloud.dataplex.v1.DataScan.SpecCase getSpecCase();
 
   com.google.cloud.dataplex.v1.DataScan.ResultCase getResultCase();

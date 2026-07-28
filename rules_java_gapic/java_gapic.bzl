@@ -190,6 +190,7 @@ def _java_gapic_srcjar(
         # possible values are: "grpc", "rest", "grpc+rest"
         transport,
         rest_numeric_enums,
+        generate_version_java = False,
         # Can be used to provide a java_library with a customized generator,
         # like the one which dumps descriptor to a file for future debugging.
         java_generator_name = "java_gapic",
@@ -216,6 +217,9 @@ def _java_gapic_srcjar(
 
     if rest_numeric_enums:
         opt_args.append("rest-numeric-enums")
+
+    if generate_version_java:
+        opt_args.append("generate-version-java")
 
     # Produces the GAPIC metadata file if this flag is set. to any value.
     # Protoc invocation: --java_gapic_opt=metadata
@@ -245,6 +249,7 @@ def java_gapic_library(
         # possible values are: "grpc", "rest", "grpc+rest"
         transport = None,
         rest_numeric_enums = False,
+        generate_version_java = False,
         **kwargs):
     srcjar_name = name + "_srcjar"
     raw_srcjar_name = srcjar_name + "_raw"
@@ -257,6 +262,7 @@ def java_gapic_library(
         service_yaml = service_yaml,
         transport = transport,
         rest_numeric_enums = rest_numeric_enums,
+        generate_version_java = generate_version_java,
         java_generator_name = "java_gapic",
         **kwargs
     )
@@ -282,6 +288,7 @@ def java_gapic_library(
             "@com_google_api_api_common//jar",
             "@com_google_guava_guava//jar",
             "@javax_annotation_javax_annotation_api//jar",
+            "@org_jspecify_jspecify//jar",
         ],
         **kwargs
     )
@@ -301,6 +308,7 @@ def java_gapic_library(
         "@com_google_auth_google_auth_library_oauth2_http//jar",
         "@com_google_http_client_google_http_client//jar",
         "@javax_annotation_javax_annotation_api//jar",
+        "@org_jspecify_jspecify//jar",
     ]
 
     if not transport or transport == "grpc":
@@ -399,6 +407,7 @@ def java_generator_request_dump(
         service_yaml = None,
         transport = None,
         rest_numeric_enums = False,
+        generate_version_java = False,
         **kwargs):
     _java_gapic_srcjar(
         name = name,
@@ -408,6 +417,7 @@ def java_generator_request_dump(
         service_yaml = service_yaml,
         transport = transport,
         rest_numeric_enums = rest_numeric_enums,
+        generate_version_java = generate_version_java,
         java_generator_name = "code_generator_request_dumper",
         **kwargs
     )

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +68,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDeviceManufacturer</td>
- *      <td><p> API to retrieve a `DeviceManufacturer` object.</td>
+ *      <td><p> Retrieves a `DeviceManufacturer` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +87,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDeviceManufacturers</td>
- *      <td><p> API to retrieve a list of `DeviceManufacturer` objects.</td>
+ *      <td><p> Lists `DeviceManufacturer` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -146,9 +148,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DeviceManufacturerServiceClient implements BackgroundResource {
-  private final DeviceManufacturerServiceSettings settings;
+  private final @Nullable DeviceManufacturerServiceSettings settings;
   private final DeviceManufacturerServiceStub stub;
 
   /** Constructs an instance of DeviceManufacturerServiceClient with default settings. */
@@ -190,7 +193,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeviceManufacturerServiceSettings getSettings() {
+  public final @Nullable DeviceManufacturerServiceSettings getSettings() {
     return settings;
   }
 
@@ -200,7 +203,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -222,7 +225,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
    *     `networks/{network_code}/deviceManufacturers/{device_manufacturer_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceManufacturer getDeviceManufacturer(DeviceManufacturerName name) {
+  public final DeviceManufacturer getDeviceManufacturer(@Nullable DeviceManufacturerName name) {
     GetDeviceManufacturerRequest request =
         GetDeviceManufacturerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -232,7 +235,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -261,7 +264,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -291,7 +294,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -322,7 +325,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -346,7 +349,8 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceManufacturersPagedResponse listDeviceManufacturers(NetworkName parent) {
+  public final ListDeviceManufacturersPagedResponse listDeviceManufacturers(
+      @Nullable NetworkName parent) {
     ListDeviceManufacturersRequest request =
         ListDeviceManufacturersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -356,7 +360,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -388,7 +392,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -426,7 +430,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -465,7 +469,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -571,10 +575,11 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
           ListDeviceManufacturersPage> {
 
     private ListDeviceManufacturersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeviceManufacturersRequest, ListDeviceManufacturersResponse, DeviceManufacturer>
             context,
-        ListDeviceManufacturersResponse response) {
+        @Nullable ListDeviceManufacturersResponse response) {
       super(context, response);
     }
 
@@ -584,16 +589,18 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceManufacturersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeviceManufacturersRequest, ListDeviceManufacturersResponse, DeviceManufacturer>
             context,
-        ListDeviceManufacturersResponse response) {
+        @Nullable ListDeviceManufacturersResponse response) {
       return new ListDeviceManufacturersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeviceManufacturersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeviceManufacturersRequest, ListDeviceManufacturersResponse, DeviceManufacturer>
             context,
         ApiFuture<ListDeviceManufacturersResponse> futureResponse) {
@@ -610,7 +617,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
           ListDeviceManufacturersFixedSizeCollection> {
 
     private ListDeviceManufacturersFixedSizeCollection(
-        List<ListDeviceManufacturersPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceManufacturersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -620,7 +627,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceManufacturersFixedSizeCollection createCollection(
-        List<ListDeviceManufacturersPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceManufacturersPage> pages, int collectionSize) {
       return new ListDeviceManufacturersFixedSizeCollection(pages, collectionSize);
     }
   }

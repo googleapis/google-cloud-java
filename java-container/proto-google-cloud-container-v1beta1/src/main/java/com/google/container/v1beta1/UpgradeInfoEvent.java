@@ -104,6 +104,16 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * SCHEDULED indicates the upgrade was scheduled.
+     * </pre>
+     *
+     * <code>SCHEDULED = 1;</code>
+     */
+    SCHEDULED(1),
+    /**
+     *
+     *
+     * <pre>
      * STARTED indicates the upgrade has started.
      * </pre>
      *
@@ -163,6 +173,17 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * SCHEDULED indicates the upgrade was scheduled.
+     * </pre>
+     *
+     * <code>SCHEDULED = 1;</code>
+     */
+    public static final int SCHEDULED_VALUE = 1;
 
     /**
      *
@@ -234,6 +255,8 @@ public final class UpgradeInfoEvent extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return STATE_UNSPECIFIED;
+        case 1:
+          return SCHEDULED;
         case 3:
           return STARTED;
         case 4:

@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesResponse;
 import com.google.ads.admanager.v1.CmsMetadataValue;
 import com.google.ads.admanager.v1.GetCmsMetadataValueRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataValuesRequest;
@@ -25,6 +29,7 @@ import com.google.ads.admanager.v1.ListCmsMetadataValuesResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CmsMetadataValueServiceStub implements BackgroundResource {
 
@@ -48,6 +54,20 @@ public abstract class CmsMetadataValueServiceStub implements BackgroundResource 
   public UnaryCallable<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse>
       listCmsMetadataValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: listCmsMetadataValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCmsMetadataValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCmsMetadataValuesCallable()");
   }
 
   @Override

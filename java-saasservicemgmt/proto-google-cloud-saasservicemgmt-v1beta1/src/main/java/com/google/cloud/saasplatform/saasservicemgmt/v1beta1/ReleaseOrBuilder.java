@@ -406,6 +406,54 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationTemplateComponent field is set.
+   */
+  boolean hasApplicationTemplateComponent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationTemplateComponent.
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef
+      getApplicationTemplateComponent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reference to component and revision in a composite
+   * ApplicationTemplate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRef application_template_component = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ComponentRefOrBuilder
+      getApplicationTemplateComponentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The labels on the resource, which can be used for categorization.
    * similar to Kubernetes resource labels.
    * </pre>

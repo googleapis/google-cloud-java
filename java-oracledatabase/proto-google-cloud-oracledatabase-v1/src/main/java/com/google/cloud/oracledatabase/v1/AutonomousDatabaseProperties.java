@@ -667,6 +667,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      * <code>BACKUP_BASED = 2;</code>
      */
     BACKUP_BASED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Local disaster recovery is not available.
+     * </pre>
+     *
+     * <code>NOT_AVAILABLE = 3;</code>
+     */
+    NOT_AVAILABLE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -713,6 +723,17 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      */
     public static final int BACKUP_BASED_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Local disaster recovery is not available.
+     * </pre>
+     *
+     * <code>NOT_AVAILABLE = 3;</code>
+     */
+    public static final int NOT_AVAILABLE_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -743,6 +764,8 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           return ADG;
         case 2:
           return BACKUP_BASED;
+        case 3:
+          return NOT_AVAILABLE;
         default:
           return null;
       }
@@ -2308,10 +2331,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The number of compute servers for the Autonomous Database.
+   * Optional. Immutable. The number of compute servers for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The computeCount.
    */
@@ -2327,10 +2353,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The number of CPU cores to be made available to the database.
+   * Optional. Immutable. The number of CPU cores to be made available to the
+   * database.
    * </pre>
    *
-   * <code>int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The cpuCoreCount.
    */
@@ -2346,10 +2375,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The size of the data stored in the database, in terabytes.
+   * Optional. Immutable. The size of the data stored in the database, in
+   * terabytes.
    * </pre>
    *
-   * <code>int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dataStorageSizeTb.
    */
@@ -2365,10 +2397,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The size of the data stored in the database, in gigabytes.
+   * Optional. Immutable. The size of the data stored in the database, in
+   * gigabytes.
    * </pre>
    *
-   * <code>int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dataStorageSizeGb.
    */
@@ -2384,11 +2419,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The workload type of the Autonomous Database.
+   * Required. Immutable. The workload type of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for dbWorkload.
@@ -2402,11 +2437,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The workload type of the Autonomous Database.
+   * Required. Immutable. The workload type of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The dbWorkload.
@@ -2425,11 +2460,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The edition of the Autonomous Databases.
+   * Optional. Immutable. The edition of the Autonomous Databases.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for dbEdition.
@@ -2443,11 +2478,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The edition of the Autonomous Databases.
+   * Optional. Immutable. The edition of the Autonomous Databases.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The dbEdition.
@@ -2473,11 +2508,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The character set for the Autonomous Database. The default is
-   * AL32UTF8.
+   * Optional. Immutable. The character set for the Autonomous Database. The
+   * default is AL32UTF8.
    * </pre>
    *
-   * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The characterSet.
    */
@@ -2498,11 +2535,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The character set for the Autonomous Database. The default is
-   * AL32UTF8.
+   * Optional. Immutable. The character set for the Autonomous Database. The
+   * default is AL32UTF8.
    * </pre>
    *
-   * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for characterSet.
    */
@@ -2528,11 +2567,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The national character set for the Autonomous Database. The
-   * default is AL16UTF16.
+   * Optional. Immutable. The national character set for the Autonomous
+   * Database. The default is AL16UTF16.
    * </pre>
    *
-   * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The nCharacterSet.
    */
@@ -2553,11 +2594,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The national character set for the Autonomous Database. The
-   * default is AL16UTF16.
+   * Optional. Immutable. The national character set for the Autonomous
+   * Database. The default is AL16UTF16.
    * </pre>
    *
-   * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for nCharacterSet.
    */
@@ -2583,10 +2626,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The private endpoint IP address for the Autonomous Database.
+   * Optional. Immutable. The private endpoint IP address for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The privateEndpointIp.
    */
@@ -2607,10 +2653,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The private endpoint IP address for the Autonomous Database.
+   * Optional. Immutable. The private endpoint IP address for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for privateEndpointIp.
    */
@@ -2636,10 +2685,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The private endpoint label for the Autonomous Database.
+   * Optional. Immutable. The private endpoint label for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The privateEndpointLabel.
    */
@@ -2660,10 +2712,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The private endpoint label for the Autonomous Database.
+   * Optional. Immutable. The private endpoint label for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for privateEndpointLabel.
    */
@@ -2689,10 +2744,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The Oracle Database version for the Autonomous Database.
+   * Optional. Immutable. The Oracle Database version for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The dbVersion.
    */
@@ -2713,10 +2771,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The Oracle Database version for the Autonomous Database.
+   * Optional. Immutable. The Oracle Database version for the Autonomous
+   * Database.
    * </pre>
    *
-   * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for dbVersion.
    */
@@ -2740,11 +2801,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. This field indicates if auto scaling is enabled for the
-   * Autonomous Database CPU core count.
+   * Optional. Immutable. This field indicates if auto scaling is enabled for
+   * the Autonomous Database CPU core count.
    * </pre>
    *
-   * <code>bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The isAutoScalingEnabled.
    */
@@ -2760,11 +2823,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. This field indicates if auto scaling is enabled for the
-   * Autonomous Database storage.
+   * Optional. Immutable. This field indicates if auto scaling is enabled for
+   * the Autonomous Database storage.
    * </pre>
    *
-   * <code>bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The isStorageAutoScalingEnabled.
@@ -2781,11 +2845,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The license type used for the Autonomous Database.
+   * Required. Immutable. The license type used for the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for licenseType.
@@ -2799,11 +2863,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The license type used for the Autonomous Database.
+   * Required. Immutable. The license type used for the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The licenseType.
@@ -2828,11 +2892,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -2845,11 +2909,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -2862,11 +2926,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -2878,11 +2942,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -2894,11 +2958,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of customer contacts.
+   * Optional. Immutable. The list of customer contacts.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -2916,10 +2980,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+   * secret.
    * </pre>
    *
-   * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The secretId.
    */
@@ -2940,10 +3007,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+   * secret.
    * </pre>
    *
-   * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for secretId.
    */
@@ -2969,10 +3039,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
    * </pre>
    *
-   * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The vaultId.
    */
@@ -2993,10 +3065,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The ID of the Oracle Cloud Infrastructure vault.
+   * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
    * </pre>
    *
-   * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for vaultId.
    */
@@ -3020,11 +3094,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The maintenance schedule of the Autonomous Database.
+   * Optional. Immutable. The maintenance schedule of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for maintenanceScheduleType.
@@ -3038,11 +3112,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The maintenance schedule of the Autonomous Database.
+   * Optional. Immutable. The maintenance schedule of the Autonomous Database.
    * </pre>
    *
    * <code>
-   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The maintenanceScheduleType.
@@ -3066,11 +3140,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. This field specifies if the Autonomous Database requires mTLS
-   * connections.
+   * Optional. Immutable. This field specifies if the Autonomous Database
+   * requires mTLS connections.
    * </pre>
    *
-   * <code>bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The mtlsConnectionRequired.
    */
@@ -3086,12 +3162,14 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The retention period for the Autonomous Database. This field is
-   * specified in days, can range from 1 day to 60 days, and has a default value
-   * of 60 days.
+   * Optional. Immutable. The retention period for the Autonomous Database. This
+   * field is specified in days, can range from 1 day to 60 days, and has a
+   * default value of 60 days.
    * </pre>
    *
-   * <code>int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The backupRetentionPeriodDays.
    */
@@ -3704,16 +3782,22 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. This field indicates whether the Autonomous Database has local
-   * (in-region) Data Guard enabled.
+   * Output only. Deprecated: Please use `local_data_guard_enabled` instead.
+   * This field indicates whether the Autonomous Database has local (in-region)
+   * Data Guard enabled.
    * </pre>
    *
-   * <code>bool is_local_data_guard_enabled = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * bool is_local_data_guard_enabled = 33 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled is
+   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
    * @return The isLocalDataGuardEnabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getIsLocalDataGuardEnabled() {
     return isLocalDataGuardEnabled_;
   }
@@ -3725,17 +3809,23 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. This field indicates the maximum data loss limit for an
-   * Autonomous Database, in seconds.
+   * Output only. Deprecated: Please use
+   * `local_adg_auto_failover_max_data_loss_limit_duration` instead.
+   * This field indicates the maximum data loss limit for an Autonomous
+   * Database, in seconds.
    * </pre>
    *
    * <code>
-   * int32 local_adg_auto_failover_max_data_loss_limit = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * int32 local_adg_auto_failover_max_data_loss_limit = 35 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
+   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
    * @return The localAdgAutoFailoverMaxDataLossLimit.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getLocalAdgAutoFailoverMaxDataLossLimit() {
     return localAdgAutoFailoverMaxDataLossLimit_;
   }
@@ -5000,10 +5090,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return A list containing the allowlistedIps.
    */
@@ -5015,10 +5108,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The count of allowlistedIps.
    */
@@ -5030,10 +5126,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The allowlistedIps at the given index.
@@ -5046,10 +5145,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * Optional. Immutable. The list of allowlisted IP addresses for the
+   * Autonomous Database.
    * </pre>
    *
-   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the allowlistedIps at the given index.
@@ -5272,6 +5374,88 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int LOCAL_DATA_GUARD_ENABLED_FIELD_NUMBER = 71;
+  private boolean localDataGuardEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the Autonomous Database has a local (in-region)
+   * standby database. Not applicable to cross-region Data Guard or dedicated
+   * Exadata infrastructure.
+   * </pre>
+   *
+   * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the localDataGuardEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalDataGuardEnabled() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the Autonomous Database has a local (in-region)
+   * standby database. Not applicable to cross-region Data Guard or dedicated
+   * Exadata infrastructure.
+   * </pre>
+   *
+   * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The localDataGuardEnabled.
+   */
+  @java.lang.Override
+  public boolean getLocalDataGuardEnabled() {
+    return localDataGuardEnabled_;
+  }
+
+  public static final int LOCAL_ADG_AUTO_FAILOVER_MAX_DATA_LOSS_LIMIT_DURATION_FIELD_NUMBER = 72;
+  private int localAdgAutoFailoverMaxDataLossLimitDuration_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field indicates the maximum data loss limit for an
+   * Autonomous Database, in seconds.
+   * </pre>
+   *
+   * <code>
+   * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the localAdgAutoFailoverMaxDataLossLimitDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalAdgAutoFailoverMaxDataLossLimitDuration() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field indicates the maximum data loss limit for an
+   * Autonomous Database, in seconds.
+   * </pre>
+   *
+   * <code>
+   * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The localAdgAutoFailoverMaxDataLossLimitDuration.
+   */
+  @java.lang.Override
+  public int getLocalAdgAutoFailoverMaxDataLossLimitDuration() {
+    return localAdgAutoFailoverMaxDataLossLimitDuration_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5514,6 +5698,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAgentEmail_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 70, serviceAgentEmail_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(71, localDataGuardEnabled_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeInt32(72, localAdgAutoFailoverMaxDataLossLimitDuration_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5794,6 +5984,14 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAgentEmail_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(70, serviceAgentEmail_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(71, localDataGuardEnabled_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              72, localAdgAutoFailoverMaxDataLossLimitDuration_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5923,6 +6121,16 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (!getEncryptionKeyHistoryEntriesList().equals(other.getEncryptionKeyHistoryEntriesList()))
       return false;
     if (!getServiceAgentEmail().equals(other.getServiceAgentEmail())) return false;
+    if (hasLocalDataGuardEnabled() != other.hasLocalDataGuardEnabled()) return false;
+    if (hasLocalDataGuardEnabled()) {
+      if (getLocalDataGuardEnabled() != other.getLocalDataGuardEnabled()) return false;
+    }
+    if (hasLocalAdgAutoFailoverMaxDataLossLimitDuration()
+        != other.hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) return false;
+    if (hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
+      if (getLocalAdgAutoFailoverMaxDataLossLimitDuration()
+          != other.getLocalAdgAutoFailoverMaxDataLossLimitDuration()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6105,6 +6313,14 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + SERVICE_AGENT_EMAIL_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAgentEmail().hashCode();
+    if (hasLocalDataGuardEnabled()) {
+      hash = (37 * hash) + LOCAL_DATA_GUARD_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocalDataGuardEnabled());
+    }
+    if (hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
+      hash = (37 * hash) + LOCAL_ADG_AUTO_FAILOVER_MAX_DATA_LOSS_LIMIT_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalAdgAutoFailoverMaxDataLossLimitDuration();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6269,6 +6485,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       super.clear();
       bitField0_ = 0;
       bitField1_ = 0;
+      bitField2_ = 0;
       ocid_ = "";
       computeCount_ = 0F;
       cpuCoreCount_ = 0;
@@ -6394,6 +6611,8 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       bitField1_ = (bitField1_ & ~0x20000000);
       serviceAgentEmail_ = "";
+      localDataGuardEnabled_ = false;
+      localAdgAutoFailoverMaxDataLossLimitDuration_ = 0;
       return this;
     }
 
@@ -6428,6 +6647,9 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       if (bitField1_ != 0) {
         buildPartial1(result);
+      }
+      if (bitField2_ != 0) {
+        buildPartial2(result);
       }
       onBuilt();
       return result;
@@ -6697,6 +6919,22 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       }
       if (((from_bitField1_ & 0x40000000) != 0)) {
         result.serviceAgentEmail_ = serviceAgentEmail_;
+      }
+      if (((from_bitField1_ & 0x80000000) != 0)) {
+        result.localDataGuardEnabled_ = localDataGuardEnabled_;
+        to_bitField0_ |= 0x00001000;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial2(
+        com.google.cloud.oracledatabase.v1.AutonomousDatabaseProperties result) {
+      int from_bitField2_ = bitField2_;
+      int to_bitField0_ = 0;
+      if (((from_bitField2_ & 0x00000001) != 0)) {
+        result.localAdgAutoFailoverMaxDataLossLimitDuration_ =
+            localAdgAutoFailoverMaxDataLossLimitDuration_;
+        to_bitField0_ |= 0x00002000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7032,6 +7270,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         serviceAgentEmail_ = other.serviceAgentEmail_;
         bitField1_ |= 0x40000000;
         onChanged();
+      }
+      if (other.hasLocalDataGuardEnabled()) {
+        setLocalDataGuardEnabled(other.getLocalDataGuardEnabled());
+      }
+      if (other.hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
+        setLocalAdgAutoFailoverMaxDataLossLimitDuration(
+            other.getLocalAdgAutoFailoverMaxDataLossLimitDuration());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7480,6 +7725,18 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
                 bitField1_ |= 0x40000000;
                 break;
               } // case 562
+            case 568:
+              {
+                localDataGuardEnabled_ = input.readBool();
+                bitField1_ |= 0x80000000;
+                break;
+              } // case 568
+            case 576:
+              {
+                localAdgAutoFailoverMaxDataLossLimitDuration_ = input.readInt32();
+                bitField2_ |= 0x00000001;
+                break;
+              } // case 576
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7499,6 +7756,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
 
     private int bitField0_;
     private int bitField1_;
+    private int bitField2_;
 
     private java.lang.Object ocid_ = "";
 
@@ -7622,10 +7880,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of compute servers for the Autonomous Database.
+     * Optional. Immutable. The number of compute servers for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The computeCount.
      */
@@ -7638,10 +7899,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of compute servers for the Autonomous Database.
+     * Optional. Immutable. The number of compute servers for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The computeCount to set.
      * @return This builder for chaining.
@@ -7658,10 +7922,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of compute servers for the Autonomous Database.
+     * Optional. Immutable. The number of compute servers for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * float compute_count = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -7678,10 +7945,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of CPU cores to be made available to the database.
+     * Optional. Immutable. The number of CPU cores to be made available to the
+     * database.
      * </pre>
      *
-     * <code>int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The cpuCoreCount.
      */
@@ -7694,10 +7964,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of CPU cores to be made available to the database.
+     * Optional. Immutable. The number of CPU cores to be made available to the
+     * database.
      * </pre>
      *
-     * <code>int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The cpuCoreCount to set.
      * @return This builder for chaining.
@@ -7714,10 +7987,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The number of CPU cores to be made available to the database.
+     * Optional. Immutable. The number of CPU cores to be made available to the
+     * database.
      * </pre>
      *
-     * <code>int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 cpu_core_count = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -7734,10 +8010,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in terabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * terabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The dataStorageSizeTb.
      */
@@ -7750,10 +8029,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in terabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * terabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The dataStorageSizeTb to set.
      * @return This builder for chaining.
@@ -7770,10 +8052,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in terabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * terabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_tb = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -7790,10 +8075,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in gigabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * gigabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The dataStorageSizeGb.
      */
@@ -7806,10 +8094,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in gigabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * gigabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The dataStorageSizeGb to set.
      * @return This builder for chaining.
@@ -7826,10 +8117,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The size of the data stored in the database, in gigabytes.
+     * Optional. Immutable. The size of the data stored in the database, in
+     * gigabytes.
      * </pre>
      *
-     * <code>int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * int32 data_storage_size_gb = 63 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -7846,11 +8140,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The workload type of the Autonomous Database.
+     * Required. Immutable. The workload type of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for dbWorkload.
@@ -7864,11 +8158,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The workload type of the Autonomous Database.
+     * Required. Immutable. The workload type of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for dbWorkload to set.
@@ -7885,11 +8179,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The workload type of the Autonomous Database.
+     * Required. Immutable. The workload type of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The dbWorkload.
@@ -7905,11 +8199,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The workload type of the Autonomous Database.
+     * Required. Immutable. The workload type of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The dbWorkload to set.
@@ -7929,11 +8223,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The workload type of the Autonomous Database.
+     * Required. Immutable. The workload type of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.DBWorkload db_workload = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -7951,11 +8245,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The edition of the Autonomous Databases.
+     * Optional. Immutable. The edition of the Autonomous Databases.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for dbEdition.
@@ -7969,11 +8263,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The edition of the Autonomous Databases.
+     * Optional. Immutable. The edition of the Autonomous Databases.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for dbEdition to set.
@@ -7990,11 +8284,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The edition of the Autonomous Databases.
+     * Optional. Immutable. The edition of the Autonomous Databases.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The dbEdition.
@@ -8015,11 +8309,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The edition of the Autonomous Databases.
+     * Optional. Immutable. The edition of the Autonomous Databases.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The dbEdition to set.
@@ -8040,11 +8334,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The edition of the Autonomous Databases.
+     * Optional. Immutable. The edition of the Autonomous Databases.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.DatabaseEdition db_edition = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -8062,11 +8356,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The character set for the Autonomous Database. The default is
-     * AL32UTF8.
+     * Optional. Immutable. The character set for the Autonomous Database. The
+     * default is AL32UTF8.
      * </pre>
      *
-     * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The characterSet.
      */
@@ -8086,11 +8382,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The character set for the Autonomous Database. The default is
-     * AL32UTF8.
+     * Optional. Immutable. The character set for the Autonomous Database. The
+     * default is AL32UTF8.
      * </pre>
      *
-     * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for characterSet.
      */
@@ -8110,11 +8408,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The character set for the Autonomous Database. The default is
-     * AL32UTF8.
+     * Optional. Immutable. The character set for the Autonomous Database. The
+     * default is AL32UTF8.
      * </pre>
      *
-     * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The characterSet to set.
      * @return This builder for chaining.
@@ -8133,11 +8433,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The character set for the Autonomous Database. The default is
-     * AL32UTF8.
+     * Optional. Immutable. The character set for the Autonomous Database. The
+     * default is AL32UTF8.
      * </pre>
      *
-     * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8152,11 +8454,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The character set for the Autonomous Database. The default is
-     * AL32UTF8.
+     * Optional. Immutable. The character set for the Autonomous Database. The
+     * default is AL32UTF8.
      * </pre>
      *
-     * <code>string character_set = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string character_set = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for characterSet to set.
      * @return This builder for chaining.
@@ -8178,11 +8482,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The national character set for the Autonomous Database. The
-     * default is AL16UTF16.
+     * Optional. Immutable. The national character set for the Autonomous
+     * Database. The default is AL16UTF16.
      * </pre>
      *
-     * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The nCharacterSet.
      */
@@ -8202,11 +8508,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The national character set for the Autonomous Database. The
-     * default is AL16UTF16.
+     * Optional. Immutable. The national character set for the Autonomous
+     * Database. The default is AL16UTF16.
      * </pre>
      *
-     * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for nCharacterSet.
      */
@@ -8226,11 +8534,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The national character set for the Autonomous Database. The
-     * default is AL16UTF16.
+     * Optional. Immutable. The national character set for the Autonomous
+     * Database. The default is AL16UTF16.
      * </pre>
      *
-     * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The nCharacterSet to set.
      * @return This builder for chaining.
@@ -8249,11 +8559,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The national character set for the Autonomous Database. The
-     * default is AL16UTF16.
+     * Optional. Immutable. The national character set for the Autonomous
+     * Database. The default is AL16UTF16.
      * </pre>
      *
-     * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8268,11 +8580,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The national character set for the Autonomous Database. The
-     * default is AL16UTF16.
+     * Optional. Immutable. The national character set for the Autonomous
+     * Database. The default is AL16UTF16.
      * </pre>
      *
-     * <code>string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string n_character_set = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for nCharacterSet to set.
      * @return This builder for chaining.
@@ -8294,10 +8608,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint IP address for the Autonomous Database.
+     * Optional. Immutable. The private endpoint IP address for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The privateEndpointIp.
      */
@@ -8317,10 +8634,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint IP address for the Autonomous Database.
+     * Optional. Immutable. The private endpoint IP address for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for privateEndpointIp.
      */
@@ -8340,10 +8660,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint IP address for the Autonomous Database.
+     * Optional. Immutable. The private endpoint IP address for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The privateEndpointIp to set.
      * @return This builder for chaining.
@@ -8362,10 +8685,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint IP address for the Autonomous Database.
+     * Optional. Immutable. The private endpoint IP address for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8380,10 +8706,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint IP address for the Autonomous Database.
+     * Optional. Immutable. The private endpoint IP address for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_ip = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for privateEndpointIp to set.
      * @return This builder for chaining.
@@ -8405,10 +8734,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint label for the Autonomous Database.
+     * Optional. Immutable. The private endpoint label for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The privateEndpointLabel.
      */
@@ -8428,10 +8760,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint label for the Autonomous Database.
+     * Optional. Immutable. The private endpoint label for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for privateEndpointLabel.
      */
@@ -8451,10 +8786,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint label for the Autonomous Database.
+     * Optional. Immutable. The private endpoint label for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The privateEndpointLabel to set.
      * @return This builder for chaining.
@@ -8473,10 +8811,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint label for the Autonomous Database.
+     * Optional. Immutable. The private endpoint label for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8491,10 +8832,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The private endpoint label for the Autonomous Database.
+     * Optional. Immutable. The private endpoint label for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string private_endpoint_label = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for privateEndpointLabel to set.
      * @return This builder for chaining.
@@ -8516,10 +8860,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The Oracle Database version for the Autonomous Database.
+     * Optional. Immutable. The Oracle Database version for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The dbVersion.
      */
@@ -8539,10 +8886,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The Oracle Database version for the Autonomous Database.
+     * Optional. Immutable. The Oracle Database version for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for dbVersion.
      */
@@ -8562,10 +8912,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The Oracle Database version for the Autonomous Database.
+     * Optional. Immutable. The Oracle Database version for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The dbVersion to set.
      * @return This builder for chaining.
@@ -8584,10 +8937,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The Oracle Database version for the Autonomous Database.
+     * Optional. Immutable. The Oracle Database version for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8602,10 +8958,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The Oracle Database version for the Autonomous Database.
+     * Optional. Immutable. The Oracle Database version for the Autonomous
+     * Database.
      * </pre>
      *
-     * <code>string db_version = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string db_version = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for dbVersion to set.
      * @return This builder for chaining.
@@ -8627,11 +8986,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database CPU core count.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database CPU core count.
      * </pre>
      *
-     * <code>bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The isAutoScalingEnabled.
      */
@@ -8644,11 +9005,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database CPU core count.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database CPU core count.
      * </pre>
      *
-     * <code>bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The isAutoScalingEnabled to set.
      * @return This builder for chaining.
@@ -8665,11 +9028,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database CPU core count.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database CPU core count.
      * </pre>
      *
-     * <code>bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool is_auto_scaling_enabled = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8686,11 +9051,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database storage.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database storage.
      * </pre>
      *
-     * <code>bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The isStorageAutoScalingEnabled.
@@ -8704,11 +9070,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database storage.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database storage.
      * </pre>
      *
-     * <code>bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The isStorageAutoScalingEnabled to set.
@@ -8726,11 +9093,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field indicates if auto scaling is enabled for the
-     * Autonomous Database storage.
+     * Optional. Immutable. This field indicates if auto scaling is enabled for
+     * the Autonomous Database storage.
      * </pre>
      *
-     * <code>bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * bool is_storage_auto_scaling_enabled = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -8748,11 +9116,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The license type used for the Autonomous Database.
+     * Required. Immutable. The license type used for the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for licenseType.
@@ -8766,11 +9134,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The license type used for the Autonomous Database.
+     * Required. Immutable. The license type used for the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for licenseType to set.
@@ -8787,11 +9155,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The license type used for the Autonomous Database.
+     * Required. Immutable. The license type used for the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The licenseType.
@@ -8811,11 +9179,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The license type used for the Autonomous Database.
+     * Required. Immutable. The license type used for the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The licenseType to set.
@@ -8836,11 +9204,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The license type used for the Autonomous Database.
+     * Required. Immutable. The license type used for the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.LicenseType license_type = 16 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -8874,11 +9242,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact>
@@ -8894,11 +9262,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public int getCustomerContactsCount() {
@@ -8913,11 +9281,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index) {
@@ -8932,11 +9300,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setCustomerContacts(
@@ -8958,11 +9326,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setCustomerContacts(
@@ -8981,11 +9349,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addCustomerContacts(com.google.cloud.oracledatabase.v1.CustomerContact value) {
@@ -9006,11 +9374,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addCustomerContacts(
@@ -9032,11 +9400,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addCustomerContacts(
@@ -9055,11 +9423,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addCustomerContacts(
@@ -9078,11 +9446,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder addAllCustomerContacts(
@@ -9101,11 +9469,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearCustomerContacts() {
@@ -9123,11 +9491,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder removeCustomerContacts(int index) {
@@ -9145,11 +9513,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CustomerContact.Builder getCustomerContactsBuilder(
@@ -9161,11 +9529,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder getCustomerContactsOrBuilder(
@@ -9181,11 +9549,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<? extends com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder>
@@ -9201,11 +9569,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CustomerContact.Builder addCustomerContactsBuilder() {
@@ -9217,11 +9585,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.oracledatabase.v1.CustomerContact.Builder addCustomerContactsBuilder(
@@ -9235,11 +9603,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of customer contacts.
+     * Optional. Immutable. The list of customer contacts.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.oracledatabase.v1.CustomerContact customer_contacts = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact.Builder>
@@ -9273,10 +9641,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+     * secret.
      * </pre>
      *
-     * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The secretId.
      */
@@ -9296,10 +9667,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+     * secret.
      * </pre>
      *
-     * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for secretId.
      */
@@ -9319,10 +9693,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+     * secret.
      * </pre>
      *
-     * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The secretId to set.
      * @return This builder for chaining.
@@ -9341,10 +9718,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+     * secret.
      * </pre>
      *
-     * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9359,10 +9739,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault secret.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault
+     * secret.
      * </pre>
      *
-     * <code>string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string secret_id = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for secretId to set.
      * @return This builder for chaining.
@@ -9384,10 +9767,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
      * </pre>
      *
-     * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The vaultId.
      */
@@ -9407,10 +9792,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
      * </pre>
      *
-     * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for vaultId.
      */
@@ -9430,10 +9817,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
      * </pre>
      *
-     * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The vaultId to set.
      * @return This builder for chaining.
@@ -9452,10 +9841,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
      * </pre>
      *
-     * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9470,10 +9861,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The ID of the Oracle Cloud Infrastructure vault.
+     * Optional. Immutable. The ID of the Oracle Cloud Infrastructure vault.
      * </pre>
      *
-     * <code>string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string vault_id = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for vaultId to set.
      * @return This builder for chaining.
@@ -9495,11 +9888,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maintenance schedule of the Autonomous Database.
+     * Optional. Immutable. The maintenance schedule of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for maintenanceScheduleType.
@@ -9513,11 +9906,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maintenance schedule of the Autonomous Database.
+     * Optional. Immutable. The maintenance schedule of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for maintenanceScheduleType to set.
@@ -9534,11 +9927,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maintenance schedule of the Autonomous Database.
+     * Optional. Immutable. The maintenance schedule of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The maintenanceScheduleType.
@@ -9560,11 +9953,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maintenance schedule of the Autonomous Database.
+     * Optional. Immutable. The maintenance schedule of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The maintenanceScheduleType to set.
@@ -9586,11 +9979,11 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The maintenance schedule of the Autonomous Database.
+     * Optional. Immutable. The maintenance schedule of the Autonomous Database.
      * </pre>
      *
      * <code>
-     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.MaintenanceScheduleType maintenance_schedule_type = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -9608,11 +10001,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field specifies if the Autonomous Database requires mTLS
-     * connections.
+     * Optional. Immutable. This field specifies if the Autonomous Database
+     * requires mTLS connections.
      * </pre>
      *
-     * <code>bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The mtlsConnectionRequired.
      */
@@ -9625,11 +10020,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field specifies if the Autonomous Database requires mTLS
-     * connections.
+     * Optional. Immutable. This field specifies if the Autonomous Database
+     * requires mTLS connections.
      * </pre>
      *
-     * <code>bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The mtlsConnectionRequired to set.
      * @return This builder for chaining.
@@ -9646,11 +10043,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. This field specifies if the Autonomous Database requires mTLS
-     * connections.
+     * Optional. Immutable. This field specifies if the Autonomous Database
+     * requires mTLS connections.
      * </pre>
      *
-     * <code>bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool mtls_connection_required = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -9667,12 +10066,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The retention period for the Autonomous Database. This field is
-     * specified in days, can range from 1 day to 60 days, and has a default value
-     * of 60 days.
+     * Optional. Immutable. The retention period for the Autonomous Database. This
+     * field is specified in days, can range from 1 day to 60 days, and has a
+     * default value of 60 days.
      * </pre>
      *
-     * <code>int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The backupRetentionPeriodDays.
@@ -9686,12 +10086,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The retention period for the Autonomous Database. This field is
-     * specified in days, can range from 1 day to 60 days, and has a default value
-     * of 60 days.
+     * Optional. Immutable. The retention period for the Autonomous Database. This
+     * field is specified in days, can range from 1 day to 60 days, and has a
+     * default value of 60 days.
      * </pre>
      *
-     * <code>int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The backupRetentionPeriodDays to set.
@@ -9709,12 +10110,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The retention period for the Autonomous Database. This field is
-     * specified in days, can range from 1 day to 60 days, and has a default value
-     * of 60 days.
+     * Optional. Immutable. The retention period for the Autonomous Database. This
+     * field is specified in days, can range from 1 day to 60 days, and has a
+     * default value of 60 days.
      * </pre>
      *
-     * <code>int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * int32 backup_retention_period_days = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.
@@ -11473,16 +11875,22 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates whether the Autonomous Database has local
-     * (in-region) Data Guard enabled.
+     * Output only. Deprecated: Please use `local_data_guard_enabled` instead.
+     * This field indicates whether the Autonomous Database has local (in-region)
+     * Data Guard enabled.
      * </pre>
      *
-     * <code>bool is_local_data_guard_enabled = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * bool is_local_data_guard_enabled = 33 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
      * @return The isLocalDataGuardEnabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getIsLocalDataGuardEnabled() {
       return isLocalDataGuardEnabled_;
     }
@@ -11491,16 +11899,22 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates whether the Autonomous Database has local
-     * (in-region) Data Guard enabled.
+     * Output only. Deprecated: Please use `local_data_guard_enabled` instead.
+     * This field indicates whether the Autonomous Database has local (in-region)
+     * Data Guard enabled.
      * </pre>
      *
-     * <code>bool is_local_data_guard_enabled = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * bool is_local_data_guard_enabled = 33 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
      * @param value The isLocalDataGuardEnabled to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setIsLocalDataGuardEnabled(boolean value) {
 
       isLocalDataGuardEnabled_ = value;
@@ -11513,15 +11927,21 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates whether the Autonomous Database has local
-     * (in-region) Data Guard enabled.
+     * Output only. Deprecated: Please use `local_data_guard_enabled` instead.
+     * This field indicates whether the Autonomous Database has local (in-region)
+     * Data Guard enabled.
      * </pre>
      *
-     * <code>bool is_local_data_guard_enabled = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * bool is_local_data_guard_enabled = 33 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearIsLocalDataGuardEnabled() {
       bitField1_ = (bitField1_ & ~0x00000002);
       isLocalDataGuardEnabled_ = false;
@@ -11535,17 +11955,23 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates the maximum data loss limit for an
-     * Autonomous Database, in seconds.
+     * Output only. Deprecated: Please use
+     * `local_adg_auto_failover_max_data_loss_limit_duration` instead.
+     * This field indicates the maximum data loss limit for an Autonomous
+     * Database, in seconds.
      * </pre>
      *
      * <code>
-     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
      * @return The localAdgAutoFailoverMaxDataLossLimit.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getLocalAdgAutoFailoverMaxDataLossLimit() {
       return localAdgAutoFailoverMaxDataLossLimit_;
     }
@@ -11554,17 +11980,23 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates the maximum data loss limit for an
-     * Autonomous Database, in seconds.
+     * Output only. Deprecated: Please use
+     * `local_adg_auto_failover_max_data_loss_limit_duration` instead.
+     * This field indicates the maximum data loss limit for an Autonomous
+     * Database, in seconds.
      * </pre>
      *
      * <code>
-     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
      * @param value The localAdgAutoFailoverMaxDataLossLimit to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setLocalAdgAutoFailoverMaxDataLossLimit(int value) {
 
       localAdgAutoFailoverMaxDataLossLimit_ = value;
@@ -11577,16 +12009,22 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. This field indicates the maximum data loss limit for an
-     * Autonomous Database, in seconds.
+     * Output only. Deprecated: Please use
+     * `local_adg_auto_failover_max_data_loss_limit_duration` instead.
+     * This field indicates the maximum data loss limit for an Autonomous
+     * Database, in seconds.
      * </pre>
      *
      * <code>
-     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * int32 local_adg_auto_failover_max_data_loss_limit = 35 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearLocalAdgAutoFailoverMaxDataLossLimit() {
       bitField1_ = (bitField1_ & ~0x00000004);
       localAdgAutoFailoverMaxDataLossLimit_ = 0;
@@ -15302,10 +15740,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return A list containing the allowlistedIps.
      */
@@ -15318,10 +15759,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The count of allowlistedIps.
      */
@@ -15333,10 +15777,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The allowlistedIps at the given index.
@@ -15349,10 +15796,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowlistedIps at the given index.
@@ -15365,10 +15815,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The allowlistedIps to set.
@@ -15389,10 +15842,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The allowlistedIps to add.
      * @return This builder for chaining.
@@ -15412,10 +15868,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param values The allowlistedIps to add.
      * @return This builder for chaining.
@@ -15432,10 +15891,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -15451,10 +15913,13 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+     * Optional. Immutable. The list of allowlisted IP addresses for the
+     * Autonomous Database.
      * </pre>
      *
-     * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes of the allowlistedIps to add.
      * @return This builder for chaining.
@@ -16258,6 +16723,174 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       checkByteStringIsUtf8(value);
       serviceAgentEmail_ = value;
       bitField1_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    private boolean localDataGuardEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the Autonomous Database has a local (in-region)
+     * standby database. Not applicable to cross-region Data Guard or dedicated
+     * Exadata infrastructure.
+     * </pre>
+     *
+     * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the localDataGuardEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalDataGuardEnabled() {
+      return ((bitField1_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the Autonomous Database has a local (in-region)
+     * standby database. Not applicable to cross-region Data Guard or dedicated
+     * Exadata infrastructure.
+     * </pre>
+     *
+     * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The localDataGuardEnabled.
+     */
+    @java.lang.Override
+    public boolean getLocalDataGuardEnabled() {
+      return localDataGuardEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the Autonomous Database has a local (in-region)
+     * standby database. Not applicable to cross-region Data Guard or dedicated
+     * Exadata infrastructure.
+     * </pre>
+     *
+     * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The localDataGuardEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalDataGuardEnabled(boolean value) {
+
+      localDataGuardEnabled_ = value;
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the Autonomous Database has a local (in-region)
+     * standby database. Not applicable to cross-region Data Guard or dedicated
+     * Exadata infrastructure.
+     * </pre>
+     *
+     * <code>optional bool local_data_guard_enabled = 71 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalDataGuardEnabled() {
+      bitField1_ = (bitField1_ & ~0x80000000);
+      localDataGuardEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int localAdgAutoFailoverMaxDataLossLimitDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field indicates the maximum data loss limit for an
+     * Autonomous Database, in seconds.
+     * </pre>
+     *
+     * <code>
+     * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the localAdgAutoFailoverMaxDataLossLimitDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasLocalAdgAutoFailoverMaxDataLossLimitDuration() {
+      return ((bitField2_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field indicates the maximum data loss limit for an
+     * Autonomous Database, in seconds.
+     * </pre>
+     *
+     * <code>
+     * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The localAdgAutoFailoverMaxDataLossLimitDuration.
+     */
+    @java.lang.Override
+    public int getLocalAdgAutoFailoverMaxDataLossLimitDuration() {
+      return localAdgAutoFailoverMaxDataLossLimitDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field indicates the maximum data loss limit for an
+     * Autonomous Database, in seconds.
+     * </pre>
+     *
+     * <code>
+     * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The localAdgAutoFailoverMaxDataLossLimitDuration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalAdgAutoFailoverMaxDataLossLimitDuration(int value) {
+
+      localAdgAutoFailoverMaxDataLossLimitDuration_ = value;
+      bitField2_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field indicates the maximum data loss limit for an
+     * Autonomous Database, in seconds.
+     * </pre>
+     *
+     * <code>
+     * optional int32 local_adg_auto_failover_max_data_loss_limit_duration = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalAdgAutoFailoverMaxDataLossLimitDuration() {
+      bitField2_ = (bitField2_ & ~0x00000001);
+      localAdgAutoFailoverMaxDataLossLimitDuration_ = 0;
       onChanged();
       return this;
     }

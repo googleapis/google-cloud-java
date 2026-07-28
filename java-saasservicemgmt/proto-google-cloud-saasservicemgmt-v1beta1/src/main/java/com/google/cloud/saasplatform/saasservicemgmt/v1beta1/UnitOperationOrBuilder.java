@@ -794,6 +794,52 @@ public interface UnitOperationOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deleteTime field is set.
+   */
+  boolean hasDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deleteTime.
+   */
+  com.google.protobuf.Timestamp getDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when the resource was marked for deletion
+   * (deletion is an asynchronous operation).
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp delete_time = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
+
   com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation.UnitOperationTypeCase
       getUnitOperationTypeCase();
 }

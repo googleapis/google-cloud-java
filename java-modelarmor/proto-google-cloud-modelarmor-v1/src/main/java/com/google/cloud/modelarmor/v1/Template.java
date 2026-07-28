@@ -297,6 +297,88 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.modelarmor.v1.Template.TemplateMetadata.MultiLanguageDetectionOrBuilder
         getMultiLanguageDetectionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the modalities.
+     */
+    java.util.List<com.google.cloud.modelarmor.v1.Modality> getModalitiesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of modalities.
+     */
+    int getModalitiesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The modalities at the given index.
+     */
+    com.google.cloud.modelarmor.v1.Modality getModalities(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for modalities.
+     */
+    java.util.List<java.lang.Integer> getModalitiesValueList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of modalities at the given index.
+     */
+    int getModalitiesValue(int index);
   }
 
   /**
@@ -333,6 +415,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       customPromptSafetyErrorMessage_ = "";
       customLlmResponseSafetyErrorMessage_ = "";
       enforcementType_ = 0;
+      modalities_ = emptyIntList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1409,6 +1492,125 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           : multiLanguageDetection_;
     }
 
+    public static final int MODALITIES_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList modalities_ = emptyIntList();
+
+    private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+            com.google.cloud.modelarmor.v1.Modality>
+        modalities_converter_ =
+            new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+                com.google.cloud.modelarmor.v1.Modality>() {
+              public com.google.cloud.modelarmor.v1.Modality convert(int from) {
+                com.google.cloud.modelarmor.v1.Modality result =
+                    com.google.cloud.modelarmor.v1.Modality.forNumber(from);
+                return result == null
+                    ? com.google.cloud.modelarmor.v1.Modality.UNRECOGNIZED
+                    : result;
+              }
+            };
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the modalities.
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.modelarmor.v1.Modality> getModalitiesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.modelarmor.v1.Modality>(modalities_, modalities_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of modalities.
+     */
+    @java.lang.Override
+    public int getModalitiesCount() {
+      return modalities_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The modalities at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.Modality getModalities(int index) {
+      return modalities_converter_.convert(modalities_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for modalities.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getModalitiesValueList() {
+      return modalities_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the modalities to scan.
+     * If empty, only text modality will be scanned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of modalities at the given index.
+     */
+    @java.lang.Override
+    public int getModalitiesValue(int index) {
+      return modalities_.getInt(index);
+    }
+
+    private int modalitiesMemoizedSerializedSize;
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1423,6 +1625,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (ignorePartialInvocationFailures_ != false) {
         output.writeBool(1, ignorePartialInvocationFailures_);
       }
@@ -1455,6 +1658,13 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(9, getMultiLanguageDetection());
+      }
+      if (getModalitiesList().size() > 0) {
+        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(modalitiesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < modalities_.size(); i++) {
+        output.writeEnumNoTag(modalities_.getInt(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1507,6 +1717,19 @@ public final class Template extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 9, getMultiLanguageDetection());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < modalities_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(modalities_.getInt(i));
+        }
+        size += dataSize;
+        if (!getModalitiesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        modalitiesMemoizedSerializedSize = dataSize;
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1539,6 +1762,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       if (hasMultiLanguageDetection()) {
         if (!getMultiLanguageDetection().equals(other.getMultiLanguageDetection())) return false;
       }
+      if (!modalities_.equals(other.modalities_)) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1571,6 +1795,10 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       if (hasMultiLanguageDetection()) {
         hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
         hash = (53 * hash) + getMultiLanguageDetection().hashCode();
+      }
+      if (getModalitiesCount() > 0) {
+        hash = (37 * hash) + MODALITIES_FIELD_NUMBER;
+        hash = (53 * hash) + modalities_.hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1735,6 +1963,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           multiLanguageDetectionBuilder_.dispose();
           multiLanguageDetectionBuilder_ = null;
         }
+        modalities_ = emptyIntList();
         return this;
       }
 
@@ -1803,6 +2032,10 @@ public final class Template extends com.google.protobuf.GeneratedMessage
                   : multiLanguageDetectionBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          modalities_.makeImmutable();
+          result.modalities_ = modalities_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1849,6 +2082,17 @@ public final class Template extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasMultiLanguageDetection()) {
           mergeMultiLanguageDetection(other.getMultiLanguageDetection());
+        }
+        if (!other.modalities_.isEmpty()) {
+          if (modalities_.isEmpty()) {
+            modalities_ = other.modalities_;
+            modalities_.makeImmutable();
+            bitField0_ |= 0x00000200;
+          } else {
+            ensureModalitiesIsMutable();
+            modalities_.addAll(other.modalities_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1932,6 +2176,24 @@ public final class Template extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 74
+              case 88:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureModalitiesIsMutable();
+                  modalities_.addInt(tmpRaw);
+                  break;
+                } // case 88
+              case 90:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureModalitiesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    modalities_.addInt(input.readEnum());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2848,6 +3110,275 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           multiLanguageDetection_ = null;
         }
         return multiLanguageDetectionBuilder_;
+      }
+
+      private com.google.protobuf.Internal.IntList modalities_ = emptyIntList();
+
+      private void ensureModalitiesIsMutable() {
+        if (!modalities_.isModifiable()) {
+          modalities_ = makeMutableCopy(modalities_);
+        }
+        bitField0_ |= 0x00000200;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the modalities.
+       */
+      public java.util.List<com.google.cloud.modelarmor.v1.Modality> getModalitiesList() {
+        return new com.google.protobuf.Internal.IntListAdapter<
+            com.google.cloud.modelarmor.v1.Modality>(modalities_, modalities_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of modalities.
+       */
+      public int getModalitiesCount() {
+        return modalities_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The modalities at the given index.
+       */
+      public com.google.cloud.modelarmor.v1.Modality getModalities(int index) {
+        return modalities_converter_.convert(modalities_.getInt(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The modalities to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModalities(int index, com.google.cloud.modelarmor.v1.Modality value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModalitiesIsMutable();
+        modalities_.setInt(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The modalities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addModalities(com.google.cloud.modelarmor.v1.Modality value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureModalitiesIsMutable();
+        modalities_.addInt(value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The modalities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllModalities(
+          java.lang.Iterable<? extends com.google.cloud.modelarmor.v1.Modality> values) {
+        ensureModalitiesIsMutable();
+        for (com.google.cloud.modelarmor.v1.Modality value : values) {
+          modalities_.addInt(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModalities() {
+        modalities_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for modalities.
+       */
+      public java.util.List<java.lang.Integer> getModalitiesValueList() {
+        modalities_.makeImmutable();
+        return modalities_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of modalities at the given index.
+       */
+      public int getModalitiesValue(int index) {
+        return modalities_.getInt(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for modalities to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModalitiesValue(int index, int value) {
+        ensureModalitiesIsMutable();
+        modalities_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for modalities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addModalitiesValue(int value) {
+        ensureModalitiesIsMutable();
+        modalities_.addInt(value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the modalities to scan.
+       * If empty, only text modality will be scanned.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.modelarmor.v1.Modality modalities = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for modalities to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllModalitiesValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureModalitiesIsMutable();
+        for (int value : values) {
+          modalities_.addInt(value);
+        }
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.Template.TemplateMetadata)

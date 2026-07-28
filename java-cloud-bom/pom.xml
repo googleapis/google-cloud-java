@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>java-cloud-bom-root</artifactId>
+  <packaging>pom</packaging>
+  <!--  This pom.xml is not meant to be published to Maven Central -->
+  <version>0.1.0</version>
+  <name>Google Cloud Java BOM root project</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    BOMs for Google Cloud Java SDK
+  </description>
+  <organization>
+    <name>Google</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <licenses>
+    <license>
+      <name>Google Cloud Software License</name>
+      <url>https://raw.githubusercontent.com/googleapis/google-cloud-java/main/LICENSE</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <enforcer.skip>true</enforcer.skip>
+  </properties>
+
+  <modules>
+    <!-- Modules in the reactor. -->
+    <module>google-cloud-bom</module>
+    <module>libraries-bom</module>
+
+    <!-- maven.deploy.skip is set to true in the following modules so that they are not published to Maven Central -->
+    <module>dashboard</module>
+    <module>release-note-generation</module>
+    <module>libraries-release-data</module>
+    <module>tests</module>
+    <module>tests/dependency-convergence</module>
+    <module>tests/validate-bom</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- This root pom.xml is not referenced by the BOMs and no need to
+        be published to Maven Central
+        https://maven.apache.org/plugins/maven-deploy-plugin/faq.html#skip -->
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.3</version>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <!--
+        Not adding nexus-staging-maven-plugin here, because it would override
+        the skip configuration above when running "mvn deploy" command and tries to upload
+        this root pom.xml to the staging repository. When we tried the skip configuration
+        of nexus-staging-maven-plugin, it skipped all modules in this repository.
+        Thus, we cannot use nexus-staging-maven-plugin when uploading artifacts to a staging
+        repository.
+        However, when we release the staging repository as the next step,
+        "mvn nexus-staging:release" command requires nexus-staging-maven-plugin.
+        Therefore, the plugin is configured to be available only for the "release" command
+        as defined in the "release-staging-repository" profile below.
+      -->
+    </plugins>
+  </build>
+  <profiles>
+    <profile>
+      <!-- profile for nexus-staging:release invocation -->
+      <id>release-staging-repository</id>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>sonatype-nexus-snapshots</id>
+          <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>sonatype-nexus-staging</id>
+          <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+      </distributionManagement>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- The root project runs nexus-staging:release task -->
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.7.0</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>sonatype-nexus-staging</serverId>
+              <nexusUrl>https://google.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
+    </profile>
+  </profiles>
+</project>

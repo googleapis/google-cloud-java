@@ -262,6 +262,63 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
         : privilegedAdmissionConfig_;
   }
 
+  public static final int CLUSTER_POLICY_CONFIG_FIELD_NUMBER = 5;
+  private com.google.container.v1beta1.ClusterPolicyConfig clusterPolicyConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   *
+   * @return Whether the clusterPolicyConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasClusterPolicyConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   *
+   * @return The clusterPolicyConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ClusterPolicyConfig getClusterPolicyConfig() {
+    return clusterPolicyConfig_ == null
+        ? com.google.container.v1beta1.ClusterPolicyConfig.getDefaultInstance()
+        : clusterPolicyConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ClusterPolicyConfig denotes cluster level policies that are enforced for
+   * the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ClusterPolicyConfigOrBuilder
+      getClusterPolicyConfigOrBuilder() {
+    return clusterPolicyConfig_ == null
+        ? com.google.container.v1beta1.ClusterPolicyConfig.getDefaultInstance()
+        : clusterPolicyConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -288,6 +345,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getPrivilegedAdmissionConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getClusterPolicyConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -311,6 +371,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getPrivilegedAdmissionConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getClusterPolicyConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,6 +404,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
       if (!getPrivilegedAdmissionConfig().equals(other.getPrivilegedAdmissionConfig()))
         return false;
     }
+    if (hasClusterPolicyConfig() != other.hasClusterPolicyConfig()) return false;
+    if (hasClusterPolicyConfig()) {
+      if (!getClusterPolicyConfig().equals(other.getClusterPolicyConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -365,6 +432,10 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
     if (hasPrivilegedAdmissionConfig()) {
       hash = (37 * hash) + PRIVILEGED_ADMISSION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrivilegedAdmissionConfig().hashCode();
+    }
+    if (hasClusterPolicyConfig()) {
+      hash = (37 * hash) + CLUSTER_POLICY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getClusterPolicyConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -510,6 +581,7 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
         internalGetWorkloadPolicyConfigFieldBuilder();
         internalGetConversionStatusFieldBuilder();
         internalGetPrivilegedAdmissionConfigFieldBuilder();
+        internalGetClusterPolicyConfigFieldBuilder();
       }
     }
 
@@ -532,6 +604,11 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
       if (privilegedAdmissionConfigBuilder_ != null) {
         privilegedAdmissionConfigBuilder_.dispose();
         privilegedAdmissionConfigBuilder_ = null;
+      }
+      clusterPolicyConfig_ = null;
+      if (clusterPolicyConfigBuilder_ != null) {
+        clusterPolicyConfigBuilder_.dispose();
+        clusterPolicyConfigBuilder_ = null;
       }
       return this;
     }
@@ -592,6 +669,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
                 : privilegedAdmissionConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.clusterPolicyConfig_ =
+            clusterPolicyConfigBuilder_ == null
+                ? clusterPolicyConfig_
+                : clusterPolicyConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -618,6 +702,9 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPrivilegedAdmissionConfig()) {
         mergePrivilegedAdmissionConfig(other.getPrivilegedAdmissionConfig());
+      }
+      if (other.hasClusterPolicyConfig()) {
+        mergeClusterPolicyConfig(other.getClusterPolicyConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -673,6 +760,13 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetClusterPolicyConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1382,6 +1476,214 @@ public final class Autopilot extends com.google.protobuf.GeneratedMessage
         privilegedAdmissionConfig_ = null;
       }
       return privilegedAdmissionConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.ClusterPolicyConfig clusterPolicyConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.ClusterPolicyConfig,
+            com.google.container.v1beta1.ClusterPolicyConfig.Builder,
+            com.google.container.v1beta1.ClusterPolicyConfigOrBuilder>
+        clusterPolicyConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     *
+     * @return Whether the clusterPolicyConfig field is set.
+     */
+    public boolean hasClusterPolicyConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     *
+     * @return The clusterPolicyConfig.
+     */
+    public com.google.container.v1beta1.ClusterPolicyConfig getClusterPolicyConfig() {
+      if (clusterPolicyConfigBuilder_ == null) {
+        return clusterPolicyConfig_ == null
+            ? com.google.container.v1beta1.ClusterPolicyConfig.getDefaultInstance()
+            : clusterPolicyConfig_;
+      } else {
+        return clusterPolicyConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public Builder setClusterPolicyConfig(com.google.container.v1beta1.ClusterPolicyConfig value) {
+      if (clusterPolicyConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clusterPolicyConfig_ = value;
+      } else {
+        clusterPolicyConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public Builder setClusterPolicyConfig(
+        com.google.container.v1beta1.ClusterPolicyConfig.Builder builderForValue) {
+      if (clusterPolicyConfigBuilder_ == null) {
+        clusterPolicyConfig_ = builderForValue.build();
+      } else {
+        clusterPolicyConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public Builder mergeClusterPolicyConfig(
+        com.google.container.v1beta1.ClusterPolicyConfig value) {
+      if (clusterPolicyConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && clusterPolicyConfig_ != null
+            && clusterPolicyConfig_
+                != com.google.container.v1beta1.ClusterPolicyConfig.getDefaultInstance()) {
+          getClusterPolicyConfigBuilder().mergeFrom(value);
+        } else {
+          clusterPolicyConfig_ = value;
+        }
+      } else {
+        clusterPolicyConfigBuilder_.mergeFrom(value);
+      }
+      if (clusterPolicyConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public Builder clearClusterPolicyConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      clusterPolicyConfig_ = null;
+      if (clusterPolicyConfigBuilder_ != null) {
+        clusterPolicyConfigBuilder_.dispose();
+        clusterPolicyConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public com.google.container.v1beta1.ClusterPolicyConfig.Builder
+        getClusterPolicyConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetClusterPolicyConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    public com.google.container.v1beta1.ClusterPolicyConfigOrBuilder
+        getClusterPolicyConfigOrBuilder() {
+      if (clusterPolicyConfigBuilder_ != null) {
+        return clusterPolicyConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return clusterPolicyConfig_ == null
+            ? com.google.container.v1beta1.ClusterPolicyConfig.getDefaultInstance()
+            : clusterPolicyConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ClusterPolicyConfig denotes cluster level policies that are enforced for
+     * the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.ClusterPolicyConfig cluster_policy_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1beta1.ClusterPolicyConfig,
+            com.google.container.v1beta1.ClusterPolicyConfig.Builder,
+            com.google.container.v1beta1.ClusterPolicyConfigOrBuilder>
+        internalGetClusterPolicyConfigFieldBuilder() {
+      if (clusterPolicyConfigBuilder_ == null) {
+        clusterPolicyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1beta1.ClusterPolicyConfig,
+                com.google.container.v1beta1.ClusterPolicyConfig.Builder,
+                com.google.container.v1beta1.ClusterPolicyConfigOrBuilder>(
+                getClusterPolicyConfig(), getParentForChildren(), isClean());
+        clusterPolicyConfig_ = null;
+      }
+      return clusterPolicyConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1beta1.Autopilot)

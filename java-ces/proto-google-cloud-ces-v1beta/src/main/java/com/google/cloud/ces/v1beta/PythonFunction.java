@@ -72,6 +72,7 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
             com.google.cloud.ces.v1beta.PythonFunction.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -237,6 +238,66 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.ces.v1beta.ServiceDirectoryConfig serviceDirectoryConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceDirectoryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceDirectoryConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceDirectoryConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ServiceDirectoryConfig getServiceDirectoryConfig() {
+    return serviceDirectoryConfig_ == null
+        ? com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()
+        : serviceDirectoryConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service Directory configuration for the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ServiceDirectoryConfigOrBuilder
+      getServiceDirectoryConfigOrBuilder() {
+    return serviceDirectoryConfig_ == null
+        ? com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()
+        : serviceDirectoryConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -260,6 +321,9 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getServiceDirectoryConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -277,6 +341,10 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, description_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getServiceDirectoryConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -297,6 +365,10 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getPythonCode().equals(other.getPythonCode())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasServiceDirectoryConfig() != other.hasServiceDirectoryConfig()) return false;
+    if (hasServiceDirectoryConfig()) {
+      if (!getServiceDirectoryConfig().equals(other.getServiceDirectoryConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,6 +386,10 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getPythonCode().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasServiceDirectoryConfig()) {
+      hash = (37 * hash) + SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceDirectoryConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -444,10 +520,19 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.ces.v1beta.PythonFunction.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetServiceDirectoryConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -457,6 +542,11 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
       name_ = "";
       pythonCode_ = "";
       description_ = "";
+      serviceDirectoryConfig_ = null;
+      if (serviceDirectoryConfigBuilder_ != null) {
+        serviceDirectoryConfigBuilder_.dispose();
+        serviceDirectoryConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -502,6 +592,15 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceDirectoryConfig_ =
+            serviceDirectoryConfigBuilder_ == null
+                ? serviceDirectoryConfig_
+                : serviceDirectoryConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -530,6 +629,9 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
         description_ = other.description_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasServiceDirectoryConfig()) {
+        mergeServiceDirectoryConfig(other.getServiceDirectoryConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -575,6 +677,14 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetServiceDirectoryConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -940,6 +1050,224 @@ public final class PythonFunction extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1beta.ServiceDirectoryConfig serviceDirectoryConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfig,
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder,
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfigOrBuilder>
+        serviceDirectoryConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceDirectoryConfig field is set.
+     */
+    public boolean hasServiceDirectoryConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceDirectoryConfig.
+     */
+    public com.google.cloud.ces.v1beta.ServiceDirectoryConfig getServiceDirectoryConfig() {
+      if (serviceDirectoryConfigBuilder_ == null) {
+        return serviceDirectoryConfig_ == null
+            ? com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()
+            : serviceDirectoryConfig_;
+      } else {
+        return serviceDirectoryConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceDirectoryConfig(
+        com.google.cloud.ces.v1beta.ServiceDirectoryConfig value) {
+      if (serviceDirectoryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceDirectoryConfig_ = value;
+      } else {
+        serviceDirectoryConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceDirectoryConfig(
+        com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder builderForValue) {
+      if (serviceDirectoryConfigBuilder_ == null) {
+        serviceDirectoryConfig_ = builderForValue.build();
+      } else {
+        serviceDirectoryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeServiceDirectoryConfig(
+        com.google.cloud.ces.v1beta.ServiceDirectoryConfig value) {
+      if (serviceDirectoryConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && serviceDirectoryConfig_ != null
+            && serviceDirectoryConfig_
+                != com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()) {
+          getServiceDirectoryConfigBuilder().mergeFrom(value);
+        } else {
+          serviceDirectoryConfig_ = value;
+        }
+      } else {
+        serviceDirectoryConfigBuilder_.mergeFrom(value);
+      }
+      if (serviceDirectoryConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearServiceDirectoryConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      serviceDirectoryConfig_ = null;
+      if (serviceDirectoryConfigBuilder_ != null) {
+        serviceDirectoryConfigBuilder_.dispose();
+        serviceDirectoryConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder
+        getServiceDirectoryConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetServiceDirectoryConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ServiceDirectoryConfigOrBuilder
+        getServiceDirectoryConfigOrBuilder() {
+      if (serviceDirectoryConfigBuilder_ != null) {
+        return serviceDirectoryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceDirectoryConfig_ == null
+            ? com.google.cloud.ces.v1beta.ServiceDirectoryConfig.getDefaultInstance()
+            : serviceDirectoryConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Service Directory configuration for the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ServiceDirectoryConfig service_directory_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfig,
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder,
+            com.google.cloud.ces.v1beta.ServiceDirectoryConfigOrBuilder>
+        internalGetServiceDirectoryConfigFieldBuilder() {
+      if (serviceDirectoryConfigBuilder_ == null) {
+        serviceDirectoryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ServiceDirectoryConfig,
+                com.google.cloud.ces.v1beta.ServiceDirectoryConfig.Builder,
+                com.google.cloud.ces.v1beta.ServiceDirectoryConfigOrBuilder>(
+                getServiceDirectoryConfig(), getParentForChildren(), isClean());
+        serviceDirectoryConfig_ = null;
+      }
+      return serviceDirectoryConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.PythonFunction)

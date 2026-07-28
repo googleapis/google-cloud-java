@@ -54,6 +54,7 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
   private ListExadbVmClustersResponse() {
     exadbVmClusters_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
+    unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -202,6 +203,78 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
     }
   }
 
+  public static final int UNREACHABLE_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList unreachable_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return A list containing the unreachable.
+   */
+  public com.google.protobuf.ProtocolStringList getUnreachableList() {
+    return unreachable_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @return The count of unreachable.
+   */
+  public int getUnreachableCount() {
+    return unreachable_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The unreachable at the given index.
+   */
+  public java.lang.String getUnreachable(int index) {
+    return unreachable_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Unreachable locations when listing resources across all locations using
+   * wildcard location '-'.
+   * </pre>
+   *
+   * <code>repeated string unreachable = 3;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the unreachable at the given index.
+   */
+  public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+    return unreachable_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -222,6 +295,9 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nextPageToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, nextPageToken_);
     }
+    for (int i = 0; i < unreachable_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, unreachable_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -236,6 +312,14 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nextPageToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, nextPageToken_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < unreachable_.size(); i++) {
+        dataSize += computeStringSizeNoTag(unreachable_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getUnreachableList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -255,6 +339,7 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
 
     if (!getExadbVmClustersList().equals(other.getExadbVmClustersList())) return false;
     if (!getNextPageToken().equals(other.getNextPageToken())) return false;
+    if (!getUnreachableList().equals(other.getUnreachableList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -272,6 +357,10 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
     }
     hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getNextPageToken().hashCode();
+    if (getUnreachableCount() > 0) {
+      hash = (37 * hash) + UNREACHABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnreachableList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +510,7 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -476,6 +566,10 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.nextPageToken_ = nextPageToken_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unreachable_.makeImmutable();
+        result.unreachable_ = unreachable_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +618,16 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.unreachable_.isEmpty()) {
+        if (unreachable_.isEmpty()) {
+          unreachable_ = other.unreachable_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureUnreachableIsMutable();
+          unreachable_.addAll(other.unreachable_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -570,6 +674,13 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureUnreachableIsMutable();
+                unreachable_.add(s);
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1075,6 +1186,198 @@ public final class ListExadbVmClustersResponse extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       nextPageToken_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList unreachable_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureUnreachableIsMutable() {
+      if (!unreachable_.isModifiable()) {
+        unreachable_ = new com.google.protobuf.LazyStringArrayList(unreachable_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return A list containing the unreachable.
+     */
+    public com.google.protobuf.ProtocolStringList getUnreachableList() {
+      unreachable_.makeImmutable();
+      return unreachable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return The count of unreachable.
+     */
+    public int getUnreachableCount() {
+      return unreachable_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The unreachable at the given index.
+     */
+    public java.lang.String getUnreachable(int index) {
+      return unreachable_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the unreachable at the given index.
+     */
+    public com.google.protobuf.ByteString getUnreachableBytes(int index) {
+      return unreachable_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The unreachable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUnreachable(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachable(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param values The unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUnreachable(java.lang.Iterable<java.lang.String> values) {
+      ensureUnreachableIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, unreachable_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUnreachable() {
+      unreachable_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unreachable locations when listing resources across all locations using
+     * wildcard location '-'.
+     * </pre>
+     *
+     * <code>repeated string unreachable = 3;</code>
+     *
+     * @param value The bytes of the unreachable to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUnreachableBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureUnreachableIsMutable();
+      unreachable_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

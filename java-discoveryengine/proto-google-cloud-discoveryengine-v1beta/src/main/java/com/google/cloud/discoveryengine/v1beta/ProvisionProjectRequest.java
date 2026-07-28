@@ -73,6 +73,657 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.Builder.class);
   }
 
+  public interface SaasParamsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to `true` to specify that caller has read and would like to
+     * give consent to the [Terms for Agent Space quality of service].
+     * </pre>
+     *
+     * <code>bool accept_biz_qos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The acceptBizQos.
+     */
+    boolean getAcceptBizQos();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the current request is for Biz edition (= true) or
+     * not
+     * (= false).
+     * </pre>
+     *
+     * <code>bool is_biz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isBiz.
+     */
+    boolean getIsBiz();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for Agentspace.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams}
+   */
+  public static final class SaasParams extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)
+      SaasParamsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SaasParams");
+    }
+
+    // Use SaasParams.newBuilder() to construct.
+    private SaasParams(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SaasParams() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.ProjectServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.ProjectServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.class,
+              com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder
+                  .class);
+    }
+
+    public static final int ACCEPT_BIZ_QOS_FIELD_NUMBER = 1;
+    private boolean acceptBizQos_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to `true` to specify that caller has read and would like to
+     * give consent to the [Terms for Agent Space quality of service].
+     * </pre>
+     *
+     * <code>bool accept_biz_qos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The acceptBizQos.
+     */
+    @java.lang.Override
+    public boolean getAcceptBizQos() {
+      return acceptBizQos_;
+    }
+
+    public static final int IS_BIZ_FIELD_NUMBER = 2;
+    private boolean isBiz_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the current request is for Biz edition (= true) or
+     * not
+     * (= false).
+     * </pre>
+     *
+     * <code>bool is_biz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The isBiz.
+     */
+    @java.lang.Override
+    public boolean getIsBiz() {
+      return isBiz_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (acceptBizQos_ != false) {
+        output.writeBool(1, acceptBizQos_);
+      }
+      if (isBiz_ != false) {
+        output.writeBool(2, isBiz_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (acceptBizQos_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, acceptBizQos_);
+      }
+      if (isBiz_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, isBiz_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams other =
+          (com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams) obj;
+
+      if (getAcceptBizQos() != other.getAcceptBizQos()) return false;
+      if (getIsBiz() != other.getIsBiz()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCEPT_BIZ_QOS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAcceptBizQos());
+      hash = (37 * hash) + IS_BIZ_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsBiz());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Parameters for Agentspace.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.ProjectServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.ProjectServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.class,
+                com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        acceptBizQos_ = false;
+        isBiz_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.ProjectServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_ProvisionProjectRequest_SaasParams_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams build() {
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams result =
+            new com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.acceptBizQos_ = acceptBizQos_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isBiz_ = isBiz_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+                .getDefaultInstance()) return this;
+        if (other.getAcceptBizQos() != false) {
+          setAcceptBizQos(other.getAcceptBizQos());
+        }
+        if (other.getIsBiz() != false) {
+          setIsBiz(other.getIsBiz());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  acceptBizQos_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  isBiz_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean acceptBizQos_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set to `true` to specify that caller has read and would like to
+       * give consent to the [Terms for Agent Space quality of service].
+       * </pre>
+       *
+       * <code>bool accept_biz_qos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The acceptBizQos.
+       */
+      @java.lang.Override
+      public boolean getAcceptBizQos() {
+        return acceptBizQos_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set to `true` to specify that caller has read and would like to
+       * give consent to the [Terms for Agent Space quality of service].
+       * </pre>
+       *
+       * <code>bool accept_biz_qos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The acceptBizQos to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAcceptBizQos(boolean value) {
+
+        acceptBizQos_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Set to `true` to specify that caller has read and would like to
+       * give consent to the [Terms for Agent Space quality of service].
+       * </pre>
+       *
+       * <code>bool accept_biz_qos = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAcceptBizQos() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        acceptBizQos_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isBiz_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the current request is for Biz edition (= true) or
+       * not
+       * (= false).
+       * </pre>
+       *
+       * <code>bool is_biz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The isBiz.
+       */
+      @java.lang.Override
+      public boolean getIsBiz() {
+        return isBiz_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the current request is for Biz edition (= true) or
+       * not
+       * (= false).
+       * </pre>
+       *
+       * <code>bool is_biz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The isBiz to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsBiz(boolean value) {
+
+        isBiz_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates if the current request is for Biz edition (= true) or
+       * not
+       * (= false).
+       * </pre>
+       *
+       * <code>bool is_biz = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIsBiz() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isBiz_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams)
+    private static final com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SaasParams> PARSER =
+        new com.google.protobuf.AbstractParser<SaasParams>() {
+          @java.lang.Override
+          public SaasParams parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SaasParams> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SaasParams> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -216,6 +867,69 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int SAAS_PARAMS_FIELD_NUMBER = 4;
+  private com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saasParams_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the saasParams field is set.
+   */
+  @java.lang.Override
+  public boolean hasSaasParams() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The saasParams.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+      getSaasParams() {
+    return saasParams_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+            .getDefaultInstance()
+        : saasParams_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for Agentspace.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder
+      getSaasParamsOrBuilder() {
+    return saasParams_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+            .getDefaultInstance()
+        : saasParams_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -239,6 +953,9 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataUseTermsVersion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, dataUseTermsVersion_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getSaasParams());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -256,6 +973,9 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataUseTermsVersion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, dataUseTermsVersion_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSaasParams());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -276,6 +996,10 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     if (!getName().equals(other.getName())) return false;
     if (getAcceptDataUseTerms() != other.getAcceptDataUseTerms()) return false;
     if (!getDataUseTermsVersion().equals(other.getDataUseTermsVersion())) return false;
+    if (hasSaasParams() != other.hasSaasParams()) return false;
+    if (hasSaasParams()) {
+      if (!getSaasParams().equals(other.getSaasParams())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -293,6 +1017,10 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAcceptDataUseTerms());
     hash = (37 * hash) + DATA_USE_TERMS_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDataUseTermsVersion().hashCode();
+    if (hasSaasParams()) {
+      hash = (37 * hash) + SAAS_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getSaasParams().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -426,10 +1154,19 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetSaasParamsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -439,6 +1176,11 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
       name_ = "";
       acceptDataUseTerms_ = false;
       dataUseTermsVersion_ = "";
+      saasParams_ = null;
+      if (saasParamsBuilder_ != null) {
+        saasParamsBuilder_.dispose();
+        saasParamsBuilder_ = null;
+      }
       return this;
     }
 
@@ -486,6 +1228,12 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.dataUseTermsVersion_ = dataUseTermsVersion_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.saasParams_ = saasParamsBuilder_ == null ? saasParams_ : saasParamsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -515,6 +1263,9 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         dataUseTermsVersion_ = other.dataUseTermsVersion_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasSaasParams()) {
+        mergeSaasParams(other.getSaasParams());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -560,6 +1311,13 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetSaasParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -901,6 +1659,229 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saasParams_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams,
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder,
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder>
+        saasParamsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the saasParams field is set.
+     */
+    public boolean hasSaasParams() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The saasParams.
+     */
+    public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+        getSaasParams() {
+      if (saasParamsBuilder_ == null) {
+        return saasParams_ == null
+            ? com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+                .getDefaultInstance()
+            : saasParams_;
+      } else {
+        return saasParamsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSaasParams(
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams value) {
+      if (saasParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        saasParams_ = value;
+      } else {
+        saasParamsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSaasParams(
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder
+            builderForValue) {
+      if (saasParamsBuilder_ == null) {
+        saasParams_ = builderForValue.build();
+      } else {
+        saasParamsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSaasParams(
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams value) {
+      if (saasParamsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && saasParams_ != null
+            && saasParams_
+                != com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+                    .getDefaultInstance()) {
+          getSaasParamsBuilder().mergeFrom(value);
+        } else {
+          saasParams_ = value;
+        }
+      } else {
+        saasParamsBuilder_.mergeFrom(value);
+      }
+      if (saasParams_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSaasParams() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      saasParams_ = null;
+      if (saasParamsBuilder_ != null) {
+        saasParamsBuilder_.dispose();
+        saasParamsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder
+        getSaasParamsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetSaasParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder
+        getSaasParamsOrBuilder() {
+      if (saasParamsBuilder_ != null) {
+        return saasParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return saasParams_ == null
+            ? com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams
+                .getDefaultInstance()
+            : saasParams_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for Agentspace.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams saas_params = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams,
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder,
+            com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder>
+        internalGetSaasParamsFieldBuilder() {
+      if (saasParamsBuilder_ == null) {
+        saasParamsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams,
+                com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParams.Builder,
+                com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest
+                    .SaasParamsOrBuilder>(getSaasParams(), getParentForChildren(), isClean());
+        saasParams_ = null;
+      }
+      return saasParamsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.ProvisionProjectRequest)

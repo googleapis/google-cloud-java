@@ -61,7 +61,7 @@ public final class CommitResponseProto extends com.google.protobuf.GeneratedFile
           + "o\022\021google.spanner.v1\032\037google/api/field_b"
           + "ehavior.proto\032\037google/protobuf/timestamp"
           + ".proto\032 google/spanner/v1/location.proto"
-          + "\032#google/spanner/v1/transaction.proto\"\220\003"
+          + "\032#google/spanner/v1/transaction.proto\"\265\004"
           + "\n\016CommitResponse\0224\n\020commit_timestamp\030\001 \001"
           + "(\0132\032.google.protobuf.Timestamp\022C\n\014commit"
           + "_stats\030\002 \001(\0132-.google.spanner.v1.CommitR"
@@ -70,13 +70,17 @@ public final class CommitResponseProto extends com.google.protobuf.GeneratedFile
           + "ionPrecommitTokenH\000\0226\n\022snapshot_timestam"
           + "p\030\005 \001(\0132\032.google.protobuf.Timestamp\0229\n\014c"
           + "ache_update\030\006 \001(\0132\036.google.spanner.v1.Ca"
-          + "cheUpdateB\003\340A\001\032%\n\013CommitStats\022\026\n\016mutatio"
-          + "n_count\030\001 \001(\003B\031\n\027MultiplexedSessionRetry"
-          + "B\266\001\n\025com.google.spanner.v1B\023CommitRespon"
-          + "seProtoP\001Z5cloud.google.com/go/spanner/a"
-          + "piv1/spannerpb;spannerpb\252\002\027Google.Cloud."
-          + "Spanner.V1\312\002\027Google\\Cloud\\Spanner\\V1\352\002\032G"
-          + "oogle::Cloud::Spanner::V1b\006proto3"
+          + "cheUpdateB\003\340A\001\022M\n\017isolation_level\030\007 \001(\0162"
+          + "4.google.spanner.v1.TransactionOptions.I"
+          + "solationLevel\022T\n\016read_lock_mode\030\010 \001(\0162<."
+          + "google.spanner.v1.TransactionOptions.Rea"
+          + "dWrite.ReadLockMode\032%\n\013CommitStats\022\026\n\016mu"
+          + "tation_count\030\001 \001(\003B\031\n\027MultiplexedSession"
+          + "RetryB\266\001\n\025com.google.spanner.v1B\023CommitR"
+          + "esponseProtoP\001Z5cloud.google.com/go/span"
+          + "ner/apiv1/spannerpb;spannerpb\252\002\027Google.C"
+          + "loud.Spanner.V1\312\002\027Google\\Cloud\\Spanner\\V"
+          + "1\352\002\032Google::Cloud::Spanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -97,6 +101,8 @@ public final class CommitResponseProto extends com.google.protobuf.GeneratedFile
               "PrecommitToken",
               "SnapshotTimestamp",
               "CacheUpdate",
+              "IsolationLevel",
+              "ReadLockMode",
               "MultiplexedSessionRetry",
             });
     internal_static_google_spanner_v1_CommitResponse_CommitStats_descriptor =

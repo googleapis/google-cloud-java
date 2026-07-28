@@ -150,6 +150,50 @@ public interface GenerateAppResourceRequestOrBuilder
    *
    *
    * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   *
+   * @return Whether the appVersionContext field is set.
+   */
+  boolean hasAppVersionContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   *
+   * @return The appVersionContext.
+   */
+  com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext getAppVersionContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * The app version context specifying the base snapshot and target agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContext app_version_context = 12;
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.GenerateAppResourceRequest.AppVersionContextOrBuilder
+      getAppVersionContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the app to generate the resource for.
    * </pre>
    *

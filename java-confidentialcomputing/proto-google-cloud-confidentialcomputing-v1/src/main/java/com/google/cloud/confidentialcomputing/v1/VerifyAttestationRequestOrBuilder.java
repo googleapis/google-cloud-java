@@ -401,6 +401,40 @@ public interface VerifyAttestationRequestOrBuilder
    */
   com.google.protobuf.ByteString getAttesterBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional resource link of the Compute Engine instance.
+   * Format:
+   * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+   * </pre>
+   *
+   * <code>
+   * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The instance.
+   */
+  java.lang.String getInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional resource link of the Compute Engine instance.
+   * Format:
+   * `projects/{project_number}/zones/{zone}/instances/{instance_id}`
+   * </pre>
+   *
+   * <code>
+   * string instance = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for instance.
+   */
+  com.google.protobuf.ByteString getInstanceBytes();
+
   com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest.TeeAttestationCase
       getTeeAttestationCase();
 

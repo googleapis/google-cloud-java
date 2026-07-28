@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -558,9 +560,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DatasetServiceClient implements BackgroundResource {
-  private final DatasetServiceSettings settings;
+  private final @Nullable DatasetServiceSettings settings;
   private final DatasetServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -603,7 +606,7 @@ public class DatasetServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final DatasetServiceSettings getSettings() {
+  public final @Nullable DatasetServiceSettings getSettings() {
     return settings;
   }
 
@@ -644,7 +647,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Dataset, CreateDatasetOperationMetadata> createDatasetAsync(
-      LocationName parent, Dataset dataset) {
+      @Nullable LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -794,7 +797,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @param name Required. The name of the Dataset resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -995,7 +998,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable LocationName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1167,7 +1170,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetAsync(
-      DatasetName name) {
+      @Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
@@ -1312,7 +1315,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataResponse, ImportDataOperationMetadata> importDataAsync(
-      DatasetName name, List<ImportDataConfig> importConfigs) {
+      @Nullable DatasetName name, List<ImportDataConfig> importConfigs) {
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1466,7 +1469,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportDataResponse, ExportDataOperationMetadata> exportDataAsync(
-      DatasetName name, ExportDataConfig exportConfig) {
+      @Nullable DatasetName name, ExportDataConfig exportConfig) {
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1622,7 +1625,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DatasetVersion, CreateDatasetVersionOperationMetadata>
-      createDatasetVersionAsync(DatasetName parent, DatasetVersion datasetVersion) {
+      createDatasetVersionAsync(@Nullable DatasetName parent, DatasetVersion datasetVersion) {
     CreateDatasetVersionRequest request =
         CreateDatasetVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1878,7 +1881,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetVersionAsync(
-      DatasetVersionName name) {
+      @Nullable DatasetVersionName name) {
     DeleteDatasetVersionRequest request =
         DeleteDatasetVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2033,7 +2036,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DatasetVersion getDatasetVersion(DatasetVersionName name) {
+  public final DatasetVersion getDatasetVersion(@Nullable DatasetVersionName name) {
     GetDatasetVersionRequest request =
         GetDatasetVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2156,7 +2159,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetVersionsPagedResponse listDatasetVersions(DatasetName parent) {
+  public final ListDatasetVersionsPagedResponse listDatasetVersions(@Nullable DatasetName parent) {
     ListDatasetVersionsRequest request =
         ListDatasetVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2334,7 +2337,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DatasetVersion, RestoreDatasetVersionOperationMetadata>
-      restoreDatasetVersionAsync(DatasetVersionName name) {
+      restoreDatasetVersionAsync(@Nullable DatasetVersionName name) {
     RestoreDatasetVersionRequest request =
         RestoreDatasetVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2491,7 +2494,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataItemsPagedResponse listDataItems(DatasetName parent) {
+  public final ListDataItemsPagedResponse listDataItems(@Nullable DatasetName parent) {
     ListDataItemsRequest request =
         ListDataItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2799,7 +2802,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSavedQueriesPagedResponse listSavedQueries(DatasetName parent) {
+  public final ListSavedQueriesPagedResponse listSavedQueries(@Nullable DatasetName parent) {
     ListSavedQueriesRequest request =
         ListSavedQueriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2975,7 +2978,7 @@ public class DatasetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(
-      SavedQueryName name) {
+      @Nullable SavedQueryName name) {
     DeleteSavedQueryRequest request =
         DeleteSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSavedQueryAsync(request);
@@ -3124,7 +3127,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
+  public final AnnotationSpec getAnnotationSpec(@Nullable AnnotationSpecName name) {
     GetAnnotationSpecRequest request =
         GetAnnotationSpecRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3247,7 +3250,7 @@ public class DatasetServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/datasets/{dataset}/dataItems/{data_item}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnnotationsPagedResponse listAnnotations(DataItemName parent) {
+  public final ListAnnotationsPagedResponse listAnnotations(@Nullable DataItemName parent) {
     ListAnnotationsRequest request =
         ListAnnotationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3824,8 +3827,8 @@ public class DatasetServiceClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -3835,14 +3838,14 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3856,7 +3859,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3866,7 +3870,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3904,9 +3908,10 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDatasetVersionsPage> {
 
     private ListDatasetVersionsPage(
-        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+        @Nullable
+            PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
             context,
-        ListDatasetVersionsResponse response) {
+        @Nullable ListDatasetVersionsResponse response) {
       super(context, response);
     }
 
@@ -3916,15 +3921,17 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetVersionsPage createPage(
-        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+        @Nullable
+            PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
             context,
-        ListDatasetVersionsResponse response) {
+        @Nullable ListDatasetVersionsResponse response) {
       return new ListDatasetVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetVersionsPage> createPageAsync(
-        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+        @Nullable
+            PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
             context,
         ApiFuture<ListDatasetVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3940,7 +3947,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDatasetVersionsFixedSizeCollection> {
 
     private ListDatasetVersionsFixedSizeCollection(
-        List<ListDatasetVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3950,7 +3957,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatasetVersionsFixedSizeCollection createCollection(
-        List<ListDatasetVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetVersionsPage> pages, int collectionSize) {
       return new ListDatasetVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3984,8 +3991,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDataItemsRequest, ListDataItemsResponse, DataItem, ListDataItemsPage> {
 
     private ListDataItemsPage(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
-        ListDataItemsResponse response) {
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable ListDataItemsResponse response) {
       super(context, response);
     }
 
@@ -3995,14 +4002,14 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataItemsPage createPage(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
-        ListDataItemsResponse response) {
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable ListDataItemsResponse response) {
       return new ListDataItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataItemsPage> createPageAsync(
-        PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
+        @Nullable PageContext<ListDataItemsRequest, ListDataItemsResponse, DataItem> context,
         ApiFuture<ListDataItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4016,7 +4023,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListDataItemsPage,
           ListDataItemsFixedSizeCollection> {
 
-    private ListDataItemsFixedSizeCollection(List<ListDataItemsPage> pages, int collectionSize) {
+    private ListDataItemsFixedSizeCollection(
+        @Nullable List<ListDataItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4026,7 +4034,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataItemsFixedSizeCollection createCollection(
-        List<ListDataItemsPage> pages, int collectionSize) {
+        @Nullable List<ListDataItemsPage> pages, int collectionSize) {
       return new ListDataItemsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4060,8 +4068,9 @@ public class DatasetServiceClient implements BackgroundResource {
           SearchDataItemsRequest, SearchDataItemsResponse, DataItemView, SearchDataItemsPage> {
 
     private SearchDataItemsPage(
-        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
-        SearchDataItemsResponse response) {
+        @Nullable PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>
+            context,
+        @Nullable SearchDataItemsResponse response) {
       super(context, response);
     }
 
@@ -4071,14 +4080,16 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDataItemsPage createPage(
-        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
-        SearchDataItemsResponse response) {
+        @Nullable PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>
+            context,
+        @Nullable SearchDataItemsResponse response) {
       return new SearchDataItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDataItemsPage> createPageAsync(
-        PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView> context,
+        @Nullable PageContext<SearchDataItemsRequest, SearchDataItemsResponse, DataItemView>
+            context,
         ApiFuture<SearchDataItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4093,7 +4104,7 @@ public class DatasetServiceClient implements BackgroundResource {
           SearchDataItemsFixedSizeCollection> {
 
     private SearchDataItemsFixedSizeCollection(
-        List<SearchDataItemsPage> pages, int collectionSize) {
+        @Nullable List<SearchDataItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4103,7 +4114,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchDataItemsFixedSizeCollection createCollection(
-        List<SearchDataItemsPage> pages, int collectionSize) {
+        @Nullable List<SearchDataItemsPage> pages, int collectionSize) {
       return new SearchDataItemsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4137,8 +4148,9 @@ public class DatasetServiceClient implements BackgroundResource {
           ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery, ListSavedQueriesPage> {
 
     private ListSavedQueriesPage(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
-        ListSavedQueriesResponse response) {
+        @Nullable PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+            context,
+        @Nullable ListSavedQueriesResponse response) {
       super(context, response);
     }
 
@@ -4148,14 +4160,16 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSavedQueriesPage createPage(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
-        ListSavedQueriesResponse response) {
+        @Nullable PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+            context,
+        @Nullable ListSavedQueriesResponse response) {
       return new ListSavedQueriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSavedQueriesPage> createPageAsync(
-        PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery> context,
+        @Nullable PageContext<ListSavedQueriesRequest, ListSavedQueriesResponse, SavedQuery>
+            context,
         ApiFuture<ListSavedQueriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4170,7 +4184,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListSavedQueriesFixedSizeCollection> {
 
     private ListSavedQueriesFixedSizeCollection(
-        List<ListSavedQueriesPage> pages, int collectionSize) {
+        @Nullable List<ListSavedQueriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4180,7 +4194,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSavedQueriesFixedSizeCollection createCollection(
-        List<ListSavedQueriesPage> pages, int collectionSize) {
+        @Nullable List<ListSavedQueriesPage> pages, int collectionSize) {
       return new ListSavedQueriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4214,8 +4228,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListAnnotationsRequest, ListAnnotationsResponse, Annotation, ListAnnotationsPage> {
 
     private ListAnnotationsPage(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
-        ListAnnotationsResponse response) {
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable ListAnnotationsResponse response) {
       super(context, response);
     }
 
@@ -4225,14 +4239,14 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationsPage createPage(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
-        ListAnnotationsResponse response) {
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable ListAnnotationsResponse response) {
       return new ListAnnotationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnnotationsPage> createPageAsync(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
         ApiFuture<ListAnnotationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4247,7 +4261,7 @@ public class DatasetServiceClient implements BackgroundResource {
           ListAnnotationsFixedSizeCollection> {
 
     private ListAnnotationsFixedSizeCollection(
-        List<ListAnnotationsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4257,7 +4271,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationsFixedSizeCollection createCollection(
-        List<ListAnnotationsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationsPage> pages, int collectionSize) {
       return new ListAnnotationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4291,8 +4305,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4302,14 +4316,14 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4323,7 +4337,8 @@ public class DatasetServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4333,7 +4348,7 @@ public class DatasetServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

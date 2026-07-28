@@ -21,6 +21,7 @@
 package com.google.cloud.geminidataanalytics.v1beta;
 
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public interface ClarificationMessageOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.geminidataanalytics.v1beta.ClarificationMessage)
@@ -30,13 +31,15 @@ public interface ClarificationMessageOrBuilder
    *
    *
    * <pre>
-   * Required. A batch of clarification questions to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * A batch of clarification questions to ask the user.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion>
       getQuestionsList();
 
@@ -44,39 +47,45 @@ public interface ClarificationMessageOrBuilder
    *
    *
    * <pre>
-   * Required. A batch of clarification questions to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * A batch of clarification questions to ask the user.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestion getQuestions(int index);
 
   /**
    *
    *
    * <pre>
-   * Required. A batch of clarification questions to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * A batch of clarification questions to ask the user.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Deprecated
   int getQuestionsCount();
 
   /**
    *
    *
    * <pre>
-   * Required. A batch of clarification questions to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * A batch of clarification questions to ask the user.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<
           ? extends com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestionOrBuilder>
       getQuestionsOrBuilderList();
@@ -85,13 +94,15 @@ public interface ClarificationMessageOrBuilder
    *
    *
    * <pre>
-   * Required. A batch of clarification questions to ask the user.
+   * Required. Deprecated: The parent message is deprecated.
+   * A batch of clarification questions to ask the user.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [(.google.api.field_behavior) = REQUIRED];
+   * repeated .google.cloud.geminidataanalytics.v1beta.ClarificationQuestion questions = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.ClarificationQuestionOrBuilder getQuestionsOrBuilder(
       int index);
 }

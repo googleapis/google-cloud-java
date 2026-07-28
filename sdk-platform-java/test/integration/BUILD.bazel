@@ -244,6 +244,7 @@ java_gapic_library(
     grpc_service_config = "@com_google_googleapis//google/pubsub/v1:pubsub_grpc_service_config.json",
     # For the IAM mixin.
     service_yaml = "pubsub_v1.yaml",
+    generate_version_java = True,
     test_deps = [
         "@com_google_googleapis//google/pubsub/v1:pubsub_java_grpc",
         "@com_google_googleapis//google/iam/v1:iam_java_grpc",

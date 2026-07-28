@@ -73,6 +73,131 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
+  public static final int INSTANT_SNAPSHOT_GROUP_PARAMETERS_FIELD_NUMBER = 17051623;
+  private com.google.cloud.compute.v1.InstantSnapshotGroupParameters
+      instantSnapshotGroupParameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   *
+   * @return Whether the instantSnapshotGroupParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstantSnapshotGroupParameters() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   *
+   * @return The instantSnapshotGroupParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstantSnapshotGroupParameters
+      getInstantSnapshotGroupParameters() {
+    return instantSnapshotGroupParameters_ == null
+        ? com.google.cloud.compute.v1.InstantSnapshotGroupParameters.getDefaultInstance()
+        : instantSnapshotGroupParameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder
+      getInstantSnapshotGroupParametersOrBuilder() {
+    return instantSnapshotGroupParameters_ == null
+        ? com.google.cloud.compute.v1.InstantSnapshotGroupParameters.getDefaultInstance()
+        : instantSnapshotGroupParameters_;
+  }
+
+  public static final int SNAPSHOT_GROUP_PARAMETERS_FIELD_NUMBER = 42252485;
+  private com.google.cloud.compute.v1.SnapshotGroupParameters snapshotGroupParameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   *
+   * @return Whether the snapshotGroupParameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasSnapshotGroupParameters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   *
+   * @return The snapshotGroupParameters.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SnapshotGroupParameters getSnapshotGroupParameters() {
+    return snapshotGroupParameters_ == null
+        ? com.google.cloud.compute.v1.SnapshotGroupParameters.getDefaultInstance()
+        : snapshotGroupParameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder
+      getSnapshotGroupParametersOrBuilder() {
+    return snapshotGroupParameters_ == null
+        ? com.google.cloud.compute.v1.SnapshotGroupParameters.getDefaultInstance()
+        : snapshotGroupParameters_;
+  }
+
   public static final int SOURCE_CONSISTENCY_GROUP_POLICY_FIELD_NUMBER = 19616093;
 
   @SuppressWarnings("serial")
@@ -102,7 +227,7 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSourceConsistencyGroupPolicy() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -190,8 +315,14 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(17051623, getInstantSnapshotGroupParameters());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 19616093, sourceConsistencyGroupPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(42252485, getSnapshotGroupParameters());
     }
     getUnknownFields().writeTo(output);
   }
@@ -204,8 +335,18 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17051623, getInstantSnapshotGroupParameters());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               19616093, sourceConsistencyGroupPolicy_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42252485, getSnapshotGroupParameters());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -223,6 +364,16 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     com.google.cloud.compute.v1.BulkInsertDiskResource other =
         (com.google.cloud.compute.v1.BulkInsertDiskResource) obj;
 
+    if (hasInstantSnapshotGroupParameters() != other.hasInstantSnapshotGroupParameters())
+      return false;
+    if (hasInstantSnapshotGroupParameters()) {
+      if (!getInstantSnapshotGroupParameters().equals(other.getInstantSnapshotGroupParameters()))
+        return false;
+    }
+    if (hasSnapshotGroupParameters() != other.hasSnapshotGroupParameters()) return false;
+    if (hasSnapshotGroupParameters()) {
+      if (!getSnapshotGroupParameters().equals(other.getSnapshotGroupParameters())) return false;
+    }
     if (hasSourceConsistencyGroupPolicy() != other.hasSourceConsistencyGroupPolicy()) return false;
     if (hasSourceConsistencyGroupPolicy()) {
       if (!getSourceConsistencyGroupPolicy().equals(other.getSourceConsistencyGroupPolicy()))
@@ -239,6 +390,14 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasInstantSnapshotGroupParameters()) {
+      hash = (37 * hash) + INSTANT_SNAPSHOT_GROUP_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getInstantSnapshotGroupParameters().hashCode();
+    }
+    if (hasSnapshotGroupParameters()) {
+      hash = (37 * hash) + SNAPSHOT_GROUP_PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getSnapshotGroupParameters().hashCode();
+    }
     if (hasSourceConsistencyGroupPolicy()) {
       hash = (37 * hash) + SOURCE_CONSISTENCY_GROUP_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getSourceConsistencyGroupPolicy().hashCode();
@@ -375,16 +534,36 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     }
 
     // Construct using com.google.cloud.compute.v1.BulkInsertDiskResource.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetInstantSnapshotGroupParametersFieldBuilder();
+        internalGetSnapshotGroupParametersFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      instantSnapshotGroupParameters_ = null;
+      if (instantSnapshotGroupParametersBuilder_ != null) {
+        instantSnapshotGroupParametersBuilder_.dispose();
+        instantSnapshotGroupParametersBuilder_ = null;
+      }
+      snapshotGroupParameters_ = null;
+      if (snapshotGroupParametersBuilder_ != null) {
+        snapshotGroupParametersBuilder_.dispose();
+        snapshotGroupParametersBuilder_ = null;
+      }
       sourceConsistencyGroupPolicy_ = "";
       return this;
     }
@@ -424,8 +603,22 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.sourceConsistencyGroupPolicy_ = sourceConsistencyGroupPolicy_;
+        result.instantSnapshotGroupParameters_ =
+            instantSnapshotGroupParametersBuilder_ == null
+                ? instantSnapshotGroupParameters_
+                : instantSnapshotGroupParametersBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snapshotGroupParameters_ =
+            snapshotGroupParametersBuilder_ == null
+                ? snapshotGroupParameters_
+                : snapshotGroupParametersBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceConsistencyGroupPolicy_ = sourceConsistencyGroupPolicy_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -443,9 +636,15 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     public Builder mergeFrom(com.google.cloud.compute.v1.BulkInsertDiskResource other) {
       if (other == com.google.cloud.compute.v1.BulkInsertDiskResource.getDefaultInstance())
         return this;
+      if (other.hasInstantSnapshotGroupParameters()) {
+        mergeInstantSnapshotGroupParameters(other.getInstantSnapshotGroupParameters());
+      }
+      if (other.hasSnapshotGroupParameters()) {
+        mergeSnapshotGroupParameters(other.getSnapshotGroupParameters());
+      }
       if (other.hasSourceConsistencyGroupPolicy()) {
         sourceConsistencyGroupPolicy_ = other.sourceConsistencyGroupPolicy_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -474,12 +673,28 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
             case 0:
               done = true;
               break;
+            case 136412986:
+              {
+                input.readMessage(
+                    internalGetInstantSnapshotGroupParametersFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 136412986
             case 156928746:
               {
                 sourceConsistencyGroupPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 156928746
+            case 338019882:
+              {
+                input.readMessage(
+                    internalGetSnapshotGroupParametersFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 338019882
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -498,6 +713,454 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
     }
 
     private int bitField0_;
+
+    private com.google.cloud.compute.v1.InstantSnapshotGroupParameters
+        instantSnapshotGroupParameters_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstantSnapshotGroupParameters,
+            com.google.cloud.compute.v1.InstantSnapshotGroupParameters.Builder,
+            com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder>
+        instantSnapshotGroupParametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     *
+     * @return Whether the instantSnapshotGroupParameters field is set.
+     */
+    public boolean hasInstantSnapshotGroupParameters() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     *
+     * @return The instantSnapshotGroupParameters.
+     */
+    public com.google.cloud.compute.v1.InstantSnapshotGroupParameters
+        getInstantSnapshotGroupParameters() {
+      if (instantSnapshotGroupParametersBuilder_ == null) {
+        return instantSnapshotGroupParameters_ == null
+            ? com.google.cloud.compute.v1.InstantSnapshotGroupParameters.getDefaultInstance()
+            : instantSnapshotGroupParameters_;
+      } else {
+        return instantSnapshotGroupParametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public Builder setInstantSnapshotGroupParameters(
+        com.google.cloud.compute.v1.InstantSnapshotGroupParameters value) {
+      if (instantSnapshotGroupParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instantSnapshotGroupParameters_ = value;
+      } else {
+        instantSnapshotGroupParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public Builder setInstantSnapshotGroupParameters(
+        com.google.cloud.compute.v1.InstantSnapshotGroupParameters.Builder builderForValue) {
+      if (instantSnapshotGroupParametersBuilder_ == null) {
+        instantSnapshotGroupParameters_ = builderForValue.build();
+      } else {
+        instantSnapshotGroupParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public Builder mergeInstantSnapshotGroupParameters(
+        com.google.cloud.compute.v1.InstantSnapshotGroupParameters value) {
+      if (instantSnapshotGroupParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && instantSnapshotGroupParameters_ != null
+            && instantSnapshotGroupParameters_
+                != com.google.cloud.compute.v1.InstantSnapshotGroupParameters
+                    .getDefaultInstance()) {
+          getInstantSnapshotGroupParametersBuilder().mergeFrom(value);
+        } else {
+          instantSnapshotGroupParameters_ = value;
+        }
+      } else {
+        instantSnapshotGroupParametersBuilder_.mergeFrom(value);
+      }
+      if (instantSnapshotGroupParameters_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public Builder clearInstantSnapshotGroupParameters() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instantSnapshotGroupParameters_ = null;
+      if (instantSnapshotGroupParametersBuilder_ != null) {
+        instantSnapshotGroupParametersBuilder_.dispose();
+        instantSnapshotGroupParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstantSnapshotGroupParameters.Builder
+        getInstantSnapshotGroupParametersBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetInstantSnapshotGroupParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder
+        getInstantSnapshotGroupParametersOrBuilder() {
+      if (instantSnapshotGroupParametersBuilder_ != null) {
+        return instantSnapshotGroupParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return instantSnapshotGroupParameters_ == null
+            ? com.google.cloud.compute.v1.InstantSnapshotGroupParameters.getDefaultInstance()
+            : instantSnapshotGroupParameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the instant snapshot group.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstantSnapshotGroupParameters,
+            com.google.cloud.compute.v1.InstantSnapshotGroupParameters.Builder,
+            com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder>
+        internalGetInstantSnapshotGroupParametersFieldBuilder() {
+      if (instantSnapshotGroupParametersBuilder_ == null) {
+        instantSnapshotGroupParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.InstantSnapshotGroupParameters,
+                com.google.cloud.compute.v1.InstantSnapshotGroupParameters.Builder,
+                com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder>(
+                getInstantSnapshotGroupParameters(), getParentForChildren(), isClean());
+        instantSnapshotGroupParameters_ = null;
+      }
+      return instantSnapshotGroupParametersBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.SnapshotGroupParameters snapshotGroupParameters_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.SnapshotGroupParameters,
+            com.google.cloud.compute.v1.SnapshotGroupParameters.Builder,
+            com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder>
+        snapshotGroupParametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     *
+     * @return Whether the snapshotGroupParameters field is set.
+     */
+    public boolean hasSnapshotGroupParameters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     *
+     * @return The snapshotGroupParameters.
+     */
+    public com.google.cloud.compute.v1.SnapshotGroupParameters getSnapshotGroupParameters() {
+      if (snapshotGroupParametersBuilder_ == null) {
+        return snapshotGroupParameters_ == null
+            ? com.google.cloud.compute.v1.SnapshotGroupParameters.getDefaultInstance()
+            : snapshotGroupParameters_;
+      } else {
+        return snapshotGroupParametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public Builder setSnapshotGroupParameters(
+        com.google.cloud.compute.v1.SnapshotGroupParameters value) {
+      if (snapshotGroupParametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        snapshotGroupParameters_ = value;
+      } else {
+        snapshotGroupParametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public Builder setSnapshotGroupParameters(
+        com.google.cloud.compute.v1.SnapshotGroupParameters.Builder builderForValue) {
+      if (snapshotGroupParametersBuilder_ == null) {
+        snapshotGroupParameters_ = builderForValue.build();
+      } else {
+        snapshotGroupParametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public Builder mergeSnapshotGroupParameters(
+        com.google.cloud.compute.v1.SnapshotGroupParameters value) {
+      if (snapshotGroupParametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && snapshotGroupParameters_ != null
+            && snapshotGroupParameters_
+                != com.google.cloud.compute.v1.SnapshotGroupParameters.getDefaultInstance()) {
+          getSnapshotGroupParametersBuilder().mergeFrom(value);
+        } else {
+          snapshotGroupParameters_ = value;
+        }
+      } else {
+        snapshotGroupParametersBuilder_.mergeFrom(value);
+      }
+      if (snapshotGroupParameters_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public Builder clearSnapshotGroupParameters() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      snapshotGroupParameters_ = null;
+      if (snapshotGroupParametersBuilder_ != null) {
+        snapshotGroupParametersBuilder_.dispose();
+        snapshotGroupParametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SnapshotGroupParameters.Builder
+        getSnapshotGroupParametersBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetSnapshotGroupParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder
+        getSnapshotGroupParametersOrBuilder() {
+      if (snapshotGroupParametersBuilder_ != null) {
+        return snapshotGroupParametersBuilder_.getMessageOrBuilder();
+      } else {
+        return snapshotGroupParameters_ == null
+            ? com.google.cloud.compute.v1.SnapshotGroupParameters.getDefaultInstance()
+            : snapshotGroupParameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The parameters for the snapshot group. The usage of snapshot group feature
+     * is restricted.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.SnapshotGroupParameters,
+            com.google.cloud.compute.v1.SnapshotGroupParameters.Builder,
+            com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder>
+        internalGetSnapshotGroupParametersFieldBuilder() {
+      if (snapshotGroupParametersBuilder_ == null) {
+        snapshotGroupParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.SnapshotGroupParameters,
+                com.google.cloud.compute.v1.SnapshotGroupParameters.Builder,
+                com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder>(
+                getSnapshotGroupParameters(), getParentForChildren(), isClean());
+        snapshotGroupParameters_ = null;
+      }
+      return snapshotGroupParametersBuilder_;
+    }
 
     private java.lang.Object sourceConsistencyGroupPolicy_ = "";
 
@@ -524,7 +1187,7 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
      * @return Whether the sourceConsistencyGroupPolicy field is set.
      */
     public boolean hasSourceConsistencyGroupPolicy() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -623,7 +1286,7 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       sourceConsistencyGroupPolicy_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -652,7 +1315,7 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
      */
     public Builder clearSourceConsistencyGroupPolicy() {
       sourceConsistencyGroupPolicy_ = getDefaultInstance().getSourceConsistencyGroupPolicy();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -686,7 +1349,7 @@ public final class BulkInsertDiskResource extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       sourceConsistencyGroupPolicy_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

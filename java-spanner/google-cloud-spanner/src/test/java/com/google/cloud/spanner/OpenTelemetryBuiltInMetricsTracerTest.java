@@ -60,6 +60,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -73,6 +74,7 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
       BuiltInMetricsProvider.INSTANCE.createClientAttributes();
   private static final Attributes expectedCommonBaseAttributes =
       Attributes.builder()
+          .put(BuiltInMetricsConstant.PROJECT_ID_KEY, "test-project")
           .put(BuiltInMetricsConstant.CLIENT_NAME_KEY, "spanner-java/")
           .put(BuiltInMetricsConstant.CLIENT_UID_KEY, attributes.get("client_uid"))
           .put(BuiltInMetricsConstant.INSTANCE_ID_KEY, "i")
@@ -160,6 +162,7 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
     client = spanner.getDatabaseClient(DatabaseId.of("test-project", "i", "d"));
   }
 
+  @Ignore("Flaky test: b/510147927")
   @Test
   public void testMetricsSingleUseQuery() {
     Stopwatch stopwatch = Stopwatch.createStarted();

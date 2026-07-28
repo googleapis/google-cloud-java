@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CustomConstraintName implements ResourceName {
   private static final PathTemplate ORGANIZATION_CUSTOM_CONSTRAINT =
@@ -75,7 +78,7 @@ public class CustomConstraintName implements ResourceName {
         .toString();
   }
 
-  public static CustomConstraintName parse(String formattedString) {
+  public static @Nullable CustomConstraintName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -93,7 +96,7 @@ public class CustomConstraintName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CustomConstraintName> values) {
+  public static List<String> toStringList(List<@Nullable CustomConstraintName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CustomConstraintName value : values) {
       if (value == null) {
@@ -139,7 +142,7 @@ public class CustomConstraintName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

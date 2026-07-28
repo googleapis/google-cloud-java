@@ -54,32 +54,32 @@ root of the repository (where you have WORKSPACE file for Bazel.)
 
 ```sh
 # In the repository root directory
-bazelisk test //...  # integration tests
+bazelisk test //sdk-platform-java/...  # integration tests
 ```
 
 
 - Run a single integration test for API like `Redis`, it generates Java source
   code using the Java microgenerator and compares them with the goldens files
-  in `test/integration/goldens/redis`.
+  in `sdk-platform-java/test/integration/goldens/redis`.
 
     ```sh
     # In the repository root directory
-    bazelisk test //test/integration:redis
+    bazelisk test //sdk-platform-java/test/integration:redis
     ```
 
 - Update integration test golden files, for example `Redis`. This clobbers all the
-  files in `test/integration/goldens/redis`.
+  files in `sdk-platform-java/test/integration/goldens/redis`.
 
     ```sh
     # In the repository root directory
-    bazelisk run //test/integration:update_redis
+    bazelisk run //sdk-platform-java/test/integration:update_redis
     ```
 
 - To update all integration tests you can use this command:
 
   ```sh
     # In the repository root directory
-    bazelisk run //test/integration:update_asset && bazelisk run //test/integration:update_credentials && bazelisk run //test/integration:update_iam && bazelisk run //test/integration:update_kms && bazelisk run //test/integration:update_pubsub && bazelisk run //test/integration:update_logging && bazelisk run //test/integration:update_redis && bazelisk run //test/integration:update_storage && bazelisk run //test/integration:update_library && bazelisk run //test/integration:update_compute && bazelisk run //test/integration:update_bigtable && bazelisk run //test/integration:update_apigeeconnect 
+    bazelisk run //sdk-platform-java/test/integration:update_asset && bazelisk run //sdk-platform-java/test/integration:update_credentials && bazelisk run //sdk-platform-java/test/integration:update_iam && bazelisk run //sdk-platform-java/test/integration:update_kms && bazelisk run //sdk-platform-java/test/integration:update_pubsub && bazelisk run //sdk-platform-java/test/integration:update_logging && bazelisk run //sdk-platform-java/test/integration:update_redis && bazelisk run //sdk-platform-java/test/integration:update_storage && bazelisk run //sdk-platform-java/test/integration:update_library && bazelisk run //sdk-platform-java/test/integration:update_compute && bazelisk run //sdk-platform-java/test/integration:update_bigtable && bazelisk run //sdk-platform-java/test/integration:update_apigeeconnect 
     ```
 
 ## Running the Plugin under googleapis with local gapic-generator-java

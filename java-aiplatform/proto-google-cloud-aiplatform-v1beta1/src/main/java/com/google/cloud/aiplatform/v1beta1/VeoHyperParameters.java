@@ -53,6 +53,8 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
 
   private VeoHyperParameters() {
     tuningTask_ = 0;
+    tuningSpeed_ = 0;
+    adapterSize_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -110,6 +112,16 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
      * <code>TUNING_TASK_T2V = 2;</code>
      */
     TUNING_TASK_T2V(2),
+    /**
+     *
+     *
+     * <pre>
+     * Tuning task for reference to video.
+     * </pre>
+     *
+     * <code>TUNING_TASK_R2V = 3;</code>
+     */
+    TUNING_TASK_R2V(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -156,6 +168,17 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
      */
     public static final int TUNING_TASK_T2V_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Tuning task for reference to video.
+     * </pre>
+     *
+     * <code>TUNING_TASK_R2V = 3;</code>
+     */
+    public static final int TUNING_TASK_R2V_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -186,6 +209,8 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
           return TUNING_TASK_I2V;
         case 2:
           return TUNING_TASK_T2V;
+        case 3:
+          return TUNING_TASK_R2V;
         default:
           return null;
       }
@@ -241,6 +266,374 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningTask)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed}
+   */
+  public enum TuningSpeed implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. For Veo 3.0 models, this defaults to FAST.
+     * </pre>
+     *
+     * <code>TUNING_SPEED_UNSPECIFIED = 0;</code>
+     */
+    TUNING_SPEED_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Regular tuning speed.
+     * </pre>
+     *
+     * <code>REGULAR = 1;</code>
+     */
+    REGULAR(1),
+    /**
+     *
+     *
+     * <pre>
+     * Fast tuning speed.
+     * </pre>
+     *
+     * <code>FAST = 2;</code>
+     */
+    FAST(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TuningSpeed");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. For Veo 3.0 models, this defaults to FAST.
+     * </pre>
+     *
+     * <code>TUNING_SPEED_UNSPECIFIED = 0;</code>
+     */
+    public static final int TUNING_SPEED_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Regular tuning speed.
+     * </pre>
+     *
+     * <code>REGULAR = 1;</code>
+     */
+    public static final int REGULAR_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fast tuning speed.
+     * </pre>
+     *
+     * <code>FAST = 2;</code>
+     */
+    public static final int FAST_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TuningSpeed valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TuningSpeed forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TUNING_SPEED_UNSPECIFIED;
+        case 1:
+          return REGULAR;
+        case 2:
+          return FAST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TuningSpeed> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TuningSpeed> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TuningSpeed>() {
+          public TuningSpeed findValueByNumber(int number) {
+            return TuningSpeed.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final TuningSpeed[] VALUES = values();
+
+    public static TuningSpeed valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TuningSpeed(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Adapter size for LoRA tuning.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize}
+   */
+  public enum AdapterSize implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size is unspecified.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_UNSPECIFIED = 0;</code>
+     */
+    ADAPTER_SIZE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 8.
+     * This is the default adapter size for Veo LoRA tuning.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_EIGHT = 8;</code>
+     */
+    ADAPTER_SIZE_EIGHT(8),
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 16.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_SIXTEEN = 16;</code>
+     */
+    ADAPTER_SIZE_SIXTEEN(16),
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 32.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_THIRTY_TWO = 32;</code>
+     */
+    ADAPTER_SIZE_THIRTY_TWO(32),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AdapterSize");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size is unspecified.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ADAPTER_SIZE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 8.
+     * This is the default adapter size for Veo LoRA tuning.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_EIGHT = 8;</code>
+     */
+    public static final int ADAPTER_SIZE_EIGHT_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 16.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_SIXTEEN = 16;</code>
+     */
+    public static final int ADAPTER_SIZE_SIXTEEN_VALUE = 16;
+
+    /**
+     *
+     *
+     * <pre>
+     * Adapter size 32.
+     * </pre>
+     *
+     * <code>ADAPTER_SIZE_THIRTY_TWO = 32;</code>
+     */
+    public static final int ADAPTER_SIZE_THIRTY_TWO_VALUE = 32;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AdapterSize valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AdapterSize forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ADAPTER_SIZE_UNSPECIFIED;
+        case 8:
+          return ADAPTER_SIZE_EIGHT;
+        case 16:
+          return ADAPTER_SIZE_SIXTEEN;
+        case 32:
+          return ADAPTER_SIZE_THIRTY_TWO;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AdapterSize> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AdapterSize> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AdapterSize>() {
+          public AdapterSize findValueByNumber(int number) {
+            return AdapterSize.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final AdapterSize[] VALUES = values();
+
+    public static AdapterSize valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AdapterSize(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize)
+  }
+
+  private int bitField0_;
   public static final int EPOCH_COUNT_FIELD_NUMBER = 1;
   private long epochCount_ = 0L;
 
@@ -323,6 +716,153 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int VEO_DATA_MIXTURE_RATIO_FIELD_NUMBER = 4;
+  private double veoDataMixtureRatio_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ratio of Google internal dataset to use in the training
+   * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+   * dataset and 80% of user dataset will be used for training. If not set, the
+   * default value is 0.1.
+   * </pre>
+   *
+   * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the veoDataMixtureRatio field is set.
+   */
+  @java.lang.Override
+  public boolean hasVeoDataMixtureRatio() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ratio of Google internal dataset to use in the training
+   * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+   * dataset and 80% of user dataset will be used for training. If not set, the
+   * default value is 0.1.
+   * </pre>
+   *
+   * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The veoDataMixtureRatio.
+   */
+  @java.lang.Override
+  public double getVeoDataMixtureRatio() {
+    return veoDataMixtureRatio_;
+  }
+
+  public static final int TUNING_SPEED_FIELD_NUMBER = 5;
+  private int tuningSpeed_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return Whether the tuningSpeed field is set.
+   */
+  @java.lang.Override
+  public boolean hasTuningSpeed() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tuningSpeed.
+   */
+  @java.lang.Override
+  public int getTuningSpeedValue() {
+    return tuningSpeed_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return The tuningSpeed.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed getTuningSpeed() {
+    com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed result =
+        com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed.forNumber(tuningSpeed_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ADAPTER_SIZE_FIELD_NUMBER = 6;
+  private int adapterSize_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The adapter size for LoRA tuning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adapterSize.
+   */
+  @java.lang.Override
+  public int getAdapterSizeValue() {
+    return adapterSize_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The adapter size for LoRA tuning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adapterSize.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize getAdapterSize() {
+    com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize result =
+        com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize.forNumber(adapterSize_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -348,6 +888,18 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       output.writeEnum(3, tuningTask_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeDouble(4, veoDataMixtureRatio_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(5, tuningSpeed_);
+    }
+    if (adapterSize_
+        != com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize
+            .ADAPTER_SIZE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, adapterSize_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -367,6 +919,18 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
         != com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningTask.TUNING_TASK_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, tuningTask_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, veoDataMixtureRatio_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, tuningSpeed_);
+    }
+    if (adapterSize_
+        != com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize
+            .ADAPTER_SIZE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, adapterSize_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -388,6 +952,16 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
     if (java.lang.Double.doubleToLongBits(getLearningRateMultiplier())
         != java.lang.Double.doubleToLongBits(other.getLearningRateMultiplier())) return false;
     if (tuningTask_ != other.tuningTask_) return false;
+    if (hasVeoDataMixtureRatio() != other.hasVeoDataMixtureRatio()) return false;
+    if (hasVeoDataMixtureRatio()) {
+      if (java.lang.Double.doubleToLongBits(getVeoDataMixtureRatio())
+          != java.lang.Double.doubleToLongBits(other.getVeoDataMixtureRatio())) return false;
+    }
+    if (hasTuningSpeed() != other.hasTuningSpeed()) return false;
+    if (hasTuningSpeed()) {
+      if (tuningSpeed_ != other.tuningSpeed_) return false;
+    }
+    if (adapterSize_ != other.adapterSize_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -408,6 +982,19 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
                 java.lang.Double.doubleToLongBits(getLearningRateMultiplier()));
     hash = (37 * hash) + TUNING_TASK_FIELD_NUMBER;
     hash = (53 * hash) + tuningTask_;
+    if (hasVeoDataMixtureRatio()) {
+      hash = (37 * hash) + VEO_DATA_MIXTURE_RATIO_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getVeoDataMixtureRatio()));
+    }
+    if (hasTuningSpeed()) {
+      hash = (37 * hash) + TUNING_SPEED_FIELD_NUMBER;
+      hash = (53 * hash) + tuningSpeed_;
+    }
+    hash = (37 * hash) + ADAPTER_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + adapterSize_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -552,6 +1139,9 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
       epochCount_ = 0L;
       learningRateMultiplier_ = 0D;
       tuningTask_ = 0;
+      veoDataMixtureRatio_ = 0D;
+      tuningSpeed_ = 0;
+      adapterSize_ = 0;
       return this;
     }
 
@@ -597,6 +1187,19 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.tuningTask_ = tuningTask_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.veoDataMixtureRatio_ = veoDataMixtureRatio_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tuningSpeed_ = tuningSpeed_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adapterSize_ = adapterSize_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -620,6 +1223,15 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
       }
       if (other.tuningTask_ != 0) {
         setTuningTaskValue(other.getTuningTaskValue());
+      }
+      if (other.hasVeoDataMixtureRatio()) {
+        setVeoDataMixtureRatio(other.getVeoDataMixtureRatio());
+      }
+      if (other.hasTuningSpeed()) {
+        setTuningSpeedValue(other.getTuningSpeedValue());
+      }
+      if (other.adapterSize_ != 0) {
+        setAdapterSizeValue(other.getAdapterSizeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -665,6 +1277,24 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 33:
+              {
+                veoDataMixtureRatio_ = input.readDouble();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 33
+            case 40:
+              {
+                tuningSpeed_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                adapterSize_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -903,6 +1533,330 @@ public final class VeoHyperParameters extends com.google.protobuf.GeneratedMessa
     public Builder clearTuningTask() {
       bitField0_ = (bitField0_ & ~0x00000004);
       tuningTask_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double veoDataMixtureRatio_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ratio of Google internal dataset to use in the training
+     * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+     * dataset and 80% of user dataset will be used for training. If not set, the
+     * default value is 0.1.
+     * </pre>
+     *
+     * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the veoDataMixtureRatio field is set.
+     */
+    @java.lang.Override
+    public boolean hasVeoDataMixtureRatio() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ratio of Google internal dataset to use in the training
+     * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+     * dataset and 80% of user dataset will be used for training. If not set, the
+     * default value is 0.1.
+     * </pre>
+     *
+     * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The veoDataMixtureRatio.
+     */
+    @java.lang.Override
+    public double getVeoDataMixtureRatio() {
+      return veoDataMixtureRatio_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ratio of Google internal dataset to use in the training
+     * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+     * dataset and 80% of user dataset will be used for training. If not set, the
+     * default value is 0.1.
+     * </pre>
+     *
+     * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The veoDataMixtureRatio to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVeoDataMixtureRatio(double value) {
+
+      veoDataMixtureRatio_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ratio of Google internal dataset to use in the training
+     * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+     * dataset and 80% of user dataset will be used for training. If not set, the
+     * default value is 0.1.
+     * </pre>
+     *
+     * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVeoDataMixtureRatio() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      veoDataMixtureRatio_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int tuningSpeed_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @return Whether the tuningSpeed field is set.
+     */
+    @java.lang.Override
+    public boolean hasTuningSpeed() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for tuningSpeed.
+     */
+    @java.lang.Override
+    public int getTuningSpeedValue() {
+      return tuningSpeed_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for tuningSpeed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTuningSpeedValue(int value) {
+      tuningSpeed_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @return The tuningSpeed.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed getTuningSpeed() {
+      com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed result =
+          com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed.forNumber(
+              tuningSpeed_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @param value The tuningSpeed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTuningSpeed(
+        com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      tuningSpeed_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The speed of the tuning job. Only supported for Veo 3.0 models.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTuningSpeed() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tuningSpeed_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int adapterSize_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The adapter size for LoRA tuning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for adapterSize.
+     */
+    @java.lang.Override
+    public int getAdapterSizeValue() {
+      return adapterSize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The adapter size for LoRA tuning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for adapterSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdapterSizeValue(int value) {
+      adapterSize_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The adapter size for LoRA tuning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The adapterSize.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize getAdapterSize() {
+      com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize result =
+          com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize.forNumber(
+              adapterSize_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The adapter size for LoRA tuning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The adapterSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdapterSize(
+        com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      adapterSize_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The adapter size for LoRA tuning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdapterSize() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      adapterSize_ = 0;
       onChanged();
       return this;
     }

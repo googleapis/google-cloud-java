@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -562,9 +564,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataprocMetastoreClient implements BackgroundResource {
-  private final DataprocMetastoreSettings settings;
+  private final @Nullable DataprocMetastoreSettings settings;
   private final DataprocMetastoreStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -612,7 +615,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataprocMetastoreSettings getSettings() {
+  public final @Nullable DataprocMetastoreSettings getSettings() {
     return settings;
   }
 
@@ -662,7 +665,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(LocationName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable LocationName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -833,7 +836,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -955,7 +958,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, OperationMetadata> createServiceAsync(
-      LocationName parent, Service service, String serviceId) {
+      @Nullable LocationName parent, Service service, String serviceId) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1254,7 +1257,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(ServiceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(
+      @Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteServiceAsync(request);
@@ -1403,7 +1407,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetadataImportsPagedResponse listMetadataImports(ServiceName parent) {
+  public final ListMetadataImportsPagedResponse listMetadataImports(@Nullable ServiceName parent) {
     ListMetadataImportsRequest request =
         ListMetadataImportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1580,7 +1584,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetadataImport getMetadataImport(MetadataImportName name) {
+  public final MetadataImport getMetadataImport(@Nullable MetadataImportName name) {
     GetMetadataImportRequest request =
         GetMetadataImportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1714,7 +1718,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MetadataImport, OperationMetadata> createMetadataImportAsync(
-      ServiceName parent, MetadataImport metadataImport, String metadataImportId) {
+      @Nullable ServiceName parent, MetadataImport metadataImport, String metadataImportId) {
     CreateMetadataImportRequest request =
         CreateMetadataImportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2119,7 +2123,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
-      ServiceName service, BackupName backup) {
+      @Nullable ServiceName service, @Nullable BackupName backup) {
     RestoreServiceRequest request =
         RestoreServiceRequest.newBuilder()
             .setService(service == null ? null : service.toString())
@@ -2156,7 +2160,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
-      ServiceName service, String backup) {
+      @Nullable ServiceName service, String backup) {
     RestoreServiceRequest request =
         RestoreServiceRequest.newBuilder()
             .setService(service == null ? null : service.toString())
@@ -2193,7 +2197,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> restoreServiceAsync(
-      String service, BackupName backup) {
+      String service, @Nullable BackupName backup) {
     RestoreServiceRequest request =
         RestoreServiceRequest.newBuilder()
             .setService(service)
@@ -2356,7 +2360,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}/backups`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(ServiceName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable ServiceName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2526,7 +2530,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -2647,7 +2651,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
-      ServiceName parent, Backup backup, String backupId) {
+      @Nullable ServiceName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2817,7 +2821,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -3641,8 +3646,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -3652,14 +3657,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3673,7 +3678,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3683,7 +3689,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3721,9 +3727,10 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListMetadataImportsPage> {
 
     private ListMetadataImportsPage(
-        PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
+        @Nullable
+            PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
             context,
-        ListMetadataImportsResponse response) {
+        @Nullable ListMetadataImportsResponse response) {
       super(context, response);
     }
 
@@ -3733,15 +3740,17 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListMetadataImportsPage createPage(
-        PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
+        @Nullable
+            PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
             context,
-        ListMetadataImportsResponse response) {
+        @Nullable ListMetadataImportsResponse response) {
       return new ListMetadataImportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetadataImportsPage> createPageAsync(
-        PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
+        @Nullable
+            PageContext<ListMetadataImportsRequest, ListMetadataImportsResponse, MetadataImport>
             context,
         ApiFuture<ListMetadataImportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3757,7 +3766,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListMetadataImportsFixedSizeCollection> {
 
     private ListMetadataImportsFixedSizeCollection(
-        List<ListMetadataImportsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataImportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3767,7 +3776,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListMetadataImportsFixedSizeCollection createCollection(
-        List<ListMetadataImportsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataImportsPage> pages, int collectionSize) {
       return new ListMetadataImportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3798,8 +3807,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -3809,14 +3818,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3830,7 +3839,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3840,7 +3850,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3874,8 +3884,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3885,14 +3895,14 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3906,7 +3916,8 @@ public class DataprocMetastoreClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3916,7 +3927,7 @@ public class DataprocMetastoreClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

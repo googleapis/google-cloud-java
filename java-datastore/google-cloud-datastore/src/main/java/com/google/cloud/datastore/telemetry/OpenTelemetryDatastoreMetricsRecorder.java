@@ -23,7 +23,10 @@ import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -43,17 +46,24 @@ import javax.annotation.Nonnull;
 class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
     implements DatastoreMetricsRecorder {
 
+  private static final Logger logger =
+      Logger.getLogger(OpenTelemetryDatastoreMetricsRecorder.class.getName());
+
   private final OpenTelemetry openTelemetry;
 
   // Datastore-specific transaction metrics (registered under the Datastore meter).
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
 
-  // Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
-  // base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
-  // However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
-  // The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
-  // is handled by configuring OpenTelemetry Views.
+  /**
+   * Creates a recorder based on the Otel configuration.
+   *
+   * <p>Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
+   * base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
+   * However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
+   * The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
+   * is handled by configuring OpenTelemetry Views.
+   */
   OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
     super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
@@ -76,6 +86,22 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
 
   OpenTelemetry getOpenTelemetry() {
     return openTelemetry;
+  }
+
+  /**
+   * Closes this recorder. If this recorder owns the underlying {@link OpenTelemetry} instance
+   * (i.e., it was created by the built-in metrics provider), it will be shut down, flushing any
+   * pending metrics. If the instance was provided by the user, this is a no-op.
+   */
+  @Override
+  public void close() {
+    if (openTelemetry instanceof OpenTelemetrySdk) {
+      try {
+        ((OpenTelemetrySdk) openTelemetry).close();
+      } catch (Exception e) {
+        logger.log(Level.WARNING, "Failed to close built-in OpenTelemetry SDK instance.", e);
+      }
+    }
   }
 
   @Override

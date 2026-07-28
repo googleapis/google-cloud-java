@@ -28,6 +28,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -137,10 +139,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EstimateBillingServiceClient implements BackgroundResource {
-  private final EstimateBillingServiceSettings settings;
+  private final @Nullable EstimateBillingServiceSettings settings;
   private final EstimateBillingServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -189,7 +192,7 @@ public class EstimateBillingServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EstimateBillingServiceSettings getSettings() {
+  public final @Nullable EstimateBillingServiceSettings getSettings() {
     return settings;
   }
 

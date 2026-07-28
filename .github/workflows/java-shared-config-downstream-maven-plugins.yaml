@@ -1,0 +1,174 @@
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+# Keeping this file separate as the dependencies check would use more
+# repositories than needed this downstream check for GraalVM native image and
+# other Maven plugins.
+name: java-shared-config downstream (maven-plugins)
+env:
+  BUILD_SUBDIR: java-shared-config
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-shared-config/**'
+  build:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [8, 11]
+        repo:
+        - java-bigquery
+        - java-bigtable
+        job-type:
+        - test  # maven-surefire-plugin
+        - clirr # clirr-maven-plugin
+        - javadoc # maven-javadoc-plugin
+        - javadoc-with-doclet # test javadoc generation with doclet
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      with:
+        distribution: zulu
+        java-version: 11
+    - name: Install java-shared-dependencies and common dependencies
+      run: |
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - name: Pre-build dependencies
+      run: |
+        LIB_DIR="${{matrix.repo}}"
+        LIB_NAME="google-cloud-${LIB_DIR#java-}"
+        mvn install -pl ${LIB_DIR}/${LIB_NAME} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
+  lint:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+        repo:
+        - java-bigquery
+        - java-bigtable
+        job-type:
+        - lint  # fmt-maven-plugin and google-java-format
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      with:
+        distribution: zulu
+        java-version: ${{matrix.java}}
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies and common dependencies
+      run: |
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - name: Pre-build dependencies
+      run: |
+        LIB_DIR="${{matrix.repo}}"
+        LIB_NAME="google-cloud-${LIB_DIR#java-}"
+        TARGET_PATH="${LIB_DIR}/${LIB_NAME}"
+        # Check if target matches standard structure (e.g. java-bigquery/google-cloud-bigquery)
+        if [ ! -d "${TARGET_PATH}" ]; then
+          # Fallback 1: Look for any google-cloud-* directory, excluding samples, retrofit, or BOMs (e.g. java-storage-nio/google-cloud-nio)
+          ALT_PATH=$(find "${LIB_DIR}" -maxdepth 1 -type d -name "google-cloud-*" ! -name "*-bom" ! -name "*-parent" ! -name "*-deps-bom" ! -name "*-examples" ! -name "*samples" ! -name "*-retrofit" | head -n 1)
+          if [ -n "${ALT_PATH}" ]; then
+            TARGET_PATH="${ALT_PATH}"
+          else
+            # Fallback 2: Assume single-module project where pom.xml is in the root directory (e.g. java-logging-logback)
+            TARGET_PATH="${LIB_DIR}"
+          fi
+        fi
+        mvn install -pl ${TARGET_PATH} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+    - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
+  javadoc-with-doclet:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+        - java-bigtable
+        - java-bigquery
+        - java-storage
+        - java-storage-nio
+        - java-spanner
+        - java-spanner-jdbc
+        - java-pubsub
+        - java-logging
+        - java-logging-logback
+        - java-firestore
+        - java-datastore
+        - java-bigquerystorage
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - name: Install java-shared-dependencies and common dependencies
+      run: |
+        .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - name: Pre-build dependencies
+      run: |
+        LIB_DIR="${{matrix.repo}}"
+        LIB_NAME="google-cloud-${LIB_DIR#java-}"
+        TARGET_PATH="${LIB_DIR}/${LIB_NAME}"
+        # Check if target matches standard structure (e.g. java-bigquery/google-cloud-bigquery)
+        if [ ! -d "${TARGET_PATH}" ]; then
+          # Fallback 1: Look for any google-cloud-* directory, excluding samples, retrofit, or BOMs (e.g. java-storage-nio/google-cloud-nio)
+          ALT_PATH=$(find "${LIB_DIR}" -maxdepth 1 -type d -name "google-cloud-*" ! -name "*-bom" ! -name "*-parent" ! -name "*-deps-bom" ! -name "*-examples" ! -name "*samples" ! -name "*-retrofit" | head -n 1)
+          if [ -n "${ALT_PATH}" ]; then
+            TARGET_PATH="${ALT_PATH}"
+          else
+            # Fallback 2: Assume single-module project where pom.xml is in the root directory (e.g. java-logging-logback)
+            TARGET_PATH="${LIB_DIR}"
+          fi
+        fi
+        mvn install -pl ${TARGET_PATH} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+    - run: .kokoro/client-library-check-doclet.sh ${{matrix.repo}}

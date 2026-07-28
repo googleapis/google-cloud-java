@@ -65,9 +65,9 @@ public interface TenantOrBuilder
    * Optional. Immutable. A reference to the consumer resource this SaaS Tenant
    * is representing.
    *
-   * The relationship with a consumer resource can be used by SaaS Runtime for
-   * retrieving consumer-defined settings and policies such as maintenance
-   * policies (using Unified Maintenance Policy API).
+   * The relationship with a consumer resource can be used by App Lifecycle
+   * Manager for retrieving consumer-defined settings and policies such as
+   * maintenance policies (using Unified Maintenance Policy API).
    * </pre>
    *
    * <code>
@@ -85,9 +85,9 @@ public interface TenantOrBuilder
    * Optional. Immutable. A reference to the consumer resource this SaaS Tenant
    * is representing.
    *
-   * The relationship with a consumer resource can be used by SaaS Runtime for
-   * retrieving consumer-defined settings and policies such as maintenance
-   * policies (using Unified Maintenance Policy API).
+   * The relationship with a consumer resource can be used by App Lifecycle
+   * Manager for retrieving consumer-defined settings and policies such as
+   * maintenance policies (using Unified Maintenance Policy API).
    * </pre>
    *
    * <code>
@@ -103,8 +103,8 @@ public interface TenantOrBuilder
    *
    * <pre>
    * Required. Immutable. A reference to the Saas that defines the product
-   * (managed service) that the producer wants to manage with SaaS Runtime. Part
-   * of the SaaS Runtime common data model.
+   * (managed service) that the producer wants to manage with App Lifecycle
+   * Manager. Part of the App Lifecycle Manager common data model.
    * </pre>
    *
    * <code>
@@ -120,8 +120,8 @@ public interface TenantOrBuilder
    *
    * <pre>
    * Required. Immutable. A reference to the Saas that defines the product
-   * (managed service) that the producer wants to manage with SaaS Runtime. Part
-   * of the SaaS Runtime common data model.
+   * (managed service) that the producer wants to manage with App Lifecycle
+   * Manager. Part of the App Lifecycle Manager common data model.
    * </pre>
    *
    * <code>

@@ -30,7 +30,7 @@ public interface AutomatedAgentConfigOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the Dialogflow agent environment to use.
+   * Required. The resource name of the Dialogflow agent environment to use.
    *
    * This project needs to either be the same project as the conversation or you
    * need to grant `service-&lt;Conversation Project
@@ -61,7 +61,7 @@ public interface AutomatedAgentConfigOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the Dialogflow agent environment to use.
+   * Required. The resource name of the Dialogflow agent environment to use.
    *
    * This project needs to either be the same project as the conversation or you
    * need to grant `service-&lt;Conversation Project

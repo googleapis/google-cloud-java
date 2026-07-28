@@ -57,19 +57,6 @@ public interface AdmissionRuleOrBuilder
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule.EvaluationMode getEvaluationMode();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -78,19 +65,6 @@ public interface AdmissionRuleOrBuilder
   java.util.List<java.lang.String> getRequireAttestationsByList();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -99,19 +73,6 @@ public interface AdmissionRuleOrBuilder
   int getRequireAttestationsByCount();
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
@@ -121,19 +82,6 @@ public interface AdmissionRuleOrBuilder
   java.lang.String getRequireAttestationsBy(int index);
 
   /**
-   *
-   *
-   * <pre>
-   * Optional. The resource names of the attestors that must attest to
-   * a container image, in the format `projects/&#42;&#47;attestors/&#42;`. Each
-   * attestor must exist before a policy can reference it.  To add an attestor
-   * to a policy the principal issuing the policy change request must be able
-   * to read the attestor resource.
-   *
-   * Note: this field must be non-empty when the evaluation_mode field specifies
-   * REQUIRE_ATTESTATION, otherwise it must be empty.
-   * </pre>
-   *
    * <code>repeated string require_attestations_by = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *

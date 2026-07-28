@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * The `Company` resource.
+ * The [Company][google.ads.admanager.v1.Company] resource.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.Company}
@@ -92,8 +92,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The resource name of the `Company`.
-   * Format: `networks/{network_code}/companies/{company_id}`
+   * Identifier. The resource name of the
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * `networks/{network_code}/companies/{company_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -117,8 +118,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The resource name of the `Company`.
-   * Format: `networks/{network_code}/companies/{company_id}`
+   * Identifier. The resource name of the
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * `networks/{network_code}/companies/{company_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -145,14 +147,19 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `Company` ID.
+   * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
    * </pre>
    *
-   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+   *     google/ads/admanager/v1/company_messages.proto;l=47
    * @return Whether the companyId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCompanyId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -161,14 +168,19 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `Company` ID.
+   * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
    * </pre>
    *
-   * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+   *     google/ads/admanager/v1/company_messages.proto;l=47
    * @return The companyId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getCompanyId() {
     return companyId_;
   }
@@ -182,7 +194,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name of the `Company`.
+   * Required. The display name of the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 127 characters.
    * </pre>
@@ -200,7 +213,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name of the `Company`.
+   * Required. The display name of the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 127 characters.
    * </pre>
@@ -226,7 +240,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name of the `Company`.
+   * Required. The display name of the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 127 characters.
    * </pre>
@@ -255,7 +270,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The type of the `Company`.
+   * Required. The type of the [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -273,7 +288,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The type of the `Company`.
+   * Required. The type of the [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -291,7 +306,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The type of the `Company`.
+   * Required. The type of the [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -318,7 +333,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The address for the `Company`.
+   * Optional. The address for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -336,7 +351,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The address for the `Company`.
+   * Optional. The address for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -362,7 +377,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The address for the `Company`.
+   * Optional. The address for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -393,7 +408,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The email for the `Company`.
+   * Optional. The email for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 128 characters.
    * </pre>
@@ -411,7 +426,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The email for the `Company`.
+   * Optional. The email for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 128 characters.
    * </pre>
@@ -437,7 +452,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The email for the `Company`.
+   * Optional. The email for the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 128 characters.
    * </pre>
@@ -468,7 +483,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fax number for the `Company`.
+   * Optional. The fax number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -486,7 +502,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fax number for the `Company`.
+   * Optional. The fax number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -512,7 +529,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The fax number for the `Company`.
+   * Optional. The fax number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -543,7 +561,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The phone number for the `Company`.
+   * Optional. The phone number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -561,7 +580,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The phone number for the `Company`.
+   * Optional. The phone number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -587,7 +607,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The phone number for the `Company`.
+   * Optional. The phone number for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 63 characters.
    * </pre>
@@ -618,7 +639,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The external ID for the `Company`.
+   * Optional. The external ID for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 255 characters.
    * </pre>
@@ -636,7 +658,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The external ID for the `Company`.
+   * Optional. The external ID for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 255 characters.
    * </pre>
@@ -662,7 +685,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The external ID for the `Company`.
+   * Optional. The external ID for the
+   * [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 255 characters.
    * </pre>
@@ -693,7 +717,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Comments about the `Company`.
+   * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -711,7 +735,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Comments about the `Company`.
+   * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -737,7 +761,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Comments about the `Company`.
+   * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
    *
    * This value has a maximum length of 1024 characters.
    * </pre>
@@ -766,10 +790,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credit status of the `Company`.
+   * Optional. The credit status of the
+   * [Company][google.ads.admanager.v1.Company].
    *
-   * This attribute defaults to `ACTIVE` if basic settings are enabled and
-   * `ON_HOLD` if advance settings are enabled.
+   * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+   * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+   * settings are enabled.
    * </pre>
    *
    * <code>
@@ -787,10 +813,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credit status of the `Company`.
+   * Optional. The credit status of the
+   * [Company][google.ads.admanager.v1.Company].
    *
-   * This attribute defaults to `ACTIVE` if basic settings are enabled and
-   * `ON_HOLD` if advance settings are enabled.
+   * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+   * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+   * settings are enabled.
    * </pre>
    *
    * <code>
@@ -808,10 +836,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credit status of the `Company`.
+   * Optional. The credit status of the
+   * [Company][google.ads.admanager.v1.Company].
    *
-   * This attribute defaults to `ACTIVE` if basic settings are enabled and
-   * `ON_HOLD` if advance settings are enabled.
+   * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+   * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+   * settings are enabled.
    * </pre>
    *
    * <code>
@@ -839,7 +869,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The labels that are directly applied to the `Company`.
+   * Optional. The labels that are directly applied to the
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -855,7 +886,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The labels that are directly applied to the `Company`.
+   * Optional. The labels that are directly applied to the
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -872,7 +904,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The labels that are directly applied to the `Company`.
+   * Optional. The labels that are directly applied to the
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -888,7 +921,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The labels that are directly applied to the `Company`.
+   * Optional. The labels that are directly applied to the
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -904,7 +938,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The labels that are directly applied to the `Company`.
+   * Optional. The labels that are directly applied to the
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>
@@ -925,8 +960,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The resource names of primary Contact of the `Company`.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. The resource names of primary
+   * [Contact][google.ads.admanager.v1.Contact] of the
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
@@ -944,8 +981,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The resource names of primary Contact of the `Company`.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. The resource names of primary
+   * [Contact][google.ads.admanager.v1.Contact] of the
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
@@ -971,8 +1010,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The resource names of primary Contact of the `Company`.
-   * Format: "networks/{network_code}/contacts/{contact_id}"
+   * Optional. The resource names of primary
+   * [Contact][google.ads.admanager.v1.Contact] of the
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/contacts/{contact_id}"
    * </pre>
    *
    * <code>
@@ -1005,7 +1046,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The resource names of Teams that are directly associated with the
-   * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/teams/{team_id}"
    * </pre>
    *
    * <code>
@@ -1023,7 +1065,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The resource names of Teams that are directly associated with the
-   * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/teams/{team_id}"
    * </pre>
    *
    * <code>
@@ -1041,7 +1084,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The resource names of Teams that are directly associated with the
-   * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/teams/{team_id}"
    * </pre>
    *
    * <code>
@@ -1060,7 +1104,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The resource names of Teams that are directly associated with the
-   * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+   * [Company][google.ads.admanager.v1.Company]. Format:
+   * "networks/{network_code}/teams/{team_id}"
    * </pre>
    *
    * <code>
@@ -1082,7 +1127,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The ID of the Google-recognized canonicalized form of the
-   * `Company`.
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1100,7 +1145,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The ID of the Google-recognized canonicalized form of the
-   * `Company`.
+   * [Company][google.ads.admanager.v1.Company].
    * </pre>
    *
    * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -1120,7 +1165,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time the `Company` was last modified.
+   * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+   * last modified.
    * </pre>
    *
    * <code>
@@ -1138,7 +1184,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time the `Company` was last modified.
+   * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+   * last modified.
    * </pre>
    *
    * <code>
@@ -1156,7 +1203,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The time the `Company` was last modified.
+   * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+   * last modified.
    * </pre>
    *
    * <code>
@@ -1539,7 +1587,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The `Company` resource.
+   * The [Company][google.ads.admanager.v1.Company] resource.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.Company}
@@ -1986,8 +2034,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the `Company`.
-     * Format: `networks/{network_code}/companies/{company_id}`
+     * Identifier. The resource name of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * `networks/{network_code}/companies/{company_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2010,8 +2059,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the `Company`.
-     * Format: `networks/{network_code}/companies/{company_id}`
+     * Identifier. The resource name of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * `networks/{network_code}/companies/{company_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2034,8 +2084,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the `Company`.
-     * Format: `networks/{network_code}/companies/{company_id}`
+     * Identifier. The resource name of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * `networks/{network_code}/companies/{company_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2057,8 +2108,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the `Company`.
-     * Format: `networks/{network_code}/companies/{company_id}`
+     * Identifier. The resource name of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * `networks/{network_code}/companies/{company_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2076,8 +2128,9 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the `Company`.
-     * Format: `networks/{network_code}/companies/{company_id}`
+     * Identifier. The resource name of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * `networks/{network_code}/companies/{company_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2102,14 +2155,19 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Company` ID.
+     * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
      * </pre>
      *
-     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+     *     google/ads/admanager/v1/company_messages.proto;l=47
      * @return Whether the companyId field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasCompanyId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -2118,14 +2176,19 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Company` ID.
+     * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
      * </pre>
      *
-     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+     *     google/ads/admanager/v1/company_messages.proto;l=47
      * @return The companyId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getCompanyId() {
       return companyId_;
     }
@@ -2134,14 +2197,19 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Company` ID.
+     * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
      * </pre>
      *
-     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+     *     google/ads/admanager/v1/company_messages.proto;l=47
      * @param value The companyId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCompanyId(long value) {
 
       companyId_ = value;
@@ -2154,13 +2222,18 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Company` ID.
+     * Output only. Deprecated: [Company][google.ads.admanager.v1.Company] ID.
      * </pre>
      *
-     * <code>optional int64 company_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * optional int64 company_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Company.company_id is deprecated. See
+     *     google/ads/admanager/v1/company_messages.proto;l=47
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearCompanyId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       companyId_ = 0L;
@@ -2174,7 +2247,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2191,7 +2265,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2216,7 +2291,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2241,7 +2317,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2265,7 +2342,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2285,7 +2363,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name of the `Company`.
+     * Required. The display name of the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 127 characters.
      * </pre>
@@ -2312,7 +2391,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2330,7 +2409,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2348,7 +2427,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2369,7 +2448,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2391,7 +2470,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2415,7 +2494,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the `Company`.
+     * Required. The type of the [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -2437,7 +2516,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2454,7 +2533,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2479,7 +2558,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2504,7 +2583,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2528,7 +2607,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2548,7 +2627,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The address for the `Company`.
+     * Optional. The address for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -2575,7 +2654,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2592,7 +2671,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2617,7 +2696,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2642,7 +2721,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2666,7 +2745,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2686,7 +2765,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The email for the `Company`.
+     * Optional. The email for the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 128 characters.
      * </pre>
@@ -2713,7 +2792,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2730,7 +2810,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2755,7 +2836,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2780,7 +2862,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2804,7 +2887,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2824,7 +2908,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The fax number for the `Company`.
+     * Optional. The fax number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2851,7 +2936,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2868,7 +2954,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2893,7 +2980,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2918,7 +3006,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2942,7 +3031,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2962,7 +3052,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The phone number for the `Company`.
+     * Optional. The phone number for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 63 characters.
      * </pre>
@@ -2989,7 +3080,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3006,7 +3098,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3031,7 +3124,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3056,7 +3150,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3080,7 +3175,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3100,7 +3196,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The external ID for the `Company`.
+     * Optional. The external ID for the
+     * [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 255 characters.
      * </pre>
@@ -3127,7 +3224,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3144,7 +3241,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3169,7 +3266,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3194,7 +3291,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3218,7 +3315,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3238,7 +3335,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Comments about the `Company`.
+     * Optional. Comments about the [Company][google.ads.admanager.v1.Company].
      *
      * This value has a maximum length of 1024 characters.
      * </pre>
@@ -3265,10 +3362,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3286,10 +3385,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3307,10 +3408,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3331,10 +3434,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3358,10 +3463,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3386,10 +3493,12 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credit status of the `Company`.
+     * Optional. The credit status of the
+     * [Company][google.ads.admanager.v1.Company].
      *
-     * This attribute defaults to `ACTIVE` if basic settings are enabled and
-     * `ON_HOLD` if advance settings are enabled.
+     * This attribute defaults to [CompanyCreditStatus.ACTIVE][] if basic
+     * settings are enabled and [CompanyCreditStatus.ON_HOLD][] if advance
+     * settings are enabled.
      * </pre>
      *
      * <code>
@@ -3426,7 +3535,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3445,7 +3555,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3464,7 +3575,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3483,7 +3595,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3508,7 +3621,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3531,7 +3645,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3556,7 +3671,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3581,7 +3697,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3604,7 +3721,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3627,7 +3745,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3650,7 +3769,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3672,7 +3792,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3694,7 +3815,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3709,7 +3831,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3728,7 +3851,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3748,7 +3872,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3764,7 +3889,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3780,7 +3906,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The labels that are directly applied to the `Company`.
+     * Optional. The labels that are directly applied to the
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>
@@ -3818,8 +3945,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3836,8 +3965,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3862,8 +3993,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3888,8 +4021,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3913,8 +4048,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3934,8 +4071,10 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource names of primary Contact of the `Company`.
-     * Format: "networks/{network_code}/contacts/{contact_id}"
+     * Optional. The resource names of primary
+     * [Contact][google.ads.admanager.v1.Contact] of the
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/contacts/{contact_id}"
      * </pre>
      *
      * <code>
@@ -3971,7 +4110,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -3990,7 +4130,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4008,7 +4149,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4027,7 +4169,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4046,7 +4189,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4073,7 +4217,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4099,7 +4244,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4122,7 +4268,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4144,7 +4291,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The resource names of Teams that are directly associated with the
-     * `Company`. Format: "networks/{network_code}/teams/{team_id}"
+     * [Company][google.ads.admanager.v1.Company]. Format:
+     * "networks/{network_code}/teams/{team_id}"
      * </pre>
      *
      * <code>
@@ -4173,7 +4321,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The ID of the Google-recognized canonicalized form of the
-     * `Company`.
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4191,7 +4339,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The ID of the Google-recognized canonicalized form of the
-     * `Company`.
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4209,7 +4357,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The ID of the Google-recognized canonicalized form of the
-     * `Company`.
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4231,7 +4379,7 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The ID of the Google-recognized canonicalized form of the
-     * `Company`.
+     * [Company][google.ads.admanager.v1.Company].
      * </pre>
      *
      * <code>optional int64 third_party_company_id = 16 [(.google.api.field_behavior) = OPTIONAL];
@@ -4257,7 +4405,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4274,7 +4423,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4297,7 +4447,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4322,7 +4473,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4344,7 +4496,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4374,7 +4527,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4396,7 +4550,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4413,7 +4568,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>
@@ -4434,7 +4590,8 @@ public final class Company extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The time the `Company` was last modified.
+     * Output only. The time the [Company][google.ads.admanager.v1.Company] was
+     * last modified.
      * </pre>
      *
      * <code>

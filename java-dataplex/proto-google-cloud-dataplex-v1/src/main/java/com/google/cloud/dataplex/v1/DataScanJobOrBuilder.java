@@ -138,6 +138,32 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
+   * Output only. A message indicating partial failure details.
+   * </pre>
+   *
+   * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The partialFailureMessage.
+   */
+  java.lang.String getPartialFailureMessage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A message indicating partial failure details.
+   * </pre>
+   *
+   * <code>string partial_failure_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for partialFailureMessage.
+   */
+  com.google.protobuf.ByteString getPartialFailureMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time when the DataScanJob was started.
    * </pre>
    *

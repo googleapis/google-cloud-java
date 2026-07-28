@@ -53,20 +53,25 @@ public final class PythonFunctionProto extends com.google.protobuf.GeneratedFile
 
   static {
     java.lang.String[] descriptorData = {
-      "\n-google/cloud/ces/v1beta/python_functio"
+      "\n"
+          + "-google/cloud/ces/v1beta/python_functio"
           + "n.proto\022\027google.cloud.ces.v1beta\032\037google"
-          + "/api/field_behavior.proto\"W\n\016PythonFunct"
-          + "ion\022\021\n\004name\030\001 \001(\tB\003\340A\001\022\030\n\013python_code\030\002 "
-          + "\001(\tB\003\340A\001\022\030\n\013description\030\003 \001(\tB\003\340A\003Bc\n\033co"
-          + "m.google.cloud.ces.v1betaB\023PythonFunctio"
-          + "nProtoP\001Z-cloud.google.com/go/ces/apiv1b"
-          + "eta/cespb;cespbb\006proto3"
+          + "/api/field_behavior.proto\032$google/cloud/ces/v1beta/common.proto\"\257\001\n"
+          + "\016PythonFunction\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\001\022\030\n"
+          + "\013python_code\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\013description\030\003 \001(\tB\003\340A\003\022V\n"
+          + "\030service_directory_config\030\004 \001(\0132/.google.clo"
+          + "ud.ces.v1beta.ServiceDirectoryConfigB\003\340A\001Bc\n"
+          + "\033com.google.cloud.ces.v1betaB\023PythonFunctionProtoP\001Z-cloud.google.com/go/ces"
+          + "/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1beta_PythonFunction_descriptor =
         getDescriptor().getMessageType(0);
@@ -74,10 +79,11 @@ public final class PythonFunctionProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_PythonFunction_descriptor,
             new java.lang.String[] {
-              "Name", "PythonCode", "Description",
+              "Name", "PythonCode", "Description", "ServiceDirectoryConfig",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.ces.v1beta.CommonProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

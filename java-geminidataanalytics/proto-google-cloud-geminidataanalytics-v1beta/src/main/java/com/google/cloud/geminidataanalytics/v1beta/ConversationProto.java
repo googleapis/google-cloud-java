@@ -81,7 +81,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + ":google/cloud/geminidataanalytics/v1beta/conversation.proto\022\'google.cloud.gemin"
           + "idataanalytics.v1beta\032\037google/api/field_"
           + "behavior.proto\032\033google/api/field_info.pr"
-          + "oto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\312\003\n"
+          + "oto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\312\004\n"
           + "\014Conversation\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\001\340A\010\022\023\n"
           + "\006agents\030\002 \003(\tB\003\340A\002\0224\n"
@@ -89,26 +89,32 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + "\016last_used_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022V\n"
           + "\006labels\030\t \003(\0132A.google.cloud.geminidataanal"
-          + "ytics.v1beta.Conversation.LabelsEntryB\003\340A\001\032-\n"
+          + "ytics.v1beta.Conversation.LabelsEntryB\003\340A\001\022?\n"
+          + "\007kms_key\030\n"
+          + " \001(\tB)\340A\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\000\210\001\001\022\037\n\r"
+          + "memory_paused\030\013 \001(\010B\003\340A\001H\001\210\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\230\001\352A\224\001\n"
-          + "/geminidataanalytics.googleapis.com/Conversation\022Dprojects/{pro"
-          + "ject}/locations/{location}/conversations/{conversation}*\r"
-          + "conversations2\014conversation\"\365\001\n"
+          + "/geminidataanalytics.googleapis.com/Conversat"
+          + "ion\022Dprojects/{project}/locations/{location}/conversations/{conversation}*\r"
+          + "conversations2\014conversationB\n\n"
+          + "\010_kms_keyB\020\n"
+          + "\016_memory_paused\"\365\001\n"
           + "\031CreateConversationRequest\022G\n"
           + "\006parent\030\001 \001("
           + "\tB7\340A\002\372A1\022/geminidataanalytics.googleapis.com/Conversation\022\034\n"
           + "\017conversation_id\030\002 \001(\tB\003\340A\001\022P\n"
-          + "\014conversation\030\003 \001(\0132"
-          + "5.google.cloud.geminidataanalytics.v1beta.ConversationB\003\340A\002\022\037\n\n"
+          + "\014conversation\030\003"
+          + " \001(\01325.google.cloud.geminidataanalytics.v1beta.ConversationB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"_\n"
           + "\026GetConversationRequest\022E\n"
           + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
           + "/geminidataanalytics.googleapis.com/Conversation\"\251\001\n"
           + "\030ListConversationsRequest\022G\n"
-          + "\006parent\030\001 \001(\tB7\340A\002\372"
-          + "A1\022/geminidataanalytics.googleapis.com/Conversation\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB7\340A\002\372A1\022/geminidataanalytics.googleapis.com/Conversation\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\202\001\n"
@@ -118,13 +124,15 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + "\017next_page_token\030\002 \001(\t\"b\n"
           + "\031DeleteConversationRequest\022E\n"
           + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
-          + "/geminidataanalytics.googleapis.com/ConversationB\242\002\n"
-          + "+com.google.cloud.geminidataanalytics.v1be"
-          + "taB\021ConversationProtoP\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/gemin"
-          + "idataanalyticspb;geminidataanalyticspb\252\002"
-          + "\'Google.Cloud.GeminiDataAnalytics.V1Beta"
-          + "\312\002\'Google\\Cloud\\GeminiDataAnalytics\\V1be"
-          + "ta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
+          + "/geminidataanalytics.googleapis.com/ConversationB\265\003\n"
+          + "+com.google.cloud.geminidataanalytics.v1betaB\021ConversationProtoP\001Z]cloud.g"
+          + "oogle.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;geminidataanaly"
+          + "ticspb\252\002\'Google.Cloud.GeminiDataAnalytic"
+          + "s.V1Beta\312\002\'Google\\Cloud\\GeminiDataAnalyt"
+          + "ics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1beta\352A\217\001\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locat"
+          + "ions/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}*\n"
+          + "cryptoKeys2\tcryptoKeyb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -141,7 +149,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_Conversation_descriptor,
             new java.lang.String[] {
-              "Name", "Agents", "CreateTime", "LastUsedTime", "Labels",
+              "Name", "Agents", "CreateTime", "LastUsedTime", "Labels", "KmsKey", "MemoryPaused",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_Conversation_LabelsEntry_descriptor =
         internal_static_google_cloud_geminidataanalytics_v1beta_Conversation_descriptor
@@ -202,6 +210,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

@@ -225,6 +225,10 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_KnowledgeAssistBehavior_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_fieldAccessorTable;
@@ -232,6 +236,14 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -248,6 +260,10 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_GenerativeSource_Snippet_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_GenerativeSource_Snippet_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -558,22 +574,25 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
           + "\016latest_message\030\002 \001(\tB)\340A\001\372A#\n"
           + "!dialogflow.googleapis.com/Message\022\031\n"
           + "\014context_size\030\003 \001(\005B\003\340A\001\022%\n"
-          + "\030previous_suggested_query\030\004 \001(\tB\003\340A\001\"\247\001\n"
+          + "\030previous_suggested_query\030\004 \001(\tB\003\340A\001\"\253\002\n"
           + "\036SuggestKnowledgeAssistResponse\022W\n"
           + "\027knowledge_assist_answer\030\001"
           + " \001(\01321.google.cloud.dialogflow.v2.KnowledgeAssistAnswerB\003\340A\003\022\026\n"
           + "\016latest_message\030\002 \001(\t\022\024\n"
-          + "\014context_size\030\003 \001(\005\"\271\005\n"
+          + "\014context_size\030\003 \001(\005\022\201\001\n"
+          + "\"additional_suggested_query_results\030\004 \003(\0132P."
+          + "google.cloud.dialogflow.v2.KnowledgeAssi"
+          + "stAnswer.AdditionalSuggestedQueryResultB\003\340A\001\"\271\005\n"
           + "!IngestedContextReferenceDebugInfo\022\037\n"
           + "\027project_not_allowlisted\030\001 \001(\010\022#\n"
           + "\033context_reference_retrieved\030\002 \001(\010\022\200\001\n"
-          + "\036ingested_parameters_debug_info\030\003 \003(\0132X.google.cloud.dia"
-          + "logflow.v2.IngestedContextReferenceDebugInfo.IngestedParameterDebugInfo\032\312\003\n"
+          + "\036ingested_parameters_debug_info\030\003 \003(\0132X.goog"
+          + "le.cloud.dialogflow.v2.IngestedContextRe"
+          + "ferenceDebugInfo.IngestedParameterDebugInfo\032\312\003\n"
           + "\032IngestedParameterDebugInfo\022\021\n"
           + "\tparameter\030\001 \001(\t\022\202\001\n"
-          + "\020ingestion_status\030\002 \001(\0162h.google.cl"
-          + "oud.dialogflow.v2.IngestedContextReferen"
-          + "ceDebugInfo.IngestedParameterDebugInfo.IngestionStatus\"\223\002\n"
+          + "\020ingestion_status\030\002 \001(\0162h.google.cloud.dialogflow.v2.IngestedCo"
+          + "ntextReferenceDebugInfo.IngestedParameterDebugInfo.IngestionStatus\"\223\002\n"
           + "\017IngestionStatus\022 \n"
           + "\034INGESTION_STATUS_UNSPECIFIED\020\000\022\036\n"
           + "\032INGESTION_STATUS_SUCCEEDED\020\001\022*\n"
@@ -583,27 +602,29 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
           + "\037INGESTION_STATUS_INVALID_FORMAT\020\005\022&\n"
           + "\"INGESTION_STATUS_LANGUAGE_MISMATCH\020\006\"\227\002\n"
           + "\016ServiceLatency\022e\n"
-          + "\032internal_service_latencies\030\001 \003(\0132A.google.clo"
-          + "ud.dialogflow.v2.ServiceLatency.InternalServiceLatency\032\235\001\n"
+          + "\032internal_service_latencies\030\001 \003(\0132"
+          + "A.google.cloud.dialogflow.v2.ServiceLatency.InternalServiceLatency\032\235\001\n"
           + "\026InternalServiceLatency\022\014\n"
           + "\004step\030\001 \001(\t\022\022\n\n"
           + "latency_ms\030\002 \001(\002\022.\n\n"
           + "start_time\030\003 \001(\0132\032.google.protobuf.Timestamp\0221\n\r"
-          + "complete_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\364\017\n"
+          + "complete_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\214\022\n"
           + "\030KnowledgeAssistDebugInfo\022z\n"
-          + "\037query_generation_failure_reason\030\001"
-          + " \001(\0162Q.google.cloud.dialogflow.v2.Knowle"
-          + "dgeAssistDebugInfo.QueryGenerationFailureReason\022\202\001\n"
-          + "#query_categorization_failure_reason\030\002 \001(\0162U.google.cloud.dialogflow."
-          + "v2.KnowledgeAssistDebugInfo.QueryCategorizationFailureReason\022V\n"
-          + "\031datastore_response_reason\030\003"
-          + " \001(\01623.google.cloud.dialogflow.v2.DatastoreResponseReason\022o\n"
-          + "\031knowledge_assist_behavior\030\004 \001(\0132L.google.cloud.d"
-          + "ialogflow.v2.KnowledgeAssistDebugInfo.KnowledgeAssistBehavior\022l\n"
-          + "%ingested_context_reference_debug_info\030\005 \001(\0132=.google.cl"
-          + "oud.dialogflow.v2.IngestedContextReferenceDebugInfo\022C\n"
-          + "\017service_latency\030\006 \001(\0132*.g"
-          + "oogle.cloud.dialogflow.v2.ServiceLatency\032\271\005\n"
+          + "\037query_generation_failure_reason\030\001 \001(\0162Q.google.cloud.dialogfl"
+          + "ow.v2.KnowledgeAssistDebugInfo.QueryGenerationFailureReason\022\202\001\n"
+          + "#query_categorization_failure_reason\030\002 \001(\0162U.google.cloud"
+          + ".dialogflow.v2.KnowledgeAssistDebugInfo.QueryCategorizationFailureReason\022V\n"
+          + "\031datastore_response_reason\030\003 \001(\01623.google.clo"
+          + "ud.dialogflow.v2.DatastoreResponseReason\022o\n"
+          + "\031knowledge_assist_behavior\030\004 \001(\0132L.go"
+          + "ogle.cloud.dialogflow.v2.KnowledgeAssistDebugInfo.KnowledgeAssistBehavior\022l\n"
+          + "%ingested_context_reference_debug_info\030\005 \001(\013"
+          + "2=.google.cloud.dialogflow.v2.IngestedContextReferenceDebugInfo\022C\n"
+          + "\017service_latency\030\006"
+          + " \001(\0132*.google.cloud.dialogflow.v2.ServiceLatency\022r\n"
+          + "\033query_generation_debug_info\030\007 \001(\0132M.google.cloud.dialogflow.v2.K"
+          + "nowledgeAssistDebugInfo.QueryGenerationDebugInfo\022/\n"
+          + "\016ces_debug_info\030\010 \001(\0132\027.google.protobuf.Struct\032\271\005\n"
           + "\027KnowledgeAssistBehavior\022%\n"
           + "\035answer_generation_rewriter_on\030\001 \001(\010\022\"\n"
           + "\032end_user_metadata_included\030\002 \001(\010\022\031\n"
@@ -623,7 +644,11 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
           + "\036query_contained_search_context\030\017 \001(\010\022.\n"
           + "&invalid_items_query_suggestion_skipped\030\020 \001(\010\022+\n"
           + "#primary_query_redacted_and_replaced\030\021 \001(\010\022%\n"
-          + "\035appended_search_context_count\030\022 \001(\005\"\317\003\n"
+          + "\035appended_search_context_count\030\022 \001(\005\032q\n"
+          + "\030QueryGenerationDebugInfo\022\032\n"
+          + "\022prompt_token_count\030\001 \001(\005\022\036\n"
+          + "\026candidates_token_count\030\002 \001(\005\022\031\n"
+          + "\021total_token_count\030\003 \001(\005\"\317\003\n"
           + "\034QueryGenerationFailureReason\022/\n"
           + "+QUERY_GENERATION_FAILURE_REASON_UNSPECIFIED\020\000\022!\n"
           + "\035QUERY_GENERATION_OUT_OF_QUOTA\020\001\022\033\n"
@@ -642,33 +667,51 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
           + "/QUERY_CATEGORIZATION_FAILURE_REASON_UNSPECIFIED\020\000\022\'\n"
           + "#QUERY_CATEGORIZATION_INVALID_CONFIG\020\001\022)\n"
           + "%QUERY_CATEGORIZATION_RESULT_NOT_FOUND\020\002\022\037\n"
-          + "\033QUERY_CATEGORIZATION_FAILED\020\003\"\366\006\n"
+          + "\033QUERY_CATEGORIZATION_FAILED\020\003\"\301\014\n"
           + "\025KnowledgeAssistAnswer\022Y\n"
-          + "\017suggested_query\030\001 \001(\0132@.google.cloud."
-          + "dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery\022a\n"
-          + "\026suggested_query_answer\030\002 \001"
-          + "(\0132A.google.cloud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer\022\025\n\r"
+          + "\017suggested_query\030\001 \001(\0132@.g"
+          + "oogle.cloud.dialogflow.v2.KnowledgeAssistAnswer.SuggestedQuery\022a\n"
+          + "\026suggested_query_answer\030\002 \001(\0132A.google.cloud.dialogflow"
+          + ".v2.KnowledgeAssistAnswer.KnowledgeAnswer\022\025\n\r"
           + "answer_record\030\003 \001(\t\022Y\n"
           + "\033knowledge_assist_debug_info\030\007"
-          + " \001(\01324.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo\032$\n"
+          + " \001(\01324.google.cloud.dialogflow.v2.KnowledgeAssistDebugInfo\032\311\001\n"
           + "\016SuggestedQuery\022\022\n\n"
-          + "query_text\030\001 \001(\t\032\206\004\n"
+          + "query_text\030\001 \001(\t\022l\n"
+          + "\017search_contexts\030\004 \003(\0132N.google.cloud.dialo"
+          + "gflow.v2.KnowledgeAssistAnswer.SuggestedQuery.SearchContextB\003\340A\001\0325\n\r"
+          + "SearchContext\022\020\n"
+          + "\003key\030\001 \001(\tB\003\340A\001\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\001\032\307\001\n"
+          + "\036AdditionalSuggestedQueryResult\022^\n"
+          + "\017suggested_query\030\001 \001(\0132@.google.cloud.dialo"
+          + "gflow.v2.KnowledgeAssistAnswer.SuggestedQueryB\003\340A\003\022E\n\r"
+          + "answer_record\030\005 \001(\tB.\340A\003\372A(\n"
+          + "&dialogflow.googleapis.com/AnswerRecord\032\341\006\n"
           + "\017KnowledgeAnswer\022\023\n"
           + "\013answer_text\030\001 \001(\t\022a\n\n"
-          + "faq_source\030\003 \001(\0132K.google.cloud.dialogflow.v2.Knowledg"
-          + "eAssistAnswer.KnowledgeAnswer.FaqSourceH\000\022o\n"
-          + "\021generative_source\030\004 \001(\0132R.google.cl"
-          + "oud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceH\000\032\035\n"
+          + "faq_source\030\003 \001(\0132K.google.cloud.di"
+          + "alogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.FaqSourceH\000\022o\n"
+          + "\021generative_source\030\004 \001(\0132R.google.cloud.dialogflow.v2.Kn"
+          + "owledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceH\000\022m\n"
+          + "\017playbook_source\030\007 \001(\0132R.google.cloud.dialogflow.v2.KnowledgeAs"
+          + "sistAnswer.KnowledgeAnswer.GenerativeSourceH\000\022e\n"
+          + "\014event_source\030\010 \001(\0132M.google.clo"
+          + "ud.dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.EventSourceH\000\032\035\n"
           + "\tFaqSource\022\020\n"
           + "\010question\030\002 \001(\t\032\340\001\n"
           + "\020GenerativeSource\022l\n"
-          + "\010snippets\030\001 \003(\0132Z.google.cloud."
-          + "dialogflow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource.Snippet\032^\n"
+          + "\010snippets\030\001 \003(\0132Z.google.cloud.dialog"
+          + "flow.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSource.Snippet\032^\n"
           + "\007Snippet\022\013\n"
           + "\003uri\030\002 \001(\t\022\014\n"
           + "\004text\030\003 \001(\t\022\r\n"
           + "\005title\030\004 \001(\t\022)\n"
-          + "\010metadata\030\005 \001(\0132\027.google.protobuf.StructB\010\n"
+          + "\010metadata\030\005 \001(\0132\027.google.protobuf.Struct\032\202\001\n"
+          + "\013EventSource\022\r\n"
+          + "\005event\030\001 \001(\t\022d\n"
+          + "\010snippets\030\002 \001(\0132R.google.cloud.dialogflo"
+          + "w.v2.KnowledgeAssistAnswer.KnowledgeAnswer.GenerativeSourceB\010\n"
           + "\006source*\326\002\n"
           + "\027DatastoreResponseReason\022)\n"
           + "%DATASTORE_RESPONSE_REASON_UNSPECIFIED\020\000\022\010\n"
@@ -682,82 +725,88 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
           + "\034ANSWER_GENERATION_RAI_FAILED\020\010\022\"\n"
           + "\036ANSWER_GENERATION_NOT_GROUNDED\020\t2\372\030\n"
           + "\014Participants\022\245\002\n"
-          + "\021CreateParticipant\0224.google.cloud.dialogflow.v2.Crea"
-          + "teParticipantRequest\032\'.google.cloud.dial"
-          + "ogflow.v2.Participant\"\260\001\332A\022parent,partic"
-          + "ipant\202\323\344\223\002\224\001\"4/v2/{parent=projects/*/con"
-          + "versations/*}/participants:\013participantZO\"@/v2/{parent=projects/*/locations/*/co"
-          + "nversations/*}/participants:\013participant\022\366\001\n"
-          + "\016GetParticipant\0221.google.cloud.dialogflow.v2.GetParticipantRequest\032\'.google."
-          + "cloud.dialogflow.v2.Participant\"\207\001\332A\004nam"
-          + "e\202\323\344\223\002z\0224/v2/{name=projects/*/conversati"
-          + "ons/*/participants/*}ZB\022@/v2/{name=proje"
-          + "cts/*/locations/*/conversations/*/participants/*}\022\211\002\n"
-          + "\020ListParticipants\0223.google.cloud.dialogflow.v2.ListParticipantsRequ"
-          + "est\0324.google.cloud.dialogflow.v2.ListPar"
-          + "ticipantsResponse\"\211\001\332A\006parent\202\323\344\223\002z\0224/v2"
-          + "/{parent=projects/*/conversations/*}/participantsZB\022@/v2/{parent=projects/*/loca"
-          + "tions/*/conversations/*}/participants\022\302\002\n"
-          + "\021UpdateParticipant\0224.google.cloud.dialo"
-          + "gflow.v2.UpdateParticipantRequest\032\'.goog"
-          + "le.cloud.dialogflow.v2.Participant\"\315\001\332A\027"
-          + "participant,update_mask\202\323\344\223\002\254\0012@/v2/{par"
-          + "ticipant.name=projects/*/conversations/*/participants/*}:\013participantZ[2L/v2/{pa"
-          + "rticipant.name=projects/*/locations/*/co"
-          + "nversations/*/participants/*}:\013participant\022\372\002\n"
-          + "\016AnalyzeContent\0221.google.cloud.dialogflow.v2.AnalyzeContentRequest\0322.googl"
-          + "e.cloud.dialogflow.v2.AnalyzeContentResp"
-          + "onse\"\200\002\332A\026participant,text_input\332A\027parti"
-          + "cipant,event_input\332A\027participant,audio_i"
-          + "nput\202\323\344\223\002\254\001\"J/v2/{participant=projects/*"
-          + "/conversations/*/participants/*}:analyzeContent:\001*Z[\"V/v2/{participant=projects/"
-          + "*/locations/*/conversations/*/participants/*}:analyzeContent:\001*\022\230\001\n"
-          + "\027StreamingAnalyzeContent\022:.google.cloud.dialogflow.v2",
-      ".StreamingAnalyzeContentRequest\032;.google"
-          + ".cloud.dialogflow.v2.StreamingAnalyzeCon"
-          + "tentResponse\"\000(\0010\001\022\311\002\n\017SuggestArticles\0222"
-          + ".google.cloud.dialogflow.v2.SuggestArtic"
-          + "lesRequest\0323.google.cloud.dialogflow.v2."
-          + "SuggestArticlesResponse\"\314\001\332A\006parent\202\323\344\223\002"
-          + "\274\001\"R/v2/{parent=projects/*/conversations"
-          + "/*/participants/*}/suggestions:suggestAr"
-          + "ticles:\001*Zc\"^/v2/{parent=projects/*/loca"
-          + "tions/*/conversations/*/participants/*}/"
-          + "suggestions:suggestArticles:\001*\022\323\002\n\021Sugge"
-          + "stFaqAnswers\0224.google.cloud.dialogflow.v"
-          + "2.SuggestFaqAnswersRequest\0325.google.clou"
-          + "d.dialogflow.v2.SuggestFaqAnswersRespons"
-          + "e\"\320\001\332A\006parent\202\323\344\223\002\300\001\"T/v2/{parent=projec"
-          + "ts/*/conversations/*/participants/*}/sug"
-          + "gestions:suggestFaqAnswers:\001*Ze\"`/v2/{pa"
-          + "rent=projects/*/locations/*/conversation"
-          + "s/*/participants/*}/suggestions:suggestF"
-          + "aqAnswers:\001*\022\335\002\n\023SuggestSmartReplies\0226.g"
-          + "oogle.cloud.dialogflow.v2.SuggestSmartRe"
-          + "pliesRequest\0327.google.cloud.dialogflow.v"
-          + "2.SuggestSmartRepliesResponse\"\324\001\332A\006paren"
-          + "t\202\323\344\223\002\304\001\"V/v2/{parent=projects/*/convers"
-          + "ations/*/participants/*}/suggestions:sug"
-          + "gestSmartReplies:\001*Zg\"b/v2/{parent=proje"
-          + "cts/*/locations/*/conversations/*/partic"
-          + "ipants/*}/suggestions:suggestSmartReplie"
-          + "s:\001*\022\343\002\n\026SuggestKnowledgeAssist\0229.google"
-          + ".cloud.dialogflow.v2.SuggestKnowledgeAss"
-          + "istRequest\032:.google.cloud.dialogflow.v2."
-          + "SuggestKnowledgeAssistResponse\"\321\001\202\323\344\223\002\312\001"
-          + "\"Y/v2/{parent=projects/*/conversations/*"
-          + "/participants/*}/suggestions:suggestKnow"
-          + "ledgeAssist:\001*Zj\"e/v2/{parent=projects/*"
-          + "/locations/*/conversations/*/participant"
-          + "s/*}/suggestions:suggestKnowledgeAssist:"
-          + "\001*\032x\312A\031dialogflow.googleapis.com\322AYhttps"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/dialog"
-          + "flowB\226\001\n\036com.google.cloud.dialogflow.v2B"
-          + "\020ParticipantProtoP\001Z>cloud.google.com/go"
-          + "/dialogflow/apiv2/dialogflowpb;dialogflo"
-          + "wpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006p"
-          + "roto3"
+          + "\021CreateParticipant\0224.google.cloud.dialogflow."
+          + "v2.CreateParticipantRequest\032\'.google.clo"
+          + "ud.dialogflow.v2.Participant\"\260\001\332A\022parent"
+          + ",participant\202\323\344\223\002\224\001\"4/v2/{parent=project"
+          + "s/*/conversations/*}/participants:\013participantZO\"@/v2/{parent=projects/*/locatio"
+          + "ns/*/conversations/*}/participants:\013participant\022\366\001\n"
+          + "\016GetParticipant\0221.google.cloud.dialogflow.v2.GetParticipantRequest\032\'."
+          + "google.cloud.dialogflow.v2.Participant\"\207"
+          + "\001\332A\004name\202\323\344\223\002z\0224/v2/{name=projects/*/con",
+      "versations/*/participants/*}ZB\022@/v2/{nam"
+          + "e=projects/*/locations/*/conversations/*"
+          + "/participants/*}\022\211\002\n\020ListParticipants\0223."
+          + "google.cloud.dialogflow.v2.ListParticipa"
+          + "ntsRequest\0324.google.cloud.dialogflow.v2."
+          + "ListParticipantsResponse\"\211\001\332A\006parent\202\323\344\223"
+          + "\002z\0224/v2/{parent=projects/*/conversations"
+          + "/*}/participantsZB\022@/v2/{parent=projects"
+          + "/*/locations/*/conversations/*}/particip"
+          + "ants\022\302\002\n\021UpdateParticipant\0224.google.clou"
+          + "d.dialogflow.v2.UpdateParticipantRequest"
+          + "\032\'.google.cloud.dialogflow.v2.Participan"
+          + "t\"\315\001\332A\027participant,update_mask\202\323\344\223\002\254\0012@/"
+          + "v2/{participant.name=projects/*/conversa"
+          + "tions/*/participants/*}:\013participantZ[2L"
+          + "/v2/{participant.name=projects/*/locatio"
+          + "ns/*/conversations/*/participants/*}:\013pa"
+          + "rticipant\022\372\002\n\016AnalyzeContent\0221.google.cl"
+          + "oud.dialogflow.v2.AnalyzeContentRequest\032"
+          + "2.google.cloud.dialogflow.v2.AnalyzeCont"
+          + "entResponse\"\200\002\332A\026participant,text_input\332"
+          + "A\027participant,event_input\332A\027participant,"
+          + "audio_input\202\323\344\223\002\254\001\"J/v2/{participant=pro"
+          + "jects/*/conversations/*/participants/*}:"
+          + "analyzeContent:\001*Z[\"V/v2/{participant=pr"
+          + "ojects/*/locations/*/conversations/*/par"
+          + "ticipants/*}:analyzeContent:\001*\022\230\001\n\027Strea"
+          + "mingAnalyzeContent\022:.google.cloud.dialog"
+          + "flow.v2.StreamingAnalyzeContentRequest\032;"
+          + ".google.cloud.dialogflow.v2.StreamingAna"
+          + "lyzeContentResponse\"\000(\0010\001\022\311\002\n\017SuggestArt"
+          + "icles\0222.google.cloud.dialogflow.v2.Sugge"
+          + "stArticlesRequest\0323.google.cloud.dialogf"
+          + "low.v2.SuggestArticlesResponse\"\314\001\332A\006pare"
+          + "nt\202\323\344\223\002\274\001\"R/v2/{parent=projects/*/conver"
+          + "sations/*/participants/*}/suggestions:su"
+          + "ggestArticles:\001*Zc\"^/v2/{parent=projects"
+          + "/*/locations/*/conversations/*/participa"
+          + "nts/*}/suggestions:suggestArticles:\001*\022\323\002"
+          + "\n\021SuggestFaqAnswers\0224.google.cloud.dialo"
+          + "gflow.v2.SuggestFaqAnswersRequest\0325.goog"
+          + "le.cloud.dialogflow.v2.SuggestFaqAnswers"
+          + "Response\"\320\001\332A\006parent\202\323\344\223\002\300\001\"T/v2/{parent"
+          + "=projects/*/conversations/*/participants"
+          + "/*}/suggestions:suggestFaqAnswers:\001*Ze\"`"
+          + "/v2/{parent=projects/*/locations/*/conve"
+          + "rsations/*/participants/*}/suggestions:s"
+          + "uggestFaqAnswers:\001*\022\335\002\n\023SuggestSmartRepl"
+          + "ies\0226.google.cloud.dialogflow.v2.Suggest"
+          + "SmartRepliesRequest\0327.google.cloud.dialo"
+          + "gflow.v2.SuggestSmartRepliesResponse\"\324\001\332"
+          + "A\006parent\202\323\344\223\002\304\001\"V/v2/{parent=projects/*/"
+          + "conversations/*/participants/*}/suggesti"
+          + "ons:suggestSmartReplies:\001*Zg\"b/v2/{paren"
+          + "t=projects/*/locations/*/conversations/*"
+          + "/participants/*}/suggestions:suggestSmar"
+          + "tReplies:\001*\022\343\002\n\026SuggestKnowledgeAssist\0229"
+          + ".google.cloud.dialogflow.v2.SuggestKnowl"
+          + "edgeAssistRequest\032:.google.cloud.dialogf"
+          + "low.v2.SuggestKnowledgeAssistResponse\"\321\001"
+          + "\202\323\344\223\002\312\001\"Y/v2/{parent=projects/*/conversa"
+          + "tions/*/participants/*}/suggestions:sugg"
+          + "estKnowledgeAssist:\001*Zj\"e/v2/{parent=pro"
+          + "jects/*/locations/*/conversations/*/part"
+          + "icipants/*}/suggestions:suggestKnowledge"
+          + "Assist:\001*\032x\312A\031dialogflow.googleapis.com\322"
+          + "AYhttps://www.googleapis.com/auth/cloud-"
+          + "platform,https://www.googleapis.com/auth"
+          + "/dialogflowB\226\001\n\036com.google.cloud.dialogf"
+          + "low.v2B\020ParticipantProtoP\001Z>cloud.google"
+          + ".com/go/dialogflow/apiv2/dialogflowpb;di"
+          + "alogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflo"
+          + "w.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1157,7 +1206,10 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SuggestKnowledgeAssistResponse_descriptor,
             new java.lang.String[] {
-              "KnowledgeAssistAnswer", "LatestMessage", "ContextSize",
+              "KnowledgeAssistAnswer",
+              "LatestMessage",
+              "ContextSize",
+              "AdditionalSuggestedQueryResults",
             });
     internal_static_google_cloud_dialogflow_v2_IngestedContextReferenceDebugInfo_descriptor =
         getDescriptor().getMessageType(35);
@@ -1204,6 +1256,8 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
               "KnowledgeAssistBehavior",
               "IngestedContextReferenceDebugInfo",
               "ServiceLatency",
+              "QueryGenerationDebugInfo",
+              "CesDebugInfo",
             });
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_KnowledgeAssistBehavior_descriptor =
         internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_descriptor
@@ -1230,6 +1284,15 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
               "PrimaryQueryRedactedAndReplaced",
               "AppendedSearchContextCount",
             });
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor =
+        internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_KnowledgeAssistDebugInfo_QueryGenerationDebugInfo_descriptor,
+            new java.lang.String[] {
+              "PromptTokenCount", "CandidatesTokenCount", "TotalTokenCount",
+            });
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_descriptor =
         getDescriptor().getMessageType(38);
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_fieldAccessorTable =
@@ -1245,16 +1308,39 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_descriptor,
             new java.lang.String[] {
-              "QueryText",
+              "QueryText", "SearchContexts",
+            });
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor =
+        internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_SuggestedQuery_SearchContext_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor =
+        internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_descriptor.getNestedType(
+            1);
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_AdditionalSuggestedQueryResult_descriptor,
+            new java.lang.String[] {
+              "SuggestedQuery", "AnswerRecord",
             });
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_descriptor =
         internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_descriptor.getNestedType(
-            1);
+            2);
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_descriptor,
             new java.lang.String[] {
-              "AnswerText", "FaqSource", "GenerativeSource", "Source",
+              "AnswerText",
+              "FaqSource",
+              "GenerativeSource",
+              "PlaybookSource",
+              "EventSource",
+              "Source",
             });
     internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_FaqSource_descriptor =
         internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_descriptor
@@ -1282,6 +1368,15 @@ public final class ParticipantProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_GenerativeSource_Snippet_descriptor,
             new java.lang.String[] {
               "Uri", "Text", "Title", "Metadata",
+            });
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor =
+        internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_KnowledgeAssistAnswer_KnowledgeAnswer_EventSource_descriptor,
+            new java.lang.String[] {
+              "Event", "Snippets",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

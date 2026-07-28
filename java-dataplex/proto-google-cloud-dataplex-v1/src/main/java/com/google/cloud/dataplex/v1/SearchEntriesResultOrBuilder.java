@@ -36,7 +36,7 @@ public interface SearchEntriesResultOrBuilder
    * <code>string linked_resource = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1553
+   *     google/cloud/dataplex/v1/catalog.proto;l=1622
    * @return The linkedResource.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface SearchEntriesResultOrBuilder
    * <code>string linked_resource = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.linked_resource is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1553
+   *     google/cloud/dataplex/v1/catalog.proto;l=1622
    * @return The bytes for linkedResource.
    */
   @java.lang.Deprecated
@@ -86,7 +86,7 @@ public interface SearchEntriesResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1558
+   *     google/cloud/dataplex/v1/catalog.proto;l=1627
    * @return Whether the snippets field is set.
    */
   @java.lang.Deprecated
@@ -103,7 +103,7 @@ public interface SearchEntriesResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dataplex.v1.SearchEntriesResult.snippets is deprecated. See
-   *     google/cloud/dataplex/v1/catalog.proto;l=1558
+   *     google/cloud/dataplex/v1/catalog.proto;l=1627
    * @return The snippets.
    */
   @java.lang.Deprecated

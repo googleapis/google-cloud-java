@@ -19,8 +19,6 @@
     <module>api-common-java</module>
     <module>gax-java</module>
     <module>gapic-generator-java</module>
-    <module>java-common-protos</module>
-    <module>java-iam</module>
     <module>java-core</module>
     <module>gapic-generator-java-bom</module>
     <module>java-shared-dependencies</module>
@@ -86,18 +84,6 @@
     </profile>
 
     <profile>
-      <id>full-project-coverage</id>
-      <activation>
-        <property>
-          <name>enableFullTestCoverage</name>
-        </property>
-      </activation>
-      <modules>
-        <module>java-showcase</module>
-      </modules>
-    </profile>
-
-    <profile>
       <id>activate-showcase-coverage</id>
       <activation>
         <property>
@@ -105,7 +91,6 @@
         </property>
       </activation>
       <modules>
-        <module>java-showcase</module>
         <module>coverage-report</module>
       </modules>
       <properties>

@@ -102,10 +102,11 @@ class ParserTest {
 
     String echoResponseName = "EchoResponse";
     Field echoResponseContentField =
-        Field.builder().setName("content").setType(TypeNode.STRING).build();
+        Field.builder().setName("content").setJsonName("content").setType(TypeNode.STRING).build();
     Field echoResponseSeverityField =
         Field.builder()
             .setName("severity")
+            .setJsonName("severity")
             .setType(
                 TypeNode.withReference(
                     VaporReference.builder().setName("Severity").setPakkage(ECHO_PACKAGE).build()))

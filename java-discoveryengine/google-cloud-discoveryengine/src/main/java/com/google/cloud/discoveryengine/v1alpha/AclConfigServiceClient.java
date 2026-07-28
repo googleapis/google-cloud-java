@@ -24,6 +24,8 @@ import com.google.cloud.discoveryengine.v1alpha.stub.AclConfigServiceStubSetting
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -147,10 +149,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AclConfigServiceClient implements BackgroundResource {
-  private final AclConfigServiceSettings settings;
+  private final @Nullable AclConfigServiceSettings settings;
   private final AclConfigServiceStub stub;
 
   /** Constructs an instance of AclConfigServiceClient with default settings. */
@@ -190,7 +193,7 @@ public class AclConfigServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AclConfigServiceSettings getSettings() {
+  public final @Nullable AclConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -278,7 +281,7 @@ public class AclConfigServiceClient implements BackgroundResource {
    *     it exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AclConfig getAclConfig(AclConfigName name) {
+  public final AclConfig getAclConfig(@Nullable AclConfigName name) {
     GetAclConfigRequest request =
         GetAclConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAclConfig(request);

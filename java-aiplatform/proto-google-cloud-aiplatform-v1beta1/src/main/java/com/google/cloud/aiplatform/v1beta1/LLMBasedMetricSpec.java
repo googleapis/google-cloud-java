@@ -82,6 +82,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     RUBRIC_GROUP_KEY(4),
+    RUBRIC_GENERATION_SPEC(5),
     PREDEFINED_RUBRIC_GENERATION_SPEC(6),
     RUBRICSSOURCE_NOT_SET(0);
     private final int value;
@@ -104,6 +105,8 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 4:
           return RUBRIC_GROUP_KEY;
+        case 5:
+          return RUBRIC_GENERATION_SPEC;
         case 6:
           return PREDEFINED_RUBRIC_GENERATION_SPEC;
         case 0:
@@ -196,6 +199,61 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RUBRIC_GENERATION_SPEC_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   *
+   * @return Whether the rubricGenerationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRubricGenerationSpec() {
+    return rubricsSourceCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   *
+   * @return The rubricGenerationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec getRubricGenerationSpec() {
+    if (rubricsSourceCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder
+      getRubricGenerationSpecOrBuilder() {
+    if (rubricsSourceCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
   }
 
   public static final int PREDEFINED_RUBRIC_GENERATION_SPEC_FIELD_NUMBER = 6;
@@ -520,6 +578,66 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         : additionalConfig_;
   }
 
+  public static final int RESULT_PARSER_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig resultParserConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the resultParserConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasResultParserConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resultParserConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig getResultParserConfig() {
+    return resultParserConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.getDefaultInstance()
+        : resultParserConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder
+      getResultParserConfigOrBuilder() {
+    return resultParserConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.getDefaultInstance()
+        : resultParserConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -546,12 +664,19 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     if (rubricsSourceCase_ == 4) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, rubricsSource_);
     }
+    if (rubricsSourceCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_);
+    }
     if (rubricsSourceCase_ == 6) {
       output.writeMessage(
           6, (com.google.cloud.aiplatform.v1beta1.PredefinedMetricSpec) rubricsSource_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getAdditionalConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getResultParserConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -575,6 +700,11 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     if (rubricsSourceCase_ == 4) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, rubricsSource_);
     }
+    if (rubricsSourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_);
+    }
     if (rubricsSourceCase_ == 6) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -582,6 +712,9 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAdditionalConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getResultParserConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -615,10 +748,17 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     if (hasAdditionalConfig()) {
       if (!getAdditionalConfig().equals(other.getAdditionalConfig())) return false;
     }
+    if (hasResultParserConfig() != other.hasResultParserConfig()) return false;
+    if (hasResultParserConfig()) {
+      if (!getResultParserConfig().equals(other.getResultParserConfig())) return false;
+    }
     if (!getRubricsSourceCase().equals(other.getRubricsSourceCase())) return false;
     switch (rubricsSourceCase_) {
       case 4:
         if (!getRubricGroupKey().equals(other.getRubricGroupKey())) return false;
+        break;
+      case 5:
+        if (!getRubricGenerationSpec().equals(other.getRubricGenerationSpec())) return false;
         break;
       case 6:
         if (!getPredefinedRubricGenerationSpec().equals(other.getPredefinedRubricGenerationSpec()))
@@ -654,10 +794,18 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + ADDITIONAL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAdditionalConfig().hashCode();
     }
+    if (hasResultParserConfig()) {
+      hash = (37 * hash) + RESULT_PARSER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getResultParserConfig().hashCode();
+    }
     switch (rubricsSourceCase_) {
       case 4:
         hash = (37 * hash) + RUBRIC_GROUP_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getRubricGroupKey().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + RUBRIC_GENERATION_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getRubricGenerationSpec().hashCode();
         break;
       case 6:
         hash = (37 * hash) + PREDEFINED_RUBRIC_GENERATION_SPEC_FIELD_NUMBER;
@@ -810,6 +958,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetJudgeAutoraterConfigFieldBuilder();
         internalGetAdditionalConfigFieldBuilder();
+        internalGetResultParserConfigFieldBuilder();
       }
     }
 
@@ -817,6 +966,9 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (rubricGenerationSpecBuilder_ != null) {
+        rubricGenerationSpecBuilder_.clear();
+      }
       if (predefinedRubricGenerationSpecBuilder_ != null) {
         predefinedRubricGenerationSpecBuilder_.clear();
       }
@@ -831,6 +983,11 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       if (additionalConfigBuilder_ != null) {
         additionalConfigBuilder_.dispose();
         additionalConfigBuilder_ = null;
+      }
+      resultParserConfig_ = null;
+      if (resultParserConfigBuilder_ != null) {
+        resultParserConfigBuilder_.dispose();
+        resultParserConfigBuilder_ = null;
       }
       rubricsSourceCase_ = 0;
       rubricsSource_ = null;
@@ -872,25 +1029,32 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metricPromptTemplate_ = metricPromptTemplate_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.systemInstruction_ = systemInstruction_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.judgeAutoraterConfig_ =
             judgeAutoraterConfigBuilder_ == null
                 ? judgeAutoraterConfig_
                 : judgeAutoraterConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.additionalConfig_ =
             additionalConfigBuilder_ == null ? additionalConfig_ : additionalConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.resultParserConfig_ =
+            resultParserConfigBuilder_ == null
+                ? resultParserConfig_
+                : resultParserConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -898,6 +1062,9 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec result) {
       result.rubricsSourceCase_ = rubricsSourceCase_;
       result.rubricsSource_ = this.rubricsSource_;
+      if (rubricsSourceCase_ == 5 && rubricGenerationSpecBuilder_ != null) {
+        result.rubricsSource_ = rubricGenerationSpecBuilder_.build();
+      }
       if (rubricsSourceCase_ == 6 && predefinedRubricGenerationSpecBuilder_ != null) {
         result.rubricsSource_ = predefinedRubricGenerationSpecBuilder_.build();
       }
@@ -918,12 +1085,12 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         return this;
       if (other.hasMetricPromptTemplate()) {
         metricPromptTemplate_ = other.metricPromptTemplate_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSystemInstruction()) {
         systemInstruction_ = other.systemInstruction_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasJudgeAutoraterConfig()) {
@@ -932,12 +1099,20 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       if (other.hasAdditionalConfig()) {
         mergeAdditionalConfig(other.getAdditionalConfig());
       }
+      if (other.hasResultParserConfig()) {
+        mergeResultParserConfig(other.getResultParserConfig());
+      }
       switch (other.getRubricsSourceCase()) {
         case RUBRIC_GROUP_KEY:
           {
             rubricsSourceCase_ = 4;
             rubricsSource_ = other.rubricsSource_;
             onChanged();
+            break;
+          }
+        case RUBRIC_GENERATION_SPEC:
+          {
+            mergeRubricGenerationSpec(other.getRubricGenerationSpec());
             break;
           }
         case PREDEFINED_RUBRIC_GENERATION_SPEC:
@@ -979,20 +1154,20 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 metricPromptTemplate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 systemInstruction_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetJudgeAutoraterConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
@@ -1002,6 +1177,13 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
                 rubricsSource_ = s;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetRubricGenerationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                rubricsSourceCase_ = 5;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(
@@ -1014,9 +1196,16 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     internalGetAdditionalConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetResultParserConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1193,6 +1382,239 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       rubricsSource_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec,
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder>
+        rubricGenerationSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     *
+     * @return Whether the rubricGenerationSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasRubricGenerationSpec() {
+      return rubricsSourceCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     *
+     * @return The rubricGenerationSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec getRubricGenerationSpec() {
+      if (rubricGenerationSpecBuilder_ == null) {
+        if (rubricsSourceCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
+      } else {
+        if (rubricsSourceCase_ == 5) {
+          return rubricGenerationSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    public Builder setRubricGenerationSpec(
+        com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec value) {
+      if (rubricGenerationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rubricsSource_ = value;
+        onChanged();
+      } else {
+        rubricGenerationSpecBuilder_.setMessage(value);
+      }
+      rubricsSourceCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    public Builder setRubricGenerationSpec(
+        com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.Builder builderForValue) {
+      if (rubricGenerationSpecBuilder_ == null) {
+        rubricsSource_ = builderForValue.build();
+        onChanged();
+      } else {
+        rubricGenerationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      rubricsSourceCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    public Builder mergeRubricGenerationSpec(
+        com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec value) {
+      if (rubricGenerationSpecBuilder_ == null) {
+        if (rubricsSourceCase_ == 5
+            && rubricsSource_
+                != com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance()) {
+          rubricsSource_ =
+              com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          rubricsSource_ = value;
+        }
+        onChanged();
+      } else {
+        if (rubricsSourceCase_ == 5) {
+          rubricGenerationSpecBuilder_.mergeFrom(value);
+        } else {
+          rubricGenerationSpecBuilder_.setMessage(value);
+        }
+      }
+      rubricsSourceCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    public Builder clearRubricGenerationSpec() {
+      if (rubricGenerationSpecBuilder_ == null) {
+        if (rubricsSourceCase_ == 5) {
+          rubricsSourceCase_ = 0;
+          rubricsSource_ = null;
+          onChanged();
+        }
+      } else {
+        if (rubricsSourceCase_ == 5) {
+          rubricsSourceCase_ = 0;
+          rubricsSource_ = null;
+        }
+        rubricGenerationSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.Builder
+        getRubricGenerationSpecBuilder() {
+      return internalGetRubricGenerationSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder
+        getRubricGenerationSpecOrBuilder() {
+      if ((rubricsSourceCase_ == 5) && (rubricGenerationSpecBuilder_ != null)) {
+        return rubricGenerationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (rubricsSourceCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dynamically generate rubrics using this specification.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec,
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder>
+        internalGetRubricGenerationSpecFieldBuilder() {
+      if (rubricGenerationSpecBuilder_ == null) {
+        if (!(rubricsSourceCase_ == 5)) {
+          rubricsSource_ =
+              com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.getDefaultInstance();
+        }
+        rubricGenerationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec,
+                com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec) rubricsSource_,
+                getParentForChildren(),
+                isClean());
+        rubricsSource_ = null;
+      }
+      rubricsSourceCase_ = 5;
+      onChanged();
+      return rubricGenerationSpecBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -1453,7 +1875,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the metricPromptTemplate field is set.
      */
     public boolean hasMetricPromptTemplate() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1522,7 +1944,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       metricPromptTemplate_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1541,7 +1963,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearMetricPromptTemplate() {
       metricPromptTemplate_ = getDefaultInstance().getMetricPromptTemplate();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1565,7 +1987,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       metricPromptTemplate_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1585,7 +2007,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the systemInstruction field is set.
      */
     public boolean hasSystemInstruction() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1654,7 +2076,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       systemInstruction_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1673,7 +2095,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearSystemInstruction() {
       systemInstruction_ = getDefaultInstance().getSystemInstruction();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1697,7 +2119,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       systemInstruction_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1723,7 +2145,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the judgeAutoraterConfig field is set.
      */
     public boolean hasJudgeAutoraterConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1770,7 +2192,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       } else {
         judgeAutoraterConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1793,7 +2215,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       } else {
         judgeAutoraterConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1812,7 +2234,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
     public Builder mergeJudgeAutoraterConfig(
         com.google.cloud.aiplatform.v1beta1.AutoraterConfig value) {
       if (judgeAutoraterConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && judgeAutoraterConfig_ != null
             && judgeAutoraterConfig_
                 != com.google.cloud.aiplatform.v1beta1.AutoraterConfig.getDefaultInstance()) {
@@ -1824,7 +2246,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         judgeAutoraterConfigBuilder_.mergeFrom(value);
       }
       if (judgeAutoraterConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1842,7 +2264,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearJudgeAutoraterConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       judgeAutoraterConfig_ = null;
       if (judgeAutoraterConfigBuilder_ != null) {
         judgeAutoraterConfigBuilder_.dispose();
@@ -1865,7 +2287,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1beta1.AutoraterConfig.Builder
         getJudgeAutoraterConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetJudgeAutoraterConfigFieldBuilder().getBuilder();
     }
@@ -1941,7 +2363,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the additionalConfig field is set.
      */
     public boolean hasAdditionalConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1987,7 +2409,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       } else {
         additionalConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2009,7 +2431,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
       } else {
         additionalConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2027,7 +2449,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeAdditionalConfig(com.google.protobuf.Struct value) {
       if (additionalConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && additionalConfig_ != null
             && additionalConfig_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getAdditionalConfigBuilder().mergeFrom(value);
@@ -2038,7 +2460,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         additionalConfigBuilder_.mergeFrom(value);
       }
       if (additionalConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2056,7 +2478,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearAdditionalConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       additionalConfig_ = null;
       if (additionalConfigBuilder_ != null) {
         additionalConfigBuilder_.dispose();
@@ -2078,7 +2500,7 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Struct.Builder getAdditionalConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetAdditionalConfigFieldBuilder().getBuilder();
     }
@@ -2130,6 +2552,225 @@ public final class LLMBasedMetricSpec extends com.google.protobuf.GeneratedMessa
         additionalConfig_ = null;
       }
       return additionalConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig resultParserConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig,
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder>
+        resultParserConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the resultParserConfig field is set.
+     */
+    public boolean hasResultParserConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The resultParserConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig getResultParserConfig() {
+      if (resultParserConfigBuilder_ == null) {
+        return resultParserConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.getDefaultInstance()
+            : resultParserConfig_;
+      } else {
+        return resultParserConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResultParserConfig(
+        com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig value) {
+      if (resultParserConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resultParserConfig_ = value;
+      } else {
+        resultParserConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResultParserConfig(
+        com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.Builder builderForValue) {
+      if (resultParserConfigBuilder_ == null) {
+        resultParserConfig_ = builderForValue.build();
+      } else {
+        resultParserConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeResultParserConfig(
+        com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig value) {
+      if (resultParserConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && resultParserConfig_ != null
+            && resultParserConfig_
+                != com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig
+                    .getDefaultInstance()) {
+          getResultParserConfigBuilder().mergeFrom(value);
+        } else {
+          resultParserConfig_ = value;
+        }
+      } else {
+        resultParserConfigBuilder_.mergeFrom(value);
+      }
+      if (resultParserConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResultParserConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      resultParserConfig_ = null;
+      if (resultParserConfigBuilder_ != null) {
+        resultParserConfigBuilder_.dispose();
+        resultParserConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.Builder
+        getResultParserConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetResultParserConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder
+        getResultParserConfigOrBuilder() {
+      if (resultParserConfigBuilder_ != null) {
+        return resultParserConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return resultParserConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.getDefaultInstance()
+            : resultParserConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parser config for the metric result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig,
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder>
+        internalGetResultParserConfigFieldBuilder() {
+      if (resultParserConfigBuilder_ == null) {
+        resultParserConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig,
+                com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder>(
+                getResultParserConfig(), getParentForChildren(), isClean());
+        resultParserConfig_ = null;
+      }
+      return resultParserConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec)

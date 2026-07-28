@@ -30,10 +30,10 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Example format: properties/1234/firebaseLinks/5678
+   * Identifier. Example format: properties/1234/firebaseLinks/5678
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface FirebaseLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Example format: properties/1234/firebaseLinks/5678
+   * Identifier. Example format: properties/1234/firebaseLinks/5678
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

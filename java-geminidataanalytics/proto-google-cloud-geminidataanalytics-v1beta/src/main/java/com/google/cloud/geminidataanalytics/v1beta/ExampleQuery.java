@@ -55,6 +55,7 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
 
   private ExampleQuery() {
     naturalLanguageQuestion_ = "";
+    parameters_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -253,6 +254,110 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARAMETERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter> parameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter>
+      getParametersList() {
+    return parameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>
+      getParametersOrBuilderList() {
+    return parameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getParametersCount() {
+    return parameters_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.QueryParameter getParameters(int index) {
+    return parameters_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of query parameters.
+   * Example: The parameterized SQL query
+   * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder getParametersOrBuilder(
+      int index) {
+    return parameters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -270,6 +375,9 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(naturalLanguageQuestion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, naturalLanguageQuestion_);
     }
+    for (int i = 0; i < parameters_.size(); i++) {
+      output.writeMessage(3, parameters_.get(i));
+    }
     if (queryCase_ == 101) {
       com.google.protobuf.GeneratedMessage.writeString(output, 101, query_);
     }
@@ -284,6 +392,9 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(naturalLanguageQuestion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, naturalLanguageQuestion_);
+    }
+    for (int i = 0; i < parameters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, parameters_.get(i));
     }
     if (queryCase_ == 101) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(101, query_);
@@ -305,6 +416,7 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.geminidataanalytics.v1beta.ExampleQuery) obj;
 
     if (!getNaturalLanguageQuestion().equals(other.getNaturalLanguageQuestion())) return false;
+    if (!getParametersList().equals(other.getParametersList())) return false;
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
       case 101:
@@ -326,6 +438,10 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NATURAL_LANGUAGE_QUESTION_FIELD_NUMBER;
     hash = (53 * hash) + getNaturalLanguageQuestion().hashCode();
+    if (getParametersCount() > 0) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParametersList().hashCode();
+    }
     switch (queryCase_) {
       case 101:
         hash = (37 * hash) + SQL_QUERY_FIELD_NUMBER;
@@ -478,6 +594,13 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       naturalLanguageQuestion_ = "";
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+      } else {
+        parameters_ = null;
+        parametersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -507,12 +630,26 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery buildPartial() {
       com.google.cloud.geminidataanalytics.v1beta.ExampleQuery result =
           new com.google.cloud.geminidataanalytics.v1beta.ExampleQuery(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery result) {
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.parameters_ = parameters_;
+      } else {
+        result.parameters_ = parametersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.ExampleQuery result) {
@@ -545,6 +682,33 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
         naturalLanguageQuestion_ = other.naturalLanguageQuestion_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (parametersBuilder_ == null) {
+        if (!other.parameters_.isEmpty()) {
+          if (parameters_.isEmpty()) {
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureParametersIsMutable();
+            parameters_.addAll(other.parameters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parameters_.isEmpty()) {
+          if (parametersBuilder_.isEmpty()) {
+            parametersBuilder_.dispose();
+            parametersBuilder_ = null;
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            parametersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetParametersFieldBuilder()
+                    : null;
+          } else {
+            parametersBuilder_.addAllMessages(other.parameters_);
+          }
+        }
       }
       switch (other.getQueryCase()) {
         case SQL_QUERY:
@@ -591,6 +755,20 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 10
+            case 26:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.QueryParameter m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.QueryParameter.parser(),
+                        extensionRegistry);
+                if (parametersBuilder_ == null) {
+                  ensureParametersIsMutable();
+                  parameters_.add(m);
+                } else {
+                  parametersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             case 810:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -896,6 +1074,479 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter> parameters_ =
+        java.util.Collections.emptyList();
+
+    private void ensureParametersIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        parameters_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.QueryParameter>(
+                parameters_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameter,
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>
+        parametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter>
+        getParametersList() {
+      if (parametersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parameters_);
+      } else {
+        return parametersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getParametersCount() {
+      if (parametersBuilder_ == null) {
+        return parameters_.size();
+      } else {
+        return parametersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryParameter getParameters(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParameters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.QueryParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.set(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(com.google.cloud.geminidataanalytics.v1beta.QueryParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.QueryParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addParameters(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllParameters(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1beta.QueryParameter>
+            values) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
+        onChanged();
+      } else {
+        parametersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearParameters() {
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        parametersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeParameters(int index) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.remove(index);
+        onChanged();
+      } else {
+        parametersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder getParametersBuilder(
+        int index) {
+      return internalGetParametersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder
+        getParametersOrBuilder(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>
+        getParametersOrBuilderList() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parameters_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder
+        addParametersBuilder() {
+      return internalGetParametersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.QueryParameter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder addParametersBuilder(
+        int index) {
+      return internalGetParametersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.geminidataanalytics.v1beta.QueryParameter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of query parameters.
+     * Example: The parameterized SQL query
+     * "SELECT * FROM my_table WHERE id = &#64;id" can be matched with any value of
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.QueryParameter parameters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder>
+        getParametersBuilderList() {
+      return internalGetParametersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameter,
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>
+        internalGetParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.QueryParameter,
+                com.google.cloud.geminidataanalytics.v1beta.QueryParameter.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.QueryParameterOrBuilder>(
+                parameters_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.ExampleQuery)

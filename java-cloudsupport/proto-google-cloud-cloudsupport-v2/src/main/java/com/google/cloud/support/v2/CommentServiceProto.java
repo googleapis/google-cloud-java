@@ -52,6 +52,10 @@ public final class CommentServiceProto extends com.google.protobuf.GeneratedFile
       internal_static_google_cloud_support_v2_CreateCommentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_support_v2_CreateCommentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_support_v2_GetCommentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_support_v2_GetCommentRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,7 +79,9 @@ public final class CommentServiceProto extends com.google.protobuf.GeneratedFile
           + "n\030\002 \001(\t\"\210\001\n\024CreateCommentRequest\0228\n\006pare"
           + "nt\030\001 \001(\tB(\340A\002\372A\"\n cloudsupport.googleapi"
           + "s.com/Case\0226\n\007comment\030\002 \001(\0132 .google.clo"
-          + "ud.support.v2.CommentB\003\340A\0022\245\004\n\016CommentSe"
+          + "ud.support.v2.CommentB\003\340A\002\"N\n\021GetComment"
+          + "Request\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#cloudsupp"
+          + "ort.googleapis.com/Comment2\264\005\n\016CommentSe"
           + "rvice\022\327\001\n\014ListComments\022,.google.cloud.su"
           + "pport.v2.ListCommentsRequest\032-.google.cl"
           + "oud.support.v2.ListCommentsResponse\"j\332A\006"
@@ -87,14 +93,17 @@ public final class CommentServiceProto extends com.google.protobuf.GeneratedFile
           + "nt\"\204\001\332A\016parent,comment\202\323\344\223\002m\"(/v2/{paren"
           + "t=projects/*/cases/*}/comments:\007commentZ"
           + "8\"-/v2/{parent=organizations/*/cases/*}/"
-          + "comments:\007comment\032O\312A\033cloudsupport.googl"
-          + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\274\001\n\033com.google.cloud."
-          + "support.v2B\023CommentServiceProtoP\001Z5cloud"
-          + ".google.com/go/support/apiv2/supportpb;s"
-          + "upportpb\252\002\027Google.Cloud.Support.V2\312\002\027Goo"
-          + "gle\\Cloud\\Support\\V2\352\002\032Google::Cloud::Su"
-          + "pport::V2b\006proto3"
+          + "comments:\007comment\022\214\001\n\nGetComment\022*.googl"
+          + "e.cloud.support.v2.GetCommentRequest\032 .g"
+          + "oogle.cloud.support.v2.Comment\"0\332A\004name\202"
+          + "\323\344\223\002#\022!/v2/{name=*/*/cases/*/comments/*}"
+          + "\032O\312A\033cloudsupport.googleapis.com\322A.https"
+          + "://www.googleapis.com/auth/cloud-platfor"
+          + "mB\274\001\n\033com.google.cloud.support.v2B\023Comme"
+          + "ntServiceProtoP\001Z5cloud.google.com/go/su"
+          + "pport/apiv2/supportpb;supportpb\252\002\027Google"
+          + ".Cloud.Support.V2\312\002\027Google\\Cloud\\Support"
+          + "\\V2\352\002\032Google::Cloud::Support::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -129,6 +138,14 @@ public final class CommentServiceProto extends com.google.protobuf.GeneratedFile
             internal_static_google_cloud_support_v2_CreateCommentRequest_descriptor,
             new java.lang.String[] {
               "Parent", "Comment",
+            });
+    internal_static_google_cloud_support_v2_GetCommentRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_support_v2_GetCommentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_support_v2_GetCommentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

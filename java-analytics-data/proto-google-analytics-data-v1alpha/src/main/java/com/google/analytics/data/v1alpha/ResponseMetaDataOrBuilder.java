@@ -300,12 +300,12 @@ public interface ResponseMetaDataOrBuilder
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -318,12 +318,12 @@ public interface ResponseMetaDataOrBuilder
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -336,12 +336,12 @@ public interface ResponseMetaDataOrBuilder
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -354,12 +354,12 @@ public interface ResponseMetaDataOrBuilder
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -373,12 +373,12 @@ public interface ResponseMetaDataOrBuilder
    *
    *
    * <pre>
-   * If this report's results are
+   * If this report results is
    * [sampled](https://support.google.com/analytics/answer/13331292), this
    * describes the percentage of events used in this report. One
    * `samplingMetadatas` is populated for each date range. Each
-   * `samplingMetadatas` corresponds to a date range in the order that date
-   * ranges were specified in the request.
+   * `samplingMetadatas` corresponds to a date range in order that date ranges
+   * were specified in the request.
    *
    * However if the results are not sampled, this field will not be defined.
    * </pre>
@@ -387,4 +387,30 @@ public interface ResponseMetaDataOrBuilder
    */
   com.google.analytics.data.v1alpha.SamplingMetadataOrBuilder getSamplingMetadatasOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the type of data in the report.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+   *
+   * @return The enum numeric value on the wire for section.
+   */
+  int getSectionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies the type of data in the report.
+   * </pre>
+   *
+   * <code>.google.analytics.data.v1alpha.Section section = 10;</code>
+   *
+   * @return The section.
+   */
+  com.google.analytics.data.v1alpha.Section getSection();
 }

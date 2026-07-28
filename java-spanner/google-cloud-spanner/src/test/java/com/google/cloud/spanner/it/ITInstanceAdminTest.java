@@ -17,7 +17,7 @@
 package com.google.cloud.spanner.it;
 
 import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assume.assumeFalse;
 
@@ -48,15 +48,31 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITInstanceAdminTest {
 
-  @ClassRule public static IntegrationTestEnv env = new IntegrationTestEnv(true);
+  @ClassRule
+  public static IntegrationTestEnv env =
+      new IntegrationTestEnv(true) {
+        @Override
+        protected void before() throws Throwable {
+          assumeFalse(
+              "ITInstanceAdminTest is disabled when running against cloud-devel or cloud-staging",
+              isRunningOnCloudDevelOrStaging());
+          super.before();
+        }
+      };
+
   static InstanceAdminClient instanceClient;
 
   @BeforeClass
   public static void setUp() {
     assumeFalse(
-        "instance / instanceConfig operations are not supported on experimental host",
-        isExperimentalHost());
+        "instance / instanceConfig operations are not supported on Spanner Omni", isSpannerOmni());
     instanceClient = env.getTestHelper().getClient().getInstanceAdminClient();
+  }
+
+  private static boolean isRunningOnCloudDevelOrStaging() {
+    String jobType = System.getenv("JOB_TYPE");
+    return jobType != null
+        && (jobType.contains("cloud-devel") || jobType.contains("cloud-staging"));
   }
 
   @Test

@@ -28,6 +28,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -137,9 +139,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PipelineServiceClient implements BackgroundResource {
-  private final PipelineServiceSettings settings;
+  private final @Nullable PipelineServiceSettings settings;
   private final PipelineServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -187,7 +190,7 @@ public class PipelineServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PipelineServiceSettings getSettings() {
+  public final @Nullable PipelineServiceSettings getSettings() {
     return settings;
   }
 
@@ -235,7 +238,7 @@ public class PipelineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RunPipelineResponse, RunPipelineMetadata> runPipelineAsync(
-      LocationName name) {
+      @Nullable LocationName name) {
     RunPipelineRequest request =
         RunPipelineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runPipelineAsync(request);

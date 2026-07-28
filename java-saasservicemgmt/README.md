@@ -1,6 +1,6 @@
-# Google SaaS Runtime API Client for Java
+# Google App Lifecycle Manager Client for Java
 
-Java idiomatic client for [SaaS Runtime API][product-docs].
+Java idiomatic client for [App Lifecycle Manager][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -14,7 +14,6 @@ Java idiomatic client for [SaaS Runtime API][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -23,7 +22,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.79.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +44,28 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-saasservicemgmt</artifactId>
-  <version>0.21.0</version>
+  <version>0.24.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-saasservicemgmt'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-saasservicemgmt:0.21.0'
+implementation 'com.google.cloud:google-cloud-saasservicemgmt:0.24.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-saasservicemgmt" % "0.21.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-saasservicemgmt" % "0.24.0"
 ```
 
 ## Authentication
@@ -67,14 +74,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired SaaS Runtime API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the SaaS Runtime API API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired App Lifecycle Manager APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the App Lifecycle Manager API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the SaaS Runtime API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google SaaS Runtime API.
+You will need a [Google Cloud Platform Console][developer-console] project with the App Lifecycle Manager [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google App Lifecycle Manager.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -84,13 +91,13 @@ You will need to [enable billing][enable-billing] to use Google SaaS Runtime API
 You'll need to obtain the `google-cloud-saasservicemgmt` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-saasservicemgmt` as a dependency in your code.
 
-## About SaaS Runtime API
+## About App Lifecycle Manager
 
 
-[SaaS Runtime API][product-docs] Model, deploy, and operate your SaaS at scale.	
+[App Lifecycle Manager][product-docs] Model, deploy, and operate your SaaS at scale.	
 
-See the [SaaS Runtime API client library docs][javadocs] to learn how to
-use this SaaS Runtime API Client Library.
+See the [App Lifecycle Manager client library docs][javadocs] to learn how to
+use this App Lifecycle Manager Client Library.
 
 
 
@@ -103,7 +110,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-SaaS Runtime API uses both gRPC and HTTP/JSON for the transport layer.
+App Lifecycle Manager uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -150,8 +157,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -181,7 +186,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-saasservicemgmt.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-saasservicemgmt/0.21.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-saasservicemgmt/0.24.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

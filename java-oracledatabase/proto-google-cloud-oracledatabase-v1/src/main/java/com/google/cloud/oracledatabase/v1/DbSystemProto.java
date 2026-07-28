@@ -215,15 +215,17 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"n\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\203\001\n"
           + "\025ListDbSystemsResponse\022<\n\n"
           + "db_systems\030\001 \003(\0132(.google.cloud.oracledatabase.v1.DbSystem\022\027\n"
-          + "\017next_page_token\030\002 \001(\tB\347\001\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\tB\347\001\n"
           + "\"com.google.cloud.oracledatabase.v1B\r"
-          + "DbSystemProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracleda"
-          + "tabasepb;oracledatabasepb\252\002\036Google.Cloud"
-          + ".OracleDatabase.V1\312\002\036Google\\Cloud\\Oracle"
-          + "Database\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "DbSystemProtoP\001ZJcloud.google.com/go/oracled"
+          + "atabase/apiv1/oracledatabasepb;oracledat"
+          + "abasepb\252\002\036Google.Cloud.OracleDatabase.V1"
+          + "\312\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!Goog"
+          + "le::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -351,7 +353,7 @@ public final class DbSystemProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListDbSystemsResponse_descriptor,
             new java.lang.String[] {
-              "DbSystems", "NextPageToken",
+              "DbSystems", "NextPageToken", "Unreachable",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

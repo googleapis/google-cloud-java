@@ -730,13 +730,13 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The number or resources with errors. Note: This is not the total
-   * number of errors as each resource can have more than one error.
-   * This is used to indicate truncation by having a `resource_error_count`
-   * that is higher than the size of `resource_error_details`.
+   * Output only. The number or resources with errors. Note: This is not the
+   * total number of errors as each resource can have more than one error. This
+   * is used to indicate truncation by having a `resource_error_count` that is
+   * higher than the size of `resource_error_details`.
    * </pre>
    *
-   * <code>int32 resource_error_count = 13;</code>
+   * <code>int32 resource_error_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resourceErrorCount.
    */
@@ -752,10 +752,11 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -768,10 +769,11 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -784,10 +786,11 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -801,10 +804,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -817,10 +822,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -835,10 +842,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
@@ -856,10 +865,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList() {
@@ -870,10 +881,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
@@ -885,10 +898,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getMetricsCount() {
@@ -899,10 +914,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index) {
@@ -913,10 +930,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(int index) {
@@ -2758,13 +2777,13 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 13;</code>
+     * <code>int32 resource_error_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The resourceErrorCount.
      */
@@ -2777,13 +2796,13 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 13;</code>
+     * <code>int32 resource_error_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The resourceErrorCount to set.
      * @return This builder for chaining.
@@ -2800,13 +2819,13 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The number or resources with errors. Note: This is not the total
-     * number of errors as each resource can have more than one error.
-     * This is used to indicate truncation by having a `resource_error_count`
-     * that is higher than the size of `resource_error_details`.
+     * Output only. The number or resources with errors. Note: This is not the
+     * total number of errors as each resource can have more than one error. This
+     * is used to indicate truncation by having a `resource_error_count` that is
+     * higher than the size of `resource_error_details`.
      * </pre>
      *
-     * <code>int32 resource_error_count = 13;</code>
+     * <code>int32 resource_error_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2828,10 +2847,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -2843,10 +2864,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -2864,10 +2887,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2887,10 +2912,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2907,10 +2934,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2935,10 +2964,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -2955,10 +2986,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000080;
@@ -2970,10 +3003,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2989,10 +3024,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was created.
+     * Output only. Time when the subtask was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -3022,10 +3059,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the lastUpdateTime field is set.
      */
@@ -3037,10 +3076,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lastUpdateTime.
      */
@@ -3058,10 +3099,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -3081,10 +3124,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setLastUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -3101,10 +3146,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeLastUpdateTime(com.google.protobuf.Timestamp value) {
       if (lastUpdateTimeBuilder_ == null) {
@@ -3129,10 +3176,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearLastUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -3149,10 +3198,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastUpdateTimeBuilder() {
       bitField0_ |= 0x00000100;
@@ -3164,10 +3215,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder() {
       if (lastUpdateTimeBuilder_ != null) {
@@ -3183,10 +3236,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Time when the subtask was last updated.
+     * Output only. Time when the subtask was last updated.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+     * <code>
+     * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -3226,10 +3281,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList() {
       if (metricsBuilder_ == null) {
@@ -3243,10 +3300,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getMetricsCount() {
       if (metricsBuilder_ == null) {
@@ -3260,10 +3319,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -3277,10 +3338,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(int index, com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -3300,10 +3363,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setMetrics(
         int index, com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -3321,10 +3386,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -3344,10 +3411,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(int index, com.google.cloud.bigquery.migration.v2.TimeSeries value) {
       if (metricsBuilder_ == null) {
@@ -3367,10 +3436,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(
         com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -3388,10 +3459,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addMetrics(
         int index, com.google.cloud.bigquery.migration.v2.TimeSeries.Builder builderForValue) {
@@ -3409,10 +3482,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllMetrics(
         java.lang.Iterable<? extends com.google.cloud.bigquery.migration.v2.TimeSeries> values) {
@@ -3430,10 +3505,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -3450,10 +3527,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -3470,10 +3549,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder getMetricsBuilder(int index) {
       return internalGetMetricsFieldBuilder().getBuilder(index);
@@ -3483,10 +3564,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(
         int index) {
@@ -3501,10 +3584,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
         getMetricsOrBuilderList() {
@@ -3519,10 +3604,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder addMetricsBuilder() {
       return internalGetMetricsFieldBuilder()
@@ -3533,10 +3620,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.bigquery.migration.v2.TimeSeries.Builder addMetricsBuilder(int index) {
       return internalGetMetricsFieldBuilder()
@@ -3548,10 +3637,12 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The metrics for the subtask.
+     * Output only. The metrics for the subtask.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+     * <code>
+     * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries.Builder>
         getMetricsBuilderList() {

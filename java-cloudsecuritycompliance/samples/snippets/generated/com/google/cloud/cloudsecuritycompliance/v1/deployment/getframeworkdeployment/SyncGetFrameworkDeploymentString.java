@@ -35,7 +35,8 @@ public class SyncGetFrameworkDeploymentString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DeploymentClient deploymentClient = DeploymentClient.create()) {
       String name =
-          FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+          FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+                  "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
               .toString();
       FrameworkDeployment response = deploymentClient.getFrameworkDeployment(name);
     }

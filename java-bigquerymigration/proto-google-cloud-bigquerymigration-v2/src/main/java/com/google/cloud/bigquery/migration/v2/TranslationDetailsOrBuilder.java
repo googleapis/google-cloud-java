@@ -284,4 +284,41 @@ public interface TranslationDetailsOrBuilder
    * @return The bytes of the targetTypes at the given index.
    */
   com.google.protobuf.ByteString getTargetTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   *
+   * @return Whether the suggestionConfig field is set.
+   */
+  boolean hasSuggestionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   *
+   * @return The suggestionConfig.
+   */
+  com.google.cloud.bigquery.migration.v2.SuggestionConfig getSuggestionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for the suggestion if requested as a target type.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.SuggestionConfig suggestion_config = 6;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.SuggestionConfigOrBuilder getSuggestionConfigOrBuilder();
 }

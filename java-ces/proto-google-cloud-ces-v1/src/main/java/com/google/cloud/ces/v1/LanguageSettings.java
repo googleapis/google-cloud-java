@@ -249,7 +249,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=235
+   *     google/cloud/ces/v1/app.proto;l=242
    * @return The fallbackAction.
    */
   @java.lang.Override
@@ -289,7 +289,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=235
+   *     google/cloud/ces/v1/app.proto;l=242
    * @return The bytes for fallbackAction.
    */
   @java.lang.Override
@@ -1098,7 +1098,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=235
+     *     google/cloud/ces/v1/app.proto;l=242
      * @return The fallbackAction.
      */
     @java.lang.Deprecated
@@ -1138,7 +1138,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=235
+     *     google/cloud/ces/v1/app.proto;l=242
      * @return The bytes for fallbackAction.
      */
     @java.lang.Deprecated
@@ -1178,7 +1178,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=235
+     *     google/cloud/ces/v1/app.proto;l=242
      * @param value The fallbackAction to set.
      * @return This builder for chaining.
      */
@@ -1217,7 +1217,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=235
+     *     google/cloud/ces/v1/app.proto;l=242
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1252,7 +1252,7 @@ public final class LanguageSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1.LanguageSettings.fallback_action is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=235
+     *     google/cloud/ces/v1/app.proto;l=242
      * @param value The bytes for fallbackAction to set.
      * @return This builder for chaining.
      */

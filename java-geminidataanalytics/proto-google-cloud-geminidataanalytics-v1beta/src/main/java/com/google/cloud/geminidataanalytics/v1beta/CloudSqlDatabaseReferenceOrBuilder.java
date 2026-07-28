@@ -213,4 +213,84 @@ public interface CloudSqlDatabaseReferenceOrBuilder
    * @return The bytes of the tableIds at the given index.
    */
   com.google.protobuf.ByteString getTableIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference>
+      getDatabaseTableReferencesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReference getDatabaseTableReferences(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDatabaseTableReferencesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder>
+      getDatabaseTableReferencesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to tables within the database. Each reference
+   * specifies a table and can optionally include the table's schema to provide
+   * context for the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DatabaseTableReference database_table_references = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DatabaseTableReferenceOrBuilder
+      getDatabaseTableReferencesOrBuilder(int index);
 }

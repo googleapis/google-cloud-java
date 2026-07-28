@@ -85,7 +85,7 @@ def get_monorepo_versions(monorepo_root='.'):
     versions = {}
     for root, dirs, files in os.walk(monorepo_root):
         # Skip common directories to improve performance and avoid noise
-        dirs[:] = [d for d in dirs if d not in ['samples', 'test', 'target', '.git', '.cloud', 'verification', 'test_data']]
+        dirs[:] = [d for d in dirs if d not in ['samples', 'test', 'target', '.git', '.cloud', 'verification', 'test_data', 'generation']]
         
         if 'pom.xml' in files:
             pom_path = os.path.join(root, 'pom.xml')
@@ -95,6 +95,16 @@ def get_monorepo_versions(monorepo_root='.'):
     return versions
 
 def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artifactId='google-cloud-jar-parent', relative_path='../google-cloud-jar-parent/pom.xml', monorepo_versions=None):
+    bom_substitutions_env = os.environ.get('BOM_SUBSTITUTIONS')
+    bom_substitutions = {}
+    if bom_substitutions_env:
+        for pair in bom_substitutions_env.split(','):
+            if ':' in pair:
+                old, new = pair.split(':', 1)
+                bom_substitutions[old.strip()] = new.strip()
+                
+    is_root_pom = source_repo_name and file_path.endswith(f"{source_repo_name}/pom.xml")
+
     with open(file_path, 'r') as f:
         lines = f.readlines()
 
@@ -182,12 +192,30 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                     current_group_id = None
                     current_artifact_id = None
                     has_version = False
+                    in_exclusions = False
                     continue
                 if '</dependency>' in line:
                     in_dependency = False
                     current_dependency_lines.append(line)
 
-                    if current_artifact_id == 'google-cloud-shared-dependencies':
+                    if current_artifact_id == 'google-cloud-shared-dependencies' and '-deps-bom' not in file_path:
+                        continue
+                        
+                    if current_artifact_id in bom_substitutions:
+                        target_bom = bom_substitutions[current_artifact_id]
+                        target_version = monorepo_versions.get(target_bom, '0.0.1-SNAPSHOT')
+                        target_marker = target_bom.replace('-bom', '')
+                        indent = "      "
+                        current_dependency_lines = [
+                            f"{indent}<dependency>\n",
+                            f"{indent}  <groupId>com.google.cloud</groupId>\n",
+                            f"{indent}  <artifactId>{target_bom}</artifactId>\n",
+                            f"{indent}  <version>{target_version}</version><!-- {{x-version-update:{target_marker}:current}} -->\n",
+                            f"{indent}  <type>pom</type>\n",
+                            f"{indent}  <scope>import</scope>\n",
+                            f"{indent}</dependency>\n"
+                        ]
+                        new_lines.extend(current_dependency_lines)
                         continue
 
                     # Preservation logic:
@@ -196,22 +224,29 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
                     # 3. Is com.google.cloud group AND artifactId starts with google-cloud- AND has a version tag
                     is_external = current_group_id and not current_group_id.startswith('com.google')
                     is_google_cloud_lib = current_group_id == 'com.google.cloud' and current_artifact_id and current_artifact_id.startswith('google-cloud-')
+                    is_truth = current_group_id and current_group_id.startswith('com.google.truth')
                     
-                    if should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version):
+                    if should_preserve or (is_external and has_version) or (is_google_cloud_lib and has_version) or (is_truth and has_version):
                         new_lines.extend(current_dependency_lines)
                     continue
 
                 if in_dependency:
-                    if '<groupId>' in line:
-                        match = re.search(r'<groupId>(.*?)</groupId>', line)
-                        if match:
-                            current_group_id = match.group(1).strip()
-                    if '<artifactId>' in line:
-                        match = re.search(r'<artifactId>(.*?)</artifactId>', line)
-                        if match:
-                            current_artifact_id = match.group(1).strip()
-                    if '<version>' in line:
-                        has_version = True
+                    if '<exclusions>' in line:
+                        in_exclusions = True
+                    if '</exclusions>' in line:
+                        in_exclusions = False
+                        
+                    if not in_exclusions:
+                        if '<groupId>' in line:
+                            match = re.search(r'<groupId>(.*?)</groupId>', line)
+                            if match:
+                                current_group_id = match.group(1).strip()
+                        if '<artifactId>' in line:
+                            match = re.search(r'<artifactId>(.*?)</artifactId>', line)
+                            if match:
+                                current_artifact_id = match.group(1).strip()
+                        if '<version>' in line:
+                            has_version = True
                     
                     if monorepo_versions and current_artifact_id and current_artifact_id in monorepo_versions:
                         new_version = monorepo_versions[current_artifact_id]
@@ -246,6 +281,47 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
             continue
 
         new_lines.append(line)
+
+    # Add bulkTests profile if it does not already exist (only for the library root pom.xml)
+    if is_root_pom:
+        bulk_tests_pattern = r'<id>\s*bulkTests\s*</id>'
+        if not re.search(bulk_tests_pattern, "".join(new_lines)):
+            in_profiles = False
+            inserted = False
+            for i in range(len(new_lines)):
+                if '<profiles>' in new_lines[i]:
+                    in_profiles = True
+                if '</profiles>' in new_lines[i] and in_profiles:
+                    indent = "    "
+                    profile_block = (
+                        f"{indent}<profile>\n"
+                        f"{indent}  <id>bulkTests</id>\n"
+                        f"{indent}  <properties>\n"
+                        f"{indent}    <skipTests>true</skipTests>\n"
+                        f"{indent}  </properties>\n"
+                        f"{indent}</profile>\n"
+                    )
+                    new_lines.insert(i, profile_block)
+                    inserted = True
+                    break
+            
+            # If no <profiles> section existed, create one before </project>
+            if not inserted:
+                for i in range(len(new_lines) - 1, -1, -1):
+                    if '</project>' in new_lines[i]:
+                        indent = "  "
+                        profile_block = (
+                            f"\n{indent}<profiles>\n"
+                            f"{indent}  <profile>\n"
+                            f"{indent}    <id>bulkTests</id>\n"
+                            f"{indent}    <properties>\n"
+                            f"{indent}      <skipTests>true</skipTests>\n"
+                            f"{indent}    </properties>\n"
+                            f"{indent}  </profile>\n"
+                            f"{indent}</profiles>\n"
+                        )
+                        new_lines.insert(i, profile_block)
+                        break
 
     with open(file_path, 'w') as f:
         # Clean up double empty lines potentially introduced by pruning

@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -609,9 +611,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AccessContextManagerClient implements BackgroundResource {
-  private final AccessContextManagerSettings settings;
+  private final @Nullable AccessContextManagerSettings settings;
   private final AccessContextManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -659,7 +662,7 @@ public class AccessContextManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AccessContextManagerSettings getSettings() {
+  public final @Nullable AccessContextManagerSettings getSettings() {
     return settings;
   }
 
@@ -821,7 +824,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     <p>Format `accessPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccessPolicy getAccessPolicy(AccessPolicyName name) {
+  public final AccessPolicy getAccessPolicy(@Nullable AccessPolicyName name) {
     GetAccessPolicyRequest request =
         GetAccessPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccessPolicy(request);
@@ -1195,7 +1198,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, AccessContextManagerOperationMetadata>
-      deleteAccessPolicyAsync(AccessPolicyName name) {
+      deleteAccessPolicyAsync(@Nullable AccessPolicyName name) {
     DeleteAccessPolicyRequest request =
         DeleteAccessPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1358,7 +1361,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     <p>Format: `accessPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccessLevelsPagedResponse listAccessLevels(AccessPolicyName parent) {
+  public final ListAccessLevelsPagedResponse listAccessLevels(@Nullable AccessPolicyName parent) {
     ListAccessLevelsRequest request =
         ListAccessLevelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1539,7 +1542,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     <p>Format: `accessPolicies/{policy_id}/accessLevels/{access_level_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccessLevel getAccessLevel(AccessLevelName name) {
+  public final AccessLevel getAccessLevel(@Nullable AccessLevelName name) {
     GetAccessLevelRequest request =
         GetAccessLevelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccessLevel(request);
@@ -1672,7 +1675,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AccessLevel, AccessContextManagerOperationMetadata>
-      createAccessLevelAsync(AccessPolicyName parent, AccessLevel accessLevel) {
+      createAccessLevelAsync(@Nullable AccessPolicyName parent, AccessLevel accessLevel) {
     CreateAccessLevelRequest request =
         CreateAccessLevelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2002,7 +2005,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, AccessContextManagerOperationMetadata> deleteAccessLevelAsync(
-      AccessLevelName name) {
+      @Nullable AccessLevelName name) {
     DeleteAccessLevelRequest request =
         DeleteAccessLevelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2296,7 +2299,8 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     <p>Format: `accessPolicies/{policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicePerimetersPagedResponse listServicePerimeters(AccessPolicyName parent) {
+  public final ListServicePerimetersPagedResponse listServicePerimeters(
+      @Nullable AccessPolicyName parent) {
     ListServicePerimetersRequest request =
         ListServicePerimetersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2476,7 +2480,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    *     <p>Format: `accessPolicies/{policy_id}/servicePerimeters/{service_perimeters_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServicePerimeter getServicePerimeter(ServicePerimeterName name) {
+  public final ServicePerimeter getServicePerimeter(@Nullable ServicePerimeterName name) {
     GetServicePerimeterRequest request =
         GetServicePerimeterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2611,7 +2615,8 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServicePerimeter, AccessContextManagerOperationMetadata>
-      createServicePerimeterAsync(AccessPolicyName parent, ServicePerimeter servicePerimeter) {
+      createServicePerimeterAsync(
+          @Nullable AccessPolicyName parent, ServicePerimeter servicePerimeter) {
     CreateServicePerimeterRequest request =
         CreateServicePerimeterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2948,7 +2953,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, AccessContextManagerOperationMetadata>
-      deleteServicePerimeterAsync(ServicePerimeterName name) {
+      deleteServicePerimeterAsync(@Nullable ServicePerimeterName name) {
     DeleteServicePerimeterRequest request =
         DeleteServicePerimeterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3379,7 +3384,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGcpUserAccessBindingsPagedResponse listGcpUserAccessBindings(
-      OrganizationName parent) {
+      @Nullable OrganizationName parent) {
     ListGcpUserAccessBindingsRequest request =
         ListGcpUserAccessBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3557,7 +3562,8 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @param name Required. Example: "organizations/256/gcpUserAccessBindings/b3-BhcX_Ud5N"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GcpUserAccessBinding getGcpUserAccessBinding(GcpUserAccessBindingName name) {
+  public final GcpUserAccessBinding getGcpUserAccessBinding(
+      @Nullable GcpUserAccessBindingName name) {
     GetGcpUserAccessBindingRequest request =
         GetGcpUserAccessBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3697,7 +3703,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    */
   public final OperationFuture<GcpUserAccessBinding, GcpUserAccessBindingOperationMetadata>
       createGcpUserAccessBindingAsync(
-          OrganizationName parent, GcpUserAccessBinding gcpUserAccessBinding) {
+          @Nullable OrganizationName parent, GcpUserAccessBinding gcpUserAccessBinding) {
     CreateGcpUserAccessBindingRequest request =
         CreateGcpUserAccessBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4046,7 +4052,7 @@ public class AccessContextManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, GcpUserAccessBindingOperationMetadata>
-      deleteGcpUserAccessBindingAsync(GcpUserAccessBindingName name) {
+      deleteGcpUserAccessBindingAsync(@Nullable GcpUserAccessBindingName name) {
     DeleteGcpUserAccessBindingRequest request =
         DeleteGcpUserAccessBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4460,8 +4466,9 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessPoliciesPage> {
 
     private ListAccessPoliciesPage(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
-        ListAccessPoliciesResponse response) {
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
+        @Nullable ListAccessPoliciesResponse response) {
       super(context, response);
     }
 
@@ -4471,14 +4478,16 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListAccessPoliciesPage createPage(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
-        ListAccessPoliciesResponse response) {
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
+        @Nullable ListAccessPoliciesResponse response) {
       return new ListAccessPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccessPoliciesPage> createPageAsync(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
         ApiFuture<ListAccessPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4493,7 +4502,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessPoliciesFixedSizeCollection> {
 
     private ListAccessPoliciesFixedSizeCollection(
-        List<ListAccessPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAccessPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4503,7 +4512,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListAccessPoliciesFixedSizeCollection createCollection(
-        List<ListAccessPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAccessPoliciesPage> pages, int collectionSize) {
       return new ListAccessPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4537,8 +4546,9 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel, ListAccessLevelsPage> {
 
     private ListAccessLevelsPage(
-        PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel> context,
-        ListAccessLevelsResponse response) {
+        @Nullable PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel>
+            context,
+        @Nullable ListAccessLevelsResponse response) {
       super(context, response);
     }
 
@@ -4548,14 +4558,16 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListAccessLevelsPage createPage(
-        PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel> context,
-        ListAccessLevelsResponse response) {
+        @Nullable PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel>
+            context,
+        @Nullable ListAccessLevelsResponse response) {
       return new ListAccessLevelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccessLevelsPage> createPageAsync(
-        PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel> context,
+        @Nullable PageContext<ListAccessLevelsRequest, ListAccessLevelsResponse, AccessLevel>
+            context,
         ApiFuture<ListAccessLevelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4570,7 +4582,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessLevelsFixedSizeCollection> {
 
     private ListAccessLevelsFixedSizeCollection(
-        List<ListAccessLevelsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessLevelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4580,7 +4592,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListAccessLevelsFixedSizeCollection createCollection(
-        List<ListAccessLevelsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessLevelsPage> pages, int collectionSize) {
       return new ListAccessLevelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4618,9 +4630,11 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListServicePerimetersPage> {
 
     private ListServicePerimetersPage(
-        PageContext<ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
+        @Nullable
+            PageContext<
+                ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
             context,
-        ListServicePerimetersResponse response) {
+        @Nullable ListServicePerimetersResponse response) {
       super(context, response);
     }
 
@@ -4630,15 +4644,19 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListServicePerimetersPage createPage(
-        PageContext<ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
+        @Nullable
+            PageContext<
+                ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
             context,
-        ListServicePerimetersResponse response) {
+        @Nullable ListServicePerimetersResponse response) {
       return new ListServicePerimetersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicePerimetersPage> createPageAsync(
-        PageContext<ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
+        @Nullable
+            PageContext<
+                ListServicePerimetersRequest, ListServicePerimetersResponse, ServicePerimeter>
             context,
         ApiFuture<ListServicePerimetersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4654,7 +4672,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListServicePerimetersFixedSizeCollection> {
 
     private ListServicePerimetersFixedSizeCollection(
-        List<ListServicePerimetersPage> pages, int collectionSize) {
+        @Nullable List<ListServicePerimetersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4664,7 +4682,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListServicePerimetersFixedSizeCollection createCollection(
-        List<ListServicePerimetersPage> pages, int collectionSize) {
+        @Nullable List<ListServicePerimetersPage> pages, int collectionSize) {
       return new ListServicePerimetersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4705,12 +4723,13 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListGcpUserAccessBindingsPage> {
 
     private ListGcpUserAccessBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGcpUserAccessBindingsRequest,
                 ListGcpUserAccessBindingsResponse,
                 GcpUserAccessBinding>
             context,
-        ListGcpUserAccessBindingsResponse response) {
+        @Nullable ListGcpUserAccessBindingsResponse response) {
       super(context, response);
     }
 
@@ -4720,18 +4739,20 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListGcpUserAccessBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGcpUserAccessBindingsRequest,
                 ListGcpUserAccessBindingsResponse,
                 GcpUserAccessBinding>
             context,
-        ListGcpUserAccessBindingsResponse response) {
+        @Nullable ListGcpUserAccessBindingsResponse response) {
       return new ListGcpUserAccessBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGcpUserAccessBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGcpUserAccessBindingsRequest,
                 ListGcpUserAccessBindingsResponse,
                 GcpUserAccessBinding>
@@ -4750,7 +4771,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListGcpUserAccessBindingsFixedSizeCollection> {
 
     private ListGcpUserAccessBindingsFixedSizeCollection(
-        List<ListGcpUserAccessBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListGcpUserAccessBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4760,7 +4781,7 @@ public class AccessContextManagerClient implements BackgroundResource {
 
     @Override
     protected ListGcpUserAccessBindingsFixedSizeCollection createCollection(
-        List<ListGcpUserAccessBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListGcpUserAccessBindingsPage> pages, int collectionSize) {
       return new ListGcpUserAccessBindingsFixedSizeCollection(pages, collectionSize);
     }
   }

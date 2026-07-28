@@ -30,10 +30,10 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation cluster.
+   * Identifier. Full name of this workstation cluster.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
-   * Full name of this workstation cluster.
+   * Identifier. Full name of this workstation cluster.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -86,7 +86,9 @@ public interface WorkstationClusterOrBuilder
    * cluster.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The uid.
    */
@@ -100,7 +102,9 @@ public interface WorkstationClusterOrBuilder
    * cluster.
    * </pre>
    *
-   * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for uid.
    */
@@ -555,10 +559,54 @@ public interface WorkstationClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the domainConfig field is set.
+   */
+  boolean hasDomainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The domainConfig.
+   */
+  com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig getDomainConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for a custom domain.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.DomainConfig domain_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationCluster.DomainConfigOrBuilder
+      getDomainConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Whether this workstation cluster is in degraded mode, in which
-   * case it may require user action to restore full functionality. Details can
-   * be found in
-   * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
+   * case it may require user action to restore full functionality. The
+   * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions]
+   * field contains detailed information about the status of the cluster.
    * </pre>
    *
    * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -631,4 +679,242 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   com.google.rpc.StatusOrBuilder getConditionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 20 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gatewayConfig field is set.
+   */
+  boolean hasGatewayConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gatewayConfig.
+   */
+  com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig getGatewayConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for Cluster HTTP Gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfig gateway_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.workstations.v1beta.WorkstationCluster.GatewayConfigOrBuilder
+      getGatewayConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the redirect URL for unauthorized requests received by
+   * workstation VMs in this cluster.
+   *
+   * Redirects to this endpoint will send a base64 encoded `state` query param
+   * containing the target workstation name and original request hostname. The
+   * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+   * and redirecting back to the original hostname with the token.
+   * </pre>
+   *
+   * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workstationAuthorizationUrl.
+   */
+  java.lang.String getWorkstationAuthorizationUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the redirect URL for unauthorized requests received by
+   * workstation VMs in this cluster.
+   *
+   * Redirects to this endpoint will send a base64 encoded `state` query param
+   * containing the target workstation name and original request hostname. The
+   * endpoint is responsible for retrieving a token using `GenerateAccessToken`
+   * and redirecting back to the original hostname with the token.
+   * </pre>
+   *
+   * <code>string workstation_authorization_url = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for workstationAuthorizationUrl.
+   */
+  com.google.protobuf.ByteString getWorkstationAuthorizationUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the launch URL for workstations in this cluster.
+   * Requests sent to unstarted workstations will be redirected to this URL.
+   *
+   * Requests redirected to the launch endpoint will be sent with a
+   * `workstation` and `project` query parameter containing the full workstation
+   * resource name and project ID, respectively. The launch endpoint is
+   * responsible for starting the workstation, polling it until it reaches
+   * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+   * </pre>
+   *
+   * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The workstationLaunchUrl.
+   */
+  java.lang.String getWorkstationLaunchUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the launch URL for workstations in this cluster.
+   * Requests sent to unstarted workstations will be redirected to this URL.
+   *
+   * Requests redirected to the launch endpoint will be sent with a
+   * `workstation` and `project` query parameter containing the full workstation
+   * resource name and project ID, respectively. The launch endpoint is
+   * responsible for starting the workstation, polling it until it reaches
+   * `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
+   * </pre>
+   *
+   * <code>string workstation_launch_url = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for workstationLaunchUrl.
+   */
+  com.google.protobuf.ByteString getWorkstationLaunchUrlBytes();
 }

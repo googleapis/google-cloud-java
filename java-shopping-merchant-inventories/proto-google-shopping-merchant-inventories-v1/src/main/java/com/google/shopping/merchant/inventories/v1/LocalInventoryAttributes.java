@@ -56,7 +56,9 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     pickupMethod_ = 0;
     pickupSla_ = 0;
     instoreProductLocation_ = "";
+    localShippingLabel_ = "";
     loyaltyPrograms_ = java.util.Collections.emptyList();
+    customAttributes_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1345,6 +1347,87 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     }
   }
 
+  public static final int LOCAL_SHIPPING_LABEL_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object localShippingLabel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a label associated with the shipping for the
+   * `LocalInventory` resource. Can be used to group local shipping services to
+   * this particular inventory item. For accepted field format, see the [Local
+   * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+   * </pre>
+   *
+   * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the localShippingLabel field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalShippingLabel() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a label associated with the shipping for the
+   * `LocalInventory` resource. Can be used to group local shipping services to
+   * this particular inventory item. For accepted field format, see the [Local
+   * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+   * </pre>
+   *
+   * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The localShippingLabel.
+   */
+  @java.lang.Override
+  public java.lang.String getLocalShippingLabel() {
+    java.lang.Object ref = localShippingLabel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      localShippingLabel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies a label associated with the shipping for the
+   * `LocalInventory` resource. Can be used to group local shipping services to
+   * this particular inventory item. For accepted field format, see the [Local
+   * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+   * </pre>
+   *
+   * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for localShippingLabel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocalShippingLabelBytes() {
+    java.lang.Object ref = localShippingLabel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      localShippingLabel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int LOYALTY_PROGRAMS_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -1506,6 +1589,127 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     return loyaltyPrograms_.get(index);
   }
 
+  public static final int CUSTOM_ATTRIBUTES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
+   * used for submitting any attribute of the data specification in its generic
+   * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+   * useful for submitting attributes not explicitly exposed by the API. Maximum
+   * allowed number of characters for each custom attribute is 10240 (represents
+   * sum of characters for name and value). Maximum 2500 custom attributes can
+   * be set, with total size of 102.4kB. Underscores in custom
+   * attribute names are replaced by spaces upon insertion.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
+    return customAttributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
+   * used for submitting any attribute of the data specification in its generic
+   * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+   * useful for submitting attributes not explicitly exposed by the API. Maximum
+   * allowed number of characters for each custom attribute is 10240 (represents
+   * sum of characters for name and value). Maximum 2500 custom attributes can
+   * be set, with total size of 102.4kB. Underscores in custom
+   * attribute names are replaced by spaces upon insertion.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
+      getCustomAttributesOrBuilderList() {
+    return customAttributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
+   * used for submitting any attribute of the data specification in its generic
+   * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+   * useful for submitting attributes not explicitly exposed by the API. Maximum
+   * allowed number of characters for each custom attribute is 10240 (represents
+   * sum of characters for name and value). Maximum 2500 custom attributes can
+   * be set, with total size of 102.4kB. Underscores in custom
+   * attribute names are replaced by spaces upon insertion.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomAttributesCount() {
+    return customAttributes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
+   * used for submitting any attribute of the data specification in its generic
+   * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+   * useful for submitting attributes not explicitly exposed by the API. Maximum
+   * allowed number of characters for each custom attribute is 10240 (represents
+   * sum of characters for name and value). Maximum 2500 custom attributes can
+   * be set, with total size of 102.4kB. Underscores in custom
+   * attribute names are replaced by spaces upon insertion.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
+    return customAttributes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of custom (merchant-provided) attributes. It can also be
+   * used for submitting any attribute of the data specification in its generic
+   * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+   * useful for submitting attributes not explicitly exposed by the API. Maximum
+   * allowed number of characters for each custom attribute is 10240 (represents
+   * sum of characters for name and value). Maximum 2500 custom attributes can
+   * be set, with total size of 102.4kB. Underscores in custom
+   * attribute names are replaced by spaces upon insertion.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(int index) {
+    return customAttributes_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1544,8 +1748,14 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, instoreProductLocation_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, localShippingLabel_);
+    }
     for (int i = 0; i < loyaltyPrograms_.size(); i++) {
       output.writeMessage(10, loyaltyPrograms_.get(i));
+    }
+    for (int i = 0; i < customAttributes_.size(); i++) {
+      output.writeMessage(11, customAttributes_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1581,8 +1791,15 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, instoreProductLocation_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, localShippingLabel_);
+    }
     for (int i = 0; i < loyaltyPrograms_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, loyaltyPrograms_.get(i));
+    }
+    for (int i = 0; i < customAttributes_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, customAttributes_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1632,7 +1849,12 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (hasInstoreProductLocation()) {
       if (!getInstoreProductLocation().equals(other.getInstoreProductLocation())) return false;
     }
+    if (hasLocalShippingLabel() != other.hasLocalShippingLabel()) return false;
+    if (hasLocalShippingLabel()) {
+      if (!getLocalShippingLabel().equals(other.getLocalShippingLabel())) return false;
+    }
     if (!getLoyaltyProgramsList().equals(other.getLoyaltyProgramsList())) return false;
+    if (!getCustomAttributesList().equals(other.getCustomAttributesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1676,9 +1898,17 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       hash = (37 * hash) + INSTORE_PRODUCT_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getInstoreProductLocation().hashCode();
     }
+    if (hasLocalShippingLabel()) {
+      hash = (37 * hash) + LOCAL_SHIPPING_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalShippingLabel().hashCode();
+    }
     if (getLoyaltyProgramsCount() > 0) {
       hash = (37 * hash) + LOYALTY_PROGRAMS_FIELD_NUMBER;
       hash = (53 * hash) + getLoyaltyProgramsList().hashCode();
+    }
+    if (getCustomAttributesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomAttributesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1828,6 +2058,7 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
         internalGetSalePriceFieldBuilder();
         internalGetSalePriceEffectiveDateFieldBuilder();
         internalGetLoyaltyProgramsFieldBuilder();
+        internalGetCustomAttributesFieldBuilder();
       }
     }
 
@@ -1855,13 +2086,21 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       pickupMethod_ = 0;
       pickupSla_ = 0;
       instoreProductLocation_ = "";
+      localShippingLabel_ = "";
       if (loyaltyProgramsBuilder_ == null) {
         loyaltyPrograms_ = java.util.Collections.emptyList();
       } else {
         loyaltyPrograms_ = null;
         loyaltyProgramsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
+      if (customAttributesBuilder_ == null) {
+        customAttributes_ = java.util.Collections.emptyList();
+      } else {
+        customAttributes_ = null;
+        customAttributesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1902,13 +2141,22 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes result) {
       if (loyaltyProgramsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           loyaltyPrograms_ = java.util.Collections.unmodifiableList(loyaltyPrograms_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.loyaltyPrograms_ = loyaltyPrograms_;
       } else {
         result.loyaltyPrograms_ = loyaltyProgramsBuilder_.build();
+      }
+      if (customAttributesBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          customAttributes_ = java.util.Collections.unmodifiableList(customAttributes_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.customAttributes_ = customAttributes_;
+      } else {
+        result.customAttributes_ = customAttributesBuilder_.build();
       }
     }
 
@@ -1950,6 +2198,10 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.instoreProductLocation_ = instoreProductLocation_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.localShippingLabel_ = localShippingLabel_;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1996,11 +2248,16 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasLocalShippingLabel()) {
+        localShippingLabel_ = other.localShippingLabel_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (loyaltyProgramsBuilder_ == null) {
         if (!other.loyaltyPrograms_.isEmpty()) {
           if (loyaltyPrograms_.isEmpty()) {
             loyaltyPrograms_ = other.loyaltyPrograms_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureLoyaltyProgramsIsMutable();
             loyaltyPrograms_.addAll(other.loyaltyPrograms_);
@@ -2013,13 +2270,40 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
             loyaltyProgramsBuilder_.dispose();
             loyaltyProgramsBuilder_ = null;
             loyaltyPrograms_ = other.loyaltyPrograms_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             loyaltyProgramsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetLoyaltyProgramsFieldBuilder()
                     : null;
           } else {
             loyaltyProgramsBuilder_.addAllMessages(other.loyaltyPrograms_);
+          }
+        }
+      }
+      if (customAttributesBuilder_ == null) {
+        if (!other.customAttributes_.isEmpty()) {
+          if (customAttributes_.isEmpty()) {
+            customAttributes_ = other.customAttributes_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureCustomAttributesIsMutable();
+            customAttributes_.addAll(other.customAttributes_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customAttributes_.isEmpty()) {
+          if (customAttributesBuilder_.isEmpty()) {
+            customAttributesBuilder_.dispose();
+            customAttributesBuilder_ = null;
+            customAttributes_ = other.customAttributes_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            customAttributesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCustomAttributesFieldBuilder()
+                    : null;
+          } else {
+            customAttributesBuilder_.addAllMessages(other.customAttributes_);
           }
         }
       }
@@ -2100,6 +2384,12 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                localShippingLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             case 82:
               {
                 com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram m =
@@ -2115,6 +2405,19 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                com.google.shopping.type.CustomAttribute m =
+                    input.readMessage(
+                        com.google.shopping.type.CustomAttribute.parser(), extensionRegistry);
+                if (customAttributesBuilder_ == null) {
+                  ensureCustomAttributesIsMutable();
+                  customAttributes_.add(m);
+                } else {
+                  customAttributesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3409,16 +3712,166 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       return this;
     }
 
+    private java.lang.Object localShippingLabel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the localShippingLabel field is set.
+     */
+    public boolean hasLocalShippingLabel() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The localShippingLabel.
+     */
+    public java.lang.String getLocalShippingLabel() {
+      java.lang.Object ref = localShippingLabel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        localShippingLabel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for localShippingLabel.
+     */
+    public com.google.protobuf.ByteString getLocalShippingLabelBytes() {
+      java.lang.Object ref = localShippingLabel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        localShippingLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The localShippingLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalShippingLabel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      localShippingLabel_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalShippingLabel() {
+      localShippingLabel_ = getDefaultInstance().getLocalShippingLabel();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies a label associated with the shipping for the
+     * `LocalInventory` resource. Can be used to group local shipping services to
+     * this particular inventory item. For accepted field format, see the [Local
+     * delivery](https://support.google.com/merchants/answer/14819809#localdelivery)
+     * </pre>
+     *
+     * <code>optional string local_shipping_label = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for localShippingLabel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalShippingLabelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      localShippingLabel_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
         loyaltyPrograms_ = java.util.Collections.emptyList();
 
     private void ensureLoyaltyProgramsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         loyaltyPrograms_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>(
                 loyaltyPrograms_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3832,7 +4285,7 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     public Builder clearLoyaltyPrograms() {
       if (loyaltyProgramsBuilder_ == null) {
         loyaltyPrograms_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         loyaltyProgramsBuilder_.clear();
@@ -4085,12 +4538,546 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
                 com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder,
                 com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>(
                 loyaltyPrograms_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         loyaltyPrograms_ = null;
       }
       return loyaltyProgramsBuilder_;
+    }
+
+    private java.util.List<com.google.shopping.type.CustomAttribute> customAttributes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomAttributesIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        customAttributes_ =
+            new java.util.ArrayList<com.google.shopping.type.CustomAttribute>(customAttributes_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.type.CustomAttribute,
+            com.google.shopping.type.CustomAttribute.Builder,
+            com.google.shopping.type.CustomAttributeOrBuilder>
+        customAttributesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList() {
+      if (customAttributesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customAttributes_);
+      } else {
+        return customAttributesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCustomAttributesCount() {
+      if (customAttributesBuilder_ == null) {
+        return customAttributes_.size();
+      } else {
+        return customAttributesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.CustomAttribute getCustomAttributes(int index) {
+      if (customAttributesBuilder_ == null) {
+        return customAttributes_.get(index);
+      } else {
+        return customAttributesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
+      if (customAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomAttributesIsMutable();
+        customAttributes_.set(index, value);
+        onChanged();
+      } else {
+        customAttributesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomAttributes(
+        int index, com.google.shopping.type.CustomAttribute.Builder builderForValue) {
+      if (customAttributesBuilder_ == null) {
+        ensureCustomAttributesIsMutable();
+        customAttributes_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customAttributesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomAttributes(com.google.shopping.type.CustomAttribute value) {
+      if (customAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomAttributesIsMutable();
+        customAttributes_.add(value);
+        onChanged();
+      } else {
+        customAttributesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomAttributes(int index, com.google.shopping.type.CustomAttribute value) {
+      if (customAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomAttributesIsMutable();
+        customAttributes_.add(index, value);
+        onChanged();
+      } else {
+        customAttributesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomAttributes(
+        com.google.shopping.type.CustomAttribute.Builder builderForValue) {
+      if (customAttributesBuilder_ == null) {
+        ensureCustomAttributesIsMutable();
+        customAttributes_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customAttributesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomAttributes(
+        int index, com.google.shopping.type.CustomAttribute.Builder builderForValue) {
+      if (customAttributesBuilder_ == null) {
+        ensureCustomAttributesIsMutable();
+        customAttributes_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customAttributesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCustomAttributes(
+        java.lang.Iterable<? extends com.google.shopping.type.CustomAttribute> values) {
+      if (customAttributesBuilder_ == null) {
+        ensureCustomAttributesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAttributes_);
+        onChanged();
+      } else {
+        customAttributesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomAttributes() {
+      if (customAttributesBuilder_ == null) {
+        customAttributes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        customAttributesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCustomAttributes(int index) {
+      if (customAttributesBuilder_ == null) {
+        ensureCustomAttributesIsMutable();
+        customAttributes_.remove(index);
+        onChanged();
+      } else {
+        customAttributesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.CustomAttribute.Builder getCustomAttributesBuilder(int index) {
+      return internalGetCustomAttributesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.CustomAttributeOrBuilder getCustomAttributesOrBuilder(
+        int index) {
+      if (customAttributesBuilder_ == null) {
+        return customAttributes_.get(index);
+      } else {
+        return customAttributesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
+        getCustomAttributesOrBuilderList() {
+      if (customAttributesBuilder_ != null) {
+        return customAttributesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customAttributes_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder() {
+      return internalGetCustomAttributesFieldBuilder()
+          .addBuilder(com.google.shopping.type.CustomAttribute.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.type.CustomAttribute.Builder addCustomAttributesBuilder(int index) {
+      return internalGetCustomAttributesFieldBuilder()
+          .addBuilder(index, com.google.shopping.type.CustomAttribute.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of custom (merchant-provided) attributes. It can also be
+     * used for submitting any attribute of the data specification in its generic
+     * form (for example, `{ "name": "size type", "value": "regular" }`). This is
+     * useful for submitting attributes not explicitly exposed by the API. Maximum
+     * allowed number of characters for each custom attribute is 10240 (represents
+     * sum of characters for name and value). Maximum 2500 custom attributes can
+     * be set, with total size of 102.4kB. Underscores in custom
+     * attribute names are replaced by spaces upon insertion.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.type.CustomAttribute custom_attributes = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.shopping.type.CustomAttribute.Builder>
+        getCustomAttributesBuilderList() {
+      return internalGetCustomAttributesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.type.CustomAttribute,
+            com.google.shopping.type.CustomAttribute.Builder,
+            com.google.shopping.type.CustomAttributeOrBuilder>
+        internalGetCustomAttributesFieldBuilder() {
+      if (customAttributesBuilder_ == null) {
+        customAttributesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.type.CustomAttribute,
+                com.google.shopping.type.CustomAttribute.Builder,
+                com.google.shopping.type.CustomAttributeOrBuilder>(
+                customAttributes_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        customAttributes_ = null;
+      }
+      return customAttributesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.inventories.v1.LocalInventoryAttributes)

@@ -428,4 +428,60 @@ public interface FrameworkComplianceSummaryOrBuilder
    */
   com.google.cloud.cloudsecuritycompliance.v1.TargetResourceDetailsOrBuilder
       getTargetResourceDetailsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of the findings generated against the framework.
+   * </pre>
+   *
+   * <code>int64 finding_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The findingCount.
+   */
+  long getFindingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the controlsPassingTrend field is set.
+   */
+  boolean hasControlsPassingTrend();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The controlsPassingTrend.
+   */
+  com.google.cloud.cloudsecuritycompliance.v1.Trend getControlsPassingTrend();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder getControlsPassingTrendOrBuilder();
 }

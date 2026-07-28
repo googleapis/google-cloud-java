@@ -42,6 +42,7 @@ public class AsyncCreateIcebergCatalog {
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setIcebergCatalogId("icebergCatalogId504062865")
               .setIcebergCatalog(IcebergCatalog.newBuilder().build())
+              .setPrimaryLocation("primaryLocation-1140723753")
               .build();
       ApiFuture<IcebergCatalog> future =
           icebergCatalogServiceClient.createIcebergCatalogCallable().futureCall(request);

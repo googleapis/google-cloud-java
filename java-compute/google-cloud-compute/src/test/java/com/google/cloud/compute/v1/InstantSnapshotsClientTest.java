@@ -231,6 +231,8 @@ public class InstantSnapshotsClientTest {
             .setSelfLinkWithId("selfLinkWithId-776809081")
             .setSourceDisk("sourceDisk-1111923624")
             .setSourceDiskId("sourceDiskId888256403")
+            .setSourceInstantSnapshotGroup("sourceInstantSnapshotGroup-2079519883")
+            .setSourceInstantSnapshotGroupId("sourceInstantSnapshotGroupId-1258812560")
             .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();

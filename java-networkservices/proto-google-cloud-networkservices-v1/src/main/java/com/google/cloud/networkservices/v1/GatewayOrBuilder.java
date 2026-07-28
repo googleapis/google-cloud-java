@@ -371,7 +371,7 @@ public interface GatewayOrBuilder
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -388,7 +388,7 @@ public interface GatewayOrBuilder
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -405,7 +405,7 @@ public interface GatewayOrBuilder
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -416,6 +416,21 @@ public interface GatewayOrBuilder
    * @return The ports at the given index.
    */
   int getPorts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the Gateway will listen on all ports. This is mutually
+   * exclusive with the `ports` field. This field only applies to gateways of
+   * type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>bool all_ports = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allPorts.
+   */
+  boolean getAllPorts();
 
   /**
    *
@@ -795,4 +810,19 @@ public interface GatewayOrBuilder
    * @return The routingMode.
    */
   com.google.cloud.networkservices.v1.Gateway.RoutingMode getRoutingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the gateway will allow traffic from clients outside of
+   * the region where the gateway is located.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>bool allow_global_access = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allowGlobalAccess.
+   */
+  boolean getAllowGlobalAccess();
 }

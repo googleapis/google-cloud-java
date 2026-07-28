@@ -79,6 +79,7 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INSPECT_RESULT(1),
     DEIDENTIFY_RESULT(2),
+    REDACT_RESULT(3),
     RESULT_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
           return INSPECT_RESULT;
         case 2:
           return DEIDENTIFY_RESULT;
+        case 3:
+          return REDACT_RESULT;
         case 0:
           return RESULT_NOT_SET;
         default:
@@ -230,6 +233,63 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.modelarmor.v1.SdpDeidentifyResult.getDefaultInstance();
   }
 
+  public static final int REDACT_RESULT_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   *
+   * @return Whether the redactResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedactResult() {
+    return resultCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   *
+   * @return The redactResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.SdpRedactResult getRedactResult() {
+    if (resultCase_ == 3) {
+      return (com.google.cloud.modelarmor.v1.SdpRedactResult) result_;
+    }
+    return com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder getRedactResultOrBuilder() {
+    if (resultCase_ == 3) {
+      return (com.google.cloud.modelarmor.v1.SdpRedactResult) result_;
+    }
+    return com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -250,6 +310,9 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
     if (resultCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.modelarmor.v1.SdpDeidentifyResult) result_);
     }
+    if (resultCase_ == 3) {
+      output.writeMessage(3, (com.google.cloud.modelarmor.v1.SdpRedactResult) result_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -268,6 +331,11 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.modelarmor.v1.SdpDeidentifyResult) result_);
+    }
+    if (resultCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.modelarmor.v1.SdpRedactResult) result_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -293,6 +361,9 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getDeidentifyResult().equals(other.getDeidentifyResult())) return false;
         break;
+      case 3:
+        if (!getRedactResult().equals(other.getRedactResult())) return false;
+        break;
       case 0:
       default:
     }
@@ -315,6 +386,10 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + DEIDENTIFY_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getDeidentifyResult().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + REDACT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getRedactResult().hashCode();
         break;
       case 0:
       default:
@@ -465,6 +540,9 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       if (deidentifyResultBuilder_ != null) {
         deidentifyResultBuilder_.clear();
       }
+      if (redactResultBuilder_ != null) {
+        redactResultBuilder_.clear();
+      }
       resultCase_ = 0;
       result_ = null;
       return this;
@@ -515,6 +593,9 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       if (resultCase_ == 2 && deidentifyResultBuilder_ != null) {
         result.result_ = deidentifyResultBuilder_.build();
       }
+      if (resultCase_ == 3 && redactResultBuilder_ != null) {
+        result.result_ = redactResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -538,6 +619,11 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
         case DEIDENTIFY_RESULT:
           {
             mergeDeidentifyResult(other.getDeidentifyResult());
+            break;
+          }
+        case REDACT_RESULT:
+          {
+            mergeRedactResult(other.getRedactResult());
             break;
           }
         case RESULT_NOT_SET:
@@ -585,6 +671,13 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
                 resultCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetRedactResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1062,6 +1155,233 @@ public final class SdpFilterResult extends com.google.protobuf.GeneratedMessage
       resultCase_ = 2;
       onChanged();
       return deidentifyResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.SdpRedactResult,
+            com.google.cloud.modelarmor.v1.SdpRedactResult.Builder,
+            com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder>
+        redactResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     *
+     * @return Whether the redactResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasRedactResult() {
+      return resultCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     *
+     * @return The redactResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.SdpRedactResult getRedactResult() {
+      if (redactResultBuilder_ == null) {
+        if (resultCase_ == 3) {
+          return (com.google.cloud.modelarmor.v1.SdpRedactResult) result_;
+        }
+        return com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 3) {
+          return redactResultBuilder_.getMessage();
+        }
+        return com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    public Builder setRedactResult(com.google.cloud.modelarmor.v1.SdpRedactResult value) {
+      if (redactResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        redactResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    public Builder setRedactResult(
+        com.google.cloud.modelarmor.v1.SdpRedactResult.Builder builderForValue) {
+      if (redactResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        redactResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    public Builder mergeRedactResult(com.google.cloud.modelarmor.v1.SdpRedactResult value) {
+      if (redactResultBuilder_ == null) {
+        if (resultCase_ == 3
+            && result_ != com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.modelarmor.v1.SdpRedactResult.newBuilder(
+                      (com.google.cloud.modelarmor.v1.SdpRedactResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 3) {
+          redactResultBuilder_.mergeFrom(value);
+        } else {
+          redactResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    public Builder clearRedactResult() {
+      if (redactResultBuilder_ == null) {
+        if (resultCase_ == 3) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 3) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        redactResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    public com.google.cloud.modelarmor.v1.SdpRedactResult.Builder getRedactResultBuilder() {
+      return internalGetRedactResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder getRedactResultOrBuilder() {
+      if ((resultCase_ == 3) && (redactResultBuilder_ != null)) {
+        return redactResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 3) {
+          return (com.google.cloud.modelarmor.v1.SdpRedactResult) result_;
+        }
+        return com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive Data Protection Redaction result if redaction is performed.
+     * This is primarily used for image redaction.
+     * </pre>
+     *
+     * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.SdpRedactResult,
+            com.google.cloud.modelarmor.v1.SdpRedactResult.Builder,
+            com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder>
+        internalGetRedactResultFieldBuilder() {
+      if (redactResultBuilder_ == null) {
+        if (!(resultCase_ == 3)) {
+          result_ = com.google.cloud.modelarmor.v1.SdpRedactResult.getDefaultInstance();
+        }
+        redactResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.modelarmor.v1.SdpRedactResult,
+                com.google.cloud.modelarmor.v1.SdpRedactResult.Builder,
+                com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder>(
+                (com.google.cloud.modelarmor.v1.SdpRedactResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 3;
+      onChanged();
+      return redactResultBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.SdpFilterResult)

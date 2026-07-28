@@ -120,4 +120,47 @@ public interface BeginTransactionRequestOrBuilder
    * <code>.google.datastore.v1.TransactionOptions transaction_options = 10;</code>
    */
   com.google.datastore.v1.TransactionOptionsOrBuilder getTransactionOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  boolean hasRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  com.google.datastore.v1.RequestOptions getRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder();
 }

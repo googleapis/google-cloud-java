@@ -147,6 +147,16 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Contact Center as a Service (CCaaS Chat) channel.
+     * </pre>
+     *
+     * <code>CONTACT_CENTER_AS_A_SERVICE_CHAT = 11;</code>
+     */
+    CONTACT_CENTER_AS_A_SERVICE_CHAT(11),
+    /**
+     *
+     *
+     * <pre>
      * Five9 channel.
      * </pre>
      *
@@ -163,6 +173,26 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
      * <code>CONTACT_CENTER_INTEGRATION = 8;</code>
      */
     CONTACT_CENTER_INTEGRATION(8),
+    /**
+     *
+     *
+     * <pre>
+     * WhatsApp channel.
+     * </pre>
+     *
+     * <code>WHATSAPP = 9;</code>
+     */
+    WHATSAPP(9),
+    /**
+     *
+     *
+     * <pre>
+     * Instagram channel.
+     * </pre>
+     *
+     * <code>INSTAGRAM = 10;</code>
+     */
+    INSTAGRAM(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -246,6 +276,17 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Contact Center as a Service (CCaaS Chat) channel.
+     * </pre>
+     *
+     * <code>CONTACT_CENTER_AS_A_SERVICE_CHAT = 11;</code>
+     */
+    public static final int CONTACT_CENTER_AS_A_SERVICE_CHAT_VALUE = 11;
+
+    /**
+     *
+     *
+     * <pre>
      * Five9 channel.
      * </pre>
      *
@@ -263,6 +304,28 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
      * <code>CONTACT_CENTER_INTEGRATION = 8;</code>
      */
     public static final int CONTACT_CENTER_INTEGRATION_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * WhatsApp channel.
+     * </pre>
+     *
+     * <code>WHATSAPP = 9;</code>
+     */
+    public static final int WHATSAPP_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Instagram channel.
+     * </pre>
+     *
+     * <code>INSTAGRAM = 10;</code>
+     */
+    public static final int INSTAGRAM_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -300,10 +363,16 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
           return GOOGLE_TELEPHONY_PLATFORM;
         case 6:
           return CONTACT_CENTER_AS_A_SERVICE;
+        case 11:
+          return CONTACT_CENTER_AS_A_SERVICE_CHAT;
         case 7:
           return FIVE9;
         case 8:
           return CONTACT_CENTER_INTEGRATION;
+        case 9:
+          return WHATSAPP;
+        case 10:
+          return INSTAGRAM;
         default:
           return null;
       }
@@ -4095,6 +4164,2942 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface WhatsAppConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The WhatsApp Business Account ID.
+     * </pre>
+     *
+     * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The wabaId.
+     */
+    java.lang.String getWabaId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The WhatsApp Business Account ID.
+     * </pre>
+     *
+     * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for wabaId.
+     */
+    com.google.protobuf.ByteString getWabaIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Meta phone number ID.
+     * </pre>
+     *
+     * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The phoneNumberId.
+     */
+    java.lang.String getPhoneNumberId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Meta phone number ID.
+     * </pre>
+     *
+     * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for phoneNumberId.
+     */
+    com.google.protobuf.ByteString getPhoneNumberIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The phone number in E.164 format.
+     * </pre>
+     *
+     * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The phoneNumber.
+     */
+    java.lang.String getPhoneNumber();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The phone number in E.164 format.
+     * </pre>
+     *
+     * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    com.google.protobuf.ByteString getPhoneNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thumbnailUrl.
+     */
+    java.lang.String getThumbnailUrl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for thumbnailUrl.
+     */
+    com.google.protobuf.ByteString getThumbnailUrlBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1.ChannelProfile.WhatsAppConfig}
+   */
+  public static final class WhatsAppConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)
+      WhatsAppConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "WhatsAppConfig");
+    }
+
+    // Use WhatsAppConfig.newBuilder() to construct.
+    private WhatsAppConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WhatsAppConfig() {
+      wabaId_ = "";
+      phoneNumberId_ = "";
+      phoneNumber_ = "";
+      displayName_ = "";
+      thumbnailUrl_ = "";
+      description_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1.CommonProto
+          .internal_static_google_cloud_ces_v1_ChannelProfile_WhatsAppConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1.CommonProto
+          .internal_static_google_cloud_ces_v1_ChannelProfile_WhatsAppConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.class,
+              com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder.class);
+    }
+
+    public static final int WABA_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object wabaId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The WhatsApp Business Account ID.
+     * </pre>
+     *
+     * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The wabaId.
+     */
+    @java.lang.Override
+    public java.lang.String getWabaId() {
+      java.lang.Object ref = wabaId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        wabaId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The WhatsApp Business Account ID.
+     * </pre>
+     *
+     * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for wabaId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWabaIdBytes() {
+      java.lang.Object ref = wabaId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        wabaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PHONE_NUMBER_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object phoneNumberId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Meta phone number ID.
+     * </pre>
+     *
+     * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The phoneNumberId.
+     */
+    @java.lang.Override
+    public java.lang.String getPhoneNumberId() {
+      java.lang.Object ref = phoneNumberId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneNumberId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Meta phone number ID.
+     * </pre>
+     *
+     * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for phoneNumberId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPhoneNumberIdBytes() {
+      java.lang.Object ref = phoneNumberId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        phoneNumberId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object phoneNumber_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The phone number in E.164 format.
+     * </pre>
+     *
+     * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The phoneNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneNumber_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The phone number in E.164 format.
+     * </pre>
+     *
+     * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPhoneNumberBytes() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        phoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THUMBNAIL_URL_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object thumbnailUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thumbnailUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getThumbnailUrl() {
+      java.lang.Object ref = thumbnailUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thumbnailUrl_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for thumbnailUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getThumbnailUrlBytes() {
+      java.lang.Object ref = thumbnailUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        thumbnailUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(wabaId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, wabaId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumberId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, phoneNumberId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUrl_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, thumbnailUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, description_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(wabaId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, wabaId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumberId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, phoneNumberId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUrl_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, thumbnailUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, description_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig other =
+          (com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig) obj;
+
+      if (!getWabaId().equals(other.getWabaId())) return false;
+      if (!getPhoneNumberId().equals(other.getPhoneNumberId())) return false;
+      if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getThumbnailUrl().equals(other.getThumbnailUrl())) return false;
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WABA_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWabaId().hashCode();
+      hash = (37 * hash) + PHONE_NUMBER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumberId().hashCode();
+      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumber().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (37 * hash) + THUMBNAIL_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getThumbnailUrl().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1.ChannelProfile.WhatsAppConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_WhatsAppConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_WhatsAppConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.class,
+                com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        wabaId_ = "";
+        phoneNumberId_ = "";
+        phoneNumber_ = "";
+        displayName_ = "";
+        thumbnailUrl_ = "";
+        description_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_WhatsAppConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig build() {
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig buildPartial() {
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig result =
+            new com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.wabaId_ = wabaId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.phoneNumberId_ = phoneNumberId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.phoneNumber_ = phoneNumber_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.thumbnailUrl_ = thumbnailUrl_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.description_ = description_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig) {
+          return mergeFrom((com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig other) {
+        if (other == com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance())
+          return this;
+        if (!other.getWabaId().isEmpty()) {
+          wabaId_ = other.wabaId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPhoneNumberId().isEmpty()) {
+          phoneNumberId_ = other.phoneNumberId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getPhoneNumber().isEmpty()) {
+          phoneNumber_ = other.phoneNumber_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getThumbnailUrl().isEmpty()) {
+          thumbnailUrl_ = other.thumbnailUrl_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  wabaId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  phoneNumberId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  phoneNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  thumbnailUrl_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  description_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object wabaId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The WhatsApp Business Account ID.
+       * </pre>
+       *
+       * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The wabaId.
+       */
+      public java.lang.String getWabaId() {
+        java.lang.Object ref = wabaId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          wabaId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The WhatsApp Business Account ID.
+       * </pre>
+       *
+       * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for wabaId.
+       */
+      public com.google.protobuf.ByteString getWabaIdBytes() {
+        java.lang.Object ref = wabaId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          wabaId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The WhatsApp Business Account ID.
+       * </pre>
+       *
+       * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The wabaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWabaId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        wabaId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The WhatsApp Business Account ID.
+       * </pre>
+       *
+       * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWabaId() {
+        wabaId_ = getDefaultInstance().getWabaId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The WhatsApp Business Account ID.
+       * </pre>
+       *
+       * <code>string waba_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for wabaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWabaIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        wabaId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object phoneNumberId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Meta phone number ID.
+       * </pre>
+       *
+       * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The phoneNumberId.
+       */
+      public java.lang.String getPhoneNumberId() {
+        java.lang.Object ref = phoneNumberId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneNumberId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Meta phone number ID.
+       * </pre>
+       *
+       * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for phoneNumberId.
+       */
+      public com.google.protobuf.ByteString getPhoneNumberIdBytes() {
+        java.lang.Object ref = phoneNumberId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          phoneNumberId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Meta phone number ID.
+       * </pre>
+       *
+       * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The phoneNumberId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        phoneNumberId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Meta phone number ID.
+       * </pre>
+       *
+       * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPhoneNumberId() {
+        phoneNumberId_ = getDefaultInstance().getPhoneNumberId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Meta phone number ID.
+       * </pre>
+       *
+       * <code>string phone_number_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for phoneNumberId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        phoneNumberId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object phoneNumber_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The phone number in E.164 format.
+       * </pre>
+       *
+       * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The phoneNumber.
+       */
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The phone number in E.164 format.
+       * </pre>
+       *
+       * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for phoneNumber.
+       */
+      public com.google.protobuf.ByteString getPhoneNumberBytes() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          phoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The phone number in E.164 format.
+       * </pre>
+       *
+       * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The phone number in E.164 format.
+       * </pre>
+       *
+       * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPhoneNumber() {
+        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The phone number in E.164 format.
+       * </pre>
+       *
+       * <code>string phone_number = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        displayName_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thumbnailUrl_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The thumbnailUrl.
+       */
+      public java.lang.String getThumbnailUrl() {
+        java.lang.Object ref = thumbnailUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thumbnailUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for thumbnailUrl.
+       */
+      public com.google.protobuf.ByteString getThumbnailUrlBytes() {
+        java.lang.Object ref = thumbnailUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          thumbnailUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The thumbnailUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUrl(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thumbnailUrl_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThumbnailUrl() {
+        thumbnailUrl_ = getDefaultInstance().getThumbnailUrl();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for thumbnailUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUrlBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        thumbnailUrl_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        description_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1.ChannelProfile.WhatsAppConfig)
+    private static final com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig();
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WhatsAppConfig> PARSER =
+        new com.google.protobuf.AbstractParser<WhatsAppConfig>() {
+          @java.lang.Override
+          public WhatsAppConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<WhatsAppConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WhatsAppConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface InstagramConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1.ChannelProfile.InstagramConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Instagram Account ID.
+     * </pre>
+     *
+     * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The instagramAccountId.
+     */
+    java.lang.String getInstagramAccountId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Instagram Account ID.
+     * </pre>
+     *
+     * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for instagramAccountId.
+     */
+    com.google.protobuf.ByteString getInstagramAccountIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thumbnailUrl.
+     */
+    java.lang.String getThumbnailUrl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for thumbnailUrl.
+     */
+    com.google.protobuf.ByteString getThumbnailUrlBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1.ChannelProfile.InstagramConfig}
+   */
+  public static final class InstagramConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1.ChannelProfile.InstagramConfig)
+      InstagramConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "InstagramConfig");
+    }
+
+    // Use InstagramConfig.newBuilder() to construct.
+    private InstagramConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InstagramConfig() {
+      instagramAccountId_ = "";
+      displayName_ = "";
+      thumbnailUrl_ = "";
+      description_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1.CommonProto
+          .internal_static_google_cloud_ces_v1_ChannelProfile_InstagramConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1.CommonProto
+          .internal_static_google_cloud_ces_v1_ChannelProfile_InstagramConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.class,
+              com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder.class);
+    }
+
+    public static final int INSTAGRAM_ACCOUNT_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object instagramAccountId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Instagram Account ID.
+     * </pre>
+     *
+     * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The instagramAccountId.
+     */
+    @java.lang.Override
+    public java.lang.String getInstagramAccountId() {
+      java.lang.Object ref = instagramAccountId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instagramAccountId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The Instagram Account ID.
+     * </pre>
+     *
+     * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for instagramAccountId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInstagramAccountIdBytes() {
+      java.lang.Object ref = instagramAccountId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instagramAccountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business page name.
+     * </pre>
+     *
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THUMBNAIL_URL_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object thumbnailUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The thumbnailUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getThumbnailUrl() {
+      java.lang.Object ref = thumbnailUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thumbnailUrl_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The fetched Meta business profile thumbnail URL.
+     * </pre>
+     *
+     * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for thumbnailUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getThumbnailUrlBytes() {
+      java.lang.Object ref = thumbnailUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        thumbnailUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The description of the Meta business page or profile.
+     * </pre>
+     *
+     * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instagramAccountId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, instagramAccountId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUrl_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, thumbnailUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, description_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instagramAccountId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, instagramAccountId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thumbnailUrl_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, thumbnailUrl_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, description_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1.ChannelProfile.InstagramConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1.ChannelProfile.InstagramConfig other =
+          (com.google.cloud.ces.v1.ChannelProfile.InstagramConfig) obj;
+
+      if (!getInstagramAccountId().equals(other.getInstagramAccountId())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+      if (!getThumbnailUrl().equals(other.getThumbnailUrl())) return false;
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INSTAGRAM_ACCOUNT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getInstagramAccountId().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+      hash = (37 * hash) + THUMBNAIL_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getThumbnailUrl().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1.ChannelProfile.InstagramConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1.ChannelProfile.InstagramConfig)
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_InstagramConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_InstagramConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.class,
+                com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        instagramAccountId_ = "";
+        displayName_ = "";
+        thumbnailUrl_ = "";
+        description_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1.CommonProto
+            .internal_static_google_cloud_ces_v1_ChannelProfile_InstagramConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig build() {
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig buildPartial() {
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig result =
+            new com.google.cloud.ces.v1.ChannelProfile.InstagramConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1.ChannelProfile.InstagramConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.instagramAccountId_ = instagramAccountId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.thumbnailUrl_ = thumbnailUrl_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.description_ = description_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1.ChannelProfile.InstagramConfig) {
+          return mergeFrom((com.google.cloud.ces.v1.ChannelProfile.InstagramConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1.ChannelProfile.InstagramConfig other) {
+        if (other == com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance())
+          return this;
+        if (!other.getInstagramAccountId().isEmpty()) {
+          instagramAccountId_ = other.instagramAccountId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getThumbnailUrl().isEmpty()) {
+          thumbnailUrl_ = other.thumbnailUrl_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  instagramAccountId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  displayName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  thumbnailUrl_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  description_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object instagramAccountId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Instagram Account ID.
+       * </pre>
+       *
+       * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The instagramAccountId.
+       */
+      public java.lang.String getInstagramAccountId() {
+        java.lang.Object ref = instagramAccountId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instagramAccountId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Instagram Account ID.
+       * </pre>
+       *
+       * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for instagramAccountId.
+       */
+      public com.google.protobuf.ByteString getInstagramAccountIdBytes() {
+        java.lang.Object ref = instagramAccountId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          instagramAccountId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Instagram Account ID.
+       * </pre>
+       *
+       * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The instagramAccountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstagramAccountId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instagramAccountId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Instagram Account ID.
+       * </pre>
+       *
+       * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInstagramAccountId() {
+        instagramAccountId_ = getDefaultInstance().getInstagramAccountId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The Instagram Account ID.
+       * </pre>
+       *
+       * <code>string instagram_account_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for instagramAccountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInstagramAccountIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        instagramAccountId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business page name.
+       * </pre>
+       *
+       * <code>string display_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        displayName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thumbnailUrl_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The thumbnailUrl.
+       */
+      public java.lang.String getThumbnailUrl() {
+        java.lang.Object ref = thumbnailUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thumbnailUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for thumbnailUrl.
+       */
+      public com.google.protobuf.ByteString getThumbnailUrlBytes() {
+        java.lang.Object ref = thumbnailUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          thumbnailUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The thumbnailUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUrl(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thumbnailUrl_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThumbnailUrl() {
+        thumbnailUrl_ = getDefaultInstance().getThumbnailUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The fetched Meta business profile thumbnail URL.
+       * </pre>
+       *
+       * <code>string thumbnail_url = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for thumbnailUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThumbnailUrlBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        thumbnailUrl_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object description_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        description_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The description of the Meta business page or profile.
+       * </pre>
+       *
+       * <code>string description = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.ChannelProfile.InstagramConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1.ChannelProfile.InstagramConfig)
+    private static final com.google.cloud.ces.v1.ChannelProfile.InstagramConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1.ChannelProfile.InstagramConfig();
+    }
+
+    public static com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InstagramConfig> PARSER =
+        new com.google.protobuf.AbstractParser<InstagramConfig>() {
+          @java.lang.Override
+          public InstagramConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InstagramConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InstagramConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int PROFILE_ID_FIELD_NUMBER = 1;
 
@@ -4408,6 +7413,126 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int WHATSAPP_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsappConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the whatsappConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWhatsappConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The whatsappConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getWhatsappConfig() {
+    return whatsappConfig_ == null
+        ? com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance()
+        : whatsappConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to WhatsApp deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder
+      getWhatsappConfigOrBuilder() {
+    return whatsappConfig_ == null
+        ? com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance()
+        : whatsappConfig_;
+  }
+
+  public static final int INSTAGRAM_CONFIG_FIELD_NUMBER = 10;
+  private com.google.cloud.ces.v1.ChannelProfile.InstagramConfig instagramConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instagramConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstagramConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instagramConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getInstagramConfig() {
+    return instagramConfig_ == null
+        ? com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance()
+        : instagramConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration specific to Instagram deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder
+      getInstagramConfigOrBuilder() {
+    return instagramConfig_ == null
+        ? com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance()
+        : instagramConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4443,6 +7568,12 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(noiseSuppressionLevel_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, noiseSuppressionLevel_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getWhatsappConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(10, getInstagramConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4473,6 +7604,12 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(noiseSuppressionLevel_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, noiseSuppressionLevel_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getWhatsappConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getInstagramConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4501,6 +7638,14 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
       if (!getWebWidgetConfig().equals(other.getWebWidgetConfig())) return false;
     }
     if (!getNoiseSuppressionLevel().equals(other.getNoiseSuppressionLevel())) return false;
+    if (hasWhatsappConfig() != other.hasWhatsappConfig()) return false;
+    if (hasWhatsappConfig()) {
+      if (!getWhatsappConfig().equals(other.getWhatsappConfig())) return false;
+    }
+    if (hasInstagramConfig() != other.hasInstagramConfig()) return false;
+    if (hasInstagramConfig()) {
+      if (!getInstagramConfig().equals(other.getInstagramConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4530,6 +7675,14 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + NOISE_SUPPRESSION_LEVEL_FIELD_NUMBER;
     hash = (53 * hash) + getNoiseSuppressionLevel().hashCode();
+    if (hasWhatsappConfig()) {
+      hash = (37 * hash) + WHATSAPP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWhatsappConfig().hashCode();
+    }
+    if (hasInstagramConfig()) {
+      hash = (37 * hash) + INSTAGRAM_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInstagramConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4674,6 +7827,8 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetPersonaPropertyFieldBuilder();
         internalGetWebWidgetConfigFieldBuilder();
+        internalGetWhatsappConfigFieldBuilder();
+        internalGetInstagramConfigFieldBuilder();
       }
     }
 
@@ -4696,6 +7851,16 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
         webWidgetConfigBuilder_ = null;
       }
       noiseSuppressionLevel_ = "";
+      whatsappConfig_ = null;
+      if (whatsappConfigBuilder_ != null) {
+        whatsappConfigBuilder_.dispose();
+        whatsappConfigBuilder_ = null;
+      }
+      instagramConfig_ = null;
+      if (instagramConfigBuilder_ != null) {
+        instagramConfigBuilder_.dispose();
+        instagramConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4758,6 +7923,16 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.noiseSuppressionLevel_ = noiseSuppressionLevel_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.whatsappConfig_ =
+            whatsappConfigBuilder_ == null ? whatsappConfig_ : whatsappConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.instagramConfig_ =
+            instagramConfigBuilder_ == null ? instagramConfig_ : instagramConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4797,6 +7972,12 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
         noiseSuppressionLevel_ = other.noiseSuppressionLevel_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasWhatsappConfig()) {
+        mergeWhatsappConfig(other.getWhatsappConfig());
+      }
+      if (other.hasInstagramConfig()) {
+        mergeInstagramConfig(other.getInstagramConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4868,6 +8049,20 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetWhatsappConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetInstagramConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5776,6 +8971,441 @@ public final class ChannelProfile extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsappConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig,
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder,
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder>
+        whatsappConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the whatsappConfig field is set.
+     */
+    public boolean hasWhatsappConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The whatsappConfig.
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig getWhatsappConfig() {
+      if (whatsappConfigBuilder_ == null) {
+        return whatsappConfig_ == null
+            ? com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance()
+            : whatsappConfig_;
+      } else {
+        return whatsappConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWhatsappConfig(com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig value) {
+      if (whatsappConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        whatsappConfig_ = value;
+      } else {
+        whatsappConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWhatsappConfig(
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder builderForValue) {
+      if (whatsappConfigBuilder_ == null) {
+        whatsappConfig_ = builderForValue.build();
+      } else {
+        whatsappConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWhatsappConfig(
+        com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig value) {
+      if (whatsappConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && whatsappConfig_ != null
+            && whatsappConfig_
+                != com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance()) {
+          getWhatsappConfigBuilder().mergeFrom(value);
+        } else {
+          whatsappConfig_ = value;
+        }
+      } else {
+        whatsappConfigBuilder_.mergeFrom(value);
+      }
+      if (whatsappConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWhatsappConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      whatsappConfig_ = null;
+      if (whatsappConfigBuilder_ != null) {
+        whatsappConfigBuilder_.dispose();
+        whatsappConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder
+        getWhatsappConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetWhatsappConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder
+        getWhatsappConfigOrBuilder() {
+      if (whatsappConfigBuilder_ != null) {
+        return whatsappConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return whatsappConfig_ == null
+            ? com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.getDefaultInstance()
+            : whatsappConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to WhatsApp deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.WhatsAppConfig whatsapp_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig,
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder,
+            com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder>
+        internalGetWhatsappConfigFieldBuilder() {
+      if (whatsappConfigBuilder_ == null) {
+        whatsappConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig,
+                com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfig.Builder,
+                com.google.cloud.ces.v1.ChannelProfile.WhatsAppConfigOrBuilder>(
+                getWhatsappConfig(), getParentForChildren(), isClean());
+        whatsappConfig_ = null;
+      }
+      return whatsappConfigBuilder_;
+    }
+
+    private com.google.cloud.ces.v1.ChannelProfile.InstagramConfig instagramConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfig,
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder,
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder>
+        instagramConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the instagramConfig field is set.
+     */
+    public boolean hasInstagramConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The instagramConfig.
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig getInstagramConfig() {
+      if (instagramConfigBuilder_ == null) {
+        return instagramConfig_ == null
+            ? com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance()
+            : instagramConfig_;
+      } else {
+        return instagramConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstagramConfig(
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig value) {
+      if (instagramConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instagramConfig_ = value;
+      } else {
+        instagramConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstagramConfig(
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder builderForValue) {
+      if (instagramConfigBuilder_ == null) {
+        instagramConfig_ = builderForValue.build();
+      } else {
+        instagramConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInstagramConfig(
+        com.google.cloud.ces.v1.ChannelProfile.InstagramConfig value) {
+      if (instagramConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && instagramConfig_ != null
+            && instagramConfig_
+                != com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance()) {
+          getInstagramConfigBuilder().mergeFrom(value);
+        } else {
+          instagramConfig_ = value;
+        }
+      } else {
+        instagramConfigBuilder_.mergeFrom(value);
+      }
+      if (instagramConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInstagramConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      instagramConfig_ = null;
+      if (instagramConfigBuilder_ != null) {
+        instagramConfigBuilder_.dispose();
+        instagramConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder
+        getInstagramConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetInstagramConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder
+        getInstagramConfigOrBuilder() {
+      if (instagramConfigBuilder_ != null) {
+        return instagramConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return instagramConfig_ == null
+            ? com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.getDefaultInstance()
+            : instagramConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration specific to Instagram deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ChannelProfile.InstagramConfig instagram_config = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfig,
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder,
+            com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder>
+        internalGetInstagramConfigFieldBuilder() {
+      if (instagramConfigBuilder_ == null) {
+        instagramConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.ChannelProfile.InstagramConfig,
+                com.google.cloud.ces.v1.ChannelProfile.InstagramConfig.Builder,
+                com.google.cloud.ces.v1.ChannelProfile.InstagramConfigOrBuilder>(
+                getInstagramConfig(), getParentForChildren(), isClean());
+        instagramConfig_ = null;
+      }
+      return instagramConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.ChannelProfile)

@@ -357,6 +357,116 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
   }
 
+  public static final int CITATIONS_FIELD_NUMBER = 5;
+  private com.google.cloud.ces.v1beta.Citations citations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+   *
+   * @return Whether the citations field is set.
+   */
+  @java.lang.Override
+  public boolean hasCitations() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+   *
+   * @return The citations.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Citations getCitations() {
+    return citations_ == null
+        ? com.google.cloud.ces.v1beta.Citations.getDefaultInstance()
+        : citations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.CitationsOrBuilder getCitationsOrBuilder() {
+    return citations_ == null
+        ? com.google.cloud.ces.v1beta.Citations.getDefaultInstance()
+        : citations_;
+  }
+
+  public static final int GOOGLE_SEARCH_SUGGESTIONS_FIELD_NUMBER = 6;
+  private com.google.cloud.ces.v1beta.GoogleSearchSuggestions googleSearchSuggestions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   *
+   * @return Whether the googleSearchSuggestions field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleSearchSuggestions() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   *
+   * @return The googleSearchSuggestions.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.GoogleSearchSuggestions getGoogleSearchSuggestions() {
+    return googleSearchSuggestions_ == null
+        ? com.google.cloud.ces.v1beta.GoogleSearchSuggestions.getDefaultInstance()
+        : googleSearchSuggestions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.GoogleSearchSuggestionsOrBuilder
+      getGoogleSearchSuggestionsOrBuilder() {
+    return googleSearchSuggestions_ == null
+        ? com.google.cloud.ces.v1beta.GoogleSearchSuggestions.getDefaultInstance()
+        : googleSearchSuggestions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -383,6 +493,12 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getVariables());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getCitations());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getGoogleSearchSuggestions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -405,6 +521,13 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getVariables());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCitations());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGoogleSearchSuggestions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -429,6 +552,14 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (hasVariables() != other.hasVariables()) return false;
     if (hasVariables()) {
       if (!getVariables().equals(other.getVariables())) return false;
+    }
+    if (hasCitations() != other.hasCitations()) return false;
+    if (hasCitations()) {
+      if (!getCitations().equals(other.getCitations())) return false;
+    }
+    if (hasGoogleSearchSuggestions() != other.hasGoogleSearchSuggestions()) return false;
+    if (hasGoogleSearchSuggestions()) {
+      if (!getGoogleSearchSuggestions().equals(other.getGoogleSearchSuggestions())) return false;
     }
     if (!getToolIdentifierCase().equals(other.getToolIdentifierCase())) return false;
     switch (toolIdentifierCase_) {
@@ -459,6 +590,14 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
     if (hasVariables()) {
       hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + getVariables().hashCode();
+    }
+    if (hasCitations()) {
+      hash = (37 * hash) + CITATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCitations().hashCode();
+    }
+    if (hasGoogleSearchSuggestions()) {
+      hash = (37 * hash) + GOOGLE_SEARCH_SUGGESTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleSearchSuggestions().hashCode();
     }
     switch (toolIdentifierCase_) {
       case 1:
@@ -616,6 +755,8 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetResponseFieldBuilder();
         internalGetVariablesFieldBuilder();
+        internalGetCitationsFieldBuilder();
+        internalGetGoogleSearchSuggestionsFieldBuilder();
       }
     }
 
@@ -635,6 +776,16 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
       if (variablesBuilder_ != null) {
         variablesBuilder_.dispose();
         variablesBuilder_ = null;
+      }
+      citations_ = null;
+      if (citationsBuilder_ != null) {
+        citationsBuilder_.dispose();
+        citationsBuilder_ = null;
+      }
+      googleSearchSuggestions_ = null;
+      if (googleSearchSuggestionsBuilder_ != null) {
+        googleSearchSuggestionsBuilder_.dispose();
+        googleSearchSuggestionsBuilder_ = null;
       }
       toolIdentifierCase_ = 0;
       toolIdentifier_ = null;
@@ -684,6 +835,17 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
         result.variables_ = variablesBuilder_ == null ? variables_ : variablesBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.citations_ = citationsBuilder_ == null ? citations_ : citationsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.googleSearchSuggestions_ =
+            googleSearchSuggestionsBuilder_ == null
+                ? googleSearchSuggestions_
+                : googleSearchSuggestionsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -713,6 +875,12 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
       }
       if (other.hasVariables()) {
         mergeVariables(other.getVariables());
+      }
+      if (other.hasCitations()) {
+        mergeCitations(other.getCitations());
+      }
+      if (other.hasGoogleSearchSuggestions()) {
+        mergeGoogleSearchSuggestions(other.getGoogleSearchSuggestions());
       }
       switch (other.getToolIdentifierCase()) {
         case TOOL:
@@ -786,6 +954,21 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetCitationsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetGoogleSearchSuggestionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1586,6 +1769,409 @@ public final class ExecuteToolResponse extends com.google.protobuf.GeneratedMess
         variables_ = null;
       }
       return variablesBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.Citations citations_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Citations,
+            com.google.cloud.ces.v1beta.Citations.Builder,
+            com.google.cloud.ces.v1beta.CitationsOrBuilder>
+        citationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     *
+     * @return Whether the citations field is set.
+     */
+    public boolean hasCitations() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     *
+     * @return The citations.
+     */
+    public com.google.cloud.ces.v1beta.Citations getCitations() {
+      if (citationsBuilder_ == null) {
+        return citations_ == null
+            ? com.google.cloud.ces.v1beta.Citations.getDefaultInstance()
+            : citations_;
+      } else {
+        return citationsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public Builder setCitations(com.google.cloud.ces.v1beta.Citations value) {
+      if (citationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        citations_ = value;
+      } else {
+        citationsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public Builder setCitations(com.google.cloud.ces.v1beta.Citations.Builder builderForValue) {
+      if (citationsBuilder_ == null) {
+        citations_ = builderForValue.build();
+      } else {
+        citationsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public Builder mergeCitations(com.google.cloud.ces.v1beta.Citations value) {
+      if (citationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && citations_ != null
+            && citations_ != com.google.cloud.ces.v1beta.Citations.getDefaultInstance()) {
+          getCitationsBuilder().mergeFrom(value);
+        } else {
+          citations_ = value;
+        }
+      } else {
+        citationsBuilder_.mergeFrom(value);
+      }
+      if (citations_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public Builder clearCitations() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      citations_ = null;
+      if (citationsBuilder_ != null) {
+        citationsBuilder_.dispose();
+        citationsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.Builder getCitationsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetCitationsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    public com.google.cloud.ces.v1beta.CitationsOrBuilder getCitationsOrBuilder() {
+      if (citationsBuilder_ != null) {
+        return citationsBuilder_.getMessageOrBuilder();
+      } else {
+        return citations_ == null
+            ? com.google.cloud.ces.v1beta.Citations.getDefaultInstance()
+            : citations_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Citations that provide the source information for the tool's execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.Citations citations = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Citations,
+            com.google.cloud.ces.v1beta.Citations.Builder,
+            com.google.cloud.ces.v1beta.CitationsOrBuilder>
+        internalGetCitationsFieldBuilder() {
+      if (citationsBuilder_ == null) {
+        citationsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.Citations,
+                com.google.cloud.ces.v1beta.Citations.Builder,
+                com.google.cloud.ces.v1beta.CitationsOrBuilder>(
+                getCitations(), getParentForChildren(), isClean());
+        citations_ = null;
+      }
+      return citationsBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.GoogleSearchSuggestions googleSearchSuggestions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestions,
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestions.Builder,
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestionsOrBuilder>
+        googleSearchSuggestionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     *
+     * @return Whether the googleSearchSuggestions field is set.
+     */
+    public boolean hasGoogleSearchSuggestions() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     *
+     * @return The googleSearchSuggestions.
+     */
+    public com.google.cloud.ces.v1beta.GoogleSearchSuggestions getGoogleSearchSuggestions() {
+      if (googleSearchSuggestionsBuilder_ == null) {
+        return googleSearchSuggestions_ == null
+            ? com.google.cloud.ces.v1beta.GoogleSearchSuggestions.getDefaultInstance()
+            : googleSearchSuggestions_;
+      } else {
+        return googleSearchSuggestionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public Builder setGoogleSearchSuggestions(
+        com.google.cloud.ces.v1beta.GoogleSearchSuggestions value) {
+      if (googleSearchSuggestionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleSearchSuggestions_ = value;
+      } else {
+        googleSearchSuggestionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public Builder setGoogleSearchSuggestions(
+        com.google.cloud.ces.v1beta.GoogleSearchSuggestions.Builder builderForValue) {
+      if (googleSearchSuggestionsBuilder_ == null) {
+        googleSearchSuggestions_ = builderForValue.build();
+      } else {
+        googleSearchSuggestionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public Builder mergeGoogleSearchSuggestions(
+        com.google.cloud.ces.v1beta.GoogleSearchSuggestions value) {
+      if (googleSearchSuggestionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && googleSearchSuggestions_ != null
+            && googleSearchSuggestions_
+                != com.google.cloud.ces.v1beta.GoogleSearchSuggestions.getDefaultInstance()) {
+          getGoogleSearchSuggestionsBuilder().mergeFrom(value);
+        } else {
+          googleSearchSuggestions_ = value;
+        }
+      } else {
+        googleSearchSuggestionsBuilder_.mergeFrom(value);
+      }
+      if (googleSearchSuggestions_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public Builder clearGoogleSearchSuggestions() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      googleSearchSuggestions_ = null;
+      if (googleSearchSuggestionsBuilder_ != null) {
+        googleSearchSuggestionsBuilder_.dispose();
+        googleSearchSuggestionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public com.google.cloud.ces.v1beta.GoogleSearchSuggestions.Builder
+        getGoogleSearchSuggestionsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetGoogleSearchSuggestionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    public com.google.cloud.ces.v1beta.GoogleSearchSuggestionsOrBuilder
+        getGoogleSearchSuggestionsOrBuilder() {
+      if (googleSearchSuggestionsBuilder_ != null) {
+        return googleSearchSuggestionsBuilder_.getMessageOrBuilder();
+      } else {
+        return googleSearchSuggestions_ == null
+            ? com.google.cloud.ces.v1beta.GoogleSearchSuggestions.getDefaultInstance()
+            : googleSearchSuggestions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The suggestions returned from Google Search as a result of invoking the
+     * Google Search Tool during the tool execution.
+     * </pre>
+     *
+     * <code>.google.cloud.ces.v1beta.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestions,
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestions.Builder,
+            com.google.cloud.ces.v1beta.GoogleSearchSuggestionsOrBuilder>
+        internalGetGoogleSearchSuggestionsFieldBuilder() {
+      if (googleSearchSuggestionsBuilder_ == null) {
+        googleSearchSuggestionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.GoogleSearchSuggestions,
+                com.google.cloud.ces.v1beta.GoogleSearchSuggestions.Builder,
+                com.google.cloud.ces.v1beta.GoogleSearchSuggestionsOrBuilder>(
+                getGoogleSearchSuggestions(), getParentForChildren(), isClean());
+        googleSearchSuggestions_ = null;
+      }
+      return googleSearchSuggestionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ExecuteToolResponse)

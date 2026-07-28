@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,10 +231,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ExtensionExecutionServiceClient implements BackgroundResource {
-  private final ExtensionExecutionServiceSettings settings;
+  private final @Nullable ExtensionExecutionServiceSettings settings;
   private final ExtensionExecutionServiceStub stub;
 
   /** Constructs an instance of ExtensionExecutionServiceClient with default settings. */
@@ -274,7 +277,7 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ExtensionExecutionServiceSettings getSettings() {
+  public final @Nullable ExtensionExecutionServiceSettings getSettings() {
     return settings;
   }
 
@@ -310,7 +313,8 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
    *     [ExtensionOperation.operation_id][google.cloud.aiplatform.v1beta1.ExtensionOperation.operation_id].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExecuteExtensionResponse executeExtension(ExtensionName name, String operationId) {
+  public final ExecuteExtensionResponse executeExtension(
+      @Nullable ExtensionName name, String operationId) {
     ExecuteExtensionRequest request =
         ExecuteExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -446,7 +450,8 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
    *     repeated field that contains conversation history + latest request.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryExtensionResponse queryExtension(ExtensionName name, List<Content> contents) {
+  public final QueryExtensionResponse queryExtension(
+      @Nullable ExtensionName name, List<Content> contents) {
     QueryExtensionRequest request =
         QueryExtensionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -989,8 +994,8 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1000,14 +1005,14 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1021,7 +1026,8 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1031,7 +1037,7 @@ public class ExtensionExecutionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

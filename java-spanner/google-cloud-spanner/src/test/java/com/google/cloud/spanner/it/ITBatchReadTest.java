@@ -19,7 +19,7 @@ package com.google.cloud.spanner.it;
 import static com.google.cloud.spanner.connection.ITAbstractSpannerTest.extractConnectionUrl;
 import static com.google.cloud.spanner.connection.ITAbstractSpannerTest.getKeyFile;
 import static com.google.cloud.spanner.connection.ITAbstractSpannerTest.hasValidKeyFile;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -249,7 +249,7 @@ public class ITBatchReadTest {
 
   @Test
   public void dataBoostRead() {
-    assumeFalse("data boost is not supported on experimental host yet", isExperimentalHost());
+    assumeFalse("data boost is not supported on Spanner Omni yet", isSpannerOmni());
     BitSet seenRows = new BitSet(numRows);
     TimestampBound bound = getRandomBound();
     PartitionOptions partitionParams = getRandomPartitionOptions();
@@ -302,7 +302,7 @@ public class ITBatchReadTest {
 
   @Test
   public void dataBoostQuery() {
-    assumeFalse("data boost is not supported on experimental host yet", isExperimentalHost());
+    assumeFalse("data boost is not supported on Spanner Omni yet", isSpannerOmni());
     BitSet seenRows = new BitSet(numRows);
     TimestampBound bound = getRandomBound();
     PartitionOptions partitionParams = getRandomPartitionOptions();

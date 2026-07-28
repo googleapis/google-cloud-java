@@ -81,6 +81,36 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIS_STANDARD_SMALL = 4;</code>
    */
   REDIS_STANDARD_SMALL(4),
+  /**
+   *
+   *
+   * <pre>
+   * Redis highcpu medium node_type.
+   * </pre>
+   *
+   * <code>REDIS_HIGHCPU_MEDIUM = 7;</code>
+   */
+  REDIS_HIGHCPU_MEDIUM(7),
+  /**
+   *
+   *
+   * <pre>
+   * Redis standard large node_type.
+   * </pre>
+   *
+   * <code>REDIS_STANDARD_LARGE = 8;</code>
+   */
+  REDIS_STANDARD_LARGE(8),
+  /**
+   *
+   *
+   * <pre>
+   * Redis highmem 2xlarge node_type.
+   * </pre>
+   *
+   * <code>REDIS_HIGHMEM_2XLARGE = 9;</code>
+   */
+  REDIS_HIGHMEM_2XLARGE(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -149,6 +179,39 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int REDIS_STANDARD_SMALL_VALUE = 4;
 
+  /**
+   *
+   *
+   * <pre>
+   * Redis highcpu medium node_type.
+   * </pre>
+   *
+   * <code>REDIS_HIGHCPU_MEDIUM = 7;</code>
+   */
+  public static final int REDIS_HIGHCPU_MEDIUM_VALUE = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Redis standard large node_type.
+   * </pre>
+   *
+   * <code>REDIS_STANDARD_LARGE = 8;</code>
+   */
+  public static final int REDIS_STANDARD_LARGE_VALUE = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * Redis highmem 2xlarge node_type.
+   * </pre>
+   *
+   * <code>REDIS_HIGHMEM_2XLARGE = 9;</code>
+   */
+  public static final int REDIS_HIGHMEM_2XLARGE_VALUE = 9;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -183,6 +246,12 @@ public enum NodeType implements com.google.protobuf.ProtocolMessageEnum {
         return REDIS_HIGHMEM_XLARGE;
       case 4:
         return REDIS_STANDARD_SMALL;
+      case 7:
+        return REDIS_HIGHCPU_MEDIUM;
+      case 8:
+        return REDIS_STANDARD_LARGE;
+      case 9:
+        return REDIS_HIGHMEM_2XLARGE;
       default:
         return null;
     }

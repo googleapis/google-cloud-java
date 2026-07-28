@@ -208,6 +208,15 @@
             "DeleteScheduledEvaluationRun": {
               "methods": ["deleteScheduledEvaluationRun", "deleteScheduledEvaluationRun", "deleteScheduledEvaluationRun", "deleteScheduledEvaluationRunCallable"]
             },
+            "ExportEvaluationResults": {
+              "methods": ["exportEvaluationResultsAsync", "exportEvaluationResultsAsync", "exportEvaluationResultsAsync", "exportEvaluationResultsOperationCallable", "exportEvaluationResultsCallable"]
+            },
+            "ExportEvaluationRuns": {
+              "methods": ["exportEvaluationRunsAsync", "exportEvaluationRunsAsync", "exportEvaluationRunsAsync", "exportEvaluationRunsOperationCallable", "exportEvaluationRunsCallable"]
+            },
+            "ExportEvaluations": {
+              "methods": ["exportEvaluationsAsync", "exportEvaluationsAsync", "exportEvaluationsAsync", "exportEvaluationsOperationCallable", "exportEvaluationsCallable"]
+            },
             "GenerateEvaluation": {
               "methods": ["generateEvaluationAsync", "generateEvaluationAsync", "generateEvaluationAsync", "generateEvaluationOperationCallable", "generateEvaluationCallable"]
             },
@@ -258,6 +267,9 @@
             },
             "RunEvaluation": {
               "methods": ["runEvaluationAsync", "runEvaluationAsync", "runEvaluationAsync", "runEvaluationOperationCallable", "runEvaluationCallable"]
+            },
+            "RunEvaluationResultMetrics": {
+              "methods": ["runEvaluationResultMetricsAsync", "runEvaluationResultMetricsAsync", "runEvaluationResultMetricsAsync", "runEvaluationResultMetricsOperationCallable", "runEvaluationResultMetricsCallable"]
             },
             "TestPersonaVoice": {
               "methods": ["testPersonaVoice", "testPersonaVoice", "testPersonaVoice", "testPersonaVoiceCallable"]

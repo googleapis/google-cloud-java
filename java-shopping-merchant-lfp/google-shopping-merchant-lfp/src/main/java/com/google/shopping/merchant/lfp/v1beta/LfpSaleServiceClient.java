@@ -24,6 +24,8 @@ import com.google.shopping.merchant.lfp.v1beta.stub.LfpSaleServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -129,10 +131,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class LfpSaleServiceClient implements BackgroundResource {
-  private final LfpSaleServiceSettings settings;
+  private final @Nullable LfpSaleServiceSettings settings;
   private final LfpSaleServiceStub stub;
 
   /** Constructs an instance of LfpSaleServiceClient with default settings. */
@@ -172,7 +175,7 @@ public class LfpSaleServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LfpSaleServiceSettings getSettings() {
+  public final @Nullable LfpSaleServiceSettings getSettings() {
     return settings;
   }
 

@@ -1,0 +1,49 @@
+# proto-file: google/bigtable/v2/bigtable.proto
+# proto-message: google.bigtable.v2.ClientConfiguration
+
+polling_configuration {
+  polling_interval {
+    seconds: 300
+  }
+  validity_duration {
+    seconds: 315576000000
+  }
+  max_rpc_retry_count: 5
+}
+
+session_configuration {
+  session_load: 0
+
+  channel_configuration {
+    min_server_count: 2
+    max_server_count: 25
+    per_server_session_count: 10
+    direct_access_with_fallback {
+      check_interval {
+        seconds: 60
+      }
+      error_rate_threshold: 0.8
+    }
+  }
+
+  session_pool_configuration {
+    headroom: 0.5
+    min_session_count: 5
+    max_session_count: 400
+    new_session_creation_budget: 50
+    new_session_creation_penalty {
+      seconds: 60
+    }
+    consecutive_session_failure_threshold: 10
+    new_session_queue_length: 10
+    load_balancing_options {
+      least_in_flight {
+        random_subset_size: 0
+      }
+    }
+  }
+}
+
+telemetry_configuration {
+  debug_tag_level: WARN
+}

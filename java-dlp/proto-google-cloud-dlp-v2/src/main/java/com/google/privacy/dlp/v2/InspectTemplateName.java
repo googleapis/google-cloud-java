@@ -24,8 +24,11 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InspectTemplateName implements ResourceName {
   private static final PathTemplate ORGANIZATION_INSPECT_TEMPLATE =
@@ -209,7 +212,7 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  public static InspectTemplateName parse(String formattedString) {
+  public static @Nullable InspectTemplateName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -275,7 +278,7 @@ public class InspectTemplateName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

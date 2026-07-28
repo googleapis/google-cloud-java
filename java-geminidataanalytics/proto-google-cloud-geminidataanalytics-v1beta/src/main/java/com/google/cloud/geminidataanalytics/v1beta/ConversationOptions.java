@@ -51,7 +51,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private ConversationOptions() {}
+  private ConversationOptions() {
+    model_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.geminidataanalytics.v1beta.ContextProto
@@ -66,6 +68,158 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         .ensureFieldAccessorsInitialized(
             com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.class,
             com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Allowed models for the agent/conversation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model}
+   */
+  public enum Model implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No model specified. The model may be set on the chat request, or the
+     * default model will be used.
+     * </pre>
+     *
+     * <code>MODEL_UNSPECIFIED = 0;</code>
+     */
+    MODEL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
+     * </pre>
+     *
+     * <code>LATEST_GA_MODEL = 1;</code>
+     */
+    LATEST_GA_MODEL(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Model");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * No model specified. The model may be set on the chat request, or the
+     * default model will be used.
+     * </pre>
+     *
+     * <code>MODEL_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
+     * </pre>
+     *
+     * <code>LATEST_GA_MODEL = 1;</code>
+     */
+    public static final int LATEST_GA_MODEL_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Model valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Model forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_UNSPECIFIED;
+        case 1:
+          return LATEST_GA_MODEL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Model> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Model> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Model>() {
+          public Model findValueByNumber(int number) {
+            return Model.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Model[] VALUES = values();
+
+    public static Model valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Model(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model)
   }
 
   private int bitField0_;
@@ -248,6 +402,67 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         : datasource_;
   }
 
+  public static final int MODEL_FIELD_NUMBER = 6;
+  private int model_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the model field is set.
+   */
+  @java.lang.Override
+  public boolean hasModel() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for model.
+   */
+  @java.lang.Override
+  public int getModelValue() {
+    return model_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model to use for the agent loop.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model getModel() {
+    com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model result =
+        com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model.forNumber(model_);
+    return result == null
+        ? com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +486,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getDatasource());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(6, model_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -288,6 +506,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDatasource());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, model_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -317,6 +538,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (hasDatasource()) {
       if (!getDatasource().equals(other.getDatasource())) return false;
     }
+    if (hasModel() != other.hasModel()) return false;
+    if (hasModel()) {
+      if (model_ != other.model_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -339,6 +564,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (hasDatasource()) {
       hash = (37 * hash) + DATASOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getDatasource().hashCode();
+    }
+    if (hasModel()) {
+      hash = (37 * hash) + MODEL_FIELD_NUMBER;
+      hash = (53 * hash) + model_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -507,6 +736,7 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         datasourceBuilder_.dispose();
         datasourceBuilder_ = null;
       }
+      model_ = 0;
       return this;
     }
 
@@ -558,6 +788,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         result.datasource_ = datasourceBuilder_ == null ? datasource_ : datasourceBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.model_ = model_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -584,6 +818,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
       }
       if (other.hasDatasource()) {
         mergeDatasource(other.getDatasource());
+      }
+      if (other.hasModel()) {
+        setModelValue(other.getModelValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -631,6 +868,12 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 48:
+              {
+                model_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1299,6 +1542,132 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         datasource_ = null;
       }
       return datasourceBuilder_;
+    }
+
+    private int model_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the model field is set.
+     */
+    @java.lang.Override
+    public boolean hasModel() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for model.
+     */
+    @java.lang.Override
+    public int getModelValue() {
+      return model_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelValue(int value) {
+      model_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The model.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model getModel() {
+      com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model result =
+          com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model.forNumber(model_);
+      return result == null
+          ? com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(
+        com.google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      model_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model to use for the agent loop.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.geminidataanalytics.v1beta.ConversationOptions.Model model = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      model_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.ConversationOptions)

@@ -30,12 +30,12 @@ public interface DataSharingSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name.
+   * Identifier. Resource name.
    * Format: accounts/{account}/dataSharingSettings
    * Example: "accounts/1000/dataSharingSettings"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface DataSharingSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name.
+   * Identifier. Resource name.
    * Format: accounts/{account}/dataSharingSettings
    * Example: "accounts/1000/dataSharingSettings"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -106,7 +106,7 @@ public interface DataSharingSettingsOrBuilder
    *
    * @deprecated
    *     google.analytics.admin.v1alpha.DataSharingSettings.sharing_with_google_any_sales_enabled is
-   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=707
+   *     deprecated. See google/analytics/admin/v1alpha/resources.proto;l=724
    * @return The sharingWithGoogleAnySalesEnabled.
    */
   @java.lang.Deprecated

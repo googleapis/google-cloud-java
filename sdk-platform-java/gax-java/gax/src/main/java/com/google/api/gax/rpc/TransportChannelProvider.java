@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Provides an interface to either build a TransportChannel or provide a fixed TransportChannel that
@@ -57,6 +59,7 @@ import java.util.concurrent.ScheduledExecutorService;
  * TransportChannel transportChannel = transportChannelProvider.getTransportChannel();
  * </code></pre>
  */
+@NullMarked
 @InternalExtensionOnly
 public interface TransportChannelProvider {
   /** Indicates whether the TransportChannel should be closed by the containing client class. */
@@ -69,6 +72,15 @@ public interface TransportChannelProvider {
    */
   @Deprecated
   boolean needsExecutor();
+
+  /**
+   * @return the user provided executor. This can be null if the user didn't override the executor
+   *     and/or the TransportProvider is using its internal executor.
+   */
+  @Nullable
+  default Executor getExecutor() {
+    return null;
+  }
 
   /** Sets the executor to use when constructing a new {@link TransportChannel}. */
   TransportChannelProvider withExecutor(Executor executor);

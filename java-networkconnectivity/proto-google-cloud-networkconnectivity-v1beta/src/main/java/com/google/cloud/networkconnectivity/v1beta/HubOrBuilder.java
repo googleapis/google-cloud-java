@@ -609,4 +609,51 @@ public interface HubOrBuilder
    * @return The exportPsc.
    */
   boolean getExportPsc();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exportPscConfig field is set.
+   */
+  boolean hasExportPscConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exportPscConfig.
+   */
+  com.google.cloud.networkconnectivity.v1beta.Hub.ExportPscConfig getExportPscConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1beta.Hub.ExportPscConfigOrBuilder
+      getExportPscConfigOrBuilder();
 }

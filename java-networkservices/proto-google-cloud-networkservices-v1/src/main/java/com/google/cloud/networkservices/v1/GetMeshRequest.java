@@ -80,7 +80,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A name of the Mesh to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. A name of the Mesh to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
    * </pre>
    *
    * <code>
@@ -446,7 +446,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A name of the Mesh to get. Must be in the format
-     * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
      * </pre>
      *
      * <code>
@@ -472,7 +472,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A name of the Mesh to get. Must be in the format
-     * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
      * </pre>
      *
      * <code>
@@ -498,7 +498,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A name of the Mesh to get. Must be in the format
-     * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
      * </pre>
      *
      * <code>
@@ -523,7 +523,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A name of the Mesh to get. Must be in the format
-     * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
      * </pre>
      *
      * <code>
@@ -544,7 +544,7 @@ public final class GetMeshRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. A name of the Mesh to get. Must be in the format
-     * `projects/&#42;&#47;locations/global/meshes/&#42;`.
+     * `projects/&#42;&#47;locations/&#42;&#47;meshes/&#42;`.
      * </pre>
      *
      * <code>

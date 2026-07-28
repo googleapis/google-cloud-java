@@ -133,24 +133,6 @@ public class DatastoreOptions {
       return this;
     }
 
-    /**
-     * Sets the project endpoint used to access Cloud Datastore. Prefer using {@link #projectId}
-     * and/or {@link #host}/{@link #localHost} when possible.
-     *
-     * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
-     */
-    @Deprecated
-    public Builder projectEndpoint(String projectEndpoint) {
-      checkArgument(projectId == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
-      checkArgument(localHost == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
-      if (!includesScheme(projectEndpoint)) {
-        throw new IllegalArgumentException(
-            String.format("Project endpoint \"%s\" must include scheme.", projectEndpoint));
-      }
-      this.projectEndpoint = projectEndpoint;
-      return this;
-    }
-
     /** Sets the (optional) initializer to run on HTTP requests to Cloud Datastore. */
     public Builder initializer(HttpRequestInitializer initializer) {
       this.initializer = initializer;

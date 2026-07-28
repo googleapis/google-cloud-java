@@ -53,23 +53,34 @@ public final class LabelMessagesProto extends com.google.protobuf.GeneratedFile 
 
   static {
     java.lang.String[] descriptorData = {
-      "\n,google/ads/admanager/v1/label_messages"
-          + ".proto\022\027google.ads.admanager.v1\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\"v\n\005Label\022\021\n\004name\030\001 \001(\tB\003\340A\010:"
-          + "Z\352AW\n\036admanager.googleapis.com/Label\022&ne"
-          + "tworks/{network_code}/labels/{label}*\006la"
-          + "bels2\005labelB\306\001\n\033com.google.ads.admanager"
-          + ".v1B\022LabelMessagesProtoP\001Z@google.golang"
-          + ".org/genproto/googleapis/ads/admanager/v"
-          + "1;admanager\252\002\027Google.Ads.AdManager.V1\312\002\027"
-          + "Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::A"
-          + "dManager::V1b\006proto3"
+      "\n"
+          + ",google/ads/admanager/v1/label_messages"
+          + ".proto\022\027google.ads.admanager.v1\032)google/"
+          + "ads/admanager/v1/label_enums.proto\032\037goog"
+          + "le/api/field_behavior.proto\032\031google/api/resource.proto\"\304\002\n"
+          + "\005Label\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\002H\000\210\001\001\022\035\n"
+          + "\013description\030\004 \001(\tB\003\340A\001H\001\210\001\001\022\030\n"
+          + "\006active\030\005 \001(\010B\003\340A\003H\002\210\001\001\022G\n"
+          + "\005types\030\007 \003(\01620.google.ads"
+          + ".admanager.v1.LabelTypeEnum.LabelTypeB\006\340A\002\340A\006:Z\352AW\n"
+          + "\036admanager.googleapis.com/Lab"
+          + "el\022&networks/{network_code}/labels/{label}*\006labels2\005labelB\017\n\r"
+          + "_display_nameB\016\n"
+          + "\014_descriptionB\t\n"
+          + "\007_activeB\306\001\n"
+          + "\033com.google.ads.admanager.v1B\022LabelMessagesProtoP\001Z@goo"
+          + "gle.golang.org/genproto/googleapis/ads/a"
+          + "dmanager/v1;admanager\252\002\027Google.Ads.AdMan"
+          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goog"
+          + "le::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.LabelEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
@@ -78,9 +89,10 @@ public final class LabelMessagesProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Label_descriptor,
             new java.lang.String[] {
-              "Name",
+              "Name", "DisplayName", "Description", "Active", "Types",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.LabelEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

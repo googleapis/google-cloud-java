@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Request message for
- * [UpdateRun][google.cloud.datacatalog.lineage.v1.UpdateRun].
+ * [UpdateRun][google.cloud.datacatalog.lineage.v1.Lineage.UpdateRun].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.UpdateRunRequest}
@@ -147,11 +147,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -164,11 +165,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -181,11 +183,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The list of fields to update. Currently not used. The whole message is
-   * updated.
+   * Optional. The list of fields to update. Currently not used. The whole
+   * message is updated.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -199,10 +202,10 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * If set to true and the run is not found, the request creates it.
+   * Optional. If set to true and the run is not found, the request creates it.
    * </pre>
    *
-   * <code>bool allow_missing = 3;</code>
+   * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The allowMissing.
    */
@@ -405,7 +408,7 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Request message for
-   * [UpdateRun][google.cloud.datacatalog.lineage.v1.UpdateRun].
+   * [UpdateRun][google.cloud.datacatalog.lineage.v1.Lineage.UpdateRun].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.UpdateRunRequest}
@@ -866,11 +869,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -882,11 +886,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -904,11 +909,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -928,11 +934,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -949,11 +956,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -978,11 +986,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -999,11 +1008,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000002;
@@ -1015,11 +1025,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1035,11 +1046,12 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The list of fields to update. Currently not used. The whole message is
-     * updated.
+     * Optional. The list of fields to update. Currently not used. The whole
+     * message is updated.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.FieldMask,
@@ -1064,10 +1076,10 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request creates it.
+     * Optional. If set to true and the run is not found, the request creates it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allowMissing.
      */
@@ -1080,10 +1092,10 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request creates it.
+     * Optional. If set to true and the run is not found, the request creates it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The allowMissing to set.
      * @return This builder for chaining.
@@ -1100,10 +1112,10 @@ public final class UpdateRunRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * If set to true and the run is not found, the request creates it.
+     * Optional. If set to true and the run is not found, the request creates it.
      * </pre>
      *
-     * <code>bool allow_missing = 3;</code>
+     * <code>bool allow_missing = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

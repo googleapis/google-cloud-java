@@ -222,6 +222,80 @@ public interface ContentLocationOrBuilder
    *
    *
    * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   *
+   * @return Whether the conversationLocation field is set.
+   */
+  boolean hasConversationLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   *
+   * @return The conversationLocation.
+   */
+  com.google.privacy.dlp.v2.ConversationLocation getConversationLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a conversation.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ConversationLocation conversation_location = 10;</code>
+   */
+  com.google.privacy.dlp.v2.ConversationLocationOrBuilder getConversationLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   *
+   * @return Whether the batchContentLocation field is set.
+   */
+  boolean hasBatchContentLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   *
+   * @return The batchContentLocation.
+   */
+  com.google.privacy.dlp.v2.BatchContentLocation getBatchContentLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Location within a batch of content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BatchContentLocation batch_content_location = 11;</code>
+   */
+  com.google.privacy.dlp.v2.BatchContentLocationOrBuilder getBatchContentLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Finding container modification timestamp, if applicable. For Cloud Storage,
    * this field contains the last file modification timestamp. For a BigQuery
    * table, this field contains the last_modified_time property. For Datastore,

@@ -111,4 +111,47 @@ public interface EventLinkOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReferenceOrBuilder getTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes how the target depends on the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.DependencyInfo dependency_info = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dependencyInfo field is set.
+   */
+  boolean hasDependencyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes how the target depends on the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.DependencyInfo dependency_info = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dependencyInfo.
+   */
+  com.google.cloud.datacatalog.lineage.v1.DependencyInfo getDependencyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes how the target depends on the source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.lineage.v1.DependencyInfo dependency_info = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datacatalog.lineage.v1.DependencyInfoOrBuilder getDependencyInfoOrBuilder();
 }

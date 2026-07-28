@@ -34,7 +34,9 @@ public interface FrameworkReferenceOrBuilder
    * corresponds to the latest version of the framework.
    * </pre>
    *
-   * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The framework.
    */
@@ -48,7 +50,9 @@ public interface FrameworkReferenceOrBuilder
    * corresponds to the latest version of the framework.
    * </pre>
    *
-   * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for framework.
    */

@@ -83,6 +83,8 @@ public class ProjectServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setProvisionCompletionTime(Timestamp.newBuilder().build())
             .putAllServiceTermsMap(new HashMap<String, Project.ServiceTerms>())
+            .setCustomerProvidedConfig(Project.CustomerProvidedConfig.newBuilder().build())
+            .setConfigurableBillingStatus(Project.ConfigurableBillingStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -135,6 +137,8 @@ public class ProjectServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setProvisionCompletionTime(Timestamp.newBuilder().build())
             .putAllServiceTermsMap(new HashMap<String, Project.ServiceTerms>())
+            .setCustomerProvidedConfig(Project.CustomerProvidedConfig.newBuilder().build())
+            .setConfigurableBillingStatus(Project.ConfigurableBillingStatus.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

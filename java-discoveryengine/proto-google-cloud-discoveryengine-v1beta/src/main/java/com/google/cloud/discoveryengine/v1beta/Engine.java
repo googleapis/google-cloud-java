@@ -58,11 +58,31 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     dataStoreIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     solutionType_ = 0;
     industryVertical_ = 0;
+    appType_ = 0;
+    configurableBillingApproach_ = 0;
+    marketplaceAgentVisibility_ = 0;
+    procurementContactEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.discoveryengine.v1beta.EngineProto
         .internal_static_google_cloud_discoveryengine_v1beta_Engine_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 30:
+        return internalGetFeatures();
+      case 37:
+        return internalGetModelConfigs();
+      case 42:
+        return internalGetConnectorTenantInfo();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -73,6 +93,872 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.discoveryengine.v1beta.Engine.class,
             com.google.cloud.discoveryengine.v1beta.Engine.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The app of the engine.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.Engine.AppType}
+   */
+  public enum AppType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * All non specified apps.
+     * </pre>
+     *
+     * <code>APP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    APP_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * App type for intranet search and Agentspace.
+     * </pre>
+     *
+     * <code>APP_TYPE_INTRANET = 1;</code>
+     */
+    APP_TYPE_INTRANET(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AppType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * All non specified apps.
+     * </pre>
+     *
+     * <code>APP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int APP_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * App type for intranet search and Agentspace.
+     * </pre>
+     *
+     * <code>APP_TYPE_INTRANET = 1;</code>
+     */
+    public static final int APP_TYPE_INTRANET_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AppType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AppType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return APP_TYPE_UNSPECIFIED;
+        case 1:
+          return APP_TYPE_INTRANET;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AppType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AppType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AppType>() {
+          public AppType findValueByNumber(int number) {
+            return AppType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.Engine.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AppType[] VALUES = values();
+
+    public static AppType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AppType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.AppType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The state of the feature for the engine.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.Engine.FeatureState}
+   */
+  public enum FeatureState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The feature state is unspecified.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_UNSPECIFIED = 0;</code>
+     */
+    FEATURE_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The feature is turned on to be accessible.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_ON = 1;</code>
+     */
+    FEATURE_STATE_ON(1),
+    /**
+     *
+     *
+     * <pre>
+     * The feature is turned off to be inaccessible.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_OFF = 2;</code>
+     */
+    FEATURE_STATE_OFF(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "FeatureState");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The feature state is unspecified.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int FEATURE_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The feature is turned on to be accessible.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_ON = 1;</code>
+     */
+    public static final int FEATURE_STATE_ON_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The feature is turned off to be inaccessible.
+     * </pre>
+     *
+     * <code>FEATURE_STATE_OFF = 2;</code>
+     */
+    public static final int FEATURE_STATE_OFF_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FeatureState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FeatureState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FEATURE_STATE_UNSPECIFIED;
+        case 1:
+          return FEATURE_STATE_ON;
+        case 2:
+          return FEATURE_STATE_OFF;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FeatureState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FeatureState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FeatureState>() {
+          public FeatureState findValueByNumber(int number) {
+            return FeatureState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.Engine.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final FeatureState[] VALUES = values();
+
+    public static FeatureState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FeatureState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.FeatureState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for configurable billing approach.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach}
+   */
+  public enum ConfigurableBillingApproach implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. For Spark and non-Spark non-configurable billing approach.
+     * General pricing model.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED = 0;</code>
+     */
+    CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The billing approach follows configurations specified by customer.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_ENABLED = 1;</code>
+     */
+    CONFIGURABLE_BILLING_APPROACH_ENABLED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ConfigurableBillingApproach");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. For Spark and non-Spark non-configurable billing approach.
+     * General pricing model.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED = 0;</code>
+     */
+    public static final int CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The billing approach follows configurations specified by customer.
+     * </pre>
+     *
+     * <code>CONFIGURABLE_BILLING_APPROACH_ENABLED = 1;</code>
+     */
+    public static final int CONFIGURABLE_BILLING_APPROACH_ENABLED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ConfigurableBillingApproach valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ConfigurableBillingApproach forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED;
+        case 1:
+          return CONFIGURABLE_BILLING_APPROACH_ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ConfigurableBillingApproach>() {
+              public ConfigurableBillingApproach findValueByNumber(int number) {
+                return ConfigurableBillingApproach.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.Engine.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final ConfigurableBillingApproach[] VALUES = values();
+
+    public static ConfigurableBillingApproach valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ConfigurableBillingApproach(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the model for the engine.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.Engine.ModelState}
+   */
+  public enum ModelState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The model state is unspecified.
+     * </pre>
+     *
+     * <code>MODEL_STATE_UNSPECIFIED = 0;</code>
+     */
+    MODEL_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The model is enabled by admin.
+     * </pre>
+     *
+     * <code>MODEL_ENABLED = 1;</code>
+     */
+    MODEL_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * The model is disabled by admin.
+     * </pre>
+     *
+     * <code>MODEL_DISABLED = 2;</code>
+     */
+    MODEL_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ModelState");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The model state is unspecified.
+     * </pre>
+     *
+     * <code>MODEL_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODEL_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The model is enabled by admin.
+     * </pre>
+     *
+     * <code>MODEL_ENABLED = 1;</code>
+     */
+    public static final int MODEL_ENABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The model is disabled by admin.
+     * </pre>
+     *
+     * <code>MODEL_DISABLED = 2;</code>
+     */
+    public static final int MODEL_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModelState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ModelState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODEL_STATE_UNSPECIFIED;
+        case 1:
+          return MODEL_ENABLED;
+        case 2:
+          return MODEL_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ModelState> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ModelState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ModelState>() {
+          public ModelState findValueByNumber(int number) {
+            return ModelState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.Engine.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final ModelState[] VALUES = values();
+
+    public static ModelState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ModelState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.ModelState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents which marketplace agents are visible to any users in agent
+   * gallery.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility}
+   */
+  public enum MarketplaceAgentVisibility implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to `MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED`.
+     * </pre>
+     *
+     * <code>MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED = 0;</code>
+     */
+    MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Only agents that are currently available for use by the user are visible.
+     * </pre>
+     *
+     * <code>SHOW_AVAILABLE_AGENTS_ONLY = 1;</code>
+     */
+    SHOW_AVAILABLE_AGENTS_ONLY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Show marketplace agents that the user does not yet have access to but
+     * are integrated into the engine. This level also includes all agents
+     * visible with `SHOW_AVAILABLE_AGENTS_ONLY`.
+     * </pre>
+     *
+     * <code>SHOW_AGENTS_ALREADY_INTEGRATED = 2;</code>
+     */
+    SHOW_AGENTS_ALREADY_INTEGRATED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Show all agents visible with `SHOW_AGENTS_ALREADY_INTEGRATED`, plus
+     * agents that have already been purchased by the project/organization, even
+     * if they are not currently integrated into the engine.
+     * </pre>
+     *
+     * <code>SHOW_AGENTS_ALREADY_PURCHASED = 3;</code>
+     */
+    SHOW_AGENTS_ALREADY_PURCHASED(3),
+    /**
+     *
+     *
+     * <pre>
+     * All agents in the marketplace are visible, regardless of access or
+     * purchase status. This level encompasses all agents shown in the previous
+     * levels.
+     * </pre>
+     *
+     * <code>SHOW_ALL_AGENTS = 4;</code>
+     */
+    SHOW_ALL_AGENTS(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "MarketplaceAgentVisibility");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to `MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED`.
+     * </pre>
+     *
+     * <code>MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Only agents that are currently available for use by the user are visible.
+     * </pre>
+     *
+     * <code>SHOW_AVAILABLE_AGENTS_ONLY = 1;</code>
+     */
+    public static final int SHOW_AVAILABLE_AGENTS_ONLY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Show marketplace agents that the user does not yet have access to but
+     * are integrated into the engine. This level also includes all agents
+     * visible with `SHOW_AVAILABLE_AGENTS_ONLY`.
+     * </pre>
+     *
+     * <code>SHOW_AGENTS_ALREADY_INTEGRATED = 2;</code>
+     */
+    public static final int SHOW_AGENTS_ALREADY_INTEGRATED_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Show all agents visible with `SHOW_AGENTS_ALREADY_INTEGRATED`, plus
+     * agents that have already been purchased by the project/organization, even
+     * if they are not currently integrated into the engine.
+     * </pre>
+     *
+     * <code>SHOW_AGENTS_ALREADY_PURCHASED = 3;</code>
+     */
+    public static final int SHOW_AGENTS_ALREADY_PURCHASED_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * All agents in the marketplace are visible, regardless of access or
+     * purchase status. This level encompasses all agents shown in the previous
+     * levels.
+     * </pre>
+     *
+     * <code>SHOW_ALL_AGENTS = 4;</code>
+     */
+    public static final int SHOW_ALL_AGENTS_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MarketplaceAgentVisibility valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MarketplaceAgentVisibility forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED;
+        case 1:
+          return SHOW_AVAILABLE_AGENTS_ONLY;
+        case 2:
+          return SHOW_AGENTS_ALREADY_INTEGRATED;
+        case 3:
+          return SHOW_AGENTS_ALREADY_PURCHASED;
+        case 4:
+          return SHOW_ALL_AGENTS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MarketplaceAgentVisibility>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MarketplaceAgentVisibility>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MarketplaceAgentVisibility>() {
+              public MarketplaceAgentVisibility findValueByNumber(int number) {
+                return MarketplaceAgentVisibility.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.Engine.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final MarketplaceAgentVisibility[] VALUES = values();
+
+    public static MarketplaceAgentVisibility valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MarketplaceAgentVisibility(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility)
   }
 
   public interface SearchEngineConfigOrBuilder
@@ -119,6 +1005,44 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return The searchTier.
      */
     com.google.cloud.discoveryengine.v1beta.SearchTier getSearchTier();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required subscription tier of this engine.
+     *
+     * They cannot be modified after engine creation. If the required
+     * subscription tier is search, user with higher license tier like assist
+     * can still access the standalone app associated with this engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requiredSubscriptionTier.
+     */
+    int getRequiredSubscriptionTierValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required subscription tier of this engine.
+     *
+     * They cannot be modified after engine creation. If the required
+     * subscription tier is search, user with higher license tier like assist
+     * can still access the standalone app associated with this engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requiredSubscriptionTier.
+     */
+    com.google.cloud.discoveryengine.v1beta.SubscriptionTier getRequiredSubscriptionTier();
 
     /**
      *
@@ -220,6 +1144,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
 
     private SearchEngineConfig() {
       searchTier_ = 0;
+      requiredSubscriptionTier_ = 0;
       searchAddOns_ = emptyIntList();
     }
 
@@ -288,6 +1213,58 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           com.google.cloud.discoveryengine.v1beta.SearchTier.forNumber(searchTier_);
       return result == null
           ? com.google.cloud.discoveryengine.v1beta.SearchTier.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int REQUIRED_SUBSCRIPTION_TIER_FIELD_NUMBER = 3;
+    private int requiredSubscriptionTier_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required subscription tier of this engine.
+     *
+     * They cannot be modified after engine creation. If the required
+     * subscription tier is search, user with higher license tier like assist
+     * can still access the standalone app associated with this engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for requiredSubscriptionTier.
+     */
+    @java.lang.Override
+    public int getRequiredSubscriptionTierValue() {
+      return requiredSubscriptionTier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required subscription tier of this engine.
+     *
+     * They cannot be modified after engine creation. If the required
+     * subscription tier is search, user with higher license tier like assist
+     * can still access the standalone app associated with this engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requiredSubscriptionTier.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SubscriptionTier getRequiredSubscriptionTier() {
+      com.google.cloud.discoveryengine.v1beta.SubscriptionTier result =
+          com.google.cloud.discoveryengine.v1beta.SubscriptionTier.forNumber(
+              requiredSubscriptionTier_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.SubscriptionTier.UNRECOGNIZED
           : result;
     }
 
@@ -424,6 +1401,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < searchAddOns_.size(); i++) {
         output.writeEnumNoTag(searchAddOns_.getInt(i));
       }
+      if (requiredSubscriptionTier_
+          != com.google.cloud.discoveryengine.v1beta.SubscriptionTier.SUBSCRIPTION_TIER_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, requiredSubscriptionTier_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -451,6 +1433,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         }
         searchAddOnsMemoizedSerializedSize = dataSize;
       }
+      if (requiredSubscriptionTier_
+          != com.google.cloud.discoveryengine.v1beta.SubscriptionTier.SUBSCRIPTION_TIER_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, requiredSubscriptionTier_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -468,6 +1455,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.discoveryengine.v1beta.Engine.SearchEngineConfig) obj;
 
       if (searchTier_ != other.searchTier_) return false;
+      if (requiredSubscriptionTier_ != other.requiredSubscriptionTier_) return false;
       if (!searchAddOns_.equals(other.searchAddOns_)) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -482,6 +1470,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SEARCH_TIER_FIELD_NUMBER;
       hash = (53 * hash) + searchTier_;
+      hash = (37 * hash) + REQUIRED_SUBSCRIPTION_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + requiredSubscriptionTier_;
       if (getSearchAddOnsCount() > 0) {
         hash = (37 * hash) + SEARCH_ADD_ONS_FIELD_NUMBER;
         hash = (53 * hash) + searchAddOns_.hashCode();
@@ -630,6 +1620,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         searchTier_ = 0;
+        requiredSubscriptionTier_ = 0;
         searchAddOns_ = emptyIntList();
         return this;
       }
@@ -674,6 +1665,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           result.searchTier_ = searchTier_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.requiredSubscriptionTier_ = requiredSubscriptionTier_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           searchAddOns_.makeImmutable();
           result.searchAddOns_ = searchAddOns_;
         }
@@ -698,11 +1692,14 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         if (other.searchTier_ != 0) {
           setSearchTierValue(other.getSearchTierValue());
         }
+        if (other.requiredSubscriptionTier_ != 0) {
+          setRequiredSubscriptionTierValue(other.getRequiredSubscriptionTierValue());
+        }
         if (!other.searchAddOns_.isEmpty()) {
           if (searchAddOns_.isEmpty()) {
             searchAddOns_ = other.searchAddOns_;
             searchAddOns_.makeImmutable();
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
           } else {
             ensureSearchAddOnsIsMutable();
             searchAddOns_.addAll(other.searchAddOns_);
@@ -759,6 +1756,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
                   input.popLimit(limit);
                   break;
                 } // case 18
+              case 24:
+                {
+                  requiredSubscriptionTier_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -910,13 +1913,143 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private int requiredSubscriptionTier_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required subscription tier of this engine.
+       *
+       * They cannot be modified after engine creation. If the required
+       * subscription tier is search, user with higher license tier like assist
+       * can still access the standalone app associated with this engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for requiredSubscriptionTier.
+       */
+      @java.lang.Override
+      public int getRequiredSubscriptionTierValue() {
+        return requiredSubscriptionTier_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required subscription tier of this engine.
+       *
+       * They cannot be modified after engine creation. If the required
+       * subscription tier is search, user with higher license tier like assist
+       * can still access the standalone app associated with this engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for requiredSubscriptionTier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequiredSubscriptionTierValue(int value) {
+        requiredSubscriptionTier_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required subscription tier of this engine.
+       *
+       * They cannot be modified after engine creation. If the required
+       * subscription tier is search, user with higher license tier like assist
+       * can still access the standalone app associated with this engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The requiredSubscriptionTier.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SubscriptionTier
+          getRequiredSubscriptionTier() {
+        com.google.cloud.discoveryengine.v1beta.SubscriptionTier result =
+            com.google.cloud.discoveryengine.v1beta.SubscriptionTier.forNumber(
+                requiredSubscriptionTier_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.SubscriptionTier.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required subscription tier of this engine.
+       *
+       * They cannot be modified after engine creation. If the required
+       * subscription tier is search, user with higher license tier like assist
+       * can still access the standalone app associated with this engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The requiredSubscriptionTier to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRequiredSubscriptionTier(
+          com.google.cloud.discoveryengine.v1beta.SubscriptionTier value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        requiredSubscriptionTier_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required subscription tier of this engine.
+       *
+       * They cannot be modified after engine creation. If the required
+       * subscription tier is search, user with higher license tier like assist
+       * can still access the standalone app associated with this engine.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SubscriptionTier required_subscription_tier = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRequiredSubscriptionTier() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        requiredSubscriptionTier_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Internal.IntList searchAddOns_ = emptyIntList();
 
       private void ensureSearchAddOnsIsMutable() {
         if (!searchAddOns_.isModifiable()) {
           searchAddOns_ = makeMutableCopy(searchAddOns_);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
 
       /**
@@ -1050,7 +2183,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearSearchAddOns() {
         searchAddOns_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1202,6 +2335,5965 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface MediaRecommendationEngineConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of engine. e.g., `recommended-for-you`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+     * `more-like-this`, `most-popular-items`.
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The type.
+     */
+    java.lang.String getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of engine. e.g., `recommended-for-you`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+     * `more-like-this`, `most-popular-items`.
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString getTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The optimization objective. e.g., `cvr`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported
+     * values: `ctr`, `cvr`.
+     *
+     * If not specified, we choose default based on engine type.
+     * Default depends on type of recommendation:
+     *
+     * `recommended-for-you` =&gt; `ctr`
+     *
+     * `others-you-may-like` =&gt; `ctr`
+     * </pre>
+     *
+     * <code>string optimization_objective = 2;</code>
+     *
+     * @return The optimizationObjective.
+     */
+    java.lang.String getOptimizationObjective();
+
+    /**
+     *
+     *
+     * <pre>
+     * The optimization objective. e.g., `cvr`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported
+     * values: `ctr`, `cvr`.
+     *
+     * If not specified, we choose default based on engine type.
+     * Default depends on type of recommendation:
+     *
+     * `recommended-for-you` =&gt; `ctr`
+     *
+     * `others-you-may-like` =&gt; `ctr`
+     * </pre>
+     *
+     * <code>string optimization_objective = 2;</code>
+     *
+     * @return The bytes for optimizationObjective.
+     */
+    com.google.protobuf.ByteString getOptimizationObjectiveBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     *
+     * @return Whether the optimizationObjectiveConfig field is set.
+     */
+    boolean hasOptimizationObjectiveConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     *
+     * @return The optimizationObjectiveConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .OptimizationObjectiveConfig
+        getOptimizationObjectiveConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .OptimizationObjectiveConfigOrBuilder
+        getOptimizationObjectiveConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The training state that the engine is in (e.g.
+     * `TRAINING` or `PAUSED`).
+     *
+     * Since part of the cost of running the service
+     * is frequency of training - this can be used to determine when to train
+     * engine in order to control cost. If not specified: the default value for
+     * `CreateEngine` method is `TRAINING`. The default value for
+     * `UpdateEngine` method is to keep the state the same as before.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trainingState.
+     */
+    int getTrainingStateValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The training state that the engine is in (e.g.
+     * `TRAINING` or `PAUSED`).
+     *
+     * Since part of the cost of running the service
+     * is frequency of training - this can be used to determine when to train
+     * engine in order to control cost. If not specified: the default value for
+     * `CreateEngine` method is `TRAINING`. The default value for
+     * `UpdateEngine` method is to keep the state the same as before.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+     * </code>
+     *
+     * @return The trainingState.
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState
+        getTrainingState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the engineFeaturesConfig field is set.
+     */
+    boolean hasEngineFeaturesConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The engineFeaturesConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .EngineFeaturesConfig
+        getEngineFeaturesConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .EngineFeaturesConfigOrBuilder
+        getEngineFeaturesConfigOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional config specs for a Media Recommendation engine.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig}
+   */
+  public static final class MediaRecommendationEngineConfig
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+      MediaRecommendationEngineConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "MediaRecommendationEngineConfig");
+    }
+
+    // Use MediaRecommendationEngineConfig.newBuilder() to construct.
+    private MediaRecommendationEngineConfig(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MediaRecommendationEngineConfig() {
+      type_ = "";
+      optimizationObjective_ = "";
+      trainingState_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.EngineProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.EngineProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.class,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The training state of the engine.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState}
+     */
+    public enum TrainingState implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified training state.
+       * </pre>
+       *
+       * <code>TRAINING_STATE_UNSPECIFIED = 0;</code>
+       */
+      TRAINING_STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The engine training is paused.
+       * </pre>
+       *
+       * <code>PAUSED = 1;</code>
+       */
+      PAUSED(1),
+      /**
+       *
+       *
+       * <pre>
+       * The engine is training.
+       * </pre>
+       *
+       * <code>TRAINING = 2;</code>
+       */
+      TRAINING(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "TrainingState");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified training state.
+       * </pre>
+       *
+       * <code>TRAINING_STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TRAINING_STATE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The engine training is paused.
+       * </pre>
+       *
+       * <code>PAUSED = 1;</code>
+       */
+      public static final int PAUSED_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The engine is training.
+       * </pre>
+       *
+       * <code>TRAINING = 2;</code>
+       */
+      public static final int TRAINING_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TrainingState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TrainingState forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TRAINING_STATE_UNSPECIFIED;
+          case 1:
+            return PAUSED;
+          case 2:
+            return TRAINING;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TrainingState> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TrainingState>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<TrainingState>() {
+                public TrainingState findValueByNumber(int number) {
+                  return TrainingState.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final TrainingState[] VALUES = values();
+
+      public static TrainingState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TrainingState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState)
+    }
+
+    public interface OptimizationObjectiveConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field to target. Currently supported
+       * values: `watch-percentage`, `watch-time`.
+       * </pre>
+       *
+       * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The targetField.
+       */
+      java.lang.String getTargetField();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field to target. Currently supported
+       * values: `watch-percentage`, `watch-time`.
+       * </pre>
+       *
+       * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for targetField.
+       */
+      com.google.protobuf.ByteString getTargetFieldBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The threshold to be applied to the target (e.g., 0.5).
+       * </pre>
+       *
+       * <code>float target_field_value_float = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The targetFieldValueFloat.
+       */
+      float getTargetFieldValueFloat();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Custom threshold for `cvr` optimization_objective.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig}
+     */
+    public static final class OptimizationObjectiveConfig
+        extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig)
+        OptimizationObjectiveConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "OptimizationObjectiveConfig");
+      }
+
+      // Use OptimizationObjectiveConfig.newBuilder() to construct.
+      private OptimizationObjectiveConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private OptimizationObjectiveConfig() {
+        targetField_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_OptimizationObjectiveConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_OptimizationObjectiveConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .OptimizationObjectiveConfig.class,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .OptimizationObjectiveConfig.Builder.class);
+      }
+
+      public static final int TARGET_FIELD_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object targetField_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field to target. Currently supported
+       * values: `watch-percentage`, `watch-time`.
+       * </pre>
+       *
+       * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The targetField.
+       */
+      @java.lang.Override
+      public java.lang.String getTargetField() {
+        java.lang.Object ref = targetField_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          targetField_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the field to target. Currently supported
+       * values: `watch-percentage`, `watch-time`.
+       * </pre>
+       *
+       * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for targetField.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTargetFieldBytes() {
+        java.lang.Object ref = targetField_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          targetField_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TARGET_FIELD_VALUE_FLOAT_FIELD_NUMBER = 2;
+      private float targetFieldValueFloat_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The threshold to be applied to the target (e.g., 0.5).
+       * </pre>
+       *
+       * <code>float target_field_value_float = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The targetFieldValueFloat.
+       */
+      @java.lang.Override
+      public float getTargetFieldValueFloat() {
+        return targetFieldValueFloat_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(targetField_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, targetField_);
+        }
+        if (java.lang.Float.floatToRawIntBits(targetFieldValueFloat_) != 0) {
+          output.writeFloat(2, targetFieldValueFloat_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(targetField_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, targetField_);
+        }
+        if (java.lang.Float.floatToRawIntBits(targetFieldValueFloat_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, targetFieldValueFloat_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .OptimizationObjectiveConfig)
+                    obj;
+
+        if (!getTargetField().equals(other.getTargetField())) return false;
+        if (java.lang.Float.floatToIntBits(getTargetFieldValueFloat())
+            != java.lang.Float.floatToIntBits(other.getTargetFieldValueFloat())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TARGET_FIELD_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetField().hashCode();
+        hash = (37 * hash) + TARGET_FIELD_VALUE_FLOAT_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getTargetFieldValueFloat());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom threshold for `cvr` optimization_objective.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig)
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_OptimizationObjectiveConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_OptimizationObjectiveConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          targetField_ = "";
+          targetFieldValueFloat_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_OptimizationObjectiveConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .OptimizationObjectiveConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.targetField_ = targetField_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.targetFieldValueFloat_ = targetFieldValueFloat_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .OptimizationObjectiveConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .OptimizationObjectiveConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.getDefaultInstance()) return this;
+          if (!other.getTargetField().isEmpty()) {
+            targetField_ = other.targetField_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (java.lang.Float.floatToRawIntBits(other.getTargetFieldValueFloat()) != 0) {
+            setTargetFieldValueFloat(other.getTargetFieldValueFloat());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    targetField_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    targetFieldValueFloat_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object targetField_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the field to target. Currently supported
+         * values: `watch-percentage`, `watch-time`.
+         * </pre>
+         *
+         * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The targetField.
+         */
+        public java.lang.String getTargetField() {
+          java.lang.Object ref = targetField_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            targetField_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the field to target. Currently supported
+         * values: `watch-percentage`, `watch-time`.
+         * </pre>
+         *
+         * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for targetField.
+         */
+        public com.google.protobuf.ByteString getTargetFieldBytes() {
+          java.lang.Object ref = targetField_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            targetField_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the field to target. Currently supported
+         * values: `watch-percentage`, `watch-time`.
+         * </pre>
+         *
+         * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The targetField to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetField(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetField_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the field to target. Currently supported
+         * values: `watch-percentage`, `watch-time`.
+         * </pre>
+         *
+         * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTargetField() {
+          targetField_ = getDefaultInstance().getTargetField();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The name of the field to target. Currently supported
+         * values: `watch-percentage`, `watch-time`.
+         * </pre>
+         *
+         * <code>string target_field = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for targetField to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetFieldBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          targetField_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private float targetFieldValueFloat_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The threshold to be applied to the target (e.g., 0.5).
+         * </pre>
+         *
+         * <code>float target_field_value_float = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The targetFieldValueFloat.
+         */
+        @java.lang.Override
+        public float getTargetFieldValueFloat() {
+          return targetFieldValueFloat_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The threshold to be applied to the target (e.g., 0.5).
+         * </pre>
+         *
+         * <code>float target_field_value_float = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @param value The targetFieldValueFloat to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetFieldValueFloat(float value) {
+
+          targetFieldValueFloat_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The threshold to be applied to the target (e.g., 0.5).
+         * </pre>
+         *
+         * <code>float target_field_value_float = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTargetFieldValueFloat() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          targetFieldValueFloat_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.Engine
+              .MediaRecommendationEngineConfig.OptimizationObjectiveConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .OptimizationObjectiveConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<OptimizationObjectiveConfig> PARSER =
+          new com.google.protobuf.AbstractParser<OptimizationObjectiveConfig>() {
+            @java.lang.Override
+            public OptimizationObjectiveConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<OptimizationObjectiveConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OptimizationObjectiveConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface EngineFeaturesConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       *
+       * @return Whether the recommendedForYouConfig field is set.
+       */
+      boolean hasRecommendedForYouConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       *
+       * @return The recommendedForYouConfig.
+       */
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          getRecommendedForYouConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfigOrBuilder
+          getRecommendedForYouConfigOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       *
+       * @return Whether the mostPopularConfig field is set.
+       */
+      boolean hasMostPopularConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       *
+       * @return The mostPopularConfig.
+       */
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          getMostPopularConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfigOrBuilder
+          getMostPopularConfigOrBuilder();
+
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig.TypeDedicatedConfigCase
+          getTypeDedicatedConfigCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * More feature configs of the selected engine type.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig}
+     */
+    public static final class EngineFeaturesConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig)
+        EngineFeaturesConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "EngineFeaturesConfig");
+      }
+
+      // Use EngineFeaturesConfig.newBuilder() to construct.
+      private EngineFeaturesConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EngineFeaturesConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_EngineFeaturesConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_EngineFeaturesConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .EngineFeaturesConfig.class,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .EngineFeaturesConfig.Builder.class);
+      }
+
+      private int typeDedicatedConfigCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object typeDedicatedConfig_;
+
+      public enum TypeDedicatedConfigCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        RECOMMENDED_FOR_YOU_CONFIG(1),
+        MOST_POPULAR_CONFIG(2),
+        TYPEDEDICATEDCONFIG_NOT_SET(0);
+        private final int value;
+
+        private TypeDedicatedConfigCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TypeDedicatedConfigCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static TypeDedicatedConfigCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return RECOMMENDED_FOR_YOU_CONFIG;
+            case 2:
+              return MOST_POPULAR_CONFIG;
+            case 0:
+              return TYPEDEDICATEDCONFIG_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public TypeDedicatedConfigCase getTypeDedicatedConfigCase() {
+        return TypeDedicatedConfigCase.forNumber(typeDedicatedConfigCase_);
+      }
+
+      public static final int RECOMMENDED_FOR_YOU_CONFIG_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       *
+       * @return Whether the recommendedForYouConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasRecommendedForYouConfig() {
+        return typeDedicatedConfigCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       *
+       * @return The recommendedForYouConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          getRecommendedForYouConfig() {
+        if (typeDedicatedConfigCase_ == 1) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig)
+              typeDedicatedConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .RecommendedForYouFeatureConfig.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Recommended for you engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfigOrBuilder
+          getRecommendedForYouConfigOrBuilder() {
+        if (typeDedicatedConfigCase_ == 1) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig)
+              typeDedicatedConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .RecommendedForYouFeatureConfig.getDefaultInstance();
+      }
+
+      public static final int MOST_POPULAR_CONFIG_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       *
+       * @return Whether the mostPopularConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasMostPopularConfig() {
+        return typeDedicatedConfigCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       *
+       * @return The mostPopularConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          getMostPopularConfig() {
+        if (typeDedicatedConfigCase_ == 2) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig)
+              typeDedicatedConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .MostPopularFeatureConfig.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Most popular engine feature config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfigOrBuilder
+          getMostPopularConfigOrBuilder() {
+        if (typeDedicatedConfigCase_ == 2) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig)
+              typeDedicatedConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .MostPopularFeatureConfig.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (typeDedicatedConfigCase_ == 1) {
+          output.writeMessage(
+              1,
+              (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig)
+                  typeDedicatedConfig_);
+        }
+        if (typeDedicatedConfigCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig)
+                  typeDedicatedConfig_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (typeDedicatedConfigCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1,
+                  (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                          .RecommendedForYouFeatureConfig)
+                      typeDedicatedConfig_);
+        }
+        if (typeDedicatedConfigCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                          .MostPopularFeatureConfig)
+                      typeDedicatedConfig_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .EngineFeaturesConfig)
+                    obj;
+
+        if (!getTypeDedicatedConfigCase().equals(other.getTypeDedicatedConfigCase())) return false;
+        switch (typeDedicatedConfigCase_) {
+          case 1:
+            if (!getRecommendedForYouConfig().equals(other.getRecommendedForYouConfig()))
+              return false;
+            break;
+          case 2:
+            if (!getMostPopularConfig().equals(other.getMostPopularConfig())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (typeDedicatedConfigCase_) {
+          case 1:
+            hash = (37 * hash) + RECOMMENDED_FOR_YOU_CONFIG_FIELD_NUMBER;
+            hash = (53 * hash) + getRecommendedForYouConfig().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + MOST_POPULAR_CONFIG_FIELD_NUMBER;
+            hash = (53 * hash) + getMostPopularConfig().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * More feature configs of the selected engine type.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig)
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_EngineFeaturesConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_EngineFeaturesConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (recommendedForYouConfigBuilder_ != null) {
+            recommendedForYouConfigBuilder_.clear();
+          }
+          if (mostPopularConfigBuilder_ != null) {
+            mostPopularConfigBuilder_.clear();
+          }
+          typeDedicatedConfigCase_ = 0;
+          typeDedicatedConfig_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_EngineFeaturesConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .EngineFeaturesConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .EngineFeaturesConfig
+                result) {
+          result.typeDedicatedConfigCase_ = typeDedicatedConfigCase_;
+          result.typeDedicatedConfig_ = this.typeDedicatedConfig_;
+          if (typeDedicatedConfigCase_ == 1 && recommendedForYouConfigBuilder_ != null) {
+            result.typeDedicatedConfig_ = recommendedForYouConfigBuilder_.build();
+          }
+          if (typeDedicatedConfigCase_ == 2 && mostPopularConfigBuilder_ != null) {
+            result.typeDedicatedConfig_ = mostPopularConfigBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .EngineFeaturesConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .EngineFeaturesConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.getDefaultInstance()) return this;
+          switch (other.getTypeDedicatedConfigCase()) {
+            case RECOMMENDED_FOR_YOU_CONFIG:
+              {
+                mergeRecommendedForYouConfig(other.getRecommendedForYouConfig());
+                break;
+              }
+            case MOST_POPULAR_CONFIG:
+              {
+                mergeMostPopularConfig(other.getMostPopularConfig());
+                break;
+              }
+            case TYPEDEDICATEDCONFIG_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetRecommendedForYouConfigFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    typeDedicatedConfigCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetMostPopularConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    typeDedicatedConfigCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int typeDedicatedConfigCase_ = 0;
+        private java.lang.Object typeDedicatedConfig_;
+
+        public TypeDedicatedConfigCase getTypeDedicatedConfigCase() {
+          return TypeDedicatedConfigCase.forNumber(typeDedicatedConfigCase_);
+        }
+
+        public Builder clearTypeDedicatedConfig() {
+          typeDedicatedConfigCase_ = 0;
+          typeDedicatedConfig_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfigOrBuilder>
+            recommendedForYouConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         *
+         * @return Whether the recommendedForYouConfig field is set.
+         */
+        @java.lang.Override
+        public boolean hasRecommendedForYouConfig() {
+          return typeDedicatedConfigCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         *
+         * @return The recommendedForYouConfig.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig
+            getRecommendedForYouConfig() {
+          if (recommendedForYouConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 1) {
+              return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig)
+                  typeDedicatedConfig_;
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig.getDefaultInstance();
+          } else {
+            if (typeDedicatedConfigCase_ == 1) {
+              return recommendedForYouConfigBuilder_.getMessage();
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        public Builder setRecommendedForYouConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig
+                value) {
+          if (recommendedForYouConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            typeDedicatedConfig_ = value;
+            onChanged();
+          } else {
+            recommendedForYouConfigBuilder_.setMessage(value);
+          }
+          typeDedicatedConfigCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        public Builder setRecommendedForYouConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig.Builder
+                builderForValue) {
+          if (recommendedForYouConfigBuilder_ == null) {
+            typeDedicatedConfig_ = builderForValue.build();
+            onChanged();
+          } else {
+            recommendedForYouConfigBuilder_.setMessage(builderForValue.build());
+          }
+          typeDedicatedConfigCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        public Builder mergeRecommendedForYouConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig
+                value) {
+          if (recommendedForYouConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 1
+                && typeDedicatedConfig_
+                    != com.google.cloud.discoveryengine.v1beta.Engine
+                        .MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig
+                        .getDefaultInstance()) {
+              typeDedicatedConfig_ =
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig.newBuilder(
+                          (com.google.cloud.discoveryengine.v1beta.Engine
+                                  .MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+                              typeDedicatedConfig_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              typeDedicatedConfig_ = value;
+            }
+            onChanged();
+          } else {
+            if (typeDedicatedConfigCase_ == 1) {
+              recommendedForYouConfigBuilder_.mergeFrom(value);
+            } else {
+              recommendedForYouConfigBuilder_.setMessage(value);
+            }
+          }
+          typeDedicatedConfigCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        public Builder clearRecommendedForYouConfig() {
+          if (recommendedForYouConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 1) {
+              typeDedicatedConfigCase_ = 0;
+              typeDedicatedConfig_ = null;
+              onChanged();
+            }
+          } else {
+            if (typeDedicatedConfigCase_ == 1) {
+              typeDedicatedConfigCase_ = 0;
+              typeDedicatedConfig_ = null;
+            }
+            recommendedForYouConfigBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig.Builder
+            getRecommendedForYouConfigBuilder() {
+          return internalGetRecommendedForYouConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfigOrBuilder
+            getRecommendedForYouConfigOrBuilder() {
+          if ((typeDedicatedConfigCase_ == 1) && (recommendedForYouConfigBuilder_ != null)) {
+            return recommendedForYouConfigBuilder_.getMessageOrBuilder();
+          } else {
+            if (typeDedicatedConfigCase_ == 1) {
+              return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig)
+                  typeDedicatedConfig_;
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Recommended for you engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig recommended_for_you_config = 1;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfigOrBuilder>
+            internalGetRecommendedForYouConfigFieldBuilder() {
+          if (recommendedForYouConfigBuilder_ == null) {
+            if (!(typeDedicatedConfigCase_ == 1)) {
+              typeDedicatedConfig_ =
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig.getDefaultInstance();
+            }
+            recommendedForYouConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .RecommendedForYouFeatureConfig,
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .RecommendedForYouFeatureConfig.Builder,
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .RecommendedForYouFeatureConfigOrBuilder>(
+                    (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                            .RecommendedForYouFeatureConfig)
+                        typeDedicatedConfig_,
+                    getParentForChildren(),
+                    isClean());
+            typeDedicatedConfig_ = null;
+          }
+          typeDedicatedConfigCase_ = 1;
+          onChanged();
+          return recommendedForYouConfigBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfigOrBuilder>
+            mostPopularConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         *
+         * @return Whether the mostPopularConfig field is set.
+         */
+        @java.lang.Override
+        public boolean hasMostPopularConfig() {
+          return typeDedicatedConfigCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         *
+         * @return The mostPopularConfig.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig
+            getMostPopularConfig() {
+          if (mostPopularConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 2) {
+              return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig)
+                  typeDedicatedConfig_;
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig.getDefaultInstance();
+          } else {
+            if (typeDedicatedConfigCase_ == 2) {
+              return mostPopularConfigBuilder_.getMessage();
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        public Builder setMostPopularConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig
+                value) {
+          if (mostPopularConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            typeDedicatedConfig_ = value;
+            onChanged();
+          } else {
+            mostPopularConfigBuilder_.setMessage(value);
+          }
+          typeDedicatedConfigCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        public Builder setMostPopularConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig.Builder
+                builderForValue) {
+          if (mostPopularConfigBuilder_ == null) {
+            typeDedicatedConfig_ = builderForValue.build();
+            onChanged();
+          } else {
+            mostPopularConfigBuilder_.setMessage(builderForValue.build());
+          }
+          typeDedicatedConfigCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        public Builder mergeMostPopularConfig(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig
+                value) {
+          if (mostPopularConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 2
+                && typeDedicatedConfig_
+                    != com.google.cloud.discoveryengine.v1beta.Engine
+                        .MediaRecommendationEngineConfig.MostPopularFeatureConfig
+                        .getDefaultInstance()) {
+              typeDedicatedConfig_ =
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig.newBuilder(
+                          (com.google.cloud.discoveryengine.v1beta.Engine
+                                  .MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+                              typeDedicatedConfig_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              typeDedicatedConfig_ = value;
+            }
+            onChanged();
+          } else {
+            if (typeDedicatedConfigCase_ == 2) {
+              mostPopularConfigBuilder_.mergeFrom(value);
+            } else {
+              mostPopularConfigBuilder_.setMessage(value);
+            }
+          }
+          typeDedicatedConfigCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        public Builder clearMostPopularConfig() {
+          if (mostPopularConfigBuilder_ == null) {
+            if (typeDedicatedConfigCase_ == 2) {
+              typeDedicatedConfigCase_ = 0;
+              typeDedicatedConfig_ = null;
+              onChanged();
+            }
+          } else {
+            if (typeDedicatedConfigCase_ == 2) {
+              typeDedicatedConfigCase_ = 0;
+              typeDedicatedConfig_ = null;
+            }
+            mostPopularConfigBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig.Builder
+            getMostPopularConfigBuilder() {
+          return internalGetMostPopularConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfigOrBuilder
+            getMostPopularConfigOrBuilder() {
+          if ((typeDedicatedConfigCase_ == 2) && (mostPopularConfigBuilder_ != null)) {
+            return mostPopularConfigBuilder_.getMessageOrBuilder();
+          } else {
+            if (typeDedicatedConfigCase_ == 2) {
+              return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig)
+                  typeDedicatedConfig_;
+            }
+            return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Most popular engine feature config.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig most_popular_config = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfigOrBuilder>
+            internalGetMostPopularConfigFieldBuilder() {
+          if (mostPopularConfigBuilder_ == null) {
+            if (!(typeDedicatedConfigCase_ == 2)) {
+              typeDedicatedConfig_ =
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig.getDefaultInstance();
+            }
+            mostPopularConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .MostPopularFeatureConfig,
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .MostPopularFeatureConfig.Builder,
+                    com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .MostPopularFeatureConfigOrBuilder>(
+                    (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                            .MostPopularFeatureConfig)
+                        typeDedicatedConfig_,
+                    getParentForChildren(),
+                    isClean());
+            typeDedicatedConfig_ = null;
+          }
+          typeDedicatedConfigCase_ = 2;
+          onChanged();
+          return mostPopularConfigBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.Engine
+              .MediaRecommendationEngineConfig.EngineFeaturesConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .EngineFeaturesConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EngineFeaturesConfig> PARSER =
+          new com.google.protobuf.AbstractParser<EngineFeaturesConfig>() {
+            @java.lang.Override
+            public EngineFeaturesConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EngineFeaturesConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EngineFeaturesConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RecommendedForYouFeatureConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of event with which the engine is queried at prediction time.
+       * If set to `generic`, only `view-item`, `media-play`,and
+       * `media-complete` will be used as `context-event` in engine training. If
+       * set to `view-home-page`, `view-home-page` will also be used as
+       * `context-events` in addition to `view-item`, `media-play`, and
+       * `media-complete`. Currently supported for the `recommended-for-you`
+       * engine. Currently supported values: `view-home-page`, `generic`.
+       * </pre>
+       *
+       * <code>string context_event_type = 1;</code>
+       *
+       * @return The contextEventType.
+       */
+      java.lang.String getContextEventType();
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of event with which the engine is queried at prediction time.
+       * If set to `generic`, only `view-item`, `media-play`,and
+       * `media-complete` will be used as `context-event` in engine training. If
+       * set to `view-home-page`, `view-home-page` will also be used as
+       * `context-events` in addition to `view-item`, `media-play`, and
+       * `media-complete`. Currently supported for the `recommended-for-you`
+       * engine. Currently supported values: `view-home-page`, `generic`.
+       * </pre>
+       *
+       * <code>string context_event_type = 1;</code>
+       *
+       * @return The bytes for contextEventType.
+       */
+      com.google.protobuf.ByteString getContextEventTypeBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional feature configurations for creating a `recommended-for-you`
+     * engine.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig}
+     */
+    public static final class RecommendedForYouFeatureConfig
+        extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+        RecommendedForYouFeatureConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "RecommendedForYouFeatureConfig");
+      }
+
+      // Use RecommendedForYouFeatureConfig.newBuilder() to construct.
+      private RecommendedForYouFeatureConfig(
+          com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RecommendedForYouFeatureConfig() {
+        contextEventType_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_RecommendedForYouFeatureConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_RecommendedForYouFeatureConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig.class,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig.Builder.class);
+      }
+
+      public static final int CONTEXT_EVENT_TYPE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object contextEventType_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of event with which the engine is queried at prediction time.
+       * If set to `generic`, only `view-item`, `media-play`,and
+       * `media-complete` will be used as `context-event` in engine training. If
+       * set to `view-home-page`, `view-home-page` will also be used as
+       * `context-events` in addition to `view-item`, `media-play`, and
+       * `media-complete`. Currently supported for the `recommended-for-you`
+       * engine. Currently supported values: `view-home-page`, `generic`.
+       * </pre>
+       *
+       * <code>string context_event_type = 1;</code>
+       *
+       * @return The contextEventType.
+       */
+      @java.lang.Override
+      public java.lang.String getContextEventType() {
+        java.lang.Object ref = contextEventType_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contextEventType_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of event with which the engine is queried at prediction time.
+       * If set to `generic`, only `view-item`, `media-play`,and
+       * `media-complete` will be used as `context-event` in engine training. If
+       * set to `view-home-page`, `view-home-page` will also be used as
+       * `context-events` in addition to `view-item`, `media-play`, and
+       * `media-complete`. Currently supported for the `recommended-for-you`
+       * engine. Currently supported values: `view-home-page`, `generic`.
+       * </pre>
+       *
+       * <code>string context_event_type = 1;</code>
+       *
+       * @return The bytes for contextEventType.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContextEventTypeBytes() {
+        java.lang.Object ref = contextEventType_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          contextEventType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contextEventType_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, contextEventType_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contextEventType_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, contextEventType_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .RecommendedForYouFeatureConfig)
+                    obj;
+
+        if (!getContextEventType().equals(other.getContextEventType())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CONTEXT_EVENT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getContextEventType().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional feature configurations for creating a `recommended-for-you`
+       * engine.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_RecommendedForYouFeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_RecommendedForYouFeatureConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          contextEventType_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_RecommendedForYouFeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .RecommendedForYouFeatureConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.contextEventType_ = contextEventType_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .RecommendedForYouFeatureConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .RecommendedForYouFeatureConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .RecommendedForYouFeatureConfig.getDefaultInstance()) return this;
+          if (!other.getContextEventType().isEmpty()) {
+            contextEventType_ = other.contextEventType_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    contextEventType_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object contextEventType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of event with which the engine is queried at prediction time.
+         * If set to `generic`, only `view-item`, `media-play`,and
+         * `media-complete` will be used as `context-event` in engine training. If
+         * set to `view-home-page`, `view-home-page` will also be used as
+         * `context-events` in addition to `view-item`, `media-play`, and
+         * `media-complete`. Currently supported for the `recommended-for-you`
+         * engine. Currently supported values: `view-home-page`, `generic`.
+         * </pre>
+         *
+         * <code>string context_event_type = 1;</code>
+         *
+         * @return The contextEventType.
+         */
+        public java.lang.String getContextEventType() {
+          java.lang.Object ref = contextEventType_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            contextEventType_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of event with which the engine is queried at prediction time.
+         * If set to `generic`, only `view-item`, `media-play`,and
+         * `media-complete` will be used as `context-event` in engine training. If
+         * set to `view-home-page`, `view-home-page` will also be used as
+         * `context-events` in addition to `view-item`, `media-play`, and
+         * `media-complete`. Currently supported for the `recommended-for-you`
+         * engine. Currently supported values: `view-home-page`, `generic`.
+         * </pre>
+         *
+         * <code>string context_event_type = 1;</code>
+         *
+         * @return The bytes for contextEventType.
+         */
+        public com.google.protobuf.ByteString getContextEventTypeBytes() {
+          java.lang.Object ref = contextEventType_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            contextEventType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of event with which the engine is queried at prediction time.
+         * If set to `generic`, only `view-item`, `media-play`,and
+         * `media-complete` will be used as `context-event` in engine training. If
+         * set to `view-home-page`, `view-home-page` will also be used as
+         * `context-events` in addition to `view-item`, `media-play`, and
+         * `media-complete`. Currently supported for the `recommended-for-you`
+         * engine. Currently supported values: `view-home-page`, `generic`.
+         * </pre>
+         *
+         * <code>string context_event_type = 1;</code>
+         *
+         * @param value The contextEventType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContextEventType(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contextEventType_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of event with which the engine is queried at prediction time.
+         * If set to `generic`, only `view-item`, `media-play`,and
+         * `media-complete` will be used as `context-event` in engine training. If
+         * set to `view-home-page`, `view-home-page` will also be used as
+         * `context-events` in addition to `view-item`, `media-play`, and
+         * `media-complete`. Currently supported for the `recommended-for-you`
+         * engine. Currently supported values: `view-home-page`, `generic`.
+         * </pre>
+         *
+         * <code>string context_event_type = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContextEventType() {
+          contextEventType_ = getDefaultInstance().getContextEventType();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The type of event with which the engine is queried at prediction time.
+         * If set to `generic`, only `view-item`, `media-play`,and
+         * `media-complete` will be used as `context-event` in engine training. If
+         * set to `view-home-page`, `view-home-page` will also be used as
+         * `context-events` in addition to `view-item`, `media-play`, and
+         * `media-complete`. Currently supported for the `recommended-for-you`
+         * engine. Currently supported values: `view-home-page`, `generic`.
+         * </pre>
+         *
+         * <code>string context_event_type = 1;</code>
+         *
+         * @param value The bytes for contextEventType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContextEventTypeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          contextEventType_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.Engine
+              .MediaRecommendationEngineConfig.RecommendedForYouFeatureConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .RecommendedForYouFeatureConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RecommendedForYouFeatureConfig> PARSER =
+          new com.google.protobuf.AbstractParser<RecommendedForYouFeatureConfig>() {
+            @java.lang.Override
+            public RecommendedForYouFeatureConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RecommendedForYouFeatureConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RecommendedForYouFeatureConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .RecommendedForYouFeatureConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface MostPopularFeatureConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The time window of which the engine is queried at training and
+       * prediction time. Positive integers only. The value translates to the
+       * last X days of events. Currently required for the `most-popular-items`
+       * engine.
+       * </pre>
+       *
+       * <code>int64 time_window_days = 1;</code>
+       *
+       * @return The timeWindowDays.
+       */
+      long getTimeWindowDays();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Feature configurations that are required for creating a Most Popular
+     * engine.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig}
+     */
+    public static final class MostPopularFeatureConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+        MostPopularFeatureConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "MostPopularFeatureConfig");
+      }
+
+      // Use MostPopularFeatureConfig.newBuilder() to construct.
+      private MostPopularFeatureConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MostPopularFeatureConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_MostPopularFeatureConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_MostPopularFeatureConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig.class,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig.Builder.class);
+      }
+
+      public static final int TIME_WINDOW_DAYS_FIELD_NUMBER = 1;
+      private long timeWindowDays_ = 0L;
+
+      /**
+       *
+       *
+       * <pre>
+       * The time window of which the engine is queried at training and
+       * prediction time. Positive integers only. The value translates to the
+       * last X days of events. Currently required for the `most-popular-items`
+       * engine.
+       * </pre>
+       *
+       * <code>int64 time_window_days = 1;</code>
+       *
+       * @return The timeWindowDays.
+       */
+      @java.lang.Override
+      public long getTimeWindowDays() {
+        return timeWindowDays_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (timeWindowDays_ != 0L) {
+          output.writeInt64(1, timeWindowDays_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (timeWindowDays_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, timeWindowDays_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig
+            other =
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .MostPopularFeatureConfig)
+                    obj;
+
+        if (getTimeWindowDays() != other.getTimeWindowDays()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TIME_WINDOW_DAYS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTimeWindowDays());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature configurations that are required for creating a Most Popular
+       * engine.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_MostPopularFeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_MostPopularFeatureConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig.class,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          timeWindowDays_ = 0L;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_MostPopularFeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .MostPopularFeatureConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.timeWindowDays_ = timeWindowDays_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                        .MostPopularFeatureConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .MostPopularFeatureConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .MostPopularFeatureConfig.getDefaultInstance()) return this;
+          if (other.getTimeWindowDays() != 0L) {
+            setTimeWindowDays(other.getTimeWindowDays());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    timeWindowDays_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private long timeWindowDays_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The time window of which the engine is queried at training and
+         * prediction time. Positive integers only. The value translates to the
+         * last X days of events. Currently required for the `most-popular-items`
+         * engine.
+         * </pre>
+         *
+         * <code>int64 time_window_days = 1;</code>
+         *
+         * @return The timeWindowDays.
+         */
+        @java.lang.Override
+        public long getTimeWindowDays() {
+          return timeWindowDays_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The time window of which the engine is queried at training and
+         * prediction time. Positive integers only. The value translates to the
+         * last X days of events. Currently required for the `most-popular-items`
+         * engine.
+         * </pre>
+         *
+         * <code>int64 time_window_days = 1;</code>
+         *
+         * @param value The timeWindowDays to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTimeWindowDays(long value) {
+
+          timeWindowDays_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The time window of which the engine is queried at training and
+         * prediction time. Positive integers only. The value translates to the
+         * last X days of events. Currently required for the `most-popular-items`
+         * engine.
+         * </pre>
+         *
+         * <code>int64 time_window_days = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTimeWindowDays() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          timeWindowDays_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.Engine
+              .MediaRecommendationEngineConfig.MostPopularFeatureConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .MostPopularFeatureConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MostPopularFeatureConfig> PARSER =
+          new com.google.protobuf.AbstractParser<MostPopularFeatureConfig>() {
+            @java.lang.Override
+            public MostPopularFeatureConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MostPopularFeatureConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MostPopularFeatureConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .MostPopularFeatureConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of engine. e.g., `recommended-for-you`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+     * `more-like-this`, `most-popular-items`.
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of engine. e.g., `recommended-for-you`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+     * `more-like-this`, `most-popular-items`.
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPTIMIZATION_OBJECTIVE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object optimizationObjective_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The optimization objective. e.g., `cvr`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported
+     * values: `ctr`, `cvr`.
+     *
+     * If not specified, we choose default based on engine type.
+     * Default depends on type of recommendation:
+     *
+     * `recommended-for-you` =&gt; `ctr`
+     *
+     * `others-you-may-like` =&gt; `ctr`
+     * </pre>
+     *
+     * <code>string optimization_objective = 2;</code>
+     *
+     * @return The optimizationObjective.
+     */
+    @java.lang.Override
+    public java.lang.String getOptimizationObjective() {
+      java.lang.Object ref = optimizationObjective_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        optimizationObjective_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The optimization objective. e.g., `cvr`.
+     *
+     * This field together with
+     * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+     * describe engine metadata to use to control engine training and serving.
+     *
+     * Currently supported
+     * values: `ctr`, `cvr`.
+     *
+     * If not specified, we choose default based on engine type.
+     * Default depends on type of recommendation:
+     *
+     * `recommended-for-you` =&gt; `ctr`
+     *
+     * `others-you-may-like` =&gt; `ctr`
+     * </pre>
+     *
+     * <code>string optimization_objective = 2;</code>
+     *
+     * @return The bytes for optimizationObjective.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOptimizationObjectiveBytes() {
+      java.lang.Object ref = optimizationObjective_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        optimizationObjective_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPTIMIZATION_OBJECTIVE_CONFIG_FIELD_NUMBER = 3;
+    private com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .OptimizationObjectiveConfig
+        optimizationObjectiveConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     *
+     * @return Whether the optimizationObjectiveConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOptimizationObjectiveConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     *
+     * @return The optimizationObjectiveConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .OptimizationObjectiveConfig
+        getOptimizationObjectiveConfig() {
+      return optimizationObjectiveConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig.getDefaultInstance()
+          : optimizationObjectiveConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name and value of the custom threshold for cvr optimization_objective.
+     * For target_field `watch-time`, target_field_value must be an integer
+     * value indicating the media progress time in seconds between (0, 86400]
+     * (excludes 0, includes 86400) (e.g., 90).
+     * For target_field `watch-percentage`, the target_field_value must be a
+     * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+     * 0.5).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .OptimizationObjectiveConfigOrBuilder
+        getOptimizationObjectiveConfigOrBuilder() {
+      return optimizationObjectiveConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig.getDefaultInstance()
+          : optimizationObjectiveConfig_;
+    }
+
+    public static final int TRAINING_STATE_FIELD_NUMBER = 4;
+    private int trainingState_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The training state that the engine is in (e.g.
+     * `TRAINING` or `PAUSED`).
+     *
+     * Since part of the cost of running the service
+     * is frequency of training - this can be used to determine when to train
+     * engine in order to control cost. If not specified: the default value for
+     * `CreateEngine` method is `TRAINING`. The default value for
+     * `UpdateEngine` method is to keep the state the same as before.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trainingState.
+     */
+    @java.lang.Override
+    public int getTrainingStateValue() {
+      return trainingState_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The training state that the engine is in (e.g.
+     * `TRAINING` or `PAUSED`).
+     *
+     * Since part of the cost of running the service
+     * is frequency of training - this can be used to determine when to train
+     * engine in order to control cost. If not specified: the default value for
+     * `CreateEngine` method is `TRAINING`. The default value for
+     * `UpdateEngine` method is to keep the state the same as before.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+     * </code>
+     *
+     * @return The trainingState.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .TrainingState
+        getTrainingState() {
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState
+          result =
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .TrainingState.forNumber(trainingState_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .TrainingState.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ENGINE_FEATURES_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .EngineFeaturesConfig
+        engineFeaturesConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the engineFeaturesConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasEngineFeaturesConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The engineFeaturesConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .EngineFeaturesConfig
+        getEngineFeaturesConfig() {
+      return engineFeaturesConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig.getDefaultInstance()
+          : engineFeaturesConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional engine features config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .EngineFeaturesConfigOrBuilder
+        getEngineFeaturesConfigOrBuilder() {
+      return engineFeaturesConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig.getDefaultInstance()
+          : engineFeaturesConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(optimizationObjective_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, optimizationObjective_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getOptimizationObjectiveConfig());
+      }
+      if (trainingState_
+          != com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .TrainingState.TRAINING_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, trainingState_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(5, getEngineFeaturesConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(optimizationObjective_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, optimizationObjective_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getOptimizationObjectiveConfig());
+      }
+      if (trainingState_
+          != com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .TrainingState.TRAINING_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, trainingState_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEngineFeaturesConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig other =
+          (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig) obj;
+
+      if (!getType().equals(other.getType())) return false;
+      if (!getOptimizationObjective().equals(other.getOptimizationObjective())) return false;
+      if (hasOptimizationObjectiveConfig() != other.hasOptimizationObjectiveConfig()) return false;
+      if (hasOptimizationObjectiveConfig()) {
+        if (!getOptimizationObjectiveConfig().equals(other.getOptimizationObjectiveConfig()))
+          return false;
+      }
+      if (trainingState_ != other.trainingState_) return false;
+      if (hasEngineFeaturesConfig() != other.hasEngineFeaturesConfig()) return false;
+      if (hasEngineFeaturesConfig()) {
+        if (!getEngineFeaturesConfig().equals(other.getEngineFeaturesConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + OPTIMIZATION_OBJECTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + getOptimizationObjective().hashCode();
+      if (hasOptimizationObjectiveConfig()) {
+        hash = (37 * hash) + OPTIMIZATION_OBJECTIVE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getOptimizationObjectiveConfig().hashCode();
+      }
+      hash = (37 * hash) + TRAINING_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + trainingState_;
+      if (hasEngineFeaturesConfig()) {
+        hash = (37 * hash) + ENGINE_FEATURES_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getEngineFeaturesConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional config specs for a Media Recommendation engine.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetOptimizationObjectiveConfigFieldBuilder();
+          internalGetEngineFeaturesConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = "";
+        optimizationObjective_ = "";
+        optimizationObjectiveConfig_ = null;
+        if (optimizationObjectiveConfigBuilder_ != null) {
+          optimizationObjectiveConfigBuilder_.dispose();
+          optimizationObjectiveConfigBuilder_ = null;
+        }
+        trainingState_ = 0;
+        engineFeaturesConfig_ = null;
+        if (engineFeaturesConfigBuilder_ != null) {
+          engineFeaturesConfigBuilder_.dispose();
+          engineFeaturesConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_MediaRecommendationEngineConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+          build() {
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig result =
+            new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.optimizationObjective_ = optimizationObjective_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.optimizationObjectiveConfig_ =
+              optimizationObjectiveConfigBuilder_ == null
+                  ? optimizationObjectiveConfig_
+                  : optimizationObjectiveConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.trainingState_ = trainingState_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.engineFeaturesConfig_ =
+              engineFeaturesConfigBuilder_ == null
+                  ? engineFeaturesConfig_
+                  : engineFeaturesConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getOptimizationObjective().isEmpty()) {
+          optimizationObjective_ = other.optimizationObjective_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasOptimizationObjectiveConfig()) {
+          mergeOptimizationObjectiveConfig(other.getOptimizationObjectiveConfig());
+        }
+        if (other.trainingState_ != 0) {
+          setTrainingStateValue(other.getTrainingStateValue());
+        }
+        if (other.hasEngineFeaturesConfig()) {
+          mergeEngineFeaturesConfig(other.getEngineFeaturesConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  optimizationObjective_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetOptimizationObjectiveConfigFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  trainingState_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetEngineFeaturesConfigFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of engine. e.g., `recommended-for-you`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+       * `more-like-this`, `most-popular-items`.
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of engine. e.g., `recommended-for-you`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+       * `more-like-this`, `most-popular-items`.
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of engine. e.g., `recommended-for-you`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+       * `more-like-this`, `most-popular-items`.
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of engine. e.g., `recommended-for-you`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+       * `more-like-this`, `most-popular-items`.
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of engine. e.g., `recommended-for-you`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.optimization_objective]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported values: `recommended-for-you`, `others-you-may-like`,
+       * `more-like-this`, `most-popular-items`.
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object optimizationObjective_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The optimization objective. e.g., `cvr`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported
+       * values: `ctr`, `cvr`.
+       *
+       * If not specified, we choose default based on engine type.
+       * Default depends on type of recommendation:
+       *
+       * `recommended-for-you` =&gt; `ctr`
+       *
+       * `others-you-may-like` =&gt; `ctr`
+       * </pre>
+       *
+       * <code>string optimization_objective = 2;</code>
+       *
+       * @return The optimizationObjective.
+       */
+      public java.lang.String getOptimizationObjective() {
+        java.lang.Object ref = optimizationObjective_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          optimizationObjective_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The optimization objective. e.g., `cvr`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported
+       * values: `ctr`, `cvr`.
+       *
+       * If not specified, we choose default based on engine type.
+       * Default depends on type of recommendation:
+       *
+       * `recommended-for-you` =&gt; `ctr`
+       *
+       * `others-you-may-like` =&gt; `ctr`
+       * </pre>
+       *
+       * <code>string optimization_objective = 2;</code>
+       *
+       * @return The bytes for optimizationObjective.
+       */
+      public com.google.protobuf.ByteString getOptimizationObjectiveBytes() {
+        java.lang.Object ref = optimizationObjective_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          optimizationObjective_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The optimization objective. e.g., `cvr`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported
+       * values: `ctr`, `cvr`.
+       *
+       * If not specified, we choose default based on engine type.
+       * Default depends on type of recommendation:
+       *
+       * `recommended-for-you` =&gt; `ctr`
+       *
+       * `others-you-may-like` =&gt; `ctr`
+       * </pre>
+       *
+       * <code>string optimization_objective = 2;</code>
+       *
+       * @param value The optimizationObjective to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOptimizationObjective(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        optimizationObjective_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The optimization objective. e.g., `cvr`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported
+       * values: `ctr`, `cvr`.
+       *
+       * If not specified, we choose default based on engine type.
+       * Default depends on type of recommendation:
+       *
+       * `recommended-for-you` =&gt; `ctr`
+       *
+       * `others-you-may-like` =&gt; `ctr`
+       * </pre>
+       *
+       * <code>string optimization_objective = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOptimizationObjective() {
+        optimizationObjective_ = getDefaultInstance().getOptimizationObjective();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The optimization objective. e.g., `cvr`.
+       *
+       * This field together with
+       * [optimization_objective][google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.type]
+       * describe engine metadata to use to control engine training and serving.
+       *
+       * Currently supported
+       * values: `ctr`, `cvr`.
+       *
+       * If not specified, we choose default based on engine type.
+       * Default depends on type of recommendation:
+       *
+       * `recommended-for-you` =&gt; `ctr`
+       *
+       * `others-you-may-like` =&gt; `ctr`
+       * </pre>
+       *
+       * <code>string optimization_objective = 2;</code>
+       *
+       * @param value The bytes for optimizationObjective to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOptimizationObjectiveBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        optimizationObjective_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          optimizationObjectiveConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfigOrBuilder>
+          optimizationObjectiveConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       *
+       * @return Whether the optimizationObjectiveConfig field is set.
+       */
+      public boolean hasOptimizationObjectiveConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       *
+       * @return The optimizationObjectiveConfig.
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig
+          getOptimizationObjectiveConfig() {
+        if (optimizationObjectiveConfigBuilder_ == null) {
+          return optimizationObjectiveConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.getDefaultInstance()
+              : optimizationObjectiveConfig_;
+        } else {
+          return optimizationObjectiveConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public Builder setOptimizationObjectiveConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig
+              value) {
+        if (optimizationObjectiveConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          optimizationObjectiveConfig_ = value;
+        } else {
+          optimizationObjectiveConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public Builder setOptimizationObjectiveConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.Builder
+              builderForValue) {
+        if (optimizationObjectiveConfigBuilder_ == null) {
+          optimizationObjectiveConfig_ = builderForValue.build();
+        } else {
+          optimizationObjectiveConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public Builder mergeOptimizationObjectiveConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig
+              value) {
+        if (optimizationObjectiveConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && optimizationObjectiveConfig_ != null
+              && optimizationObjectiveConfig_
+                  != com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig.getDefaultInstance()) {
+            getOptimizationObjectiveConfigBuilder().mergeFrom(value);
+          } else {
+            optimizationObjectiveConfig_ = value;
+          }
+        } else {
+          optimizationObjectiveConfigBuilder_.mergeFrom(value);
+        }
+        if (optimizationObjectiveConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public Builder clearOptimizationObjectiveConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        optimizationObjectiveConfig_ = null;
+        if (optimizationObjectiveConfigBuilder_ != null) {
+          optimizationObjectiveConfigBuilder_.dispose();
+          optimizationObjectiveConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfig.Builder
+          getOptimizationObjectiveConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetOptimizationObjectiveConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .OptimizationObjectiveConfigOrBuilder
+          getOptimizationObjectiveConfigOrBuilder() {
+        if (optimizationObjectiveConfigBuilder_ != null) {
+          return optimizationObjectiveConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return optimizationObjectiveConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.getDefaultInstance()
+              : optimizationObjectiveConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Name and value of the custom threshold for cvr optimization_objective.
+       * For target_field `watch-time`, target_field_value must be an integer
+       * value indicating the media progress time in seconds between (0, 86400]
+       * (excludes 0, includes 86400) (e.g., 90).
+       * For target_field `watch-percentage`, the target_field_value must be a
+       * valid float value between (0, 1.0] (excludes 0, includes 1.0) (e.g.,
+       * 0.5).
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig optimization_objective_config = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .OptimizationObjectiveConfigOrBuilder>
+          internalGetOptimizationObjectiveConfigFieldBuilder() {
+        if (optimizationObjectiveConfigBuilder_ == null) {
+          optimizationObjectiveConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfig.Builder,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .OptimizationObjectiveConfigOrBuilder>(
+                  getOptimizationObjectiveConfig(), getParentForChildren(), isClean());
+          optimizationObjectiveConfig_ = null;
+        }
+        return optimizationObjectiveConfigBuilder_;
+      }
+
+      private int trainingState_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The training state that the engine is in (e.g.
+       * `TRAINING` or `PAUSED`).
+       *
+       * Since part of the cost of running the service
+       * is frequency of training - this can be used to determine when to train
+       * engine in order to control cost. If not specified: the default value for
+       * `CreateEngine` method is `TRAINING`. The default value for
+       * `UpdateEngine` method is to keep the state the same as before.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for trainingState.
+       */
+      @java.lang.Override
+      public int getTrainingStateValue() {
+        return trainingState_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The training state that the engine is in (e.g.
+       * `TRAINING` or `PAUSED`).
+       *
+       * Since part of the cost of running the service
+       * is frequency of training - this can be used to determine when to train
+       * engine in order to control cost. If not specified: the default value for
+       * `CreateEngine` method is `TRAINING`. The default value for
+       * `UpdateEngine` method is to keep the state the same as before.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for trainingState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingStateValue(int value) {
+        trainingState_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The training state that the engine is in (e.g.
+       * `TRAINING` or `PAUSED`).
+       *
+       * Since part of the cost of running the service
+       * is frequency of training - this can be used to determine when to train
+       * engine in order to control cost. If not specified: the default value for
+       * `CreateEngine` method is `TRAINING`. The default value for
+       * `UpdateEngine` method is to keep the state the same as before.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+       * </code>
+       *
+       * @return The trainingState.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .TrainingState
+          getTrainingState() {
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState
+            result =
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .TrainingState.forNumber(trainingState_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                .TrainingState.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The training state that the engine is in (e.g.
+       * `TRAINING` or `PAUSED`).
+       *
+       * Since part of the cost of running the service
+       * is frequency of training - this can be used to determine when to train
+       * engine in order to control cost. If not specified: the default value for
+       * `CreateEngine` method is `TRAINING`. The default value for
+       * `UpdateEngine` method is to keep the state the same as before.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+       * </code>
+       *
+       * @param value The trainingState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrainingState(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .TrainingState
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        trainingState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The training state that the engine is in (e.g.
+       * `TRAINING` or `PAUSED`).
+       *
+       * Since part of the cost of running the service
+       * is frequency of training - this can be used to determine when to train
+       * engine in order to control cost. If not specified: the default value for
+       * `CreateEngine` method is `TRAINING`. The default value for
+       * `UpdateEngine` method is to keep the state the same as before.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.TrainingState training_state = 4;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrainingState() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        trainingState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          engineFeaturesConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfigOrBuilder>
+          engineFeaturesConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the engineFeaturesConfig field is set.
+       */
+      public boolean hasEngineFeaturesConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The engineFeaturesConfig.
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig
+          getEngineFeaturesConfig() {
+        if (engineFeaturesConfigBuilder_ == null) {
+          return engineFeaturesConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.getDefaultInstance()
+              : engineFeaturesConfig_;
+        } else {
+          return engineFeaturesConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEngineFeaturesConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig
+              value) {
+        if (engineFeaturesConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          engineFeaturesConfig_ = value;
+        } else {
+          engineFeaturesConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setEngineFeaturesConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.Builder
+              builderForValue) {
+        if (engineFeaturesConfigBuilder_ == null) {
+          engineFeaturesConfig_ = builderForValue.build();
+        } else {
+          engineFeaturesConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeEngineFeaturesConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig
+              value) {
+        if (engineFeaturesConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && engineFeaturesConfig_ != null
+              && engineFeaturesConfig_
+                  != com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig.getDefaultInstance()) {
+            getEngineFeaturesConfigBuilder().mergeFrom(value);
+          } else {
+            engineFeaturesConfig_ = value;
+          }
+        } else {
+          engineFeaturesConfigBuilder_.mergeFrom(value);
+        }
+        if (engineFeaturesConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearEngineFeaturesConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        engineFeaturesConfig_ = null;
+        if (engineFeaturesConfigBuilder_ != null) {
+          engineFeaturesConfigBuilder_.dispose();
+          engineFeaturesConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfig.Builder
+          getEngineFeaturesConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetEngineFeaturesConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+              .EngineFeaturesConfigOrBuilder
+          getEngineFeaturesConfigOrBuilder() {
+        if (engineFeaturesConfigBuilder_ != null) {
+          return engineFeaturesConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return engineFeaturesConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.getDefaultInstance()
+              : engineFeaturesConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional engine features config.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfig engine_features_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfig.Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .EngineFeaturesConfigOrBuilder>
+          internalGetEngineFeaturesConfigFieldBuilder() {
+        if (engineFeaturesConfigBuilder_ == null) {
+          engineFeaturesConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfig.Builder,
+                  com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                      .EngineFeaturesConfigOrBuilder>(
+                  getEngineFeaturesConfig(), getParentForChildren(), isClean());
+          engineFeaturesConfig_ = null;
+        }
+        return engineFeaturesConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+    private static final com.google.cloud.discoveryengine.v1beta.Engine
+            .MediaRecommendationEngineConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MediaRecommendationEngineConfig> PARSER =
+        new com.google.protobuf.AbstractParser<MediaRecommendationEngineConfig>() {
+          @java.lang.Override
+          public MediaRecommendationEngineConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MediaRecommendationEngineConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MediaRecommendationEngineConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ChatEngineConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.ChatEngineConfig)
@@ -1329,6 +8421,30 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return The bytes for dialogflowAgentToLink.
      */
     com.google.protobuf.ByteString getDialogflowAgentToLinkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the flag set to true, we allow the agent and engine are in
+     * different locations, otherwise the agent and engine are required to be in
+     * the same location. The flag is set to false by default.
+     *
+     * Note that the `allow_cross_region` are one-time consumed by and
+     * passed to
+     * [EngineService.CreateEngine][google.cloud.discoveryengine.v1beta.EngineService.CreateEngine].
+     * It means they cannot be retrieved using
+     * [EngineService.GetEngine][google.cloud.discoveryengine.v1beta.EngineService.GetEngine]
+     * or
+     * [EngineService.ListEngines][google.cloud.discoveryengine.v1beta.EngineService.ListEngines]
+     * API after engine creation.
+     * </pre>
+     *
+     * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowCrossRegion.
+     */
+    boolean getAllowCrossRegion();
   }
 
   /**
@@ -2957,6 +10073,36 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ALLOW_CROSS_REGION_FIELD_NUMBER = 3;
+    private boolean allowCrossRegion_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If the flag set to true, we allow the agent and engine are in
+     * different locations, otherwise the agent and engine are required to be in
+     * the same location. The flag is set to false by default.
+     *
+     * Note that the `allow_cross_region` are one-time consumed by and
+     * passed to
+     * [EngineService.CreateEngine][google.cloud.discoveryengine.v1beta.EngineService.CreateEngine].
+     * It means they cannot be retrieved using
+     * [EngineService.GetEngine][google.cloud.discoveryengine.v1beta.EngineService.GetEngine]
+     * or
+     * [EngineService.ListEngines][google.cloud.discoveryengine.v1beta.EngineService.ListEngines]
+     * API after engine creation.
+     * </pre>
+     *
+     * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowCrossRegion.
+     */
+    @java.lang.Override
+    public boolean getAllowCrossRegion() {
+      return allowCrossRegion_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2977,6 +10123,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dialogflowAgentToLink_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, dialogflowAgentToLink_);
       }
+      if (allowCrossRegion_ != false) {
+        output.writeBool(3, allowCrossRegion_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2992,6 +10141,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dialogflowAgentToLink_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, dialogflowAgentToLink_);
+      }
+      if (allowCrossRegion_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, allowCrossRegion_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3014,6 +10166,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         if (!getAgentCreationConfig().equals(other.getAgentCreationConfig())) return false;
       }
       if (!getDialogflowAgentToLink().equals(other.getDialogflowAgentToLink())) return false;
+      if (getAllowCrossRegion() != other.getAllowCrossRegion()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3031,6 +10184,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       hash = (37 * hash) + DIALOGFLOW_AGENT_TO_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getDialogflowAgentToLink().hashCode();
+      hash = (37 * hash) + ALLOW_CROSS_REGION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCrossRegion());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3189,6 +10344,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           agentCreationConfigBuilder_ = null;
         }
         dialogflowAgentToLink_ = "";
+        allowCrossRegion_ = false;
         return this;
       }
 
@@ -3238,6 +10394,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.dialogflowAgentToLink_ = dialogflowAgentToLink_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allowCrossRegion_ = allowCrossRegion_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -3263,6 +10422,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           dialogflowAgentToLink_ = other.dialogflowAgentToLink_;
           bitField0_ |= 0x00000002;
           onChanged();
+        }
+        if (other.getAllowCrossRegion() != false) {
+          setAllowCrossRegion(other.getAllowCrossRegion());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3303,6 +10465,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 24:
+                {
+                  allowCrossRegion_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3807,6 +10975,95 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         dialogflowAgentToLink_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private boolean allowCrossRegion_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1beta.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1beta.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1beta.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The allowCrossRegion.
+       */
+      @java.lang.Override
+      public boolean getAllowCrossRegion() {
+        return allowCrossRegion_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1beta.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1beta.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1beta.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The allowCrossRegion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowCrossRegion(boolean value) {
+
+        allowCrossRegion_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If the flag set to true, we allow the agent and engine are in
+       * different locations, otherwise the agent and engine are required to be in
+       * the same location. The flag is set to false by default.
+       *
+       * Note that the `allow_cross_region` are one-time consumed by and
+       * passed to
+       * [EngineService.CreateEngine][google.cloud.discoveryengine.v1beta.EngineService.CreateEngine].
+       * It means they cannot be retrieved using
+       * [EngineService.GetEngine][google.cloud.discoveryengine.v1beta.EngineService.GetEngine]
+       * or
+       * [EngineService.ListEngines][google.cloud.discoveryengine.v1beta.EngineService.ListEngines]
+       * API after engine creation.
+       * </pre>
+       *
+       * <code>bool allow_cross_region = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowCrossRegion() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allowCrossRegion_ = false;
         onChanged();
         return this;
       }
@@ -4487,6 +11744,2678 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface KnowledgeGraphConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable the Cloud Knowledge Graph for the engine.
+     *
+     * Defaults to false if not specified.
+     * </pre>
+     *
+     * <code>bool enable_cloud_knowledge_graph = 1;</code>
+     *
+     * @return The enableCloudKnowledgeGraph.
+     */
+    boolean getEnableCloudKnowledgeGraph();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @return A list containing the cloudKnowledgeGraphTypes.
+     */
+    java.util.List<java.lang.String> getCloudKnowledgeGraphTypesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @return The count of cloudKnowledgeGraphTypes.
+     */
+    int getCloudKnowledgeGraphTypesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The cloudKnowledgeGraphTypes at the given index.
+     */
+    java.lang.String getCloudKnowledgeGraphTypes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the cloudKnowledgeGraphTypes at the given index.
+     */
+    com.google.protobuf.ByteString getCloudKnowledgeGraphTypesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable the Private Knowledge Graph for the engine.
+     *
+     * Defaults to false if not specified.
+     * </pre>
+     *
+     * <code>bool enable_private_knowledge_graph = 3;</code>
+     *
+     * @return The enablePrivateKnowledgeGraph.
+     */
+    boolean getEnablePrivateKnowledgeGraph();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @return A list containing the privateKnowledgeGraphTypes.
+     */
+    java.util.List<java.lang.String> getPrivateKnowledgeGraphTypesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @return The count of privateKnowledgeGraphTypes.
+     */
+    int getPrivateKnowledgeGraphTypesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The privateKnowledgeGraphTypes at the given index.
+     */
+    java.lang.String getPrivateKnowledgeGraphTypes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the privateKnowledgeGraphTypes at the given index.
+     */
+    com.google.protobuf.ByteString getPrivateKnowledgeGraphTypesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the featureConfig field is set.
+     */
+    boolean hasFeatureConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The featureConfig.
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+        getFeatureConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfigOrBuilder
+        getFeatureConfigOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration message for the Knowledge Graph.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig}
+   */
+  public static final class KnowledgeGraphConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)
+      KnowledgeGraphConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "KnowledgeGraphConfig");
+    }
+
+    // Use KnowledgeGraphConfig.newBuilder() to construct.
+    private KnowledgeGraphConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KnowledgeGraphConfig() {
+      cloudKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      privateKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.EngineProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.EngineProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.class,
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder.class);
+    }
+
+    public interface FeatureConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG query understanding for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_query_understanding = 1;</code>
+       *
+       * @return The disablePrivateKgQueryUnderstanding.
+       */
+      boolean getDisablePrivateKgQueryUnderstanding();
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG enrichment for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_enrichment = 2;</code>
+       *
+       * @return The disablePrivateKgEnrichment.
+       */
+      boolean getDisablePrivateKgEnrichment();
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG auto complete for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_auto_complete = 3;</code>
+       *
+       * @return The disablePrivateKgAutoComplete.
+       */
+      boolean getDisablePrivateKgAutoComplete();
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG for query UI chips.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_query_ui_chips = 4;</code>
+       *
+       * @return The disablePrivateKgQueryUiChips.
+       */
+      boolean getDisablePrivateKgQueryUiChips();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig}
+     */
+    public static final class FeatureConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+        FeatureConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "FeatureConfig");
+      }
+
+      // Use FeatureConfig.newBuilder() to construct.
+      private FeatureConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FeatureConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_FeatureConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                    .Builder.class);
+      }
+
+      public static final int DISABLE_PRIVATE_KG_QUERY_UNDERSTANDING_FIELD_NUMBER = 1;
+      private boolean disablePrivateKgQueryUnderstanding_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG query understanding for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_query_understanding = 1;</code>
+       *
+       * @return The disablePrivateKgQueryUnderstanding.
+       */
+      @java.lang.Override
+      public boolean getDisablePrivateKgQueryUnderstanding() {
+        return disablePrivateKgQueryUnderstanding_;
+      }
+
+      public static final int DISABLE_PRIVATE_KG_ENRICHMENT_FIELD_NUMBER = 2;
+      private boolean disablePrivateKgEnrichment_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG enrichment for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_enrichment = 2;</code>
+       *
+       * @return The disablePrivateKgEnrichment.
+       */
+      @java.lang.Override
+      public boolean getDisablePrivateKgEnrichment() {
+        return disablePrivateKgEnrichment_;
+      }
+
+      public static final int DISABLE_PRIVATE_KG_AUTO_COMPLETE_FIELD_NUMBER = 3;
+      private boolean disablePrivateKgAutoComplete_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG auto complete for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_auto_complete = 3;</code>
+       *
+       * @return The disablePrivateKgAutoComplete.
+       */
+      @java.lang.Override
+      public boolean getDisablePrivateKgAutoComplete() {
+        return disablePrivateKgAutoComplete_;
+      }
+
+      public static final int DISABLE_PRIVATE_KG_QUERY_UI_CHIPS_FIELD_NUMBER = 4;
+      private boolean disablePrivateKgQueryUiChips_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to disable the private KG for query UI chips.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool disable_private_kg_query_ui_chips = 4;</code>
+       *
+       * @return The disablePrivateKgQueryUiChips.
+       */
+      @java.lang.Override
+      public boolean getDisablePrivateKgQueryUiChips() {
+        return disablePrivateKgQueryUiChips_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (disablePrivateKgQueryUnderstanding_ != false) {
+          output.writeBool(1, disablePrivateKgQueryUnderstanding_);
+        }
+        if (disablePrivateKgEnrichment_ != false) {
+          output.writeBool(2, disablePrivateKgEnrichment_);
+        }
+        if (disablePrivateKgAutoComplete_ != false) {
+          output.writeBool(3, disablePrivateKgAutoComplete_);
+        }
+        if (disablePrivateKgQueryUiChips_ != false) {
+          output.writeBool(4, disablePrivateKgQueryUiChips_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (disablePrivateKgQueryUnderstanding_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  1, disablePrivateKgQueryUnderstanding_);
+        }
+        if (disablePrivateKgEnrichment_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(2, disablePrivateKgEnrichment_);
+        }
+        if (disablePrivateKgAutoComplete_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  3, disablePrivateKgAutoComplete_);
+        }
+        if (disablePrivateKgQueryUiChips_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  4, disablePrivateKgQueryUiChips_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig other =
+            (com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig) obj;
+
+        if (getDisablePrivateKgQueryUnderstanding()
+            != other.getDisablePrivateKgQueryUnderstanding()) return false;
+        if (getDisablePrivateKgEnrichment() != other.getDisablePrivateKgEnrichment()) return false;
+        if (getDisablePrivateKgAutoComplete() != other.getDisablePrivateKgAutoComplete())
+          return false;
+        if (getDisablePrivateKgQueryUiChips() != other.getDisablePrivateKgQueryUiChips())
+          return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISABLE_PRIVATE_KG_QUERY_UNDERSTANDING_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getDisablePrivateKgQueryUnderstanding());
+        hash = (37 * hash) + DISABLE_PRIVATE_KG_ENRICHMENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisablePrivateKgEnrichment());
+        hash = (37 * hash) + DISABLE_PRIVATE_KG_AUTO_COMPLETE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getDisablePrivateKgAutoComplete());
+        hash = (37 * hash) + DISABLE_PRIVATE_KG_QUERY_UI_CHIPS_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getDisablePrivateKgQueryUiChips());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_FeatureConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          disablePrivateKgQueryUnderstanding_ = false;
+          disablePrivateKgEnrichment_ = false;
+          disablePrivateKgAutoComplete_ = false;
+          disablePrivateKgQueryUiChips_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.EngineProto
+              .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+            build() {
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig result =
+              new com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.disablePrivateKgQueryUnderstanding_ = disablePrivateKgQueryUnderstanding_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.disablePrivateKgEnrichment_ = disablePrivateKgEnrichment_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.disablePrivateKgAutoComplete_ = disablePrivateKgAutoComplete_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.disablePrivateKgQueryUiChips_ = disablePrivateKgQueryUiChips_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                  .getDefaultInstance()) return this;
+          if (other.getDisablePrivateKgQueryUnderstanding() != false) {
+            setDisablePrivateKgQueryUnderstanding(other.getDisablePrivateKgQueryUnderstanding());
+          }
+          if (other.getDisablePrivateKgEnrichment() != false) {
+            setDisablePrivateKgEnrichment(other.getDisablePrivateKgEnrichment());
+          }
+          if (other.getDisablePrivateKgAutoComplete() != false) {
+            setDisablePrivateKgAutoComplete(other.getDisablePrivateKgAutoComplete());
+          }
+          if (other.getDisablePrivateKgQueryUiChips() != false) {
+            setDisablePrivateKgQueryUiChips(other.getDisablePrivateKgQueryUiChips());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    disablePrivateKgQueryUnderstanding_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    disablePrivateKgEnrichment_ = input.readBool();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    disablePrivateKgAutoComplete_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 32:
+                  {
+                    disablePrivateKgQueryUiChips_ = input.readBool();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean disablePrivateKgQueryUnderstanding_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG query understanding for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_understanding = 1;</code>
+         *
+         * @return The disablePrivateKgQueryUnderstanding.
+         */
+        @java.lang.Override
+        public boolean getDisablePrivateKgQueryUnderstanding() {
+          return disablePrivateKgQueryUnderstanding_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG query understanding for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_understanding = 1;</code>
+         *
+         * @param value The disablePrivateKgQueryUnderstanding to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisablePrivateKgQueryUnderstanding(boolean value) {
+
+          disablePrivateKgQueryUnderstanding_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG query understanding for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_understanding = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisablePrivateKgQueryUnderstanding() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          disablePrivateKgQueryUnderstanding_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean disablePrivateKgEnrichment_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG enrichment for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_enrichment = 2;</code>
+         *
+         * @return The disablePrivateKgEnrichment.
+         */
+        @java.lang.Override
+        public boolean getDisablePrivateKgEnrichment() {
+          return disablePrivateKgEnrichment_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG enrichment for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_enrichment = 2;</code>
+         *
+         * @param value The disablePrivateKgEnrichment to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisablePrivateKgEnrichment(boolean value) {
+
+          disablePrivateKgEnrichment_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG enrichment for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_enrichment = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisablePrivateKgEnrichment() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          disablePrivateKgEnrichment_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean disablePrivateKgAutoComplete_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG auto complete for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_auto_complete = 3;</code>
+         *
+         * @return The disablePrivateKgAutoComplete.
+         */
+        @java.lang.Override
+        public boolean getDisablePrivateKgAutoComplete() {
+          return disablePrivateKgAutoComplete_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG auto complete for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_auto_complete = 3;</code>
+         *
+         * @param value The disablePrivateKgAutoComplete to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisablePrivateKgAutoComplete(boolean value) {
+
+          disablePrivateKgAutoComplete_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG auto complete for the engine.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_auto_complete = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisablePrivateKgAutoComplete() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          disablePrivateKgAutoComplete_ = false;
+          onChanged();
+          return this;
+        }
+
+        private boolean disablePrivateKgQueryUiChips_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG for query UI chips.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_ui_chips = 4;</code>
+         *
+         * @return The disablePrivateKgQueryUiChips.
+         */
+        @java.lang.Override
+        public boolean getDisablePrivateKgQueryUiChips() {
+          return disablePrivateKgQueryUiChips_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG for query UI chips.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_ui_chips = 4;</code>
+         *
+         * @param value The disablePrivateKgQueryUiChips to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisablePrivateKgQueryUiChips(boolean value) {
+
+          disablePrivateKgQueryUiChips_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Whether to disable the private KG for query UI chips.
+         *
+         * Defaults to false if not specified.
+         * </pre>
+         *
+         * <code>bool disable_private_kg_query_ui_chips = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisablePrivateKgQueryUiChips() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          disablePrivateKgQueryUiChips_ = false;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig)
+      private static final com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FeatureConfig> PARSER =
+          new com.google.protobuf.AbstractParser<FeatureConfig>() {
+            @java.lang.Override
+            public FeatureConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FeatureConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FeatureConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int ENABLE_CLOUD_KNOWLEDGE_GRAPH_FIELD_NUMBER = 1;
+    private boolean enableCloudKnowledgeGraph_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable the Cloud Knowledge Graph for the engine.
+     *
+     * Defaults to false if not specified.
+     * </pre>
+     *
+     * <code>bool enable_cloud_knowledge_graph = 1;</code>
+     *
+     * @return The enableCloudKnowledgeGraph.
+     */
+    @java.lang.Override
+    public boolean getEnableCloudKnowledgeGraph() {
+      return enableCloudKnowledgeGraph_;
+    }
+
+    public static final int CLOUD_KNOWLEDGE_GRAPH_TYPES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList cloudKnowledgeGraphTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @return A list containing the cloudKnowledgeGraphTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getCloudKnowledgeGraphTypesList() {
+      return cloudKnowledgeGraphTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @return The count of cloudKnowledgeGraphTypes.
+     */
+    public int getCloudKnowledgeGraphTypesCount() {
+      return cloudKnowledgeGraphTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The cloudKnowledgeGraphTypes at the given index.
+     */
+    public java.lang.String getCloudKnowledgeGraphTypes(int index) {
+      return cloudKnowledgeGraphTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the cloudKnowledgeGraphTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getCloudKnowledgeGraphTypesBytes(int index) {
+      return cloudKnowledgeGraphTypes_.getByteString(index);
+    }
+
+    public static final int ENABLE_PRIVATE_KNOWLEDGE_GRAPH_FIELD_NUMBER = 3;
+    private boolean enablePrivateKnowledgeGraph_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to enable the Private Knowledge Graph for the engine.
+     *
+     * Defaults to false if not specified.
+     * </pre>
+     *
+     * <code>bool enable_private_knowledge_graph = 3;</code>
+     *
+     * @return The enablePrivateKnowledgeGraph.
+     */
+    @java.lang.Override
+    public boolean getEnablePrivateKnowledgeGraph() {
+      return enablePrivateKnowledgeGraph_;
+    }
+
+    public static final int PRIVATE_KNOWLEDGE_GRAPH_TYPES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList privateKnowledgeGraphTypes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @return A list containing the privateKnowledgeGraphTypes.
+     */
+    public com.google.protobuf.ProtocolStringList getPrivateKnowledgeGraphTypesList() {
+      return privateKnowledgeGraphTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @return The count of privateKnowledgeGraphTypes.
+     */
+    public int getPrivateKnowledgeGraphTypesCount() {
+      return privateKnowledgeGraphTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The privateKnowledgeGraphTypes at the given index.
+     */
+    public java.lang.String getPrivateKnowledgeGraphTypes(int index) {
+      return privateKnowledgeGraphTypes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify entity types to support.
+     * </pre>
+     *
+     * <code>repeated string private_knowledge_graph_types = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the privateKnowledgeGraphTypes at the given index.
+     */
+    public com.google.protobuf.ByteString getPrivateKnowledgeGraphTypesBytes(int index) {
+      return privateKnowledgeGraphTypes_.getByteString(index);
+    }
+
+    public static final int FEATURE_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+        featureConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the featureConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasFeatureConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The featureConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+        getFeatureConfig() {
+      return featureConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+              .getDefaultInstance()
+          : featureConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the Knowledge Graph.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+            .FeatureConfigOrBuilder
+        getFeatureConfigOrBuilder() {
+      return featureConfig_ == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+              .getDefaultInstance()
+          : featureConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableCloudKnowledgeGraph_ != false) {
+        output.writeBool(1, enableCloudKnowledgeGraph_);
+      }
+      for (int i = 0; i < cloudKnowledgeGraphTypes_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(
+            output, 2, cloudKnowledgeGraphTypes_.getRaw(i));
+      }
+      if (enablePrivateKnowledgeGraph_ != false) {
+        output.writeBool(3, enablePrivateKnowledgeGraph_);
+      }
+      for (int i = 0; i < privateKnowledgeGraphTypes_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(
+            output, 4, privateKnowledgeGraphTypes_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getFeatureConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableCloudKnowledgeGraph_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableCloudKnowledgeGraph_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < cloudKnowledgeGraphTypes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(cloudKnowledgeGraphTypes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCloudKnowledgeGraphTypesList().size();
+      }
+      if (enablePrivateKnowledgeGraph_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, enablePrivateKnowledgeGraph_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < privateKnowledgeGraphTypes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(privateKnowledgeGraphTypes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPrivateKnowledgeGraphTypesList().size();
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFeatureConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig other =
+          (com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig) obj;
+
+      if (getEnableCloudKnowledgeGraph() != other.getEnableCloudKnowledgeGraph()) return false;
+      if (!getCloudKnowledgeGraphTypesList().equals(other.getCloudKnowledgeGraphTypesList()))
+        return false;
+      if (getEnablePrivateKnowledgeGraph() != other.getEnablePrivateKnowledgeGraph()) return false;
+      if (!getPrivateKnowledgeGraphTypesList().equals(other.getPrivateKnowledgeGraphTypesList()))
+        return false;
+      if (hasFeatureConfig() != other.hasFeatureConfig()) return false;
+      if (hasFeatureConfig()) {
+        if (!getFeatureConfig().equals(other.getFeatureConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_CLOUD_KNOWLEDGE_GRAPH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCloudKnowledgeGraph());
+      if (getCloudKnowledgeGraphTypesCount() > 0) {
+        hash = (37 * hash) + CLOUD_KNOWLEDGE_GRAPH_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudKnowledgeGraphTypesList().hashCode();
+      }
+      hash = (37 * hash) + ENABLE_PRIVATE_KNOWLEDGE_GRAPH_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateKnowledgeGraph());
+      if (getPrivateKnowledgeGraphTypesCount() > 0) {
+        hash = (37 * hash) + PRIVATE_KNOWLEDGE_GRAPH_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivateKnowledgeGraphTypesList().hashCode();
+      }
+      if (hasFeatureConfig()) {
+        hash = (37 * hash) + FEATURE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getFeatureConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration message for the Knowledge Graph.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.class,
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetFeatureConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enableCloudKnowledgeGraph_ = false;
+        cloudKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        enablePrivateKnowledgeGraph_ = false;
+        privateKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        featureConfig_ = null;
+        if (featureConfigBuilder_ != null) {
+          featureConfigBuilder_.dispose();
+          featureConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.EngineProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Engine_KnowledgeGraphConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig build() {
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig result =
+            new com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableCloudKnowledgeGraph_ = enableCloudKnowledgeGraph_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          cloudKnowledgeGraphTypes_.makeImmutable();
+          result.cloudKnowledgeGraphTypes_ = cloudKnowledgeGraphTypes_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enablePrivateKnowledgeGraph_ = enablePrivateKnowledgeGraph_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          privateKnowledgeGraphTypes_.makeImmutable();
+          result.privateKnowledgeGraphTypes_ = privateKnowledgeGraphTypes_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.featureConfig_ =
+              featureConfigBuilder_ == null ? featureConfig_ : featureConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                .getDefaultInstance()) return this;
+        if (other.getEnableCloudKnowledgeGraph() != false) {
+          setEnableCloudKnowledgeGraph(other.getEnableCloudKnowledgeGraph());
+        }
+        if (!other.cloudKnowledgeGraphTypes_.isEmpty()) {
+          if (cloudKnowledgeGraphTypes_.isEmpty()) {
+            cloudKnowledgeGraphTypes_ = other.cloudKnowledgeGraphTypes_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureCloudKnowledgeGraphTypesIsMutable();
+            cloudKnowledgeGraphTypes_.addAll(other.cloudKnowledgeGraphTypes_);
+          }
+          onChanged();
+        }
+        if (other.getEnablePrivateKnowledgeGraph() != false) {
+          setEnablePrivateKnowledgeGraph(other.getEnablePrivateKnowledgeGraph());
+        }
+        if (!other.privateKnowledgeGraphTypes_.isEmpty()) {
+          if (privateKnowledgeGraphTypes_.isEmpty()) {
+            privateKnowledgeGraphTypes_ = other.privateKnowledgeGraphTypes_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensurePrivateKnowledgeGraphTypesIsMutable();
+            privateKnowledgeGraphTypes_.addAll(other.privateKnowledgeGraphTypes_);
+          }
+          onChanged();
+        }
+        if (other.hasFeatureConfig()) {
+          mergeFeatureConfig(other.getFeatureConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enableCloudKnowledgeGraph_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureCloudKnowledgeGraphTypesIsMutable();
+                  cloudKnowledgeGraphTypes_.add(s);
+                  break;
+                } // case 18
+              case 24:
+                {
+                  enablePrivateKnowledgeGraph_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePrivateKnowledgeGraphTypesIsMutable();
+                  privateKnowledgeGraphTypes_.add(s);
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetFeatureConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enableCloudKnowledgeGraph_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Cloud Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_cloud_knowledge_graph = 1;</code>
+       *
+       * @return The enableCloudKnowledgeGraph.
+       */
+      @java.lang.Override
+      public boolean getEnableCloudKnowledgeGraph() {
+        return enableCloudKnowledgeGraph_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Cloud Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_cloud_knowledge_graph = 1;</code>
+       *
+       * @param value The enableCloudKnowledgeGraph to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableCloudKnowledgeGraph(boolean value) {
+
+        enableCloudKnowledgeGraph_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Cloud Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_cloud_knowledge_graph = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableCloudKnowledgeGraph() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableCloudKnowledgeGraph_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList cloudKnowledgeGraphTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureCloudKnowledgeGraphTypesIsMutable() {
+        if (!cloudKnowledgeGraphTypes_.isModifiable()) {
+          cloudKnowledgeGraphTypes_ =
+              new com.google.protobuf.LazyStringArrayList(cloudKnowledgeGraphTypes_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @return A list containing the cloudKnowledgeGraphTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getCloudKnowledgeGraphTypesList() {
+        cloudKnowledgeGraphTypes_.makeImmutable();
+        return cloudKnowledgeGraphTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @return The count of cloudKnowledgeGraphTypes.
+       */
+      public int getCloudKnowledgeGraphTypesCount() {
+        return cloudKnowledgeGraphTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The cloudKnowledgeGraphTypes at the given index.
+       */
+      public java.lang.String getCloudKnowledgeGraphTypes(int index) {
+        return cloudKnowledgeGraphTypes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the cloudKnowledgeGraphTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getCloudKnowledgeGraphTypesBytes(int index) {
+        return cloudKnowledgeGraphTypes_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The cloudKnowledgeGraphTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCloudKnowledgeGraphTypes(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCloudKnowledgeGraphTypesIsMutable();
+        cloudKnowledgeGraphTypes_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param value The cloudKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCloudKnowledgeGraphTypes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCloudKnowledgeGraphTypesIsMutable();
+        cloudKnowledgeGraphTypes_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param values The cloudKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCloudKnowledgeGraphTypes(java.lang.Iterable<java.lang.String> values) {
+        ensureCloudKnowledgeGraphTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cloudKnowledgeGraphTypes_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCloudKnowledgeGraphTypes() {
+        cloudKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string cloud_knowledge_graph_types = 2;</code>
+       *
+       * @param value The bytes of the cloudKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCloudKnowledgeGraphTypesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureCloudKnowledgeGraphTypesIsMutable();
+        cloudKnowledgeGraphTypes_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private boolean enablePrivateKnowledgeGraph_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Private Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_private_knowledge_graph = 3;</code>
+       *
+       * @return The enablePrivateKnowledgeGraph.
+       */
+      @java.lang.Override
+      public boolean getEnablePrivateKnowledgeGraph() {
+        return enablePrivateKnowledgeGraph_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Private Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_private_knowledge_graph = 3;</code>
+       *
+       * @param value The enablePrivateKnowledgeGraph to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablePrivateKnowledgeGraph(boolean value) {
+
+        enablePrivateKnowledgeGraph_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether to enable the Private Knowledge Graph for the engine.
+       *
+       * Defaults to false if not specified.
+       * </pre>
+       *
+       * <code>bool enable_private_knowledge_graph = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablePrivateKnowledgeGraph() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        enablePrivateKnowledgeGraph_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList privateKnowledgeGraphTypes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensurePrivateKnowledgeGraphTypesIsMutable() {
+        if (!privateKnowledgeGraphTypes_.isModifiable()) {
+          privateKnowledgeGraphTypes_ =
+              new com.google.protobuf.LazyStringArrayList(privateKnowledgeGraphTypes_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @return A list containing the privateKnowledgeGraphTypes.
+       */
+      public com.google.protobuf.ProtocolStringList getPrivateKnowledgeGraphTypesList() {
+        privateKnowledgeGraphTypes_.makeImmutable();
+        return privateKnowledgeGraphTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @return The count of privateKnowledgeGraphTypes.
+       */
+      public int getPrivateKnowledgeGraphTypesCount() {
+        return privateKnowledgeGraphTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The privateKnowledgeGraphTypes at the given index.
+       */
+      public java.lang.String getPrivateKnowledgeGraphTypes(int index) {
+        return privateKnowledgeGraphTypes_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the privateKnowledgeGraphTypes at the given index.
+       */
+      public com.google.protobuf.ByteString getPrivateKnowledgeGraphTypesBytes(int index) {
+        return privateKnowledgeGraphTypes_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The privateKnowledgeGraphTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrivateKnowledgeGraphTypes(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePrivateKnowledgeGraphTypesIsMutable();
+        privateKnowledgeGraphTypes_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param value The privateKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPrivateKnowledgeGraphTypes(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePrivateKnowledgeGraphTypesIsMutable();
+        privateKnowledgeGraphTypes_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param values The privateKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPrivateKnowledgeGraphTypes(java.lang.Iterable<java.lang.String> values) {
+        ensurePrivateKnowledgeGraphTypesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, privateKnowledgeGraphTypes_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPrivateKnowledgeGraphTypes() {
+        privateKnowledgeGraphTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specify entity types to support.
+       * </pre>
+       *
+       * <code>repeated string private_knowledge_graph_types = 4;</code>
+       *
+       * @param value The bytes of the privateKnowledgeGraphTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPrivateKnowledgeGraphTypesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePrivateKnowledgeGraphTypesIsMutable();
+        privateKnowledgeGraphTypes_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+          featureConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                  .FeatureConfigOrBuilder>
+          featureConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the featureConfig field is set.
+       */
+      public boolean hasFeatureConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The featureConfig.
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+          getFeatureConfig() {
+        if (featureConfigBuilder_ == null) {
+          return featureConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                  .getDefaultInstance()
+              : featureConfig_;
+        } else {
+          return featureConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFeatureConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig value) {
+        if (featureConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          featureConfig_ = value;
+        } else {
+          featureConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFeatureConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig.Builder
+              builderForValue) {
+        if (featureConfigBuilder_ == null) {
+          featureConfig_ = builderForValue.build();
+        } else {
+          featureConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeFeatureConfig(
+          com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig value) {
+        if (featureConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && featureConfig_ != null
+              && featureConfig_
+                  != com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                      .FeatureConfig.getDefaultInstance()) {
+            getFeatureConfigBuilder().mergeFrom(value);
+          } else {
+            featureConfig_ = value;
+          }
+        } else {
+          featureConfigBuilder_.mergeFrom(value);
+        }
+        if (featureConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearFeatureConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        featureConfig_ = null;
+        if (featureConfigBuilder_ != null) {
+          featureConfigBuilder_.dispose();
+          featureConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+              .Builder
+          getFeatureConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetFeatureConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+              .FeatureConfigOrBuilder
+          getFeatureConfigOrBuilder() {
+        if (featureConfigBuilder_ != null) {
+          return featureConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return featureConfig_ == null
+              ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                  .getDefaultInstance()
+              : featureConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Feature config for the Knowledge Graph.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig feature_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig,
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                  .FeatureConfigOrBuilder>
+          internalGetFeatureConfigFieldBuilder() {
+        if (featureConfigBuilder_ == null) {
+          featureConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig,
+                  com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.FeatureConfig
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                      .FeatureConfigOrBuilder>(
+                  getFeatureConfig(), getParentForChildren(), isClean());
+          featureConfig_ = null;
+        }
+        return featureConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig)
+    private static final com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KnowledgeGraphConfig> PARSER =
+        new com.google.protobuf.AbstractParser<KnowledgeGraphConfig>() {
+          @java.lang.Override
+          public KnowledgeGraphConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KnowledgeGraphConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KnowledgeGraphConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ChatEngineMetadataOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Engine.ChatEngineMetadata)
@@ -5156,6 +15085,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CHAT_ENGINE_CONFIG(11),
     SEARCH_ENGINE_CONFIG(13),
+    MEDIA_RECOMMENDATION_ENGINE_CONFIG(14),
     ENGINECONFIG_NOT_SET(0);
     private final int value;
 
@@ -5179,6 +15109,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           return CHAT_ENGINE_CONFIG;
         case 13:
           return SEARCH_ENGINE_CONFIG;
+        case 14:
+          return MEDIA_RECOMMENDATION_ENGINE_CONFIG;
         case 0:
           return ENGINECONFIG_NOT_SET;
         default:
@@ -5376,6 +15308,90 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.discoveryengine.v1beta.Engine.SearchEngineConfig.getDefaultInstance();
   }
 
+  public static final int MEDIA_RECOMMENDATION_ENGINE_CONFIG_FIELD_NUMBER = 14;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for the Media Engine. Only applicable on the data
+   * stores with
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+   * and
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+   * </code>
+   *
+   * @return Whether the mediaRecommendationEngineConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMediaRecommendationEngineConfig() {
+    return engineConfigCase_ == 14;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for the Media Engine. Only applicable on the data
+   * stores with
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+   * and
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+   * </code>
+   *
+   * @return The mediaRecommendationEngineConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+      getMediaRecommendationEngineConfig() {
+    if (engineConfigCase_ == 14) {
+      return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+          engineConfig_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for the Media Engine. Only applicable on the data
+   * stores with
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+   * and
+   * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+   * vertical.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfigOrBuilder
+      getMediaRecommendationEngineConfigOrBuilder() {
+    if (engineConfigCase_ == 14) {
+      return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+          engineConfig_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        .getDefaultInstance();
+  }
+
   public static final int CHAT_ENGINE_METADATA_FIELD_NUMBER = 12;
 
   /**
@@ -5458,7 +15474,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. The fully qualified resource name of the engine.
+   * Immutable. Identifier. The fully qualified resource name of the engine.
    *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
@@ -5469,7 +15485,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -5490,7 +15508,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. The fully qualified resource name of the engine.
+   * Immutable. Identifier. The fully qualified resource name of the engine.
    *
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
@@ -5501,7 +15519,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -5687,7 +15707,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The data stores associated with this engine.
+   * Optional. The data stores associated with this engine.
    *
    * For
    * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -5709,7 +15729,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * initializations.
    * </pre>
    *
-   * <code>repeated string data_store_ids = 5;</code>
+   * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the dataStoreIds.
    */
@@ -5721,7 +15741,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The data stores associated with this engine.
+   * Optional. The data stores associated with this engine.
    *
    * For
    * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -5743,7 +15763,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * initializations.
    * </pre>
    *
-   * <code>repeated string data_store_ids = 5;</code>
+   * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of dataStoreIds.
    */
@@ -5755,7 +15775,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The data stores associated with this engine.
+   * Optional. The data stores associated with this engine.
    *
    * For
    * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -5777,7 +15797,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * initializations.
    * </pre>
    *
-   * <code>repeated string data_store_ids = 5;</code>
+   * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The dataStoreIds at the given index.
@@ -5790,7 +15810,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The data stores associated with this engine.
+   * Optional. The data stores associated with this engine.
    *
    * For
    * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -5812,7 +15832,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    * initializations.
    * </pre>
    *
-   * <code>repeated string data_store_ids = 5;</code>
+   * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the dataStoreIds at the given index.
@@ -5871,14 +15891,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The industry vertical that the engine registers.
+   * Optional. The industry vertical that the engine registers.
    * The restriction of the Engine industry vertical is based on
-   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-   * default to `GENERIC`. Vertical on Engine has to match vertical of the
-   * DataStore linked to the engine.
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+   * Engine has to match vertical of the DataStore linked to the engine.
    * </pre>
    *
-   * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for industryVertical.
    */
@@ -5891,14 +15912,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The industry vertical that the engine registers.
+   * Optional. The industry vertical that the engine registers.
    * The restriction of the Engine industry vertical is based on
-   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-   * default to `GENERIC`. Vertical on Engine has to match vertical of the
-   * DataStore linked to the engine.
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+   * Engine has to match vertical of the DataStore linked to the engine.
    * </pre>
    *
-   * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The industryVertical.
    */
@@ -5965,6 +15987,123 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         : commonConfig_;
   }
 
+  public static final int KNOWLEDGE_GRAPH_CONFIG_FIELD_NUMBER = 23;
+  private com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledgeGraphConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeGraphConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeGraphConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeGraphConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+      getKnowledgeGraphConfig() {
+    return knowledgeGraphConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.getDefaultInstance()
+        : knowledgeGraphConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configurations for the Knowledge Graph. Only applicable if
+   * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+   * is
+   * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder
+      getKnowledgeGraphConfigOrBuilder() {
+    return knowledgeGraphConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.getDefaultInstance()
+        : knowledgeGraphConfig_;
+  }
+
+  public static final int APP_TYPE_FIELD_NUMBER = 24;
+  private int appType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This the application type which this engine resource
+   * represents. NOTE: this is a new concept independ of existing industry
+   * vertical or solution type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for appType.
+   */
+  @java.lang.Override
+  public int getAppTypeValue() {
+    return appType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. This the application type which this engine resource
+   * represents. NOTE: this is a new concept independ of existing industry
+   * vertical or solution type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The appType.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.AppType getAppType() {
+    com.google.cloud.discoveryengine.v1beta.Engine.AppType result =
+        com.google.cloud.discoveryengine.v1beta.Engine.AppType.forNumber(appType_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.Engine.AppType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int DISABLE_ANALYTICS_FIELD_NUMBER = 26;
   private boolean disableAnalytics_ = false;
 
@@ -5983,6 +16122,1152 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getDisableAnalytics() {
     return disableAnalytics_;
+  }
+
+  public static final int FEATURES_FIELD_NUMBER = 30;
+
+  private static final class FeaturesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.EngineProto
+                .internal_static_google_cloud_discoveryengine_v1beta_Engine_FeaturesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.ENUM,
+            com.google.cloud.discoveryengine.v1beta.Engine.FeatureState.FEATURE_STATE_UNSPECIFIED
+                .getNumber());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> features_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> internalGetFeatures() {
+    if (features_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(FeaturesDefaultEntryHolder.defaultEntry);
+    }
+    return features_;
+  }
+
+  private static final com.google.protobuf.Internal.MapAdapter.Converter<
+          java.lang.Integer, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+      featuresValueConverter =
+          com.google.protobuf.Internal.MapAdapter.newEnumConverter(
+              com.google.cloud.discoveryengine.v1beta.Engine.FeatureState.internalGetValueMap(),
+              com.google.cloud.discoveryengine.v1beta.Engine.FeatureState.UNRECOGNIZED);
+
+  private static final java.util.Map<
+          java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+      internalGetAdaptedFeaturesMap(java.util.Map<java.lang.String, java.lang.Integer> map) {
+    return new com.google.protobuf.Internal.MapAdapter<
+        java.lang.String,
+        com.google.cloud.discoveryengine.v1beta.Engine.FeatureState,
+        java.lang.Integer>(map, featuresValueConverter);
+  }
+
+  public int getFeaturesCount() {
+    return internalGetFeatures().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsFeatures(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetFeatures().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getFeaturesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+      getFeatures() {
+    return getFeaturesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+      getFeaturesMap() {
+    return internalGetAdaptedFeaturesMap(internalGetFeatures().getMap());
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.discoveryengine.v1beta.Engine.FeatureState
+      getFeaturesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.discoveryengine.v1beta.Engine.FeatureState defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+    return map.containsKey(key) ? featuresValueConverter.doForward(map.get(key)) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.FeatureState getFeaturesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return featuresValueConverter.doForward(map.get(key));
+  }
+
+  /** Use {@link #getFeaturesValueMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValue() {
+    return getFeaturesValueMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValueMap() {
+    return internalGetFeatures().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFeaturesValueOrDefault(java.lang.String key, int defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feature config for the engine to opt in or opt out of features.
+   * Supported keys:
+   *
+   * * `*`: all features, if it's present, all other feature state settings are
+   * ignored.
+   * * `agent-gallery`
+   * * `no-code-agent-builder`
+   * * `prompt-gallery`
+   * * `model-selector`
+   * * `notebook-lm`
+   * * `people-search`
+   * * `people-search-org-chart`
+   * * `bi-directional-audio`
+   * * `feedback`
+   * * `session-sharing`
+   * * `personalization-memory`
+   * * `personalization-suggested-highlights`
+   * * `mobile-app-access`
+   * * `disable-agent-sharing`
+   * * `disable-image-generation`
+   * * `disable-video-generation`
+   * * `disable-onedrive-upload`
+   * * `disable-talk-to-content`
+   * * `disable-google-drive-upload`
+   * * `disable-welcome-emails`
+   * * `disable-canvas`
+   * * `disable-canvas-workspace`
+   * * `disable-skills`
+   * * `enable-end-user-sharing-with-groups`
+   * * `single-agent-orchestration`
+   * * `multi-agent-orchestration`
+   * * `cross-product-intelligence`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFeaturesValueOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int CMEK_CONFIG_FIELD_NUMBER = 32;
+  private com.google.cloud.discoveryengine.v1beta.CmekConfig cmekConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cmekConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCmekConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cmekConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CmekConfig getCmekConfig() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CMEK-related information for the Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+    return cmekConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+        : cmekConfig_;
+  }
+
+  public static final int CONFIGURABLE_BILLING_APPROACH_FIELD_NUMBER = 36;
+  private int configurableBillingApproach_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for configurableBillingApproach.
+   */
+  @java.lang.Override
+  public int getConfigurableBillingApproachValue() {
+    return configurableBillingApproach_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configurableBillingApproach.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach
+      getConfigurableBillingApproach() {
+    com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach result =
+        com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach.forNumber(
+            configurableBillingApproach_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int MODEL_CONFIGS_FIELD_NUMBER = 37;
+
+  private static final class ModelConfigsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.EngineProto
+                .internal_static_google_cloud_discoveryengine_v1beta_Engine_ModelConfigsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.ENUM,
+            com.google.cloud.discoveryengine.v1beta.Engine.ModelState.MODEL_STATE_UNSPECIFIED
+                .getNumber());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> modelConfigs_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+      internalGetModelConfigs() {
+    if (modelConfigs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ModelConfigsDefaultEntryHolder.defaultEntry);
+    }
+    return modelConfigs_;
+  }
+
+  private static final com.google.protobuf.Internal.MapAdapter.Converter<
+          java.lang.Integer, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+      modelConfigsValueConverter =
+          com.google.protobuf.Internal.MapAdapter.newEnumConverter(
+              com.google.cloud.discoveryengine.v1beta.Engine.ModelState.internalGetValueMap(),
+              com.google.cloud.discoveryengine.v1beta.Engine.ModelState.UNRECOGNIZED);
+
+  private static final java.util.Map<
+          java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+      internalGetAdaptedModelConfigsMap(java.util.Map<java.lang.String, java.lang.Integer> map) {
+    return new com.google.protobuf.Internal.MapAdapter<
+        java.lang.String,
+        com.google.cloud.discoveryengine.v1beta.Engine.ModelState,
+        java.lang.Integer>(map, modelConfigsValueConverter);
+  }
+
+  public int getModelConfigsCount() {
+    return internalGetModelConfigs().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsModelConfigs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetModelConfigs().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getModelConfigsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+      getModelConfigs() {
+    return getModelConfigsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+      getModelConfigsMap() {
+    return internalGetAdaptedModelConfigsMap(internalGetModelConfigs().getMap());
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.discoveryengine.v1beta.Engine.ModelState
+      getModelConfigsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.discoveryengine.v1beta.Engine.ModelState defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+    return map.containsKey(key) ? modelConfigsValueConverter.doForward(map.get(key)) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.ModelState getModelConfigsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return modelConfigsValueConverter.doForward(map.get(key));
+  }
+
+  /** Use {@link #getModelConfigsValueMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValue() {
+    return getModelConfigsValueMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValueMap() {
+    return internalGetModelConfigs().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getModelConfigsValueOrDefault(java.lang.String key, int defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a model name to its specific configuration for this engine.
+   * This allows admin users to turn on/off individual models. This only stores
+   * models whose states are overridden by the admin.
+   *
+   * When the state is unspecified, or model_configs is empty for this
+   * model, the system will decide if this model should be available or not
+   * based on the default configuration. For example, a preview model
+   * should be disabled by default if the admin has not chosen to enable it.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getModelConfigsValueOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int OBSERVABILITY_CONFIG_FIELD_NUMBER = 39;
+  private com.google.cloud.discoveryengine.v1beta.ObservabilityConfig observabilityConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the observabilityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasObservabilityConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The observabilityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.ObservabilityConfig getObservabilityConfig() {
+    return observabilityConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.getDefaultInstance()
+        : observabilityConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Observability config for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.ObservabilityConfigOrBuilder
+      getObservabilityConfigOrBuilder() {
+    return observabilityConfig_ == null
+        ? com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.getDefaultInstance()
+        : observabilityConfig_;
+  }
+
+  public static final int CONNECTOR_TENANT_INFO_FIELD_NUMBER = 42;
+
+  private static final class ConnectorTenantInfoDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1beta.EngineProto
+                .internal_static_google_cloud_discoveryengine_v1beta_Engine_ConnectorTenantInfoEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> connectorTenantInfo_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetConnectorTenantInfo() {
+    if (connectorTenantInfo_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ConnectorTenantInfoDefaultEntryHolder.defaultEntry);
+    }
+    return connectorTenantInfo_;
+  }
+
+  public int getConnectorTenantInfoCount() {
+    return internalGetConnectorTenantInfo().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsConnectorTenantInfo(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetConnectorTenantInfo().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getConnectorTenantInfoMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfo() {
+    return getConnectorTenantInfoMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfoMap() {
+    return internalGetConnectorTenantInfo().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getConnectorTenantInfoOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetConnectorTenantInfo().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+   * tenant-specific information required for that connector. The structure of
+   * the tenant information string is connector-dependent.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getConnectorTenantInfoOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetConnectorTenantInfo().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int AGENT_GATEWAY_SETTING_FIELD_NUMBER = 43;
+  private com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting agentGatewaySetting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentGatewaySetting field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentGatewaySetting() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentGatewaySetting.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting getAgentGatewaySetting() {
+    return agentGatewaySetting_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.getDefaultInstance()
+        : agentGatewaySetting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The agent gateway setting for the engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AgentGatewaySettingOrBuilder
+      getAgentGatewaySettingOrBuilder() {
+    return agentGatewaySetting_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.getDefaultInstance()
+        : agentGatewaySetting_;
+  }
+
+  public static final int MARKETPLACE_AGENT_VISIBILITY_FIELD_NUMBER = 44;
+  private int marketplaceAgentVisibility_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The visibility of marketplace agents in the agent gallery.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for marketplaceAgentVisibility.
+   */
+  @java.lang.Override
+  public int getMarketplaceAgentVisibilityValue() {
+    return marketplaceAgentVisibility_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The visibility of marketplace agents in the agent gallery.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The marketplaceAgentVisibility.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility
+      getMarketplaceAgentVisibility() {
+    com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility result =
+        com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility.forNumber(
+            marketplaceAgentVisibility_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int PROCUREMENT_CONTACT_EMAILS_FIELD_NUMBER = 45;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList procurementContactEmails_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the procurementContactEmails.
+   */
+  public com.google.protobuf.ProtocolStringList getProcurementContactEmailsList() {
+    return procurementContactEmails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of procurementContactEmails.
+   */
+  public int getProcurementContactEmailsCount() {
+    return procurementContactEmails_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The procurementContactEmails at the given index.
+   */
+  public java.lang.String getProcurementContactEmails(int index) {
+    return procurementContactEmails_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The emails of the procurement contacts.
+   * </pre>
+   *
+   * <code>
+   * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the procurementContactEmails at the given index.
+   */
+  public com.google.protobuf.ByteString getProcurementContactEmailsBytes(int index) {
+    return procurementContactEmails_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -6031,6 +17316,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           13, (com.google.cloud.discoveryengine.v1beta.Engine.SearchEngineConfig) engineConfig_);
     }
+    if (engineConfigCase_ == 14) {
+      output.writeMessage(
+          14,
+          (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+              engineConfig_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getCommonConfig());
     }
@@ -6039,8 +17330,50 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(16, industryVertical_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(23, getKnowledgeGraphConfig());
+    }
+    if (appType_
+        != com.google.cloud.discoveryengine.v1beta.Engine.AppType.APP_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(24, appType_);
+    }
     if (disableAnalytics_ != false) {
       output.writeBool(26, disableAnalytics_);
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetFeatures(), FeaturesDefaultEntryHolder.defaultEntry, 30);
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(32, getCmekConfig());
+    }
+    if (configurableBillingApproach_
+        != com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach
+            .CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(36, configurableBillingApproach_);
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetModelConfigs(), ModelConfigsDefaultEntryHolder.defaultEntry, 37);
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(39, getObservabilityConfig());
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetConnectorTenantInfo(),
+        ConnectorTenantInfoDefaultEntryHolder.defaultEntry,
+        42);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(43, getAgentGatewaySetting());
+    }
+    if (marketplaceAgentVisibility_
+        != com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility
+            .MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(44, marketplaceAgentVisibility_);
+    }
+    for (int i = 0; i < procurementContactEmails_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 45, procurementContactEmails_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -6093,6 +17426,13 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
               13,
               (com.google.cloud.discoveryengine.v1beta.Engine.SearchEngineConfig) engineConfig_);
     }
+    if (engineConfigCase_ == 14) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14,
+              (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+                  engineConfig_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getCommonConfig());
     }
@@ -6101,8 +17441,80 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, industryVertical_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(23, getKnowledgeGraphConfig());
+    }
+    if (appType_
+        != com.google.cloud.discoveryengine.v1beta.Engine.AppType.APP_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(24, appType_);
+    }
     if (disableAnalytics_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, disableAnalytics_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+        internalGetFeatures().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> features__ =
+          FeaturesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, features__);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getCmekConfig());
+    }
+    if (configurableBillingApproach_
+        != com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach
+            .CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(36, configurableBillingApproach_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+        internalGetModelConfigs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> modelConfigs__ =
+          ModelConfigsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, modelConfigs__);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(39, getObservabilityConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetConnectorTenantInfo().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> connectorTenantInfo__ =
+          ConnectorTenantInfoDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, connectorTenantInfo__);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(43, getAgentGatewaySetting());
+    }
+    if (marketplaceAgentVisibility_
+        != com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility
+            .MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(44, marketplaceAgentVisibility_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < procurementContactEmails_.size(); i++) {
+        dataSize += computeStringSizeNoTag(procurementContactEmails_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getProcurementContactEmailsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6137,7 +17549,32 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     if (hasCommonConfig()) {
       if (!getCommonConfig().equals(other.getCommonConfig())) return false;
     }
+    if (hasKnowledgeGraphConfig() != other.hasKnowledgeGraphConfig()) return false;
+    if (hasKnowledgeGraphConfig()) {
+      if (!getKnowledgeGraphConfig().equals(other.getKnowledgeGraphConfig())) return false;
+    }
+    if (appType_ != other.appType_) return false;
     if (getDisableAnalytics() != other.getDisableAnalytics()) return false;
+    if (!internalGetFeatures().equals(other.internalGetFeatures())) return false;
+    if (hasCmekConfig() != other.hasCmekConfig()) return false;
+    if (hasCmekConfig()) {
+      if (!getCmekConfig().equals(other.getCmekConfig())) return false;
+    }
+    if (configurableBillingApproach_ != other.configurableBillingApproach_) return false;
+    if (!internalGetModelConfigs().equals(other.internalGetModelConfigs())) return false;
+    if (hasObservabilityConfig() != other.hasObservabilityConfig()) return false;
+    if (hasObservabilityConfig()) {
+      if (!getObservabilityConfig().equals(other.getObservabilityConfig())) return false;
+    }
+    if (!internalGetConnectorTenantInfo().equals(other.internalGetConnectorTenantInfo()))
+      return false;
+    if (hasAgentGatewaySetting() != other.hasAgentGatewaySetting()) return false;
+    if (hasAgentGatewaySetting()) {
+      if (!getAgentGatewaySetting().equals(other.getAgentGatewaySetting())) return false;
+    }
+    if (marketplaceAgentVisibility_ != other.marketplaceAgentVisibility_) return false;
+    if (!getProcurementContactEmailsList().equals(other.getProcurementContactEmailsList()))
+      return false;
     if (!getEngineConfigCase().equals(other.getEngineConfigCase())) return false;
     switch (engineConfigCase_) {
       case 11:
@@ -6145,6 +17582,10 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         break;
       case 13:
         if (!getSearchEngineConfig().equals(other.getSearchEngineConfig())) return false;
+        break;
+      case 14:
+        if (!getMediaRecommendationEngineConfig()
+            .equals(other.getMediaRecommendationEngineConfig())) return false;
         break;
       case 0:
       default:
@@ -6192,8 +17633,46 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + COMMON_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCommonConfig().hashCode();
     }
+    if (hasKnowledgeGraphConfig()) {
+      hash = (37 * hash) + KNOWLEDGE_GRAPH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeGraphConfig().hashCode();
+    }
+    hash = (37 * hash) + APP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + appType_;
     hash = (37 * hash) + DISABLE_ANALYTICS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableAnalytics());
+    if (!internalGetFeatures().getMap().isEmpty()) {
+      hash = (37 * hash) + FEATURES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetFeatures().hashCode();
+    }
+    if (hasCmekConfig()) {
+      hash = (37 * hash) + CMEK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCmekConfig().hashCode();
+    }
+    hash = (37 * hash) + CONFIGURABLE_BILLING_APPROACH_FIELD_NUMBER;
+    hash = (53 * hash) + configurableBillingApproach_;
+    if (!internalGetModelConfigs().getMap().isEmpty()) {
+      hash = (37 * hash) + MODEL_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetModelConfigs().hashCode();
+    }
+    if (hasObservabilityConfig()) {
+      hash = (37 * hash) + OBSERVABILITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getObservabilityConfig().hashCode();
+    }
+    if (!internalGetConnectorTenantInfo().getMap().isEmpty()) {
+      hash = (37 * hash) + CONNECTOR_TENANT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetConnectorTenantInfo().hashCode();
+    }
+    if (hasAgentGatewaySetting()) {
+      hash = (37 * hash) + AGENT_GATEWAY_SETTING_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentGatewaySetting().hashCode();
+    }
+    hash = (37 * hash) + MARKETPLACE_AGENT_VISIBILITY_FIELD_NUMBER;
+    hash = (53 * hash) + marketplaceAgentVisibility_;
+    if (getProcurementContactEmailsCount() > 0) {
+      hash = (37 * hash) + PROCUREMENT_CONTACT_EMAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getProcurementContactEmailsList().hashCode();
+    }
     switch (engineConfigCase_) {
       case 11:
         hash = (37 * hash) + CHAT_ENGINE_CONFIG_FIELD_NUMBER;
@@ -6202,6 +17681,10 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       case 13:
         hash = (37 * hash) + SEARCH_ENGINE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getSearchEngineConfig().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + MEDIA_RECOMMENDATION_ENGINE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getMediaRecommendationEngineConfig().hashCode();
         break;
       case 0:
       default:
@@ -6334,6 +17817,36 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_discoveryengine_v1beta_Engine_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 30:
+          return internalGetFeatures();
+        case 37:
+          return internalGetModelConfigs();
+        case 42:
+          return internalGetConnectorTenantInfo();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 30:
+          return internalGetMutableFeatures();
+        case 37:
+          return internalGetMutableModelConfigs();
+        case 42:
+          return internalGetMutableConnectorTenantInfo();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -6359,6 +17872,10 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetCommonConfigFieldBuilder();
+        internalGetKnowledgeGraphConfigFieldBuilder();
+        internalGetCmekConfigFieldBuilder();
+        internalGetObservabilityConfigFieldBuilder();
+        internalGetAgentGatewaySettingFieldBuilder();
       }
     }
 
@@ -6371,6 +17888,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       if (searchEngineConfigBuilder_ != null) {
         searchEngineConfigBuilder_.clear();
+      }
+      if (mediaRecommendationEngineConfigBuilder_ != null) {
+        mediaRecommendationEngineConfigBuilder_.clear();
       }
       if (chatEngineMetadataBuilder_ != null) {
         chatEngineMetadataBuilder_.clear();
@@ -6395,7 +17915,34 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         commonConfigBuilder_.dispose();
         commonConfigBuilder_ = null;
       }
+      knowledgeGraphConfig_ = null;
+      if (knowledgeGraphConfigBuilder_ != null) {
+        knowledgeGraphConfigBuilder_.dispose();
+        knowledgeGraphConfigBuilder_ = null;
+      }
+      appType_ = 0;
       disableAnalytics_ = false;
+      internalGetMutableFeatures().clear();
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
+      configurableBillingApproach_ = 0;
+      internalGetMutableModelConfigs().clear();
+      observabilityConfig_ = null;
+      if (observabilityConfigBuilder_ != null) {
+        observabilityConfigBuilder_.dispose();
+        observabilityConfigBuilder_ = null;
+      }
+      internalGetMutableConnectorTenantInfo().clear();
+      agentGatewaySetting_ = null;
+      if (agentGatewaySettingBuilder_ != null) {
+        agentGatewaySettingBuilder_.dispose();
+        agentGatewaySettingBuilder_ = null;
+      }
+      marketplaceAgentVisibility_ = 0;
+      procurementContactEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
       engineConfigCase_ = 0;
       engineConfig_ = null;
       engineMetadataCase_ = 0;
@@ -6437,38 +17984,88 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1beta.Engine result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.displayName_ = displayName_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         dataStoreIds_.makeImmutable();
         result.dataStoreIds_ = dataStoreIds_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.solutionType_ = solutionType_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.industryVertical_ = industryVertical_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.commonConfig_ =
             commonConfigBuilder_ == null ? commonConfig_ : commonConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.knowledgeGraphConfig_ =
+            knowledgeGraphConfigBuilder_ == null
+                ? knowledgeGraphConfig_
+                : knowledgeGraphConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.appType_ = appType_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.disableAnalytics_ = disableAnalytics_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.features_ = internalGetFeatures();
+        result.features_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.cmekConfig_ = cmekConfigBuilder_ == null ? cmekConfig_ : cmekConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.configurableBillingApproach_ = configurableBillingApproach_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.modelConfigs_ = internalGetModelConfigs();
+        result.modelConfigs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.observabilityConfig_ =
+            observabilityConfigBuilder_ == null
+                ? observabilityConfig_
+                : observabilityConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.connectorTenantInfo_ = internalGetConnectorTenantInfo();
+        result.connectorTenantInfo_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.agentGatewaySetting_ =
+            agentGatewaySettingBuilder_ == null
+                ? agentGatewaySetting_
+                : agentGatewaySettingBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.marketplaceAgentVisibility_ = marketplaceAgentVisibility_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        procurementContactEmails_.makeImmutable();
+        result.procurementContactEmails_ = procurementContactEmails_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6481,6 +18078,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       if (engineConfigCase_ == 13 && searchEngineConfigBuilder_ != null) {
         result.engineConfig_ = searchEngineConfigBuilder_.build();
+      }
+      if (engineConfigCase_ == 14 && mediaRecommendationEngineConfigBuilder_ != null) {
+        result.engineConfig_ = mediaRecommendationEngineConfigBuilder_.build();
       }
       result.engineMetadataCase_ = engineMetadataCase_;
       result.engineMetadata_ = this.engineMetadata_;
@@ -6503,12 +18103,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.discoveryengine.v1beta.Engine.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -6520,7 +18120,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (!other.dataStoreIds_.isEmpty()) {
         if (dataStoreIds_.isEmpty()) {
           dataStoreIds_ = other.dataStoreIds_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
         } else {
           ensureDataStoreIdsIsMutable();
           dataStoreIds_.addAll(other.dataStoreIds_);
@@ -6536,8 +18136,45 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (other.hasCommonConfig()) {
         mergeCommonConfig(other.getCommonConfig());
       }
+      if (other.hasKnowledgeGraphConfig()) {
+        mergeKnowledgeGraphConfig(other.getKnowledgeGraphConfig());
+      }
+      if (other.appType_ != 0) {
+        setAppTypeValue(other.getAppTypeValue());
+      }
       if (other.getDisableAnalytics() != false) {
         setDisableAnalytics(other.getDisableAnalytics());
+      }
+      internalGetMutableFeatures().mergeFrom(other.internalGetFeatures());
+      bitField0_ |= 0x00008000;
+      if (other.hasCmekConfig()) {
+        mergeCmekConfig(other.getCmekConfig());
+      }
+      if (other.configurableBillingApproach_ != 0) {
+        setConfigurableBillingApproachValue(other.getConfigurableBillingApproachValue());
+      }
+      internalGetMutableModelConfigs().mergeFrom(other.internalGetModelConfigs());
+      bitField0_ |= 0x00040000;
+      if (other.hasObservabilityConfig()) {
+        mergeObservabilityConfig(other.getObservabilityConfig());
+      }
+      internalGetMutableConnectorTenantInfo().mergeFrom(other.internalGetConnectorTenantInfo());
+      bitField0_ |= 0x00100000;
+      if (other.hasAgentGatewaySetting()) {
+        mergeAgentGatewaySetting(other.getAgentGatewaySetting());
+      }
+      if (other.marketplaceAgentVisibility_ != 0) {
+        setMarketplaceAgentVisibilityValue(other.getMarketplaceAgentVisibilityValue());
+      }
+      if (!other.procurementContactEmails_.isEmpty()) {
+        if (procurementContactEmails_.isEmpty()) {
+          procurementContactEmails_ = other.procurementContactEmails_;
+          bitField0_ |= 0x00800000;
+        } else {
+          ensureProcurementContactEmailsIsMutable();
+          procurementContactEmails_.addAll(other.procurementContactEmails_);
+        }
+        onChanged();
       }
       switch (other.getEngineConfigCase()) {
         case CHAT_ENGINE_CONFIG:
@@ -6548,6 +18185,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         case SEARCH_ENGINE_CONFIG:
           {
             mergeSearchEngineConfig(other.getSearchEngineConfig());
+            break;
+          }
+        case MEDIA_RECOMMENDATION_ENGINE_CONFIG:
+          {
+            mergeMediaRecommendationEngineConfig(other.getMediaRecommendationEngineConfig());
             break;
           }
         case ENGINECONFIG_NOT_SET:
@@ -6595,27 +18237,27 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 34
             case 42:
@@ -6628,7 +18270,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
             case 48:
               {
                 solutionType_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 90:
@@ -6652,25 +18294,123 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
                 engineConfigCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetMediaRecommendationEngineConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                engineConfigCase_ = 14;
+                break;
+              } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetCommonConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 128:
               {
                 industryVertical_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 128
+            case 186:
+              {
+                input.readMessage(
+                    internalGetKnowledgeGraphConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 186
+            case 192:
+              {
+                appType_ = input.readEnum();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 192
             case 208:
               {
                 disableAnalytics_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 208
+            case 242:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> features__ =
+                    input.readMessage(
+                        FeaturesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableFeatures()
+                    .getMutableMap()
+                    .put(features__.getKey(), features__.getValue());
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 242
+            case 258:
+              {
+                input.readMessage(
+                    internalGetCmekConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 258
+            case 288:
+              {
+                configurableBillingApproach_ = input.readEnum();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 288
+            case 298:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> modelConfigs__ =
+                    input.readMessage(
+                        ModelConfigsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableModelConfigs()
+                    .getMutableMap()
+                    .put(modelConfigs__.getKey(), modelConfigs__.getValue());
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 298
+            case 314:
+              {
+                input.readMessage(
+                    internalGetObservabilityConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 314
+            case 338:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    connectorTenantInfo__ =
+                        input.readMessage(
+                            ConnectorTenantInfoDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableConnectorTenantInfo()
+                    .getMutableMap()
+                    .put(connectorTenantInfo__.getKey(), connectorTenantInfo__.getValue());
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 338
+            case 346:
+              {
+                input.readMessage(
+                    internalGetAgentGatewaySettingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 346
+            case 352:
+              {
+                marketplaceAgentVisibility_ = input.readEnum();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 352
+            case 362:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProcurementContactEmailsIsMutable();
+                procurementContactEmails_.add(s);
+                break;
+              } // case 362
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7257,6 +18997,317 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig,
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfigOrBuilder>
+        mediaRecommendationEngineConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     *
+     * @return Whether the mediaRecommendationEngineConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasMediaRecommendationEngineConfig() {
+      return engineConfigCase_ == 14;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     *
+     * @return The mediaRecommendationEngineConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+        getMediaRecommendationEngineConfig() {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        if (engineConfigCase_ == 14) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+              engineConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .getDefaultInstance();
+      } else {
+        if (engineConfigCase_ == 14) {
+          return mediaRecommendationEngineConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    public Builder setMediaRecommendationEngineConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig value) {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        engineConfig_ = value;
+        onChanged();
+      } else {
+        mediaRecommendationEngineConfigBuilder_.setMessage(value);
+      }
+      engineConfigCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    public Builder setMediaRecommendationEngineConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.Builder
+            builderForValue) {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        engineConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        mediaRecommendationEngineConfigBuilder_.setMessage(builderForValue.build());
+      }
+      engineConfigCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    public Builder mergeMediaRecommendationEngineConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig value) {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        if (engineConfigCase_ == 14
+            && engineConfig_
+                != com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .getDefaultInstance()) {
+          engineConfig_ =
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.Engine
+                              .MediaRecommendationEngineConfig)
+                          engineConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          engineConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (engineConfigCase_ == 14) {
+          mediaRecommendationEngineConfigBuilder_.mergeFrom(value);
+        } else {
+          mediaRecommendationEngineConfigBuilder_.setMessage(value);
+        }
+      }
+      engineConfigCase_ = 14;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    public Builder clearMediaRecommendationEngineConfig() {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        if (engineConfigCase_ == 14) {
+          engineConfigCase_ = 0;
+          engineConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (engineConfigCase_ == 14) {
+          engineConfigCase_ = 0;
+          engineConfig_ = null;
+        }
+        mediaRecommendationEngineConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.Builder
+        getMediaRecommendationEngineConfigBuilder() {
+      return internalGetMediaRecommendationEngineConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfigOrBuilder
+        getMediaRecommendationEngineConfigOrBuilder() {
+      if ((engineConfigCase_ == 14) && (mediaRecommendationEngineConfigBuilder_ != null)) {
+        return mediaRecommendationEngineConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (engineConfigCase_ == 14) {
+          return (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+              engineConfig_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configurations for the Media Engine. Only applicable on the data
+     * stores with
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION]
+     * and
+     * [IndustryVertical.MEDIA][google.cloud.discoveryengine.v1beta.IndustryVertical.MEDIA]
+     * vertical.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig media_recommendation_engine_config = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig,
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfigOrBuilder>
+        internalGetMediaRecommendationEngineConfigFieldBuilder() {
+      if (mediaRecommendationEngineConfigBuilder_ == null) {
+        if (!(engineConfigCase_ == 14)) {
+          engineConfig_ =
+              com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                  .getDefaultInstance();
+        }
+        mediaRecommendationEngineConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig
+                    .Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine
+                    .MediaRecommendationEngineConfigOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.Engine.MediaRecommendationEngineConfig)
+                    engineConfig_,
+                getParentForChildren(),
+                isClean());
+        engineConfig_ = null;
+      }
+      engineConfigCase_ = 14;
+      onChanged();
+      return mediaRecommendationEngineConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.Engine.ChatEngineMetadata,
             com.google.cloud.discoveryengine.v1beta.Engine.ChatEngineMetadata.Builder,
             com.google.cloud.discoveryengine.v1beta.Engine.ChatEngineMetadataOrBuilder>
@@ -7549,7 +19600,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The fully qualified resource name of the engine.
+     * Immutable. Identifier. The fully qualified resource name of the engine.
      *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
@@ -7560,7 +19611,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -7580,7 +19633,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The fully qualified resource name of the engine.
+     * Immutable. Identifier. The fully qualified resource name of the engine.
      *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
@@ -7591,7 +19644,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -7611,7 +19666,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The fully qualified resource name of the engine.
+     * Immutable. Identifier. The fully qualified resource name of the engine.
      *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
@@ -7622,7 +19677,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -7632,7 +19689,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7641,7 +19698,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The fully qualified resource name of the engine.
+     * Immutable. Identifier. The fully qualified resource name of the engine.
      *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
@@ -7652,13 +19709,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -7667,7 +19726,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. The fully qualified resource name of the engine.
+     * Immutable. Identifier. The fully qualified resource name of the engine.
      *
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
@@ -7678,7 +19737,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * /[a-z0-9][a-z0-9-_]*&#47;. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -7689,7 +19750,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7762,7 +19823,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7781,7 +19842,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7805,7 +19866,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7831,7 +19892,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -7877,7 +19938,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7899,7 +19960,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7917,7 +19978,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -7928,7 +19989,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -7946,7 +20007,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -7968,7 +20029,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -8043,7 +20104,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -8089,7 +20150,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8111,7 +20172,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8129,7 +20190,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -8140,7 +20201,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -8158,7 +20219,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -8180,7 +20241,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -8241,14 +20302,14 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (!dataStoreIds_.isModifiable()) {
         dataStoreIds_ = new com.google.protobuf.LazyStringArrayList(dataStoreIds_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
     }
 
     /**
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8270,7 +20331,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the dataStoreIds.
      */
@@ -8283,7 +20344,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8305,7 +20366,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of dataStoreIds.
      */
@@ -8317,7 +20378,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8339,7 +20400,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The dataStoreIds at the given index.
@@ -8352,7 +20413,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8374,7 +20435,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the dataStoreIds at the given index.
@@ -8387,7 +20448,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8409,7 +20470,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index to set the value at.
      * @param value The dataStoreIds to set.
@@ -8421,7 +20482,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       ensureDataStoreIdsIsMutable();
       dataStoreIds_.set(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8430,7 +20491,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8452,7 +20513,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The dataStoreIds to add.
      * @return This builder for chaining.
@@ -8463,7 +20524,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       }
       ensureDataStoreIdsIsMutable();
       dataStoreIds_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8472,7 +20533,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8494,7 +20555,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param values The dataStoreIds to add.
      * @return This builder for chaining.
@@ -8502,7 +20563,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     public Builder addAllDataStoreIds(java.lang.Iterable<java.lang.String> values) {
       ensureDataStoreIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataStoreIds_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8511,7 +20572,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8533,13 +20594,13 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDataStoreIds() {
       dataStoreIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       ;
       onChanged();
       return this;
@@ -8549,7 +20610,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The data stores associated with this engine.
+     * Optional. The data stores associated with this engine.
      *
      * For
      * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH]
@@ -8571,7 +20632,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * initializations.
      * </pre>
      *
-     * <code>repeated string data_store_ids = 5;</code>
+     * <code>repeated string data_store_ids = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes of the dataStoreIds to add.
      * @return This builder for chaining.
@@ -8583,7 +20644,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureDataStoreIdsIsMutable();
       dataStoreIds_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8624,7 +20685,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      */
     public Builder setSolutionTypeValue(int value) {
       solutionType_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8669,7 +20730,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       solutionType_ = value.getNumber();
       onChanged();
       return this;
@@ -8689,7 +20750,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSolutionType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       solutionType_ = 0;
       onChanged();
       return this;
@@ -8701,14 +20762,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The industry vertical that the engine registers.
+     * Optional. The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+     * Engine has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for industryVertical.
      */
@@ -8721,21 +20783,22 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The industry vertical that the engine registers.
+     * Optional. The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+     * Engine has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for industryVertical to set.
      * @return This builder for chaining.
      */
     public Builder setIndustryVerticalValue(int value) {
       industryVertical_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8744,14 +20807,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The industry vertical that the engine registers.
+     * Optional. The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+     * Engine has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The industryVertical.
      */
@@ -8768,14 +20832,15 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The industry vertical that the engine registers.
+     * Optional. The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+     * Engine has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The industryVertical to set.
      * @return This builder for chaining.
@@ -8785,7 +20850,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       industryVertical_ = value.getNumber();
       onChanged();
       return this;
@@ -8795,19 +20860,20 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The industry vertical that the engine registers.
+     * Optional. The industry vertical that the engine registers.
      * The restriction of the Engine industry vertical is based on
-     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: If unspecified,
-     * default to `GENERIC`. Vertical on Engine has to match vertical of the
-     * DataStore linked to the engine.
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore]: Vertical on
+     * Engine has to match vertical of the DataStore linked to the engine.
      * </pre>
      *
-     * <code>.google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16;</code>
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.IndustryVertical industry_vertical = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearIndustryVertical() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       industryVertical_ = 0;
       onChanged();
       return this;
@@ -8832,7 +20898,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return Whether the commonConfig field is set.
      */
     public boolean hasCommonConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -8875,7 +20941,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         commonConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8896,7 +20962,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       } else {
         commonConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8913,7 +20979,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     public Builder mergeCommonConfig(
         com.google.cloud.discoveryengine.v1beta.Engine.CommonConfig value) {
       if (commonConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && commonConfig_ != null
             && commonConfig_
                 != com.google.cloud.discoveryengine.v1beta.Engine.CommonConfig
@@ -8926,7 +20992,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
         commonConfigBuilder_.mergeFrom(value);
       }
       if (commonConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -8942,7 +21008,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1beta.Engine.CommonConfig common_config = 15;</code>
      */
     public Builder clearCommonConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       commonConfig_ = null;
       if (commonConfigBuilder_ != null) {
         commonConfigBuilder_.dispose();
@@ -8963,7 +21029,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.Engine.CommonConfig.Builder
         getCommonConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetCommonConfigFieldBuilder().getBuilder();
     }
@@ -9014,6 +21080,374 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
       return commonConfigBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        knowledgeGraphConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig,
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder>
+        knowledgeGraphConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the knowledgeGraphConfig field is set.
+     */
+    public boolean hasKnowledgeGraphConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The knowledgeGraphConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+        getKnowledgeGraphConfig() {
+      if (knowledgeGraphConfigBuilder_ == null) {
+        return knowledgeGraphConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                .getDefaultInstance()
+            : knowledgeGraphConfig_;
+      } else {
+        return knowledgeGraphConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeGraphConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig value) {
+      if (knowledgeGraphConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeGraphConfig_ = value;
+      } else {
+        knowledgeGraphConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setKnowledgeGraphConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder
+            builderForValue) {
+      if (knowledgeGraphConfigBuilder_ == null) {
+        knowledgeGraphConfig_ = builderForValue.build();
+      } else {
+        knowledgeGraphConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeKnowledgeGraphConfig(
+        com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig value) {
+      if (knowledgeGraphConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && knowledgeGraphConfig_ != null
+            && knowledgeGraphConfig_
+                != com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                    .getDefaultInstance()) {
+          getKnowledgeGraphConfigBuilder().mergeFrom(value);
+        } else {
+          knowledgeGraphConfig_ = value;
+        }
+      } else {
+        knowledgeGraphConfigBuilder_.mergeFrom(value);
+      }
+      if (knowledgeGraphConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearKnowledgeGraphConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      knowledgeGraphConfig_ = null;
+      if (knowledgeGraphConfigBuilder_ != null) {
+        knowledgeGraphConfigBuilder_.dispose();
+        knowledgeGraphConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder
+        getKnowledgeGraphConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetKnowledgeGraphConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder
+        getKnowledgeGraphConfigOrBuilder() {
+      if (knowledgeGraphConfigBuilder_ != null) {
+        return knowledgeGraphConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeGraphConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig
+                .getDefaultInstance()
+            : knowledgeGraphConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for the Knowledge Graph. Only applicable if
+     * [solution_type][google.cloud.discoveryengine.v1beta.Engine.solution_type]
+     * is
+     * [SOLUTION_TYPE_SEARCH][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_SEARCH].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig knowledge_graph_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig,
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder>
+        internalGetKnowledgeGraphConfigFieldBuilder() {
+      if (knowledgeGraphConfigBuilder_ == null) {
+        knowledgeGraphConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig,
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.Engine.KnowledgeGraphConfigOrBuilder>(
+                getKnowledgeGraphConfig(), getParentForChildren(), isClean());
+        knowledgeGraphConfig_ = null;
+      }
+      return knowledgeGraphConfigBuilder_;
+    }
+
+    private int appType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This the application type which this engine resource
+     * represents. NOTE: this is a new concept independ of existing industry
+     * vertical or solution type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for appType.
+     */
+    @java.lang.Override
+    public int getAppTypeValue() {
+      return appType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This the application type which this engine resource
+     * represents. NOTE: this is a new concept independ of existing industry
+     * vertical or solution type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for appType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppTypeValue(int value) {
+      appType_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This the application type which this engine resource
+     * represents. NOTE: this is a new concept independ of existing industry
+     * vertical or solution type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The appType.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.AppType getAppType() {
+      com.google.cloud.discoveryengine.v1beta.Engine.AppType result =
+          com.google.cloud.discoveryengine.v1beta.Engine.AppType.forNumber(appType_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.AppType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This the application type which this engine resource
+     * represents. NOTE: this is a new concept independ of existing industry
+     * vertical or solution type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The appType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppType(com.google.cloud.discoveryengine.v1beta.Engine.AppType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00002000;
+      appType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. This the application type which this engine resource
+     * represents. NOTE: this is a new concept independ of existing industry
+     * vertical or solution type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.AppType app_type = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      appType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private boolean disableAnalytics_;
 
     /**
@@ -9049,7 +21483,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
     public Builder setDisableAnalytics(boolean value) {
 
       disableAnalytics_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9067,8 +21501,2370 @@ public final class Engine extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisableAnalytics() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       disableAnalytics_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> features_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetFeatures() {
+      if (features_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(FeaturesDefaultEntryHolder.defaultEntry);
+      }
+      return features_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetMutableFeatures() {
+      if (features_ == null) {
+        features_ =
+            com.google.protobuf.MapField.newMapField(FeaturesDefaultEntryHolder.defaultEntry);
+      }
+      if (!features_.isMutable()) {
+        features_ = features_.copy();
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return features_;
+    }
+
+    public int getFeaturesCount() {
+      return internalGetFeatures().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsFeatures(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetFeatures().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getFeaturesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+        getFeatures() {
+      return getFeaturesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+        getFeaturesMap() {
+      return internalGetAdaptedFeaturesMap(internalGetFeatures().getMap());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.discoveryengine.v1beta.Engine.FeatureState
+        getFeaturesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.discoveryengine.v1beta.Engine.FeatureState defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+      return map.containsKey(key) ? featuresValueConverter.doForward(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.FeatureState getFeaturesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return featuresValueConverter.doForward(map.get(key));
+    }
+
+    /** Use {@link #getFeaturesValueMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValue() {
+      return getFeaturesValueMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer> getFeaturesValueMap() {
+      return internalGetFeatures().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getFeaturesValueOrDefault(java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getFeaturesValueOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetFeatures().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearFeatures() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      internalGetMutableFeatures().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeFeatures(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableFeatures().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+        getMutableFeatures() {
+      bitField0_ |= 0x00008000;
+      return internalGetAdaptedFeaturesMap(internalGetMutableFeatures().getMutableMap());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putFeatures(
+        java.lang.String key, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableFeatures()
+          .getMutableMap()
+          .put(key, featuresValueConverter.doBackward(value));
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllFeatures(
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.FeatureState>
+            values) {
+      internalGetAdaptedFeaturesMap(internalGetMutableFeatures().getMutableMap()).putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getMutableFeaturesValue() {
+      bitField0_ |= 0x00008000;
+      return internalGetMutableFeatures().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putFeaturesValue(java.lang.String key, int value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableFeatures().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feature config for the engine to opt in or opt out of features.
+     * Supported keys:
+     *
+     * * `*`: all features, if it's present, all other feature state settings are
+     * ignored.
+     * * `agent-gallery`
+     * * `no-code-agent-builder`
+     * * `prompt-gallery`
+     * * `model-selector`
+     * * `notebook-lm`
+     * * `people-search`
+     * * `people-search-org-chart`
+     * * `bi-directional-audio`
+     * * `feedback`
+     * * `session-sharing`
+     * * `personalization-memory`
+     * * `personalization-suggested-highlights`
+     * * `mobile-app-access`
+     * * `disable-agent-sharing`
+     * * `disable-image-generation`
+     * * `disable-video-generation`
+     * * `disable-onedrive-upload`
+     * * `disable-talk-to-content`
+     * * `disable-google-drive-upload`
+     * * `disable-welcome-emails`
+     * * `disable-canvas`
+     * * `disable-canvas-workspace`
+     * * `disable-skills`
+     * * `enable-end-user-sharing-with-groups`
+     * * `single-agent-orchestration`
+     * * `multi-agent-orchestration`
+     * * `cross-product-intelligence`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.FeatureState&gt; features = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllFeaturesValue(java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableFeatures().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.CmekConfig cmekConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.CmekConfig,
+            com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>
+        cmekConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cmekConfig field is set.
+     */
+    public boolean hasCmekConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cmekConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfig getCmekConfig() {
+      if (cmekConfigBuilder_ == null) {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      } else {
+        return cmekConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(com.google.cloud.discoveryengine.v1beta.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cmekConfig_ = value;
+      } else {
+        cmekConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmekConfig(
+        com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder builderForValue) {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfig_ = builderForValue.build();
+      } else {
+        cmekConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCmekConfig(com.google.cloud.discoveryengine.v1beta.CmekConfig value) {
+      if (cmekConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && cmekConfig_ != null
+            && cmekConfig_
+                != com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()) {
+          getCmekConfigBuilder().mergeFrom(value);
+        } else {
+          cmekConfig_ = value;
+        }
+      } else {
+        cmekConfigBuilder_.mergeFrom(value);
+      }
+      if (cmekConfig_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCmekConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      cmekConfig_ = null;
+      if (cmekConfigBuilder_ != null) {
+        cmekConfigBuilder_.dispose();
+        cmekConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder getCmekConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetCmekConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder getCmekConfigOrBuilder() {
+      if (cmekConfigBuilder_ != null) {
+        return cmekConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return cmekConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.CmekConfig.getDefaultInstance()
+            : cmekConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CMEK-related information for the Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.CmekConfig cmek_config = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.CmekConfig,
+            com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>
+        internalGetCmekConfigFieldBuilder() {
+      if (cmekConfigBuilder_ == null) {
+        cmekConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.CmekConfig,
+                com.google.cloud.discoveryengine.v1beta.CmekConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.CmekConfigOrBuilder>(
+                getCmekConfig(), getParentForChildren(), isClean());
+        cmekConfig_ = null;
+      }
+      return cmekConfigBuilder_;
+    }
+
+    private int configurableBillingApproach_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for configurableBillingApproach.
+     */
+    @java.lang.Override
+    public int getConfigurableBillingApproachValue() {
+      return configurableBillingApproach_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for configurableBillingApproach to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigurableBillingApproachValue(int value) {
+      configurableBillingApproach_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The configurableBillingApproach.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach
+        getConfigurableBillingApproach() {
+      com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach result =
+          com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach.forNumber(
+              configurableBillingApproach_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The configurableBillingApproach to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConfigurableBillingApproach(
+        com.google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00020000;
+      configurableBillingApproach_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for configurable billing approach.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.ConfigurableBillingApproach configurable_billing_approach = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConfigurableBillingApproach() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      configurableBillingApproach_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> modelConfigs_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetModelConfigs() {
+      if (modelConfigs_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ModelConfigsDefaultEntryHolder.defaultEntry);
+      }
+      return modelConfigs_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetMutableModelConfigs() {
+      if (modelConfigs_ == null) {
+        modelConfigs_ =
+            com.google.protobuf.MapField.newMapField(ModelConfigsDefaultEntryHolder.defaultEntry);
+      }
+      if (!modelConfigs_.isMutable()) {
+        modelConfigs_ = modelConfigs_.copy();
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return modelConfigs_;
+    }
+
+    public int getModelConfigsCount() {
+      return internalGetModelConfigs().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsModelConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetModelConfigs().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getModelConfigsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+        getModelConfigs() {
+      return getModelConfigsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+        getModelConfigsMap() {
+      return internalGetAdaptedModelConfigsMap(internalGetModelConfigs().getMap());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.discoveryengine.v1beta.Engine.ModelState
+        getModelConfigsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.discoveryengine.v1beta.Engine.ModelState defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+      return map.containsKey(key)
+          ? modelConfigsValueConverter.doForward(map.get(key))
+          : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.ModelState getModelConfigsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return modelConfigsValueConverter.doForward(map.get(key));
+    }
+
+    /** Use {@link #getModelConfigsValueMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValue() {
+      return getModelConfigsValueMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer> getModelConfigsValueMap() {
+      return internalGetModelConfigs().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getModelConfigsValueOrDefault(java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getModelConfigsValueOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetModelConfigs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearModelConfigs() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      internalGetMutableModelConfigs().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeModelConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableModelConfigs().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+        getMutableModelConfigs() {
+      bitField0_ |= 0x00040000;
+      return internalGetAdaptedModelConfigsMap(internalGetMutableModelConfigs().getMutableMap());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putModelConfigs(
+        java.lang.String key, com.google.cloud.discoveryengine.v1beta.Engine.ModelState value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableModelConfigs()
+          .getMutableMap()
+          .put(key, modelConfigsValueConverter.doBackward(value));
+      bitField0_ |= 0x00040000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllModelConfigs(
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.Engine.ModelState>
+            values) {
+      internalGetAdaptedModelConfigsMap(internalGetMutableModelConfigs().getMutableMap())
+          .putAll(values);
+      bitField0_ |= 0x00040000;
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getMutableModelConfigsValue() {
+      bitField0_ |= 0x00040000;
+      return internalGetMutableModelConfigs().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putModelConfigsValue(java.lang.String key, int value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableModelConfigs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00040000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a model name to its specific configuration for this engine.
+     * This allows admin users to turn on/off individual models. This only stores
+     * models whose states are overridden by the admin.
+     *
+     * When the state is unspecified, or model_configs is empty for this
+     * model, the system will decide if this model should be available or not
+     * based on the default configuration. For example, a preview model
+     * should be disabled by default if the admin has not chosen to enable it.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1beta.Engine.ModelState&gt; model_configs = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllModelConfigsValue(
+        java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableModelConfigs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00040000;
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.ObservabilityConfig observabilityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfig,
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfigOrBuilder>
+        observabilityConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the observabilityConfig field is set.
+     */
+    public boolean hasObservabilityConfig() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The observabilityConfig.
+     */
+    public com.google.cloud.discoveryengine.v1beta.ObservabilityConfig getObservabilityConfig() {
+      if (observabilityConfigBuilder_ == null) {
+        return observabilityConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.getDefaultInstance()
+            : observabilityConfig_;
+      } else {
+        return observabilityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setObservabilityConfig(
+        com.google.cloud.discoveryengine.v1beta.ObservabilityConfig value) {
+      if (observabilityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        observabilityConfig_ = value;
+      } else {
+        observabilityConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setObservabilityConfig(
+        com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.Builder builderForValue) {
+      if (observabilityConfigBuilder_ == null) {
+        observabilityConfig_ = builderForValue.build();
+      } else {
+        observabilityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeObservabilityConfig(
+        com.google.cloud.discoveryengine.v1beta.ObservabilityConfig value) {
+      if (observabilityConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && observabilityConfig_ != null
+            && observabilityConfig_
+                != com.google.cloud.discoveryengine.v1beta.ObservabilityConfig
+                    .getDefaultInstance()) {
+          getObservabilityConfigBuilder().mergeFrom(value);
+        } else {
+          observabilityConfig_ = value;
+        }
+      } else {
+        observabilityConfigBuilder_.mergeFrom(value);
+      }
+      if (observabilityConfig_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearObservabilityConfig() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      observabilityConfig_ = null;
+      if (observabilityConfigBuilder_ != null) {
+        observabilityConfigBuilder_.dispose();
+        observabilityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.Builder
+        getObservabilityConfigBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetObservabilityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ObservabilityConfigOrBuilder
+        getObservabilityConfigOrBuilder() {
+      if (observabilityConfigBuilder_ != null) {
+        return observabilityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return observabilityConfig_ == null
+            ? com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.getDefaultInstance()
+            : observabilityConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Observability config for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.ObservabilityConfig observability_config = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfig,
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.Builder,
+            com.google.cloud.discoveryengine.v1beta.ObservabilityConfigOrBuilder>
+        internalGetObservabilityConfigFieldBuilder() {
+      if (observabilityConfigBuilder_ == null) {
+        observabilityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.ObservabilityConfig,
+                com.google.cloud.discoveryengine.v1beta.ObservabilityConfig.Builder,
+                com.google.cloud.discoveryengine.v1beta.ObservabilityConfigOrBuilder>(
+                getObservabilityConfig(), getParentForChildren(), isClean());
+        observabilityConfig_ = null;
+      }
+      return observabilityConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> connectorTenantInfo_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetConnectorTenantInfo() {
+      if (connectorTenantInfo_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConnectorTenantInfoDefaultEntryHolder.defaultEntry);
+      }
+      return connectorTenantInfo_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableConnectorTenantInfo() {
+      if (connectorTenantInfo_ == null) {
+        connectorTenantInfo_ =
+            com.google.protobuf.MapField.newMapField(
+                ConnectorTenantInfoDefaultEntryHolder.defaultEntry);
+      }
+      if (!connectorTenantInfo_.isMutable()) {
+        connectorTenantInfo_ = connectorTenantInfo_.copy();
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return connectorTenantInfo_;
+    }
+
+    public int getConnectorTenantInfoCount() {
+      return internalGetConnectorTenantInfo().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsConnectorTenantInfo(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetConnectorTenantInfo().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getConnectorTenantInfoMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfo() {
+      return getConnectorTenantInfoMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getConnectorTenantInfoMap() {
+      return internalGetConnectorTenantInfo().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getConnectorTenantInfoOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConnectorTenantInfo().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getConnectorTenantInfoOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConnectorTenantInfo().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearConnectorTenantInfo() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      internalGetMutableConnectorTenantInfo().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeConnectorTenantInfo(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableConnectorTenantInfo().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableConnectorTenantInfo() {
+      bitField0_ |= 0x00100000;
+      return internalGetMutableConnectorTenantInfo().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putConnectorTenantInfo(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableConnectorTenantInfo().getMutableMap().put(key, value);
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to
+     * tenant-specific information required for that connector. The structure of
+     * the tenant information string is connector-dependent.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_tenant_info = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllConnectorTenantInfo(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableConnectorTenantInfo().getMutableMap().putAll(values);
+      bitField0_ |= 0x00100000;
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting agentGatewaySetting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting,
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.Builder,
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySettingOrBuilder>
+        agentGatewaySettingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentGatewaySetting field is set.
+     */
+    public boolean hasAgentGatewaySetting() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentGatewaySetting.
+     */
+    public com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting getAgentGatewaySetting() {
+      if (agentGatewaySettingBuilder_ == null) {
+        return agentGatewaySetting_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.getDefaultInstance()
+            : agentGatewaySetting_;
+      } else {
+        return agentGatewaySettingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentGatewaySetting(
+        com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting value) {
+      if (agentGatewaySettingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentGatewaySetting_ = value;
+      } else {
+        agentGatewaySettingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentGatewaySetting(
+        com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.Builder builderForValue) {
+      if (agentGatewaySettingBuilder_ == null) {
+        agentGatewaySetting_ = builderForValue.build();
+      } else {
+        agentGatewaySettingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentGatewaySetting(
+        com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting value) {
+      if (agentGatewaySettingBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && agentGatewaySetting_ != null
+            && agentGatewaySetting_
+                != com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting
+                    .getDefaultInstance()) {
+          getAgentGatewaySettingBuilder().mergeFrom(value);
+        } else {
+          agentGatewaySetting_ = value;
+        }
+      } else {
+        agentGatewaySettingBuilder_.mergeFrom(value);
+      }
+      if (agentGatewaySetting_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentGatewaySetting() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      agentGatewaySetting_ = null;
+      if (agentGatewaySettingBuilder_ != null) {
+        agentGatewaySettingBuilder_.dispose();
+        agentGatewaySettingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.Builder
+        getAgentGatewaySettingBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetAgentGatewaySettingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AgentGatewaySettingOrBuilder
+        getAgentGatewaySettingOrBuilder() {
+      if (agentGatewaySettingBuilder_ != null) {
+        return agentGatewaySettingBuilder_.getMessageOrBuilder();
+      } else {
+        return agentGatewaySetting_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.getDefaultInstance()
+            : agentGatewaySetting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The agent gateway setting for the engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AgentGatewaySetting agent_gateway_setting = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting,
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.Builder,
+            com.google.cloud.discoveryengine.v1beta.AgentGatewaySettingOrBuilder>
+        internalGetAgentGatewaySettingFieldBuilder() {
+      if (agentGatewaySettingBuilder_ == null) {
+        agentGatewaySettingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting,
+                com.google.cloud.discoveryengine.v1beta.AgentGatewaySetting.Builder,
+                com.google.cloud.discoveryengine.v1beta.AgentGatewaySettingOrBuilder>(
+                getAgentGatewaySetting(), getParentForChildren(), isClean());
+        agentGatewaySetting_ = null;
+      }
+      return agentGatewaySettingBuilder_;
+    }
+
+    private int marketplaceAgentVisibility_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The visibility of marketplace agents in the agent gallery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for marketplaceAgentVisibility.
+     */
+    @java.lang.Override
+    public int getMarketplaceAgentVisibilityValue() {
+      return marketplaceAgentVisibility_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The visibility of marketplace agents in the agent gallery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for marketplaceAgentVisibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarketplaceAgentVisibilityValue(int value) {
+      marketplaceAgentVisibility_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The visibility of marketplace agents in the agent gallery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The marketplaceAgentVisibility.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility
+        getMarketplaceAgentVisibility() {
+      com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility result =
+          com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility.forNumber(
+              marketplaceAgentVisibility_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The visibility of marketplace agents in the agent gallery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The marketplaceAgentVisibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarketplaceAgentVisibility(
+        com.google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00400000;
+      marketplaceAgentVisibility_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The visibility of marketplace agents in the agent gallery.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.Engine.MarketplaceAgentVisibility marketplace_agent_visibility = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarketplaceAgentVisibility() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      marketplaceAgentVisibility_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList procurementContactEmails_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProcurementContactEmailsIsMutable() {
+      if (!procurementContactEmails_.isModifiable()) {
+        procurementContactEmails_ =
+            new com.google.protobuf.LazyStringArrayList(procurementContactEmails_);
+      }
+      bitField0_ |= 0x00800000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the procurementContactEmails.
+     */
+    public com.google.protobuf.ProtocolStringList getProcurementContactEmailsList() {
+      procurementContactEmails_.makeImmutable();
+      return procurementContactEmails_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of procurementContactEmails.
+     */
+    public int getProcurementContactEmailsCount() {
+      return procurementContactEmails_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The procurementContactEmails at the given index.
+     */
+    public java.lang.String getProcurementContactEmails(int index) {
+      return procurementContactEmails_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the procurementContactEmails at the given index.
+     */
+    public com.google.protobuf.ByteString getProcurementContactEmailsBytes(int index) {
+      return procurementContactEmails_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The procurementContactEmails to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProcurementContactEmails(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProcurementContactEmailsIsMutable();
+      procurementContactEmails_.set(index, value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The procurementContactEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProcurementContactEmails(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProcurementContactEmailsIsMutable();
+      procurementContactEmails_.add(value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The procurementContactEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProcurementContactEmails(java.lang.Iterable<java.lang.String> values) {
+      ensureProcurementContactEmailsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, procurementContactEmails_);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProcurementContactEmails() {
+      procurementContactEmails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The emails of the procurement contacts.
+     * </pre>
+     *
+     * <code>
+     * repeated string procurement_contact_emails = 45 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the procurementContactEmails to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProcurementContactEmailsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProcurementContactEmailsIsMutable();
+      procurementContactEmails_.add(value);
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }

@@ -38,6 +38,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -116,6 +118,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDataSettings> {
@@ -142,12 +145,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
   public UnaryCallSettings<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).queryAudienceListSettings();
-  }
-
-  /** Returns the object with the settings used for calls to sheetExportAudienceList. */
-  public UnaryCallSettings<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListSettings() {
-    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).sheetExportAudienceListSettings();
   }
 
   /** Returns the object with the settings used for calls to getAudienceList. */
@@ -220,6 +217,16 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).listReportTasksSettings();
   }
 
+  /** Returns the object with the settings used for calls to runReport. */
+  public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).runReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMetadata. */
+  public UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).getMetadataSettings();
+  }
+
   public static final AlphaAnalyticsDataSettings create(AlphaAnalyticsDataStubSettings stub)
       throws IOException {
     return new AlphaAnalyticsDataSettings.Builder(stub.toBuilder()).build();
@@ -276,7 +283,7 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -296,7 +303,7 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(AlphaAnalyticsDataStubSettings.newBuilder(clientContext));
     }
 
@@ -355,13 +362,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     public UnaryCallSettings.Builder<QueryAudienceListRequest, QueryAudienceListResponse>
         queryAudienceListSettings() {
       return getStubSettingsBuilder().queryAudienceListSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to sheetExportAudienceList. */
-    public UnaryCallSettings.Builder<
-            SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-        sheetExportAudienceListSettings() {
-      return getStubSettingsBuilder().sheetExportAudienceListSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAudienceList. */
@@ -432,6 +432,16 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings() {
       return getStubSettingsBuilder().listReportTasksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runReport. */
+    public UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings() {
+      return getStubSettingsBuilder().runReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMetadata. */
+    public UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings() {
+      return getStubSettingsBuilder().getMetadataSettings();
     }
 
     @Override

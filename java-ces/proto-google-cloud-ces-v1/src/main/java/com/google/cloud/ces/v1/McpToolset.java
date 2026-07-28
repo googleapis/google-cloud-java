@@ -54,6 +54,7 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
 
   private McpToolset() {
     serverAddress_ = "";
+    toolOverrides_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -462,6 +463,102 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int TOOL_OVERRIDES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.ces.v1.McpToolOverride> toolOverrides_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.ces.v1.McpToolOverride> getToolOverridesList() {
+    return toolOverrides_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.ces.v1.McpToolOverrideOrBuilder>
+      getToolOverridesOrBuilderList() {
+    return toolOverrides_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getToolOverridesCount() {
+    return toolOverrides_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.McpToolOverride getToolOverrides(int index) {
+    return toolOverrides_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Overrides for individual tools within this toolset.
+   * This allows overriding specific details like descriptions, names,
+   * or pinning the tools' states so they aren't fully dynamic.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.McpToolOverrideOrBuilder getToolOverridesOrBuilder(int index) {
+    return toolOverrides_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -490,6 +587,9 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetCustomHeaders(), CustomHeadersDefaultEntryHolder.defaultEntry, 5);
+    for (int i = 0; i < toolOverrides_.size(); i++) {
+      output.writeMessage(6, toolOverrides_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -522,6 +622,9 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, customHeaders__);
     }
+    for (int i = 0; i < toolOverrides_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, toolOverrides_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -551,6 +654,7 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
       if (!getTlsConfig().equals(other.getTlsConfig())) return false;
     }
     if (!internalGetCustomHeaders().equals(other.internalGetCustomHeaders())) return false;
+    if (!getToolOverridesList().equals(other.getToolOverridesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -579,6 +683,10 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     if (!internalGetCustomHeaders().getMap().isEmpty()) {
       hash = (37 * hash) + CUSTOM_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetCustomHeaders().hashCode();
+    }
+    if (getToolOverridesCount() > 0) {
+      hash = (37 * hash) + TOOL_OVERRIDES_FIELD_NUMBER;
+      hash = (53 * hash) + getToolOverridesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -746,6 +854,7 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         internalGetApiAuthenticationFieldBuilder();
         internalGetServiceDirectoryConfigFieldBuilder();
         internalGetTlsConfigFieldBuilder();
+        internalGetToolOverridesFieldBuilder();
       }
     }
 
@@ -770,6 +879,13 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
         tlsConfigBuilder_ = null;
       }
       internalGetMutableCustomHeaders().clear();
+      if (toolOverridesBuilder_ == null) {
+        toolOverrides_ = java.util.Collections.emptyList();
+      } else {
+        toolOverrides_ = null;
+        toolOverridesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -796,11 +912,24 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.cloud.ces.v1.McpToolset buildPartial() {
       com.google.cloud.ces.v1.McpToolset result = new com.google.cloud.ces.v1.McpToolset(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.ces.v1.McpToolset result) {
+      if (toolOverridesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          toolOverrides_ = java.util.Collections.unmodifiableList(toolOverrides_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.toolOverrides_ = toolOverrides_;
+      } else {
+        result.toolOverrides_ = toolOverridesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.ces.v1.McpToolset result) {
@@ -862,6 +991,33 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableCustomHeaders().mergeFrom(other.internalGetCustomHeaders());
       bitField0_ |= 0x00000010;
+      if (toolOverridesBuilder_ == null) {
+        if (!other.toolOverrides_.isEmpty()) {
+          if (toolOverrides_.isEmpty()) {
+            toolOverrides_ = other.toolOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureToolOverridesIsMutable();
+            toolOverrides_.addAll(other.toolOverrides_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.toolOverrides_.isEmpty()) {
+          if (toolOverridesBuilder_.isEmpty()) {
+            toolOverridesBuilder_.dispose();
+            toolOverridesBuilder_ = null;
+            toolOverrides_ = other.toolOverrides_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            toolOverridesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetToolOverridesFieldBuilder()
+                    : null;
+          } else {
+            toolOverridesBuilder_.addAllMessages(other.toolOverrides_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -928,6 +1084,19 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.ces.v1.McpToolOverride m =
+                    input.readMessage(
+                        com.google.cloud.ces.v1.McpToolOverride.parser(), extensionRegistry);
+                if (toolOverridesBuilder_ == null) {
+                  ensureToolOverridesIsMutable();
+                  toolOverrides_.add(m);
+                } else {
+                  toolOverridesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1979,6 +2148,449 @@ public final class McpToolset extends com.google.protobuf.GeneratedMessage
       internalGetMutableCustomHeaders().getMutableMap().putAll(values);
       bitField0_ |= 0x00000010;
       return this;
+    }
+
+    private java.util.List<com.google.cloud.ces.v1.McpToolOverride> toolOverrides_ =
+        java.util.Collections.emptyList();
+
+    private void ensureToolOverridesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        toolOverrides_ =
+            new java.util.ArrayList<com.google.cloud.ces.v1.McpToolOverride>(toolOverrides_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1.McpToolOverride,
+            com.google.cloud.ces.v1.McpToolOverride.Builder,
+            com.google.cloud.ces.v1.McpToolOverrideOrBuilder>
+        toolOverridesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1.McpToolOverride> getToolOverridesList() {
+      if (toolOverridesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(toolOverrides_);
+      } else {
+        return toolOverridesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getToolOverridesCount() {
+      if (toolOverridesBuilder_ == null) {
+        return toolOverrides_.size();
+      } else {
+        return toolOverridesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.McpToolOverride getToolOverrides(int index) {
+      if (toolOverridesBuilder_ == null) {
+        return toolOverrides_.get(index);
+      } else {
+        return toolOverridesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setToolOverrides(int index, com.google.cloud.ces.v1.McpToolOverride value) {
+      if (toolOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolOverridesIsMutable();
+        toolOverrides_.set(index, value);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setToolOverrides(
+        int index, com.google.cloud.ces.v1.McpToolOverride.Builder builderForValue) {
+      if (toolOverridesBuilder_ == null) {
+        ensureToolOverridesIsMutable();
+        toolOverrides_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolOverridesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolOverrides(com.google.cloud.ces.v1.McpToolOverride value) {
+      if (toolOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolOverridesIsMutable();
+        toolOverrides_.add(value);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolOverrides(int index, com.google.cloud.ces.v1.McpToolOverride value) {
+      if (toolOverridesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureToolOverridesIsMutable();
+        toolOverrides_.add(index, value);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolOverrides(
+        com.google.cloud.ces.v1.McpToolOverride.Builder builderForValue) {
+      if (toolOverridesBuilder_ == null) {
+        ensureToolOverridesIsMutable();
+        toolOverrides_.add(builderForValue.build());
+        onChanged();
+      } else {
+        toolOverridesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addToolOverrides(
+        int index, com.google.cloud.ces.v1.McpToolOverride.Builder builderForValue) {
+      if (toolOverridesBuilder_ == null) {
+        ensureToolOverridesIsMutable();
+        toolOverrides_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        toolOverridesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllToolOverrides(
+        java.lang.Iterable<? extends com.google.cloud.ces.v1.McpToolOverride> values) {
+      if (toolOverridesBuilder_ == null) {
+        ensureToolOverridesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, toolOverrides_);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearToolOverrides() {
+      if (toolOverridesBuilder_ == null) {
+        toolOverrides_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeToolOverrides(int index) {
+      if (toolOverridesBuilder_ == null) {
+        ensureToolOverridesIsMutable();
+        toolOverrides_.remove(index);
+        onChanged();
+      } else {
+        toolOverridesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.McpToolOverride.Builder getToolOverridesBuilder(int index) {
+      return internalGetToolOverridesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.McpToolOverrideOrBuilder getToolOverridesOrBuilder(int index) {
+      if (toolOverridesBuilder_ == null) {
+        return toolOverrides_.get(index);
+      } else {
+        return toolOverridesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.ces.v1.McpToolOverrideOrBuilder>
+        getToolOverridesOrBuilderList() {
+      if (toolOverridesBuilder_ != null) {
+        return toolOverridesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(toolOverrides_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.McpToolOverride.Builder addToolOverridesBuilder() {
+      return internalGetToolOverridesFieldBuilder()
+          .addBuilder(com.google.cloud.ces.v1.McpToolOverride.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.McpToolOverride.Builder addToolOverridesBuilder(int index) {
+      return internalGetToolOverridesFieldBuilder()
+          .addBuilder(index, com.google.cloud.ces.v1.McpToolOverride.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Overrides for individual tools within this toolset.
+     * This allows overriding specific details like descriptions, names,
+     * or pinning the tools' states so they aren't fully dynamic.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1.McpToolOverride tool_overrides = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1.McpToolOverride.Builder>
+        getToolOverridesBuilderList() {
+      return internalGetToolOverridesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1.McpToolOverride,
+            com.google.cloud.ces.v1.McpToolOverride.Builder,
+            com.google.cloud.ces.v1.McpToolOverrideOrBuilder>
+        internalGetToolOverridesFieldBuilder() {
+      if (toolOverridesBuilder_ == null) {
+        toolOverridesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.ces.v1.McpToolOverride,
+                com.google.cloud.ces.v1.McpToolOverride.Builder,
+                com.google.cloud.ces.v1.McpToolOverrideOrBuilder>(
+                toolOverrides_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        toolOverrides_ = null;
+      }
+      return toolOverridesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.McpToolset)

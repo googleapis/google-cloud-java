@@ -25,6 +25,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.support.v2.Attachment;
+import com.google.cloud.support.v2.GetAttachmentRequest;
 import com.google.cloud.support.v2.ListAttachmentsRequest;
 import com.google.cloud.support.v2.ListAttachmentsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -33,6 +35,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -40,6 +43,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
   private static final MethodDescriptor<ListAttachmentsRequest, ListAttachmentsResponse>
@@ -54,10 +58,22 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetAttachmentRequest, Attachment>
+      getAttachmentMethodDescriptor =
+          MethodDescriptor.<GetAttachmentRequest, Attachment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.support.v2.CaseAttachmentService/GetAttachment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAttachmentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Attachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsResponse>
       listAttachmentsCallable;
   private final UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
       listAttachmentsPagedCallable;
+  private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -115,6 +131,17 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
+        GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
+            .setMethodDescriptor(getAttachmentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.listAttachmentsCallable =
         callableFactory.createUnaryCallable(
@@ -122,6 +149,9 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
     this.listAttachmentsPagedCallable =
         callableFactory.createPagedCallable(
             listAttachmentsTransportSettings, settings.listAttachmentsSettings(), clientContext);
+    this.getAttachmentCallable =
+        callableFactory.createUnaryCallable(
+            getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -140,6 +170,11 @@ public class GrpcCaseAttachmentServiceStub extends CaseAttachmentServiceStub {
   public UnaryCallable<ListAttachmentsRequest, ListAttachmentsPagedResponse>
       listAttachmentsPagedCallable() {
     return listAttachmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
+    return getAttachmentCallable;
   }
 
   @Override

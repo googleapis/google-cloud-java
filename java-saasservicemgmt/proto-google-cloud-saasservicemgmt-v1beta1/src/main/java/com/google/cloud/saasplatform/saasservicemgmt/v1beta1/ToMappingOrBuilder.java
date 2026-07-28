@@ -84,8 +84,8 @@ public interface ToMappingOrBuilder
    *
    *
    * <pre>
-   * Optional. Tells SaaS Runtime if this mapping should be used during lookup
-   * or not
+   * Optional. Tells App Lifecycle Manager if this mapping should be used during
+   * lookup or not
    * </pre>
    *
    * <code>bool ignore_for_lookup = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

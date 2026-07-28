@@ -3438,4 +3438,50 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void updateReportingIdentitySettings(
+      UpdateReportingIdentitySettingsRequest request,
+      StreamObserver<ReportingIdentitySettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingIdentitySettings) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingIdentitySettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateReportingIdentitySettings,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingIdentitySettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUserProvidedDataSettings(
+      GetUserProvidedDataSettingsRequest request,
+      StreamObserver<UserProvidedDataSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserProvidedDataSettings) {
+      requests.add(request);
+      responseObserver.onNext(((UserProvidedDataSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserProvidedDataSettings, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserProvidedDataSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

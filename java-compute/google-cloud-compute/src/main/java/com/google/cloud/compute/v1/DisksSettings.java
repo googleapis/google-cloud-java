@@ -34,6 +34,8 @@ import com.google.cloud.compute.v1.stub.DisksStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -109,6 +111,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DisksSettings extends ClientSettings<DisksSettings> {
 
@@ -289,6 +292,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     return ((DisksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final DisksSettings create(DisksStubSettings stub) throws IOException {
     return new DisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -333,7 +347,7 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -353,7 +367,7 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(DisksStubSettings.newBuilder(clientContext));
     }
 
@@ -565,6 +579,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

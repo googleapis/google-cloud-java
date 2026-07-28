@@ -25,7 +25,7 @@ package com.google.cloud.datacatalog.lineage.v1;
  *
  * <pre>
  * Response message for
- * [ListRuns][google.cloud.datacatalog.lineage.v1.ListRuns].
+ * [ListRuns][google.cloud.datacatalog.lineage.v1.Lineage.ListRuns].
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListRunsResponse}
@@ -380,7 +380,7 @@ public final class ListRunsResponse extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Response message for
-   * [ListRuns][google.cloud.datacatalog.lineage.v1.ListRuns].
+   * [ListRuns][google.cloud.datacatalog.lineage.v1.Lineage.ListRuns].
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.lineage.v1.ListRunsResponse}

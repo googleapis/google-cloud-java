@@ -58,6 +58,9 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     uris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     vpcNetwork_ = "";
     includeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    excludeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -297,6 +300,234 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     return includeImportRanges_.getByteString(index);
   }
 
+  public static final int EXCLUDE_IMPORT_RANGES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList excludeImportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeImportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getExcludeImportRangesList() {
+    return excludeImportRanges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeImportRanges.
+   */
+  public int getExcludeImportRangesCount() {
+    return excludeImportRanges_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeImportRanges at the given index.
+   */
+  public java.lang.String getExcludeImportRanges(int index) {
+    return excludeImportRanges_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeImportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getExcludeImportRangesBytes(int index) {
+    return excludeImportRanges_.getByteString(index);
+  }
+
+  public static final int INCLUDE_EXPORT_RANGES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList includeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getIncludeExportRangesList() {
+    return includeExportRanges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeExportRanges.
+   */
+  public int getIncludeExportRangesCount() {
+    return includeExportRanges_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeExportRanges at the given index.
+   */
+  public java.lang.String getIncludeExportRanges(int index) {
+    return includeExportRanges_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getIncludeExportRangesBytes(int index) {
+    return includeExportRanges_.getByteString(index);
+  }
+
+  public static final int EXCLUDE_EXPORT_RANGES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList excludeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getExcludeExportRangesList() {
+    return excludeExportRanges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeExportRanges.
+   */
+  public int getExcludeExportRangesCount() {
+    return excludeExportRanges_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeExportRanges at the given index.
+   */
+  public java.lang.String getExcludeExportRanges(int index) {
+    return excludeExportRanges_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getExcludeExportRangesBytes(int index) {
+    return excludeExportRanges_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -322,6 +553,15 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < includeImportRanges_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, includeImportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < excludeImportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, excludeImportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < includeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, includeExportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < excludeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, excludeExportRanges_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -354,6 +594,30 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getIncludeImportRangesList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < excludeImportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(excludeImportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExcludeImportRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < includeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(includeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIncludeExportRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < excludeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(excludeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExcludeExportRangesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -374,6 +638,9 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     if (getSiteToSiteDataTransfer() != other.getSiteToSiteDataTransfer()) return false;
     if (!getVpcNetwork().equals(other.getVpcNetwork())) return false;
     if (!getIncludeImportRangesList().equals(other.getIncludeImportRangesList())) return false;
+    if (!getExcludeImportRangesList().equals(other.getExcludeImportRangesList())) return false;
+    if (!getIncludeExportRangesList().equals(other.getIncludeExportRangesList())) return false;
+    if (!getExcludeExportRangesList().equals(other.getExcludeExportRangesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -396,6 +663,18 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
     if (getIncludeImportRangesCount() > 0) {
       hash = (37 * hash) + INCLUDE_IMPORT_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getIncludeImportRangesList().hashCode();
+    }
+    if (getExcludeImportRangesCount() > 0) {
+      hash = (37 * hash) + EXCLUDE_IMPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludeImportRangesList().hashCode();
+    }
+    if (getIncludeExportRangesCount() > 0) {
+      hash = (37 * hash) + INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getIncludeExportRangesList().hashCode();
+    }
+    if (getExcludeExportRangesCount() > 0) {
+      hash = (37 * hash) + EXCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludeExportRangesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -545,6 +824,9 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       siteToSiteDataTransfer_ = false;
       vpcNetwork_ = "";
       includeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -597,6 +879,18 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
         includeImportRanges_.makeImmutable();
         result.includeImportRanges_ = includeImportRanges_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        excludeImportRanges_.makeImmutable();
+        result.excludeImportRanges_ = excludeImportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        includeExportRanges_.makeImmutable();
+        result.includeExportRanges_ = includeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        excludeExportRanges_.makeImmutable();
+        result.excludeExportRanges_ = excludeExportRanges_;
+      }
     }
 
     @java.lang.Override
@@ -638,6 +932,36 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
         } else {
           ensureIncludeImportRangesIsMutable();
           includeImportRanges_.addAll(other.includeImportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.excludeImportRanges_.isEmpty()) {
+        if (excludeImportRanges_.isEmpty()) {
+          excludeImportRanges_ = other.excludeImportRanges_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureExcludeImportRangesIsMutable();
+          excludeImportRanges_.addAll(other.excludeImportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.includeExportRanges_.isEmpty()) {
+        if (includeExportRanges_.isEmpty()) {
+          includeExportRanges_ = other.includeExportRanges_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureIncludeExportRangesIsMutable();
+          includeExportRanges_.addAll(other.includeExportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.excludeExportRanges_.isEmpty()) {
+        if (excludeExportRanges_.isEmpty()) {
+          excludeExportRanges_ = other.excludeExportRanges_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureExcludeExportRangesIsMutable();
+          excludeExportRanges_.addAll(other.excludeExportRanges_);
         }
         onChanged();
       }
@@ -693,6 +1017,27 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
                 includeImportRanges_.add(s);
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExcludeImportRangesIsMutable();
+                excludeImportRanges_.add(s);
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureIncludeExportRangesIsMutable();
+                includeExportRanges_.add(s);
+                break;
+              } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExcludeExportRangesIsMutable();
+                excludeExportRanges_.add(s);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1275,6 +1620,609 @@ public final class LinkedVpnTunnels extends com.google.protobuf.GeneratedMessage
       ensureIncludeImportRangesIsMutable();
       includeImportRanges_.add(value);
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList excludeImportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExcludeImportRangesIsMutable() {
+      if (!excludeImportRanges_.isModifiable()) {
+        excludeImportRanges_ = new com.google.protobuf.LazyStringArrayList(excludeImportRanges_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludeImportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludeImportRangesList() {
+      excludeImportRanges_.makeImmutable();
+      return excludeImportRanges_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludeImportRanges.
+     */
+    public int getExcludeImportRangesCount() {
+      return excludeImportRanges_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeImportRanges at the given index.
+     */
+    public java.lang.String getExcludeImportRanges(int index) {
+      return excludeImportRanges_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeImportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludeImportRangesBytes(int index) {
+      return excludeImportRanges_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludeImportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludeImportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeImportRangesIsMutable();
+      excludeImportRanges_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The excludeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeImportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeImportRangesIsMutable();
+      excludeImportRanges_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The excludeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExcludeImportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureExcludeImportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeImportRanges_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludeImportRanges() {
+      excludeImportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+     * excluded during import from hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the excludeImportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeImportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExcludeImportRangesIsMutable();
+      excludeImportRanges_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList includeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureIncludeExportRangesIsMutable() {
+      if (!includeExportRanges_.isModifiable()) {
+        includeExportRanges_ = new com.google.protobuf.LazyStringArrayList(includeExportRanges_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the includeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getIncludeExportRangesList() {
+      includeExportRanges_.makeImmutable();
+      return includeExportRanges_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of includeExportRanges.
+     */
+    public int getIncludeExportRangesCount() {
+      return includeExportRanges_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The includeExportRanges at the given index.
+     */
+    public java.lang.String getIncludeExportRanges(int index) {
+      return includeExportRanges_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the includeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getIncludeExportRangesBytes(int index) {
+      return includeExportRanges_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The includeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllIncludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureIncludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, includeExportRanges_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeExportRanges() {
+      includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes fully encompassed by include export ranges are
+     * included during export to hub.
+     * </pre>
+     *
+     * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the includeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addIncludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIncludeExportRangesIsMutable();
+      includeExportRanges_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList excludeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExcludeExportRangesIsMutable() {
+      if (!excludeExportRanges_.isModifiable()) {
+        excludeExportRanges_ = new com.google.protobuf.LazyStringArrayList(excludeExportRanges_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludeExportRangesList() {
+      excludeExportRanges_.makeImmutable();
+      return excludeExportRanges_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludeExportRanges.
+     */
+    public int getExcludeExportRangesCount() {
+      return excludeExportRanges_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeExportRanges at the given index.
+     */
+    public java.lang.String getExcludeExportRanges(int index) {
+      return excludeExportRanges_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludeExportRangesBytes(int index) {
+      return excludeExportRanges_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The excludeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeExportRangesIsMutable();
+      excludeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The excludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExcludeExportRangesIsMutable();
+      excludeExportRanges_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The excludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExcludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureExcludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeExportRanges_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludeExportRanges() {
+      excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+     * are excluded during export to hub.
+     * </pre>
+     *
+     * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the excludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExcludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExcludeExportRangesIsMutable();
+      excludeExportRanges_.add(value);
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

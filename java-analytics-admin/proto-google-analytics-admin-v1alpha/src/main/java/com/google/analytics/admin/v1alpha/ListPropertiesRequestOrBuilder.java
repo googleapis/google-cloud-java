@@ -86,13 +86,13 @@ public interface ListPropertiesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of resources to return. The service may return
+   * Optional. The maximum number of resources to return. The service may return
    * fewer than this value, even if there are additional pages.
    * If unspecified, at most 50 resources will be returned.
    * The maximum value is 200; (higher values will be coerced to the maximum)
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -102,13 +102,13 @@ public interface ListPropertiesRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListProperties` call.
+   * Optional. A page token, received from a previous `ListProperties` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListProperties` must
    * match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -118,13 +118,13 @@ public interface ListPropertiesRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListProperties` call.
+   * Optional. A page token, received from a previous `ListProperties` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListProperties` must
    * match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

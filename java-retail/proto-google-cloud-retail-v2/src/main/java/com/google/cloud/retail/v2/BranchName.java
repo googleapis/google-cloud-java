@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BranchName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CATALOG_BRANCH =
@@ -96,7 +99,7 @@ public class BranchName implements ResourceName {
         .toString();
   }
 
-  public static BranchName parse(String formattedString) {
+  public static @Nullable BranchName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -118,7 +121,7 @@ public class BranchName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BranchName> values) {
+  public static List<String> toStringList(List<@Nullable BranchName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BranchName value : values) {
       if (value == null) {
@@ -170,7 +173,7 @@ public class BranchName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

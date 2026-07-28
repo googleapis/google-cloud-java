@@ -31,7 +31,7 @@ public interface ListHttpRoutesRequestOrBuilder
    *
    * <pre>
    * Required. The project and location from which the HttpRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface ListHttpRoutesRequestOrBuilder
    *
    * <pre>
    * Required. The project and location from which the HttpRoutes should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -115,4 +115,30 @@ public interface ListHttpRoutesRequestOrBuilder
    * @return The returnPartialSuccess.
    */
   boolean getReturnPartialSuccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter expression to restrict the list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter expression to restrict the list.
+   * </pre>
+   *
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

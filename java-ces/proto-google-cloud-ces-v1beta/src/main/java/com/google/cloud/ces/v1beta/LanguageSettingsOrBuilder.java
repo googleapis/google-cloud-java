@@ -151,7 +151,7 @@ public interface LanguageSettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=247
+   *     google/cloud/ces/v1beta/app.proto;l=255
    * @return The fallbackAction.
    */
   @java.lang.Deprecated
@@ -180,7 +180,7 @@ public interface LanguageSettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=247
+   *     google/cloud/ces/v1beta/app.proto;l=255
    * @return The bytes for fallbackAction.
    */
   @java.lang.Deprecated

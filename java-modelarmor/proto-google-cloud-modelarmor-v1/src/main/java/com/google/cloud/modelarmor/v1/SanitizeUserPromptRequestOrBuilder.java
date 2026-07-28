@@ -144,4 +144,49 @@ public interface SanitizeUserPromptRequestOrBuilder
    */
   com.google.cloud.modelarmor.v1.MultiLanguageDetectionMetadataOrBuilder
       getMultiLanguageDetectionMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  boolean hasStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  int getStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  com.google.cloud.modelarmor.v1.StreamingMode getStreamingMode();
 }

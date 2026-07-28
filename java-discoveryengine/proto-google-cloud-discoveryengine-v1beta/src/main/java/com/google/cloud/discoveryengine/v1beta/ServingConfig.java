@@ -69,6 +69,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     dissociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    promoteControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2850,9 +2851,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if
-   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-   * is specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if `SearchRequest.ranking_expression` is
+   * specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
@@ -2903,9 +2903,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if
-   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-   * is specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if `SearchRequest.ranking_expression` is
+   * specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
@@ -3769,6 +3768,82 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     return ignoreControlIds_.getByteString(index);
   }
 
+  public static final int PROMOTE_CONTROL_IDS_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList promoteControlIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @return A list containing the promoteControlIds.
+   */
+  public com.google.protobuf.ProtocolStringList getPromoteControlIdsList() {
+    return promoteControlIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @return The count of promoteControlIds.
+   */
+  public int getPromoteControlIdsCount() {
+    return promoteControlIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The promoteControlIds at the given index.
+   */
+  public java.lang.String getPromoteControlIds(int index) {
+    return promoteControlIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Condition promote specifications.
+   *
+   * Maximum number of specifications is 100.
+   * </pre>
+   *
+   * <code>repeated string promote_control_ids = 26;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the promoteControlIds at the given index.
+   */
+  public com.google.protobuf.ByteString getPromoteControlIdsBytes(int index) {
+    return promoteControlIds_.getByteString(index);
+  }
+
   public static final int PERSONALIZATION_SPEC_FIELD_NUMBER = 25;
   private com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
       personalizationSpec_;
@@ -3860,6 +3935,66 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         : personalizationSpec_;
   }
 
+  public static final int ANSWER_GENERATION_SPEC_FIELD_NUMBER = 27;
+  private com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answerGenerationSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerGenerationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnswerGenerationSpec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerGenerationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec getAnswerGenerationSpec() {
+    return answerGenerationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.getDefaultInstance()
+        : answerGenerationSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder
+      getAnswerGenerationSpecOrBuilder() {
+    return answerGenerationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.getDefaultInstance()
+        : answerGenerationSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3940,6 +4075,12 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(25, getPersonalizationSpec());
+    }
+    for (int i = 0; i < promoteControlIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 26, promoteControlIds_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(27, getAnswerGenerationSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4060,6 +4201,18 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(25, getPersonalizationSpec());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < promoteControlIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(promoteControlIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getPromoteControlIdsList().size();
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getAnswerGenerationSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4103,9 +4256,14 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     if (!getDissociateControlIdsList().equals(other.getDissociateControlIdsList())) return false;
     if (!getReplacementControlIdsList().equals(other.getReplacementControlIdsList())) return false;
     if (!getIgnoreControlIdsList().equals(other.getIgnoreControlIdsList())) return false;
+    if (!getPromoteControlIdsList().equals(other.getPromoteControlIdsList())) return false;
     if (hasPersonalizationSpec() != other.hasPersonalizationSpec()) return false;
     if (hasPersonalizationSpec()) {
       if (!getPersonalizationSpec().equals(other.getPersonalizationSpec())) return false;
+    }
+    if (hasAnswerGenerationSpec() != other.hasAnswerGenerationSpec()) return false;
+    if (hasAnswerGenerationSpec()) {
+      if (!getAnswerGenerationSpec().equals(other.getAnswerGenerationSpec())) return false;
     }
     if (!getVerticalConfigCase().equals(other.getVerticalConfigCase())) return false;
     switch (verticalConfigCase_) {
@@ -4185,9 +4343,17 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + IGNORE_CONTROL_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getIgnoreControlIdsList().hashCode();
     }
+    if (getPromoteControlIdsCount() > 0) {
+      hash = (37 * hash) + PROMOTE_CONTROL_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getPromoteControlIdsList().hashCode();
+    }
     if (hasPersonalizationSpec()) {
       hash = (37 * hash) + PERSONALIZATION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalizationSpec().hashCode();
+    }
+    if (hasAnswerGenerationSpec()) {
+      hash = (37 * hash) + ANSWER_GENERATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerGenerationSpec().hashCode();
     }
     switch (verticalConfigCase_) {
       case 7:
@@ -4350,6 +4516,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetPersonalizationSpecFieldBuilder();
+        internalGetAnswerGenerationSpecFieldBuilder();
       }
     }
 
@@ -4392,10 +4559,16 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       dissociateControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      promoteControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       personalizationSpec_ = null;
       if (personalizationSpecBuilder_ != null) {
         personalizationSpecBuilder_.dispose();
         personalizationSpecBuilder_ = null;
+      }
+      answerGenerationSpec_ = null;
+      if (answerGenerationSpecBuilder_ != null) {
+        answerGenerationSpecBuilder_.dispose();
+        answerGenerationSpecBuilder_ = null;
       }
       verticalConfigCase_ = 0;
       verticalConfig_ = null;
@@ -4501,11 +4674,22 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         result.ignoreControlIds_ = ignoreControlIds_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
+        promoteControlIds_.makeImmutable();
+        result.promoteControlIds_ = promoteControlIds_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.personalizationSpec_ =
             personalizationSpecBuilder_ == null
                 ? personalizationSpec_
                 : personalizationSpecBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.answerGenerationSpec_ =
+            answerGenerationSpecBuilder_ == null
+                ? answerGenerationSpec_
+                : answerGenerationSpecBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4651,8 +4835,21 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (!other.promoteControlIds_.isEmpty()) {
+        if (promoteControlIds_.isEmpty()) {
+          promoteControlIds_ = other.promoteControlIds_;
+          bitField0_ |= 0x00080000;
+        } else {
+          ensurePromoteControlIdsIsMutable();
+          promoteControlIds_.addAll(other.promoteControlIds_);
+        }
+        onChanged();
+      }
       if (other.hasPersonalizationSpec()) {
         mergePersonalizationSpec(other.getPersonalizationSpec());
+      }
+      if (other.hasAnswerGenerationSpec()) {
+        mergeAnswerGenerationSpec(other.getAnswerGenerationSpec());
       }
       switch (other.getVerticalConfigCase()) {
         case MEDIA_CONFIG:
@@ -4827,9 +5024,23 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetPersonalizationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 202
+            case 210:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePromoteControlIdsIsMutable();
+                promoteControlIds_.add(s);
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    internalGetAnswerGenerationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6287,9 +6498,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * The ranking expression controls the customized ranking on retrieval
      * documents. To leverage this, document embedding is required. The ranking
      * expression setting in ServingConfig applies to all search requests served
-     * by the serving config. However, if
-     * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-     * is specified, it overrides the ServingConfig ranking expression.
+     * by the serving config. However, if `SearchRequest.ranking_expression` is
+     * specified, it overrides the ServingConfig ranking expression.
      *
      * The ranking expression is a single function or multiple functions that are
      * joined by "+".
@@ -6339,9 +6549,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * The ranking expression controls the customized ranking on retrieval
      * documents. To leverage this, document embedding is required. The ranking
      * expression setting in ServingConfig applies to all search requests served
-     * by the serving config. However, if
-     * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-     * is specified, it overrides the ServingConfig ranking expression.
+     * by the serving config. However, if `SearchRequest.ranking_expression` is
+     * specified, it overrides the ServingConfig ranking expression.
      *
      * The ranking expression is a single function or multiple functions that are
      * joined by "+".
@@ -6391,9 +6600,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * The ranking expression controls the customized ranking on retrieval
      * documents. To leverage this, document embedding is required. The ranking
      * expression setting in ServingConfig applies to all search requests served
-     * by the serving config. However, if
-     * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-     * is specified, it overrides the ServingConfig ranking expression.
+     * by the serving config. However, if `SearchRequest.ranking_expression` is
+     * specified, it overrides the ServingConfig ranking expression.
      *
      * The ranking expression is a single function or multiple functions that are
      * joined by "+".
@@ -6442,9 +6650,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * The ranking expression controls the customized ranking on retrieval
      * documents. To leverage this, document embedding is required. The ranking
      * expression setting in ServingConfig applies to all search requests served
-     * by the serving config. However, if
-     * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-     * is specified, it overrides the ServingConfig ranking expression.
+     * by the serving config. However, if `SearchRequest.ranking_expression` is
+     * specified, it overrides the ServingConfig ranking expression.
      *
      * The ranking expression is a single function or multiple functions that are
      * joined by "+".
@@ -6489,9 +6696,8 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * The ranking expression controls the customized ranking on retrieval
      * documents. To leverage this, document embedding is required. The ranking
      * expression setting in ServingConfig applies to all search requests served
-     * by the serving config. However, if
-     * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
-     * is specified, it overrides the ServingConfig ranking expression.
+     * by the serving config. However, if `SearchRequest.ranking_expression` is
+     * specified, it overrides the ServingConfig ranking expression.
      *
      * The ranking expression is a single function or multiple functions that are
      * joined by "+".
@@ -8811,6 +9017,207 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList promoteControlIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePromoteControlIdsIsMutable() {
+      if (!promoteControlIds_.isModifiable()) {
+        promoteControlIds_ = new com.google.protobuf.LazyStringArrayList(promoteControlIds_);
+      }
+      bitField0_ |= 0x00080000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @return A list containing the promoteControlIds.
+     */
+    public com.google.protobuf.ProtocolStringList getPromoteControlIdsList() {
+      promoteControlIds_.makeImmutable();
+      return promoteControlIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @return The count of promoteControlIds.
+     */
+    public int getPromoteControlIdsCount() {
+      return promoteControlIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The promoteControlIds at the given index.
+     */
+    public java.lang.String getPromoteControlIds(int index) {
+      return promoteControlIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the promoteControlIds at the given index.
+     */
+    public com.google.protobuf.ByteString getPromoteControlIdsBytes(int index) {
+      return promoteControlIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The promoteControlIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromoteControlIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePromoteControlIdsIsMutable();
+      promoteControlIds_.set(index, value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param value The promoteControlIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPromoteControlIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePromoteControlIdsIsMutable();
+      promoteControlIds_.add(value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param values The promoteControlIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPromoteControlIds(java.lang.Iterable<java.lang.String> values) {
+      ensurePromoteControlIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promoteControlIds_);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPromoteControlIds() {
+      promoteControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Condition promote specifications.
+     *
+     * Maximum number of specifications is 100.
+     * </pre>
+     *
+     * <code>repeated string promote_control_ids = 26;</code>
+     *
+     * @param value The bytes of the promoteControlIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPromoteControlIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePromoteControlIdsIsMutable();
+      promoteControlIds_.add(value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
         personalizationSpec_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -8842,7 +9249,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the personalizationSpec field is set.
      */
     public boolean hasPersonalizationSpec() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -8909,7 +9316,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       } else {
         personalizationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8942,7 +9349,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       } else {
         personalizationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8970,7 +9377,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergePersonalizationSpec(
         com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec value) {
       if (personalizationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && personalizationSpec_ != null
             && personalizationSpec_
                 != com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec
@@ -8983,7 +9390,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         personalizationSpecBuilder_.mergeFrom(value);
       }
       if (personalizationSpec_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -9010,7 +9417,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPersonalizationSpec() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       personalizationSpec_ = null;
       if (personalizationSpecBuilder_ != null) {
         personalizationSpecBuilder_.dispose();
@@ -9042,7 +9449,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1beta.SearchRequest.PersonalizationSpec.Builder
         getPersonalizationSpecBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetPersonalizationSpecFieldBuilder().getBuilder();
     }
@@ -9114,6 +9521,225 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
         personalizationSpec_ = null;
       }
       return personalizationSpecBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answerGenerationSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec,
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder>
+        answerGenerationSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the answerGenerationSpec field is set.
+     */
+    public boolean hasAnswerGenerationSpec() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The answerGenerationSpec.
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec getAnswerGenerationSpec() {
+      if (answerGenerationSpecBuilder_ == null) {
+        return answerGenerationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.getDefaultInstance()
+            : answerGenerationSpec_;
+      } else {
+        return answerGenerationSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec value) {
+      if (answerGenerationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answerGenerationSpec_ = value;
+      } else {
+        answerGenerationSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.Builder builderForValue) {
+      if (answerGenerationSpecBuilder_ == null) {
+        answerGenerationSpec_ = builderForValue.build();
+      } else {
+        answerGenerationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec value) {
+      if (answerGenerationSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && answerGenerationSpec_ != null
+            && answerGenerationSpec_
+                != com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec
+                    .getDefaultInstance()) {
+          getAnswerGenerationSpecBuilder().mergeFrom(value);
+        } else {
+          answerGenerationSpec_ = value;
+        }
+      } else {
+        answerGenerationSpecBuilder_.mergeFrom(value);
+      }
+      if (answerGenerationSpec_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAnswerGenerationSpec() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      answerGenerationSpec_ = null;
+      if (answerGenerationSpecBuilder_ != null) {
+        answerGenerationSpecBuilder_.dispose();
+        answerGenerationSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.Builder
+        getAnswerGenerationSpecBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetAnswerGenerationSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder
+        getAnswerGenerationSpecOrBuilder() {
+      if (answerGenerationSpecBuilder_ != null) {
+        return answerGenerationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return answerGenerationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.getDefaultInstance()
+            : answerGenerationSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec,
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder>
+        internalGetAnswerGenerationSpecFieldBuilder() {
+      if (answerGenerationSpecBuilder_ == null) {
+        answerGenerationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec,
+                com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.AnswerGenerationSpecOrBuilder>(
+                getAnswerGenerationSpec(), getParentForChildren(), isClean());
+        answerGenerationSpec_ = null;
+      }
+      return answerGenerationSpecBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.ServingConfig)

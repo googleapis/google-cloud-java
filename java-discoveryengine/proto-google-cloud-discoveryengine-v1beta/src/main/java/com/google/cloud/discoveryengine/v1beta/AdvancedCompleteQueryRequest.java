@@ -60,6 +60,8 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     queryModel_ = "";
     userPseudoId_ = "";
     suggestionTypes_ = emptyIntList();
+    suggestionTypeSpecs_ = java.util.Collections.emptyList();
+    experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -328,7 +330,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -349,7 +351,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -369,7 +371,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -387,7 +389,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -409,7 +411,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -429,7 +431,8 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specification to boost suggestions based on the condtion of the suggestion.
+   * Specification to boost suggestions based on the condition of the
+   * suggestion.
    * </pre>
    *
    * Protobuf type {@code
@@ -1402,7 +1405,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -1426,7 +1429,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -1451,7 +1454,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -1472,7 +1475,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -1495,7 +1498,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Condition boost specifications. If a suggestion matches multiple
-     * conditions in the specifictions, boost values from these specifications
+     * conditions in the specifications, boost values from these specifications
      * are all applied and combined in a non-linear way. Maximum number of
      * specifications is 20.
      *
@@ -1690,7 +1693,8 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specification to boost suggestions based on the condtion of the suggestion.
+     * Specification to boost suggestions based on the condition of the
+     * suggestion.
      * </pre>
      *
      * Protobuf type {@code
@@ -1932,7 +1936,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -1959,7 +1963,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -1983,7 +1987,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2009,7 +2013,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2043,7 +2047,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2074,7 +2078,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2107,7 +2111,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2141,7 +2145,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2171,7 +2175,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2202,7 +2206,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2234,7 +2238,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2261,7 +2265,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2288,7 +2292,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2310,7 +2314,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2336,7 +2340,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2364,7 +2368,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2389,7 +2393,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2415,7 +2419,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
        *
        * <pre>
        * Condition boost specifications. If a suggestion matches multiple
-       * conditions in the specifictions, boost values from these specifications
+       * conditions in the specifications, boost values from these specifications
        * are all applied and combined in a non-linear way. Maximum number of
        * specifications is 20.
        *
@@ -2511,6 +2515,790 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.BoostSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SuggestionTypeSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Suggestion type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for suggestionType.
+     */
+    int getSuggestionTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Suggestion type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionType.
+     */
+    com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+        getSuggestionType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of suggestions to return for each suggestion
+     * type.
+     * </pre>
+     *
+     * <code>int32 max_suggestions = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxSuggestions.
+     */
+    int getMaxSuggestions();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification of each suggestion type.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec}
+   */
+  public static final class SuggestionTypeSpec extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec)
+      SuggestionTypeSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SuggestionTypeSpec");
+    }
+
+    // Use SuggestionTypeSpec.newBuilder() to construct.
+    private SuggestionTypeSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SuggestionTypeSpec() {
+      suggestionType_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.CompletionServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.CompletionServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_AdvancedCompleteQueryRequest_SuggestionTypeSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpec.class,
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpec.Builder.class);
+    }
+
+    public static final int SUGGESTION_TYPE_FIELD_NUMBER = 1;
+    private int suggestionType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Suggestion type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for suggestionType.
+     */
+    @java.lang.Override
+    public int getSuggestionTypeValue() {
+      return suggestionType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Suggestion type.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionType.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+        getSuggestionType() {
+      com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType result =
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+              .forNumber(suggestionType_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int MAX_SUGGESTIONS_FIELD_NUMBER = 2;
+    private int maxSuggestions_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of suggestions to return for each suggestion
+     * type.
+     * </pre>
+     *
+     * <code>int32 max_suggestions = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxSuggestions.
+     */
+    @java.lang.Override
+    public int getMaxSuggestions() {
+      return maxSuggestions_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (suggestionType_
+          != com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+              .SUGGESTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, suggestionType_);
+      }
+      if (maxSuggestions_ != 0) {
+        output.writeInt32(2, maxSuggestions_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (suggestionType_
+          != com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+              .SUGGESTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, suggestionType_);
+      }
+      if (maxSuggestions_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxSuggestions_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+              .SuggestionTypeSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+          other =
+              (com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                      .SuggestionTypeSpec)
+                  obj;
+
+      if (suggestionType_ != other.suggestionType_) return false;
+      if (getMaxSuggestions() != other.getMaxSuggestions()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SUGGESTION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + suggestionType_;
+      hash = (37 * hash) + MAX_SUGGESTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxSuggestions();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification of each suggestion type.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec)
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.CompletionServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.CompletionServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AdvancedCompleteQueryRequest_SuggestionTypeSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec.class,
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        suggestionType_ = 0;
+        maxSuggestions_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.CompletionServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_AdvancedCompleteQueryRequest_SuggestionTypeSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+          build() {
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            result =
+                new com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.suggestionType_ = suggestionType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxSuggestions_ = maxSuggestions_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                .SuggestionTypeSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                      .SuggestionTypeSpec)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+              other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                .SuggestionTypeSpec.getDefaultInstance()) return this;
+        if (other.suggestionType_ != 0) {
+          setSuggestionTypeValue(other.getSuggestionTypeValue());
+        }
+        if (other.getMaxSuggestions() != 0) {
+          setMaxSuggestions(other.getMaxSuggestions());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  suggestionType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxSuggestions_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int suggestionType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Suggestion type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for suggestionType.
+       */
+      @java.lang.Override
+      public int getSuggestionTypeValue() {
+        return suggestionType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Suggestion type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for suggestionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuggestionTypeValue(int value) {
+        suggestionType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Suggestion type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The suggestionType.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+          getSuggestionType() {
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType result =
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+                .forNumber(suggestionType_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Suggestion type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The suggestionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSuggestionType(
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        suggestionType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Suggestion type.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionType suggestion_type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSuggestionType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        suggestionType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxSuggestions_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maximum number of suggestions to return for each suggestion
+       * type.
+       * </pre>
+       *
+       * <code>int32 max_suggestions = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The maxSuggestions.
+       */
+      @java.lang.Override
+      public int getMaxSuggestions() {
+        return maxSuggestions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maximum number of suggestions to return for each suggestion
+       * type.
+       * </pre>
+       *
+       * <code>int32 max_suggestions = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The maxSuggestions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxSuggestions(int value) {
+
+        maxSuggestions_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Maximum number of suggestions to return for each suggestion
+       * type.
+       * </pre>
+       *
+       * <code>int32 max_suggestions = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxSuggestions() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxSuggestions_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec)
+    private static final com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+              .SuggestionTypeSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SuggestionTypeSpec> PARSER =
+        new com.google.protobuf.AbstractParser<SuggestionTypeSpec>() {
+          @java.lang.Override
+          public SuggestionTypeSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SuggestionTypeSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SuggestionTypeSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2656,9 +3444,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the autocomplete data model. This overrides any model specified
-   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-   * supported values:
+   * Specifies the autocomplete query model, which only applies to the QUERY
+   * SuggestionType. This overrides any model specified in the Configuration &gt;
+   * Autocomplete section of the Cloud console. Currently supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -2696,9 +3484,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Specifies the autocomplete data model. This overrides any model specified
-   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-   * supported values:
+   * Specifies the autocomplete query model, which only applies to the QUERY
+   * SuggestionType. This overrides any model specified in the Configuration &gt;
+   * Autocomplete section of the Cloud console. Currently supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -2741,10 +3529,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -2756,7 +3544,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    * The field must be a UTF-8 encoded string with a length limit of 128
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The userPseudoId.
    */
@@ -2777,10 +3565,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * A unique identifier for tracking visitors. For example, this could be
-   * implemented with an HTTP cookie, which should be able to uniquely identify
-   * a visitor on a single device. This unique identifier should not change if
-   * the visitor logs in or out of the website.
+   * Optional. A unique identifier for tracking visitors. For example, this
+   * could be implemented with an HTTP cookie, which should be able to uniquely
+   * identify a visitor on a single device. This unique identifier should not
+   * change if the visitor logs in or out of the website.
    *
    * This field should NOT have a fixed value such as `unknown_visitor`.
    *
@@ -2792,7 +3580,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
    * The field must be a UTF-8 encoded string with a length limit of 128
    * </pre>
    *
-   * <code>string user_pseudo_id = 4;</code>
+   * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for userPseudoId.
    */
@@ -3102,6 +3890,170 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
 
   private int suggestionTypesMemoizedSerializedSize;
 
+  public static final int SUGGESTION_TYPE_SPECS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec>
+      suggestionTypeSpecs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec>
+      getSuggestionTypeSpecsList() {
+    return suggestionTypeSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpecOrBuilder>
+      getSuggestionTypeSpecsOrBuilderList() {
+    return suggestionTypeSpecs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSuggestionTypeSpecsCount() {
+    return suggestionTypeSpecs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+      getSuggestionTypeSpecs(int index) {
+    return suggestionTypeSpecs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of each suggestion type.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+          .SuggestionTypeSpecOrBuilder
+      getSuggestionTypeSpecsOrBuilder(int index) {
+    return suggestionTypeSpecs_.get(index);
+  }
+
+  public static final int EXPERIMENT_IDS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList experimentIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the experimentIds.
+   */
+  public com.google.protobuf.ProtocolStringList getExperimentIdsList() {
+    return experimentIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of experimentIds.
+   */
+  public int getExperimentIdsCount() {
+    return experimentIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The experimentIds at the given index.
+   */
+  public java.lang.String getExperimentIds(int index) {
+    return experimentIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment ids for this request.
+   * </pre>
+   *
+   * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the experimentIds at the given index.
+   */
+  public com.google.protobuf.ByteString getExperimentIdsBytes(int index) {
+    return experimentIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3144,6 +4096,12 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getUserInfo());
+    }
+    for (int i = 0; i < suggestionTypeSpecs_.size(); i++) {
+      output.writeMessage(10, suggestionTypeSpecs_.get(i));
+    }
+    for (int i = 0; i < experimentIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, experimentIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3188,6 +4146,18 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUserInfo());
     }
+    for (int i = 0; i < suggestionTypeSpecs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, suggestionTypeSpecs_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < experimentIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(experimentIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getExperimentIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3218,6 +4188,8 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       if (!getBoostSpec().equals(other.getBoostSpec())) return false;
     }
     if (!suggestionTypes_.equals(other.suggestionTypes_)) return false;
+    if (!getSuggestionTypeSpecsList().equals(other.getSuggestionTypeSpecsList())) return false;
+    if (!getExperimentIdsList().equals(other.getExperimentIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3250,6 +4222,14 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     if (getSuggestionTypesCount() > 0) {
       hash = (37 * hash) + SUGGESTION_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + suggestionTypes_.hashCode();
+    }
+    if (getSuggestionTypeSpecsCount() > 0) {
+      hash = (37 * hash) + SUGGESTION_TYPE_SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getSuggestionTypeSpecsList().hashCode();
+    }
+    if (getExperimentIdsCount() > 0) {
+      hash = (37 * hash) + EXPERIMENT_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExperimentIdsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3400,6 +4380,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetUserInfoFieldBuilder();
         internalGetBoostSpecFieldBuilder();
+        internalGetSuggestionTypeSpecsFieldBuilder();
       }
     }
 
@@ -3423,6 +4404,14 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         boostSpecBuilder_ = null;
       }
       suggestionTypes_ = emptyIntList();
+      if (suggestionTypeSpecsBuilder_ == null) {
+        suggestionTypeSpecs_ = java.util.Collections.emptyList();
+      } else {
+        suggestionTypeSpecs_ = null;
+        suggestionTypeSpecsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
+      experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -3452,11 +4441,25 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
     public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest buildPartial() {
       com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest result =
           new com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest result) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          suggestionTypeSpecs_ = java.util.Collections.unmodifiableList(suggestionTypeSpecs_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.suggestionTypeSpecs_ = suggestionTypeSpecs_;
+      } else {
+        result.suggestionTypeSpecs_ = suggestionTypeSpecsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -3489,6 +4492,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000080) != 0)) {
         suggestionTypes_.makeImmutable();
         result.suggestionTypes_ = suggestionTypes_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        experimentIds_.makeImmutable();
+        result.experimentIds_ = experimentIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3546,6 +4553,43 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
         } else {
           ensureSuggestionTypesIsMutable();
           suggestionTypes_.addAll(other.suggestionTypes_);
+        }
+        onChanged();
+      }
+      if (suggestionTypeSpecsBuilder_ == null) {
+        if (!other.suggestionTypeSpecs_.isEmpty()) {
+          if (suggestionTypeSpecs_.isEmpty()) {
+            suggestionTypeSpecs_ = other.suggestionTypeSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureSuggestionTypeSpecsIsMutable();
+            suggestionTypeSpecs_.addAll(other.suggestionTypeSpecs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.suggestionTypeSpecs_.isEmpty()) {
+          if (suggestionTypeSpecsBuilder_.isEmpty()) {
+            suggestionTypeSpecsBuilder_.dispose();
+            suggestionTypeSpecsBuilder_ = null;
+            suggestionTypeSpecs_ = other.suggestionTypeSpecs_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            suggestionTypeSpecsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetSuggestionTypeSpecsFieldBuilder()
+                    : null;
+          } else {
+            suggestionTypeSpecsBuilder_.addAllMessages(other.suggestionTypeSpecs_);
+          }
+        }
+      }
+      if (!other.experimentIds_.isEmpty()) {
+        if (experimentIds_.isEmpty()) {
+          experimentIds_ = other.experimentIds_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureExperimentIdsIsMutable();
+          experimentIds_.addAll(other.experimentIds_);
         }
         onChanged();
       }
@@ -3637,6 +4681,30 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000010;
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                        .SuggestionTypeSpec
+                    m =
+                        input.readMessage(
+                            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                                .SuggestionTypeSpec.parser(),
+                            extensionRegistry);
+                if (suggestionTypeSpecsBuilder_ == null) {
+                  ensureSuggestionTypeSpecsIsMutable();
+                  suggestionTypeSpecs_.add(m);
+                } else {
+                  suggestionTypeSpecsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureExperimentIdsIsMutable();
+                experimentIds_.add(s);
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3944,9 +5012,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the autocomplete data model. This overrides any model specified
-     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-     * supported values:
+     * Specifies the autocomplete query model, which only applies to the QUERY
+     * SuggestionType. This overrides any model specified in the Configuration &gt;
+     * Autocomplete section of the Cloud console. Currently supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -3983,9 +5051,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the autocomplete data model. This overrides any model specified
-     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-     * supported values:
+     * Specifies the autocomplete query model, which only applies to the QUERY
+     * SuggestionType. This overrides any model specified in the Configuration &gt;
+     * Autocomplete section of the Cloud console. Currently supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -4022,9 +5090,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the autocomplete data model. This overrides any model specified
-     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-     * supported values:
+     * Specifies the autocomplete query model, which only applies to the QUERY
+     * SuggestionType. This overrides any model specified in the Configuration &gt;
+     * Autocomplete section of the Cloud console. Currently supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -4060,9 +5128,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the autocomplete data model. This overrides any model specified
-     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-     * supported values:
+     * Specifies the autocomplete query model, which only applies to the QUERY
+     * SuggestionType. This overrides any model specified in the Configuration &gt;
+     * Autocomplete section of the Cloud console. Currently supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -4094,9 +5162,9 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Specifies the autocomplete data model. This overrides any model specified
-     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
-     * supported values:
+     * Specifies the autocomplete query model, which only applies to the QUERY
+     * SuggestionType. This overrides any model specified in the Configuration &gt;
+     * Autocomplete section of the Cloud console. Currently supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -4135,10 +5203,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A unique identifier for tracking visitors. For example, this could be
-     * implemented with an HTTP cookie, which should be able to uniquely identify
-     * a visitor on a single device. This unique identifier should not change if
-     * the visitor logs in or out of the website.
+     * Optional. A unique identifier for tracking visitors. For example, this
+     * could be implemented with an HTTP cookie, which should be able to uniquely
+     * identify a visitor on a single device. This unique identifier should not
+     * change if the visitor logs in or out of the website.
      *
      * This field should NOT have a fixed value such as `unknown_visitor`.
      *
@@ -4150,7 +5218,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * The field must be a UTF-8 encoded string with a length limit of 128
      * </pre>
      *
-     * <code>string user_pseudo_id = 4;</code>
+     * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The userPseudoId.
      */
@@ -4170,10 +5238,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A unique identifier for tracking visitors. For example, this could be
-     * implemented with an HTTP cookie, which should be able to uniquely identify
-     * a visitor on a single device. This unique identifier should not change if
-     * the visitor logs in or out of the website.
+     * Optional. A unique identifier for tracking visitors. For example, this
+     * could be implemented with an HTTP cookie, which should be able to uniquely
+     * identify a visitor on a single device. This unique identifier should not
+     * change if the visitor logs in or out of the website.
      *
      * This field should NOT have a fixed value such as `unknown_visitor`.
      *
@@ -4185,7 +5253,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * The field must be a UTF-8 encoded string with a length limit of 128
      * </pre>
      *
-     * <code>string user_pseudo_id = 4;</code>
+     * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for userPseudoId.
      */
@@ -4205,10 +5273,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A unique identifier for tracking visitors. For example, this could be
-     * implemented with an HTTP cookie, which should be able to uniquely identify
-     * a visitor on a single device. This unique identifier should not change if
-     * the visitor logs in or out of the website.
+     * Optional. A unique identifier for tracking visitors. For example, this
+     * could be implemented with an HTTP cookie, which should be able to uniquely
+     * identify a visitor on a single device. This unique identifier should not
+     * change if the visitor logs in or out of the website.
      *
      * This field should NOT have a fixed value such as `unknown_visitor`.
      *
@@ -4220,7 +5288,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * The field must be a UTF-8 encoded string with a length limit of 128
      * </pre>
      *
-     * <code>string user_pseudo_id = 4;</code>
+     * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The userPseudoId to set.
      * @return This builder for chaining.
@@ -4239,10 +5307,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A unique identifier for tracking visitors. For example, this could be
-     * implemented with an HTTP cookie, which should be able to uniquely identify
-     * a visitor on a single device. This unique identifier should not change if
-     * the visitor logs in or out of the website.
+     * Optional. A unique identifier for tracking visitors. For example, this
+     * could be implemented with an HTTP cookie, which should be able to uniquely
+     * identify a visitor on a single device. This unique identifier should not
+     * change if the visitor logs in or out of the website.
      *
      * This field should NOT have a fixed value such as `unknown_visitor`.
      *
@@ -4254,7 +5322,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * The field must be a UTF-8 encoded string with a length limit of 128
      * </pre>
      *
-     * <code>string user_pseudo_id = 4;</code>
+     * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4269,10 +5337,10 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * A unique identifier for tracking visitors. For example, this could be
-     * implemented with an HTTP cookie, which should be able to uniquely identify
-     * a visitor on a single device. This unique identifier should not change if
-     * the visitor logs in or out of the website.
+     * Optional. A unique identifier for tracking visitors. For example, this
+     * could be implemented with an HTTP cookie, which should be able to uniquely
+     * identify a visitor on a single device. This unique identifier should not
+     * change if the visitor logs in or out of the website.
      *
      * This field should NOT have a fixed value such as `unknown_visitor`.
      *
@@ -4284,7 +5352,7 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
      * The field must be a UTF-8 encoded string with a length limit of 128
      * </pre>
      *
-     * <code>string user_pseudo_id = 4;</code>
+     * <code>string user_pseudo_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for userPseudoId to set.
      * @return This builder for chaining.
@@ -5137,6 +6205,647 @@ public final class AdvancedCompleteQueryRequest extends com.google.protobuf.Gene
       for (int value : values) {
         suggestionTypes_.addInt(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec>
+        suggestionTypeSpecs_ = java.util.Collections.emptyList();
+
+    private void ensureSuggestionTypeSpecsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        suggestionTypeSpecs_ =
+            new java.util.ArrayList<
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec>(suggestionTypeSpecs_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec,
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder,
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                .SuggestionTypeSpecOrBuilder>
+        suggestionTypeSpecsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec>
+        getSuggestionTypeSpecsList() {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(suggestionTypeSpecs_);
+      } else {
+        return suggestionTypeSpecsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSuggestionTypeSpecsCount() {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        return suggestionTypeSpecs_.size();
+      } else {
+        return suggestionTypeSpecsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+        getSuggestionTypeSpecs(int index) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        return suggestionTypeSpecs_.get(index);
+      } else {
+        return suggestionTypeSpecsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionTypeSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            value) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.set(index, value);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionTypeSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder
+            builderForValue) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSuggestionTypeSpecs(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            value) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.add(value);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSuggestionTypeSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            value) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.add(index, value);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSuggestionTypeSpecs(
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder
+            builderForValue) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSuggestionTypeSpecs(
+        int index,
+        com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder
+            builderForValue) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSuggestionTypeSpecs(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                        .SuggestionTypeSpec>
+            values) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        ensureSuggestionTypeSpecsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, suggestionTypeSpecs_);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSuggestionTypeSpecs() {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        suggestionTypeSpecs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSuggestionTypeSpecs(int index) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        ensureSuggestionTypeSpecsIsMutable();
+        suggestionTypeSpecs_.remove(index);
+        onChanged();
+      } else {
+        suggestionTypeSpecsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            .Builder
+        getSuggestionTypeSpecsBuilder(int index) {
+      return internalGetSuggestionTypeSpecsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+            .SuggestionTypeSpecOrBuilder
+        getSuggestionTypeSpecsOrBuilder(int index) {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        return suggestionTypeSpecs_.get(index);
+      } else {
+        return suggestionTypeSpecsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpecOrBuilder>
+        getSuggestionTypeSpecsOrBuilderList() {
+      if (suggestionTypeSpecsBuilder_ != null) {
+        return suggestionTypeSpecsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(suggestionTypeSpecs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            .Builder
+        addSuggestionTypeSpecsBuilder() {
+      return internalGetSuggestionTypeSpecsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+            .Builder
+        addSuggestionTypeSpecsBuilder(int index) {
+      return internalGetSuggestionTypeSpecsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                  .SuggestionTypeSpec.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of each suggestion type.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec suggestion_type_specs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder>
+        getSuggestionTypeSpecsBuilderList() {
+      return internalGetSuggestionTypeSpecsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec,
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest.SuggestionTypeSpec
+                .Builder,
+            com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                .SuggestionTypeSpecOrBuilder>
+        internalGetSuggestionTypeSpecsFieldBuilder() {
+      if (suggestionTypeSpecsBuilder_ == null) {
+        suggestionTypeSpecsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec,
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.AdvancedCompleteQueryRequest
+                    .SuggestionTypeSpecOrBuilder>(
+                suggestionTypeSpecs_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        suggestionTypeSpecs_ = null;
+      }
+      return suggestionTypeSpecsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList experimentIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureExperimentIdsIsMutable() {
+      if (!experimentIds_.isModifiable()) {
+        experimentIds_ = new com.google.protobuf.LazyStringArrayList(experimentIds_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the experimentIds.
+     */
+    public com.google.protobuf.ProtocolStringList getExperimentIdsList() {
+      experimentIds_.makeImmutable();
+      return experimentIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of experimentIds.
+     */
+    public int getExperimentIdsCount() {
+      return experimentIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The experimentIds at the given index.
+     */
+    public java.lang.String getExperimentIds(int index) {
+      return experimentIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the experimentIds at the given index.
+     */
+    public com.google.protobuf.ByteString getExperimentIdsBytes(int index) {
+      return experimentIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The experimentIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExperimentIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExperimentIdsIsMutable();
+      experimentIds_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The experimentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExperimentIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureExperimentIdsIsMutable();
+      experimentIds_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The experimentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllExperimentIds(java.lang.Iterable<java.lang.String> values) {
+      ensureExperimentIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, experimentIds_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExperimentIds() {
+      experimentIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment ids for this request.
+     * </pre>
+     *
+     * <code>repeated string experiment_ids = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the experimentIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addExperimentIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureExperimentIdsIsMutable();
+      experimentIds_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

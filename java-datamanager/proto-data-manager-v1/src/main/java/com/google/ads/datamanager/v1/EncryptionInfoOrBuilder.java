@@ -100,5 +100,63 @@ public interface EncryptionInfoOrBuilder
    */
   com.google.ads.datamanager.v1.AwsWrappedKeyInfoOrBuilder getAwsWrappedKeyInfoOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   *
+   * @return Whether the coordinatorKeyInfo field is set.
+   */
+  boolean hasCoordinatorKeyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   *
+   * @return The coordinatorKeyInfo.
+   */
+  com.google.ads.datamanager.v1.CoordinatorKeyInfo getCoordinatorKeyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key information for the chosen coordinator key.
+   *
+   * This is not supported for the
+   * [IngestEvents][google.ads.datamanager.v1.IngestionService.IngestEvents],
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers],
+   * and
+   * [RemoveAudienceMembers][google.ads.datamanager.v1.IngestionService.RemoveAudienceMembers]
+   * methods.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.CoordinatorKeyInfo coordinator_key_info = 3;</code>
+   */
+  com.google.ads.datamanager.v1.CoordinatorKeyInfoOrBuilder getCoordinatorKeyInfoOrBuilder();
+
   com.google.ads.datamanager.v1.EncryptionInfo.WrappedKeyCase getWrappedKeyCase();
 }

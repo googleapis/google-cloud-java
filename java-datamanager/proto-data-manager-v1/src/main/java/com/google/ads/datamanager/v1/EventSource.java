@@ -85,6 +85,16 @@ public enum EventSource implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The event was generated from a message.
+   * </pre>
+   *
+   * <code>MESSAGE = 6;</code>
+   */
+  MESSAGE(6),
+  /**
+   *
+   *
+   * <pre>
    * The event was generated from other sources.
    * </pre>
    *
@@ -163,6 +173,17 @@ public enum EventSource implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The event was generated from a message.
+   * </pre>
+   *
+   * <code>MESSAGE = 6;</code>
+   */
+  public static final int MESSAGE_VALUE = 6;
+
+  /**
+   *
+   *
+   * <pre>
    * The event was generated from other sources.
    * </pre>
    *
@@ -204,6 +225,8 @@ public enum EventSource implements com.google.protobuf.ProtocolMessageEnum {
         return IN_STORE;
       case 4:
         return PHONE;
+      case 6:
+        return MESSAGE;
       case 5:
         return OTHER;
       default:

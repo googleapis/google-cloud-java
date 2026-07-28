@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -123,6 +125,24 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetHealth</td>
+ *      <td><p> Gets the most recent health check results for this regional CompositeHealthCheck.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHealth(GetHealthRegionCompositeHealthCheckRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHealth(String project, String region, String compositeHealthCheck)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHealthCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -244,9 +264,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionCompositeHealthChecksClient implements BackgroundResource {
-  private final RegionCompositeHealthChecksSettings settings;
+  private final @Nullable RegionCompositeHealthChecksSettings settings;
   private final RegionCompositeHealthChecksStub stub;
 
   /** Constructs an instance of RegionCompositeHealthChecksClient with default settings. */
@@ -289,7 +310,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionCompositeHealthChecksSettings getSettings() {
+  public final @Nullable RegionCompositeHealthChecksSettings getSettings() {
     return settings;
   }
 
@@ -708,6 +729,108 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
   public final UnaryCallable<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
       getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String compositeHealthCheck = "compositeHealthCheck-1727645947";
+   *   CompositeHealthCheckHealth response =
+   *       regionCompositeHealthChecksClient.getHealth(project, region, compositeHealthCheck);
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @param region Name of the region scoping this request.
+   * @param compositeHealthCheck Name of the CompositeHealthCheck resource to get health for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompositeHealthCheckHealth getHealth(
+      String project, String region, String compositeHealthCheck) {
+    GetHealthRegionCompositeHealthCheckRequest request =
+        GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setCompositeHealthCheck(compositeHealthCheck)
+            .build();
+    return getHealth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   GetHealthRegionCompositeHealthCheckRequest request =
+   *       GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+   *           .setCompositeHealthCheck("compositeHealthCheck-1727645947")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   CompositeHealthCheckHealth response = regionCompositeHealthChecksClient.getHealth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CompositeHealthCheckHealth getHealth(
+      GetHealthRegionCompositeHealthCheckRequest request) {
+    return getHealthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional CompositeHealthCheck.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionCompositeHealthChecksClient regionCompositeHealthChecksClient =
+   *     RegionCompositeHealthChecksClient.create()) {
+   *   GetHealthRegionCompositeHealthCheckRequest request =
+   *       GetHealthRegionCompositeHealthCheckRequest.newBuilder()
+   *           .setCompositeHealthCheck("compositeHealthCheck-1727645947")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<CompositeHealthCheckHealth> future =
+   *       regionCompositeHealthChecksClient.getHealthCallable().futureCall(request);
+   *   // Do something.
+   *   CompositeHealthCheckHealth response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthCallable() {
+    return stub.getHealthCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1345,12 +1468,13 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
             context,
-        CompositeHealthCheckAggregatedList response) {
+        @Nullable CompositeHealthCheckAggregatedList response) {
       super(context, response);
     }
 
@@ -1360,18 +1484,20 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
             context,
-        CompositeHealthCheckAggregatedList response) {
+        @Nullable CompositeHealthCheckAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckAggregatedList,
                 Map.Entry<String, CompositeHealthChecksScopedList>>
@@ -1389,7 +1515,8 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1399,7 +1526,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1438,12 +1565,13 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
             context,
-        CompositeHealthCheckList response) {
+        @Nullable CompositeHealthCheckList response) {
       super(context, response);
     }
 
@@ -1453,18 +1581,20 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
             context,
-        CompositeHealthCheckList response) {
+        @Nullable CompositeHealthCheckList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionCompositeHealthChecksRequest,
                 CompositeHealthCheckList,
                 CompositeHealthCheck>
@@ -1482,7 +1612,7 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1491,7 +1621,8 @@ public class RegionCompositeHealthChecksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

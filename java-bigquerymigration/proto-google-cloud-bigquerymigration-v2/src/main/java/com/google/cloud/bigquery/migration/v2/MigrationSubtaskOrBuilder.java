@@ -275,13 +275,13 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The number or resources with errors. Note: This is not the total
-   * number of errors as each resource can have more than one error.
-   * This is used to indicate truncation by having a `resource_error_count`
-   * that is higher than the size of `resource_error_details`.
+   * Output only. The number or resources with errors. Note: This is not the
+   * total number of errors as each resource can have more than one error. This
+   * is used to indicate truncation by having a `resource_error_count` that is
+   * higher than the size of `resource_error_details`.
    * </pre>
    *
-   * <code>int32 resource_error_count = 13;</code>
+   * <code>int32 resource_error_count = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The resourceErrorCount.
    */
@@ -291,10 +291,11 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -304,10 +305,11 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -317,10 +319,11 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was created.
+   * Output only. Time when the subtask was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -328,10 +331,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastUpdateTime field is set.
    */
@@ -341,10 +346,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastUpdateTime.
    */
@@ -354,10 +361,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * Time when the subtask was last updated.
+   * Output only. Time when the subtask was last updated.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_update_time = 8;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();
 
@@ -365,10 +374,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList();
 
@@ -376,10 +387,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index);
 
@@ -387,10 +400,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getMetricsCount();
 
@@ -398,10 +413,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
       getMetricsOrBuilderList();
@@ -410,10 +427,12 @@ public interface MigrationSubtaskOrBuilder
    *
    *
    * <pre>
-   * The metrics for the subtask.
+   * Output only. The metrics for the subtask.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder getMetricsOrBuilder(int index);
 }

@@ -72,6 +72,8 @@ import com.google.cloud.chronicle.v1.Rule;
 import com.google.cloud.chronicle.v1.RuleDeployment;
 import com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest;
 import com.google.cloud.chronicle.v1.UpdateRuleRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -82,6 +84,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -159,12 +163,17 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/chronicle")
+          .add("https://www.googleapis.com/auth/chronicle.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<CreateRuleRequest, Rule> createRuleSettings;
   private final UnaryCallSettings<GetRuleRequest, Rule> getRuleSettings;
@@ -172,6 +181,8 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       listRulesSettings;
   private final UnaryCallSettings<UpdateRuleRequest, Rule> updateRuleSettings;
   private final UnaryCallSettings<DeleteRuleRequest, Empty> deleteRuleSettings;
+  private final UnaryCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse>
+      verifyRuleTextSettings;
   private final PagedCallSettings<
           ListRuleRevisionsRequest, ListRuleRevisionsResponse, ListRuleRevisionsPagedResponse>
       listRuleRevisionsSettings;
@@ -434,6 +445,11 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     return deleteRuleSettings;
   }
 
+  /** Returns the object with the settings used for calls to verifyRuleText. */
+  public UnaryCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextSettings() {
+    return verifyRuleTextSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRuleRevisions. */
   public PagedCallSettings<
           ListRuleRevisionsRequest, ListRuleRevisionsResponse, ListRuleRevisionsPagedResponse>
@@ -581,7 +597,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -598,6 +614,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     listRulesSettings = settingsBuilder.listRulesSettings().build();
     updateRuleSettings = settingsBuilder.updateRuleSettings().build();
     deleteRuleSettings = settingsBuilder.deleteRuleSettings().build();
+    verifyRuleTextSettings = settingsBuilder.verifyRuleTextSettings().build();
     listRuleRevisionsSettings = settingsBuilder.listRuleRevisionsSettings().build();
     createRetrohuntSettings = settingsBuilder.createRetrohuntSettings().build();
     createRetrohuntOperationSettings = settingsBuilder.createRetrohuntOperationSettings().build();
@@ -627,6 +644,8 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
         listRulesSettings;
     private final UnaryCallSettings.Builder<UpdateRuleRequest, Rule> updateRuleSettings;
     private final UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings;
+    private final UnaryCallSettings.Builder<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextSettings;
     private final PagedCallSettings.Builder<
             ListRuleRevisionsRequest, ListRuleRevisionsResponse, ListRuleRevisionsPagedResponse>
         listRuleRevisionsSettings;
@@ -655,15 +674,15 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_4_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -679,7 +698,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -701,7 +720,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_4_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
@@ -709,7 +728,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
-      definitions.put("no_retry_4_params", settings);
+      definitions.put("no_retry_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -717,7 +736,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -725,6 +744,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       listRulesSettings = PagedCallSettings.newBuilder(LIST_RULES_PAGE_STR_FACT);
       updateRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      verifyRuleTextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRuleRevisionsSettings = PagedCallSettings.newBuilder(LIST_RULE_REVISIONS_PAGE_STR_FACT);
       createRetrohuntSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRetrohuntOperationSettings = OperationCallSettings.newBuilder();
@@ -742,6 +762,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               listRulesSettings,
               updateRuleSettings,
               deleteRuleSettings,
+              verifyRuleTextSettings,
               listRuleRevisionsSettings,
               createRetrohuntSettings,
               getRetrohuntSettings,
@@ -760,6 +781,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
       listRulesSettings = settings.listRulesSettings.toBuilder();
       updateRuleSettings = settings.updateRuleSettings.toBuilder();
       deleteRuleSettings = settings.deleteRuleSettings.toBuilder();
+      verifyRuleTextSettings = settings.verifyRuleTextSettings.toBuilder();
       listRuleRevisionsSettings = settings.listRuleRevisionsSettings.toBuilder();
       createRetrohuntSettings = settings.createRetrohuntSettings.toBuilder();
       createRetrohuntOperationSettings = settings.createRetrohuntOperationSettings.toBuilder();
@@ -776,6 +798,7 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
               listRulesSettings,
               updateRuleSettings,
               deleteRuleSettings,
+              verifyRuleTextSettings,
               listRuleRevisionsSettings,
               createRetrohuntSettings,
               getRetrohuntSettings,
@@ -812,8 +835,8 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     private static Builder initDefaults(Builder builder) {
       builder
           .createRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
       builder
           .getRuleSettings()
@@ -822,28 +845,33 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
 
       builder
           .listRulesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .deleteRuleSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_3_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .verifyRuleTextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listRuleRevisionsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .createRetrohuntSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .getRetrohuntSettings()
@@ -857,26 +885,26 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
 
       builder
           .getRuleDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .listRuleDeploymentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
 
       builder
           .updateRuleDeploymentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
 
       builder
           .createRetrohuntOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<CreateRetrohuntRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Retrohunt.class))
@@ -936,6 +964,12 @@ public class RuleServiceStubSettings extends StubSettings<RuleServiceStubSetting
     /** Returns the builder for the settings used for calls to deleteRule. */
     public UnaryCallSettings.Builder<DeleteRuleRequest, Empty> deleteRuleSettings() {
       return deleteRuleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyRuleText. */
+    public UnaryCallSettings.Builder<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextSettings() {
+      return verifyRuleTextSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRuleRevisions. */

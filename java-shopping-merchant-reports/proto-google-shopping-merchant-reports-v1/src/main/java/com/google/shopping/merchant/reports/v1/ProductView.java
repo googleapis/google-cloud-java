@@ -26,12 +26,13 @@ package com.google.shopping.merchant.reports.v1;
  * <pre>
  * Fields available for query in `product_view` table.
  *
- * Products in the current inventory. Products in this table are the same as in
- * Products sub-API but not all product attributes from Products sub-API are
- * available for query in this table. In contrast to Products sub-API, this
- * table allows to filter the returned list of products by product attributes.
- * To retrieve a single product by `id` or list all products, Products sub-API
- * should be used.
+ * Products in the current inventory. Products in this table are the
+ * same as a [Product resource in Products
+ * sub-API](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products)
+ * but not all product attributes from Products sub-API are available for query
+ * in this table. In contrast to Products sub-API, this table allows to filter
+ * the returned list of products by product attributes. To retrieve a single
+ * product by `id` or list all products, Products sub-API should be used.
  *
  * Values are only set for fields requested explicitly in the request's search
  * query.
@@ -86,6 +87,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
     itemGroupId_ = "";
     thumbnailLink_ = "";
     aggregatedReportingContextStatus_ = 0;
+    statusPerReportingContext_ = java.util.Collections.emptyList();
+    reportingContext_ = 0;
     itemIssues_ = java.util.Collections.emptyList();
     clickPotential_ = 0;
   }
@@ -110,6 +113,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Status of the product aggregated for all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    *
    * Here's an example of how the aggregated status is computed:
    *
@@ -140,7 +146,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is not eligible or is disapproved for all reporting contexts.
+     * Product is not eligible or is disapproved for all reporting contexts and
+     * countries.
      * </pre>
      *
      * <code>NOT_ELIGIBLE_OR_DISAPPROVED = 1;</code>
@@ -150,7 +157,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product's status is pending in all reporting contexts.
+     * Product's status is pending in all reporting contexts and countries.
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -160,7 +167,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is eligible for some (but not all) reporting contexts.
+     * Product is eligible for some (but not all) reporting contexts and
+     * countries.
      * </pre>
      *
      * <code>ELIGIBLE_LIMITED = 3;</code>
@@ -170,7 +178,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is eligible for all reporting contexts.
+     * Product is eligible for all reporting contexts and countries.
      * </pre>
      *
      * <code>ELIGIBLE = 4;</code>
@@ -204,7 +212,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is not eligible or is disapproved for all reporting contexts.
+     * Product is not eligible or is disapproved for all reporting contexts and
+     * countries.
      * </pre>
      *
      * <code>NOT_ELIGIBLE_OR_DISAPPROVED = 1;</code>
@@ -215,7 +224,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product's status is pending in all reporting contexts.
+     * Product's status is pending in all reporting contexts and countries.
      * </pre>
      *
      * <code>PENDING = 2;</code>
@@ -226,7 +235,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is eligible for some (but not all) reporting contexts.
+     * Product is eligible for some (but not all) reporting contexts and
+     * countries.
      * </pre>
      *
      * <code>ELIGIBLE_LIMITED = 3;</code>
@@ -237,7 +247,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Product is eligible for all reporting contexts.
+     * Product is eligible for all reporting contexts and countries.
      * </pre>
      *
      * <code>ELIGIBLE = 4;</code>
@@ -1886,6 +1896,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -1902,6 +1915,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -1917,6 +1933,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -1930,6 +1949,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -1947,6 +1969,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -1962,6 +1987,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
+       *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -1980,6 +2009,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
        *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
+       *
        * **This field can be used for filtering the results.**
        * </pre>
        *
@@ -1996,6 +2029,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
+       *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -3741,6 +3778,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -3760,6 +3800,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -3780,6 +3823,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -3796,6 +3842,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -3814,6 +3863,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Issue severity per reporting context.
+       *
+       * Reporting contexts included in this list can be restricted using a
+       * filter on the `reporting_context` field.
        * </pre>
        *
        * <code>
@@ -3836,6 +3888,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
        *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
+       *
        * **This field can be used for filtering the results.**
        * </pre>
        *
@@ -3856,6 +3912,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
        *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
+       *
        * **This field can be used for filtering the results.**
        * </pre>
        *
@@ -3875,6 +3935,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Aggregated severity of the issue for all reporting contexts it affects.
+       *
+       * Reporting contexts included in the computation of the aggregated
+       * severity can be restricted using a filter on the `reporting_context`
+       * field.
        *
        * **This field can be used for filtering the results.**
        * </pre>
@@ -4359,6 +4423,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4381,6 +4448,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4400,6 +4470,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4421,6 +4494,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4450,6 +4526,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4476,6 +4555,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4504,6 +4586,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4533,6 +4618,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4558,6 +4646,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4584,6 +4675,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4612,6 +4706,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4634,6 +4731,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4656,6 +4756,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4673,6 +4776,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4694,6 +4800,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4717,6 +4826,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4737,6 +4849,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4758,6 +4873,9 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Issue severity per reporting context.
+         *
+         * Reporting contexts included in this list can be restricted using a
+         * filter on the `reporting_context` field.
          * </pre>
          *
          * <code>
@@ -4805,6 +4923,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
          *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
+         *
          * **This field can be used for filtering the results.**
          * </pre>
          *
@@ -4825,6 +4947,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
          *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
+         *
          * **This field can be used for filtering the results.**
          * </pre>
          *
@@ -4844,6 +4970,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
+         *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4867,6 +4997,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
+         *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -4898,6 +5032,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
          *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
+         *
          * **This field can be used for filtering the results.**
          * </pre>
          *
@@ -4926,6 +5064,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Aggregated severity of the issue for all reporting contexts it affects.
+         *
+         * Reporting contexts included in the computation of the aggregated
+         * severity can be restricted using a filter on the `reporting_context`
+         * field.
          *
          * **This field can be used for filtering the results.**
          * </pre>
@@ -6208,6 +6350,1837 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.shopping.merchant.reports.v1.ProductView.ItemIssue
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface StatusPerReportingContextOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return Whether the reportingContext field is set.
+     */
+    boolean hasReportingContext();
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reportingContext.
+     */
+    int getReportingContextValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return The reportingContext.
+     */
+    com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @return A list containing the approvedCountries.
+     */
+    java.util.List<java.lang.String> getApprovedCountriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @return The count of approvedCountries.
+     */
+    int getApprovedCountriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The approvedCountries at the given index.
+     */
+    java.lang.String getApprovedCountries(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the approvedCountries at the given index.
+     */
+    com.google.protobuf.ByteString getApprovedCountriesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @return A list containing the disapprovedCountries.
+     */
+    java.util.List<java.lang.String> getDisapprovedCountriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @return The count of disapprovedCountries.
+     */
+    int getDisapprovedCountriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The disapprovedCountries at the given index.
+     */
+    java.lang.String getDisapprovedCountries(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the disapprovedCountries at the given index.
+     */
+    com.google.protobuf.ByteString getDisapprovedCountriesBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @return A list containing the pendingCountries.
+     */
+    java.util.List<java.lang.String> getPendingCountriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @return The count of pendingCountries.
+     */
+    int getPendingCountriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The pendingCountries at the given index.
+     */
+    java.lang.String getPendingCountries(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pendingCountries at the given index.
+     */
+    com.google.protobuf.ByteString getPendingCountriesBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Status of the product for a specific reporting context.
+   *
+   * Equivalent to
+   * [`DestinationStatus`][google.shopping.merchant.products.v1.ProductStatus.DestinationStatus]
+   * in Products API.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext}
+   */
+  public static final class StatusPerReportingContext extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+      StatusPerReportingContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "StatusPerReportingContext");
+    }
+
+    // Use StatusPerReportingContext.newBuilder() to construct.
+    private StatusPerReportingContext(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StatusPerReportingContext() {
+      reportingContext_ = 0;
+      approvedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      disapprovedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      pendingCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.reports.v1.ReportsProto
+          .internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.reports.v1.ReportsProto
+          .internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.class,
+              com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int REPORTING_CONTEXT_FIELD_NUMBER = 1;
+    private int reportingContext_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return Whether the reportingContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasReportingContext() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reportingContext.
+     */
+    @java.lang.Override
+    public int getReportingContextValue() {
+      return reportingContext_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context the status applies to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+     * </code>
+     *
+     * @return The reportingContext.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext() {
+      com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+          com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(
+              reportingContext_);
+      return result == null
+          ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int APPROVED_COUNTRIES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList approvedCountries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @return A list containing the approvedCountries.
+     */
+    public com.google.protobuf.ProtocolStringList getApprovedCountriesList() {
+      return approvedCountries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @return The count of approvedCountries.
+     */
+    public int getApprovedCountriesCount() {
+      return approvedCountries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The approvedCountries at the given index.
+     */
+    public java.lang.String getApprovedCountries(int index) {
+      return approvedCountries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of approved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string approved_countries = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the approvedCountries at the given index.
+     */
+    public com.google.protobuf.ByteString getApprovedCountriesBytes(int index) {
+      return approvedCountries_.getByteString(index);
+    }
+
+    public static final int DISAPPROVED_COUNTRIES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList disapprovedCountries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @return A list containing the disapprovedCountries.
+     */
+    public com.google.protobuf.ProtocolStringList getDisapprovedCountriesList() {
+      return disapprovedCountries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @return The count of disapprovedCountries.
+     */
+    public int getDisapprovedCountriesCount() {
+      return disapprovedCountries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The disapprovedCountries at the given index.
+     */
+    public java.lang.String getDisapprovedCountries(int index) {
+      return disapprovedCountries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disapproved countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string disapproved_countries = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the disapprovedCountries at the given index.
+     */
+    public com.google.protobuf.ByteString getDisapprovedCountriesBytes(int index) {
+      return disapprovedCountries_.getByteString(index);
+    }
+
+    public static final int PENDING_COUNTRIES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList pendingCountries_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @return A list containing the pendingCountries.
+     */
+    public com.google.protobuf.ProtocolStringList getPendingCountriesList() {
+      return pendingCountries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @return The count of pendingCountries.
+     */
+    public int getPendingCountriesCount() {
+      return pendingCountries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The pendingCountries at the given index.
+     */
+    public java.lang.String getPendingCountries(int index) {
+      return pendingCountries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of pending countries in the reporting context, represented in
+     * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+     * example, `US`.
+     * </pre>
+     *
+     * <code>repeated string pending_countries = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the pendingCountries at the given index.
+     */
+    public com.google.protobuf.ByteString getPendingCountriesBytes(int index) {
+      return pendingCountries_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, reportingContext_);
+      }
+      for (int i = 0; i < approvedCountries_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, approvedCountries_.getRaw(i));
+      }
+      for (int i = 0; i < disapprovedCountries_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(
+            output, 3, disapprovedCountries_.getRaw(i));
+      }
+      for (int i = 0; i < pendingCountries_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, pendingCountries_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, reportingContext_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < approvedCountries_.size(); i++) {
+          dataSize += computeStringSizeNoTag(approvedCountries_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getApprovedCountriesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < disapprovedCountries_.size(); i++) {
+          dataSize += computeStringSizeNoTag(disapprovedCountries_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDisapprovedCountriesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < pendingCountries_.size(); i++) {
+          dataSize += computeStringSizeNoTag(pendingCountries_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPendingCountriesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext other =
+          (com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext) obj;
+
+      if (hasReportingContext() != other.hasReportingContext()) return false;
+      if (hasReportingContext()) {
+        if (reportingContext_ != other.reportingContext_) return false;
+      }
+      if (!getApprovedCountriesList().equals(other.getApprovedCountriesList())) return false;
+      if (!getDisapprovedCountriesList().equals(other.getDisapprovedCountriesList())) return false;
+      if (!getPendingCountriesList().equals(other.getPendingCountriesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasReportingContext()) {
+        hash = (37 * hash) + REPORTING_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + reportingContext_;
+      }
+      if (getApprovedCountriesCount() > 0) {
+        hash = (37 * hash) + APPROVED_COUNTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getApprovedCountriesList().hashCode();
+      }
+      if (getDisapprovedCountriesCount() > 0) {
+        hash = (37 * hash) + DISAPPROVED_COUNTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDisapprovedCountriesList().hashCode();
+      }
+      if (getPendingCountriesCount() > 0) {
+        hash = (37 * hash) + PENDING_COUNTRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getPendingCountriesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Status of the product for a specific reporting context.
+     *
+     * Equivalent to
+     * [`DestinationStatus`][google.shopping.merchant.products.v1.ProductStatus.DestinationStatus]
+     * in Products API.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.reports.v1.ReportsProto
+            .internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.reports.v1.ReportsProto
+            .internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.class,
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        reportingContext_ = 0;
+        approvedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        disapprovedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        pendingCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.reports.v1.ReportsProto
+            .internal_static_google_shopping_merchant_reports_v1_ProductView_StatusPerReportingContext_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext build() {
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+          buildPartial() {
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext result =
+            new com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reportingContext_ = reportingContext_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          approvedCountries_.makeImmutable();
+          result.approvedCountries_ = approvedCountries_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          disapprovedCountries_.makeImmutable();
+          result.disapprovedCountries_ = disapprovedCountries_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          pendingCountries_.makeImmutable();
+          result.pendingCountries_ = pendingCountries_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext) {
+          return mergeFrom(
+              (com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext other) {
+        if (other
+            == com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+                .getDefaultInstance()) return this;
+        if (other.hasReportingContext()) {
+          setReportingContextValue(other.getReportingContextValue());
+        }
+        if (!other.approvedCountries_.isEmpty()) {
+          if (approvedCountries_.isEmpty()) {
+            approvedCountries_ = other.approvedCountries_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureApprovedCountriesIsMutable();
+            approvedCountries_.addAll(other.approvedCountries_);
+          }
+          onChanged();
+        }
+        if (!other.disapprovedCountries_.isEmpty()) {
+          if (disapprovedCountries_.isEmpty()) {
+            disapprovedCountries_ = other.disapprovedCountries_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureDisapprovedCountriesIsMutable();
+            disapprovedCountries_.addAll(other.disapprovedCountries_);
+          }
+          onChanged();
+        }
+        if (!other.pendingCountries_.isEmpty()) {
+          if (pendingCountries_.isEmpty()) {
+            pendingCountries_ = other.pendingCountries_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensurePendingCountriesIsMutable();
+            pendingCountries_.addAll(other.pendingCountries_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  reportingContext_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureApprovedCountriesIsMutable();
+                  approvedCountries_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureDisapprovedCountriesIsMutable();
+                  disapprovedCountries_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensurePendingCountriesIsMutable();
+                  pendingCountries_.add(s);
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int reportingContext_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @return Whether the reportingContext field is set.
+       */
+      @java.lang.Override
+      public boolean hasReportingContext() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for reportingContext.
+       */
+      @java.lang.Override
+      public int getReportingContextValue() {
+        return reportingContext_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for reportingContext to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReportingContextValue(int value) {
+        reportingContext_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @return The reportingContext.
+       */
+      @java.lang.Override
+      public com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext() {
+        com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+            com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(
+                reportingContext_);
+        return result == null
+            ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @param value The reportingContext to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReportingContext(
+          com.google.shopping.type.ReportingContext.ReportingContextEnum value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        reportingContext_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Reporting context the status applies to.
+       * </pre>
+       *
+       * <code>
+       * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReportingContext() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reportingContext_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList approvedCountries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureApprovedCountriesIsMutable() {
+        if (!approvedCountries_.isModifiable()) {
+          approvedCountries_ = new com.google.protobuf.LazyStringArrayList(approvedCountries_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @return A list containing the approvedCountries.
+       */
+      public com.google.protobuf.ProtocolStringList getApprovedCountriesList() {
+        approvedCountries_.makeImmutable();
+        return approvedCountries_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @return The count of approvedCountries.
+       */
+      public int getApprovedCountriesCount() {
+        return approvedCountries_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The approvedCountries at the given index.
+       */
+      public java.lang.String getApprovedCountries(int index) {
+        return approvedCountries_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the approvedCountries at the given index.
+       */
+      public com.google.protobuf.ByteString getApprovedCountriesBytes(int index) {
+        return approvedCountries_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The approvedCountries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApprovedCountries(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureApprovedCountriesIsMutable();
+        approvedCountries_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param value The approvedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApprovedCountries(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureApprovedCountriesIsMutable();
+        approvedCountries_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param values The approvedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllApprovedCountries(java.lang.Iterable<java.lang.String> values) {
+        ensureApprovedCountriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, approvedCountries_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearApprovedCountries() {
+        approvedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of approved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string approved_countries = 2;</code>
+       *
+       * @param value The bytes of the approvedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addApprovedCountriesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureApprovedCountriesIsMutable();
+        approvedCountries_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList disapprovedCountries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureDisapprovedCountriesIsMutable() {
+        if (!disapprovedCountries_.isModifiable()) {
+          disapprovedCountries_ =
+              new com.google.protobuf.LazyStringArrayList(disapprovedCountries_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @return A list containing the disapprovedCountries.
+       */
+      public com.google.protobuf.ProtocolStringList getDisapprovedCountriesList() {
+        disapprovedCountries_.makeImmutable();
+        return disapprovedCountries_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @return The count of disapprovedCountries.
+       */
+      public int getDisapprovedCountriesCount() {
+        return disapprovedCountries_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The disapprovedCountries at the given index.
+       */
+      public java.lang.String getDisapprovedCountries(int index) {
+        return disapprovedCountries_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the disapprovedCountries at the given index.
+       */
+      public com.google.protobuf.ByteString getDisapprovedCountriesBytes(int index) {
+        return disapprovedCountries_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The disapprovedCountries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisapprovedCountries(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisapprovedCountriesIsMutable();
+        disapprovedCountries_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param value The disapprovedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDisapprovedCountries(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisapprovedCountriesIsMutable();
+        disapprovedCountries_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param values The disapprovedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDisapprovedCountries(java.lang.Iterable<java.lang.String> values) {
+        ensureDisapprovedCountriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disapprovedCountries_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisapprovedCountries() {
+        disapprovedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of disapproved countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string disapproved_countries = 3;</code>
+       *
+       * @param value The bytes of the disapprovedCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDisapprovedCountriesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureDisapprovedCountriesIsMutable();
+        disapprovedCountries_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList pendingCountries_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensurePendingCountriesIsMutable() {
+        if (!pendingCountries_.isModifiable()) {
+          pendingCountries_ = new com.google.protobuf.LazyStringArrayList(pendingCountries_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @return A list containing the pendingCountries.
+       */
+      public com.google.protobuf.ProtocolStringList getPendingCountriesList() {
+        pendingCountries_.makeImmutable();
+        return pendingCountries_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @return The count of pendingCountries.
+       */
+      public int getPendingCountriesCount() {
+        return pendingCountries_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The pendingCountries at the given index.
+       */
+      public java.lang.String getPendingCountries(int index) {
+        return pendingCountries_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the pendingCountries at the given index.
+       */
+      public com.google.protobuf.ByteString getPendingCountriesBytes(int index) {
+        return pendingCountries_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The pendingCountries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPendingCountries(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePendingCountriesIsMutable();
+        pendingCountries_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param value The pendingCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPendingCountries(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePendingCountriesIsMutable();
+        pendingCountries_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param values The pendingCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPendingCountries(java.lang.Iterable<java.lang.String> values) {
+        ensurePendingCountriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pendingCountries_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPendingCountries() {
+        pendingCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * List of pending countries in the reporting context, represented in
+       * [ISO 3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) format, for
+       * example, `US`.
+       * </pre>
+       *
+       * <code>repeated string pending_countries = 4;</code>
+       *
+       * @param value The bytes of the pendingCountries to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPendingCountriesBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensurePendingCountriesIsMutable();
+        pendingCountries_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext)
+    private static final com.google.shopping.merchant.reports.v1.ProductView
+            .StatusPerReportingContext
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext();
+    }
+
+    public static com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StatusPerReportingContext> PARSER =
+        new com.google.protobuf.AbstractParser<StatusPerReportingContext>() {
+          @java.lang.Override
+          public StatusPerReportingContext parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StatusPerReportingContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StatusPerReportingContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8002,7 +9975,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -8020,7 +9996,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -8038,7 +10017,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Aggregated status.
+   * Aggregated status across all reporting contexts.
+   *
+   * Reporting contexts included in the computation of the aggregated status can
+   * be restricted using a filter on the `reporting_context` field.
    * </pre>
    *
    * <code>
@@ -8056,6 +10038,228 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
     return result == null
         ? com.google.shopping.merchant.reports.v1.ProductView.AggregatedReportingContextStatus
             .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int STATUS_PER_REPORTING_CONTEXT_FIELD_NUMBER = 32;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+      statusPerReportingContext_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+      getStatusPerReportingContextList() {
+    return statusPerReportingContext_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.reports.v1.ProductView
+                  .StatusPerReportingContextOrBuilder>
+      getStatusPerReportingContextOrBuilderList() {
+    return statusPerReportingContext_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public int getStatusPerReportingContextCount() {
+    return statusPerReportingContext_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+      getStatusPerReportingContext(int index) {
+    return statusPerReportingContext_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed product status per reporting context.
+   *
+   * Reporting contexts included in this list can be restricted using a filter
+   * on the `reporting_context` field.
+   *
+   * Equivalent to
+   * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+   * in Products API.
+   *
+   * **This field cannot be used for sorting or filtering the results.**
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder
+      getStatusPerReportingContextOrBuilder(int index) {
+    return statusPerReportingContext_.get(index);
+  }
+
+  public static final int REPORTING_CONTEXT_FIELD_NUMBER = 33;
+  private int reportingContext_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return Whether the reportingContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasReportingContext() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reportingContext.
+   */
+  @java.lang.Override
+  public int getReportingContextValue() {
+    return reportingContext_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Reporting context to restrict the query to.
+   *
+   * Restricts the reporting contexts returned in `status_per_reporting_context`
+   * and `item_issues`, and used to compute
+   * `aggregated_reporting_context_status`.
+   *
+   * **This field can only be used in the `WHERE` clause and cannot be selected
+   * in the `SELECT` clause.**
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+   * </code>
+   *
+   * @return The reportingContext.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext() {
+    com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+        com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(reportingContext_);
+    return result == null
+        ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
         : result;
   }
 
@@ -8224,9 +10428,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Rank of the product based on its click potential. A product with
-   * `click_potential_rank` 1 has the highest click potential among the
-   * merchant's products that fulfill the search query conditions.
+   * Normalized click potential of the product. Values range from 1 to 1000,
+   * where 1 is the highest click potential and 1000 is the theoretical lowest.
    * </pre>
    *
    * <code>optional int64 click_potential_rank = 30;</code>
@@ -8235,16 +10438,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasClickPotentialRank() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Rank of the product based on its click potential. A product with
-   * `click_potential_rank` 1 has the highest click potential among the
-   * merchant's products that fulfill the search query conditions.
+   * Normalized click potential of the product. Values range from 1 to 1000,
+   * where 1 is the highest click potential and 1000 is the theoretical lowest.
    * </pre>
    *
    * <code>optional int64 click_potential_rank = 30;</code>
@@ -8360,8 +10562,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(29, clickPotential_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeInt64(30, clickPotentialRank_);
+    }
+    for (int i = 0; i < statusPerReportingContext_.size(); i++) {
+      output.writeMessage(32, statusPerReportingContext_.get(i));
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      output.writeEnum(33, reportingContext_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8469,8 +10677,16 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(29, clickPotential_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(30, clickPotentialRank_);
+    }
+    for (int i = 0; i < statusPerReportingContext_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              32, statusPerReportingContext_.get(i));
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(33, reportingContext_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8594,6 +10810,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
     if (hasAggregatedReportingContextStatus()) {
       if (aggregatedReportingContextStatus_ != other.aggregatedReportingContextStatus_)
         return false;
+    }
+    if (!getStatusPerReportingContextList().equals(other.getStatusPerReportingContextList()))
+      return false;
+    if (hasReportingContext() != other.hasReportingContext()) return false;
+    if (hasReportingContext()) {
+      if (reportingContext_ != other.reportingContext_) return false;
     }
     if (!getItemIssuesList().equals(other.getItemIssuesList())) return false;
     if (clickPotential_ != other.clickPotential_) return false;
@@ -8720,6 +10942,14 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + AGGREGATED_REPORTING_CONTEXT_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + aggregatedReportingContextStatus_;
     }
+    if (getStatusPerReportingContextCount() > 0) {
+      hash = (37 * hash) + STATUS_PER_REPORTING_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getStatusPerReportingContextList().hashCode();
+    }
+    if (hasReportingContext()) {
+      hash = (37 * hash) + REPORTING_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + reportingContext_;
+    }
     if (getItemIssuesCount() > 0) {
       hash = (37 * hash) + ITEM_ISSUES_FIELD_NUMBER;
       hash = (53 * hash) + getItemIssuesList().hashCode();
@@ -8837,12 +11067,13 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Fields available for query in `product_view` table.
    *
-   * Products in the current inventory. Products in this table are the same as in
-   * Products sub-API but not all product attributes from Products sub-API are
-   * available for query in this table. In contrast to Products sub-API, this
-   * table allows to filter the returned list of products by product attributes.
-   * To retrieve a single product by `id` or list all products, Products sub-API
-   * should be used.
+   * Products in the current inventory. Products in this table are the
+   * same as a [Product resource in Products
+   * sub-API](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products)
+   * but not all product attributes from Products sub-API are available for query
+   * in this table. In contrast to Products sub-API, this table allows to filter
+   * the returned list of products by product attributes. To retrieve a single
+   * product by `id` or list all products, Products sub-API should be used.
    *
    * Values are only set for fields requested explicitly in the request's search
    * query.
@@ -8884,6 +11115,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
         internalGetPriceFieldBuilder();
         internalGetCreationTimeFieldBuilder();
         internalGetExpirationDateFieldBuilder();
+        internalGetStatusPerReportingContextFieldBuilder();
         internalGetItemIssuesFieldBuilder();
       }
     }
@@ -8931,13 +11163,21 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
         expirationDateBuilder_ = null;
       }
       aggregatedReportingContextStatus_ = 0;
+      if (statusPerReportingContextBuilder_ == null) {
+        statusPerReportingContext_ = java.util.Collections.emptyList();
+      } else {
+        statusPerReportingContext_ = null;
+        statusPerReportingContextBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x08000000);
+      reportingContext_ = 0;
       if (itemIssuesBuilder_ == null) {
         itemIssues_ = java.util.Collections.emptyList();
       } else {
         itemIssues_ = null;
         itemIssuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       clickPotential_ = 0;
       clickPotentialRank_ = 0L;
       return this;
@@ -8977,10 +11217,20 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.reports.v1.ProductView result) {
-      if (itemIssuesBuilder_ == null) {
+      if (statusPerReportingContextBuilder_ == null) {
         if (((bitField0_ & 0x08000000) != 0)) {
-          itemIssues_ = java.util.Collections.unmodifiableList(itemIssues_);
+          statusPerReportingContext_ =
+              java.util.Collections.unmodifiableList(statusPerReportingContext_);
           bitField0_ = (bitField0_ & ~0x08000000);
+        }
+        result.statusPerReportingContext_ = statusPerReportingContext_;
+      } else {
+        result.statusPerReportingContext_ = statusPerReportingContextBuilder_.build();
+      }
+      if (itemIssuesBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)) {
+          itemIssues_ = java.util.Collections.unmodifiableList(itemIssues_);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.itemIssues_ = itemIssues_;
       } else {
@@ -9102,11 +11352,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.reportingContext_ = reportingContext_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.clickPotential_ = clickPotential_;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.clickPotentialRank_ = clickPotentialRank_;
-        to_bitField0_ |= 0x04000000;
+        to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9254,11 +11508,41 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
       if (other.hasAggregatedReportingContextStatus()) {
         setAggregatedReportingContextStatusValue(other.getAggregatedReportingContextStatusValue());
       }
+      if (statusPerReportingContextBuilder_ == null) {
+        if (!other.statusPerReportingContext_.isEmpty()) {
+          if (statusPerReportingContext_.isEmpty()) {
+            statusPerReportingContext_ = other.statusPerReportingContext_;
+            bitField0_ = (bitField0_ & ~0x08000000);
+          } else {
+            ensureStatusPerReportingContextIsMutable();
+            statusPerReportingContext_.addAll(other.statusPerReportingContext_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.statusPerReportingContext_.isEmpty()) {
+          if (statusPerReportingContextBuilder_.isEmpty()) {
+            statusPerReportingContextBuilder_.dispose();
+            statusPerReportingContextBuilder_ = null;
+            statusPerReportingContext_ = other.statusPerReportingContext_;
+            bitField0_ = (bitField0_ & ~0x08000000);
+            statusPerReportingContextBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetStatusPerReportingContextFieldBuilder()
+                    : null;
+          } else {
+            statusPerReportingContextBuilder_.addAllMessages(other.statusPerReportingContext_);
+          }
+        }
+      }
+      if (other.hasReportingContext()) {
+        setReportingContextValue(other.getReportingContextValue());
+      }
       if (itemIssuesBuilder_ == null) {
         if (!other.itemIssues_.isEmpty()) {
           if (itemIssues_.isEmpty()) {
             itemIssues_ = other.itemIssues_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensureItemIssuesIsMutable();
             itemIssues_.addAll(other.itemIssues_);
@@ -9271,7 +11555,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
             itemIssuesBuilder_.dispose();
             itemIssuesBuilder_ = null;
             itemIssues_ = other.itemIssues_;
-            bitField0_ = (bitField0_ & ~0x08000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
             itemIssuesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetItemIssuesFieldBuilder()
@@ -9495,15 +11779,36 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
             case 232:
               {
                 clickPotential_ = input.readEnum();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 232
             case 240:
               {
                 clickPotentialRank_ = input.readInt64();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 240
+            case 258:
+              {
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext m =
+                    input.readMessage(
+                        com.google.shopping.merchant.reports.v1.ProductView
+                            .StatusPerReportingContext.parser(),
+                        extensionRegistry);
+                if (statusPerReportingContextBuilder_ == null) {
+                  ensureStatusPerReportingContextIsMutable();
+                  statusPerReportingContext_.add(m);
+                } else {
+                  statusPerReportingContextBuilder_.addMessage(m);
+                }
+                break;
+              } // case 258
+            case 264:
+              {
+                reportingContext_ = input.readEnum();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 264
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13164,7 +15469,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13182,7 +15490,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13200,7 +15511,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13221,7 +15535,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13246,7 +15563,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13272,7 +15592,10 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Aggregated status.
+     * Aggregated status across all reporting contexts.
+     *
+     * Reporting contexts included in the computation of the aggregated status can
+     * be restricted using a filter on the `reporting_context` field.
      * </pre>
      *
      * <code>
@@ -13288,15 +15611,787 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+        statusPerReportingContext_ = java.util.Collections.emptyList();
+
+    private void ensureStatusPerReportingContextIsMutable() {
+      if (!((bitField0_ & 0x08000000) != 0)) {
+        statusPerReportingContext_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>(
+                statusPerReportingContext_);
+        bitField0_ |= 0x08000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext,
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder,
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder>
+        statusPerReportingContextBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+        getStatusPerReportingContextList() {
+      if (statusPerReportingContextBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(statusPerReportingContext_);
+      } else {
+        return statusPerReportingContextBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public int getStatusPerReportingContextCount() {
+      if (statusPerReportingContextBuilder_ == null) {
+        return statusPerReportingContext_.size();
+      } else {
+        return statusPerReportingContextBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+        getStatusPerReportingContext(int index) {
+      if (statusPerReportingContextBuilder_ == null) {
+        return statusPerReportingContext_.get(index);
+      } else {
+        return statusPerReportingContextBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder setStatusPerReportingContext(
+        int index,
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext value) {
+      if (statusPerReportingContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.set(index, value);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder setStatusPerReportingContext(
+        int index,
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+            builderForValue) {
+      if (statusPerReportingContextBuilder_ == null) {
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder addStatusPerReportingContext(
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext value) {
+      if (statusPerReportingContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.add(value);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder addStatusPerReportingContext(
+        int index,
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext value) {
+      if (statusPerReportingContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.add(index, value);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder addStatusPerReportingContext(
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+            builderForValue) {
+      if (statusPerReportingContextBuilder_ == null) {
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.add(builderForValue.build());
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder addStatusPerReportingContext(
+        int index,
+        com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+            builderForValue) {
+      if (statusPerReportingContextBuilder_ == null) {
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder addAllStatusPerReportingContext(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext>
+            values) {
+      if (statusPerReportingContextBuilder_ == null) {
+        ensureStatusPerReportingContextIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, statusPerReportingContext_);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder clearStatusPerReportingContext() {
+      if (statusPerReportingContextBuilder_ == null) {
+        statusPerReportingContext_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x08000000);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public Builder removeStatusPerReportingContext(int index) {
+      if (statusPerReportingContextBuilder_ == null) {
+        ensureStatusPerReportingContextIsMutable();
+        statusPerReportingContext_.remove(index);
+        onChanged();
+      } else {
+        statusPerReportingContextBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+        getStatusPerReportingContextBuilder(int index) {
+      return internalGetStatusPerReportingContextFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder
+        getStatusPerReportingContextOrBuilder(int index) {
+      if (statusPerReportingContextBuilder_ == null) {
+        return statusPerReportingContext_.get(index);
+      } else {
+        return statusPerReportingContextBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.reports.v1.ProductView
+                    .StatusPerReportingContextOrBuilder>
+        getStatusPerReportingContextOrBuilderList() {
+      if (statusPerReportingContextBuilder_ != null) {
+        return statusPerReportingContextBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(statusPerReportingContext_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+        addStatusPerReportingContextBuilder() {
+      return internalGetStatusPerReportingContextFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder
+        addStatusPerReportingContextBuilder(int index) {
+      return internalGetStatusPerReportingContextFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed product status per reporting context.
+     *
+     * Reporting contexts included in this list can be restricted using a filter
+     * on the `reporting_context` field.
+     *
+     * Equivalent to
+     * [`ProductStatus.destination_statuses`][google.shopping.merchant.products.v1.ProductStatus]
+     * in Products API.
+     *
+     * **This field cannot be used for sorting or filtering the results.**
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext status_per_reporting_context = 32;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder>
+        getStatusPerReportingContextBuilderList() {
+      return internalGetStatusPerReportingContextFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext,
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext.Builder,
+            com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContextOrBuilder>
+        internalGetStatusPerReportingContextFieldBuilder() {
+      if (statusPerReportingContextBuilder_ == null) {
+        statusPerReportingContextBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext,
+                com.google.shopping.merchant.reports.v1.ProductView.StatusPerReportingContext
+                    .Builder,
+                com.google.shopping.merchant.reports.v1.ProductView
+                    .StatusPerReportingContextOrBuilder>(
+                statusPerReportingContext_,
+                ((bitField0_ & 0x08000000) != 0),
+                getParentForChildren(),
+                isClean());
+        statusPerReportingContext_ = null;
+      }
+      return statusPerReportingContextBuilder_;
+    }
+
+    private int reportingContext_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @return Whether the reportingContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasReportingContext() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reportingContext.
+     */
+    @java.lang.Override
+    public int getReportingContextValue() {
+      return reportingContext_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reportingContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReportingContextValue(int value) {
+      reportingContext_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @return The reportingContext.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.ReportingContext.ReportingContextEnum getReportingContext() {
+      com.google.shopping.type.ReportingContext.ReportingContextEnum result =
+          com.google.shopping.type.ReportingContext.ReportingContextEnum.forNumber(
+              reportingContext_);
+      return result == null
+          ? com.google.shopping.type.ReportingContext.ReportingContextEnum.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @param value The reportingContext to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReportingContext(
+        com.google.shopping.type.ReportingContext.ReportingContextEnum value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x10000000;
+      reportingContext_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reporting context to restrict the query to.
+     *
+     * Restricts the reporting contexts returned in `status_per_reporting_context`
+     * and `item_issues`, and used to compute
+     * `aggregated_reporting_context_status`.
+     *
+     * **This field can only be used in the `WHERE` clause and cannot be selected
+     * in the `SELECT` clause.**
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.type.ReportingContext.ReportingContextEnum reporting_context = 33;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReportingContext() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      reportingContext_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.shopping.merchant.reports.v1.ProductView.ItemIssue>
         itemIssues_ = java.util.Collections.emptyList();
 
     private void ensureItemIssuesIsMutable() {
-      if (!((bitField0_ & 0x08000000) != 0)) {
+      if (!((bitField0_ & 0x20000000) != 0)) {
         itemIssues_ =
             new java.util.ArrayList<com.google.shopping.merchant.reports.v1.ProductView.ItemIssue>(
                 itemIssues_);
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
       }
     }
 
@@ -13606,7 +16701,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
     public Builder clearItemIssues() {
       if (itemIssuesBuilder_ == null) {
         itemIssues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
       } else {
         itemIssuesBuilder_.clear();
@@ -13792,7 +16887,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
                 com.google.shopping.merchant.reports.v1.ProductView.ItemIssue,
                 com.google.shopping.merchant.reports.v1.ProductView.ItemIssue.Builder,
                 com.google.shopping.merchant.reports.v1.ProductView.ItemIssueOrBuilder>(
-                itemIssues_, ((bitField0_ & 0x08000000) != 0), getParentForChildren(), isClean());
+                itemIssues_, ((bitField0_ & 0x20000000) != 0), getParentForChildren(), isClean());
         itemIssues_ = null;
       }
       return itemIssuesBuilder_;
@@ -13834,7 +16929,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      */
     public Builder setClickPotentialValue(int value) {
       clickPotential_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -13881,7 +16976,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       clickPotential_ = value.getNumber();
       onChanged();
       return this;
@@ -13901,7 +16996,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClickPotential() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       clickPotential_ = 0;
       onChanged();
       return this;
@@ -13913,9 +17008,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Rank of the product based on its click potential. A product with
-     * `click_potential_rank` 1 has the highest click potential among the
-     * merchant's products that fulfill the search query conditions.
+     * Normalized click potential of the product. Values range from 1 to 1000,
+     * where 1 is the highest click potential and 1000 is the theoretical lowest.
      * </pre>
      *
      * <code>optional int64 click_potential_rank = 30;</code>
@@ -13924,16 +17018,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasClickPotentialRank() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Rank of the product based on its click potential. A product with
-     * `click_potential_rank` 1 has the highest click potential among the
-     * merchant's products that fulfill the search query conditions.
+     * Normalized click potential of the product. Values range from 1 to 1000,
+     * where 1 is the highest click potential and 1000 is the theoretical lowest.
      * </pre>
      *
      * <code>optional int64 click_potential_rank = 30;</code>
@@ -13949,9 +17042,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Rank of the product based on its click potential. A product with
-     * `click_potential_rank` 1 has the highest click potential among the
-     * merchant's products that fulfill the search query conditions.
+     * Normalized click potential of the product. Values range from 1 to 1000,
+     * where 1 is the highest click potential and 1000 is the theoretical lowest.
      * </pre>
      *
      * <code>optional int64 click_potential_rank = 30;</code>
@@ -13962,7 +17054,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
     public Builder setClickPotentialRank(long value) {
 
       clickPotentialRank_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -13971,9 +17063,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Rank of the product based on its click potential. A product with
-     * `click_potential_rank` 1 has the highest click potential among the
-     * merchant's products that fulfill the search query conditions.
+     * Normalized click potential of the product. Values range from 1 to 1000,
+     * where 1 is the highest click potential and 1000 is the theoretical lowest.
      * </pre>
      *
      * <code>optional int64 click_potential_rank = 30;</code>
@@ -13981,7 +17072,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClickPotentialRank() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       clickPotentialRank_ = 0L;
       onChanged();
       return this;

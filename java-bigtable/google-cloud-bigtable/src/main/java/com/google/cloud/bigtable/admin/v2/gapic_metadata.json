@@ -1,0 +1,225 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.bigtable.admin.v2",
+  "libraryPackage": "com.google.cloud.bigtable.admin.v2",
+  "services": {
+    "BigtableInstanceAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BaseBigtableInstanceAdminClient",
+          "rpcs": {
+            "CreateAppProfile": {
+              "methods": ["createAppProfile", "createAppProfile", "createAppProfile", "createAppProfileCallable"]
+            },
+            "CreateCluster": {
+              "methods": ["createClusterAsync", "createClusterAsync", "createClusterAsync", "createClusterOperationCallable", "createClusterCallable"]
+            },
+            "CreateInstance": {
+              "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateLogicalView": {
+              "methods": ["createLogicalViewAsync", "createLogicalViewAsync", "createLogicalViewAsync", "createLogicalViewOperationCallable", "createLogicalViewCallable"]
+            },
+            "CreateMaterializedView": {
+              "methods": ["createMaterializedViewAsync", "createMaterializedViewAsync", "createMaterializedViewAsync", "createMaterializedViewOperationCallable", "createMaterializedViewCallable"]
+            },
+            "DeleteAppProfile": {
+              "methods": ["deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfile", "deleteAppProfileCallable"]
+            },
+            "DeleteCluster": {
+              "methods": ["deleteCluster", "deleteCluster", "deleteCluster", "deleteClusterCallable"]
+            },
+            "DeleteInstance": {
+              "methods": ["deleteInstance", "deleteInstance", "deleteInstance", "deleteInstanceCallable"]
+            },
+            "DeleteLogicalView": {
+              "methods": ["deleteLogicalView", "deleteLogicalView", "deleteLogicalView", "deleteLogicalViewCallable"]
+            },
+            "DeleteMaterializedView": {
+              "methods": ["deleteMaterializedView", "deleteMaterializedView", "deleteMaterializedView", "deleteMaterializedViewCallable"]
+            },
+            "GetAppProfile": {
+              "methods": ["getAppProfile", "getAppProfile", "getAppProfile", "getAppProfileCallable"]
+            },
+            "GetCluster": {
+              "methods": ["getCluster", "getCluster", "getCluster", "getClusterCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetInstance": {
+              "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
+            },
+            "GetLogicalView": {
+              "methods": ["getLogicalView", "getLogicalView", "getLogicalView", "getLogicalViewCallable"]
+            },
+            "GetMaterializedView": {
+              "methods": ["getMaterializedView", "getMaterializedView", "getMaterializedView", "getMaterializedViewCallable"]
+            },
+            "ListAppProfiles": {
+              "methods": ["listAppProfiles", "listAppProfiles", "listAppProfiles", "listAppProfilesPagedCallable", "listAppProfilesCallable"]
+            },
+            "ListClusters": {
+              "methods": ["listClusters", "listClusters", "listClusters", "listClustersCallable"]
+            },
+            "ListHotTablets": {
+              "methods": ["listHotTablets", "listHotTablets", "listHotTablets", "listHotTabletsPagedCallable", "listHotTabletsCallable"]
+            },
+            "ListInstances": {
+              "methods": ["listInstances", "listInstances", "listInstances", "listInstancesCallable"]
+            },
+            "ListLogicalViews": {
+              "methods": ["listLogicalViews", "listLogicalViews", "listLogicalViews", "listLogicalViewsPagedCallable", "listLogicalViewsCallable"]
+            },
+            "ListMaterializedViews": {
+              "methods": ["listMaterializedViews", "listMaterializedViews", "listMaterializedViews", "listMaterializedViewsPagedCallable", "listMaterializedViewsCallable"]
+            },
+            "PartialUpdateCluster": {
+              "methods": ["partialUpdateClusterAsync", "partialUpdateClusterAsync", "partialUpdateClusterOperationCallable", "partialUpdateClusterCallable"]
+            },
+            "PartialUpdateInstance": {
+              "methods": ["partialUpdateInstanceAsync", "partialUpdateInstanceAsync", "partialUpdateInstanceOperationCallable", "partialUpdateInstanceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateAppProfile": {
+              "methods": ["updateAppProfileAsync", "updateAppProfileAsync", "updateAppProfileOperationCallable", "updateAppProfileCallable"]
+            },
+            "UpdateCluster": {
+              "methods": ["updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
+            },
+            "UpdateInstance": {
+              "methods": ["updateInstance", "updateInstanceCallable"]
+            },
+            "UpdateLogicalView": {
+              "methods": ["updateLogicalViewAsync", "updateLogicalViewAsync", "updateLogicalViewOperationCallable", "updateLogicalViewCallable"]
+            },
+            "UpdateMaterializedView": {
+              "methods": ["updateMaterializedViewAsync", "updateMaterializedViewAsync", "updateMaterializedViewOperationCallable", "updateMaterializedViewCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BigtableTableAdmin": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BaseBigtableTableAdminClient",
+          "rpcs": {
+            "CheckConsistency": {
+              "methods": ["checkConsistency", "checkConsistency", "checkConsistency", "checkConsistencyCallable"]
+            },
+            "CopyBackup": {
+              "methods": ["copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupOperationCallable", "copyBackupCallable"]
+            },
+            "CreateAuthorizedView": {
+              "methods": ["createAuthorizedViewAsync", "createAuthorizedViewAsync", "createAuthorizedViewAsync", "createAuthorizedViewOperationCallable", "createAuthorizedViewCallable"]
+            },
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "CreateSchemaBundle": {
+              "methods": ["createSchemaBundleAsync", "createSchemaBundleAsync", "createSchemaBundleAsync", "createSchemaBundleOperationCallable", "createSchemaBundleCallable"]
+            },
+            "CreateTable": {
+              "methods": ["createTable", "createTable", "createTable", "createTableCallable"]
+            },
+            "CreateTableFromSnapshot": {
+              "methods": ["createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotOperationCallable", "createTableFromSnapshotCallable"]
+            },
+            "DeleteAuthorizedView": {
+              "methods": ["deleteAuthorizedView", "deleteAuthorizedView", "deleteAuthorizedView", "deleteAuthorizedViewCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
+            },
+            "DeleteSchemaBundle": {
+              "methods": ["deleteSchemaBundle", "deleteSchemaBundle", "deleteSchemaBundle", "deleteSchemaBundleCallable"]
+            },
+            "DeleteSnapshot": {
+              "methods": ["deleteSnapshot", "deleteSnapshot", "deleteSnapshot", "deleteSnapshotCallable"]
+            },
+            "DeleteTable": {
+              "methods": ["deleteTable", "deleteTable", "deleteTable", "deleteTableCallable"]
+            },
+            "DropRowRange": {
+              "methods": ["dropRowRange", "dropRowRangeCallable"]
+            },
+            "GenerateConsistencyToken": {
+              "methods": ["generateConsistencyToken", "generateConsistencyToken", "generateConsistencyToken", "generateConsistencyTokenCallable"]
+            },
+            "GetAuthorizedView": {
+              "methods": ["getAuthorizedView", "getAuthorizedView", "getAuthorizedView", "getAuthorizedViewCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetSchemaBundle": {
+              "methods": ["getSchemaBundle", "getSchemaBundle", "getSchemaBundle", "getSchemaBundleCallable"]
+            },
+            "GetSnapshot": {
+              "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
+            },
+            "GetTable": {
+              "methods": ["getTable", "getTable", "getTable", "getTableCallable"]
+            },
+            "ListAuthorizedViews": {
+              "methods": ["listAuthorizedViews", "listAuthorizedViews", "listAuthorizedViews", "listAuthorizedViewsPagedCallable", "listAuthorizedViewsCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListSchemaBundles": {
+              "methods": ["listSchemaBundles", "listSchemaBundles", "listSchemaBundles", "listSchemaBundlesPagedCallable", "listSchemaBundlesCallable"]
+            },
+            "ListSnapshots": {
+              "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
+            },
+            "ListTables": {
+              "methods": ["listTables", "listTables", "listTables", "listTablesPagedCallable", "listTablesCallable"]
+            },
+            "ModifyColumnFamilies": {
+              "methods": ["modifyColumnFamilies", "modifyColumnFamilies", "modifyColumnFamilies", "modifyColumnFamiliesCallable"]
+            },
+            "RestoreTable": {
+              "methods": ["restoreTableAsync", "restoreTableOperationCallable", "restoreTableCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SnapshotTable": {
+              "methods": ["snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableAsync", "snapshotTableOperationCallable", "snapshotTableCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UndeleteTable": {
+              "methods": ["undeleteTableAsync", "undeleteTableAsync", "undeleteTableAsync", "undeleteTableOperationCallable", "undeleteTableCallable"]
+            },
+            "UpdateAuthorizedView": {
+              "methods": ["updateAuthorizedViewAsync", "updateAuthorizedViewAsync", "updateAuthorizedViewOperationCallable", "updateAuthorizedViewCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]
+            },
+            "UpdateSchemaBundle": {
+              "methods": ["updateSchemaBundleAsync", "updateSchemaBundleAsync", "updateSchemaBundleOperationCallable", "updateSchemaBundleCallable"]
+            },
+            "UpdateTable": {
+              "methods": ["updateTableAsync", "updateTableAsync", "updateTableOperationCallable", "updateTableCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

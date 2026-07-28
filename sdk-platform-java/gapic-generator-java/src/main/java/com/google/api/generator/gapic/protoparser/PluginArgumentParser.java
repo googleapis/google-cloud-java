@@ -30,7 +30,9 @@ public class PluginArgumentParser {
   @VisibleForTesting static final String KEY_GAPIC_CONFIG = "gapic-config";
   @VisibleForTesting static final String KEY_METADATA = "metadata";
   @VisibleForTesting static final String KEY_NUMERIC_ENUM = "rest-numeric-enums";
+  @VisibleForTesting static final String KEY_GENERATE_VERSION_JAVA = "generate-version-java";
   @VisibleForTesting static final String KEY_SERVICE_YAML_CONFIG = "api-service-config";
+
   @VisibleForTesting static final String KEY_TRANSPORT = "transport";
   @VisibleForTesting static final String KEY_REPO = "repo";
   @VisibleForTesting static final String KEY_ARTIFACT = "artifact";
@@ -69,6 +71,10 @@ public class PluginArgumentParser {
 
   static boolean hasNumericEnumFlag(CodeGeneratorRequest request) {
     return hasFlag(request.getParameter(), KEY_NUMERIC_ENUM);
+  }
+
+  static boolean hasGenerateVersionJavaFlag(CodeGeneratorRequest request) {
+    return hasFlag(request.getParameter(), KEY_GENERATE_VERSION_JAVA);
   }
 
   /** Expects a comma-separated list of file paths. */

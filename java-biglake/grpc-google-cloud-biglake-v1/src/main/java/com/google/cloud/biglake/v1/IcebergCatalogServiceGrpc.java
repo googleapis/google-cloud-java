@@ -21,31 +21,13 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Iceberg Catalog Service API: this implements the open-source Iceberg REST
- * Catalog API.
- * See the API definition here:
- * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
- * The API is defined as OpenAPI 3.1.1 spec.
- * Currently we only support the following methods:
- * - GetConfig/GetIcebergCatalogConfig
- * - ListIcebergNamespaces
- * - CheckIcebergNamespaceExists
- * - GetIcebergNamespace
- * - CreateIcebergNamespace (only supports single level)
- * - DeleteIcebergNamespace
- * - UpdateIcebergNamespace properties
- * - ListTableIdentifiers
- * - CreateIcebergTable
- * - DeleteIcebergTable
- * - GetIcebergTable
- * - UpdateIcebergTable (CommitTable)
- * - LoadIcebergTableCredentials
- * - RegisterTable
- * Users are required to provided the `X-Goog-User-Project` header with the
- * project id or number which can be different from the bucket project id.
- * That project will be charged for the API calls and the calling user must have
- * access to that project. The caller must have `serviceusage.services.use`
- * permission on the project.
+ * Lakehouse runtime catalog supports the following catalog management methods:
+ * - GetIcebergCatalog
+ * - ListIcebergCatalogs
+ * - DeleteIcebergCatalog
+ * - UpdateIcebergCatalog
+ * - CreateIcebergCatalog
+ * - FailoverIcebergCatalog
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -795,6 +777,55 @@ public final class IcebergCatalogServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest, com.google.protobuf.Empty>
+      getReportIcebergTableMetricsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReportIcebergTableMetrics",
+      requestType = com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest, com.google.protobuf.Empty>
+      getReportIcebergTableMetricsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest, com.google.protobuf.Empty>
+        getReportIcebergTableMetricsMethod;
+    if ((getReportIcebergTableMetricsMethod =
+            IcebergCatalogServiceGrpc.getReportIcebergTableMetricsMethod)
+        == null) {
+      synchronized (IcebergCatalogServiceGrpc.class) {
+        if ((getReportIcebergTableMetricsMethod =
+                IcebergCatalogServiceGrpc.getReportIcebergTableMetricsMethod)
+            == null) {
+          IcebergCatalogServiceGrpc.getReportIcebergTableMetricsMethod =
+              getReportIcebergTableMetricsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReportIcebergTableMetrics"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IcebergCatalogServiceMethodDescriptorSupplier(
+                              "ReportIcebergTableMetrics"))
+                      .build();
+        }
+      }
+    }
+    return getReportIcebergTableMetricsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.biglake.v1.GetIcebergCatalogRequest,
           com.google.cloud.biglake.v1.IcebergCatalog>
       getGetIcebergCatalogMethod;
@@ -1150,31 +1181,13 @@ public final class IcebergCatalogServiceGrpc {
    *
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public interface AsyncService {
@@ -1410,6 +1423,20 @@ public final class IcebergCatalogServiceGrpc {
      *
      *
      * <pre>
+     * Reports a metrics report for a table.
+     * </pre>
+     */
+    default void reportIcebergTableMetrics(
+        com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReportIcebergTableMetricsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the Iceberg REST Catalog configuration options.
      * </pre>
      */
@@ -1471,7 +1498,6 @@ public final class IcebergCatalogServiceGrpc {
      *
      * <pre>
      * Creates the Iceberg REST Catalog.
-     * Currently only supports Google Cloud Storage Bucket catalogs.
      * Google Cloud Storage Bucket catalog id is the bucket for which the
      * catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
      * If the bucket does not exist, of the caller does not have bucket metadata
@@ -1505,31 +1531,13 @@ public final class IcebergCatalogServiceGrpc {
    * Base class for the server implementation of the service IcebergCatalogService.
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public abstract static class IcebergCatalogServiceImplBase
@@ -1545,31 +1553,13 @@ public final class IcebergCatalogServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service IcebergCatalogService.
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public static final class IcebergCatalogServiceStub
@@ -1845,6 +1835,22 @@ public final class IcebergCatalogServiceGrpc {
      *
      *
      * <pre>
+     * Reports a metrics report for a table.
+     * </pre>
+     */
+    public void reportIcebergTableMetrics(
+        com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReportIcebergTableMetricsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the Iceberg REST Catalog configuration options.
      * </pre>
      */
@@ -1914,7 +1920,6 @@ public final class IcebergCatalogServiceGrpc {
      *
      * <pre>
      * Creates the Iceberg REST Catalog.
-     * Currently only supports Google Cloud Storage Bucket catalogs.
      * Google Cloud Storage Bucket catalog id is the bucket for which the
      * catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
      * If the bucket does not exist, of the caller does not have bucket metadata
@@ -1952,31 +1957,13 @@ public final class IcebergCatalogServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service IcebergCatalogService.
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public static final class IcebergCatalogServiceBlockingV2Stub
@@ -2215,6 +2202,20 @@ public final class IcebergCatalogServiceGrpc {
      *
      *
      * <pre>
+     * Reports a metrics report for a table.
+     * </pre>
+     */
+    public com.google.protobuf.Empty reportIcebergTableMetrics(
+        com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReportIcebergTableMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the Iceberg REST Catalog configuration options.
      * </pre>
      */
@@ -2275,7 +2276,6 @@ public final class IcebergCatalogServiceGrpc {
      *
      * <pre>
      * Creates the Iceberg REST Catalog.
-     * Currently only supports Google Cloud Storage Bucket catalogs.
      * Google Cloud Storage Bucket catalog id is the bucket for which the
      * catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
      * If the bucket does not exist, of the caller does not have bucket metadata
@@ -2308,31 +2308,13 @@ public final class IcebergCatalogServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service IcebergCatalogService.
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public static final class IcebergCatalogServiceBlockingStub
@@ -2558,6 +2540,19 @@ public final class IcebergCatalogServiceGrpc {
      *
      *
      * <pre>
+     * Reports a metrics report for a table.
+     * </pre>
+     */
+    public com.google.protobuf.Empty reportIcebergTableMetrics(
+        com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReportIcebergTableMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the Iceberg REST Catalog configuration options.
      * </pre>
      */
@@ -2614,7 +2609,6 @@ public final class IcebergCatalogServiceGrpc {
      *
      * <pre>
      * Creates the Iceberg REST Catalog.
-     * Currently only supports Google Cloud Storage Bucket catalogs.
      * Google Cloud Storage Bucket catalog id is the bucket for which the
      * catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
      * If the bucket does not exist, of the caller does not have bucket metadata
@@ -2646,31 +2640,13 @@ public final class IcebergCatalogServiceGrpc {
    * IcebergCatalogService.
    *
    * <pre>
-   * Iceberg Catalog Service API: this implements the open-source Iceberg REST
-   * Catalog API.
-   * See the API definition here:
-   * https://github.com/apache/iceberg/blob/main/open-api/rest-catalog-open-api.yaml
-   * The API is defined as OpenAPI 3.1.1 spec.
-   * Currently we only support the following methods:
-   * - GetConfig/GetIcebergCatalogConfig
-   * - ListIcebergNamespaces
-   * - CheckIcebergNamespaceExists
-   * - GetIcebergNamespace
-   * - CreateIcebergNamespace (only supports single level)
-   * - DeleteIcebergNamespace
-   * - UpdateIcebergNamespace properties
-   * - ListTableIdentifiers
-   * - CreateIcebergTable
-   * - DeleteIcebergTable
-   * - GetIcebergTable
-   * - UpdateIcebergTable (CommitTable)
-   * - LoadIcebergTableCredentials
-   * - RegisterTable
-   * Users are required to provided the `X-Goog-User-Project` header with the
-   * project id or number which can be different from the bucket project id.
-   * That project will be charged for the API calls and the calling user must have
-   * access to that project. The caller must have `serviceusage.services.use`
-   * permission on the project.
+   * Lakehouse runtime catalog supports the following catalog management methods:
+   * - GetIcebergCatalog
+   * - ListIcebergCatalogs
+   * - DeleteIcebergCatalog
+   * - UpdateIcebergCatalog
+   * - CreateIcebergCatalog
+   * - FailoverIcebergCatalog
    * </pre>
    */
   public static final class IcebergCatalogServiceFutureStub
@@ -2905,6 +2881,20 @@ public final class IcebergCatalogServiceGrpc {
      *
      *
      * <pre>
+     * Reports a metrics report for a table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        reportIcebergTableMetrics(
+            com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReportIcebergTableMetricsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the Iceberg REST Catalog configuration options.
      * </pre>
      */
@@ -2964,7 +2954,6 @@ public final class IcebergCatalogServiceGrpc {
      *
      * <pre>
      * Creates the Iceberg REST Catalog.
-     * Currently only supports Google Cloud Storage Bucket catalogs.
      * Google Cloud Storage Bucket catalog id is the bucket for which the
      * catalog is created (e.g. `my-catalog` for `gs://my-catalog`).
      * If the bucket does not exist, of the caller does not have bucket metadata
@@ -3008,12 +2997,13 @@ public final class IcebergCatalogServiceGrpc {
   private static final int METHODID_LOAD_ICEBERG_TABLE_CREDENTIALS = 12;
   private static final int METHODID_UPDATE_ICEBERG_TABLE = 13;
   private static final int METHODID_REGISTER_ICEBERG_TABLE = 14;
-  private static final int METHODID_GET_ICEBERG_CATALOG = 15;
-  private static final int METHODID_LIST_ICEBERG_CATALOGS = 16;
-  private static final int METHODID_DELETE_ICEBERG_CATALOG = 17;
-  private static final int METHODID_UPDATE_ICEBERG_CATALOG = 18;
-  private static final int METHODID_CREATE_ICEBERG_CATALOG = 19;
-  private static final int METHODID_FAILOVER_ICEBERG_CATALOG = 20;
+  private static final int METHODID_REPORT_ICEBERG_TABLE_METRICS = 15;
+  private static final int METHODID_GET_ICEBERG_CATALOG = 16;
+  private static final int METHODID_LIST_ICEBERG_CATALOGS = 17;
+  private static final int METHODID_DELETE_ICEBERG_CATALOG = 18;
+  private static final int METHODID_UPDATE_ICEBERG_CATALOG = 19;
+  private static final int METHODID_CREATE_ICEBERG_CATALOG = 20;
+  private static final int METHODID_FAILOVER_ICEBERG_CATALOG = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3117,6 +3107,11 @@ public final class IcebergCatalogServiceGrpc {
           serviceImpl.registerIcebergTable(
               (com.google.cloud.biglake.v1.RegisterIcebergTableRequest) request,
               (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
+          break;
+        case METHODID_REPORT_ICEBERG_TABLE_METRICS:
+          serviceImpl.reportIcebergTableMetrics(
+              (com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_ICEBERG_CATALOG:
           serviceImpl.getIcebergCatalog(
@@ -3270,6 +3265,12 @@ public final class IcebergCatalogServiceGrpc {
                     com.google.cloud.biglake.v1.RegisterIcebergTableRequest,
                     com.google.api.HttpBody>(service, METHODID_REGISTER_ICEBERG_TABLE)))
         .addMethod(
+            getReportIcebergTableMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.biglake.v1.ReportIcebergTableMetricsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_REPORT_ICEBERG_TABLE_METRICS)))
+        .addMethod(
             getGetIcebergCatalogMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3376,6 +3377,7 @@ public final class IcebergCatalogServiceGrpc {
                       .addMethod(getLoadIcebergTableCredentialsMethod())
                       .addMethod(getUpdateIcebergTableMethod())
                       .addMethod(getRegisterIcebergTableMethod())
+                      .addMethod(getReportIcebergTableMetricsMethod())
                       .addMethod(getGetIcebergCatalogMethod())
                       .addMethod(getListIcebergCatalogsMethod())
                       .addMethod(getDeleteIcebergCatalogMethod())

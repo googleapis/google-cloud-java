@@ -53,6 +53,7 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
 
   private SanitizeUserPromptRequest() {
     name_ = "";
+    streamingMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -251,6 +252,65 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         : multiLanguageDetectionMetadata_;
   }
 
+  public static final int STREAMING_MODE_FIELD_NUMBER = 7;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the streamingMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasStreamingMode() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Streaming Mode for StreamSanitize* API.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1beta.StreamingMode getStreamingMode() {
+    com.google.cloud.modelarmor.v1beta.StreamingMode result =
+        com.google.cloud.modelarmor.v1beta.StreamingMode.forNumber(streamingMode_);
+    return result == null ? com.google.cloud.modelarmor.v1beta.StreamingMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -274,6 +334,9 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getMultiLanguageDetectionMetadata());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(7, streamingMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -293,6 +356,9 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getMultiLanguageDetectionMetadata());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, streamingMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -321,6 +387,10 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
       if (!getMultiLanguageDetectionMetadata().equals(other.getMultiLanguageDetectionMetadata()))
         return false;
     }
+    if (hasStreamingMode() != other.hasStreamingMode()) return false;
+    if (hasStreamingMode()) {
+      if (streamingMode_ != other.streamingMode_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -341,6 +411,10 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
     if (hasMultiLanguageDetectionMetadata()) {
       hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMultiLanguageDetectionMetadata().hashCode();
+    }
+    if (hasStreamingMode()) {
+      hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + streamingMode_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -504,6 +578,7 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         multiLanguageDetectionMetadataBuilder_.dispose();
         multiLanguageDetectionMetadataBuilder_ = null;
       }
+      streamingMode_ = 0;
       return this;
     }
 
@@ -558,6 +633,10 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
                 : multiLanguageDetectionMetadataBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.streamingMode_ = streamingMode_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -585,6 +664,9 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
       }
       if (other.hasMultiLanguageDetectionMetadata()) {
         mergeMultiLanguageDetectionMetadata(other.getMultiLanguageDetectionMetadata());
+      }
+      if (other.hasStreamingMode()) {
+        setStreamingModeValue(other.getStreamingModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -633,6 +715,12 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000004;
                 break;
               } // case 50
+            case 56:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1211,6 +1299,131 @@ public final class SanitizeUserPromptRequest extends com.google.protobuf.Generat
         multiLanguageDetectionMetadata_ = null;
       }
       return multiLanguageDetectionMetadataBuilder_;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the streamingMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasStreamingMode() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1beta.StreamingMode getStreamingMode() {
+      com.google.cloud.modelarmor.v1beta.StreamingMode result =
+          com.google.cloud.modelarmor.v1beta.StreamingMode.forNumber(streamingMode_);
+      return result == null
+          ? com.google.cloud.modelarmor.v1beta.StreamingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.cloud.modelarmor.v1beta.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Streaming Mode for StreamSanitize* API.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1beta.StreamingMode streaming_mode = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      streamingMode_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1beta.SanitizeUserPromptRequest)

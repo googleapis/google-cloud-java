@@ -70,6 +70,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     conditions_ = java.util.Collections.emptyList();
     managementMode_ = 0;
     systemManagedState_ = 0;
+    application_ = "";
     uid_ = "";
     etag_ = "";
   }
@@ -2771,6 +2772,67 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         : systemCleanupAt_;
   }
 
+  public static final int APPLICATION_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object application_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reference to the AppHub Application this unit belongs to.
+   * All resources deployed in this Unit will be associated with the specified
+   * Application.
+   * </pre>
+   *
+   * <code>
+   * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The application.
+   */
+  @java.lang.Override
+  public java.lang.String getApplication() {
+    java.lang.Object ref = application_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      application_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reference to the AppHub Application this unit belongs to.
+   * All resources deployed in this Unit will be associated with the specified
+   * Application.
+   * </pre>
+   *
+   * <code>
+   * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for application.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApplicationBytes() {
+    java.lang.Object ref = application_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      application_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int LABELS_FIELD_NUMBER = 10401;
 
   private static final class LabelsDefaultEntryHolder {
@@ -3256,6 +3318,45 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 10305;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource location satisfies Zone
+   * Separation constraints. This is false by default.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 10306;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 10306 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3330,6 +3431,9 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(26, getSystemCleanupAt());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(application_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 29, application_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10201, uid_);
     }
@@ -3341,6 +3445,12 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10304, getUpdateTime());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(10305, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(10306, satisfiesPzi_);
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10401);
@@ -3430,6 +3540,9 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSystemCleanupAt());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(application_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(29, application_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10201, uid_);
     }
@@ -3441,6 +3554,12 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10304, getUpdateTime());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10305, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10306, satisfiesPzi_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -3501,6 +3620,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     if (hasSystemCleanupAt()) {
       if (!getSystemCleanupAt().equals(other.getSystemCleanupAt())) return false;
     }
+    if (!getApplication().equals(other.getApplication())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
     if (!getUid().equals(other.getUid())) return false;
@@ -3513,6 +3633,8 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3578,6 +3700,8 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SYSTEM_CLEANUP_AT_FIELD_NUMBER;
       hash = (53 * hash) + getSystemCleanupAt().hashCode();
     }
+    hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
+    hash = (53 * hash) + getApplication().hashCode();
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -3598,6 +3722,10 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3840,6 +3968,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         systemCleanupAtBuilder_.dispose();
         systemCleanupAtBuilder_ = null;
       }
+      application_ = "";
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       uid_ = "";
@@ -3854,6 +3983,8 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -3985,26 +4116,35 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.application_ = application_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.uid_ = uid_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4222,18 +4362,23 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       if (other.hasSystemCleanupAt()) {
         mergeSystemCleanupAt(other.getSystemCleanupAt());
       }
+      if (!other.getApplication().isEmpty()) {
+        application_ = other.application_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00020000;
-      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00040000;
+      internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00080000;
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -4241,6 +4386,12 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4418,32 +4569,50 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00010000;
                 break;
               } // case 210
+            case 234:
+              {
+                application_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 234
             case 81610:
               {
                 uid_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 81610
             case 81618:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 81618
             case 82426:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 82426
             case 82434:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 82434
+            case 82440:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 82440
+            case 82448:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 82448
             case 83210:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -4453,7 +4622,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 83210
             case 83218:
@@ -4465,7 +4634,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 83218
             default:
@@ -8687,6 +8856,137 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       return systemCleanupAtBuilder_;
     }
 
+    private java.lang.Object application_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reference to the AppHub Application this unit belongs to.
+     * All resources deployed in this Unit will be associated with the specified
+     * Application.
+     * </pre>
+     *
+     * <code>
+     * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The application.
+     */
+    public java.lang.String getApplication() {
+      java.lang.Object ref = application_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        application_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reference to the AppHub Application this unit belongs to.
+     * All resources deployed in this Unit will be associated with the specified
+     * Application.
+     * </pre>
+     *
+     * <code>
+     * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for application.
+     */
+    public com.google.protobuf.ByteString getApplicationBytes() {
+      java.lang.Object ref = application_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        application_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reference to the AppHub Application this unit belongs to.
+     * All resources deployed in this Unit will be associated with the specified
+     * Application.
+     * </pre>
+     *
+     * <code>
+     * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The application to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplication(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      application_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reference to the AppHub Application this unit belongs to.
+     * All resources deployed in this Unit will be associated with the specified
+     * Application.
+     * </pre>
+     *
+     * <code>
+     * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplication() {
+      application_ = getDefaultInstance().getApplication();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Reference to the AppHub Application this unit belongs to.
+     * All resources deployed in this Unit will be associated with the specified
+     * Application.
+     * </pre>
+     *
+     * <code>
+     * string application = 29 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for application to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      application_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -8704,7 +9004,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return labels_;
     }
@@ -8802,7 +9102,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8829,7 +9129,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -8852,7 +9152,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -8869,7 +9169,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -8893,7 +9193,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return annotations_;
     }
@@ -9011,7 +9311,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -9043,7 +9343,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -9071,7 +9371,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -9093,7 +9393,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -9180,7 +9480,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uid_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9204,7 +9504,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUid() {
       uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -9233,7 +9533,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uid_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9309,7 +9609,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9329,7 +9629,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -9354,7 +9654,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9380,7 +9680,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -9426,7 +9726,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9448,7 +9748,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9466,7 +9766,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -9477,7 +9777,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -9495,7 +9795,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -9517,7 +9817,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -9594,7 +9894,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -9644,7 +9944,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9668,7 +9968,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9688,7 +9988,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -9699,7 +9999,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -9719,7 +10019,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -9743,7 +10043,7 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -9799,6 +10099,121 @@ public final class Unit extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource location satisfies Zone
+     * Separation constraints. This is false by default.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource location satisfies Zone
+     * Separation constraints. This is false by default.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource location satisfies Zone
+     * Separation constraints. This is false by default.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 10305 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10306 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10306 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 10306 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.saasplatform.saasservicemgmt.v1beta1.Unit)

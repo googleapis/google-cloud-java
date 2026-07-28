@@ -144,4 +144,12 @@ class GoldenSignalsMetricsRecorderTest {
         GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
     assertThat(actual).isNull();
   }
+
+  @Test
+  void create_shouldNotThrow_whenVersionIsNull() {
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setArtifactName(ARTIFACT_NAME).build();
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
+    assertThat(actual).isNotNull();
+  }
 }

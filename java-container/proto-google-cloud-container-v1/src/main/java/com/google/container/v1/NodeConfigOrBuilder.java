@@ -464,14 +464,63 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return Whether the nodeImageConfig field is set.
+   */
+  boolean hasNodeImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   *
+   * @return The nodeImageConfig.
+   */
+  com.google.container.v1.CustomImageConfig getNodeImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The node image configuration to use for this node pool.  Note that this is
+   * only applicable for node pools using image_type=CUSTOM.
+   * </pre>
+   *
+   * <code>.google.container.v1.CustomImageConfig node_image_config = 90;</code>
+   */
+  com.google.container.v1.CustomImageConfigOrBuilder getNodeImageConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -482,14 +531,23 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -504,14 +562,23 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -522,14 +589,23 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -544,14 +620,23 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * The map of Kubernetes labels (key/value pairs) to be applied to each node.
-   * These will added in addition to any default label(s) that
-   * Kubernetes may apply to the node.
-   * In case of conflict in label keys, the applied set may differ depending on
-   * the Kubernetes version -- it's best to assume the behavior is undefined
-   * and conflicts should be avoided.
-   * For more information, including usage and the valid values, see:
-   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+   * The Kubernetes labels (key/value pairs) to apply to each node. The values
+   * in this field are added to the set of default labels Kubernetes applies to
+   * nodes.
+   *
+   * This field has the following restrictions:
+   *
+   * * Labels must use a valid Kubernetes syntax and character set, as defined
+   * in
+   * https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set.
+   * * This field supports up to 1,024 total characters in a single request.
+   *
+   * Depending on the Kubernetes version, keys in this field might conflict with
+   * the keys of the default labels, which might change which of your labels
+   * are applied to the nodes. Assume that the behavior is unpredictable and
+   * avoid label key conflicts. For more information about the default labels,
+   * see:
+   * https://kubernetes.io/docs/reference/labels-annotations-taints/
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -2141,4 +2226,47 @@ public interface NodeConfigOrBuilder
    * <code>.google.protobuf.Duration consolidation_delay = 60;</code>
    */
   com.google.protobuf.DurationOrBuilder getConsolidationDelayOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the taintConfig field is set.
+   */
+  boolean hasTaintConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The taintConfig.
+   */
+  com.google.container.v1.TaintConfig getTaintConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The taint configuration for the node pool.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1.TaintConfig taint_config = 62 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.TaintConfigOrBuilder getTaintConfigOrBuilder();
 }

@@ -38,7 +38,7 @@ public class SyncDeleteFrameworkDeployment {
       DeleteFrameworkDeploymentRequest request =
           DeleteFrameworkDeploymentRequest.newBuilder()
               .setName(
-                  FrameworkDeploymentName.of(
+                  FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
                           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                       .toString())
               .setEtag("etag3123477")

@@ -126,8 +126,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -184,8 +189,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -330,8 +340,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,8 +418,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -476,8 +496,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -544,8 +569,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -610,8 +640,13 @@ public class WorkstationsClientTest {
             .setSubnetwork("subnetwork-1302785042")
             .setControlPlaneIp("controlPlaneIp-1263362938")
             .setPrivateClusterConfig(WorkstationCluster.PrivateClusterConfig.newBuilder().build())
+            .setDomainConfig(WorkstationCluster.DomainConfig.newBuilder().build())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .putAllTags(new HashMap<String, String>())
+            .setGatewayConfig(WorkstationCluster.GatewayConfig.newBuilder().build())
+            .setWorkstationAuthorizationUrl("workstationAuthorizationUrl153395545")
+            .setWorkstationLaunchUrl("workstationLaunchUrl-885627143")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -673,14 +708,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -738,14 +779,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -985,14 +1032,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1063,14 +1116,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1139,14 +1198,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1212,14 +1277,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1285,14 +1356,20 @@ public class WorkstationsClientTest {
             .setEtag("etag3123477")
             .setIdleTimeout(Duration.newBuilder().build())
             .setRunningTimeout(Duration.newBuilder().build())
+            .setMaxUsableWorkstations(1568144476)
             .setHost(WorkstationConfig.Host.newBuilder().build())
             .addAllPersistentDirectories(new ArrayList<WorkstationConfig.PersistentDirectory>())
+            .addAllEphemeralDirectories(new ArrayList<WorkstationConfig.EphemeralDirectory>())
             .setContainer(WorkstationConfig.Container.newBuilder().build())
             .setEncryptionKey(WorkstationConfig.CustomerEncryptionKey.newBuilder().build())
             .addAllReadinessChecks(new ArrayList<WorkstationConfig.ReadinessCheck>())
             .addAllReplicaZones(new ArrayList<String>())
             .setDegraded(true)
             .addAllConditions(new ArrayList<Status>())
+            .setEnableAuditAgent(true)
+            .setDisableTcpConnections(true)
+            .addAllAllowedPorts(new ArrayList<WorkstationConfig.PortRange>())
+            .setGrantWorkstationAdminRoleOnCreate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1357,7 +1434,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -1425,7 +1508,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     mockWorkstations.addResponse(expectedResponse);
 
@@ -1667,7 +1756,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1742,7 +1837,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1813,7 +1914,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1880,7 +1987,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1956,7 +2069,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2020,7 +2139,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2096,7 +2221,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2160,7 +2291,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2236,7 +2373,13 @@ public class WorkstationsClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .addAllPersistentDirectories(
+                new ArrayList<Workstation.WorkstationPersistentDirectory>())
             .setHost("host3208616")
+            .putAllEnv(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setSourceWorkstation("sourceWorkstation2087650792")
+            .setRuntimeHost(Workstation.RuntimeHost.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

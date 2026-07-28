@@ -79,6 +79,7 @@ import com.google.cloud.dataplex.v1.LookupEntryLinksResponse;
 import com.google.cloud.dataplex.v1.LookupEntryRequest;
 import com.google.cloud.dataplex.v1.MetadataFeed;
 import com.google.cloud.dataplex.v1.MetadataJob;
+import com.google.cloud.dataplex.v1.ModifyEntryRequest;
 import com.google.cloud.dataplex.v1.OperationMetadata;
 import com.google.cloud.dataplex.v1.SearchEntriesRequest;
 import com.google.cloud.dataplex.v1.SearchEntriesResponse;
@@ -105,6 +106,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -112,6 +114,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private static final MethodDescriptor<CreateEntryTypeRequest, Operation>
@@ -333,6 +336,15 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
           .setType(MethodDescriptor.MethodType.UNARY)
           .setFullMethodName("google.cloud.dataplex.v1.CatalogService/LookupEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ModifyEntryRequest, Entry> modifyEntryMethodDescriptor =
+      MethodDescriptor.<ModifyEntryRequest, Entry>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataplex.v1.CatalogService/ModifyEntry")
+          .setRequestMarshaller(ProtoUtils.marshaller(ModifyEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
@@ -617,6 +629,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
       listEntriesPagedCallable;
   private final UnaryCallable<GetEntryRequest, Entry> getEntryCallable;
   private final UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable;
+  private final UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesResponse> searchEntriesCallable;
   private final UnaryCallable<SearchEntriesRequest, SearchEntriesPagedResponse>
       searchEntriesPagedCallable;
@@ -936,6 +949,16 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getEntry())
+            .build();
+    GrpcCallSettings<ModifyEntryRequest, Entry> modifyEntryTransportSettings =
+        GrpcCallSettings.<ModifyEntryRequest, Entry>newBuilder()
+            .setMethodDescriptor(modifyEntryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
             .build();
     GrpcCallSettings<SearchEntriesRequest, SearchEntriesResponse> searchEntriesTransportSettings =
         GrpcCallSettings.<SearchEntriesRequest, SearchEntriesResponse>newBuilder()
@@ -1298,6 +1321,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     this.lookupEntryCallable =
         callableFactory.createUnaryCallable(
             lookupEntryTransportSettings, settings.lookupEntrySettings(), clientContext);
+    this.modifyEntryCallable =
+        callableFactory.createUnaryCallable(
+            modifyEntryTransportSettings, settings.modifyEntrySettings(), clientContext);
     this.searchEntriesCallable =
         callableFactory.createUnaryCallable(
             searchEntriesTransportSettings, settings.searchEntriesSettings(), clientContext);
@@ -1605,6 +1631,11 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return lookupEntryCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable() {
+    return modifyEntryCallable;
   }
 
   @Override

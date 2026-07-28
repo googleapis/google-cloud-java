@@ -441,6 +441,64 @@ public interface ReportDefinitionOrBuilder
    *
    *
    * <pre>
+   * Optional. CMS Metadata Dimension keys that represent
+   * CMS_METADATA_DIMENSION_* dimensions. The index of this repeated field
+   * corresponds to the index on each dimension. For example,
+   * cms_metadata_dimension_key_ids[0] describes
+   * CMS_METADATA_DIMENSION_0_VALUE_ID and CMS_METADATA_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 cms_metadata_dimension_key_ids = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the cmsMetadataDimensionKeyIds.
+   */
+  java.util.List<java.lang.Long> getCmsMetadataDimensionKeyIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CMS Metadata Dimension keys that represent
+   * CMS_METADATA_DIMENSION_* dimensions. The index of this repeated field
+   * corresponds to the index on each dimension. For example,
+   * cms_metadata_dimension_key_ids[0] describes
+   * CMS_METADATA_DIMENSION_0_VALUE_ID and CMS_METADATA_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 cms_metadata_dimension_key_ids = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of cmsMetadataDimensionKeyIds.
+   */
+  int getCmsMetadataDimensionKeyIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CMS Metadata Dimension keys that represent
+   * CMS_METADATA_DIMENSION_* dimensions. The index of this repeated field
+   * corresponds to the index on each dimension. For example,
+   * cms_metadata_dimension_key_ids[0] describes
+   * CMS_METADATA_DIMENSION_0_VALUE_ID and CMS_METADATA_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 cms_metadata_dimension_key_ids = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The cmsMetadataDimensionKeyIds at the given index.
+   */
+  long getCmsMetadataDimensionKeyIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Custom Dimension keys that represent CUSTOM_DIMENSION_*
    * dimensions. The index of this repeated field corresponds to the index on
    * each dimension. For example, custom_dimension_key_ids[0] describes
@@ -488,6 +546,58 @@ public interface ReportDefinitionOrBuilder
    * @return The customDimensionKeyIds at the given index.
    */
   long getCustomDimensionKeyIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enhanced Key-values Dimension keys that represent EKV_DIMENSION_*
+   * dimensions. The index of this repeated field corresponds to the index on
+   * each dimension.  For example, ekv_dimension_key_ids[0] describes
+   * EKV_DIMENSION_0_VALUE_ID and EKV_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>repeated int64 ekv_dimension_key_ids = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the ekvDimensionKeyIds.
+   */
+  java.util.List<java.lang.Long> getEkvDimensionKeyIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enhanced Key-values Dimension keys that represent EKV_DIMENSION_*
+   * dimensions. The index of this repeated field corresponds to the index on
+   * each dimension.  For example, ekv_dimension_key_ids[0] describes
+   * EKV_DIMENSION_0_VALUE_ID and EKV_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>repeated int64 ekv_dimension_key_ids = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of ekvDimensionKeyIds.
+   */
+  int getEkvDimensionKeyIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enhanced Key-values Dimension keys that represent EKV_DIMENSION_*
+   * dimensions. The index of this repeated field corresponds to the index on
+   * each dimension.  For example, ekv_dimension_key_ids[0] describes
+   * EKV_DIMENSION_0_VALUE_ID and EKV_DIMENSION_0_VALUE.
+   * </pre>
+   *
+   * <code>repeated int64 ekv_dimension_key_ids = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The ekvDimensionKeyIds at the given index.
+   */
+  long getEkvDimensionKeyIds(int index);
 
   /**
    *
@@ -851,4 +961,28 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.ReportDefinition.SortOrBuilder getSortsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to use expanded compatibility for this report.
+   *
+   * If true, this setting enables certain combinations of dimensions and
+   * metrics for this report that would otherwise be incompatible. Enabling this
+   * will collapse reservation data into a single row even if the report's
+   * dimensions would normally result in multiple rows for reservation data.
+   * This impacts dimensions related to line items, orders, creatives, and
+   * advertisers.
+   *
+   * This is equivalent to the "Access more dimension and metric combinations"
+   * setting in the Interactive Reports UI. For more details, see:
+   * https://support.google.com/admanager/answer/16865393#combinations
+   * </pre>
+   *
+   * <code>bool expanded_compatibility = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expandedCompatibility.
+   */
+  boolean getExpandedCompatibility();
 }

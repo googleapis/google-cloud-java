@@ -89,6 +89,8 @@ public class ToolServiceClientHttpJsonTest {
         ExecuteToolResponse.newBuilder()
             .setResponse(Struct.newBuilder().build())
             .setVariables(Struct.newBuilder().build())
+            .setCitations(Citations.newBuilder().build())
+            .setGoogleSearchSuggestions(GoogleSearchSuggestions.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -96,6 +98,7 @@ public class ToolServiceClientHttpJsonTest {
         ExecuteToolRequest.newBuilder()
             .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
             .setArgs(Struct.newBuilder().build())
+            .setMockConfig(MockConfig.newBuilder().build())
             .build();
 
     ExecuteToolResponse actualResponse = client.executeTool(request);
@@ -128,6 +131,7 @@ public class ToolServiceClientHttpJsonTest {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       client.executeTool(request);
       Assert.fail("No exception raised");
@@ -197,6 +201,7 @@ public class ToolServiceClientHttpJsonTest {
         RetrieveToolsRequest.newBuilder()
             .setToolset(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .addAllToolIds(new ArrayList<String>())
+            .setBypassPersistenceConfig(true)
             .build();
 
     RetrieveToolsResponse actualResponse = client.retrieveTools(request);
@@ -230,6 +235,7 @@ public class ToolServiceClientHttpJsonTest {
               .setToolset(
                   ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
               .addAllToolIds(new ArrayList<String>())
+              .setBypassPersistenceConfig(true)
               .build();
       client.retrieveTools(request);
       Assert.fail("No exception raised");

@@ -60,6 +60,14 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_ads_datamanager_v1_PpidData_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_PpidData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_CompositeData_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_CompositeData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_IpData_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_IpData_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -69,31 +77,49 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/ads/datamanager/v1/audience.pro"
+      "\n"
+          + "(google/ads/datamanager/v1/audience.pro"
           + "to\022\031google.ads.datamanager.v1\032\'google/ad"
           + "s/datamanager/v1/consent.proto\032)google/a"
           + "ds/datamanager/v1/user_data.proto\032\037googl"
-          + "e/api/field_behavior.proto\"\242\003\n\016AudienceM"
-          + "ember\022#\n\026destination_references\030\001 \003(\tB\003\340"
-          + "A\001\0228\n\tuser_data\030\002 \001(\0132#.google.ads.datam"
-          + "anager.v1.UserDataH\000\0228\n\tpair_data\030\004 \001(\0132"
-          + "#.google.ads.datamanager.v1.PairDataH\000\022<"
-          + "\n\013mobile_data\030\005 \001(\0132%.google.ads.dataman"
-          + "ager.v1.MobileDataH\000\022=\n\014user_id_data\030\006 \001"
-          + "(\0132%.google.ads.datamanager.v1.UserIdDat"
-          + "aH\000\0228\n\tppid_data\030\007 \001(\0132#.google.ads.data"
-          + "manager.v1.PpidDataH\000\0228\n\007consent\030\003 \001(\0132\""
-          + ".google.ads.datamanager.v1.ConsentB\003\340A\001B"
-          + "\006\n\004data\"!\n\010PairData\022\025\n\010pair_ids\030\001 \003(\tB\003\340"
-          + "A\002\"%\n\nMobileData\022\027\n\nmobile_ids\030\001 \003(\tB\003\340A"
-          + "\002\"\"\n\nUserIdData\022\024\n\007user_id\030\001 \001(\tB\003\340A\002\"\036\n"
-          + "\010PpidData\022\022\n\005ppids\030\001 \003(\tB\003\340A\002B\312\001\n\035com.go"
-          + "ogle.ads.datamanager.v1B\rAudienceProtoP\001"
-          + "ZAcloud.google.com/go/datamanager/apiv1/"
-          + "datamanagerpb;datamanagerpb\252\002\031Google.Ads"
-          + ".DataManager.V1\312\002\031Google\\Ads\\DataManager"
-          + "\\V1\352\002\034Google::Ads::DataManager::V1b\006prot"
-          + "o3"
+          + "e/api/field_behavior.proto\032\033google/api/f"
+          + "ield_info.proto\032\037google/protobuf/timestamp.proto\"\346\003\n"
+          + "\016AudienceMember\022#\n"
+          + "\026destination_references\030\001 \003(\tB\003\340A\001\0228\n"
+          + "\tuser_data\030\002 \001(\0132#.google.ads.datamanager.v1.UserDataH\000\0228\n"
+          + "\tpair_data\030\004 \001(\0132#.google.ads.datamanager.v1.PairDataH\000\022<\n"
+          + "\013mobile_data\030\005 \001(\0132%.google.ads.datamanager.v1.MobileDataH\000\022=\n"
+          + "\014user_id_data\030\006 \001(\0132%.google.ads.datamanager.v1.UserIdDataH\000\0228\n"
+          + "\tppid_data\030\007 \001(\0132#.google.ads.datamanager.v1.PpidDataH\000\022B\n"
+          + "\016composite_data\030\010"
+          + " \001(\0132(.google.ads.datamanager.v1.CompositeDataH\000\0228\n"
+          + "\007consent\030\003"
+          + " \001(\0132\".google.ads.datamanager.v1.ConsentB\003\340A\001B\006\n"
+          + "\004data\"!\n"
+          + "\010PairData\022\025\n"
+          + "\010pair_ids\030\001 \003(\tB\003\340A\002\"%\n\n"
+          + "MobileData\022\027\n\n"
+          + "mobile_ids\030\001 \003(\tB\003\340A\002\"\"\n\n"
+          + "UserIdData\022\024\n"
+          + "\007user_id\030\001 \001(\tB\003\340A\002\"\036\n"
+          + "\010PpidData\022\022\n"
+          + "\005ppids\030\001 \003(\tB\003\340A\002\"\205\001\n\r"
+          + "CompositeData\022;\n"
+          + "\tuser_data\030\001 \001(\0132#.g"
+          + "oogle.ads.datamanager.v1.UserDataB\003\340A\001\0227\n"
+          + "\007ip_data\030\002"
+          + " \003(\0132!.google.ads.datamanager.v1.IpDataB\003\340A\001\"\241\001\n"
+          + "\006IpData\022\037\n\n"
+          + "ip_address\030\001 \001(\tB\013\340A\002\342\214\317\327\010\002\010\004\022;\n"
+          + "\022observe_start_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\0229\n"
+          + "\020observe_end_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001B\312\001\n"
+          + "\035com.google.ads.datamanager.v1B\r"
+          + "AudienceProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanage"
+          + "rpb;datamanagerpb\252\002\031Google.Ads.DataManag"
+          + "er.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Goog"
+          + "le::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -102,6 +128,8 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
               com.google.ads.datamanager.v1.ConsentProto.getDescriptor(),
               com.google.ads.datamanager.v1.UserDataProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_datamanager_v1_AudienceMember_descriptor =
         getDescriptor().getMessageType(0);
@@ -115,6 +143,7 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
               "MobileData",
               "UserIdData",
               "PpidData",
+              "CompositeData",
               "Consent",
               "Data",
             });
@@ -150,13 +179,31 @@ public final class AudienceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Ppids",
             });
+    internal_static_google_ads_datamanager_v1_CompositeData_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_datamanager_v1_CompositeData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_CompositeData_descriptor,
+            new java.lang.String[] {
+              "UserData", "IpData",
+            });
+    internal_static_google_ads_datamanager_v1_IpData_descriptor = getDescriptor().getMessageType(6);
+    internal_static_google_ads_datamanager_v1_IpData_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_IpData_descriptor,
+            new java.lang.String[] {
+              "IpAddress", "ObserveStartTime", "ObserveEndTime",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.datamanager.v1.ConsentProto.getDescriptor();
     com.google.ads.datamanager.v1.UserDataProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

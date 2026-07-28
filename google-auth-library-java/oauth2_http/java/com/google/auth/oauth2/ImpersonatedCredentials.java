@@ -44,7 +44,6 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.ServiceAccountSigner;
@@ -117,9 +116,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private transient HttpTransportFactory transportFactory;
 
   private transient Calendar calendar;
-
-  private int connectTimeout;
-  private int readTimeout;
 
   /**
    * @param sourceCredentials the source credential used to acquire the impersonated credentials. It
@@ -567,8 +563,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
                   + "does not match %s universe domain set for impersonated credentials.",
               this.sourceCredentials.getUniverseDomain(), builder.getUniverseDomain()));
     }
-    this.connectTimeout = builder.connectTimeout;
-    this.readTimeout = builder.readTimeout;
   }
 
   /**
@@ -597,12 +591,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
         || (isDefaultUniverseDomain()
             && ((ServiceAccountCredentials) this.sourceCredentials)
                 .shouldUseAssertionFlowForGdu())) {
-      if (this.sourceCredentials instanceof IdentityPoolCredentials) {
-        this.sourceCredentials =
-            ((IdentityPoolCredentials) this.sourceCredentials)
-                .toBuilder().setConnectTimeout(connectTimeout).setReadTimeout(readTimeout).build();
-      }
-
       try {
         this.sourceCredentials.refreshIfExpired();
       } catch (IOException e) {
@@ -635,8 +623,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
-    request.setConnectTimeout(connectTimeout);
-    request.setReadTimeout(readTimeout);
     adapter.initialize(request);
     request.setParser(parser);
     MetricsUtils.setMetricsHeader(
@@ -783,9 +769,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
     private String iamEndpointOverride;
     private Calendar calendar = Calendar.getInstance();
 
-    private int connectTimeout = 20000; // Default to 20000ms = 20s
-    private int readTimeout = 20000; // Default to 20000ms = 20s
-
     protected Builder() {}
 
     /**
@@ -809,8 +792,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
       this.lifetime = credentials.lifetime;
       this.transportFactory = credentials.transportFactory;
       this.iamEndpointOverride = credentials.iamEndpointOverride;
-      this.connectTimeout = credentials.connectTimeout;
-      this.readTimeout = credentials.readTimeout;
     }
 
     @CanIgnoreReturnValue
@@ -909,20 +890,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
     public Builder setCalendar(Calendar calendar) {
       this.calendar = calendar;
-      return this;
-    }
-
-    /** Warning: Not for public use and can be removed at any time. */
-    @InternalApi
-    public Builder setConnectTimeout(int connectTimeout) {
-      this.connectTimeout = connectTimeout;
-      return this;
-    }
-
-    /** Warning: Not for public use and can be removed at any time. */
-    @InternalApi
-    public Builder setReadTimeout(int readTimeout) {
-      this.readTimeout = readTimeout;
       return this;
     }
 

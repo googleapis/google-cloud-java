@@ -632,6 +632,17 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>PQ_SIGN_ML_DSA_87_EXTERNAL_MU = 71;</code>
      */
     PQ_SIGN_ML_DSA_87_EXTERNAL_MU(71),
+    /**
+     *
+     *
+     * <pre>
+     * AES key wrap with zero padding algorithm (RFC 5649). Can only be used
+     * by keys with purpose AES_WRAPPING.
+     * </pre>
+     *
+     * <code>AES_256_KWP = 73;</code>
+     */
+    AES_256_KWP(73),
     UNRECOGNIZED(-1),
     ;
 
@@ -1181,6 +1192,18 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      */
     public static final int PQ_SIGN_ML_DSA_87_EXTERNAL_MU_VALUE = 71;
 
+    /**
+     *
+     *
+     * <pre>
+     * AES key wrap with zero padding algorithm (RFC 5649). Can only be used
+     * by keys with purpose AES_WRAPPING.
+     * </pre>
+     *
+     * <code>AES_256_KWP = 73;</code>
+     */
+    public static final int AES_256_KWP_VALUE = 73;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1299,6 +1322,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return PQ_SIGN_ML_DSA_65_EXTERNAL_MU;
         case 71:
           return PQ_SIGN_ML_DSA_87_EXTERNAL_MU;
+        case 73:
+          return AES_256_KWP;
         default:
           return null;
       }
@@ -2851,6 +2876,56 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     return reimportEligible_;
   }
 
+  public static final int TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER = 21;
+  private boolean trustedWrappingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Field indicating that the key may be wrapped by a trusted key.
+   * This field can be set for all key purposes except
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT],
+   * and is only valid for keys with protection level
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field can only be set at creation or import time via
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion],
+   * or
+   * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  @java.lang.Override
+  public boolean getTrustedWrappingEnabled() {
+    return trustedWrappingEnabled_;
+  }
+
+  public static final int HSM_TRUSTED_FIELD_NUMBER = 23;
+  private boolean hsmTrusted_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicating that the key wrapping key is trusted.
+   * This field is only valid for key purpose
+   * [AES_256_WRAPPING][CryptoKey.CryptoKeyPurpose.AES_256_WRAPPING], and
+   * protection level
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * </pre>
+   *
+   * <code>bool hsm_trusted = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hsmTrusted.
+   */
+  @java.lang.Override
+  public boolean getHsmTrusted() {
+    return hsmTrusted_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2921,6 +2996,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(
           output, 20, externalDestructionFailureReason_);
     }
+    if (trustedWrappingEnabled_ != false) {
+      output.writeBool(21, trustedWrappingEnabled_);
+    }
+    if (hsmTrusted_ != false) {
+      output.writeBool(23, hsmTrusted_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2989,6 +3070,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.GeneratedMessage.computeStringSize(
               20, externalDestructionFailureReason_);
     }
+    if (trustedWrappingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, trustedWrappingEnabled_);
+    }
+    if (hsmTrusted_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, hsmTrusted_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3044,6 +3131,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         return false;
     }
     if (getReimportEligible() != other.getReimportEligible()) return false;
+    if (getTrustedWrappingEnabled() != other.getTrustedWrappingEnabled()) return false;
+    if (getHsmTrusted() != other.getHsmTrusted()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3101,6 +3190,10 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + REIMPORT_ELIGIBLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReimportEligible());
+    hash = (37 * hash) + TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrustedWrappingEnabled());
+    hash = (37 * hash) + HSM_TRUSTED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHsmTrusted());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3310,6 +3403,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
         externalProtectionLevelOptionsBuilder_ = null;
       }
       reimportEligible_ = false;
+      trustedWrappingEnabled_ = false;
+      hsmTrusted_ = false;
       return this;
     }
 
@@ -3409,6 +3504,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.reimportEligible_ = reimportEligible_;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.trustedWrappingEnabled_ = trustedWrappingEnabled_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.hsmTrusted_ = hsmTrusted_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3481,6 +3582,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
       }
       if (other.getReimportEligible() != false) {
         setReimportEligible(other.getReimportEligible());
+      }
+      if (other.getTrustedWrappingEnabled() != false) {
+        setTrustedWrappingEnabled(other.getTrustedWrappingEnabled());
+      }
+      if (other.getHsmTrusted() != false) {
+        setHsmTrusted(other.getHsmTrusted());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3612,6 +3719,18 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 162
+            case 168:
+              {
+                trustedWrappingEnabled_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 168
+            case 184:
+              {
+                hsmTrusted_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 184
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6342,6 +6461,154 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     public Builder clearReimportEligible() {
       bitField0_ = (bitField0_ & ~0x00008000);
       reimportEligible_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean trustedWrappingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Field indicating that the key may be wrapped by a trusted key.
+     * This field can be set for all key purposes except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT],
+     * and is only valid for keys with protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field can only be set at creation or import time via
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion],
+     * or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The trustedWrappingEnabled.
+     */
+    @java.lang.Override
+    public boolean getTrustedWrappingEnabled() {
+      return trustedWrappingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Field indicating that the key may be wrapped by a trusted key.
+     * This field can be set for all key purposes except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT],
+     * and is only valid for keys with protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field can only be set at creation or import time via
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion],
+     * or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The trustedWrappingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrustedWrappingEnabled(boolean value) {
+
+      trustedWrappingEnabled_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Field indicating that the key may be wrapped by a trusted key.
+     * This field can be set for all key purposes except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT],
+     * and is only valid for keys with protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field can only be set at creation or import time via
+     * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion],
+     * or
+     * [ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 21 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrustedWrappingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      trustedWrappingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean hsmTrusted_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating that the key wrapping key is trusted.
+     * This field is only valid for key purpose
+     * [AES_256_WRAPPING][CryptoKey.CryptoKeyPurpose.AES_256_WRAPPING], and
+     * protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * </pre>
+     *
+     * <code>bool hsm_trusted = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The hsmTrusted.
+     */
+    @java.lang.Override
+    public boolean getHsmTrusted() {
+      return hsmTrusted_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating that the key wrapping key is trusted.
+     * This field is only valid for key purpose
+     * [AES_256_WRAPPING][CryptoKey.CryptoKeyPurpose.AES_256_WRAPPING], and
+     * protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * </pre>
+     *
+     * <code>bool hsm_trusted = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The hsmTrusted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHsmTrusted(boolean value) {
+
+      hsmTrusted_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicating that the key wrapping key is trusted.
+     * This field is only valid for key purpose
+     * [AES_256_WRAPPING][CryptoKey.CryptoKeyPurpose.AES_256_WRAPPING], and
+     * protection level
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * </pre>
+     *
+     * <code>bool hsm_trusted = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHsmTrusted() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      hsmTrusted_ = false;
       onChanged();
       return this;
     }

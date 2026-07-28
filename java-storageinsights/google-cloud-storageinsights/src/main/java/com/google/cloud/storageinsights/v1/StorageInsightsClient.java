@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -432,9 +434,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class StorageInsightsClient implements BackgroundResource {
-  private final StorageInsightsSettings settings;
+  private final @Nullable StorageInsightsSettings settings;
   private final StorageInsightsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -482,7 +485,7 @@ public class StorageInsightsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StorageInsightsSettings getSettings() {
+  public final @Nullable StorageInsightsSettings getSettings() {
     return settings;
   }
 
@@ -530,7 +533,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListReportConfigsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportConfigsPagedResponse listReportConfigs(LocationName parent) {
+  public final ListReportConfigsPagedResponse listReportConfigs(@Nullable LocationName parent) {
     ListReportConfigsRequest request =
         ListReportConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -699,7 +702,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportConfig getReportConfig(ReportConfigName name) {
+  public final ReportConfig getReportConfig(@Nullable ReportConfigName name) {
     GetReportConfigRequest request =
         GetReportConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReportConfig(request);
@@ -810,7 +813,8 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param reportConfig Required. The resource being created
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportConfig createReportConfig(LocationName parent, ReportConfig reportConfig) {
+  public final ReportConfig createReportConfig(
+      @Nullable LocationName parent, ReportConfig reportConfig) {
     CreateReportConfigRequest request =
         CreateReportConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1027,7 +1031,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReportConfig(ReportConfigName name) {
+  public final void deleteReportConfig(@Nullable ReportConfigName name) {
     DeleteReportConfigRequest request =
         DeleteReportConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1145,7 +1149,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListReportDetailsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportDetailsPagedResponse listReportDetails(ReportConfigName parent) {
+  public final ListReportDetailsPagedResponse listReportDetails(@Nullable ReportConfigName parent) {
     ListReportDetailsRequest request =
         ListReportDetailsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1318,7 +1322,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportDetail getReportDetail(ReportDetailName name) {
+  public final ReportDetail getReportDetail(@Nullable ReportDetailName name) {
     GetReportDetailRequest request =
         GetReportDetailRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReportDetail(request);
@@ -1437,7 +1441,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListDatasetConfigsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetConfigsPagedResponse listDatasetConfigs(LocationName parent) {
+  public final ListDatasetConfigsPagedResponse listDatasetConfigs(@Nullable LocationName parent) {
     ListDatasetConfigsRequest request =
         ListDatasetConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1607,7 +1611,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DatasetConfig getDatasetConfig(DatasetConfigName name) {
+  public final DatasetConfig getDatasetConfig(@Nullable DatasetConfigName name) {
     GetDatasetConfigRequest request =
         GetDatasetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatasetConfig(request);
@@ -1728,7 +1732,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DatasetConfig, OperationMetadata> createDatasetConfigAsync(
-      LocationName parent, DatasetConfig datasetConfig, String datasetConfigId) {
+      @Nullable LocationName parent, DatasetConfig datasetConfig, String datasetConfigId) {
     CreateDatasetConfigRequest request =
         CreateDatasetConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2025,7 +2029,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDatasetConfigAsync(
-      DatasetConfigName name) {
+      @Nullable DatasetConfigName name) {
     DeleteDatasetConfigRequest request =
         DeleteDatasetConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2174,7 +2178,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LinkDatasetResponse, OperationMetadata> linkDatasetAsync(
-      DatasetConfigName name) {
+      @Nullable DatasetConfigName name) {
     LinkDatasetRequest request =
         LinkDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return linkDatasetAsync(request);
@@ -2317,7 +2321,7 @@ public class StorageInsightsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> unlinkDatasetAsync(
-      DatasetConfigName name) {
+      @Nullable DatasetConfigName name) {
     UnlinkDatasetRequest request =
         UnlinkDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return unlinkDatasetAsync(request);
@@ -2656,8 +2660,9 @@ public class StorageInsightsClient implements BackgroundResource {
           ListReportConfigsPage> {
 
     private ListReportConfigsPage(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
-        ListReportConfigsResponse response) {
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
+        @Nullable ListReportConfigsResponse response) {
       super(context, response);
     }
 
@@ -2667,14 +2672,16 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListReportConfigsPage createPage(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
-        ListReportConfigsResponse response) {
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
+        @Nullable ListReportConfigsResponse response) {
       return new ListReportConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportConfigsPage> createPageAsync(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
         ApiFuture<ListReportConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2689,7 +2696,7 @@ public class StorageInsightsClient implements BackgroundResource {
           ListReportConfigsFixedSizeCollection> {
 
     private ListReportConfigsFixedSizeCollection(
-        List<ListReportConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReportConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2699,7 +2706,7 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListReportConfigsFixedSizeCollection createCollection(
-        List<ListReportConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReportConfigsPage> pages, int collectionSize) {
       return new ListReportConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2736,8 +2743,9 @@ public class StorageInsightsClient implements BackgroundResource {
           ListReportDetailsPage> {
 
     private ListReportDetailsPage(
-        PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail> context,
-        ListReportDetailsResponse response) {
+        @Nullable PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail>
+            context,
+        @Nullable ListReportDetailsResponse response) {
       super(context, response);
     }
 
@@ -2747,14 +2755,16 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListReportDetailsPage createPage(
-        PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail> context,
-        ListReportDetailsResponse response) {
+        @Nullable PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail>
+            context,
+        @Nullable ListReportDetailsResponse response) {
       return new ListReportDetailsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportDetailsPage> createPageAsync(
-        PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail> context,
+        @Nullable PageContext<ListReportDetailsRequest, ListReportDetailsResponse, ReportDetail>
+            context,
         ApiFuture<ListReportDetailsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2769,7 +2779,7 @@ public class StorageInsightsClient implements BackgroundResource {
           ListReportDetailsFixedSizeCollection> {
 
     private ListReportDetailsFixedSizeCollection(
-        List<ListReportDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListReportDetailsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2779,7 +2789,7 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListReportDetailsFixedSizeCollection createCollection(
-        List<ListReportDetailsPage> pages, int collectionSize) {
+        @Nullable List<ListReportDetailsPage> pages, int collectionSize) {
       return new ListReportDetailsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2816,8 +2826,9 @@ public class StorageInsightsClient implements BackgroundResource {
           ListDatasetConfigsPage> {
 
     private ListDatasetConfigsPage(
-        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
-        ListDatasetConfigsResponse response) {
+        @Nullable PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>
+            context,
+        @Nullable ListDatasetConfigsResponse response) {
       super(context, response);
     }
 
@@ -2827,14 +2838,16 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListDatasetConfigsPage createPage(
-        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
-        ListDatasetConfigsResponse response) {
+        @Nullable PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>
+            context,
+        @Nullable ListDatasetConfigsResponse response) {
       return new ListDatasetConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetConfigsPage> createPageAsync(
-        PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig> context,
+        @Nullable PageContext<ListDatasetConfigsRequest, ListDatasetConfigsResponse, DatasetConfig>
+            context,
         ApiFuture<ListDatasetConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2849,7 +2862,7 @@ public class StorageInsightsClient implements BackgroundResource {
           ListDatasetConfigsFixedSizeCollection> {
 
     private ListDatasetConfigsFixedSizeCollection(
-        List<ListDatasetConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2859,7 +2872,7 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListDatasetConfigsFixedSizeCollection createCollection(
-        List<ListDatasetConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetConfigsPage> pages, int collectionSize) {
       return new ListDatasetConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2893,8 +2906,8 @@ public class StorageInsightsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2904,14 +2917,14 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2925,7 +2938,8 @@ public class StorageInsightsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2935,7 +2949,7 @@ public class StorageInsightsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

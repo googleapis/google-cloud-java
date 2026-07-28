@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,9 +220,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AccountServicesServiceClient implements BackgroundResource {
-  private final AccountServicesServiceSettings settings;
+  private final @Nullable AccountServicesServiceSettings settings;
   private final AccountServicesServiceStub stub;
 
   /** Constructs an instance of AccountServicesServiceClient with default settings. */
@@ -261,7 +264,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountServicesServiceSettings getSettings() {
+  public final @Nullable AccountServicesServiceSettings getSettings() {
     return settings;
   }
 
@@ -292,7 +295,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
    *     `accounts/{account}/services/{service}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountService getAccountService(AccountServiceName name) {
+  public final AccountService getAccountService(@Nullable AccountServiceName name) {
     GetAccountServiceRequest request =
         GetAccountServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -412,7 +415,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountServicesPagedResponse listAccountServices(AccountName parent) {
+  public final ListAccountServicesPagedResponse listAccountServices(@Nullable AccountName parent) {
     ListAccountServicesRequest request =
         ListAccountServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -593,7 +596,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AccountService proposeAccountService(
-      AccountName parent, String provider, AccountService accountService) {
+      @Nullable AccountName parent, String provider, AccountService accountService) {
     ProposeAccountServiceRequest request =
         ProposeAccountServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -730,7 +733,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
    *     `accounts/{account}/services/{service}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountService approveAccountService(AccountServiceName name) {
+  public final AccountService approveAccountService(@Nullable AccountServiceName name) {
     ApproveAccountServiceRequest request =
         ApproveAccountServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -849,7 +852,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
    *     `accounts/{account}/services/{service}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void rejectAccountService(AccountServiceName name) {
+  public final void rejectAccountService(@Nullable AccountServiceName name) {
     RejectAccountServiceRequest request =
         RejectAccountServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1007,9 +1010,10 @@ public class AccountServicesServiceClient implements BackgroundResource {
           ListAccountServicesPage> {
 
     private ListAccountServicesPage(
-        PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
+        @Nullable
+            PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
             context,
-        ListAccountServicesResponse response) {
+        @Nullable ListAccountServicesResponse response) {
       super(context, response);
     }
 
@@ -1019,15 +1023,17 @@ public class AccountServicesServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountServicesPage createPage(
-        PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
+        @Nullable
+            PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
             context,
-        ListAccountServicesResponse response) {
+        @Nullable ListAccountServicesResponse response) {
       return new ListAccountServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountServicesPage> createPageAsync(
-        PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
+        @Nullable
+            PageContext<ListAccountServicesRequest, ListAccountServicesResponse, AccountService>
             context,
         ApiFuture<ListAccountServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1043,7 +1049,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
           ListAccountServicesFixedSizeCollection> {
 
     private ListAccountServicesFixedSizeCollection(
-        List<ListAccountServicesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1053,7 +1059,7 @@ public class AccountServicesServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountServicesFixedSizeCollection createCollection(
-        List<ListAccountServicesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountServicesPage> pages, int collectionSize) {
       return new ListAccountServicesFixedSizeCollection(pages, collectionSize);
     }
   }

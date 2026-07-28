@@ -226,9 +226,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Full resource name of the [SiteCredential][], such as
-   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-   * Only set to crawl private URIs.
+   * Optional. Credential id to use for crawling.
    * </pre>
    *
    * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -252,9 +250,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Full resource name of the [SiteCredential][], such as
-   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-   * Only set to crawl private URIs.
+   * Optional. Credential id to use for crawling.
    * </pre>
    *
    * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1001,9 +997,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Full resource name of the [SiteCredential][], such as
-     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-     * Only set to crawl private URIs.
+     * Optional. Credential id to use for crawling.
      * </pre>
      *
      * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1026,9 +1020,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Full resource name of the [SiteCredential][], such as
-     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-     * Only set to crawl private URIs.
+     * Optional. Credential id to use for crawling.
      * </pre>
      *
      * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1051,9 +1043,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Full resource name of the [SiteCredential][], such as
-     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-     * Only set to crawl private URIs.
+     * Optional. Credential id to use for crawling.
      * </pre>
      *
      * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1075,9 +1065,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Full resource name of the [SiteCredential][], such as
-     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-     * Only set to crawl private URIs.
+     * Optional. Credential id to use for crawling.
      * </pre>
      *
      * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1095,9 +1083,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Full resource name of the [SiteCredential][], such as
-     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;dataStores/&#42;&#47;siteSearchEngine/siteCredentials/&#42;`.
-     * Only set to crawl private URIs.
+     * Optional. Credential id to use for crawling.
      * </pre>
      *
      * <code>string site_credential = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

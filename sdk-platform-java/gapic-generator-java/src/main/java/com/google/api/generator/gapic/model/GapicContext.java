@@ -60,6 +60,8 @@ public abstract class GapicContext {
 
   public abstract boolean restNumericEnumsEnabled();
 
+  public abstract boolean generateVersionJava();
+
   public GapicMetadata gapicMetadata() {
     return gapicMetadata;
   }
@@ -105,7 +107,8 @@ public abstract class GapicContext {
     return new AutoValue_GapicContext.Builder()
         .setMixinServices(Collections.emptyList())
         .setGapicMetadataEnabled(false)
-        .setRestNumericEnumsEnabled(false);
+        .setRestNumericEnumsEnabled(false)
+        .setGenerateVersionJava(false);
   }
 
   @AutoValue.Builder
@@ -133,6 +136,8 @@ public abstract class GapicContext {
     public abstract Builder setGapicMetadataEnabled(boolean gapicMetadataEnabled);
 
     public abstract Builder setRestNumericEnumsEnabled(boolean restNumericEnumsEnabled);
+
+    public abstract Builder setGenerateVersionJava(boolean generateVersionJava);
 
     public abstract Builder setTransport(Transport transport);
 

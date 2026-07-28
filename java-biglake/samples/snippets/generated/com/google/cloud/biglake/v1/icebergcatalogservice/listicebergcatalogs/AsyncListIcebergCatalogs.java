@@ -42,6 +42,7 @@ public class AsyncListIcebergCatalogs {
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       ApiFuture<IcebergCatalog> future =
           icebergCatalogServiceClient.listIcebergCatalogsPagedCallable().futureCall(request);

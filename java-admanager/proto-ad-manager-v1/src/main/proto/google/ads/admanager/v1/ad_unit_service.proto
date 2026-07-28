@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service AdUnitService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve an AdUnit object.
+  // Retrieves an `AdUnit` object.
   rpc GetAdUnit(GetAdUnitRequest) returns (AdUnit) {
     option (google.api.http) = {
       get: "/v1/{name=networks/*/adUnits/*}"
@@ -45,7 +46,7 @@ service AdUnitService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of AdUnit objects.
+  // Lists `AdUnit` objects.
   rpc ListAdUnits(ListAdUnitsRequest) returns (ListAdUnitsResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=networks/*}/adUnits"
@@ -53,7 +54,7 @@ service AdUnitService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to retrieve a list of AdUnitSize objects.
+  // Lists `AdUnitSize` objects.
   rpc ListAdUnitSizes(ListAdUnitSizesRequest)
       returns (ListAdUnitSizesResponse) {
     option (google.api.http) = {
@@ -62,7 +63,7 @@ service AdUnitService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create an `AdUnit` object.
+  // Creates an `AdUnit` object.
   rpc CreateAdUnit(CreateAdUnitRequest) returns (AdUnit) {
     option (google.api.http) = {
       post: "/v1/{parent=networks/*}/adUnits"
@@ -71,7 +72,7 @@ service AdUnitService {
     option (google.api.method_signature) = "parent,ad_unit";
   }
 
-  // API to update an `AdUnit` object.
+  // Updates an `AdUnit` object.
   rpc UpdateAdUnit(UpdateAdUnitRequest) returns (AdUnit) {
     option (google.api.http) = {
       patch: "/v1/{ad_unit.name=networks/*/adUnits/*}"
@@ -80,7 +81,7 @@ service AdUnitService {
     option (google.api.method_signature) = "ad_unit,update_mask";
   }
 
-  // API to batch create `AdUnit` objects.
+  // Creates `AdUnit` objects.
   rpc BatchCreateAdUnits(BatchCreateAdUnitsRequest)
       returns (BatchCreateAdUnitsResponse) {
     option (google.api.http) = {
@@ -90,7 +91,7 @@ service AdUnitService {
     option (google.api.method_signature) = "parent,requests";
   }
 
-  // API to batch update `AdUnit` objects.
+  // Batch updates `AdUnit` objects.
   rpc BatchUpdateAdUnits(BatchUpdateAdUnitsRequest)
       returns (BatchUpdateAdUnitsResponse) {
     option (google.api.http) = {
@@ -100,7 +101,7 @@ service AdUnitService {
     option (google.api.method_signature) = "parent,requests";
   }
 
-  // API to batch activate `AdUnit` objects.
+  // Batch activates `AdUnit` objects.
   rpc BatchActivateAdUnits(BatchActivateAdUnitsRequest)
       returns (BatchActivateAdUnitsResponse) {
     option (google.api.http) = {
@@ -168,8 +169,24 @@ message ListAdUnitsRequest {
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to filter the response.
-  // See syntax details at
-  // https://developers.google.com/ad-manager/api/beta/filters
+  //  See syntax details at
+  //  https://developers.google.com/ad-manager/api/beta/filters
+  //
+  // <b>Filterable fields:</b>
+  // <ul style="list-style-type:none">
+  //   <li><code>adUnitCode</code></li>
+  //   <li><code>adUnitSizes.canonicalName</code></li>
+  //   <li><code>displayName</code></li>
+  //   <li><code>effectiveAdsenseEnabled</code></li>
+  //   <li><code>explicitlyTargeted</code></li>
+  //   <li><code>externalSetTopBoxChannelId</code></li>
+  //   <li><code>hasChildren</code></li>
+  //   <li><code>name</code></li>
+  //   <li><code>parentAdUnit</code></li>
+  //   <li><code>status</code></li>
+  //   <li><code>teams</code></li>
+  //   <li><code>updateTime</code></li>
+  // </ul>
   string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to specify sorting order.
@@ -227,9 +244,9 @@ message UpdateAdUnitRequest {
   // `networks/{network_code}/adUnits/{ad_unit_id}`
   AdUnit ad_unit = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request object for `BatchCreateAdUnits` method.

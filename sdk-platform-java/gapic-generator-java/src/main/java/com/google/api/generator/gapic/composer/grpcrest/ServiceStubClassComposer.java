@@ -37,9 +37,11 @@ public class ServiceStubClassComposer extends AbstractServiceStubClassComposer {
   @Override
   protected MethodDefinition createOperationsStubGetterMethodDefinition(
       TypeNode returnType, String methodName, TypeStore typeStore) {
+    TypeNode annotatedReturnType =
+        TypeNode.withReference(returnType.reference().copyAndSetNullable(true));
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
-        .setReturnType(returnType)
+        .setReturnType(annotatedReturnType)
         .setName(methodName)
         .setReturnExpr(ReturnExpr.withExpr(ValueExpr.createNullExpr()))
         .build();

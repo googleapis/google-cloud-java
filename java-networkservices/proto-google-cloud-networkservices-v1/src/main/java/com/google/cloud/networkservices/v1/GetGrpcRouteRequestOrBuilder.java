@@ -31,7 +31,7 @@ public interface GetGrpcRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the GrpcRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/grpcRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;grpcRoutes/&#42;`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface GetGrpcRouteRequestOrBuilder
    *
    * <pre>
    * Required. A name of the GrpcRoute to get. Must be in the format
-   * `projects/&#42;&#47;locations/global/grpcRoutes/&#42;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;grpcRoutes/&#42;`.
    * </pre>
    *
    * <code>

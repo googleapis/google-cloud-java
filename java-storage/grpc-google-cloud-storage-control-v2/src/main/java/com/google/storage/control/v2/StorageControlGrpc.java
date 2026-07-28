@@ -1306,6 +1306,266 @@ public final class StorageControlGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRequest,
+          com.google.storage.control.v2.IntelligenceFinding>
+      getGetIntelligenceFindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIntelligenceFinding",
+      requestType = com.google.storage.control.v2.GetIntelligenceFindingRequest.class,
+      responseType = com.google.storage.control.v2.IntelligenceFinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRequest,
+          com.google.storage.control.v2.IntelligenceFinding>
+      getGetIntelligenceFindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.GetIntelligenceFindingRequest,
+            com.google.storage.control.v2.IntelligenceFinding>
+        getGetIntelligenceFindingMethod;
+    if ((getGetIntelligenceFindingMethod = StorageControlGrpc.getGetIntelligenceFindingMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getGetIntelligenceFindingMethod = StorageControlGrpc.getGetIntelligenceFindingMethod)
+            == null) {
+          StorageControlGrpc.getGetIntelligenceFindingMethod =
+              getGetIntelligenceFindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.GetIntelligenceFindingRequest,
+                          com.google.storage.control.v2.IntelligenceFinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetIntelligenceFinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.GetIntelligenceFindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.IntelligenceFinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("GetIntelligenceFinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetIntelligenceFindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+      getListIntelligenceFindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIntelligenceFindings",
+      requestType = com.google.storage.control.v2.ListIntelligenceFindingsRequest.class,
+      responseType = com.google.storage.control.v2.ListIntelligenceFindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+      getListIntelligenceFindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+            com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+        getListIntelligenceFindingsMethod;
+    if ((getListIntelligenceFindingsMethod = StorageControlGrpc.getListIntelligenceFindingsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getListIntelligenceFindingsMethod =
+                StorageControlGrpc.getListIntelligenceFindingsMethod)
+            == null) {
+          StorageControlGrpc.getListIntelligenceFindingsMethod =
+              getListIntelligenceFindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+                          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListIntelligenceFindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("ListIntelligenceFindings"))
+                      .build();
+        }
+      }
+    }
+    return getListIntelligenceFindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+      getSummarizeIntelligenceFindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SummarizeIntelligenceFindings",
+      requestType = com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest.class,
+      responseType = com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+      getSummarizeIntelligenceFindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+        getSummarizeIntelligenceFindingsMethod;
+    if ((getSummarizeIntelligenceFindingsMethod =
+            StorageControlGrpc.getSummarizeIntelligenceFindingsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getSummarizeIntelligenceFindingsMethod =
+                StorageControlGrpc.getSummarizeIntelligenceFindingsMethod)
+            == null) {
+          StorageControlGrpc.getSummarizeIntelligenceFindingsMethod =
+              getSummarizeIntelligenceFindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+                          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SummarizeIntelligenceFindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "SummarizeIntelligenceFindings"))
+                      .build();
+        }
+      }
+    }
+    return getSummarizeIntelligenceFindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+          com.google.storage.control.v2.IntelligenceFindingRevision>
+      getGetIntelligenceFindingRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIntelligenceFindingRevision",
+      requestType = com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest.class,
+      responseType = com.google.storage.control.v2.IntelligenceFindingRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+          com.google.storage.control.v2.IntelligenceFindingRevision>
+      getGetIntelligenceFindingRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+            com.google.storage.control.v2.IntelligenceFindingRevision>
+        getGetIntelligenceFindingRevisionMethod;
+    if ((getGetIntelligenceFindingRevisionMethod =
+            StorageControlGrpc.getGetIntelligenceFindingRevisionMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getGetIntelligenceFindingRevisionMethod =
+                StorageControlGrpc.getGetIntelligenceFindingRevisionMethod)
+            == null) {
+          StorageControlGrpc.getGetIntelligenceFindingRevisionMethod =
+              getGetIntelligenceFindingRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+                          com.google.storage.control.v2.IntelligenceFindingRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetIntelligenceFindingRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.IntelligenceFindingRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "GetIntelligenceFindingRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetIntelligenceFindingRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+      getListIntelligenceFindingRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIntelligenceFindingRevisions",
+      requestType = com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest.class,
+      responseType = com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+      getListIntelligenceFindingRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+        getListIntelligenceFindingRevisionsMethod;
+    if ((getListIntelligenceFindingRevisionsMethod =
+            StorageControlGrpc.getListIntelligenceFindingRevisionsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getListIntelligenceFindingRevisionsMethod =
+                StorageControlGrpc.getListIntelligenceFindingRevisionsMethod)
+            == null) {
+          StorageControlGrpc.getListIntelligenceFindingRevisionsMethod =
+              getListIntelligenceFindingRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+                          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListIntelligenceFindingRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "ListIntelligenceFindingRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListIntelligenceFindingRevisionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static StorageControlStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StorageControlStub> factory =
@@ -1780,6 +2040,84 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    default void getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIntelligenceFindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified project.
+     * </pre>
+     */
+    default void listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIntelligenceFindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarize the intelligence findings for the specified scope(org, folder or
+     * project).
+     * </pre>
+     */
+    default void summarizeIntelligenceFindings(
+        com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSummarizeIntelligenceFindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    default void getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFindingRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIntelligenceFindingRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    default void listIntelligenceFindingRevisions(
+        com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIntelligenceFindingRevisionsMethod(), responseObserver);
     }
   }
 
@@ -2282,6 +2620,94 @@ public final class StorageControlGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public void getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified project.
+     * </pre>
+     */
+    public void listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarize the intelligence findings for the specified scope(org, folder or
+     * project).
+     * </pre>
+     */
+    public void summarizeIntelligenceFindings(
+        com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSummarizeIntelligenceFindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public void getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFindingRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public void listIntelligenceFindingRevisions(
+        com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2698,6 +3124,79 @@ public final class StorageControlGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFinding getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIntelligenceFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingsResponse listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarize the intelligence findings for the specified scope(org, folder or
+     * project).
+     * </pre>
+     */
+    public com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSummarizeIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFindingRevision getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIntelligenceFindingRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3092,6 +3591,74 @@ public final class StorageControlGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFinding getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIntelligenceFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingsResponse listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarize the intelligence findings for the specified scope(org, folder or
+     * project).
+     * </pre>
+     */
+    public com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSummarizeIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFindingRevision getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIntelligenceFindingRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3517,6 +4084,85 @@ public final class StorageControlGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.IntelligenceFinding>
+        getIntelligenceFinding(
+            com.google.storage.control.v2.GetIntelligenceFindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+        listIntelligenceFindings(
+            com.google.storage.control.v2.ListIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarize the intelligence findings for the specified scope(org, folder or
+     * project).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSummarizeIntelligenceFindingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.IntelligenceFindingRevision>
+        getIntelligenceFindingRevision(
+            com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingRevisionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingRevisionsMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_FOLDER = 0;
@@ -3546,6 +4192,11 @@ public final class StorageControlGrpc {
   private static final int METHODID_GET_IAM_POLICY = 24;
   private static final int METHODID_SET_IAM_POLICY = 25;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 26;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING = 27;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDINGS = 28;
+  private static final int METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS = 29;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING_REVISION = 30;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3716,6 +4367,40 @@ public final class StorageControlGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INTELLIGENCE_FINDING:
+          serviceImpl.getIntelligenceFinding(
+              (com.google.storage.control.v2.GetIntelligenceFindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_INTELLIGENCE_FINDINGS:
+          serviceImpl.listIntelligenceFindings(
+              (com.google.storage.control.v2.ListIntelligenceFindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.ListIntelligenceFindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS:
+          serviceImpl.summarizeIntelligenceFindings(
+              (com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INTELLIGENCE_FINDING_REVISION:
+          serviceImpl.getIntelligenceFindingRevision(
+              (com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.IntelligenceFindingRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS:
+          serviceImpl.listIntelligenceFindingRevisions(
+              (com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>)
                   responseObserver);
           break;
         default:
@@ -3913,6 +4598,41 @@ public final class StorageControlGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getGetIntelligenceFindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.GetIntelligenceFindingRequest,
+                    com.google.storage.control.v2.IntelligenceFinding>(
+                    service, METHODID_GET_INTELLIGENCE_FINDING)))
+        .addMethod(
+            getListIntelligenceFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+                    com.google.storage.control.v2.ListIntelligenceFindingsResponse>(
+                    service, METHODID_LIST_INTELLIGENCE_FINDINGS)))
+        .addMethod(
+            getSummarizeIntelligenceFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+                    com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>(
+                    service, METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS)))
+        .addMethod(
+            getGetIntelligenceFindingRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+                    com.google.storage.control.v2.IntelligenceFindingRevision>(
+                    service, METHODID_GET_INTELLIGENCE_FINDING_REVISION)))
+        .addMethod(
+            getListIntelligenceFindingRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+                    com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>(
+                    service, METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS)))
         .build();
   }
 
@@ -3991,6 +4711,11 @@ public final class StorageControlGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getGetIntelligenceFindingMethod())
+                      .addMethod(getListIntelligenceFindingsMethod())
+                      .addMethod(getSummarizeIntelligenceFindingsMethod())
+                      .addMethod(getGetIntelligenceFindingRevisionMethod())
+                      .addMethod(getListIntelligenceFindingRevisionsMethod())
                       .build();
         }
       }

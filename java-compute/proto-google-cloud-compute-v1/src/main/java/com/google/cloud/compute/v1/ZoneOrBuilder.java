@@ -347,6 +347,25 @@ public interface ZoneOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  boolean hasResourceStatus();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   *
+   * @return The resourceStatus.
+   */
+  com.google.cloud.compute.v1.ZoneResourceStatus getResourceStatus();
+
+  /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   */
+  com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder getResourceStatusOrBuilder();
+
+  /**
    *
    *
    * <pre>

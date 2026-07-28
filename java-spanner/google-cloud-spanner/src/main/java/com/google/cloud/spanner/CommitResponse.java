@@ -18,6 +18,8 @@ package com.google.cloud.spanner;
 
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
@@ -52,6 +54,30 @@ public class CommitResponse {
       return null;
     }
     return Timestamp.fromProto(proto.getSnapshotTimestamp());
+  }
+
+  /**
+   * Returns the {@link IsolationLevel} used for the read-write transaction if the transaction ran
+   * in internal test environments, and otherwise returns null.
+   */
+  public @Nullable IsolationLevel getIsolationLevel() {
+    if (proto.getIsolationLevel() == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+        || proto.getIsolationLevel() == IsolationLevel.UNRECOGNIZED) {
+      return null;
+    }
+    return proto.getIsolationLevel();
+  }
+
+  /**
+   * Returns the {@link ReadLockMode} used for the read-write transaction if the transaction ran in
+   * internal test environments, and otherwise returns null.
+   */
+  public @Nullable ReadLockMode getReadLockMode() {
+    if (proto.getReadLockMode() == ReadLockMode.READ_LOCK_MODE_UNSPECIFIED
+        || proto.getReadLockMode() == ReadLockMode.UNRECOGNIZED) {
+      return null;
+    }
+    return proto.getReadLockMode();
   }
 
   /**

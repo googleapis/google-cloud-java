@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -680,10 +682,89 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportEvaluations</td>
+ *      <td><p> Exports evaluations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsAsync(ExportEvaluationsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsAsync(AppName parent)
+ *           <li><p> exportEvaluationsAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsOperationCallable()
+ *           <li><p> exportEvaluationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportEvaluationRuns</td>
+ *      <td><p> Exports evaluations runs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationRunsAsync(ExportEvaluationRunsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationRunsAsync(AppName parent, List&lt;String&gt; names)
+ *           <li><p> exportEvaluationRunsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationRunsOperationCallable()
+ *           <li><p> exportEvaluationRunsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportEvaluationResults</td>
+ *      <td><p> Exports evaluations results.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationResultsAsync(ExportEvaluationResultsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationResultsAsync(EvaluationName parent, List&lt;String&gt; names)
+ *           <li><p> exportEvaluationResultsAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationResultsOperationCallable()
+ *           <li><p> exportEvaluationResultsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunEvaluationResultMetrics</td>
+ *      <td><p> Runs metrics on an existing evaluation result.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runEvaluationResultMetricsAsync(RunEvaluationResultMetricsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> runEvaluationResultMetricsAsync(EvaluationResultName evaluationResultId)
+ *           <li><p> runEvaluationResultMetricsAsync(String evaluationResultId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runEvaluationResultMetricsOperationCallable()
+ *           <li><p> runEvaluationResultMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -769,10 +850,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
-  private final EvaluationServiceSettings settings;
+  private final @Nullable EvaluationServiceSettings settings;
   private final EvaluationServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -820,7 +902,7 @@ public class EvaluationServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EvaluationServiceSettings getSettings() {
+  public final @Nullable EvaluationServiceSettings getSettings() {
     return settings;
   }
 
@@ -868,7 +950,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata>
-      runEvaluationAsync(AppName app) {
+      runEvaluationAsync(@Nullable AppName app) {
     RunEvaluationRequest request =
         RunEvaluationRequest.newBuilder().setApp(app == null ? null : app.toString()).build();
     return runEvaluationAsync(request);
@@ -936,6 +1018,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   RunEvaluationResponse response = evaluationServiceClient.runEvaluationAsync(request).get();
    * }
@@ -983,6 +1066,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   OperationFuture<RunEvaluationResponse, RunEvaluationOperationMetadata> future =
    *       evaluationServiceClient.runEvaluationOperationCallable().futureCall(request);
@@ -1031,6 +1115,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
    *           .setGenerateLatencyReport(true)
+   *           .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       evaluationServiceClient.runEvaluationCallable().futureCall(request);
@@ -1073,7 +1158,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadEvaluationAudioResponse uploadEvaluationAudio(
-      EvaluationName name, ByteString audioContent) {
+      @Nullable EvaluationName name, ByteString audioContent) {
     UploadEvaluationAudioRequest request =
         UploadEvaluationAudioRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1215,7 +1300,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param evaluation Required. The evaluation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation createEvaluation(AppName parent, Evaluation evaluation) {
+  public final Evaluation createEvaluation(@Nullable AppName parent, Evaluation evaluation) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1284,7 +1369,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Evaluation createEvaluation(
-      AppName parent, Evaluation evaluation, String evaluationId) {
+      @Nullable AppName parent, Evaluation evaluation, String evaluationId) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1418,7 +1503,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Evaluation, GenerateEvaluationOperationMetadata>
-      generateEvaluationAsync(ConversationName conversation) {
+      generateEvaluationAsync(@Nullable ConversationName conversation) {
     GenerateEvaluationRequest request =
         GenerateEvaluationRequest.newBuilder()
             .setConversation(conversation == null ? null : conversation.toString())
@@ -1573,7 +1658,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportEvaluationsResponse, ImportEvaluationsOperationMetadata>
-      importEvaluationsAsync(AppName parent) {
+      importEvaluationsAsync(@Nullable AppName parent) {
     ImportEvaluationsRequest request =
         ImportEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1728,7 +1813,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationDataset createEvaluationDataset(
-      AppName parent, EvaluationDataset evaluationDataset) {
+      @Nullable AppName parent, EvaluationDataset evaluationDataset) {
     CreateEvaluationDatasetRequest request =
         CreateEvaluationDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1803,7 +1888,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationDataset createEvaluationDataset(
-      AppName parent, EvaluationDataset evaluationDataset, String evaluationDatasetId) {
+      @Nullable AppName parent, EvaluationDataset evaluationDataset, String evaluationDatasetId) {
     CreateEvaluationDatasetRequest request =
         CreateEvaluationDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2121,7 +2206,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluation(EvaluationName name) {
+  public final void deleteEvaluation(@Nullable EvaluationName name) {
     DeleteEvaluationRequest request =
         DeleteEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEvaluation(request);
@@ -2239,7 +2324,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation result to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationResult(EvaluationResultName name) {
+  public final void deleteEvaluationResult(@Nullable EvaluationResultName name) {
     DeleteEvaluationResultRequest request =
         DeleteEvaluationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2362,7 +2447,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationDataset(EvaluationDatasetName name) {
+  public final void deleteEvaluationDataset(@Nullable EvaluationDatasetName name) {
     DeleteEvaluationDatasetRequest request =
         DeleteEvaluationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2487,7 +2572,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteEvaluationRunOperationMetadata>
-      deleteEvaluationRunAsync(EvaluationRunName name) {
+      deleteEvaluationRunAsync(@Nullable EvaluationRunName name) {
     DeleteEvaluationRunRequest request =
         DeleteEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2638,7 +2723,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -2752,7 +2837,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation result to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationResult getEvaluationResult(EvaluationResultName name) {
+  public final EvaluationResult getEvaluationResult(@Nullable EvaluationResultName name) {
     GetEvaluationResultRequest request =
         GetEvaluationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2875,7 +2960,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationDataset getEvaluationDataset(EvaluationDatasetName name) {
+  public final EvaluationDataset getEvaluationDataset(@Nullable EvaluationDatasetName name) {
     GetEvaluationDatasetRequest request =
         GetEvaluationDatasetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2997,7 +3082,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation run to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationRun getEvaluationRun(EvaluationRunName name) {
+  public final EvaluationRun getEvaluationRun(@Nullable EvaluationRunName name) {
     GetEvaluationRunRequest request =
         GetEvaluationRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluationRun(request);
@@ -3113,7 +3198,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluations from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationsPagedResponse listEvaluations(AppName parent) {
+  public final ListEvaluationsPagedResponse listEvaluations(@Nullable AppName parent) {
     ListEvaluationsRequest request =
         ListEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3295,7 +3380,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     the filter. For example: `projects/{project}/locations/{location}/apps/{app}/evaluations/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationResultsPagedResponse listEvaluationResults(EvaluationName parent) {
+  public final ListEvaluationResultsPagedResponse listEvaluationResults(
+      @Nullable EvaluationName parent) {
     ListEvaluationResultsRequest request =
         ListEvaluationResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3476,7 +3562,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation datasets from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationDatasetsPagedResponse listEvaluationDatasets(AppName parent) {
+  public final ListEvaluationDatasetsPagedResponse listEvaluationDatasets(
+      @Nullable AppName parent) {
     ListEvaluationDatasetsRequest request =
         ListEvaluationDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3651,7 +3738,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation runs from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationRunsPagedResponse listEvaluationRuns(AppName parent) {
+  public final ListEvaluationRunsPagedResponse listEvaluationRuns(@Nullable AppName parent) {
     ListEvaluationRunsRequest request =
         ListEvaluationRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3826,7 +3913,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the app to list evaluation expectations from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationExpectationsPagedResponse listEvaluationExpectations(AppName parent) {
+  public final ListEvaluationExpectationsPagedResponse listEvaluationExpectations(
+      @Nullable AppName parent) {
     ListEvaluationExpectationsRequest request =
         ListEvaluationExpectationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4001,7 +4089,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation expectation to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EvaluationExpectation getEvaluationExpectation(EvaluationExpectationName name) {
+  public final EvaluationExpectation getEvaluationExpectation(
+      @Nullable EvaluationExpectationName name) {
     GetEvaluationExpectationRequest request =
         GetEvaluationExpectationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4129,7 +4218,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationExpectation createEvaluationExpectation(
-      AppName parent, EvaluationExpectation evaluationExpectation) {
+      @Nullable AppName parent, EvaluationExpectation evaluationExpectation) {
     CreateEvaluationExpectationRequest request =
         CreateEvaluationExpectationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4204,7 +4293,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EvaluationExpectation createEvaluationExpectation(
-      AppName parent, EvaluationExpectation evaluationExpectation, String evaluationExpectationId) {
+      @Nullable AppName parent,
+      EvaluationExpectation evaluationExpectation,
+      String evaluationExpectationId) {
     CreateEvaluationExpectationRequest request =
         CreateEvaluationExpectationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4435,7 +4526,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the evaluation expectation to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteEvaluationExpectation(EvaluationExpectationName name) {
+  public final void deleteEvaluationExpectation(@Nullable EvaluationExpectationName name) {
     DeleteEvaluationExpectationRequest request =
         DeleteEvaluationExpectationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4564,7 +4655,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScheduledEvaluationRun createScheduledEvaluationRun(
-      AppName parent, ScheduledEvaluationRun scheduledEvaluationRun) {
+      @Nullable AppName parent, ScheduledEvaluationRun scheduledEvaluationRun) {
     CreateScheduledEvaluationRunRequest request =
         CreateScheduledEvaluationRunRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4639,7 +4730,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ScheduledEvaluationRun createScheduledEvaluationRun(
-      AppName parent,
+      @Nullable AppName parent,
       ScheduledEvaluationRun scheduledEvaluationRun,
       String scheduledEvaluationRunId) {
     CreateScheduledEvaluationRunRequest request =
@@ -4780,7 +4871,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the scheduled evaluation run to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScheduledEvaluationRun getScheduledEvaluationRun(ScheduledEvaluationRunName name) {
+  public final ScheduledEvaluationRun getScheduledEvaluationRun(
+      @Nullable ScheduledEvaluationRunName name) {
     GetScheduledEvaluationRunRequest request =
         GetScheduledEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4907,7 +4999,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScheduledEvaluationRunsPagedResponse listScheduledEvaluationRuns(
-      AppName parent) {
+      @Nullable AppName parent) {
     ListScheduledEvaluationRunsRequest request =
         ListScheduledEvaluationRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5179,7 +5271,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the scheduled evaluation run to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteScheduledEvaluationRun(ScheduledEvaluationRunName name) {
+  public final void deleteScheduledEvaluationRun(@Nullable ScheduledEvaluationRunName name) {
     DeleteScheduledEvaluationRunRequest request =
         DeleteScheduledEvaluationRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5304,7 +5396,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apps/{app}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestPersonaVoiceResponse testPersonaVoice(AppName app) {
+  public final TestPersonaVoiceResponse testPersonaVoice(@Nullable AppName app) {
     TestPersonaVoiceRequest request =
         TestPersonaVoiceRequest.newBuilder().setApp(app == null ? null : app.toString()).build();
     return testPersonaVoice(request);
@@ -5400,12 +5492,688 @@ public class EvaluationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluations from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      @Nullable AppName parent) {
+    ExportEvaluationsRequest request =
+        ExportEvaluationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return exportEvaluationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   String parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluations from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      String parent) {
+    ExportEvaluationsRequest request =
+        ExportEvaluationsRequest.newBuilder().setParent(parent).build();
+    return exportEvaluationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      ExportEvaluationsRequest request) {
+    return exportEvaluationsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   OperationFuture<ExportEvaluationsResponse, OperationMetadata> future =
+   *       evaluationServiceClient.exportEvaluationsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportEvaluationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable() {
+    return stub.exportEvaluationsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.exportEvaluationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
+    return stub.exportEvaluationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations runs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+   *   List<String> names = new ArrayList<>();
+   *   ExportEvaluationRunsResponse response =
+   *       evaluationServiceClient.exportEvaluationRunsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluation runs from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @param names Required. The resource names of the evaluation runs to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationRunsResponse, ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsAsync(@Nullable AppName parent, List<String> names) {
+    ExportEvaluationRunsRequest request =
+        ExportEvaluationRunsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return exportEvaluationRunsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations runs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   String parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   ExportEvaluationRunsResponse response =
+   *       evaluationServiceClient.exportEvaluationRunsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluation runs from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @param names Required. The resource names of the evaluation runs to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationRunsResponse, ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsAsync(String parent, List<String> names) {
+    ExportEvaluationRunsRequest request =
+        ExportEvaluationRunsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return exportEvaluationRunsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations runs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationRunsRequest request =
+   *       ExportEvaluationRunsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   ExportEvaluationRunsResponse response =
+   *       evaluationServiceClient.exportEvaluationRunsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationRunsResponse, ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsAsync(ExportEvaluationRunsRequest request) {
+    return exportEvaluationRunsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations runs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationRunsRequest request =
+   *       ExportEvaluationRunsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ExportEvaluationRunsResponse, ExportEvaluationRunsOperationMetadata> future =
+   *       evaluationServiceClient.exportEvaluationRunsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportEvaluationRunsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable() {
+    return stub.exportEvaluationRunsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations runs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationRunsRequest request =
+   *       ExportEvaluationRunsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.exportEvaluationRunsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportEvaluationRunsRequest, Operation>
+      exportEvaluationRunsCallable() {
+    return stub.exportEvaluationRunsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   EvaluationName parent = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+   *   List<String> names = new ArrayList<>();
+   *   ExportEvaluationResultsResponse response =
+   *       evaluationServiceClient.exportEvaluationResultsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the evaluation to export evaluation results from.
+   *     Format: `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
+   * @param names Required. The resource names of the evaluation results to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ExportEvaluationResultsResponse, ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsAsync(@Nullable EvaluationName parent, List<String> names) {
+    ExportEvaluationResultsRequest request =
+        ExportEvaluationResultsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return exportEvaluationResultsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   String parent =
+   *       EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   ExportEvaluationResultsResponse response =
+   *       evaluationServiceClient.exportEvaluationResultsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the evaluation to export evaluation results from.
+   *     Format: `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
+   * @param names Required. The resource names of the evaluation results to export.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ExportEvaluationResultsResponse, ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsAsync(String parent, List<String> names) {
+    ExportEvaluationResultsRequest request =
+        ExportEvaluationResultsRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return exportEvaluationResultsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationResultsRequest request =
+   *       ExportEvaluationResultsRequest.newBuilder()
+   *           .setParent(
+   *               EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   ExportEvaluationResultsResponse response =
+   *       evaluationServiceClient.exportEvaluationResultsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ExportEvaluationResultsResponse, ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsAsync(ExportEvaluationResultsRequest request) {
+    return exportEvaluationResultsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationResultsRequest request =
+   *       ExportEvaluationResultsRequest.newBuilder()
+   *           .setParent(
+   *               EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ExportEvaluationResultsResponse, ExportEvaluationResultsOperationMetadata>
+   *       future =
+   *           evaluationServiceClient
+   *               .exportEvaluationResultsOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   ExportEvaluationResultsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable() {
+    return stub.exportEvaluationResultsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations results.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationResultsRequest request =
+   *       ExportEvaluationResultsRequest.newBuilder()
+   *           .setParent(
+   *               EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.exportEvaluationResultsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable() {
+    return stub.exportEvaluationResultsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs metrics on an existing evaluation result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   EvaluationResultName evaluationResultId =
+   *       EvaluationResultName.of(
+   *           "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]");
+   *   RunEvaluationResultMetricsResponse response =
+   *       evaluationServiceClient.runEvaluationResultMetricsAsync(evaluationResultId).get();
+   * }
+   * }</pre>
+   *
+   * @param evaluationResultId Required. The evaluation result to run metrics for. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}/results/{evaluation_result_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          RunEvaluationResultMetricsResponse, RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsAsync(@Nullable EvaluationResultName evaluationResultId) {
+    RunEvaluationResultMetricsRequest request =
+        RunEvaluationResultMetricsRequest.newBuilder()
+            .setEvaluationResultId(
+                evaluationResultId == null ? null : evaluationResultId.toString())
+            .build();
+    return runEvaluationResultMetricsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs metrics on an existing evaluation result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   String evaluationResultId =
+   *       EvaluationResultName.of(
+   *               "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]")
+   *           .toString();
+   *   RunEvaluationResultMetricsResponse response =
+   *       evaluationServiceClient.runEvaluationResultMetricsAsync(evaluationResultId).get();
+   * }
+   * }</pre>
+   *
+   * @param evaluationResultId Required. The evaluation result to run metrics for. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}/results/{evaluation_result_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          RunEvaluationResultMetricsResponse, RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsAsync(String evaluationResultId) {
+    RunEvaluationResultMetricsRequest request =
+        RunEvaluationResultMetricsRequest.newBuilder()
+            .setEvaluationResultId(evaluationResultId)
+            .build();
+    return runEvaluationResultMetricsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs metrics on an existing evaluation result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   RunEvaluationResultMetricsRequest request =
+   *       RunEvaluationResultMetricsRequest.newBuilder()
+   *           .setEvaluationResultId(
+   *               EvaluationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]")
+   *                   .toString())
+   *           .build();
+   *   RunEvaluationResultMetricsResponse response =
+   *       evaluationServiceClient.runEvaluationResultMetricsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          RunEvaluationResultMetricsResponse, RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsAsync(RunEvaluationResultMetricsRequest request) {
+    return runEvaluationResultMetricsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs metrics on an existing evaluation result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   RunEvaluationResultMetricsRequest request =
+   *       RunEvaluationResultMetricsRequest.newBuilder()
+   *           .setEvaluationResultId(
+   *               EvaluationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<
+   *           RunEvaluationResultMetricsResponse, RunEvaluationResultMetricsOperationMetadata>
+   *       future =
+   *           evaluationServiceClient
+   *               .runEvaluationResultMetricsOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   RunEvaluationResultMetricsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable() {
+    return stub.runEvaluationResultMetricsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs metrics on an existing evaluation result.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   RunEvaluationResultMetricsRequest request =
+   *       RunEvaluationResultMetricsRequest.newBuilder()
+   *           .setEvaluationResultId(
+   *               EvaluationResultName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.runEvaluationResultMetricsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable() {
+    return stub.runEvaluationResultMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -5449,9 +6217,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -5496,9 +6263,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -5653,8 +6419,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
 
     private ListEvaluationsPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -5664,14 +6430,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsPage createPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       return new ListEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationsPage> createPageAsync(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
         ApiFuture<ListEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5686,7 +6452,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsFixedSizeCollection> {
 
     private ListEvaluationsFixedSizeCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5696,7 +6462,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsFixedSizeCollection createCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5734,9 +6500,11 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsPage> {
 
     private ListEvaluationResultsPage(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       super(context, response);
     }
 
@@ -5746,15 +6514,19 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsPage createPage(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       return new ListEvaluationResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationResultsPage> createPageAsync(
-        PageContext<ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
+        @Nullable
+            PageContext<
+                ListEvaluationResultsRequest, ListEvaluationResultsResponse, EvaluationResult>
             context,
         ApiFuture<ListEvaluationResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5770,7 +6542,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsFixedSizeCollection> {
 
     private ListEvaluationResultsFixedSizeCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5780,7 +6552,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsFixedSizeCollection createCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       return new ListEvaluationResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5819,10 +6591,11 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationDatasetsPage> {
 
     private ListEvaluationDatasetsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
-        ListEvaluationDatasetsResponse response) {
+        @Nullable ListEvaluationDatasetsResponse response) {
       super(context, response);
     }
 
@@ -5832,16 +6605,18 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationDatasetsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
-        ListEvaluationDatasetsResponse response) {
+        @Nullable ListEvaluationDatasetsResponse response) {
       return new ListEvaluationDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationDatasetsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationDatasetsRequest, ListEvaluationDatasetsResponse, EvaluationDataset>
             context,
         ApiFuture<ListEvaluationDatasetsResponse> futureResponse) {
@@ -5858,7 +6633,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationDatasetsFixedSizeCollection> {
 
     private ListEvaluationDatasetsFixedSizeCollection(
-        List<ListEvaluationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5868,7 +6643,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationDatasetsFixedSizeCollection createCollection(
-        List<ListEvaluationDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationDatasetsPage> pages, int collectionSize) {
       return new ListEvaluationDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5905,8 +6680,9 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationRunsPage> {
 
     private ListEvaluationRunsPage(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
-        ListEvaluationRunsResponse response) {
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
+        @Nullable ListEvaluationRunsResponse response) {
       super(context, response);
     }
 
@@ -5916,14 +6692,16 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationRunsPage createPage(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
-        ListEvaluationRunsResponse response) {
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
+        @Nullable ListEvaluationRunsResponse response) {
       return new ListEvaluationRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationRunsPage> createPageAsync(
-        PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun> context,
+        @Nullable PageContext<ListEvaluationRunsRequest, ListEvaluationRunsResponse, EvaluationRun>
+            context,
         ApiFuture<ListEvaluationRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5938,7 +6716,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationRunsFixedSizeCollection> {
 
     private ListEvaluationRunsFixedSizeCollection(
-        List<ListEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5948,7 +6726,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationRunsFixedSizeCollection createCollection(
-        List<ListEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationRunsPage> pages, int collectionSize) {
       return new ListEvaluationRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5989,12 +6767,13 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationExpectationsPage> {
 
     private ListEvaluationExpectationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
             context,
-        ListEvaluationExpectationsResponse response) {
+        @Nullable ListEvaluationExpectationsResponse response) {
       super(context, response);
     }
 
@@ -6004,18 +6783,20 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationExpectationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
             context,
-        ListEvaluationExpectationsResponse response) {
+        @Nullable ListEvaluationExpectationsResponse response) {
       return new ListEvaluationExpectationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationExpectationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationExpectationsRequest,
                 ListEvaluationExpectationsResponse,
                 EvaluationExpectation>
@@ -6034,7 +6815,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationExpectationsFixedSizeCollection> {
 
     private ListEvaluationExpectationsFixedSizeCollection(
-        List<ListEvaluationExpectationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationExpectationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6044,7 +6825,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationExpectationsFixedSizeCollection createCollection(
-        List<ListEvaluationExpectationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationExpectationsPage> pages, int collectionSize) {
       return new ListEvaluationExpectationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6086,12 +6867,13 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListScheduledEvaluationRunsPage> {
 
     private ListScheduledEvaluationRunsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
             context,
-        ListScheduledEvaluationRunsResponse response) {
+        @Nullable ListScheduledEvaluationRunsResponse response) {
       super(context, response);
     }
 
@@ -6101,18 +6883,20 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListScheduledEvaluationRunsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
             context,
-        ListScheduledEvaluationRunsResponse response) {
+        @Nullable ListScheduledEvaluationRunsResponse response) {
       return new ListScheduledEvaluationRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScheduledEvaluationRunsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScheduledEvaluationRunsRequest,
                 ListScheduledEvaluationRunsResponse,
                 ScheduledEvaluationRun>
@@ -6131,7 +6915,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListScheduledEvaluationRunsFixedSizeCollection> {
 
     private ListScheduledEvaluationRunsFixedSizeCollection(
-        List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6141,7 +6925,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListScheduledEvaluationRunsFixedSizeCollection createCollection(
-        List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScheduledEvaluationRunsPage> pages, int collectionSize) {
       return new ListScheduledEvaluationRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6175,8 +6959,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6186,14 +6970,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6207,7 +6991,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6217,7 +7002,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

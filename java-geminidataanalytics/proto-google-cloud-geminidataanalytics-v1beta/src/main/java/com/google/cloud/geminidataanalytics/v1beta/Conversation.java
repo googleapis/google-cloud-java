@@ -54,6 +54,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
   private Conversation() {
     name_ = "";
     agents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    kmsKey_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -469,6 +470,131 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasKmsKey() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+   * Conversation resources. Encryption will happen at Titan layer, we will pass
+   * the KMS key to Titan.
+   *
+   * Format:
+   * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MEMORY_PAUSED_FIELD_NUMBER = 11;
+  private boolean memoryPaused_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether memory is paused for this conversation.
+   * </pre>
+   *
+   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the memoryPaused field is set.
+   */
+  @java.lang.Override
+  public boolean hasMemoryPaused() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether memory is paused for this conversation.
+   * </pre>
+   *
+   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryPaused.
+   */
+  @java.lang.Override
+  public boolean getMemoryPaused() {
+    return memoryPaused_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -497,6 +623,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, kmsKey_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(11, memoryPaused_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -533,6 +665,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, kmsKey_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, memoryPaused_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -560,6 +698,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       if (!getLastUsedTime().equals(other.getLastUsedTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasKmsKey() != other.hasKmsKey()) return false;
+    if (hasKmsKey()) {
+      if (!getKmsKey().equals(other.getKmsKey())) return false;
+    }
+    if (hasMemoryPaused() != other.hasMemoryPaused()) return false;
+    if (hasMemoryPaused()) {
+      if (getMemoryPaused() != other.getMemoryPaused()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -588,6 +734,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasKmsKey()) {
+      hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKey().hashCode();
+    }
+    if (hasMemoryPaused()) {
+      hash = (37 * hash) + MEMORY_PAUSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMemoryPaused());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -775,6 +929,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         lastUsedTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      kmsKey_ = "";
+      memoryPaused_ = false;
       return this;
     }
 
@@ -832,6 +988,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.memoryPaused_ = memoryPaused_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -871,6 +1035,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000010;
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasMemoryPaused()) {
+        setMemoryPaused(other.getMemoryPaused());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -936,6 +1108,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 74
+            case 82:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 82
+            case 88:
+              {
+                memoryPaused_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1948,6 +2132,246 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the kmsKey field is set.
+     */
+    public boolean hasKmsKey() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer managed encryption key (CMEK) to use for encrypting the
+     * Conversation resources. Encryption will happen at Titan layer, we will pass
+     * the KMS key to Titan.
+     *
+     * Format:
+     * projects/{project_id}/locations/{location}/keyRings/{key_ring_name}/cryptoKeys/{key_name}.
+     * </pre>
+     *
+     * <code>
+     * optional string kms_key = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private boolean memoryPaused_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether memory is paused for this conversation.
+     * </pre>
+     *
+     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the memoryPaused field is set.
+     */
+    @java.lang.Override
+    public boolean hasMemoryPaused() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether memory is paused for this conversation.
+     * </pre>
+     *
+     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The memoryPaused.
+     */
+    @java.lang.Override
+    public boolean getMemoryPaused() {
+      return memoryPaused_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether memory is paused for this conversation.
+     * </pre>
+     *
+     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The memoryPaused to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryPaused(boolean value) {
+
+      memoryPaused_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether memory is paused for this conversation.
+     * </pre>
+     *
+     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMemoryPaused() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      memoryPaused_ = false;
+      onChanged();
       return this;
     }
 

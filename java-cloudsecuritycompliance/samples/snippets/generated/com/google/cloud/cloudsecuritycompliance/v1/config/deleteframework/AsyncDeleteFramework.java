@@ -38,7 +38,10 @@ public class AsyncDeleteFramework {
     try (ConfigClient configClient = ConfigClient.create()) {
       DeleteFrameworkRequest request =
           DeleteFrameworkRequest.newBuilder()
-              .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+              .setName(
+                  FrameworkName.ofOrganizationLocationFrameworkName(
+                          "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                      .toString())
               .build();
       ApiFuture<Empty> future = configClient.deleteFrameworkCallable().futureCall(request);
       // Do something.

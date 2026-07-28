@@ -23,6 +23,8 @@ import com.google.cloud.chronicle.v1.stub.InstanceServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -131,9 +133,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceServiceClient implements BackgroundResource {
-  private final InstanceServiceSettings settings;
+  private final @Nullable InstanceServiceSettings settings;
   private final InstanceServiceStub stub;
 
   /** Constructs an instance of InstanceServiceClient with default settings. */
@@ -173,7 +176,7 @@ public class InstanceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InstanceServiceSettings getSettings() {
+  public final @Nullable InstanceServiceSettings getSettings() {
     return settings;
   }
 
@@ -203,7 +206,7 @@ public class InstanceServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Instance getInstance(InstanceName name) {
+  public final Instance getInstance(@Nullable InstanceName name) {
     GetInstanceRequest request =
         GetInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInstance(request);

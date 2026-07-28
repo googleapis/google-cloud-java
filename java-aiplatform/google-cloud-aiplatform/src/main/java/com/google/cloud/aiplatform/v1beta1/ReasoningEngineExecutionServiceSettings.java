@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -41,9 +42,12 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -95,7 +99,34 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for asyncQueryReasoningEngine:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ReasoningEngineExecutionServiceSettings.Builder reasoningEngineExecutionServiceSettingsBuilder =
+ *     ReasoningEngineExecutionServiceSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * reasoningEngineExecutionServiceSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ReasoningEngineExecutionServiceSettings
@@ -113,6 +144,31 @@ public class ReasoningEngineExecutionServiceSettings
       streamQueryReasoningEngineSettings() {
     return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
         .streamQueryReasoningEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncQueryReasoningEngine. */
+  public UnaryCallSettings<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .asyncQueryReasoningEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asyncQueryReasoningEngine. */
+  public OperationCallSettings<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .asyncQueryReasoningEngineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelAsyncQueryReasoningEngine. */
+  public UnaryCallSettings<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .cancelAsyncQueryReasoningEngineSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -188,7 +244,7 @@ public class ReasoningEngineExecutionServiceSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -209,7 +265,7 @@ public class ReasoningEngineExecutionServiceSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ReasoningEngineExecutionServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -251,6 +307,28 @@ public class ReasoningEngineExecutionServiceSettings
     public ServerStreamingCallSettings.Builder<StreamQueryReasoningEngineRequest, HttpBody>
         streamQueryReasoningEngineSettings() {
       return getStubSettingsBuilder().streamQueryReasoningEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<AsyncQueryReasoningEngineRequest, Operation>
+        asyncQueryReasoningEngineSettings() {
+      return getStubSettingsBuilder().asyncQueryReasoningEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asyncQueryReasoningEngine. */
+    public OperationCallSettings.Builder<
+            AsyncQueryReasoningEngineRequest,
+            AsyncQueryReasoningEngineResponse,
+            AsyncQueryReasoningEngineOperationMetadata>
+        asyncQueryReasoningEngineOperationSettings() {
+      return getStubSettingsBuilder().asyncQueryReasoningEngineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAsyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineSettings() {
+      return getStubSettingsBuilder().cancelAsyncQueryReasoningEngineSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

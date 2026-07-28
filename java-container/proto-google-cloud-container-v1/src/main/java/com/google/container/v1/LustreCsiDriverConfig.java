@@ -110,13 +110,36 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
    * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2344
+   *     See google/container/v1/cluster_service.proto;l=2503
    * @return The enableLegacyLustrePort.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean getEnableLegacyLustrePort() {
     return enableLegacyLustrePort_;
+  }
+
+  public static final int DISABLE_MULTI_NIC_FIELD_NUMBER = 4;
+  private boolean disableMultiNic_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * When set to true, this disables multi-NIC support for the Lustre CSI
+   * driver.
+   * By default, GKE enables multi-NIC support, which allows the Lustre
+   * CSI driver to automatically detect and configure all suitable network
+   * interfaces on a node to maximize I/O performance for demanding workloads.
+   * </pre>
+   *
+   * <code>bool disable_multi_nic = 4;</code>
+   *
+   * @return The disableMultiNic.
+   */
+  @java.lang.Override
+  public boolean getDisableMultiNic() {
+    return disableMultiNic_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -139,6 +162,9 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
     if (enableLegacyLustrePort_ != false) {
       output.writeBool(3, enableLegacyLustrePort_);
     }
+    if (disableMultiNic_ != false) {
+      output.writeBool(4, disableMultiNic_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -153,6 +179,9 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
     }
     if (enableLegacyLustrePort_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableLegacyLustrePort_);
+    }
+    if (disableMultiNic_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, disableMultiNic_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -172,6 +201,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
 
     if (getEnabled() != other.getEnabled()) return false;
     if (getEnableLegacyLustrePort() != other.getEnableLegacyLustrePort()) return false;
+    if (getDisableMultiNic() != other.getDisableMultiNic()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +217,8 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
     hash = (37 * hash) + ENABLE_LEGACY_LUSTRE_PORT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLegacyLustrePort());
+    hash = (37 * hash) + DISABLE_MULTI_NIC_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMultiNic());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -329,6 +361,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       enabled_ = false;
       enableLegacyLustrePort_ = false;
+      disableMultiNic_ = false;
       return this;
     }
 
@@ -371,6 +404,9 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.enableLegacyLustrePort_ = enableLegacyLustrePort_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.disableMultiNic_ = disableMultiNic_;
+      }
     }
 
     @java.lang.Override
@@ -390,6 +426,9 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
       }
       if (other.getEnableLegacyLustrePort() != false) {
         setEnableLegacyLustrePort(other.getEnableLegacyLustrePort());
+      }
+      if (other.getDisableMultiNic() != false) {
+        setDisableMultiNic(other.getDisableMultiNic());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -429,6 +468,12 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                disableMultiNic_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -526,7 +571,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2344
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @return The enableLegacyLustrePort.
      */
     @java.lang.Override
@@ -555,7 +600,7 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2344
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @param value The enableLegacyLustrePort to set.
      * @return This builder for chaining.
      */
@@ -588,13 +633,81 @@ public final class LustreCsiDriverConfig extends com.google.protobuf.GeneratedMe
      * <code>bool enable_legacy_lustre_port = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.LustreCsiDriverConfig.enable_legacy_lustre_port is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=2344
+     *     deprecated. See google/container/v1/cluster_service.proto;l=2503
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnableLegacyLustrePort() {
       bitField0_ = (bitField0_ & ~0x00000002);
       enableLegacyLustrePort_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableMultiNic_;
+
+    /**
+     *
+     *
+     * <pre>
+     * When set to true, this disables multi-NIC support for the Lustre CSI
+     * driver.
+     * By default, GKE enables multi-NIC support, which allows the Lustre
+     * CSI driver to automatically detect and configure all suitable network
+     * interfaces on a node to maximize I/O performance for demanding workloads.
+     * </pre>
+     *
+     * <code>bool disable_multi_nic = 4;</code>
+     *
+     * @return The disableMultiNic.
+     */
+    @java.lang.Override
+    public boolean getDisableMultiNic() {
+      return disableMultiNic_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When set to true, this disables multi-NIC support for the Lustre CSI
+     * driver.
+     * By default, GKE enables multi-NIC support, which allows the Lustre
+     * CSI driver to automatically detect and configure all suitable network
+     * interfaces on a node to maximize I/O performance for demanding workloads.
+     * </pre>
+     *
+     * <code>bool disable_multi_nic = 4;</code>
+     *
+     * @param value The disableMultiNic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableMultiNic(boolean value) {
+
+      disableMultiNic_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When set to true, this disables multi-NIC support for the Lustre CSI
+     * driver.
+     * By default, GKE enables multi-NIC support, which allows the Lustre
+     * CSI driver to automatically detect and configure all suitable network
+     * interfaces on a node to maximize I/O performance for demanding workloads.
+     * </pre>
+     *
+     * <code>bool disable_multi_nic = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableMultiNic() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      disableMultiNic_ = false;
       onChanged();
       return this;
     }

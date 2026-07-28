@@ -30,13 +30,49 @@ public interface ConfidentialInstanceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Defines whether the instance should have confidential compute
-   * enabled.
+   * Optional. Deprecated: Use 'confidential_instance_type' instead.
+   * Defines whether the instance should have confidential compute enabled.
    * </pre>
    *
-   * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * bool enable_confidential_compute = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute is
+   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
    * @return The enableConfidentialCompute.
    */
+  @java.lang.Deprecated
   boolean getEnableConfidentialCompute();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the type of Confidential Compute technology to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for confidentialInstanceType.
+   */
+  int getConfidentialInstanceTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the type of Confidential Compute technology to use.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType confidential_instance_type = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confidentialInstanceType.
+   */
+  com.google.cloud.dataproc.v1.ConfidentialInstanceConfig.ConfidentialInstanceType
+      getConfidentialInstanceType();
 }

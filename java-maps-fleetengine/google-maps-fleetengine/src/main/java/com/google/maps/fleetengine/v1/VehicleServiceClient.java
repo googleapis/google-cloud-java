@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -248,9 +250,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class VehicleServiceClient implements BackgroundResource {
-  private final VehicleServiceSettings settings;
+  private final @Nullable VehicleServiceSettings settings;
   private final VehicleServiceStub stub;
 
   /** Constructs an instance of VehicleServiceClient with default settings. */
@@ -290,7 +293,7 @@ public class VehicleServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final VehicleServiceSettings getSettings() {
+  public final @Nullable VehicleServiceSettings getSettings() {
     return settings;
   }
 
@@ -507,7 +510,7 @@ public class VehicleServiceClient implements BackgroundResource {
    *     Project of which the service account making this call is a member.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteVehicle(VehicleName name) {
+  public final void deleteVehicle(@Nullable VehicleName name) {
     DeleteVehicleRequest request =
         DeleteVehicleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteVehicle(request);
@@ -1052,8 +1055,8 @@ public class VehicleServiceClient implements BackgroundResource {
       extends AbstractPage<ListVehiclesRequest, ListVehiclesResponse, Vehicle, ListVehiclesPage> {
 
     private ListVehiclesPage(
-        PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
-        ListVehiclesResponse response) {
+        @Nullable PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
+        @Nullable ListVehiclesResponse response) {
       super(context, response);
     }
 
@@ -1063,14 +1066,14 @@ public class VehicleServiceClient implements BackgroundResource {
 
     @Override
     protected ListVehiclesPage createPage(
-        PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
-        ListVehiclesResponse response) {
+        @Nullable PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
+        @Nullable ListVehiclesResponse response) {
       return new ListVehiclesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVehiclesPage> createPageAsync(
-        PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
+        @Nullable PageContext<ListVehiclesRequest, ListVehiclesResponse, Vehicle> context,
         ApiFuture<ListVehiclesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1084,7 +1087,8 @@ public class VehicleServiceClient implements BackgroundResource {
           ListVehiclesPage,
           ListVehiclesFixedSizeCollection> {
 
-    private ListVehiclesFixedSizeCollection(List<ListVehiclesPage> pages, int collectionSize) {
+    private ListVehiclesFixedSizeCollection(
+        @Nullable List<ListVehiclesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1094,7 +1098,7 @@ public class VehicleServiceClient implements BackgroundResource {
 
     @Override
     protected ListVehiclesFixedSizeCollection createCollection(
-        List<ListVehiclesPage> pages, int collectionSize) {
+        @Nullable List<ListVehiclesPage> pages, int collectionSize) {
       return new ListVehiclesFixedSizeCollection(pages, collectionSize);
     }
   }

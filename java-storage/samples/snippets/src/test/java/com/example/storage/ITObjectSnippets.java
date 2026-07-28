@@ -468,12 +468,39 @@ public class ITObjectSnippets extends TestBase {
         BlobInfo.newBuilder(bucket.getName(), secondObject).build(), secondObject.getBytes(UTF_8));
 
     ComposeObject.composeObject(
-        bucket.getName(), firstObject, secondObject, targetObject, GOOGLE_CLOUD_PROJECT);
+        bucket.getName(), firstObject, secondObject, targetObject, GOOGLE_CLOUD_PROJECT, false);
 
     String got = stdOut.getCapturedOutputAsUtf8String();
     assertThat(got).contains(firstObject);
     assertThat(got).contains(secondObject);
     assertThat(got).contains(targetObject);
+    // Verify source objects still exist
+    assertThat(storage.get(bucket.getName(), firstObject)).isNotNull();
+    assertThat(storage.get(bucket.getName(), secondObject)).isNotNull();
+  }
+
+  @Test
+  public void testComposeObjectWithDeleteSources() {
+    String firstObject = generator.randomObjectName();
+    String secondObject = generator.randomObjectName();
+    String targetObject = generator.randomObjectName();
+    storage.create(
+        BlobInfo.newBuilder(bucket.getName(), firstObject).build(), firstObject.getBytes(UTF_8));
+    storage.create(
+        BlobInfo.newBuilder(bucket.getName(), secondObject).build(), secondObject.getBytes(UTF_8));
+
+    ComposeObject.composeObject(
+        bucket.getName(), firstObject, secondObject, targetObject, GOOGLE_CLOUD_PROJECT, true);
+
+    String got = stdOut.getCapturedOutputAsUtf8String();
+    assertThat(got).contains(firstObject);
+    assertThat(got).contains(secondObject);
+    assertThat(got).contains(targetObject);
+    assertThat(got).contains("and the source objects were deleted");
+
+    // Verify source objects are deleted
+    assertThat(storage.get(bucket.getName(), firstObject)).isNull();
+    assertThat(storage.get(bucket.getName(), secondObject)).isNull();
   }
 
   @Test

@@ -59,8 +59,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
   private InstanceGroupManagerResizeRequest() {
     creationTimestamp_ = "";
     description_ = "";
+    instances_ = java.util.Collections.emptyList();
     kind_ = "";
     name_ = "";
+    region_ = "";
     selfLink_ = "";
     selfLinkWithId_ = "";
     state_ = "";
@@ -86,7 +88,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupManagerResizeRequest.State}
@@ -361,7 +363,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -378,7 +380,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -403,7 +405,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -500,8 +502,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] A unique identifier for this resource type. The server
-   * generates this identifier.
+   * Output only. A unique identifier for this resource type. The server generates this
+   * identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -517,8 +519,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] A unique identifier for this resource type. The server
-   * generates this identifier.
+   * Output only. A unique identifier for this resource type. The server generates this
+   * identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -530,6 +532,97 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     return id_;
   }
 
+  public static final int INSTANCES_FIELD_NUMBER = 29097598;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+      getInstancesOrBuilderList() {
+    return instances_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public int getInstancesCount() {
+    return instances_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index) {
+    return instances_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getInstancesOrBuilder(int index) {
+    return instances_.get(index);
+  }
+
   public static final int KIND_FIELD_NUMBER = 3292052;
 
   @SuppressWarnings("serial")
@@ -539,8 +632,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -556,8 +648,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -581,8 +672,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-   * resize requests.
+   * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -674,6 +764,81 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     }
   }
 
+  public static final int REGION_FIELD_NUMBER = 138946292;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegion() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  @java.lang.Override
+  public java.lang.String getRegion() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      region_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of a region
+   * where the resize request is located. Populated only for regional resize
+   * requests.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRegionBytes() {
+    java.lang.Object ref = region_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      region_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REQUESTED_RUN_DURATION_FIELD_NUMBER = 232146425;
   private com.google.cloud.compute.v1.Duration requestedRunDuration_;
 
@@ -691,7 +856,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasRequestedRunDuration() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -748,7 +913,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasResizeBy() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -778,8 +943,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -788,15 +952,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -820,8 +983,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL for this resize request. The server defines
-   * this URL.
+   * Output only. The URL for this resize request. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -850,7 +1012,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -859,14 +1021,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -890,7 +1052,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -919,7 +1081,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -929,14 +1091,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -961,7 +1123,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output only] Current state of the request.
+   * Output only. Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -989,7 +1151,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -1000,14 +1162,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -1027,7 +1189,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output only] Status of the request.
+   * Output only. Status of the request.
    * </pre>
    *
    * <code>
@@ -1051,7 +1213,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1062,14 +1224,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1095,7 +1257,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of azone
+   * Output only. The URL of a zone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1140,31 +1302,37 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
+    }
+    for (int i = 0; i < instances_.size(); i++) {
+      output.writeMessage(29097598, instances_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 109757585, state_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(232146425, getRequestedRunDuration());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(533735362, resizeBy_);
     }
     getUnknownFields().writeTo(output);
@@ -1185,22 +1353,28 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
+    }
+    for (int i = 0; i < instances_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29097598, instances_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(109757585, state_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               232146425, getRequestedRunDuration());
@@ -1208,10 +1382,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(533735362, resizeBy_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1242,6 +1416,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (hasId()) {
       if (getId() != other.getId()) return false;
     }
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
@@ -1249,6 +1424,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasRegion() != other.hasRegion()) return false;
+    if (hasRegion()) {
+      if (!getRegion().equals(other.getRegion())) return false;
     }
     if (hasRequestedRunDuration() != other.hasRequestedRunDuration()) return false;
     if (hasRequestedRunDuration()) {
@@ -1301,6 +1480,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
     }
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
+    }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
@@ -1308,6 +1491,10 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasRegion()) {
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
     }
     if (hasRequestedRunDuration()) {
       hash = (37 * hash) + REQUESTED_RUN_DURATION_FIELD_NUMBER;
@@ -1483,6 +1670,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetInstancesFieldBuilder();
         internalGetRequestedRunDurationFieldBuilder();
         internalGetStatusFieldBuilder();
       }
@@ -1495,8 +1683,16 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       creationTimestamp_ = "";
       description_ = "";
       id_ = 0L;
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+      } else {
+        instances_ = null;
+        instancesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       kind_ = "";
       name_ = "";
+      region_ = "";
       requestedRunDuration_ = null;
       if (requestedRunDurationBuilder_ != null) {
         requestedRunDurationBuilder_.dispose();
@@ -1540,11 +1736,25 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest buildPartial() {
       com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest result) {
+      if (instancesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          instances_ = java.util.Collections.unmodifiableList(instances_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.instances_ = instances_;
+      } else {
+        result.instances_ = instancesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -1563,44 +1773,48 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         result.id_ = id_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.requestedRunDuration_ =
             requestedRunDurationBuilder_ == null
                 ? requestedRunDuration_
                 : requestedRunDurationBuilder_.build();
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.resizeBy_ = resizeBy_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.selfLink_ = selfLink_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.resizeBy_ = resizeBy_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.state_ = state_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.state_ = state_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.zone_ = zone_;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1632,14 +1846,46 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       if (other.hasId()) {
         setId(other.getId());
       }
+      if (instancesBuilder_ == null) {
+        if (!other.instances_.isEmpty()) {
+          if (instances_.isEmpty()) {
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureInstancesIsMutable();
+            instances_.addAll(other.instances_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.instances_.isEmpty()) {
+          if (instancesBuilder_.isEmpty()) {
+            instancesBuilder_.dispose();
+            instancesBuilder_ = null;
+            instances_ = other.instances_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            instancesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetInstancesFieldBuilder()
+                    : null;
+          } else {
+            instancesBuilder_.addAllMessages(other.instances_);
+          }
+        }
+      }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasRegion()) {
+        region_ = other.region_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasRequestedRunDuration()) {
@@ -1650,17 +1896,17 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1668,7 +1914,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1706,21 +1952,34 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26989658
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 29957474
+            case 232780786:
+              {
+                com.google.cloud.compute.v1.PerInstanceConfig m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.PerInstanceConfig.parser(), extensionRegistry);
+                if (instancesBuilder_ == null) {
+                  ensureInstancesIsMutable();
+                  instances_.add(m);
+                } else {
+                  instancesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 232780786
             case 244202930:
               {
                 creationTimestamp_ = input.readStringRequireUtf8();
@@ -1730,26 +1989,32 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 356167698
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 878060682
+            case 1111570338:
+              {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 1111570338
             case 1450082194:
               {
                 input.readMessage(internalGetStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1857171402:
               {
                 input.readMessage(
                     internalGetRequestedRunDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1857171402
             case -911466526:
@@ -1761,13 +2026,13 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -645248918
             case -25084400:
               {
                 resizeBy_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -25084400
             default:
@@ -1795,7 +2060,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1811,7 +2076,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1835,7 +2100,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1859,7 +2124,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1882,7 +2147,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1901,7 +2166,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -2053,8 +2318,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] A unique identifier for this resource type. The server
-     * generates this identifier.
+     * Output only. A unique identifier for this resource type. The server generates this
+     * identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2070,8 +2335,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] A unique identifier for this resource type. The server
-     * generates this identifier.
+     * Output only. A unique identifier for this resource type. The server generates this
+     * identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2087,8 +2352,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] A unique identifier for this resource type. The server
-     * generates this identifier.
+     * Output only. A unique identifier for this resource type. The server generates this
+     * identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2108,8 +2373,8 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] A unique identifier for this resource type. The server
-     * generates this identifier.
+     * Output only. A unique identifier for this resource type. The server generates this
+     * identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2123,14 +2388,435 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       return this;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_ =
+        java.util.Collections.emptyList();
+
+    private void ensureInstancesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        instances_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.PerInstanceConfig>(instances_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.PerInstanceConfig,
+            com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+            com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        instancesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList() {
+      if (instancesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instances_);
+      } else {
+        return instancesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public int getInstancesCount() {
+      if (instancesBuilder_ == null) {
+        return instances_.size();
+      } else {
+        return instancesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder setInstances(int index, com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.set(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder setInstances(
+        int index, com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(int index, com.google.cloud.compute.v1.PerInstanceConfig value) {
+      if (instancesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstancesIsMutable();
+        instances_.add(index, value);
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(
+        com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addInstances(
+        int index, com.google.cloud.compute.v1.PerInstanceConfig.Builder builderForValue) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instancesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder addAllInstances(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.PerInstanceConfig> values) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+        onChanged();
+      } else {
+        instancesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder clearInstances() {
+      if (instancesBuilder_ == null) {
+        instances_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        instancesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public Builder removeInstances(int index) {
+      if (instancesBuilder_ == null) {
+        ensureInstancesIsMutable();
+        instances_.remove(index);
+        onChanged();
+      } else {
+        instancesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder getInstancesBuilder(int index) {
+      return internalGetInstancesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getInstancesOrBuilder(int index) {
+      if (instancesBuilder_ == null) {
+        return instances_.get(index);
+      } else {
+        return instancesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        getInstancesOrBuilderList() {
+      if (instancesBuilder_ != null) {
+        return instancesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instances_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder addInstancesBuilder() {
+      return internalGetInstancesFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public com.google.cloud.compute.v1.PerInstanceConfig.Builder addInstancesBuilder(int index) {
+      return internalGetInstancesFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The names of instances to be created by this resize request. The number of
+     * names specified determines the number of instances to create. The group's
+     * target size will be increased by this number. This field cannot be used
+     * together with 'resize_by'.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig.Builder>
+        getInstancesBuilderList() {
+      return internalGetInstancesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.PerInstanceConfig,
+            com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+            com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+        internalGetInstancesFieldBuilder() {
+      if (instancesBuilder_ == null) {
+        instancesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.PerInstanceConfig,
+                com.google.cloud.compute.v1.PerInstanceConfig.Builder,
+                com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>(
+                instances_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        instances_ = null;
+      }
+      return instancesBuilder_;
+    }
+
     private java.lang.Object kind_ = "";
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2138,15 +2824,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2169,8 +2854,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2193,8 +2877,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2207,7 +2890,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2216,8 +2899,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2226,7 +2908,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2235,8 +2917,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
-     * resize requests.
+     * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2250,7 +2931,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2270,7 +2951,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2339,7 +3020,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2358,7 +3039,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2382,7 +3063,145 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object region_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return Whether the region field is set.
+     */
+    public boolean hasRegion() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The region.
+     */
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return The bytes for region.
+     */
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      region_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegion() {
+      region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of a region
+     * where the resize request is located. Populated only for regional resize
+     * requests.
+     * </pre>
+     *
+     * <code>optional string region = 138946292;</code>
+     *
+     * @param value The bytes for region to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      region_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2407,7 +3226,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the requestedRunDuration field is set.
      */
     public boolean hasRequestedRunDuration() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2451,7 +3270,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         requestedRunDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2473,7 +3292,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         requestedRunDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2490,7 +3309,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder mergeRequestedRunDuration(com.google.cloud.compute.v1.Duration value) {
       if (requestedRunDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && requestedRunDuration_ != null
             && requestedRunDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getRequestedRunDurationBuilder().mergeFrom(value);
@@ -2501,7 +3320,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         requestedRunDurationBuilder_.mergeFrom(value);
       }
       if (requestedRunDuration_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2518,7 +3337,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
      */
     public Builder clearRequestedRunDuration() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       requestedRunDuration_ = null;
       if (requestedRunDurationBuilder_ != null) {
         requestedRunDurationBuilder_.dispose();
@@ -2539,7 +3358,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * <code>optional .google.cloud.compute.v1.Duration requested_run_duration = 232146425;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getRequestedRunDurationBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetRequestedRunDurationFieldBuilder().getBuilder();
     }
@@ -2608,7 +3427,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     @java.lang.Override
     public boolean hasResizeBy() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2646,7 +3465,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public Builder setResizeBy(int value) {
 
       resizeBy_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2665,7 +3484,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearResizeBy() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       resizeBy_ = 0;
       onChanged();
       return this;
@@ -2677,8 +3496,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2686,15 +3504,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2717,8 +3534,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2741,8 +3557,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2755,7 +3570,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2764,8 +3579,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2774,7 +3588,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2783,8 +3597,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL for this resize request. The server defines
-     * this URL.
+     * Output only. The URL for this resize request. The server defines this URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2798,7 +3611,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2809,7 +3622,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2817,14 +3630,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2847,7 +3660,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2870,7 +3683,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2883,7 +3696,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2892,7 +3705,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2901,7 +3714,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2910,7 +3723,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2924,7 +3737,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2935,7 +3748,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2944,14 +3757,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2975,7 +3788,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2999,7 +3812,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3013,7 +3826,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3022,7 +3835,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3032,7 +3845,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3041,7 +3854,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Current state of the request.
+     * Output only. Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3056,7 +3869,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3072,7 +3885,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3082,14 +3895,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3113,7 +3926,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3130,7 +3943,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3139,7 +3952,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3154,7 +3967,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3163,7 +3976,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3173,7 +3986,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
     public Builder mergeStatus(
         com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus
@@ -3186,7 +3999,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3196,7 +4009,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3204,7 +4017,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -3218,7 +4031,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3227,7 +4040,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus.Builder
         getStatusBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetStatusFieldBuilder().getBuilder();
     }
@@ -3236,7 +4049,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3259,7 +4072,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output only] Status of the request.
+     * Output only. Status of the request.
      * </pre>
      *
      * <code>
@@ -3289,7 +4102,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3299,14 +4112,14 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3331,7 +4144,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3356,7 +4169,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3371,7 +4184,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3380,7 +4193,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3391,7 +4204,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3400,7 +4213,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of azone
+     * Output only. The URL of a zone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3416,7 +4229,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

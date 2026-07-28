@@ -1128,7 +1128,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -1148,7 +1148,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -1167,7 +1167,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. One or more port numbers (1-65535), on which the Gateway will
    * receive traffic. The proxy binds to the specified ports.
-   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+   * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
    * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
    * support multiple ports.
    * </pre>
@@ -1182,6 +1182,27 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
   }
 
   private int portsMemoizedSerializedSize = -1;
+
+  public static final int ALL_PORTS_FIELD_NUMBER = 34;
+  private boolean allPorts_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the Gateway will listen on all ports. This is mutually
+   * exclusive with the `ports` field. This field only applies to gateways of
+   * type 'SECURE_WEB_GATEWAY'.
+   * </pre>
+   *
+   * <code>bool all_ports = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allPorts.
+   */
+  @java.lang.Override
+  public boolean getAllPorts() {
+    return allPorts_;
+  }
 
   public static final int SCOPE_FIELD_NUMBER = 8;
 
@@ -1751,6 +1772,27 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int ALLOW_GLOBAL_ACCESS_FIELD_NUMBER = 33;
+  private boolean allowGlobalAccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the gateway will allow traffic from clients outside of
+   * the region where the gateway is located.
+   * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+   * </pre>
+   *
+   * <code>bool allow_global_access = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allowGlobalAccess.
+   */
+  @java.lang.Override
+  public boolean getAllowGlobalAccess() {
+    return allowGlobalAccess_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1826,6 +1868,12 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         != com.google.cloud.networkservices.v1.Gateway.RoutingMode.EXPLICIT_ROUTING_MODE
             .getNumber()) {
       output.writeEnum(32, routingMode_);
+    }
+    if (allowGlobalAccess_ != false) {
+      output.writeBool(33, allowGlobalAccess_);
+    }
+    if (allPorts_ != false) {
+      output.writeBool(34, allPorts_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1920,6 +1968,12 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(32, routingMode_);
     }
+    if (allowGlobalAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, allowGlobalAccess_);
+    }
+    if (allPorts_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(34, allPorts_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1951,6 +2005,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     if (type_ != other.type_) return false;
     if (!getAddressesList().equals(other.getAddressesList())) return false;
     if (!getPortsList().equals(other.getPortsList())) return false;
+    if (getAllPorts() != other.getAllPorts()) return false;
     if (!getScope().equals(other.getScope())) return false;
     if (!getServerTlsPolicy().equals(other.getServerTlsPolicy())) return false;
     if (!getCertificateUrlsList().equals(other.getCertificateUrlsList())) return false;
@@ -1963,6 +2018,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (envoyHeaders_ != other.envoyHeaders_) return false;
     }
     if (routingMode_ != other.routingMode_) return false;
+    if (getAllowGlobalAccess() != other.getAllowGlobalAccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2002,6 +2058,8 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getPortsList().hashCode();
     }
+    hash = (37 * hash) + ALL_PORTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllPorts());
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + getScope().hashCode();
     hash = (37 * hash) + SERVER_TLS_POLICY_FIELD_NUMBER;
@@ -2024,6 +2082,8 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ROUTING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + routingMode_;
+    hash = (37 * hash) + ALLOW_GLOBAL_ACCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowGlobalAccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2216,6 +2276,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       type_ = 0;
       addresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ports_ = emptyIntList();
+      allPorts_ = false;
       scope_ = "";
       serverTlsPolicy_ = "";
       certificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -2225,6 +2286,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       ipVersion_ = 0;
       envoyHeaders_ = 0;
       routingMode_ = 0;
+      allowGlobalAccess_ = false;
       return this;
     }
 
@@ -2295,33 +2357,39 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         result.ports_ = ports_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.scope_ = scope_;
+        result.allPorts_ = allPorts_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.serverTlsPolicy_ = serverTlsPolicy_;
+        result.scope_ = scope_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.serverTlsPolicy_ = serverTlsPolicy_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         certificateUrls_.makeImmutable();
         result.certificateUrls_ = certificateUrls_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.gatewaySecurityPolicy_ = gatewaySecurityPolicy_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.network_ = network_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.subnetwork_ = subnetwork_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.ipVersion_ = ipVersion_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.envoyHeaders_ = envoyHeaders_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.routingMode_ = routingMode_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.allowGlobalAccess_ = allowGlobalAccess_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2385,20 +2453,23 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (other.getAllPorts() != false) {
+        setAllPorts(other.getAllPorts());
+      }
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getServerTlsPolicy().isEmpty()) {
         serverTlsPolicy_ = other.serverTlsPolicy_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.certificateUrls_.isEmpty()) {
         if (certificateUrls_.isEmpty()) {
           certificateUrls_ = other.certificateUrls_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
         } else {
           ensureCertificateUrlsIsMutable();
           certificateUrls_.addAll(other.certificateUrls_);
@@ -2407,17 +2478,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getGatewaySecurityPolicy().isEmpty()) {
         gatewaySecurityPolicy_ = other.gatewaySecurityPolicy_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.ipVersion_ != 0) {
@@ -2428,6 +2499,9 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       if (other.routingMode_ != 0) {
         setRoutingModeValue(other.getRoutingModeValue());
+      }
+      if (other.getAllowGlobalAccess() != false) {
+        setAllowGlobalAccess(other.getAllowGlobalAccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2509,13 +2583,13 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
             case 66:
               {
                 scope_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
             case 74:
               {
                 serverTlsPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 74
             case 88:
@@ -2552,39 +2626,51 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
             case 130:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 138:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
             case 146:
               {
                 gatewaySecurityPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 146
             case 168:
               {
                 ipVersion_ = input.readEnum();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 168
             case 224:
               {
                 envoyHeaders_ = input.readEnum();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 224
             case 256:
               {
                 routingMode_ = input.readEnum();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 256
+            case 264:
+              {
+                allowGlobalAccess_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 264
+            case 272:
+              {
+                allPorts_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 272
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3916,7 +4002,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -3936,7 +4022,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -3955,7 +4041,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -3975,7 +4061,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -4001,7 +4087,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -4026,7 +4112,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -4050,7 +4136,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. One or more port numbers (1-65535), on which the Gateway will
      * receive traffic. The proxy binds to the specified ports.
-     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port.
+     * Gateways of type 'SECURE_WEB_GATEWAY' are limited to 5 ports.
      * Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and
      * support multiple ports.
      * </pre>
@@ -4062,6 +4148,68 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     public Builder clearPorts() {
       ports_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    private boolean allPorts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the Gateway will listen on all ports. This is mutually
+     * exclusive with the `ports` field. This field only applies to gateways of
+     * type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>bool all_ports = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allPorts.
+     */
+    @java.lang.Override
+    public boolean getAllPorts() {
+      return allPorts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the Gateway will listen on all ports. This is mutually
+     * exclusive with the `ports` field. This field only applies to gateways of
+     * type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>bool all_ports = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The allPorts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllPorts(boolean value) {
+
+      allPorts_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the Gateway will listen on all ports. This is mutually
+     * exclusive with the `ports` field. This field only applies to gateways of
+     * type 'SECURE_WEB_GATEWAY'.
+     * </pre>
+     *
+     * <code>bool all_ports = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllPorts() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      allPorts_ = false;
       onChanged();
       return this;
     }
@@ -4152,7 +4300,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       scope_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4177,7 +4325,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearScope() {
       scope_ = getDefaultInstance().getScope();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4207,7 +4355,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       scope_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4286,7 +4434,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serverTlsPolicy_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4307,7 +4455,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServerTlsPolicy() {
       serverTlsPolicy_ = getDefaultInstance().getServerTlsPolicy();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4333,7 +4481,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serverTlsPolicy_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4345,7 +4493,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (!certificateUrls_.isModifiable()) {
         certificateUrls_ = new com.google.protobuf.LazyStringArrayList(certificateUrls_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
     }
 
     /**
@@ -4450,7 +4598,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       ensureCertificateUrlsIsMutable();
       certificateUrls_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4477,7 +4625,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       ensureCertificateUrlsIsMutable();
       certificateUrls_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4501,7 +4649,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     public Builder addAllCertificateUrls(java.lang.Iterable<java.lang.String> values) {
       ensureCertificateUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, certificateUrls_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4523,7 +4671,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCertificateUrls() {
       certificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -4552,7 +4700,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureCertificateUrlsIsMutable();
       certificateUrls_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4649,7 +4797,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       gatewaySecurityPolicy_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4676,7 +4824,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearGatewaySecurityPolicy() {
       gatewaySecurityPolicy_ = getDefaultInstance().getGatewaySecurityPolicy();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4708,7 +4856,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       gatewaySecurityPolicy_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4796,7 +4944,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4820,7 +4968,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4849,7 +4997,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4937,7 +5085,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4961,7 +5109,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4990,7 +5138,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5033,7 +5181,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder setIpVersionValue(int value) {
       ipVersion_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5080,7 +5228,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       ipVersion_ = value.getNumber();
       onChanged();
       return this;
@@ -5101,7 +5249,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearIpVersion() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       ipVersion_ = 0;
       onChanged();
       return this;
@@ -5126,7 +5274,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnvoyHeaders() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5167,7 +5315,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEnvoyHeadersValue(int value) {
       envoyHeaders_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5216,7 +5364,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       envoyHeaders_ = value.getNumber();
       onChanged();
       return this;
@@ -5238,7 +5386,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnvoyHeaders() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       envoyHeaders_ = 0;
       onChanged();
       return this;
@@ -5284,7 +5432,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      */
     public Builder setRoutingModeValue(int value) {
       routingMode_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5333,7 +5481,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       routingMode_ = value.getNumber();
       onChanged();
       return this;
@@ -5355,8 +5503,70 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRoutingMode() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       routingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowGlobalAccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the gateway will allow traffic from clients outside of
+     * the region where the gateway is located.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>bool allow_global_access = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The allowGlobalAccess.
+     */
+    @java.lang.Override
+    public boolean getAllowGlobalAccess() {
+      return allowGlobalAccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the gateway will allow traffic from clients outside of
+     * the region where the gateway is located.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>bool allow_global_access = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The allowGlobalAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowGlobalAccess(boolean value) {
+
+      allowGlobalAccess_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the gateway will allow traffic from clients outside of
+     * the region where the gateway is located.
+     * This field is configurable only for gateways of type SECURE_WEB_GATEWAY.
+     * </pre>
+     *
+     * <code>bool allow_global_access = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowGlobalAccess() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      allowGlobalAccess_ = false;
       onChanged();
       return this;
     }

@@ -60,7 +60,8 @@ public interface DataAgentContextOrBuilder
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -69,18 +70,22 @@ public interface DataAgentContextOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
    * @return Whether the credentials field is set.
    */
+  @java.lang.Deprecated
   boolean hasCredentials();
 
   /**
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -89,18 +94,22 @@ public interface DataAgentContextOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
    * @return The credentials.
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials();
 
   /**
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -109,9 +118,10 @@ public interface DataAgentContextOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder getCredentialsOrBuilder();
 
   /**

@@ -41,6 +41,8 @@ import com.google.cloud.dataplex.v1.ListDataAssetsResponse;
 import com.google.cloud.dataplex.v1.ListDataProductsRequest;
 import com.google.cloud.dataplex.v1.ListDataProductsResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessRequest;
+import com.google.cloud.dataplex.v1.RequestDataProductAccessResponse;
 import com.google.cloud.dataplex.v1.UpdateDataAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateDataProductRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -60,6 +62,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -67,6 +70,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcDataProductServiceStub extends DataProductServiceStub {
   private static final MethodDescriptor<CreateDataProductRequest, Operation>
@@ -122,6 +126,21 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataProductRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessMethodDescriptor =
+          MethodDescriptor
+              .<RequestDataProductAccessRequest, RequestDataProductAccessResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataplex.v1.DataProductService/RequestDataProductAccess")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RequestDataProductAccessRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RequestDataProductAccessResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -245,6 +264,8 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
   private final UnaryCallable<UpdateDataProductRequest, Operation> updateDataProductCallable;
   private final OperationCallable<UpdateDataProductRequest, DataProduct, OperationMetadata>
       updateDataProductOperationCallable;
+  private final UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable;
   private final UnaryCallable<CreateDataAssetRequest, Operation> createDataAssetCallable;
   private final OperationCallable<CreateDataAssetRequest, DataAsset, OperationMetadata>
       createDataAssetOperationCallable;
@@ -367,6 +388,19 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+        requestDataProductAccessTransportSettings =
+            GrpcCallSettings
+                .<RequestDataProductAccessRequest, RequestDataProductAccessResponse>newBuilder()
+                .setMethodDescriptor(requestDataProductAccessMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<CreateDataAssetRequest, Operation> createDataAssetTransportSettings =
         GrpcCallSettings.<CreateDataAssetRequest, Operation>newBuilder()
             .setMethodDescriptor(createDataAssetMethodDescriptor)
@@ -519,6 +553,11 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
             settings.updateDataProductOperationSettings(),
             clientContext,
             operationsStub);
+    this.requestDataProductAccessCallable =
+        callableFactory.createUnaryCallable(
+            requestDataProductAccessTransportSettings,
+            settings.requestDataProductAccessSettings(),
+            clientContext);
     this.createDataAssetCallable =
         callableFactory.createUnaryCallable(
             createDataAssetTransportSettings, settings.createDataAssetSettings(), clientContext);
@@ -632,6 +671,12 @@ public class GrpcDataProductServiceStub extends DataProductServiceStub {
   public OperationCallable<UpdateDataProductRequest, DataProduct, OperationMetadata>
       updateDataProductOperationCallable() {
     return updateDataProductOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable() {
+    return requestDataProductAccessCallable;
   }
 
   @Override

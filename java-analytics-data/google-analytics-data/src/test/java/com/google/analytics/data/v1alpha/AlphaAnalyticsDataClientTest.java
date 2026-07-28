@@ -318,90 +318,6 @@ public class AlphaAnalyticsDataClientTest {
   }
 
   @Test
-  public void sheetExportAudienceListTest() throws Exception {
-    SheetExportAudienceListResponse expectedResponse =
-        SheetExportAudienceListResponse.newBuilder()
-            .setSpreadsheetUri("spreadsheetUri1336397312")
-            .setSpreadsheetId("spreadsheetId1844224519")
-            .setRowCount(1340416618)
-            .setAudienceList(AudienceList.newBuilder().build())
-            .build();
-    mockAlphaAnalyticsData.addResponse(expectedResponse);
-
-    AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-
-    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SheetExportAudienceListRequest actualRequest =
-        ((SheetExportAudienceListRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name.toString(), actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void sheetExportAudienceListExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAlphaAnalyticsData.addException(exception);
-
-    try {
-      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-      client.sheetExportAudienceList(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void sheetExportAudienceListTest2() throws Exception {
-    SheetExportAudienceListResponse expectedResponse =
-        SheetExportAudienceListResponse.newBuilder()
-            .setSpreadsheetUri("spreadsheetUri1336397312")
-            .setSpreadsheetId("spreadsheetId1844224519")
-            .setRowCount(1340416618)
-            .setAudienceList(AudienceList.newBuilder().build())
-            .build();
-    mockAlphaAnalyticsData.addResponse(expectedResponse);
-
-    String name = "name3373707";
-
-    SheetExportAudienceListResponse actualResponse = client.sheetExportAudienceList(name);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
-    Assert.assertEquals(1, actualRequests.size());
-    SheetExportAudienceListRequest actualRequest =
-        ((SheetExportAudienceListRequest) actualRequests.get(0));
-
-    Assert.assertEquals(name, actualRequest.getName());
-    Assert.assertTrue(
-        channelProvider.isHeaderSent(
-            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
-            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
-  }
-
-  @Test
-  public void sheetExportAudienceListExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
-    mockAlphaAnalyticsData.addException(exception);
-
-    try {
-      String name = "name3373707";
-      client.sheetExportAudienceList(name);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void getAudienceListTest() throws Exception {
     AudienceList expectedResponse =
         AudienceList.newBuilder()
@@ -1264,6 +1180,190 @@ public class AlphaAnalyticsDataClientTest {
     try {
       String parent = "parent-995424086";
       client.listReportTasks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void runReportTest() throws Exception {
+    RunReportResponse expectedResponse =
+        RunReportResponse.newBuilder()
+            .addAllDimensionHeaders(new ArrayList<DimensionHeader>())
+            .addAllMetricHeaders(new ArrayList<MetricHeader>())
+            .addAllRows(new ArrayList<Row>())
+            .addAllTotals(new ArrayList<Row>())
+            .addAllMaximums(new ArrayList<Row>())
+            .addAllMinimums(new ArrayList<Row>())
+            .setRowCount(1340416618)
+            .setMetadata(ResponseMetaData.newBuilder().build())
+            .setPropertyQuota(PropertyQuota.newBuilder().build())
+            .setKind("kind3292052")
+            .setNextPageToken("nextPageToken-1386094857")
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    RunReportRequest request =
+        RunReportRequest.newBuilder()
+            .setProperty("property-993141291")
+            .addAllDimensions(new ArrayList<Dimension>())
+            .addAllMetrics(new ArrayList<Metric>())
+            .addAllDateRanges(new ArrayList<DateRange>())
+            .setDimensionFilter(FilterExpression.newBuilder().build())
+            .setMetricFilter(FilterExpression.newBuilder().build())
+            .setOffset(-1019779949)
+            .setLimit(102976443)
+            .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+            .addAllOrderBys(new ArrayList<OrderBy>())
+            .setCurrencyCode("currencyCode1004773790")
+            .setCohortSpec(CohortSpec.newBuilder().build())
+            .setKeepEmptyRows(true)
+            .setReturnPropertyQuota(true)
+            .addAllComparisons(new ArrayList<Comparison>())
+            .setConversionSpec(ConversionSpec.newBuilder().build())
+            .build();
+
+    RunReportResponse actualResponse = client.runReport(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunReportRequest actualRequest = ((RunReportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getDimensionsList(), actualRequest.getDimensionsList());
+    Assert.assertEquals(request.getMetricsList(), actualRequest.getMetricsList());
+    Assert.assertEquals(request.getDateRangesList(), actualRequest.getDateRangesList());
+    Assert.assertEquals(request.getDimensionFilter(), actualRequest.getDimensionFilter());
+    Assert.assertEquals(request.getMetricFilter(), actualRequest.getMetricFilter());
+    Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getLimit(), actualRequest.getLimit());
+    Assert.assertEquals(
+        request.getMetricAggregationsList(), actualRequest.getMetricAggregationsList());
+    Assert.assertEquals(request.getOrderBysList(), actualRequest.getOrderBysList());
+    Assert.assertEquals(request.getCurrencyCode(), actualRequest.getCurrencyCode());
+    Assert.assertEquals(request.getCohortSpec(), actualRequest.getCohortSpec());
+    Assert.assertEquals(request.getKeepEmptyRows(), actualRequest.getKeepEmptyRows());
+    Assert.assertEquals(request.getReturnPropertyQuota(), actualRequest.getReturnPropertyQuota());
+    Assert.assertEquals(request.getComparisonsList(), actualRequest.getComparisonsList());
+    Assert.assertEquals(request.getConversionSpec(), actualRequest.getConversionSpec());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runReportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      RunReportRequest request =
+          RunReportRequest.newBuilder()
+              .setProperty("property-993141291")
+              .addAllDimensions(new ArrayList<Dimension>())
+              .addAllMetrics(new ArrayList<Metric>())
+              .addAllDateRanges(new ArrayList<DateRange>())
+              .setDimensionFilter(FilterExpression.newBuilder().build())
+              .setMetricFilter(FilterExpression.newBuilder().build())
+              .setOffset(-1019779949)
+              .setLimit(102976443)
+              .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+              .addAllOrderBys(new ArrayList<OrderBy>())
+              .setCurrencyCode("currencyCode1004773790")
+              .setCohortSpec(CohortSpec.newBuilder().build())
+              .setKeepEmptyRows(true)
+              .setReturnPropertyQuota(true)
+              .addAllComparisons(new ArrayList<Comparison>())
+              .setConversionSpec(ConversionSpec.newBuilder().build())
+              .build();
+      client.runReport(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataTest() throws Exception {
+    Metadata expectedResponse =
+        Metadata.newBuilder()
+            .setName(MetadataName.of("[PROPERTY]").toString())
+            .addAllDimensions(new ArrayList<DimensionMetadata>())
+            .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
+            .addAllConversions(new ArrayList<ConversionMetadata>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    MetadataName name = MetadataName.of("[PROPERTY]");
+
+    Metadata actualResponse = client.getMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataRequest actualRequest = ((GetMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      MetadataName name = MetadataName.of("[PROPERTY]");
+      client.getMetadata(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMetadataTest2() throws Exception {
+    Metadata expectedResponse =
+        Metadata.newBuilder()
+            .setName(MetadataName.of("[PROPERTY]").toString())
+            .addAllDimensions(new ArrayList<DimensionMetadata>())
+            .addAllMetrics(new ArrayList<MetricMetadata>())
+            .addAllComparisons(new ArrayList<ComparisonMetadata>())
+            .addAllConversions(new ArrayList<ConversionMetadata>())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Metadata actualResponse = client.getMetadata(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMetadataRequest actualRequest = ((GetMetadataRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMetadataExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMetadata(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

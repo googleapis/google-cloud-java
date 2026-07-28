@@ -66,6 +66,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
     guardrails_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
     evaluationPersonas_ = java.util.Collections.emptyList();
+    validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2944,6 +2945,65 @@ public final class App extends com.google.protobuf.GeneratedMessage
         : clientCertificateSettings_;
   }
 
+  public static final int VPC_SC_SETTINGS_FIELD_NUMBER = 26;
+  private com.google.cloud.ces.v1beta.VpcScSettings vpcScSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vpcScSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasVpcScSettings() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vpcScSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.VpcScSettings getVpcScSettings() {
+    return vpcScSettings_ == null
+        ? com.google.cloud.ces.v1beta.VpcScSettings.getDefaultInstance()
+        : vpcScSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. VPC-SC settings for the app.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.VpcScSettingsOrBuilder getVpcScSettingsOrBuilder() {
+    return vpcScSettings_ == null
+        ? com.google.cloud.ces.v1beta.VpcScSettings.getDefaultInstance()
+        : vpcScSettings_;
+  }
+
   public static final int LOCKED_FIELD_NUMBER = 29;
   private boolean locked_ = false;
 
@@ -3079,7 +3139,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEvaluationSettings() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -3118,6 +3178,78 @@ public final class App extends com.google.protobuf.GeneratedMessage
     return evaluationSettings_ == null
         ? com.google.cloud.ces.v1beta.EvaluationSettings.getDefaultInstance()
         : evaluationSettings_;
+  }
+
+  public static final int VALIDATION_ERRORS_FIELD_NUMBER = 39;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList validationErrors_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the validationErrors.
+   */
+  public com.google.protobuf.ProtocolStringList getValidationErrorsList() {
+    return validationErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of validationErrors.
+   */
+  public int getValidationErrorsCount() {
+    return validationErrors_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The validationErrors at the given index.
+   */
+  public java.lang.String getValidationErrors(int index) {
+    return validationErrors_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Misconfigurations or warnings in the app.
+   * </pre>
+   *
+   * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the validationErrors at the given index.
+   */
+  public com.google.protobuf.ByteString getValidationErrorsBytes(int index) {
+    return validationErrors_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3193,6 +3325,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(25, getClientCertificateSettings());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(26, getVpcScSettings());
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(27, getTimeZoneSettings());
     }
@@ -3213,11 +3348,14 @@ public final class App extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(32, toolExecutionMode_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(33, getEvaluationSettings());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(34, getErrorHandlingSettings());
+    }
+    for (int i = 0; i < validationErrors_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 39, validationErrors_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3308,6 +3446,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               25, getClientCertificateSettings());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getVpcScSettings());
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getTimeZoneSettings());
     }
@@ -3331,12 +3472,20 @@ public final class App extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(32, toolExecutionMode_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getEvaluationSettings());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(34, getErrorHandlingSettings());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < validationErrors_.size(); i++) {
+        dataSize += computeStringSizeNoTag(validationErrors_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getValidationErrorsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3417,12 +3566,17 @@ public final class App extends com.google.protobuf.GeneratedMessage
       if (!getClientCertificateSettings().equals(other.getClientCertificateSettings()))
         return false;
     }
+    if (hasVpcScSettings() != other.hasVpcScSettings()) return false;
+    if (hasVpcScSettings()) {
+      if (!getVpcScSettings().equals(other.getVpcScSettings())) return false;
+    }
     if (getLocked() != other.getLocked()) return false;
     if (!getEvaluationPersonasList().equals(other.getEvaluationPersonasList())) return false;
     if (hasEvaluationSettings() != other.hasEvaluationSettings()) return false;
     if (hasEvaluationSettings()) {
       if (!getEvaluationSettings().equals(other.getEvaluationSettings())) return false;
     }
+    if (!getValidationErrorsList().equals(other.getValidationErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3516,6 +3670,10 @@ public final class App extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CLIENT_CERTIFICATE_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getClientCertificateSettings().hashCode();
     }
+    if (hasVpcScSettings()) {
+      hash = (37 * hash) + VPC_SC_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getVpcScSettings().hashCode();
+    }
     hash = (37 * hash) + LOCKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
     if (getEvaluationPersonasCount() > 0) {
@@ -3525,6 +3683,10 @@ public final class App extends com.google.protobuf.GeneratedMessage
     if (hasEvaluationSettings()) {
       hash = (37 * hash) + EVALUATION_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getEvaluationSettings().hashCode();
+    }
+    if (getValidationErrorsCount() > 0) {
+      hash = (37 * hash) + VALIDATION_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getValidationErrorsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3704,6 +3866,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetClientCertificateSettingsFieldBuilder();
+        internalGetVpcScSettingsFieldBuilder();
         internalGetEvaluationPersonasFieldBuilder();
         internalGetEvaluationSettingsFieldBuilder();
       }
@@ -3798,6 +3961,11 @@ public final class App extends com.google.protobuf.GeneratedMessage
         clientCertificateSettingsBuilder_.dispose();
         clientCertificateSettingsBuilder_ = null;
       }
+      vpcScSettings_ = null;
+      if (vpcScSettingsBuilder_ != null) {
+        vpcScSettingsBuilder_.dispose();
+        vpcScSettingsBuilder_ = null;
+      }
       locked_ = false;
       if (evaluationPersonasBuilder_ == null) {
         evaluationPersonas_ = java.util.Collections.emptyList();
@@ -3805,12 +3973,13 @@ public final class App extends com.google.protobuf.GeneratedMessage
         evaluationPersonas_ = null;
         evaluationPersonasBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       evaluationSettings_ = null;
       if (evaluationSettingsBuilder_ != null) {
         evaluationSettingsBuilder_.dispose();
         evaluationSettingsBuilder_ = null;
       }
+      validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -3866,9 +4035,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
         result.predefinedVariableDeclarations_ = predefinedVariableDeclarationsBuilder_.build();
       }
       if (evaluationPersonasBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)) {
+        if (((bitField0_ & 0x08000000) != 0)) {
           evaluationPersonas_ = java.util.Collections.unmodifiableList(evaluationPersonas_);
-          bitField0_ = (bitField0_ & ~0x04000000);
+          bitField0_ = (bitField0_ & ~0x08000000);
         }
         result.evaluationPersonas_ = evaluationPersonas_;
       } else {
@@ -3985,14 +4154,23 @@ public final class App extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.vpcScSettings_ =
+            vpcScSettingsBuilder_ == null ? vpcScSettings_ : vpcScSettingsBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.locked_ = locked_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.evaluationSettings_ =
             evaluationSettingsBuilder_ == null
                 ? evaluationSettings_
                 : evaluationSettingsBuilder_.build();
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        validationErrors_.makeImmutable();
+        result.validationErrors_ = validationErrors_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4151,6 +4329,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
       if (other.hasClientCertificateSettings()) {
         mergeClientCertificateSettings(other.getClientCertificateSettings());
       }
+      if (other.hasVpcScSettings()) {
+        mergeVpcScSettings(other.getVpcScSettings());
+      }
       if (other.getLocked() != false) {
         setLocked(other.getLocked());
       }
@@ -4158,7 +4339,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
         if (!other.evaluationPersonas_.isEmpty()) {
           if (evaluationPersonas_.isEmpty()) {
             evaluationPersonas_ = other.evaluationPersonas_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
           } else {
             ensureEvaluationPersonasIsMutable();
             evaluationPersonas_.addAll(other.evaluationPersonas_);
@@ -4171,7 +4352,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
             evaluationPersonasBuilder_.dispose();
             evaluationPersonasBuilder_ = null;
             evaluationPersonas_ = other.evaluationPersonas_;
-            bitField0_ = (bitField0_ & ~0x04000000);
+            bitField0_ = (bitField0_ & ~0x08000000);
             evaluationPersonasBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEvaluationPersonasFieldBuilder()
@@ -4183,6 +4364,16 @@ public final class App extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEvaluationSettings()) {
         mergeEvaluationSettings(other.getEvaluationSettings());
+      }
+      if (!other.validationErrors_.isEmpty()) {
+        if (validationErrors_.isEmpty()) {
+          validationErrors_ = other.validationErrors_;
+          bitField0_ |= 0x20000000;
+        } else {
+          ensureValidationErrorsIsMutable();
+          validationErrors_.addAll(other.validationErrors_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4357,6 +4548,13 @@ public final class App extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x01000000;
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    internalGetVpcScSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 210
             case 218:
               {
                 input.readMessage(
@@ -4381,7 +4579,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
             case 232:
               {
                 locked_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 232
             case 242:
@@ -4413,7 +4611,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetEvaluationSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 266
             case 274:
@@ -4423,6 +4621,13 @@ public final class App extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 274
+            case 314:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureValidationErrorsIsMutable();
+                validationErrors_.add(s);
+                break;
+              } // case 314
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9212,6 +9417,219 @@ public final class App extends com.google.protobuf.GeneratedMessage
       return clientCertificateSettingsBuilder_;
     }
 
+    private com.google.cloud.ces.v1beta.VpcScSettings vpcScSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.VpcScSettings,
+            com.google.cloud.ces.v1beta.VpcScSettings.Builder,
+            com.google.cloud.ces.v1beta.VpcScSettingsOrBuilder>
+        vpcScSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vpcScSettings field is set.
+     */
+    public boolean hasVpcScSettings() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vpcScSettings.
+     */
+    public com.google.cloud.ces.v1beta.VpcScSettings getVpcScSettings() {
+      if (vpcScSettingsBuilder_ == null) {
+        return vpcScSettings_ == null
+            ? com.google.cloud.ces.v1beta.VpcScSettings.getDefaultInstance()
+            : vpcScSettings_;
+      } else {
+        return vpcScSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVpcScSettings(com.google.cloud.ces.v1beta.VpcScSettings value) {
+      if (vpcScSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vpcScSettings_ = value;
+      } else {
+        vpcScSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVpcScSettings(
+        com.google.cloud.ces.v1beta.VpcScSettings.Builder builderForValue) {
+      if (vpcScSettingsBuilder_ == null) {
+        vpcScSettings_ = builderForValue.build();
+      } else {
+        vpcScSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVpcScSettings(com.google.cloud.ces.v1beta.VpcScSettings value) {
+      if (vpcScSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && vpcScSettings_ != null
+            && vpcScSettings_ != com.google.cloud.ces.v1beta.VpcScSettings.getDefaultInstance()) {
+          getVpcScSettingsBuilder().mergeFrom(value);
+        } else {
+          vpcScSettings_ = value;
+        }
+      } else {
+        vpcScSettingsBuilder_.mergeFrom(value);
+      }
+      if (vpcScSettings_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVpcScSettings() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      vpcScSettings_ = null;
+      if (vpcScSettingsBuilder_ != null) {
+        vpcScSettingsBuilder_.dispose();
+        vpcScSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.VpcScSettings.Builder getVpcScSettingsBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return internalGetVpcScSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.VpcScSettingsOrBuilder getVpcScSettingsOrBuilder() {
+      if (vpcScSettingsBuilder_ != null) {
+        return vpcScSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return vpcScSettings_ == null
+            ? com.google.cloud.ces.v1beta.VpcScSettings.getDefaultInstance()
+            : vpcScSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. VPC-SC settings for the app.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.VpcScSettings vpc_sc_settings = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.VpcScSettings,
+            com.google.cloud.ces.v1beta.VpcScSettings.Builder,
+            com.google.cloud.ces.v1beta.VpcScSettingsOrBuilder>
+        internalGetVpcScSettingsFieldBuilder() {
+      if (vpcScSettingsBuilder_ == null) {
+        vpcScSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.VpcScSettings,
+                com.google.cloud.ces.v1beta.VpcScSettings.Builder,
+                com.google.cloud.ces.v1beta.VpcScSettingsOrBuilder>(
+                getVpcScSettings(), getParentForChildren(), isClean());
+        vpcScSettings_ = null;
+      }
+      return vpcScSettingsBuilder_;
+    }
+
     private boolean locked_;
 
     /**
@@ -9247,7 +9665,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
     public Builder setLocked(boolean value) {
 
       locked_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -9265,7 +9683,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLocked() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       locked_ = false;
       onChanged();
       return this;
@@ -9275,11 +9693,11 @@ public final class App extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureEvaluationPersonasIsMutable() {
-      if (!((bitField0_ & 0x04000000) != 0)) {
+      if (!((bitField0_ & 0x08000000) != 0)) {
         evaluationPersonas_ =
             new java.util.ArrayList<com.google.cloud.ces.v1beta.EvaluationPersona>(
                 evaluationPersonas_);
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
       }
     }
 
@@ -9552,7 +9970,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
     public Builder clearEvaluationPersonas() {
       if (evaluationPersonasBuilder_ == null) {
         evaluationPersonas_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         onChanged();
       } else {
         evaluationPersonasBuilder_.clear();
@@ -9713,7 +10131,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.ces.v1beta.EvaluationPersona.Builder,
                 com.google.cloud.ces.v1beta.EvaluationPersonaOrBuilder>(
                 evaluationPersonas_,
-                ((bitField0_ & 0x04000000) != 0),
+                ((bitField0_ & 0x08000000) != 0),
                 getParentForChildren(),
                 isClean());
         evaluationPersonas_ = null;
@@ -9742,7 +10160,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
      * @return Whether the evaluationSettings field is set.
      */
     public boolean hasEvaluationSettings() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -9788,7 +10206,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
       } else {
         evaluationSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -9811,7 +10229,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
       } else {
         evaluationSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -9829,7 +10247,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEvaluationSettings(com.google.cloud.ces.v1beta.EvaluationSettings value) {
       if (evaluationSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && evaluationSettings_ != null
             && evaluationSettings_
                 != com.google.cloud.ces.v1beta.EvaluationSettings.getDefaultInstance()) {
@@ -9841,7 +10259,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
         evaluationSettingsBuilder_.mergeFrom(value);
       }
       if (evaluationSettings_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -9859,7 +10277,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEvaluationSettings() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       evaluationSettings_ = null;
       if (evaluationSettingsBuilder_ != null) {
         evaluationSettingsBuilder_.dispose();
@@ -9881,7 +10299,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.EvaluationSettings.Builder getEvaluationSettingsBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return internalGetEvaluationSettingsFieldBuilder().getBuilder();
     }
@@ -9934,6 +10352,198 @@ public final class App extends com.google.protobuf.GeneratedMessage
         evaluationSettings_ = null;
       }
       return evaluationSettingsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList validationErrors_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureValidationErrorsIsMutable() {
+      if (!validationErrors_.isModifiable()) {
+        validationErrors_ = new com.google.protobuf.LazyStringArrayList(validationErrors_);
+      }
+      bitField0_ |= 0x20000000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the validationErrors.
+     */
+    public com.google.protobuf.ProtocolStringList getValidationErrorsList() {
+      validationErrors_.makeImmutable();
+      return validationErrors_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of validationErrors.
+     */
+    public int getValidationErrorsCount() {
+      return validationErrors_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The validationErrors at the given index.
+     */
+    public java.lang.String getValidationErrors(int index) {
+      return validationErrors_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the validationErrors at the given index.
+     */
+    public com.google.protobuf.ByteString getValidationErrorsBytes(int index) {
+      return validationErrors_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The validationErrors to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidationErrors(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureValidationErrorsIsMutable();
+      validationErrors_.set(index, value);
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addValidationErrors(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureValidationErrorsIsMutable();
+      validationErrors_.add(value);
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllValidationErrors(java.lang.Iterable<java.lang.String> values) {
+      ensureValidationErrorsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validationErrors_);
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidationErrors() {
+      validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Misconfigurations or warnings in the app.
+     * </pre>
+     *
+     * <code>repeated string validation_errors = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the validationErrors to add.
+     * @return This builder for chaining.
+     */
+    public Builder addValidationErrorsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureValidationErrorsIsMutable();
+      validationErrors_.add(value);
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.App)

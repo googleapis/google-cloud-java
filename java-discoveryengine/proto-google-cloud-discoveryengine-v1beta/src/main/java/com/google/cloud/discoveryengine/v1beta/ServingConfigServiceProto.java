@@ -41,9 +41,17 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_CreateServingConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_CreateServingConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_DeleteServingConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_DeleteServingConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_GetServingConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -65,59 +73,103 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "@google/cloud/discoveryengine/v1beta/serving_config_service.proto\022#google.cloud"
+      "\n@google/cloud/discoveryengine/v1beta/se"
+          + "rving_config_service.proto\022#google.cloud"
           + ".discoveryengine.v1beta\032\034google/api/anno"
           + "tations.proto\032\027google/api/client.proto\032\037"
           + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\0328google/cloud/discoveryengine/v1beta/serving_config.proto\032"
-          + " google/protobuf/field_mask.proto\"\236\001\n"
-          + "\032UpdateServingConfigRequest\022O\n"
-          + "\016serving_config\030\001"
-          + " \001(\01322.google.cloud.discoveryengine.v1beta.ServingConfigB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"]\n"
-          + "\027GetServingConfigRequest\022B\n"
-          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",discoveryengine.googleapis.com/ServingConfig\"\222\001\n"
-          + "\031ListServingConfigsRequest\022D\n"
-          + "\006parent\030\001 \001("
-          + "\tB4\340A\002\372A.\022,discoveryengine.googleapis.com/ServingConfig\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\202\001\n"
-          + "\032ListServingConfigsResponse\022K\n"
-          + "\017serving_configs\030\001"
-          + " \003(\01322.google.cloud.discoveryengine.v1beta.ServingConfig\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\202\013\n"
-          + "\024ServingConfigService\022\372\003\n"
-          + "\023UpdateServingConfig\022?.google.cloud.discove"
-          + "ryengine.v1beta.UpdateServingConfigRequest\0322.google.cloud.discoveryengine.v1beta"
-          + ".ServingConfig\"\355\002\332A\032serving_config,updat"
-          + "e_mask\202\323\344\223\002\311\0022R/v1beta/{serving_config.n"
-          + "ame=projects/*/locations/*/dataStores/*/servingConfigs/*}:\016serving_configZr2`/v1"
-          + "beta/{serving_config.name=projects/*/locations/*/collections/*/dataStores/*/serv"
-          + "ingConfigs/*}:\016serving_configZo2]/v1beta/{serving_config.name=projects/*/locatio"
-          + "ns/*/collections/*/engines/*/servingConfigs/*}:\016serving_config\022\201\003\n"
-          + "\020GetServingConfig\022<.google.cloud.discoveryengine.v1bet"
-          + "a.GetServingConfigRequest\0322.google.cloud"
-          + ".discoveryengine.v1beta.ServingConfig\"\372\001"
-          + "\332A\004name\202\323\344\223\002\354\001\022C/v1beta/{name=projects/*"
-          + "/locations/*/dataStores/*/servingConfigs/*}ZS\022Q/v1beta/{name=projects/*/location"
-          + "s/*/collections/*/dataStores/*/servingConfigs/*}ZP\022N/v1beta/{name=projects/*/loc"
-          + "ations/*/collections/*/engines/*/servingConfigs/*}\022\224\003\n"
-          + "\022ListServingConfigs\022>.google.cloud.discoveryengine.v1beta.ListServ"
-          + "ingConfigsRequest\032?.google.cloud.discoveryengine.v1beta.ListServingConfigsRespon"
-          + "se\"\374\001\332A\006parent\202\323\344\223\002\354\001\022C/v1beta/{parent=p"
-          + "rojects/*/locations/*/dataStores/*}/servingConfigsZS\022Q/v1beta/{parent=projects/*"
-          + "/locations/*/collections/*/dataStores/*}/servingConfigsZP\022N/v1beta/{parent=proje"
-          + "cts/*/locations/*/collections/*/engines/"
-          + "*}/servingConfigs\032R\312A\036discoveryengine.go"
-          + "ogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\240\002\n"
-          + "\'com.google.cloud.discoveryengine.v1betaB\031ServingConfig"
-          + "ServiceProtoP\001ZQcloud.google.com/go/discoveryengine/apiv1beta/discoveryenginepb;"
-          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Go"
-          + "ogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goog"
-          + "le\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google"
-          + "::Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "api/resource.proto\0328google/cloud/discove"
+          + "ryengine/v1beta/serving_config.proto\032\033go"
+          + "ogle/protobuf/empty.proto\032 google/protob"
+          + "uf/field_mask.proto\"\323\001\n\032CreateServingCon"
+          + "figRequest\022D\n\006parent\030\001 \001(\tB4\340A\002\372A.\022,disc"
+          + "overyengine.googleapis.com/ServingConfig"
+          + "\022O\n\016serving_config\030\002 \001(\01322.google.cloud."
+          + "discoveryengine.v1beta.ServingConfigB\003\340A"
+          + "\002\022\036\n\021serving_config_id\030\003 \001(\tB\003\340A\002\"\236\001\n\032Up"
+          + "dateServingConfigRequest\022O\n\016serving_conf"
+          + "ig\030\001 \001(\01322.google.cloud.discoveryengine."
+          + "v1beta.ServingConfigB\003\340A\002\022/\n\013update_mask"
+          + "\030\002 \001(\0132\032.google.protobuf.FieldMask\"`\n\032De"
+          + "leteServingConfigRequest\022B\n\004name\030\001 \001(\tB4"
+          + "\340A\002\372A.\n,discoveryengine.googleapis.com/S"
+          + "ervingConfig\"]\n\027GetServingConfigRequest\022"
+          + "B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,discoveryengine.g"
+          + "oogleapis.com/ServingConfig\"\222\001\n\031ListServ"
+          + "ingConfigsRequest\022D\n\006parent\030\001 \001(\tB4\340A\002\372A"
+          + ".\022,discoveryengine.googleapis.com/Servin"
+          + "gConfig\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_"
+          + "token\030\003 \001(\tB\003\340A\001\"\202\001\n\032ListServingConfigsR"
+          + "esponse\022K\n\017serving_configs\030\001 \003(\01322.googl"
+          + "e.cloud.discoveryengine.v1beta.ServingCo"
+          + "nfig\022\027\n\017next_page_token\030\002 \001(\t2\313\022\n\024Servin"
+          + "gConfigService\022\332\003\n\023CreateServingConfig\022?"
+          + ".google.cloud.discoveryengine.v1beta.Cre"
+          + "ateServingConfigRequest\0322.google.cloud.d"
+          + "iscoveryengine.v1beta.ServingConfig\"\315\002\332A"
+          + "\'parent,serving_config,serving_config_id"
+          + "\202\323\344\223\002\234\002\"C/v1beta/{parent=projects/*/loca"
+          + "tions/*/dataStores/*}/servingConfigs:\016se"
+          + "rving_configZc\"Q/v1beta/{parent=projects"
+          + "/*/locations/*/collections/*/dataStores/"
+          + "*}/servingConfigs:\016serving_configZ`\"N/v1"
+          + "beta/{parent=projects/*/locations/*/coll"
+          + "ections/*/engines/*}/servingConfigs:\016ser"
+          + "ving_config\022\353\002\n\023DeleteServingConfig\022?.go"
+          + "ogle.cloud.discoveryengine.v1beta.Delete"
+          + "ServingConfigRequest\032\026.google.protobuf.E"
+          + "mpty\"\372\001\332A\004name\202\323\344\223\002\354\001*C/v1beta/{name=pro"
+          + "jects/*/locations/*/dataStores/*/serving"
+          + "Configs/*}ZS*Q/v1beta/{name=projects/*/l"
+          + "ocations/*/collections/*/dataStores/*/se"
+          + "rvingConfigs/*}ZP*N/v1beta/{name=project"
+          + "s/*/locations/*/collections/*/engines/*/"
+          + "servingConfigs/*}\022\372\003\n\023UpdateServingConfi"
+          + "g\022?.google.cloud.discoveryengine.v1beta."
+          + "UpdateServingConfigRequest\0322.google.clou"
+          + "d.discoveryengine.v1beta.ServingConfig\"\355"
+          + "\002\332A\032serving_config,update_mask\202\323\344\223\002\311\0022R/"
+          + "v1beta/{serving_config.name=projects/*/l"
+          + "ocations/*/dataStores/*/servingConfigs/*"
+          + "}:\016serving_configZr2`/v1beta/{serving_co"
+          + "nfig.name=projects/*/locations/*/collect"
+          + "ions/*/dataStores/*/servingConfigs/*}:\016s"
+          + "erving_configZo2]/v1beta/{serving_config"
+          + ".name=projects/*/locations/*/collections"
+          + "/*/engines/*/servingConfigs/*}:\016serving_"
+          + "config\022\201\003\n\020GetServingConfig\022<.google.clo"
+          + "ud.discoveryengine.v1beta.GetServingConf"
+          + "igRequest\0322.google.cloud.discoveryengine"
+          + ".v1beta.ServingConfig\"\372\001\332A\004name\202\323\344\223\002\354\001\022C"
+          + "/v1beta/{name=projects/*/locations/*/dat"
+          + "aStores/*/servingConfigs/*}ZS\022Q/v1beta/{"
+          + "name=projects/*/locations/*/collections/"
+          + "*/dataStores/*/servingConfigs/*}ZP\022N/v1b"
+          + "eta/{name=projects/*/locations/*/collect"
+          + "ions/*/engines/*/servingConfigs/*}\022\224\003\n\022L"
+          + "istServingConfigs\022>.google.cloud.discove"
+          + "ryengine.v1beta.ListServingConfigsReques"
+          + "t\032?.google.cloud.discoveryengine.v1beta."
+          + "ListServingConfigsResponse\"\374\001\332A\006parent\202\323"
+          + "\344\223\002\354\001\022C/v1beta/{parent=projects/*/locati"
+          + "ons/*/dataStores/*}/servingConfigsZS\022Q/v"
+          + "1beta/{parent=projects/*/locations/*/col"
+          + "lections/*/dataStores/*}/servingConfigsZ"
+          + "P\022N/v1beta/{parent=projects/*/locations/"
+          + "*/collections/*/engines/*}/servingConfig"
+          + "s\032\317\001\312A\036discoveryengine.googleapis.com\322A\252"
+          + "\001https://www.googleapis.com/auth/cloud-p"
+          + "latform,https://www.googleapis.com/auth/"
+          + "discoveryengine.readwrite,https://www.go"
+          + "ogleapis.com/auth/discoveryengine.servin"
+          + "g.readwriteB\240\002\n\'com.google.cloud.discove"
+          + "ryengine.v1betaB\031ServingConfigServicePro"
+          + "toP\001ZQcloud.google.com/go/discoveryengin"
+          + "e/apiv1beta/discoveryenginepb;discoverye"
+          + "nginepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud"
+          + ".DiscoveryEngine.V1Beta\312\002#Google\\Cloud\\D"
+          + "iscoveryEngine\\V1beta\352\002&Google::Cloud::D"
+          + "iscoveryEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -128,18 +180,35 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.ServingConfigProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
-    internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_descriptor =
+    internal_static_google_cloud_discoveryengine_v1beta_CreateServingConfigRequest_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_CreateServingConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_CreateServingConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ServingConfig", "ServingConfigId",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_UpdateServingConfigRequest_descriptor,
             new java.lang.String[] {
               "ServingConfig", "UpdateMask",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_DeleteServingConfigRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_discoveryengine_v1beta_DeleteServingConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_DeleteServingConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_discoveryengine_v1beta_GetServingConfigRequest_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_discoveryengine_v1beta_GetServingConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_GetServingConfigRequest_descriptor,
@@ -147,7 +216,7 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
               "Name",
             });
     internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsRequest_descriptor,
@@ -155,7 +224,7 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsResponse_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_ListServingConfigsResponse_descriptor,
@@ -168,6 +237,7 @@ public final class ServingConfigServiceProto extends com.google.protobuf.Generat
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.ServingConfigProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

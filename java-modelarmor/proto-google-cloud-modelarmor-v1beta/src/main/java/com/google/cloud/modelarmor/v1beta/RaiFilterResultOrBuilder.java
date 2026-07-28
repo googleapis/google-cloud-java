@@ -168,7 +168,8 @@ public interface RaiFilterResultOrBuilder
    *
    * <pre>
    * The map of RAI filter results where key is RAI filter type - either of
-   * "sexually_explicit", "hate_speech", "harassment", "dangerous".
+   * "sexually_explicit", "hate_speech", "harassment", "dangerous", "violence",
+   * "sexually_suggestive".
    * </pre>
    *
    * <code>
@@ -182,7 +183,8 @@ public interface RaiFilterResultOrBuilder
    *
    * <pre>
    * The map of RAI filter results where key is RAI filter type - either of
-   * "sexually_explicit", "hate_speech", "harassment", "dangerous".
+   * "sexually_explicit", "hate_speech", "harassment", "dangerous", "violence",
+   * "sexually_suggestive".
    * </pre>
    *
    * <code>
@@ -202,7 +204,8 @@ public interface RaiFilterResultOrBuilder
    *
    * <pre>
    * The map of RAI filter results where key is RAI filter type - either of
-   * "sexually_explicit", "hate_speech", "harassment", "dangerous".
+   * "sexually_explicit", "hate_speech", "harassment", "dangerous", "violence",
+   * "sexually_suggestive".
    * </pre>
    *
    * <code>
@@ -218,7 +221,8 @@ public interface RaiFilterResultOrBuilder
    *
    * <pre>
    * The map of RAI filter results where key is RAI filter type - either of
-   * "sexually_explicit", "hate_speech", "harassment", "dangerous".
+   * "sexually_explicit", "hate_speech", "harassment", "dangerous", "violence",
+   * "sexually_suggestive".
    * </pre>
    *
    * <code>
@@ -237,7 +241,8 @@ public interface RaiFilterResultOrBuilder
    *
    * <pre>
    * The map of RAI filter results where key is RAI filter type - either of
-   * "sexually_explicit", "hate_speech", "harassment", "dangerous".
+   * "sexually_explicit", "hate_speech", "harassment", "dangerous", "violence",
+   * "sexually_suggestive".
    * </pre>
    *
    * <code>

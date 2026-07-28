@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: CHANGELOG.md generation test
 
 on:
@@ -11,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      with:
+        persist-credentials: false
     - name: Unit Test
       run: |
         python3 .github/release-note-generation/unit_test.py

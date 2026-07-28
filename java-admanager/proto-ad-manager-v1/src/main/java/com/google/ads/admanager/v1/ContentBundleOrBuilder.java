@@ -85,4 +85,78 @@ public interface ContentBundleOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ContentBundleStatus of the
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ContentBundleStatus of the
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
+   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time the `ContentBundle` was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

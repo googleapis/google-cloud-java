@@ -48,6 +48,10 @@ public final class CartDataProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_ads_datamanager_v1_Item_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_Item_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_ItemCustomVariable_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_ItemCustomVariable_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,26 +61,41 @@ public final class CartDataProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n)google/ads/datamanager/v1/cart_data.pr"
+      "\n"
+          + ")google/ads/datamanager/v1/cart_data.pr"
           + "oto\022\031google.ads.datamanager.v1\032.google/a"
-          + "ds/datamanager/v1/item_parameter.proto\032\037"
-          + "google/api/field_behavior.proto\"\310\001\n\010Cart"
-          + "Data\022\030\n\013merchant_id\030\001 \001(\tB\003\340A\001\022 \n\023mercha"
-          + "nt_feed_label\030\002 \001(\tB\003\340A\001\022(\n\033merchant_fee"
-          + "d_language_code\030\003 \001(\tB\003\340A\001\022!\n\024transactio"
-          + "n_discount\030\004 \001(\001B\003\340A\001\0223\n\005items\030\005 \003(\0132\037.g"
-          + "oogle.ads.datamanager.v1.ItemB\003\340A\001\"\301\001\n\004I"
-          + "tem\022 \n\023merchant_product_id\030\001 \001(\tB\003\340A\001\022\025\n"
-          + "\010quantity\030\002 \001(\003B\003\340A\001\022\027\n\nunit_price\030\003 \001(\001"
-          + "B\003\340A\001\022\024\n\007item_id\030\004 \001(\tB\003\340A\001\022Q\n\032additiona"
-          + "l_item_parameters\030\005 \003(\0132(.google.ads.dat"
-          + "amanager.v1.ItemParameterB\003\340A\001B\312\001\n\035com.g"
-          + "oogle.ads.datamanager.v1B\rCartDataProtoP"
-          + "\001ZAcloud.google.com/go/datamanager/apiv1"
-          + "/datamanagerpb;datamanagerpb\252\002\031Google.Ad"
-          + "s.DataManager.V1\312\002\031Google\\Ads\\DataManage"
-          + "r\\V1\352\002\034Google::Ads::DataManager::V1b\006pro"
-          + "to3"
+          + "ds/datamanager/v1/item_parameter.proto\032\037google/api/field_behavior.proto\"\343\001\n"
+          + "\010CartData\022\030\n"
+          + "\013merchant_id\030\001 \001(\tB\003\340A\001\022 \n"
+          + "\023merchant_feed_label\030\002 \001(\tB\003\340A\001\022(\n"
+          + "\033merchant_feed_language_code\030\003 \001(\tB\003\340A\001\022!\n"
+          + "\024transaction_discount\030\004 \001(\001B\003\340A\001\0223\n"
+          + "\005items\030\005"
+          + " \003(\0132\037.google.ads.datamanager.v1.ItemB\003\340A\001\022\031\n"
+          + "\014coupon_codes\030\006 \003(\tB\003\340A\001\"\256\003\n"
+          + "\004Item\022 \n"
+          + "\023merchant_product_id\030\001 \001(\tB\003\340A\001\022\025\n"
+          + "\010quantity\030\002 \001(\003B\003\340A\001\022\027\n\n"
+          + "unit_price\030\003 \001(\001B\003\340A\001\022\024\n"
+          + "\007item_id\030\004 \001(\tB\003\340A\001\022Q\n"
+          + "\032additional_item_parameters\030\005"
+          + " \003(\0132(.google.ads.datamanager.v1.ItemParameterB\003\340A\001\022\030\n"
+          + "\013merchant_id\030\006 \001(\tB\003\340A\001\022 \n"
+          + "\023merchant_feed_label\030\007 \001(\tB\003\340A\001\022(\n"
+          + "\033merchant_feed_language_code\030\010 \001(\tB\003\340A\001\022\"\n"
+          + "\020conversion_value\030\t \001(\001B\003\340A\001H\000\210\001\001\022L\n"
+          + "\020custom_variables\030\n"
+          + " \003(\0132-.google.ads.datamanager.v1.ItemCustomVariableB\003\340A\001B\023\n"
+          + "\021_conversion_value\"d\n"
+          + "\022ItemCustomVariable\022\025\n"
+          + "\010variable\030\001 \001(\tB\003\340A\001\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\001\022#\n"
+          + "\026destination_references\030\003 \003(\tB\003\340A\001B\312\001\n"
+          + "\035com.google.ads.datamanager.v1B\r"
+          + "CartDataProtoP\001ZAcloud.google.com/go/datamanager"
+          + "/apiv1/datamanagerpb;datamanagerpb\252\002\031Goo"
+          + "gle.Ads.DataManager.V1\312\002\031Google\\Ads\\Data"
+          + "Manager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -96,13 +115,31 @@ public final class CartDataProto extends com.google.protobuf.GeneratedFile {
               "MerchantFeedLanguageCode",
               "TransactionDiscount",
               "Items",
+              "CouponCodes",
             });
     internal_static_google_ads_datamanager_v1_Item_descriptor = getDescriptor().getMessageType(1);
     internal_static_google_ads_datamanager_v1_Item_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_Item_descriptor,
             new java.lang.String[] {
-              "MerchantProductId", "Quantity", "UnitPrice", "ItemId", "AdditionalItemParameters",
+              "MerchantProductId",
+              "Quantity",
+              "UnitPrice",
+              "ItemId",
+              "AdditionalItemParameters",
+              "MerchantId",
+              "MerchantFeedLabel",
+              "MerchantFeedLanguageCode",
+              "ConversionValue",
+              "CustomVariables",
+            });
+    internal_static_google_ads_datamanager_v1_ItemCustomVariable_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_datamanager_v1_ItemCustomVariable_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_ItemCustomVariable_descriptor,
+            new java.lang.String[] {
+              "Variable", "Value", "DestinationReferences",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.datamanager.v1.ItemParameterProto.getDescriptor();

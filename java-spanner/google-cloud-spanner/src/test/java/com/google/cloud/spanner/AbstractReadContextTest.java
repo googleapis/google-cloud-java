@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.cloud.spanner.Options.RpcPriority;
@@ -148,7 +149,7 @@ public class AbstractReadContextTest {
             .setSession(session)
             .setRpc(mock(SpannerRpc.class))
             .setDefaultQueryOptions(defaultQueryOptions)
-            .setExecutorProvider(mock(ExecutorProvider.class))
+            .setExecutorProvider(mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
             .build();
   }
 
@@ -223,7 +224,7 @@ public class AbstractReadContextTest {
   }
 
   @Test
-  public void getChannelHintOptionsPrefersTransactionHintWhenGrpcGcpEnabled() {
+  public void getChannelHintOptionsUsesChannelIdAffinityWhenGrpcGcpEnabled() {
     Map<SpannerRpc.Option, ?> sessionHint =
         SessionClient.optionMap(SessionClient.SessionOption.channelHint(7L));
 
@@ -231,7 +232,8 @@ public class AbstractReadContextTest {
         AbstractReadContext.getChannelHintOptions(sessionHint, 11L, true);
 
     assertThat(result).isNotSameInstanceAs(sessionHint);
-    assertEquals(Long.valueOf(11L), Option.CHANNEL_HINT.getLong(result));
+    assertThat(result).containsKey(Option.CHANNEL_ID_AFFINITY);
+    assertThat(result).doesNotContainKey(Option.CHANNEL_HINT);
   }
 
   @Test
@@ -360,7 +362,7 @@ public class AbstractReadContextTest {
             .setSession(session)
             .setRpc(mock(SpannerRpc.class))
             .setDefaultQueryOptions(defaultQueryOptions)
-            .setExecutorProvider(mock(ExecutorProvider.class))
+            .setExecutorProvider(mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
             .build();
 
     ExecuteSqlRequest request =

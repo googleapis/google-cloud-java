@@ -1,0 +1,56 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.datacatalog.lineage.v1.samples;
+
+// [START datalineage_v1_generated_Lineage_SearchLineageStreaming_async]
+import com.google.api.gax.rpc.ServerStream;
+import com.google.cloud.datacatalog.lineage.v1.LineageClient;
+import com.google.cloud.datacatalog.lineage.v1.LocationName;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest;
+import com.google.cloud.datacatalog.lineage.v1.SearchLineageStreamingResponse;
+import java.util.ArrayList;
+
+public class AsyncSearchLineageStreaming {
+
+  public static void main(String[] args) throws Exception {
+    asyncSearchLineageStreaming();
+  }
+
+  public static void asyncSearchLineageStreaming() throws Exception {
+    // This snippet has been automatically generated and should be regarded as a code template only.
+    // It will require modifications to work:
+    // - It may require correct/in-range values for request initialization.
+    // - It may require specifying regional endpoints when creating the service client as shown in
+    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+    try (LineageClient lineageClient = LineageClient.create()) {
+      SearchLineageStreamingRequest request =
+          SearchLineageStreamingRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .addAllLocations(new ArrayList<String>())
+              .setRootCriteria(SearchLineageStreamingRequest.RootCriteria.newBuilder().build())
+              .setFilters(SearchLineageStreamingRequest.SearchFilters.newBuilder().build())
+              .setLimits(SearchLineageStreamingRequest.SearchLimits.newBuilder().build())
+              .build();
+      ServerStream<SearchLineageStreamingResponse> stream =
+          lineageClient.searchLineageStreamingCallable().call(request);
+      for (SearchLineageStreamingResponse response : stream) {
+        // Do something when a response is received.
+      }
+    }
+  }
+}
+// [END datalineage_v1_generated_Lineage_SearchLineageStreaming_async]

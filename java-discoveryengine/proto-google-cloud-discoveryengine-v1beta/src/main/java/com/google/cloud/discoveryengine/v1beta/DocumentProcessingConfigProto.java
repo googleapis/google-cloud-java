@@ -85,7 +85,7 @@ public final class DocumentProcessingConfigProto extends com.google.protobuf.Gen
           + "cument_processing_config.proto\022#google.c"
           + "loud.discoveryengine.v1beta\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\"\314\014\n\030DocumentProcessingConfig\022\014\n\004"
+          + "e.proto\"\372\016\n\030DocumentProcessingConfig\022\014\n\004"
           + "name\030\001 \001(\t\022e\n\017chunking_config\030\003 \001(\0132L.go"
           + "ogle.cloud.discoveryengine.v1beta.Docume"
           + "ntProcessingConfig.ChunkingConfig\022k\n\026def"
@@ -101,7 +101,7 @@ public final class DocumentProcessingConfigProto extends com.google.protobuf.Gen
           + "fig.LayoutBasedChunkingConfigH\000\032R\n\031Layou"
           + "tBasedChunkingConfig\022\022\n\nchunk_size\030\001 \001(\005"
           + "\022!\n\031include_ancestor_headings\030\002 \001(\010B\014\n\nc"
-          + "hunk_mode\032\260\004\n\rParsingConfig\022\202\001\n\026digital_"
+          + "hunk_mode\032\336\006\n\rParsingConfig\022\202\001\n\026digital_"
           + "parsing_config\030\001 \001(\0132`.google.cloud.disc"
           + "overyengine.v1beta.DocumentProcessingCon"
           + "fig.ParsingConfig.DigitalParsingConfigH\000"
@@ -114,26 +114,33 @@ public final class DocumentProcessingConfigProto extends com.google.protobuf.Gen
           + "ParsingConfigH\000\032\026\n\024DigitalParsingConfig\032"
           + "S\n\020OcrParsingConfig\022&\n\032enhanced_document"
           + "_elements\030\001 \003(\tB\002\030\001\022\027\n\017use_native_text\030\002"
-          + " \001(\010\032\025\n\023LayoutParsingConfigB\027\n\025type_dedi"
-          + "cated_config\032\212\001\n\033ParsingConfigOverridesE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022Z\n\005value\030\002 \001(\0132K.googl"
-          + "e.cloud.discoveryengine.v1beta.DocumentP"
-          + "rocessingConfig.ParsingConfig:\0028\001:\212\002\352A\206\002"
-          + "\n7discoveryengine.googleapis.com/Documen"
-          + "tProcessingConfig\022Xprojects/{project}/lo"
-          + "cations/{location}/dataStores/{data_stor"
-          + "e}/documentProcessingConfig\022qprojects/{p"
-          + "roject}/locations/{location}/collections"
-          + "/{collection}/dataStores/{data_store}/do"
-          + "cumentProcessingConfigB\244\002\n\'com.google.cl"
-          + "oud.discoveryengine.v1betaB\035DocumentProc"
-          + "essingConfigProtoP\001ZQcloud.google.com/go"
-          + "/discoveryengine/apiv1beta/discoveryengi"
-          + "nepb;discoveryenginepb\242\002\017DISCOVERYENGINE"
-          + "\252\002#Google.Cloud.DiscoveryEngine.V1Beta\312\002"
-          + "#Google\\Cloud\\DiscoveryEngine\\V1beta\352\002&G"
-          + "oogle::Cloud::DiscoveryEngine::V1betab\006p"
-          + "roto3"
+          + " \001(\010\032\302\002\n\023LayoutParsingConfig\022$\n\027enable_t"
+          + "able_annotation\030\001 \001(\010B\003\340A\001\022$\n\027enable_ima"
+          + "ge_annotation\030\002 \001(\010B\003\340A\001\022&\n\031enable_llm_l"
+          + "ayout_parsing\030\005 \001(\010B\003\340A\001\022%\n\030structured_c"
+          + "ontent_types\030\t \003(\tB\003\340A\001\022\"\n\025exclude_html_"
+          + "elements\030\n \003(\tB\003\340A\001\022!\n\024exclude_html_clas"
+          + "ses\030\013 \003(\tB\003\340A\001\022\035\n\020exclude_html_ids\030\014 \003(\t"
+          + "B\003\340A\001\022*\n\035enable_get_processed_document\030\016"
+          + " \001(\010B\003\340A\001B\027\n\025type_dedicated_config\032\212\001\n\033P"
+          + "arsingConfigOverridesEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "Z\n\005value\030\002 \001(\0132K.google.cloud.discoverye"
+          + "ngine.v1beta.DocumentProcessingConfig.Pa"
+          + "rsingConfig:\0028\001:\212\002\352A\206\002\n7discoveryengine."
+          + "googleapis.com/DocumentProcessingConfig\022"
+          + "Xprojects/{project}/locations/{location}"
+          + "/dataStores/{data_store}/documentProcess"
+          + "ingConfig\022qprojects/{project}/locations/"
+          + "{location}/collections/{collection}/data"
+          + "Stores/{data_store}/documentProcessingCo"
+          + "nfigB\244\002\n\'com.google.cloud.discoveryengin"
+          + "e.v1betaB\035DocumentProcessingConfigProtoP"
+          + "\001ZQcloud.google.com/go/discoveryengine/a"
+          + "piv1beta/discoveryenginepb;discoveryengi"
+          + "nepb\242\002\017DISCOVERYENGINE\252\002#Google.Cloud.Di"
+          + "scoveryEngine.V1Beta\312\002#Google\\Cloud\\Disc"
+          + "overyEngine\\V1beta\352\002&Google::Cloud::Disc"
+          + "overyEngine::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -202,7 +209,16 @@ public final class DocumentProcessingConfigProto extends com.google.protobuf.Gen
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfig_LayoutParsingConfig_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "EnableTableAnnotation",
+              "EnableImageAnnotation",
+              "EnableLlmLayoutParsing",
+              "StructuredContentTypes",
+              "ExcludeHtmlElements",
+              "ExcludeHtmlClasses",
+              "ExcludeHtmlIds",
+              "EnableGetProcessedDocument",
+            });
     internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_ParsingConfigOverridesEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_DocumentProcessingConfig_descriptor
             .getNestedType(2);
@@ -217,6 +233,7 @@ public final class DocumentProcessingConfigProto extends com.google.protobuf.Gen
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

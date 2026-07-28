@@ -126,4 +126,32 @@ public interface YarnApplicationOrBuilder
    * @return The bytes for trackingUrl.
    */
   com.google.protobuf.ByteString getTrackingUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cumulative CPU time consumed by the application for a job,
+   * measured in vcore-seconds.
+   * </pre>
+   *
+   * <code>int64 vcore_seconds = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The vcoreSeconds.
+   */
+  long getVcoreSeconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cumulative memory usage of the application for a job,
+   * measured in mb-seconds.
+   * </pre>
+   *
+   * <code>int64 memory_mb_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The memoryMbSeconds.
+   */
+  long getMemoryMbSeconds();
 }

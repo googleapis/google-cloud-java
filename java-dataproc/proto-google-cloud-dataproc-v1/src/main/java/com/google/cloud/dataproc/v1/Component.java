@@ -149,16 +149,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Jupyter Kernel Gateway.
-   * </pre>
-   *
-   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
-   */
-  JUPYTER_KERNEL_GATEWAY(22),
-  /**
-   *
-   *
-   * <pre>
    * The Pig component.
    * </pre>
    *
@@ -225,6 +215,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ZOOKEEPER = 8;</code>
    */
   ZOOKEEPER(8),
+  /**
+   *
+   *
+   * <pre>
+   * The Jupyter Kernel Gateway.
+   * </pre>
+   *
+   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
+   */
+  JUPYTER_KERNEL_GATEWAY(22),
   UNRECOGNIZED(-1),
   ;
 
@@ -367,17 +367,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The Jupyter Kernel Gateway.
-   * </pre>
-   *
-   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
-   */
-  public static final int JUPYTER_KERNEL_GATEWAY_VALUE = 22;
-
-  /**
-   *
-   *
-   * <pre>
    * The Pig component.
    * </pre>
    *
@@ -451,6 +440,17 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int ZOOKEEPER_VALUE = 8;
 
+  /**
+   *
+   *
+   * <pre>
+   * The Jupyter Kernel Gateway.
+   * </pre>
+   *
+   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
+   */
+  public static final int JUPYTER_KERNEL_GATEWAY_VALUE = 22;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -497,8 +497,6 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return ICEBERG;
       case 1:
         return JUPYTER;
-      case 22:
-        return JUPYTER_KERNEL_GATEWAY;
       case 21:
         return PIG;
       case 6:
@@ -513,6 +511,8 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return ZEPPELIN;
       case 8:
         return ZOOKEEPER;
+      case 22:
+        return JUPYTER_KERNEL_GATEWAY;
       default:
         return null;
     }

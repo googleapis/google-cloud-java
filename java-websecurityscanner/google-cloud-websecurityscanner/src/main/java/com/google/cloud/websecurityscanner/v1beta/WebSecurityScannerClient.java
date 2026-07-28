@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -376,10 +378,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WebSecurityScannerClient implements BackgroundResource {
-  private final WebSecurityScannerSettings settings;
+  private final @Nullable WebSecurityScannerSettings settings;
   private final WebSecurityScannerStub stub;
 
   /** Constructs an instance of WebSecurityScannerClient with default settings. */
@@ -419,7 +422,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WebSecurityScannerSettings getSettings() {
+  public final @Nullable WebSecurityScannerSettings getSettings() {
     return settings;
   }
 
@@ -451,7 +454,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    * @param scanConfig Required. The ScanConfig to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanConfig createScanConfig(ProjectName parent, ScanConfig scanConfig) {
+  public final ScanConfig createScanConfig(@Nullable ProjectName parent, ScanConfig scanConfig) {
     CreateScanConfigRequest request =
         CreateScanConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -570,7 +573,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteScanConfig(ScanConfigName name) {
+  public final void deleteScanConfig(@Nullable ScanConfigName name) {
     DeleteScanConfigRequest request =
         DeleteScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteScanConfig(request);
@@ -681,7 +684,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanConfig getScanConfig(ScanConfigName name) {
+  public final ScanConfig getScanConfig(@Nullable ScanConfigName name) {
     GetScanConfigRequest request =
         GetScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScanConfig(request);
@@ -794,7 +797,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     the format 'projects/{projectId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScanConfigsPagedResponse listScanConfigs(ProjectName parent) {
+  public final ListScanConfigsPagedResponse listScanConfigs(@Nullable ProjectName parent) {
     ListScanConfigsRequest request =
         ListScanConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1052,7 +1055,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanRun startScanRun(ScanConfigName name) {
+  public final ScanRun startScanRun(@Nullable ScanConfigName name) {
     StartScanRunRequest request =
         StartScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startScanRun(request);
@@ -1163,7 +1166,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanRun getScanRun(ScanRunName name) {
+  public final ScanRun getScanRun(@Nullable ScanRunName name) {
     GetScanRunRequest request =
         GetScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScanRun(request);
@@ -1275,7 +1278,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format 'projects/{projectId}/scanConfigs/{scanConfigId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScanRunsPagedResponse listScanRuns(ScanConfigName parent) {
+  public final ListScanRunsPagedResponse listScanRuns(@Nullable ScanConfigName parent) {
     ListScanRunsRequest request =
         ListScanRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1438,7 +1441,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     format of 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanRun stopScanRun(ScanRunName name) {
+  public final ScanRun stopScanRun(@Nullable ScanRunName name) {
     StopScanRunRequest request =
         StopScanRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopScanRun(request);
@@ -1551,7 +1554,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCrawledUrlsPagedResponse listCrawledUrls(ScanRunName parent) {
+  public final ListCrawledUrlsPagedResponse listCrawledUrls(@Nullable ScanRunName parent) {
     ListCrawledUrlsRequest request =
         ListCrawledUrlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1716,7 +1719,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Finding getFinding(FindingName name) {
+  public final Finding getFinding(@Nullable FindingName name) {
     GetFindingRequest request =
         GetFindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFinding(request);
@@ -1838,7 +1841,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     operator: '='.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingsPagedResponse listFindings(ScanRunName parent, String filter) {
+  public final ListFindingsPagedResponse listFindings(@Nullable ScanRunName parent, String filter) {
     ListFindingsRequest request =
         ListFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2010,7 +2013,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
    *     the format 'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingTypeStatsResponse listFindingTypeStats(ScanRunName parent) {
+  public final ListFindingTypeStatsResponse listFindingTypeStats(@Nullable ScanRunName parent) {
     ListFindingTypeStatsRequest request =
         ListFindingTypeStatsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2164,8 +2167,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig, ListScanConfigsPage> {
 
     private ListScanConfigsPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable ListScanConfigsResponse response) {
       super(context, response);
     }
 
@@ -2175,14 +2178,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanConfigsPage createPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable ListScanConfigsResponse response) {
       return new ListScanConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScanConfigsPage> createPageAsync(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
+        @Nullable PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
         ApiFuture<ListScanConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2197,7 +2200,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanConfigsFixedSizeCollection> {
 
     private ListScanConfigsFixedSizeCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListScanConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2207,7 +2210,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanConfigsFixedSizeCollection createCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListScanConfigsPage> pages, int collectionSize) {
       return new ListScanConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2240,8 +2243,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
       extends AbstractPage<ListScanRunsRequest, ListScanRunsResponse, ScanRun, ListScanRunsPage> {
 
     private ListScanRunsPage(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
-        ListScanRunsResponse response) {
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable ListScanRunsResponse response) {
       super(context, response);
     }
 
@@ -2251,14 +2254,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanRunsPage createPage(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
-        ListScanRunsResponse response) {
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable ListScanRunsResponse response) {
       return new ListScanRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScanRunsPage> createPageAsync(
-        PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
+        @Nullable PageContext<ListScanRunsRequest, ListScanRunsResponse, ScanRun> context,
         ApiFuture<ListScanRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2272,7 +2275,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanRunsPage,
           ListScanRunsFixedSizeCollection> {
 
-    private ListScanRunsFixedSizeCollection(List<ListScanRunsPage> pages, int collectionSize) {
+    private ListScanRunsFixedSizeCollection(
+        @Nullable List<ListScanRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2282,7 +2286,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListScanRunsFixedSizeCollection createCollection(
-        List<ListScanRunsPage> pages, int collectionSize) {
+        @Nullable List<ListScanRunsPage> pages, int collectionSize) {
       return new ListScanRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2316,8 +2320,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl, ListCrawledUrlsPage> {
 
     private ListCrawledUrlsPage(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
-        ListCrawledUrlsResponse response) {
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable ListCrawledUrlsResponse response) {
       super(context, response);
     }
 
@@ -2327,14 +2331,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListCrawledUrlsPage createPage(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
-        ListCrawledUrlsResponse response) {
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable ListCrawledUrlsResponse response) {
       return new ListCrawledUrlsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCrawledUrlsPage> createPageAsync(
-        PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
+        @Nullable PageContext<ListCrawledUrlsRequest, ListCrawledUrlsResponse, CrawledUrl> context,
         ApiFuture<ListCrawledUrlsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2349,7 +2353,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListCrawledUrlsFixedSizeCollection> {
 
     private ListCrawledUrlsFixedSizeCollection(
-        List<ListCrawledUrlsPage> pages, int collectionSize) {
+        @Nullable List<ListCrawledUrlsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2359,7 +2363,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListCrawledUrlsFixedSizeCollection createCollection(
-        List<ListCrawledUrlsPage> pages, int collectionSize) {
+        @Nullable List<ListCrawledUrlsPage> pages, int collectionSize) {
       return new ListCrawledUrlsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2392,8 +2396,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
       extends AbstractPage<ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage> {
 
     private ListFindingsPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       super(context, response);
     }
 
@@ -2403,14 +2407,14 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListFindingsPage createPage(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
-        ListFindingsResponse response) {
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
       return new ListFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingsPage> createPageAsync(
-        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
         ApiFuture<ListFindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2424,7 +2428,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListFindingsPage,
           ListFindingsFixedSizeCollection> {
 
-    private ListFindingsFixedSizeCollection(List<ListFindingsPage> pages, int collectionSize) {
+    private ListFindingsFixedSizeCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2434,7 +2439,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
 
     @Override
     protected ListFindingsFixedSizeCollection createCollection(
-        List<ListFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
       return new ListFindingsFixedSizeCollection(pages, collectionSize);
     }
   }

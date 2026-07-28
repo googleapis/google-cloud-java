@@ -87,43 +87,44 @@ public final class DataDocumentationProto extends com.google.protobuf.GeneratedF
     java.lang.String[] descriptorData = {
       "\n"
           + "1google/cloud/dataplex/v1/data_document"
-          + "ation.proto\022\030google.cloud.dataplex.v1\032\037google/api/field_behavior.proto\"\223\002\n"
+          + "ation.proto\022\030google.cloud.dataplex.v1\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/api/resource.proto\"\223\002\n"
           + "\025DataDocumentationSpec\022\'\n"
           + "\032catalog_publishing_enabled\030\002 \001(\010B\003\340A\001\022_\n"
-          + "\021generation_scopes\030\003"
-          + " \003(\0162?.google.cloud.dataplex.v1.DataDocumentationSpec.GenerationScopeB\003\340A\001\"p\n"
+          + "\021generation_scopes\030\003 \003(\0162?.google"
+          + ".cloud.dataplex.v1.DataDocumentationSpec.GenerationScopeB\003\340A\001\"p\n"
           + "\017GenerationScope\022 \n"
           + "\034GENERATION_SCOPE_UNSPECIFIED\020\000\022\007\n"
           + "\003ALL\020\001\022!\n"
           + "\035TABLE_AND_COLUMN_DESCRIPTIONS\020\002\022\017\n"
           + "\013SQL_QUERIES\020\003\"\250\014\n"
           + "\027DataDocumentationResult\022^\n"
-          + "\016dataset_result\030\007 \001(\013"
-          + "2?.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultB\003\340A\003H\000\022Z\n"
-          + "\014table_result\030\010 \001(\0132=.google.cloud.dataplex.v"
-          + "1.DataDocumentationResult.TableResultB\003\340A\003H\000\032\336\001\n\r"
+          + "\016dataset_result\030\007 \001(\0132?.google.clo"
+          + "ud.dataplex.v1.DataDocumentationResult.DatasetResultB\003\340A\003H\000\022Z\n"
+          + "\014table_result\030\010 \001("
+          + "\0132=.google.cloud.dataplex.v1.DataDocumentationResult.TableResultB\003\340A\003H\000\032\336\001\n\r"
           + "DatasetResult\022\025\n"
           + "\010overview\030\001 \001(\tB\003\340A\003\022g\n"
-          + "\024schema_relationships\030\003 \003(\0132D.go"
-          + "ogle.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipB\003\340A\003\022M\n"
-          + "\007queries\030\004"
-          + " \003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.QueryB\003\340A\003\032\325\001\n"
+          + "\024schema_relationships\030\003 \003(\0132D.google.cloud.da"
+          + "taplex.v1.DataDocumentationResult.SchemaRelationshipB\003\340A\003\022M\n"
+          + "\007queries\030\004 \003(\01327.goo"
+          + "gle.cloud.dataplex.v1.DataDocumentationResult.QueryB\003\340A\003\032\325\001\n"
           + "\013TableResult\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\025\n"
           + "\010overview\030\002 \001(\tB\003\340A\003\022M\n"
-          + "\006schema\030\003 \001(\01328.google.cloud.d"
-          + "ataplex.v1.DataDocumentationResult.SchemaB\003\340A\003\022M\n"
-          + "\007queries\030\004 \003(\01327.google.cloud.d"
-          + "ataplex.v1.DataDocumentationResult.QueryB\003\340A\003\032\373\004\n"
+          + "\006schema\030\003"
+          + " \001(\01328.google.cloud.dataplex.v1.DataDocumentationResult.SchemaB\003\340A\003\022M\n"
+          + "\007queries\030\004"
+          + " \003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.QueryB\003\340A\003\032\373\004\n"
           + "\022SchemaRelationship\022p\n"
-          + "\021left_schema_paths\030\001 \001(\0132P.google.cloud.dataplex."
-          + "v1.DataDocumentationResult.SchemaRelationship.SchemaPathsB\003\340A\003\022q\n"
-          + "\022right_schema_paths\030\002 \001(\0132P.google.cloud.dataplex.v1.Da"
-          + "taDocumentationResult.SchemaRelationship.SchemaPathsB\003\340A\003\022a\n"
-          + "\007sources\030\004 \003(\0162K.goo"
-          + "gle.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SourceB\003\340A\003\022\\\n"
-          + "\004type\030\006 \001(\0162I.google.cloud.dataplex.v1.Da"
-          + "taDocumentationResult.SchemaRelationship.TypeB\003\340A\003\0329\n"
+          + "\021left_schema_paths\030\001 \001(\0132P.google.cloud.dataplex.v1.DataDocume"
+          + "ntationResult.SchemaRelationship.SchemaPathsB\003\340A\003\022q\n"
+          + "\022right_schema_paths\030\002 \001(\0132P.google.cloud.dataplex.v1.DataDocumentati"
+          + "onResult.SchemaRelationship.SchemaPathsB\003\340A\003\022a\n"
+          + "\007sources\030\004 \003(\0162K.google.cloud.dat"
+          + "aplex.v1.DataDocumentationResult.SchemaRelationship.SourceB\003\340A\003\022\\\n"
+          + "\004type\030\006 \001(\0162I."
+          + "google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.TypeB\003\340A\003\0329\n"
           + "\013SchemaPaths\022\026\n"
           + "\ttable_fqn\030\001 \001(\tB\003\340A\003\022\022\n"
           + "\005paths\030\002 \003(\tB\003\340A\003\"U\n"
@@ -139,22 +140,23 @@ public final class DataDocumentationProto extends com.google.protobuf.GeneratedF
           + "\003sql\030\001 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\003\032V\n"
           + "\006Schema\022L\n"
-          + "\006fields\030\001 \003"
-          + "(\01327.google.cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003\032\202\001\n"
+          + "\006fields\030\001 \003(\01327.google.c"
+          + "loud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003\032\202\001\n"
           + "\005Field\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\003\022L\n"
-          + "\006fields\030\003"
-          + " \003(\01327.google.cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003B\010\n"
+          + "\006fields\030\003 \003"
+          + "(\01327.google.cloud.dataplex.v1.DataDocumentationResult.FieldB\003\340A\003B\010\n"
           + "\006resultBr\n"
-          + "\034com.google.cloud.dataplex.v1B\026DataDocumentationProtoP\001Z8cloud.google."
-          + "com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
+          + "\034com.google.cloud.dataplex.v1B\026DataDocument"
+          + "ationProtoP\001Z8cloud.google.com/go/dataplex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_dataplex_v1_DataDocumentationSpec_descriptor =
         getDescriptor().getMessageType(0);
@@ -237,6 +239,7 @@ public final class DataDocumentationProto extends com.google.protobuf.GeneratedF
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

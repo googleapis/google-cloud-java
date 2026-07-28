@@ -30,10 +30,10 @@ public interface InsightOrBuilder
    *
    *
    * <pre>
-   * Name of the insight.
+   * Identifier. Name of the insight.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface InsightOrBuilder
    *
    *
    * <pre>
-   * Name of the insight.
+   * Identifier. Name of the insight.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

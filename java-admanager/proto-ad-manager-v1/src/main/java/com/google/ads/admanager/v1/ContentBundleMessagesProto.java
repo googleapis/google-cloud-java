@@ -55,25 +55,33 @@ public final class ContentBundleMessagesProto extends com.google.protobuf.Genera
     java.lang.String[] descriptorData = {
       "\n5google/ads/admanager/v1/content_bundle"
           + "_messages.proto\022\027google.ads.admanager.v1"
-          + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\"\304\001\n\rContentBundle\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014display_name\030\003 \001(\tB"
-          + "\003\340A\002:\204\001\352A\200\001\n&admanager.googleapis.com/Co"
-          + "ntentBundle\0227networks/{network_code}/con"
-          + "tentBundles/{content_bundle}*\016contentBun"
-          + "dles2\rcontentBundleB\316\001\n\033com.google.ads.a"
-          + "dmanager.v1B\032ContentBundleMessagesProtoP"
-          + "\001Z@google.golang.org/genproto/googleapis"
-          + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
-          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
-          + "\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\0322google/ads/admanager/v1/content_bundle"
+          + "_enums.proto\032\037google/api/field_behavior."
+          + "proto\032\031google/api/resource.proto\032\037google"
+          + "/protobuf/timestamp.proto\"\325\002\n\rContentBun"
+          + "dle\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014display_name\030\003"
+          + " \001(\tB\003\340A\002\022Y\n\006status\030\004 \001(\0162D.google.ads.a"
+          + "dmanager.v1.ContentBundleStatusEnum.Cont"
+          + "entBundleStatusB\003\340A\003\0224\n\013update_time\030\007 \001("
+          + "\0132\032.google.protobuf.TimestampB\003\340A\003:\204\001\352A\200"
+          + "\001\n&admanager.googleapis.com/ContentBundl"
+          + "e\0227networks/{network_code}/contentBundle"
+          + "s/{content_bundle}*\016contentBundles2\rcont"
+          + "entBundleB\316\001\n\033com.google.ads.admanager.v"
+          + "1B\032ContentBundleMessagesProtoP\001Z@google."
+          + "golang.org/genproto/googleapis/ads/adman"
+          + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.ContentBundleEnumsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_ContentBundle_descriptor =
         getDescriptor().getMessageType(0);
@@ -81,11 +89,13 @@ public final class ContentBundleMessagesProto extends com.google.protobuf.Genera
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ContentBundle_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName",
+              "Name", "DisplayName", "Status", "UpdateTime",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.ContentBundleEnumsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

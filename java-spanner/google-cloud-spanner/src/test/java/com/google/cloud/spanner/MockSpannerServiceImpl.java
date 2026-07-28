@@ -608,6 +608,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private Deque<AbstractMessage> requests = new ConcurrentLinkedDeque<>();
   private volatile CountDownLatch freezeLock = new CountDownLatch(0);
   private final AtomicInteger freezeAfterReturningNumRows = new AtomicInteger();
+  private final AtomicInteger freezeAfterNumRequests = new AtomicInteger(-1);
   private Queue<Exception> exceptions = new ConcurrentLinkedQueue<>();
   private boolean stickyGlobalExceptions = false;
   private ConcurrentMap<Statement, StatementResult> statementResults = new ConcurrentHashMap<>();
@@ -812,16 +813,40 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     ignoreInlineBeginRequest.set(ignore);
   }
 
+  private boolean shouldOmitInlineBeginTransaction(TransactionSelector transactionSelector) {
+    return ignoreInlineBeginRequest.get() && transactionSelector.hasBegin();
+  }
+
   public void freeze() {
-    freezeLock = new CountDownLatch(1);
+    synchronized (lock) {
+      freezeLock = new CountDownLatch(1);
+    }
   }
 
   public void unfreeze() {
-    freezeLock.countDown();
+    synchronized (lock) {
+      freezeAfterNumRequests.set(-1);
+      freezeLock.countDown();
+    }
   }
 
   public void freezeAfterReturningNumRows(int numRows) {
     freezeAfterReturningNumRows.set(numRows);
+  }
+
+  public void freezeAfter(int numRequests) {
+    freezeAfterNumRequests.set(numRequests);
+  }
+
+  private void maybeFreezeAndRecordRequest(AbstractMessage request) {
+    synchronized (lock) {
+      if (freezeAfterNumRequests.get() >= 0) {
+        if (freezeAfterNumRequests.decrementAndGet() == -1) {
+          freeze();
+        }
+      }
+      requests.add(request);
+    }
   }
 
   public void setMaxSessionsInOneBatch(int max) {
@@ -836,7 +861,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   public void batchCreateSessions(
       BatchCreateSessionsRequest request,
       StreamObserver<BatchCreateSessionsResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getDatabase());
     String name = null;
     try {
@@ -898,7 +923,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void createSession(
       CreateSessionRequest request, StreamObserver<Session> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getDatabase());
     Preconditions.checkNotNull(request.getSession());
     String name = generateSessionName(request.getDatabase());
@@ -938,7 +963,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void getSession(GetSessionRequest request, StreamObserver<Session> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getName());
     try {
       getSessionExecutionTime.simulateExecutionTime(exceptions, stickyGlobalExceptions, freezeLock);
@@ -983,7 +1008,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void listSessions(
       ListSessionsRequest request, StreamObserver<ListSessionsResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     try {
       listSessionsExecutionTime.simulateExecutionTime(
           exceptions, stickyGlobalExceptions, freezeLock);
@@ -1006,7 +1031,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void deleteSession(DeleteSessionRequest request, StreamObserver<Empty> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getName());
     try {
       deleteSessionExecutionTime.simulateExecutionTime(
@@ -1035,7 +1060,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void executeSql(ExecuteSqlRequest request, StreamObserver<ResultSet> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -1079,12 +1104,12 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                             .setRowCountExact(result.getUpdateCount())
                             .build())
                     .setMetadata(
-                        ResultSetMetadata.newBuilder()
-                            .setTransaction(
-                                ignoreInlineBeginRequest.get()
-                                    ? Transaction.getDefaultInstance()
-                                    : Transaction.newBuilder().setId(transactionId).build())
-                            .build());
+                        shouldOmitInlineBeginTransaction(request.getTransaction())
+                            ? ResultSetMetadata.getDefaultInstance()
+                            : ResultSetMetadata.newBuilder()
+                                .setTransaction(
+                                    Transaction.newBuilder().setId(transactionId).build())
+                                .build());
             if (session.getMultiplexed() && isReadWriteTransaction(transactionId)) {
               resultSetBuilder.setPrecommitToken(getResultSetPrecommitToken(transactionId));
             }
@@ -1110,13 +1135,12 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       Session session) {
     ResultSetMetadata metadata = resultSet.getMetadata();
     if (transactionId != null) {
-      metadata =
-          metadata.toBuilder()
-              .setTransaction(
-                  ignoreInlineBeginRequest.get()
-                      ? Transaction.getDefaultInstance()
-                      : Transaction.newBuilder().setId(transactionId).build())
-              .build();
+      if (!shouldOmitInlineBeginTransaction(transactionSelector)) {
+        metadata =
+            metadata.toBuilder()
+                .setTransaction(Transaction.newBuilder().setId(transactionId).build())
+                .build();
+      }
     } else if (transactionSelector.hasBegin() || transactionSelector.hasSingleUse()) {
       Transaction transaction = getTemporaryTransactionOrNull(transactionSelector);
       metadata = metadata.toBuilder().setTransaction(transaction).build();
@@ -1133,7 +1157,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void executeBatchDml(
       ExecuteBatchDmlRequest request, StreamObserver<ExecuteBatchDmlResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -1213,12 +1237,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
             ResultSet.newBuilder()
                 .setStats(ResultSetStats.newBuilder().setRowCountExact(updateCount).build())
                 .setMetadata(
-                    ResultSetMetadata.newBuilder()
-                        .setTransaction(
-                            ignoreInlineBeginRequest.get()
-                                ? Transaction.getDefaultInstance()
-                                : Transaction.newBuilder().setId(transactionId).build())
-                        .build())
+                    shouldOmitInlineBeginTransaction(request.getTransaction())
+                        ? ResultSetMetadata.getDefaultInstance()
+                        : ResultSetMetadata.newBuilder()
+                            .setTransaction(Transaction.newBuilder().setId(transactionId).build())
+                            .build())
                 .build());
       }
       builder.setStatus(status);
@@ -1241,7 +1264,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         || !request
             .getSql()
             .equals(MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT.getSql())) {
-      requests.add(request);
+      maybeFreezeAndRecordRequest(request);
     }
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
@@ -1687,7 +1710,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void read(final ReadRequest request, StreamObserver<ResultSet> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -1720,7 +1743,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void streamingRead(
       final ReadRequest request, StreamObserver<PartialResultSet> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -1945,7 +1968,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         .getRequestOptions()
         .getTransactionTag()
         .equals("multiplexed-rw-background-begin-txn")) {
-      requests.add(request);
+      maybeFreezeAndRecordRequest(request);
     }
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
@@ -2080,7 +2103,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void commit(CommitRequest request, StreamObserver<CommitResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -2152,7 +2175,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void batchWrite(
       BatchWriteRequest request, StreamObserver<BatchWriteResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getSession());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -2181,7 +2204,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
   @Override
   public void rollback(RollbackRequest request, StreamObserver<Empty> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     Preconditions.checkNotNull(request.getTransactionId());
     Session session = getSession(request.getSession());
     if (session == null) {
@@ -2230,7 +2253,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void partitionQuery(
       PartitionQueryRequest request, StreamObserver<PartitionResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     try {
       partitionQueryExecutionTime.simulateExecutionTime(
           exceptions, stickyGlobalExceptions, freezeLock);
@@ -2249,7 +2272,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   @Override
   public void partitionRead(
       PartitionReadRequest request, StreamObserver<PartitionResponse> responseObserver) {
-    requests.add(request);
+    maybeFreezeAndRecordRequest(request);
     try {
       partitionReadExecutionTime.simulateExecutionTime(
           exceptions, stickyGlobalExceptions, freezeLock);
@@ -2418,23 +2441,27 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   /** Removes all sessions and transactions. Mocked results are not removed. */
   @Override
   public void reset() {
-    requests = new ConcurrentLinkedDeque<>();
-    exceptions = new ConcurrentLinkedQueue<>();
-    statementGetCounts = new ConcurrentHashMap<>();
-    sessions = new ConcurrentHashMap<>();
-    sessionLastUsed = new ConcurrentHashMap<>();
-    transactions = new ConcurrentHashMap<>();
-    transactionsStarted.clear();
-    isPartitionedDmlTransaction = new ConcurrentHashMap<>();
-    abortedTransactions = new ConcurrentHashMap<>();
-    transactionCounters = new ConcurrentHashMap<>();
-    partitionTokens = new ConcurrentHashMap<>();
-    transactionLastUsed = new ConcurrentHashMap<>();
-    transactionSequenceNo = new ConcurrentHashMap<>();
+    synchronized (lock) {
+      requests = new ConcurrentLinkedDeque<>();
+      exceptions = new ConcurrentLinkedQueue<>();
+      statementGetCounts = new ConcurrentHashMap<>();
+      sessions = new ConcurrentHashMap<>();
+      sessionLastUsed = new ConcurrentHashMap<>();
+      transactions = new ConcurrentHashMap<>();
+      transactionsStarted.clear();
+      isPartitionedDmlTransaction = new ConcurrentHashMap<>();
+      abortedTransactions = new ConcurrentHashMap<>();
+      transactionCounters = new ConcurrentHashMap<>();
+      partitionTokens = new ConcurrentHashMap<>();
+      transactionLastUsed = new ConcurrentHashMap<>();
+      transactionSequenceNo = new ConcurrentHashMap<>();
 
-    numSessionsCreated.set(0);
-    stickyGlobalExceptions = false;
-    freezeLock.countDown();
+      numSessionsCreated.set(0);
+      freezeAfterNumRequests.set(-1);
+      freezeAfterReturningNumRows.set(0);
+      stickyGlobalExceptions = false;
+      freezeLock.countDown();
+    }
   }
 
   public void removeAllExecutionTimes() {

@@ -249,4 +249,80 @@ public class MockModelArmorImpl extends ModelArmorImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public StreamObserver<SanitizeUserPromptRequest> streamSanitizeUserPrompt(
+      final StreamObserver<SanitizeUserPromptResponse> responseObserver) {
+    StreamObserver<SanitizeUserPromptRequest> requestObserver =
+        new StreamObserver<SanitizeUserPromptRequest>() {
+          @Override
+          public void onNext(SanitizeUserPromptRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof SanitizeUserPromptResponse) {
+              responseObserver.onNext(((SanitizeUserPromptResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamSanitizeUserPrompt,"
+                              + " expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          SanitizeUserPromptResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
+  public StreamObserver<SanitizeModelResponseRequest> streamSanitizeModelResponse(
+      final StreamObserver<SanitizeModelResponseResponse> responseObserver) {
+    StreamObserver<SanitizeModelResponseRequest> requestObserver =
+        new StreamObserver<SanitizeModelResponseRequest>() {
+          @Override
+          public void onNext(SanitizeModelResponseRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof SanitizeModelResponseResponse) {
+              responseObserver.onNext(((SanitizeModelResponseResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamSanitizeModelResponse,"
+                              + " expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          SanitizeModelResponseResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
 }

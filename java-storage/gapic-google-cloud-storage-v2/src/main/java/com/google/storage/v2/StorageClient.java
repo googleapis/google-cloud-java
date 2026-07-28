@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -599,9 +601,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class StorageClient implements BackgroundResource {
-  private final StorageSettings settings;
+  private final @Nullable StorageSettings settings;
   private final StorageStub stub;
 
   /** Constructs an instance of StorageClient with default settings. */
@@ -639,7 +642,7 @@ public class StorageClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final StorageSettings getSettings() {
+  public final @Nullable StorageSettings getSettings() {
     return settings;
   }
 
@@ -684,7 +687,7 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBucket(BucketName name) {
+  public final void deleteBucket(@Nullable BucketName name) {
     DeleteBucketRequest request =
         DeleteBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBucket(request);
@@ -852,7 +855,7 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket getBucket(BucketName name) {
+  public final Bucket getBucket(@Nullable BucketName name) {
     GetBucketRequest request =
         GetBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBucket(request);
@@ -1011,7 +1014,7 @@ public class StorageClient implements BackgroundResource {
    *     name `projects/123456/buckets/foo`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket createBucket(ProjectName parent, Bucket bucket, String bucketId) {
+  public final Bucket createBucket(@Nullable ProjectName parent, Bucket bucket, String bucketId) {
     CreateBucketRequest request =
         CreateBucketRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1187,7 +1190,7 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. The project whose buckets we are listing.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(ProjectName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable ProjectName parent) {
     ListBucketsRequest request =
         ListBucketsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1401,7 +1404,7 @@ public class StorageClient implements BackgroundResource {
    * @param bucket Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket lockBucketRetentionPolicy(BucketName bucket) {
+  public final Bucket lockBucketRetentionPolicy(@Nullable BucketName bucket) {
     LockBucketRetentionPolicyRequest request =
         LockBucketRetentionPolicyRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -1567,7 +1570,7 @@ public class StorageClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1714,7 +1717,7 @@ public class StorageClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1857,7 +1860,7 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2234,7 +2237,7 @@ public class StorageClient implements BackgroundResource {
    *     an unfinalized resumable upload please use `CancelResumableWrite`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteObject(BucketName bucket, String object) {
+  public final void deleteObject(@Nullable BucketName bucket, String object) {
     DeleteObjectRequest request =
         DeleteObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -2324,7 +2327,7 @@ public class StorageClient implements BackgroundResource {
    *     (as opposed to the latest version, the default).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteObject(BucketName bucket, String object, long generation) {
+  public final void deleteObject(@Nullable BucketName bucket, String object, long generation) {
     DeleteObjectRequest request =
         DeleteObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -2524,7 +2527,7 @@ public class StorageClient implements BackgroundResource {
    * @param generation Required. The specific revision of the object to restore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Object restoreObject(BucketName bucket, String object, long generation) {
+  public final Object restoreObject(@Nullable BucketName bucket, String object, long generation) {
     RestoreObjectRequest request =
         RestoreObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -2836,7 +2839,7 @@ public class StorageClient implements BackgroundResource {
    * @param object Required. Name of the object.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Object getObject(BucketName bucket, String object) {
+  public final Object getObject(@Nullable BucketName bucket, String object) {
     GetObjectRequest request =
         GetObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -2910,7 +2913,7 @@ public class StorageClient implements BackgroundResource {
    *     to the latest version, the default).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Object getObject(BucketName bucket, String object, long generation) {
+  public final Object getObject(@Nullable BucketName bucket, String object, long generation) {
     GetObjectRequest request =
         GetObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -3426,7 +3429,7 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. Name of the bucket in which to look for objects.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListObjectsPagedResponse listObjects(BucketName parent) {
+  public final ListObjectsPagedResponse listObjects(@Nullable BucketName parent) {
     ListObjectsRequest request =
         ListObjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3951,7 +3954,8 @@ public class StorageClient implements BackgroundResource {
    * @param destinationObject Required. Name of the destination object.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Object moveObject(BucketName bucket, String sourceObject, String destinationObject) {
+  public final Object moveObject(
+      @Nullable BucketName bucket, String sourceObject, String destinationObject) {
     MoveObjectRequest request =
         MoveObjectRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -4157,8 +4161,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListBucketsRequest, ListBucketsResponse, Bucket, ListBucketsPage> {
 
     private ListBucketsPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       super(context, response);
     }
 
@@ -4168,14 +4172,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsPage createPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       return new ListBucketsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBucketsPage> createPageAsync(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
         ApiFuture<ListBucketsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4189,7 +4193,8 @@ public class StorageClient implements BackgroundResource {
           ListBucketsPage,
           ListBucketsFixedSizeCollection> {
 
-    private ListBucketsFixedSizeCollection(List<ListBucketsPage> pages, int collectionSize) {
+    private ListBucketsFixedSizeCollection(
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4199,7 +4204,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsFixedSizeCollection createCollection(
-        List<ListBucketsPage> pages, int collectionSize) {
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       return new ListBucketsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4230,8 +4235,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListObjectsRequest, ListObjectsResponse, Object, ListObjectsPage> {
 
     private ListObjectsPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       super(context, response);
     }
 
@@ -4241,14 +4246,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsPage createPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       return new ListObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListObjectsPage> createPageAsync(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
         ApiFuture<ListObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4262,7 +4267,8 @@ public class StorageClient implements BackgroundResource {
           ListObjectsPage,
           ListObjectsFixedSizeCollection> {
 
-    private ListObjectsFixedSizeCollection(List<ListObjectsPage> pages, int collectionSize) {
+    private ListObjectsFixedSizeCollection(
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4272,7 +4278,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsFixedSizeCollection createCollection(
-        List<ListObjectsPage> pages, int collectionSize) {
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       return new ListObjectsFixedSizeCollection(pages, collectionSize);
     }
   }

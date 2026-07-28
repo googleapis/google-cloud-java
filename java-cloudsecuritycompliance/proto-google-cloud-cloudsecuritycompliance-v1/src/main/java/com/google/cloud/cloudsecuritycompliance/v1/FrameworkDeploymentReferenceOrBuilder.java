@@ -31,7 +31,9 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    * <pre>
    * Output only. The name of the framework deployment, in the format
-   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -48,7 +50,9 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    * <pre>
    * Output only. The name of the framework deployment, in the format
-   * `organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -70,7 +74,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```
@@ -96,7 +100,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```
@@ -122,7 +126,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    * ```
    * {
    * framework:
-   * "organizations/{org}/locations/{location}/frameworks/{framework}",
+   * "organizations/{organization}/locations/{location}/frameworks/{framework}",
    * major_revision_id: 1
    * }
    * ```

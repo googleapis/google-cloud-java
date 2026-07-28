@@ -151,4 +151,75 @@ public interface ProductInstallmentOrBuilder
    * @return The creditType.
    */
   com.google.shopping.merchant.products.v1.CreditType getCreditType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Annual percentage rate for `credit_type` finance
+   * </pre>
+   *
+   * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the annualPercentageRate field is set.
+   */
+  boolean hasAnnualPercentageRate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Annual percentage rate for `credit_type` finance
+   * </pre>
+   *
+   * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The annualPercentageRate.
+   */
+  double getAnnualPercentageRate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the totalAmount field is set.
+   */
+  boolean hasTotalAmount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The totalAmount.
+   */
+  com.google.shopping.type.Price getTotalAmount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total amount the buyer has to pay, including interest.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.type.Price total_amount = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.type.PriceOrBuilder getTotalAmountOrBuilder();
 }

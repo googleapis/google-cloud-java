@@ -1,0 +1,168 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.pubsub.v1",
+  "libraryPackage": "com.google.cloud.pubsub.v1",
+  "services": {
+    "Publisher": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TopicAdminClient",
+          "rpcs": {
+            "CreateTopic": {
+              "methods": ["createTopic", "createTopic", "createTopic", "createTopicCallable"]
+            },
+            "DeleteTopic": {
+              "methods": ["deleteTopic", "deleteTopic", "deleteTopic", "deleteTopicCallable"]
+            },
+            "DetachSubscription": {
+              "methods": ["detachSubscription", "detachSubscriptionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetTopic": {
+              "methods": ["getTopic", "getTopic", "getTopic", "getTopicCallable"]
+            },
+            "ListTopicSnapshots": {
+              "methods": ["listTopicSnapshots", "listTopicSnapshots", "listTopicSnapshots", "listTopicSnapshotsPagedCallable", "listTopicSnapshotsCallable"]
+            },
+            "ListTopicSubscriptions": {
+              "methods": ["listTopicSubscriptions", "listTopicSubscriptions", "listTopicSubscriptions", "listTopicSubscriptionsPagedCallable", "listTopicSubscriptionsCallable"]
+            },
+            "ListTopics": {
+              "methods": ["listTopics", "listTopics", "listTopics", "listTopicsPagedCallable", "listTopicsCallable"]
+            },
+            "Publish": {
+              "methods": ["publish", "publish", "publish", "publishCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateTopic": {
+              "methods": ["updateTopic", "updateTopic", "updateTopicCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Subscriber": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SubscriptionAdminClient",
+          "rpcs": {
+            "Acknowledge": {
+              "methods": ["acknowledge", "acknowledge", "acknowledge", "acknowledgeCallable"]
+            },
+            "CreateSnapshot": {
+              "methods": ["createSnapshot", "createSnapshot", "createSnapshot", "createSnapshot", "createSnapshot", "createSnapshotCallable"]
+            },
+            "CreateSubscription": {
+              "methods": ["createSubscription", "createSubscription", "createSubscription", "createSubscription", "createSubscription", "createSubscriptionCallable"]
+            },
+            "DeleteSnapshot": {
+              "methods": ["deleteSnapshot", "deleteSnapshot", "deleteSnapshot", "deleteSnapshotCallable"]
+            },
+            "DeleteSubscription": {
+              "methods": ["deleteSubscription", "deleteSubscription", "deleteSubscription", "deleteSubscriptionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetSnapshot": {
+              "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
+            },
+            "GetSubscription": {
+              "methods": ["getSubscription", "getSubscription", "getSubscription", "getSubscriptionCallable"]
+            },
+            "ListSnapshots": {
+              "methods": ["listSnapshots", "listSnapshots", "listSnapshots", "listSnapshotsPagedCallable", "listSnapshotsCallable"]
+            },
+            "ListSubscriptions": {
+              "methods": ["listSubscriptions", "listSubscriptions", "listSubscriptions", "listSubscriptionsPagedCallable", "listSubscriptionsCallable"]
+            },
+            "ModifyAckDeadline": {
+              "methods": ["modifyAckDeadline", "modifyAckDeadline", "modifyAckDeadline", "modifyAckDeadlineCallable"]
+            },
+            "ModifyPushConfig": {
+              "methods": ["modifyPushConfig", "modifyPushConfig", "modifyPushConfig", "modifyPushConfigCallable"]
+            },
+            "Pull": {
+              "methods": ["pull", "pull", "pull", "pull", "pull", "pullCallable"]
+            },
+            "Seek": {
+              "methods": ["seek", "seekCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StreamingPull": {
+              "methods": ["streamingPullCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateSnapshot": {
+              "methods": ["updateSnapshot", "updateSnapshot", "updateSnapshotCallable"]
+            },
+            "UpdateSubscription": {
+              "methods": ["updateSubscription", "updateSubscription", "updateSubscriptionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SchemaService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SchemaServiceClient",
+          "rpcs": {
+            "CommitSchema": {
+              "methods": ["commitSchema", "commitSchema", "commitSchema", "commitSchemaCallable"]
+            },
+            "CreateSchema": {
+              "methods": ["createSchema", "createSchema", "createSchema", "createSchemaCallable"]
+            },
+            "DeleteSchema": {
+              "methods": ["deleteSchema", "deleteSchema", "deleteSchema", "deleteSchemaCallable"]
+            },
+            "DeleteSchemaRevision": {
+              "methods": ["deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevision", "deleteSchemaRevisionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetSchema": {
+              "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
+            },
+            "ListSchemaRevisions": {
+              "methods": ["listSchemaRevisions", "listSchemaRevisions", "listSchemaRevisions", "listSchemaRevisionsPagedCallable", "listSchemaRevisionsCallable"]
+            },
+            "ListSchemas": {
+              "methods": ["listSchemas", "listSchemas", "listSchemas", "listSchemasPagedCallable", "listSchemasCallable"]
+            },
+            "RollbackSchema": {
+              "methods": ["rollbackSchema", "rollbackSchema", "rollbackSchema", "rollbackSchemaCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "ValidateMessage": {
+              "methods": ["validateMessage", "validateMessageCallable"]
+            },
+            "ValidateSchema": {
+              "methods": ["validateSchema", "validateSchema", "validateSchema", "validateSchemaCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -47,6 +47,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -373,9 +375,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EndpointServiceClient implements BackgroundResource {
-  private final EndpointServiceSettings settings;
+  private final @Nullable EndpointServiceSettings settings;
   private final EndpointServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -418,7 +421,7 @@ public class EndpointServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final EndpointServiceSettings getSettings() {
+  public final @Nullable EndpointServiceSettings getSettings() {
     return settings;
   }
 
@@ -459,7 +462,7 @@ public class EndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
-      LocationName parent, Endpoint endpoint) {
+      @Nullable LocationName parent, Endpoint endpoint) {
     CreateEndpointRequest request =
         CreateEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -536,7 +539,7 @@ public class EndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Endpoint, CreateEndpointOperationMetadata> createEndpointAsync(
-      LocationName parent, Endpoint endpoint, String endpointId) {
+      @Nullable LocationName parent, Endpoint endpoint, String endpointId) {
     CreateEndpointRequest request =
         CreateEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -708,7 +711,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Endpoint getEndpoint(EndpointName name) {
+  public final Endpoint getEndpoint(@Nullable EndpointName name) {
     GetEndpointRequest request =
         GetEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEndpoint(request);
@@ -828,7 +831,7 @@ public class EndpointServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEndpointsPagedResponse listEndpoints(LocationName parent) {
+  public final ListEndpointsPagedResponse listEndpoints(@Nullable LocationName parent) {
     ListEndpointsRequest request =
         ListEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1208,7 +1211,7 @@ public class EndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteEndpointAsync(
-      EndpointName name) {
+      @Nullable EndpointName name) {
     DeleteEndpointRequest request =
         DeleteEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEndpointAsync(request);
@@ -1378,7 +1381,9 @@ public class EndpointServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeployModelResponse, DeployModelOperationMetadata> deployModelAsync(
-      EndpointName endpoint, DeployedModel deployedModel, Map<String, Integer> trafficSplit) {
+      @Nullable EndpointName endpoint,
+      DeployedModel deployedModel,
+      Map<String, Integer> trafficSplit) {
     DeployModelRequest request =
         DeployModelRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -1577,7 +1582,9 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final OperationFuture<UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelAsync(
-          EndpointName endpoint, String deployedModelId, Map<String, Integer> trafficSplit) {
+          @Nullable EndpointName endpoint,
+          String deployedModelId,
+          Map<String, Integer> trafficSplit) {
     UndeployModelRequest request =
         UndeployModelRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -1788,7 +1795,7 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final OperationFuture<MutateDeployedModelResponse, MutateDeployedModelOperationMetadata>
       mutateDeployedModelAsync(
-          EndpointName endpoint, DeployedModel deployedModel, FieldMask updateMask) {
+          @Nullable EndpointName endpoint, DeployedModel deployedModel, FieldMask updateMask) {
     MutateDeployedModelRequest request =
         MutateDeployedModelRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -2391,8 +2398,8 @@ public class EndpointServiceClient implements BackgroundResource {
           ListEndpointsRequest, ListEndpointsResponse, Endpoint, ListEndpointsPage> {
 
     private ListEndpointsPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       super(context, response);
     }
 
@@ -2402,14 +2409,14 @@ public class EndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsPage createPage(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
-        ListEndpointsResponse response) {
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable ListEndpointsResponse response) {
       return new ListEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEndpointsPage> createPageAsync(
-        PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
+        @Nullable PageContext<ListEndpointsRequest, ListEndpointsResponse, Endpoint> context,
         ApiFuture<ListEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2423,7 +2430,8 @@ public class EndpointServiceClient implements BackgroundResource {
           ListEndpointsPage,
           ListEndpointsFixedSizeCollection> {
 
-    private ListEndpointsFixedSizeCollection(List<ListEndpointsPage> pages, int collectionSize) {
+    private ListEndpointsFixedSizeCollection(
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2433,7 +2441,7 @@ public class EndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListEndpointsFixedSizeCollection createCollection(
-        List<ListEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListEndpointsPage> pages, int collectionSize) {
       return new ListEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2467,8 +2475,8 @@ public class EndpointServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2478,14 +2486,14 @@ public class EndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2499,7 +2507,8 @@ public class EndpointServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2509,7 +2518,7 @@ public class EndpointServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

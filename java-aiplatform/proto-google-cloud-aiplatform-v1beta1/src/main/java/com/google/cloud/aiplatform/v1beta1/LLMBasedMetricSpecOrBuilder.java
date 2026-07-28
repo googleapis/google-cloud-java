@@ -72,6 +72,44 @@ public interface LLMBasedMetricSpecOrBuilder
    *
    *
    * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   *
+   * @return Whether the rubricGenerationSpec field is set.
+   */
+  boolean hasRubricGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   *
+   * @return The rubricGenerationSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricGenerationSpec getRubricGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dynamically generate rubrics using this specification.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RubricGenerationSpec rubric_generation_spec = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.RubricGenerationSpecOrBuilder
+      getRubricGenerationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Dynamically generate rubrics using a predefined spec.
    * </pre>
    *
@@ -278,6 +316,50 @@ public interface LLMBasedMetricSpecOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getAdditionalConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the resultParserConfig field is set.
+   */
+  boolean hasResultParserConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The resultParserConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationParserConfig getResultParserConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parser config for the metric result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationParserConfig result_parser_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationParserConfigOrBuilder
+      getResultParserConfigOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.LLMBasedMetricSpec.RubricsSourceCase getRubricsSourceCase();
 }

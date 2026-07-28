@@ -244,4 +244,86 @@ public interface KnowledgeAssistDebugInfoOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.ServiceLatency service_latency = 6;</code>
    */
   com.google.cloud.dialogflow.v2beta1.ServiceLatencyOrBuilder getServiceLatencyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   *
+   * @return Whether the queryGenerationDebugInfo field is set.
+   */
+  boolean hasQueryGenerationDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   *
+   * @return The queryGenerationDebugInfo.
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo
+      getQueryGenerationDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Token usage metadata for query generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.QueryGenerationDebugInfo query_generation_debug_info = 7;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.QueryGenerationDebugInfoOrBuilder
+      getQueryGenerationDebugInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   *
+   * @return Whether the cesDebugInfo field is set.
+   */
+  boolean hasCesDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   *
+   * @return The cesDebugInfo.
+   */
+  com.google.protobuf.Struct getCesDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information from CES runtime API.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 8;</code>
+   */
+  com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder();
 }

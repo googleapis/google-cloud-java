@@ -23,6 +23,7 @@ import com.google.cloud.modelarmor.v1beta.ModelArmorClient;
 import com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata;
 import com.google.cloud.modelarmor.v1beta.SanitizeModelResponseRequest;
 import com.google.cloud.modelarmor.v1beta.SanitizeModelResponseResponse;
+import com.google.cloud.modelarmor.v1beta.StreamingMode;
 import com.google.cloud.modelarmor.v1beta.TemplateName;
 
 public class AsyncSanitizeModelResponse {
@@ -45,6 +46,7 @@ public class AsyncSanitizeModelResponse {
               .setUserPrompt("userPrompt1504308495")
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       ApiFuture<SanitizeModelResponseResponse> future =
           modelArmorClient.sanitizeModelResponseCallable().futureCall(request);

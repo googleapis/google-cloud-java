@@ -85,7 +85,7 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
           + "-google/cloud/networkservices/v1/gateway.proto\022\037google.cloud.networkservices.v1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032,google/cloud/networkservices/v1/common.proto\032 google/proto"
-          + "buf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\204\013\n"
+          + "buf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\276\013\n"
           + "\007Gateway\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\tself_link\030\r"
@@ -99,7 +99,8 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0162-.google.cloud.networkservices.v1.Gateway.TypeB\003\340A\005\0229\n"
           + "\taddresses\030\007 \003(\tB&\340A\001\372A \n"
           + "\036compute.googleapis.com/Address\022\022\n"
-          + "\005ports\030\013 \003(\005B\003\340A\002\022\022\n"
+          + "\005ports\030\013 \003(\005B\003\340A\002\022\026\n"
+          + "\tall_ports\030\" \001(\010B\003\340A\001\022\022\n"
           + "\005scope\030\010 \001(\tB\003\340A\001\022Q\n"
           + "\021server_tls_policy\030\t \001(\tB6\340A\001\372A0\n"
           + ".networksecurity.googleapis.com/ServerTlsPolicy\022O\n"
@@ -111,12 +112,13 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
           + "\036compute.googleapis.com/Network\022=\n\n"
           + "subnetwork\030\021 \001(\tB)\340A\001\372A#\n"
           + "!compute.googleapis.com/Subnetwork\022K\n\n"
-          + "ip_version\030\025 \001("
-          + "\01622.google.cloud.networkservices.v1.Gateway.IpVersionB\003\340A\001\022N\n\r"
-          + "envoy_headers\030\034 \001("
-          + "\0162-.google.cloud.networkservices.v1.EnvoyHeadersB\003\340A\001H\000\210\001\001\022O\n"
-          + "\014routing_mode\030  \001(\016"
-          + "24.google.cloud.networkservices.v1.Gateway.RoutingModeB\003\340A\001\032-\n"
+          + "ip_version\030\025 \001(\01622.google.cloud"
+          + ".networkservices.v1.Gateway.IpVersionB\003\340A\001\022N\n\r"
+          + "envoy_headers\030\034 \001(\0162-.google.cloud"
+          + ".networkservices.v1.EnvoyHeadersB\003\340A\001H\000\210\001\001\022O\n"
+          + "\014routing_mode\030  \001(\01624.google.cloud."
+          + "networkservices.v1.Gateway.RoutingModeB\003\340A\001\022 \n"
+          + "\023allow_global_access\030! \001(\010B\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"C\n"
@@ -131,8 +133,8 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
           + "\013RoutingMode\022\031\n"
           + "\025EXPLICIT_ROUTING_MODE\020\000\022\031\n"
           + "\025NEXT_HOP_ROUTING_MODE\020\001:g\352Ad\n"
-          + "&networkservices.googleapis.com/Gateway\022:projects"
-          + "/{project}/locations/{location}/gateways/{gateway}B\020\n"
+          + "&networkservices.googleapis.com"
+          + "/Gateway\022:projects/{project}/locations/{location}/gateways/{gateway}B\020\n"
           + "\016_envoy_headers\"|\n"
           + "\023ListGatewaysRequest\022>\n"
           + "\006parent\030\001 \001("
@@ -150,31 +152,29 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB.\340A\002\372A(\022&networkservices.googleapis.com/Gateway\022\027\n\n"
           + "gateway_id\030\002 \001(\tB\003\340A\002\022>\n"
-          + "\007gateway\030\003"
-          + " \001(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"\214\001\n"
+          + "\007gateway\030\003 \001(\0132(."
+          + "google.cloud.networkservices.v1.GatewayB\003\340A\002\"\214\001\n"
           + "\024UpdateGatewayRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022>\n"
-          + "\007gateway\030\002 \001"
-          + "(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"T\n"
+          + "\007gateway\030\002"
+          + " \001(\0132(.google.cloud.networkservices.v1.GatewayB\003\340A\002\"T\n"
           + "\024DeleteGatewayRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&networkservices.googleapis.com/GatewayB\211\006\n"
-          + "#com.google.cloud.networkservices.v1B\014GatewayProtoP\001ZMcloud.g"
-          + "oogle.com/go/networkservices/apiv1/netwo"
-          + "rkservicespb;networkservicespb\252\002\037Google."
-          + "Cloud.NetworkServices.V1\312\002\037Google\\Cloud\\"
-          + "NetworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1\352A\221\001\n"
-          + "4networksecurity.googleapis.com/GatewaySecurityPolicy\022Yproje"
-          + "cts/{project}/locations/{location}/gatew"
-          + "aySecurityPolicies/{gateway_security_policy}\352Aa\n"
-          + "!compute.googleapis.com/Subnetwo"
-          + "rk\022<projects/{project}/regions/{region}/subnetworks/{subnetwork}\352AN\n"
-          + "\036compute.goo"
-          + "gleapis.com/Network\022,projects/{project}/global/networks/{network}\352AY\n"
-          + "\036compute.googleapis.com/Address\0227projects/{project}"
-          + "/regions/{region}/addresses/{address}\352As\n"
-          + "-certificatemanager.googleapis.com/Certificate\022Bprojects/{project}/locations/{l"
-          + "ocation}/certificates/{certificate}b\006proto3"
+          + "#com.google.cloud.networkservices.v1B\014Gatew"
+          + "ayProtoP\001ZMcloud.google.com/go/networkservices/apiv1/networkservicespb;networkse"
+          + "rvicespb\252\002\037Google.Cloud.NetworkServices."
+          + "V1\312\002\037Google\\Cloud\\NetworkServices\\V1\352\002\"Google::Cloud::NetworkServices::V1\352A\221\001\n"
+          + "4networksecurity.googleapis.com/GatewaySecurityPolicy\022Yprojects/{project}/location"
+          + "s/{location}/gatewaySecurityPolicies/{gateway_security_policy}\352Aa\n"
+          + "!compute.googleapis.com/Subnetwork\022<projects/{project}"
+          + "/regions/{region}/subnetworks/{subnetwork}\352AN\n"
+          + "\036compute.googleapis.com/Network\022,p"
+          + "rojects/{project}/global/networks/{network}\352AY\n"
+          + "\036compute.googleapis.com/Address\0227"
+          + "projects/{project}/regions/{region}/addresses/{address}\352As\n"
+          + "-certificatemanager.googleapis.com/Certificate\022Bprojects/{pro"
+          + "ject}/locations/{location}/certificates/{certificate}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -201,6 +201,7 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
               "Type",
               "Addresses",
               "Ports",
+              "AllPorts",
               "Scope",
               "ServerTlsPolicy",
               "CertificateUrls",
@@ -210,6 +211,7 @@ public final class GatewayProto extends com.google.protobuf.GeneratedFile {
               "IpVersion",
               "EnvoyHeaders",
               "RoutingMode",
+              "AllowGlobalAccess",
             });
     internal_static_google_cloud_networkservices_v1_Gateway_LabelsEntry_descriptor =
         internal_static_google_cloud_networkservices_v1_Gateway_descriptor.getNestedType(0);

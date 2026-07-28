@@ -53,6 +53,8 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
 
   private EvaluateInstancesRequest() {
     location_ = "";
+    metrics_ = java.util.Collections.emptyList();
+    metricSources_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2180,6 +2182,242 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int METRICS_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> metrics_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> getMetricsList() {
+    return metrics_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
+      getMetricsOrBuilderList() {
+    return metrics_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  @java.lang.Override
+  public int getMetricsCount() {
+    return metrics_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Metric getMetrics(int index) {
+    return metrics_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricOrBuilder getMetricsOrBuilder(int index) {
+    return metrics_.get(index);
+  }
+
+  public static final int METRIC_SOURCES_FIELD_NUMBER = 52;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource> metricSources_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource> getMetricSourcesList() {
+    return metricSources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>
+      getMetricSourcesOrBuilderList() {
+    return metricSources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMetricSourcesCount() {
+    return metricSources_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricSource getMetricSources(int index) {
+    return metricSources_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The metrics (either inline or registered) used for evaluation.
+   * Currently, we only support evaluating a single metric. If multiple metrics
+   * are provided, only the first one will be evaluated.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder getMetricSourcesOrBuilder(
+      int index) {
+    return metricSources_.get(index);
+  }
+
+  public static final int INSTANCE_FIELD_NUMBER = 50;
+  private com.google.cloud.aiplatform.v1beta1.EvaluationInstance instance_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   *
+   * @return Whether the instance field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstance() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   *
+   * @return The instance.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationInstance getInstance() {
+    return instance_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationInstance.getDefaultInstance()
+        : instance_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The instance to be evaluated.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder getInstanceOrBuilder() {
+    return instance_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluationInstance.getDefaultInstance()
+        : instance_;
+  }
+
   public static final int AUTORATER_CONFIG_FIELD_NUMBER = 30;
   private com.google.cloud.aiplatform.v1beta1.AutoraterConfig autoraterConfig_;
 
@@ -2198,7 +2436,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public boolean hasAutoraterConfig() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -2346,7 +2584,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       output.writeMessage(
           29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(30, getAutoraterConfig());
     }
     if (metricInputsCase_ == 31) {
@@ -2383,6 +2621,15 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       output.writeMessage(
           40,
           (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput) metricInputs_);
+    }
+    for (int i = 0; i < metrics_.size(); i++) {
+      output.writeMessage(49, metrics_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(50, getInstance());
+    }
+    for (int i = 0; i < metricSources_.size(); i++) {
+      output.writeMessage(52, metricSources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2522,7 +2769,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               29, (com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput) metricInputs_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getAutoraterConfig());
     }
     if (metricInputsCase_ == 31) {
@@ -2572,6 +2819,15 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
               (com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput)
                   metricInputs_);
     }
+    for (int i = 0; i < metrics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(49, metrics_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getInstance());
+    }
+    for (int i = 0; i < metricSources_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, metricSources_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2589,6 +2845,12 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         (com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest) obj;
 
     if (!getLocation().equals(other.getLocation())) return false;
+    if (!getMetricsList().equals(other.getMetricsList())) return false;
+    if (!getMetricSourcesList().equals(other.getMetricSourcesList())) return false;
+    if (hasInstance() != other.hasInstance()) return false;
+    if (hasInstance()) {
+      if (!getInstance().equals(other.getInstance())) return false;
+    }
     if (hasAutoraterConfig() != other.hasAutoraterConfig()) return false;
     if (hasAutoraterConfig()) {
       if (!getAutoraterConfig().equals(other.getAutoraterConfig())) return false;
@@ -2724,6 +2986,18 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getLocation().hashCode();
+    if (getMetricsCount() > 0) {
+      hash = (37 * hash) + METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricsList().hashCode();
+    }
+    if (getMetricSourcesCount() > 0) {
+      hash = (37 * hash) + METRIC_SOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricSourcesList().hashCode();
+    }
+    if (hasInstance()) {
+      hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getInstance().hashCode();
+    }
     if (hasAutoraterConfig()) {
       hash = (37 * hash) + AUTORATER_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAutoraterConfig().hashCode();
@@ -3002,6 +3276,9 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetMetricsFieldBuilder();
+        internalGetMetricSourcesFieldBuilder();
+        internalGetInstanceFieldBuilder();
         internalGetAutoraterConfigFieldBuilder();
       }
     }
@@ -3108,6 +3385,25 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         rubricBasedInstructionFollowingInputBuilder_.clear();
       }
       location_ = "";
+      if (metricsBuilder_ == null) {
+        metrics_ = java.util.Collections.emptyList();
+      } else {
+        metrics_ = null;
+        metricsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000002);
+      if (metricSourcesBuilder_ == null) {
+        metricSources_ = java.util.Collections.emptyList();
+      } else {
+        metricSources_ = null;
+        metricSourcesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000004);
+      instance_ = null;
+      if (instanceBuilder_ != null) {
+        instanceBuilder_.dispose();
+        instanceBuilder_ = null;
+      }
       autoraterConfig_ = null;
       if (autoraterConfigBuilder_ != null) {
         autoraterConfigBuilder_.dispose();
@@ -3143,6 +3439,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     public com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest buildPartial() {
       com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest result =
           new com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -3152,6 +3449,28 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest result) {
+      if (metricsBuilder_ == null) {
+        if (((bitField1_ & 0x00000002) != 0)) {
+          metrics_ = java.util.Collections.unmodifiableList(metrics_);
+          bitField1_ = (bitField1_ & ~0x00000002);
+        }
+        result.metrics_ = metrics_;
+      } else {
+        result.metrics_ = metricsBuilder_.build();
+      }
+      if (metricSourcesBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)) {
+          metricSources_ = java.util.Collections.unmodifiableList(metricSources_);
+          bitField1_ = (bitField1_ & ~0x00000004);
+        }
+        result.metricSources_ = metricSources_;
+      } else {
+        result.metricSources_ = metricSourcesBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -3166,10 +3485,14 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         result.location_ = location_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.instance_ = instanceBuilder_ == null ? instance_ : instanceBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.autoraterConfig_ =
             autoraterConfigBuilder_ == null ? autoraterConfig_ : autoraterConfigBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3294,6 +3617,63 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         location_ = other.location_;
         bitField1_ |= 0x00000001;
         onChanged();
+      }
+      if (metricsBuilder_ == null) {
+        if (!other.metrics_.isEmpty()) {
+          if (metrics_.isEmpty()) {
+            metrics_ = other.metrics_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+          } else {
+            ensureMetricsIsMutable();
+            metrics_.addAll(other.metrics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.metrics_.isEmpty()) {
+          if (metricsBuilder_.isEmpty()) {
+            metricsBuilder_.dispose();
+            metricsBuilder_ = null;
+            metrics_ = other.metrics_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+            metricsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetMetricsFieldBuilder()
+                    : null;
+          } else {
+            metricsBuilder_.addAllMessages(other.metrics_);
+          }
+        }
+      }
+      if (metricSourcesBuilder_ == null) {
+        if (!other.metricSources_.isEmpty()) {
+          if (metricSources_.isEmpty()) {
+            metricSources_ = other.metricSources_;
+            bitField1_ = (bitField1_ & ~0x00000004);
+          } else {
+            ensureMetricSourcesIsMutable();
+            metricSources_.addAll(other.metricSources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.metricSources_.isEmpty()) {
+          if (metricSourcesBuilder_.isEmpty()) {
+            metricSourcesBuilder_.dispose();
+            metricSourcesBuilder_ = null;
+            metricSources_ = other.metricSources_;
+            bitField1_ = (bitField1_ & ~0x00000004);
+            metricSourcesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetMetricSourcesFieldBuilder()
+                    : null;
+          } else {
+            metricSourcesBuilder_.addAllMessages(other.metricSources_);
+          }
+        }
+      }
+      if (other.hasInstance()) {
+        mergeInstance(other.getInstance());
       }
       if (other.hasAutoraterConfig()) {
         mergeAutoraterConfig(other.getAutoraterConfig());
@@ -3674,7 +4054,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
               {
                 input.readMessage(
                     internalGetAutoraterConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 242
             case 250:
@@ -3746,6 +4126,40 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 40;
                 break;
               } // case 322
+            case 394:
+              {
+                com.google.cloud.aiplatform.v1beta1.Metric m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.Metric.parser(), extensionRegistry);
+                if (metricsBuilder_ == null) {
+                  ensureMetricsIsMutable();
+                  metrics_.add(m);
+                } else {
+                  metricsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 394
+            case 402:
+              {
+                input.readMessage(
+                    internalGetInstanceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 402
+            case 418:
+              {
+                com.google.cloud.aiplatform.v1beta1.MetricSource m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.MetricSource.parser(),
+                        extensionRegistry);
+                if (metricSourcesBuilder_ == null) {
+                  ensureMetricSourcesIsMutable();
+                  metricSources_.add(m);
+                } else {
+                  metricSourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 418
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11529,6 +11943,1053 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       return this;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> metrics_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMetricsIsMutable() {
+      if (!((bitField1_ & 0x00000002) != 0)) {
+        metrics_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Metric>(metrics_);
+        bitField1_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Metric,
+            com.google.cloud.aiplatform.v1beta1.Metric.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
+        metricsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Metric> getMetricsList() {
+      if (metricsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(metrics_);
+      } else {
+        return metricsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public int getMetricsCount() {
+      if (metricsBuilder_ == null) {
+        return metrics_.size();
+      } else {
+        return metricsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Metric getMetrics(int index) {
+      if (metricsBuilder_ == null) {
+        return metrics_.get(index);
+      } else {
+        return metricsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder setMetrics(int index, com.google.cloud.aiplatform.v1beta1.Metric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.set(index, value);
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder setMetrics(
+        int index, com.google.cloud.aiplatform.v1beta1.Metric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder addMetrics(com.google.cloud.aiplatform.v1beta1.Metric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.add(value);
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder addMetrics(int index, com.google.cloud.aiplatform.v1beta1.Metric value) {
+      if (metricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricsIsMutable();
+        metrics_.add(index, value);
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder addMetrics(com.google.cloud.aiplatform.v1beta1.Metric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder addMetrics(
+        int index, com.google.cloud.aiplatform.v1beta1.Metric.Builder builderForValue) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder addAllMetrics(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Metric> values) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metrics_);
+        onChanged();
+      } else {
+        metricsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder clearMetrics() {
+      if (metricsBuilder_ == null) {
+        metrics_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000002);
+        onChanged();
+      } else {
+        metricsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public Builder removeMetrics(int index) {
+      if (metricsBuilder_ == null) {
+        ensureMetricsIsMutable();
+        metrics_.remove(index);
+        onChanged();
+      } else {
+        metricsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Metric.Builder getMetricsBuilder(int index) {
+      return internalGetMetricsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricOrBuilder getMetricsOrBuilder(int index) {
+      if (metricsBuilder_ == null) {
+        return metrics_.get(index);
+      } else {
+        return metricsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
+        getMetricsOrBuilderList() {
+      if (metricsBuilder_ != null) {
+        return metricsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(metrics_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Metric.Builder addMetricsBuilder() {
+      return internalGetMetricsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.Metric.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Metric.Builder addMetricsBuilder(int index) {
+      return internalGetMetricsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Metric.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The metrics used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.aiplatform.v1beta1.Metric metrics = 49;</code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Metric.Builder>
+        getMetricsBuilderList() {
+      return internalGetMetricsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Metric,
+            com.google.cloud.aiplatform.v1beta1.Metric.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>
+        internalGetMetricsFieldBuilder() {
+      if (metricsBuilder_ == null) {
+        metricsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.Metric,
+                com.google.cloud.aiplatform.v1beta1.Metric.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetricOrBuilder>(
+                metrics_, ((bitField1_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        metrics_ = null;
+      }
+      return metricsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource> metricSources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMetricSourcesIsMutable() {
+      if (!((bitField1_ & 0x00000004) != 0)) {
+        metricSources_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.MetricSource>(
+                metricSources_);
+        bitField1_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricSource,
+            com.google.cloud.aiplatform.v1beta1.MetricSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>
+        metricSourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource> getMetricSourcesList() {
+      if (metricSourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(metricSources_);
+      } else {
+        return metricSourcesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getMetricSourcesCount() {
+      if (metricSourcesBuilder_ == null) {
+        return metricSources_.size();
+      } else {
+        return metricSourcesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricSource getMetricSources(int index) {
+      if (metricSourcesBuilder_ == null) {
+        return metricSources_.get(index);
+      } else {
+        return metricSourcesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetricSources(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricSource value) {
+      if (metricSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricSourcesIsMutable();
+        metricSources_.set(index, value);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetricSources(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricSource.Builder builderForValue) {
+      if (metricSourcesBuilder_ == null) {
+        ensureMetricSourcesIsMutable();
+        metricSources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricSourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMetricSources(com.google.cloud.aiplatform.v1beta1.MetricSource value) {
+      if (metricSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricSourcesIsMutable();
+        metricSources_.add(value);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMetricSources(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricSource value) {
+      if (metricSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMetricSourcesIsMutable();
+        metricSources_.add(index, value);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMetricSources(
+        com.google.cloud.aiplatform.v1beta1.MetricSource.Builder builderForValue) {
+      if (metricSourcesBuilder_ == null) {
+        ensureMetricSourcesIsMutable();
+        metricSources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        metricSourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMetricSources(
+        int index, com.google.cloud.aiplatform.v1beta1.MetricSource.Builder builderForValue) {
+      if (metricSourcesBuilder_ == null) {
+        ensureMetricSourcesIsMutable();
+        metricSources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        metricSourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllMetricSources(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.MetricSource> values) {
+      if (metricSourcesBuilder_ == null) {
+        ensureMetricSourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, metricSources_);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMetricSources() {
+      if (metricSourcesBuilder_ == null) {
+        metricSources_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000004);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMetricSources(int index) {
+      if (metricSourcesBuilder_ == null) {
+        ensureMetricSourcesIsMutable();
+        metricSources_.remove(index);
+        onChanged();
+      } else {
+        metricSourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricSource.Builder getMetricSourcesBuilder(
+        int index) {
+      return internalGetMetricSourcesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder getMetricSourcesOrBuilder(
+        int index) {
+      if (metricSourcesBuilder_ == null) {
+        return metricSources_.get(index);
+      } else {
+        return metricSourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>
+        getMetricSourcesOrBuilderList() {
+      if (metricSourcesBuilder_ != null) {
+        return metricSourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(metricSources_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricSource.Builder addMetricSourcesBuilder() {
+      return internalGetMetricSourcesFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.MetricSource.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MetricSource.Builder addMetricSourcesBuilder(
+        int index) {
+      return internalGetMetricSourcesFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.MetricSource.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The metrics (either inline or registered) used for evaluation.
+     * Currently, we only support evaluating a single metric. If multiple metrics
+     * are provided, only the first one will be evaluated.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MetricSource metric_sources = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MetricSource.Builder>
+        getMetricSourcesBuilderList() {
+      return internalGetMetricSourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MetricSource,
+            com.google.cloud.aiplatform.v1beta1.MetricSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>
+        internalGetMetricSourcesFieldBuilder() {
+      if (metricSourcesBuilder_ == null) {
+        metricSourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.MetricSource,
+                com.google.cloud.aiplatform.v1beta1.MetricSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.MetricSourceOrBuilder>(
+                metricSources_,
+                ((bitField1_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        metricSources_ = null;
+      }
+      return metricSourcesBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EvaluationInstance instance_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstance,
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstance.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder>
+        instanceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     *
+     * @return Whether the instance field is set.
+     */
+    public boolean hasInstance() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     *
+     * @return The instance.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationInstance getInstance() {
+      if (instanceBuilder_ == null) {
+        return instance_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationInstance.getDefaultInstance()
+            : instance_;
+      } else {
+        return instanceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public Builder setInstance(com.google.cloud.aiplatform.v1beta1.EvaluationInstance value) {
+      if (instanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instance_ = value;
+      } else {
+        instanceBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public Builder setInstance(
+        com.google.cloud.aiplatform.v1beta1.EvaluationInstance.Builder builderForValue) {
+      if (instanceBuilder_ == null) {
+        instance_ = builderForValue.build();
+      } else {
+        instanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public Builder mergeInstance(com.google.cloud.aiplatform.v1beta1.EvaluationInstance value) {
+      if (instanceBuilder_ == null) {
+        if (((bitField1_ & 0x00000008) != 0)
+            && instance_ != null
+            && instance_
+                != com.google.cloud.aiplatform.v1beta1.EvaluationInstance.getDefaultInstance()) {
+          getInstanceBuilder().mergeFrom(value);
+        } else {
+          instance_ = value;
+        }
+      } else {
+        instanceBuilder_.mergeFrom(value);
+      }
+      if (instance_ != null) {
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public Builder clearInstance() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      instance_ = null;
+      if (instanceBuilder_ != null) {
+        instanceBuilder_.dispose();
+        instanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationInstance.Builder getInstanceBuilder() {
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return internalGetInstanceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder getInstanceOrBuilder() {
+      if (instanceBuilder_ != null) {
+        return instanceBuilder_.getMessageOrBuilder();
+      } else {
+        return instance_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluationInstance.getDefaultInstance()
+            : instance_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance to be evaluated.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EvaluationInstance instance = 50;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstance,
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstance.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder>
+        internalGetInstanceFieldBuilder() {
+      if (instanceBuilder_ == null) {
+        instanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.EvaluationInstance,
+                com.google.cloud.aiplatform.v1beta1.EvaluationInstance.Builder,
+                com.google.cloud.aiplatform.v1beta1.EvaluationInstanceOrBuilder>(
+                getInstance(), getParentForChildren(), isClean());
+        instance_ = null;
+      }
+      return instanceBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.AutoraterConfig autoraterConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.AutoraterConfig,
@@ -11550,7 +13011,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      * @return Whether the autoraterConfig field is set.
      */
     public boolean hasAutoraterConfig() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -11596,7 +13057,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       } else {
         autoraterConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11619,7 +13080,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       } else {
         autoraterConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11637,7 +13098,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAutoraterConfig(com.google.cloud.aiplatform.v1beta1.AutoraterConfig value) {
       if (autoraterConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && autoraterConfig_ != null
             && autoraterConfig_
                 != com.google.cloud.aiplatform.v1beta1.AutoraterConfig.getDefaultInstance()) {
@@ -11649,7 +13110,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         autoraterConfigBuilder_.mergeFrom(value);
       }
       if (autoraterConfig_ != null) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -11667,7 +13128,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAutoraterConfig() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000010);
       autoraterConfig_ = null;
       if (autoraterConfigBuilder_ != null) {
         autoraterConfigBuilder_.dispose();
@@ -11689,7 +13150,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.AutoraterConfig.Builder getAutoraterConfigBuilder() {
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000010;
       onChanged();
       return internalGetAutoraterConfigFieldBuilder().getBuilder();
     }

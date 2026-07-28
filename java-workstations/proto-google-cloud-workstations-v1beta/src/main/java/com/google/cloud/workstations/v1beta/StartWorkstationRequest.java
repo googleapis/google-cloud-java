@@ -54,6 +54,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
   private StartWorkstationRequest() {
     name_ = "";
     etag_ = "";
+    boostConfig_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,7 +136,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -203,6 +204,61 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int BOOST_CONFIG_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object boostConfig_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the workstation starts using the boost configuration with
+   * the specified ID.
+   * </pre>
+   *
+   * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The boostConfig.
+   */
+  @java.lang.Override
+  public java.lang.String getBoostConfig() {
+    java.lang.Object ref = boostConfig_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      boostConfig_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the workstation starts using the boost configuration with
+   * the specified ID.
+   * </pre>
+   *
+   * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for boostConfig.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBoostConfigBytes() {
+    java.lang.Object ref = boostConfig_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      boostConfig_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -226,6 +282,9 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, etag_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(boostConfig_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, boostConfig_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -243,6 +302,9 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, etag_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(boostConfig_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, boostConfig_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -263,6 +325,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
     if (!getName().equals(other.getName())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!getBoostConfig().equals(other.getBoostConfig())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -280,6 +343,8 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + BOOST_CONFIG_FIELD_NUMBER;
+    hash = (53 * hash) + getBoostConfig().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -424,6 +489,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
       name_ = "";
       validateOnly_ = false;
       etag_ = "";
+      boostConfig_ = "";
       return this;
     }
 
@@ -471,6 +537,9 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.etag_ = etag_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.boostConfig_ = boostConfig_;
+      }
     }
 
     @java.lang.Override
@@ -498,6 +567,11 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getBoostConfig().isEmpty()) {
+        boostConfig_ = other.boostConfig_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -544,6 +618,12 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                boostConfig_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -690,7 +770,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -707,7 +787,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -728,7 +808,7 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -855,6 +935,122 @@ public final class StartWorkstationRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object boostConfig_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the workstation starts using the boost configuration with
+     * the specified ID.
+     * </pre>
+     *
+     * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The boostConfig.
+     */
+    public java.lang.String getBoostConfig() {
+      java.lang.Object ref = boostConfig_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        boostConfig_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the workstation starts using the boost configuration with
+     * the specified ID.
+     * </pre>
+     *
+     * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for boostConfig.
+     */
+    public com.google.protobuf.ByteString getBoostConfigBytes() {
+      java.lang.Object ref = boostConfig_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        boostConfig_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the workstation starts using the boost configuration with
+     * the specified ID.
+     * </pre>
+     *
+     * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The boostConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoostConfig(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      boostConfig_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the workstation starts using the boost configuration with
+     * the specified ID.
+     * </pre>
+     *
+     * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBoostConfig() {
+      boostConfig_ = getDefaultInstance().getBoostConfig();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the workstation starts using the boost configuration with
+     * the specified ID.
+     * </pre>
+     *
+     * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for boostConfig to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBoostConfigBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      boostConfig_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -60,7 +60,7 @@ public interface StartWorkstationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -97,4 +97,32 @@ public interface StartWorkstationRequestOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the workstation starts using the boost configuration with
+   * the specified ID.
+   * </pre>
+   *
+   * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The boostConfig.
+   */
+  java.lang.String getBoostConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the workstation starts using the boost configuration with
+   * the specified ID.
+   * </pre>
+   *
+   * <code>string boost_config = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for boostConfig.
+   */
+  com.google.protobuf.ByteString getBoostConfigBytes();
 }

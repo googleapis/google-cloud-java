@@ -212,7 +212,10 @@ case ${JOB_TYPE} in
 
     MODULE_FILTER=""
 
-    if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
+    if [ -n "${BUILD_SUBDIR}" ] && ( [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ] ); then
+        echo "BASE_SHA or HEAD_SHA is empty, but BUILD_SUBDIR is set. Running full lint check on ${BUILD_SUBDIR}."
+        MODULE_FILTER=""
+    elif [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
         # Format those specific modules instead of the entire codebase, reducing format check time.
         # The --relative flag is when building in the submodule as only files modified in the module
@@ -263,6 +266,7 @@ case ${JOB_TYPE} in
                        [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
                        [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
                        [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
+                       [[ "$(basename "${dir}")" != *"test-proxy"* ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
 
                         changed_modules+=("${dir}")
@@ -299,6 +303,29 @@ case ${JOB_TYPE} in
       -Dlint \
       checkstyle:check@checkstyle
 
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
+    ;;
+  clirr)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      install_modules "sdk-platform-java"
+    fi
+    mvn -B -ntp \
+      -Dfmt.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      clirr:check
+    RETURN_CODE=$?
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
       echo "restoring directory"

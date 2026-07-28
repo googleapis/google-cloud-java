@@ -35,6 +35,8 @@ import com.google.cloud.biglake.hive.v1beta.CreateHiveTableRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveTableRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse;
 import com.google.cloud.biglake.hive.v1beta.GetHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveTableRequest;
@@ -54,6 +56,7 @@ import com.google.cloud.biglake.hive.v1beta.UpdateHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.UpdateHiveTableRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -61,6 +64,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class HiveMetastoreServiceStub implements BackgroundResource {
@@ -159,6 +163,11 @@ public abstract class HiveMetastoreServiceStub implements BackgroundResource {
   public ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPartitionsCallable()");
+  }
+
+  public UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable() {
+    throw new UnsupportedOperationException("Not implemented: failoverHiveCatalogCallable()");
   }
 
   @Override

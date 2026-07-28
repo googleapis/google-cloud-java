@@ -73,6 +73,7 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
             com.google.datastore.v1.AllocateIdsRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -270,6 +271,65 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     return keys_.get(index);
   }
 
+  public static final int REQUEST_OPTIONS_FIELD_NUMBER = 10;
+  private com.google.datastore.v1.RequestOptions requestOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestOptions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.RequestOptions getRequestOptions() {
+    return requestOptions_ == null
+        ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The options for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+    return requestOptions_ == null
+        ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -293,6 +353,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(databaseId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, databaseId_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(10, getRequestOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -310,6 +373,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(databaseId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, databaseId_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRequestOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -330,6 +396,10 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getDatabaseId().equals(other.getDatabaseId())) return false;
     if (!getKeysList().equals(other.getKeysList())) return false;
+    if (hasRequestOptions() != other.hasRequestOptions()) return false;
+    if (hasRequestOptions()) {
+      if (!getRequestOptions().equals(other.getRequestOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,6 +418,10 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     if (getKeysCount() > 0) {
       hash = (37 * hash) + KEYS_FIELD_NUMBER;
       hash = (53 * hash) + getKeysList().hashCode();
+    }
+    if (hasRequestOptions()) {
+      hash = (37 * hash) + REQUEST_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -480,10 +554,20 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.datastore.v1.AllocateIdsRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetKeysFieldBuilder();
+        internalGetRequestOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -499,6 +583,11 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         keysBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -554,6 +643,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.databaseId_ = databaseId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestOptions_ =
+            requestOptionsBuilder_ == null ? requestOptions_ : requestOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -605,6 +701,9 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasRequestOptions()) {
+        mergeRequestOptions(other.getRequestOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -655,6 +754,13 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetRequestOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1305,6 +1411,219 @@ public final class AllocateIdsRequest extends com.google.protobuf.GeneratedMessa
         keys_ = null;
       }
       return keysBuilder_;
+    }
+
+    private com.google.datastore.v1.RequestOptions requestOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.datastore.v1.RequestOptions,
+            com.google.datastore.v1.RequestOptions.Builder,
+            com.google.datastore.v1.RequestOptionsOrBuilder>
+        requestOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestOptions field is set.
+     */
+    public boolean hasRequestOptions() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestOptions.
+     */
+    public com.google.datastore.v1.RequestOptions getRequestOptions() {
+      if (requestOptionsBuilder_ == null) {
+        return requestOptions_ == null
+            ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      } else {
+        return requestOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(com.google.datastore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestOptions_ = value;
+      } else {
+        requestOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(
+        com.google.datastore.v1.RequestOptions.Builder builderForValue) {
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = builderForValue.build();
+      } else {
+        requestOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRequestOptions(com.google.datastore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && requestOptions_ != null
+            && requestOptions_ != com.google.datastore.v1.RequestOptions.getDefaultInstance()) {
+          getRequestOptionsBuilder().mergeFrom(value);
+        } else {
+          requestOptions_ = value;
+        }
+      } else {
+        requestOptionsBuilder_.mergeFrom(value);
+      }
+      if (requestOptions_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRequestOptions() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.RequestOptions.Builder getRequestOptionsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetRequestOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+      if (requestOptionsBuilder_ != null) {
+        return requestOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestOptions_ == null
+            ? com.google.datastore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The options for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.RequestOptions request_options = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.datastore.v1.RequestOptions,
+            com.google.datastore.v1.RequestOptions.Builder,
+            com.google.datastore.v1.RequestOptionsOrBuilder>
+        internalGetRequestOptionsFieldBuilder() {
+      if (requestOptionsBuilder_ == null) {
+        requestOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.datastore.v1.RequestOptions,
+                com.google.datastore.v1.RequestOptions.Builder,
+                com.google.datastore.v1.RequestOptionsOrBuilder>(
+                getRequestOptions(), getParentForChildren(), isClean());
+        requestOptions_ = null;
+      }
+      return requestOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.AllocateIdsRequest)

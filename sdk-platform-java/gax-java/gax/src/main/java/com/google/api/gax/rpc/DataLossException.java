@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Exception thrown due to unrecoverable data loss or corruption. */
+@NullMarked
 public class DataLossException extends ApiException {
   public DataLossException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

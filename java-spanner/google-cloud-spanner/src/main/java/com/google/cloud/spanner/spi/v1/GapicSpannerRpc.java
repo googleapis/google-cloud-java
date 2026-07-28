@@ -62,6 +62,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.grpc.GcpManagedChannel;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelBuilder;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
@@ -110,7 +111,6 @@ import com.google.longrunning.CancelOperationRequest;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsGrpc;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -230,7 +230,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -252,12 +251,19 @@ public class GapicSpannerRpc implements SpannerRpc {
       "com.google.cloud.spanner.watchdogPeriodSeconds";
   private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
   private static final int DEFAULT_PERIOD_SECONDS = 10;
-  private static final int GRPC_KEEPALIVE_SECONDS = 2 * 60;
   private static final String USER_AGENT_KEY = "user-agent";
   private static final String CLIENT_LIBRARY_LANGUAGE = "spanner-java";
   public static final String DEFAULT_USER_AGENT =
       CLIENT_LIBRARY_LANGUAGE + "/" + GaxProperties.getLibraryVersion(GapicSpannerRpc.class);
-  public static boolean DIRECTPATH_CHANNEL_CREATED = false;
+
+  /**
+   * Whether the most recently initialized RPC created a DirectPath channel.
+   *
+   * <p>This process-wide volatile value may be updated during concurrent client construction and
+   * read from another thread when built-in metric attributes are created.
+   */
+  public static volatile boolean DIRECTPATH_CHANNEL_CREATED = false;
+
   private static final String API_FILE = "grpc-gcp-apiconfig.json";
 
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
@@ -373,16 +379,18 @@ public class GapicSpannerRpc implements SpannerRpc {
               options, headerProviderWithUserAgent, isEnableDirectAccess);
       GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
           createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
-      maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
-
-      if (options.getChannelProvider() == null
-          && isEnableDirectAccess
-          && options.isEnableGcpFallback()) {
+      boolean useGcpFallback =
+          options.getChannelProvider() == null
+              && isEnableDirectAccess
+              && options.isEnableGcpFallback();
+      if (useGcpFallback) {
         setupGcpFallback(
             defaultChannelProviderBuilder,
             options,
             headerProviderWithUserAgent,
             credentialsProvider);
+      } else {
+        maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
       }
 
       boolean enableLocationApi = options.isEnableLocationApi();
@@ -587,6 +595,7 @@ public class GapicSpannerRpc implements SpannerRpc {
         .setPrimaryChannelName("directpath")
         .setFallbackChannelName("cloudpath")
         .setMinFailedCalls(minFailedCalls)
+        .setPeriod(Duration.ofMinutes(3))
         .setGcpFallbackOpenTelemetry(fallbackTelemetry)
         .build();
   }
@@ -624,23 +633,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     return null;
   }
 
-  @Override
-  public void clearTransactionAffinity(ByteString transactionId) {
-    if (keyAwareChannel != null) {
-      keyAwareChannel.clearTransactionAffinity(transactionId);
-    }
-  }
-
-  @Override
-  public void clearTransactionAndChannelAffinity(
-      ByteString transactionId, @Nullable Long channelHint) {
-    if (keyAwareChannel != null) {
-      keyAwareChannel.clearTransactionAndChannelAffinity(transactionId, channelHint);
-      return;
-    }
-    GrpcGcpAffinityUtil.clearChannelHintAffinity(grpcGcpChannel, channelHint);
-  }
-
   private static String parseGrpcGcpApiConfig() {
     try {
       return Resources.toString(
@@ -656,30 +648,19 @@ public class GapicSpannerRpc implements SpannerRpc {
       final HeaderProvider headerProviderWithUserAgent,
       final CredentialsProvider credentialsProvider) {
     InstantiatingGrpcChannelProvider.Builder cloudPathProviderBuilder =
-        createChannelProviderBuilder(
+        createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false);
-
-    final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> existingCloudPathConfigurator =
-        cloudPathProviderBuilder.getChannelConfigurator();
-    final AtomicReference<ManagedChannelBuilder> cloudPathBuilderRef = new AtomicReference<>();
-    cloudPathProviderBuilder.setChannelConfigurator(
-        builder -> {
-          ManagedChannelBuilder effectiveBuilder = builder;
-          if (existingCloudPathConfigurator != null) {
-            effectiveBuilder = existingCloudPathConfigurator.apply(effectiveBuilder);
-          }
-          cloudPathBuilderRef.set(effectiveBuilder);
-          return effectiveBuilder;
-        });
-
-    // Build the cloudPathProvider to extract the builder which will be provided to
-    // FallbackChannelBuilder.
-    try (TransportChannel ignored = cloudPathProviderBuilder.build().getTransportChannel()) {
-    } catch (Exception e) {
-      throw asSpannerException(e);
+    if (options.isGrpcGcpExtensionEnabled()) {
+      cloudPathProviderBuilder.setPoolSize(1);
     }
 
-    ManagedChannelBuilder cloudPathBuilder = cloudPathBuilderRef.get();
+    InstantiatingGrpcChannelProvider cloudPathProvider = cloudPathProviderBuilder.build();
+    ManagedChannelBuilder cloudPathBuilder;
+    try {
+      cloudPathBuilder = cloudPathProvider.createDecoratedChannelBuilder();
+    } catch (IOException e) {
+      throw asSpannerException(e);
+    }
     if (cloudPathBuilder == null) {
       throw new IllegalStateException("CloudPath builder was not captured.");
     }
@@ -703,6 +684,9 @@ public class GapicSpannerRpc implements SpannerRpc {
 
     final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> existingConfigurator =
         defaultChannelProviderBuilder.getChannelConfigurator();
+    if (options.isGrpcGcpExtensionEnabled()) {
+      defaultChannelProviderBuilder.setPoolSize(1);
+    }
     defaultChannelProviderBuilder.setChannelConfigurator(
         directPathBuilder -> {
           ManagedChannelBuilder builder = directPathBuilder;
@@ -710,21 +694,23 @@ public class GapicSpannerRpc implements SpannerRpc {
             builder = existingConfigurator.apply(builder);
           }
 
-          String jsonApiConfig = parseGrpcGcpApiConfig();
-          GcpManagedChannelOptions gcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
-          if (gcpOptions == null) {
-            gcpOptions = GcpManagedChannelOptions.newBuilder().build();
+          ManagedChannelBuilder<?> primaryBuilder = builder;
+          ManagedChannelBuilder<?> fallbackBuilder = cloudPathBuilder;
+          if (options.isGrpcGcpExtensionEnabled()) {
+            String jsonApiConfig = parseGrpcGcpApiConfig();
+            GcpManagedChannelOptions gcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
+            if (gcpOptions == null) {
+              gcpOptions = GcpManagedChannelOptions.newBuilder().build();
+            }
+            primaryBuilder =
+                GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                    .withApiConfigJsonString(jsonApiConfig)
+                    .withOptions(gcpOptions);
+            fallbackBuilder =
+                GcpManagedChannelBuilder.forDelegateBuilder(cloudPathBuilder)
+                    .withApiConfigJsonString(jsonApiConfig)
+                    .withOptions(gcpOptions);
           }
-
-          GcpManagedChannelBuilder primaryGcpBuilder =
-              GcpManagedChannelBuilder.forDelegateBuilder(builder)
-                  .withApiConfigJsonString(jsonApiConfig)
-                  .withOptions(gcpOptions);
-
-          GcpManagedChannelBuilder fallbackGcpBuilder =
-              GcpManagedChannelBuilder.forDelegateBuilder(cloudPathBuilder)
-                  .withApiConfigJsonString(jsonApiConfig)
-                  .withOptions(gcpOptions);
 
           GcpFallbackOpenTelemetry fallbackTelemetry =
               GcpFallbackOpenTelemetry.newBuilder()
@@ -734,9 +720,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                   .build();
 
           return new FallbackChannelBuilder(
-              primaryGcpBuilder,
-              fallbackGcpBuilder,
-              createFallbackChannelOptions(fallbackTelemetry, 1));
+              primaryBuilder, fallbackBuilder, createFallbackChannelOptions(fallbackTelemetry, 1));
         });
   }
 
@@ -763,9 +747,10 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setMaxInboundMetadataSize(MAX_METADATA_SIZE)
             .setPoolSize(options.getNumChannels())
 
-            // Set a keepalive time of 120 seconds to help long running
+            // Set a keepalive time to help long running
             // commit GRPC calls succeed
-            .setKeepAliveTimeDuration(Duration.ofSeconds(GRPC_KEEPALIVE_SECONDS))
+            .setKeepAliveTimeDuration(options.getGrpcKeepAliveTime())
+            .setKeepAliveTimeoutDuration(options.getGrpcKeepAliveTimeout())
 
             // Then check if SpannerOptions provides an InterceptorProvider. Create a default
             // SpannerInterceptorProvider if none is provided
@@ -2160,13 +2145,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       CommitRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context =
         newCallContext(options, request.getSession(), request, SpannerGrpc.getCommitMethod(), true);
-    // Signal grpc-gcp to unbind the affinity key after this call completes.
-    // Commit is a terminal RPC — no more RPCs will use this transaction's affinity key.
-    if (this.isGrpcGcpExtensionEnabled) {
-      context =
-          context.withCallOptions(
-              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-    }
     return spannerStub.commitCallable().futureCall(request, context);
   }
 
@@ -2186,13 +2164,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     GrpcCallContext context =
         newCallContext(
             options, request.getSession(), request, SpannerGrpc.getRollbackMethod(), true);
-    // Signal grpc-gcp to unbind the affinity key after this call completes.
-    // Rollback is a terminal RPC — no more RPCs will use this transaction's affinity key.
-    if (this.isGrpcGcpExtensionEnabled) {
-      context =
-          context.withCallOptions(
-              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-    }
     return spannerStub.rollbackCallable().futureCall(request, context);
   }
 
@@ -2374,31 +2345,32 @@ public class GapicSpannerRpc implements SpannerRpc {
       boolean routeToLeader) {
     GrpcCallContext context = this.baseGrpcCallContext;
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
+    ChannelAffinityRef channelAffinityRef =
+        options == null ? null : Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(options);
     if (affinity != null) {
       if (this.isGrpcGcpExtensionEnabled) {
-        // Set channel affinity in gRPC-GCP. Always use the raw affinity value as the key.
-        // Cleanup is handled explicitly by unbind on terminal/single-use operations.
         String affinityKey = String.valueOf(affinity);
         context =
             context.withCallOptions(
                 context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
-        // Check if the caller wants to unbind the affinity key after this call completes.
-        Boolean unbind = Option.UNBIND_CHANNEL_HINT.get(options);
-        if (Boolean.TRUE.equals(unbind)) {
-          context =
-              context.withCallOptions(
-                  context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-        }
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());
       }
     }
+    if (this.isGrpcGcpExtensionEnabled && channelAffinityRef != null) {
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(GcpManagedChannel.CHANNEL_AFFINITY_REF_KEY, channelAffinityRef));
+    }
     // When grpc-gcp extension with dynamic channel pooling is enabled, the actual channel ID
     // will be set by RequestIdInterceptor after grpc-gcp selects the channel.
     // Set to 0 (unknown) here as a placeholder.
     int requestIdChannel =
-        (this.isGrpcGcpExtensionEnabled && this.isDynamicChannelPoolEnabled)
+        (this.isGrpcGcpExtensionEnabled
+                && (this.isDynamicChannelPoolEnabled || channelAffinityRef != null))
             ? 0
             : convertToRequestIdChannelNumber(affinity);
     if (requestId == null) {
@@ -2609,15 +2581,15 @@ public class GapicSpannerRpc implements SpannerRpc {
       extends ForwardingChannelBuilder2<FallbackChannelBuilder> {
     private final GcpFallbackChannelOptions options;
 
-    private final GcpManagedChannelBuilder primaryGcpBuilder;
-    private final GcpManagedChannelBuilder fallbackGcpBuilder;
+    private final ManagedChannelBuilder<?> primaryBuilder;
+    private final ManagedChannelBuilder<?> fallbackBuilder;
 
     private FallbackChannelBuilder(
-        GcpManagedChannelBuilder primary,
-        GcpManagedChannelBuilder fallback,
+        ManagedChannelBuilder<?> primary,
+        ManagedChannelBuilder<?> fallback,
         GcpFallbackChannelOptions options) {
-      this.primaryGcpBuilder = primary;
-      this.fallbackGcpBuilder = fallback;
+      this.primaryBuilder = primary;
+      this.fallbackBuilder = fallback;
       this.options = options;
     }
 
@@ -2627,7 +2599,7 @@ public class GapicSpannerRpc implements SpannerRpc {
      */
     @Override
     protected ManagedChannelBuilder<?> delegate() {
-      return primaryGcpBuilder;
+      return primaryBuilder;
     }
 
     /**
@@ -2636,7 +2608,7 @@ public class GapicSpannerRpc implements SpannerRpc {
      */
     @Override
     public ManagedChannel build() {
-      return new GcpFallbackChannel(options, primaryGcpBuilder, fallbackGcpBuilder);
+      return new GcpFallbackChannel(options, primaryBuilder, fallbackBuilder);
     }
   }
 }

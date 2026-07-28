@@ -42,6 +42,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -215,6 +216,119 @@ public class ReasoningEngineExecutionServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void asyncQueryReasoningEngineTest() throws Exception {
+    AsyncQueryReasoningEngineResponse expectedResponse =
+        AsyncQueryReasoningEngineResponse.newBuilder()
+            .setOutputGcsUri("outputGcsUri-489598154")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncQueryReasoningEngineTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockReasoningEngineExecutionService.addResponse(resultOperation);
+
+    AsyncQueryReasoningEngineRequest request =
+        AsyncQueryReasoningEngineRequest.newBuilder()
+            .setName(
+                ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString())
+            .setInputGcsUri("inputGcsUri-665217217")
+            .setOutputGcsUri("outputGcsUri-489598154")
+            .build();
+
+    AsyncQueryReasoningEngineResponse actualResponse =
+        client.asyncQueryReasoningEngineAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReasoningEngineExecutionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AsyncQueryReasoningEngineRequest actualRequest =
+        ((AsyncQueryReasoningEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getInputGcsUri(), actualRequest.getInputGcsUri());
+    Assert.assertEquals(request.getOutputGcsUri(), actualRequest.getOutputGcsUri());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void asyncQueryReasoningEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReasoningEngineExecutionService.addException(exception);
+
+    try {
+      AsyncQueryReasoningEngineRequest request =
+          AsyncQueryReasoningEngineRequest.newBuilder()
+              .setName(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
+              .setInputGcsUri("inputGcsUri-665217217")
+              .setOutputGcsUri("outputGcsUri-489598154")
+              .build();
+      client.asyncQueryReasoningEngineAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelAsyncQueryReasoningEngineTest() throws Exception {
+    CancelAsyncQueryReasoningEngineResponse expectedResponse =
+        CancelAsyncQueryReasoningEngineResponse.newBuilder().build();
+    mockReasoningEngineExecutionService.addResponse(expectedResponse);
+
+    CancelAsyncQueryReasoningEngineRequest request =
+        CancelAsyncQueryReasoningEngineRequest.newBuilder()
+            .setName(
+                ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString())
+            .setOperationName("operationName91797650")
+            .build();
+
+    CancelAsyncQueryReasoningEngineResponse actualResponse =
+        client.cancelAsyncQueryReasoningEngine(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReasoningEngineExecutionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelAsyncQueryReasoningEngineRequest actualRequest =
+        ((CancelAsyncQueryReasoningEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getOperationName(), actualRequest.getOperationName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelAsyncQueryReasoningEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReasoningEngineExecutionService.addException(exception);
+
+    try {
+      CancelAsyncQueryReasoningEngineRequest request =
+          CancelAsyncQueryReasoningEngineRequest.newBuilder()
+              .setName(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
+              .setOperationName("operationName91797650")
+              .build();
+      client.cancelAsyncQueryReasoningEngine(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

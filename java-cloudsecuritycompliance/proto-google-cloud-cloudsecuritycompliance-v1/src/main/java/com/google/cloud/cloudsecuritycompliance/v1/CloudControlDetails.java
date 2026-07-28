@@ -80,8 +80,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the cloud control, in the format
-   * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+   * Required. The name of the cloud control, in one of the following formats:
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -106,8 +109,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the cloud control, in the format
-   * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+   * Required. The name of the cloud control, in one of the following formats:
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -665,8 +671,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+     * Required. The name of the cloud control, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -690,8 +699,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+     * Required. The name of the cloud control, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -715,8 +727,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+     * Required. The name of the cloud control, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -739,8 +754,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+     * Required. The name of the cloud control, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -759,8 +777,11 @@ public final class CloudControlDetails extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud-control}`.
+     * Required. The name of the cloud control, in one of the following formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *

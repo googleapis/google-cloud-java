@@ -54,6 +54,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 
 class OpenTelemetryTracingFactoryTest {
   private OpenTelemetry openTelemetry;
@@ -71,12 +72,13 @@ class OpenTelemetryTracingFactoryTest {
     span = mock(Span.class);
     when(openTelemetry.getTracer(nullable(String.class), nullable(String.class)))
         .thenReturn(tracer);
+    when(openTelemetry.getTracer(anyString())).thenReturn(tracer);
     when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
     when(spanBuilder.setSpanKind(any())).thenReturn(spanBuilder);
     when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     when(spanBuilder.startSpan()).thenReturn(span);
 
-    validMetadata = mock(LibraryMetadata.class);
+    validMetadata = mock(LibraryMetadata.class, Mockito.withSettings().withoutAnnotations());
     when(validMetadata.artifactName()).thenReturn("gax-java");
     when(validMetadata.version()).thenReturn("2.1.0");
   }
@@ -404,5 +406,19 @@ class OpenTelemetryTracingFactoryTest {
         new OpenTelemetryTracingFactory(openTelemetry, tracer, context);
 
     assertThat(factoryWithContext.needsContext()).isFalse();
+  }
+
+  @Test
+  void testWithContext_nullVersion_createsFactorySuccessfully() {
+    LibraryMetadata metadata =
+        mock(LibraryMetadata.class, Mockito.withSettings().withoutAnnotations());
+    when(metadata.artifactName()).thenReturn("gax-java");
+    when(metadata.version()).thenReturn(null);
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    ApiTracerFactory factoryWithContext = factory.withContext(context);
+    assertThat(factoryWithContext).isInstanceOf(OpenTelemetryTracingFactory.class);
   }
 }

@@ -30,11 +30,11 @@ public interface StudioDatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference>
@@ -44,11 +44,11 @@ public interface StudioDatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference getStudioReferences(
@@ -58,11 +58,11 @@ public interface StudioDatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getStudioReferencesCount();
@@ -71,11 +71,11 @@ public interface StudioDatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<
@@ -86,11 +86,11 @@ public interface StudioDatasourceReferencesOrBuilder
    *
    *
    * <pre>
-   * The references to the studio datasources.
+   * Optional. The references to the studio datasources.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2;
+   * repeated .google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference studio_references = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferenceOrBuilder

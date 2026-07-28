@@ -85,8 +85,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    * <pre>
    * Required. The parent resource for the cloud control deployment, in the
-   * format `organizations/{organization}/locations/{location}`. The only
-   * supported location is `global`.
+   * format `organizations/{organization}/locations/{location}` or
+   * `projects/{project}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -113,8 +114,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    * <pre>
    * Required. The parent resource for the cloud control deployment, in the
-   * format `organizations/{organization}/locations/{location}`. The only
-   * supported location is `global`.
+   * format `organizations/{organization}/locations/{location}` or
+   * `projects/{project}/locations/{location}`.
+   * The only supported location is `global`.
    * </pre>
    *
    * <code>
@@ -765,8 +767,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      * <pre>
      * Required. The parent resource for the cloud control deployment, in the
-     * format `organizations/{organization}/locations/{location}`. The only
-     * supported location is `global`.
+     * format `organizations/{organization}/locations/{location}` or
+     * `projects/{project}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -792,8 +795,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      * <pre>
      * Required. The parent resource for the cloud control deployment, in the
-     * format `organizations/{organization}/locations/{location}`. The only
-     * supported location is `global`.
+     * format `organizations/{organization}/locations/{location}` or
+     * `projects/{project}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -819,8 +823,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      * <pre>
      * Required. The parent resource for the cloud control deployment, in the
-     * format `organizations/{organization}/locations/{location}`. The only
-     * supported location is `global`.
+     * format `organizations/{organization}/locations/{location}` or
+     * `projects/{project}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -845,8 +850,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      * <pre>
      * Required. The parent resource for the cloud control deployment, in the
-     * format `organizations/{organization}/locations/{location}`. The only
-     * supported location is `global`.
+     * format `organizations/{organization}/locations/{location}` or
+     * `projects/{project}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>
@@ -867,8 +873,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      * <pre>
      * Required. The parent resource for the cloud control deployment, in the
-     * format `organizations/{organization}/locations/{location}`. The only
-     * supported location is `global`.
+     * format `organizations/{organization}/locations/{location}` or
+     * `projects/{project}/locations/{location}`.
+     * The only supported location is `global`.
      * </pre>
      *
      * <code>

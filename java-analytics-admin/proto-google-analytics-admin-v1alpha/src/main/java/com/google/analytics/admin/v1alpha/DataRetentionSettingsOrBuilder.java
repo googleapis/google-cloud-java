@@ -30,11 +30,11 @@ public interface DataRetentionSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this DataRetentionSetting resource.
+   * Identifier. Resource name for this DataRetentionSetting resource.
    * Format: properties/{property}/dataRetentionSettings
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,11 +44,11 @@ public interface DataRetentionSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this DataRetentionSetting resource.
+   * Identifier. Resource name for this DataRetentionSetting resource.
    * Format: properties/{property}/dataRetentionSettings
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

@@ -247,6 +247,57 @@ public class IngestionServiceClientHttpJsonTest {
   }
 
   @Test
+  public void ingestAdEventsTest() throws Exception {
+    IngestAdEventsResponse expectedResponse = IngestAdEventsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    IngestAdEventsRequest request =
+        IngestAdEventsRequest.newBuilder()
+            .addAllAdEvents(new ArrayList<AdEvent>())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    IngestAdEventsResponse actualResponse = client.ingestAdEvents(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void ingestAdEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IngestAdEventsRequest request =
+          IngestAdEventsRequest.newBuilder()
+              .addAllAdEvents(new ArrayList<AdEvent>())
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.ingestAdEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void retrieveRequestStatusTest() throws Exception {
     RetrieveRequestStatusResponse expectedResponse =
         RetrieveRequestStatusResponse.newBuilder()

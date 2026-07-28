@@ -189,7 +189,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Workstation to create.
+   * Required. Workstation to create. If source_workstation is specified, the
+   * user must have `workstations.workstations.use` permission on the source
+   * workstation, and the Cloud Workstations Service Agent for the project where
+   * you are creating the new workstation must have compute.disks.createSnapshot
+   * and compute.snapshots.useReadOnly on the source project.
    * </pre>
    *
    * <code>
@@ -207,7 +211,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Workstation to create.
+   * Required. Workstation to create. If source_workstation is specified, the
+   * user must have `workstations.workstations.use` permission on the source
+   * workstation, and the Cloud Workstations Service Agent for the project where
+   * you are creating the new workstation must have compute.disks.createSnapshot
+   * and compute.snapshots.useReadOnly on the source project.
    * </pre>
    *
    * <code>
@@ -227,7 +235,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Workstation to create.
+   * Required. Workstation to create. If source_workstation is specified, the
+   * user must have `workstations.workstations.use` permission on the source
+   * workstation, and the Cloud Workstations Service Agent for the project where
+   * you are creating the new workstation must have compute.disks.createSnapshot
+   * and compute.snapshots.useReadOnly on the source project.
    * </pre>
    *
    * <code>
@@ -248,7 +260,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not
+   * Optional. If set, validate the request and preview the result, but do not
    * actually apply it.
    * </pre>
    *
@@ -909,7 +921,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -926,7 +942,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -949,7 +969,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -974,7 +998,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -997,7 +1025,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -1028,7 +1060,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -1050,7 +1086,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -1067,7 +1107,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -1088,7 +1132,11 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Workstation to create.
+     * Required. Workstation to create. If source_workstation is specified, the
+     * user must have `workstations.workstations.use` permission on the source
+     * workstation, and the Cloud Workstations Service Agent for the project where
+     * you are creating the new workstation must have compute.disks.createSnapshot
+     * and compute.snapshots.useReadOnly on the source project.
      * </pre>
      *
      * <code>
@@ -1118,7 +1166,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1135,7 +1183,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *
@@ -1156,7 +1204,7 @@ public final class CreateWorkstationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. If set, validate the request and preview the review, but do not
+     * Optional. If set, validate the request and preview the result, but do not
      * actually apply it.
      * </pre>
      *

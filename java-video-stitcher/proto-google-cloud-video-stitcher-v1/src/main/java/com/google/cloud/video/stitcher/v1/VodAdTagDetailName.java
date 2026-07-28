@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class VodAdTagDetailName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_VOD_SESSION_VOD_AD_TAG_DETAIL =
@@ -98,7 +101,7 @@ public class VodAdTagDetailName implements ResourceName {
         .toString();
   }
 
-  public static VodAdTagDetailName parse(String formattedString) {
+  public static @Nullable VodAdTagDetailName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class VodAdTagDetailName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<VodAdTagDetailName> values) {
+  public static List<String> toStringList(List<@Nullable VodAdTagDetailName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (VodAdTagDetailName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class VodAdTagDetailName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

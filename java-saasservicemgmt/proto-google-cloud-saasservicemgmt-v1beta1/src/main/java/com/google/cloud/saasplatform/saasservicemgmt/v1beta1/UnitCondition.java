@@ -329,6 +329,27 @@ public final class UnitCondition extends com.google.protobuf.GeneratedMessage
      * <code>TYPE_OPERATION_ERROR = 4;</code>
      */
     TYPE_OPERATION_ERROR(4),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if AppHub app has been created or if Apphub app has already
+     * existed.
+     * </pre>
+     *
+     * <code>TYPE_APP_CREATED_OR_ALREADY_EXISTS = 6;</code>
+     */
+    TYPE_APP_CREATED_OR_ALREADY_EXISTS(6),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if services and workloads have been registered with AppHub.
+     * </pre>
+     *
+     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
+     */
+    TYPE_APP_COMPONENTS_REGISTERED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -398,6 +419,29 @@ public final class UnitCondition extends com.google.protobuf.GeneratedMessage
      */
     public static final int TYPE_OPERATION_ERROR_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if AppHub app has been created or if Apphub app has already
+     * existed.
+     * </pre>
+     *
+     * <code>TYPE_APP_CREATED_OR_ALREADY_EXISTS = 6;</code>
+     */
+    public static final int TYPE_APP_CREATED_OR_ALREADY_EXISTS_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if services and workloads have been registered with AppHub.
+     * </pre>
+     *
+     * <code>TYPE_APP_COMPONENTS_REGISTERED = 7;</code>
+     */
+    public static final int TYPE_APP_COMPONENTS_REGISTERED_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -432,6 +476,10 @@ public final class UnitCondition extends com.google.protobuf.GeneratedMessage
           return TYPE_PROVISIONED;
         case 4:
           return TYPE_OPERATION_ERROR;
+        case 6:
+          return TYPE_APP_CREATED_OR_ALREADY_EXISTS;
+        case 7:
+          return TYPE_APP_COMPONENTS_REGISTERED;
         default:
           return null;
       }

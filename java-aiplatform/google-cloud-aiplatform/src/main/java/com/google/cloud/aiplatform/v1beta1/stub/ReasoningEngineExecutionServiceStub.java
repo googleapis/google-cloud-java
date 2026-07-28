@@ -21,8 +21,14 @@ import static com.google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionServic
 import com.google.api.HttpBody;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
@@ -35,7 +41,11 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -43,9 +53,14 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ReasoningEngineExecutionServiceStub implements BackgroundResource {
+
+  public @Nullable OperationsStub getOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
+  }
 
   public UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
       queryReasoningEngineCallable() {
@@ -56,6 +71,27 @@ public abstract class ReasoningEngineExecutionServiceStub implements BackgroundR
       streamQueryReasoningEngineCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: streamQueryReasoningEngineCallable()");
+  }
+
+  public OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: asyncQueryReasoningEngineOperationCallable()");
+  }
+
+  public UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable() {
+    throw new UnsupportedOperationException("Not implemented: asyncQueryReasoningEngineCallable()");
+  }
+
+  public UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelAsyncQueryReasoningEngineCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

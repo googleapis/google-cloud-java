@@ -313,7 +313,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -322,12 +323,15 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
    * @return Whether the credentials field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCredentials() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -336,7 +340,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -345,12 +350,15 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
    * @return The credentials.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials() {
     return credentials_ == null
         ? com.google.cloud.geminidataanalytics.v1beta.Credentials.getDefaultInstance()
@@ -361,7 +369,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the Looker data source.
+   * Optional. Deprecated: Use credentials in ChatRequest.
+   * The credentials to use when calling the Looker data source.
    *
    * Currently supports both OAuth token and API key-based credentials, as
    * described in
@@ -370,10 +379,11 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder
       getCredentialsOrBuilder() {
     return credentials_ == null
@@ -945,7 +955,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -954,11 +965,14 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
      * @return Whether the credentials field is set.
      */
+    @java.lang.Deprecated
     public boolean hasCredentials() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -967,7 +981,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -976,11 +991,14 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
      * @return The credentials.
      */
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.Credentials getCredentials() {
       if (credentialsBuilder_ == null) {
         return credentials_ == null
@@ -995,7 +1013,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1004,9 +1023,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCredentials(com.google.cloud.geminidataanalytics.v1beta.Credentials value) {
       if (credentialsBuilder_ == null) {
         if (value == null) {
@@ -1025,7 +1045,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1034,9 +1055,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCredentials(
         com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder builderForValue) {
       if (credentialsBuilder_ == null) {
@@ -1053,7 +1075,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1062,9 +1085,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeCredentials(com.google.cloud.geminidataanalytics.v1beta.Credentials value) {
       if (credentialsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -1089,7 +1113,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1098,9 +1123,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCredentials() {
       bitField0_ = (bitField0_ & ~0x00000002);
       credentials_ = null;
@@ -1116,7 +1142,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1125,9 +1152,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.Credentials.Builder getCredentialsBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
@@ -1138,7 +1166,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1147,9 +1176,10 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.geminidataanalytics.v1beta.CredentialsOrBuilder
         getCredentialsOrBuilder() {
       if (credentialsBuilder_ != null) {
@@ -1165,7 +1195,8 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the Looker data source.
+     * Optional. Deprecated: Use credentials in ChatRequest.
+     * The credentials to use when calling the Looker data source.
      *
      * Currently supports both OAuth token and API key-based credentials, as
      * described in
@@ -1174,7 +1205,7 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.geminidataanalytics.v1beta.Credentials credentials = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

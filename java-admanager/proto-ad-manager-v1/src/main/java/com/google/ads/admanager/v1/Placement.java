@@ -138,14 +138,18 @@ public final class Placement extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. `Placement` ID.
+   * Output only. Deprecated: `Placement` ID.
    * </pre>
    *
-   * <code>int64 placement_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 placement_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.ads.admanager.v1.Placement.placement_id is deprecated. See
+   *     google/ads/admanager/v1/placement_messages.proto;l=45
    * @return The placementId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getPlacementId() {
     return placementId_;
   }
@@ -1213,14 +1217,18 @@ public final class Placement extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Placement` ID.
+     * Output only. Deprecated: `Placement` ID.
      * </pre>
      *
-     * <code>int64 placement_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 placement_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Placement.placement_id is deprecated. See
+     *     google/ads/admanager/v1/placement_messages.proto;l=45
      * @return The placementId.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getPlacementId() {
       return placementId_;
     }
@@ -1229,14 +1237,18 @@ public final class Placement extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Placement` ID.
+     * Output only. Deprecated: `Placement` ID.
      * </pre>
      *
-     * <code>int64 placement_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 placement_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Placement.placement_id is deprecated. See
+     *     google/ads/admanager/v1/placement_messages.proto;l=45
      * @param value The placementId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPlacementId(long value) {
 
       placementId_ = value;
@@ -1249,13 +1261,17 @@ public final class Placement extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. `Placement` ID.
+     * Output only. Deprecated: `Placement` ID.
      * </pre>
      *
-     * <code>int64 placement_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 placement_id = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.ads.admanager.v1.Placement.placement_id is deprecated. See
+     *     google/ads/admanager/v1/placement_messages.proto;l=45
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPlacementId() {
       bitField0_ = (bitField0_ & ~0x00000002);
       placementId_ = 0L;

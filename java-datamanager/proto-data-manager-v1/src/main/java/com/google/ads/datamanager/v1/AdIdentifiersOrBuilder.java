@@ -179,4 +179,176 @@ public interface AdIdentifiersOrBuilder
    * </code>
    */
   com.google.ads.datamanager.v1.DeviceInfoOrBuilder getLandingPageDeviceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The mobileDeviceId.
+   */
+  java.lang.String getMobileDeviceId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mobile identifier for advertisers. This would be IDFA on iOS,
+   * AdID on Android, or other platforms’ identifiers for advertisers.
+   * </pre>
+   *
+   * <code>string mobile_device_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for mobileDeviceId.
+   */
+  com.google.protobuf.ByteString getMobileDeviceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display click ID associated with this event.
+   * </pre>
+   *
+   * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dclid.
+   */
+  java.lang.String getDclid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display click ID associated with this event.
+   * </pre>
+   *
+   * <code>string dclid = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for dclid.
+   */
+  com.google.protobuf.ByteString getDclidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The impression ID associated with this event.
+   * </pre>
+   *
+   * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The impressionId.
+   */
+  java.lang.String getImpressionId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The impression ID associated with this event.
+   * </pre>
+   *
+   * <code>string impression_id = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for impressionId.
+   */
+  com.google.protobuf.ByteString getImpressionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The match ID field used to join this event with a previous event.
+   * </pre>
+   *
+   * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The matchId.
+   */
+  java.lang.String getMatchId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The match ID field used to join this event with a previous event.
+   * </pre>
+   *
+   * <code>string match_id = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for matchId.
+   */
+  com.google.protobuf.ByteString getMatchIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.datamanager.v1.EncryptedUserId> getEncryptedUserIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.EncryptedUserId getEncryptedUserIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getEncryptedUserIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder>
+      getEncryptedUserIdsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any number of encrypted user IDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.datamanager.v1.EncryptedUserId encrypted_user_ids = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder getEncryptedUserIdsOrBuilder(int index);
 }

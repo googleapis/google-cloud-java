@@ -201,7 +201,7 @@ public enum SamplingLevel implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(9);
+        .get(10);
   }
 
   private static final SamplingLevel[] VALUES = values();

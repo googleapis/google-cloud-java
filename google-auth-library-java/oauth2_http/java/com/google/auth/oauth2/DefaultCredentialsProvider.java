@@ -239,7 +239,7 @@ class DefaultCredentialsProvider {
     return credentials;
   }
 
-  private final File getWellKnownCredentialsFile() {
+  private final File getWellKnownCredentialsFile() throws IOException {
     return GoogleAuthUtils.getWellKnownCredentialsFile(this);
   }
 

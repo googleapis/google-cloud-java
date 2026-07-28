@@ -31,7 +31,7 @@ public interface MeshOrBuilder
    *
    * <pre>
    * Identifier. Name of the Mesh resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -45,7 +45,7 @@ public interface MeshOrBuilder
    *
    * <pre>
    * Identifier. Name of the Mesh resource. It matches pattern
-   * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
+   * `projects/&#42;&#47;locations/&#42;&#47;meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
