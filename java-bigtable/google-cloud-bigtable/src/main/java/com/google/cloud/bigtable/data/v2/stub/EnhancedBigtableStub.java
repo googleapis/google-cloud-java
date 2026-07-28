@@ -377,9 +377,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     r ->
                         r.getMaterializedViewName().isEmpty()
                             ? composeRequestParams(
-                                r.getAppProfileId(),
-                                r.getTableName(),
-                                r.getAuthorizedViewName())
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
                             : composeInstanceLevelRequestParams(
                                 MaterializedViewName.parse(r.getMaterializedViewName())
                                     .getInstanceName()
@@ -459,9 +457,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     r ->
                         r.getMaterializedViewName().isEmpty()
                             ? composeRequestParams(
-                                r.getAppProfileId(),
-                                r.getTableName(),
-                                r.getAuthorizedViewName())
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
                             : composeInstanceLevelRequestParams(
                                 MaterializedViewName.parse(r.getMaterializedViewName())
                                     .getInstanceName()

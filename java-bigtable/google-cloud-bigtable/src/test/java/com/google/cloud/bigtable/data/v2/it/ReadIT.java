@@ -249,9 +249,7 @@ public class ReadIT {
       instanceAdmin.createMaterializedView(
           CreateMaterializedViewRequest.of(instanceId, materializedViewId)
               .setQuery(
-                  "SELECT _key, MAX(cf1['column']) as column FROM `"
-                      + tableId
-                      + "` GROUP BY _key")
+                  "SELECT _key, MAX(cf1['column']) as column FROM `" + tableId + "` GROUP BY _key")
               .setDeletionProtection(false));
       try {
         Row row = null;
