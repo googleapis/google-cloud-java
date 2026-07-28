@@ -6023,7 +6023,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
      * @return Whether the copyOnly field is set.
      */
     @java.lang.Deprecated
@@ -6039,7 +6039,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
      * @return The copyOnly.
      */
     @java.lang.Deprecated
@@ -6415,7 +6415,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
      * @return Whether the copyOnly field is set.
      */
     @java.lang.Override
@@ -6434,7 +6434,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+     *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
      * @return The copyOnly.
      */
     @java.lang.Override
@@ -7704,7 +7704,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
        *
        * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-       *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+       *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
        * @return Whether the copyOnly field is set.
        */
       @java.lang.Deprecated
@@ -7722,7 +7722,7 @@ public final class ExportContext extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.BoolValue copy_only = 5 [deprecated = true];</code>
        *
        * @deprecated google.cloud.sql.v1.ExportContext.SqlBakExportOptions.copy_only is deprecated.
-       *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=486
+       *     See google/cloud/sql/v1/cloud_sql_resources.proto;l=482
        * @return The copyOnly.
        */
       @java.lang.Deprecated

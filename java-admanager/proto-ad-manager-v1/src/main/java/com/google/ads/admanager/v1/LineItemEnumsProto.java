@@ -41,9 +41,21 @@ public final class LineItemEnumsProto extends com.google.protobuf.GeneratedFile 
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_LineItemCostTypeEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_LineItemCostTypeEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_LineItemTypeEnum_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_LineItemTypeEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_LineItemReservationStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_LineItemReservationStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_LineItemComputedStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_LineItemComputedStatusEnum_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -54,7 +66,18 @@ public final class LineItemEnumsProto extends com.google.protobuf.GeneratedFile 
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "-google/ads/admanager/v1/line_item_enums.proto\022\027google.ads.admanager.v1\"\202\002\n"
+          + "-google/ads/admanager/v1/line_item_enums.proto\022\027google.ads.admanager.v1\"\250\001\n"
+          + "\024LineItemCostTypeEnum\"\217\001\n"
+          + "\020LineItemCostType\022#\n"
+          + "\037LINE_ITEM_COST_TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\003CPA\020\001\032\002\010\001\022\007\n"
+          + "\003CPC\020\002\022\007\n"
+          + "\003CPD\020\003\022\007\n"
+          + "\003CPM\020\004\022\010\n"
+          + "\004VCPM\020\005\022\021\n\r"
+          + "CPM_IN_TARGET\020\006\022\007\n"
+          + "\003CPF\020\007\022\010\n"
+          + "\004CPCV\020\010\"\202\002\n"
           + "\020LineItemTypeEnum\"\355\001\n"
           + "\014LineItemType\022\036\n"
           + "\032LINE_ITEM_TYPE_UNSPECIFIED\020\000\022\017\n"
@@ -71,20 +94,59 @@ public final class LineItemEnumsProto extends com.google.protobuf.GeneratedFile 
           + "\006BUMPER\020\005\022\022\n"
           + "\016PREFERRED_DEAL\020\n"
           + "\022\026\n"
-          + "\022AUDIENCE_EXTENSION\020\016B\306\001\n"
-          + "\033com.google.ads.admanager.v1B\022LineItemEnumsProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/ads/admanager"
-          + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\022AUDIENCE_EXTENSION\020\016\"\210\001\n"
+          + "\035LineItemReservationStatusEnum\"g\n"
+          + "\031LineItemReservationStatus\022,\n"
+          + "(LINE_ITEM_RESERVATION_STATUS_UNSPECIFIED\020\000\022\014\n"
+          + "\010RESERVED\020\001\022\016\n\n"
+          + "UNRESERVED\020\002\"\234\002\n"
+          + "\032LineItemComputedStatusEnum\"\375\001\n"
+          + "\026LineItemComputedStatus\022)\n"
+          + "%LINE_ITEM_COMPUTED_STATUS_UNSPECIFIED\020\000\022\014\n"
+          + "\010CANCELED\020\001\022\r"
+          + "\n"
+          + "\tCOMPLETED\020\002\022\016\n\n"
+          + "DELIVERING\020\003\022\025\n"
+          + "\021DELIVERY_EXTENDED\020\004\022\017\n"
+          + "\013DISAPPROVED\020\005\022\t\n"
+          + "\005DRAFT\020\006\022\014\n"
+          + "\010INACTIVE\020\007\022\n\n"
+          + "\006PAUSED\020\010\022\035\n"
+          + "\031PAUSED_INVENTORY_RELEASED\020\t\022\024\n"
+          + "\020PENDING_APPROVAL\020\n"
+          + "\022\t\n"
+          + "\005READY\020\013B\306\001\n"
+          + "\033com.google.ads.admanager.v1B\022LineItemEnumsProtoP\001Z@google.golang."
+          + "org/genproto/googleapis/ads/admanager/v1"
+          + ";admanager\252\002\027Google.Ads.AdManager.V1\312\002\027G"
+          + "oogle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
-    internal_static_google_ads_admanager_v1_LineItemTypeEnum_descriptor =
+    internal_static_google_ads_admanager_v1_LineItemCostTypeEnum_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_ads_admanager_v1_LineItemCostTypeEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_LineItemCostTypeEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_LineItemTypeEnum_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_ads_admanager_v1_LineItemTypeEnum_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_LineItemTypeEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_LineItemReservationStatusEnum_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_LineItemReservationStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_LineItemReservationStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_LineItemComputedStatusEnum_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_LineItemComputedStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_LineItemComputedStatusEnum_descriptor,
             new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
   }

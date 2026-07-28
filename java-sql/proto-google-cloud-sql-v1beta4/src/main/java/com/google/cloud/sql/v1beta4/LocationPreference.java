@@ -92,7 +92,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
    * <code>string follow_gae_application = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
    * @return The followGaeApplication.
    */
   @java.lang.Override
@@ -120,7 +120,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
    * <code>string follow_gae_application = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
    * @return The bytes for followGaeApplication.
    */
   @java.lang.Override
@@ -700,7 +700,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
      * <code>string follow_gae_application = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
      * @return The followGaeApplication.
      */
     @java.lang.Deprecated
@@ -727,7 +727,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
      * <code>string follow_gae_application = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
      * @return The bytes for followGaeApplication.
      */
     @java.lang.Deprecated
@@ -754,7 +754,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
      * <code>string follow_gae_application = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
      * @param value The followGaeApplication to set.
      * @return This builder for chaining.
      */
@@ -780,7 +780,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
      * <code>string follow_gae_application = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -802,7 +802,7 @@ public final class LocationPreference extends com.google.protobuf.GeneratedMessa
      * <code>string follow_gae_application = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+     *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
      * @param value The bytes for followGaeApplication to set.
      * @return This builder for chaining.
      */

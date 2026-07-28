@@ -30,12 +30,12 @@ public interface IntelligenceFindingRevisionOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of `IntelligenceFindingRevision`.
+   * Output only. The resource name of `IntelligenceFindingRevision`.
    * Format:
    * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface IntelligenceFindingRevisionOrBuilder
    *
    *
    * <pre>
-   * Identifier. The resource name of `IntelligenceFindingRevision`.
+   * Output only. The resource name of `IntelligenceFindingRevision`.
    * Format:
    * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */

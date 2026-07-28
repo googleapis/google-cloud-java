@@ -64,7 +64,6 @@ This is the table of modules included in the latest libraries-bom release:
 | google-cloud-analyticshub | Product | [0.91.0](https://cloud.google.com/java/docs/reference/google-cloud-analyticshub/latest/overview) | [Analytics Hub API](https://cloud.google.com/bigquery/TBD) |
 | google-cloud-api-gateway | Product | [2.94.0](https://cloud.google.com/java/docs/reference/google-cloud-api-gateway/latest/overview) | [API Gateway](https://cloud.google.com/api-gateway/docs) |
 | google-cloud-apigee-connect | Product | [2.94.0](https://cloud.google.com/java/docs/reference/google-cloud-apigee-connect/latest/overview) | [Apigee Connect](https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/) |
-| google-cloud-apigee-registry | Product | [0.94.0](https://cloud.google.com/java/docs/reference/google-cloud-apigee-registry/latest/overview) | [Registry API](https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api) |
 | google-cloud-apihub | Product | [0.47.0](https://cloud.google.com/java/docs/reference/google-cloud-apihub/latest/overview) | N/A |
 | google-cloud-apikeys | Product | [0.92.0](https://cloud.google.com/java/docs/reference/google-cloud-apikeys/latest/overview) | [API Keys API](https://cloud.google.com/api-keys/) |
 | google-cloud-appengine-admin | Product | [2.94.0](https://cloud.google.com/java/docs/reference/google-cloud-appengine-admin/latest/overview) | [App Engine Admin API](https://cloud.google.com/appengine/docs/admin-api/) |

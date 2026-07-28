@@ -37,9 +37,6 @@ proto-google-cloud-api-gateway-v1:2.94.0:2.95.0-SNAPSHOT
 google-cloud-apigee-connect:2.94.0:2.95.0-SNAPSHOT
 grpc-google-cloud-apigee-connect-v1:2.94.0:2.95.0-SNAPSHOT
 proto-google-cloud-apigee-connect-v1:2.94.0:2.95.0-SNAPSHOT
-google-cloud-apigee-registry:0.94.0:0.95.0-SNAPSHOT
-proto-google-cloud-apigee-registry-v1:0.94.0:0.95.0-SNAPSHOT
-grpc-google-cloud-apigee-registry-v1:0.94.0:0.95.0-SNAPSHOT
 google-cloud-apikeys:0.92.0:0.93.0-SNAPSHOT
 proto-google-cloud-apikeys-v2:0.92.0:0.93.0-SNAPSHOT
 grpc-google-cloud-apikeys-v2:0.92.0:0.93.0-SNAPSHOT
@@ -1099,3 +1096,8 @@ grpc-google-cloud-sql-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-sql:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-sql-v1beta4:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-sql-v1beta4:0.0.0:0.1.0-SNAPSHOT
+google-maps-navconnect-parent:0.0.0:0.1.0-SNAPSHOT
+google-maps-navconnect-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-maps-navconnect-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-maps-navconnect-v1:0.0.0:0.1.0-SNAPSHOT
+google-maps-navconnect:0.0.0:0.1.0-SNAPSHOT

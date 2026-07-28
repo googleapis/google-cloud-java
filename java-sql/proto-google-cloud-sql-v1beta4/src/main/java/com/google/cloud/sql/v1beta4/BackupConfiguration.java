@@ -719,14 +719,22 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+   *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
    * @return Whether the replicationLogArchivingEnabled field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasReplicationLogArchivingEnabled() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -735,14 +743,22 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+   *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
    * @return The replicationLogArchivingEnabled.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.BoolValue getReplicationLogArchivingEnabled() {
     return replicationLogArchivingEnabled_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -753,12 +769,18 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.BoolValueOrBuilder getReplicationLogArchivingEnabledOrBuilder() {
     return replicationLogArchivingEnabled_ == null
         ? com.google.protobuf.BoolValue.getDefaultInstance()
@@ -2396,13 +2418,21 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
      * @return Whether the replicationLogArchivingEnabled field is set.
      */
+    @java.lang.Deprecated
     public boolean hasReplicationLogArchivingEnabled() {
       return ((bitField0_ & 0x00000010) != 0);
     }
@@ -2411,13 +2441,21 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
      * @return The replicationLogArchivingEnabled.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.BoolValue getReplicationLogArchivingEnabled() {
       if (replicationLogArchivingEnabledBuilder_ == null) {
         return replicationLogArchivingEnabled_ == null
@@ -2432,11 +2470,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setReplicationLogArchivingEnabled(com.google.protobuf.BoolValue value) {
       if (replicationLogArchivingEnabledBuilder_ == null) {
         if (value == null) {
@@ -2455,11 +2499,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setReplicationLogArchivingEnabled(
         com.google.protobuf.BoolValue.Builder builderForValue) {
       if (replicationLogArchivingEnabledBuilder_ == null) {
@@ -2476,11 +2526,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeReplicationLogArchivingEnabled(com.google.protobuf.BoolValue value) {
       if (replicationLogArchivingEnabledBuilder_ == null) {
         if (((bitField0_ & 0x00000010) != 0)
@@ -2505,11 +2561,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearReplicationLogArchivingEnabled() {
       bitField0_ = (bitField0_ & ~0x00000010);
       replicationLogArchivingEnabled_ = null;
@@ -2525,11 +2587,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.BoolValue.Builder getReplicationLogArchivingEnabledBuilder() {
       bitField0_ |= 0x00000010;
       onChanged();
@@ -2540,11 +2608,17 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.BoolValueOrBuilder getReplicationLogArchivingEnabledOrBuilder() {
       if (replicationLogArchivingEnabledBuilder_ != null) {
         return replicationLogArchivingEnabledBuilder_.getMessageOrBuilder();
@@ -2559,10 +2633,15 @@ public final class BackupConfiguration extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Reserved for future use.
+     * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+     * will be removed from a future version of the API. Use
+     * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+     * instead.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+     * <code>
+     * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.BoolValue,

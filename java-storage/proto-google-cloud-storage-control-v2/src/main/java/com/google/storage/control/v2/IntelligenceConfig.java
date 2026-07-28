@@ -80,7 +80,7 @@ public final class IntelligenceConfig extends com.google.protobuf.GeneratedMessa
    * signifies the edition used for configuring the `IntelligenceConfig`
    * resource and can only take the following values:
    * `EDITION_CONFIG_UNSPECIFIED`, `INHERIT`, `DISABLED`, `STANDARD` and
-   * `TRIAL`.
+   * `EVALUATE`.
    * </pre>
    *
    * Protobuf enum {@code google.storage.control.v2.IntelligenceConfig.EditionConfig}
@@ -142,6 +142,16 @@ public final class IntelligenceConfig extends com.google.protobuf.GeneratedMessa
      * <code>TRIAL = 5;</code>
      */
     TRIAL(5),
+    /**
+     *
+     *
+     * <pre>
+     * The `IntelligenceConfig` resource is of ESSENTIALS edition.
+     * </pre>
+     *
+     * <code>ESSENTIALS = 6;</code>
+     */
+    ESSENTIALS(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -216,6 +226,17 @@ public final class IntelligenceConfig extends com.google.protobuf.GeneratedMessa
      */
     public static final int TRIAL_VALUE = 5;
 
+    /**
+     *
+     *
+     * <pre>
+     * The `IntelligenceConfig` resource is of ESSENTIALS edition.
+     * </pre>
+     *
+     * <code>ESSENTIALS = 6;</code>
+     */
+    public static final int ESSENTIALS_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -250,6 +271,8 @@ public final class IntelligenceConfig extends com.google.protobuf.GeneratedMessa
           return STANDARD;
         case 5:
           return TRIAL;
+        case 6:
+          return ESSENTIALS;
         default:
           return null;
       }
