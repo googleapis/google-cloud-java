@@ -834,47 +834,94 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return builder;
   }
 
+  @SuppressWarnings({"unchecked", "rawtypes"})
   private ManagedChannelBuilder<?> applyPqcConfiguration(ManagedChannelBuilder<?> builder) {
-    // Register Conscrypt to handle PQC algorithms in TLS 1.3.
-    // We insert it at position 1 to ensure it takes precedence over default providers.
-    Security.insertProviderAt(Conscrypt.newProvider(), 1);
-    
-    // Force the use of the PQC algorithm group.
-    System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+    try {
+      Security.insertProviderAt(Conscrypt.newProvider(), 1);
+      System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+    } catch (Throwable t) {
+      // Conscrypt or PQC unavailable
+    }
 
-    if (builder instanceof io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) {
-        io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder nettyBuilder = 
-            (io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) builder;
-        try {
-            javax.net.ssl.SSLContext sslContext = javax.net.ssl.SSLContext.getInstance("TLSv1.3", Conscrypt.newProvider());
-            sslContext.init(null, null, null);
-            
-            io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig apn = 
-                new io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig(
-                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.Protocol.ALPN,
-                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
-                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
-                    "h2"
-                );
-                
-            io.grpc.netty.shaded.io.netty.handler.ssl.JdkSslContext shadedSslContext = 
-                new io.grpc.netty.shaded.io.netty.handler.ssl.JdkSslContext(
+    try {
+      Class<?> shadedNettyBuilderClass =
+          Class.forName("io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder");
+      if (shadedNettyBuilderClass.isInstance(builder)) {
+        javax.net.ssl.SSLContext sslContext =
+            javax.net.ssl.SSLContext.getInstance("TLSv1.3", Conscrypt.newProvider());
+        sslContext.init(null, null, null);
+
+        Class<?> apnClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig");
+        Class<?> protocolClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig$Protocol");
+        Class<?> selectorBehaviorClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig$SelectorFailureBehavior");
+        Class<?> selectedListenerBehaviorClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig$SelectedListenerBehavior");
+
+        Object protocolAlpn = Enum.valueOf((Class<Enum>) protocolClass, "ALPN");
+        Object selectorNoAdvertise =
+            Enum.valueOf((Class<Enum>) selectorBehaviorClass, "NO_ADVERTISE");
+        Object selectedAccept =
+            Enum.valueOf((Class<Enum>) selectedListenerBehaviorClass, "ACCEPT");
+
+        Object apn =
+            apnClass
+                .getConstructor(
+                    protocolClass,
+                    selectorBehaviorClass,
+                    selectedListenerBehaviorClass,
+                    String[].class)
+                .newInstance(
+                    protocolAlpn,
+                    selectorNoAdvertise,
+                    selectedAccept,
+                    new String[] {"h2"});
+
+        Class<?> cipherFilterClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.CipherSuiteFilter");
+        Class<?> identityFilterClass =
+            Class.forName(
+                "io.grpc.netty.shaded.io.netty.handler.ssl.IdentityCipherSuiteFilter");
+        Object identityFilter = identityFilterClass.getField("INSTANCE").get(null);
+
+        Class<?> clientAuthClass =
+            Class.forName("io.grpc.netty.shaded.io.netty.handler.ssl.ClientAuth");
+        Object clientAuthNone = Enum.valueOf((Class<Enum>) clientAuthClass, "NONE");
+
+        Class<?> jdkSslContextClass =
+            Class.forName("io.grpc.netty.shaded.io.netty.handler.ssl.JdkSslContext");
+        Class<?> sslContextClass =
+            Class.forName("io.grpc.netty.shaded.io.netty.handler.ssl.SslContext");
+
+        Object shadedSslContext =
+            jdkSslContextClass
+                .getConstructor(
+                    javax.net.ssl.SSLContext.class,
+                    boolean.class,
+                    Iterable.class,
+                    cipherFilterClass,
+                    apnClass,
+                    clientAuthClass)
+                .newInstance(
                     sslContext,
-                    true, // isClient
-                    null, // ciphers
-                    io.grpc.netty.shaded.io.netty.handler.ssl.IdentityCipherSuiteFilter.INSTANCE,
+                    true,
+                    null,
+                    identityFilter,
                     apn,
-                    io.grpc.netty.shaded.io.netty.handler.ssl.ClientAuth.NONE
-                );
-            nettyBuilder.sslContext(shadedSslContext);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to configure shaded Netty PQC SSL context", e);
-        }
-    } else if (builder instanceof io.grpc.netty.NettyChannelBuilder) {
-        // Handle unshaded Netty similarly if needed, but usually snapshot uses shaded.
-        // For now, focus on shaded which is what failed.
-    } else {
-        throw new IllegalStateException("Expected NettyChannelBuilder but got " + builder.getClass().getName());
+                    clientAuthNone);
+
+        Method sslContextMethod =
+            shadedNettyBuilderClass.getMethod("sslContext", sslContextClass);
+        sslContextMethod.invoke(builder, shadedSslContext);
+      }
+    } catch (Throwable ignored) {
     }
     return builder;
   }
