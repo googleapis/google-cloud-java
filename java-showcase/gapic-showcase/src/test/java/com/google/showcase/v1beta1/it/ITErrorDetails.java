@@ -19,9 +19,14 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.protobuf.TypeRegistry;
+import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.BadRequest;
 import com.google.rpc.DebugInfo;
 import com.google.rpc.ErrorInfo;
@@ -32,6 +37,7 @@ import com.google.rpc.QuotaFailure;
 import com.google.rpc.RequestInfo;
 import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
+import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.FailEchoWithDetailsRequest;
@@ -42,6 +48,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Integration tests for verifying that client libraries correctly propagate and deserialize
+ * standard and custom error details from {@link ApiException} over gRPC and HTTP/JSON transports.
+ */
 class ITErrorDetails {
 
   private static EchoClient grpcClient;
@@ -63,12 +73,11 @@ class ITErrorDetails {
         TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
   }
 
-  private void verifyErrorDetailsGrpc(ApiException exception) {
-    assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
-
-    ErrorDetails errorDetails = exception.getErrorDetails();
-    assertThat(errorDetails).isNotNull();
-
+  /**
+   * Helper method to verify the content of error details. Transport-neutral validation of standard
+   * and custom error packets.
+   */
+  private void verifyErrorDetailsContent(ErrorDetails errorDetails, String expectedPoem) {
     // Verify standard error details are present and populated
     // We are assuming that the mock server's hardcoded return values will stay the same
     // https://github.com/googleapis/gapic-showcase/blob/b6c247f153369044d599969f6929ecdeb066c4c6/server/services/echo_service.go
@@ -118,24 +127,31 @@ class ITErrorDetails {
     assertThat(localizedMessage.getMessage())
         .isEqualTo("This LocalizedMessage should be treated specially");
 
-    // Verify custom PoetryError can be unpacked
+    // Verify custom PoetryError can be unpacked and matches expected poem
     PoetryError poetryError = errorDetails.getMessage(PoetryError.class);
     assertThat(poetryError).isNotNull();
-    assertThat(poetryError.getPoem()).isEqualTo("roses are red");
+    assertThat(poetryError.getPoem()).isEqualTo(expectedPoem);
 
     // Verify mismatched type returns null safely (mismatch unpacking)
     EchoResponse mismatchedDetail = errorDetails.getMessage(EchoResponse.class);
     assertThat(mismatchedDetail).isNull();
   }
 
+  // Verifies error details are correctly propagated and unpacked over standard gRPC protocol
   @Test
   void testGrpc_failEchoWithDetails() {
     FailEchoWithDetailsRequest request = FailEchoWithDetailsRequest.newBuilder().build();
     ApiException exception =
         assertThrows(ApiException.class, () -> grpcClient.failEchoWithDetails(request));
-    verifyErrorDetailsGrpc(exception);
+
+    assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+    assertThat(exception.getErrorDetails()).isNotNull();
+
+    // Reuse Transport-neutral Validation
+    verifyErrorDetailsContent(exception.getErrorDetails(), "roses are red");
   }
 
+  // Verifies custom Error Details messages reflect user-defined inputs via gRPC
   @Test
   void testGrpc_failEchoWithDetails_customMessage() {
     String customMessage = "this is a custom message to echo back";
@@ -143,19 +159,18 @@ class ITErrorDetails {
         FailEchoWithDetailsRequest.newBuilder().setMessage(customMessage).build();
     ApiException exception =
         assertThrows(ApiException.class, () -> grpcClient.failEchoWithDetails(request));
+
     assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+    assertThat(exception.getErrorDetails()).isNotNull();
 
-    ErrorDetails errorDetails = exception.getErrorDetails();
-    assertThat(errorDetails).isNotNull();
-
-    // Verify custom PoetryError can be unpacked and contains the custom message
-    PoetryError poetryError = errorDetails.getMessage(PoetryError.class);
-    assertThat(poetryError).isNotNull();
-    assertThat(poetryError.getPoem()).isEqualTo(customMessage);
+    // Reuse Transport-neutral Validation
+    verifyErrorDetailsContent(exception.getErrorDetails(), customMessage);
   }
 
+  // Verifies error details are accessible in raw form over REST/HTTP and validates manually-parsed
+  // decompression
   @Test
-  void testHttpJson_failEchoWithDetails() {
+  void testHttpJson_failEchoWithDetails() throws Exception {
     FailEchoWithDetailsRequest request = FailEchoWithDetailsRequest.newBuilder().build();
     ApiException exception =
         assertThrows(ApiException.class, () -> httpjsonClient.failEchoWithDetails(request));
@@ -168,5 +183,43 @@ class ITErrorDetails {
     if (errorDetails != null) {
       assertThat(errorDetails.getErrorInfo()).isNull();
     }
+
+    // Workaround REST limitation: Parse the raw HTTP JSON error response manually using a custom
+    // TypeRegistry that registers standard types plus the showcase-specific PoetryError type.
+    assertThat(exception.getCause()).isInstanceOf(HttpResponseException.class);
+    HttpResponseException httpException = (HttpResponseException) exception.getCause();
+    String errorJson = httpException.getContent();
+    assertThat(errorJson).isNotNull();
+
+    TypeRegistry typeRegistry =
+        TypeRegistry.newBuilder()
+            .add(ErrorInfo.getDescriptor())
+            .add(RetryInfo.getDescriptor())
+            .add(DebugInfo.getDescriptor())
+            .add(QuotaFailure.getDescriptor())
+            .add(PreconditionFailure.getDescriptor())
+            .add(BadRequest.getDescriptor())
+            .add(RequestInfo.getDescriptor())
+            .add(ResourceInfo.getDescriptor())
+            .add(Help.getDescriptor())
+            .add(LocalizedMessage.getDescriptor())
+            .add(PoetryError.getDescriptor())
+            .build();
+    JsonFormat.Parser jsonParser =
+        JsonFormat.parser().ignoringUnknownFields().usingTypeRegistry(typeRegistry);
+
+    // Parse the AIP-193 "error" JSON object into a status builder
+    JsonObject root = JsonParser.parseString(errorJson).getAsJsonObject();
+    JsonObject errorObj = root.getAsJsonObject("error");
+    Status.Builder statusBuilder = Status.newBuilder();
+    jsonParser.merge(errorObj.toString(), statusBuilder);
+    Status status = statusBuilder.build();
+
+    // Verify we can successfully unpack the details from our custom status instance
+    ErrorDetails parsedDetails =
+        ErrorDetails.builder().setRawErrorMessages(status.getDetailsList()).build();
+
+    // Reuse Transport-neutral Validation!
+    verifyErrorDetailsContent(parsedDetails, "roses are red");
   }
 }
