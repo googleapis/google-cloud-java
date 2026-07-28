@@ -150,10 +150,11 @@ class ITPostQuantumCryptography {
       // Assert that supported groups offered by Conscrypt include the primary PQC group and
       // classical fallback group. We use containsAtLeast instead of exact list equality because
       // Go's crypto/tls library only recognizes standard Curve IDs (e.g. X25519MLKEM768 and
-      // X25519),
-      // which is not a 1:1 mapping with the full list of named groups that Conscrypt supports
-      // (draft/standalone groups like X25519Kyber768Draft00 and MLKEM1024 are formatted as
-      // "Unknown-Curve-25497" and "Unknown-Curve-514" by the Showcase server).
+      // X25519), which is not a 1:1 mapping with the full list of named groups that Conscrypt
+      // supports (see
+      // https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md#supported-named-groups).
+      // Draft/standalone groups like X25519Kyber768Draft00 and MLKEM1024 are formatted as
+      // "Unknown-Curve-25497" and "Unknown-Curve-514" by the Showcase server.
       List<String> supportedGroups =
           getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).containsAtLeast(EXPECTED_PQC_GROUP, CLASSICAL_X25519_GROUP);
