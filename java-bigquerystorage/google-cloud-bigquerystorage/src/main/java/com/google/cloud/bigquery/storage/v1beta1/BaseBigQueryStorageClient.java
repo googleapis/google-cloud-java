@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,7 +200,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BaseBigQueryStorageClient implements BackgroundResource {
-  private final BaseBigQueryStorageSettings settings;
+  private final @Nullable BaseBigQueryStorageSettings settings;
   private final BigQueryStorageStub stub;
 
   /** Constructs an instance of BaseBigQueryStorageClient with default settings. */
@@ -239,7 +240,7 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BaseBigQueryStorageSettings getSettings() {
+  public final @Nullable BaseBigQueryStorageSettings getSettings() {
     return settings;
   }
 
@@ -289,7 +290,9 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Storage.ReadSession createReadSession(
-      TableReferenceProto.TableReference tableReference, ProjectName parent, int requestedStreams) {
+      TableReferenceProto.TableReference tableReference,
+      @Nullable ProjectName parent,
+      int requestedStreams) {
     Storage.CreateReadSessionRequest request =
         Storage.CreateReadSessionRequest.newBuilder()
             .setTableReference(tableReference)

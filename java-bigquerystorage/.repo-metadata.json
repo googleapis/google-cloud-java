@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-bigquerystorage",
   "api_id": "bigquerystorage.googleapis.com",
   "library_type": "GAPIC_COMBO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/bigquery-team",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559654",
   "recommended_package": "com.google.cloud.bigquery.storage.v1"

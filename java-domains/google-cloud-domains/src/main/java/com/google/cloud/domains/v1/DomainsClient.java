@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -443,7 +444,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DomainsClient implements BackgroundResource {
-  private final DomainsSettings settings;
+  private final @Nullable DomainsSettings settings;
   private final DomainsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -489,7 +490,7 @@ public class DomainsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DomainsSettings getSettings() {
+  public final @Nullable DomainsSettings getSettings() {
     return settings;
   }
 
@@ -540,7 +541,7 @@ public class DomainsClient implements BackgroundResource {
    * @param query Required. String used to search for available domain names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchDomainsResponse searchDomains(LocationName location, String query) {
+  public final SearchDomainsResponse searchDomains(@Nullable LocationName location, String query) {
     SearchDomainsRequest request =
         SearchDomainsRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -672,7 +673,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetrieveRegisterParametersResponse retrieveRegisterParameters(
-      LocationName location, String domainName) {
+      @Nullable LocationName location, String domainName) {
     RetrieveRegisterParametersRequest request =
         RetrieveRegisterParametersRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -818,7 +819,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> registerDomainAsync(
-      LocationName parent, Registration registration, Money yearlyPrice) {
+      @Nullable LocationName parent, Registration registration, Money yearlyPrice) {
     RegisterDomainRequest request =
         RegisterDomainRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1032,7 +1033,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetrieveTransferParametersResponse retrieveTransferParameters(
-      LocationName location, String domainName) {
+      @Nullable LocationName location, String domainName) {
     RetrieveTransferParametersRequest request =
         RetrieveTransferParametersRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -1201,7 +1202,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> transferDomainAsync(
-      LocationName parent,
+      @Nullable LocationName parent,
       Registration registration,
       Money yearlyPrice,
       AuthorizationCode authorizationCode) {
@@ -1456,7 +1457,7 @@ public class DomainsClient implements BackgroundResource {
    *     in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRegistrationsPagedResponse listRegistrations(LocationName parent) {
+  public final ListRegistrationsPagedResponse listRegistrations(@Nullable LocationName parent) {
     ListRegistrationsRequest request =
         ListRegistrationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1624,7 +1625,7 @@ public class DomainsClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Registration getRegistration(RegistrationName name) {
+  public final Registration getRegistration(@Nullable RegistrationName name) {
     GetRegistrationRequest request =
         GetRegistrationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRegistration(request);
@@ -1896,7 +1897,9 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureManagementSettingsAsync(
-      RegistrationName registration, ManagementSettings managementSettings, FieldMask updateMask) {
+      @Nullable RegistrationName registration,
+      ManagementSettings managementSettings,
+      FieldMask updateMask) {
     ConfigureManagementSettingsRequest request =
         ConfigureManagementSettingsRequest.newBuilder()
             .setRegistration(registration == null ? null : registration.toString())
@@ -2080,7 +2083,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureDnsSettingsAsync(
-      RegistrationName registration, DnsSettings dnsSettings, FieldMask updateMask) {
+      @Nullable RegistrationName registration, DnsSettings dnsSettings, FieldMask updateMask) {
     ConfigureDnsSettingsRequest request =
         ConfigureDnsSettingsRequest.newBuilder()
             .setRegistration(registration == null ? null : registration.toString())
@@ -2267,7 +2270,9 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> configureContactSettingsAsync(
-      RegistrationName registration, ContactSettings contactSettings, FieldMask updateMask) {
+      @Nullable RegistrationName registration,
+      ContactSettings contactSettings,
+      FieldMask updateMask) {
     ConfigureContactSettingsRequest request =
         ConfigureContactSettingsRequest.newBuilder()
             .setRegistration(registration == null ? null : registration.toString())
@@ -2455,7 +2460,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Registration, OperationMetadata> exportRegistrationAsync(
-      RegistrationName name) {
+      @Nullable RegistrationName name) {
     ExportRegistrationRequest request =
         ExportRegistrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2643,7 +2648,7 @@ public class DomainsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRegistrationAsync(
-      RegistrationName name) {
+      @Nullable RegistrationName name) {
     DeleteRegistrationRequest request =
         DeleteRegistrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2867,7 +2872,8 @@ public class DomainsClient implements BackgroundResource {
    *     retrieved, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AuthorizationCode retrieveAuthorizationCode(RegistrationName registration) {
+  public final AuthorizationCode retrieveAuthorizationCode(
+      @Nullable RegistrationName registration) {
     RetrieveAuthorizationCodeRequest request =
         RetrieveAuthorizationCodeRequest.newBuilder()
             .setRegistration(registration == null ? null : registration.toString())
@@ -3002,7 +3008,7 @@ public class DomainsClient implements BackgroundResource {
    *     reset, in the format `projects/&#42;/locations/&#42;/registrations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AuthorizationCode resetAuthorizationCode(RegistrationName registration) {
+  public final AuthorizationCode resetAuthorizationCode(@Nullable RegistrationName registration) {
     ResetAuthorizationCodeRequest request =
         ResetAuthorizationCodeRequest.newBuilder()
             .setRegistration(registration == null ? null : registration.toString())
@@ -3169,8 +3175,9 @@ public class DomainsClient implements BackgroundResource {
           ListRegistrationsPage> {
 
     private ListRegistrationsPage(
-        PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration> context,
-        ListRegistrationsResponse response) {
+        @Nullable PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration>
+            context,
+        @Nullable ListRegistrationsResponse response) {
       super(context, response);
     }
 
@@ -3180,14 +3187,16 @@ public class DomainsClient implements BackgroundResource {
 
     @Override
     protected ListRegistrationsPage createPage(
-        PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration> context,
-        ListRegistrationsResponse response) {
+        @Nullable PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration>
+            context,
+        @Nullable ListRegistrationsResponse response) {
       return new ListRegistrationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRegistrationsPage> createPageAsync(
-        PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration> context,
+        @Nullable PageContext<ListRegistrationsRequest, ListRegistrationsResponse, Registration>
+            context,
         ApiFuture<ListRegistrationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3202,7 +3211,7 @@ public class DomainsClient implements BackgroundResource {
           ListRegistrationsFixedSizeCollection> {
 
     private ListRegistrationsFixedSizeCollection(
-        List<ListRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListRegistrationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3212,7 +3221,7 @@ public class DomainsClient implements BackgroundResource {
 
     @Override
     protected ListRegistrationsFixedSizeCollection createCollection(
-        List<ListRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListRegistrationsPage> pages, int collectionSize) {
       return new ListRegistrationsFixedSizeCollection(pages, collectionSize);
     }
   }

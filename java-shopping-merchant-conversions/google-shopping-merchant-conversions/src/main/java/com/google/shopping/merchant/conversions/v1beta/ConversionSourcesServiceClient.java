@@ -35,6 +35,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -240,7 +241,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversionSourcesServiceClient implements BackgroundResource {
-  private final ConversionSourcesServiceSettings settings;
+  private final @Nullable ConversionSourcesServiceSettings settings;
   private final ConversionSourcesServiceStub stub;
 
   /** Constructs an instance of ConversionSourcesServiceClient with default settings. */
@@ -282,7 +283,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConversionSourcesServiceSettings getSettings() {
+  public final @Nullable ConversionSourcesServiceSettings getSettings() {
     return settings;
   }
 
@@ -318,7 +319,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConversionSource createConversionSource(
-      AccountName parent, ConversionSource conversionSource) {
+      @Nullable AccountName parent, ConversionSource conversionSource) {
     CreateConversionSourceRequest request =
         CreateConversionSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -550,7 +551,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
    *     accounts/{account}/conversionSources/{conversion_source}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConversionSource(ConversionSourceName name) {
+  public final void deleteConversionSource(@Nullable ConversionSourceName name) {
     DeleteConversionSourceRequest request =
         DeleteConversionSourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -736,7 +737,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
    *     accounts/{account}/conversionsources/{conversion_source}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConversionSource getConversionSource(ConversionSourceName name) {
+  public final ConversionSource getConversionSource(@Nullable ConversionSourceName name) {
     GetConversionSourceRequest request =
         GetConversionSourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -858,7 +859,8 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
    *     Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversionSourcesPagedResponse listConversionSources(AccountName parent) {
+  public final ListConversionSourcesPagedResponse listConversionSources(
+      @Nullable AccountName parent) {
     ListConversionSourcesRequest request =
         ListConversionSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1074,9 +1076,11 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
           ListConversionSourcesPage> {
 
     private ListConversionSourcesPage(
-        PageContext<ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
+        @Nullable
+            PageContext<
+                ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
             context,
-        ListConversionSourcesResponse response) {
+        @Nullable ListConversionSourcesResponse response) {
       super(context, response);
     }
 
@@ -1086,15 +1090,19 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionSourcesPage createPage(
-        PageContext<ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
+        @Nullable
+            PageContext<
+                ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
             context,
-        ListConversionSourcesResponse response) {
+        @Nullable ListConversionSourcesResponse response) {
       return new ListConversionSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversionSourcesPage> createPageAsync(
-        PageContext<ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
+        @Nullable
+            PageContext<
+                ListConversionSourcesRequest, ListConversionSourcesResponse, ConversionSource>
             context,
         ApiFuture<ListConversionSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1110,7 +1118,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
           ListConversionSourcesFixedSizeCollection> {
 
     private ListConversionSourcesFixedSizeCollection(
-        List<ListConversionSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListConversionSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1120,7 +1128,7 @@ public class ConversionSourcesServiceClient implements BackgroundResource {
 
     @Override
     protected ListConversionSourcesFixedSizeCollection createCollection(
-        List<ListConversionSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListConversionSourcesPage> pages, int collectionSize) {
       return new ListConversionSourcesFixedSizeCollection(pages, collectionSize);
     }
   }

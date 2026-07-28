@@ -10,6 +10,5 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-showcase",
   "distribution_name": "com.google.cloud:gapic-showcase",
-  "library_type": "OTHER",
-  "requires_billing": true
+  "library_type": "OTHER"
 }

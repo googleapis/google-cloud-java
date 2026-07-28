@@ -35,6 +35,8 @@ import com.google.cloud.biglake.hive.v1beta.CreateHiveTableRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveTableRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse;
 import com.google.cloud.biglake.hive.v1beta.GetHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveTableRequest;
@@ -161,6 +163,11 @@ public abstract class HiveMetastoreServiceStub implements BackgroundResource {
   public ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listPartitionsCallable()");
+  }
+
+  public UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable() {
+    throw new UnsupportedOperationException("Not implemented: failoverHiveCatalogCallable()");
   }
 
   @Override

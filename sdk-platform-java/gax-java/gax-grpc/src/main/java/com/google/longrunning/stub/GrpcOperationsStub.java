@@ -52,12 +52,14 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * gRPC stub implementation for Google Long Running Operations API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 public class GrpcOperationsStub extends OperationsStub {
 
   private static final MethodDescriptor<GetOperationRequest, Operation>

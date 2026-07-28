@@ -53,23 +53,34 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedServerStreamingCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    parentTracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    tracerContext = mock(ApiTracerContext.class, Mockito.withSettings().withoutAnnotations());
+    tracerContextBuilder =
+        mock(ApiTracerContext.Builder.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
 
-  @Mock private ApiTracerFactory tracerFactory;
-  @Mock private ApiTracer tracer;
-  @Mock private ApiTracerContext tracerContext;
-  @Mock private ApiTracerContext.Builder tracerContextBuilder;
+  private ApiTracerFactory tracerFactory;
+  private ApiTracer tracer;
+  private ApiTracerContext tracerContext;
+  private ApiTracerContext.Builder tracerContextBuilder;
 
   private MockServerStreamingCallable<String, String> innerCallable;
   private TracedServerStreamingCallable<String, String> tracedCallable;
   private MockResponseObserver<String> responseObserver;
   private ApiCallContext callContext;
-  @Mock private ApiTracer parentTracer;
+  private ApiTracer parentTracer;
 
   void init(boolean useContext) {
     innerCallable = new MockServerStreamingCallable<>();
@@ -184,7 +195,8 @@ class TracedServerStreamingCallableTest {
     RuntimeException expectedError = new RuntimeException("expected error");
 
     // Create a broken inner callable
-    ServerStreamingCallable<String, String> innerCallable = mock(ServerStreamingCallable.class);
+    ServerStreamingCallable<String, String> innerCallable =
+        mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
     doThrow(expectedError)
         .when(innerCallable)
         .call(

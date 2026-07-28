@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetDeviceCategory</td>
- *      <td><p> API to retrieve a `DeviceCategory` object.</td>
+ *      <td><p> Retrieves a `DeviceCategory` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListDeviceCategories</td>
- *      <td><p> API to retrieve a list of `DeviceCategory` objects.</td>
+ *      <td><p> Lists `DeviceCategory` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeviceCategoryServiceClient implements BackgroundResource {
-  private final DeviceCategoryServiceSettings settings;
+  private final @Nullable DeviceCategoryServiceSettings settings;
   private final DeviceCategoryServiceStub stub;
 
   /** Constructs an instance of DeviceCategoryServiceClient with default settings. */
@@ -189,7 +190,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeviceCategoryServiceSettings getSettings() {
+  public final @Nullable DeviceCategoryServiceSettings getSettings() {
     return settings;
   }
 
@@ -199,7 +200,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCategory` object.
+   * Retrieves a `DeviceCategory` object.
    *
    * <p>Sample code:
    *
@@ -220,7 +221,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
    *     `networks/{network_code}/deviceCategories/{device_category_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeviceCategory getDeviceCategory(DeviceCategoryName name) {
+  public final DeviceCategory getDeviceCategory(@Nullable DeviceCategoryName name) {
     GetDeviceCategoryRequest request =
         GetDeviceCategoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -230,7 +231,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCategory` object.
+   * Retrieves a `DeviceCategory` object.
    *
    * <p>Sample code:
    *
@@ -258,7 +259,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCategory` object.
+   * Retrieves a `DeviceCategory` object.
    *
    * <p>Sample code:
    *
@@ -287,7 +288,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceCategory` object.
+   * Retrieves a `DeviceCategory` object.
    *
    * <p>Sample code:
    *
@@ -316,7 +317,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCategory` objects.
+   * Lists `DeviceCategory` objects.
    *
    * <p>Sample code:
    *
@@ -340,7 +341,8 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeviceCategoriesPagedResponse listDeviceCategories(NetworkName parent) {
+  public final ListDeviceCategoriesPagedResponse listDeviceCategories(
+      @Nullable NetworkName parent) {
     ListDeviceCategoriesRequest request =
         ListDeviceCategoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -350,7 +352,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCategory` objects.
+   * Lists `DeviceCategory` objects.
    *
    * <p>Sample code:
    *
@@ -382,7 +384,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCategory` objects.
+   * Lists `DeviceCategory` objects.
    *
    * <p>Sample code:
    *
@@ -420,7 +422,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCategory` objects.
+   * Lists `DeviceCategory` objects.
    *
    * <p>Sample code:
    *
@@ -457,7 +459,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceCategory` objects.
+   * Lists `DeviceCategory` objects.
    *
    * <p>Sample code:
    *
@@ -562,9 +564,10 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
           ListDeviceCategoriesPage> {
 
     private ListDeviceCategoriesPage(
-        PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
+        @Nullable
+            PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
             context,
-        ListDeviceCategoriesResponse response) {
+        @Nullable ListDeviceCategoriesResponse response) {
       super(context, response);
     }
 
@@ -574,15 +577,17 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceCategoriesPage createPage(
-        PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
+        @Nullable
+            PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
             context,
-        ListDeviceCategoriesResponse response) {
+        @Nullable ListDeviceCategoriesResponse response) {
       return new ListDeviceCategoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeviceCategoriesPage> createPageAsync(
-        PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
+        @Nullable
+            PageContext<ListDeviceCategoriesRequest, ListDeviceCategoriesResponse, DeviceCategory>
             context,
         ApiFuture<ListDeviceCategoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -598,7 +603,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
           ListDeviceCategoriesFixedSizeCollection> {
 
     private ListDeviceCategoriesFixedSizeCollection(
-        List<ListDeviceCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceCategoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -608,7 +613,7 @@ public class DeviceCategoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeviceCategoriesFixedSizeCollection createCollection(
-        List<ListDeviceCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListDeviceCategoriesPage> pages, int collectionSize) {
       return new ListDeviceCategoriesFixedSizeCollection(pages, collectionSize);
     }
   }

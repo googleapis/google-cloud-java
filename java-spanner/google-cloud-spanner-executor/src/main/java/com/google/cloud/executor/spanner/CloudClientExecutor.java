@@ -394,14 +394,13 @@ public class CloudClientExecutor extends CloudExecutor {
                   List<TransactionOption> transactionOptions = new ArrayList<>();
                   if (repeatableRead) {
                     transactionOptions.add(Options.isolationLevel(IsolationLevel.REPEATABLE_READ));
-                  } else {
-                    transactionOptions.add(Options.isolationLevel(IsolationLevel.SERIALIZABLE));
+                    transactionOptions.add(
+                        Options.readLockMode(
+                            optimistic ? ReadLockMode.OPTIMISTIC : ReadLockMode.PESSIMISTIC));
                   }
                   if (!repeatableRead && optimistic) {
+                    transactionOptions.add(Options.isolationLevel(IsolationLevel.SERIALIZABLE));
                     transactionOptions.add(Options.readLockMode(ReadLockMode.OPTIMISTIC));
-                  }
-                  if (repeatableRead && !optimistic) {
-                    transactionOptions.add(Options.readLockMode(ReadLockMode.PESSIMISTIC));
                   }
                   runner =
                       dbClient.readWriteTransaction(
@@ -786,11 +785,13 @@ public class CloudClientExecutor extends CloudExecutor {
               if (rwTxn.getTimestamp() != null) {
                 outcomeBuilder.setCommitTime(rwTxn.getTimestamp());
               }
-              if (finishMode == Mode.COMMIT
-                  && rwTxn.runner.getCommitResponse().getSnapshotTimestamp() != null) {
-                outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
-                    Timestamps.toMicros(
-                        rwTxn.runner.getCommitResponse().getSnapshotTimestamp().toProto()));
+              if (finishMode == Mode.COMMIT && rwTxn.runner.getCommitResponse() != null) {
+                com.google.cloud.spanner.CommitResponse commitResponse =
+                    rwTxn.runner.getCommitResponse();
+                if (commitResponse.getSnapshotTimestamp() != null) {
+                  outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
+                      Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
+                }
               }
               clear();
             }

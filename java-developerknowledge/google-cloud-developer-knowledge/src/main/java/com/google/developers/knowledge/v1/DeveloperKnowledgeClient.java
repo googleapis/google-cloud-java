@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -126,6 +127,20 @@ import org.jspecify.annotations.NullMarked;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> AnswerQuery</td>
+ *      <td><p> Answers a query using grounded generation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> answerQuery(AnswerQueryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> answerQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -187,7 +202,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeveloperKnowledgeClient implements BackgroundResource {
-  private final DeveloperKnowledgeSettings settings;
+  private final @Nullable DeveloperKnowledgeSettings settings;
   private final DeveloperKnowledgeStub stub;
 
   /** Constructs an instance of DeveloperKnowledgeClient with default settings. */
@@ -227,7 +242,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeveloperKnowledgeSettings getSettings() {
+  public final @Nullable DeveloperKnowledgeSettings getSettings() {
     return settings;
   }
 
@@ -395,7 +410,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Document getDocument(DocumentName name) {
+  public final Document getDocument(@Nullable DocumentName name) {
     GetDocumentRequest request =
         GetDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDocument(request);
@@ -546,6 +561,58 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
     return stub.batchGetDocumentsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answers a query using grounded generation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *   AnswerQueryResponse response = developerKnowledgeClient.answerQuery(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnswerQueryResponse answerQuery(AnswerQueryRequest request) {
+    return answerQueryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answers a query using grounded generation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *   ApiFuture<AnswerQueryResponse> future =
+   *       developerKnowledgeClient.answerQueryCallable().futureCall(request);
+   *   // Do something.
+   *   AnswerQueryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return stub.answerQueryCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -609,9 +676,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
           SearchDocumentChunksPage> {
 
     private SearchDocumentChunksPage(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
-        SearchDocumentChunksResponse response) {
+        @Nullable SearchDocumentChunksResponse response) {
       super(context, response);
     }
 
@@ -621,15 +689,17 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentChunksPage createPage(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
-        SearchDocumentChunksResponse response) {
+        @Nullable SearchDocumentChunksResponse response) {
       return new SearchDocumentChunksPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDocumentChunksPage> createPageAsync(
-        PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
+        @Nullable
+            PageContext<SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
             context,
         ApiFuture<SearchDocumentChunksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -645,7 +715,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
           SearchDocumentChunksFixedSizeCollection> {
 
     private SearchDocumentChunksFixedSizeCollection(
-        List<SearchDocumentChunksPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentChunksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -655,7 +725,7 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
 
     @Override
     protected SearchDocumentChunksFixedSizeCollection createCollection(
-        List<SearchDocumentChunksPage> pages, int collectionSize) {
+        @Nullable List<SearchDocumentChunksPage> pages, int collectionSize) {
       return new SearchDocumentChunksFixedSizeCollection(pages, collectionSize);
     }
   }

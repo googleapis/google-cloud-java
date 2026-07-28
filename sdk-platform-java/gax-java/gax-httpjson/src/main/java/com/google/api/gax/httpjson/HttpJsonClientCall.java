@@ -29,7 +29,8 @@
  */
 package com.google.api.gax.httpjson;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // This class mimics the structure and behavior of the corresponding ClientCall from gRPC package as
 // closely as possible.
@@ -57,6 +58,7 @@ import javax.annotation.Nullable;
  * @param <RequestT> type of message sent to the server
  * @param <ResponseT> type of message received one or more times from the server
  */
+@NullMarked
 public abstract class HttpJsonClientCall<RequestT, ResponseT> {
   /**
    * Callbacks for receiving metadata, response messages and completion status from the server.

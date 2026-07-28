@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -368,7 +369,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ParameterManagerClient implements BackgroundResource {
-  private final ParameterManagerSettings settings;
+  private final @Nullable ParameterManagerSettings settings;
   private final ParameterManagerStub stub;
 
   /** Constructs an instance of ParameterManagerClient with default settings. */
@@ -408,7 +409,7 @@ public class ParameterManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ParameterManagerSettings getSettings() {
+  public final @Nullable ParameterManagerSettings getSettings() {
     return settings;
   }
 
@@ -440,7 +441,7 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListParametersPagedResponse listParameters(LocationName parent) {
+  public final ListParametersPagedResponse listParameters(@Nullable LocationName parent) {
     ListParametersRequest request =
         ListParametersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -610,7 +611,7 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/parameters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Parameter getParameter(ParameterName name) {
+  public final Parameter getParameter(@Nullable ParameterName name) {
     GetParameterRequest request =
         GetParameterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getParameter(request);
@@ -725,7 +726,7 @@ public class ParameterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Parameter createParameter(
-      LocationName parent, Parameter parameter, String parameterId) {
+      @Nullable LocationName parent, Parameter parameter, String parameterId) {
     CreateParameterRequest request =
         CreateParameterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -950,7 +951,7 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/parameters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteParameter(ParameterName name) {
+  public final void deleteParameter(@Nullable ParameterName name) {
     DeleteParameterRequest request =
         DeleteParameterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteParameter(request);
@@ -1066,7 +1067,8 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/parameters/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListParameterVersionsPagedResponse listParameterVersions(ParameterName parent) {
+  public final ListParameterVersionsPagedResponse listParameterVersions(
+      @Nullable ParameterName parent) {
     ListParameterVersionsRequest request =
         ListParameterVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1241,7 +1243,7 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/parameters/&#42;/versions/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ParameterVersion getParameterVersion(ParameterVersionName name) {
+  public final ParameterVersion getParameterVersion(@Nullable ParameterVersionName name) {
     GetParameterVersionRequest request =
         GetParameterVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1366,7 +1368,8 @@ public class ParameterManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RenderParameterVersionResponse renderParameterVersion(ParameterVersionName name) {
+  public final RenderParameterVersionResponse renderParameterVersion(
+      @Nullable ParameterVersionName name) {
     RenderParameterVersionRequest request =
         RenderParameterVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1497,7 +1500,9 @@ public class ParameterManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ParameterVersion createParameterVersion(
-      ParameterName parent, ParameterVersion parameterVersion, String parameterVersionId) {
+      @Nullable ParameterName parent,
+      ParameterVersion parameterVersion,
+      String parameterVersionId) {
     CreateParameterVersionRequest request =
         CreateParameterVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1731,7 +1736,7 @@ public class ParameterManagerClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/parameters/&#42;/versions/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteParameterVersion(ParameterVersionName name) {
+  public final void deleteParameterVersion(@Nullable ParameterVersionName name) {
     DeleteParameterVersionRequest request =
         DeleteParameterVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2049,8 +2054,8 @@ public class ParameterManagerClient implements BackgroundResource {
           ListParametersRequest, ListParametersResponse, Parameter, ListParametersPage> {
 
     private ListParametersPage(
-        PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
-        ListParametersResponse response) {
+        @Nullable PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
+        @Nullable ListParametersResponse response) {
       super(context, response);
     }
 
@@ -2060,14 +2065,14 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListParametersPage createPage(
-        PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
-        ListParametersResponse response) {
+        @Nullable PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
+        @Nullable ListParametersResponse response) {
       return new ListParametersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListParametersPage> createPageAsync(
-        PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
+        @Nullable PageContext<ListParametersRequest, ListParametersResponse, Parameter> context,
         ApiFuture<ListParametersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2081,7 +2086,8 @@ public class ParameterManagerClient implements BackgroundResource {
           ListParametersPage,
           ListParametersFixedSizeCollection> {
 
-    private ListParametersFixedSizeCollection(List<ListParametersPage> pages, int collectionSize) {
+    private ListParametersFixedSizeCollection(
+        @Nullable List<ListParametersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2091,7 +2097,7 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListParametersFixedSizeCollection createCollection(
-        List<ListParametersPage> pages, int collectionSize) {
+        @Nullable List<ListParametersPage> pages, int collectionSize) {
       return new ListParametersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2129,9 +2135,11 @@ public class ParameterManagerClient implements BackgroundResource {
           ListParameterVersionsPage> {
 
     private ListParameterVersionsPage(
-        PageContext<ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
+        @Nullable
+            PageContext<
+                ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
             context,
-        ListParameterVersionsResponse response) {
+        @Nullable ListParameterVersionsResponse response) {
       super(context, response);
     }
 
@@ -2141,15 +2149,19 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListParameterVersionsPage createPage(
-        PageContext<ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
+        @Nullable
+            PageContext<
+                ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
             context,
-        ListParameterVersionsResponse response) {
+        @Nullable ListParameterVersionsResponse response) {
       return new ListParameterVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListParameterVersionsPage> createPageAsync(
-        PageContext<ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
+        @Nullable
+            PageContext<
+                ListParameterVersionsRequest, ListParameterVersionsResponse, ParameterVersion>
             context,
         ApiFuture<ListParameterVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2165,7 +2177,7 @@ public class ParameterManagerClient implements BackgroundResource {
           ListParameterVersionsFixedSizeCollection> {
 
     private ListParameterVersionsFixedSizeCollection(
-        List<ListParameterVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListParameterVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2175,7 +2187,7 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListParameterVersionsFixedSizeCollection createCollection(
-        List<ListParameterVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListParameterVersionsPage> pages, int collectionSize) {
       return new ListParameterVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2209,8 +2221,8 @@ public class ParameterManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2220,14 +2232,14 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2241,7 +2253,8 @@ public class ParameterManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2251,7 +2264,7 @@ public class ParameterManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

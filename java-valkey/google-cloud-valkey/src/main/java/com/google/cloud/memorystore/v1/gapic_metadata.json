@@ -10,11 +10,20 @@
         "grpc": {
           "libraryClient": "MemorystoreClient",
           "rpcs": {
+            "AddAuthToken": {
+              "methods": ["addAuthTokenAsync", "addAuthTokenAsync", "addAuthTokenAsync", "addAuthTokenOperationCallable", "addAuthTokenCallable"]
+            },
+            "AddTokenAuthUser": {
+              "methods": ["addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserOperationCallable", "addTokenAuthUserCallable"]
+            },
             "BackupInstance": {
               "methods": ["backupInstanceAsync", "backupInstanceAsync", "backupInstanceAsync", "backupInstanceOperationCallable", "backupInstanceCallable"]
             },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "DeleteAuthToken": {
+              "methods": ["deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenOperationCallable", "deleteAuthTokenCallable"]
             },
             "DeleteBackup": {
               "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
@@ -22,11 +31,17 @@
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
             },
+            "DeleteTokenAuthUser": {
+              "methods": ["deleteTokenAuthUserAsync", "deleteTokenAuthUserAsync", "deleteTokenAuthUserAsync", "deleteTokenAuthUserOperationCallable", "deleteTokenAuthUserCallable"]
+            },
             "ExportBackup": {
               "methods": ["exportBackupAsync", "exportBackupOperationCallable", "exportBackupCallable"]
             },
             "FinishMigration": {
               "methods": ["finishMigrationAsync", "finishMigrationAsync", "finishMigrationAsync", "finishMigrationOperationCallable", "finishMigrationCallable"]
+            },
+            "GetAuthToken": {
+              "methods": ["getAuthToken", "getAuthToken", "getAuthToken", "getAuthTokenCallable"]
             },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
@@ -46,6 +61,12 @@
             "GetSharedRegionalCertificateAuthority": {
               "methods": ["getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthorityCallable"]
             },
+            "GetTokenAuthUser": {
+              "methods": ["getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUserCallable"]
+            },
+            "ListAuthTokens": {
+              "methods": ["listAuthTokens", "listAuthTokens", "listAuthTokens", "listAuthTokensPagedCallable", "listAuthTokensCallable"]
+            },
             "ListBackupCollections": {
               "methods": ["listBackupCollections", "listBackupCollections", "listBackupCollections", "listBackupCollectionsPagedCallable", "listBackupCollectionsCallable"]
             },
@@ -57,6 +78,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTokenAuthUsers": {
+              "methods": ["listTokenAuthUsers", "listTokenAuthUsers", "listTokenAuthUsers", "listTokenAuthUsersPagedCallable", "listTokenAuthUsersCallable"]
             },
             "RescheduleMaintenance": {
               "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]

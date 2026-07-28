@@ -16,7 +16,9 @@ package com.google.api.generator.engine.ast;
 
 import com.google.api.generator.engine.lexicon.Literal;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class PrimitiveValue implements Value {
   @Override

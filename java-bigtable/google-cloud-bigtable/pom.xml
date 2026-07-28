@@ -20,8 +20,9 @@
     <site.installationModule>google-cloud-bigtable</site.installationModule>
 
     <!-- Enable the ability to skip unit tests and only run integration tests,
-         while still respecting global skipTests override. -->
-    <skipTests>false</skipTests>
+         while still respecting global skipTests override and parent bulkTests profile.
+         Do NOT set an explicit <skipTests>false</skipTests> here, as submodule property
+         declarations override parent profile settings and prevent -PbulkTests from working. -->
     <skipUnitTests>${skipTests}</skipUnitTests>
     <skipITs>${skipTests}</skipITs>
     <!-- Configure test logging output. By default tests print info logs to stdout/err.
@@ -248,10 +249,6 @@
       <artifactId>opentelemetry-sdk-common</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud.opentelemetry</groupId>
-      <artifactId>detector-resources-support</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-testing</artifactId>
       <scope>test</scope>
@@ -263,6 +260,14 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry.contrib</groupId>
+      <artifactId>opentelemetry-gcp-resources</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
     </dependency>
 
     <!-- export custom metrics to cloud console -->

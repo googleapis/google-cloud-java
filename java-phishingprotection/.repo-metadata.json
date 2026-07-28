@@ -11,6 +11,5 @@
   "repo_short": "java-phishingprotection",
   "distribution_name": "com.google.cloud:google-cloud-phishingprotection",
   "api_id": "phishingprotection.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": false
+  "library_type": "GAPIC_AUTO"
 }

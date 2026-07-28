@@ -35,6 +35,7 @@ import com.google.api.gax.retrying.NonCancellableFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Callable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A callable representing an attempt to check the status of something by issuing a call to a
@@ -45,6 +46,7 @@ import java.util.concurrent.Callable;
  * @param <RequestT> request type
  * @param <ResponseT> response type
  */
+@NullMarked
 class CheckingAttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> callable;
   private final ApiCallContext originalCallContext;

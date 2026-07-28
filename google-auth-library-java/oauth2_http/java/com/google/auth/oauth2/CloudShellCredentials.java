@@ -43,8 +43,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** OAuth2 credentials representing the built-in service account for Google Cloud Shell. */
+@NullMarked
 public class CloudShellCredentials extends GoogleCredentials {
 
   private static final long serialVersionUID = -2133257318957488451L;
@@ -109,7 +112,7 @@ public class CloudShellCredentials extends GoogleCredentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof CloudShellCredentials)) {
       return false;
     }

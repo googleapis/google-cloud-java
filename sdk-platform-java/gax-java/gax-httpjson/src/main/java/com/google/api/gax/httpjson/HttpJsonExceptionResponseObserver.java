@@ -33,8 +33,10 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StateCheckingResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /** Package-private for internal use. */
+@NullMarked
 class HttpJsonExceptionResponseObserver<ResponseT>
     extends StateCheckingResponseObserver<ResponseT> {
   private final ResponseObserver<ResponseT> innerObserver;

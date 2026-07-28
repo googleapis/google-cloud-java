@@ -12,6 +12,5 @@
   "distribution_name": "com.google.maps:google-maps-solar",
   "api_id": "maps-solar.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://developers.google.com/maps/documentation/solar/reference/rest"
 }

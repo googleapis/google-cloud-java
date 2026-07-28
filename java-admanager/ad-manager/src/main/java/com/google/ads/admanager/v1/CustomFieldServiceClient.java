@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomField</td>
- *      <td><p> API to retrieve a `CustomField` object.</td>
+ *      <td><p> Retrieves a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListCustomFields</td>
- *      <td><p> API to retrieve a list of `CustomField` objects.</td>
+ *      <td><p> Lists `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +106,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCustomField</td>
- *      <td><p> API to create a `CustomField` object.</td>
+ *      <td><p> Creates a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +125,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateCustomFields</td>
- *      <td><p> API to batch create `CustomField` objects.</td>
+ *      <td><p> Creates `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +141,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCustomField</td>
- *      <td><p> API to update a `CustomField` object.</td>
+ *      <td><p> Updates a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +159,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateCustomFields</td>
- *      <td><p> API to batch update `CustomField` objects.</td>
+ *      <td><p> Batch updates `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -256,7 +257,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CustomFieldServiceClient implements BackgroundResource {
-  private final CustomFieldServiceSettings settings;
+  private final @Nullable CustomFieldServiceSettings settings;
   private final CustomFieldServiceStub stub;
 
   /** Constructs an instance of CustomFieldServiceClient with default settings. */
@@ -296,7 +297,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CustomFieldServiceSettings getSettings() {
+  public final @Nullable CustomFieldServiceSettings getSettings() {
     return settings;
   }
 
@@ -306,7 +307,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -326,7 +327,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    *     `networks/{network_code}/customFields/{custom_field_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomField getCustomField(CustomFieldName name) {
+  public final CustomField getCustomField(@Nullable CustomFieldName name) {
     GetCustomFieldRequest request =
         GetCustomFieldRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomField(request);
@@ -334,7 +335,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -361,7 +362,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -389,7 +390,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -417,7 +418,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -439,7 +440,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomFieldsPagedResponse listCustomFields(NetworkName parent) {
+  public final ListCustomFieldsPagedResponse listCustomFields(@Nullable NetworkName parent) {
     ListCustomFieldsRequest request =
         ListCustomFieldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -449,7 +450,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -479,7 +480,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -514,7 +515,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -550,7 +551,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -593,7 +594,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -615,7 +616,8 @@ public class CustomFieldServiceClient implements BackgroundResource {
    * @param customField Required. The `CustomField` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomField createCustomField(NetworkName parent, CustomField customField) {
+  public final CustomField createCustomField(
+      @Nullable NetworkName parent, CustomField customField) {
     CreateCustomFieldRequest request =
         CreateCustomFieldRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -626,7 +628,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -656,7 +658,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -685,7 +687,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -714,7 +716,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -740,7 +742,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateCustomFieldsResponse batchCreateCustomFields(
-      NetworkName parent, List<CreateCustomFieldRequest> requests) {
+      @Nullable NetworkName parent, List<CreateCustomFieldRequest> requests) {
     BatchCreateCustomFieldsRequest request =
         BatchCreateCustomFieldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -751,7 +753,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -788,7 +790,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -819,7 +821,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -849,7 +851,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -882,7 +884,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -911,7 +913,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -940,7 +942,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -966,7 +968,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateCustomFieldsResponse batchUpdateCustomFields(
-      NetworkName parent, List<UpdateCustomFieldRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateCustomFieldRequest> requests) {
     BatchUpdateCustomFieldsRequest request =
         BatchUpdateCustomFieldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -977,7 +979,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -1014,7 +1016,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -1045,7 +1047,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -1099,7 +1101,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateCustomFieldsResponse batchActivateCustomFields(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateCustomFieldsRequest request =
         BatchActivateCustomFieldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1227,7 +1229,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateCustomFieldsResponse batchDeactivateCustomFields(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateCustomFieldsRequest request =
         BatchDeactivateCustomFieldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1392,8 +1394,9 @@ public class CustomFieldServiceClient implements BackgroundResource {
           ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField, ListCustomFieldsPage> {
 
     private ListCustomFieldsPage(
-        PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField> context,
-        ListCustomFieldsResponse response) {
+        @Nullable PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField>
+            context,
+        @Nullable ListCustomFieldsResponse response) {
       super(context, response);
     }
 
@@ -1403,14 +1406,16 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomFieldsPage createPage(
-        PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField> context,
-        ListCustomFieldsResponse response) {
+        @Nullable PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField>
+            context,
+        @Nullable ListCustomFieldsResponse response) {
       return new ListCustomFieldsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomFieldsPage> createPageAsync(
-        PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField> context,
+        @Nullable PageContext<ListCustomFieldsRequest, ListCustomFieldsResponse, CustomField>
+            context,
         ApiFuture<ListCustomFieldsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1425,7 +1430,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
           ListCustomFieldsFixedSizeCollection> {
 
     private ListCustomFieldsFixedSizeCollection(
-        List<ListCustomFieldsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomFieldsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1435,7 +1440,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomFieldsFixedSizeCollection createCollection(
-        List<ListCustomFieldsPage> pages, int collectionSize) {
+        @Nullable List<ListCustomFieldsPage> pages, int collectionSize) {
       return new ListCustomFieldsFixedSizeCollection(pages, collectionSize);
     }
   }

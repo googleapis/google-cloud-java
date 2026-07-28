@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -318,7 +319,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AccessApprovalAdminClient implements BackgroundResource {
-  private final AccessApprovalAdminSettings settings;
+  private final @Nullable AccessApprovalAdminSettings settings;
   private final AccessApprovalStub stub;
 
   /** Constructs an instance of AccessApprovalAdminClient with default settings. */
@@ -358,7 +359,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccessApprovalAdminSettings getSettings() {
+  public final @Nullable AccessApprovalAdminSettings getSettings() {
     return settings;
   }
 
@@ -392,7 +393,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *     "organizations/{organization}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApprovalRequestsPagedResponse listApprovalRequests(FolderName parent) {
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(@Nullable FolderName parent) {
     ListApprovalRequestsMessage request =
         ListApprovalRequestsMessage.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -426,7 +427,8 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *     "organizations/{organization}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApprovalRequestsPagedResponse listApprovalRequests(OrganizationName parent) {
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(
+      @Nullable OrganizationName parent) {
     ListApprovalRequestsMessage request =
         ListApprovalRequestsMessage.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -460,7 +462,8 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *     "organizations/{organization}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApprovalRequestsPagedResponse listApprovalRequests(ProjectName parent) {
+  public final ListApprovalRequestsPagedResponse listApprovalRequests(
+      @Nullable ProjectName parent) {
     ListApprovalRequestsMessage request =
         ListApprovalRequestsMessage.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -636,7 +639,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *     "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ApprovalRequest getApprovalRequest(ApprovalRequestName name) {
+  public final ApprovalRequest getApprovalRequest(@Nullable ApprovalRequestName name) {
     GetApprovalRequestMessage request =
         GetApprovalRequestMessage.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -980,7 +983,8 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    *     "{projects|folders|organizations}/{id}/accessApprovalSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccessApprovalSettings getAccessApprovalSettings(AccessApprovalSettingsName name) {
+  public final AccessApprovalSettings getAccessApprovalSettings(
+      @Nullable AccessApprovalSettingsName name) {
     GetAccessApprovalSettingsMessage request =
         GetAccessApprovalSettingsMessage.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1204,7 +1208,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
    * @param name Name of the AccessApprovalSettings to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAccessApprovalSettings(AccessApprovalSettingsName name) {
+  public final void deleteAccessApprovalSettings(@Nullable AccessApprovalSettingsName name) {
     DeleteAccessApprovalSettingsMessage request =
         DeleteAccessApprovalSettingsMessage.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1457,9 +1461,10 @@ public class AccessApprovalAdminClient implements BackgroundResource {
           ListApprovalRequestsPage> {
 
     private ListApprovalRequestsPage(
-        PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
+        @Nullable
+            PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
             context,
-        ListApprovalRequestsResponse response) {
+        @Nullable ListApprovalRequestsResponse response) {
       super(context, response);
     }
 
@@ -1469,15 +1474,17 @@ public class AccessApprovalAdminClient implements BackgroundResource {
 
     @Override
     protected ListApprovalRequestsPage createPage(
-        PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
+        @Nullable
+            PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
             context,
-        ListApprovalRequestsResponse response) {
+        @Nullable ListApprovalRequestsResponse response) {
       return new ListApprovalRequestsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApprovalRequestsPage> createPageAsync(
-        PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
+        @Nullable
+            PageContext<ListApprovalRequestsMessage, ListApprovalRequestsResponse, ApprovalRequest>
             context,
         ApiFuture<ListApprovalRequestsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1493,7 +1500,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
           ListApprovalRequestsFixedSizeCollection> {
 
     private ListApprovalRequestsFixedSizeCollection(
-        List<ListApprovalRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListApprovalRequestsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1503,7 +1510,7 @@ public class AccessApprovalAdminClient implements BackgroundResource {
 
     @Override
     protected ListApprovalRequestsFixedSizeCollection createCollection(
-        List<ListApprovalRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListApprovalRequestsPage> pages, int collectionSize) {
       return new ListApprovalRequestsFixedSizeCollection(pages, collectionSize);
     }
   }

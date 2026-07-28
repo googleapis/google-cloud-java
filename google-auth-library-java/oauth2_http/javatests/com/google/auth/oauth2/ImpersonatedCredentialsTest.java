@@ -42,6 +42,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
@@ -850,7 +851,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     // Currently, no credentials allowed as source credentials throws exception for
     // getUniverseDomain(), mock this behavior for test only. ServiceAccountCredentials
     // should not throw for getUniverseDomain() calls.
-    ServiceAccountCredentials sourceCredentialsMock = mock(ServiceAccountCredentials.class);
+    ServiceAccountCredentials sourceCredentialsMock =
+        mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
     when(sourceCredentialsMock.getUniverseDomain()).thenThrow(IOException.class);
 
     MockIAMCredentialsServiceTransportFactory transportFactory =

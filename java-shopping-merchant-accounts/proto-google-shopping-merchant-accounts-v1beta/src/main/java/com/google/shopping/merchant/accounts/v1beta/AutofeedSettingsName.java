@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,7 +66,7 @@ public class AutofeedSettingsName implements ResourceName {
     return newBuilder().setAccount(account).build().toString();
   }
 
-  public static AutofeedSettingsName parse(String formattedString) {
+  public static @Nullable AutofeedSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -83,7 +84,7 @@ public class AutofeedSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AutofeedSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable AutofeedSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AutofeedSettingsName value : values) {
       if (value == null) {
@@ -125,7 +126,7 @@ public class AutofeedSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

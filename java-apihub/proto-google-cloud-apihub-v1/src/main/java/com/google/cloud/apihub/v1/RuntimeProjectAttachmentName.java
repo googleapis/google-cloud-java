@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -90,7 +91,7 @@ public class RuntimeProjectAttachmentName implements ResourceName {
         .toString();
   }
 
-  public static RuntimeProjectAttachmentName parse(String formattedString) {
+  public static @Nullable RuntimeProjectAttachmentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -112,7 +113,7 @@ public class RuntimeProjectAttachmentName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RuntimeProjectAttachmentName> values) {
+  public static List<String> toStringList(List<@Nullable RuntimeProjectAttachmentName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RuntimeProjectAttachmentName value : values) {
       if (value == null) {
@@ -166,7 +167,7 @@ public class RuntimeProjectAttachmentName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

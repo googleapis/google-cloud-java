@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** A callback used to report that the {@link ClientStream} is ready to send more messages. */
+@NullMarked
 @FunctionalInterface
 public interface ClientStreamReadyObserver<V> {
   void onReady(ClientStream<V> stream);

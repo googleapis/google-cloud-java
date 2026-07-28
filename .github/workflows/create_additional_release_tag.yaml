@@ -29,7 +29,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
-        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable' 'libraries-bom')
+        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable' 'libraries-bom' 'gapic-generator-java')
         for ARTIFACT_ID in "${ARTIFACT_IDS[@]}"; do
           VERSION=$(grep "^${ARTIFACT_ID}:" versions.txt | cut -d':' -f2 | tr -d '[:space:]')
           TAG_NAME="${ARTIFACT_ID}/v$VERSION"

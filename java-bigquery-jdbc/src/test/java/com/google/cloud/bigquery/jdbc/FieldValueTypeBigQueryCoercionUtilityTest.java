@@ -39,6 +39,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
@@ -392,5 +393,37 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   @Test
   public void fieldValueToObjectWhenInnerValueIsNull() {
     assertThat(INSTANCE.coerceTo(Object.class, NULL_VALUE)).isNull();
+  }
+
+  @Test
+  public void testCalendarConversions() {
+    assertThat(BigQueryTypeCoercionUtility.convertDateWithCalendar(null, null)).isNull();
+    assertThat(BigQueryTypeCoercionUtility.convertTimeWithCalendar(null, null)).isNull();
+    assertThat(BigQueryTypeCoercionUtility.convertTimestampWithCalendar(null, null)).isNull();
+
+    Date rawDate = Date.valueOf("2026-07-17");
+    Time rawTime = Time.valueOf("14:30:00");
+    Timestamp rawTimestamp = Timestamp.valueOf("2026-07-17 14:30:00.123456789");
+
+    // Null calendar returns input unchanged
+    assertThat(BigQueryTypeCoercionUtility.convertDateWithCalendar(rawDate, null))
+        .isEqualTo(rawDate);
+    assertThat(BigQueryTypeCoercionUtility.convertTimeWithCalendar(rawTime, null))
+        .isEqualTo(rawTime);
+    assertThat(BigQueryTypeCoercionUtility.convertTimestampWithCalendar(rawTimestamp, null))
+        .isEqualTo(rawTimestamp);
+
+    // UTC Calendar shifts wall-clock components into target timezone
+    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    Date utcConvertedDate = BigQueryTypeCoercionUtility.convertDateWithCalendar(rawDate, utcCal);
+    assertThat(utcConvertedDate).isNotNull();
+
+    Time utcConvertedTime = BigQueryTypeCoercionUtility.convertTimeWithCalendar(rawTime, utcCal);
+    assertThat(utcConvertedTime).isNotNull();
+
+    Timestamp utcConvertedTimestamp =
+        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(rawTimestamp, utcCal);
+    assertThat(utcConvertedTimestamp).isNotNull();
+    assertThat(utcConvertedTimestamp.getNanos()).isEqualTo(123456789);
   }
 }

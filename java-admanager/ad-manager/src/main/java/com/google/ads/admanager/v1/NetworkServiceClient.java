@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +65,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetNetwork</td>
- *      <td><p> API to retrieve a Network object.</td>
+ *      <td><p> Retrieves a `Network` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +84,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListNetworks</td>
- *      <td><p> API to retrieve all the networks the current user has access to.</td>
+ *      <td><p> Retrieves all the networks the current user has access to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +141,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkServiceClient implements BackgroundResource {
-  private final NetworkServiceSettings settings;
+  private final @Nullable NetworkServiceSettings settings;
   private final NetworkServiceStub stub;
 
   /** Constructs an instance of NetworkServiceClient with default settings. */
@@ -180,7 +181,7 @@ public class NetworkServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworkServiceSettings getSettings() {
+  public final @Nullable NetworkServiceSettings getSettings() {
     return settings;
   }
 
@@ -190,7 +191,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -209,7 +210,7 @@ public class NetworkServiceClient implements BackgroundResource {
    * @param name Required. Resource name of Network. Format: networks/{network_code}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Network getNetwork(NetworkName name) {
+  public final Network getNetwork(@Nullable NetworkName name) {
     GetNetworkRequest request =
         GetNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNetwork(request);
@@ -217,7 +218,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -243,7 +244,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -271,7 +272,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -298,7 +299,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -330,7 +331,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -363,7 +364,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -457,8 +458,8 @@ public class NetworkServiceClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, ListNetworksResponse, Network, ListNetworksPage> {
 
     private ListNetworksPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       super(context, response);
     }
 
@@ -468,14 +469,14 @@ public class NetworkServiceClient implements BackgroundResource {
 
     @Override
     protected ListNetworksPage createPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       return new ListNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworksPage> createPageAsync(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
         ApiFuture<ListNetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -489,7 +490,8 @@ public class NetworkServiceClient implements BackgroundResource {
           ListNetworksPage,
           ListNetworksFixedSizeCollection> {
 
-    private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
+    private ListNetworksFixedSizeCollection(
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -499,7 +501,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
     @Override
     protected ListNetworksFixedSizeCollection createCollection(
-        List<ListNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
     }
   }

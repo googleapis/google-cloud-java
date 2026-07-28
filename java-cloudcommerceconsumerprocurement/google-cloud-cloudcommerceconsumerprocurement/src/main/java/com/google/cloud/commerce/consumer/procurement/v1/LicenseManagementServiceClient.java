@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -217,7 +218,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LicenseManagementServiceClient implements BackgroundResource {
-  private final LicenseManagementServiceSettings settings;
+  private final @Nullable LicenseManagementServiceSettings settings;
   private final LicenseManagementServiceStub stub;
 
   /** Constructs an instance of LicenseManagementServiceClient with default settings. */
@@ -259,7 +260,7 @@ public class LicenseManagementServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LicenseManagementServiceSettings getSettings() {
+  public final @Nullable LicenseManagementServiceSettings getSettings() {
     return settings;
   }
 
@@ -829,9 +830,10 @@ public class LicenseManagementServiceClient implements BackgroundResource {
           EnumerateLicensedUsersPage> {
 
     private EnumerateLicensedUsersPage(
-        PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
+        @Nullable
+            PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
             context,
-        EnumerateLicensedUsersResponse response) {
+        @Nullable EnumerateLicensedUsersResponse response) {
       super(context, response);
     }
 
@@ -841,15 +843,17 @@ public class LicenseManagementServiceClient implements BackgroundResource {
 
     @Override
     protected EnumerateLicensedUsersPage createPage(
-        PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
+        @Nullable
+            PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
             context,
-        EnumerateLicensedUsersResponse response) {
+        @Nullable EnumerateLicensedUsersResponse response) {
       return new EnumerateLicensedUsersPage(context, response);
     }
 
     @Override
     public ApiFuture<EnumerateLicensedUsersPage> createPageAsync(
-        PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
+        @Nullable
+            PageContext<EnumerateLicensedUsersRequest, EnumerateLicensedUsersResponse, LicensedUser>
             context,
         ApiFuture<EnumerateLicensedUsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -865,7 +869,7 @@ public class LicenseManagementServiceClient implements BackgroundResource {
           EnumerateLicensedUsersFixedSizeCollection> {
 
     private EnumerateLicensedUsersFixedSizeCollection(
-        List<EnumerateLicensedUsersPage> pages, int collectionSize) {
+        @Nullable List<EnumerateLicensedUsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -875,7 +879,7 @@ public class LicenseManagementServiceClient implements BackgroundResource {
 
     @Override
     protected EnumerateLicensedUsersFixedSizeCollection createCollection(
-        List<EnumerateLicensedUsersPage> pages, int collectionSize) {
+        @Nullable List<EnumerateLicensedUsersPage> pages, int collectionSize) {
       return new EnumerateLicensedUsersFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -299,7 +300,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataSubscriptionServiceClient implements BackgroundResource {
-  private final DataSubscriptionServiceSettings settings;
+  private final @Nullable DataSubscriptionServiceSettings settings;
   private final DataSubscriptionServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -348,7 +349,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataSubscriptionServiceSettings getSettings() {
+  public final @Nullable DataSubscriptionServiceSettings getSettings() {
     return settings;
   }
 
@@ -427,7 +428,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Subscriber, CreateSubscriberMetadata> createSubscriberAsync(
-      ProjectName parent, CreateSubscriberPayload subscriber, String subscriberId) {
+      @Nullable ProjectName parent, CreateSubscriberPayload subscriber, String subscriberId) {
     CreateSubscriberRequest request =
         CreateSubscriberRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -682,7 +683,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    *     projects/{project}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubscribersPagedResponse listSubscribers(ProjectName parent) {
+  public final ListSubscribersPagedResponse listSubscribers(@Nullable ProjectName parent) {
     ListSubscribersRequest request =
         ListSubscribersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1043,7 +1044,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteSubscriberMetadata> deleteSubscriberAsync(
-      SubscriberName name) {
+      @Nullable SubscriberName name) {
     DeleteSubscriberRequest request =
         DeleteSubscriberRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSubscriberAsync(request);
@@ -1210,7 +1211,9 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      SubscriberName parent, CreateSubscriptionPayload subscription, String subscriptionId) {
+      @Nullable SubscriberName parent,
+      CreateSubscriptionPayload subscription,
+      String subscriptionId) {
     CreateSubscriptionRequest request =
         CreateSubscriptionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1357,7 +1360,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    *     system-generated otherwise.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubscriptionsPagedResponse listSubscriptions(SubscriberName parent) {
+  public final ListSubscriptionsPagedResponse listSubscriptions(@Nullable SubscriberName parent) {
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1639,7 +1642,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    *     /[a-z]([a-z0-9-]{2,34}[a-z0-9])/) or system-generated if not provided during creation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSubscription(SubscriptionName name) {
+  public final void deleteSubscription(@Nullable SubscriptionName name) {
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1800,8 +1803,8 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
           ListSubscribersRequest, ListSubscribersResponse, Subscriber, ListSubscribersPage> {
 
     private ListSubscribersPage(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
-        ListSubscribersResponse response) {
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
+        @Nullable ListSubscribersResponse response) {
       super(context, response);
     }
 
@@ -1811,14 +1814,14 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscribersPage createPage(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
-        ListSubscribersResponse response) {
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
+        @Nullable ListSubscribersResponse response) {
       return new ListSubscribersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscribersPage> createPageAsync(
-        PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
+        @Nullable PageContext<ListSubscribersRequest, ListSubscribersResponse, Subscriber> context,
         ApiFuture<ListSubscribersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1833,7 +1836,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
           ListSubscribersFixedSizeCollection> {
 
     private ListSubscribersFixedSizeCollection(
-        List<ListSubscribersPage> pages, int collectionSize) {
+        @Nullable List<ListSubscribersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1843,7 +1846,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscribersFixedSizeCollection createCollection(
-        List<ListSubscribersPage> pages, int collectionSize) {
+        @Nullable List<ListSubscribersPage> pages, int collectionSize) {
       return new ListSubscribersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1880,8 +1883,9 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
           ListSubscriptionsPage> {
 
     private ListSubscriptionsPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
+        @Nullable ListSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -1891,14 +1895,16 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsPage createPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
+        @Nullable ListSubscriptionsResponse response) {
       return new ListSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscriptionsPage> createPageAsync(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            context,
         ApiFuture<ListSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1913,7 +1919,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
           ListSubscriptionsFixedSizeCollection> {
 
     private ListSubscriptionsFixedSizeCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1923,7 +1929,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsFixedSizeCollection createCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }

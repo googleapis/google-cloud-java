@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -116,6 +117,25 @@ import org.jspecify.annotations.NullMarked;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getRemoteTransportProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ParseFromActivationKey</td>
+ *      <td><p> Gets details of a single RemoteTransportProfile given an activation key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKey(ParseFromActivationKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKey(LocationName parent, String activationKey)
+ *           <li><p> parseFromActivationKey(String parent, String activationKey)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKeyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -238,8 +258,9 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -357,7 +378,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TransportManagerClient implements BackgroundResource {
-  private final TransportManagerSettings settings;
+  private final @Nullable TransportManagerSettings settings;
   private final TransportManagerStub stub;
   private final OperationsClient operationsClient;
 
@@ -400,7 +421,7 @@ public class TransportManagerClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final TransportManagerSettings getSettings() {
+  public final @Nullable TransportManagerSettings getSettings() {
     return settings;
   }
 
@@ -441,7 +462,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRemoteTransportProfilesPagedResponse listRemoteTransportProfiles(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListRemoteTransportProfilesRequest request =
         ListRemoteTransportProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -616,7 +637,8 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RemoteTransportProfile getRemoteTransportProfile(RemoteTransportProfileName name) {
+  public final RemoteTransportProfile getRemoteTransportProfile(
+      @Nullable RemoteTransportProfileName name) {
     GetRemoteTransportProfileRequest request =
         GetRemoteTransportProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -719,6 +741,135 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String activationKey = "activationKey1757742441";
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(parent, activationKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ParseFromActivationKeyRequest.
+   * @param activationKey Required. The activation key to get the RemoteTransportProfile for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      @Nullable LocationName parent, String activationKey) {
+    ParseFromActivationKeyRequest request =
+        ParseFromActivationKeyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setActivationKey(activationKey)
+            .build();
+    return parseFromActivationKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String activationKey = "activationKey1757742441";
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(parent, activationKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ParseFromActivationKeyRequest.
+   * @param activationKey Required. The activation key to get the RemoteTransportProfile for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      String parent, String activationKey) {
+    ParseFromActivationKeyRequest request =
+        ParseFromActivationKeyRequest.newBuilder()
+            .setParent(parent)
+            .setActivationKey(activationKey)
+            .build();
+    return parseFromActivationKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   ParseFromActivationKeyRequest request =
+   *       ParseFromActivationKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setActivationKey("activationKey1757742441")
+   *           .build();
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      ParseFromActivationKeyRequest request) {
+    return parseFromActivationKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   ParseFromActivationKeyRequest request =
+   *       ParseFromActivationKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setActivationKey("activationKey1757742441")
+   *           .build();
+   *   ApiFuture<ParseFromActivationKeyResponse> future =
+   *       transportManagerClient.parseFromActivationKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ParseFromActivationKeyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyCallable() {
+    return stub.parseFromActivationKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Transports in a given project and location.
    *
    * <p>Sample code:
@@ -740,7 +891,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListTransportsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTransportsPagedResponse listTransports(LocationName parent) {
+  public final ListTransportsPagedResponse listTransports(@Nullable LocationName parent) {
     ListTransportsRequest request =
         ListTransportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -908,7 +1059,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Transport getTransport(TransportName name) {
+  public final Transport getTransport(@Nullable TransportName name) {
     GetTransportRequest request =
         GetTransportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTransport(request);
@@ -1017,7 +1168,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetStatusResponse getStatus(TransportName name) {
+  public final GetStatusResponse getStatus(@Nullable TransportName name) {
     GetStatusRequest request =
         GetStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStatus(request);
@@ -1065,6 +1216,7 @@ public class TransportManagerClient implements BackgroundResource {
    *   GetStatusRequest request =
    *       GetStatusRequest.newBuilder()
    *           .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+   *           .setSkipCache(true)
    *           .build();
    *   GetStatusResponse response = transportManagerClient.getStatus(request);
    * }
@@ -1093,6 +1245,7 @@ public class TransportManagerClient implements BackgroundResource {
    *   GetStatusRequest request =
    *       GetStatusRequest.newBuilder()
    *           .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+   *           .setSkipCache(true)
    *           .build();
    *   ApiFuture<GetStatusResponse> future =
    *       transportManagerClient.getStatusCallable().futureCall(request);
@@ -1132,7 +1285,7 @@ public class TransportManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Transport, OperationMetadata> createTransportAsync(
-      LocationName parent, Transport transport, String transportId) {
+      @Nullable LocationName parent, Transport transport, String transportId) {
     CreateTransportRequest request =
         CreateTransportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1424,7 +1577,8 @@ public class TransportManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteTransportAsync(TransportName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteTransportAsync(
+      @Nullable TransportName name) {
     DeleteTransportRequest request =
         DeleteTransportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTransportAsync(request);
@@ -1547,13 +1701,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1586,13 +1746,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1626,13 +1792,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1977,12 +2149,13 @@ public class TransportManagerClient implements BackgroundResource {
           ListRemoteTransportProfilesPage> {
 
     private ListRemoteTransportProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
             context,
-        ListRemoteTransportProfilesResponse response) {
+        @Nullable ListRemoteTransportProfilesResponse response) {
       super(context, response);
     }
 
@@ -1992,18 +2165,20 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListRemoteTransportProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
             context,
-        ListRemoteTransportProfilesResponse response) {
+        @Nullable ListRemoteTransportProfilesResponse response) {
       return new ListRemoteTransportProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRemoteTransportProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRemoteTransportProfilesRequest,
                 ListRemoteTransportProfilesResponse,
                 RemoteTransportProfile>
@@ -2022,7 +2197,7 @@ public class TransportManagerClient implements BackgroundResource {
           ListRemoteTransportProfilesFixedSizeCollection> {
 
     private ListRemoteTransportProfilesFixedSizeCollection(
-        List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2032,7 +2207,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListRemoteTransportProfilesFixedSizeCollection createCollection(
-        List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListRemoteTransportProfilesPage> pages, int collectionSize) {
       return new ListRemoteTransportProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2066,8 +2241,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListTransportsRequest, ListTransportsResponse, Transport, ListTransportsPage> {
 
     private ListTransportsPage(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
-        ListTransportsResponse response) {
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable ListTransportsResponse response) {
       super(context, response);
     }
 
@@ -2077,14 +2252,14 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListTransportsPage createPage(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
-        ListTransportsResponse response) {
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable ListTransportsResponse response) {
       return new ListTransportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTransportsPage> createPageAsync(
-        PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
+        @Nullable PageContext<ListTransportsRequest, ListTransportsResponse, Transport> context,
         ApiFuture<ListTransportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2098,7 +2273,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListTransportsPage,
           ListTransportsFixedSizeCollection> {
 
-    private ListTransportsFixedSizeCollection(List<ListTransportsPage> pages, int collectionSize) {
+    private ListTransportsFixedSizeCollection(
+        @Nullable List<ListTransportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2108,7 +2284,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListTransportsFixedSizeCollection createCollection(
-        List<ListTransportsPage> pages, int collectionSize) {
+        @Nullable List<ListTransportsPage> pages, int collectionSize) {
       return new ListTransportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2142,8 +2318,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2153,14 +2329,14 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2174,7 +2350,8 @@ public class TransportManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2184,7 +2361,7 @@ public class TransportManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

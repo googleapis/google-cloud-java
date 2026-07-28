@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import com.google.api.client.http.GenericUrl;
@@ -141,7 +142,7 @@ class Slf4jUtilsLogbackTest {
     data.put("key1", "value1");
     data.put("token", "value2");
 
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider = mock(LoggerProvider.class, withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(LOGGER);
     LoggingUtils.logResponsePayload(data, loggerProvider, "test generic data");
 
@@ -176,7 +177,7 @@ class Slf4jUtilsLogbackTest {
     HttpRequest request =
         requestFactory.buildPostRequest(new GenericUrl(OAuth2Utils.TOKEN_SERVER_URI), content);
 
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider = mock(LoggerProvider.class, withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(LOGGER);
     LoggingUtils.logRequest(request, loggerProvider, "test log request");
 

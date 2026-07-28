@@ -36,6 +36,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Traces the initial RPC of a long running operation.
@@ -43,6 +44,7 @@ import com.google.common.util.concurrent.MoreExecutors;
  * <p>It will trace it like a child unary RPC and will also contribute to the parent tracer (created
  * by {@link TracedOperationCallable}) the result of the call.
  */
+@NullMarked
 public class TracedOperationInitialCallable<RequestT>
     extends TracedUnaryCallable<RequestT, OperationSnapshot> {
 

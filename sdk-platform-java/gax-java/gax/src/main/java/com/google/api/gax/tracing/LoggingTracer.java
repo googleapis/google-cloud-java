@@ -37,11 +37,13 @@ import com.google.common.base.Strings;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An {@link ApiTracer} that logs actionable errors using {@link LoggingUtils} when an RPC attempt
  * fails.
  */
+@NullMarked
 class LoggingTracer extends BaseApiTracer {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(LoggingTracer.class);

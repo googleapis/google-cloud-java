@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.RequestUrlParamsEncoder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@code UnaryCallable} that extracts values from the fields of the request and inserts them into
@@ -42,6 +43,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class GrpcUnaryRequestParamCallable<RequestT, ResponseT>
     extends UnaryCallable<RequestT, ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> callable;

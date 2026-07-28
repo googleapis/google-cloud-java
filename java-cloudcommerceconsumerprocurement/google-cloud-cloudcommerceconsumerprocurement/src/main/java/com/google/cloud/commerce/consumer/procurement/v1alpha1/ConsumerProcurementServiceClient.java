@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -191,7 +192,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConsumerProcurementServiceClient implements BackgroundResource {
-  private final ConsumerProcurementServiceSettings settings;
+  private final @Nullable ConsumerProcurementServiceSettings settings;
   private final ConsumerProcurementServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -241,7 +242,7 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConsumerProcurementServiceSettings getSettings() {
+  public final @Nullable ConsumerProcurementServiceSettings getSettings() {
     return settings;
   }
 
@@ -669,8 +670,8 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
       extends AbstractPage<ListOrdersRequest, ListOrdersResponse, Order, ListOrdersPage> {
 
     private ListOrdersPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       super(context, response);
     }
 
@@ -680,14 +681,14 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrdersPage createPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       return new ListOrdersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrdersPage> createPageAsync(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
         ApiFuture<ListOrdersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -701,7 +702,8 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
           ListOrdersPage,
           ListOrdersFixedSizeCollection> {
 
-    private ListOrdersFixedSizeCollection(List<ListOrdersPage> pages, int collectionSize) {
+    private ListOrdersFixedSizeCollection(
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -711,7 +713,7 @@ public class ConsumerProcurementServiceClient implements BackgroundResource {
 
     @Override
     protected ListOrdersFixedSizeCollection createCollection(
-        List<ListOrdersPage> pages, int collectionSize) {
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       return new ListOrdersFixedSizeCollection(pages, collectionSize);
     }
   }

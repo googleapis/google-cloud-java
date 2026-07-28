@@ -11,6 +11,5 @@
   "repo_short": "java-chronicle",
   "distribution_name": "com.google.cloud:google-cloud-chronicle",
   "api_id": "chronicle.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

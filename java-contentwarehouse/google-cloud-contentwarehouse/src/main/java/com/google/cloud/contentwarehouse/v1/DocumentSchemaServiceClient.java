@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -224,7 +225,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DocumentSchemaServiceClient implements BackgroundResource {
-  private final DocumentSchemaServiceSettings settings;
+  private final @Nullable DocumentSchemaServiceSettings settings;
   private final DocumentSchemaServiceStub stub;
 
   /** Constructs an instance of DocumentSchemaServiceClient with default settings. */
@@ -264,7 +265,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DocumentSchemaServiceSettings getSettings() {
+  public final @Nullable DocumentSchemaServiceSettings getSettings() {
     return settings;
   }
 
@@ -298,7 +299,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DocumentSchema createDocumentSchema(
-      LocationName parent, DocumentSchema documentSchema) {
+      @Nullable LocationName parent, DocumentSchema documentSchema) {
     CreateDocumentSchemaRequest request =
         CreateDocumentSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -434,7 +435,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DocumentSchema updateDocumentSchema(
-      DocumentSchemaName name, DocumentSchema documentSchema) {
+      @Nullable DocumentSchemaName name, DocumentSchema documentSchema) {
     UpdateDocumentSchemaRequest request =
         UpdateDocumentSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -577,7 +578,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
    * @param name Required. The name of the document schema to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DocumentSchema getDocumentSchema(DocumentSchemaName name) {
+  public final DocumentSchema getDocumentSchema(@Nullable DocumentSchemaName name) {
     GetDocumentSchemaRequest request =
         GetDocumentSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -697,7 +698,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
    * @param name Required. The name of the document schema to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDocumentSchema(DocumentSchemaName name) {
+  public final void deleteDocumentSchema(@Nullable DocumentSchemaName name) {
     DeleteDocumentSchemaRequest request =
         DeleteDocumentSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -823,7 +824,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDocumentSchemasPagedResponse listDocumentSchemas(LocationName parent) {
+  public final ListDocumentSchemasPagedResponse listDocumentSchemas(@Nullable LocationName parent) {
     ListDocumentSchemasRequest request =
         ListDocumentSchemasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1036,9 +1037,10 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
           ListDocumentSchemasPage> {
 
     private ListDocumentSchemasPage(
-        PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
+        @Nullable
+            PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
             context,
-        ListDocumentSchemasResponse response) {
+        @Nullable ListDocumentSchemasResponse response) {
       super(context, response);
     }
 
@@ -1048,15 +1050,17 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentSchemasPage createPage(
-        PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
+        @Nullable
+            PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
             context,
-        ListDocumentSchemasResponse response) {
+        @Nullable ListDocumentSchemasResponse response) {
       return new ListDocumentSchemasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDocumentSchemasPage> createPageAsync(
-        PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
+        @Nullable
+            PageContext<ListDocumentSchemasRequest, ListDocumentSchemasResponse, DocumentSchema>
             context,
         ApiFuture<ListDocumentSchemasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1072,7 +1076,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
           ListDocumentSchemasFixedSizeCollection> {
 
     private ListDocumentSchemasFixedSizeCollection(
-        List<ListDocumentSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentSchemasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1082,7 +1086,7 @@ public class DocumentSchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListDocumentSchemasFixedSizeCollection createCollection(
-        List<ListDocumentSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentSchemasPage> pages, int collectionSize) {
       return new ListDocumentSchemasFixedSizeCollection(pages, collectionSize);
     }
   }

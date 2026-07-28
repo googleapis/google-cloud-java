@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-dialogflow",
   "api_id": "dialogflow.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5300385"
 }

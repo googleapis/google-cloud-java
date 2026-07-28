@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -263,7 +264,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionInstantSnapshotsClient implements BackgroundResource {
-  private final RegionInstantSnapshotsSettings settings;
+  private final @Nullable RegionInstantSnapshotsSettings settings;
   private final RegionInstantSnapshotsStub stub;
 
   /** Constructs an instance of RegionInstantSnapshotsClient with default settings. */
@@ -304,7 +305,7 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionInstantSnapshotsSettings getSettings() {
+  public final @Nullable RegionInstantSnapshotsSettings getSettings() {
     return settings;
   }
 
@@ -1395,9 +1396,10 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
           ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
+        @Nullable
+            PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
             context,
-        InstantSnapshotList response) {
+        @Nullable InstantSnapshotList response) {
       super(context, response);
     }
 
@@ -1407,15 +1409,17 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
+        @Nullable
+            PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
             context,
-        InstantSnapshotList response) {
+        @Nullable InstantSnapshotList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
+        @Nullable
+            PageContext<ListRegionInstantSnapshotsRequest, InstantSnapshotList, InstantSnapshot>
             context,
         ApiFuture<InstantSnapshotList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1430,7 +1434,7 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1439,7 +1443,8 @@ public class RegionInstantSnapshotsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

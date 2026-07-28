@@ -11,6 +11,5 @@
   "repo_short": "java-marketingplatformadminapi",
   "distribution_name": "com.google.ads-marketingplatform:admin",
   "api_id": "marketingplatformadminapi.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

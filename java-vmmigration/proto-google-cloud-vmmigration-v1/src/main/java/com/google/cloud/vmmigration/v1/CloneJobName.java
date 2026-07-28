@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -109,7 +110,7 @@ public class CloneJobName implements ResourceName {
         .toString();
   }
 
-  public static CloneJobName parse(String formattedString) {
+  public static @Nullable CloneJobName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -132,7 +133,7 @@ public class CloneJobName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CloneJobName> values) {
+  public static List<String> toStringList(List<@Nullable CloneJobName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CloneJobName value : values) {
       if (value == null) {
@@ -196,7 +197,7 @@ public class CloneJobName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -159,7 +160,7 @@ public class ColumnDataProfileName implements ResourceName {
         .toString();
   }
 
-  public static ColumnDataProfileName parse(String formattedString) {
+  public static @Nullable ColumnDataProfileName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -187,7 +188,7 @@ public class ColumnDataProfileName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ColumnDataProfileName> values) {
+  public static List<String> toStringList(List<@Nullable ColumnDataProfileName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ColumnDataProfileName value : values) {
       if (value == null) {
@@ -239,7 +240,7 @@ public class ColumnDataProfileName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -429,7 +430,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionServiceClient implements BackgroundResource {
-  private final PredictionServiceSettings settings;
+  private final @Nullable PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
 
   /** Constructs an instance of PredictionServiceClient with default settings. */
@@ -469,7 +470,7 @@ public class PredictionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PredictionServiceSettings getSettings() {
+  public final @Nullable PredictionServiceSettings getSettings() {
     return settings;
   }
 
@@ -516,7 +517,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PredictResponse predict(
-      EndpointName endpoint, List<Value> instances, Value parameters) {
+      @Nullable EndpointName endpoint, List<Value> instances, Value parameters) {
     PredictRequest request =
         PredictRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -692,7 +693,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] and use the `RawPredict` method.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HttpBody rawPredict(EndpointName endpoint, HttpBody httpBody) {
+  public final HttpBody rawPredict(@Nullable EndpointName endpoint, HttpBody httpBody) {
     RawPredictRequest request =
         RawPredictRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -1246,7 +1247,10 @@ public class PredictionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExplainResponse explain(
-      EndpointName endpoint, List<Value> instances, Value parameters, String deployedModelId) {
+      @Nullable EndpointName endpoint,
+      List<Value> instances,
+      Value parameters,
+      String deployedModelId) {
     ExplainRequest request =
         ExplainRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -1434,7 +1438,8 @@ public class PredictionServiceClient implements BackgroundResource {
    *     identical to the prediction schema of the underlying model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CountTokensResponse countTokens(EndpointName endpoint, List<Value> instances) {
+  public final CountTokensResponse countTokens(
+      @Nullable EndpointName endpoint, List<Value> instances) {
     CountTokensRequest request =
         CountTokensRequest.newBuilder()
             .setEndpoint(endpoint == null ? null : endpoint.toString())
@@ -1762,7 +1767,7 @@ public class PredictionServiceClient implements BackgroundResource {
    * @param content Required. Input content to be embedded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EmbedContentResponse embedContent(EndpointName model, Content content) {
+  public final EmbedContentResponse embedContent(@Nullable EndpointName model, Content content) {
     EmbedContentRequest request =
         EmbedContentRequest.newBuilder()
             .setModel(model == null ? null : model.toString())
@@ -2300,8 +2305,8 @@ public class PredictionServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2311,14 +2316,14 @@ public class PredictionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2332,7 +2337,8 @@ public class PredictionServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2342,7 +2348,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -206,7 +207,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  private final AssetServiceSettings settings;
+  private final @Nullable AssetServiceSettings settings;
   private final AssetServiceStub stub;
 
   /** Constructs an instance of AssetServiceClient with default settings. */
@@ -245,7 +246,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AssetServiceSettings getSettings() {
+  public final @Nullable AssetServiceSettings getSettings() {
     return settings;
   }
 
@@ -364,7 +365,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Feed getFeed(FeedName name) {
+  public final Feed getFeed(@Nullable FeedName name) {
     GetFeedRequest request =
         GetFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeed(request);
@@ -641,7 +642,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     organizations/organization_number/feeds/feed_id
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFeed(FeedName name) {
+  public final void deleteFeed(@Nullable FeedName name) {
     DeleteFeedRequest request =
         DeleteFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFeed(request);

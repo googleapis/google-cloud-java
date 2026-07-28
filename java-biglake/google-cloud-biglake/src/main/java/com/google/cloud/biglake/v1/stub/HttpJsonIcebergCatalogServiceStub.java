@@ -116,6 +116,7 @@ public class HttpJsonIcebergCatalogServiceStub extends IcebergCatalogServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListIcebergCatalogsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "page-size", request.getPageSize());
                             serializer.putQueryParam(fields, "page-token", request.getPageToken());
                             serializer.putQueryParam(fields, "view", request.getViewValue());

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -187,7 +188,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionalInventoryServiceClient implements BackgroundResource {
-  private final RegionalInventoryServiceSettings settings;
+  private final @Nullable RegionalInventoryServiceSettings settings;
   private final RegionalInventoryServiceStub stub;
 
   /** Constructs an instance of RegionalInventoryServiceClient with default settings. */
@@ -229,7 +230,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionalInventoryServiceSettings getSettings() {
+  public final @Nullable RegionalInventoryServiceSettings getSettings() {
     return settings;
   }
 
@@ -289,7 +290,8 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     formats.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRegionalInventoriesPagedResponse listRegionalInventories(ProductName parent) {
+  public final ListRegionalInventoriesPagedResponse listRegionalInventories(
+      @Nullable ProductName parent) {
     ListRegionalInventoriesRequest request =
         ListRegionalInventoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -601,7 +603,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     formats.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRegionalInventory(RegionalInventoryName name) {
+  public final void deleteRegionalInventory(@Nullable RegionalInventoryName name) {
     DeleteRegionalInventoryRequest request =
         DeleteRegionalInventoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -793,10 +795,11 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
           ListRegionalInventoriesPage> {
 
     private ListRegionalInventoriesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionalInventoriesRequest, ListRegionalInventoriesResponse, RegionalInventory>
             context,
-        ListRegionalInventoriesResponse response) {
+        @Nullable ListRegionalInventoriesResponse response) {
       super(context, response);
     }
 
@@ -806,16 +809,18 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListRegionalInventoriesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionalInventoriesRequest, ListRegionalInventoriesResponse, RegionalInventory>
             context,
-        ListRegionalInventoriesResponse response) {
+        @Nullable ListRegionalInventoriesResponse response) {
       return new ListRegionalInventoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRegionalInventoriesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionalInventoriesRequest, ListRegionalInventoriesResponse, RegionalInventory>
             context,
         ApiFuture<ListRegionalInventoriesResponse> futureResponse) {
@@ -832,7 +837,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
           ListRegionalInventoriesFixedSizeCollection> {
 
     private ListRegionalInventoriesFixedSizeCollection(
-        List<ListRegionalInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRegionalInventoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -842,7 +847,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListRegionalInventoriesFixedSizeCollection createCollection(
-        List<ListRegionalInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListRegionalInventoriesPage> pages, int collectionSize) {
       return new ListRegionalInventoriesFixedSizeCollection(pages, collectionSize);
     }
   }

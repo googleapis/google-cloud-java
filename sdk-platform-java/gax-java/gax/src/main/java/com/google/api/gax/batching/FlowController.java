@@ -34,9 +34,11 @@ import com.google.api.gax.batching.FlowControlEventStats.FlowControlEvent;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Provides flow control capability. */
+@NullMarked
 public class FlowController {
   /** Base exception that signals a flow control state. */
   public abstract static class FlowControlException extends Exception {
@@ -137,12 +139,12 @@ public class FlowController {
     Ignore,
   }
 
-  @Nullable private final Semaphore64 outstandingElementCount;
-  @Nullable private final Semaphore64 outstandingByteCount;
-  @Nullable private final Long maxElementCountLimit;
-  @Nullable private final Long maxRequestBytesLimit;
-  @Nullable private final Long minElementCountLimit;
-  @Nullable private final Long minRequestBytesLimit;
+  private final @Nullable Semaphore64 outstandingElementCount;
+  private final @Nullable Semaphore64 outstandingByteCount;
+  private final @Nullable Long maxElementCountLimit;
+  private final @Nullable Long maxRequestBytesLimit;
+  private final @Nullable Long minElementCountLimit;
+  private final @Nullable Long minRequestBytesLimit;
   private final LimitExceededBehavior limitExceededBehavior;
   private final Object updateLimitLock;
 
@@ -315,38 +317,32 @@ public class FlowController {
   }
 
   @InternalApi("For internal use by google-cloud-java clients only")
-  @Nullable
-  public Long getMaxElementCountLimit() {
+  public @Nullable Long getMaxElementCountLimit() {
     return maxElementCountLimit;
   }
 
   @InternalApi("For internal use by google-cloud-java clients only")
-  @Nullable
-  public Long getMaxRequestBytesLimit() {
+  public @Nullable Long getMaxRequestBytesLimit() {
     return maxRequestBytesLimit;
   }
 
   @InternalApi("For google-cloud-java client use only")
-  @Nullable
-  public Long getMinElementCountLimit() {
+  public @Nullable Long getMinElementCountLimit() {
     return minElementCountLimit;
   }
 
   @InternalApi("For google-cloud-java client use only")
-  @Nullable
-  public Long getMinRequestBytesLimit() {
+  public @Nullable Long getMinRequestBytesLimit() {
     return minRequestBytesLimit;
   }
 
   @InternalApi("For google-cloud-java client use only")
-  @Nullable
-  public Long getCurrentElementCountLimit() {
+  public @Nullable Long getCurrentElementCountLimit() {
     return outstandingElementCount == null ? null : outstandingElementCount.getPermitLimit();
   }
 
   @InternalApi("For google-cloud-java client use only")
-  @Nullable
-  public Long getCurrentRequestBytesLimit() {
+  public @Nullable Long getCurrentRequestBytesLimit() {
     return outstandingByteCount == null ? null : outstandingByteCount.getPermitLimit();
   }
 

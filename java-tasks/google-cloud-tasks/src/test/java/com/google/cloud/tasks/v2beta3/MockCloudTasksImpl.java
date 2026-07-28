@@ -23,6 +23,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -361,6 +362,27 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
   }
 
   @Override
+  public void batchCreateTasks(
+      BatchCreateTasksRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateTasks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteTask(DeleteTaskRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Empty) {
@@ -381,6 +403,27 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
   }
 
   @Override
+  public void batchDeleteTasks(
+      BatchDeleteTasksRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteTasks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void runTask(RunTaskRequest request, StreamObserver<Task> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Task) {
@@ -396,6 +439,48 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
                   "Unrecognized response type %s for method RunTask, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Task.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateCmekConfig(
+      UpdateCmekConfigRequest request, StreamObserver<CmekConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CmekConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CmekConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCmekConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CmekConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getCmekConfig(
+      GetCmekConfigRequest request, StreamObserver<CmekConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CmekConfig) {
+      requests.add(request);
+      responseObserver.onNext(((CmekConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCmekConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CmekConfig.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -107,7 +107,7 @@ class MetricsIsolationTest {
         new MetricsImpl(
             registry,
             clientInfo,
-            Mockito.mock(ApiTracerFactory.class),
+            Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations()),
             internalOtel,
             userOtel,
             Mockito.mock(Tagger.class),

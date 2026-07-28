@@ -38,13 +38,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Keeps the statistics about failed operations(both at RPC and ElementT) in {@link Batcher}. This
  * provides the count of individual exception failure and count of each failed {@link Code} occurred
  * in the batching process.
  */
+@NullMarked
 class BatcherStats {
 
   private final Map<Class, Integer> requestExceptionCounts = new HashMap<>();

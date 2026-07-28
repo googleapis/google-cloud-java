@@ -31,6 +31,7 @@ package com.google.api.gax.paging;
 
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A Page object wraps an API list method response.
@@ -39,6 +40,7 @@ import java.util.stream.StreamSupport;
  * object also provides methods to retrieve additional pages using the page token, and to get the
  * API request and response objects.
  */
+@NullMarked
 public interface Page<ResourceT> {
   /** Returns true if there are more pages that can be retrieved from the API. */
   boolean hasNextPage();

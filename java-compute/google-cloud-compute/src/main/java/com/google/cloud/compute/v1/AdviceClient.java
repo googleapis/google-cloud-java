@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -119,7 +120,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AdviceClient implements BackgroundResource {
-  private final AdviceSettings settings;
+  private final @Nullable AdviceSettings settings;
   private final AdviceStub stub;
 
   /** Constructs an instance of AdviceClient with default settings. */
@@ -157,7 +158,7 @@ public class AdviceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdviceSettings getSettings() {
+  public final @Nullable AdviceSettings getSettings() {
     return settings;
   }
 

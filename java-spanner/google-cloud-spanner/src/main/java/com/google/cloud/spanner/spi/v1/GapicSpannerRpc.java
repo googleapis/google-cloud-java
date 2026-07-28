@@ -255,7 +255,15 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final String CLIENT_LIBRARY_LANGUAGE = "spanner-java";
   public static final String DEFAULT_USER_AGENT =
       CLIENT_LIBRARY_LANGUAGE + "/" + GaxProperties.getLibraryVersion(GapicSpannerRpc.class);
-  public static boolean DIRECTPATH_CHANNEL_CREATED = false;
+
+  /**
+   * Whether the most recently initialized RPC created a DirectPath channel.
+   *
+   * <p>This process-wide volatile value may be updated during concurrent client construction and
+   * read from another thread when built-in metric attributes are created.
+   */
+  public static volatile boolean DIRECTPATH_CHANNEL_CREATED = false;
+
   private static final String API_FILE = "grpc-gcp-apiconfig.json";
 
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
