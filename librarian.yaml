@@ -2988,6 +2988,13 @@ libraries:
       artifact_id: google-maps-mapsplatformdatasets
       name_pretty_override: Maps Platform Datasets API
       product_documentation_override: https://developers.google.com/maps/documentation
+  - name: maps-navconnect
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/maps/navconnect/v1
+    java:
+      artifact_id: google-maps-navconnect
+      group_id: com.google.maps
   - name: maps-places
     version: 0.66.0-SNAPSHOT
     apis:
