@@ -33,6 +33,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongArray;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Distribution records values from {@code 0} (inclusive) to {@code endValue} (exclusive) and
@@ -40,6 +41,7 @@ import java.util.concurrent.atomic.AtomicLongArray;
  *
  * <p>Methods may be called concurrently.
  */
+@NullMarked
 public class Distribution {
 
   private final AtomicLongArray buckets;

@@ -30,8 +30,10 @@
 package com.google.api.gax.httpjson;
 
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /** Provider of custom REST ClientInterceptors. */
+@NullMarked
 public interface HttpJsonInterceptorProvider {
 
   /**

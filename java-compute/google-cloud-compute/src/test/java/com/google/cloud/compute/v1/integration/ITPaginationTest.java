@@ -30,8 +30,10 @@ import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore("Disabled due to frequent quota issues; covered by showcase ITPagination")
 public class ITPaginationTest extends BaseTest {
   private static ZonesClient zonesClient;
 

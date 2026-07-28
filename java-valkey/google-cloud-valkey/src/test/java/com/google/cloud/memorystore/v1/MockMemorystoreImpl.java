@@ -420,4 +420,173 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listTokenAuthUsers(
+      ListTokenAuthUsersRequest request,
+      StreamObserver<ListTokenAuthUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTokenAuthUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTokenAuthUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTokenAuthUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTokenAuthUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTokenAuthUser(
+      GetTokenAuthUserRequest request, StreamObserver<TokenAuthUser> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TokenAuthUser) {
+      requests.add(request);
+      responseObserver.onNext(((TokenAuthUser) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TokenAuthUser.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAuthTokens(
+      ListAuthTokensRequest request, StreamObserver<ListAuthTokensResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAuthTokensResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAuthTokensResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAuthTokens, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAuthTokensResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAuthToken(
+      GetAuthTokenRequest request, StreamObserver<AuthToken> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuthToken) {
+      requests.add(request);
+      responseObserver.onNext(((AuthToken) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuthToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuthToken.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addTokenAuthUser(
+      AddTokenAuthUserRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTokenAuthUser(
+      DeleteTokenAuthUserRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addAuthToken(
+      AddAuthTokenRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddAuthToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAuthToken(
+      DeleteAuthTokenRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAuthToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

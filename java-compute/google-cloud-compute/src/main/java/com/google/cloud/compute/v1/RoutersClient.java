@@ -108,6 +108,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DeleteNamedSet</td>
+ *      <td><p> Deletes Named Set</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNamedSetAsync(DeleteNamedSetRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteNamedSetAsync(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNamedSetOperationCallable()
+ *           <li><p> deleteNamedSetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteRoutePolicy</td>
  *      <td><p> Deletes Route Policy</td>
  *      <td>
@@ -141,6 +160,24 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNamedSet</td>
+ *      <td><p> Returns specified Named Set</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNamedSet(GetNamedSetRouterRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getNamedSet(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNamedSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -275,6 +312,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListNamedSets</td>
+ *      <td><p> Retrieves a list of router named set subresources available to the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNamedSets(ListNamedSetsRoutersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listNamedSets(String project, String region, String router)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNamedSetsPagedCallable()
+ *           <li><p> listNamedSetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListRoutePolicies</td>
  *      <td><p> Retrieves a list of router route policy subresources available to the specified project.</td>
  *      <td>
@@ -309,6 +365,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> patchOperationCallable()
  *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PatchNamedSet</td>
+ *      <td><p> Patches Named Set</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchNamedSetAsync(PatchNamedSetRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchNamedSetAsync(String project, String region, String router, NamedSet namedSetResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchNamedSetOperationCallable()
+ *           <li><p> patchNamedSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -365,6 +440,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> updateOperationCallable()
  *           <li><p> updateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNamedSet</td>
+ *      <td><p> Updates or creates new Named Set</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNamedSetAsync(UpdateNamedSetRouterRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateNamedSetAsync(String project, String region, String router, NamedSet namedSetResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNamedSetOperationCallable()
+ *           <li><p> updateNamedSetCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -769,6 +863,139 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   Operation response = routersClient.deleteNamedSetAsync(project, region, router).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Named Set is defined.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteNamedSetAsync(
+      String project, String region, String router) {
+    DeleteNamedSetRouterRequest request =
+        DeleteNamedSetRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return deleteNamedSetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteNamedSetRouterRequest request =
+   *       DeleteNamedSetRouterRequest.newBuilder()
+   *           .setNamedSet("namedSet1841034857")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.deleteNamedSetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteNamedSetAsync(
+      DeleteNamedSetRouterRequest request) {
+    return deleteNamedSetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteNamedSetRouterRequest request =
+   *       DeleteNamedSetRouterRequest.newBuilder()
+   *           .setNamedSet("namedSet1841034857")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.deleteNamedSetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNamedSetRouterRequest, Operation, Operation>
+      deleteNamedSetOperationCallable() {
+    return stub.deleteNamedSetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   DeleteNamedSetRouterRequest request =
+   *       DeleteNamedSetRouterRequest.newBuilder()
+   *           .setNamedSet("namedSet1841034857")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.deleteNamedSetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNamedSetRouterRequest, Operation> deleteNamedSetCallable() {
+    return stub.deleteNamedSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes Route Policy
    *
    * <p>Sample code:
@@ -993,6 +1220,106 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRouterRequest, Router> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns specified Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   RoutersGetNamedSetResponse response = routersClient.getNamedSet(project, region, router);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource to query for the named set. The name should conform
+   *     to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RoutersGetNamedSetResponse getNamedSet(
+      String project, String region, String router) {
+    GetNamedSetRouterRequest request =
+        GetNamedSetRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return getNamedSet(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns specified Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNamedSetRouterRequest request =
+   *       GetNamedSetRouterRequest.newBuilder()
+   *           .setNamedSet("namedSet1841034857")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   RoutersGetNamedSetResponse response = routersClient.getNamedSet(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RoutersGetNamedSetResponse getNamedSet(GetNamedSetRouterRequest request) {
+    return getNamedSetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns specified Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   GetNamedSetRouterRequest request =
+   *       GetNamedSetRouterRequest.newBuilder()
+   *           .setNamedSet("namedSet1841034857")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<RoutersGetNamedSetResponse> future =
+   *       routersClient.getNamedSetCallable().futureCall(request);
+   *   // Do something.
+   *   RoutersGetNamedSetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+      getNamedSetCallable() {
+    return stub.getNamedSetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1903,6 +2230,162 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieves a list of router named set subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   for (NamedSet element : routersClient.listNamedSets(project, region, router).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name or id of the resource for this request. Name should conform to RFC1035.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNamedSetsPagedResponse listNamedSets(
+      String project, String region, String router) {
+    ListNamedSetsRoutersRequest request =
+        ListNamedSetsRoutersRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .build();
+    return listNamedSets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router named set subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListNamedSetsRoutersRequest request =
+   *       ListNamedSetsRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   for (NamedSet element : routersClient.listNamedSets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListNamedSetsPagedResponse listNamedSets(ListNamedSetsRoutersRequest request) {
+    return listNamedSetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router named set subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListNamedSetsRoutersRequest request =
+   *       ListNamedSetsRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<NamedSet> future = routersClient.listNamedSetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NamedSet element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNamedSetsRoutersRequest, ListNamedSetsPagedResponse>
+      listNamedSetsPagedCallable() {
+    return stub.listNamedSetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a list of router named set subresources available to the specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   ListNamedSetsRoutersRequest request =
+   *       ListNamedSetsRoutersRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setReturnPartialSuccess(true)
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   while (true) {
+   *     RoutersListNamedSets response = routersClient.listNamedSetsCallable().call(request);
+   *     for (NamedSet element : response.getResultList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListNamedSetsRoutersRequest, RoutersListNamedSets>
+      listNamedSetsCallable() {
+    return stub.listNamedSetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Retrieves a list of router route policy subresources available to the specified project.
    *
    * <p>Sample code:
@@ -2197,6 +2680,143 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRouterRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   NamedSet namedSetResource = NamedSet.newBuilder().build();
+   *   Operation response =
+   *       routersClient.patchNamedSetAsync(project, region, router, namedSetResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Named Set is defined.
+   * @param namedSetResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchNamedSetAsync(
+      String project, String region, String router, NamedSet namedSetResource) {
+    PatchNamedSetRouterRequest request =
+        PatchNamedSetRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .setNamedSetResource(namedSetResource)
+            .build();
+    return patchNamedSetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchNamedSetRouterRequest request =
+   *       PatchNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.patchNamedSetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchNamedSetAsync(
+      PatchNamedSetRouterRequest request) {
+    return patchNamedSetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchNamedSetRouterRequest request =
+   *       PatchNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.patchNamedSetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PatchNamedSetRouterRequest, Operation, Operation>
+      patchNamedSetOperationCallable() {
+    return stub.patchNamedSetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Patches Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   PatchNamedSetRouterRequest request =
+   *       PatchNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.patchNamedSetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchNamedSetRouterRequest, Operation> patchNamedSetCallable() {
+    return stub.patchNamedSetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2582,6 +3202,143 @@ public class RoutersClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRouterRequest, Operation> updateCallable() {
     return stub.updateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String router = "router-925132983";
+   *   NamedSet namedSetResource = NamedSet.newBuilder().build();
+   *   Operation response =
+   *       routersClient.updateNamedSetAsync(project, region, router, namedSetResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param router Name of the Router resource where Named Set is defined.
+   * @param namedSetResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateNamedSetAsync(
+      String project, String region, String router, NamedSet namedSetResource) {
+    UpdateNamedSetRouterRequest request =
+        UpdateNamedSetRouterRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setRouter(router)
+            .setNamedSetResource(namedSetResource)
+            .build();
+    return updateNamedSetAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateNamedSetRouterRequest request =
+   *       UpdateNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   Operation response = routersClient.updateNamedSetAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateNamedSetAsync(
+      UpdateNamedSetRouterRequest request) {
+    return updateNamedSetOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateNamedSetRouterRequest request =
+   *       UpdateNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       routersClient.updateNamedSetOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateNamedSetRouterRequest, Operation, Operation>
+      updateNamedSetOperationCallable() {
+    return stub.updateNamedSetOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates or creates new Named Set
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RoutersClient routersClient = RoutersClient.create()) {
+   *   UpdateNamedSetRouterRequest request =
+   *       UpdateNamedSetRouterRequest.newBuilder()
+   *           .setNamedSetResource(NamedSet.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setRouter("router-925132983")
+   *           .build();
+   *   ApiFuture<Operation> future = routersClient.updateNamedSetCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNamedSetRouterRequest, Operation> updateNamedSetCallable() {
+    return stub.updateNamedSetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3081,6 +3838,83 @@ public class RoutersClient implements BackgroundResource {
     protected ListBgpRoutesFixedSizeCollection createCollection(
         @Nullable List<ListBgpRoutesPage> pages, int collectionSize) {
       return new ListBgpRoutesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListNamedSetsPagedResponse
+      extends AbstractPagedListResponse<
+          ListNamedSetsRoutersRequest,
+          RoutersListNamedSets,
+          NamedSet,
+          ListNamedSetsPage,
+          ListNamedSetsFixedSizeCollection> {
+
+    public static ApiFuture<ListNamedSetsPagedResponse> createAsync(
+        PageContext<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet> context,
+        ApiFuture<RoutersListNamedSets> futureResponse) {
+      ApiFuture<ListNamedSetsPage> futurePage =
+          ListNamedSetsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListNamedSetsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListNamedSetsPagedResponse(ListNamedSetsPage page) {
+      super(page, ListNamedSetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListNamedSetsPage
+      extends AbstractPage<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet, ListNamedSetsPage> {
+
+    private ListNamedSetsPage(
+        @Nullable PageContext<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet> context,
+        @Nullable RoutersListNamedSets response) {
+      super(context, response);
+    }
+
+    private static ListNamedSetsPage createEmptyPage() {
+      return new ListNamedSetsPage(null, null);
+    }
+
+    @Override
+    protected ListNamedSetsPage createPage(
+        @Nullable PageContext<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet> context,
+        @Nullable RoutersListNamedSets response) {
+      return new ListNamedSetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListNamedSetsPage> createPageAsync(
+        @Nullable PageContext<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet> context,
+        ApiFuture<RoutersListNamedSets> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListNamedSetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListNamedSetsRoutersRequest,
+          RoutersListNamedSets,
+          NamedSet,
+          ListNamedSetsPage,
+          ListNamedSetsFixedSizeCollection> {
+
+    private ListNamedSetsFixedSizeCollection(
+        @Nullable List<ListNamedSetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListNamedSetsFixedSizeCollection createEmptyCollection() {
+      return new ListNamedSetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListNamedSetsFixedSizeCollection createCollection(
+        @Nullable List<ListNamedSetsPage> pages, int collectionSize) {
+      return new ListNamedSetsFixedSizeCollection(pages, collectionSize);
     }
   }
 

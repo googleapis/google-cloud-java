@@ -152,6 +152,7 @@ public class DeveloperKnowledgeClientTest {
             .setTitle("title110371416")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setView(DocumentView.forNumber(0))
+            .setContentLengthBytes(228531160)
             .build();
     mockDeveloperKnowledge.addResponse(expectedResponse);
 
@@ -197,6 +198,7 @@ public class DeveloperKnowledgeClientTest {
             .setTitle("title110371416")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setView(DocumentView.forNumber(0))
+            .setContentLengthBytes(228531160)
             .build();
     mockDeveloperKnowledge.addResponse(expectedResponse);
 
@@ -269,6 +271,43 @@ public class DeveloperKnowledgeClientTest {
               .setView(DocumentView.forNumber(0))
               .build();
       client.batchGetDocuments(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void answerQueryTest() throws Exception {
+    AnswerQueryResponse expectedResponse =
+        AnswerQueryResponse.newBuilder().setAnswer(Answer.newBuilder().build()).build();
+    mockDeveloperKnowledge.addResponse(expectedResponse);
+
+    AnswerQueryRequest request = AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+
+    AnswerQueryResponse actualResponse = client.answerQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperKnowledge.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnswerQueryRequest actualRequest = ((AnswerQueryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void answerQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperKnowledge.addException(exception);
+
+    try {
+      AnswerQueryRequest request =
+          AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+      client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

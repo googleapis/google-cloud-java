@@ -69,7 +69,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetPrivateAuctionDeal</td>
- *      <td><p> API to retrieve a `PrivateAuctionDeal` object.</td>
+ *      <td><p> Retrieves a `PrivateAuctionDeal` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListPrivateAuctionDeals</td>
- *      <td><p> API to retrieve a list of `PrivateAuctionDeal` objects.</td>
+ *      <td><p> Lists `PrivateAuctionDeal` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -108,7 +108,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePrivateAuctionDeal</td>
- *      <td><p> API to create a `PrivateAuctionDeal` object.</td>
+ *      <td><p> Creates a `PrivateAuctionDeal` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -127,7 +127,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePrivateAuctionDeal</td>
- *      <td><p> API to update a `PrivateAuctionDeal` object.</td>
+ *      <td><p> Updates a `PrivateAuctionDeal` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -241,7 +241,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuctionDeal` object.
+   * Retrieves a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -273,7 +273,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuctionDeal` object.
+   * Retrieves a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -303,7 +303,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuctionDeal` object.
+   * Retrieves a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -333,7 +333,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuctionDeal` object.
+   * Retrieves a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -364,7 +364,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuctionDeal` objects.
+   * Lists `PrivateAuctionDeal` objects.
    *
    * <p>Sample code:
    *
@@ -399,7 +399,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuctionDeal` objects.
+   * Lists `PrivateAuctionDeal` objects.
    *
    * <p>Sample code:
    *
@@ -431,7 +431,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuctionDeal` objects.
+   * Lists `PrivateAuctionDeal` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +469,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuctionDeal` objects.
+   * Lists `PrivateAuctionDeal` objects.
    *
    * <p>Sample code:
    *
@@ -508,7 +508,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuctionDeal` objects.
+   * Lists `PrivateAuctionDeal` objects.
    *
    * <p>Sample code:
    *
@@ -552,7 +552,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuctionDeal` object.
+   * Creates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -588,7 +588,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuctionDeal` object.
+   * Creates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -624,7 +624,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuctionDeal` object.
+   * Creates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -656,7 +656,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuctionDeal` object.
+   * Creates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -687,7 +687,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuctionDeal` object.
+   * Updates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -724,7 +724,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuctionDeal` object.
+   * Updates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *
@@ -756,7 +756,7 @@ public class PrivateAuctionDealServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuctionDeal` object.
+   * Updates a `PrivateAuctionDeal` object.
    *
    * <p>Sample code:
    *

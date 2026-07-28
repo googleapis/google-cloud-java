@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for cancel:
+ * configure the RetrySettings for advance:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -113,6 +113,17 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RolloutsSettings extends ClientSettings<RolloutsSettings> {
+
+  /** Returns the object with the settings used for calls to advance. */
+  public UnaryCallSettings<AdvanceRolloutRequest, Operation> advanceSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).advanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to advance. */
+  public OperationCallSettings<AdvanceRolloutRequest, Operation, Operation>
+      advanceOperationSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).advanceOperationSettings();
+  }
 
   /** Returns the object with the settings used for calls to cancel. */
   public UnaryCallSettings<CancelRolloutRequest, Operation> cancelSettings() {
@@ -145,6 +156,27 @@ public class RolloutsSettings extends ClientSettings<RolloutsSettings> {
   public PagedCallSettings<ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
       listSettings() {
     return ((RolloutsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pause. */
+  public UnaryCallSettings<PauseRolloutRequest, Operation> pauseSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).pauseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to pause. */
+  public OperationCallSettings<PauseRolloutRequest, Operation, Operation> pauseOperationSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).pauseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public UnaryCallSettings<ResumeRolloutRequest, Operation> resumeSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).resumeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resume. */
+  public OperationCallSettings<ResumeRolloutRequest, Operation, Operation>
+      resumeOperationSettings() {
+    return ((RolloutsStubSettings) getStubSettings()).resumeOperationSettings();
   }
 
   public static final RolloutsSettings create(RolloutsStubSettings stub) throws IOException {
@@ -243,6 +275,17 @@ public class RolloutsSettings extends ClientSettings<RolloutsSettings> {
       return this;
     }
 
+    /** Returns the builder for the settings used for calls to advance. */
+    public UnaryCallSettings.Builder<AdvanceRolloutRequest, Operation> advanceSettings() {
+      return getStubSettingsBuilder().advanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to advance. */
+    public OperationCallSettings.Builder<AdvanceRolloutRequest, Operation, Operation>
+        advanceOperationSettings() {
+      return getStubSettingsBuilder().advanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to cancel. */
     public UnaryCallSettings.Builder<CancelRolloutRequest, Operation> cancelSettings() {
       return getStubSettingsBuilder().cancelSettings();
@@ -274,6 +317,28 @@ public class RolloutsSettings extends ClientSettings<RolloutsSettings> {
     public PagedCallSettings.Builder<ListRolloutsRequest, RolloutsListResponse, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pause. */
+    public UnaryCallSettings.Builder<PauseRolloutRequest, Operation> pauseSettings() {
+      return getStubSettingsBuilder().pauseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pause. */
+    public OperationCallSettings.Builder<PauseRolloutRequest, Operation, Operation>
+        pauseOperationSettings() {
+      return getStubSettingsBuilder().pauseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    public UnaryCallSettings.Builder<ResumeRolloutRequest, Operation> resumeSettings() {
+      return getStubSettingsBuilder().resumeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resume. */
+    public OperationCallSettings.Builder<ResumeRolloutRequest, Operation, Operation>
+        resumeOperationSettings() {
+      return getStubSettingsBuilder().resumeOperationSettings();
     }
 
     @Override

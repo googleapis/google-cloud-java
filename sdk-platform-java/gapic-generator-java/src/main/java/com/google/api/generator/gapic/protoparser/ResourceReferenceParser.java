@@ -29,8 +29,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ResourceReferenceParser {
   private static final String EMPTY_STRING = "";
   private static final String LEFT_BRACE = "{";

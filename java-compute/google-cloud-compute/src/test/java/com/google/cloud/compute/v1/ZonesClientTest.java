@@ -87,6 +87,7 @@ public class ZonesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setRegion("region-934795532")
+            .setResourceStatus(ZoneResourceStatus.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setStatus("status-892481550")
             .setSupportsPzs(true)

@@ -36,7 +36,9 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.util.GenericData;
 import java.util.Map;
 import java.util.logging.Level;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 class LoggingUtils {
 
   static final String GOOGLE_SDK_JAVA_LOGGING = "GOOGLE_SDK_JAVA_LOGGING";

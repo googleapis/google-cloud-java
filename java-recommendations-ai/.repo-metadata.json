@@ -11,6 +11,5 @@
   "repo_short": "java-recommendations-ai",
   "distribution_name": "com.google.cloud:google-cloud-recommendations-ai",
   "api_id": "recommendationengine.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

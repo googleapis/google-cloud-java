@@ -1422,6 +1422,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstanceGroupManagerRequest request =
    *       DeleteInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -1457,6 +1458,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstanceGroupManagerRequest request =
    *       DeleteInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -1492,6 +1494,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstanceGroupManagerRequest request =
    *       DeleteInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -1602,6 +1605,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersDeleteInstancesRequestResource(
    *               InstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -1648,6 +1652,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersDeleteInstancesRequestResource(
    *               InstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -1694,6 +1699,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersDeleteInstancesRequestResource(
    *               InstanceGroupManagersDeleteInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -3278,6 +3284,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersRecreateInstancesRequestResource(
    *               InstanceGroupManagersRecreateInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -3323,6 +3330,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersRecreateInstancesRequestResource(
    *               InstanceGroupManagersRecreateInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -3368,6 +3376,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersRecreateInstancesRequestResource(
    *               InstanceGroupManagersRecreateInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -4471,6 +4480,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersStopInstancesRequestResource(
    *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -4525,6 +4535,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersStopInstancesRequestResource(
    *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -4579,6 +4590,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
    *           .setInstanceGroupManagersStopInstancesRequestResource(
    *               InstanceGroupManagersStopInstancesRequest.newBuilder().build())
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")

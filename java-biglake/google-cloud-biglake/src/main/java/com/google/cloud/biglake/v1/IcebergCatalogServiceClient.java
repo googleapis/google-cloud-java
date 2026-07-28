@@ -474,6 +474,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (IcebergCatalog element :
    *       icebergCatalogServiceClient.listIcebergCatalogs(request).iterateAll()) {
@@ -509,6 +510,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<IcebergCatalog> future =
    *       icebergCatalogServiceClient.listIcebergCatalogsPagedCallable().futureCall(request);
@@ -543,6 +545,7 @@ public class IcebergCatalogServiceClient implements BackgroundResource {
    *           .setParent(ProjectName.of("[PROJECT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListIcebergCatalogsResponse response =

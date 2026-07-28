@@ -140,6 +140,9 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetGlobalForwardingRuleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasView()) {
+                              serializer.putQueryParam(fields, "view", request.getView());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

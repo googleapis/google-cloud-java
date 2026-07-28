@@ -71,6 +71,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
@@ -79,6 +81,7 @@ import java.util.logging.Logger;
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
  */
+@NullMarked
 public class ComputeEngineCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider {
 
@@ -127,8 +130,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private transient HttpTransportFactory transportFactory;
 
-  private String universeDomainFromMetadata = null;
-  private String projectId = null;
+  private @Nullable String universeDomainFromMetadata = null;
+  private @Nullable String projectId = null;
 
   /**
    * Experimental Feature.
@@ -757,7 +760,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ComputeEngineCredentials)) {
       return false;
     }

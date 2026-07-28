@@ -41,6 +41,7 @@ public class SyncRecreateInstances {
               .setInstanceGroupManager("instanceGroupManager-388242077")
               .setInstanceGroupManagersRecreateInstancesRequestResource(
                   InstanceGroupManagersRecreateInstancesRequest.newBuilder().build())
+              .setNoGracefulShutdown(true)
               .setProject("project-309310695")
               .setRequestId("requestId693933066")
               .setZone("zone3744684")

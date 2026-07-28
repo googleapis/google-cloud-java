@@ -52,9 +52,11 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Handles an interactive 3-Legged-OAuth2 (3LO) user consent authorization. */
+@NullMarked
 public class UserAuthorizer {
 
   private static final LoggerProvider LOGGER_PROVIDER =
@@ -196,7 +198,10 @@ public class UserAuthorizer {
    * @return The URL that can be navigated or redirected to.
    */
   public URL getAuthorizationUrl(
-      String userId, String state, URI baseUri, Map<String, String> additionalParameters) {
+      String userId,
+      String state,
+      URI baseUri,
+      @Nullable Map<String, String> additionalParameters) {
     URI resolvedCallbackUri = getCallbackUri(baseUri);
     String scopesString = Joiner.on(' ').join(scopes);
 
@@ -235,6 +240,7 @@ public class UserAuthorizer {
    * @return The loaded credentials or null if there are no valid approved credentials.
    * @throws IOException If there is error retrieving or loading the credentials.
    */
+  @Nullable
   public UserCredentials getCredentials(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
     if (tokenStore == null) {
@@ -297,7 +303,8 @@ public class UserAuthorizer {
    * @throws IOException An error from the server API call to get the tokens.
    */
   public UserCredentials getCredentialsFromCode(
-      String code, URI baseUri, Map<String, String> additionalParameters) throws IOException {
+      String code, URI baseUri, @Nullable Map<String, String> additionalParameters)
+      throws IOException {
     TokenResponseWithConfig tokenResponseWithConfig =
         getCredentialsFromCodeInternal(code, baseUri, additionalParameters);
     return UserCredentials.newBuilder()

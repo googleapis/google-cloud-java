@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.62.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -30,9 +30,8 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-datastore</artifactId>
-    <version>3.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datastore:current} -->
   </dependency>
-
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
@@ -42,9 +41,8 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>2.31.2</version>
+  <version>3.2.0</version>
 </dependency>
-
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies:
@@ -54,6 +52,7 @@ implementation platform('com.google.cloud:libraries-bom:26.83.0')
 
 implementation 'com.google.cloud:google-cloud-datastore'
 ```
+
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -384,9 +383,9 @@ Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/
 | Sum Aggregation With Limit | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithLimit.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithLimit.java) |
 | Sum Aggregation With Order By | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithOrderBy.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithOrderBy.java) |
 | Sum Aggregation With Property Filter | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithPropertyFilter.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/aggregation/SumAggregationWithPropertyFilter.java) |
-| Indexing Consideration Query | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/filters/IndexingConsiderationQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/filters/IndexingConsiderationQuery.java) |
+| Queries with indexing considerations | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/filters/IndexingConsiderationQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/filters/IndexingConsiderationQuery.java) |
 | Create a union between two filters | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/filters/OrFilterQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/filters/OrFilterQuery.java) |
-| Order Fields Query | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/filters/OrderFieldsQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/filters/OrderFieldsQuery.java) |
+| Queries with order fileds | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/filters/OrderFieldsQuery.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/filters/OrderFieldsQuery.java) |
 | Query Profile Explain | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplain.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplain.java) |
 | Query Profile Explain Aggregation | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplainAggregation.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplainAggregation.java) |
 | Query Profile Explain Analyze | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplainAnalyze.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/datastore/queryprofile/QueryProfileExplainAnalyze.java) |
@@ -448,8 +447,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 

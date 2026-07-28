@@ -19,8 +19,10 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class Method {
   public enum Stream {
@@ -46,27 +48,21 @@ public abstract class Method {
     return pageSizeFieldName() != null;
   }
 
-  @Nullable
-  public abstract String pageSizeFieldName();
+  public abstract @Nullable String pageSizeFieldName();
 
   public abstract boolean isDeprecated();
 
-  @Nullable
-  public abstract LongrunningOperation lro();
+  public abstract @Nullable LongrunningOperation lro();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   // Example: google.iam.v1.IAMPolicy.
-  @Nullable
-  public abstract String mixedInApiName();
+  public abstract @Nullable String mixedInApiName();
 
   // HttpBinding pending dotted reference support.
-  @Nullable
-  public abstract HttpBindings httpBindings();
+  public abstract @Nullable HttpBindings httpBindings();
 
-  @Nullable
-  public abstract RoutingHeaderRule routingHeaderRule();
+  public abstract @Nullable RoutingHeaderRule routingHeaderRule();
 
   // Example from Expand in echo.proto: Thet TypeNodes that map to
   // [["content", "error"], ["content", "error", "info"]].

@@ -79,7 +79,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
         with:
-          java-version: 11
+          java-version: 8
           distribution: temurin
           cache: 'maven'
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
@@ -112,7 +112,7 @@ jobs:
     - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5
       with:
         distribution: temurin
-        java-version: 11
+        java-version: 8
         cache: 'maven'
     - run: java -version
     - name: Pre-install all BOM modules to populate local cache

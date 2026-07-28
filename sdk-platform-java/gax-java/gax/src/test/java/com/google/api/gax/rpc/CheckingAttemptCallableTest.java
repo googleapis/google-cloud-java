@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.api.core.SettableApiFuture;
@@ -42,7 +43,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -50,13 +50,16 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class CheckingAttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
-  @Mock RetryingFuture<String> mockExternalFuture;
+  private RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockExternalFuture =
+        Mockito.mock(RetryingFuture.class, Mockito.withSettings().withoutAnnotations());
+    mockInnerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
 
     currentAttemptSettings =
@@ -110,7 +113,9 @@ class CheckingAttemptCallableTest {
     FakeCallContext callContext = Mockito.spy(FakeCallContext.createDefault());
     Mockito.doReturn(callContext).when(callContext).withTimeoutDuration(ArgumentMatchers.any());
     CheckingAttemptCallable<String, String> callable =
-        new CheckingAttemptCallable<>(Mockito.mock(UnaryCallable.class), callContext);
+        new CheckingAttemptCallable<>(
+            Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()),
+            callContext);
     callable.setExternalFuture(mockExternalFuture);
 
     // Make sure that the rpc timeout is set

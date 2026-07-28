@@ -15,9 +15,11 @@
 package com.google.api.generator.engine.lexicon;
 
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 // TODO(miraleung): Add logical representations for each operator so we can use them in expression
 // parsing.
+@NullMarked
 public class Operator {
   private static final Pattern OPERATOR_PATTERN =
       Pattern.compile("[\\+\\-\\*\\/%\\=\\!\\&\\|<>\\?\\:\\^]");

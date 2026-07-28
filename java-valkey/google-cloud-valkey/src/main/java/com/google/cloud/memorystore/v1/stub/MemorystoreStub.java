@@ -16,10 +16,12 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -28,31 +30,43 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.AddAuthTokenRequest;
+import com.google.cloud.memorystore.v1.AddTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1.AuthToken;
 import com.google.cloud.memorystore.v1.Backup;
 import com.google.cloud.memorystore.v1.BackupCollection;
 import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
 import com.google.cloud.memorystore.v1.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.memorystore.v1.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListAuthTokensRequest;
+import com.google.cloud.memorystore.v1.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
 import com.google.cloud.memorystore.v1.ListBackupsRequest;
 import com.google.cloud.memorystore.v1.ListBackupsResponse;
 import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
+import com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest;
+import com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.StartMigrationRequest;
+import com.google.cloud.memorystore.v1.TokenAuthUser;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -212,6 +226,70 @@ public abstract class MemorystoreStub implements BackgroundResource {
 
   public UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable() {
     throw new UnsupportedOperationException("Not implemented: finishMigrationCallable()");
+  }
+
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTokenAuthUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTokenAuthUsersCallable()");
+  }
+
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTokenAuthUserCallable()");
+  }
+
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthTokensPagedCallable()");
+  }
+
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthTokensCallable()");
+  }
+
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAuthTokenCallable()");
+  }
+
+  public OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addTokenAuthUserOperationCallable()");
+  }
+
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: addTokenAuthUserCallable()");
+  }
+
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteTokenAuthUserOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTokenAuthUserCallable()");
+  }
+
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAuthTokenOperationCallable()");
+  }
+
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAuthTokenCallable()");
+  }
+
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthTokenOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthTokenCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

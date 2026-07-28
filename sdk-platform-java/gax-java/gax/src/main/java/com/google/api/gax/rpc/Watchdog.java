@@ -50,6 +50,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Prevents the streams from hanging indefinitely. This middleware garbage collects idle streams in
@@ -66,6 +67,7 @@ import javax.annotation.Nonnull;
  *       had no outstanding demand. Duration.ZERO disables the timeout.
  * </ul>
  */
+@NullMarked
 public final class Watchdog implements Runnable, BackgroundResource {
 
   private static final Logger LOG = Logger.getLogger(Watchdog.class.getName());

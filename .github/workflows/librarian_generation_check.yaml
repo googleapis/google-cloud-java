@@ -75,8 +75,6 @@ jobs:
         librarian install
         echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
     - name: Run librarian generate
-      env:
-        PYTHONPATH: ${{ github.workspace }}/sdk-platform-java/hermetic_build/library_generation/owlbot
       run: |
         librarian generate --all
     - name: Check for generated code changes

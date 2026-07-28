@@ -15,7 +15,9 @@
 package com.google.api.generator.engine.ast;
 
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class BlockComment implements Comment {
   @Override

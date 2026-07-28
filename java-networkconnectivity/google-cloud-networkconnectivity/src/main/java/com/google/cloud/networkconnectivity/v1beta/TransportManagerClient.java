@@ -121,6 +121,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ParseFromActivationKey</td>
+ *      <td><p> Gets details of a single RemoteTransportProfile given an activation key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKey(ParseFromActivationKeyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKey(LocationName parent, String activationKey)
+ *           <li><p> parseFromActivationKey(String parent, String activationKey)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> parseFromActivationKeyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListTransports</td>
  *      <td><p> Lists Transports in a given project and location.</td>
  *      <td>
@@ -239,8 +258,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -721,6 +741,135 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String activationKey = "activationKey1757742441";
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(parent, activationKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ParseFromActivationKeyRequest.
+   * @param activationKey Required. The activation key to get the RemoteTransportProfile for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      @Nullable LocationName parent, String activationKey) {
+    ParseFromActivationKeyRequest request =
+        ParseFromActivationKeyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setActivationKey(activationKey)
+            .build();
+    return parseFromActivationKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String activationKey = "activationKey1757742441";
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(parent, activationKey);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ParseFromActivationKeyRequest.
+   * @param activationKey Required. The activation key to get the RemoteTransportProfile for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      String parent, String activationKey) {
+    ParseFromActivationKeyRequest request =
+        ParseFromActivationKeyRequest.newBuilder()
+            .setParent(parent)
+            .setActivationKey(activationKey)
+            .build();
+    return parseFromActivationKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   ParseFromActivationKeyRequest request =
+   *       ParseFromActivationKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setActivationKey("activationKey1757742441")
+   *           .build();
+   *   ParseFromActivationKeyResponse response =
+   *       transportManagerClient.parseFromActivationKey(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ParseFromActivationKeyResponse parseFromActivationKey(
+      ParseFromActivationKeyRequest request) {
+    return parseFromActivationKeyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single RemoteTransportProfile given an activation key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TransportManagerClient transportManagerClient = TransportManagerClient.create()) {
+   *   ParseFromActivationKeyRequest request =
+   *       ParseFromActivationKeyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setActivationKey("activationKey1757742441")
+   *           .build();
+   *   ApiFuture<ParseFromActivationKeyResponse> future =
+   *       transportManagerClient.parseFromActivationKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ParseFromActivationKeyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyCallable() {
+    return stub.parseFromActivationKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Transports in a given project and location.
    *
    * <p>Sample code:
@@ -1067,6 +1216,7 @@ public class TransportManagerClient implements BackgroundResource {
    *   GetStatusRequest request =
    *       GetStatusRequest.newBuilder()
    *           .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+   *           .setSkipCache(true)
    *           .build();
    *   GetStatusResponse response = transportManagerClient.getStatus(request);
    * }
@@ -1095,6 +1245,7 @@ public class TransportManagerClient implements BackgroundResource {
    *   GetStatusRequest request =
    *       GetStatusRequest.newBuilder()
    *           .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+   *           .setSkipCache(true)
    *           .build();
    *   ApiFuture<GetStatusResponse> future =
    *       transportManagerClient.getStatusCallable().futureCall(request);
@@ -1550,13 +1701,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1589,13 +1746,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1629,13 +1792,19 @@ public class TransportManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

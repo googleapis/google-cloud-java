@@ -33,8 +33,10 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
 /** A value class to represent the name of the RPC method in an {@link ApiTracer}. */
+@NullMarked
 @BetaApi
 @InternalApi
 @AutoValue

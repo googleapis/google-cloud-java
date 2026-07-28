@@ -90,7 +90,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class Parser {
   enum SelectiveGapicType {
     // Methods will be generated and exposed externally as usual.
@@ -950,7 +953,7 @@ public class Parser {
   }
 
   @VisibleForTesting
-  static LongrunningOperation parseLro(
+  static @Nullable LongrunningOperation parseLro(
       String servicePackage, MethodDescriptor methodDescriptor, Map<String, Message> messageTypes) {
     MethodOptions methodOptions = methodDescriptor.getOptions();
 

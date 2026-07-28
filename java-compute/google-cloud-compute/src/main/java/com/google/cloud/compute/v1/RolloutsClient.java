@@ -67,6 +67,25 @@ import org.jspecify.annotations.Nullable;
  *      <th>Method Variants</th>
  *    </tr>
  *    <tr>
+ *      <td><p> Advance</td>
+ *      <td><p> Advances a Rollout to the next wave, or completes it if no waves remain.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> advanceAsync(AdvanceRolloutRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> advanceAsync(String project, String rollout)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> advanceOperationCallable()
+ *           <li><p> advanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Cancel</td>
  *      <td><p> Cancels a Rollout.</td>
  *      <td>
@@ -138,6 +157,44 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listPagedCallable()
  *           <li><p> listCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Pause</td>
+ *      <td><p> Pauses a Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> pauseAsync(PauseRolloutRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> pauseAsync(String project, String rollout)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> pauseOperationCallable()
+ *           <li><p> pauseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> Resume</td>
+ *      <td><p> Resumes a Rollout.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resumeAsync(ResumeRolloutRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> resumeAsync(String project, String rollout)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resumeOperationCallable()
+ *           <li><p> resumeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -229,6 +286,128 @@ public class RolloutsClient implements BackgroundResource {
 
   public RolloutsStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout to the next wave, or completes it if no waves remain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   String project = "project-309310695";
+   *   String rollout = "rollout1377108401";
+   *   Operation response = rolloutsClient.advanceAsync(project, rollout).get();
+   * }
+   * }</pre>
+   *
+   * @param project Required. Project ID for this request.
+   * @param rollout Required. Name of the Rollout resource to advance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> advanceAsync(String project, String rollout) {
+    AdvanceRolloutRequest request =
+        AdvanceRolloutRequest.newBuilder().setProject(project).setRollout(rollout).build();
+    return advanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout to the next wave, or completes it if no waves remain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   AdvanceRolloutRequest request =
+   *       AdvanceRolloutRequest.newBuilder()
+   *           .setCurrentWaveNumber(-1432331895)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   Operation response = rolloutsClient.advanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> advanceAsync(AdvanceRolloutRequest request) {
+    return advanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout to the next wave, or completes it if no waves remain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   AdvanceRolloutRequest request =
+   *       AdvanceRolloutRequest.newBuilder()
+   *           .setCurrentWaveNumber(-1432331895)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       rolloutsClient.advanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AdvanceRolloutRequest, Operation, Operation>
+      advanceOperationCallable() {
+    return stub.advanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout to the next wave, or completes it if no waves remain.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   AdvanceRolloutRequest request =
+   *       AdvanceRolloutRequest.newBuilder()
+   *           .setCurrentWaveNumber(-1432331895)
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   ApiFuture<Operation> future = rolloutsClient.advanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AdvanceRolloutRequest, Operation> advanceCallable() {
+    return stub.advanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -694,6 +873,250 @@ public class RolloutsClient implements BackgroundResource {
    */
   public final UnaryCallable<ListRolloutsRequest, RolloutsListResponse> listCallable() {
     return stub.listCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   String project = "project-309310695";
+   *   String rollout = "rollout1377108401";
+   *   Operation response = rolloutsClient.pauseAsync(project, rollout).get();
+   * }
+   * }</pre>
+   *
+   * @param project Required. Project ID for this request.
+   * @param rollout Required. Name of the Rollout resource to pause.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> pauseAsync(String project, String rollout) {
+    PauseRolloutRequest request =
+        PauseRolloutRequest.newBuilder().setProject(project).setRollout(rollout).build();
+    return pauseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   PauseRolloutRequest request =
+   *       PauseRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   Operation response = rolloutsClient.pauseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> pauseAsync(PauseRolloutRequest request) {
+    return pauseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   PauseRolloutRequest request =
+   *       PauseRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       rolloutsClient.pauseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<PauseRolloutRequest, Operation, Operation>
+      pauseOperationCallable() {
+    return stub.pauseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Pauses a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   PauseRolloutRequest request =
+   *       PauseRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   ApiFuture<Operation> future = rolloutsClient.pauseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PauseRolloutRequest, Operation> pauseCallable() {
+    return stub.pauseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   String project = "project-309310695";
+   *   String rollout = "rollout1377108401";
+   *   Operation response = rolloutsClient.resumeAsync(project, rollout).get();
+   * }
+   * }</pre>
+   *
+   * @param project Required. Project ID for this request.
+   * @param rollout Required. Name of the Rollout resource to resume.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeAsync(String project, String rollout) {
+    ResumeRolloutRequest request =
+        ResumeRolloutRequest.newBuilder().setProject(project).setRollout(rollout).build();
+    return resumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   ResumeRolloutRequest request =
+   *       ResumeRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   Operation response = rolloutsClient.resumeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> resumeAsync(ResumeRolloutRequest request) {
+    return resumeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   ResumeRolloutRequest request =
+   *       ResumeRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       rolloutsClient.resumeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ResumeRolloutRequest, Operation, Operation>
+      resumeOperationCallable() {
+    return stub.resumeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+   *   ResumeRolloutRequest request =
+   *       ResumeRolloutRequest.newBuilder()
+   *           .setEtag("etag3123477")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setRollout("rollout1377108401")
+   *           .build();
+   *   ApiFuture<Operation> future = rolloutsClient.resumeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResumeRolloutRequest, Operation> resumeCallable() {
+    return stub.resumeCallable();
   }
 
   @Override

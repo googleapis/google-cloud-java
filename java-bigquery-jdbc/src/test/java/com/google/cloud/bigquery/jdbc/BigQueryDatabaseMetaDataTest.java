@@ -34,9 +34,15 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -49,13 +55,22 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -72,6 +87,22 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
+    when(bigQueryConnection.getTracer())
+        .thenReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+    when(bigQueryConnection.getOtelContext()).thenReturn(Context.current());
+
+    Page<Dataset> datasetPageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
+
+    Page<Table> tablePageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
+
+    Table mockTable = mock(Table.class);
+    when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
     when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
     when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
@@ -1009,7 +1040,7 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
     Routine otherProc = mockBigQueryRoutine(catalog, schema, "another_proc", "PROCEDURE", "p3");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1, proc2, otherProc));
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
@@ -1027,7 +1058,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1053,7 +1084,7 @@ public class BigQueryDatabaseMetaDataTest {
     Routine proc1 = mockBigQueryRoutine(catalog, schema, "proc_abc", "PROCEDURE", "p1");
     Routine func1 = mockBigQueryRoutine(catalog, schema, "func_123", "FUNCTION", "f1");
 
-    Page<Routine> page = mock(Page.class);
+    Page<Routine> page = mock(Page.class, withSettings().withoutAnnotations());
     when(page.iterateAll()).thenReturn(Arrays.asList(proc1, func1));
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
@@ -1069,7 +1100,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class));
@@ -1104,7 +1135,7 @@ public class BigQueryDatabaseMetaDataTest {
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
             regex,
-            dbMetadata.LOG);
+            false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
@@ -1114,6 +1145,57 @@ public class BigQueryDatabaseMetaDataTest {
     List<Routine> resultList = new ArrayList<>(results);
     assertEquals(1, resultList.size());
     assertSame(mockRoutine, resultList.get(0));
+  }
+
+  private List<Table> invokeFindMatchingObjectsWithException(
+      BigQueryException bqe, String pattern, boolean throwOn404) throws Exception {
+    return dbMetadata.findMatchingBigQueryObjects(
+        "Table",
+        () -> {
+          throw bqe;
+        },
+        (name) -> {
+          throw bqe;
+        },
+        (table) -> "name",
+        pattern,
+        dbMetadata.compileSqlLikePattern(pattern),
+        throwOn404);
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Swallows404_TargetedScan() throws Exception {
+    List<Table> results =
+        invokeFindMatchingObjectsWithException(
+            new BigQueryException(404, "Not Found"), "exact_match", false);
+    assertTrue(results.isEmpty());
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws404_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(404, "Not Found"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_BroadScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "%", true));
+  }
+
+  @Test
+  public void testFindMatchingBigQueryObjects_Throws403_TargetedScan() {
+    assertThrows(
+        BigQueryException.class,
+        () ->
+            invokeFindMatchingObjectsWithException(
+                new BigQueryException(403, "Access Denied"), "exact_match", false));
   }
 
   @Test
@@ -1545,12 +1627,12 @@ public class BigQueryDatabaseMetaDataTest {
     Routine func1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "func_b", "FUNCTION", "desc b");
     Routine proc2_ds2 = mockBigQueryRoutine(catalog, schema2Name, "proc_c", "PROCEDURE", "desc c");
 
-    Page<Routine> page1 = mock(Page.class);
+    Page<Routine> page1 = mock(Page.class, withSettings().withoutAnnotations());
     when(page1.iterateAll()).thenReturn(Arrays.asList(proc1_ds1, func1_ds1));
     when(bigqueryClient.listRoutines(eq(dataset1.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page1);
 
-    Page<Routine> page2 = mock(Page.class);
+    Page<Routine> page2 = mock(Page.class, withSettings().withoutAnnotations());
     when(page2.iterateAll()).thenReturn(Collections.singletonList(proc2_ds2));
     when(bigqueryClient.listRoutines(eq(dataset2.getDatasetId()), any(RoutineListOption.class)))
         .thenReturn(page2);
@@ -2926,7 +3008,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws Exception {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
@@ -3219,6 +3301,48 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
   }
 
+  @ParameterizedTest
+  @MethodSource("metadataOperationProvider")
+  public void testMetadataOperation_generatesSpan(
+      MetadataOperation operation, String expectedSpanName) throws Exception {
+    operation.run();
+
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
+  }
+
+  @FunctionalInterface
+  interface MetadataOperation {
+    void run() throws SQLException;
+  }
+
+  Stream<Arguments> metadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getCatalogs(),
+            "BigQueryDatabaseMetaData.getCatalogs"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getSchemas("catalog", "schema"),
+            "BigQueryDatabaseMetaData.getSchemas"),
+        Arguments.of(
+            (MetadataOperation)
+                () -> dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"}),
+            "BigQueryDatabaseMetaData.getTables"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
+            "BigQueryDatabaseMetaData.getColumns"));
+  }
+
   @Test
   public void testWrapperMethods() throws SQLException {
     assertTrue(dbMetadata.isWrapperFor(DatabaseMetaData.class));
@@ -3309,20 +3433,20 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
     when(bigqueryClient.listDatasets(
             eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
     when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pageAdditional);
 
-    Page<Dataset> pageDiscovered = mock(Page.class);
+    Page<Dataset> pageDiscovered = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsDiscovered = mockBigQueryDataset("discovered-1", "dataset_d");
     when(pageDiscovered.iterateAll()).thenReturn(Collections.singletonList(dsDiscovered));
     when(bigqueryClient.listDatasets(eq("discovered-1"), any(BigQuery.DatasetListOption[].class)))
@@ -3354,14 +3478,14 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getDiscoveredProjects()).thenReturn(Arrays.asList("discovered-1"));
     when(bigQueryConnection.getAdditionalProjects()).thenReturn("additional-1");
 
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mockBigQueryDataset("primary-project", "dataset_p");
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
     when(bigqueryClient.listDatasets(
             eq("primary-project"), any(BigQuery.DatasetListOption[].class)))
         .thenReturn(pagePrimary);
 
-    Page<Dataset> pageAdditional = mock(Page.class);
+    Page<Dataset> pageAdditional = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsAdditional = mockBigQueryDataset("additional-1", "dataset_a");
     when(pageAdditional.iterateAll()).thenReturn(Collections.singletonList(dsAdditional));
     when(bigqueryClient.listDatasets(eq("additional-1"), any(BigQuery.DatasetListOption[].class)))
@@ -3388,7 +3512,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   private void mockDatasetIteration(DatasetId datasetId) {
-    Page<Dataset> pagePrimary = mock(Page.class);
+    Page<Dataset> pagePrimary = mock(Page.class, withSettings().withoutAnnotations());
     Dataset dsPrimary = mock(Dataset.class);
     when(dsPrimary.getDatasetId()).thenReturn(datasetId);
     when(pagePrimary.iterateAll()).thenReturn(Collections.singletonList(dsPrimary));
@@ -3411,7 +3535,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   private void mockTableIteration(DatasetId datasetId, Table... tables) {
-    Page<Table> pageTables = mock(Page.class);
+    Page<Table> pageTables = mock(Page.class, withSettings().withoutAnnotations());
     when(pageTables.iterateAll()).thenReturn(Arrays.asList(tables));
     when(bigqueryClient.listTables(eq(datasetId), any(BigQuery.TableListOption[].class)))
         .thenReturn(pageTables);
@@ -3522,7 +3646,27 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_hasKeys() throws SQLException {
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+
+    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
+    assertEquals(mockRs, rs);
+    verify(mockStmt).closeOnCompletion();
+    verify(mockStmt).executeQuery();
+  }
+
+  @Test
+  public void testGetExportedKeys_pcntSchema() throws SQLException {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset.p", "ref_table")) {
+      assertFalse(rs.next());
+    }
+  }
+
+  @Test
+  public void testGetExportedKeys_fallback_hasKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
     TableId refTableId = TableId.of("test-project", "dataset_p", "ref_table");
@@ -3544,7 +3688,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertTrue(rs.next());
       assertEquals("test-project", rs.getString("PKTABLE_CAT"));
       assertEquals("dataset_p", rs.getString("PKTABLE_SCHEM"));
@@ -3572,7 +3716,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetExportedKeys_noKeys() throws SQLException {
+  public void testGetExportedKeys_fallback_noKeys() throws SQLException {
     DatasetId datasetId = DatasetId.of("test-project", "dataset_p");
     TableId tableId = TableId.of("test-project", "dataset_p", "table_p");
 
@@ -3580,7 +3724,7 @@ public class BigQueryDatabaseMetaDataTest {
     mockDatasetIteration(datasetId);
     mockTableIteration(datasetId, mockTableP);
 
-    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table")) {
+    try (ResultSet rs = dbMetadata.getExportedKeys("test-project", null, "ref_table")) {
       assertFalse(rs.next());
     }
   }

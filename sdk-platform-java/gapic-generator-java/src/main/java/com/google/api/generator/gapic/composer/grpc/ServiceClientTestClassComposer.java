@@ -64,7 +64,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientTestClassComposer extends AbstractServiceClientTestClassComposer {
 
   private static final String SERVICE_HELPER_VAR_NAME = "mockServiceHelper";

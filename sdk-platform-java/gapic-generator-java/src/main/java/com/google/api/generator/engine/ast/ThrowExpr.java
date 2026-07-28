@@ -16,23 +16,22 @@ package com.google.api.generator.engine.ast;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class ThrowExpr implements Expr {
   // TODO(miraleung): Refactor with StringObjectValue and possibly with NewObjectExpr.
 
-  @Nullable
-  public abstract Expr throwExpr();
+  public abstract @Nullable Expr throwExpr();
 
   @Override
   public abstract TypeNode type();
 
-  @Nullable
-  public abstract Expr messageExpr();
+  public abstract @Nullable Expr messageExpr();
 
-  @Nullable
-  public abstract Expr causeExpr();
+  public abstract @Nullable Expr causeExpr();
 
   @Override
   public void accept(AstNodeVisitor visitor) {

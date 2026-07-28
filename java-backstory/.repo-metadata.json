@@ -11,6 +11,5 @@
   "repo_short": "java-backstory",
   "distribution_name": "com.google.cloud:google-cloud-backstory",
   "api_id": "backstory.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

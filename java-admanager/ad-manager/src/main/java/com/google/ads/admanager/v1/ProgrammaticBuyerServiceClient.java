@@ -68,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetProgrammaticBuyer</td>
- *      <td><p> API to retrieve a `ProgrammaticBuyer` object.</td>
+ *      <td><p> Retrieves a `ProgrammaticBuyer` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListProgrammaticBuyers</td>
- *      <td><p> API to retrieve a list of `ProgrammaticBuyer` objects.</td>
+ *      <td><p> Lists `ProgrammaticBuyer` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -203,7 +203,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ProgrammaticBuyer` object.
+   * Retrieves a `ProgrammaticBuyer` object.
    *
    * <p>Sample code:
    *
@@ -235,7 +235,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ProgrammaticBuyer` object.
+   * Retrieves a `ProgrammaticBuyer` object.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ProgrammaticBuyer` object.
+   * Retrieves a `ProgrammaticBuyer` object.
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ProgrammaticBuyer` object.
+   * Retrieves a `ProgrammaticBuyer` object.
    *
    * <p>Sample code:
    *
@@ -325,7 +325,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ProgrammaticBuyer` objects.
+   * Lists `ProgrammaticBuyer` objects.
    *
    * <p>Sample code:
    *
@@ -360,7 +360,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ProgrammaticBuyer` objects.
+   * Lists `ProgrammaticBuyer` objects.
    *
    * <p>Sample code:
    *
@@ -392,7 +392,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ProgrammaticBuyer` objects.
+   * Lists `ProgrammaticBuyer` objects.
    *
    * <p>Sample code:
    *
@@ -430,7 +430,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ProgrammaticBuyer` objects.
+   * Lists `ProgrammaticBuyer` objects.
    *
    * <p>Sample code:
    *
@@ -467,7 +467,7 @@ public class ProgrammaticBuyerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ProgrammaticBuyer` objects.
+   * Lists `ProgrammaticBuyer` objects.
    *
    * <p>Sample code:
    *

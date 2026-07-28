@@ -56,7 +56,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A {@link ManagedChannel} that will send requests round-robin via a set of channels.
@@ -68,6 +69,7 @@ import javax.annotation.Nullable;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class ChannelPool extends ManagedChannel {
   static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
       "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+ times). See https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md for more information about this behavior.";
@@ -78,8 +80,8 @@ class ChannelPool extends ManagedChannel {
   private final ChannelFactory channelFactory;
   private final FixedExecutorProvider backgroundExecutorProvider;
 
-  private ScheduledFuture<?> refreshFuture = null;
-  private ScheduledFuture<?> resizeFuture = null;
+  private @Nullable ScheduledFuture<?> refreshFuture = null;
+  private @Nullable ScheduledFuture<?> resizeFuture = null;
 
   private final Object entryWriteLock = new Object();
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
@@ -621,7 +623,7 @@ class ChannelPool extends ManagedChannel {
 
   /** ClientCall wrapper that makes sure to decrement the outstanding RPC count on completion. */
   static class ReleasingClientCall<ReqT, RespT> extends SimpleForwardingClientCall<ReqT, RespT> {
-    @Nullable private CancellationException cancellationException;
+    private @Nullable CancellationException cancellationException;
     final Entry entry;
     private final AtomicBoolean wasClosed = new AtomicBoolean();
     private final AtomicBoolean wasReleased = new AtomicBoolean();
