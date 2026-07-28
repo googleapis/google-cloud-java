@@ -56,7 +56,7 @@ public class HttpJsonConscryptUtils {
    *       standard TLS 1.3 endpoints.
    * </ul>
    */
-  public static final String[] DEFAULT_PQC_GROUPS =
+  static final String[] DEFAULT_PQC_GROUPS =
       new String[] {"X25519MLKEM768", "X25519Kyber768Draft00", "MLKEM1024", "X25519"};
 
   /**
