@@ -16,7 +16,7 @@
 
 package com.google.showcase.v1beta1.it;
 
-import static com.google.api.gax.httpjson.HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS;
+import static com.google.api.gax.httpjson.HttpJsonConscryptUtils.DEFAULT_CONSCRYPT_NAMED_GROUPS;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
@@ -151,7 +151,7 @@ class ITPostQuantumCryptography {
       List<String> supportedGroups =
           getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups)
-          .containsExactlyElementsIn(Arrays.asList(DEFAULT_PQC_GROUPS))
+          .containsExactlyElementsIn(Arrays.asList(DEFAULT_CONSCRYPT_NAMED_GROUPS))
           .inOrder();
     }
   }

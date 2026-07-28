@@ -43,21 +43,33 @@ public class HttpJsonConscryptUtils {
   private static final Logger LOG = Logger.getLogger(HttpJsonConscryptUtils.class.getName());
 
   /**
-   * Default TLS 1.3 Post-Quantum Cryptography (PQC) named groups configured when Conscrypt security
-   * provider is present:
+   * Default TLS 1.3 named groups configured when Conscrypt security provider is present, organized
+   * in client preference order:
    *
-   * <ul>
-   *   <li>{@code X25519MLKEM768}: Standard post-quantum hybrid group combining Curve25519 ECDHE
-   *       with NIST FIPS 203 (ML-KEM-768).
-   *   <li>{@code X25519Kyber768Draft00}: Draft 00 Kyber768 hybrid group alias for backward
-   *       compatibility with draft PQC implementations.
-   *   <li>{@code MLKEM1024}: Standalone Level 5 post-quantum ML-KEM-1024 group.
-   *   <li>{@code X25519}: Classical non-quantum key exchange fallback to ensure compatibility with
-   *       standard TLS 1.3 endpoints.
-   * </ul>
+   * <ol>
+   *   <li><b>Standard ML-KEM algorithms</b>: Prioritized first for quantum resistance.
+   *   <li><b>Draft Kyber algorithms</b>: Retained as a fallback for legacy draft PQC deployments.
+   *   <li><b>Classical curves</b>: Fallback for endpoints without PQC support.
+   * </ol>
+   *
+   * <p>In TLS 1.3, the client offers key exchange groups via the {@code supported_groups}
+   * ClientHello extension in preference order. The server selects the first group it supports.
+   *
+   * <p>For details on Conscrypt's supported TLS algorithms, see <a
+   * href="https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md">Conscrypt
+   * CAPABILITIES.md</a>.
    */
-  public static final String[] DEFAULT_PQC_GROUPS =
-      new String[] {"X25519MLKEM768", "X25519Kyber768Draft00", "MLKEM1024", "X25519"};
+  public static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
+      new String[] {
+        "X25519MLKEM768",
+        "SecP256r1MLKEM768",
+        "MLKEM1024",
+        "MLKEM768",
+        "X25519Kyber768Draft00",
+        "X25519",
+        "secp256r1",
+        "secp384r1"
+      };
 
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.
@@ -105,7 +117,7 @@ public class HttpJsonConscryptUtils {
                 return;
               }
               try {
-                Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+                Conscrypt.setNamedGroups(socket, DEFAULT_CONSCRYPT_NAMED_GROUPS);
               } catch (Exception e) {
                 // Native JNI linkage errors (e.g. UnsatisfiedLinkError) are caught during
                 // ConscryptProviderHolder initialization. Catching Exception here safely
