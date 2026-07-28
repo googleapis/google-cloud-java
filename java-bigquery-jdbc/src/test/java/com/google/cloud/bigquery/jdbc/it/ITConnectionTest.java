@@ -340,6 +340,7 @@ public class ITConnectionTest {
   }
 
   @Test
+  @Tag("advanced")
   public void testCreateArray() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertThrows(
