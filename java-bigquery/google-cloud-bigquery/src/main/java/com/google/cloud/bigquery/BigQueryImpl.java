@@ -1657,6 +1657,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
+  /**
+   * Inserts the specified rows into a table using the BigQuery insertAll API.
+   * Note: To prevent duplicate rows, this method does not perform automatic retries unless
+   * insert IDs are provided. Transient service errors (such as UNAVAILABLE) may be thrown and
+   * should be handled by the caller.
+   */
   @Override
   public InsertAllResponse insertAll(InsertAllRequest request) {
     final TableId tableId =
