@@ -152,4 +152,39 @@ class IdentityPoolCredentialsSourceTest {
         "Invalid type for 'use_default_certificate_config' in certificate configuration: expected Boolean, got String.",
         exception.getMessage());
   }
+
+  @Test
+  void constructor_fileAndCertificatePresent_isSupported() {
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", true);
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("certificate", certificateMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    assertEquals(
+        IdentityPoolCredentialSourceType.FILE, credentialSource.credentialSourceType);
+    assertEquals("/path/to/file", credentialSource.getCredentialLocation());
+    assertNotNull(credentialSource.getCertificateConfig());
+    assertTrue(credentialSource.getCertificateConfig().useDefaultCertificateConfig());
+  }
+
+  @Test
+  void constructor_jsonFormat_withActorTokenFieldName() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_field");
+    formatMap.put("actor_token_field_name", "act_field");
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    assertEquals("sub_field", credentialSource.subjectTokenFieldName);
+    assertEquals("act_field", credentialSource.actorTokenFieldName);
+  }
 }
