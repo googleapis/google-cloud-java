@@ -75,6 +75,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Long maxResults;
   private final JobCreationMode jobCreationMode;
   private final String reservation;
+  private final QueryResultsFormat queryResultsFormat;
+  private final ArrowSerializationOptions arrowSerializationOptions;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -144,6 +146,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Long maxResults;
     private JobCreationMode jobCreationMode;
     private String reservation;
+    private QueryResultsFormat queryResultsFormat;
+    private ArrowSerializationOptions arrowSerializationOptions;
 
     private Builder() {
       super(Type.QUERY);
@@ -181,6 +185,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maxResults = jobConfiguration.maxResults;
       this.jobCreationMode = jobConfiguration.jobCreationMode;
       this.reservation = jobConfiguration.reservation;
+      this.queryResultsFormat = jobConfiguration.queryResultsFormat;
+      this.arrowSerializationOptions = jobConfiguration.arrowSerializationOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -701,6 +707,17 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    public Builder setQueryResultsFormat(QueryResultsFormat queryResultsFormat) {
+      this.queryResultsFormat = queryResultsFormat;
+      return this;
+    }
+
+    public Builder setArrowSerializationOptions(
+        ArrowSerializationOptions arrowSerializationOptions) {
+      this.arrowSerializationOptions = arrowSerializationOptions;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -747,6 +764,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.maxResults = builder.maxResults;
     this.jobCreationMode = builder.jobCreationMode;
     this.reservation = builder.reservation;
+    this.queryResultsFormat = builder.queryResultsFormat;
+    this.arrowSerializationOptions = builder.arrowSerializationOptions;
   }
 
   /**
@@ -973,6 +992,14 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return new Builder(this);
   }
 
+  public QueryResultsFormat getQueryResultsFormat() {
+    return queryResultsFormat;
+  }
+
+  public ArrowSerializationOptions getArrowSerializationOptions() {
+    return arrowSerializationOptions;
+  }
+
   @Override
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
@@ -1004,13 +1031,23 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("rangePartitioning", rangePartitioning)
         .add("connectionProperties", connectionProperties)
         .add("jobCreationMode", jobCreationMode)
-        .add("reservation", reservation);
+        .add("reservation", reservation)
+        .add("queryResultsFormat", queryResultsFormat)
+        .add("arrowSerializationOptions", arrowSerializationOptions);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj instanceof QueryJobConfiguration && baseEquals((QueryJobConfiguration) obj);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !(obj instanceof QueryJobConfiguration)) {
+      return false;
+    }
+    QueryJobConfiguration other = (QueryJobConfiguration) obj;
+    return baseEquals(other)
+        && Objects.equals(queryResultsFormat, other.queryResultsFormat)
+        && Objects.equals(arrowSerializationOptions, other.arrowSerializationOptions);
   }
 
   @Override
@@ -1043,7 +1080,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         labels,
         rangePartitioning,
         connectionProperties,
-        reservation);
+        reservation,
+        queryResultsFormat,
+        arrowSerializationOptions);
   }
 
   @Override
