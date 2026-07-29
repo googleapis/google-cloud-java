@@ -195,6 +195,20 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         "InstantiatingHttpJsonChannelProvider doesn't need credentials");
   }
 
+  /**
+   * Creates and configures the underlying {@link HttpTransport} for HTTP/JSON transport.
+   *
+   * <p>This method mutates the {@link NetHttpTransport.Builder} in two ordered steps:
+   *
+   * <ol>
+   *   <li><b>mTLS Configuration</b>: Configures client certificate authentication and sets the SSL
+   *       socket factory if mutual TLS is enabled via {@link #configureMtls(NetHttpTransport.Builder)}.
+   *   <li><b>Conscrypt / PQC Configuration</b>: Configures Conscrypt as the preferred security
+   *       provider via {@link
+   *       HttpJsonConscryptUtils#configureConscryptSecurityProvider(NetHttpTransport.Builder)} so
+   *       that standard TLS and mTLS connections negotiate Post-Quantum Cryptography by default.
+   * </ol>
+   */
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     configureMtls(builder);
@@ -202,35 +216,42 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     return builder.build();
   }
 
-  private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
+  private void configureMtls(NetHttpTransport.Builder builder)
       throws IOException, GeneralSecurityException {
     if (mtlsProvider == null || !certificateBasedAccess.useMtlsClientCertificate()) {
-      return builder;
+      return;
     }
     KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
     if (mtlsKeyStore == null) {
-      return builder;
+      return;
     }
+    // Passing null for trustStore instructs SslUtils.initSslContext to use the JVM's default
+    // system trust store (cacerts), ensuring standard JDK root CA certificates are used for
+    // server verification while mtlsKeyStore provides the client certificate for mutual
+    // authentication.
     builder.trustCertificates(null, mtlsKeyStore, "");
     Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
     if (conscryptProvider == null) {
       // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
-      return builder;
+      return;
     }
-    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
-    // key managers
-    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
-    // key exchange).
+    // Explicitly initialize SSLContext with Conscrypt so that mTLS connections use Conscrypt's
+    // BoringSSL engine and negotiate Post-Quantum Cryptography (X25519MLKEM768) by default.
+    // Without passing conscryptProvider explicitly, SSLContext.getInstance("TLS") defaults to
+    // the JVM's built-in SunJSSE provider, which would downgrade mTLS to classical key exchange.
     SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    // Align the PKIX TrustManagerFactory provider with Conscrypt via
+    // SslUtils.getPkixTrustManagerFactory(conscryptProvider). This ensures compatibility across
+    // all Java environments—including older Java 8 runtimes (pre-8u261)—where the JVM's default
+    // SunJSSE trust manager threw "Unknown authType: GENERIC" during TLS 1.3 handshakes.
     SslUtils.initSslContext(
         sslContext,
-        null,
-        SslUtils.getPkixTrustManagerFactory(),
+        null, // null trustStore instructs TrustManagerFactory to use default JDK cacerts
+        SslUtils.getPkixTrustManagerFactory(conscryptProvider),
         mtlsKeyStore,
         "",
         SslUtils.getDefaultKeyManagerFactory());
     builder.setSslSocketFactory(sslContext.getSocketFactory());
-    return builder;
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {

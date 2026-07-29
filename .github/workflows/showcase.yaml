@@ -65,14 +65,17 @@ jobs:
                 ./gapic-showcase run &
                 # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
                 ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
-                # Wait deterministically for both background showcase servers to finish binding ports 7469/7470
+                # Start secure mTLS showcase server on port 7471 for PQC mTLS integration tests
+                ./gapic-showcase run --port 7471 -f 1339 --tls-cert $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/server.crt --tls-key $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/server.key --tls-ca-cert $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/ca.crt &
+                # Wait deterministically for background showcase servers to finish binding ports 7469/7470/7471
                 # and writing /tmp/showcase-ca.pem. Starting TLS requires RSA key generation and disk I/O,
                 # which can cause race conditions if tests start before /tmp/showcase-ca.pem is created.
                 for i in $(seq 1 30); do
                   if (echo > /dev/tcp/127.0.0.1/7469) 2>/dev/null && \
                      (echo > /dev/tcp/127.0.0.1/7470) 2>/dev/null && \
+                     (echo > /dev/tcp/127.0.0.1/7471) 2>/dev/null && \
                      [ -f /tmp/showcase-ca.pem ]; then
-                    echo "Showcase servers (ports 7469, 7470) and CA cert ready in attempt $i."
+                    echo "Showcase servers (ports 7469, 7470, 7471) and CA cert ready in attempt $i."
                     break
                   fi
                   sleep 0.2
@@ -179,14 +182,17 @@ jobs:
           ./gapic-showcase run &
           # Start secure TLS showcase server on port 7470 for PQC TLS integration tests
           ./gapic-showcase run --port 7470 --tls --ca-cert-output-file /tmp/showcase-ca.pem &
-          # Wait deterministically for both background showcase servers to finish binding ports 7469/7470
+          # Start secure mTLS showcase server on port 7471 for PQC mTLS integration tests
+          ./gapic-showcase run --port 7471 -f 1339 --tls-cert $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/server.crt --tls-key $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/server.key --tls-ca-cert $GITHUB_WORKSPACE/java-showcase/gapic-showcase/src/test/resources/mtls/ca.crt &
+          # Wait deterministically for background showcase servers to finish binding ports 7469/7470/7471
           # and writing /tmp/showcase-ca.pem. Starting TLS requires RSA key generation and disk I/O,
           # which can cause race conditions if tests start before /tmp/showcase-ca.pem is created.
           for i in $(seq 1 30); do
             if (echo > /dev/tcp/127.0.0.1/7469) 2>/dev/null && \
                (echo > /dev/tcp/127.0.0.1/7470) 2>/dev/null && \
+               (echo > /dev/tcp/127.0.0.1/7471) 2>/dev/null && \
                [ -f /tmp/showcase-ca.pem ]; then
-              echo "Showcase servers (ports 7469, 7470) and CA cert ready in attempt $i."
+              echo "Showcase servers (ports 7469, 7470, 7471) and CA cert ready in attempt $i."
               break
             fi
             sleep 0.2

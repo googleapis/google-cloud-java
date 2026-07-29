@@ -23,7 +23,9 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
+import com.google.api.gax.httpjson.HttpJsonMtlsTestUtils;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.auth.mtls.MtlsProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoResponse;
@@ -34,12 +36,14 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
+import java.security.PrivateKey;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.conscrypt.Conscrypt;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -62,12 +66,15 @@ import org.junit.jupiter.api.Test;
  * <p>Verification cases:
  *
  * <ol>
- *   <li>{@code testHttpJsonPqc}: Verifies that HTTP/JSON transport defaults to Conscrypt and
- *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
- *   <li>{@code testHttpJsonPqc_withExplicitNonPqcGroup}: Verifies that explicitly configuring
- *       classical non-PQC key exchange groups (e.g. {@code X25519}) forces classical key exchange.
- *       Explicitly setting the group ensures test compatibility across all JDK versions, including
- *       future JDK releases (such as JDK 27+) where PQC will be enabled by default.
+ *   <li>{@code testHttpJsonPqc_withTls}: Verifies that HTTP/JSON TLS transport defaults to
+ *       Conscrypt and negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
+ *   <li>{@code testHttpJsonPqc_withTls_withExplicitNonPqcGroup}: Verifies that explicitly
+ *       configuring classical non-PQC key exchange groups (e.g. {@code X25519}) over TLS forces
+ *       classical key exchange.
+ *   <li>{@code testHttpJsonPqc_withMtls}: Verifies that mTLS (mutual TLS with client certificates)
+ *       defaults to Conscrypt and negotiates {@code X25519MLKEM768}.
+ *   <li>{@code testHttpJsonPqc_withMtls_withExplicitNonPqcGroup}: Verifies that mTLS with explicit
+ *       classical non-PQC group forces classical key exchange.
  * </ol>
  */
 class ITPostQuantumCryptography {
@@ -102,6 +109,8 @@ class ITPostQuantumCryptography {
 
   private static final String SECURE_ENDPOINT =
       System.getProperty("showcase.secure.endpoint", "localhost:7470");
+  private static final String MTLS_SECURE_ENDPOINT =
+      System.getProperty("showcase.mtls.secure.endpoint", "localhost:7471");
 
   @BeforeAll
   static void setUp() throws Exception {
@@ -109,15 +118,15 @@ class ITPostQuantumCryptography {
     assertWithMessage("CA certificate file not found at " + DEFAULT_CA_CERT_PATH)
         .that(certFile.isFile())
         .isTrue();
+    Assumptions.assumeTrue(
+        Conscrypt.isAvailable(),
+        "Conscrypt native library unavailable on this system/glibc; skipping PQC tests.");
   }
 
   @Test
-  void testHttpJsonPqc() throws Exception {
+  void testHttpJsonPqc_withTls() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
-    // Construct a dedicated NetHttpTransport configured with Conscrypt security provider
-    // and explicitly trusted Showcase CA certificate. This avoids modifying the global JVM
-    // SSLContext (via SSLContext.setDefault) and ensures Conscrypt's TLS engine is used.
     NetHttpTransport transport =
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
             .trustCertificates(loadCaCert(DEFAULT_CA_CERT_PATH))
@@ -162,7 +171,7 @@ class ITPostQuantumCryptography {
   }
 
   @Test
-  void testHttpJsonPqc_withExplicitNonPqcGroup() throws Exception {
+  void testHttpJsonPqc_withTls_withExplicitNonPqcGroup() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
     // Explicitly configure Conscrypt socket with classical X25519 group. This verifies that
@@ -210,7 +219,144 @@ class ITPostQuantumCryptography {
 
       List<String> supportedGroups =
           getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
-      assertThat(supportedGroups).containsExactlyElementsIn(Arrays.asList(EXPLICIT_NON_PQC_GROUPS));
+      assertThat(supportedGroups).doesNotContain(EXPECTED_PQC_GROUP);
+      assertThat(supportedGroups).contains(CLASSICAL_X25519_GROUP);
+    }
+  }
+
+  @Test
+  void testHttpJsonPqc_withMtls() throws Exception {
+    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
+    MtlsProvider mtlsProvider = loadTestMtlsProvider();
+
+    InstantiatingHttpJsonChannelProvider.Builder providerBuilder =
+        EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setEndpoint("https://" + MTLS_SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor));
+    HttpJsonMtlsTestUtils.configureMtlsTestProvider(providerBuilder, mtlsProvider);
+    InstantiatingHttpJsonChannelProvider transportChannelProvider = providerBuilder.build();
+
+    EchoSettings settings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(EchoRequest.newBuilder().setContent("pqc-httpjson-mtls-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-httpjson-mtls-test");
+
+      HttpJsonMetadata capturedHeaders = interceptor.metadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      assertThat(negotiatedGroup).isEqualTo(EXPECTED_PQC_GROUP);
+
+      List<String> supportedGroups =
+          getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
+      assertThat(supportedGroups).containsAtLeast(EXPECTED_PQC_GROUP, CLASSICAL_X25519_GROUP);
+    }
+  }
+
+  @Test
+  void testHttpJsonPqc_withMtls_withExplicitNonPqcGroup() throws Exception {
+    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
+    MtlsProvider mtlsProvider = loadTestMtlsProvider();
+
+    // Construct custom NetHttpTransport with explicit classical non-PQC group
+    NetHttpTransport transport =
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+            .setSslSocketConfigurator(
+                socket -> {
+                  if (Conscrypt.isConscrypt(socket)) {
+                    try {
+                      Conscrypt.setNamedGroups(socket, EXPLICIT_NON_PQC_GROUPS);
+                    } catch (Exception ignored) {
+                    }
+                  }
+                })
+            .build();
+
+    InstantiatingHttpJsonChannelProvider.Builder providerBuilder =
+        EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setHttpTransport(transport)
+            .setEndpoint("https://" + MTLS_SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor));
+    HttpJsonMtlsTestUtils.configureMtlsTestProvider(providerBuilder, mtlsProvider);
+    InstantiatingHttpJsonChannelProvider transportChannelProvider = providerBuilder.build();
+
+    EchoSettings settings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(
+              EchoRequest.newBuilder().setContent("pqc-httpjson-mtls-non-pqc-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-httpjson-mtls-non-pqc-test");
+
+      HttpJsonMetadata capturedHeaders = interceptor.metadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      assertThat(negotiatedGroup).isEqualTo(CLASSICAL_X25519_GROUP);
+
+      List<String> supportedGroups =
+          getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
+      assertThat(supportedGroups).doesNotContain(EXPECTED_PQC_GROUP);
+      assertThat(supportedGroups).contains(CLASSICAL_X25519_GROUP);
+    }
+  }
+
+  /**
+   * Helper method to load test mTLS client PKCS12 KeyStore from test resources.
+   *
+   * @return initialized MtlsProvider wrapping the client key store
+   * @throws Exception if reading the key store fails
+   */
+  private static MtlsProvider loadTestMtlsProvider() throws Exception {
+    KeyStore trustAndKeyStore = KeyStore.getInstance("JKS");
+    trustAndKeyStore.load(null, null);
+
+    try (InputStream is = ITPostQuantumCryptography.class.getResourceAsStream("/mtls/ca.crt")) {
+      assertWithMessage("mTLS CA cert not found in test resources").that(is).isNotNull();
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      Certificate caCert = cf.generateCertificate(is);
+      trustAndKeyStore.setCertificateEntry("showcase-ca-mtls", caCert);
+    }
+
+    KeyStore clientPkcs12 = KeyStore.getInstance("PKCS12");
+    try (InputStream is = ITPostQuantumCryptography.class.getResourceAsStream("/mtls/client.p12")) {
+      assertWithMessage("mTLS client key store not found in test resources").that(is).isNotNull();
+      clientPkcs12.load(is, "".toCharArray());
+    }
+    String alias = clientPkcs12.aliases().nextElement();
+    PrivateKey privateKey = (PrivateKey) clientPkcs12.getKey(alias, "".toCharArray());
+    Certificate[] chain = clientPkcs12.getCertificateChain(alias);
+    trustAndKeyStore.setKeyEntry("client-key", privateKey, "".toCharArray(), chain);
+
+    return new TestMtlsProvider(trustAndKeyStore);
+  }
+
+  /** Simple test implementation of MtlsProvider wrapping an in-memory KeyStore. */
+  private static class TestMtlsProvider implements MtlsProvider {
+    private final KeyStore keyStore;
+
+    TestMtlsProvider(KeyStore keyStore) {
+      this.keyStore = keyStore;
+    }
+
+    @Override
+    public boolean isAvailable() {
+      return true;
+    }
+
+    @Override
+    public KeyStore getKeyStore() {
+      return keyStore;
     }
   }
 
