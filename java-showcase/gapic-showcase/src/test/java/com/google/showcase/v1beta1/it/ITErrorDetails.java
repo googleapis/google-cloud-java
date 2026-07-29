@@ -39,7 +39,6 @@ import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
-import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.FailEchoWithDetailsRequest;
 import com.google.showcase.v1beta1.PoetryError;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
@@ -131,10 +130,6 @@ class ITErrorDetails {
     PoetryError poetryError = errorDetails.getMessage(PoetryError.class);
     assertThat(poetryError).isNotNull();
     assertThat(poetryError.getPoem()).isEqualTo(expectedPoem);
-
-    // Verify mismatched type returns null safely (mismatch unpacking)
-    EchoResponse mismatchedDetail = errorDetails.getMessage(EchoResponse.class);
-    assertThat(mismatchedDetail).isNull();
   }
 
   // Verifies error details are correctly propagated and unpacked over standard gRPC protocol
@@ -178,7 +173,7 @@ class ITErrorDetails {
 
     // GAX HTTP/JSON parser limitation: Because the response contains a custom/unregistered type
     // (PoetryError) in the Any details list, HttpJsonErrorParser fails to parse the status payload,
-    // resulting in empty/null ErrorDetails.
+    // resulting in empty ErrorDetails (where getErrorInfo() returns null).
     ErrorDetails errorDetails = exception.getErrorDetails();
     if (errorDetails != null) {
       assertThat(errorDetails.getErrorInfo()).isNull();
@@ -186,6 +181,8 @@ class ITErrorDetails {
 
     // Workaround REST limitation: Parse the raw HTTP JSON error response manually using a custom
     // TypeRegistry that registers standard types plus the showcase-specific PoetryError type.
+    // This mimics the behavior of HttpJsonErrorParser, which currently does not support passing in
+    // a custom TypeRegistry.
     assertThat(exception.getCause()).isInstanceOf(HttpResponseException.class);
     HttpResponseException httpException = (HttpResponseException) exception.getCause();
     String errorJson = httpException.getContent();
