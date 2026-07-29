@@ -116,14 +116,17 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void shouldRequestBoundToken_certificateParsingException_returnsFalse() throws java.security.cert.CertificateParsingException {
+  public void shouldRequestBoundToken_certificateParsingException_returnsFalse()
+      throws java.security.cert.CertificateParsingException {
     X509Certificate mockCert = mock(X509Certificate.class);
-    when(mockCert.getSubjectAlternativeNames()).thenThrow(new java.security.cert.CertificateParsingException());
+    when(mockCert.getSubjectAlternativeNames())
+        .thenThrow(new java.security.cert.CertificateParsingException());
     assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
   }
 
   @Test
-  public void shouldRequestBoundToken_nonUriSan_returnsFalse() throws java.security.cert.CertificateParsingException {
+  public void shouldRequestBoundToken_nonUriSan_returnsFalse()
+      throws java.security.cert.CertificateParsingException {
     X509Certificate mockCert = mock(X509Certificate.class);
     List<?> dnsSan = Arrays.asList(2, "www.example.com");
     when(mockCert.getSubjectAlternativeNames()).thenReturn(Collections.<List<?>>singleton(dnsSan));
