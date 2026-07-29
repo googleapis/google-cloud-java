@@ -1096,6 +1096,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
