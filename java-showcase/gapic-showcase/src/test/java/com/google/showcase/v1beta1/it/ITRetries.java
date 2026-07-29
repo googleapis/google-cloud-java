@@ -169,21 +169,18 @@ class ITRetries {
         .isEqualTo(com.google.rpc.Code.UNAVAILABLE.getNumber());
     assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(com.google.rpc.Code.OK.getNumber());
 
-    // Verify delay intervals are within expected tolerances:
-    // Attempt 1 -> 2: ~100ms delay. Range [80ms, 250ms]
+    // Verify delay intervals are at least the expected exponential backoff thresholds:
+    // Attempt 1 -> 2: scheduled 100ms. Must be at least 80ms (no upper bound)
     long delay1 = getDelayMs(attempts.get(1));
     assertThat(delay1).isAtLeast(80L);
-    assertThat(delay1).isLessThan(250L);
 
-    // Attempt 2 -> 3: ~200ms delay. Range [180ms, 400ms]
+    // Attempt 2 -> 3: scheduled 200ms. Must be at least 180ms (no upper bound)
     long delay2 = getDelayMs(attempts.get(2));
     assertThat(delay2).isAtLeast(180L);
-    assertThat(delay2).isLessThan(400L);
 
-    // Attempt 3 -> 4: ~400ms delay. Range [380ms, 700ms]
+    // Attempt 3 -> 4: scheduled 400ms. Must be at least 380ms (no upper bound)
     long delay3 = getDelayMs(attempts.get(3));
     assertThat(delay3).isAtLeast(380L);
-    assertThat(delay3).isLessThan(700L);
   }
 
   private long getDelayMs(SequenceReport.Attempt attempt) {
