@@ -17,10 +17,10 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.Date;
-import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;

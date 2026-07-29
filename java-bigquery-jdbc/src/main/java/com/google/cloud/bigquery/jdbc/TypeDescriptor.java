@@ -68,7 +68,8 @@ final class TypeDescriptor<T> {
     return supportedJavaTypes;
   }
 
-  public Object convert(Object value, Class<?> targetClass, ZoneId zoneId) throws BigQueryJdbcException {
+  public Object convert(Object value, Class<?> targetClass, ZoneId zoneId)
+      throws BigQueryJdbcException {
     if (value == null) {
       return null;
     }
