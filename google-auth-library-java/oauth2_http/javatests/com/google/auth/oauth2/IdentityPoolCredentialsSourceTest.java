@@ -164,8 +164,7 @@ class IdentityPoolCredentialsSourceTest {
 
     IdentityPoolCredentialSource credentialSource =
         new IdentityPoolCredentialSource(credentialSourceMap);
-    assertEquals(
-        IdentityPoolCredentialSourceType.FILE, credentialSource.credentialSourceType);
+    assertEquals(IdentityPoolCredentialSourceType.FILE, credentialSource.credentialSourceType);
     assertEquals("/path/to/file", credentialSource.getCredentialLocation());
     assertNotNull(credentialSource.getCertificateConfig());
     assertTrue(credentialSource.getCertificateConfig().useDefaultCertificateConfig());

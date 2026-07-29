@@ -113,7 +113,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } else {
       throw new IllegalArgumentException("Source type not supported.");
     }
-    
+
     this.actorTokenType = builder.actorTokenType;
     if (builder.actorTokenSupplier != null) {
       this.actorTokenSupplier = builder.actorTokenSupplier;

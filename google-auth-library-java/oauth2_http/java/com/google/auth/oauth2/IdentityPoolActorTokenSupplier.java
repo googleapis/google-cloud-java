@@ -33,9 +33,7 @@ package com.google.auth.oauth2;
 
 import java.io.IOException;
 
-/**
- * Functional interface for supplying an actor token for IdentityPool credentials.
- */
+/** Functional interface for supplying an actor token for IdentityPool credentials. */
 @FunctionalInterface
 interface IdentityPoolActorTokenSupplier extends java.io.Serializable {
 

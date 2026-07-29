@@ -94,7 +94,10 @@ class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSup
       HttpResponse response = request.execute();
       LoggingUtils.logResponse(
           response, LOGGER_PROVIDER, "Received response for subject token request");
-      return parseToken(response.getContent(), this.credentialSource, this.credentialSource.subjectTokenFieldName);
+      return parseToken(
+          response.getContent(),
+          this.credentialSource,
+          this.credentialSource.subjectTokenFieldName);
     } catch (IOException e) {
       throw new IOException(
           String.format("Error getting subject token from metadata server: %s", e.getMessage()), e);

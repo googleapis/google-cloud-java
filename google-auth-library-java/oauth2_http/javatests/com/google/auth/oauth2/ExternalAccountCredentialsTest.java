@@ -204,7 +204,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   void fromJson_identityPoolCredentials_withActorTokenType() {
     GenericJson json = buildJsonIdentityPoolCredential();
     json.put("actor_token_type", "actorTokenType");
-    
+
     ExternalAccountCredentials credential =
         ExternalAccountCredentials.fromJson(json, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 

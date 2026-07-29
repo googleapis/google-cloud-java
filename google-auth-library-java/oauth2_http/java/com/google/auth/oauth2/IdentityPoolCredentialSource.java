@@ -262,8 +262,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
     boolean urlPresent = credentialSourceMap.containsKey("url");
     boolean certificatePresent = credentialSourceMap.containsKey("certificate");
 
-    if ((filePresent && urlPresent)
-        || (urlPresent && certificatePresent)) {
+    if ((filePresent && urlPresent) || (urlPresent && certificatePresent)) {
       throw new IllegalArgumentException(
           "A credential source type of URL can not be used with other credential source types.");
     }

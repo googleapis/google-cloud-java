@@ -61,9 +61,12 @@ class FileIdentityPoolTokenSupplierTest {
   }
 
   @Test
-  void getToken_jsonFormat_cachingLogic(@TempDir Path tempDir) throws IOException, InterruptedException {
+  void getToken_jsonFormat_cachingLogic(@TempDir Path tempDir)
+      throws IOException, InterruptedException {
     Path credentialFile = tempDir.resolve("credential.json");
-    Files.write(credentialFile, "{\"sub_token\": \"my_sub_token\", \"act_token\": \"my_act_token\"}".getBytes());
+    Files.write(
+        credentialFile,
+        "{\"sub_token\": \"my_sub_token\", \"act_token\": \"my_act_token\"}".getBytes());
 
     Map<String, Object> credentialSourceMap = new HashMap<>();
     credentialSourceMap.put("file", credentialFile.toString());
@@ -85,10 +88,11 @@ class FileIdentityPoolTokenSupplierTest {
 
     // Wait 10ms for mtime to definitely advance for the reload logic
     Thread.sleep(10);
-    
+
     // Modify file
-    Files.write(credentialFile, "{\"sub_token\": \"new_sub\", \"act_token\": \"new_act\"}".getBytes());
-    
+    Files.write(
+        credentialFile, "{\"sub_token\": \"new_sub\", \"act_token\": \"new_act\"}".getBytes());
+
     // Validate we read the new token after file modification
     assertEquals("new_sub", subSupplier.getSubjectToken(null));
     assertEquals("new_act", actSupplier.getActorToken(null));
@@ -112,7 +116,9 @@ class FileIdentityPoolTokenSupplierTest {
         new FileIdentityPoolTokenSupplier(source, source.actorTokenFieldName);
 
     IOException exception = assertThrows(IOException.class, () -> actSupplier.getActorToken(null));
-    assertEquals("Invalid token field name. No token was found for field: act_token", exception.getMessage());
+    assertEquals(
+        "Invalid token field name. No token was found for field: act_token",
+        exception.getMessage());
   }
 
   @Test
@@ -127,7 +133,8 @@ class FileIdentityPoolTokenSupplierTest {
 
     IOException exception = assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
     assertEquals(
-        String.format("Invalid credential location. The file at %s does not exist.", credentialFile),
+        String.format(
+            "Invalid credential location. The file at %s does not exist.", credentialFile),
         exception.getMessage());
   }
 }

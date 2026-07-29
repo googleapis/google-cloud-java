@@ -53,8 +53,8 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Internal provider for retrieving the subject and actor tokens for {@link IdentityPoolCredentials} to
- * exchange for GCP access tokens via a local file.
+ * Internal provider for retrieving the subject and actor tokens for {@link IdentityPoolCredentials}
+ * to exchange for GCP access tokens via a local file.
  */
 @NullMarked
 class FileIdentityPoolTokenSupplier
@@ -87,22 +87,19 @@ class FileIdentityPoolTokenSupplier
                   try (InputStream inputStream = Files.newInputStream(file.toPath())) {
                     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
                     GenericJson parsedJson =
-                        parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+                        parser.parseAndClose(
+                            inputStream, StandardCharsets.UTF_8, GenericJson.class);
                     return new CachedFile(lastModified, parsedJson);
                   }
                 }
               });
 
-  /**
-   * Constructor that defaults to using the subjectTokenFieldName.
-   */
+  /** Constructor that defaults to using the subjectTokenFieldName. */
   FileIdentityPoolTokenSupplier(IdentityPoolCredentialSource credentialSource) {
     this(credentialSource, credentialSource.subjectTokenFieldName);
   }
 
-  /**
-   * Overloaded constructor allowing targeting of any specific field in the JSON.
-   */
+  /** Overloaded constructor allowing targeting of any specific field in the JSON. */
   FileIdentityPoolTokenSupplier(
       IdentityPoolCredentialSource credentialSource, @Nullable String targetFieldName) {
     this.credentialSource = checkNotNull(credentialSource, "credentialSource cannot be null");
@@ -141,32 +138,33 @@ class FileIdentityPoolTokenSupplier
         try {
           cached = FILE_CACHE.get(credentialFilePath);
         } catch (Exception e) {
-          throw new IOException("Error when attempting to read the token from the credential file.", e);
+          throw new IOException(
+              "Error when attempting to read the token from the credential file.", e);
         }
       }
 
       Object value = cached.parsedJson.get(targetFieldName);
       if (value == null) {
-        throw new IOException("Invalid token field name. No token was found for field: " + targetFieldName);
+        throw new IOException(
+            "Invalid token field name. No token was found for field: " + targetFieldName);
       }
       return value.toString();
     }
 
     try (InputStream inputStream = Files.newInputStream(Paths.get(credentialFilePath))) {
-       BufferedReader reader =
-           new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-       return CharStreams.toString(reader);
+      BufferedReader reader =
+          new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+      return CharStreams.toString(reader);
     } catch (IOException e) {
-      throw new IOException(
-          "Error when attempting to read the token from the credential file.", e);
+      throw new IOException("Error when attempting to read the token from the credential file.", e);
     }
   }
 
-  /**
-   * Used primarily for UrlIdentityPoolSubjectTokenSupplier
-   */
+  /** Used primarily for UrlIdentityPoolSubjectTokenSupplier */
   static String parseToken(
-      InputStream inputStream, IdentityPoolCredentialSource credentialSource, @Nullable String targetFieldName)
+      InputStream inputStream,
+      IdentityPoolCredentialSource credentialSource,
+      @Nullable String targetFieldName)
       throws IOException {
     if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
       BufferedReader reader =
@@ -175,7 +173,7 @@ class FileIdentityPoolTokenSupplier
     }
 
     if (targetFieldName == null) {
-        throw new IOException("Target field name must be specified for JSON credentials.");
+      throw new IOException("Target field name must be specified for JSON credentials.");
     }
 
     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
@@ -183,7 +181,8 @@ class FileIdentityPoolTokenSupplier
         parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
 
     if (!fileContents.containsKey(targetFieldName)) {
-      throw new IOException("Invalid token field name. No token was found for field: " + targetFieldName);
+      throw new IOException(
+          "Invalid token field name. No token was found for field: " + targetFieldName);
     }
     return (String) fileContents.get(targetFieldName);
   }
