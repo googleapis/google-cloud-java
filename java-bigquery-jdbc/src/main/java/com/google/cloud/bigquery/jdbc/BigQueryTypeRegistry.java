@@ -123,7 +123,7 @@ final class BigQueryTypeRegistry {
             Arrays.asList(BigDecimal.class),
             (val, targetClass, zone) -> {
               if (val instanceof BigDecimal) return val;
-              if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
+              if (val instanceof Number) return new BigDecimal(val.toString());
               if (val instanceof String) return new BigDecimal((String) val);
               throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
             }));
@@ -138,8 +138,11 @@ final class BigQueryTypeRegistry {
             (val, targetClass, zone) -> {
               Date sqlDate;
               if (val instanceof Date) sqlDate = (Date) val;
+              else if (val instanceof java.util.Date)
+                sqlDate = new Date(((java.util.Date) val).getTime());
               else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
-              else if (val instanceof String) sqlDate = Date.valueOf((String) val);
+              else if (val instanceof String)
+                sqlDate = BigQueryTimezoneUtility.boxDate((String) val, zone);
               else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
 
               if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
@@ -156,15 +159,12 @@ final class BigQueryTypeRegistry {
             (val, targetClass, zone) -> {
               Timestamp ts;
               if (val instanceof Timestamp) ts = (Timestamp) val;
+              else if (val instanceof java.util.Date)
+                ts = new Timestamp(((java.util.Date) val).getTime());
               else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
-              else if (val instanceof String) {
-                String str = (String) val;
-                if (str.contains("T")) {
-                  ts = Timestamp.valueOf(LocalDateTime.parse(str));
-                } else {
-                  ts = Timestamp.valueOf(str);
-                }
-              } else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+              else if (val instanceof String)
+                ts = BigQueryTimezoneUtility.boxDateTime((String) val, zone);
+              else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
 
               if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
               return ts;
@@ -181,14 +181,16 @@ final class BigQueryTypeRegistry {
             (val, targetClass, zone) -> {
               Timestamp ts;
               if (val instanceof Timestamp) ts = (Timestamp) val;
-              else if (val instanceof String) {
-                String str = (String) val;
-                if (str.contains("T") || str.contains("Z")) {
-                  ts = Timestamp.from(Instant.parse(str));
-                } else {
-                  ts = Timestamp.valueOf(str);
-                }
-              } else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+              else if (val instanceof java.util.Date)
+                ts = new Timestamp(((java.util.Date) val).getTime());
+              else if (val instanceof Instant) ts = Timestamp.from((Instant) val);
+              else if (val instanceof OffsetDateTime)
+                ts = Timestamp.from(((OffsetDateTime) val).toInstant());
+              else if (val instanceof ZonedDateTime)
+                ts = Timestamp.from(((ZonedDateTime) val).toInstant());
+              else if (val instanceof String)
+                ts = BigQueryTimezoneUtility.boxTimestamp((String) val);
+              else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
 
               if (targetClass == Instant.class) return ts.toInstant();
               if (targetClass == OffsetDateTime.class)
@@ -208,8 +210,11 @@ final class BigQueryTypeRegistry {
             (val, targetClass, zone) -> {
               Time sqlTime;
               if (val instanceof Time) sqlTime = (Time) val;
+              else if (val instanceof java.util.Date)
+                sqlTime = new Time(((java.util.Date) val).getTime());
               else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
-              else if (val instanceof String) sqlTime = Time.valueOf((String) val);
+              else if (val instanceof String)
+                sqlTime = BigQueryTimezoneUtility.boxTime((String) val, zone);
               else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
 
               if (targetClass == LocalTime.class) return sqlTime.toLocalTime();
@@ -270,7 +275,7 @@ final class BigQueryTypeRegistry {
             Arrays.asList(BigDecimal.class),
             (val, targetClass, zone) -> {
               if (val instanceof BigDecimal) return val;
-              if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
+              if (val instanceof Number) return new BigDecimal(val.toString());
               if (val instanceof String) return new BigDecimal((String) val);
               throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
             }));
