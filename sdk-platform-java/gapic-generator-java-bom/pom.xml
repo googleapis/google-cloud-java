@@ -164,6 +164,11 @@
         <artifactId>grpc-google-iam-v3beta</artifactId>
         <version>1.69.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-iam-v3beta:current} -->
       </dependency>
+      <dependency>
+        <groupId>org.conscrypt</groupId>
+        <artifactId>conscrypt-openjdk-uber</artifactId>
+        <version>${conscrypt.version}</version>
+      </dependency>
     </dependencies>
 
   </dependencyManagement>
