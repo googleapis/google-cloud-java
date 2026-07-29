@@ -20,7 +20,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.Date;
-import java.sql.SQLException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -66,7 +66,7 @@ final class BigQueryTypeRegistry {
             (val, targetClass, zone) -> {
               if (val instanceof Boolean) return val;
               if (val instanceof String) return Boolean.parseBoolean((String) val);
-              throw new SQLException("Cannot convert to BOOL: " + val);
+              throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
             }));
 
     // STRING
@@ -89,7 +89,7 @@ final class BigQueryTypeRegistry {
               long longVal;
               if (val instanceof Number) longVal = ((Number) val).longValue();
               else if (val instanceof String) longVal = Long.parseLong((String) val);
-              else throw new SQLException("Cannot convert to INT64: " + val);
+              else throw new BigQueryJdbcException("Cannot convert to INT64: " + val);
 
               if (targetClass == Integer.class) return (int) longVal;
               if (targetClass == Short.class) return (short) longVal;
@@ -108,7 +108,7 @@ final class BigQueryTypeRegistry {
               double doubleVal;
               if (val instanceof Number) doubleVal = ((Number) val).doubleValue();
               else if (val instanceof String) doubleVal = Double.parseDouble((String) val);
-              else throw new SQLException("Cannot convert to FLOAT64: " + val);
+              else throw new BigQueryJdbcException("Cannot convert to FLOAT64: " + val);
 
               if (targetClass == Float.class) return (float) doubleVal;
               return doubleVal;
@@ -125,7 +125,7 @@ final class BigQueryTypeRegistry {
               if (val instanceof BigDecimal) return val;
               if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
               if (val instanceof String) return new BigDecimal((String) val);
-              throw new SQLException("Cannot convert to NUMERIC: " + val);
+              throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
             }));
 
     // DATE
@@ -140,7 +140,7 @@ final class BigQueryTypeRegistry {
               if (val instanceof Date) sqlDate = (Date) val;
               else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
               else if (val instanceof String) sqlDate = Date.valueOf((String) val);
-              else throw new SQLException("Cannot convert to DATE: " + val);
+              else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
 
               if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
               return sqlDate;
@@ -164,7 +164,7 @@ final class BigQueryTypeRegistry {
                 } else {
                   ts = Timestamp.valueOf(str);
                 }
-              } else throw new SQLException("Cannot convert to DATETIME: " + val);
+              } else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
 
               if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
               return ts;
@@ -188,7 +188,7 @@ final class BigQueryTypeRegistry {
                 } else {
                   ts = Timestamp.valueOf(str);
                 }
-              } else throw new SQLException("Cannot convert to TIMESTAMP: " + val);
+              } else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
 
               if (targetClass == Instant.class) return ts.toInstant();
               if (targetClass == OffsetDateTime.class)
@@ -210,7 +210,7 @@ final class BigQueryTypeRegistry {
               if (val instanceof Time) sqlTime = (Time) val;
               else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
               else if (val instanceof String) sqlTime = Time.valueOf((String) val);
-              else throw new SQLException("Cannot convert to TIME: " + val);
+              else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
 
               if (targetClass == LocalTime.class) return sqlTime.toLocalTime();
               return sqlTime;
@@ -225,7 +225,7 @@ final class BigQueryTypeRegistry {
             Arrays.asList(byte[].class),
             (val, targetClass, zone) -> {
               if (val instanceof byte[]) return val;
-              throw new SQLException("Cannot convert to BYTES: " + val);
+              throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
             }));
 
     // ARRAY
@@ -237,7 +237,7 @@ final class BigQueryTypeRegistry {
             Arrays.asList(Array.class),
             (val, targetClass, zone) -> {
               if (val instanceof Array) return val;
-              throw new SQLException("Cannot convert to ARRAY: " + val);
+              throw new BigQueryJdbcException("Cannot convert to ARRAY: " + val);
             }));
 
     // STRUCT
@@ -249,7 +249,7 @@ final class BigQueryTypeRegistry {
             Arrays.asList(Struct.class),
             (val, targetClass, zone) -> {
               if (val instanceof Struct) return val;
-              throw new SQLException("Cannot convert to STRUCT: " + val);
+              throw new BigQueryJdbcException("Cannot convert to STRUCT: " + val);
             }));
 
     // JSON
@@ -272,7 +272,7 @@ final class BigQueryTypeRegistry {
               if (val instanceof BigDecimal) return val;
               if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
               if (val instanceof String) return new BigDecimal((String) val);
-              throw new SQLException("Cannot convert to BIGNUMERIC: " + val);
+              throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
             }));
 
     // GEOGRAPHY
@@ -338,13 +338,13 @@ final class BigQueryTypeRegistry {
 
   /** Converts the input value to the target class type. */
   @SuppressWarnings("unchecked")
-  public static <T> T convert(Object input, Class<T> targetClass) throws SQLException {
+  public static <T> T convert(Object input, Class<T> targetClass) throws BigQueryJdbcException {
     if (input == null) {
       return null;
     }
     TypeDescriptor<?> descriptor = getDescriptorForClass(targetClass);
     if (descriptor == null) {
-      throw new SQLException("Unsupported target class: " + targetClass.getName());
+      throw new BigQueryJdbcException("Unsupported target class: " + targetClass.getName());
     }
     return (T) descriptor.convert(input, targetClass, null);
   }

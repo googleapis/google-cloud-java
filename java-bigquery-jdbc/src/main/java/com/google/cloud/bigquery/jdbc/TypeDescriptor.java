@@ -17,7 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import java.sql.SQLException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.time.ZoneId;
 import java.util.List;
 
@@ -30,7 +30,7 @@ final class TypeDescriptor<T> {
 
   @FunctionalInterface
   interface TypeCoercer {
-    Object coerce(Object value, Class<?> targetClass, ZoneId zoneId) throws SQLException;
+    Object coerce(Object value, Class<?> targetClass, ZoneId zoneId) throws BigQueryJdbcException;
   }
 
   private final int jdbcType;
@@ -68,7 +68,7 @@ final class TypeDescriptor<T> {
     return supportedJavaTypes;
   }
 
-  public Object convert(Object value, Class<?> targetClass, ZoneId zoneId) throws SQLException {
+  public Object convert(Object value, Class<?> targetClass, ZoneId zoneId) throws BigQueryJdbcException {
     if (value == null) {
       return null;
     }
