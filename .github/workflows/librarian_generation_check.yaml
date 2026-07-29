@@ -101,8 +101,7 @@ jobs:
         fi
     - name: Create issue if previous step fails
       if: ${{ failure() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-      # zizmor: ignore[unpinned-uses]
-      uses: googleapis/librarian/.github/actions/create-issue-on-failure@main
+      uses: googleapis/librarian/.github/actions/create-issue-on-failure@35997441eafc2b02716804f9baba1e3f04f8a44f # v0.31.1
       with:
         title: "Librarian generate diff check failed on main branch"
         body: |

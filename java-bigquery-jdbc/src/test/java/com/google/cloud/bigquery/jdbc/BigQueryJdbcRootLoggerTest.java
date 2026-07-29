@@ -20,6 +20,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
+import io.opentelemetry.context.Scope;
 import java.util.logging.Formatter;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -70,5 +75,24 @@ public class BigQueryJdbcRootLoggerTest {
   public void testGetThreadNameNotFound() {
     String name = BigQueryJdbcRootLogger.getThreadName(-1);
     assertEquals("", name);
+  }
+
+  @Test
+  public void testFormatterWithOpenTelemetrySpan() {
+    SpanContext spanContext =
+        SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            TraceFlags.getDefault(),
+            TraceState.getDefault());
+    Span span = Span.wrap(spanContext);
+    try (Scope scope = span.makeCurrent()) {
+      Formatter formatter = BigQueryJdbcRootLogger.getFormatter();
+      LogRecord record = new LogRecord(Level.INFO, "Test message with span");
+      String formatted = formatter.format(record);
+      assertTrue(
+          formatted.contains(
+              "[trace_id=00000000000000000000000000000001 span_id=0000000000000002] "));
+    }
   }
 }
