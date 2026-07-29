@@ -17,6 +17,9 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.common.base.Strings;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.time.Instant;
@@ -84,6 +87,18 @@ class BigQueryJdbcRootLogger {
     return new Formatter() {
       private static final int MAX_THREAD_NAME_LENGTH = 15;
 
+      private void appendTraceBlock(StringBuilder sb) {
+        SpanContext spanContext = Span.fromContext(Context.current()).getSpanContext();
+        if (!spanContext.isValid()) {
+          return;
+        }
+        sb.append("[trace_id=")
+            .append(spanContext.getTraceId())
+            .append(" span_id=")
+            .append(spanContext.getSpanId())
+            .append("] ");
+      }
+
       @Override
       public String format(LogRecord record) {
         String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
@@ -114,14 +129,12 @@ class BigQueryJdbcRootLogger {
                 : record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
 
-        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS [CONNECTION_ID] LEVEL PID --- [THREAD] CLASS
-        // METHOD: MESSAGE
+        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS [CONNECTION_ID] [trace_id=<trace_id>
+        // span_id=<span_id>] LEVEL PID --- [THREAD] CLASS METHOD: MESSAGE
         StringBuilder sb = new StringBuilder(256);
-        sb.append(date)
-            .append(" [")
-            .append(connStr)
-            .append("] ")
-            .append(Strings.padEnd(record.getLevel().getName(), 7, ' '))
+        sb.append(date).append(" [").append(connStr).append("] ");
+        appendTraceBlock(sb);
+        sb.append(Strings.padEnd(record.getLevel().getName(), 7, ' '))
             .append(" ")
             .append(PROCESS_ID)
             .append(" --- [")

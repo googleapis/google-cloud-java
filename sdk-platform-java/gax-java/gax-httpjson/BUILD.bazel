@@ -25,6 +25,7 @@ _COMPILE_DEPS = [
     "@com_google_api_grpc_proto_google_common_protos//jar",
     "@com_google_protobuf//:protobuf_java",
     "@com_google_protobuf_java_util//jar",
+    "@org_conscrypt_conscrypt_openjdk_uber//jar",
     "//gax:gax",
 ]
 
