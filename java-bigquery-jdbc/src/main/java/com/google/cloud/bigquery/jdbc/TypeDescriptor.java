@@ -26,7 +26,7 @@ import java.util.function.BiFunction;
  * StandardSQLTypeName. It also contains the coercion logic to convert raw values into the expected
  * Java type.
  */
-public final class TypeDescriptor<T> {
+final class TypeDescriptor<T> {
   private final int jdbcType;
   private final Class<T> defaultJavaClass;
   private final StandardSQLTypeName bqType;

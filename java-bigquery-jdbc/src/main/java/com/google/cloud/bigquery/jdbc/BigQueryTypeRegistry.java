@@ -39,7 +39,7 @@ import java.util.Map;
  * A central, bidirectional engine for resolving and coercing types between JDBC, Java, and
  * BigQuery.
  */
-public final class BigQueryTypeRegistry {
+final class BigQueryTypeRegistry {
 
   private static final TypeDescriptor<?>[] DESCRIPTORS_BY_ORDINAL;
   private static final Map<Class<?>, TypeDescriptor<?>> DESCRIPTORS_BY_CLASS;
