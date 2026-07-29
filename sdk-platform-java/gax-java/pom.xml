@@ -94,6 +94,11 @@
         </exclusions>
       </dependency>
       <dependency>
+        <groupId>org.conscrypt</groupId>
+        <artifactId>conscrypt-openjdk-uber</artifactId>
+        <version>${conscrypt.version}</version>
+      </dependency>
+      <dependency>
         <groupId>io.opencensus</groupId>
         <artifactId>opencensus-api</artifactId>
         <version>0.31.1</version>
