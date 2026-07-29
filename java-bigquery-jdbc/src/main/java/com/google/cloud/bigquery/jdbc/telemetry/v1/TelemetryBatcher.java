@@ -17,11 +17,11 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
+import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
@@ -51,14 +51,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final boolean ownsExecutor;
   private final ReentrantLock flushLock = new ReentrantLock();
 
-  private final LinkedBlockingQueue<ConnectionAttempt> connectionAttemptQueue =
-      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final LinkedBlockingQueue<StatementExecution> statementExecutionQueue =
-      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final LinkedBlockingQueue<ErrorMetric> errorMetricQueue =
-      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
-  private final LinkedBlockingQueue<FeatureUsage> featureUsageQueue =
-      new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
+  private final LinkedBlockingQueue<Message> eventQueue = new LinkedBlockingQueue<>(MAX_QUEUE_SIZE);
 
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
@@ -70,15 +63,6 @@ final class TelemetryBatcher implements AutoCloseable {
         transport,
         (config != null && config.isEnabled()) ? createDefaultExecutor() : null,
         config != null && config.isEnabled());
-  }
-
-  private static ScheduledExecutorService createDefaultExecutor() {
-    return Executors.newSingleThreadScheduledExecutor(
-        r -> {
-          Thread t = new Thread(r, "jdbc-telemetry-batcher");
-          t.setDaemon(true);
-          return t;
-        });
   }
 
   // Package-private constructor for testing overrides
@@ -98,27 +82,36 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
+  private static ScheduledExecutorService createDefaultExecutor() {
+    return Executors.newSingleThreadScheduledExecutor(
+        r -> {
+          Thread t = new Thread(r, "jdbc-telemetry-batcher");
+          t.setDaemon(true);
+          return t;
+        });
+  }
+
   void offerConnectionAttempt(ConnectionAttempt attempt) {
-    offerMetric(connectionAttemptQueue, attempt, "Connection attempt");
+    offerMetric(attempt, "Connection attempt");
   }
 
   void offerStatementExecution(StatementExecution execution) {
-    offerMetric(statementExecutionQueue, execution, "Statement execution");
+    offerMetric(execution, "Statement execution");
   }
 
   void offerErrorMetric(ErrorMetric errorMetric) {
-    offerMetric(errorMetricQueue, errorMetric, "Error metric");
+    offerMetric(errorMetric, "Error metric");
   }
 
   void offerFeatureUsage(FeatureUsage featureUsage) {
-    offerMetric(featureUsageQueue, featureUsage, "Feature usage");
+    offerMetric(featureUsage, "Feature usage");
   }
 
-  private <T> void offerMetric(Queue<T> queue, T item, String metricName) {
+  private void offerMetric(Message item, String metricName) {
     if (isClosed.get() || !isConfigured() || item == null) {
       return;
     }
-    if (!queue.offer(item)) {
+    if (!eventQueue.offer(item)) {
       logger.log(Level.WARNING, metricName + " telemetry queue full. Dropping metric.");
     }
   }
@@ -135,21 +128,10 @@ final class TelemetryBatcher implements AutoCloseable {
               ? config.getBatchSizeThreshold()
               : TelemetryConfiguration.DEFAULT_BATCH_SIZE_THRESHOLD;
 
-      List<ConnectionAttempt> connectionAttempts = new ArrayList<>();
-      List<StatementExecution> statementExecutions = new ArrayList<>();
-      List<ErrorMetric> errorMetrics = new ArrayList<>();
-      List<FeatureUsage> featureUsages = new ArrayList<>();
+      List<Message> events = new ArrayList<>(maxTotalBatchSize);
+      eventQueue.drainTo(events, maxTotalBatchSize);
 
-      int remainingQuota = maxTotalBatchSize;
-      remainingQuota -= drainQueue(connectionAttemptQueue, connectionAttempts, remainingQuota);
-      remainingQuota -= drainQueue(statementExecutionQueue, statementExecutions, remainingQuota);
-      remainingQuota -= drainQueue(errorMetricQueue, errorMetrics, remainingQuota);
-      remainingQuota -= drainQueue(featureUsageQueue, featureUsages, remainingQuota);
-
-      if (connectionAttempts.isEmpty()
-          && statementExecutions.isEmpty()
-          && errorMetrics.isEmpty()
-          && featureUsages.isEmpty()) {
+      if (events.isEmpty()) {
         return TransportResult.disabled();
       }
 
@@ -162,42 +144,33 @@ final class TelemetryBatcher implements AutoCloseable {
       if (driverEnvironment != null) {
         payloadBuilder.setDriverEnvironment(driverEnvironment);
       }
-      payloadBuilder.addAllConnectionAttempts(connectionAttempts);
-      payloadBuilder.addAllStatementExecutions(statementExecutions);
-      payloadBuilder.addAllErrors(errorMetrics);
-      payloadBuilder.addAllFeatureUsages(featureUsages);
+
+      populatePayloadBuilder(payloadBuilder, events);
 
       TelemetryPayload payload = payloadBuilder.build();
 
       // Enforce MAX_PAYLOAD_BYTES (512 KB) by estimating bulk trim with safety padding
       int currentSize = payload.getSerializedSize();
-      if (currentSize > MAX_PAYLOAD_BYTES) {
-        int totalItems =
-            connectionAttempts.size()
-                + statementExecutions.size()
-                + errorMetrics.size()
-                + featureUsages.size();
-        if (totalItems > 0) {
-          double avgBytesPerItem = (double) currentSize / totalItems;
-          int excessBytes = currentSize - MAX_PAYLOAD_BYTES;
-          // Add +5 items safety pad to guarantee 100% single-pass size compliance
-          int itemsToTrim =
-              Math.min(totalItems, (int) Math.ceil(excessBytes / avgBytesPerItem) + 5);
+      if (currentSize > MAX_PAYLOAD_BYTES && !events.isEmpty()) {
+        double avgBytesPerItem = (double) currentSize / events.size();
+        int excessBytes = currentSize - MAX_PAYLOAD_BYTES;
+        int itemsToTrim =
+            Math.min(events.size(), (int) Math.ceil(excessBytes / avgBytesPerItem) + 5);
 
-          trimExcessItemsBulk(
-              itemsToTrim, connectionAttempts, statementExecutions, errorMetrics, featureUsages);
-
-          payloadBuilder
-              .clearConnectionAttempts()
-              .addAllConnectionAttempts(connectionAttempts)
-              .clearStatementExecutions()
-              .addAllStatementExecutions(statementExecutions)
-              .clearErrors()
-              .addAllErrors(errorMetrics)
-              .clearFeatureUsages()
-              .addAllFeatureUsages(featureUsages);
-          payload = payloadBuilder.build();
+        int trimCount = Math.min(events.size(), itemsToTrim);
+        int startIndex = events.size() - trimCount;
+        for (int i = events.size() - 1; i >= startIndex; i--) {
+          eventQueue.offer(events.get(i));
         }
+        events.subList(startIndex, events.size()).clear();
+
+        payloadBuilder
+            .clearConnectionAttempts()
+            .clearStatementExecutions()
+            .clearErrors()
+            .clearFeatureUsages();
+        populatePayloadBuilder(payloadBuilder, events);
+        payload = payloadBuilder.build();
       }
 
       TransportResult result;
@@ -209,10 +182,7 @@ final class TelemetryBatcher implements AutoCloseable {
       }
 
       if (!result.isSuccess()) {
-        requeueItems(connectionAttemptQueue, connectionAttempts);
-        requeueItems(statementExecutionQueue, statementExecutions);
-        requeueItems(errorMetricQueue, errorMetrics);
-        requeueItems(featureUsageQueue, featureUsages);
+        requeueItems(events);
       }
 
       long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
@@ -225,6 +195,20 @@ final class TelemetryBatcher implements AutoCloseable {
       return result;
     } finally {
       flushLock.unlock();
+    }
+  }
+
+  private void populatePayloadBuilder(TelemetryPayload.Builder builder, List<Message> events) {
+    for (Message event : events) {
+      if (event instanceof ConnectionAttempt) {
+        builder.addConnectionAttempts((ConnectionAttempt) event);
+      } else if (event instanceof StatementExecution) {
+        builder.addStatementExecutions((StatementExecution) event);
+      } else if (event instanceof ErrorMetric) {
+        builder.addErrors((ErrorMetric) event);
+      } else if (event instanceof FeatureUsage) {
+        builder.addFeatureUsages((FeatureUsage) event);
+      }
     }
   }
 
@@ -263,17 +247,11 @@ final class TelemetryBatcher implements AutoCloseable {
   }
 
   boolean isEmpty() {
-    return connectionAttemptQueue.isEmpty()
-        && statementExecutionQueue.isEmpty()
-        && errorMetricQueue.isEmpty()
-        && featureUsageQueue.isEmpty();
+    return eventQueue.isEmpty();
   }
 
   int getPendingEventCount() {
-    return connectionAttemptQueue.size()
-        + statementExecutionQueue.size()
-        + errorMetricQueue.size()
-        + featureUsageQueue.size();
+    return eventQueue.size();
   }
 
   private boolean isConfigured() {
@@ -316,41 +294,13 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
-  private void trimExcessItemsBulk(
-      int itemsToTrim,
-      List<ConnectionAttempt> connectionAttempts,
-      List<StatementExecution> statementExecutions,
-      List<ErrorMetric> errorMetrics,
-      List<FeatureUsage> featureUsages) {
-    int remaining = itemsToTrim;
-    remaining -= trimListToQueue(featureUsages, featureUsageQueue, remaining);
-    remaining -= trimListToQueue(errorMetrics, errorMetricQueue, remaining);
-    remaining -= trimListToQueue(statementExecutions, statementExecutionQueue, remaining);
-    trimListToQueue(connectionAttempts, connectionAttemptQueue, remaining);
-  }
-
-  private <T> int trimListToQueue(List<T> list, Queue<T> queue, int maxToTrim) {
-    int trimmed = 0;
-    while (trimmed < maxToTrim && !list.isEmpty()) {
-      queue.offer(list.remove(list.size() - 1));
-      trimmed++;
+  private void requeueItems(List<Message> items) {
+    if (items == null || items.isEmpty()) {
+      return;
     }
-    return trimmed;
-  }
-
-  private <T> int drainQueue(LinkedBlockingQueue<T> queue, List<T> targetList, int maxItems) {
-    if (maxItems <= 0) {
-      return 0;
-    }
-    return queue.drainTo(targetList, maxItems);
-  }
-
-  private <T> void requeueItems(Queue<T> queue, List<T> items) {
-    if (items != null && !items.isEmpty()) {
-      for (T item : items) {
-        if (!queue.offer(item)) {
-          break; // Queue is full; stop requeueing to avoid dropping metrics or throwing exception
-        }
+    for (Message item : items) {
+      if (!eventQueue.offer(item)) {
+        break; // Queue is full; stop requeueing to avoid dropping metrics or throwing exception
       }
     }
   }
