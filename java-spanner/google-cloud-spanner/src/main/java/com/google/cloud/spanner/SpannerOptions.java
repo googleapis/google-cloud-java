@@ -89,6 +89,7 @@ import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -110,12 +111,15 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final long serialVersionUID = 2789571558532701170L;
+  private static final Logger logger = Logger.getLogger(SpannerOptions.class.getName());
   private static SpannerEnvironment environment = SpannerEnvironmentImpl.INSTANCE;
   private static boolean enableOpenCensusMetrics = true;
   private static boolean enableOpenTelemetryMetrics = false;
@@ -299,6 +303,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final CallCredentialsProvider callCredentialsProvider;
   private final CloseableExecutorProvider asyncExecutorProvider;
   private final String compressorName;
+  private final String emulatorHost;
   private final boolean leaderAwareRoutingEnabled;
   private final boolean enableDirectAccess;
   private final boolean enableGcpFallback;
@@ -306,7 +311,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean useVirtualThreads;
   private final OpenTelemetry openTelemetry;
   private final boolean enableApiTracing;
+  private final boolean rawEnableBuiltInMetrics;
   private final boolean enableBuiltInMetrics;
+  private final MetricsProvider metricsProvider;
+  private final MetricsProvider resolvedMetricsProvider;
   private final boolean enableLocationApi;
   private final boolean enableExtendedTracing;
   private final boolean enableEndToEndTracing;
@@ -993,6 +1001,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     callCredentialsProvider = builder.callCredentialsProvider;
     asyncExecutorProvider = builder.asyncExecutorProvider;
     compressorName = builder.compressorName;
+    emulatorHost = builder.emulatorHost;
     leaderAwareRoutingEnabled = builder.leaderAwareRoutingEnabled;
     enableDirectAccess = builder.enableDirectAccess;
     enableGcpFallback = builder.enableGcpFallback;
@@ -1001,11 +1010,26 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     openTelemetry = builder.openTelemetry;
     enableApiTracing = builder.enableApiTracing;
     enableExtendedTracing = builder.enableExtendedTracing;
+    // Resolve the client-metrics provider and the Cloud Monitoring (GCM) built-in metrics flag
+    // independently. The built-in metrics flag/env controls only the GCM sink; the client-metrics
+    // provider controls only the caller-owned OpenTelemetry sink.
+    // - Non-OMNI: GCM is gated by enableBuiltInMetrics/env. A custom provider records the same
+    //   client instruments to the caller-owned spanner/client namespace regardless of that flag.
+    // - OMNI: GCM is always off (the backend rejects reserved-namespace writes). The Default
+    //   provider is coerced to Noop, while a custom provider records client metrics regardless of
+    //   enableBuiltInMetrics/env.
+    rawEnableBuiltInMetrics = builder.enableBuiltInMetrics;
+    metricsProvider = builder.metricsProvider;
+    MetricsProvider resolved = builder.metricsProvider;
     if (builder.instanceType == InstanceType.OMNI) {
+      if (resolved instanceof DefaultMetricsProvider) {
+        resolved = NoopMetricsProvider.INSTANCE;
+      }
       enableBuiltInMetrics = false;
     } else {
       enableBuiltInMetrics = builder.enableBuiltInMetrics;
     }
+    resolvedMetricsProvider = resolved;
     // Enable location API when InstanceType is OMNI, unless explicitly disabled
     // via GOOGLE_SPANNER_EXPERIMENTAL_LOCATION_API=false.
     if (builder.instanceType == InstanceType.OMNI) {
@@ -1337,6 +1361,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean enableExtendedTracing = SpannerOptions.environment.isEnableExtendedTracing();
     private boolean enableEndToEndTracing = SpannerOptions.environment.isEnableEndToEndTracing();
     private boolean enableBuiltInMetrics = SpannerOptions.environment.isEnableBuiltInMetrics();
+    private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
     private SslContext mTLSContext = null;
@@ -1409,11 +1434,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
-      if (options.getHost() != null
-          && this.emulatorHost != null
-          && !options.getHost().equals(this.emulatorHost)) {
-        this.emulatorHost = null;
-      }
+      this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
           options.transportChannelExecutorThreadNameFormat;
@@ -1450,7 +1471,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.useVirtualThreads = options.useVirtualThreads;
       this.enableApiTracing = options.enableApiTracing;
       this.enableExtendedTracing = options.enableExtendedTracing;
-      this.enableBuiltInMetrics = options.enableBuiltInMetrics;
+      this.enableBuiltInMetrics = options.rawEnableBuiltInMetrics;
+      this.metricsProvider = options.metricsProvider;
       this.enableLocationApi = options.enableLocationApi;
       this.enableEndToEndTracing = options.enableEndToEndTracing;
       this.monitoringHost = options.monitoringHost;
@@ -2180,11 +2202,43 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Sets whether to enable or disable built in metrics for Data client operations. Built in
-     * metrics are enabled by default.
+     * Sets whether to enable or disable the Cloud Monitoring export destination for Spanner
+     * built-in client metrics. Built-in metrics are enabled by default.
+     *
+     * <p>This flag controls only the default Cloud Monitoring (GCM) export destination on non-Omni
+     * clients. It has no effect on a client-metrics provider configured with {@link
+     * #setClientMetricsProvider(MetricsProvider)}; that caller-owned OpenTelemetry destination is
+     * controlled separately by the configured provider.
+     *
+     * <p>On {@link InstanceType#OMNI} clients the GCM sink is unavailable, so this flag does not
+     * enable Cloud Monitoring export there.
      */
     public Builder setBuiltInMetricsEnabled(boolean enableBuiltInMetrics) {
       this.enableBuiltInMetrics = enableBuiltInMetrics;
+      return this;
+    }
+
+    /**
+     * Sets the {@link MetricsProvider} that controls client-metrics export to a caller-owned
+     * OpenTelemetry destination. Defaults to {@link DefaultMetricsProvider#INSTANCE}, which does
+     * not configure a caller-owned destination. Use {@link NoopMetricsProvider#INSTANCE} to disable
+     * caller-owned client metrics explicitly, or {@link CustomOpenTelemetryMetricsProvider} to
+     * record the same Spanner client instruments on a caller-provided {@link OpenTelemetry}
+     * instance.
+     *
+     * <p>Client metrics are independent of the built-in Cloud Monitoring (GCM) export controlled by
+     * {@link #setBuiltInMetricsEnabled(boolean)} and the {@code SPANNER_DISABLE_BUILTIN_METRICS}
+     * environment variable. A custom client-metrics provider keeps recording when the GCM sink is
+     * disabled. On non-Omni clients, the GCM and client-metrics destinations can both be active. On
+     * {@link InstanceType#OMNI} clients, the GCM sink is unavailable and a custom provider is the
+     * way to export client metrics.
+     *
+     * <p>Client metrics are not recorded when the client runs against the Spanner emulator,
+     * regardless of the configured {@link MetricsProvider}.
+     */
+    public Builder setClientMetricsProvider(MetricsProvider metricsProvider) {
+      this.metricsProvider =
+          Preconditions.checkNotNull(metricsProvider, "metricsProvider cannot be null");
       return this;
     }
 
@@ -2323,7 +2377,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         if (!emulatorHost.startsWith("http")) {
           emulatorHost = "http://" + emulatorHost;
         }
-        this.setHost(emulatorHost);
+        this.host = emulatorHost;
+        super.setHost(this.host);
         // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
         // needing certificates.
         this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
@@ -2643,14 +2698,57 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
   }
 
+  /**
+   * Wires gRPC-layer built-in metrics into the given channel provider builder using the
+   * pre-emulator-aware behavior.
+   *
+   * @deprecated for internal callers only. Use {@link #enablegRPCMetrics(
+   *     InstantiatingGrpcChannelProvider.Builder, boolean)}.
+   */
+  @Deprecated
+  @InternalApi
   public void enablegRPCMetrics(InstantiatingGrpcChannelProvider.Builder channelProviderBuilder) {
-    if (isEnableBuiltInMetrics() && SpannerOptions.environment.isEnableGRPCBuiltInMetrics()) {
+    enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
+  }
+
+  /**
+   * Wires gRPC-layer built-in metrics into the given channel provider builder for each active
+   * metrics sink: the Cloud Monitoring (GCM) sink when {@link #isEnableBuiltInMetrics()} is true,
+   * and the caller-owned OpenTelemetry sink when a {@link CustomOpenTelemetryMetricsProvider} is
+   * configured. Does nothing when {@code isEmulatorEnabled} is true or gRPC built-in metrics are
+   * disabled via the environment.
+   */
+  @InternalApi
+  public void enablegRPCMetrics(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, boolean isEmulatorEnabled) {
+    if (isEmulatorEnabled || !SpannerOptions.environment.isEnableGRPCBuiltInMetrics()) {
+      return;
+    }
+    // The GCM and client-metrics sinks are independent; wire each active sink onto the channel.
+    // grpc-java
+    // records each instrument once per GrpcOpenTelemetry instance, so wiring two instances onto one
+    // channel does not double-count attempt/operation metrics (verified by
+    // GrpcMetricsDualWireTest).
+    if (isEnableBuiltInMetrics()) {
       this.builtInMetricsProvider.enableGrpcMetrics(
           channelProviderBuilder,
           this.getProjectId(),
           getCredentials(),
           this.monitoringHost,
           getUniverseDomain());
+    }
+    if (usesCustomMetricsProvider()) {
+      OpenTelemetry customOpenTelemetry =
+          ((CustomOpenTelemetryMetricsProvider) resolvedMetricsProvider).getOpenTelemetry();
+      // GrpcOpenTelemetry can only record metrics on an SDK instance.
+      if (customOpenTelemetry instanceof OpenTelemetrySdk) {
+        this.builtInMetricsProvider.enableGrpcMetrics(channelProviderBuilder, customOpenTelemetry);
+      } else {
+        logger.log(
+            Level.FINE,
+            "Skipping gRPC-layer built-in metrics: the OpenTelemetry instance of the"
+                + " CustomOpenTelemetryMetricsProvider is not an OpenTelemetrySdk.");
+      }
     }
   }
 
@@ -2671,12 +2769,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     apiTracerFactories.add(
         MoreObjects.firstNonNull(super.getApiTracerFactory(), getDefaultApiTracerFactory()));
 
-    // Add Metrics Tracer factory if built in metrics are enabled and if the client is data client
-    // and if emulator is not enabled.
-    if (isEnableBuiltInMetrics() && !isAdminClient && !isEmulatorEnabled && !usesNoCredentials()) {
-      ApiTracerFactory metricsTracerFactory = createMetricsApiTracerFactory();
-      if (metricsTracerFactory != null) {
-        apiTracerFactories.add(metricsTracerFactory);
+    // Add built-in metrics tracer factories for a data client (never admin/emulator). The Cloud
+    // Monitoring (GCM) sink and a caller-provided client-metrics sink are independent and may both
+    // be
+    // active, so each active sink gets its own tracer factory recording into its own OpenTelemetry
+    // and namespace. The credentials guard only applies to the GCM sink: a client-metrics sink
+    // needs no
+    // Google credentials to export (e.g. Spanner Omni clients).
+    if (!isAdminClient && !isEmulatorEnabled) {
+      if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
+        ApiTracerFactory cloudMonitoringTracerFactory = createCloudMonitoringMetricsTracerFactory();
+        if (cloudMonitoringTracerFactory != null) {
+          apiTracerFactories.add(cloudMonitoringTracerFactory);
+        }
+      }
+      if (usesCustomMetricsProvider()) {
+        apiTracerFactories.add(createCustomMetricsTracerFactory());
       }
     }
 
@@ -2699,7 +2807,31 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return BaseApiTracerFactory.getInstance();
   }
 
-  private ApiTracerFactory createMetricsApiTracerFactory() {
+  /**
+   * Records client metrics on the caller-provided OpenTelemetry with the custom-export namespace.
+   * This deliberately does not touch the process-wide BuiltInMetricsProvider singleton, so a client
+   * with a client-metrics sink can coexist with clients that export to Cloud Monitoring in the same
+   * JVM.
+   */
+  private ApiTracerFactory createCustomMetricsTracerFactory() {
+    OpenTelemetry customOpenTelemetry =
+        ((CustomOpenTelemetryMetricsProvider) resolvedMetricsProvider).getOpenTelemetry();
+    // The Cloud Monitoring exporter adds client_name/client_uid at export time; on the custom
+    // path they must be recorded as metric attributes instead.
+    Map<String, String> clientAttributes = this.builtInMetricsProvider.createClientAttributes();
+    return new BuiltInMetricsTracerFactory(
+        new BuiltInMetricsRecorder(
+            customOpenTelemetry, BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME),
+        clientAttributes,
+        createTraceWrapper());
+  }
+
+  /**
+   * Records built-in metrics on the process-wide Cloud Monitoring OpenTelemetry with the reserved
+   * {@code spanner.googleapis.com} namespace. Returns {@code null} when the Cloud Monitoring
+   * OpenTelemetry could not be created.
+   */
+  private ApiTracerFactory createCloudMonitoringMetricsTracerFactory() {
     OpenTelemetry openTelemetry =
         this.builtInMetricsProvider.getOrCreateOpenTelemetry(
             this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
@@ -2708,15 +2840,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         ? new BuiltInMetricsTracerFactory(
             new BuiltInMetricsRecorder(openTelemetry, BuiltInMetricsConstant.METER_NAME),
             new HashMap<>(),
-            new TraceWrapper(
-                Tracing.getTracer(),
-                // Using the OpenTelemetry object set in Spanner Options, will be NoOp if not set
-                this.getOpenTelemetry()
-                    .getTracer(
-                        MetricRegistryConstants.INSTRUMENTATION_SCOPE,
-                        GaxProperties.getLibraryVersion(getClass())),
-                true))
+            createTraceWrapper())
         : null;
+  }
+
+  private TraceWrapper createTraceWrapper() {
+    return new TraceWrapper(
+        Tracing.getTracer(),
+        // Using the OpenTelemetry object set in Spanner Options, will be NoOp if not set
+        this.getOpenTelemetry()
+            .getTracer(
+                MetricRegistryConstants.INSTRUMENTATION_SCOPE,
+                GaxProperties.getLibraryVersion(getClass())),
+        true);
   }
 
   /**
@@ -2729,11 +2865,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Returns true if an {@link com.google.api.gax.tracing.MetricsTracer} should be created and set
-   * on the Spanner client.
+   * Returns true if built-in metrics are exported to the default Cloud Monitoring (GCM)
+   * destination. Always false for {@link InstanceType#OMNI} clients, where the GCM sink is
+   * unavailable. This flag does not affect a caller-owned client-metrics destination configured
+   * with {@link Builder#setClientMetricsProvider(MetricsProvider)}.
    */
   public boolean isEnableBuiltInMetrics() {
     return enableBuiltInMetrics;
+  }
+
+  /**
+   * Returns the effective {@link MetricsProvider} used for client metrics. This is the provider set
+   * with {@link Builder#setClientMetricsProvider(MetricsProvider)} after applying instance type
+   * rules: {@link NoopMetricsProvider} is returned when the {@link DefaultMetricsProvider} is used
+   * with an {@link InstanceType#OMNI} client. A {@link CustomOpenTelemetryMetricsProvider} records
+   * the same client instruments to an independent caller-owned OpenTelemetry destination on all
+   * instance types, including Omni, and is not affected by {@link
+   * Builder#setBuiltInMetricsEnabled(boolean)} or the {@code SPANNER_DISABLE_BUILTIN_METRICS}
+   * environment variable. {@link #toBuilder()} preserves the provider as originally set, so
+   * rebuilding the options re-applies these rules against the new configuration.
+   */
+  public MetricsProvider getClientMetricsProvider() {
+    return resolvedMetricsProvider;
+  }
+
+  /** Returns true if client metrics are recorded on a caller-provided OpenTelemetry. */
+  private boolean usesCustomMetricsProvider() {
+    return resolvedMetricsProvider instanceof CustomOpenTelemetryMetricsProvider;
   }
 
   @InternalApi
@@ -2888,5 +3046,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     return String.format(
         "%s:%s", url.getHost(), url.getPort() < 0 ? url.getDefaultPort() : url.getPort());
+  }
+
+  @InternalApi
+  public boolean isEmulatorEnabled() {
+    return getChannelProvider() == null
+        && emulatorHost != null
+        && getHost() != null
+        && getHost().equals(emulatorHost);
   }
 }
