@@ -127,7 +127,7 @@ public final class AgentIdentityUtils {
 
   public interface EnvReader {
     /** Javadoc. */
-    String getEnv(String name);
+    String getEnv(final String name);
   }
 
   /** Javadoc. */
@@ -241,7 +241,8 @@ public final class AgentIdentityUtils {
    * Resolves the paths for the certificate and private key based on the config path or well-known
    * locations.
    */
-  static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(String certConfigPath) throws IOException {
+  static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(final String certConfigPath)
+      throws IOException {
     String certPath = null;
     String keyPath = null;
 
@@ -281,7 +282,8 @@ public final class AgentIdentityUtils {
   /**
    * Loads the certificate and private key, and verifies that they match if they are separate files.
    */
-  static CertInfo loadAndVerifyCredentials(String certPath, String keyPath) throws IOException {
+  static CertInfo loadAndVerifyCredentials(final String certPath, final String keyPath)
+      throws IOException {
     X509Certificate cert = null;
     PrivateKey privateKey = null;
     String certContent = null;
@@ -353,7 +355,7 @@ public final class AgentIdentityUtils {
   }
 
   /** Checks if a file exists, throwing AccessDeniedException if permission is denied. */
-  private static boolean checkExistsOrAccessDenied(java.nio.file.Path path)
+  private static boolean checkExistsOrAccessDenied(final java.nio.file.Path path)
       throws java.nio.file.AccessDeniedException {
     try {
       Files.readAttributes(path, java.nio.file.attribute.BasicFileAttributes.class);
@@ -375,7 +377,7 @@ public final class AgentIdentityUtils {
    * Reads the certificate path from the config file with retry logic to handle rotation race
    * conditions.
    */
-  private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(String certConfigPath)
+  private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(final String certConfigPath)
       throws IOException {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
@@ -476,7 +478,7 @@ public final class AgentIdentityUtils {
   }
 
   /** Reads the full certificate chain from the specified path as a string. */
-  static String readCertificateChain(String certPath) throws IOException {
+  static String readCertificateChain(final String certPath) throws IOException {
     return new String(Files.readAllBytes(Paths.get(certPath)), StandardCharsets.UTF_8);
   }
 
@@ -484,7 +486,7 @@ public final class AgentIdentityUtils {
    * Verifies that the private key corresponds to the public key in the certificate by performing a
    * test signature and verification.
    */
-  static boolean verifyKeyPair(X509Certificate cert, PrivateKey privateKey) {
+  static boolean verifyKeyPair(final X509Certificate cert, final PrivateKey privateKey) {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
 
@@ -515,7 +517,8 @@ public final class AgentIdentityUtils {
   }
 
   /** Reads the private key from the specified path using PKCS8 format. */
-  static PrivateKey readPrivateKey(String keyPath, String algorithm) throws IOException {
+  static PrivateKey readPrivateKey(final String keyPath, final String algorithm)
+      throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
     OAuth2Utils.Pkcs8Algorithm pkcs8Alg =
         "EC".equals(algorithm) ? OAuth2Utils.Pkcs8Algorithm.EC : OAuth2Utils.Pkcs8Algorithm.RSA;
@@ -525,7 +528,8 @@ public final class AgentIdentityUtils {
   /**
    * Determines if mTLS should be enabled based on environment variables and certificate presence.
    */
-  static boolean shouldEnableMtls(boolean certsPresent, boolean configExists) throws IOException {
+  static boolean shouldEnableMtls(final boolean certsPresent, final boolean configExists)
+      throws IOException {
     String useClientCert = envReader.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
 
     // Case 1: Explicitly enabled via environment variable
@@ -583,7 +587,7 @@ public final class AgentIdentityUtils {
 
   @SuppressWarnings("unchecked")
   /** Extracts the certificate and private key paths from the JSON configuration file. */
-  private static ResolvedCertAndKeyPaths extractPathsFromConfig(String certConfigPath)
+  private static ResolvedCertAndKeyPaths extractPathsFromConfig(final String certConfigPath)
       throws IOException {
     try (InputStream stream = Files.newInputStream(Paths.get(certConfigPath))) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
@@ -614,7 +618,8 @@ public final class AgentIdentityUtils {
   }
 
   /** Parses the X509 certificate from the specified content string. */
-  private static X509Certificate parseCertificateContent(String certContent) throws IOException {
+  private static X509Certificate parseCertificateContent(final String certContent)
+      throws IOException {
     try (InputStream stream =
         new java.io.ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8))) {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -629,7 +634,7 @@ public final class AgentIdentityUtils {
    * Determines if a bound token should be requested by checking if any of the certificate's Subject
    * Alternative Names (SANs) match allowed SPIFFE patterns.
    */
-  static boolean shouldRequestBoundToken(X509Certificate cert) {
+  static boolean shouldRequestBoundToken(final X509Certificate cert) {
     try {
       Collection<List<?>> sans = cert.getSubjectAlternativeNames();
       if (sans == null) {
