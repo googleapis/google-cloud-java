@@ -17,9 +17,9 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import java.sql.SQLException;
 import java.time.ZoneId;
 import java.util.List;
-import java.util.function.BiFunction;
 
 /**
  * Defines the bidirectional mapping between a JDBC SQL type, a default Java class, and a BigQuery
@@ -27,18 +27,24 @@ import java.util.function.BiFunction;
  * Java type.
  */
 final class TypeDescriptor<T> {
+
+  @FunctionalInterface
+  interface TypeCoercer {
+    Object coerce(Object value, Class<?> targetClass, ZoneId zoneId) throws SQLException;
+  }
+
   private final int jdbcType;
   private final Class<T> defaultJavaClass;
   private final StandardSQLTypeName bqType;
   private final List<Class<?>> supportedJavaTypes;
-  private final BiFunction<Object, ZoneId, T> coercer;
+  private final TypeCoercer coercer;
 
   TypeDescriptor(
       int jdbcType,
       Class<T> defaultJavaClass,
       StandardSQLTypeName bqType,
       List<Class<?>> supportedJavaTypes,
-      BiFunction<Object, ZoneId, T> coercer) {
+      TypeCoercer coercer) {
     this.jdbcType = jdbcType;
     this.defaultJavaClass = defaultJavaClass;
     this.bqType = bqType;
@@ -62,10 +68,10 @@ final class TypeDescriptor<T> {
     return supportedJavaTypes;
   }
 
-  public T convert(Object value, ZoneId zoneId) {
+  public Object convert(Object value, Class<?> targetClass, ZoneId zoneId) throws SQLException {
     if (value == null) {
       return null;
     }
-    return coercer.apply(value, zoneId);
+    return coercer.coerce(value, targetClass, zoneId);
   }
 }

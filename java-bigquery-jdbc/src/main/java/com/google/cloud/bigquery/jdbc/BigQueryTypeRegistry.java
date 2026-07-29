@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -31,9 +32,8 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.IdentityHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * A central, bidirectional engine for resolving and coercing types between JDBC, Java, and
@@ -53,8 +53,8 @@ final class BigQueryTypeRegistry {
       }
     }
     DESCRIPTORS_BY_ORDINAL = new TypeDescriptor<?>[maxOrdinal + 1];
-    DESCRIPTORS_BY_CLASS = new IdentityHashMap<>();
-    DESCRIPTORS_BY_JDBC_TYPE = new HashMap<>();
+    DESCRIPTORS_BY_CLASS = new ConcurrentHashMap<>();
+    DESCRIPTORS_BY_JDBC_TYPE = new ConcurrentHashMap<>();
 
     // BOOL
     register(
@@ -63,10 +63,10 @@ final class BigQueryTypeRegistry {
             Boolean.class,
             StandardSQLTypeName.BOOL,
             Arrays.asList(Boolean.class),
-            (val, zone) -> {
-              if (val instanceof Boolean) return (Boolean) val;
+            (val, targetClass, zone) -> {
+              if (val instanceof Boolean) return val;
               if (val instanceof String) return Boolean.parseBoolean((String) val);
-              throw new IllegalArgumentException("Cannot convert to BOOL: " + val);
+              throw new SQLException("Cannot convert to BOOL: " + val);
             }));
 
     // STRING
@@ -76,7 +76,7 @@ final class BigQueryTypeRegistry {
             String.class,
             StandardSQLTypeName.STRING,
             Arrays.asList(String.class),
-            (val, zone) -> String.valueOf(val)));
+            (val, targetClass, zone) -> String.valueOf(val)));
 
     // INT64
     register(
@@ -85,10 +85,16 @@ final class BigQueryTypeRegistry {
             Long.class,
             StandardSQLTypeName.INT64,
             Arrays.asList(Long.class, Integer.class, Short.class, Byte.class),
-            (val, zone) -> {
-              if (val instanceof Number) return ((Number) val).longValue();
-              if (val instanceof String) return Long.parseLong((String) val);
-              throw new IllegalArgumentException("Cannot convert to INT64: " + val);
+            (val, targetClass, zone) -> {
+              long longVal;
+              if (val instanceof Number) longVal = ((Number) val).longValue();
+              else if (val instanceof String) longVal = Long.parseLong((String) val);
+              else throw new SQLException("Cannot convert to INT64: " + val);
+
+              if (targetClass == Integer.class) return (int) longVal;
+              if (targetClass == Short.class) return (short) longVal;
+              if (targetClass == Byte.class) return (byte) longVal;
+              return longVal;
             }));
 
     // FLOAT64
@@ -98,10 +104,14 @@ final class BigQueryTypeRegistry {
             Double.class,
             StandardSQLTypeName.FLOAT64,
             Arrays.asList(Double.class, Float.class),
-            (val, zone) -> {
-              if (val instanceof Number) return ((Number) val).doubleValue();
-              if (val instanceof String) return Double.parseDouble((String) val);
-              throw new IllegalArgumentException("Cannot convert to FLOAT64: " + val);
+            (val, targetClass, zone) -> {
+              double doubleVal;
+              if (val instanceof Number) doubleVal = ((Number) val).doubleValue();
+              else if (val instanceof String) doubleVal = Double.parseDouble((String) val);
+              else throw new SQLException("Cannot convert to FLOAT64: " + val);
+
+              if (targetClass == Float.class) return (float) doubleVal;
+              return doubleVal;
             }));
 
     // NUMERIC
@@ -111,11 +121,11 @@ final class BigQueryTypeRegistry {
             BigDecimal.class,
             StandardSQLTypeName.NUMERIC,
             Arrays.asList(BigDecimal.class),
-            (val, zone) -> {
-              if (val instanceof BigDecimal) return (BigDecimal) val;
+            (val, targetClass, zone) -> {
+              if (val instanceof BigDecimal) return val;
               if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
               if (val instanceof String) return new BigDecimal((String) val);
-              throw new IllegalArgumentException("Cannot convert to NUMERIC: " + val);
+              throw new SQLException("Cannot convert to NUMERIC: " + val);
             }));
 
     // DATE
@@ -125,10 +135,15 @@ final class BigQueryTypeRegistry {
             Date.class,
             StandardSQLTypeName.DATE,
             Arrays.asList(Date.class, LocalDate.class),
-            (val, zone) -> {
-              if (val instanceof Date) return (Date) val;
-              if (val instanceof LocalDate) return Date.valueOf((LocalDate) val);
-              throw new IllegalArgumentException("Cannot convert to DATE: " + val);
+            (val, targetClass, zone) -> {
+              Date sqlDate;
+              if (val instanceof Date) sqlDate = (Date) val;
+              else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
+              else if (val instanceof String) sqlDate = Date.valueOf((String) val);
+              else throw new SQLException("Cannot convert to DATE: " + val);
+
+              if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
+              return sqlDate;
             }));
 
     // DATETIME
@@ -137,11 +152,22 @@ final class BigQueryTypeRegistry {
             Types.TIMESTAMP,
             Timestamp.class,
             StandardSQLTypeName.DATETIME,
-            Arrays.asList(LocalDateTime.class),
-            (val, zone) -> {
-              if (val instanceof LocalDateTime) return Timestamp.valueOf((LocalDateTime) val);
-              if (val instanceof Timestamp) return (Timestamp) val;
-              throw new IllegalArgumentException("Cannot convert to DATETIME: " + val);
+            Arrays.asList(Timestamp.class, LocalDateTime.class),
+            (val, targetClass, zone) -> {
+              Timestamp ts;
+              if (val instanceof Timestamp) ts = (Timestamp) val;
+              else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
+              else if (val instanceof String) {
+                String str = (String) val;
+                if (str.contains("T")) {
+                  ts = Timestamp.valueOf(LocalDateTime.parse(str));
+                } else {
+                  ts = Timestamp.valueOf(str);
+                }
+              } else throw new SQLException("Cannot convert to DATETIME: " + val);
+
+              if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
+              return ts;
             }));
 
     // TIMESTAMP
@@ -152,9 +178,24 @@ final class BigQueryTypeRegistry {
             StandardSQLTypeName.TIMESTAMP,
             Arrays.asList(
                 Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
-            (val, zone) -> {
-              if (val instanceof Timestamp) return (Timestamp) val;
-              throw new IllegalArgumentException("Cannot convert to TIMESTAMP: " + val);
+            (val, targetClass, zone) -> {
+              Timestamp ts;
+              if (val instanceof Timestamp) ts = (Timestamp) val;
+              else if (val instanceof String) {
+                String str = (String) val;
+                if (str.contains("T") || str.contains("Z")) {
+                  ts = Timestamp.from(Instant.parse(str));
+                } else {
+                  ts = Timestamp.valueOf(str);
+                }
+              } else throw new SQLException("Cannot convert to TIMESTAMP: " + val);
+
+              if (targetClass == Instant.class) return ts.toInstant();
+              if (targetClass == OffsetDateTime.class)
+                return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
+              if (targetClass == ZonedDateTime.class)
+                return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
+              return ts;
             }));
 
     // TIME
@@ -164,10 +205,15 @@ final class BigQueryTypeRegistry {
             Time.class,
             StandardSQLTypeName.TIME,
             Arrays.asList(Time.class, LocalTime.class),
-            (val, zone) -> {
-              if (val instanceof Time) return (Time) val;
-              if (val instanceof LocalTime) return Time.valueOf((LocalTime) val);
-              throw new IllegalArgumentException("Cannot convert to TIME: " + val);
+            (val, targetClass, zone) -> {
+              Time sqlTime;
+              if (val instanceof Time) sqlTime = (Time) val;
+              else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
+              else if (val instanceof String) sqlTime = Time.valueOf((String) val);
+              else throw new SQLException("Cannot convert to TIME: " + val);
+
+              if (targetClass == LocalTime.class) return sqlTime.toLocalTime();
+              return sqlTime;
             }));
 
     // BYTES
@@ -177,9 +223,9 @@ final class BigQueryTypeRegistry {
             byte[].class,
             StandardSQLTypeName.BYTES,
             Arrays.asList(byte[].class),
-            (val, zone) -> {
-              if (val instanceof byte[]) return (byte[]) val;
-              throw new IllegalArgumentException("Cannot convert to BYTES: " + val);
+            (val, targetClass, zone) -> {
+              if (val instanceof byte[]) return val;
+              throw new SQLException("Cannot convert to BYTES: " + val);
             }));
 
     // ARRAY
@@ -189,9 +235,9 @@ final class BigQueryTypeRegistry {
             Array.class,
             StandardSQLTypeName.ARRAY,
             Arrays.asList(Array.class),
-            (val, zone) -> {
-              if (val instanceof Array) return (Array) val;
-              throw new IllegalArgumentException("Cannot convert to ARRAY: " + val);
+            (val, targetClass, zone) -> {
+              if (val instanceof Array) return val;
+              throw new SQLException("Cannot convert to ARRAY: " + val);
             }));
 
     // STRUCT
@@ -201,9 +247,9 @@ final class BigQueryTypeRegistry {
             Struct.class,
             StandardSQLTypeName.STRUCT,
             Arrays.asList(Struct.class),
-            (val, zone) -> {
-              if (val instanceof Struct) return (Struct) val;
-              throw new IllegalArgumentException("Cannot convert to STRUCT: " + val);
+            (val, targetClass, zone) -> {
+              if (val instanceof Struct) return val;
+              throw new SQLException("Cannot convert to STRUCT: " + val);
             }));
 
     // JSON
@@ -213,7 +259,7 @@ final class BigQueryTypeRegistry {
             String.class,
             StandardSQLTypeName.JSON,
             Arrays.asList(com.google.gson.JsonObject.class),
-            (val, zone) -> String.valueOf(val)));
+            (val, targetClass, zone) -> String.valueOf(val)));
 
     // BIGNUMERIC
     register(
@@ -222,11 +268,11 @@ final class BigQueryTypeRegistry {
             BigDecimal.class,
             StandardSQLTypeName.BIGNUMERIC,
             Arrays.asList(BigDecimal.class),
-            (val, zone) -> {
-              if (val instanceof BigDecimal) return (BigDecimal) val;
+            (val, targetClass, zone) -> {
+              if (val instanceof BigDecimal) return val;
               if (val instanceof Number) return BigDecimal.valueOf(((Number) val).doubleValue());
               if (val instanceof String) return new BigDecimal((String) val);
-              throw new IllegalArgumentException("Cannot convert to BIGNUMERIC: " + val);
+              throw new SQLException("Cannot convert to BIGNUMERIC: " + val);
             }));
 
     // GEOGRAPHY
@@ -236,7 +282,7 @@ final class BigQueryTypeRegistry {
             String.class,
             StandardSQLTypeName.GEOGRAPHY,
             Arrays.asList(String.class),
-            (val, zone) -> String.valueOf(val)));
+            (val, targetClass, zone) -> String.valueOf(val)));
 
     // INTERVAL
     register(
@@ -245,7 +291,7 @@ final class BigQueryTypeRegistry {
             String.class,
             StandardSQLTypeName.INTERVAL,
             Arrays.asList(String.class),
-            (val, zone) -> String.valueOf(val)));
+            (val, targetClass, zone) -> String.valueOf(val)));
 
     // RANGE
     register(
@@ -254,7 +300,7 @@ final class BigQueryTypeRegistry {
             String.class,
             StandardSQLTypeName.RANGE,
             Arrays.asList(String.class),
-            (val, zone) -> String.valueOf(val)));
+            (val, targetClass, zone) -> String.valueOf(val)));
   }
 
   private static void register(TypeDescriptor<?> descriptor) {
@@ -292,15 +338,15 @@ final class BigQueryTypeRegistry {
 
   /** Converts the input value to the target class type. */
   @SuppressWarnings("unchecked")
-  public static <T> T convert(Object input, Class<T> targetClass) {
+  public static <T> T convert(Object input, Class<T> targetClass) throws SQLException {
     if (input == null) {
       return null;
     }
     TypeDescriptor<?> descriptor = getDescriptorForClass(targetClass);
     if (descriptor == null) {
-      throw new IllegalArgumentException("Unsupported target class: " + targetClass.getName());
+      throw new SQLException("Unsupported target class: " + targetClass.getName());
     }
-    return (T) descriptor.convert(input, null);
+    return (T) descriptor.convert(input, targetClass, null);
   }
 
   private static TypeDescriptor<?> getDescriptorForClass(Class<?> clazz) {
@@ -308,10 +354,13 @@ final class BigQueryTypeRegistry {
     if (descriptor != null) {
       return descriptor;
     }
-    // Fallback logic for subclasses/interfaces
+    // Fallback logic for subclasses/interfaces (O(N) initial lookup)
     for (Map.Entry<Class<?>, TypeDescriptor<?>> entry : DESCRIPTORS_BY_CLASS.entrySet()) {
       if (entry.getKey().isAssignableFrom(clazz)) {
-        return entry.getValue();
+        TypeDescriptor<?> matchedDescriptor = entry.getValue();
+        // Cache the result in the ConcurrentHashMap to turn subsequent subclass lookups into O(1)
+        DESCRIPTORS_BY_CLASS.putIfAbsent(clazz, matchedDescriptor);
+        return matchedDescriptor;
       }
     }
     return null;
