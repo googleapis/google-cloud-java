@@ -128,9 +128,113 @@ final class BigQueryTypeRegistry {
               throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
             }));
 
-    // --- TEMPORAL TYPES MOVED TO PHASE 2 PR ---
-    // DATE, DATETIME, TIMESTAMP, and TIME descriptors require BigQueryTemporalUtility
-    // which will be introduced in the stacked Phase 2 PR.
+    // DATE
+    register(
+        new TypeDescriptor<>(
+            Types.DATE,
+            Date.class,
+            StandardSQLTypeName.DATE,
+            Arrays.asList(Date.class, LocalDate.class),
+            (val, targetClass, zone) -> {
+              // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDate
+              Date sqlDate;
+              if (val instanceof Date) sqlDate = (Date) val;
+              else if (val instanceof java.util.Date)
+                sqlDate = new Date(((java.util.Date) val).getTime());
+              else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
+              else if (val instanceof String)
+                sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
+              else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+
+              if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
+              return sqlDate;
+            }));
+
+    // DATETIME
+    register(
+        new TypeDescriptor<>(
+            Types.TIMESTAMP,
+            Timestamp.class,
+            StandardSQLTypeName.DATETIME,
+            Arrays.asList(Timestamp.class, LocalDateTime.class),
+            (val, targetClass, zone) -> {
+              // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDateTime
+              Timestamp ts;
+              if (val instanceof Timestamp) ts = (Timestamp) val;
+              else if (val instanceof java.util.Date)
+                ts = new Timestamp(((java.util.Date) val).getTime());
+              else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
+              else if (val instanceof String)
+                ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
+              else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+
+              if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
+              return ts;
+            }));
+
+    // TIMESTAMP
+    register(
+        new TypeDescriptor<>(
+            Types.TIMESTAMP,
+            Timestamp.class,
+            StandardSQLTypeName.TIMESTAMP,
+            Arrays.asList(
+                Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
+            (val, targetClass, zone) -> {
+              // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for Instant, etc.
+              Timestamp ts;
+              if (val instanceof Timestamp) ts = (Timestamp) val;
+              else if (val instanceof java.util.Date)
+                ts = new Timestamp(((java.util.Date) val).getTime());
+              else if (val instanceof Instant) ts = Timestamp.from((Instant) val);
+              else if (val instanceof OffsetDateTime)
+                ts = Timestamp.from(((OffsetDateTime) val).toInstant());
+              else if (val instanceof ZonedDateTime)
+                ts = Timestamp.from(((ZonedDateTime) val).toInstant());
+              else if (val instanceof String)
+                ts = BigQueryTemporalUtility.boxTimestamp((String) val);
+              else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+
+              if (targetClass == Instant.class) return ts.toInstant();
+              if (targetClass == OffsetDateTime.class)
+                return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
+              if (targetClass == ZonedDateTime.class)
+                return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
+              return ts;
+            }));
+
+    // TIME
+    register(
+        new TypeDescriptor<>(
+            Types.TIME,
+            Time.class,
+            StandardSQLTypeName.TIME,
+            Arrays.asList(Time.class, LocalTime.class),
+            (val, targetClass, zone) -> {
+              if (targetClass == LocalTime.class && val instanceof String) {
+                // Phase 3 Fast Path: Parse directly to LocalTime to preserve microsecond precision
+                return LocalTime.parse((String) val);
+              }
+
+              Time sqlTime;
+              if (val instanceof Time) sqlTime = (Time) val;
+              else if (val instanceof java.util.Date)
+                sqlTime = new Time(((java.util.Date) val).getTime());
+              else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
+              else if (val instanceof String)
+                sqlTime = BigQueryTemporalUtility.boxTime((String) val, zone);
+              else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
+
+              if (targetClass == LocalTime.class) {
+                // java.sql.Time.toLocalTime() drops milliseconds (JDK bug).
+                // We manually convert it using the JVM offset to preserve millisecond precision.
+                long epochMillis = sqlTime.getTime();
+                return Instant.ofEpochMilli(epochMillis)
+                    .atZone(ZoneId.systemDefault())
+                    .toLocalTime();
+              }
+              return sqlTime;
+            }));
     
     // BYTES
     register(
