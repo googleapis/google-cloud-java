@@ -22,7 +22,9 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.ProjectList;
@@ -43,6 +45,10 @@ import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperExceptio
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
+import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
@@ -57,6 +63,7 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -261,6 +268,143 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         job = job.reload();
       }
       return listTableData(table, schema, serviceOptions, requestOptions).x();
+    }
+  }
+
+  private static class ArrowQueryPageFetcher implements NextPageFetcher<FieldValueList> {
+    private static final long serialVersionUID = 1L;
+
+    private final JobId jobId;
+    private final Schema schema;
+    private final org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
+    private final BigQueryOptions serviceOptions;
+    private final long maxResults;
+
+    private transient BigQueryReadClient bqReadClient;
+    private transient ServerStream<ReadRowsResponse> stream;
+    private transient Iterator<ReadRowsResponse> streamIterator;
+    private long totalRowsReturned = 0L;
+    private boolean streamClosed = false;
+
+    ArrowQueryPageFetcher(
+        JobId jobId,
+        Schema schema,
+        org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
+        BigQueryOptions serviceOptions,
+        long initialRowOffset,
+        Long maxResults) {
+      this.jobId = jobId;
+      this.schema = schema;
+      this.arrowSchemaPojo = arrowSchemaPojo;
+      this.serviceOptions = serviceOptions;
+      this.totalRowsReturned = initialRowOffset;
+      this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
+    }
+
+    @Override
+    public Page<FieldValueList> getNextPage() {
+      if (streamClosed || totalRowsReturned >= maxResults) {
+        closeClient();
+        return null;
+      }
+
+      long pageSize = 100000L;
+      List<FieldValueList> rowBatch = new ArrayList<>();
+
+      try {
+        if (bqReadClient == null) {
+          BigQueryReadSettings settings =
+              BigQueryReadSettings.newBuilder()
+                  .setCredentialsProvider(
+                      FixedCredentialsProvider.create(serviceOptions.getCredentials()))
+                  .build();
+          bqReadClient = BigQueryReadClient.create(settings);
+        }
+
+        if (streamIterator == null) {
+          String streamName =
+              String.format(
+                  "projects/%s/locations/%s/jobs/%s/streams/_default",
+                  jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
+                  jobId.getLocation() != null ? jobId.getLocation() : serviceOptions.getLocation(),
+                  jobId.getJob());
+
+          ReadRowsRequest readRowsRequest =
+              ReadRowsRequest.newBuilder()
+                  .setReadStream(streamName)
+                  .setOffset(totalRowsReturned)
+                  .build();
+
+          stream = bqReadClient.readRowsCallable().call(readRowsRequest);
+          streamIterator = stream.iterator();
+        }
+
+        try (org.apache.arrow.memory.BufferAllocator allocator =
+            new org.apache.arrow.memory.RootAllocator(Long.MAX_VALUE)) {
+          List<org.apache.arrow.vector.FieldVector> vectors = new ArrayList<>();
+          for (org.apache.arrow.vector.types.pojo.Field field : arrowSchemaPojo.getFields()) {
+            vectors.add((org.apache.arrow.vector.FieldVector) field.createVector(allocator));
+          }
+          try (org.apache.arrow.vector.VectorSchemaRoot root =
+              new org.apache.arrow.vector.VectorSchemaRoot(vectors)) {
+            org.apache.arrow.vector.VectorLoader loader =
+                new org.apache.arrow.vector.VectorLoader(root);
+
+            while (rowBatch.size() < pageSize && streamIterator.hasNext()) {
+              ReadRowsResponse response = streamIterator.next();
+              if (response.hasArrowRecordBatch()) {
+                com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
+                    response.getArrowRecordBatch();
+                org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
+                    org.apache.arrow.vector.ipc.message.MessageSerializer.deserializeRecordBatch(
+                        new org.apache.arrow.vector.ipc.ReadChannel(
+                            new org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel(
+                                batch.getSerializedRecordBatch().toByteArray())),
+                        allocator);
+                loader.load(deserializedBatch);
+                deserializedBatch.close();
+                int batchRowCount = root.getRowCount();
+                for (int i = 0; i < batchRowCount; i++) {
+                  rowBatch.add(ArrowDeserializer.arrowRootToFieldValueList(root, i, schema));
+                }
+                root.clear();
+              }
+            }
+          }
+        }
+
+        if (rowBatch.isEmpty()) {
+          streamClosed = true;
+          closeClient();
+          return null;
+        }
+
+        totalRowsReturned += rowBatch.size();
+
+        String nextPageToken = null;
+        if (streamIterator.hasNext() && totalRowsReturned < maxResults) {
+          nextPageToken = String.valueOf(totalRowsReturned);
+        } else {
+          streamClosed = true;
+          closeClient();
+        }
+
+        return new PageImpl<>(this, nextPageToken, rowBatch);
+
+      } catch (Exception e) {
+        streamClosed = true;
+        closeClient();
+        throw new BigQueryException(0, "Failed to read Arrow rows from storage stream", e);
+      }
+    }
+
+    private void closeClient() {
+      if (bqReadClient != null) {
+        bqReadClient.close();
+        bqReadClient = null;
+      }
+      streamIterator = null;
+      stream = null;
     }
   }
 
@@ -2077,8 +2221,28 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     long numRows;
     Schema schema;
-    if (results.getJobComplete() && results.getSchema() != null) {
-      schema = Schema.fromPb(results.getSchema());
+    boolean isArrow = false;
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
+
+    if (results.getJobComplete()) {
+      if (results.getSchema() != null) {
+        schema = Schema.fromPb(results.getSchema());
+      } else if (results.getArrowSchema() != null) {
+        isArrow = true;
+        try {
+          arrowSchemaPojo =
+              org.apache.arrow.vector.ipc.message.MessageSerializer.deserializeSchema(
+                  new org.apache.arrow.vector.ipc.ReadChannel(
+                      new org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel(
+                          results.getArrowSchema().decodeSerializedSchema())));
+          schema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchemaPojo);
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to deserialize Arrow schema from response", e);
+        }
+      } else {
+        schema = null;
+      }
+
       if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
         numRows = 0L;
       } else if (results.getNumDmlAffectedRows() != null) {
@@ -2098,42 +2262,91 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
+
+      Iterable<FieldValueList> firstPageRows;
+      NextPageFetcher<FieldValueList> pageFetcher;
+
+      if (isArrow) {
+        if (results.getArrowRecordBatch() != null) {
+          try {
+            firstPageRows =
+                ArrowDeserializer.deserializeRecordBatch(
+                    results.getArrowRecordBatch().decodeSerializedRecordBatch(),
+                    schema,
+                    arrowSchemaPojo);
+          } catch (IOException e) {
+            throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
+          }
+        } else {
+          firstPageRows = ImmutableList.of();
+        }
+        long initialRowOffset =
+            firstPageRows instanceof List ? ((List<?>) firstPageRows).size() : 0L;
+        pageFetcher =
+            new ArrowQueryPageFetcher(
+                jobId,
+                schema,
+                arrowSchemaPojo,
+                getOptions(),
+                initialRowOffset,
+                null); // Or use maxResults from configuration if available
+      } else {
+        firstPageRows =
+            transformTableData(
+                results.getRows(), schema, getOptions().getDataFormatOptions().useInt64Timestamp());
+        pageFetcher = new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options));
+      }
+
       return TableResult.newBuilder()
           .setSchema(schema)
           .setTotalRows(numRows)
-          .setPageNoSchema(
-              new PageImpl<>(
-                  // fetch next pages of results
-                  new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
-                  cursor,
-                  transformTableData(
-                      results.getRows(),
-                      schema,
-                      getOptions().getDataFormatOptions().useInt64Timestamp())))
+          .setPageNoSchema(new PageImpl<>(pageFetcher, cursor, firstPageRows))
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
-          .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+          .setRowsInPage(
+              firstPageRows instanceof List ? (long) ((List<?>) firstPageRows).size() : 0L)
           .build();
     }
     // only 1 page of result
+    Iterable<FieldValueList> firstPageRows;
+    if (isArrow) {
+      if (results.getArrowRecordBatch() != null) {
+        try {
+          firstPageRows =
+              ArrowDeserializer.deserializeRecordBatch(
+                  results.getArrowRecordBatch().decodeSerializedRecordBatch(),
+                  schema,
+                  arrowSchemaPojo);
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
+        }
+      } else {
+        firstPageRows = ImmutableList.of();
+      }
+    } else {
+      firstPageRows =
+          transformTableData(
+              results.getRows(), schema, getOptions().getDataFormatOptions().useInt64Timestamp());
+    }
+
     return TableResult.newBuilder()
         .setSchema(schema)
         .setTotalRows(numRows)
         .setPageNoSchema(
             new PageImpl<>(
-                new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+                isArrow
+                    ? null
+                    : new TableDataPageFetcher(
+                        null, schema, getOptions(), null, optionMap(options)),
                 null,
-                transformTableData(
-                    results.getRows(),
-                    schema,
-                    getOptions().getDataFormatOptions().useInt64Timestamp())))
+                firstPageRows))
         // Return the JobID of the successful job
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
         .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
-        .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+        .setRowsInPage(firstPageRows instanceof List ? (long) ((List<?>) firstPageRows).size() : 0L)
         .build();
   }
 
@@ -2206,6 +2419,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         }
 
         return queryRpc(projectId, content, options);
+      }
+      if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
+        throw new IllegalArgumentException(
+            "Arrow results format is only supported for fast query path execution (e.g. no destination table, no custom clustering, etc.).");
       }
       return create(JobInfo.of(jobId, configuration), options);
     } finally {

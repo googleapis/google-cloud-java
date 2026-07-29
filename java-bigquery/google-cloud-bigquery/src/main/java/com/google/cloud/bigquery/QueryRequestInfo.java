@@ -46,6 +46,8 @@ final class QueryRequestInfo {
   private final DataFormatOptions formatOptions;
   private final String reservation;
   private final Long jobTimeoutMs;
+  private final QueryResultsFormat queryResultsFormat;
+  private final ArrowSerializationOptions arrowSerializationOptions;
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
@@ -66,6 +68,8 @@ final class QueryRequestInfo {
     this.formatOptions = dataFormatOptions.toPb();
     this.reservation = config.getReservation();
     this.jobTimeoutMs = config.getJobTimeoutMs();
+    this.queryResultsFormat = config.getQueryResultsFormat();
+    this.arrowSerializationOptions = config.getArrowSerializationOptions();
   }
 
   /**
@@ -141,6 +145,12 @@ final class QueryRequestInfo {
     }
     if (jobTimeoutMs != null) {
       request.setJobTimeoutMs(jobTimeoutMs);
+    }
+    if (queryResultsFormat != null) {
+      request.setQueryResultsFormat(queryResultsFormat.toString());
+    }
+    if (arrowSerializationOptions != null) {
+      request.setArrowSerializationOptions(arrowSerializationOptions.toPb());
     }
     return request;
   }
