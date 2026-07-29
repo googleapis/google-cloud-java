@@ -128,99 +128,10 @@ final class BigQueryTypeRegistry {
               throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
             }));
 
-    // DATE
-    register(
-        new TypeDescriptor<>(
-            Types.DATE,
-            Date.class,
-            StandardSQLTypeName.DATE,
-            Arrays.asList(Date.class, LocalDate.class),
-            (val, targetClass, zone) -> {
-              Date sqlDate;
-              if (val instanceof Date) sqlDate = (Date) val;
-              else if (val instanceof java.util.Date)
-                sqlDate = new Date(((java.util.Date) val).getTime());
-              else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
-              else if (val instanceof String)
-                sqlDate = BigQueryTimezoneUtility.boxDate((String) val, zone);
-              else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
-
-              if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
-              return sqlDate;
-            }));
-
-    // DATETIME
-    register(
-        new TypeDescriptor<>(
-            Types.TIMESTAMP,
-            Timestamp.class,
-            StandardSQLTypeName.DATETIME,
-            Arrays.asList(Timestamp.class, LocalDateTime.class),
-            (val, targetClass, zone) -> {
-              Timestamp ts;
-              if (val instanceof Timestamp) ts = (Timestamp) val;
-              else if (val instanceof java.util.Date)
-                ts = new Timestamp(((java.util.Date) val).getTime());
-              else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
-              else if (val instanceof String)
-                ts = BigQueryTimezoneUtility.boxDateTime((String) val, zone);
-              else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
-
-              if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
-              return ts;
-            }));
-
-    // TIMESTAMP
-    register(
-        new TypeDescriptor<>(
-            Types.TIMESTAMP,
-            Timestamp.class,
-            StandardSQLTypeName.TIMESTAMP,
-            Arrays.asList(
-                Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
-            (val, targetClass, zone) -> {
-              Timestamp ts;
-              if (val instanceof Timestamp) ts = (Timestamp) val;
-              else if (val instanceof java.util.Date)
-                ts = new Timestamp(((java.util.Date) val).getTime());
-              else if (val instanceof Instant) ts = Timestamp.from((Instant) val);
-              else if (val instanceof OffsetDateTime)
-                ts = Timestamp.from(((OffsetDateTime) val).toInstant());
-              else if (val instanceof ZonedDateTime)
-                ts = Timestamp.from(((ZonedDateTime) val).toInstant());
-              else if (val instanceof String)
-                ts = BigQueryTimezoneUtility.boxTimestamp((String) val);
-              else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
-
-              if (targetClass == Instant.class) return ts.toInstant();
-              if (targetClass == OffsetDateTime.class)
-                return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
-              if (targetClass == ZonedDateTime.class)
-                return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
-              return ts;
-            }));
-
-    // TIME
-    register(
-        new TypeDescriptor<>(
-            Types.TIME,
-            Time.class,
-            StandardSQLTypeName.TIME,
-            Arrays.asList(Time.class, LocalTime.class),
-            (val, targetClass, zone) -> {
-              Time sqlTime;
-              if (val instanceof Time) sqlTime = (Time) val;
-              else if (val instanceof java.util.Date)
-                sqlTime = new Time(((java.util.Date) val).getTime());
-              else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
-              else if (val instanceof String)
-                sqlTime = BigQueryTimezoneUtility.boxTime((String) val, zone);
-              else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
-
-              if (targetClass == LocalTime.class) return sqlTime.toLocalTime();
-              return sqlTime;
-            }));
-
+    // --- TEMPORAL TYPES MOVED TO PHASE 2 PR ---
+    // DATE, DATETIME, TIMESTAMP, and TIME descriptors require BigQueryTemporalUtility
+    // which will be introduced in the stacked Phase 2 PR.
+    
     // BYTES
     register(
         new TypeDescriptor<>(
@@ -341,7 +252,9 @@ final class BigQueryTypeRegistry {
     return String.class; // fallback
   }
 
-  /** Converts the input value to the target class type. */
+  /**
+   * Converts the input value to the target class type by looking up the target class descriptor.
+   */
   @SuppressWarnings("unchecked")
   public static <T> T convert(Object input, Class<T> targetClass) throws BigQueryJdbcException {
     if (input == null) {
@@ -352,6 +265,37 @@ final class BigQueryTypeRegistry {
       throw new BigQueryJdbcException("Unsupported target class: " + targetClass.getName());
     }
     return (T) descriptor.convert(input, targetClass, null);
+  }
+
+  /**
+   * High-performance hotpath convert for ResultSets. Converts the input value using the default
+   * mapping for the given BigQuery type via O(1) array indexing.
+   */
+  public static Object convert(Object input, StandardSQLTypeName bqType, ZoneId zoneId)
+      throws BigQueryJdbcException {
+    if (input == null) return null;
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
+    }
+    TypeDescriptor<?> descriptor = DESCRIPTORS_BY_ORDINAL[ordinal];
+    return descriptor.convert(input, descriptor.getDefaultJavaClass(), zoneId);
+  }
+
+  /**
+   * High-performance hotpath convert for ResultSets. Converts the input value to the target class
+   * using the descriptor for the given BigQuery type via O(1) array indexing.
+   */
+  @SuppressWarnings("unchecked")
+  public static <T> T convert(
+      Object input, StandardSQLTypeName bqType, Class<T> targetClass, ZoneId zoneId)
+      throws BigQueryJdbcException {
+    if (input == null) return null;
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
+    }
+    return (T) DESCRIPTORS_BY_ORDINAL[ordinal].convert(input, targetClass, zoneId);
   }
 
   private static TypeDescriptor<?> getDescriptorForClass(Class<?> clazz) {
