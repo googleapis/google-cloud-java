@@ -187,10 +187,12 @@ class ITBigQueryStorageWriteClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException {
-    readClient = BigQueryReadClient.create();
+    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
 
     BigQueryWriteSettings settings =
-        BigQueryWriteSettings.newBuilder().setHeaderProvider(USER_AGENT_HEADER_PROVIDER).build();
+        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryWriteSettingsBuilder()
+            .setHeaderProvider(USER_AGENT_HEADER_PROVIDER)
+            .build();
     writeClient = BigQueryWriteClient.create(settings);
     parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
