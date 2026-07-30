@@ -61,7 +61,6 @@ class FileIdentityPoolTokenSupplier
   private final long serialVersionUID = 2475549052347431993L;
 
   private final IdentityPoolCredentialSource credentialSource;
-  @Nullable private final String targetFieldName;
 
   private static class CachedFile {
     final long lastModified;
@@ -75,29 +74,21 @@ class FileIdentityPoolTokenSupplier
 
   private volatile CachedFile cachedFile;
 
-  /** Constructor that defaults to using the subjectTokenFieldName. */
   FileIdentityPoolTokenSupplier(IdentityPoolCredentialSource credentialSource) {
-    this(credentialSource, credentialSource.subjectTokenFieldName);
-  }
-
-  /** Overloaded constructor allowing targeting of any specific field in the JSON. */
-  FileIdentityPoolTokenSupplier(
-      IdentityPoolCredentialSource credentialSource, @Nullable String targetFieldName) {
     this.credentialSource = checkNotNull(credentialSource, "credentialSource cannot be null");
-    this.targetFieldName = targetFieldName;
   }
 
   @Override
   public String getSubjectToken(ExternalAccountSupplierContext context) throws IOException {
-    return getToken();
+    return getToken(credentialSource.subjectTokenFieldName);
   }
 
   @Override
   public String getActorToken(ExternalAccountSupplierContext context) throws IOException {
-    return getToken();
+    return getToken(credentialSource.actorTokenFieldName);
   }
 
-  private String getToken() throws IOException {
+  private String getToken(@Nullable String targetFieldName) throws IOException {
     String credentialFilePath = credentialSource.getCredentialLocation();
     if (!Files.exists(Paths.get(credentialFilePath), LinkOption.NOFOLLOW_LINKS)) {
       throw new IOException(
@@ -171,3 +162,4 @@ class FileIdentityPoolTokenSupplier
     return (String) fileContents.get(targetFieldName);
   }
 }
+

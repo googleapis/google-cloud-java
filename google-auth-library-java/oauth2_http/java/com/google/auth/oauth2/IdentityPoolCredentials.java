@@ -118,8 +118,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (builder.actorTokenSupplier != null) {
       this.actorTokenSupplier = builder.actorTokenSupplier;
     } else if (credentialSource != null && credentialSource.actorTokenFieldName != null) {
-      this.actorTokenSupplier =
-          new FileIdentityPoolTokenSupplier(credentialSource, credentialSource.actorTokenFieldName);
+      if (this.subjectTokenSupplier instanceof FileIdentityPoolTokenSupplier) {
+        this.actorTokenSupplier = (FileIdentityPoolTokenSupplier) this.subjectTokenSupplier;
+      } else {
+        this.actorTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
+      }
     } else {
       this.actorTokenSupplier = null;
     }

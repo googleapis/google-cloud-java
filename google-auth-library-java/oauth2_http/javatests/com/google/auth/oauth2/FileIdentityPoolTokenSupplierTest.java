@@ -54,7 +54,7 @@ class FileIdentityPoolTokenSupplierTest {
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
     FileIdentityPoolTokenSupplier supplier =
-        new FileIdentityPoolTokenSupplier(source, null); // TEXT doesn't need targetFieldName
+        new FileIdentityPoolTokenSupplier(source); // TEXT doesn't need targetFieldName
 
     assertEquals("plain_token", supplier.getSubjectToken(null));
     assertEquals("plain_token", supplier.getActorToken(null));
@@ -78,9 +78,9 @@ class FileIdentityPoolTokenSupplierTest {
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
     FileIdentityPoolTokenSupplier subSupplier =
-        new FileIdentityPoolTokenSupplier(source, source.subjectTokenFieldName);
+        new FileIdentityPoolTokenSupplier(source);
     FileIdentityPoolTokenSupplier actSupplier =
-        new FileIdentityPoolTokenSupplier(source, source.actorTokenFieldName);
+        new FileIdentityPoolTokenSupplier(source);
 
     // Initial read
     assertEquals("my_sub_token", subSupplier.getSubjectToken(null));
@@ -113,7 +113,7 @@ class FileIdentityPoolTokenSupplierTest {
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
     FileIdentityPoolTokenSupplier actSupplier =
-        new FileIdentityPoolTokenSupplier(source, source.actorTokenFieldName);
+        new FileIdentityPoolTokenSupplier(source);
 
     IOException exception = assertThrows(IOException.class, () -> actSupplier.getActorToken(null));
     assertEquals(
