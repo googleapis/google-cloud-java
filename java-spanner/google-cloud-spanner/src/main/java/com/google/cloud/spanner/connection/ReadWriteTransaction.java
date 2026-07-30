@@ -541,11 +541,8 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
       ReadWriteTransaction transaction = transactionRef.get();
       if (transaction != null && transaction.shouldPing()) {
         transaction.keepAliveLock.lock();
-        try {
-          transaction.keepAliveFuture = null;
-        } finally {
-          transaction.keepAliveLock.unlock();
-        }
+        transaction.keepAliveFuture = null;
+        transaction.keepAliveLock.unlock();
         if (transaction.shouldPing()) {
           boolean schedulePing = false;
           if (transaction.abortedLock.tryLock()) {
