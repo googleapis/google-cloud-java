@@ -84,6 +84,10 @@ class FileIdentityPoolTokenSupplier
 
   @Override
   public String getActorToken(ExternalAccountSupplierContext context) throws IOException {
+    if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
+      throw new IllegalArgumentException(
+          "Actor tokens are only supported for JSON-formatted credential files with distinct field names.");
+    }
     return getToken(credentialSource.actorTokenFieldName);
   }
 
@@ -105,15 +109,20 @@ class FileIdentityPoolTokenSupplier
       CachedFile cached = this.cachedFile;
 
       if (cached == null || cached.lastModified < lastModified) {
-        try (InputStream inputStream = Files.newInputStream(file.toPath())) {
-          JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-          GenericJson parsedJson =
-              parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
-          cached = new CachedFile(lastModified, parsedJson);
-          this.cachedFile = cached;
-        } catch (Exception e) {
-          throw new IOException(
-              "Error when attempting to read the token from the credential file.", e);
+        synchronized (this) {
+          cached = this.cachedFile;
+          if (cached == null || cached.lastModified < lastModified) {
+            try (InputStream inputStream = Files.newInputStream(file.toPath())) {
+              JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
+              GenericJson parsedJson =
+                  parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+              cached = new CachedFile(lastModified, parsedJson);
+              this.cachedFile = cached;
+            } catch (Exception e) {
+              throw new IOException(
+                  "Error when attempting to read the token from the credential file.", e);
+            }
+          }
         }
       }
 
@@ -140,24 +149,25 @@ class FileIdentityPoolTokenSupplier
       IdentityPoolCredentialSource credentialSource,
       @Nullable String targetFieldName)
       throws IOException {
-    if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
-      BufferedReader reader =
-          new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-      return CharStreams.toString(reader);
-    }
+    try (InputStream in = inputStream;
+        java.io.Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8)) {
+      if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
+        return CharStreams.toString(new BufferedReader(reader));
+      }
 
-    if (targetFieldName == null) {
-      throw new IOException("Target field name must be specified for JSON credentials.");
-    }
+      if (targetFieldName == null) {
+        throw new IOException("Target field name must be specified for JSON credentials.");
+      }
 
-    JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-    GenericJson fileContents =
-        parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+      JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
+      GenericJson fileContents =
+          parser.parseAndClose(in, StandardCharsets.UTF_8, GenericJson.class);
 
-    if (!fileContents.containsKey(targetFieldName)) {
-      throw new IOException(
-          "Invalid token field name. No token was found for field: " + targetFieldName);
+      if (!fileContents.containsKey(targetFieldName)) {
+        throw new IOException(
+            "Invalid token field name. No token was found for field: " + targetFieldName);
+      }
+      return (String) fileContents.get(targetFieldName);
     }
-    return (String) fileContents.get(targetFieldName);
   }
 }

@@ -50,6 +50,11 @@ import org.jspecify.annotations.Nullable;
  * Url-sourced, file-sourced, or user provided supplier method-sourced external account credentials.
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
+ *
+ * <p>Note: Actor token extraction is currently restricted to file-based JSON credential sources
+ * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens for GAX channel
+ * providers, ensure you configure {@code
+ * InstantiatingGrpcChannelProvider.newBuilder().setMtlsProvider(...)} in tandem.
  */
 @NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
@@ -62,6 +67,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
   @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
   @Nullable private final String actorTokenType;
+  @Nullable private final X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -91,6 +97,17 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       this.subjectTokenSupplier = builder.subjectTokenSupplier;
       this.metricsHeaderValue = PROGRAMMATIC_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.FILE) {
+      if (credentialSource.getCertificateConfig() != null) {
+        try {
+          X509Provider x509Provider = getX509Provider(builder, credentialSource);
+          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
+          this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+        } catch (Exception e) {
+          throw new RuntimeException(
+              "Failed to initialize mTLS transport for file credential source due to certificate error.",
+              e);
+        }
+      }
       this.subjectTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
       this.metricsHeaderValue = FILE_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.URL) {
@@ -129,9 +146,22 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     if (this.actorTokenSupplier != null
-        && (getTokenUrl() == null || !getTokenUrl().contains(".mtls."))) {
-      throw new IllegalArgumentException("Actor tokens are only supported for mTLS token URLs.");
+        && (this.actorTokenType == null || this.actorTokenType.trim().isEmpty())) {
+      throw new IllegalArgumentException(
+          "An actorTokenType must be specified when an actorTokenSupplier is configured.");
     }
+    if (this.actorTokenSupplier == null && this.actorTokenType != null) {
+      throw new IllegalArgumentException(
+          "An actorTokenSupplier must be specified when an actorTokenType is configured.");
+    }
+
+    if (this.actorTokenSupplier != null
+        && !(this.transportFactory instanceof MtlsHttpTransportFactory)) {
+      throw new IllegalArgumentException(
+          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.");
+    }
+
+    this.x509Provider = builder.x509Provider;
   }
 
   @Override
@@ -249,6 +279,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
       this.actorTokenType = credentials.actorTokenType;
+      this.x509Provider = credentials.x509Provider;
     }
 
     /**

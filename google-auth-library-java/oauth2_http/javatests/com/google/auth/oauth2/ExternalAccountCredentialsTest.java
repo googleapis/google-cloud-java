@@ -205,8 +205,18 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     GenericJson json = buildJsonIdentityPoolCredential();
     json.put("actor_token_type", "actorTokenType");
 
+    Map<String, Object> credentialSource = (Map<String, Object>) json.get("credential_source");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("actor_token_field_name", "actor_token");
+    formatMap.put("subject_token_field_name", "subject_token");
+    credentialSource.put("format", formatMap);
+
+    com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
+        org.mockito.Mockito.mock(com.google.auth.mtls.MtlsHttpTransportFactory.class);
+
     ExternalAccountCredentials credential =
-        ExternalAccountCredentials.fromJson(json, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+        ExternalAccountCredentials.fromJson(json, mockTransportFactory);
 
     assertInstanceOf(IdentityPoolCredentials.class, credential);
     IdentityPoolCredentials idpCreds = (IdentityPoolCredentials) credential;
