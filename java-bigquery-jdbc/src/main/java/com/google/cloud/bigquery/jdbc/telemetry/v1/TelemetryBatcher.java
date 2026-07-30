@@ -159,10 +159,9 @@ final class TelemetryBatcher implements AutoCloseable {
 
         int trimCount = Math.min(events.size(), itemsToTrim);
         int startIndex = events.size() - trimCount;
-        for (int i = events.size() - 1; i >= startIndex; i--) {
-          eventQueue.offer(events.get(i));
-        }
-        events.subList(startIndex, events.size()).clear();
+        List<Message> trimmedEvents = events.subList(startIndex, events.size());
+        requeueItems(trimmedEvents);
+        trimmedEvents.clear();
 
         payloadBuilder
             .clearConnectionAttempts()
