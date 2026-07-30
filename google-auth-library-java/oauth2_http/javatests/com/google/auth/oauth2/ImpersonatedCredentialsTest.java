@@ -514,6 +514,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setHttpTransportFactory(mockTransportFactory)
                 .setUseJwtAccessWithScope(true)
                 .build();
+    sourceCredentialsSSJ.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsSSJ.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsSSJ,
@@ -543,6 +545,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain(TEST_UNIVERSE_DOMAIN)
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials impersonatedCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -844,6 +848,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain("test.com")
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -970,6 +976,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain("test.com")
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
