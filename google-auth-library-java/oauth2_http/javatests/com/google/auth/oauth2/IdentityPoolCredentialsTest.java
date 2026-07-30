@@ -271,9 +271,12 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     UrlIdentityPoolSubjectTokenSupplier supplier =
         new UrlIdentityPoolSubjectTokenSupplier(credentialSource, transportFactory);
-    
+
     ExternalAccountSupplierContext dummyContext =
-        ExternalAccountSupplierContext.newBuilder().setAudience("aud").setSubjectTokenType("urn").build();
+        ExternalAccountSupplierContext.newBuilder()
+            .setAudience("aud")
+            .setSubjectTokenType("urn")
+            .build();
 
     String subjectToken = supplier.getSubjectToken(dummyContext);
 
