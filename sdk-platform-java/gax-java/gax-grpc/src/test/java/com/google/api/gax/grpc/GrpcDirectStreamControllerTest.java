@@ -52,7 +52,7 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -78,9 +78,8 @@ class GrpcDirectStreamControllerTest {
             return response;
           }
 
-          @Nullable
           @Override
-          public Color getResumeRequest(Color originalRequest) {
+          public @Nullable Color getResumeRequest(Color originalRequest) {
             return originalRequest;
           }
 
