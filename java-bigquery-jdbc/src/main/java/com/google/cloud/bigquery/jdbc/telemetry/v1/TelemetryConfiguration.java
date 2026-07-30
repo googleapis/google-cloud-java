@@ -25,7 +25,7 @@ final class TelemetryConfiguration {
   static final int DEFAULT_LOG_SOURCE = -1;
   static final String DEFAULT_ENDPOINT_URL = "https://play.googleapis.com/log";
   static final long DEFAULT_UPLOAD_INTERVAL_MS = 300_000L;
-  static final int DEFAULT_BATCH_SIZE_THRESHOLD = 100;
+  static final int DEFAULT_BATCH_SIZE_THRESHOLD = 5000;
 
   private final boolean enabled;
   private final int logSource;
