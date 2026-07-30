@@ -40,6 +40,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Integration tests for verifying that client libraries correctly handle retry behaviors and
+ * timeout settings over gRPC and HTTP/JSON transports.
+ */
 class ITRetries {
 
   private static final Sequence STANDARD_SEQUENCE =
@@ -109,6 +113,8 @@ class ITRetries {
         TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
   }
 
+  // Tests that the client retries on UNAVAILABLE errors up to maxAttempts (4) and succeeds when
+  // receiving OK.
   @Test
   void testGrpc_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -122,6 +128,8 @@ class ITRetries {
     }
   }
 
+  // Tests that the client retries on UNAVAILABLE errors up to maxAttempts (4) and succeeds when
+  // receiving OK.
   @Test
   void testHttpJson_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -135,6 +143,8 @@ class ITRetries {
     }
   }
 
+  // Tests that configuring maxAttempts = 1 causes the client to fail immediately on the first error
+  // without retrying.
   @Test
   void testGrpc_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -152,6 +162,8 @@ class ITRetries {
     }
   }
 
+  // Tests that configuring maxAttempts = 1 causes the client to fail immediately on the first error
+  // without retrying.
   @Test
   void testHttpJson_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -169,6 +181,8 @@ class ITRetries {
     }
   }
 
+  // Tests that encountering a non-retryable error (INVALID_ARGUMENT) stops retries immediately,
+  // even if maxAttempts > 1.
   @Test
   void testGrpc_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -187,6 +201,8 @@ class ITRetries {
     }
   }
 
+  // Tests that encountering a non-retryable error (INVALID_ARGUMENT) stops retries immediately,
+  // even if maxAttempts > 1.
   @Test
   void testHttpJson_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -205,6 +221,8 @@ class ITRetries {
     }
   }
 
+  // Tests that the client retries through a sequence of different retryable status codes
+  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED).
   @Test
   void testGrpc_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -231,6 +249,8 @@ class ITRetries {
     }
   }
 
+  // Tests that the client retries through a sequence of different retryable status codes
+  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED).
   @Test
   void testHttpJson_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
@@ -257,6 +277,8 @@ class ITRetries {
     }
   }
 
+  // Tests that individual attempt timeouts (rpcTimeout) trigger a retry when the server response
+  // delay exceeds the timeout.
   @Test
   void testGrpc_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
@@ -297,6 +319,8 @@ class ITRetries {
     }
   }
 
+  // Tests that individual attempt timeouts (rpcTimeout) trigger a retry when the server response
+  // delay exceeds the timeout.
   @Test
   void testHttpJson_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
@@ -337,6 +361,8 @@ class ITRetries {
     }
   }
 
+  // Tests that the operation deadline (totalTimeout) halts the retry loop when cumulative delay
+  // exceeds totalTimeout.
   @Test
   void testGrpc_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
@@ -382,6 +408,8 @@ class ITRetries {
     }
   }
 
+  // Tests that the operation deadline (totalTimeout) halts the retry loop when cumulative delay
+  // exceeds totalTimeout.
   @Test
   void testHttpJson_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
