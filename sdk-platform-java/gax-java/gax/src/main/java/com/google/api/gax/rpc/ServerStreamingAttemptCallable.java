@@ -252,11 +252,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
                         true, // isRetryable = true
                         causeEx.getErrorDetails());
 
-                t =
-                    new com.google.api.gax.retrying.ServerStreamingAttemptException(
-                        cause,
-                        true, // canResume = true
-                        seenSuccessSinceLastError);
+                t = cause;
               }
             }
             onAttemptError(t);
