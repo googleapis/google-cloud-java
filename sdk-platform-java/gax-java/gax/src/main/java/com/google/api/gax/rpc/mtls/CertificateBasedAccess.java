@@ -121,10 +121,10 @@ public class CertificateBasedAccess {
   private String extractJsonValue(String json, String key) {
     java.util.regex.Pattern pattern =
         java.util.regex.Pattern.compile(
-            "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"([^\"]+)\"");
+            "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"((?:[^\\\\\"]|\\\\.)*)\"");
     java.util.regex.Matcher matcher = pattern.matcher(json);
     if (matcher.find()) {
-      return matcher.group(1);
+      return matcher.group(1).replace("\\\\", "\\").replace("\\/", "/").replace("\\\"", "\"");
     }
     return null;
   }
