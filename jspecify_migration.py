@@ -8,56 +8,49 @@ def migrate_file(file_path):
     original_content = content
     
     # 1. Add JSpecify NullMarked import if not present
-    package_match = re.search(r"^(package\s+[\w\.]+;)", content, re.MULTILINE)
+    package_match = re.search(r"^\s*package\s+[\w\.]+\s*;", content, re.MULTILINE)
     if package_match and "org.jspecify.annotations.NullMarked" not in content and "@NullMarked" not in content:
-        package_line = package_match.group(1)
-        content = content.replace(package_line, package_line + "\nimport org.jspecify.annotations.NullMarked;")
+        end_pos = package_match.end()
+        content = content[:end_pos] + "\nimport org.jspecify.annotations.NullMarked;" + content[end_pos:]
         
         # 2. Add @NullMarked before class/interface/enum declaration
-        class_match = re.search(r"\n(public\s+)?(abstract\s+)?(final\s+)?(class|interface|enum)\s+\w+", content)
+        class_match = re.search(
+            r"(\n|^)\s*(?:(?:public|protected|private|abstract|final|static|sealed|non-sealed)\s+)*(?:class|interface|enum|record)\s+\w+",
+            content
+        )
         if class_match:
             class_start = class_match.start()
-            prefix = content[:class_start]
-            lines = prefix.split("\n")
-            
-            # Find the correct insertion point (before other class-level annotations)
-            insert_idx = len(lines)
-            for i in range(len(lines) - 1, -1, -1):
-                line = lines[i].strip()
-                if line.startswith("@") and not line.startswith("@Override") and not line.startswith("@Test"):
-                    insert_idx = i
-                elif line == "" or line.startswith("//") or line.startswith("/*") or line.startswith("*"):
-                    break
-                else:
-                    break
-            lines.insert(insert_idx, "@NullMarked")
-            content = "\n".join(lines) + content[class_start:]
-
+            if class_start == 0:
+                content = "@NullMarked\n" + content
+            else:
+                prefix = content[:class_start]
+                lines = prefix.split("\n")
+                
+                # Find the correct insertion point (before other class-level annotations)
+                insert_idx = len(lines)
+                for i in range(len(lines) - 1, -1, -1):
+                    line = lines[i].strip()
+                    if line.startswith("@") and not line.startswith("@Override") and not line.startswith("@Test"):
+                        insert_idx = i
+                    elif line == "" or line.startswith("//") or line.startswith("/*") or line.startswith("*"):
+                        break
+                    else:
+                        break
+                lines.insert(insert_idx, "@NullMarked")
+                content = "\n".join(lines) + content[class_start:]
 
     # 3. Replace legacy javax Nullable import
     content = content.replace("import javax.annotation.Nullable;", "import org.jspecify.annotations.Nullable;")
 
-    # 4. Reposition @Nullable from declaration to type-use position
-    # (immediately before the type name, after class modifiers)
-    patterns = [
-        (r"@Nullable\s+public\s+abstract\s+final\s+(\w+)", r"public abstract final @Nullable \1"),
-        (r"@Nullable\s+public\s+abstract\s+(\w+)", r"public abstract @Nullable \1"),
-        (r"@Nullable\s+public\s+static\s+final\s+(\w+)", r"public static final @Nullable \1"),
-        (r"@Nullable\s+public\s+static\s+(\w+)", r"public static @Nullable \1"),
-        (r"@Nullable\s+public\s+final\s+(\w+)", r"public final @Nullable \1"),
-        (r"@Nullable\s+public\s+(\w+)", r"public @Nullable \1"),
-        (r"@Nullable\s+private\s+static\s+final\s+(\w+)", r"private static final @Nullable \1"),
-        (r"@Nullable\s+private\s+static\s+(\w+)", r"private static @Nullable \1"),
-        (r"@Nullable\s+private\s+final\s+(\w+)", r"private final @Nullable \1"),
-        (r"@Nullable\s+private\s+(\w+)", r"private @Nullable \1"),
-        (r"@Nullable\s+protected\s+static\s+final\s+(\w+)", r"protected static final @Nullable \1"),
-        (r"@Nullable\s+protected\s+static\s+(\w+)", r"protected static @Nullable \1"),
-        (r"@Nullable\s+protected\s+final\s+(\w+)", r"protected final @Nullable \1"),
-        (r"@Nullable\s+protected\s+(\w+)", r"protected @Nullable \1"),
-    ]
+    # 4. Remove legacy javax Nonnull import and annotations
+    content = re.sub(r"import\s+javax\.annotation\.Nonnull;\s*\r?\n", "", content)
+    content = re.sub(r"^[ \t]*@(javax\.annotation\.)?Nonnull[ \t]*\r?\n", "", content, flags=re.MULTILINE)
+    content = re.sub(r"\b@(javax\.annotation\.)?Nonnull\s+", "", content)
 
-    for pattern, replacement in patterns:
-        content = re.sub(pattern, replacement, content)
+    # 5. Reposition @Nullable to be after all modifiers (type-use position)
+    # This single regex handles any combination of modifiers (including package-private, final parameters, etc.)
+    modifier_pattern = r"@Nullable\s+((?:(?:public|private|protected|static|final|abstract|synchronized|volatile|transient|native|strictfp|sealed|non-sealed)\s+)+)"
+    content = re.sub(modifier_pattern, r"\1@Nullable ", content)
 
     # Save changes if modified
     if content != original_content:
