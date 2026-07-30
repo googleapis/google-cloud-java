@@ -12,7 +12,11 @@ Traditional TLS public-key encryption (such as RSA and ECDH) is vulnerable to fu
 
 ## 2. HTTP/JSON (REST) Client Library Support
 
-Post-Quantum Cryptography is **enabled by default** for **HTTP/JSON** (REST) transport in Google Cloud Java client libraries (`gax-httpjson`) whenever native Conscrypt / BoringSSL libraries are supported on the runtime environment.
+Google Cloud Java client libraries (`gax-httpjson`) use **Conscrypt by default** to achieve Post-Quantum Cryptography (PQC) for **HTTP/JSON** (REST) transport whenever native BoringSSL libraries are supported on the runtime environment.
+
+> [!WARNING]
+> **User Responsibility for Conscrypt Compatibility**:
+> It is the user's responsibility to ensure that their runtime environment supports Conscrypt native libraries if they want to use the default PQC configuration. Otherwise, users can opt to use alternative configurations (see **Section 2.7**). If Conscrypt cannot be initialized, the client library will silently fall back to standard JDK JSSE (`SunJSSE`), which on Java 8–20 has no Post-Quantum Cryptography support. See **Section 2.5 (Known Conscrypt Compatibility Issues)** for more information.
 
 ### 2.1 Minimum Required Versions
 
@@ -30,19 +34,19 @@ PQC enablement for HTTP/JSON transport requires compatible versions of `conscryp
 
 ### 2.2 Why Conscrypt?
 
-Standard Java Development Kits (JDK 8, 11, 17, and 21) do not natively support Post-Quantum Cryptography in their built-in TLS providers (`SunJSSE`). While native ML-KEM support is planned for **JDK 27+**, requiring all users to upgrade to JDK 27 is not feasible for most production environments.
+Standard Java Development Kits (Java 8–20) do not natively support Post-Quantum Cryptography in their built-in TLS providers (`SunJSSE`). While native ML-KEM support is planned for **JDK 27+**, requiring all users to upgrade to JDK 27 is not feasible for most production environments.
 
-We chose **Conscrypt** (`conscrypt-openjdk-uber`) because:
-1. **Maximum Java & OS Compatibility**: Conscrypt wraps Google's BoringSSL cryptographic engine via JNI, enabling quantum-resistant TLS 1.3 handshakes across existing Java LTS runtimes (Java 8, 11, 17, 21, and 25).
+**Conscrypt** (`conscrypt-openjdk-uber`) is the default `SecurityProvider` for Google Cloud Java client libraries because:
+1. **Maximum Java & OS Compatibility**: Conscrypt wraps Google's BoringSSL cryptographic engine via JNI, enabling quantum-resistant TLS 1.3 handshakes across existing Java runtimes (**Java 8+**).
 2. **Zero Runtime Configuration Required**: By bundling Conscrypt as an optional dependency, `gax-httpjson` delivers high-performance PQC out-of-the-box without requiring users to replace their JVM or upgrade their JDK.
 
 ### 2.3 How HTTP/JSON Clients and Google Cloud Servers Work Together
 
 When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` registers Conscrypt on the Google HTTP Client (`NetHttpTransport`) to advertise PQC and classical groups in preference order:
 
-- **PQC-Enabled Endpoints (GFE)**: During the TLS 1.3 handshake, Google Front End servers select `X25519MLKEM768` (#1 preference), establishing a quantum-resistant session.
+- **PQC-Enabled Google Cloud Endpoints**: During the TLS 1.3 handshake, Google Cloud servers select `X25519MLKEM768` (#1 preference), establishing a quantum-resistant session.
 - **Non-PQC Endpoints**: Endpoints that do not support PQC ignore unknown post-quantum identifiers and select the first compatible classical algorithm (such as `X25519`).
-- **Platform Runtime Fallback**: If Conscrypt native libraries cannot load on the OS, the client logs a concise warning and falls back to standard JDK JSSE (`SunJSSE`).
+- **Platform Runtime Fallback**: If Conscrypt native libraries cannot load on the OS, the client logs at debug level (`FINE`) and falls back to standard JDK JSSE (`SunJSSE`) without emitting operational warnings.
 
 ```
 +-------------------------------------------------------------------+
@@ -59,8 +63,8 @@ When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` regis
    google-http-client uses Conscrypt         Falls back to JDK JSSE
    Offers PQC Hybrid + Classical Groups      Offers Standard JDK Classical Groups
    - Server selects 1st compatible group     - Server negotiates Classical
-   - Negotiates X25519MLKEM768 on            - Negotiates Classical X25519 /
-     Google Cloud Front End (GFE)              secp256r1 via JDK TLS
+   - Negotiates X25519MLKEM768 on              X25519 / secp256r1 via JDK TLS
+     Google Cloud Endpoints
    - Automatically falls back to X25519
      on older non-PQC servers
 ```
@@ -80,45 +84,37 @@ Google Cloud HTTP/JSON client libraries configure Conscrypt to advertise the fol
 
 For additional details on Conscrypt's cryptographic algorithms and capabilities, refer to the official [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md#supported-named-groups).
 
-### 2.5 Platform Compatibility & Native Library Limitations
+### 2.5 Known Conscrypt Compatibility Issues
 
-Because Conscrypt relies on C native shared libraries (`conscrypt-openjdk-uber`) loaded via Java Native Interface (JNI), PQC support depends on OS platform compatibility:
+Because Conscrypt relies on C native shared libraries (`conscrypt-openjdk-uber`) loaded via Java Native Interface (JNI), PQC support depends on OS platform compatibility. Note that the constraints below represent known common issues and are **not an exhaustive list** of Conscrypt platform requirements:
 
 1. **System & GLIBC Compatibility Constraints**:
    - **Linux glibc Versioning**: Conscrypt native C binaries require compatible C runtime (`glibc`) versions (such as `GLIBC_2.35+`). Older Linux distributions or lightweight images (such as Alpine Linux using `musl` libc) will fail to load native libraries (`UnsatisfiedLinkError`).
    - **Restricted Filesystems**: Operating systems that mount `/tmp` with `noexec`, strict container security profiles, or environments blocking JNI library extraction will prevent Conscrypt from initializing.
 
 2. **Graceful Fallback Behavior**:
-   - Whenever native library loading fails, `gax-httpjson` catches the error, logs a concise warning at `Level.WARNING`, and safely falls back to standard JDK JSSE:
+   - Whenever native library loading fails, `gax-httpjson` catches the error, logs at **`Level.FINE` (debug level)**, and safely falls back to standard JDK JSSE (`SunJSSE`):
      ```
-     WARNING: Conscrypt native libraries not available. Falling back to JDK TLS.
+     FINE: Conscrypt native libraries not available. Falling back to JDK TLS.
      ```
-   - Your application will continue running normally using classical TLS provided by the JDK.
+   - Your application will continue running normally using classical TLS provided by the JDK without emitting warnings in standard operational logs.
 
 ### 2.6 Verifying PQC in HTTP/JSON Client Libraries
 
-You can verify that your Google Cloud HTTP/JSON Java client library is actively negotiating Post-Quantum Cryptography through operational logs or debug logging. Note that the log messages and logger categories below apply specifically to HTTP/JSON (REST) client libraries.
+You can verify that your Google Cloud HTTP/JSON Java client library is actively negotiating Post-Quantum Cryptography through debug logging. Note that the log messages and logger categories below apply specifically to HTTP/JSON (REST) client libraries.
 
-#### 1. Check Operational Log Messages
-When Conscrypt initializes successfully and configures PQC named groups, **no warning logs are emitted**.
-
-If your environment cannot load native Conscrypt libraries or cannot configure PQC groups, the library emits a concise, one-line warning at `Level.WARNING` and safely falls back to standard JDK TLS:
-```
-WARNING: Conscrypt native libraries not available. Falling back to JDK TLS.
-```
-If you **do not see this warning message** in your application logs, Conscrypt has successfully initialized and enabled PQC key exchange.
-
-#### 2. Enable Debug Logging (`Level.FINE`)
-To inspect the exact initialization status and any underlying native library loader exceptions, enable debug logging (`Level.FINE`) for `com.google.api.gax.httpjson.HttpJsonConscryptUtils`:
+To inspect whether Conscrypt successfully initialized or why it fell back to JDK TLS, enable debug logging (`Level.FINE`) for `com.google.api.gax.httpjson.HttpJsonConscryptUtils`:
 
 - In `logging.properties`:
   ```properties
   com.google.api.gax.httpjson.HttpJsonConscryptUtils.level = FINE
   ```
-- If an error occurs during initialization, the full exception stacktrace (`UnsatisfiedLinkError`, `LinkageError`, etc.) will appear only at `FINE` level:
+- When Conscrypt is unavailable or fails to initialize, it logs at `Level.FINE`:
   ```
+  FINE: Conscrypt native library unavailable. Falling back to default JDK TLS.
   FINE: Conscrypt initialization failed with exception: java.lang.UnsatisfiedLinkError: ...
   ```
+- When Conscrypt initializes successfully, no fallback messages appear in the `FINE` logs.
 
 ### 2.7 Custom & Alternative Configurations
 
