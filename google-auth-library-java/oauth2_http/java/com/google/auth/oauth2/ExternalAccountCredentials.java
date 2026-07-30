@@ -431,6 +431,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       Map<String, Object> json, HttpTransportFactory transportFactory) {
     String audience = (String) json.get("audience");
     String subjectTokenType = (String) json.get("subject_token_type");
+    String actorTokenType = (String) json.get("actor_token_type");
     String tokenUrl = (String) json.get("token_url");
 
     Map<String, Object> credentialSourceMap = (Map<String, Object>) json.get("credential_source");
@@ -487,6 +488,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         .setHttpTransportFactory(transportFactory)
         .setAudience(audience)
         .setSubjectTokenType(subjectTokenType)
+        .setActorTokenType(actorTokenType)
         .setTokenUrl(tokenUrl)
         .setTokenInfoUrl(tokenInfoUrl)
         .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))

@@ -60,6 +60,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   private static final long serialVersionUID = 2471046175477275881L;
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+  @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
+  @Nullable private final String actorTokenType;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -89,7 +91,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       this.subjectTokenSupplier = builder.subjectTokenSupplier;
       this.metricsHeaderValue = PROGRAMMATIC_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.FILE) {
-      this.subjectTokenSupplier = new FileIdentityPoolSubjectTokenSupplier(credentialSource);
+      this.subjectTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
       this.metricsHeaderValue = FILE_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.URL) {
       this.subjectTokenSupplier =
@@ -111,6 +113,22 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } else {
       throw new IllegalArgumentException("Source type not supported.");
     }
+
+    this.actorTokenType = builder.actorTokenType;
+    if (builder.actorTokenSupplier != null) {
+      this.actorTokenSupplier = builder.actorTokenSupplier;
+    } else if (credentialSource != null && credentialSource.actorTokenFieldName != null) {
+      this.actorTokenSupplier =
+          new FileIdentityPoolTokenSupplier(credentialSource, credentialSource.actorTokenFieldName);
+    } else {
+      this.actorTokenSupplier = null;
+    }
+
+    if (this.actorTokenSupplier != null
+        && (getTokenUrl() == null || !getTokenUrl().contains("mtls.googleapis.com"))) {
+      throw new IllegalArgumentException(
+          "Actor tokens are only supported for mTLS token URLs.");
+    }
   }
 
   @Override
@@ -119,6 +137,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
             .setAudience(getAudience());
+
+    if (this.actorTokenSupplier != null && this.actorTokenType != null) {
+      String actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
+      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+    }
 
     Collection<String> scopes = getScopes();
     if (scopes != null && !scopes.isEmpty()) {
@@ -141,6 +164,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   @VisibleForTesting
   IdentityPoolSubjectTokenSupplier getIdentityPoolSubjectTokenSupplier() {
     return this.subjectTokenSupplier;
+  }
+
+  @VisibleForTesting
+  String getActorTokenType() {
+    return this.actorTokenType;
   }
 
   /** Clones the IdentityPoolCredentials with the specified scopes. */
@@ -205,6 +233,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   public static class Builder extends ExternalAccountCredentials.Builder {
 
     private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+    private IdentityPoolActorTokenSupplier actorTokenSupplier;
+    private String actorTokenType;
     private X509Provider x509Provider;
 
     Builder() {}
@@ -213,7 +243,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       super(credentials);
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
+        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
+      this.actorTokenType = credentials.actorTokenType;
     }
 
     /**
@@ -241,6 +273,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setSubjectTokenSupplier(IdentityPoolSubjectTokenSupplier subjectTokenSupplier) {
       this.subjectTokenSupplier = subjectTokenSupplier;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    public Builder setActorTokenSupplier(IdentityPoolActorTokenSupplier actorTokenSupplier) {
+      this.actorTokenSupplier = actorTokenSupplier;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    public Builder setActorTokenType(String actorTokenType) {
+      this.actorTokenType = actorTokenType;
       return this;
     }
 
