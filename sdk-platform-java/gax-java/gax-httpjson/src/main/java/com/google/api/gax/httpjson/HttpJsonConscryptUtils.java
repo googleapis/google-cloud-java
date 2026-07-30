@@ -89,7 +89,8 @@ public class HttpJsonConscryptUtils {
         return Conscrypt.newProvider();
       } catch (SecurityException | LinkageError t) {
         LOG.log(
-            Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+            Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.");
+        LOG.log(Level.FINE, "Conscrypt initialization failed with exception: ", t);
         return null;
       }
     }
@@ -126,8 +127,8 @@ public class HttpJsonConscryptUtils {
                 LOG.log(
                     Level.WARNING,
                     "Failed to set PQC named groups on Conscrypt socket. Falling back to Conscrypt"
-                        + " default TLS groups.",
-                    e);
+                        + " default TLS groups.");
+                LOG.log(Level.FINE, "Conscrypt socket group configuration failed: ", e);
               }
             });
   }
