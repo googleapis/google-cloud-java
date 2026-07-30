@@ -10,72 +10,39 @@ Traditional TLS public-key encryption (such as RSA and ECDH) is vulnerable to fu
 
 ---
 
-## 2. Overview & Default Behavior in `gax-httpjson`
+## 2. HTTP/JSON (REST) Client Library Support
 
-PQC support is **enabled by default** for **HTTP/JSON** (REST) transport in Google Cloud Java client libraries (`gax-httpjson`) whenever native Conscrypt / BoringSSL libraries are supported on the runtime environment.
+Post-Quantum Cryptography is **enabled by default** for **HTTP/JSON** (REST) transport in Google Cloud Java client libraries (`gax-httpjson`) whenever native Conscrypt / BoringSSL libraries are supported on the runtime environment.
 
-### Transport Support Summary
+### 2.1 Minimum Required Versions
 
-| Transport | GAX Module | Underlying HTTP Client | Cryptographic Engine | PQC Activation |
-| :--- | :--- | :--- | :--- | :--- |
-| **HTTP/JSON** | `gax-httpjson` | Google HTTP Client (`NetHttpTransport`) | Conscrypt (BoringSSL JNI) | **Enabled by Default** via `google-http-java-client` security provider API |
-
----
-
-## 3. How to Verify That You Are Using PQC in Google Cloud Java Client Libraries
-
-You can verify that your Google Cloud HTTP/JSON Java client library is actively negotiating Post-Quantum Cryptography through operational logs, debug logging, or network traffic analysis.
-
-### 1. Check Operational Log Messages
-When Conscrypt initializes successfully and configures PQC named groups, **no warning logs are emitted**.
-
-If your environment cannot load native Conscrypt libraries or cannot configure PQC groups, the library emits a concise, one-line warning at `Level.WARNING` and safely falls back to standard JDK TLS:
-```
-WARNING: Conscrypt native libraries not available. Falling back to JDK TLS.
-```
-If you **do not see this warning message** in your application logs, Conscrypt has successfully initialized and enabled PQC key exchange.
-
-### 2. Enable Debug Logging (`Level.FINE`)
-To inspect the exact initialization status and any underlying native library loader exceptions, enable debug logging (`Level.FINE`) for `com.google.api.gax.httpjson.HttpJsonConscryptUtils`:
-
-- In `logging.properties`:
-  ```properties
-  com.google.api.gax.httpjson.HttpJsonConscryptUtils.level = FINE
-  ```
-- If an error occurs during initialization, the full exception stacktrace (`UnsatisfiedLinkError`, `LinkageError`, etc.) will appear only at `FINE` level:
-  ```
-  FINE: Conscrypt initialization failed with exception: java.lang.UnsatisfiedLinkError: ...
-  ```
-
-### 3. Packet & Handshake Inspection
-During a TLS 1.3 handshake with Google Front End (GFE) services, you can verify PQC negotiation by inspecting the handshake packets:
-- **ClientHello**: Inspect the TLS `supported_groups` extension (Extension 10). When PQC is active, `X25519MLKEM768` (Group ID `0x4543` / `17731` or standardized IANA PQC identifier) is advertised in the ClientHello.
-- **ServerHello**: The GFE endpoint selects `X25519MLKEM768` in the `key_share` extension, confirming that hybrid post-quantum key agreement was established for the connection.
-
----
-
-## 4. Architecture & Minimum Required Versions
-
-PQC enablement for HTTP/JSON transport requires compatible versions of `gax-httpjson` and `google-http-client`:
+PQC enablement for HTTP/JSON transport requires compatible versions of `conscrypt-openjdk-uber`, `gax-httpjson`, and `google-http-client`:
 
 > [!TIP]
 > **Recommended BOM**:
 > We recommend importing Google Cloud Java libraries using **`libraries-bom` version `26.86.0+`**, which automatically manages compatible dependency versions across all Google Cloud client libraries, GAX, and the Google HTTP Client.
 
-### Minimum Required Versions
-
 | Library | Minimum Required Version | Role |
 | :--- | :--- | :--- |
+| **`conscrypt-openjdk-uber`** | `2.6.0+` | Provides BoringSSL native C engine and TLS 1.3 PQC hybrid named groups. |
 | **`gax-httpjson`** | `2.83.0+` | Automatically registers Conscrypt as the TLS security provider and configures PQC named groups. |
 | **`google-http-client`** | `2.2.0+` | Provides security provider registration and socket configurators on `NetHttpTransport.Builder`. |
 
-### How GAX and Google Cloud Servers Work Together
+### 2.2 Why Conscrypt?
 
-When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` automatically registers Conscrypt as the underlying cryptographic provider on the Google HTTP Client (`NetHttpTransport`).
+Standard Java Development Kits (JDK 8, 11, 17, and 21) do not natively support Post-Quantum Cryptography in their built-in TLS providers (`SunJSSE`). While native ML-KEM support is planned for **JDK 27+**, requiring all users to upgrade to JDK 27 is not feasible for most production environments.
 
-- **Negotiation with Google Cloud Servers**: During the TLS 1.3 handshake, `gax-httpjson` advertises Post-Quantum Cryptography named groups (`X25519MLKEM768`, etc.) in preference order alongside classical TLS groups. When connecting to Google Cloud Front End (GFE) endpoints, the server evaluates the client's list from top to bottom and **selects the first compatible algorithm from the list that it also supports**—in this case, `X25519MLKEM768` (#1 preference), establishing an authenticated post-quantum session.
-- **Transparent Endpoint Compatibility**: When connecting to endpoints that do not yet support PQC, the server skips the unknown post-quantum identifiers at the top of the list and selects **the first compatible algorithm from the client's list that it recognizes** (such as classical `X25519`), transparently negotiating standard TLS without dropping the connection.
-- **Platform Runtime Fallback**: If the runtime environment cannot load native Conscrypt libraries, `gax-httpjson` catches the error, logs a concise warning, and falls back to standard JDK JSSE (`SunJSSE`), ensuring network connectivity is never broken.
+We chose **Conscrypt** (`conscrypt-openjdk-uber`) because:
+1. **Maximum Java & OS Compatibility**: Conscrypt wraps Google's BoringSSL cryptographic engine via JNI, enabling quantum-resistant TLS 1.3 handshakes across existing Java LTS runtimes (Java 8, 11, 17, 21, and 25).
+2. **Zero Runtime Configuration Required**: By bundling Conscrypt as an optional dependency, `gax-httpjson` delivers high-performance PQC out-of-the-box without requiring users to replace their JVM or upgrade their JDK.
+
+### 2.3 How HTTP/JSON Clients and Google Cloud Servers Work Together
+
+When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` registers Conscrypt on the Google HTTP Client (`NetHttpTransport`) to advertise PQC and classical groups in preference order:
+
+- **PQC-Enabled Endpoints (GFE)**: During the TLS 1.3 handshake, Google Front End servers select `X25519MLKEM768` (#1 preference), establishing a quantum-resistant session.
+- **Non-PQC Endpoints**: Endpoints that do not support PQC ignore unknown post-quantum identifiers and select the first compatible classical algorithm (such as `X25519`).
+- **Platform Runtime Fallback**: If Conscrypt native libraries cannot load on the OS, the client logs a concise warning and falls back to standard JDK JSSE (`SunJSSE`).
 
 ```
 +-------------------------------------------------------------------+
@@ -98,9 +65,7 @@ When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` autom
      on older non-PQC servers
 ```
 
----
-
-## 5. Supported Key Exchange Groups
+### 2.4 Supported Key Exchange Groups
 
 Google Cloud HTTP/JSON client libraries configure Conscrypt to advertise the following named groups in preference order:
 
@@ -115,9 +80,7 @@ Google Cloud HTTP/JSON client libraries configure Conscrypt to advertise the fol
 
 For additional details on Conscrypt's cryptographic algorithms and capabilities, refer to the official [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md#supported-named-groups).
 
----
-
-## 6. Platform Compatibility & Native Library Limitations
+### 2.5 Platform Compatibility & Native Library Limitations
 
 Because Conscrypt relies on C native shared libraries (`conscrypt-openjdk-uber`) loaded via Java Native Interface (JNI), PQC support depends on OS platform compatibility:
 
@@ -132,13 +95,36 @@ Because Conscrypt relies on C native shared libraries (`conscrypt-openjdk-uber`)
      ```
    - Your application will continue running normally using classical TLS provided by the JDK.
 
----
+### 2.6 Verifying PQC in HTTP/JSON Client Libraries
 
-## 7. Custom & Alternative Configurations
+You can verify that your Google Cloud HTTP/JSON Java client library is actively negotiating Post-Quantum Cryptography through operational logs or debug logging. Note that the log messages and logger categories below apply specifically to HTTP/JSON (REST) client libraries.
+
+#### 1. Check Operational Log Messages
+When Conscrypt initializes successfully and configures PQC named groups, **no warning logs are emitted**.
+
+If your environment cannot load native Conscrypt libraries or cannot configure PQC groups, the library emits a concise, one-line warning at `Level.WARNING` and safely falls back to standard JDK TLS:
+```
+WARNING: Conscrypt native libraries not available. Falling back to JDK TLS.
+```
+If you **do not see this warning message** in your application logs, Conscrypt has successfully initialized and enabled PQC key exchange.
+
+#### 2. Enable Debug Logging (`Level.FINE`)
+To inspect the exact initialization status and any underlying native library loader exceptions, enable debug logging (`Level.FINE`) for `com.google.api.gax.httpjson.HttpJsonConscryptUtils`:
+
+- In `logging.properties`:
+  ```properties
+  com.google.api.gax.httpjson.HttpJsonConscryptUtils.level = FINE
+  ```
+- If an error occurs during initialization, the full exception stacktrace (`UnsatisfiedLinkError`, `LinkageError`, etc.) will appear only at `FINE` level:
+  ```
+  FINE: Conscrypt initialization failed with exception: java.lang.UnsatisfiedLinkError: ...
+  ```
+
+### 2.7 Custom & Alternative Configurations
 
 If you need to disable PQC, force classical key exchange, bypass Conscrypt, or use a third-party security provider, you can customize the transport provider.
 
-### Alternative 1: Forcing Classical (Non-PQC) Key Exchange
+#### Alternative 1: Forcing Classical (Non-PQC) Key Exchange
 
 To explicitly restrict key exchange to classical `X25519` (disabling post-quantum hybrid groups):
 
@@ -183,7 +169,7 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 }
 ```
 
-### Alternative 2: Bypassing Conscrypt to Use Standard JDK JSSE
+#### Alternative 2: Bypassing Conscrypt to Use Standard JDK JSSE
 
 To bypass Conscrypt completely and use the standard JDK JSSE TLS provider:
 
@@ -211,7 +197,7 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 }
 ```
 
-### Alternative 3: Configuring Custom Security Providers
+#### Alternative 3: Configuring Custom Security Providers
 
 If your application requires a custom cryptographic provider (such as Bouncy Castle), you can configure it on a specific `NetHttpTransport` instance using `NetHttpTransport.Builder.setSecurityProvider(...)` and `.setSslSocketConfigurator(...)`:
 
@@ -253,9 +239,10 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 
 ---
 
-## 8. Addendum: JDK 27+ and Native OpenJDK PQC Support
+## 3. Addendum: JDK 27+ and Native OpenJDK PQC Support
 
 As quantum-resistant cryptography standards mature, OpenJDK is incorporating native PQC support directly into standard Java releases:
 - Starting with **JDK 27**, standard JDK Security Providers (`SunJSSE`) include native support for NIST post-quantum key encapsulation standards (JEP / ML-KEM).
-- When running on JDK 27 or later, Java applications automatically negotiate ML-KEM PQC key exchange out-of-the-box—without requiring Conscrypt or JNI native dependencies.
+- **Google Cloud Java Client Libraries**: Google Cloud Java client SDKs use Conscrypt by default whenever it is available on the platform (delivering hardware-accelerated BoringSSL performance across all Java releases).
+- **Your Own Applications**: For your own Java applications or non-Conscrypt HTTPS connections running on JDK 27 or later, standard OpenJDK Security Providers automatically negotiate ML-KEM PQC key exchange out-of-the-box—even without Conscrypt or JNI native dependencies.
 - No code or configuration changes are required in Google Cloud Java client libraries when running on JDK 27+.
