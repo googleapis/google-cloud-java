@@ -59,24 +59,26 @@ class CertificateBasedAccessTest {
     private final Map<String, String> content = new HashMap<>();
 
     void setExists(String path, boolean val) {
-      exists.put(path, val);
+      exists.put(java.nio.file.Paths.get(path).toString(), val);
     }
 
     void setContent(String path, String val) {
-      content.put(path, val);
-      exists.put(path, true);
+      String normalizedPath = java.nio.file.Paths.get(path).toString();
+      content.put(normalizedPath, val);
+      exists.put(normalizedPath, true);
     }
   }
 
   private CertificateBasedAccess createCba(TestEnv env, TestFileSystem fs) {
     return new CertificateBasedAccess(
         env::get,
-        path -> fs.exists.getOrDefault(path, false),
+        path -> fs.exists.getOrDefault(java.nio.file.Paths.get(path).toString(), false),
         path -> {
-          if (!fs.content.containsKey(path)) {
+          String normalized = java.nio.file.Paths.get(path).toString();
+          if (!fs.content.containsKey(normalized)) {
             throw new IOException("File not found: " + path);
           }
-          return fs.content.get(path);
+          return fs.content.get(normalized);
         });
   }
 

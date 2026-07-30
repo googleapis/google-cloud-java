@@ -149,16 +149,19 @@ public class CertificateBasedAccess {
     }
 
     // 3. Fallback to well-known spiffe path
-    String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials/";
+    String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials";
 
     // Check for atomic bundle containing both cert and key
-    if (fileExistenceProvider.exists(wellKnownPath + "credentialbundle.pem")) {
+    if (fileExistenceProvider.exists(
+        java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString())) {
       return true;
     }
 
     // Check for separate certificate and private key files
-    if (fileExistenceProvider.exists(wellKnownPath + "certificates.pem")
-        && fileExistenceProvider.exists(wellKnownPath + "private_key.pem")) {
+    if (fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString())
+        && fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "private_key.pem").toString())) {
       return true;
     }
 
