@@ -98,8 +98,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
       throw new IllegalArgumentException(e);
     }
     if (responseDelay == Duration.ZERO) {
-      sendResponse(response, responseObserver);
       requests.add(request);
+      sendResponse(response, responseObserver);
     } else {
       final Response responseToSend = response;
       executor.schedule(
