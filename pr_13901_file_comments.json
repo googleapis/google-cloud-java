@@ -1,0 +1,416 @@
+[
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448983",
+    "pull_request_review_id": 4789733840,
+    "id": 3659448983,
+    "node_id": "PRRC_kwDOAY9-ns7aHsKX",
+    "diff_hunk": "@@ -51,6 +50,9 @@ public boolean shouldRetry(Throwable previousThrowable, ResponseT previousRespon\n   @Override\n   public boolean shouldRetry(\n       RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {\n+    if (previousThrowable instanceof UnauthenticatedException) {\n+      return ((UnauthenticatedException) previousThrowable).isRetryable();\n+    }",
+    "path": "sdk-platform-java/gax-java/gax/src/main/java/com/google/api/gax/rpc/ApiResultRetryAlgorithm.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![critical](https://www.gstatic.com/codereviewagent/critical.svg)\n\nThe check for `UnauthenticatedException` is placed before the `context.getRetryableCodes() != null` check and returns `isRetryable()` immediately. This completely breaks retries for `UnauthenticatedException` when `UNAUTHENTICATED` is in the configured retryable codes but `isRetryable()` is `false` (which is the default). We should only return `true` immediately if `isRetryable()` is `true` (indicating a cert rotation retry), and otherwise fall through to the standard `context.getRetryableCodes()` check.\n\n```java\n    if (previousThrowable instanceof UnauthenticatedException\n        && ((UnauthenticatedException) previousThrowable).isRetryable()) {\n      return true;\n    }\n```",
+    "created_at": "2026-07-27T17:25:00Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659448983",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448983"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659448983"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448983/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 53,
+    "original_start_line": 53,
+    "start_side": "RIGHT",
+    "line": 55,
+    "original_line": 55,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 14,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448998",
+    "pull_request_review_id": 4789733840,
+    "id": 3659448998,
+    "node_id": "PRRC_kwDOAY9-ns7aHsKm",
+    "diff_hunk": "@@ -0,0 +1,320 @@\n+/*\n+ * Copyright 2026 Google LLC\n+ *\n+ * Redistribution and use in source and binary forms, with or without\n+ * modification, are permitted provided that the following conditions are\n+ * met:\n+ *\n+ *     * Redistributions of source code must retain the above copyright\n+ * notice, this list of conditions and the following disclaimer.\n+ *     * Redistributions in binary form must reproduce the above\n+ * copyright notice, this list of conditions and the following disclaimer\n+ * in the documentation and/or other materials provided with the\n+ * distribution.\n+ *     * Neither the name of Google LLC nor the names of its\n+ * contributors may be used to endorse or promote products derived from\n+ * this software without specific prior written permission.\n+ *\n+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n+ * \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n+ */\n+package com.google.api.gax.httpjson;\n+\n+import com.google.api.core.InternalApi;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;\n+import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;\n+import java.util.concurrent.TimeUnit;\n+import java.util.concurrent.atomic.AtomicBoolean;\n+import java.util.concurrent.atomic.AtomicInteger;\n+import java.util.concurrent.atomic.AtomicReference;\n+import java.util.function.Supplier;\n+import java.util.logging.Level;\n+import java.util.logging.Logger;\n+\n+/**\n+ * An implementation of {@link ManagedHttpJsonChannel} that supports dynamic mTLS certificate\n+ * rotation by thread-safely hot-swapping the underlying active HTTP/JSON channel while gracefully\n+ * retiring older connections after all active in-flight requests complete.\n+ */\n+@InternalApi\n+public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {\n+\n+  private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());\n+\n+  private static class DiskCheckResult {\n+    final String fingerprint;\n+    final long timestampNanos;\n+\n+    DiskCheckResult(String fingerprint, long timestampNanos) {\n+      this.fingerprint = fingerprint;\n+      this.timestampNanos = timestampNanos;\n+    }\n+  }\n+\n+  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);\n+  private final Supplier<ManagedHttpJsonChannel> channelFactory;\n+  private final AtomicReference<ChannelEntry> activeEntry;\n+  // Keep track of all entries to properly await their termination\n+  private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =\n+      new java.util.concurrent.ConcurrentLinkedQueue<>();\n+  private final Object lock = new Object();\n+  private volatile String activeCertFingerprint = \"\";\n+\n+  public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {\n+    this.channelFactory = channelFactory;\n+    ChannelEntry initial = new ChannelEntry(channelFactory.get());\n+    this.activeEntry = new AtomicReference<>(initial);\n+    this.allEntries.add(initial);\n+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+    if (certPath != null) {\n+      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+    }\n+  }\n+\n+  private String getOrUpdateDiskFingerprint(String certPath) {\n+    long now = System.nanoTime();\n+    DiskCheckResult cached = lastDiskCheck.get();\n+    if (cached != null\n+        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+      return cached.fingerprint;\n+    }\n+\n+    synchronized (lastDiskCheck) {\n+      cached = lastDiskCheck.get();\n+      if (cached != null\n+          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+        return cached.fingerprint;\n+      }\n+      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));\n+      return fingerprint;\n+    }\n+  }\n+\n+  @Override\n+  public boolean shouldRefresh() {\n+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+    if (certPath == null) {\n+      return false;\n+    }\n+    String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);\n+    if (currentDiskFingerprint.isEmpty()) {\n+      return false;\n+    }\n+    return !currentDiskFingerprint.equalsIgnoreCase(activeCertFingerprint);\n+  }\n+\n+  @Override\n+  public void refresh() {\n+    synchronized (lock) {\n+      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+      if (certPath == null) {\n+        return;\n+      }\n+      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);\n+      if (currentDiskFingerprint.isEmpty()) {\n+        return;\n+      }\n+\n+      // Double-check inside lock\n+      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {\n+        LOG.fine(\n+            \"HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh\");\n+        return;\n+      }\n+\n+      this.activeCertFingerprint = currentDiskFingerprint;\n+      LOG.info(\"mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.\");\n+\n+      ChannelEntry newEntry = new ChannelEntry(channelFactory.get());\n+      allEntries.add(newEntry);\n+      ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);\n+\n+      if (oldEntry != null) {\n+        oldEntry.requestShutdown();\n+      }\n+    }\n+  }\n+\n+  private ChannelEntry getRetainedEntry() {\n+    while (true) {\n+      ChannelEntry entry = activeEntry.get();\n+      if (entry.retain()) {\n+        return entry;\n+      }\n+      if (entry.shutdownRequested.get()) {\n+        throw new IllegalStateException(\"Channel has been shut down\");\n+      }\n+    }\n+  }",
+    "path": "sdk-platform-java/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/RefreshingHttpJsonChannel.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![high](https://www.gstatic.com/codereviewagent/high-priority.svg)\n\nIn `getRetainedEntry()`, if `entry.retain()` returns `false` (because a refresh occurred and `oldEntry.shutdownRequested` was set to `true`), the code immediately throws `IllegalStateException(\"Channel has been shut down\")`. However, the channel pool itself is not shut down; only the old entry is being retired. This will cause transient `IllegalStateException`s for active requests during certificate rotation. We should only throw `IllegalStateException` if the active entry itself has been shut down (i.e., `entry == activeEntry.get()`), and otherwise retry the loop with the new active entry.\n\n```suggestion\n  private ChannelEntry getRetainedEntry() {\n    while (true) {\n      ChannelEntry entry = activeEntry.get();\n      if (entry.retain()) {\n        return entry;\n      }\n      if (entry == activeEntry.get()) {\n        throw new IllegalStateException(\"Channel has been shut down\");\n      }\n    }\n  }\n```",
+    "created_at": "2026-07-27T17:25:00Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659448998",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448998"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659448998"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659448998/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 149,
+    "original_start_line": 149,
+    "start_side": "RIGHT",
+    "line": 159,
+    "original_line": 159,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 159,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449034",
+    "pull_request_review_id": 4789733840,
+    "id": 3659449034,
+    "node_id": "PRRC_kwDOAY9-ns7aHsLK",
+    "diff_hunk": "@@ -64,10 +94,96 @@ public enum MtlsEndpointUsagePolicy {\n     ALWAYS;\n   }\n \n+  private static class CertificateConfig {\n+    final String certPath;\n+    final String keyPath;\n+\n+    CertificateConfig(String certPath, String keyPath) {\n+      this.certPath = certPath;\n+      this.keyPath = keyPath;\n+    }\n+  }\n+\n+  private CertificateConfig parseCertificateConfig(String configPath) throws IOException {\n+    String content = fileContentReader.read(configPath);\n+\n+    String certPath = extractJsonValue(content, \"cert_path\");\n+    String keyPath = extractJsonValue(content, \"key_path\");\n+\n+    if (certPath == null || keyPath == null) {\n+      throw new IllegalStateException(\n+          \"Malformed certificate config JSON. Must contain 'cert_path' and 'key_path'.\");\n+    }\n+\n+    return new CertificateConfig(certPath, keyPath);\n+  }\n+\n+  private String extractJsonValue(String json, String key) {\n+    java.util.regex.Pattern pattern =\n+        java.util.regex.Pattern.compile(\n+            \"\\\"\" + java.util.regex.Pattern.quote(key) + \"\\\"\\\\s*:\\\\s*\\\"([^\\\"]+)\\\"\");\n+    java.util.regex.Matcher matcher = pattern.matcher(json);\n+    if (matcher.find()) {\n+      return matcher.group(1);\n+    }\n+    return null;\n+  }\n+\n   /** Returns if mutual TLS client certificate should be used. */\n   public boolean useMtlsClientCertificate() {\n+    // 1. Check the explicit user flag first (Primary override)\n     String useClientCertificate = envProvider.getenv(\"GOOGLE_API_USE_CLIENT_CERTIFICATE\");\n-    return \"true\".equals(useClientCertificate);\n+    if (useClientCertificate != null && !useClientCertificate.isEmpty()) {\n+      if (\"false\".equalsIgnoreCase(useClientCertificate)) {\n+        return false;\n+      }\n+    }",
+    "path": "sdk-platform-java/gax-java/gax/src/main/java/com/google/api/gax/rpc/mtls/CertificateBasedAccess.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![high](https://www.gstatic.com/codereviewagent/high-priority.svg)\n\nThe new implementation of `useMtlsClientCertificate()` breaks backward compatibility. Previously, if `GOOGLE_API_USE_CLIENT_CERTIFICATE` was set to `\"true\"`, it returned `true` immediately, allowing custom `MtlsProvider`s to be used. Now, it falls through to check for SPIFFE credentials or config files on disk, returning `false` if they are not found. This will break mTLS for users relying on custom `MtlsProvider`s. We should preserve backward compatibility by returning `true` immediately if `GOOGLE_API_USE_CLIENT_CERTIFICATE` is explicitly set to `\"true\"`.\n\n```suggestion\n    // 1. Check the explicit user flag first (Primary override)\n    String useClientCertificate = envProvider.getenv(\"GOOGLE_API_USE_CLIENT_CERTIFICATE\");\n    if (useClientCertificate != null && !useClientCertificate.isEmpty()) {\n      if (\"false\".equalsIgnoreCase(useClientCertificate)) {\n        return false;\n      }\n      if (\"true\".equalsIgnoreCase(useClientCertificate)) {\n        return true;\n      }\n    }\n```",
+    "created_at": "2026-07-27T17:25:00Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449034",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449034"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449034"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449034/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 134,
+    "original_start_line": 134,
+    "start_side": "RIGHT",
+    "line": 140,
+    "original_line": 140,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 103,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449046",
+    "pull_request_review_id": 4789733840,
+    "id": 3659449046,
+    "node_id": "PRRC_kwDOAY9-ns7aHsLW",
+    "diff_hunk": "@@ -0,0 +1,320 @@\n+/*\n+ * Copyright 2026 Google LLC\n+ *\n+ * Redistribution and use in source and binary forms, with or without\n+ * modification, are permitted provided that the following conditions are\n+ * met:\n+ *\n+ *     * Redistributions of source code must retain the above copyright\n+ * notice, this list of conditions and the following disclaimer.\n+ *     * Redistributions in binary form must reproduce the above\n+ * copyright notice, this list of conditions and the following disclaimer\n+ * in the documentation and/or other materials provided with the\n+ * distribution.\n+ *     * Neither the name of Google LLC nor the names of its\n+ * contributors may be used to endorse or promote products derived from\n+ * this software without specific prior written permission.\n+ *\n+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n+ * \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n+ */\n+package com.google.api.gax.httpjson;\n+\n+import com.google.api.core.InternalApi;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;\n+import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;\n+import java.util.concurrent.TimeUnit;\n+import java.util.concurrent.atomic.AtomicBoolean;\n+import java.util.concurrent.atomic.AtomicInteger;\n+import java.util.concurrent.atomic.AtomicReference;\n+import java.util.function.Supplier;\n+import java.util.logging.Level;\n+import java.util.logging.Logger;\n+\n+/**\n+ * An implementation of {@link ManagedHttpJsonChannel} that supports dynamic mTLS certificate\n+ * rotation by thread-safely hot-swapping the underlying active HTTP/JSON channel while gracefully\n+ * retiring older connections after all active in-flight requests complete.\n+ */\n+@InternalApi\n+public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {\n+\n+  private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());\n+\n+  private static class DiskCheckResult {\n+    final String fingerprint;\n+    final long timestampNanos;\n+\n+    DiskCheckResult(String fingerprint, long timestampNanos) {\n+      this.fingerprint = fingerprint;\n+      this.timestampNanos = timestampNanos;\n+    }\n+  }\n+\n+  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);\n+  private final Supplier<ManagedHttpJsonChannel> channelFactory;\n+  private final AtomicReference<ChannelEntry> activeEntry;\n+  // Keep track of all entries to properly await their termination\n+  private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =\n+      new java.util.concurrent.ConcurrentLinkedQueue<>();\n+  private final Object lock = new Object();\n+  private volatile String activeCertFingerprint = \"\";\n+\n+  public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {\n+    this.channelFactory = channelFactory;\n+    ChannelEntry initial = new ChannelEntry(channelFactory.get());\n+    this.activeEntry = new AtomicReference<>(initial);\n+    this.allEntries.add(initial);\n+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+    if (certPath != null) {\n+      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+    }\n+  }\n+\n+  private String getOrUpdateDiskFingerprint(String certPath) {\n+    long now = System.nanoTime();\n+    DiskCheckResult cached = lastDiskCheck.get();\n+    if (cached != null\n+        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+      return cached.fingerprint;\n+    }\n+\n+    synchronized (lastDiskCheck) {\n+      cached = lastDiskCheck.get();\n+      if (cached != null\n+          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+        return cached.fingerprint;\n+      }\n+      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));\n+      return fingerprint;\n+    }\n+  }\n+\n+  @Override\n+  public boolean shouldRefresh() {\n+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+    if (certPath == null) {\n+      return false;\n+    }\n+    String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);\n+    if (currentDiskFingerprint.isEmpty()) {\n+      return false;\n+    }\n+    return !currentDiskFingerprint.equalsIgnoreCase(activeCertFingerprint);\n+  }\n+\n+  @Override\n+  public void refresh() {\n+    synchronized (lock) {\n+      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+      if (certPath == null) {\n+        return;\n+      }\n+      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);\n+      if (currentDiskFingerprint.isEmpty()) {\n+        return;\n+      }\n+\n+      // Double-check inside lock\n+      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {\n+        LOG.fine(\n+            \"HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh\");\n+        return;\n+      }\n+\n+      this.activeCertFingerprint = currentDiskFingerprint;\n+      LOG.info(\"mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.\");\n+\n+      ChannelEntry newEntry = new ChannelEntry(channelFactory.get());\n+      allEntries.add(newEntry);\n+      ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);\n+\n+      if (oldEntry != null) {\n+        oldEntry.requestShutdown();\n+      }\n+    }\n+  }\n+",
+    "path": "sdk-platform-java/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/RefreshingHttpJsonChannel.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![medium](https://www.gstatic.com/codereviewagent/medium-priority.svg)\n\n`allEntries` queue accumulates `ChannelEntry` objects on every `refresh()`, but they are never removed once they are terminated. This leads to a memory leak over time in long-running processes with frequent certificate rotations. We should prune terminated entries from `allEntries` during `refresh()`.\n\n```java\n  @Override\n  public void refresh() {\n    synchronized (lock) {\n      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n      if (certPath == null) {\n        return;\n      }\n      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);\n      if (currentDiskFingerprint.isEmpty()) {\n        return;\n      }\n\n      // Double-check inside lock\n      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {\n        LOG.fine(\n            \"HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh\");\n        return;\n      }\n\n      this.activeCertFingerprint = currentDiskFingerprint;\n      LOG.info(\"mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.\");\n\n      // Prune terminated entries to prevent memory leak\n      allEntries.removeIf(entry -> entry.channel.isTerminated());\n\n      ChannelEntry newEntry = new ChannelEntry(channelFactory.get());\n      allEntries.add(newEntry);\n      ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);\n\n      if (oldEntry != null) {\n        oldEntry.requestShutdown();\n      }\n    }\n  }\n```",
+    "created_at": "2026-07-27T17:25:00Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449046",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449046"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449046"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449046/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 118,
+    "original_start_line": 118,
+    "start_side": "RIGHT",
+    "line": 148,
+    "original_line": 148,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 148,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449053",
+    "pull_request_review_id": 4789733840,
+    "id": 3659449053,
+    "node_id": "PRRC_kwDOAY9-ns7aHsLd",
+    "diff_hunk": "@@ -0,0 +1,320 @@\n+/*\n+ * Copyright 2026 Google LLC\n+ *\n+ * Redistribution and use in source and binary forms, with or without\n+ * modification, are permitted provided that the following conditions are\n+ * met:\n+ *\n+ *     * Redistributions of source code must retain the above copyright\n+ * notice, this list of conditions and the following disclaimer.\n+ *     * Redistributions in binary form must reproduce the above\n+ * copyright notice, this list of conditions and the following disclaimer\n+ * in the documentation and/or other materials provided with the\n+ * distribution.\n+ *     * Neither the name of Google LLC nor the names of its\n+ * contributors may be used to endorse or promote products derived from\n+ * this software without specific prior written permission.\n+ *\n+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n+ * \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n+ */\n+package com.google.api.gax.httpjson;\n+\n+import com.google.api.core.InternalApi;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;\n+import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;\n+import java.util.concurrent.TimeUnit;\n+import java.util.concurrent.atomic.AtomicBoolean;\n+import java.util.concurrent.atomic.AtomicInteger;\n+import java.util.concurrent.atomic.AtomicReference;\n+import java.util.function.Supplier;\n+import java.util.logging.Level;\n+import java.util.logging.Logger;\n+\n+/**\n+ * An implementation of {@link ManagedHttpJsonChannel} that supports dynamic mTLS certificate\n+ * rotation by thread-safely hot-swapping the underlying active HTTP/JSON channel while gracefully\n+ * retiring older connections after all active in-flight requests complete.\n+ */\n+@InternalApi\n+public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {\n+\n+  private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());\n+\n+  private static class DiskCheckResult {\n+    final String fingerprint;\n+    final long timestampNanos;\n+\n+    DiskCheckResult(String fingerprint, long timestampNanos) {\n+      this.fingerprint = fingerprint;\n+      this.timestampNanos = timestampNanos;\n+    }\n+  }\n+\n+  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);",
+    "path": "sdk-platform-java/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/RefreshingHttpJsonChannel.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![medium](https://www.gstatic.com/codereviewagent/medium-priority.svg)\n\nSynchronizing on an `AtomicReference` (like `lastDiskCheck`) is a code smell. `AtomicReference` is designed for lock-free thread-safe operations. In performance-sensitive code, if a lock is needed to prevent concurrent disk reads, we should use an explicit `ReentrantLock` instead of the `synchronized` keyword to protect shared state.\n\n```suggestion\n  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);\n  private final ReentrantLock diskCheckLock = new ReentrantLock();\n```\n\n<details>\n<summary>References</summary>\n\n1. In performance-sensitive code, prefer using explicit locks over the 'synchronized' keyword to protect shared state while ensuring thread safety and visibility.\n</details>",
+    "created_at": "2026-07-27T17:25:01Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449053",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449053"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449053"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449053/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 64,
+    "original_line": 64,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 64,
+    "position": 1,
+    "subject_type": "line"
+  },
+  {
+    "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449063",
+    "pull_request_review_id": 4789733840,
+    "id": 3659449063,
+    "node_id": "PRRC_kwDOAY9-ns7aHsLn",
+    "diff_hunk": "@@ -0,0 +1,320 @@\n+/*\n+ * Copyright 2026 Google LLC\n+ *\n+ * Redistribution and use in source and binary forms, with or without\n+ * modification, are permitted provided that the following conditions are\n+ * met:\n+ *\n+ *     * Redistributions of source code must retain the above copyright\n+ * notice, this list of conditions and the following disclaimer.\n+ *     * Redistributions in binary form must reproduce the above\n+ * copyright notice, this list of conditions and the following disclaimer\n+ * in the documentation and/or other materials provided with the\n+ * distribution.\n+ *     * Neither the name of Google LLC nor the names of its\n+ * contributors may be used to endorse or promote products derived from\n+ * this software without specific prior written permission.\n+ *\n+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n+ * \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n+ */\n+package com.google.api.gax.httpjson;\n+\n+import com.google.api.core.InternalApi;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;\n+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;\n+import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;\n+import java.util.concurrent.TimeUnit;\n+import java.util.concurrent.atomic.AtomicBoolean;\n+import java.util.concurrent.atomic.AtomicInteger;\n+import java.util.concurrent.atomic.AtomicReference;\n+import java.util.function.Supplier;\n+import java.util.logging.Level;\n+import java.util.logging.Logger;\n+\n+/**\n+ * An implementation of {@link ManagedHttpJsonChannel} that supports dynamic mTLS certificate\n+ * rotation by thread-safely hot-swapping the underlying active HTTP/JSON channel while gracefully\n+ * retiring older connections after all active in-flight requests complete.\n+ */\n+@InternalApi\n+public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {\n+\n+  private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());\n+\n+  private static class DiskCheckResult {\n+    final String fingerprint;\n+    final long timestampNanos;\n+\n+    DiskCheckResult(String fingerprint, long timestampNanos) {\n+      this.fingerprint = fingerprint;\n+      this.timestampNanos = timestampNanos;\n+    }\n+  }\n+\n+  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);\n+  private final Supplier<ManagedHttpJsonChannel> channelFactory;\n+  private final AtomicReference<ChannelEntry> activeEntry;\n+  // Keep track of all entries to properly await their termination\n+  private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =\n+      new java.util.concurrent.ConcurrentLinkedQueue<>();\n+  private final Object lock = new Object();\n+  private volatile String activeCertFingerprint = \"\";\n+\n+  public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {\n+    this.channelFactory = channelFactory;\n+    ChannelEntry initial = new ChannelEntry(channelFactory.get());\n+    this.activeEntry = new AtomicReference<>(initial);\n+    this.allEntries.add(initial);\n+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();\n+    if (certPath != null) {\n+      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+    }\n+  }\n+\n+  private String getOrUpdateDiskFingerprint(String certPath) {\n+    long now = System.nanoTime();\n+    DiskCheckResult cached = lastDiskCheck.get();\n+    if (cached != null\n+        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+      return cached.fingerprint;\n+    }\n+\n+    synchronized (lastDiskCheck) {\n+      cached = lastDiskCheck.get();\n+      if (cached != null\n+          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n+        return cached.fingerprint;\n+      }\n+      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n+      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));\n+      return fingerprint;\n+    }",
+    "path": "sdk-platform-java/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/RefreshingHttpJsonChannel.java",
+    "commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "original_commit_id": "85f5c597186699e44f3847980f99f2e9e8f74c68",
+    "user": {
+      "login": "gemini-code-assist[bot]",
+      "id": 176961590,
+      "node_id": "BOT_kgDOCow4Ng",
+      "avatar_url": "https://avatars.githubusercontent.com/in/956858?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D",
+      "html_url": "https://github.com/apps/gemini-code-assist",
+      "followers_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/gemini-code-assist%5Bbot%5D/received_events",
+      "type": "Bot",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "![medium](https://www.gstatic.com/codereviewagent/medium-priority.svg)\n\nTo avoid lock contention on the critical path, we should perform a lock-free read on `lastDiskCheck` first. If the cache is expired, we can then acquire an explicit `ReentrantLock` to perform the disk read and update the cache, rather than using `synchronized`.\n\n```suggestion\n    DiskCheckResult cached = lastDiskCheck.get();\n    long now = System.nanoTime();\n    if (cached != null\n        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n      return cached.fingerprint;\n    }\n    diskCheckLock.lock();\n    try {\n      cached = lastDiskCheck.get();\n      if (cached != null\n          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {\n        return cached.fingerprint;\n      }\n      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);\n      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));\n      return fingerprint;\n    } finally {\n      diskCheckLock.unlock();\n    }\n```\n\n<details>\n<summary>References</summary>\n\n1. In performance-sensitive code, prefer using explicit locks over the 'synchronized' keyword to protect shared state while ensuring thread safety and visibility.\n2. To avoid lock contention on frequently called monitoring or routing methods (such as `getLoad()`), maintain state using atomic variables (e.g., `AtomicLong`, `AtomicReference`) to allow lock-free reads, rather than acquiring locks on the critical path.\n</details>",
+    "created_at": "2026-07-27T17:25:01Z",
+    "updated_at": "2026-07-27T17:25:01Z",
+    "html_url": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449063",
+    "pull_request_url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449063"
+      },
+      "html": {
+        "href": "https://github.com/googleapis/google-cloud-java/pull/13901#discussion_r3659449063"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/13901"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/googleapis/google-cloud-java/pulls/comments/3659449063/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": 92,
+    "original_start_line": 92,
+    "start_side": "RIGHT",
+    "line": 101,
+    "original_line": 101,
+    "side": "RIGHT",
+    "author_association": "CONTRIBUTOR",
+    "original_position": 101,
+    "position": 1,
+    "subject_type": "line"
+  }
+]

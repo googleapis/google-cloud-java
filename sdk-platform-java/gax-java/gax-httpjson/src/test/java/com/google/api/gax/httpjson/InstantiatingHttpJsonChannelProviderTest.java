@@ -181,6 +181,39 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     instantiatingHttpJsonChannelProvider.getTransportChannel().shutdownNow();
   }
 
+  @Test
+  void managedChannelDoesNotShutdownCustomHttpTransport() throws IOException {
+    com.google.api.client.http.HttpTransport mockHttpTransport =
+        org.mockito.Mockito.mock(com.google.api.client.http.HttpTransport.class);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHttpTransport(mockHttpTransport)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+
+    // Verify custom transport is injected
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    ManagedHttpJsonInterceptorChannel managedHttpJsonChannel =
+        (ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel();
+    RefreshingHttpJsonChannel refreshingHttpJsonChannel =
+        (RefreshingHttpJsonChannel) managedHttpJsonChannel.getChannel();
+    ManagedHttpJsonChannel channel = refreshingHttpJsonChannel.getActiveChannel();
+
+    assertThat(channel.getHttpTransport()).isEqualTo(mockHttpTransport);
+
+    // Perform a shutdown
+    provider.getTransportChannel().shutdownNow();
+
+    // Verify that shutdown() was NOT called on the custom HttpTransport
+    org.mockito.Mockito.verify(mockHttpTransport, org.mockito.Mockito.never()).shutdown();
+  }
+
   @Override
   protected Object getMtlsObjectFromTransportChannel(
       MtlsProvider provider, CertificateBasedAccess certificateBasedAccess)

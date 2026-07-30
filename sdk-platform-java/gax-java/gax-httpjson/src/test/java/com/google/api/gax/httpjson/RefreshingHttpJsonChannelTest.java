@@ -171,4 +171,26 @@ class RefreshingHttpJsonChannelTest {
     // FIRST CHANNEL SHOULD BE SHUT DOWN NOW!
     verify(firstChannel).shutdown();
   }
+
+  @Test
+  void testRefreshDoesNotSpawnChannelWhenShutdown() throws InterruptedException {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    assertEquals(1, channelFactoryCount.get());
+
+    // By default, Mockito returns false for boolean.
+    // Let's simulate that the channel pool is shut down.
+    when(firstChannel.isShutdown()).thenReturn(true);
+
+    Thread.sleep(1001); // Invalidate 1-second cache
+
+    // Change fingerprint
+    testFingerprint = "fingerprint2";
+    
+    // Act
+    channel.refresh();
+
+    // Verify no new channel was spawned
+    assertEquals(1, channelFactoryCount.get());
+  }
 }

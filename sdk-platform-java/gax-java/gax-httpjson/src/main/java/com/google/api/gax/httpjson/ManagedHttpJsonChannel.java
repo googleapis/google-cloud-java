@@ -50,26 +50,34 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   private final boolean usingDefaultExecutor;
   private final String endpoint;
   private final HttpTransport httpTransport;
+  private final boolean usingDefaultTransport;
   private final ScheduledExecutorService deadlineScheduledExecutorService;
   private boolean isTransportShutdown;
 
   protected ManagedHttpJsonChannel() {
-    this(null, true, null, null);
+    this(null, true, null, null, true);
   }
 
   String getEndpoint() {
     return endpoint;
   }
 
+  @VisibleForTesting
+  HttpTransport getHttpTransport() {
+    return httpTransport;
+  }
+
   private ManagedHttpJsonChannel(
       Executor executor,
       boolean usingDefaultExecutor,
       String endpoint,
-      @Nullable HttpTransport httpTransport) {
+      @Nullable HttpTransport httpTransport,
+      boolean usingDefaultTransport) {
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
     this.httpTransport = httpTransport == null ? new NetHttpTransport() : httpTransport;
+    this.usingDefaultTransport = usingDefaultTransport || httpTransport == null;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -110,7 +118,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdown();
       }
       deadlineScheduledExecutorService.shutdown();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -152,7 +162,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdownNow();
       }
       deadlineScheduledExecutorService.shutdownNow();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -199,9 +211,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     private String endpoint;
     private HttpTransport httpTransport;
     private boolean usingDefaultExecutor;
+    private boolean usingDefaultTransport;
 
     private Builder() {
       this.usingDefaultExecutor = false;
+      this.usingDefaultTransport = false;
     }
 
     public Builder setExecutor(Executor executor) {
@@ -216,6 +230,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
 
     public Builder setHttpTransport(HttpTransport httpTransport) {
       this.httpTransport = httpTransport;
+      return this;
+    }
+
+    Builder setManageHttpTransport(boolean manageHttpTransport) {
+      this.usingDefaultTransport = manageHttpTransport;
       return this;
     }
 
@@ -235,7 +254,8 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
           executor,
           usingDefaultExecutor,
           endpoint,
-          httpTransport == null ? new NetHttpTransport() : httpTransport);
+          httpTransport,
+          usingDefaultTransport);
     }
   }
 }

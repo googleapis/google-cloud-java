@@ -209,6 +209,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                 .setEndpoint(endpoint)
                 .setExecutor(executor)
                 .setHttpTransport(httpTransportToUse)
+                .setManageHttpTransport(httpTransport == null)
                 .build();
           } catch (Exception e) {
             throw new java.lang.RuntimeException(

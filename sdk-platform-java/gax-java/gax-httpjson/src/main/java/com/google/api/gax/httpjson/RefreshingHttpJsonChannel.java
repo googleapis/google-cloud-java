@@ -33,6 +33,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;
 import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
+import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -128,6 +129,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   @Override
   public void refresh() {
     synchronized (refreshLock) {
+      if (isShutdown()) {
+        return;
+      }
       String certPath = getWorkloadCertPath();
       if (certPath == null) {
         return;
@@ -189,6 +193,11 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   @Override
   java.util.concurrent.Executor getExecutor() {
     return activeEntry.get().channel.getExecutor();
+  }
+
+  @VisibleForTesting
+  ManagedHttpJsonChannel getActiveChannel() {
+    return activeEntry.get().channel;
   }
 
   @Override
