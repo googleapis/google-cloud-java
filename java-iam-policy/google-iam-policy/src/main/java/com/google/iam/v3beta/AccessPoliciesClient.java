@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -247,7 +248,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AccessPoliciesClient implements BackgroundResource {
-  private final AccessPoliciesSettings settings;
+  private final @Nullable AccessPoliciesSettings settings;
   private final AccessPoliciesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -295,7 +296,7 @@ public class AccessPoliciesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AccessPoliciesSettings getSettings() {
+  public final @Nullable AccessPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -354,7 +355,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AccessPolicy, OperationMetadata> createAccessPolicyAsync(
-      FolderLocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
+      @Nullable FolderLocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
     CreateAccessPolicyRequest request =
         CreateAccessPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -398,7 +399,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AccessPolicy, OperationMetadata> createAccessPolicyAsync(
-      LocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
+      @Nullable LocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
     CreateAccessPolicyRequest request =
         CreateAccessPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -442,7 +443,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AccessPolicy, OperationMetadata> createAccessPolicyAsync(
-      OrganizationLocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
+      @Nullable OrganizationLocationName parent, AccessPolicy accessPolicy, String accessPolicyId) {
     CreateAccessPolicyRequest request =
         CreateAccessPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -618,7 +619,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    *     `organizations/{organization_id}/locations/{location}/accessPolicies/{access_policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccessPolicy getAccessPolicy(AccessPolicyName name) {
+  public final AccessPolicy getAccessPolicy(@Nullable AccessPolicyName name) {
     GetAccessPolicyRequest request =
         GetAccessPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccessPolicy(request);
@@ -836,7 +837,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAccessPolicyAsync(
-      AccessPolicyName name) {
+      @Nullable AccessPolicyName name) {
     DeleteAccessPolicyRequest request =
         DeleteAccessPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1009,7 +1010,8 @@ public class AccessPoliciesClient implements BackgroundResource {
    *     `organizations/{organization_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccessPoliciesPagedResponse listAccessPolicies(FolderLocationName parent) {
+  public final ListAccessPoliciesPagedResponse listAccessPolicies(
+      @Nullable FolderLocationName parent) {
     ListAccessPoliciesRequest request =
         ListAccessPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1044,7 +1046,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    *     `organizations/{organization_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccessPoliciesPagedResponse listAccessPolicies(LocationName parent) {
+  public final ListAccessPoliciesPagedResponse listAccessPolicies(@Nullable LocationName parent) {
     ListAccessPoliciesRequest request =
         ListAccessPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1079,7 +1081,8 @@ public class AccessPoliciesClient implements BackgroundResource {
    *     `organizations/{organization_id}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccessPoliciesPagedResponse listAccessPolicies(OrganizationLocationName parent) {
+  public final ListAccessPoliciesPagedResponse listAccessPolicies(
+      @Nullable OrganizationLocationName parent) {
     ListAccessPoliciesRequest request =
         ListAccessPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1258,7 +1261,7 @@ public class AccessPoliciesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAccessPolicyBindingsPagedResponse searchAccessPolicyBindings(
-      AccessPolicyName name) {
+      @Nullable AccessPolicyName name) {
     SearchAccessPolicyBindingsRequest request =
         SearchAccessPolicyBindingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1486,8 +1489,9 @@ public class AccessPoliciesClient implements BackgroundResource {
           ListAccessPoliciesPage> {
 
     private ListAccessPoliciesPage(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
-        ListAccessPoliciesResponse response) {
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
+        @Nullable ListAccessPoliciesResponse response) {
       super(context, response);
     }
 
@@ -1497,14 +1501,16 @@ public class AccessPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListAccessPoliciesPage createPage(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
-        ListAccessPoliciesResponse response) {
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
+        @Nullable ListAccessPoliciesResponse response) {
       return new ListAccessPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccessPoliciesPage> createPageAsync(
-        PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy> context,
+        @Nullable PageContext<ListAccessPoliciesRequest, ListAccessPoliciesResponse, AccessPolicy>
+            context,
         ApiFuture<ListAccessPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1519,7 +1525,7 @@ public class AccessPoliciesClient implements BackgroundResource {
           ListAccessPoliciesFixedSizeCollection> {
 
     private ListAccessPoliciesFixedSizeCollection(
-        List<ListAccessPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAccessPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1529,7 +1535,7 @@ public class AccessPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListAccessPoliciesFixedSizeCollection createCollection(
-        List<ListAccessPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAccessPoliciesPage> pages, int collectionSize) {
       return new ListAccessPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1570,12 +1576,13 @@ public class AccessPoliciesClient implements BackgroundResource {
           SearchAccessPolicyBindingsPage> {
 
     private SearchAccessPolicyBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAccessPolicyBindingsRequest,
                 SearchAccessPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchAccessPolicyBindingsResponse response) {
+        @Nullable SearchAccessPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1585,18 +1592,20 @@ public class AccessPoliciesClient implements BackgroundResource {
 
     @Override
     protected SearchAccessPolicyBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAccessPolicyBindingsRequest,
                 SearchAccessPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchAccessPolicyBindingsResponse response) {
+        @Nullable SearchAccessPolicyBindingsResponse response) {
       return new SearchAccessPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAccessPolicyBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAccessPolicyBindingsRequest,
                 SearchAccessPolicyBindingsResponse,
                 PolicyBinding>
@@ -1615,7 +1624,7 @@ public class AccessPoliciesClient implements BackgroundResource {
           SearchAccessPolicyBindingsFixedSizeCollection> {
 
     private SearchAccessPolicyBindingsFixedSizeCollection(
-        List<SearchAccessPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchAccessPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1625,7 +1634,7 @@ public class AccessPoliciesClient implements BackgroundResource {
 
     @Override
     protected SearchAccessPolicyBindingsFixedSizeCollection createCollection(
-        List<SearchAccessPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchAccessPolicyBindingsPage> pages, int collectionSize) {
       return new SearchAccessPolicyBindingsFixedSizeCollection(pages, collectionSize);
     }
   }

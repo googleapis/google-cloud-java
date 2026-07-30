@@ -14,6 +14,9 @@
 
 package com.google.api.generator.gapic.model;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public enum Transport {
   REST,
   GRPC,

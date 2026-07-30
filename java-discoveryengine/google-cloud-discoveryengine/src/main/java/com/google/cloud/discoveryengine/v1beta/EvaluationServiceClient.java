@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -211,7 +212,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EvaluationServiceClient implements BackgroundResource {
-  private final EvaluationServiceSettings settings;
+  private final @Nullable EvaluationServiceSettings settings;
   private final EvaluationServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -259,7 +260,7 @@ public class EvaluationServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EvaluationServiceSettings getSettings() {
+  public final @Nullable EvaluationServiceSettings getSettings() {
     return settings;
   }
 
@@ -312,7 +313,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     exist, a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -434,7 +435,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     regardless of whether or not this location exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationsPagedResponse listEvaluations(LocationName parent) {
+  public final ListEvaluationsPagedResponse listEvaluations(@Nullable LocationName parent) {
     ListEvaluationsRequest request =
         ListEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -607,7 +608,7 @@ public class EvaluationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Evaluation, CreateEvaluationMetadata> createEvaluationAsync(
-      LocationName parent, Evaluation evaluation) {
+      @Nullable LocationName parent, Evaluation evaluation) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -775,7 +776,8 @@ public class EvaluationServiceClient implements BackgroundResource {
    *     `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationResultsPagedResponse listEvaluationResults(EvaluationName evaluation) {
+  public final ListEvaluationResultsPagedResponse listEvaluationResults(
+      @Nullable EvaluationName evaluation) {
     ListEvaluationResultsRequest request =
         ListEvaluationResultsRequest.newBuilder()
             .setEvaluation(evaluation == null ? null : evaluation.toString())
@@ -992,8 +994,8 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
 
     private ListEvaluationsPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -1003,14 +1005,14 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsPage createPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       return new ListEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationsPage> createPageAsync(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
         ApiFuture<ListEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1025,7 +1027,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationsFixedSizeCollection> {
 
     private ListEvaluationsFixedSizeCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1035,7 +1037,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsFixedSizeCollection createCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1076,12 +1078,13 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsPage> {
 
     private ListEvaluationResultsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationResultsRequest,
                 ListEvaluationResultsResponse,
                 ListEvaluationResultsResponse.EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       super(context, response);
     }
 
@@ -1091,18 +1094,20 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationResultsRequest,
                 ListEvaluationResultsResponse,
                 ListEvaluationResultsResponse.EvaluationResult>
             context,
-        ListEvaluationResultsResponse response) {
+        @Nullable ListEvaluationResultsResponse response) {
       return new ListEvaluationResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationResultsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEvaluationResultsRequest,
                 ListEvaluationResultsResponse,
                 ListEvaluationResultsResponse.EvaluationResult>
@@ -1121,7 +1126,7 @@ public class EvaluationServiceClient implements BackgroundResource {
           ListEvaluationResultsFixedSizeCollection> {
 
     private ListEvaluationResultsFixedSizeCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1131,7 +1136,7 @@ public class EvaluationServiceClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationResultsFixedSizeCollection createCollection(
-        List<ListEvaluationResultsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationResultsPage> pages, int collectionSize) {
       return new ListEvaluationResultsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -21,7 +21,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ResourceNameTokenizer {
   private static final String LEFT_BRACE = "{";
   private static final String RIGHT_BRACE = "}";

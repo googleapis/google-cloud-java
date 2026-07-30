@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +65,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetRole</td>
- *      <td><p> API to retrieve a `Role` object.</td>
+ *      <td><p> Retrieves a `Role` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +84,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListRoles</td>
- *      <td><p> API to retrieve a list of `Role` objects.</td>
+ *      <td><p> Lists `Role` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -145,7 +146,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RoleServiceClient implements BackgroundResource {
-  private final RoleServiceSettings settings;
+  private final @Nullable RoleServiceSettings settings;
   private final RoleServiceStub stub;
 
   /** Constructs an instance of RoleServiceClient with default settings. */
@@ -184,7 +185,7 @@ public class RoleServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RoleServiceSettings getSettings() {
+  public final @Nullable RoleServiceSettings getSettings() {
     return settings;
   }
 
@@ -194,7 +195,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -214,7 +215,7 @@ public class RoleServiceClient implements BackgroundResource {
    *     `networks/{network_code}/roles/{role_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Role getRole(RoleName name) {
+  public final Role getRole(@Nullable RoleName name) {
     GetRoleRequest request =
         GetRoleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRole(request);
@@ -222,7 +223,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -249,7 +250,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -277,7 +278,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -304,7 +305,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -326,7 +327,7 @@ public class RoleServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRolesPagedResponse listRoles(NetworkName parent) {
+  public final ListRolesPagedResponse listRoles(@Nullable NetworkName parent) {
     ListRolesRequest request =
         ListRolesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRoles(request);
@@ -334,7 +335,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -363,7 +364,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -398,7 +399,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -432,7 +433,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -523,8 +524,8 @@ public class RoleServiceClient implements BackgroundResource {
       extends AbstractPage<ListRolesRequest, ListRolesResponse, Role, ListRolesPage> {
 
     private ListRolesPage(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
-        ListRolesResponse response) {
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable ListRolesResponse response) {
       super(context, response);
     }
 
@@ -534,14 +535,14 @@ public class RoleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRolesPage createPage(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
-        ListRolesResponse response) {
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable ListRolesResponse response) {
       return new ListRolesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRolesPage> createPageAsync(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
         ApiFuture<ListRolesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -551,7 +552,7 @@ public class RoleServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRolesRequest, ListRolesResponse, Role, ListRolesPage, ListRolesFixedSizeCollection> {
 
-    private ListRolesFixedSizeCollection(List<ListRolesPage> pages, int collectionSize) {
+    private ListRolesFixedSizeCollection(@Nullable List<ListRolesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -561,7 +562,7 @@ public class RoleServiceClient implements BackgroundResource {
 
     @Override
     protected ListRolesFixedSizeCollection createCollection(
-        List<ListRolesPage> pages, int collectionSize) {
+        @Nullable List<ListRolesPage> pages, int collectionSize) {
       return new ListRolesFixedSizeCollection(pages, collectionSize);
     }
   }

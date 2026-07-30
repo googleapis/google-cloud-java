@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,7 +222,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EntitySignalsMappingServiceClient implements BackgroundResource {
-  private final EntitySignalsMappingServiceSettings settings;
+  private final @Nullable EntitySignalsMappingServiceSettings settings;
   private final EntitySignalsMappingServiceStub stub;
 
   /** Constructs an instance of EntitySignalsMappingServiceClient with default settings. */
@@ -264,7 +265,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EntitySignalsMappingServiceSettings getSettings() {
+  public final @Nullable EntitySignalsMappingServiceSettings getSettings() {
     return settings;
   }
 
@@ -297,7 +298,8 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    *     `networks/{network_code}/entitySignalsMappings/{entity_signals_mapping_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntitySignalsMapping getEntitySignalsMapping(EntitySignalsMappingName name) {
+  public final EntitySignalsMapping getEntitySignalsMapping(
+      @Nullable EntitySignalsMappingName name) {
     GetEntitySignalsMappingRequest request =
         GetEntitySignalsMappingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -428,7 +430,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntitySignalsMappingsPagedResponse listEntitySignalsMappings(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListEntitySignalsMappingsRequest request =
         ListEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -618,7 +620,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntitySignalsMapping createEntitySignalsMapping(
-      NetworkName parent, EntitySignalsMapping entitySignalsMapping) {
+      @Nullable NetworkName parent, EntitySignalsMapping entitySignalsMapping) {
     CreateEntitySignalsMappingRequest request =
         CreateEntitySignalsMappingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -861,7 +863,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateEntitySignalsMappingsResponse batchCreateEntitySignalsMappings(
-      NetworkName parent, List<CreateEntitySignalsMappingRequest> requests) {
+      @Nullable NetworkName parent, List<CreateEntitySignalsMappingRequest> requests) {
     BatchCreateEntitySignalsMappingsRequest request =
         BatchCreateEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1003,7 +1005,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateEntitySignalsMappingsResponse batchUpdateEntitySignalsMappings(
-      NetworkName parent, List<UpdateEntitySignalsMappingRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateEntitySignalsMappingRequest> requests) {
     BatchUpdateEntitySignalsMappingsRequest request =
         BatchUpdateEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1182,12 +1184,13 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
           ListEntitySignalsMappingsPage> {
 
     private ListEntitySignalsMappingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
             context,
-        ListEntitySignalsMappingsResponse response) {
+        @Nullable ListEntitySignalsMappingsResponse response) {
       super(context, response);
     }
 
@@ -1197,18 +1200,20 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitySignalsMappingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
             context,
-        ListEntitySignalsMappingsResponse response) {
+        @Nullable ListEntitySignalsMappingsResponse response) {
       return new ListEntitySignalsMappingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitySignalsMappingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
@@ -1227,7 +1232,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
           ListEntitySignalsMappingsFixedSizeCollection> {
 
     private ListEntitySignalsMappingsFixedSizeCollection(
-        List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1237,7 +1242,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitySignalsMappingsFixedSizeCollection createCollection(
-        List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
       return new ListEntitySignalsMappingsFixedSizeCollection(pages, collectionSize);
     }
   }

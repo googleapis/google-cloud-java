@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -284,7 +285,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TranscoderServiceClient implements BackgroundResource {
-  private final TranscoderServiceSettings settings;
+  private final @Nullable TranscoderServiceSettings settings;
   private final TranscoderServiceStub stub;
 
   /** Constructs an instance of TranscoderServiceClient with default settings. */
@@ -324,7 +325,7 @@ public class TranscoderServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TranscoderServiceSettings getSettings() {
+  public final @Nullable TranscoderServiceSettings getSettings() {
     return settings;
   }
 
@@ -356,7 +357,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    * @param job Required. Parameters for creating transcoding job.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(LocationName parent, Job job) {
+  public final Job createJob(@Nullable LocationName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -474,7 +475,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    * @param parent Required. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(LocationName parent) {
+  public final ListJobsPagedResponse listJobs(@Nullable LocationName parent) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listJobs(request);
@@ -637,7 +638,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/jobs/{job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -747,7 +748,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/jobs/{job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(JobName name) {
+  public final void deleteJob(@Nullable JobName name) {
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -868,7 +869,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final JobTemplate createJobTemplate(
-      LocationName parent, JobTemplate jobTemplate, String jobTemplateId) {
+      @Nullable LocationName parent, JobTemplate jobTemplate, String jobTemplateId) {
     CreateJobTemplateRequest request =
         CreateJobTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1003,7 +1004,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *     templates. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobTemplatesPagedResponse listJobTemplates(LocationName parent) {
+  public final ListJobTemplatesPagedResponse listJobTemplates(@Nullable LocationName parent) {
     ListJobTemplatesRequest request =
         ListJobTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1174,7 +1175,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final JobTemplate getJobTemplate(JobTemplateName name) {
+  public final JobTemplate getJobTemplate(@Nullable JobTemplateName name) {
     GetJobTemplateRequest request =
         GetJobTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJobTemplate(request);
@@ -1285,7 +1286,7 @@ public class TranscoderServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/jobTemplates/{job_template}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJobTemplate(JobTemplateName name) {
+  public final void deleteJobTemplate(@Nullable JobTemplateName name) {
     DeleteJobTemplateRequest request =
         DeleteJobTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1430,7 +1431,8 @@ public class TranscoderServiceClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1440,13 +1442,14 @@ public class TranscoderServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1456,7 +1459,7 @@ public class TranscoderServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1466,7 +1469,7 @@ public class TranscoderServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1500,8 +1503,9 @@ public class TranscoderServiceClient implements BackgroundResource {
           ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate, ListJobTemplatesPage> {
 
     private ListJobTemplatesPage(
-        PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate> context,
-        ListJobTemplatesResponse response) {
+        @Nullable PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
+            context,
+        @Nullable ListJobTemplatesResponse response) {
       super(context, response);
     }
 
@@ -1511,14 +1515,16 @@ public class TranscoderServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobTemplatesPage createPage(
-        PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate> context,
-        ListJobTemplatesResponse response) {
+        @Nullable PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
+            context,
+        @Nullable ListJobTemplatesResponse response) {
       return new ListJobTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobTemplatesPage> createPageAsync(
-        PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate> context,
+        @Nullable PageContext<ListJobTemplatesRequest, ListJobTemplatesResponse, JobTemplate>
+            context,
         ApiFuture<ListJobTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1533,7 +1539,7 @@ public class TranscoderServiceClient implements BackgroundResource {
           ListJobTemplatesFixedSizeCollection> {
 
     private ListJobTemplatesFixedSizeCollection(
-        List<ListJobTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListJobTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1543,7 +1549,7 @@ public class TranscoderServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobTemplatesFixedSizeCollection createCollection(
-        List<ListJobTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListJobTemplatesPage> pages, int collectionSize) {
       return new ListJobTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }

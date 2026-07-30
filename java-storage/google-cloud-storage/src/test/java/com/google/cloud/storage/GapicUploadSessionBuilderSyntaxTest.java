@@ -30,9 +30,7 @@ import com.google.storage.v2.WriteObjectRequest;
 import com.google.storage.v2.WriteObjectResponse;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.Mockito;
 
 /**
  * For our {@link GapicUploadSessionBuilder} a number of items must be provided to ultimately
@@ -43,7 +41,6 @@ import org.mockito.junit.MockitoJUnitRunner;
  * the builders. Each builder is built which runs some minor validation - such as null checks - but
  * otherwise does not have any other logic.
  */
-@RunWith(MockitoJUnitRunner.class)
 public final class GapicUploadSessionBuilderSyntaxTest {
 
   private final WriteObjectRequest req = WriteObjectRequest.getDefaultInstance();
@@ -52,14 +49,17 @@ public final class GapicUploadSessionBuilderSyntaxTest {
   // We need them to be non-null, but otherwise they do not matter.
   // They have many dependencies which would need to be constructed in order to instantiate a
   // literal instance.
-  @Mock private ClientStreamingCallable<WriteObjectRequest, WriteObjectResponse> write;
+  private ClientStreamingCallable<WriteObjectRequest, WriteObjectResponse> write;
 
-  @Mock
   private UnaryCallable<StartResumableWriteRequest, StartResumableWriteResponse>
       startResumableWrite;
 
   @Before
   public void setUp() throws Exception {
+    write =
+        Mockito.mock(ClientStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
+    startResumableWrite =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(startResumableWrite.call(any()))
         .thenReturn(StartResumableWriteResponse.getDefaultInstance());
   }

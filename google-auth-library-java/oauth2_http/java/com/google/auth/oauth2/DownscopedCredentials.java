@@ -40,6 +40,7 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * DownscopedCredentials enables the ability to downscope, or restrict, the Identity and Access
@@ -94,6 +95,7 @@ import java.io.IOException;
  * token, allowing for automatic token refreshes by providing a {@link
  * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}.
  */
+@NullMarked
 public final class DownscopedCredentials extends OAuth2Credentials {
 
   private final GoogleCredentials sourceCredential;

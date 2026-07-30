@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -264,29 +265,31 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             || this.currentBatchRowIndex == (this.vectorSchemaRoot.getRowCount() - 1)) {
           /* Start of iteration or we have exhausted the current batch */
           // Advance the cursor. Potentially blocking operation.
-          BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
-          if (batchWrapper.getException() != null) {
-            throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
-          }
-          if (batchWrapper.isLast()) {
-            /* Marks the end of the records */
-            if (this.vectorSchemaRoot != null) {
-              // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
-              // the last batch
-              this.vectorSchemaRoot.clear();
+          try (Scope scope = makeOriginalContextCurrent()) {
+            BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
+            if (batchWrapper.getException() != null) {
+              throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
             }
-            this.hasReachedEnd = true;
+            if (batchWrapper.isLast()) {
+              /* Marks the end of the records */
+              if (this.vectorSchemaRoot != null) {
+                // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
+                // the last batch
+                this.vectorSchemaRoot.clear();
+              }
+              this.hasReachedEnd = true;
+              this.rowCount++;
+              return false;
+            }
+            // Valid batch, process it
+            ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
+            // Populates vectorSchemaRoot
+            this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
+            // Pointing to the first row in this fresh batch
+            this.currentBatchRowIndex = 0;
             this.rowCount++;
-            return false;
+            return true;
           }
-          // Valid batch, process it
-          ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-          // Populates vectorSchemaRoot
-          this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-          // Pointing to the first row in this fresh batch
-          this.currentBatchRowIndex = 0;
-          this.rowCount++;
-          return true;
         }
         // There are rows left in the current batch.
         else if (this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount()) {

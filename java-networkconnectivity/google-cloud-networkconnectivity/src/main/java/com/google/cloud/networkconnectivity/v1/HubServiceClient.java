@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -656,7 +657,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class HubServiceClient implements BackgroundResource {
-  private final HubServiceSettings settings;
+  private final @Nullable HubServiceSettings settings;
   private final HubServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -697,7 +698,7 @@ public class HubServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final HubServiceSettings getSettings() {
+  public final @Nullable HubServiceSettings getSettings() {
     return settings;
   }
 
@@ -736,7 +737,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHubsPagedResponse listHubs(LocationName parent) {
+  public final ListHubsPagedResponse listHubs(@Nullable LocationName parent) {
     ListHubsRequest request =
         ListHubsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listHubs(request);
@@ -898,7 +899,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the hub resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Hub getHub(HubName name) {
+  public final Hub getHub(@Nullable HubName name) {
     GetHubRequest request =
         GetHubRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHub(request);
@@ -1007,7 +1008,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hub, OperationMetadata> createHubAsync(
-      LocationName parent, Hub hub, String hubId) {
+      @Nullable LocationName parent, Hub hub, String hubId) {
     CreateHubRequest request =
         CreateHubRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1286,7 +1287,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the hub to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteHubAsync(HubName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteHubAsync(@Nullable HubName name) {
     DeleteHubRequest request =
         DeleteHubRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteHubAsync(request);
@@ -1430,7 +1431,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHubSpokesPagedResponse listHubSpokes(HubName name) {
+  public final ListHubSpokesPagedResponse listHubSpokes(@Nullable HubName name) {
     ListHubSpokesRequest request =
         ListHubSpokesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return listHubSpokes(request);
@@ -1606,7 +1607,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the hub.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QueryHubStatusPagedResponse queryHubStatus(HubName name) {
+  public final QueryHubStatusPagedResponse queryHubStatus(@Nullable HubName name) {
     QueryHubStatusRequest request =
         QueryHubStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return queryHubStatus(request);
@@ -1776,7 +1777,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSpokesPagedResponse listSpokes(LocationName parent) {
+  public final ListSpokesPagedResponse listSpokes(@Nullable LocationName parent) {
     ListSpokesRequest request =
         ListSpokesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSpokes(request);
@@ -1938,7 +1939,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the spoke resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Spoke getSpoke(SpokeName name) {
+  public final Spoke getSpoke(@Nullable SpokeName name) {
     GetSpokeRequest request =
         GetSpokeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpoke(request);
@@ -2051,7 +2052,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Spoke, OperationMetadata> createSpokeAsync(
-      LocationName parent, Spoke spoke, String spokeId) {
+      @Nullable LocationName parent, Spoke spoke, String spokeId) {
     CreateSpokeRequest request =
         CreateSpokeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2341,7 +2342,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
-      HubName name, SpokeName spokeUri) {
+      @Nullable HubName name, @Nullable SpokeName spokeUri) {
     RejectHubSpokeRequest request =
         RejectHubSpokeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2376,7 +2377,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
-      HubName name, String spokeUri) {
+      @Nullable HubName name, String spokeUri) {
     RejectHubSpokeRequest request =
         RejectHubSpokeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2411,7 +2412,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
-      String name, SpokeName spokeUri) {
+      String name, @Nullable SpokeName spokeUri) {
     RejectHubSpokeRequest request =
         RejectHubSpokeRequest.newBuilder()
             .setName(name)
@@ -2576,7 +2577,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
-      HubName name, SpokeName spokeUri) {
+      @Nullable HubName name, @Nullable SpokeName spokeUri) {
     AcceptHubSpokeRequest request =
         AcceptHubSpokeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2609,7 +2610,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
-      HubName name, String spokeUri) {
+      @Nullable HubName name, String spokeUri) {
     AcceptHubSpokeRequest request =
         AcceptHubSpokeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2642,7 +2643,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
-      String name, SpokeName spokeUri) {
+      String name, @Nullable SpokeName spokeUri) {
     AcceptHubSpokeRequest request =
         AcceptHubSpokeRequest.newBuilder()
             .setName(name)
@@ -2799,7 +2800,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
-      HubName name, SpokeName spokeUri, String spokeEtag) {
+      @Nullable HubName name, @Nullable SpokeName spokeUri, String spokeEtag) {
     AcceptSpokeUpdateRequest request =
         AcceptSpokeUpdateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2836,7 +2837,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
-      HubName name, String spokeUri, String spokeEtag) {
+      @Nullable HubName name, String spokeUri, String spokeEtag) {
     AcceptSpokeUpdateRequest request =
         AcceptSpokeUpdateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2873,7 +2874,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AcceptSpokeUpdateResponse, OperationMetadata> acceptSpokeUpdateAsync(
-      String name, SpokeName spokeUri, String spokeEtag) {
+      String name, @Nullable SpokeName spokeUri, String spokeEtag) {
     AcceptSpokeUpdateRequest request =
         AcceptSpokeUpdateRequest.newBuilder()
             .setName(name)
@@ -3043,7 +3044,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
-      HubName name, SpokeName spokeUri, String spokeEtag) {
+      @Nullable HubName name, @Nullable SpokeName spokeUri, String spokeEtag) {
     RejectSpokeUpdateRequest request =
         RejectSpokeUpdateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3080,7 +3081,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
-      HubName name, String spokeUri, String spokeEtag) {
+      @Nullable HubName name, String spokeUri, String spokeEtag) {
     RejectSpokeUpdateRequest request =
         RejectSpokeUpdateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3117,7 +3118,7 @@ public class HubServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RejectSpokeUpdateResponse, OperationMetadata> rejectSpokeUpdateAsync(
-      String name, SpokeName spokeUri, String spokeEtag) {
+      String name, @Nullable SpokeName spokeUri, String spokeEtag) {
     RejectSpokeUpdateRequest request =
         RejectSpokeUpdateRequest.newBuilder()
             .setName(name)
@@ -3284,7 +3285,8 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the spoke to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSpokeAsync(SpokeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSpokeAsync(
+      @Nullable SpokeName name) {
     DeleteSpokeRequest request =
         DeleteSpokeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSpokeAsync(request);
@@ -3425,7 +3427,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the route table resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RouteTable getRouteTable(RouteTableName name) {
+  public final RouteTable getRouteTable(@Nullable RouteTableName name) {
     GetRouteTableRequest request =
         GetRouteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRouteTable(request);
@@ -3533,7 +3535,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the route resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Route getRoute(HubRouteName name) {
+  public final Route getRoute(@Nullable HubRouteName name) {
     GetRouteRequest request =
         GetRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRoute(request);
@@ -3643,7 +3645,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRoutesPagedResponse listRoutes(RouteTableName parent) {
+  public final ListRoutesPagedResponse listRoutes(@Nullable RouteTableName parent) {
     ListRoutesRequest request =
         ListRoutesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRoutes(request);
@@ -3807,7 +3809,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRouteTablesPagedResponse listRouteTables(HubName parent) {
+  public final ListRouteTablesPagedResponse listRouteTables(@Nullable HubName parent) {
     ListRouteTablesRequest request =
         ListRouteTablesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3974,7 +3976,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param name Required. The name of the route table resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group getGroup(GroupName name) {
+  public final Group getGroup(@Nullable GroupName name) {
     GetGroupRequest request =
         GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGroup(request);
@@ -4084,7 +4086,7 @@ public class HubServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(HubName parent) {
+  public final ListGroupsPagedResponse listGroups(@Nullable HubName parent) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listGroups(request);
@@ -4747,7 +4749,8 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractPage<ListHubsRequest, ListHubsResponse, Hub, ListHubsPage> {
 
     private ListHubsPage(
-        PageContext<ListHubsRequest, ListHubsResponse, Hub> context, ListHubsResponse response) {
+        @Nullable PageContext<ListHubsRequest, ListHubsResponse, Hub> context,
+        @Nullable ListHubsResponse response) {
       super(context, response);
     }
 
@@ -4757,13 +4760,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListHubsPage createPage(
-        PageContext<ListHubsRequest, ListHubsResponse, Hub> context, ListHubsResponse response) {
+        @Nullable PageContext<ListHubsRequest, ListHubsResponse, Hub> context,
+        @Nullable ListHubsResponse response) {
       return new ListHubsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHubsPage> createPageAsync(
-        PageContext<ListHubsRequest, ListHubsResponse, Hub> context,
+        @Nullable PageContext<ListHubsRequest, ListHubsResponse, Hub> context,
         ApiFuture<ListHubsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4773,7 +4777,7 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListHubsRequest, ListHubsResponse, Hub, ListHubsPage, ListHubsFixedSizeCollection> {
 
-    private ListHubsFixedSizeCollection(List<ListHubsPage> pages, int collectionSize) {
+    private ListHubsFixedSizeCollection(@Nullable List<ListHubsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4783,7 +4787,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListHubsFixedSizeCollection createCollection(
-        List<ListHubsPage> pages, int collectionSize) {
+        @Nullable List<ListHubsPage> pages, int collectionSize) {
       return new ListHubsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4816,8 +4820,8 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractPage<ListHubSpokesRequest, ListHubSpokesResponse, Spoke, ListHubSpokesPage> {
 
     private ListHubSpokesPage(
-        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
-        ListHubSpokesResponse response) {
+        @Nullable PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        @Nullable ListHubSpokesResponse response) {
       super(context, response);
     }
 
@@ -4827,14 +4831,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListHubSpokesPage createPage(
-        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
-        ListHubSpokesResponse response) {
+        @Nullable PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        @Nullable ListHubSpokesResponse response) {
       return new ListHubSpokesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHubSpokesPage> createPageAsync(
-        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        @Nullable PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
         ApiFuture<ListHubSpokesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4848,7 +4852,8 @@ public class HubServiceClient implements BackgroundResource {
           ListHubSpokesPage,
           ListHubSpokesFixedSizeCollection> {
 
-    private ListHubSpokesFixedSizeCollection(List<ListHubSpokesPage> pages, int collectionSize) {
+    private ListHubSpokesFixedSizeCollection(
+        @Nullable List<ListHubSpokesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4858,7 +4863,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListHubSpokesFixedSizeCollection createCollection(
-        List<ListHubSpokesPage> pages, int collectionSize) {
+        @Nullable List<ListHubSpokesPage> pages, int collectionSize) {
       return new ListHubSpokesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4892,8 +4897,9 @@ public class HubServiceClient implements BackgroundResource {
           QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry, QueryHubStatusPage> {
 
     private QueryHubStatusPage(
-        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
-        QueryHubStatusResponse response) {
+        @Nullable PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>
+            context,
+        @Nullable QueryHubStatusResponse response) {
       super(context, response);
     }
 
@@ -4903,14 +4909,16 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected QueryHubStatusPage createPage(
-        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
-        QueryHubStatusResponse response) {
+        @Nullable PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>
+            context,
+        @Nullable QueryHubStatusResponse response) {
       return new QueryHubStatusPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryHubStatusPage> createPageAsync(
-        PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry> context,
+        @Nullable PageContext<QueryHubStatusRequest, QueryHubStatusResponse, HubStatusEntry>
+            context,
         ApiFuture<QueryHubStatusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4924,7 +4932,8 @@ public class HubServiceClient implements BackgroundResource {
           QueryHubStatusPage,
           QueryHubStatusFixedSizeCollection> {
 
-    private QueryHubStatusFixedSizeCollection(List<QueryHubStatusPage> pages, int collectionSize) {
+    private QueryHubStatusFixedSizeCollection(
+        @Nullable List<QueryHubStatusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4934,7 +4943,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected QueryHubStatusFixedSizeCollection createCollection(
-        List<QueryHubStatusPage> pages, int collectionSize) {
+        @Nullable List<QueryHubStatusPage> pages, int collectionSize) {
       return new QueryHubStatusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4965,8 +4974,8 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractPage<ListSpokesRequest, ListSpokesResponse, Spoke, ListSpokesPage> {
 
     private ListSpokesPage(
-        PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
-        ListSpokesResponse response) {
+        @Nullable PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
+        @Nullable ListSpokesResponse response) {
       super(context, response);
     }
 
@@ -4976,14 +4985,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpokesPage createPage(
-        PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
-        ListSpokesResponse response) {
+        @Nullable PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
+        @Nullable ListSpokesResponse response) {
       return new ListSpokesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpokesPage> createPageAsync(
-        PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
+        @Nullable PageContext<ListSpokesRequest, ListSpokesResponse, Spoke> context,
         ApiFuture<ListSpokesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4997,7 +5006,8 @@ public class HubServiceClient implements BackgroundResource {
           ListSpokesPage,
           ListSpokesFixedSizeCollection> {
 
-    private ListSpokesFixedSizeCollection(List<ListSpokesPage> pages, int collectionSize) {
+    private ListSpokesFixedSizeCollection(
+        @Nullable List<ListSpokesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5007,7 +5017,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpokesFixedSizeCollection createCollection(
-        List<ListSpokesPage> pages, int collectionSize) {
+        @Nullable List<ListSpokesPage> pages, int collectionSize) {
       return new ListSpokesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5038,8 +5048,8 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractPage<ListRoutesRequest, ListRoutesResponse, Route, ListRoutesPage> {
 
     private ListRoutesPage(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
-        ListRoutesResponse response) {
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable ListRoutesResponse response) {
       super(context, response);
     }
 
@@ -5049,14 +5059,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListRoutesPage createPage(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
-        ListRoutesResponse response) {
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable ListRoutesResponse response) {
       return new ListRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRoutesPage> createPageAsync(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
         ApiFuture<ListRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5070,7 +5080,8 @@ public class HubServiceClient implements BackgroundResource {
           ListRoutesPage,
           ListRoutesFixedSizeCollection> {
 
-    private ListRoutesFixedSizeCollection(List<ListRoutesPage> pages, int collectionSize) {
+    private ListRoutesFixedSizeCollection(
+        @Nullable List<ListRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5080,7 +5091,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListRoutesFixedSizeCollection createCollection(
-        List<ListRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListRoutesPage> pages, int collectionSize) {
       return new ListRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5114,8 +5125,8 @@ public class HubServiceClient implements BackgroundResource {
           ListRouteTablesRequest, ListRouteTablesResponse, RouteTable, ListRouteTablesPage> {
 
     private ListRouteTablesPage(
-        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
-        ListRouteTablesResponse response) {
+        @Nullable PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        @Nullable ListRouteTablesResponse response) {
       super(context, response);
     }
 
@@ -5125,14 +5136,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListRouteTablesPage createPage(
-        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
-        ListRouteTablesResponse response) {
+        @Nullable PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        @Nullable ListRouteTablesResponse response) {
       return new ListRouteTablesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRouteTablesPage> createPageAsync(
-        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        @Nullable PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
         ApiFuture<ListRouteTablesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5147,7 +5158,7 @@ public class HubServiceClient implements BackgroundResource {
           ListRouteTablesFixedSizeCollection> {
 
     private ListRouteTablesFixedSizeCollection(
-        List<ListRouteTablesPage> pages, int collectionSize) {
+        @Nullable List<ListRouteTablesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5157,7 +5168,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListRouteTablesFixedSizeCollection createCollection(
-        List<ListRouteTablesPage> pages, int collectionSize) {
+        @Nullable List<ListRouteTablesPage> pages, int collectionSize) {
       return new ListRouteTablesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5188,8 +5199,8 @@ public class HubServiceClient implements BackgroundResource {
       extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
 
     private ListGroupsPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       super(context, response);
     }
 
@@ -5199,14 +5210,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupsPage createPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       return new ListGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupsPage> createPageAsync(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
         ApiFuture<ListGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5220,7 +5231,8 @@ public class HubServiceClient implements BackgroundResource {
           ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
-    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+    private ListGroupsFixedSizeCollection(
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5230,7 +5242,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListGroupsFixedSizeCollection createCollection(
-        List<ListGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       return new ListGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5264,8 +5276,8 @@ public class HubServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5275,14 +5287,14 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5296,7 +5308,8 @@ public class HubServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5306,7 +5319,7 @@ public class HubServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

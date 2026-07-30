@@ -11,6 +11,5 @@
   "repo_short": "java-beyondcorp-clientgateways",
   "distribution_name": "com.google.cloud:google-cloud-beyondcorp-clientgateways",
   "api_id": "beyondcorp.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

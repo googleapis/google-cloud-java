@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -220,7 +221,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResource {
-  private final OrgPolicyViolationsPreviewServiceSettings settings;
+  private final @Nullable OrgPolicyViolationsPreviewServiceSettings settings;
   private final OrgPolicyViolationsPreviewServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -273,7 +274,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final OrgPolicyViolationsPreviewServiceSettings getSettings() {
+  public final @Nullable OrgPolicyViolationsPreviewServiceSettings getSettings() {
     return settings;
   }
 
@@ -332,7 +333,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrgPolicyViolationsPreviewsPagedResponse listOrgPolicyViolationsPreviews(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListOrgPolicyViolationsPreviewsRequest request =
         ListOrgPolicyViolationsPreviewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -539,7 +540,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OrgPolicyViolationsPreview getOrgPolicyViolationsPreview(
-      OrgPolicyViolationsPreviewName name) {
+      @Nullable OrgPolicyViolationsPreviewName name) {
     GetOrgPolicyViolationsPreviewRequest request =
         GetOrgPolicyViolationsPreviewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -702,7 +703,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
   public final OperationFuture<
           OrgPolicyViolationsPreview, CreateOrgPolicyViolationsPreviewOperationMetadata>
       createOrgPolicyViolationsPreviewAsync(
-          OrganizationLocationName parent,
+          @Nullable OrganizationLocationName parent,
           OrgPolicyViolationsPreview orgPolicyViolationsPreview,
           String orgPolicyViolationsPreviewId) {
     CreateOrgPolicyViolationsPreviewRequest request =
@@ -921,7 +922,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrgPolicyViolationsPagedResponse listOrgPolicyViolations(
-      OrgPolicyViolationsPreviewName parent) {
+      @Nullable OrgPolicyViolationsPreviewName parent) {
     ListOrgPolicyViolationsRequest request =
         ListOrgPolicyViolationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1156,12 +1157,13 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
           ListOrgPolicyViolationsPreviewsPage> {
 
     private ListOrgPolicyViolationsPreviewsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsPreviewsRequest,
                 ListOrgPolicyViolationsPreviewsResponse,
                 OrgPolicyViolationsPreview>
             context,
-        ListOrgPolicyViolationsPreviewsResponse response) {
+        @Nullable ListOrgPolicyViolationsPreviewsResponse response) {
       super(context, response);
     }
 
@@ -1171,18 +1173,20 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
 
     @Override
     protected ListOrgPolicyViolationsPreviewsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsPreviewsRequest,
                 ListOrgPolicyViolationsPreviewsResponse,
                 OrgPolicyViolationsPreview>
             context,
-        ListOrgPolicyViolationsPreviewsResponse response) {
+        @Nullable ListOrgPolicyViolationsPreviewsResponse response) {
       return new ListOrgPolicyViolationsPreviewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrgPolicyViolationsPreviewsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsPreviewsRequest,
                 ListOrgPolicyViolationsPreviewsResponse,
                 OrgPolicyViolationsPreview>
@@ -1201,7 +1205,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
           ListOrgPolicyViolationsPreviewsFixedSizeCollection> {
 
     private ListOrgPolicyViolationsPreviewsFixedSizeCollection(
-        List<ListOrgPolicyViolationsPreviewsPage> pages, int collectionSize) {
+        @Nullable List<ListOrgPolicyViolationsPreviewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1211,7 +1215,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
 
     @Override
     protected ListOrgPolicyViolationsPreviewsFixedSizeCollection createCollection(
-        List<ListOrgPolicyViolationsPreviewsPage> pages, int collectionSize) {
+        @Nullable List<ListOrgPolicyViolationsPreviewsPage> pages, int collectionSize) {
       return new ListOrgPolicyViolationsPreviewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1250,10 +1254,11 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
           ListOrgPolicyViolationsPage> {
 
     private ListOrgPolicyViolationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsRequest, ListOrgPolicyViolationsResponse, OrgPolicyViolation>
             context,
-        ListOrgPolicyViolationsResponse response) {
+        @Nullable ListOrgPolicyViolationsResponse response) {
       super(context, response);
     }
 
@@ -1263,16 +1268,18 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
 
     @Override
     protected ListOrgPolicyViolationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsRequest, ListOrgPolicyViolationsResponse, OrgPolicyViolation>
             context,
-        ListOrgPolicyViolationsResponse response) {
+        @Nullable ListOrgPolicyViolationsResponse response) {
       return new ListOrgPolicyViolationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrgPolicyViolationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrgPolicyViolationsRequest, ListOrgPolicyViolationsResponse, OrgPolicyViolation>
             context,
         ApiFuture<ListOrgPolicyViolationsResponse> futureResponse) {
@@ -1289,7 +1296,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
           ListOrgPolicyViolationsFixedSizeCollection> {
 
     private ListOrgPolicyViolationsFixedSizeCollection(
-        List<ListOrgPolicyViolationsPage> pages, int collectionSize) {
+        @Nullable List<ListOrgPolicyViolationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1299,7 +1306,7 @@ public class OrgPolicyViolationsPreviewServiceClient implements BackgroundResour
 
     @Override
     protected ListOrgPolicyViolationsFixedSizeCollection createCollection(
-        List<ListOrgPolicyViolationsPage> pages, int collectionSize) {
+        @Nullable List<ListOrgPolicyViolationsPage> pages, int collectionSize) {
       return new ListOrgPolicyViolationsFixedSizeCollection(pages, collectionSize);
     }
   }

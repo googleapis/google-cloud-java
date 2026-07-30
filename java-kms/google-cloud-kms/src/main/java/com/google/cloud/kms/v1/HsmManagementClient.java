@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -396,7 +397,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class HsmManagementClient implements BackgroundResource {
-  private final HsmManagementSettings settings;
+  private final @Nullable HsmManagementSettings settings;
   private final HsmManagementStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -444,7 +445,7 @@ public class HsmManagementClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final HsmManagementSettings getSettings() {
+  public final @Nullable HsmManagementSettings getSettings() {
     return settings;
   }
 
@@ -496,7 +497,7 @@ public class HsmManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSingleTenantHsmInstancesPagedResponse listSingleTenantHsmInstances(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListSingleTenantHsmInstancesRequest request =
         ListSingleTenantHsmInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -680,7 +681,7 @@ public class HsmManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SingleTenantHsmInstance getSingleTenantHsmInstance(
-      SingleTenantHsmInstanceName name) {
+      @Nullable SingleTenantHsmInstanceName name) {
     GetSingleTenantHsmInstanceRequest request =
         GetSingleTenantHsmInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -824,7 +825,7 @@ public class HsmManagementClient implements BackgroundResource {
    */
   public final OperationFuture<SingleTenantHsmInstance, CreateSingleTenantHsmInstanceMetadata>
       createSingleTenantHsmInstanceAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           SingleTenantHsmInstance singleTenantHsmInstance,
           String singleTenantHsmInstanceId) {
     CreateSingleTenantHsmInstanceRequest request =
@@ -1031,7 +1032,7 @@ public class HsmManagementClient implements BackgroundResource {
   public final OperationFuture<
           SingleTenantHsmInstanceProposal, CreateSingleTenantHsmInstanceProposalMetadata>
       createSingleTenantHsmInstanceProposalAsync(
-          SingleTenantHsmInstanceName parent,
+          @Nullable SingleTenantHsmInstanceName parent,
           SingleTenantHsmInstanceProposal singleTenantHsmInstanceProposal,
           String singleTenantHsmInstanceProposalId) {
     CreateSingleTenantHsmInstanceProposalRequest request =
@@ -1254,7 +1255,7 @@ public class HsmManagementClient implements BackgroundResource {
    */
   public final ApproveSingleTenantHsmInstanceProposalResponse
       approveSingleTenantHsmInstanceProposal(
-          SingleTenantHsmInstanceProposalName name,
+          @Nullable SingleTenantHsmInstanceProposalName name,
           ApproveSingleTenantHsmInstanceProposalRequest.QuorumReply quorumReply) {
     ApproveSingleTenantHsmInstanceProposalRequest request =
         ApproveSingleTenantHsmInstanceProposalRequest.newBuilder()
@@ -1416,7 +1417,8 @@ public class HsmManagementClient implements BackgroundResource {
   public final OperationFuture<
           ExecuteSingleTenantHsmInstanceProposalResponse,
           ExecuteSingleTenantHsmInstanceProposalMetadata>
-      executeSingleTenantHsmInstanceProposalAsync(SingleTenantHsmInstanceProposalName name) {
+      executeSingleTenantHsmInstanceProposalAsync(
+          @Nullable SingleTenantHsmInstanceProposalName name) {
     ExecuteSingleTenantHsmInstanceProposalRequest request =
         ExecuteSingleTenantHsmInstanceProposalRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1608,7 +1610,7 @@ public class HsmManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SingleTenantHsmInstanceProposal getSingleTenantHsmInstanceProposal(
-      SingleTenantHsmInstanceProposalName name) {
+      @Nullable SingleTenantHsmInstanceProposalName name) {
     GetSingleTenantHsmInstanceProposalRequest request =
         GetSingleTenantHsmInstanceProposalRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1746,7 +1748,7 @@ public class HsmManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSingleTenantHsmInstanceProposalsPagedResponse
-      listSingleTenantHsmInstanceProposals(SingleTenantHsmInstanceName parent) {
+      listSingleTenantHsmInstanceProposals(@Nullable SingleTenantHsmInstanceName parent) {
     ListSingleTenantHsmInstanceProposalsRequest request =
         ListSingleTenantHsmInstanceProposalsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1947,7 +1949,7 @@ public class HsmManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSingleTenantHsmInstanceProposal(
-      SingleTenantHsmInstanceProposalName name) {
+      @Nullable SingleTenantHsmInstanceProposalName name) {
     DeleteSingleTenantHsmInstanceProposalRequest request =
         DeleteSingleTenantHsmInstanceProposalRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2515,12 +2517,13 @@ public class HsmManagementClient implements BackgroundResource {
           ListSingleTenantHsmInstancesPage> {
 
     private ListSingleTenantHsmInstancesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstancesRequest,
                 ListSingleTenantHsmInstancesResponse,
                 SingleTenantHsmInstance>
             context,
-        ListSingleTenantHsmInstancesResponse response) {
+        @Nullable ListSingleTenantHsmInstancesResponse response) {
       super(context, response);
     }
 
@@ -2530,18 +2533,20 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListSingleTenantHsmInstancesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstancesRequest,
                 ListSingleTenantHsmInstancesResponse,
                 SingleTenantHsmInstance>
             context,
-        ListSingleTenantHsmInstancesResponse response) {
+        @Nullable ListSingleTenantHsmInstancesResponse response) {
       return new ListSingleTenantHsmInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSingleTenantHsmInstancesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstancesRequest,
                 ListSingleTenantHsmInstancesResponse,
                 SingleTenantHsmInstance>
@@ -2560,7 +2565,7 @@ public class HsmManagementClient implements BackgroundResource {
           ListSingleTenantHsmInstancesFixedSizeCollection> {
 
     private ListSingleTenantHsmInstancesFixedSizeCollection(
-        List<ListSingleTenantHsmInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListSingleTenantHsmInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2570,7 +2575,7 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListSingleTenantHsmInstancesFixedSizeCollection createCollection(
-        List<ListSingleTenantHsmInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListSingleTenantHsmInstancesPage> pages, int collectionSize) {
       return new ListSingleTenantHsmInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2613,12 +2618,13 @@ public class HsmManagementClient implements BackgroundResource {
           ListSingleTenantHsmInstanceProposalsPage> {
 
     private ListSingleTenantHsmInstanceProposalsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstanceProposalsRequest,
                 ListSingleTenantHsmInstanceProposalsResponse,
                 SingleTenantHsmInstanceProposal>
             context,
-        ListSingleTenantHsmInstanceProposalsResponse response) {
+        @Nullable ListSingleTenantHsmInstanceProposalsResponse response) {
       super(context, response);
     }
 
@@ -2628,18 +2634,20 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListSingleTenantHsmInstanceProposalsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstanceProposalsRequest,
                 ListSingleTenantHsmInstanceProposalsResponse,
                 SingleTenantHsmInstanceProposal>
             context,
-        ListSingleTenantHsmInstanceProposalsResponse response) {
+        @Nullable ListSingleTenantHsmInstanceProposalsResponse response) {
       return new ListSingleTenantHsmInstanceProposalsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSingleTenantHsmInstanceProposalsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSingleTenantHsmInstanceProposalsRequest,
                 ListSingleTenantHsmInstanceProposalsResponse,
                 SingleTenantHsmInstanceProposal>
@@ -2658,7 +2666,7 @@ public class HsmManagementClient implements BackgroundResource {
           ListSingleTenantHsmInstanceProposalsFixedSizeCollection> {
 
     private ListSingleTenantHsmInstanceProposalsFixedSizeCollection(
-        List<ListSingleTenantHsmInstanceProposalsPage> pages, int collectionSize) {
+        @Nullable List<ListSingleTenantHsmInstanceProposalsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2668,7 +2676,7 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListSingleTenantHsmInstanceProposalsFixedSizeCollection createCollection(
-        List<ListSingleTenantHsmInstanceProposalsPage> pages, int collectionSize) {
+        @Nullable List<ListSingleTenantHsmInstanceProposalsPage> pages, int collectionSize) {
       return new ListSingleTenantHsmInstanceProposalsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2702,8 +2710,8 @@ public class HsmManagementClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2713,14 +2721,14 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2734,7 +2742,8 @@ public class HsmManagementClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2744,7 +2753,7 @@ public class HsmManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

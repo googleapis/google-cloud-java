@@ -26,7 +26,9 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceSettingsClassComposer extends AbstractServiceSettingsClassComposer {
   private static final ServiceSettingsClassComposer INSTANCE = new ServiceSettingsClassComposer();
 

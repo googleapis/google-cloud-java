@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -354,7 +355,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ExampleStoreServiceClient implements BackgroundResource {
-  private final ExampleStoreServiceSettings settings;
+  private final @Nullable ExampleStoreServiceSettings settings;
   private final ExampleStoreServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -397,7 +398,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ExampleStoreServiceSettings getSettings() {
+  public final @Nullable ExampleStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -439,7 +440,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExampleStore, CreateExampleStoreOperationMetadata>
-      createExampleStoreAsync(LocationName parent, ExampleStore exampleStore) {
+      createExampleStoreAsync(@Nullable LocationName parent, ExampleStore exampleStore) {
     CreateExampleStoreRequest request =
         CreateExampleStoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -595,7 +596,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/exampleStores/{example_store}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExampleStore getExampleStore(ExampleStoreName name) {
+  public final ExampleStore getExampleStore(@Nullable ExampleStoreName name) {
     GetExampleStoreRequest request =
         GetExampleStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExampleStore(request);
@@ -832,7 +833,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteExampleStoreOperationMetadata> deleteExampleStoreAsync(
-      ExampleStoreName name) {
+      @Nullable ExampleStoreName name) {
     DeleteExampleStoreRequest request =
         DeleteExampleStoreRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -981,7 +982,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExampleStoresPagedResponse listExampleStores(LocationName parent) {
+  public final ListExampleStoresPagedResponse listExampleStores(@Nullable LocationName parent) {
     ListExampleStoresRequest request =
         ListExampleStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1854,8 +1855,9 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           ListExampleStoresPage> {
 
     private ListExampleStoresPage(
-        PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore> context,
-        ListExampleStoresResponse response) {
+        @Nullable PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore>
+            context,
+        @Nullable ListExampleStoresResponse response) {
       super(context, response);
     }
 
@@ -1865,14 +1867,16 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListExampleStoresPage createPage(
-        PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore> context,
-        ListExampleStoresResponse response) {
+        @Nullable PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore>
+            context,
+        @Nullable ListExampleStoresResponse response) {
       return new ListExampleStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExampleStoresPage> createPageAsync(
-        PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore> context,
+        @Nullable PageContext<ListExampleStoresRequest, ListExampleStoresResponse, ExampleStore>
+            context,
         ApiFuture<ListExampleStoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1887,7 +1891,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           ListExampleStoresFixedSizeCollection> {
 
     private ListExampleStoresFixedSizeCollection(
-        List<ListExampleStoresPage> pages, int collectionSize) {
+        @Nullable List<ListExampleStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1897,7 +1901,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListExampleStoresFixedSizeCollection createCollection(
-        List<ListExampleStoresPage> pages, int collectionSize) {
+        @Nullable List<ListExampleStoresPage> pages, int collectionSize) {
       return new ListExampleStoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1931,8 +1935,8 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           FetchExamplesRequest, FetchExamplesResponse, Example, FetchExamplesPage> {
 
     private FetchExamplesPage(
-        PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
-        FetchExamplesResponse response) {
+        @Nullable PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
+        @Nullable FetchExamplesResponse response) {
       super(context, response);
     }
 
@@ -1942,14 +1946,14 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected FetchExamplesPage createPage(
-        PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
-        FetchExamplesResponse response) {
+        @Nullable PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
+        @Nullable FetchExamplesResponse response) {
       return new FetchExamplesPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchExamplesPage> createPageAsync(
-        PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
+        @Nullable PageContext<FetchExamplesRequest, FetchExamplesResponse, Example> context,
         ApiFuture<FetchExamplesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1963,7 +1967,8 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           FetchExamplesPage,
           FetchExamplesFixedSizeCollection> {
 
-    private FetchExamplesFixedSizeCollection(List<FetchExamplesPage> pages, int collectionSize) {
+    private FetchExamplesFixedSizeCollection(
+        @Nullable List<FetchExamplesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1973,7 +1978,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected FetchExamplesFixedSizeCollection createCollection(
-        List<FetchExamplesPage> pages, int collectionSize) {
+        @Nullable List<FetchExamplesPage> pages, int collectionSize) {
       return new FetchExamplesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2007,8 +2012,8 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2018,14 +2023,14 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2039,7 +2044,8 @@ public class ExampleStoreServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2049,7 +2055,7 @@ public class ExampleStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

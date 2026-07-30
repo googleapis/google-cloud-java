@@ -45,9 +45,11 @@ import com.google.rpc.RequestInfo;
 import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** This class contains a list of standard error messages that returns from server. */
+@NullMarked
 @AutoValue
 public abstract class ErrorDetails {
 
@@ -55,8 +57,7 @@ public abstract class ErrorDetails {
    * This is the most important and special error message. It describes the cause of the error with
    * structured details that both humans and applications can depend on.
    */
-  @Nullable
-  public ErrorInfo getErrorInfo() {
+  public @Nullable ErrorInfo getErrorInfo() {
     return unpack(ErrorInfo.class);
   }
 
@@ -64,26 +65,22 @@ public abstract class ErrorDetails {
    * Describes when the clients can retry a failed request. Clients could ignore the recommendation
    * here or retry when this information is missing from error responses.
    */
-  @Nullable
-  public RetryInfo getRetryInfo() {
+  public @Nullable RetryInfo getRetryInfo() {
     return unpack(RetryInfo.class);
   }
 
   /** Describes additional debugging info. */
-  @Nullable
-  public DebugInfo getDebugInfo() {
+  public @Nullable DebugInfo getDebugInfo() {
     return unpack(DebugInfo.class);
   }
 
   /** Describes how a quota check failed. */
-  @Nullable
-  public QuotaFailure getQuotaFailure() {
+  public @Nullable QuotaFailure getQuotaFailure() {
     return unpack(QuotaFailure.class);
   }
 
   /** Describes what preconditions have failed. */
-  @Nullable
-  public PreconditionFailure getPreconditionFailure() {
+  public @Nullable PreconditionFailure getPreconditionFailure() {
     return unpack(PreconditionFailure.class);
   }
 
@@ -91,8 +88,7 @@ public abstract class ErrorDetails {
    * Describes violations in a client request. This error type focuses on the syntactic aspects of
    * the request.
    */
-  @Nullable
-  public BadRequest getBadRequest() {
+  public @Nullable BadRequest getBadRequest() {
     return unpack(BadRequest.class);
   }
 
@@ -100,20 +96,17 @@ public abstract class ErrorDetails {
    * Contains metadata about the request that clients can attach when filing a bug or providing
    * other forms of feedback.
    */
-  @Nullable
-  public RequestInfo getRequestInfo() {
+  public @Nullable RequestInfo getRequestInfo() {
     return unpack(RequestInfo.class);
   }
 
   /** Describes the resource that is being accessed. */
-  @Nullable
-  public ResourceInfo getResourceInfo() {
+  public @Nullable ResourceInfo getResourceInfo() {
     return unpack(ResourceInfo.class);
   }
 
   /** Provides links to documentation or for performing an out-of-band action. */
-  @Nullable
-  public Help getHelp() {
+  public @Nullable Help getHelp() {
     return unpack(Help.class);
   }
 
@@ -121,8 +114,7 @@ public abstract class ErrorDetails {
    * Provides a localized error message that is safe to return to the user which can be attached to
    * an RPC error
    */
-  @Nullable
-  public LocalizedMessage getLocalizedMessage() {
+  public @Nullable LocalizedMessage getLocalizedMessage() {
     return unpack(LocalizedMessage.class);
   }
 

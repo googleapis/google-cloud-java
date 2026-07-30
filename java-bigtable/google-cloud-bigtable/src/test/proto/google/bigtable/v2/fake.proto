@@ -37,6 +37,18 @@ message OpenFakeSessionRequest {
   StreamError stream_error = 3;
   SessionParametersResponse session_params = 4;
 
+  // If set, the server sends a GO_AWAY immediately without ever sending the
+  // SessionParameters / OpenSession handshake responses, i.e. the session receives a
+  // GO_AWAY while it is still STARTING. Used to exercise the STARTING -> WAIT_SERVER_CLOSE
+  // session-creation-budget release path.
+  bool go_away_before_open = 9;
+
+  // If set, the server accepts the stream but never sends any handshake response (no
+  // SessionParameters, no OpenSession, no GoAway), leaving the client wedged in STARTING. Used to
+  // exercise the open-handshake deadline (OPEN_SESSION_TIMEOUT) that force-closes a session that
+  // never finishes opening, so its reserved session-creation-budget slot is released.
+  bool hang_before_open = 10;
+
   // session steady phase
   message Action {
     google.protobuf.Duration delay = 1;

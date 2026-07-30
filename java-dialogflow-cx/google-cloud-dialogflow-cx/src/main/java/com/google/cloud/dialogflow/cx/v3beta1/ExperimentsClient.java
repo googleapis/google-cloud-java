@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -293,7 +294,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ExperimentsClient implements BackgroundResource {
-  private final ExperimentsSettings settings;
+  private final @Nullable ExperimentsSettings settings;
   private final ExperimentsStub stub;
 
   /** Constructs an instance of ExperimentsClient with default settings. */
@@ -332,7 +333,7 @@ public class ExperimentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ExperimentsSettings getSettings() {
+  public final @Nullable ExperimentsSettings getSettings() {
     return settings;
   }
 
@@ -367,7 +368,7 @@ public class ExperimentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExperimentsPagedResponse listExperiments(EnvironmentName parent) {
+  public final ListExperimentsPagedResponse listExperiments(@Nullable EnvironmentName parent) {
     ListExperimentsRequest request =
         ListExperimentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -545,7 +546,7 @@ public class ExperimentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Experiment getExperiment(ExperimentName name) {
+  public final Experiment getExperiment(@Nullable ExperimentName name) {
     GetExperimentRequest request =
         GetExperimentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExperiment(request);
@@ -669,7 +670,8 @@ public class ExperimentsClient implements BackgroundResource {
    * @param experiment Required. The experiment to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Experiment createExperiment(EnvironmentName parent, Experiment experiment) {
+  public final Experiment createExperiment(
+      @Nullable EnvironmentName parent, Experiment experiment) {
     CreateExperimentRequest request =
         CreateExperimentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -889,7 +891,7 @@ public class ExperimentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteExperiment(ExperimentName name) {
+  public final void deleteExperiment(@Nullable ExperimentName name) {
     DeleteExperimentRequest request =
         DeleteExperimentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteExperiment(request);
@@ -1010,7 +1012,7 @@ public class ExperimentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Experiment startExperiment(ExperimentName name) {
+  public final Experiment startExperiment(@Nullable ExperimentName name) {
     StartExperimentRequest request =
         StartExperimentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return startExperiment(request);
@@ -1134,7 +1136,7 @@ public class ExperimentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/experiments/&lt;ExperimentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Experiment stopExperiment(ExperimentName name) {
+  public final Experiment stopExperiment(@Nullable ExperimentName name) {
     StopExperimentRequest request =
         StopExperimentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopExperiment(request);
@@ -1483,8 +1485,8 @@ public class ExperimentsClient implements BackgroundResource {
           ListExperimentsRequest, ListExperimentsResponse, Experiment, ListExperimentsPage> {
 
     private ListExperimentsPage(
-        PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
-        ListExperimentsResponse response) {
+        @Nullable PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
+        @Nullable ListExperimentsResponse response) {
       super(context, response);
     }
 
@@ -1494,14 +1496,14 @@ public class ExperimentsClient implements BackgroundResource {
 
     @Override
     protected ListExperimentsPage createPage(
-        PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
-        ListExperimentsResponse response) {
+        @Nullable PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
+        @Nullable ListExperimentsResponse response) {
       return new ListExperimentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExperimentsPage> createPageAsync(
-        PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
+        @Nullable PageContext<ListExperimentsRequest, ListExperimentsResponse, Experiment> context,
         ApiFuture<ListExperimentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1516,7 +1518,7 @@ public class ExperimentsClient implements BackgroundResource {
           ListExperimentsFixedSizeCollection> {
 
     private ListExperimentsFixedSizeCollection(
-        List<ListExperimentsPage> pages, int collectionSize) {
+        @Nullable List<ListExperimentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1526,7 +1528,7 @@ public class ExperimentsClient implements BackgroundResource {
 
     @Override
     protected ListExperimentsFixedSizeCollection createCollection(
-        List<ListExperimentsPage> pages, int collectionSize) {
+        @Nullable List<ListExperimentsPage> pages, int collectionSize) {
       return new ListExperimentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1560,8 +1562,8 @@ public class ExperimentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1571,14 +1573,14 @@ public class ExperimentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1592,7 +1594,8 @@ public class ExperimentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1602,7 +1605,7 @@ public class ExperimentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

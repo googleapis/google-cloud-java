@@ -16,6 +16,7 @@
 
 package com.google.storage.control.v2.stub;
 
+import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
@@ -25,14 +26,18 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.common.base.Strings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -46,6 +51,8 @@ import com.google.storage.control.v2.CreateAnywhereCacheMetadata;
 import com.google.storage.control.v2.CreateAnywhereCacheRequest;
 import com.google.storage.control.v2.CreateFolderRequest;
 import com.google.storage.control.v2.CreateManagedFolderRequest;
+import com.google.storage.control.v2.CreateRapidCacheMetadata;
+import com.google.storage.control.v2.CreateRapidCacheRequest;
 import com.google.storage.control.v2.DeleteFolderRecursiveMetadata;
 import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
@@ -60,6 +67,7 @@ import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.GetRapidCacheRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
 import com.google.storage.control.v2.IntelligenceFinding;
@@ -74,8 +82,11 @@ import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
 import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
+import com.google.storage.control.v2.ListRapidCachesRequest;
+import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
+import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
@@ -85,13 +96,17 @@ import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateManagedFolderRequest;
 import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateRapidCacheMetadata;
+import com.google.storage.control.v2.UpdateRapidCacheRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
@@ -109,12 +124,305 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(RenameFolderMetadata.getDescriptor())
+          .add(CreateRapidCacheMetadata.getDescriptor())
+          .add(UpdateRapidCacheMetadata.getDescriptor())
           .add(Folder.getDescriptor())
           .add(AnywhereCache.getDescriptor())
           .add(UpdateAnywhereCacheMetadata.getDescriptor())
           .add(DeleteFolderRecursiveMetadata.getDescriptor())
           .add(CreateAnywhereCacheMetadata.getDescriptor())
+          .add(RapidCache.getDescriptor())
           .build();
+
+  private static final ApiMethodDescriptor<CreateFolderRequest, Folder>
+      createFolderMethodDescriptor =
+          ApiMethodDescriptor.<CreateFolderRequest, Folder>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/CreateFolder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateFolderRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/buckets/*}/folders",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "folderId", request.getFolderId());
+                            serializer.putQueryParam(fields, "recursive", request.getRecursive());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("folder", request.getFolder(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Folder>newBuilder()
+                      .setDefaultInstance(Folder.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFolderRequest, Empty>
+      deleteFolderMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFolderRequest, Empty>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/DeleteFolder")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFolderRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/buckets/*/folders/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasIfMetagenerationMatch()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "ifMetagenerationMatch",
+                                  request.getIfMetagenerationMatch());
+                            }
+                            if (request.hasIfMetagenerationNotMatch()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "ifMetagenerationNotMatch",
+                                  request.getIfMetagenerationNotMatch());
+                            }
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetFolderRequest, Folder> getFolderMethodDescriptor =
+      ApiMethodDescriptor.<GetFolderRequest, Folder>newBuilder()
+          .setFullMethodName("google.storage.control.v2.StorageControl/GetFolder")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetFolderRequest>newBuilder()
+                  .setPath(
+                      "/v2/{name=projects/*/buckets/*/folders/**}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFolderRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetFolderRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasIfMetagenerationMatch()) {
+                          serializer.putQueryParam(
+                              fields, "ifMetagenerationMatch", request.getIfMetagenerationMatch());
+                        }
+                        if (request.hasIfMetagenerationNotMatch()) {
+                          serializer.putQueryParam(
+                              fields,
+                              "ifMetagenerationNotMatch",
+                              request.getIfMetagenerationNotMatch());
+                        }
+                        serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Folder>newBuilder()
+                  .setDefaultInstance(Folder.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListFoldersRequest, ListFoldersResponse>
+      listFoldersMethodDescriptor =
+          ApiMethodDescriptor.<ListFoldersRequest, ListFoldersResponse>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/ListFolders")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListFoldersRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/buckets/*}/folders",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFoldersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListFoldersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "delimiter", request.getDelimiter());
+                            serializer.putQueryParam(
+                                fields, "lexicographicEnd", request.getLexicographicEnd());
+                            serializer.putQueryParam(
+                                fields, "lexicographicStart", request.getLexicographicStart());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "prefix", request.getPrefix());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListFoldersResponse>newBuilder()
+                      .setDefaultInstance(ListFoldersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RenameFolderRequest, Operation>
+      renameFolderMethodDescriptor =
+          ApiMethodDescriptor.<RenameFolderRequest, Operation>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/RenameFolder")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RenameFolderRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/buckets/*/folders/**}:rename",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RenameFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RenameFolderRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RenameFolderRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteFolderRecursiveRequest, Operation>
+      deleteFolderRecursiveMethodDescriptor =
+          ApiMethodDescriptor.<DeleteFolderRecursiveRequest, Operation>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/DeleteFolderRecursive")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteFolderRecursiveRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/buckets/*/folders/**}:deleteRecursive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRecursiveRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteFolderRecursiveRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteFolderRecursiveRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetStorageLayoutRequest, StorageLayout>
+      getStorageLayoutMethodDescriptor =
+          ApiMethodDescriptor.<GetStorageLayoutRequest, StorageLayout>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetStorageLayout")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetStorageLayoutRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/buckets/*/storageLayout}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetStorageLayoutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetStorageLayoutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "prefix", request.getPrefix());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<StorageLayout>newBuilder()
+                      .setDefaultInstance(StorageLayout.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigMethodDescriptor =
@@ -562,6 +870,21 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                       .build())
               .build();
 
+  private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
+  private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
+  private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
+  private final UnaryCallable<ListFoldersRequest, ListFoldersResponse> listFoldersCallable;
+  private final UnaryCallable<ListFoldersRequest, ListFoldersPagedResponse>
+      listFoldersPagedCallable;
+  private final UnaryCallable<RenameFolderRequest, Operation> renameFolderCallable;
+  private final OperationCallable<RenameFolderRequest, Folder, RenameFolderMetadata>
+      renameFolderOperationCallable;
+  private final UnaryCallable<DeleteFolderRecursiveRequest, Operation>
+      deleteFolderRecursiveCallable;
+  private final OperationCallable<
+          DeleteFolderRecursiveRequest, Empty, DeleteFolderRecursiveMetadata>
+      deleteFolderRecursiveOperationCallable;
+  private final UnaryCallable<GetStorageLayoutRequest, StorageLayout> getStorageLayoutCallable;
   private final UnaryCallable<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigCallable;
   private final UnaryCallable<UpdateProjectIntelligenceConfigRequest, IntelligenceConfig>
@@ -599,6 +922,21 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate CREATE_FOLDER_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=**}");
+  private static final PathTemplate DELETE_FOLDER_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate GET_FOLDER_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate LIST_FOLDERS_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=**}");
+  private static final PathTemplate RENAME_FOLDER_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate DELETE_FOLDER_RECURSIVE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate GET_STORAGE_LAYOUT_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
 
   public static final HttpJsonStorageControlStub create(StorageControlStubSettings settings)
       throws IOException {
@@ -641,6 +979,140 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
     this.httpJsonOperationsStub =
         HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
 
+    HttpJsonCallSettings<CreateFolderRequest, Folder> createFolderTransportSettings =
+        HttpJsonCallSettings.<CreateFolderRequest, Folder>newBuilder()
+            .setMethodDescriptor(createFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "bucket", CREATE_FOLDER_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  CreateFolderRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteFolderRequest, Empty> deleteFolderTransportSettings =
+        HttpJsonCallSettings.<DeleteFolderRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", DELETE_FOLDER_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  DeleteFolderRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetFolderRequest, Folder> getFolderTransportSettings =
+        HttpJsonCallSettings.<GetFolderRequest, Folder>newBuilder()
+            .setMethodDescriptor(getFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", GET_FOLDER_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  GetFolderRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListFoldersRequest, ListFoldersResponse> listFoldersTransportSettings =
+        HttpJsonCallSettings.<ListFoldersRequest, ListFoldersResponse>newBuilder()
+            .setMethodDescriptor(listFoldersMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "bucket", LIST_FOLDERS_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<RenameFolderRequest, Operation> renameFolderTransportSettings =
+        HttpJsonCallSettings.<RenameFolderRequest, Operation>newBuilder()
+            .setMethodDescriptor(renameFolderMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", RENAME_FOLDER_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  RenameFolderRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<DeleteFolderRecursiveRequest, Operation>
+        deleteFolderRecursiveTransportSettings =
+            HttpJsonCallSettings.<DeleteFolderRecursiveRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteFolderRecursiveMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(), "bucket", DELETE_FOLDER_RECURSIVE_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setRequestMutator(
+                    request -> {
+                      DeleteFolderRecursiveRequest.Builder requestBuilder = request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetStorageLayoutRequest, StorageLayout> getStorageLayoutTransportSettings =
+        HttpJsonCallSettings.<GetStorageLayoutRequest, StorageLayout>newBuilder()
+            .setMethodDescriptor(getStorageLayoutMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", GET_STORAGE_LAYOUT_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  GetStorageLayoutRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
         getProjectIntelligenceConfigTransportSettings =
             HttpJsonCallSettings
@@ -801,6 +1273,44 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
+    this.createFolderCallable =
+        callableFactory.createUnaryCallable(
+            createFolderTransportSettings, settings.createFolderSettings(), clientContext);
+    this.deleteFolderCallable =
+        callableFactory.createUnaryCallable(
+            deleteFolderTransportSettings, settings.deleteFolderSettings(), clientContext);
+    this.getFolderCallable =
+        callableFactory.createUnaryCallable(
+            getFolderTransportSettings, settings.getFolderSettings(), clientContext);
+    this.listFoldersCallable =
+        callableFactory.createUnaryCallable(
+            listFoldersTransportSettings, settings.listFoldersSettings(), clientContext);
+    this.listFoldersPagedCallable =
+        callableFactory.createPagedCallable(
+            listFoldersTransportSettings, settings.listFoldersSettings(), clientContext);
+    this.renameFolderCallable =
+        callableFactory.createUnaryCallable(
+            renameFolderTransportSettings, settings.renameFolderSettings(), clientContext);
+    this.renameFolderOperationCallable =
+        callableFactory.createOperationCallable(
+            renameFolderTransportSettings,
+            settings.renameFolderOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteFolderRecursiveCallable =
+        callableFactory.createUnaryCallable(
+            deleteFolderRecursiveTransportSettings,
+            settings.deleteFolderRecursiveSettings(),
+            clientContext);
+    this.deleteFolderRecursiveOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteFolderRecursiveTransportSettings,
+            settings.deleteFolderRecursiveOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getStorageLayoutCallable =
+        callableFactory.createUnaryCallable(
+            getStorageLayoutTransportSettings, settings.getStorageLayoutSettings(), clientContext);
     this.getProjectIntelligenceConfigCallable =
         callableFactory.createUnaryCallable(
             getProjectIntelligenceConfigTransportSettings,
@@ -879,6 +1389,13 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(createFolderMethodDescriptor);
+    methodDescriptors.add(deleteFolderMethodDescriptor);
+    methodDescriptors.add(getFolderMethodDescriptor);
+    methodDescriptors.add(listFoldersMethodDescriptor);
+    methodDescriptors.add(renameFolderMethodDescriptor);
+    methodDescriptors.add(deleteFolderRecursiveMethodDescriptor);
+    methodDescriptors.add(getStorageLayoutMethodDescriptor);
     methodDescriptors.add(getProjectIntelligenceConfigMethodDescriptor);
     methodDescriptors.add(updateProjectIntelligenceConfigMethodDescriptor);
     methodDescriptors.add(getFolderIntelligenceConfigMethodDescriptor);
@@ -895,6 +1412,58 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
 
   public HttpJsonOperationsStub getHttpJsonOperationsStub() {
     return httpJsonOperationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateFolderRequest, Folder> createFolderCallable() {
+    return createFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
+    return deleteFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFolderRequest, Folder> getFolderCallable() {
+    return getFolderCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFoldersRequest, ListFoldersResponse> listFoldersCallable() {
+    return listFoldersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFoldersRequest, ListFoldersPagedResponse> listFoldersPagedCallable() {
+    return listFoldersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameFolderRequest, Operation> renameFolderCallable() {
+    return renameFolderCallable;
+  }
+
+  @Override
+  public OperationCallable<RenameFolderRequest, Folder, RenameFolderMetadata>
+      renameFolderOperationCallable() {
+    return renameFolderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteFolderRecursiveRequest, Operation> deleteFolderRecursiveCallable() {
+    return deleteFolderRecursiveCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteFolderRecursiveRequest, Empty, DeleteFolderRecursiveMetadata>
+      deleteFolderRecursiveOperationCallable() {
+    return deleteFolderRecursiveOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetStorageLayoutRequest, StorageLayout> getStorageLayoutCallable() {
+    return getStorageLayoutCallable;
   }
 
   @Override
@@ -985,55 +1554,6 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   }
 
   @Override
-  public UnaryCallable<CreateFolderRequest, Folder> createFolderCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: createFolderCallable(). REST transport is not implemented for this method"
-            + " yet.");
-  }
-
-  @Override
-  public UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteFolderCallable(). REST transport is not implemented for this method"
-            + " yet.");
-  }
-
-  @Override
-  public UnaryCallable<GetFolderRequest, Folder> getFolderCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getFolderCallable(). REST transport is not implemented for this method"
-            + " yet.");
-  }
-
-  @Override
-  public UnaryCallable<ListFoldersRequest, ListFoldersResponse> listFoldersCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: listFoldersCallable(). REST transport is not implemented for this method"
-            + " yet.");
-  }
-
-  @Override
-  public UnaryCallable<RenameFolderRequest, Operation> renameFolderCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: renameFolderCallable(). REST transport is not implemented for this method"
-            + " yet.");
-  }
-
-  @Override
-  public UnaryCallable<DeleteFolderRecursiveRequest, Operation> deleteFolderRecursiveCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: deleteFolderRecursiveCallable(). REST transport is not implemented for"
-            + " this method yet.");
-  }
-
-  @Override
-  public UnaryCallable<GetStorageLayoutRequest, StorageLayout> getStorageLayoutCallable() {
-    throw new UnsupportedOperationException(
-        "Not implemented: getStorageLayoutCallable(). REST transport is not implemented for this"
-            + " method yet.");
-  }
-
-  @Override
   public UnaryCallable<CreateManagedFolderRequest, ManagedFolder> createManagedFolderCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createManagedFolderCallable(). REST transport is not implemented for this"
@@ -1059,6 +1579,13 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
       listManagedFoldersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listManagedFoldersCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<UpdateManagedFolderRequest, ManagedFolder> updateManagedFolderCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateManagedFolderCallable(). REST transport is not implemented for this"
             + " method yet.");
   }
 
@@ -1109,6 +1636,34 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
       listAnywhereCachesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listAnywhereCachesCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<CreateRapidCacheRequest, Operation> createRapidCacheCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createRapidCacheCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateRapidCacheCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getRapidCacheCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse> listRapidCachesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listRapidCachesCallable(). REST transport is not implemented for this"
             + " method yet.");
   }
 

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TaxonomyCategoryServiceClient implements BackgroundResource {
-  private final TaxonomyCategoryServiceSettings settings;
+  private final @Nullable TaxonomyCategoryServiceSettings settings;
   private final TaxonomyCategoryServiceStub stub;
 
   /** Constructs an instance of TaxonomyCategoryServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TaxonomyCategoryServiceSettings getSettings() {
+  public final @Nullable TaxonomyCategoryServiceSettings getSettings() {
     return settings;
   }
 
@@ -221,7 +222,7 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
    *     `networks/{network_code}/taxonomyCategories/{taxonomy_category_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TaxonomyCategory getTaxonomyCategory(TaxonomyCategoryName name) {
+  public final TaxonomyCategory getTaxonomyCategory(@Nullable TaxonomyCategoryName name) {
     GetTaxonomyCategoryRequest request =
         GetTaxonomyCategoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -343,7 +344,8 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTaxonomyCategoriesPagedResponse listTaxonomyCategories(NetworkName parent) {
+  public final ListTaxonomyCategoriesPagedResponse listTaxonomyCategories(
+      @Nullable NetworkName parent) {
     ListTaxonomyCategoriesRequest request =
         ListTaxonomyCategoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -565,9 +567,11 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
           ListTaxonomyCategoriesPage> {
 
     private ListTaxonomyCategoriesPage(
-        PageContext<ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
+        @Nullable
+            PageContext<
+                ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
             context,
-        ListTaxonomyCategoriesResponse response) {
+        @Nullable ListTaxonomyCategoriesResponse response) {
       super(context, response);
     }
 
@@ -577,15 +581,19 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListTaxonomyCategoriesPage createPage(
-        PageContext<ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
+        @Nullable
+            PageContext<
+                ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
             context,
-        ListTaxonomyCategoriesResponse response) {
+        @Nullable ListTaxonomyCategoriesResponse response) {
       return new ListTaxonomyCategoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTaxonomyCategoriesPage> createPageAsync(
-        PageContext<ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
+        @Nullable
+            PageContext<
+                ListTaxonomyCategoriesRequest, ListTaxonomyCategoriesResponse, TaxonomyCategory>
             context,
         ApiFuture<ListTaxonomyCategoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -601,7 +609,7 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
           ListTaxonomyCategoriesFixedSizeCollection> {
 
     private ListTaxonomyCategoriesFixedSizeCollection(
-        List<ListTaxonomyCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListTaxonomyCategoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -611,7 +619,7 @@ public class TaxonomyCategoryServiceClient implements BackgroundResource {
 
     @Override
     protected ListTaxonomyCategoriesFixedSizeCollection createCollection(
-        List<ListTaxonomyCategoriesPage> pages, int collectionSize) {
+        @Nullable List<ListTaxonomyCategoriesPage> pages, int collectionSize) {
       return new ListTaxonomyCategoriesFixedSizeCollection(pages, collectionSize);
     }
   }

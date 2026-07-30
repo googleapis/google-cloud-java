@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -300,7 +301,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FindingsRefinementServiceClient implements BackgroundResource {
-  private final FindingsRefinementServiceSettings settings;
+  private final @Nullable FindingsRefinementServiceSettings settings;
   private final FindingsRefinementServiceStub stub;
 
   /** Constructs an instance of FindingsRefinementServiceClient with default settings. */
@@ -342,7 +343,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FindingsRefinementServiceSettings getSettings() {
+  public final @Nullable FindingsRefinementServiceSettings getSettings() {
     return settings;
   }
 
@@ -375,7 +376,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/findingsRefinements/{findings_refinement}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FindingsRefinement getFindingsRefinement(FindingsRefinementName name) {
+  public final FindingsRefinement getFindingsRefinement(@Nullable FindingsRefinementName name) {
     GetFindingsRefinementRequest request =
         GetFindingsRefinementRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -506,7 +507,8 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFindingsRefinementsPagedResponse listFindingsRefinements(InstanceName parent) {
+  public final ListFindingsRefinementsPagedResponse listFindingsRefinements(
+      @Nullable InstanceName parent) {
     ListFindingsRefinementsRequest request =
         ListFindingsRefinementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -685,7 +687,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FindingsRefinement createFindingsRefinement(
-      InstanceName parent, FindingsRefinement findingsRefinement) {
+      @Nullable InstanceName parent, FindingsRefinement findingsRefinement) {
     CreateFindingsRefinementRequest request =
         CreateFindingsRefinementRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -922,7 +924,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FindingsRefinementDeployment getFindingsRefinementDeployment(
-      FindingsRefinementDeploymentName name) {
+      @Nullable FindingsRefinementDeploymentName name) {
     GetFindingsRefinementDeploymentRequest request =
         GetFindingsRefinementDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1169,7 +1171,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAllFindingsRefinementDeploymentsPagedResponse
-      listAllFindingsRefinementDeployments(InstanceName instance) {
+      listAllFindingsRefinementDeployments(@Nullable InstanceName instance) {
     ListAllFindingsRefinementDeploymentsRequest request =
         ListAllFindingsRefinementDeploymentsRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1364,7 +1366,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeFindingsRefinementActivityResponse computeFindingsRefinementActivity(
-      FindingsRefinementName name) {
+      @Nullable FindingsRefinementName name) {
     ComputeFindingsRefinementActivityRequest request =
         ComputeFindingsRefinementActivityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1504,7 +1506,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ComputeAllFindingsRefinementActivitiesResponse
-      computeAllFindingsRefinementActivities(InstanceName instance) {
+      computeAllFindingsRefinementActivities(@Nullable InstanceName instance) {
     ComputeAllFindingsRefinementActivitiesRequest request =
         ComputeAllFindingsRefinementActivitiesRequest.newBuilder()
             .setInstance(instance == null ? null : instance.toString())
@@ -1675,10 +1677,11 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
           ListFindingsRefinementsPage> {
 
     private ListFindingsRefinementsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRefinementsRequest, ListFindingsRefinementsResponse, FindingsRefinement>
             context,
-        ListFindingsRefinementsResponse response) {
+        @Nullable ListFindingsRefinementsResponse response) {
       super(context, response);
     }
 
@@ -1688,16 +1691,18 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
 
     @Override
     protected ListFindingsRefinementsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRefinementsRequest, ListFindingsRefinementsResponse, FindingsRefinement>
             context,
-        ListFindingsRefinementsResponse response) {
+        @Nullable ListFindingsRefinementsResponse response) {
       return new ListFindingsRefinementsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFindingsRefinementsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFindingsRefinementsRequest, ListFindingsRefinementsResponse, FindingsRefinement>
             context,
         ApiFuture<ListFindingsRefinementsResponse> futureResponse) {
@@ -1714,7 +1719,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
           ListFindingsRefinementsFixedSizeCollection> {
 
     private ListFindingsRefinementsFixedSizeCollection(
-        List<ListFindingsRefinementsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsRefinementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1724,7 +1729,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
 
     @Override
     protected ListFindingsRefinementsFixedSizeCollection createCollection(
-        List<ListFindingsRefinementsPage> pages, int collectionSize) {
+        @Nullable List<ListFindingsRefinementsPage> pages, int collectionSize) {
       return new ListFindingsRefinementsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1767,12 +1772,13 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
           ListAllFindingsRefinementDeploymentsPage> {
 
     private ListAllFindingsRefinementDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAllFindingsRefinementDeploymentsRequest,
                 ListAllFindingsRefinementDeploymentsResponse,
                 FindingsRefinementDeployment>
             context,
-        ListAllFindingsRefinementDeploymentsResponse response) {
+        @Nullable ListAllFindingsRefinementDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -1782,18 +1788,20 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
 
     @Override
     protected ListAllFindingsRefinementDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAllFindingsRefinementDeploymentsRequest,
                 ListAllFindingsRefinementDeploymentsResponse,
                 FindingsRefinementDeployment>
             context,
-        ListAllFindingsRefinementDeploymentsResponse response) {
+        @Nullable ListAllFindingsRefinementDeploymentsResponse response) {
       return new ListAllFindingsRefinementDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAllFindingsRefinementDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAllFindingsRefinementDeploymentsRequest,
                 ListAllFindingsRefinementDeploymentsResponse,
                 FindingsRefinementDeployment>
@@ -1812,7 +1820,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
           ListAllFindingsRefinementDeploymentsFixedSizeCollection> {
 
     private ListAllFindingsRefinementDeploymentsFixedSizeCollection(
-        List<ListAllFindingsRefinementDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListAllFindingsRefinementDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1822,7 +1830,7 @@ public class FindingsRefinementServiceClient implements BackgroundResource {
 
     @Override
     protected ListAllFindingsRefinementDeploymentsFixedSizeCollection createCollection(
-        List<ListAllFindingsRefinementDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListAllFindingsRefinementDeploymentsPage> pages, int collectionSize) {
       return new ListAllFindingsRefinementDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }

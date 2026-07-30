@@ -394,14 +394,13 @@ public class CloudClientExecutor extends CloudExecutor {
                   List<TransactionOption> transactionOptions = new ArrayList<>();
                   if (repeatableRead) {
                     transactionOptions.add(Options.isolationLevel(IsolationLevel.REPEATABLE_READ));
-                  } else {
-                    transactionOptions.add(Options.isolationLevel(IsolationLevel.SERIALIZABLE));
+                    transactionOptions.add(
+                        Options.readLockMode(
+                            optimistic ? ReadLockMode.OPTIMISTIC : ReadLockMode.PESSIMISTIC));
                   }
                   if (!repeatableRead && optimistic) {
+                    transactionOptions.add(Options.isolationLevel(IsolationLevel.SERIALIZABLE));
                     transactionOptions.add(Options.readLockMode(ReadLockMode.OPTIMISTIC));
-                  }
-                  if (repeatableRead && !optimistic) {
-                    transactionOptions.add(Options.readLockMode(ReadLockMode.PESSIMISTIC));
                   }
                   runner =
                       dbClient.readWriteTransaction(
@@ -786,11 +785,13 @@ public class CloudClientExecutor extends CloudExecutor {
               if (rwTxn.getTimestamp() != null) {
                 outcomeBuilder.setCommitTime(rwTxn.getTimestamp());
               }
-              if (finishMode == Mode.COMMIT
-                  && rwTxn.runner.getCommitResponse().getSnapshotTimestamp() != null) {
-                outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
-                    Timestamps.toMicros(
-                        rwTxn.runner.getCommitResponse().getSnapshotTimestamp().toProto()));
+              if (finishMode == Mode.COMMIT && rwTxn.runner.getCommitResponse() != null) {
+                com.google.cloud.spanner.CommitResponse commitResponse =
+                    rwTxn.runner.getCommitResponse();
+                if (commitResponse.getSnapshotTimestamp() != null) {
+                  outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
+                      Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
+                }
               }
               clear();
             }
@@ -2461,14 +2462,10 @@ public class CloudClientExecutor extends CloudExecutor {
       // For initial partition query (no partition token) we simulate precision of the timestamp
       // in nanoseconds as that's closer inlined with the production client code.
 
-      String startTime =
-          timestampToString(
-              !action.hasPartitionToken(), Timestamps.toMicros(action.getStartTime()));
+      String startTime = timestampToString(false, Timestamps.toMicros(action.getStartTime()));
       String endTime = "null";
       if (action.hasEndTime()) {
-        endTime =
-            timestampToString(
-                !action.hasPartitionToken(), Timestamps.toMicros(action.getEndTime()));
+        endTime = timestampToString(false, Timestamps.toMicros(action.getEndTime()));
       }
       String heartbeat = "null";
       if (action.hasHeartbeatMilliseconds()) {

@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -253,7 +254,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PagesClient implements BackgroundResource {
-  private final PagesSettings settings;
+  private final @Nullable PagesSettings settings;
   private final PagesStub stub;
 
   /** Constructs an instance of PagesClient with default settings. */
@@ -291,7 +292,7 @@ public class PagesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PagesSettings getSettings() {
+  public final @Nullable PagesSettings getSettings() {
     return settings;
   }
 
@@ -323,7 +324,7 @@ public class PagesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPagesPagedResponse listPages(FlowName parent) {
+  public final ListPagesPagedResponse listPages(@Nullable FlowName parent) {
     ListPagesRequest request =
         ListPagesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listPages(request);
@@ -484,7 +485,7 @@ public class PagesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/pages/&lt;PageID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Page getPage(PageName name) {
+  public final Page getPage(@Nullable PageName name) {
     GetPageRequest request =
         GetPageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPage(request);
@@ -604,7 +605,7 @@ public class PagesClient implements BackgroundResource {
    * @param page Required. The page to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Page createPage(FlowName parent, Page page) {
+  public final Page createPage(@Nullable FlowName parent, Page page) {
     CreatePageRequest request =
         CreatePageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -834,7 +835,7 @@ public class PagesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/Flows/&lt;flowID&gt;/pages/&lt;PageID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePage(PageName name) {
+  public final void deletePage(@Nullable PageName name) {
     DeletePageRequest request =
         DeletePageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePage(request);
@@ -1178,8 +1179,8 @@ public class PagesClient implements BackgroundResource {
       extends AbstractPage<ListPagesRequest, ListPagesResponse, Page, ListPagesPage> {
 
     private ListPagesPage(
-        PageContext<ListPagesRequest, ListPagesResponse, Page> context,
-        ListPagesResponse response) {
+        @Nullable PageContext<ListPagesRequest, ListPagesResponse, Page> context,
+        @Nullable ListPagesResponse response) {
       super(context, response);
     }
 
@@ -1189,14 +1190,14 @@ public class PagesClient implements BackgroundResource {
 
     @Override
     protected ListPagesPage createPage(
-        PageContext<ListPagesRequest, ListPagesResponse, Page> context,
-        ListPagesResponse response) {
+        @Nullable PageContext<ListPagesRequest, ListPagesResponse, Page> context,
+        @Nullable ListPagesResponse response) {
       return new ListPagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPagesPage> createPageAsync(
-        PageContext<ListPagesRequest, ListPagesResponse, Page> context,
+        @Nullable PageContext<ListPagesRequest, ListPagesResponse, Page> context,
         ApiFuture<ListPagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1206,7 +1207,7 @@ public class PagesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListPagesRequest, ListPagesResponse, Page, ListPagesPage, ListPagesFixedSizeCollection> {
 
-    private ListPagesFixedSizeCollection(List<ListPagesPage> pages, int collectionSize) {
+    private ListPagesFixedSizeCollection(@Nullable List<ListPagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1216,7 +1217,7 @@ public class PagesClient implements BackgroundResource {
 
     @Override
     protected ListPagesFixedSizeCollection createCollection(
-        List<ListPagesPage> pages, int collectionSize) {
+        @Nullable List<ListPagesPage> pages, int collectionSize) {
       return new ListPagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1250,8 +1251,8 @@ public class PagesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1261,14 +1262,14 @@ public class PagesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1282,7 +1283,8 @@ public class PagesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1292,7 +1294,7 @@ public class PagesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

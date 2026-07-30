@@ -59,6 +59,8 @@ import com.google.cloud.biglake.hive.v1beta.CreateHiveTableRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveTableRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse;
 import com.google.cloud.biglake.hive.v1beta.GetHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveTableRequest;
@@ -86,6 +88,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -182,6 +185,8 @@ public class HiveMetastoreServiceStubSettings
       batchUpdatePartitionsSettings;
   private final ServerStreamingCallSettings<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsSettings;
+  private final UnaryCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogSettings;
 
   private static final PagedListDescriptor<
           ListHiveCatalogsRequest, ListHiveCatalogsResponse, HiveCatalog>
@@ -455,6 +460,12 @@ public class HiveMetastoreServiceStubSettings
     return listPartitionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to failoverHiveCatalog. */
+  public UnaryCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogSettings() {
+    return failoverHiveCatalogSettings;
+  }
+
   public HiveMetastoreServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -554,7 +565,7 @@ public class HiveMetastoreServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -585,6 +596,7 @@ public class HiveMetastoreServiceStubSettings
     batchDeletePartitionsSettings = settingsBuilder.batchDeletePartitionsSettings().build();
     batchUpdatePartitionsSettings = settingsBuilder.batchUpdatePartitionsSettings().build();
     listPartitionsSettings = settingsBuilder.listPartitionsSettings().build();
+    failoverHiveCatalogSettings = settingsBuilder.failoverHiveCatalogSettings().build();
   }
 
   @Override
@@ -641,6 +653,8 @@ public class HiveMetastoreServiceStubSettings
         batchUpdatePartitionsSettings;
     private final ServerStreamingCallSettings.Builder<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsSettings;
+    private final UnaryCallSettings.Builder<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -678,7 +692,7 @@ public class HiveMetastoreServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createHiveCatalogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -700,6 +714,7 @@ public class HiveMetastoreServiceStubSettings
       batchDeletePartitionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdatePartitionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPartitionsSettings = ServerStreamingCallSettings.newBuilder();
+      failoverHiveCatalogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -720,7 +735,8 @@ public class HiveMetastoreServiceStubSettings
               deleteHiveTableSettings,
               batchCreatePartitionsSettings,
               batchDeletePartitionsSettings,
-              batchUpdatePartitionsSettings);
+              batchUpdatePartitionsSettings,
+              failoverHiveCatalogSettings);
       initDefaults(this);
     }
 
@@ -746,6 +762,7 @@ public class HiveMetastoreServiceStubSettings
       batchDeletePartitionsSettings = settings.batchDeletePartitionsSettings.toBuilder();
       batchUpdatePartitionsSettings = settings.batchUpdatePartitionsSettings.toBuilder();
       listPartitionsSettings = settings.listPartitionsSettings.toBuilder();
+      failoverHiveCatalogSettings = settings.failoverHiveCatalogSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -766,7 +783,8 @@ public class HiveMetastoreServiceStubSettings
               deleteHiveTableSettings,
               batchCreatePartitionsSettings,
               batchDeletePartitionsSettings,
-              batchUpdatePartitionsSettings);
+              batchUpdatePartitionsSettings,
+              failoverHiveCatalogSettings);
     }
 
     private static Builder createDefault() {
@@ -886,6 +904,11 @@ public class HiveMetastoreServiceStubSettings
 
       builder
           .listPartitionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .failoverHiveCatalogSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1016,6 +1039,12 @@ public class HiveMetastoreServiceStubSettings
     public ServerStreamingCallSettings.Builder<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsSettings() {
       return listPartitionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverHiveCatalog. */
+    public UnaryCallSettings.Builder<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogSettings() {
+      return failoverHiveCatalogSettings;
     }
 
     @Override

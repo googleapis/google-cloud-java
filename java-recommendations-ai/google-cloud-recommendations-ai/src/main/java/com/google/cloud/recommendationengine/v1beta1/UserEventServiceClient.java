@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -230,7 +231,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class UserEventServiceClient implements BackgroundResource {
-  private final UserEventServiceSettings settings;
+  private final @Nullable UserEventServiceSettings settings;
   private final UserEventServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -278,7 +279,7 @@ public class UserEventServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final UserEventServiceSettings getSettings() {
+  public final @Nullable UserEventServiceSettings getSettings() {
     return settings;
   }
 
@@ -328,7 +329,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * @param userEvent Required. User event to write.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserEvent writeUserEvent(EventStoreName parent, UserEvent userEvent) {
+  public final UserEvent writeUserEvent(@Nullable EventStoreName parent, UserEvent userEvent) {
     WriteUserEventRequest request =
         WriteUserEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -468,7 +469,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HttpBody collectUserEvent(
-      EventStoreName parent, String userEvent, String uri, long ets) {
+      @Nullable EventStoreName parent, String userEvent, String uri, long ets) {
     CollectUserEventRequest request =
         CollectUserEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -647,7 +648,8 @@ public class UserEventServiceClient implements BackgroundResource {
    *     eventsMissingCatalogItems
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUserEventsPagedResponse listUserEvents(EventStoreName parent, String filter) {
+  public final ListUserEventsPagedResponse listUserEvents(
+      @Nullable EventStoreName parent, String filter) {
     ListUserEventsRequest request =
         ListUserEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -871,7 +873,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata>
-      purgeUserEventsAsync(EventStoreName parent, String filter, boolean force) {
+      purgeUserEventsAsync(@Nullable EventStoreName parent, String filter, boolean force) {
     PurgeUserEventsRequest request =
         PurgeUserEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1086,7 +1088,7 @@ public class UserEventServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportUserEventsResponse, ImportMetadata> importUserEventsAsync(
-      EventStoreName parent,
+      @Nullable EventStoreName parent,
       String requestId,
       InputConfig inputConfig,
       ImportErrorsConfig errorsConfig) {
@@ -1325,8 +1327,8 @@ public class UserEventServiceClient implements BackgroundResource {
           ListUserEventsRequest, ListUserEventsResponse, UserEvent, ListUserEventsPage> {
 
     private ListUserEventsPage(
-        PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
-        ListUserEventsResponse response) {
+        @Nullable PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
+        @Nullable ListUserEventsResponse response) {
       super(context, response);
     }
 
@@ -1336,14 +1338,14 @@ public class UserEventServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserEventsPage createPage(
-        PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
-        ListUserEventsResponse response) {
+        @Nullable PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
+        @Nullable ListUserEventsResponse response) {
       return new ListUserEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserEventsPage> createPageAsync(
-        PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
+        @Nullable PageContext<ListUserEventsRequest, ListUserEventsResponse, UserEvent> context,
         ApiFuture<ListUserEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1357,7 +1359,8 @@ public class UserEventServiceClient implements BackgroundResource {
           ListUserEventsPage,
           ListUserEventsFixedSizeCollection> {
 
-    private ListUserEventsFixedSizeCollection(List<ListUserEventsPage> pages, int collectionSize) {
+    private ListUserEventsFixedSizeCollection(
+        @Nullable List<ListUserEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1367,7 +1370,7 @@ public class UserEventServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserEventsFixedSizeCollection createCollection(
-        List<ListUserEventsPage> pages, int collectionSize) {
+        @Nullable List<ListUserEventsPage> pages, int collectionSize) {
       return new ListUserEventsFixedSizeCollection(pages, collectionSize);
     }
   }

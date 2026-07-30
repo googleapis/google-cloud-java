@@ -19,6 +19,9 @@
             "CreateManagedFolder": {
               "methods": ["createManagedFolder", "createManagedFolder", "createManagedFolder", "createManagedFolderCallable"]
             },
+            "CreateRapidCache": {
+              "methods": ["createRapidCacheAsync", "createRapidCacheAsync", "createRapidCacheAsync", "createRapidCacheOperationCallable", "createRapidCacheCallable"]
+            },
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
             },
@@ -58,6 +61,9 @@
             "GetProjectIntelligenceConfig": {
               "methods": ["getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfigCallable"]
             },
+            "GetRapidCache": {
+              "methods": ["getRapidCache", "getRapidCache", "getRapidCache", "getRapidCacheCallable"]
+            },
             "GetStorageLayout": {
               "methods": ["getStorageLayout", "getStorageLayout", "getStorageLayout", "getStorageLayoutCallable"]
             },
@@ -75,6 +81,9 @@
             },
             "ListManagedFolders": {
               "methods": ["listManagedFolders", "listManagedFolders", "listManagedFolders", "listManagedFoldersPagedCallable", "listManagedFoldersCallable"]
+            },
+            "ListRapidCaches": {
+              "methods": ["listRapidCaches", "listRapidCaches", "listRapidCaches", "listRapidCachesPagedCallable", "listRapidCachesCallable"]
             },
             "PauseAnywhereCache": {
               "methods": ["pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCacheCallable"]
@@ -100,11 +109,17 @@
             "UpdateFolderIntelligenceConfig": {
               "methods": ["updateFolderIntelligenceConfig", "updateFolderIntelligenceConfig", "updateFolderIntelligenceConfigCallable"]
             },
+            "UpdateManagedFolder": {
+              "methods": ["updateManagedFolder", "updateManagedFolder", "updateManagedFolderCallable"]
+            },
             "UpdateOrganizationIntelligenceConfig": {
               "methods": ["updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfigCallable"]
             },
             "UpdateProjectIntelligenceConfig": {
               "methods": ["updateProjectIntelligenceConfig", "updateProjectIntelligenceConfig", "updateProjectIntelligenceConfigCallable"]
+            },
+            "UpdateRapidCache": {
+              "methods": ["updateRapidCacheAsync", "updateRapidCacheAsync", "updateRapidCacheOperationCallable", "updateRapidCacheCallable"]
             }
           }
         }

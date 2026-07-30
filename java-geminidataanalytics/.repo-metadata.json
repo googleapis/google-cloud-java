@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-geminidataanalytics",
   "api_id": "geminidataanalytics.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://cloud.google.com/gemini/docs/conversational-analytics-api/reference"
 }

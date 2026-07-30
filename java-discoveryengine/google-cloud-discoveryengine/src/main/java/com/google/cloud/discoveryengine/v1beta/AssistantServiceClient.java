@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -235,7 +236,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssistantServiceClient implements BackgroundResource {
-  private final AssistantServiceSettings settings;
+  private final @Nullable AssistantServiceSettings settings;
   private final AssistantServiceStub stub;
 
   /** Constructs an instance of AssistantServiceClient with default settings. */
@@ -275,7 +276,7 @@ public class AssistantServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AssistantServiceSettings getSettings() {
+  public final @Nullable AssistantServiceSettings getSettings() {
     return settings;
   }
 
@@ -415,7 +416,7 @@ public class AssistantServiceClient implements BackgroundResource {
    *     exist, a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAssistant(AssistantName name) {
+  public final void deleteAssistant(@Nullable AssistantName name) {
     DeleteAssistantRequest request =
         DeleteAssistantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAssistant(request);
@@ -641,7 +642,7 @@ public class AssistantServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assistant getAssistant(AssistantName name) {
+  public final Assistant getAssistant(@Nullable AssistantName name) {
     GetAssistantRequest request =
         GetAssistantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAssistant(request);
@@ -764,7 +765,7 @@ public class AssistantServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssistantsPagedResponse listAssistants(EngineName parent) {
+  public final ListAssistantsPagedResponse listAssistants(@Nullable EngineName parent) {
     ListAssistantsRequest request =
         ListAssistantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -973,8 +974,8 @@ public class AssistantServiceClient implements BackgroundResource {
           ListAssistantsRequest, ListAssistantsResponse, Assistant, ListAssistantsPage> {
 
     private ListAssistantsPage(
-        PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
-        ListAssistantsResponse response) {
+        @Nullable PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
+        @Nullable ListAssistantsResponse response) {
       super(context, response);
     }
 
@@ -984,14 +985,14 @@ public class AssistantServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssistantsPage createPage(
-        PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
-        ListAssistantsResponse response) {
+        @Nullable PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
+        @Nullable ListAssistantsResponse response) {
       return new ListAssistantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssistantsPage> createPageAsync(
-        PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
+        @Nullable PageContext<ListAssistantsRequest, ListAssistantsResponse, Assistant> context,
         ApiFuture<ListAssistantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1005,7 +1006,8 @@ public class AssistantServiceClient implements BackgroundResource {
           ListAssistantsPage,
           ListAssistantsFixedSizeCollection> {
 
-    private ListAssistantsFixedSizeCollection(List<ListAssistantsPage> pages, int collectionSize) {
+    private ListAssistantsFixedSizeCollection(
+        @Nullable List<ListAssistantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1015,7 +1017,7 @@ public class AssistantServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssistantsFixedSizeCollection createCollection(
-        List<ListAssistantsPage> pages, int collectionSize) {
+        @Nullable List<ListAssistantsPage> pages, int collectionSize) {
       return new ListAssistantsFixedSizeCollection(pages, collectionSize);
     }
   }

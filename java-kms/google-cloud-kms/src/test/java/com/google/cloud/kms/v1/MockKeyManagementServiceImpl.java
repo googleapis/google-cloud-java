@@ -423,6 +423,52 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void importTrustedKeyWrappedCryptoKeyVersion(
+      ImportTrustedKeyWrappedCryptoKeyVersionRequest request,
+      StreamObserver<CryptoKeyVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CryptoKeyVersion) {
+      requests.add(request);
+      responseObserver.onNext(((CryptoKeyVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " ImportTrustedKeyWrappedCryptoKeyVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CryptoKeyVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void exportTrustedKeyWrappedCryptoKeyVersion(
+      ExportTrustedKeyWrappedCryptoKeyVersionRequest request,
+      StreamObserver<ExportTrustedKeyWrappedCryptoKeyVersionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExportTrustedKeyWrappedCryptoKeyVersionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExportTrustedKeyWrappedCryptoKeyVersionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " ExportTrustedKeyWrappedCryptoKeyVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExportTrustedKeyWrappedCryptoKeyVersionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createImportJob(
       CreateImportJobRequest request, StreamObserver<ImportJob> responseObserver) {
     Object response = responses.poll();

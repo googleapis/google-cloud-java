@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -73,7 +74,7 @@ public class MonitoredProjectName implements ResourceName {
     return newBuilder().setMetricsScope(metricsScope).setProject(project).build().toString();
   }
 
-  public static MonitoredProjectName parse(String formattedString) {
+  public static @Nullable MonitoredProjectName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -91,7 +92,7 @@ public class MonitoredProjectName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<MonitoredProjectName> values) {
+  public static List<String> toStringList(List<@Nullable MonitoredProjectName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (MonitoredProjectName value : values) {
       if (value == null) {
@@ -136,7 +137,7 @@ public class MonitoredProjectName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

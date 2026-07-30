@@ -1739,4 +1739,50 @@ public class HiveMetastoreServiceClientHttpJsonTest {
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
     mockService.addException(exception);
   }
+
+  @Test
+  public void failoverHiveCatalogTest() throws Exception {
+    FailoverHiveCatalogResponse expectedResponse =
+        FailoverHiveCatalogResponse.newBuilder()
+            .setReplicationTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-9652/catalogs/catalog-9652";
+    String primaryReplica = "primaryReplica-389090218";
+
+    FailoverHiveCatalogResponse actualResponse = client.failoverHiveCatalog(name, primaryReplica);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void failoverHiveCatalogExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9652/catalogs/catalog-9652";
+      String primaryReplica = "primaryReplica-389090218";
+      client.failoverHiveCatalog(name, primaryReplica);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

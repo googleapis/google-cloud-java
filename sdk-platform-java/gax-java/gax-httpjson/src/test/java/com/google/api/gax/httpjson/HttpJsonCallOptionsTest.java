@@ -42,7 +42,7 @@ public class HttpJsonCallOptionsTest {
 
   @Test
   void testTracer() {
-    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    ApiTracer tracer = Mockito.mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     HttpJsonCallOptions options = OPTIONS_BUILDER.setTracer(tracer).build();
     assertThat(options.getTracer()).isSameInstanceAs(tracer);
   }

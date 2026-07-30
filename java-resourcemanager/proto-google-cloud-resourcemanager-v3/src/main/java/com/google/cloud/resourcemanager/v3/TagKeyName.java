@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,7 +66,7 @@ public class TagKeyName implements ResourceName {
     return newBuilder().setTagKey(tagKey).build().toString();
   }
 
-  public static TagKeyName parse(String formattedString) {
+  public static @Nullable TagKeyName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -83,7 +84,7 @@ public class TagKeyName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<TagKeyName> values) {
+  public static List<String> toStringList(List<@Nullable TagKeyName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (TagKeyName value : values) {
       if (value == null) {
@@ -125,7 +126,7 @@ public class TagKeyName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

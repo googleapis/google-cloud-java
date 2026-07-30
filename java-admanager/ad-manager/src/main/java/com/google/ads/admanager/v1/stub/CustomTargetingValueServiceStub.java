@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.GetCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingValueRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -51,6 +61,46 @@ public abstract class CustomTargetingValueServiceStub implements BackgroundResou
   public UnaryCallable<ListCustomTargetingValuesRequest, ListCustomTargetingValuesResponse>
       listCustomTargetingValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: listCustomTargetingValuesCallable()");
+  }
+
+  public UnaryCallable<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createCustomTargetingValueCallable()");
+  }
+
+  public UnaryCallable<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateCustomTargetingValuesCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCustomTargetingValueCallable()");
+  }
+
+  public UnaryCallable<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchUpdateCustomTargetingValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCustomTargetingValuesCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCustomTargetingValuesCallable()");
   }
 
   @Override

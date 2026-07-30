@@ -39,7 +39,8 @@ import com.google.common.base.Preconditions;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A wrapper callable that will wrap a callable chain in a trace.
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  *
  * <p>For internal use only.
  */
+@NullMarked
 @BetaApi("The surface for tracing is not stable and might change in the future")
 @InternalApi
 public class TracedClientStreamingCallable<RequestT, ResponseT>
@@ -56,7 +58,7 @@ public class TracedClientStreamingCallable<RequestT, ResponseT>
   private final ClientStreamingCallable<RequestT, ResponseT> innerCallable;
   private final ApiTracerFactory tracerFactory;
   private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
+  private final @Nullable ApiTracerContext apiTracerContext;
 
   public TracedClientStreamingCallable(
       @Nonnull ClientStreamingCallable<RequestT, ResponseT> innerCallable,

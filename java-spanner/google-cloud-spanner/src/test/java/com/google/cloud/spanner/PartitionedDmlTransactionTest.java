@@ -26,6 +26,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.AbortedException;
@@ -117,7 +118,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             Mockito.eq(executeRequestWithoutResumeToken), anyMap(), any(), any(Duration.class)))
@@ -137,7 +139,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             Mockito.eq(executeRequestWithRequestOptions), anyMap(), any(), any(Duration.class)))
@@ -159,7 +162,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -168,7 +172,8 @@ public class PartitionedDmlTransactionTest {
             new AbortedException(
                 "transaction aborted", null, GrpcStatusCode.of(Code.ABORTED), true));
     when(stream1.iterator()).thenReturn(iterator);
-    ServerStream<PartialResultSet> stream2 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream2 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream2.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             any(ExecuteSqlRequest.class), anyMap(), any(), any(Duration.class)))
@@ -188,7 +193,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -197,7 +203,8 @@ public class PartitionedDmlTransactionTest {
             new UnavailableException(
                 "temporary unavailable", null, GrpcStatusCode.of(Code.UNAVAILABLE), true));
     when(stream1.iterator()).thenReturn(iterator);
-    ServerStream<PartialResultSet> stream2 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream2 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream2.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             Mockito.eq(executeRequestWithoutResumeToken), anyMap(), any(), any(Duration.class)))
@@ -221,7 +228,8 @@ public class PartitionedDmlTransactionTest {
   @Test
   public void testExecuteStreamingPartitionedUpdateUnavailableAndThenDeadlineExceeded() {
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -249,7 +257,8 @@ public class PartitionedDmlTransactionTest {
   @Test
   public void testExecuteStreamingPartitionedUpdateAbortedAndThenDeadlineExceeded() {
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -277,7 +286,8 @@ public class PartitionedDmlTransactionTest {
   @Test
   public void testExecuteStreamingPartitionedUpdateMultipleAbortsUntilDeadlineExceeded() {
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true);
     when(iterator.next())
@@ -319,7 +329,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -331,7 +342,8 @@ public class PartitionedDmlTransactionTest {
                 GrpcStatusCode.of(Code.INTERNAL),
                 true));
     when(stream1.iterator()).thenReturn(iterator);
-    ServerStream<PartialResultSet> stream2 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream2 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream2.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             Mockito.eq(executeRequestWithoutResumeToken), anyMap(), any(), any(Duration.class)))
@@ -358,7 +370,8 @@ public class PartitionedDmlTransactionTest {
     ResultSetStats stats = ResultSetStats.newBuilder().setRowCountLowerBound(1000L).build();
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
     PartialResultSet p2 = PartialResultSet.newBuilder().setStats(stats).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())
@@ -370,7 +383,8 @@ public class PartitionedDmlTransactionTest {
                 GrpcStatusCode.of(Code.INTERNAL),
                 true));
     when(stream1.iterator()).thenReturn(iterator);
-    ServerStream<PartialResultSet> stream2 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream2 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(stream2.iterator()).thenReturn(ImmutableList.of(p1, p2).iterator());
     when(rpc.executeStreamingPartitionedDml(
             Mockito.eq(executeRequestWithoutResumeToken), anyMap(), any(), any(Duration.class)))
@@ -395,7 +409,8 @@ public class PartitionedDmlTransactionTest {
   @Test
   public void testExecuteStreamingPartitionedUpdateGenericInternalException() {
     PartialResultSet p1 = PartialResultSet.newBuilder().setResumeToken(resumeToken).build();
-    ServerStream<PartialResultSet> stream1 = mock(ServerStream.class);
+    ServerStream<PartialResultSet> stream1 =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     Iterator<PartialResultSet> iterator = mock(Iterator.class);
     when(iterator.hasNext()).thenReturn(true, true, false);
     when(iterator.next())

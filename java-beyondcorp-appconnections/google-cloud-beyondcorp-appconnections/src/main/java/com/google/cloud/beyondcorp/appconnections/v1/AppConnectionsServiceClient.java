@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -330,7 +331,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AppConnectionsServiceClient implements BackgroundResource {
-  private final AppConnectionsServiceSettings settings;
+  private final @Nullable AppConnectionsServiceSettings settings;
   private final AppConnectionsServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -373,7 +374,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final AppConnectionsServiceSettings getSettings() {
+  public final @Nullable AppConnectionsServiceSettings getSettings() {
     return settings;
   }
 
@@ -415,7 +416,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAppConnectionsPagedResponse listAppConnections(LocationName parent) {
+  public final ListAppConnectionsPagedResponse listAppConnections(@Nullable LocationName parent) {
     ListAppConnectionsRequest request =
         ListAppConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -594,7 +595,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppConnection getAppConnection(AppConnectionName name) {
+  public final AppConnection getAppConnection(@Nullable AppConnectionName name) {
     GetAppConnectionRequest request =
         GetAppConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAppConnection(request);
@@ -722,7 +723,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    */
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       createAppConnectionAsync(
-          LocationName parent, AppConnection appConnection, String appConnectionId) {
+          @Nullable LocationName parent, AppConnection appConnection, String appConnectionId) {
     CreateAppConnectionRequest request =
         CreateAppConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1048,7 +1049,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, AppConnectionOperationMetadata> deleteAppConnectionAsync(
-      AppConnectionName name) {
+      @Nullable AppConnectionName name) {
     DeleteAppConnectionRequest request =
         DeleteAppConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1211,7 +1212,8 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResolveAppConnectionsPagedResponse resolveAppConnections(LocationName parent) {
+  public final ResolveAppConnectionsPagedResponse resolveAppConnections(
+      @Nullable LocationName parent) {
     ResolveAppConnectionsRequest request =
         ResolveAppConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1801,8 +1803,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ListAppConnectionsPage> {
 
     private ListAppConnectionsPage(
-        PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection> context,
-        ListAppConnectionsResponse response) {
+        @Nullable PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection>
+            context,
+        @Nullable ListAppConnectionsResponse response) {
       super(context, response);
     }
 
@@ -1812,14 +1815,16 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppConnectionsPage createPage(
-        PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection> context,
-        ListAppConnectionsResponse response) {
+        @Nullable PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection>
+            context,
+        @Nullable ListAppConnectionsResponse response) {
       return new ListAppConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAppConnectionsPage> createPageAsync(
-        PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection> context,
+        @Nullable PageContext<ListAppConnectionsRequest, ListAppConnectionsResponse, AppConnection>
+            context,
         ApiFuture<ListAppConnectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1834,7 +1839,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ListAppConnectionsFixedSizeCollection> {
 
     private ListAppConnectionsFixedSizeCollection(
-        List<ListAppConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListAppConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1844,7 +1849,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppConnectionsFixedSizeCollection createCollection(
-        List<ListAppConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListAppConnectionsPage> pages, int collectionSize) {
       return new ListAppConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1885,12 +1890,13 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ResolveAppConnectionsPage> {
 
     private ResolveAppConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ResolveAppConnectionsRequest,
                 ResolveAppConnectionsResponse,
                 ResolveAppConnectionsResponse.AppConnectionDetails>
             context,
-        ResolveAppConnectionsResponse response) {
+        @Nullable ResolveAppConnectionsResponse response) {
       super(context, response);
     }
 
@@ -1900,18 +1906,20 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ResolveAppConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ResolveAppConnectionsRequest,
                 ResolveAppConnectionsResponse,
                 ResolveAppConnectionsResponse.AppConnectionDetails>
             context,
-        ResolveAppConnectionsResponse response) {
+        @Nullable ResolveAppConnectionsResponse response) {
       return new ResolveAppConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ResolveAppConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ResolveAppConnectionsRequest,
                 ResolveAppConnectionsResponse,
                 ResolveAppConnectionsResponse.AppConnectionDetails>
@@ -1930,7 +1938,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ResolveAppConnectionsFixedSizeCollection> {
 
     private ResolveAppConnectionsFixedSizeCollection(
-        List<ResolveAppConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ResolveAppConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1940,7 +1948,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ResolveAppConnectionsFixedSizeCollection createCollection(
-        List<ResolveAppConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ResolveAppConnectionsPage> pages, int collectionSize) {
       return new ResolveAppConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1974,8 +1982,8 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1985,14 +1993,14 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2006,7 +2014,8 @@ public class AppConnectionsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2016,7 +2025,7 @@ public class AppConnectionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

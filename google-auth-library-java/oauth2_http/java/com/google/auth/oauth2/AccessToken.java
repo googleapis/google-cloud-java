@@ -39,14 +39,17 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents a temporary OAuth2 access token and its expiration information. */
+@NullMarked
 public class AccessToken implements Serializable {
 
   private static final long serialVersionUID = -8514239465808977353L;
 
   private final String tokenValue;
-  private final Long expirationTimeMillis;
+  private final @Nullable Long expirationTimeMillis;
   private final List<String> scopes;
 
   /**
@@ -98,7 +101,7 @@ public class AccessToken implements Serializable {
    *
    * @return The expiration time as a {@link Date}.
    */
-  public Date getExpirationTime() {
+  public @Nullable Date getExpirationTime() {
     if (expirationTimeMillis == null) {
       return null;
     }
@@ -131,7 +134,7 @@ public class AccessToken implements Serializable {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof AccessToken)) {
       return false;
     }

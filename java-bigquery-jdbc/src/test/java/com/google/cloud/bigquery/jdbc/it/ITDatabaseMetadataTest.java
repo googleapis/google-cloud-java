@@ -45,6 +45,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
@@ -57,6 +58,8 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
+  private static final String PCNT_SCHEMA = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
+  private static final String PCNT_TABLE_NAME = "PCNT_TEST_TABLE";
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
@@ -270,6 +273,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testTableConstraints() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     ResultSet primaryKey1 =
@@ -388,6 +392,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testMetadataResultSetsDoNotInterfere() throws SQLException {
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
@@ -443,6 +448,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testDatabaseMetadataGetProcedures() throws SQLException {
 
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
@@ -850,10 +856,9 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(rsNoMatch.next());
 
     // Test case 4: Get schemas with non-existent catalog
-    Assertions.assertThrows(
-        SQLException.class,
-        () -> databaseMetaData.getSchemas("invalid-catalog", null),
-        "Should throw SQLException for non-existent catalog");
+    ResultSet rsInvalid = databaseMetaData.getSchemas("invalid-catalog", null);
+    Assertions.assertFalse(
+        rsInvalid.next(), "Should return empty ResultSet for non-existent catalog");
     connection.close();
   }
 
@@ -1187,6 +1192,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
 
     String defaultDatasetValue = CONSTRAINTS_DATASET;
@@ -1257,6 +1263,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;

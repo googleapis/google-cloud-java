@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Wraps a HttpJsonClientCall in a {@link StreamController}. It feeds events to a {@link
@@ -41,6 +42,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class HttpJsonDirectStreamController<RequestT, ResponseT> implements StreamController {
   private final HttpJsonClientCall<RequestT, ResponseT> clientCall;
   private final ResponseObserver<ResponseT> responseObserver;

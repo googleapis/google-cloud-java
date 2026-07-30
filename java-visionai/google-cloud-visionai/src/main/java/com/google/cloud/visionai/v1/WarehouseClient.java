@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1306,7 +1307,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class WarehouseClient implements BackgroundResource {
-  private final WarehouseSettings settings;
+  private final @Nullable WarehouseSettings settings;
   private final WarehouseStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1352,7 +1353,7 @@ public class WarehouseClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WarehouseSettings getSettings() {
+  public final @Nullable WarehouseSettings getSettings() {
     return settings;
   }
 
@@ -1407,7 +1408,7 @@ public class WarehouseClient implements BackgroundResource {
    *     first character must be a letter, the last could be a letter or a number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Asset createAsset(CorpusName parent, Asset asset, String assetId) {
+  public final Asset createAsset(@Nullable CorpusName parent, Asset asset, String assetId) {
     CreateAssetRequest request =
         CreateAssetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1626,7 +1627,7 @@ public class WarehouseClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/corpora/{corpus}/assets/{asset}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Asset getAsset(AssetName name) {
+  public final Asset getAsset(@Nullable AssetName name) {
     GetAssetRequest request =
         GetAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAsset(request);
@@ -1741,7 +1742,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(CorpusName parent) {
+  public final ListAssetsPagedResponse listAssets(@Nullable CorpusName parent) {
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
@@ -1902,7 +1903,8 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/assets/{asset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteAssetMetadata> deleteAssetAsync(AssetName name) {
+  public final OperationFuture<Empty, DeleteAssetMetadata> deleteAssetAsync(
+      @Nullable AssetName name) {
     DeleteAssetRequest request =
         DeleteAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAssetAsync(request);
@@ -2496,7 +2498,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ViewIndexedAssetsPagedResponse viewIndexedAssets(IndexName index) {
+  public final ViewIndexedAssetsPagedResponse viewIndexedAssets(@Nullable IndexName index) {
     ViewIndexedAssetsRequest request =
         ViewIndexedAssetsRequest.newBuilder()
             .setIndex(index == null ? null : index.toString())
@@ -2677,7 +2679,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, CreateIndexMetadata> createIndexAsync(
-      CorpusName parent, Index index, String indexId) {
+      @Nullable CorpusName parent, Index index, String indexId) {
     CreateIndexRequest request =
         CreateIndexRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2967,7 +2969,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Index getIndex(IndexName name) {
+  public final Index getIndex(@Nullable IndexName name) {
     GetIndexRequest request =
         GetIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndex(request);
@@ -3082,7 +3084,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexesPagedResponse listIndexes(CorpusName parent) {
+  public final ListIndexesPagedResponse listIndexes(@Nullable CorpusName parent) {
     ListIndexesRequest request =
         ListIndexesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3244,7 +3246,8 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteIndexMetadata> deleteIndexAsync(IndexName name) {
+  public final OperationFuture<Empty, DeleteIndexMetadata> deleteIndexAsync(
+      @Nullable IndexName name) {
     DeleteIndexRequest request =
         DeleteIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteIndexAsync(request);
@@ -3509,7 +3512,7 @@ public class WarehouseClient implements BackgroundResource {
    * @param name Required. The resource name of the corpus to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Corpus getCorpus(CorpusName name) {
+  public final Corpus getCorpus(@Nullable CorpusName name) {
     GetCorpusRequest request =
         GetCorpusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCorpus(request);
@@ -3836,7 +3839,7 @@ public class WarehouseClient implements BackgroundResource {
    * @param name Required. The resource name of the corpus to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCorpus(CorpusName name) {
+  public final void deleteCorpus(@Nullable CorpusName name) {
     DeleteCorpusRequest request =
         DeleteCorpusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCorpus(request);
@@ -4032,7 +4035,7 @@ public class WarehouseClient implements BackgroundResource {
    * @param dataSchema Required. The data schema to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSchema createDataSchema(CorpusName parent, DataSchema dataSchema) {
+  public final DataSchema createDataSchema(@Nullable CorpusName parent, DataSchema dataSchema) {
     CreateDataSchemaRequest request =
         CreateDataSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4242,7 +4245,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/corpora/{corpus_id}/dataSchemas/{data_schema_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSchema getDataSchema(DataSchemaName name) {
+  public final DataSchema getDataSchema(@Nullable DataSchemaName name) {
     GetDataSchemaRequest request =
         GetDataSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataSchema(request);
@@ -4359,7 +4362,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/corpora/{corpus_id}/dataSchemas/{data_schema_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataSchema(DataSchemaName name) {
+  public final void deleteDataSchema(@Nullable DataSchemaName name) {
     DeleteDataSchemaRequest request =
         DeleteDataSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataSchema(request);
@@ -4477,7 +4480,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/corpora/{corpus_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSchemasPagedResponse listDataSchemas(CorpusName parent) {
+  public final ListDataSchemasPagedResponse listDataSchemas(@Nullable CorpusName parent) {
     ListDataSchemasRequest request =
         ListDataSchemasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4649,7 +4652,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Annotation createAnnotation(
-      AssetName parent, Annotation annotation, String annotationId) {
+      @Nullable AssetName parent, Annotation annotation, String annotationId) {
     CreateAnnotationRequest request =
         CreateAnnotationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4786,7 +4789,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/assets/{asset}/annotations/{annotation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Annotation getAnnotation(AnnotationName name) {
+  public final Annotation getAnnotation(@Nullable AnnotationName name) {
     GetAnnotationRequest request =
         GetAnnotationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnnotation(request);
@@ -4906,7 +4909,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/assets/{asset}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnnotationsPagedResponse listAnnotations(AssetName parent) {
+  public final ListAnnotationsPagedResponse listAnnotations(@Nullable AssetName parent) {
     ListAnnotationsRequest request =
         ListAnnotationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5169,7 +5172,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/assets/{asset}/annotations/{annotation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAnnotation(AnnotationName name) {
+  public final void deleteAnnotation(@Nullable AnnotationName name) {
     DeleteAnnotationRequest request =
         DeleteAnnotationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAnnotation(request);
@@ -5552,7 +5555,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchConfig createSearchConfig(
-      CorpusName parent, SearchConfig searchConfig, String searchConfigId) {
+      @Nullable CorpusName parent, SearchConfig searchConfig, String searchConfigId) {
     CreateSearchConfigRequest request =
         CreateSearchConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5828,7 +5831,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/searchConfigs/{search_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchConfig getSearchConfig(SearchConfigName name) {
+  public final SearchConfig getSearchConfig(@Nullable SearchConfigName name) {
     GetSearchConfigRequest request =
         GetSearchConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSearchConfig(request);
@@ -5951,7 +5954,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/searchConfigs/{search_config}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSearchConfig(SearchConfigName name) {
+  public final void deleteSearchConfig(@Nullable SearchConfigName name) {
     DeleteSearchConfigRequest request =
         DeleteSearchConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6083,7 +6086,7 @@ public class WarehouseClient implements BackgroundResource {
    *     Format: `projects/{project_number}/locations/{location}/corpora/{corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSearchConfigsPagedResponse listSearchConfigs(CorpusName parent) {
+  public final ListSearchConfigsPagedResponse listSearchConfigs(@Nullable CorpusName parent) {
     ListSearchConfigsRequest request =
         ListSearchConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6255,7 +6258,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchHypernym createSearchHypernym(
-      CorpusName parent, SearchHypernym searchHypernym, String searchHypernymId) {
+      @Nullable CorpusName parent, SearchHypernym searchHypernym, String searchHypernymId) {
     CreateSearchHypernymRequest request =
         CreateSearchHypernymRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6483,7 +6486,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/searchHypernyms/{search_hypernym}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchHypernym getSearchHypernym(SearchHypernymName name) {
+  public final SearchHypernym getSearchHypernym(@Nullable SearchHypernymName name) {
     GetSearchHypernymRequest request =
         GetSearchHypernymRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6605,7 +6608,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/searchHypernyms/{search_hypernym}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSearchHypernym(SearchHypernymName name) {
+  public final void deleteSearchHypernym(@Nullable SearchHypernymName name) {
     DeleteSearchHypernymRequest request =
         DeleteSearchHypernymRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6728,7 +6731,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSearchHypernymsPagedResponse listSearchHypernyms(CorpusName parent) {
+  public final ListSearchHypernymsPagedResponse listSearchHypernyms(@Nullable CorpusName parent) {
     ListSearchHypernymsRequest request =
         ListSearchHypernymsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7136,7 +7139,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<IndexEndpoint, CreateIndexEndpointMetadata> createIndexEndpointAsync(
-      LocationName parent, IndexEndpoint indexEndpoint, String indexEndpointId) {
+      @Nullable LocationName parent, IndexEndpoint indexEndpoint, String indexEndpointId) {
     CreateIndexEndpointRequest request =
         CreateIndexEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7301,7 +7304,7 @@ public class WarehouseClient implements BackgroundResource {
    * @param name Required. Name of the IndexEndpoint resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IndexEndpoint getIndexEndpoint(IndexEndpointName name) {
+  public final IndexEndpoint getIndexEndpoint(@Nullable IndexEndpointName name) {
     GetIndexEndpointRequest request =
         GetIndexEndpointRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndexEndpoint(request);
@@ -7414,7 +7417,7 @@ public class WarehouseClient implements BackgroundResource {
    * @param parent Required. Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexEndpointsPagedResponse listIndexEndpoints(LocationName parent) {
+  public final ListIndexEndpointsPagedResponse listIndexEndpoints(@Nullable LocationName parent) {
     ListIndexEndpointsRequest request =
         ListIndexEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7710,7 +7713,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteIndexEndpointMetadata> deleteIndexEndpointAsync(
-      IndexEndpointName name) {
+      @Nullable IndexEndpointName name) {
     DeleteIndexEndpointRequest request =
         DeleteIndexEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8046,7 +8049,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, CreateCollectionMetadata> createCollectionAsync(
-      CorpusName parent, Collection collection, String collectionId) {
+      @Nullable CorpusName parent, Collection collection, String collectionId) {
     CreateCollectionRequest request =
         CreateCollectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8213,7 +8216,7 @@ public class WarehouseClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteCollectionMetadata> deleteCollectionAsync(
-      CollectionName name) {
+      @Nullable CollectionName name) {
     DeleteCollectionRequest request =
         DeleteCollectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCollectionAsync(request);
@@ -8362,7 +8365,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/collections/{collection}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Collection getCollection(CollectionName name) {
+  public final Collection getCollection(@Nullable CollectionName name) {
     GetCollectionRequest request =
         GetCollectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCollection(request);
@@ -8575,7 +8578,7 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCollectionsPagedResponse listCollections(CorpusName parent) {
+  public final ListCollectionsPagedResponse listCollections(@Nullable CorpusName parent) {
     ListCollectionsRequest request =
         ListCollectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8909,7 +8912,8 @@ public class WarehouseClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location}/corpora/{corpus}/collections/{collection}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ViewCollectionItemsPagedResponse viewCollectionItems(CollectionName collection) {
+  public final ViewCollectionItemsPagedResponse viewCollectionItems(
+      @Nullable CollectionName collection) {
     ViewCollectionItemsRequest request =
         ViewCollectionItemsRequest.newBuilder()
             .setCollection(collection == null ? null : collection.toString())
@@ -9271,8 +9275,8 @@ public class WarehouseClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -9282,14 +9286,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9303,7 +9307,8 @@ public class WarehouseClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9313,7 +9318,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9350,8 +9355,9 @@ public class WarehouseClient implements BackgroundResource {
           ViewIndexedAssetsPage> {
 
     private ViewIndexedAssetsPage(
-        PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset> context,
-        ViewIndexedAssetsResponse response) {
+        @Nullable PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset>
+            context,
+        @Nullable ViewIndexedAssetsResponse response) {
       super(context, response);
     }
 
@@ -9361,14 +9367,16 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ViewIndexedAssetsPage createPage(
-        PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset> context,
-        ViewIndexedAssetsResponse response) {
+        @Nullable PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset>
+            context,
+        @Nullable ViewIndexedAssetsResponse response) {
       return new ViewIndexedAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ViewIndexedAssetsPage> createPageAsync(
-        PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset> context,
+        @Nullable PageContext<ViewIndexedAssetsRequest, ViewIndexedAssetsResponse, IndexedAsset>
+            context,
         ApiFuture<ViewIndexedAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9383,7 +9391,7 @@ public class WarehouseClient implements BackgroundResource {
           ViewIndexedAssetsFixedSizeCollection> {
 
     private ViewIndexedAssetsFixedSizeCollection(
-        List<ViewIndexedAssetsPage> pages, int collectionSize) {
+        @Nullable List<ViewIndexedAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9393,7 +9401,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ViewIndexedAssetsFixedSizeCollection createCollection(
-        List<ViewIndexedAssetsPage> pages, int collectionSize) {
+        @Nullable List<ViewIndexedAssetsPage> pages, int collectionSize) {
       return new ViewIndexedAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9424,8 +9432,8 @@ public class WarehouseClient implements BackgroundResource {
       extends AbstractPage<ListIndexesRequest, ListIndexesResponse, Index, ListIndexesPage> {
 
     private ListIndexesPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       super(context, response);
     }
 
@@ -9435,14 +9443,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListIndexesPage createPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       return new ListIndexesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexesPage> createPageAsync(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
         ApiFuture<ListIndexesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9456,7 +9464,8 @@ public class WarehouseClient implements BackgroundResource {
           ListIndexesPage,
           ListIndexesFixedSizeCollection> {
 
-    private ListIndexesFixedSizeCollection(List<ListIndexesPage> pages, int collectionSize) {
+    private ListIndexesFixedSizeCollection(
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9466,7 +9475,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListIndexesFixedSizeCollection createCollection(
-        List<ListIndexesPage> pages, int collectionSize) {
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       return new ListIndexesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9497,8 +9506,8 @@ public class WarehouseClient implements BackgroundResource {
       extends AbstractPage<ListCorporaRequest, ListCorporaResponse, Corpus, ListCorporaPage> {
 
     private ListCorporaPage(
-        PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
-        ListCorporaResponse response) {
+        @Nullable PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
+        @Nullable ListCorporaResponse response) {
       super(context, response);
     }
 
@@ -9508,14 +9517,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListCorporaPage createPage(
-        PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
-        ListCorporaResponse response) {
+        @Nullable PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
+        @Nullable ListCorporaResponse response) {
       return new ListCorporaPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCorporaPage> createPageAsync(
-        PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
+        @Nullable PageContext<ListCorporaRequest, ListCorporaResponse, Corpus> context,
         ApiFuture<ListCorporaResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9529,7 +9538,8 @@ public class WarehouseClient implements BackgroundResource {
           ListCorporaPage,
           ListCorporaFixedSizeCollection> {
 
-    private ListCorporaFixedSizeCollection(List<ListCorporaPage> pages, int collectionSize) {
+    private ListCorporaFixedSizeCollection(
+        @Nullable List<ListCorporaPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9539,7 +9549,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListCorporaFixedSizeCollection createCollection(
-        List<ListCorporaPage> pages, int collectionSize) {
+        @Nullable List<ListCorporaPage> pages, int collectionSize) {
       return new ListCorporaFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9573,8 +9583,8 @@ public class WarehouseClient implements BackgroundResource {
           ListDataSchemasRequest, ListDataSchemasResponse, DataSchema, ListDataSchemasPage> {
 
     private ListDataSchemasPage(
-        PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
-        ListDataSchemasResponse response) {
+        @Nullable PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
+        @Nullable ListDataSchemasResponse response) {
       super(context, response);
     }
 
@@ -9584,14 +9594,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListDataSchemasPage createPage(
-        PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
-        ListDataSchemasResponse response) {
+        @Nullable PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
+        @Nullable ListDataSchemasResponse response) {
       return new ListDataSchemasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataSchemasPage> createPageAsync(
-        PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
+        @Nullable PageContext<ListDataSchemasRequest, ListDataSchemasResponse, DataSchema> context,
         ApiFuture<ListDataSchemasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9606,7 +9616,7 @@ public class WarehouseClient implements BackgroundResource {
           ListDataSchemasFixedSizeCollection> {
 
     private ListDataSchemasFixedSizeCollection(
-        List<ListDataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListDataSchemasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9616,7 +9626,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListDataSchemasFixedSizeCollection createCollection(
-        List<ListDataSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListDataSchemasPage> pages, int collectionSize) {
       return new ListDataSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9650,8 +9660,8 @@ public class WarehouseClient implements BackgroundResource {
           ListAnnotationsRequest, ListAnnotationsResponse, Annotation, ListAnnotationsPage> {
 
     private ListAnnotationsPage(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
-        ListAnnotationsResponse response) {
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable ListAnnotationsResponse response) {
       super(context, response);
     }
 
@@ -9661,14 +9671,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationsPage createPage(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
-        ListAnnotationsResponse response) {
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable ListAnnotationsResponse response) {
       return new ListAnnotationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnnotationsPage> createPageAsync(
-        PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
+        @Nullable PageContext<ListAnnotationsRequest, ListAnnotationsResponse, Annotation> context,
         ApiFuture<ListAnnotationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9683,7 +9693,7 @@ public class WarehouseClient implements BackgroundResource {
           ListAnnotationsFixedSizeCollection> {
 
     private ListAnnotationsFixedSizeCollection(
-        List<ListAnnotationsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9693,7 +9703,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListAnnotationsFixedSizeCollection createCollection(
-        List<ListAnnotationsPage> pages, int collectionSize) {
+        @Nullable List<ListAnnotationsPage> pages, int collectionSize) {
       return new ListAnnotationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9730,8 +9740,9 @@ public class WarehouseClient implements BackgroundResource {
           ListSearchConfigsPage> {
 
     private ListSearchConfigsPage(
-        PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig> context,
-        ListSearchConfigsResponse response) {
+        @Nullable PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig>
+            context,
+        @Nullable ListSearchConfigsResponse response) {
       super(context, response);
     }
 
@@ -9741,14 +9752,16 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListSearchConfigsPage createPage(
-        PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig> context,
-        ListSearchConfigsResponse response) {
+        @Nullable PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig>
+            context,
+        @Nullable ListSearchConfigsResponse response) {
       return new ListSearchConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSearchConfigsPage> createPageAsync(
-        PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig> context,
+        @Nullable PageContext<ListSearchConfigsRequest, ListSearchConfigsResponse, SearchConfig>
+            context,
         ApiFuture<ListSearchConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9763,7 +9776,7 @@ public class WarehouseClient implements BackgroundResource {
           ListSearchConfigsFixedSizeCollection> {
 
     private ListSearchConfigsFixedSizeCollection(
-        List<ListSearchConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListSearchConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9773,7 +9786,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListSearchConfigsFixedSizeCollection createCollection(
-        List<ListSearchConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListSearchConfigsPage> pages, int collectionSize) {
       return new ListSearchConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9811,9 +9824,10 @@ public class WarehouseClient implements BackgroundResource {
           ListSearchHypernymsPage> {
 
     private ListSearchHypernymsPage(
-        PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
+        @Nullable
+            PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
             context,
-        ListSearchHypernymsResponse response) {
+        @Nullable ListSearchHypernymsResponse response) {
       super(context, response);
     }
 
@@ -9823,15 +9837,17 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListSearchHypernymsPage createPage(
-        PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
+        @Nullable
+            PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
             context,
-        ListSearchHypernymsResponse response) {
+        @Nullable ListSearchHypernymsResponse response) {
       return new ListSearchHypernymsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSearchHypernymsPage> createPageAsync(
-        PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
+        @Nullable
+            PageContext<ListSearchHypernymsRequest, ListSearchHypernymsResponse, SearchHypernym>
             context,
         ApiFuture<ListSearchHypernymsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -9847,7 +9863,7 @@ public class WarehouseClient implements BackgroundResource {
           ListSearchHypernymsFixedSizeCollection> {
 
     private ListSearchHypernymsFixedSizeCollection(
-        List<ListSearchHypernymsPage> pages, int collectionSize) {
+        @Nullable List<ListSearchHypernymsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9857,7 +9873,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListSearchHypernymsFixedSizeCollection createCollection(
-        List<ListSearchHypernymsPage> pages, int collectionSize) {
+        @Nullable List<ListSearchHypernymsPage> pages, int collectionSize) {
       return new ListSearchHypernymsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9891,8 +9907,8 @@ public class WarehouseClient implements BackgroundResource {
           SearchAssetsRequest, SearchAssetsResponse, SearchResultItem, SearchAssetsPage> {
 
     private SearchAssetsPage(
-        PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
-        SearchAssetsResponse response) {
+        @Nullable PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
+        @Nullable SearchAssetsResponse response) {
       super(context, response);
     }
 
@@ -9902,14 +9918,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected SearchAssetsPage createPage(
-        PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
-        SearchAssetsResponse response) {
+        @Nullable PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
+        @Nullable SearchAssetsResponse response) {
       return new SearchAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAssetsPage> createPageAsync(
-        PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
+        @Nullable PageContext<SearchAssetsRequest, SearchAssetsResponse, SearchResultItem> context,
         ApiFuture<SearchAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9923,7 +9939,8 @@ public class WarehouseClient implements BackgroundResource {
           SearchAssetsPage,
           SearchAssetsFixedSizeCollection> {
 
-    private SearchAssetsFixedSizeCollection(List<SearchAssetsPage> pages, int collectionSize) {
+    private SearchAssetsFixedSizeCollection(
+        @Nullable List<SearchAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9933,7 +9950,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected SearchAssetsFixedSizeCollection createCollection(
-        List<SearchAssetsPage> pages, int collectionSize) {
+        @Nullable List<SearchAssetsPage> pages, int collectionSize) {
       return new SearchAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9971,9 +9988,10 @@ public class WarehouseClient implements BackgroundResource {
           SearchIndexEndpointPage> {
 
     private SearchIndexEndpointPage(
-        PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
+        @Nullable
+            PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
             context,
-        SearchIndexEndpointResponse response) {
+        @Nullable SearchIndexEndpointResponse response) {
       super(context, response);
     }
 
@@ -9983,15 +10001,17 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected SearchIndexEndpointPage createPage(
-        PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
+        @Nullable
+            PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
             context,
-        SearchIndexEndpointResponse response) {
+        @Nullable SearchIndexEndpointResponse response) {
       return new SearchIndexEndpointPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchIndexEndpointPage> createPageAsync(
-        PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
+        @Nullable
+            PageContext<SearchIndexEndpointRequest, SearchIndexEndpointResponse, SearchResultItem>
             context,
         ApiFuture<SearchIndexEndpointResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10007,7 +10027,7 @@ public class WarehouseClient implements BackgroundResource {
           SearchIndexEndpointFixedSizeCollection> {
 
     private SearchIndexEndpointFixedSizeCollection(
-        List<SearchIndexEndpointPage> pages, int collectionSize) {
+        @Nullable List<SearchIndexEndpointPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10017,7 +10037,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected SearchIndexEndpointFixedSizeCollection createCollection(
-        List<SearchIndexEndpointPage> pages, int collectionSize) {
+        @Nullable List<SearchIndexEndpointPage> pages, int collectionSize) {
       return new SearchIndexEndpointFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10054,8 +10074,9 @@ public class WarehouseClient implements BackgroundResource {
           ListIndexEndpointsPage> {
 
     private ListIndexEndpointsPage(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
-        ListIndexEndpointsResponse response) {
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
+        @Nullable ListIndexEndpointsResponse response) {
       super(context, response);
     }
 
@@ -10065,14 +10086,16 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListIndexEndpointsPage createPage(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
-        ListIndexEndpointsResponse response) {
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
+        @Nullable ListIndexEndpointsResponse response) {
       return new ListIndexEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexEndpointsPage> createPageAsync(
-        PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint> context,
+        @Nullable PageContext<ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
+            context,
         ApiFuture<ListIndexEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10087,7 +10110,7 @@ public class WarehouseClient implements BackgroundResource {
           ListIndexEndpointsFixedSizeCollection> {
 
     private ListIndexEndpointsFixedSizeCollection(
-        List<ListIndexEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListIndexEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10097,7 +10120,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListIndexEndpointsFixedSizeCollection createCollection(
-        List<ListIndexEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListIndexEndpointsPage> pages, int collectionSize) {
       return new ListIndexEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10131,8 +10154,8 @@ public class WarehouseClient implements BackgroundResource {
           ListCollectionsRequest, ListCollectionsResponse, Collection, ListCollectionsPage> {
 
     private ListCollectionsPage(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
-        ListCollectionsResponse response) {
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable ListCollectionsResponse response) {
       super(context, response);
     }
 
@@ -10142,14 +10165,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListCollectionsPage createPage(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
-        ListCollectionsResponse response) {
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable ListCollectionsResponse response) {
       return new ListCollectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCollectionsPage> createPageAsync(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
         ApiFuture<ListCollectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10164,7 +10187,7 @@ public class WarehouseClient implements BackgroundResource {
           ListCollectionsFixedSizeCollection> {
 
     private ListCollectionsFixedSizeCollection(
-        List<ListCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10174,7 +10197,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListCollectionsFixedSizeCollection createCollection(
-        List<ListCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionsPage> pages, int collectionSize) {
       return new ListCollectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10212,9 +10235,10 @@ public class WarehouseClient implements BackgroundResource {
           ViewCollectionItemsPage> {
 
     private ViewCollectionItemsPage(
-        PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
+        @Nullable
+            PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
             context,
-        ViewCollectionItemsResponse response) {
+        @Nullable ViewCollectionItemsResponse response) {
       super(context, response);
     }
 
@@ -10224,15 +10248,17 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ViewCollectionItemsPage createPage(
-        PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
+        @Nullable
+            PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
             context,
-        ViewCollectionItemsResponse response) {
+        @Nullable ViewCollectionItemsResponse response) {
       return new ViewCollectionItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ViewCollectionItemsPage> createPageAsync(
-        PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
+        @Nullable
+            PageContext<ViewCollectionItemsRequest, ViewCollectionItemsResponse, CollectionItem>
             context,
         ApiFuture<ViewCollectionItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -10248,7 +10274,7 @@ public class WarehouseClient implements BackgroundResource {
           ViewCollectionItemsFixedSizeCollection> {
 
     private ViewCollectionItemsFixedSizeCollection(
-        List<ViewCollectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ViewCollectionItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10258,7 +10284,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ViewCollectionItemsFixedSizeCollection createCollection(
-        List<ViewCollectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ViewCollectionItemsPage> pages, int collectionSize) {
       return new ViewCollectionItemsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -10292,8 +10318,8 @@ public class WarehouseClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -10303,14 +10329,14 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10324,7 +10350,8 @@ public class WarehouseClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10334,7 +10361,7 @@ public class WarehouseClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

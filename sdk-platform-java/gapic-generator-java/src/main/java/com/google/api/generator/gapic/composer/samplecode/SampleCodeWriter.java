@@ -23,7 +23,9 @@ import com.google.api.generator.gapic.model.Sample;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.Arrays;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public final class SampleCodeWriter {
 
   public static String writeInlineSample(List<Statement> statements) {

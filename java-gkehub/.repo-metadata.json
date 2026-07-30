@@ -11,6 +11,5 @@
   "repo_short": "java-gkehub",
   "distribution_name": "com.google.cloud:google-cloud-gkehub",
   "api_id": "gkehub.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

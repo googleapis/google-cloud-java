@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -487,7 +488,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DisksClient implements BackgroundResource {
-  private final DisksSettings settings;
+  private final @Nullable DisksSettings settings;
   private final DisksStub stub;
 
   /** Constructs an instance of DisksClient with default settings. */
@@ -525,7 +526,7 @@ public class DisksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DisksSettings getSettings() {
+  public final @Nullable DisksSettings getSettings() {
     return settings;
   }
 
@@ -3297,10 +3298,11 @@ public class DisksClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
-        DiskAggregatedList response) {
+        @Nullable DiskAggregatedList response) {
       super(context, response);
     }
 
@@ -3310,16 +3312,18 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
-        DiskAggregatedList response) {
+        @Nullable DiskAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
             context,
         ApiFuture<DiskAggregatedList> futureResponse) {
@@ -3335,7 +3339,8 @@ public class DisksClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3345,7 +3350,7 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3369,7 +3374,9 @@ public class DisksClient implements BackgroundResource {
 
   public static class ListPage extends AbstractPage<ListDisksRequest, DiskList, Disk, ListPage> {
 
-    private ListPage(PageContext<ListDisksRequest, DiskList, Disk> context, DiskList response) {
+    private ListPage(
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       super(context, response);
     }
 
@@ -3379,13 +3386,15 @@ public class DisksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListDisksRequest, DiskList, Disk> context, DiskList response) {
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListDisksRequest, DiskList, Disk> context, ApiFuture<DiskList> futureResponse) {
+        @Nullable PageContext<ListDisksRequest, DiskList, Disk> context,
+        ApiFuture<DiskList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
   }
@@ -3394,7 +3403,7 @@ public class DisksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListDisksRequest, DiskList, Disk, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3403,7 +3412,8 @@ public class DisksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

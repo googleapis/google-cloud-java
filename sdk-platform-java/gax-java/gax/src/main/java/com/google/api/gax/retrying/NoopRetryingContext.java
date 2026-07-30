@@ -37,11 +37,13 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Backwards compatibility class to aid in transition to adding operation state to {@link
  * RetryingFuture} implementations.
  */
+@NullMarked
 class NoopRetryingContext implements RetryingContext {
   public static RetryingContext create() {
     return new NoopRetryingContext();

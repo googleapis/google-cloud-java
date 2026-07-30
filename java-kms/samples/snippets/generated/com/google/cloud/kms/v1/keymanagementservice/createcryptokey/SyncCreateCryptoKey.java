@@ -42,6 +42,7 @@ public class SyncCreateCryptoKey {
               .setCryptoKeyId("cryptoKeyId-1643185255")
               .setCryptoKey(CryptoKey.newBuilder().build())
               .setSkipInitialVersionCreation(true)
+              .setTrustedWrappingEnabled(true)
               .build();
       CryptoKey response = keyManagementServiceClient.createCryptoKey(request);
     }

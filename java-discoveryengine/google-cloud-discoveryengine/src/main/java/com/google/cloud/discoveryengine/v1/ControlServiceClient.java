@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -227,7 +228,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ControlServiceClient implements BackgroundResource {
-  private final ControlServiceSettings settings;
+  private final @Nullable ControlServiceSettings settings;
   private final ControlServiceStub stub;
 
   /** Constructs an instance of ControlServiceClient with default settings. */
@@ -267,7 +268,7 @@ public class ControlServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ControlServiceSettings getSettings() {
+  public final @Nullable ControlServiceSettings getSettings() {
     return settings;
   }
 
@@ -310,7 +311,8 @@ public class ControlServiceClient implements BackgroundResource {
    *     <p>This value must be within 1-63 characters. Valid characters are /[a-z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Control createControl(DataStoreName parent, Control control, String controlId) {
+  public final Control createControl(
+      @Nullable DataStoreName parent, Control control, String controlId) {
     CreateControlRequest request =
         CreateControlRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -354,7 +356,8 @@ public class ControlServiceClient implements BackgroundResource {
    *     <p>This value must be within 1-63 characters. Valid characters are /[a-z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Control createControl(EngineName parent, Control control, String controlId) {
+  public final Control createControl(
+      @Nullable EngineName parent, Control control, String controlId) {
     CreateControlRequest request =
         CreateControlRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -510,7 +513,7 @@ public class ControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteControl(ControlName name) {
+  public final void deleteControl(@Nullable ControlName name) {
     DeleteControlRequest request =
         DeleteControlRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteControl(request);
@@ -745,7 +748,7 @@ public class ControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Control getControl(ControlName name) {
+  public final Control getControl(@Nullable ControlName name) {
     GetControlRequest request =
         GetControlRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getControl(request);
@@ -869,7 +872,7 @@ public class ControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListControlsPagedResponse listControls(DataStoreName parent) {
+  public final ListControlsPagedResponse listControls(@Nullable DataStoreName parent) {
     ListControlsRequest request =
         ListControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -903,7 +906,7 @@ public class ControlServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListControlsPagedResponse listControls(EngineName parent) {
+  public final ListControlsPagedResponse listControls(@Nullable EngineName parent) {
     ListControlsRequest request =
         ListControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1117,8 +1120,8 @@ public class ControlServiceClient implements BackgroundResource {
       extends AbstractPage<ListControlsRequest, ListControlsResponse, Control, ListControlsPage> {
 
     private ListControlsPage(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
-        ListControlsResponse response) {
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable ListControlsResponse response) {
       super(context, response);
     }
 
@@ -1128,14 +1131,14 @@ public class ControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListControlsPage createPage(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
-        ListControlsResponse response) {
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable ListControlsResponse response) {
       return new ListControlsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListControlsPage> createPageAsync(
-        PageContext<ListControlsRequest, ListControlsResponse, Control> context,
+        @Nullable PageContext<ListControlsRequest, ListControlsResponse, Control> context,
         ApiFuture<ListControlsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1149,7 +1152,8 @@ public class ControlServiceClient implements BackgroundResource {
           ListControlsPage,
           ListControlsFixedSizeCollection> {
 
-    private ListControlsFixedSizeCollection(List<ListControlsPage> pages, int collectionSize) {
+    private ListControlsFixedSizeCollection(
+        @Nullable List<ListControlsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1159,7 +1163,7 @@ public class ControlServiceClient implements BackgroundResource {
 
     @Override
     protected ListControlsFixedSizeCollection createCollection(
-        List<ListControlsPage> pages, int collectionSize) {
+        @Nullable List<ListControlsPage> pages, int collectionSize) {
       return new ListControlsFixedSizeCollection(pages, collectionSize);
     }
   }

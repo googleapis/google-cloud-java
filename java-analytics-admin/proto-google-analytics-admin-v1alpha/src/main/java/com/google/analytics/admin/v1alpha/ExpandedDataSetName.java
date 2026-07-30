@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -77,7 +78,7 @@ public class ExpandedDataSetName implements ResourceName {
         .toString();
   }
 
-  public static ExpandedDataSetName parse(String formattedString) {
+  public static @Nullable ExpandedDataSetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -95,7 +96,7 @@ public class ExpandedDataSetName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ExpandedDataSetName> values) {
+  public static List<String> toStringList(List<@Nullable ExpandedDataSetName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ExpandedDataSetName value : values) {
       if (value == null) {
@@ -141,7 +142,7 @@ public class ExpandedDataSetName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

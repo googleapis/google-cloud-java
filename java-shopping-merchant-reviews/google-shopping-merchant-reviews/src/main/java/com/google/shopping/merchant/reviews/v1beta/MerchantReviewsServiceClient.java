@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,7 +201,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MerchantReviewsServiceClient implements BackgroundResource {
-  private final MerchantReviewsServiceSettings settings;
+  private final @Nullable MerchantReviewsServiceSettings settings;
   private final MerchantReviewsServiceStub stub;
 
   /** Constructs an instance of MerchantReviewsServiceClient with default settings. */
@@ -241,7 +242,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MerchantReviewsServiceSettings getSettings() {
+  public final @Nullable MerchantReviewsServiceSettings getSettings() {
     return settings;
   }
 
@@ -272,7 +273,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
    *     accounts/{account}/merchantReviews/{merchantReview}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MerchantReview getMerchantReview(MerchantReviewName name) {
+  public final MerchantReview getMerchantReview(@Nullable MerchantReviewName name) {
     GetMerchantReviewRequest request =
         GetMerchantReviewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -391,7 +392,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
    * @param parent Required. The account to list merchant reviews for. Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMerchantReviewsPagedResponse listMerchantReviews(AccountName parent) {
+  public final ListMerchantReviewsPagedResponse listMerchantReviews(@Nullable AccountName parent) {
     ListMerchantReviewsRequest request =
         ListMerchantReviewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -628,7 +629,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
    *     accounts/{account}/merchantReviews/{merchantReview}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMerchantReview(MerchantReviewName name) {
+  public final void deleteMerchantReview(@Nullable MerchantReviewName name) {
     DeleteMerchantReviewRequest request =
         DeleteMerchantReviewRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -786,9 +787,10 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
           ListMerchantReviewsPage> {
 
     private ListMerchantReviewsPage(
-        PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
+        @Nullable
+            PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
             context,
-        ListMerchantReviewsResponse response) {
+        @Nullable ListMerchantReviewsResponse response) {
       super(context, response);
     }
 
@@ -798,15 +800,17 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
 
     @Override
     protected ListMerchantReviewsPage createPage(
-        PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
+        @Nullable
+            PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
             context,
-        ListMerchantReviewsResponse response) {
+        @Nullable ListMerchantReviewsResponse response) {
       return new ListMerchantReviewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMerchantReviewsPage> createPageAsync(
-        PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
+        @Nullable
+            PageContext<ListMerchantReviewsRequest, ListMerchantReviewsResponse, MerchantReview>
             context,
         ApiFuture<ListMerchantReviewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -822,7 +826,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
           ListMerchantReviewsFixedSizeCollection> {
 
     private ListMerchantReviewsFixedSizeCollection(
-        List<ListMerchantReviewsPage> pages, int collectionSize) {
+        @Nullable List<ListMerchantReviewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -832,7 +836,7 @@ public class MerchantReviewsServiceClient implements BackgroundResource {
 
     @Override
     protected ListMerchantReviewsFixedSizeCollection createCollection(
-        List<ListMerchantReviewsPage> pages, int collectionSize) {
+        @Nullable List<ListMerchantReviewsPage> pages, int collectionSize) {
       return new ListMerchantReviewsFixedSizeCollection(pages, collectionSize);
     }
   }

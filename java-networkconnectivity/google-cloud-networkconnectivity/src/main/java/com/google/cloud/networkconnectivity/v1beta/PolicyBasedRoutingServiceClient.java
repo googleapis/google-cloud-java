@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -161,8 +162,9 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -280,7 +282,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PolicyBasedRoutingServiceClient implements BackgroundResource {
-  private final PolicyBasedRoutingServiceSettings settings;
+  private final @Nullable PolicyBasedRoutingServiceSettings settings;
   private final PolicyBasedRoutingServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -325,7 +327,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final PolicyBasedRoutingServiceSettings getSettings() {
+  public final @Nullable PolicyBasedRoutingServiceSettings getSettings() {
     return settings;
   }
 
@@ -366,7 +368,8 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBasedRoutesPagedResponse listPolicyBasedRoutes(LocationName parent) {
+  public final ListPolicyBasedRoutesPagedResponse listPolicyBasedRoutes(
+      @Nullable LocationName parent) {
     ListPolicyBasedRoutesRequest request =
         ListPolicyBasedRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -543,7 +546,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * @param name Required. Name of the PolicyBasedRoute resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PolicyBasedRoute getPolicyBasedRoute(PolicyBasedRouteName name) {
+  public final PolicyBasedRoute getPolicyBasedRoute(@Nullable PolicyBasedRouteName name) {
     GetPolicyBasedRouteRequest request =
         GetPolicyBasedRouteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -674,7 +677,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBasedRoute, OperationMetadata> createPolicyBasedRouteAsync(
-      LocationName parent, PolicyBasedRoute policyBasedRoute, String policyBasedRouteId) {
+      @Nullable LocationName parent, PolicyBasedRoute policyBasedRoute, String policyBasedRouteId) {
     CreatePolicyBasedRouteRequest request =
         CreatePolicyBasedRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -855,7 +858,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBasedRouteAsync(
-      PolicyBasedRouteName name) {
+      @Nullable PolicyBasedRouteName name) {
     DeletePolicyBasedRouteRequest request =
         DeletePolicyBasedRouteRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -988,13 +991,19 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1028,13 +1037,19 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1069,13 +1084,19 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1429,9 +1450,11 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
           ListPolicyBasedRoutesPage> {
 
     private ListPolicyBasedRoutesPage(
-        PageContext<ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
+        @Nullable
+            PageContext<
+                ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
             context,
-        ListPolicyBasedRoutesResponse response) {
+        @Nullable ListPolicyBasedRoutesResponse response) {
       super(context, response);
     }
 
@@ -1441,15 +1464,19 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBasedRoutesPage createPage(
-        PageContext<ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
+        @Nullable
+            PageContext<
+                ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
             context,
-        ListPolicyBasedRoutesResponse response) {
+        @Nullable ListPolicyBasedRoutesResponse response) {
       return new ListPolicyBasedRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPolicyBasedRoutesPage> createPageAsync(
-        PageContext<ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
+        @Nullable
+            PageContext<
+                ListPolicyBasedRoutesRequest, ListPolicyBasedRoutesResponse, PolicyBasedRoute>
             context,
         ApiFuture<ListPolicyBasedRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1465,7 +1492,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
           ListPolicyBasedRoutesFixedSizeCollection> {
 
     private ListPolicyBasedRoutesFixedSizeCollection(
-        List<ListPolicyBasedRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBasedRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1475,7 +1502,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBasedRoutesFixedSizeCollection createCollection(
-        List<ListPolicyBasedRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBasedRoutesPage> pages, int collectionSize) {
       return new ListPolicyBasedRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1509,8 +1536,8 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1520,14 +1547,14 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1541,7 +1568,8 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1551,7 +1579,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

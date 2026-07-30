@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -139,7 +140,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TextSuggestionsServiceClient implements BackgroundResource {
-  private final TextSuggestionsServiceSettings settings;
+  private final @Nullable TextSuggestionsServiceSettings settings;
   private final TextSuggestionsServiceStub stub;
 
   /** Constructs an instance of TextSuggestionsServiceClient with default settings. */
@@ -180,7 +181,7 @@ public class TextSuggestionsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TextSuggestionsServiceSettings getSettings() {
+  public final @Nullable TextSuggestionsServiceSettings getSettings() {
     return settings;
   }
 

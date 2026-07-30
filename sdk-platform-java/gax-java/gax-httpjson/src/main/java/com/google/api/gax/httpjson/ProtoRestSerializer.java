@@ -42,6 +42,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class serializes/deserializes protobuf {@link Message} for REST interactions. It serializes
@@ -49,6 +50,7 @@ import java.util.Map;
  * URL path parameters, and query parameters. It deserializes JSON responses into response protobuf
  * message.
  */
+@NullMarked
 public class ProtoRestSerializer<RequestT extends Message> {
 
   private final TypeRegistry registry;

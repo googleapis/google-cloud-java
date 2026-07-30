@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.httpjson;
 
+import org.jspecify.annotations.NullMarked;
+
 /** HttpJsonChannel contains the functionality to issue http-json calls. */
+@NullMarked
 public interface HttpJsonChannel {
   <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
       ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor, HttpJsonCallOptions callOptions);
