@@ -50,7 +50,6 @@ import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @InternalApi("for testing")
@@ -463,7 +462,6 @@ public class FakeCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  @Nonnull
   public ApiTracer getTracer() {
     if (tracer == null) {
       return BaseApiTracer.getInstance();
@@ -473,7 +471,7 @@ public class FakeCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  public ApiCallContext withTracer(@Nonnull ApiTracer tracer) {
+  public ApiCallContext withTracer(ApiTracer tracer) {
     Preconditions.checkNotNull(tracer);
 
     return new FakeCallContext(
