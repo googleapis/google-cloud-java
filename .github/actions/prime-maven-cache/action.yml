@@ -1,0 +1,30 @@
+name: 'Prime Maven Cache'
+description: 'Pre-populates Maven dependencies into ~/.m2/repository and GitHub Actions Cache'
+
+runs:
+  using: 'composite'
+  steps:
+    # JDK version does not impact priming or matching the Maven cache, as cache keys are derived
+    # from ${{ runner.os }} and SHA-256 hashes of pom.xml files, not the JDK version.
+    # We default to the latest LTS version (25) to run the pre-population step.
+    # Furthermore, GitHub Actions Cache entries are immutable by primary key: downstream jobs
+    # restoring this cache can run 'mvn install' or add SNAPSHOT JARs locally without ever
+    # polluting or overwriting the remote cache.
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      id: setup-java
+      with:
+        java-version: 25
+        distribution: 'temurin'
+        cache: 'maven'
+    # Only run mvn test-compile if this is a primary key CACHE MISS (new/modified pom.xml).
+    # If cache-hit == 'true', ~/.m2/repository is already warm in GitHub Actions Cache and
+    # this step is skipped entirely (~3s total job execution!).
+    # Why 'mvn test-compile'?
+    # Using test-compile (instead of compile) downloads both production dependencies (compile scope)
+    # AND test libraries (test scope: JUnit, Mockito, Truth, Testcontainers) into ~/.m2/repository.
+    # When this job completes, setup-java saves ~/.m2/repository to GitHub Actions Cache.
+    # Downstream unit test jobs restore this cache and run offline without downloading any JARs from Maven Central.
+    - name: Prime Maven Cache
+      if: steps.setup-java.outputs.cache-hit != 'true'
+      shell: bash
+      run: mvn test-compile -DskipTests -Pquick-build -T 1C --batch-mode --no-transfer-progress
