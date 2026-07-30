@@ -36,9 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.auth.oauth2.IdentityPoolCredentialSource.CredentialFormatType;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
+
 import com.google.common.io.CharStreams;
 import java.io.BufferedReader;
 import java.io.File;
@@ -75,24 +73,7 @@ class FileIdentityPoolTokenSupplier
     }
   }
 
-  private static final LoadingCache<String, CachedFile> FILE_CACHE =
-      CacheBuilder.newBuilder()
-          .maximumSize(10)
-          .build(
-              new CacheLoader<String, CachedFile>() {
-                @Override
-                public CachedFile load(String filePath) throws Exception {
-                  File file = new File(filePath);
-                  long lastModified = file.lastModified();
-                  try (InputStream inputStream = Files.newInputStream(file.toPath())) {
-                    JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-                    GenericJson parsedJson =
-                        parser.parseAndClose(
-                            inputStream, StandardCharsets.UTF_8, GenericJson.class);
-                    return new CachedFile(lastModified, parsedJson);
-                  }
-                }
-              });
+  private volatile CachedFile cachedFile;
 
   /** Constructor that defaults to using the subjectTokenFieldName. */
   FileIdentityPoolTokenSupplier(IdentityPoolCredentialSource credentialSource) {
@@ -131,12 +112,15 @@ class FileIdentityPoolTokenSupplier
       File file = new File(credentialFilePath);
       long lastModified = file.lastModified();
 
-      CachedFile cached = FILE_CACHE.getIfPresent(credentialFilePath);
+      CachedFile cached = this.cachedFile;
 
       if (cached == null || cached.lastModified < lastModified) {
-        FILE_CACHE.invalidate(credentialFilePath);
-        try {
-          cached = FILE_CACHE.get(credentialFilePath);
+        try (InputStream inputStream = Files.newInputStream(file.toPath())) {
+          JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
+          GenericJson parsedJson =
+              parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+          cached = new CachedFile(lastModified, parsedJson);
+          this.cachedFile = cached;
         } catch (Exception e) {
           throw new IOException(
               "Error when attempting to read the token from the credential file.", e);
