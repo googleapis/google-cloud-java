@@ -36,7 +36,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.auth.oauth2.IdentityPoolCredentialSource.CredentialFormatType;
-
 import com.google.common.io.CharStreams;
 import java.io.BufferedReader;
 import java.io.File;
@@ -162,4 +161,3 @@ class FileIdentityPoolTokenSupplier
     return (String) fileContents.get(targetFieldName);
   }
 }
-

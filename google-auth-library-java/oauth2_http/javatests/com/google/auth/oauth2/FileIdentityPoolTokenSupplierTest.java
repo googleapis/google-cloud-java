@@ -77,10 +77,8 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier subSupplier =
-        new FileIdentityPoolTokenSupplier(source);
-    FileIdentityPoolTokenSupplier actSupplier =
-        new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolTokenSupplier subSupplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolTokenSupplier actSupplier = new FileIdentityPoolTokenSupplier(source);
 
     // Initial read
     assertEquals("my_sub_token", subSupplier.getSubjectToken(null));
@@ -112,8 +110,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier actSupplier =
-        new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolTokenSupplier actSupplier = new FileIdentityPoolTokenSupplier(source);
 
     IOException exception = assertThrows(IOException.class, () -> actSupplier.getActorToken(null));
     assertEquals(

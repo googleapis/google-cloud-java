@@ -1299,4 +1299,61 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       this.shouldThrowOnGetKeyStore = shouldThrow;
     }
   }
+
+  @Test
+  void builder_actorTokenWithInvalidUrl_throws() {
+    IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://invalid.googleapis.com/") // Does not contain .mtls.
+                    .setCredentialSource(credentialSource)
+                    .setActorTokenSupplier(
+                        new IdentityPoolActorTokenSupplier() {
+                          @Override
+                          public String getActorToken(ExternalAccountSupplierContext context) {
+                            return "token";
+                          }
+                        })
+                    .build());
+
+    assertEquals("Actor tokens are only supported for mTLS token URLs.", e.getMessage());
+  }
+
+  @Test
+  void builder_actorTokenWithInvalidCredentialSource_throws() {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    formatMap.put("actor_token_field_name", "actor_token");
+
+    // Not a file credential source
+    IdentityPoolCredentialSource credentialSource =
+        buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl(), formatMap);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/") // Valid URL
+                    .setCredentialSource(credentialSource) // Invalid source for actor tokens
+                    .build());
+
+    assertEquals(
+        "Actor tokens are currently only supported for file-based credential sources.",
+        e.getMessage());
+  }
 }

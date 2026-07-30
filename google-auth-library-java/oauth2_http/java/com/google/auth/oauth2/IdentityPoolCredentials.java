@@ -130,8 +130,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     if (this.actorTokenSupplier != null
         && (getTokenUrl() == null || !getTokenUrl().contains(".mtls."))) {
-      throw new IllegalArgumentException(
-          "Actor tokens are only supported for mTLS token URLs.");
+      throw new IllegalArgumentException("Actor tokens are only supported for mTLS token URLs.");
     }
   }
 
