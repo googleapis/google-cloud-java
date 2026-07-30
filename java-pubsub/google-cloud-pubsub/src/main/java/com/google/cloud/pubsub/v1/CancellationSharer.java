@@ -20,6 +20,7 @@ import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.rpc.ApiException;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PublishResponse;
 import java.util.Map;
@@ -93,11 +94,27 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       return;
     }
     lastError.set(t);
-    if (runningAttempts.isEmpty() && done.compareAndSet(false, true)) {
-      setException(lastError.get());
-      if (isInQueue.get()) {
-        publisher.removeFromHedgingQueue(this);
+
+    boolean isRetryable = true;
+    if (t instanceof ApiException) {
+      isRetryable =
+          publisher.getRetryableCodes().contains(((ApiException) t).getStatusCode().getCode());
+    }
+
+    if (runningAttempts.isEmpty() || !isRetryable) {
+      if (done.compareAndSet(false, true)) {
+        setException(lastError.get());
+        cancelAll();
+        if (isInQueue.get()) {
+          publisher.removeFromHedgingQueue(this);
+        }
       }
+    }
+  }
+
+  private void cancelAll() {
+    for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
+      future.cancel(true);
     }
   }
 

@@ -50,6 +50,7 @@ import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -69,6 +70,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
@@ -147,6 +149,7 @@ public class Publisher implements PublisherInterface {
 
   private final HedgeSettings hedgeSettings;
   private final Map<String, List<String>> hedgingMetadata;
+  private final Set<StatusCode.Code> retryableCodes;
 
   /**
    * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
@@ -253,6 +256,7 @@ public class Publisher implements PublisherInterface {
         .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
+    this.retryableCodes = ImmutableSet.copyOf(stubSettings.publishSettings().getRetryableCodes());
     backgroundResourceList.add(publisherStub);
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
@@ -466,6 +470,10 @@ public class Publisher implements PublisherInterface {
    * wait for the send operations to complete. To wait for messages to send, call {@code get} on the
    * futures returned from {@code publish}.
    */
+  Set<StatusCode.Code> getRetryableCodes() {
+    return retryableCodes;
+  }
+
   public void publishAllOutstanding() {
     OutstandingBatch unorderedOutstandingBatch = null;
     messagesBatchLock.lock();

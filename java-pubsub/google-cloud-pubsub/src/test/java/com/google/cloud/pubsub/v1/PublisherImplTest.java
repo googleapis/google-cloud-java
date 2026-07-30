@@ -36,6 +36,7 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -1656,6 +1657,43 @@ public class PublisherImplTest {
 
     // Captured requests should still be 1 (no hedge triggered)
     assertThat(testPublisherServiceImpl.getCapturedRequests()).hasSize(1);
+
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testPermanentErrorTerminatesMetaRequest() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
+
+    // 1. Configure the first response to be slow (200ms)
+    testPublisherServiceImpl.setAutoPublishResponse(false);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(200));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    // Start original attempt (Attempt 1)
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-permanent-error-test");
+    waitForRequests(testPublisherServiceImpl, 1);
+
+    // 2. Before the hedge is triggered, change response delay to 0ms (fast)
+    // and enqueue a PERMISSION_DENIED error for Attempt 2
+    fakeExecutor.advanceTime(Duration.ofMillis(50));
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ZERO);
+    testPublisherServiceImpl.addPublishError(new StatusException(Status.PERMISSION_DENIED));
+
+    // 3. Advance past the hedge delay to trigger the hedge (Attempt 2) at t=120ms
+    fakeExecutor.advanceTime(Duration.ofMillis(70));
+    waitForRequests(testPublisherServiceImpl, 2);
+
+    // Attempt 2 fails immediately with a permanent error.
+    // It should fail the client future immediately at t=120ms,
+    // without waiting for Attempt 1 to complete at t=200ms.
+    try {
+      future.get(1, TimeUnit.SECONDS);
+      fail("Should have failed with ExecutionException");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(PermissionDeniedException.class);
+    }
 
     shutdownTestPublisher(publisher);
   }
