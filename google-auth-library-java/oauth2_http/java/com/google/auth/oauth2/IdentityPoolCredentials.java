@@ -121,7 +121,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (this.subjectTokenSupplier instanceof FileIdentityPoolTokenSupplier) {
         this.actorTokenSupplier = (FileIdentityPoolTokenSupplier) this.subjectTokenSupplier;
       } else {
-        this.actorTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
+        throw new IllegalArgumentException(
+            "Actor tokens are currently only supported for file-based credential sources.");
       }
     } else {
       this.actorTokenSupplier = null;
