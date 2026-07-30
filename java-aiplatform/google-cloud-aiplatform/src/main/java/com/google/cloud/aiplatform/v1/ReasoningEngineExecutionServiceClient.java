@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -259,7 +260,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ReasoningEngineExecutionServiceClient implements BackgroundResource {
-  private final ReasoningEngineExecutionServiceSettings settings;
+  private final @Nullable ReasoningEngineExecutionServiceSettings settings;
   private final ReasoningEngineExecutionServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -307,7 +308,7 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ReasoningEngineExecutionServiceSettings getSettings() {
+  public final @Nullable ReasoningEngineExecutionServiceSettings getSettings() {
     return settings;
   }
 
@@ -1049,8 +1050,8 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1060,14 +1061,14 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1081,7 +1082,8 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1091,7 +1093,7 @@ public class ReasoningEngineExecutionServiceClient implements BackgroundResource
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -85,7 +86,7 @@ public class GeneratorName implements ResourceName {
         .toString();
   }
 
-  public static GeneratorName parse(String formattedString) {
+  public static @Nullable GeneratorName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -103,7 +104,7 @@ public class GeneratorName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GeneratorName> values) {
+  public static List<String> toStringList(List<@Nullable GeneratorName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GeneratorName value : values) {
       if (value == null) {
@@ -152,7 +153,7 @@ public class GeneratorName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

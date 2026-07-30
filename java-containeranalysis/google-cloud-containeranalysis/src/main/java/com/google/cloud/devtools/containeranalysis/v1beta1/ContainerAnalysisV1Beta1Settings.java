@@ -41,6 +41,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -184,7 +185,7 @@ public class ContainerAnalysisV1Beta1Settings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -205,7 +206,7 @@ public class ContainerAnalysisV1Beta1Settings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ContainerAnalysisV1Beta1StubSettings.newBuilder(clientContext));
     }
 

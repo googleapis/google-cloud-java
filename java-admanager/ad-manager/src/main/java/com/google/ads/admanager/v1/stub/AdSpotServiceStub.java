@@ -1,0 +1,78 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.ads.admanager.v1.stub;
+
+import static com.google.ads.admanager.v1.AdSpotServiceClient.ListAdSpotsPagedResponse;
+
+import com.google.ads.admanager.v1.AdSpot;
+import com.google.ads.admanager.v1.BatchCreateAdSpotsRequest;
+import com.google.ads.admanager.v1.BatchCreateAdSpotsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAdSpotsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAdSpotsResponse;
+import com.google.ads.admanager.v1.CreateAdSpotRequest;
+import com.google.ads.admanager.v1.GetAdSpotRequest;
+import com.google.ads.admanager.v1.ListAdSpotsRequest;
+import com.google.ads.admanager.v1.ListAdSpotsResponse;
+import com.google.ads.admanager.v1.UpdateAdSpotRequest;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.UnaryCallable;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Base stub class for the AdSpotService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@Generated("by gapic-generator-java")
+public abstract class AdSpotServiceStub implements BackgroundResource {
+
+  public UnaryCallable<GetAdSpotRequest, AdSpot> getAdSpotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAdSpotCallable()");
+  }
+
+  public UnaryCallable<ListAdSpotsRequest, ListAdSpotsPagedResponse> listAdSpotsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAdSpotsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAdSpotsRequest, ListAdSpotsResponse> listAdSpotsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAdSpotsCallable()");
+  }
+
+  public UnaryCallable<CreateAdSpotRequest, AdSpot> createAdSpotCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAdSpotCallable()");
+  }
+
+  public UnaryCallable<BatchCreateAdSpotsRequest, BatchCreateAdSpotsResponse>
+      batchCreateAdSpotsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateAdSpotsCallable()");
+  }
+
+  public UnaryCallable<UpdateAdSpotRequest, AdSpot> updateAdSpotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAdSpotCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateAdSpotsRequest, BatchUpdateAdSpotsResponse>
+      batchUpdateAdSpotsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateAdSpotsCallable()");
+  }
+
+  @Override
+  public abstract void close();
+}

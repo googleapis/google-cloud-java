@@ -25,6 +25,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.developers.knowledge.v1.AnswerQueryRequest;
+import com.google.developers.knowledge.v1.AnswerQueryResponse;
 import com.google.developers.knowledge.v1.BatchGetDocumentsRequest;
 import com.google.developers.knowledge.v1.BatchGetDocumentsResponse;
 import com.google.developers.knowledge.v1.Document;
@@ -83,6 +85,17 @@ public class GrpcDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      answerQueryMethodDescriptor =
+          MethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.developers.knowledge.v1.DeveloperKnowledge/AnswerQuery")
+              .setRequestMarshaller(ProtoUtils.marshaller(AnswerQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnswerQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<SearchDocumentChunksRequest, SearchDocumentChunksResponse>
       searchDocumentChunksCallable;
   private final UnaryCallable<SearchDocumentChunksRequest, SearchDocumentChunksPagedResponse>
@@ -90,6 +103,7 @@ public class GrpcDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable;
+  private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -156,6 +170,10 @@ public class GrpcDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
             GrpcCallSettings.<BatchGetDocumentsRequest, BatchGetDocumentsResponse>newBuilder()
                 .setMethodDescriptor(batchGetDocumentsMethodDescriptor)
                 .build();
+    GrpcCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
+        GrpcCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+            .setMethodDescriptor(answerQueryMethodDescriptor)
+            .build();
 
     this.searchDocumentChunksCallable =
         callableFactory.createUnaryCallable(
@@ -175,6 +193,9 @@ public class GrpcDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
             batchGetDocumentsTransportSettings,
             settings.batchGetDocumentsSettings(),
             clientContext);
+    this.answerQueryCallable =
+        callableFactory.createUnaryCallable(
+            answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -205,6 +226,11 @@ public class GrpcDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
   public UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
     return batchGetDocumentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return answerQueryCallable;
   }
 
   @Override

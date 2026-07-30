@@ -32,7 +32,7 @@ package com.google.api.gax.httpjson;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.mtls.AbstractMtlsTransportChannelTest;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
@@ -46,7 +46,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChannelTest {
 
@@ -189,9 +188,30 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .setEndpoint("localhost:8080")
             .setMtlsProvider(provider)
             .setCertificateBasedAccess(certificateBasedAccess)
-            .setHeaderProvider(Mockito.mock(HeaderProvider.class))
-            .setExecutor(Mockito.mock(Executor.class))
+            .setHeaderProvider(Collections::emptyMap)
+            .setExecutor(Runnable::run)
             .build();
-    return channelProvider.createHttpTransport();
+    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
+    return (transport != null && transport.isMtls()) ? transport : null;
+  }
+
+  @Test
+  void testCreateHttpTransport_returnsValidTransport() throws Exception {
+    InstantiatingHttpJsonChannelProvider channelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint("localhost:8080")
+            .setHeaderProvider(Collections::emptyMap)
+            .setExecutor(Runnable::run)
+            .build();
+    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
+    assertThat(transport).isNotNull();
+  }
+
+  @Test
+  void testConfigureConscryptSecurityProvider_returnsConfiguredBuilder() {
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    NetHttpTransport.Builder result =
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+    assertThat(result).isSameInstanceAs(builder);
   }
 }

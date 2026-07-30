@@ -23,7 +23,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class JavaDocComment implements Comment {
   @Override
@@ -48,11 +51,11 @@ public abstract class JavaDocComment implements Comment {
     static final String PARAM_INDENT = "       ";
 
     // The lack of a getter for these local variables in the external class is WAI.
-    String throwsType = null;
-    String throwsDescription = null;
-    String deprecated = null;
-    String internalOnly = null;
-    String returnDescription = null;
+    @Nullable String throwsType = null;
+    @Nullable String throwsDescription = null;
+    @Nullable String deprecated = null;
+    @Nullable String internalOnly = null;
+    @Nullable String returnDescription = null;
     List<String> paramsList = new ArrayList<>();
     List<String> componentsList = new ArrayList<>();
 

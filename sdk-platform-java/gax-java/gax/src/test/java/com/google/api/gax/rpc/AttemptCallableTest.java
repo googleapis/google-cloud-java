@@ -44,7 +44,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -52,13 +51,16 @@ import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class AttemptCallableTest {
-  @Mock UnaryCallable<String, String> mockInnerCallable;
+  UnaryCallable<String, String> mockInnerCallable;
   ArgumentCaptor<ApiCallContext> capturedCallContext;
-  @Mock RetryingFuture<String> mockExternalFuture;
+  private RetryingFuture<String> mockExternalFuture;
   TimedAttemptSettings currentAttemptSettings;
 
   @BeforeEach
   void setUp() {
+    mockExternalFuture =
+        Mockito.mock(RetryingFuture.class, Mockito.withSettings().withoutAnnotations());
+    mockInnerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     capturedCallContext = ArgumentCaptor.forClass(ApiCallContext.class);
     when(mockInnerCallable.futureCall(Mockito.anyString(), capturedCallContext.capture()))
         .thenReturn(SettableApiFuture.<String>create());
@@ -86,10 +88,12 @@ class AttemptCallableTest {
 
   @Test
   void testRpcTimeout() {
-    FakeCallContext callContext = mock(FakeCallContext.class);
+    FakeCallContext callContext =
+        mock(FakeCallContext.class, Mockito.withSettings().withoutAnnotations());
     when(callContext.getTimeoutDuration()).thenReturn(null);
     when(callContext.withTimeoutDuration(any(java.time.Duration.class))).thenReturn(callContext);
-    when(callContext.getTracer()).thenReturn(mock(ApiTracer.class));
+    when(callContext.getTracer())
+        .thenReturn(mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations()));
     AttemptCallable<String, String> callable =
         new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
     callable.setExternalFuture(mockExternalFuture);

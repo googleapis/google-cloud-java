@@ -16,7 +16,9 @@ package com.google.api.generator.engine.lexicon;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class Keyword {
   // This is a valid field for all objects, so handle particular keyword differently.
   private static final String CLASS_KEYWORD = "class";

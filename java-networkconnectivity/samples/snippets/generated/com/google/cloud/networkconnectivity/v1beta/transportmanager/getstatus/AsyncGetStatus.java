@@ -39,6 +39,7 @@ public class AsyncGetStatus {
       GetStatusRequest request =
           GetStatusRequest.newBuilder()
               .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+              .setSkipCache(true)
               .build();
       ApiFuture<GetStatusResponse> future =
           transportManagerClient.getStatusCallable().futureCall(request);

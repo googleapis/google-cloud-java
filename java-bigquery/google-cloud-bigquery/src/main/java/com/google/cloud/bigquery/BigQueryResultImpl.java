@@ -475,7 +475,7 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
         wasNull = false;
         return fieldValue.getNumericValue().longValue();
       } else { // Data received from Read API (Arrow)
-        return getInt(schemaFieldList.get(columnIndex).getName());
+        return getLong(schemaFieldList.get(columnIndex).getName());
       }
     }
 

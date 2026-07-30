@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-servicehealth",
   "api_id": "servicehealth.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://cloud.google.com/service-health/docs/reference/rpc"
 }

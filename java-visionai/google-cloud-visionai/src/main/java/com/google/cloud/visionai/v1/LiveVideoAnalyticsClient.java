@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -517,7 +518,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LiveVideoAnalyticsClient implements BackgroundResource {
-  private final LiveVideoAnalyticsSettings settings;
+  private final @Nullable LiveVideoAnalyticsSettings settings;
   private final LiveVideoAnalyticsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -565,7 +566,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final LiveVideoAnalyticsSettings getSettings() {
+  public final @Nullable LiveVideoAnalyticsSettings getSettings() {
     return settings;
   }
 
@@ -613,7 +614,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListPublicOperatorsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPublicOperatorsPagedResponse listPublicOperators(LocationName parent) {
+  public final ListPublicOperatorsPagedResponse listPublicOperators(@Nullable LocationName parent) {
     ListPublicOperatorsRequest request =
         ListPublicOperatorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -787,7 +788,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResolveOperatorInfoResponse resolveOperatorInfo(
-      LocationName parent, List<OperatorQuery> queries) {
+      @Nullable LocationName parent, List<OperatorQuery> queries) {
     ResolveOperatorInfoRequest request =
         ResolveOperatorInfoRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -909,7 +910,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListOperatorsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOperatorsPagedResponse listOperators(LocationName parent) {
+  public final ListOperatorsPagedResponse listOperators(@Nullable LocationName parent) {
     ListOperatorsRequest request =
         ListOperatorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1076,7 +1077,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Operator getOperator(OperatorName name) {
+  public final Operator getOperator(@Nullable OperatorName name) {
     GetOperatorRequest request =
         GetOperatorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOperator(request);
@@ -1191,7 +1192,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Operator, OperationMetadata> createOperatorAsync(
-      LocationName parent, Operator operator, String operatorId) {
+      @Nullable LocationName parent, Operator operator, String operatorId) {
     CreateOperatorRequest request =
         CreateOperatorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1479,7 +1480,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteOperatorAsync(OperatorName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteOperatorAsync(
+      @Nullable OperatorName name) {
     DeleteOperatorRequest request =
         DeleteOperatorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteOperatorAsync(request);
@@ -1623,7 +1625,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListAnalysesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnalysesPagedResponse listAnalyses(ClusterName parent) {
+  public final ListAnalysesPagedResponse listAnalyses(@Nullable ClusterName parent) {
     ListAnalysesRequest request =
         ListAnalysesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1790,7 +1792,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Analysis getAnalysis(AnalysisName name) {
+  public final Analysis getAnalysis(@Nullable AnalysisName name) {
     GetAnalysisRequest request =
         GetAnalysisRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnalysis(request);
@@ -1908,7 +1910,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Analysis, OperationMetadata> createAnalysisAsync(
-      ClusterName parent, Analysis analysis, String analysisId) {
+      @Nullable ClusterName parent, Analysis analysis, String analysisId) {
     CreateAnalysisRequest request =
         CreateAnalysisRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2196,7 +2198,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteAnalysisAsync(AnalysisName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteAnalysisAsync(
+      @Nullable AnalysisName name) {
     DeleteAnalysisRequest request =
         DeleteAnalysisRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAnalysisAsync(request);
@@ -2344,7 +2347,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param parent Required. Parent value for ListProcessesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessesPagedResponse listProcesses(ClusterName parent) {
+  public final ListProcessesPagedResponse listProcesses(@Nullable ClusterName parent) {
     ListProcessesRequest request =
         ListProcessesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2511,7 +2514,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Process getProcess(ProcessName name) {
+  public final Process getProcess(@Nullable ProcessName name) {
     GetProcessRequest request =
         GetProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcess(request);
@@ -2627,7 +2630,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Process, OperationMetadata> createProcessAsync(
-      ClusterName parent, Process process, String processId) {
+      @Nullable ClusterName parent, Process process, String processId) {
     CreateProcessRequest request =
         CreateProcessRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2915,7 +2918,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(ProcessName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(
+      @Nullable ProcessName name) {
     DeleteProcessRequest request =
         DeleteProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProcessAsync(request);
@@ -3064,7 +3068,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRunProcessResponse, OperationMetadata> batchRunProcessAsync(
-      ClusterName parent, List<CreateProcessRequest> requests) {
+      @Nullable ClusterName parent, List<CreateProcessRequest> requests) {
     BatchRunProcessRequest request =
         BatchRunProcessRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3419,8 +3423,9 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListPublicOperatorsPage> {
 
     private ListPublicOperatorsPage(
-        PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator> context,
-        ListPublicOperatorsResponse response) {
+        @Nullable PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator>
+            context,
+        @Nullable ListPublicOperatorsResponse response) {
       super(context, response);
     }
 
@@ -3430,14 +3435,16 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListPublicOperatorsPage createPage(
-        PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator> context,
-        ListPublicOperatorsResponse response) {
+        @Nullable PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator>
+            context,
+        @Nullable ListPublicOperatorsResponse response) {
       return new ListPublicOperatorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPublicOperatorsPage> createPageAsync(
-        PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator> context,
+        @Nullable PageContext<ListPublicOperatorsRequest, ListPublicOperatorsResponse, Operator>
+            context,
         ApiFuture<ListPublicOperatorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3452,7 +3459,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListPublicOperatorsFixedSizeCollection> {
 
     private ListPublicOperatorsFixedSizeCollection(
-        List<ListPublicOperatorsPage> pages, int collectionSize) {
+        @Nullable List<ListPublicOperatorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3462,7 +3469,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListPublicOperatorsFixedSizeCollection createCollection(
-        List<ListPublicOperatorsPage> pages, int collectionSize) {
+        @Nullable List<ListPublicOperatorsPage> pages, int collectionSize) {
       return new ListPublicOperatorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3496,8 +3503,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListOperatorsRequest, ListOperatorsResponse, Operator, ListOperatorsPage> {
 
     private ListOperatorsPage(
-        PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
-        ListOperatorsResponse response) {
+        @Nullable PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
+        @Nullable ListOperatorsResponse response) {
       super(context, response);
     }
 
@@ -3507,14 +3514,14 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListOperatorsPage createPage(
-        PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
-        ListOperatorsResponse response) {
+        @Nullable PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
+        @Nullable ListOperatorsResponse response) {
       return new ListOperatorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOperatorsPage> createPageAsync(
-        PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
+        @Nullable PageContext<ListOperatorsRequest, ListOperatorsResponse, Operator> context,
         ApiFuture<ListOperatorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3528,7 +3535,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListOperatorsPage,
           ListOperatorsFixedSizeCollection> {
 
-    private ListOperatorsFixedSizeCollection(List<ListOperatorsPage> pages, int collectionSize) {
+    private ListOperatorsFixedSizeCollection(
+        @Nullable List<ListOperatorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3538,7 +3546,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListOperatorsFixedSizeCollection createCollection(
-        List<ListOperatorsPage> pages, int collectionSize) {
+        @Nullable List<ListOperatorsPage> pages, int collectionSize) {
       return new ListOperatorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3571,8 +3579,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
       extends AbstractPage<ListAnalysesRequest, ListAnalysesResponse, Analysis, ListAnalysesPage> {
 
     private ListAnalysesPage(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
-        ListAnalysesResponse response) {
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable ListAnalysesResponse response) {
       super(context, response);
     }
 
@@ -3582,14 +3590,14 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysesPage createPage(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
-        ListAnalysesResponse response) {
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable ListAnalysesResponse response) {
       return new ListAnalysesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnalysesPage> createPageAsync(
-        PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
+        @Nullable PageContext<ListAnalysesRequest, ListAnalysesResponse, Analysis> context,
         ApiFuture<ListAnalysesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3603,7 +3611,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListAnalysesPage,
           ListAnalysesFixedSizeCollection> {
 
-    private ListAnalysesFixedSizeCollection(List<ListAnalysesPage> pages, int collectionSize) {
+    private ListAnalysesFixedSizeCollection(
+        @Nullable List<ListAnalysesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3613,7 +3622,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListAnalysesFixedSizeCollection createCollection(
-        List<ListAnalysesPage> pages, int collectionSize) {
+        @Nullable List<ListAnalysesPage> pages, int collectionSize) {
       return new ListAnalysesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3647,8 +3656,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListProcessesRequest, ListProcessesResponse, Process, ListProcessesPage> {
 
     private ListProcessesPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       super(context, response);
     }
 
@@ -3658,14 +3667,14 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListProcessesPage createPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       return new ListProcessesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessesPage> createPageAsync(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
         ApiFuture<ListProcessesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3679,7 +3688,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListProcessesPage,
           ListProcessesFixedSizeCollection> {
 
-    private ListProcessesFixedSizeCollection(List<ListProcessesPage> pages, int collectionSize) {
+    private ListProcessesFixedSizeCollection(
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3689,7 +3699,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListProcessesFixedSizeCollection createCollection(
-        List<ListProcessesPage> pages, int collectionSize) {
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       return new ListProcessesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3723,8 +3733,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3734,14 +3744,14 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3755,7 +3765,8 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3765,7 +3776,7 @@ public class LiveVideoAnalyticsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

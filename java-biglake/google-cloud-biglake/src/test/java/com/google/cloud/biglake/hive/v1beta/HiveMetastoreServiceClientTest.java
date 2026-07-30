@@ -1540,4 +1540,45 @@ public class HiveMetastoreServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void failoverHiveCatalogTest() throws Exception {
+    FailoverHiveCatalogResponse expectedResponse =
+        FailoverHiveCatalogResponse.newBuilder()
+            .setReplicationTime(Timestamp.newBuilder().build())
+            .build();
+    mockHiveMetastoreService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String primaryReplica = "primaryReplica-389090218";
+
+    FailoverHiveCatalogResponse actualResponse = client.failoverHiveCatalog(name, primaryReplica);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHiveMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FailoverHiveCatalogRequest actualRequest = ((FailoverHiveCatalogRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(primaryReplica, actualRequest.getPrimaryReplica());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void failoverHiveCatalogExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHiveMetastoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String primaryReplica = "primaryReplica-389090218";
+      client.failoverHiveCatalog(name, primaryReplica);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

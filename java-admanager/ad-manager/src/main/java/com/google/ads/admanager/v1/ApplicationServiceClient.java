@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetApplication</td>
- *      <td><p> API to retrieve a `Application` object.</td>
+ *      <td><p> Retrieves a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListApplications</td>
- *      <td><p> API to retrieve a list of `Application` objects.</td>
+ *      <td><p> Lists `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +106,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreateApplication</td>
- *      <td><p> API to create a `Application` object.</td>
+ *      <td><p> Creates a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +125,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateApplications</td>
- *      <td><p> API to batch create `Application` objects.</td>
+ *      <td><p> Creates `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +141,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateApplication</td>
- *      <td><p> API to update a `Application` object.</td>
+ *      <td><p> Updates a `Application` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +159,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateApplications</td>
- *      <td><p> API to batch update `Application` objects.</td>
+ *      <td><p> Batch updates `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -174,7 +175,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchArchiveApplications</td>
- *      <td><p> / API to batch archive `Application` objects.</td>
+ *      <td><p> Batch archives `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -193,7 +194,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUnarchiveApplications</td>
- *      <td><p> / API to batch unarchive `Application` objects.</td>
+ *      <td><p> Batch unarchives `Application` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -256,7 +257,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ApplicationServiceClient implements BackgroundResource {
-  private final ApplicationServiceSettings settings;
+  private final @Nullable ApplicationServiceSettings settings;
   private final ApplicationServiceStub stub;
 
   /** Constructs an instance of ApplicationServiceClient with default settings. */
@@ -296,7 +297,7 @@ public class ApplicationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ApplicationServiceSettings getSettings() {
+  public final @Nullable ApplicationServiceSettings getSettings() {
     return settings;
   }
 
@@ -306,7 +307,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -326,7 +327,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    *     `networks/{network_code}/applications/{application_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Application getApplication(ApplicationName name) {
+  public final Application getApplication(@Nullable ApplicationName name) {
     GetApplicationRequest request =
         GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApplication(request);
@@ -334,7 +335,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -361,7 +362,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -389,7 +390,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Application` object.
+   * Retrieves a `Application` object.
    *
    * <p>Sample code:
    *
@@ -417,7 +418,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -439,7 +440,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApplicationsPagedResponse listApplications(NetworkName parent) {
+  public final ListApplicationsPagedResponse listApplications(@Nullable NetworkName parent) {
     ListApplicationsRequest request =
         ListApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -449,7 +450,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -479,7 +480,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -514,7 +515,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -550,7 +551,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Application` objects.
+   * Lists `Application` objects.
    *
    * <p>Sample code:
    *
@@ -593,7 +594,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -615,7 +616,8 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @param application Required. The `Application` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Application createApplication(NetworkName parent, Application application) {
+  public final Application createApplication(
+      @Nullable NetworkName parent, Application application) {
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -626,7 +628,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -656,7 +658,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -685,7 +687,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Application` object.
+   * Creates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -714,7 +716,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -739,7 +741,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateApplicationsResponse batchCreateApplications(
-      NetworkName parent, List<CreateApplicationRequest> requests) {
+      @Nullable NetworkName parent, List<CreateApplicationRequest> requests) {
     BatchCreateApplicationsRequest request =
         BatchCreateApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -750,7 +752,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -786,7 +788,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -817,7 +819,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Application` objects.
+   * Creates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -847,7 +849,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -880,7 +882,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -909,7 +911,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Application` object.
+   * Updates a `Application` object.
    *
    * <p>Sample code:
    *
@@ -938,7 +940,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -963,7 +965,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateApplicationsResponse batchUpdateApplications(
-      NetworkName parent, List<UpdateApplicationRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateApplicationRequest> requests) {
     BatchUpdateApplicationsRequest request =
         BatchUpdateApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -974,7 +976,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1010,7 +1012,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1041,7 +1043,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Application` objects.
+   * Batch updates `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1071,7 +1073,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1095,7 +1097,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchArchiveApplicationsResponse batchArchiveApplications(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchArchiveApplicationsRequest request =
         BatchArchiveApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1106,7 +1108,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1138,7 +1140,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1169,7 +1171,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch archive `Application` objects.
+   * Batch archives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1199,7 +1201,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1223,7 +1225,7 @@ public class ApplicationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUnarchiveApplicationsResponse batchUnarchiveApplications(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchUnarchiveApplicationsRequest request =
         BatchUnarchiveApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1234,7 +1236,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1266,7 +1268,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1297,7 +1299,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * / API to batch unarchive `Application` objects.
+   * Batch unarchives `Application` objects.
    *
    * <p>Sample code:
    *
@@ -1384,8 +1386,9 @@ public class ApplicationServiceClient implements BackgroundResource {
           ListApplicationsRequest, ListApplicationsResponse, Application, ListApplicationsPage> {
 
     private ListApplicationsPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       super(context, response);
     }
 
@@ -1395,14 +1398,16 @@ public class ApplicationServiceClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsPage createPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       return new ListApplicationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApplicationsPage> createPageAsync(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
         ApiFuture<ListApplicationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1417,7 +1422,7 @@ public class ApplicationServiceClient implements BackgroundResource {
           ListApplicationsFixedSizeCollection> {
 
     private ListApplicationsFixedSizeCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1427,7 +1432,7 @@ public class ApplicationServiceClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsFixedSizeCollection createCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       return new ListApplicationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -30,7 +30,8 @@
 package com.google.api.gax.retrying;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This is part of the server streaming retry api. Its implementers are responsible for tracking the
@@ -38,6 +39,7 @@ import javax.annotation.Nullable;
  *
  * <p>Implementations don't have to be threadsafe because all of the calls will be serialized.
  */
+@NullMarked
 public interface StreamResumptionStrategy<RequestT, ResponseT> {
 
   /** Creates a new instance of this StreamResumptionStrategy without accumulated state */
@@ -68,8 +70,7 @@ public interface StreamResumptionStrategy<RequestT, ResponseT> {
    *
    * @return A request that can be used to resume the stream.
    */
-  @Nullable
-  RequestT getResumeRequest(RequestT originalRequest);
+  @Nullable RequestT getResumeRequest(RequestT originalRequest);
 
   /** If a resume request can be created. */
   boolean canResume();

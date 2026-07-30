@@ -31,10 +31,12 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.support.v2.stub.SupportEventSubscriptionServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -137,6 +139,13 @@ public class SupportEventSubscriptionServiceSettings
         .undeleteSupportEventSubscriptionSettings();
   }
 
+  /** Returns the object with the settings used for calls to expungeSupportEventSubscription. */
+  public UnaryCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionSettings() {
+    return ((SupportEventSubscriptionServiceStubSettings) getStubSettings())
+        .expungeSupportEventSubscriptionSettings();
+  }
+
   public static final SupportEventSubscriptionServiceSettings create(
       SupportEventSubscriptionServiceStubSettings stub) throws IOException {
     return new SupportEventSubscriptionServiceSettings.Builder(stub.toBuilder()).build();
@@ -193,7 +202,7 @@ public class SupportEventSubscriptionServiceSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -214,7 +223,7 @@ public class SupportEventSubscriptionServiceSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(SupportEventSubscriptionServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -291,6 +300,12 @@ public class SupportEventSubscriptionServiceSettings
             UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
         undeleteSupportEventSubscriptionSettings() {
       return getStubSettingsBuilder().undeleteSupportEventSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to expungeSupportEventSubscription. */
+    public UnaryCallSettings.Builder<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionSettings() {
+      return getStubSettingsBuilder().expungeSupportEventSubscriptionSettings();
     }
 
     @Override

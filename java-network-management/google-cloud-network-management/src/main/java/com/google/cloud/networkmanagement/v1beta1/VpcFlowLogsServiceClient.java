@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -354,7 +355,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class VpcFlowLogsServiceClient implements BackgroundResource {
-  private final VpcFlowLogsServiceSettings settings;
+  private final @Nullable VpcFlowLogsServiceSettings settings;
   private final VpcFlowLogsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -402,7 +403,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VpcFlowLogsServiceSettings getSettings() {
+  public final @Nullable VpcFlowLogsServiceSettings getSettings() {
     return settings;
   }
 
@@ -454,7 +455,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *     <p>- For organization-level resources: `organizations/{organization_id}/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(LocationName parent) {
+  public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(
+      @Nullable LocationName parent) {
     ListVpcFlowLogsConfigsRequest request =
         ListVpcFlowLogsConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -490,7 +492,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListVpcFlowLogsConfigsPagedResponse listVpcFlowLogsConfigs(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListVpcFlowLogsConfigsRequest request =
         ListVpcFlowLogsConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -672,7 +674,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    *     `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VpcFlowLogsConfig getVpcFlowLogsConfig(VpcFlowLogsConfigName name) {
+  public final VpcFlowLogsConfig getVpcFlowLogsConfig(@Nullable VpcFlowLogsConfigName name) {
     GetVpcFlowLogsConfigRequest request =
         GetVpcFlowLogsConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -818,9 +820,9 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
-      LocationName parent,
+      @Nullable LocationName parent,
       VpcFlowLogsConfig vpcFlowLogsConfig,
-      VpcFlowLogsConfigName vpcFlowLogsConfigId) {
+      @Nullable VpcFlowLogsConfigName vpcFlowLogsConfigId) {
     CreateVpcFlowLogsConfigRequest request =
         CreateVpcFlowLogsConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -872,7 +874,9 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
-      LocationName parent, VpcFlowLogsConfig vpcFlowLogsConfig, String vpcFlowLogsConfigId) {
+      @Nullable LocationName parent,
+      VpcFlowLogsConfig vpcFlowLogsConfig,
+      String vpcFlowLogsConfigId) {
     CreateVpcFlowLogsConfigRequest request =
         CreateVpcFlowLogsConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -922,9 +926,9 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
-      OrganizationLocationName parent,
+      @Nullable OrganizationLocationName parent,
       VpcFlowLogsConfig vpcFlowLogsConfig,
-      VpcFlowLogsConfigName vpcFlowLogsConfigId) {
+      @Nullable VpcFlowLogsConfigName vpcFlowLogsConfigId) {
     CreateVpcFlowLogsConfigRequest request =
         CreateVpcFlowLogsConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -976,7 +980,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
-      OrganizationLocationName parent,
+      @Nullable OrganizationLocationName parent,
       VpcFlowLogsConfig vpcFlowLogsConfig,
       String vpcFlowLogsConfigId) {
     CreateVpcFlowLogsConfigRequest request =
@@ -1030,7 +1034,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
   public final OperationFuture<VpcFlowLogsConfig, OperationMetadata> createVpcFlowLogsConfigAsync(
       String parent,
       VpcFlowLogsConfig vpcFlowLogsConfig,
-      VpcFlowLogsConfigName vpcFlowLogsConfigId) {
+      @Nullable VpcFlowLogsConfigName vpcFlowLogsConfigId) {
     CreateVpcFlowLogsConfigRequest request =
         CreateVpcFlowLogsConfigRequest.newBuilder()
             .setParent(parent)
@@ -1399,7 +1403,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteVpcFlowLogsConfigAsync(
-      VpcFlowLogsConfigName name) {
+      @Nullable VpcFlowLogsConfigName name) {
     DeleteVpcFlowLogsConfigRequest request =
         DeleteVpcFlowLogsConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2202,10 +2206,11 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ListVpcFlowLogsConfigsPage> {
 
     private ListVpcFlowLogsConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVpcFlowLogsConfigsRequest, ListVpcFlowLogsConfigsResponse, VpcFlowLogsConfig>
             context,
-        ListVpcFlowLogsConfigsResponse response) {
+        @Nullable ListVpcFlowLogsConfigsResponse response) {
       super(context, response);
     }
 
@@ -2215,16 +2220,18 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ListVpcFlowLogsConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVpcFlowLogsConfigsRequest, ListVpcFlowLogsConfigsResponse, VpcFlowLogsConfig>
             context,
-        ListVpcFlowLogsConfigsResponse response) {
+        @Nullable ListVpcFlowLogsConfigsResponse response) {
       return new ListVpcFlowLogsConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVpcFlowLogsConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVpcFlowLogsConfigsRequest, ListVpcFlowLogsConfigsResponse, VpcFlowLogsConfig>
             context,
         ApiFuture<ListVpcFlowLogsConfigsResponse> futureResponse) {
@@ -2241,7 +2248,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ListVpcFlowLogsConfigsFixedSizeCollection> {
 
     private ListVpcFlowLogsConfigsFixedSizeCollection(
-        List<ListVpcFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListVpcFlowLogsConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2251,7 +2258,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ListVpcFlowLogsConfigsFixedSizeCollection createCollection(
-        List<ListVpcFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListVpcFlowLogsConfigsPage> pages, int collectionSize) {
       return new ListVpcFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2292,12 +2299,13 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           QueryOrgVpcFlowLogsConfigsPage> {
 
     private QueryOrgVpcFlowLogsConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryOrgVpcFlowLogsConfigsRequest,
                 QueryOrgVpcFlowLogsConfigsResponse,
                 VpcFlowLogsConfig>
             context,
-        QueryOrgVpcFlowLogsConfigsResponse response) {
+        @Nullable QueryOrgVpcFlowLogsConfigsResponse response) {
       super(context, response);
     }
 
@@ -2307,18 +2315,20 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected QueryOrgVpcFlowLogsConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryOrgVpcFlowLogsConfigsRequest,
                 QueryOrgVpcFlowLogsConfigsResponse,
                 VpcFlowLogsConfig>
             context,
-        QueryOrgVpcFlowLogsConfigsResponse response) {
+        @Nullable QueryOrgVpcFlowLogsConfigsResponse response) {
       return new QueryOrgVpcFlowLogsConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryOrgVpcFlowLogsConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryOrgVpcFlowLogsConfigsRequest,
                 QueryOrgVpcFlowLogsConfigsResponse,
                 VpcFlowLogsConfig>
@@ -2337,7 +2347,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           QueryOrgVpcFlowLogsConfigsFixedSizeCollection> {
 
     private QueryOrgVpcFlowLogsConfigsFixedSizeCollection(
-        List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2347,7 +2357,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected QueryOrgVpcFlowLogsConfigsFixedSizeCollection createCollection(
-        List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<QueryOrgVpcFlowLogsConfigsPage> pages, int collectionSize) {
       return new QueryOrgVpcFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2389,12 +2399,13 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ShowEffectiveFlowLogsConfigsPage> {
 
     private ShowEffectiveFlowLogsConfigsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ShowEffectiveFlowLogsConfigsRequest,
                 ShowEffectiveFlowLogsConfigsResponse,
                 EffectiveVpcFlowLogsConfig>
             context,
-        ShowEffectiveFlowLogsConfigsResponse response) {
+        @Nullable ShowEffectiveFlowLogsConfigsResponse response) {
       super(context, response);
     }
 
@@ -2404,18 +2415,20 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ShowEffectiveFlowLogsConfigsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ShowEffectiveFlowLogsConfigsRequest,
                 ShowEffectiveFlowLogsConfigsResponse,
                 EffectiveVpcFlowLogsConfig>
             context,
-        ShowEffectiveFlowLogsConfigsResponse response) {
+        @Nullable ShowEffectiveFlowLogsConfigsResponse response) {
       return new ShowEffectiveFlowLogsConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ShowEffectiveFlowLogsConfigsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ShowEffectiveFlowLogsConfigsRequest,
                 ShowEffectiveFlowLogsConfigsResponse,
                 EffectiveVpcFlowLogsConfig>
@@ -2434,7 +2447,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ShowEffectiveFlowLogsConfigsFixedSizeCollection> {
 
     private ShowEffectiveFlowLogsConfigsFixedSizeCollection(
-        List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2444,7 +2457,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ShowEffectiveFlowLogsConfigsFixedSizeCollection createCollection(
-        List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ShowEffectiveFlowLogsConfigsPage> pages, int collectionSize) {
       return new ShowEffectiveFlowLogsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2478,8 +2491,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2489,14 +2502,14 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2510,7 +2523,8 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2520,7 +2534,7 @@ public class VpcFlowLogsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

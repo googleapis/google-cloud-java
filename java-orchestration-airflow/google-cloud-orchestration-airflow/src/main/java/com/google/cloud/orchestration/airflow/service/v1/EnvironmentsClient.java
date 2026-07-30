@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -560,7 +561,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EnvironmentsClient implements BackgroundResource {
-  private final EnvironmentsSettings settings;
+  private final @Nullable EnvironmentsSettings settings;
   private final EnvironmentsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -607,7 +608,7 @@ public class EnvironmentsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EnvironmentsSettings getSettings() {
+  public final @Nullable EnvironmentsSettings getSettings() {
     return settings;
   }
 
@@ -1501,7 +1502,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkloadsPagedResponse listWorkloads(EnvironmentName parent) {
+  public final ListWorkloadsPagedResponse listWorkloads(@Nullable EnvironmentName parent) {
     ListWorkloadsRequest request =
         ListWorkloadsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1785,7 +1786,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserWorkloadsSecret createUserWorkloadsSecret(
-      EnvironmentName parent, UserWorkloadsSecret userWorkloadsSecret) {
+      @Nullable EnvironmentName parent, UserWorkloadsSecret userWorkloadsSecret) {
     CreateUserWorkloadsSecretRequest request =
         CreateUserWorkloadsSecretRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1925,7 +1926,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserWorkloadsSecret getUserWorkloadsSecret(UserWorkloadsSecretName name) {
+  public final UserWorkloadsSecret getUserWorkloadsSecret(@Nullable UserWorkloadsSecretName name) {
     GetUserWorkloadsSecretRequest request =
         GetUserWorkloadsSecretRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2065,7 +2066,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUserWorkloadsSecretsPagedResponse listUserWorkloadsSecrets(
-      EnvironmentName parent) {
+      @Nullable EnvironmentName parent) {
     ListUserWorkloadsSecretsRequest request =
         ListUserWorkloadsSecretsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2348,7 +2349,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUserWorkloadsSecret(UserWorkloadsSecretName name) {
+  public final void deleteUserWorkloadsSecret(@Nullable UserWorkloadsSecretName name) {
     DeleteUserWorkloadsSecretRequest request =
         DeleteUserWorkloadsSecretRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2488,7 +2489,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserWorkloadsConfigMap createUserWorkloadsConfigMap(
-      EnvironmentName parent, UserWorkloadsConfigMap userWorkloadsConfigMap) {
+      @Nullable EnvironmentName parent, UserWorkloadsConfigMap userWorkloadsConfigMap) {
     CreateUserWorkloadsConfigMapRequest request =
         CreateUserWorkloadsConfigMapRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2628,7 +2629,8 @@ public class EnvironmentsClient implements BackgroundResource {
    *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserWorkloadsConfigMap getUserWorkloadsConfigMap(UserWorkloadsConfigMapName name) {
+  public final UserWorkloadsConfigMap getUserWorkloadsConfigMap(
+      @Nullable UserWorkloadsConfigMapName name) {
     GetUserWorkloadsConfigMapRequest request =
         GetUserWorkloadsConfigMapRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2769,7 +2771,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUserWorkloadsConfigMapsPagedResponse listUserWorkloadsConfigMaps(
-      EnvironmentName parent) {
+      @Nullable EnvironmentName parent) {
     ListUserWorkloadsConfigMapsRequest request =
         ListUserWorkloadsConfigMapsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3054,7 +3056,7 @@ public class EnvironmentsClient implements BackgroundResource {
    *     "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsConfigMaps/{userWorkloadsConfigMapId}"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUserWorkloadsConfigMap(UserWorkloadsConfigMapName name) {
+  public final void deleteUserWorkloadsConfigMap(@Nullable UserWorkloadsConfigMapName name) {
     DeleteUserWorkloadsConfigMapRequest request =
         DeleteUserWorkloadsConfigMapRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3572,8 +3574,9 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsRequest, ListEnvironmentsResponse, Environment, ListEnvironmentsPage> {
 
     private ListEnvironmentsPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       super(context, response);
     }
 
@@ -3583,14 +3586,16 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsPage createPage(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
-        ListEnvironmentsResponse response) {
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
+        @Nullable ListEnvironmentsResponse response) {
       return new ListEnvironmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnvironmentsPage> createPageAsync(
-        PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment> context,
+        @Nullable PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+            context,
         ApiFuture<ListEnvironmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3605,7 +3610,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListEnvironmentsFixedSizeCollection> {
 
     private ListEnvironmentsFixedSizeCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3615,7 +3620,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListEnvironmentsFixedSizeCollection createCollection(
-        List<ListEnvironmentsPage> pages, int collectionSize) {
+        @Nullable List<ListEnvironmentsPage> pages, int collectionSize) {
       return new ListEnvironmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3654,10 +3659,11 @@ public class EnvironmentsClient implements BackgroundResource {
           ListWorkloadsPage> {
 
     private ListWorkloadsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
             context,
-        ListWorkloadsResponse response) {
+        @Nullable ListWorkloadsResponse response) {
       super(context, response);
     }
 
@@ -3667,16 +3673,18 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
             context,
-        ListWorkloadsResponse response) {
+        @Nullable ListWorkloadsResponse response) {
       return new ListWorkloadsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkloadsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListWorkloadsRequest, ListWorkloadsResponse, ListWorkloadsResponse.ComposerWorkload>
             context,
         ApiFuture<ListWorkloadsResponse> futureResponse) {
@@ -3692,7 +3700,8 @@ public class EnvironmentsClient implements BackgroundResource {
           ListWorkloadsPage,
           ListWorkloadsFixedSizeCollection> {
 
-    private ListWorkloadsFixedSizeCollection(List<ListWorkloadsPage> pages, int collectionSize) {
+    private ListWorkloadsFixedSizeCollection(
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3702,7 +3711,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsFixedSizeCollection createCollection(
-        List<ListWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3743,12 +3752,13 @@ public class EnvironmentsClient implements BackgroundResource {
           ListUserWorkloadsSecretsPage> {
 
     private ListUserWorkloadsSecretsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsSecretsRequest,
                 ListUserWorkloadsSecretsResponse,
                 UserWorkloadsSecret>
             context,
-        ListUserWorkloadsSecretsResponse response) {
+        @Nullable ListUserWorkloadsSecretsResponse response) {
       super(context, response);
     }
 
@@ -3758,18 +3768,20 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListUserWorkloadsSecretsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsSecretsRequest,
                 ListUserWorkloadsSecretsResponse,
                 UserWorkloadsSecret>
             context,
-        ListUserWorkloadsSecretsResponse response) {
+        @Nullable ListUserWorkloadsSecretsResponse response) {
       return new ListUserWorkloadsSecretsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserWorkloadsSecretsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsSecretsRequest,
                 ListUserWorkloadsSecretsResponse,
                 UserWorkloadsSecret>
@@ -3788,7 +3800,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListUserWorkloadsSecretsFixedSizeCollection> {
 
     private ListUserWorkloadsSecretsFixedSizeCollection(
-        List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
+        @Nullable List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3798,7 +3810,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListUserWorkloadsSecretsFixedSizeCollection createCollection(
-        List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
+        @Nullable List<ListUserWorkloadsSecretsPage> pages, int collectionSize) {
       return new ListUserWorkloadsSecretsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3840,12 +3852,13 @@ public class EnvironmentsClient implements BackgroundResource {
           ListUserWorkloadsConfigMapsPage> {
 
     private ListUserWorkloadsConfigMapsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsConfigMapsRequest,
                 ListUserWorkloadsConfigMapsResponse,
                 UserWorkloadsConfigMap>
             context,
-        ListUserWorkloadsConfigMapsResponse response) {
+        @Nullable ListUserWorkloadsConfigMapsResponse response) {
       super(context, response);
     }
 
@@ -3855,18 +3868,20 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListUserWorkloadsConfigMapsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsConfigMapsRequest,
                 ListUserWorkloadsConfigMapsResponse,
                 UserWorkloadsConfigMap>
             context,
-        ListUserWorkloadsConfigMapsResponse response) {
+        @Nullable ListUserWorkloadsConfigMapsResponse response) {
       return new ListUserWorkloadsConfigMapsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserWorkloadsConfigMapsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserWorkloadsConfigMapsRequest,
                 ListUserWorkloadsConfigMapsResponse,
                 UserWorkloadsConfigMap>
@@ -3885,7 +3900,7 @@ public class EnvironmentsClient implements BackgroundResource {
           ListUserWorkloadsConfigMapsFixedSizeCollection> {
 
     private ListUserWorkloadsConfigMapsFixedSizeCollection(
-        List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
+        @Nullable List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3895,7 +3910,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
     @Override
     protected ListUserWorkloadsConfigMapsFixedSizeCollection createCollection(
-        List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
+        @Nullable List<ListUserWorkloadsConfigMapsPage> pages, int collectionSize) {
       return new ListUserWorkloadsConfigMapsFixedSizeCollection(pages, collectionSize);
     }
   }

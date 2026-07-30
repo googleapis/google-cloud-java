@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,7 +142,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ImageVersionsClient implements BackgroundResource {
-  private final ImageVersionsSettings settings;
+  private final @Nullable ImageVersionsSettings settings;
   private final ImageVersionsStub stub;
 
   /** Constructs an instance of ImageVersionsClient with default settings. */
@@ -181,7 +182,7 @@ public class ImageVersionsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ImageVersionsSettings getSettings() {
+  public final @Nullable ImageVersionsSettings getSettings() {
     return settings;
   }
 
@@ -389,8 +390,9 @@ public class ImageVersionsClient implements BackgroundResource {
           ListImageVersionsPage> {
 
     private ListImageVersionsPage(
-        PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion> context,
-        ListImageVersionsResponse response) {
+        @Nullable PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion>
+            context,
+        @Nullable ListImageVersionsResponse response) {
       super(context, response);
     }
 
@@ -400,14 +402,16 @@ public class ImageVersionsClient implements BackgroundResource {
 
     @Override
     protected ListImageVersionsPage createPage(
-        PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion> context,
-        ListImageVersionsResponse response) {
+        @Nullable PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion>
+            context,
+        @Nullable ListImageVersionsResponse response) {
       return new ListImageVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImageVersionsPage> createPageAsync(
-        PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion> context,
+        @Nullable PageContext<ListImageVersionsRequest, ListImageVersionsResponse, ImageVersion>
+            context,
         ApiFuture<ListImageVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -422,7 +426,7 @@ public class ImageVersionsClient implements BackgroundResource {
           ListImageVersionsFixedSizeCollection> {
 
     private ListImageVersionsFixedSizeCollection(
-        List<ListImageVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListImageVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -432,7 +436,7 @@ public class ImageVersionsClient implements BackgroundResource {
 
     @Override
     protected ListImageVersionsFixedSizeCollection createCollection(
-        List<ListImageVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListImageVersionsPage> pages, int collectionSize) {
       return new ListImageVersionsFixedSizeCollection(pages, collectionSize);
     }
   }

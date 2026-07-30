@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -67,7 +68,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> FetchMcmEarnings</td>
- *      <td><p> API to retrieve a list of `McmEarnings` objects.</td>
+ *      <td><p> Lists `McmEarnings` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -131,7 +132,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class McmEarningsServiceClient implements BackgroundResource {
-  private final McmEarningsServiceSettings settings;
+  private final @Nullable McmEarningsServiceSettings settings;
   private final McmEarningsServiceStub stub;
 
   /** Constructs an instance of McmEarningsServiceClient with default settings. */
@@ -171,7 +172,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final McmEarningsServiceSettings getSettings() {
+  public final @Nullable McmEarningsServiceSettings getSettings() {
     return settings;
   }
 
@@ -181,7 +182,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -203,7 +204,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchMcmEarningsPagedResponse fetchMcmEarnings(NetworkName parent) {
+  public final FetchMcmEarningsPagedResponse fetchMcmEarnings(@Nullable NetworkName parent) {
     FetchMcmEarningsRequest request =
         FetchMcmEarningsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -213,7 +214,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -243,7 +244,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -279,7 +280,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -316,7 +317,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -417,8 +418,9 @@ public class McmEarningsServiceClient implements BackgroundResource {
           FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings, FetchMcmEarningsPage> {
 
     private FetchMcmEarningsPage(
-        PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings> context,
-        FetchMcmEarningsResponse response) {
+        @Nullable PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings>
+            context,
+        @Nullable FetchMcmEarningsResponse response) {
       super(context, response);
     }
 
@@ -428,14 +430,16 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
     @Override
     protected FetchMcmEarningsPage createPage(
-        PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings> context,
-        FetchMcmEarningsResponse response) {
+        @Nullable PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings>
+            context,
+        @Nullable FetchMcmEarningsResponse response) {
       return new FetchMcmEarningsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchMcmEarningsPage> createPageAsync(
-        PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings> context,
+        @Nullable PageContext<FetchMcmEarningsRequest, FetchMcmEarningsResponse, McmEarnings>
+            context,
         ApiFuture<FetchMcmEarningsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -450,7 +454,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
           FetchMcmEarningsFixedSizeCollection> {
 
     private FetchMcmEarningsFixedSizeCollection(
-        List<FetchMcmEarningsPage> pages, int collectionSize) {
+        @Nullable List<FetchMcmEarningsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -460,7 +464,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
     @Override
     protected FetchMcmEarningsFixedSizeCollection createCollection(
-        List<FetchMcmEarningsPage> pages, int collectionSize) {
+        @Nullable List<FetchMcmEarningsPage> pages, int collectionSize) {
       return new FetchMcmEarningsFixedSizeCollection(pages, collectionSize);
     }
   }

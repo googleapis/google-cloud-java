@@ -49,11 +49,18 @@ final class OtelMultipartUploadClientDecorator extends MultipartUploadClient {
   private final Tracer tracer;
 
   private OtelMultipartUploadClientDecorator(
-      MultipartUploadClient delegate, OpenTelemetry otel, Attributes baseAttributes) {
+      MultipartUploadClient delegate,
+      OtelStorageDecorator parentDecorator,
+      OpenTelemetry otel,
+      Attributes baseAttributes) {
     this.delegate = delegate;
     this.tracer =
         OtelStorageDecorator.TracerDecorator.decorate(
-            null, otel, baseAttributes, MultipartUploadClient.class.getName() + "/");
+            parentDecorator,
+            null,
+            otel,
+            baseAttributes,
+            MultipartUploadClient.class.getName() + "/");
   }
 
   @Override
@@ -172,7 +179,10 @@ final class OtelMultipartUploadClientDecorator extends MultipartUploadClient {
   }
 
   static MultipartUploadClient decorate(
-      MultipartUploadClient delegate, OpenTelemetry otel, Transport transport) {
+      MultipartUploadClient delegate,
+      OtelStorageDecorator parentDecorator,
+      OpenTelemetry otel,
+      Transport transport) {
     if (otel == OpenTelemetry.noop()) {
       return delegate;
     }
@@ -185,6 +195,6 @@ final class OtelMultipartUploadClientDecorator extends MultipartUploadClient {
             .put("rpc.system", "XML")
             .put("service.name", "storage.googleapis.com")
             .build();
-    return new OtelMultipartUploadClientDecorator(delegate, otel, baseAttributes);
+    return new OtelMultipartUploadClientDecorator(delegate, parentDecorator, otel, baseAttributes);
   }
 }

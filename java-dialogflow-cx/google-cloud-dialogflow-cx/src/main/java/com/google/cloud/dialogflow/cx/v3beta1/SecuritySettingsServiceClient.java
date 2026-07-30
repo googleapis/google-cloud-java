@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -261,7 +262,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SecuritySettingsServiceClient implements BackgroundResource {
-  private final SecuritySettingsServiceSettings settings;
+  private final @Nullable SecuritySettingsServiceSettings settings;
   private final SecuritySettingsServiceStub stub;
 
   /** Constructs an instance of SecuritySettingsServiceClient with default settings. */
@@ -302,7 +303,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SecuritySettingsServiceSettings getSettings() {
+  public final @Nullable SecuritySettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -338,7 +339,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings createSecuritySettings(
-      LocationName parent, SecuritySettings securitySettings) {
+      @Nullable LocationName parent, SecuritySettings securitySettings) {
     CreateSecuritySettingsRequest request =
         CreateSecuritySettingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -471,7 +472,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;securitysettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
+  public final SecuritySettings getSecuritySettings(@Nullable SecuritySettingsName name) {
     GetSecuritySettingsRequest request =
         GetSecuritySettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -702,7 +703,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSecuritySettingsPagedResponse listSecuritySettings(LocationName parent) {
+  public final ListSecuritySettingsPagedResponse listSecuritySettings(
+      @Nullable LocationName parent) {
     ListSecuritySettingsRequest request =
         ListSecuritySettingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -877,7 +879,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/securitySettings/&lt;SecuritySettingsID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSecuritySettings(SecuritySettingsName name) {
+  public final void deleteSecuritySettings(@Nullable SecuritySettingsName name) {
     DeleteSecuritySettingsRequest request =
         DeleteSecuritySettingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1240,9 +1242,10 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
           ListSecuritySettingsPage> {
 
     private ListSecuritySettingsPage(
-        PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
+        @Nullable
+            PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
             context,
-        ListSecuritySettingsResponse response) {
+        @Nullable ListSecuritySettingsResponse response) {
       super(context, response);
     }
 
@@ -1252,15 +1255,17 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecuritySettingsPage createPage(
-        PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
+        @Nullable
+            PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
             context,
-        ListSecuritySettingsResponse response) {
+        @Nullable ListSecuritySettingsResponse response) {
       return new ListSecuritySettingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecuritySettingsPage> createPageAsync(
-        PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
+        @Nullable
+            PageContext<ListSecuritySettingsRequest, ListSecuritySettingsResponse, SecuritySettings>
             context,
         ApiFuture<ListSecuritySettingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1276,7 +1281,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
           ListSecuritySettingsFixedSizeCollection> {
 
     private ListSecuritySettingsFixedSizeCollection(
-        List<ListSecuritySettingsPage> pages, int collectionSize) {
+        @Nullable List<ListSecuritySettingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1286,7 +1291,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSecuritySettingsFixedSizeCollection createCollection(
-        List<ListSecuritySettingsPage> pages, int collectionSize) {
+        @Nullable List<ListSecuritySettingsPage> pages, int collectionSize) {
       return new ListSecuritySettingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1320,8 +1325,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1331,14 +1336,14 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1352,7 +1357,8 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1362,7 +1368,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

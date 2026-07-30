@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -167,7 +168,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GroundedGenerationServiceClient implements BackgroundResource {
-  private final GroundedGenerationServiceSettings settings;
+  private final @Nullable GroundedGenerationServiceSettings settings;
   private final GroundedGenerationServiceStub stub;
 
   /** Constructs an instance of GroundedGenerationServiceClient with default settings. */
@@ -209,7 +210,7 @@ public class GroundedGenerationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GroundedGenerationServiceSettings getSettings() {
+  public final @Nullable GroundedGenerationServiceSettings getSettings() {
     return settings;
   }
 

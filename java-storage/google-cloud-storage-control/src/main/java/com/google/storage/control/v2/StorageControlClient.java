@@ -45,6 +45,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -291,6 +292,24 @@ import org.jspecify.annotations.NullMarked;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateManagedFolder</td>
+ *      <td><p> Updates a managed folder. Currently, this RPC only supports updating the `rapid_cache_config` field.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateManagedFolder(UpdateManagedFolderRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateManagedFolder(ManagedFolder managedFolder, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateManagedFolderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateAnywhereCache</td>
  *      <td><p> Creates an Anywhere Cache instance.</td>
  *      <td>
@@ -422,6 +441,84 @@ import org.jspecify.annotations.NullMarked;
  *      <ul>
  *           <li><p> listAnywhereCachesPagedCallable()
  *           <li><p> listAnywhereCachesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateRapidCache</td>
+ *      <td><p> Creates a Rapid Cache instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createRapidCacheAsync(CreateRapidCacheRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createRapidCacheAsync(BucketName parent, RapidCache rapidCache)
+ *           <li><p> createRapidCacheAsync(String parent, RapidCache rapidCache)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createRapidCacheOperationCallable()
+ *           <li><p> createRapidCacheCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateRapidCache</td>
+ *      <td><p> Updates a Rapid Cache instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateRapidCacheAsync(UpdateRapidCacheRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateRapidCacheAsync(RapidCache rapidCache, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateRapidCacheOperationCallable()
+ *           <li><p> updateRapidCacheCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetRapidCache</td>
+ *      <td><p> Gets a Rapid Cache instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getRapidCache(GetRapidCacheRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getRapidCache(RapidCacheName name)
+ *           <li><p> getRapidCache(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getRapidCacheCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListRapidCaches</td>
+ *      <td><p> Lists Rapid Cache instances for a given bucket.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listRapidCaches(ListRapidCachesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listRapidCaches(BucketName parent)
+ *           <li><p> listRapidCaches(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listRapidCachesPagedCallable()
+ *           <li><p> listRapidCachesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -614,7 +711,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListIntelligenceFindings</td>
- *      <td><p> Lists the `IntelligenceFinding` resources for the specified project.</td>
+ *      <td><p> Lists the `IntelligenceFinding` resources for the specified the project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -634,7 +731,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> SummarizeIntelligenceFindings</td>
- *      <td><p> Summarize the intelligence findings for the specified scope(org, folder or project).</td>
+ *      <td><p> Summarizes the intelligence findings for the specified scope (organization, folder or project).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -748,7 +845,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageControlClient implements BackgroundResource {
-  private final StorageControlSettings settings;
+  private final @Nullable StorageControlSettings settings;
   private final StorageControlStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -796,7 +893,7 @@ public class StorageControlClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StorageControlSettings getSettings() {
+  public final @Nullable StorageControlSettings getSettings() {
     return settings;
   }
 
@@ -853,7 +950,7 @@ public class StorageControlClient implements BackgroundResource {
    *     "books/" folder.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder createFolder(BucketName parent, Folder folder, String folderId) {
+  public final Folder createFolder(@Nullable BucketName parent, Folder folder, String folderId) {
     CreateFolderRequest request =
         CreateFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -993,7 +1090,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/folders/{folder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFolder(FolderName name) {
+  public final void deleteFolder(@Nullable FolderName name) {
     DeleteFolderRequest request =
         DeleteFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFolder(request);
@@ -1113,7 +1210,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/folders/{folder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Folder getFolder(FolderName name) {
+  public final Folder getFolder(@Nullable FolderName name) {
     GetFolderRequest request =
         GetFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFolder(request);
@@ -1235,7 +1332,7 @@ public class StorageControlClient implements BackgroundResource {
    *     hierarchical namespace enabled bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFoldersPagedResponse listFolders(BucketName parent) {
+  public final ListFoldersPagedResponse listFolders(@Nullable BucketName parent) {
     ListFoldersRequest request =
         ListFoldersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1421,7 +1518,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Folder, RenameFolderMetadata> renameFolderAsync(
-      FolderName name, String destinationFolderId) {
+      @Nullable FolderName name, String destinationFolderId) {
     RenameFolderRequest request =
         RenameFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1593,7 +1690,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteFolderRecursiveMetadata> deleteFolderRecursiveAsync(
-      FolderName name) {
+      @Nullable FolderName name) {
     DeleteFolderRecursiveRequest request =
         DeleteFolderRecursiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1752,7 +1849,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/storageLayout`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StorageLayout getStorageLayout(StorageLayoutName name) {
+  public final StorageLayout getStorageLayout(@Nullable StorageLayoutName name) {
     GetStorageLayoutRequest request =
         GetStorageLayoutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStorageLayout(request);
@@ -1875,7 +1972,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ManagedFolder createManagedFolder(
-      BucketName parent, ManagedFolder managedFolder, String managedFolderId) {
+      @Nullable BucketName parent, ManagedFolder managedFolder, String managedFolderId) {
     CreateManagedFolderRequest request =
         CreateManagedFolderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2010,7 +2107,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/managedFolders/{managedFolder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteManagedFolder(ManagedFolderName name) {
+  public final void deleteManagedFolder(@Nullable ManagedFolderName name) {
     DeleteManagedFolderRequest request =
         DeleteManagedFolderRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2132,7 +2229,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/managedFolders/{managedFolder}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ManagedFolder getManagedFolder(ManagedFolderName name) {
+  public final ManagedFolder getManagedFolder(@Nullable ManagedFolderName name) {
     GetManagedFolderRequest request =
         GetManagedFolderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getManagedFolder(request);
@@ -2250,7 +2347,7 @@ public class StorageControlClient implements BackgroundResource {
    * @param parent Required. Name of the bucket this managed folder belongs to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListManagedFoldersPagedResponse listManagedFolders(BucketName parent) {
+  public final ListManagedFoldersPagedResponse listManagedFolders(@Nullable BucketName parent) {
     ListManagedFoldersRequest request =
         ListManagedFoldersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2401,6 +2498,114 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates a managed folder. Currently, this RPC only supports updating the `rapid_cache_config`
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ManagedFolder managedFolder = ManagedFolder.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ManagedFolder response = storageControlClient.updateManagedFolder(managedFolder, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param managedFolder Required. Properties of the managed folder being updated. Currently, this
+   *     RPC only supports updating the `rapid_cache_config` field in `managed_folder`.
+   * @param updateMask Optional. Update mask for managed_folder. Currently, this RPC only supports
+   *     updating the `rapid_cache_config` field in `managed_folder`. This field also supports
+   *     update mask for the subfields in the map of `rapid_cache_config`. The user can specify the
+   *     update mask for `rapid_cache_config.policies` and
+   *     `rapid_cache_config.policies.&lt;key&gt;`, but patching is not supported for a field within
+   *     `RapidCachePolicy.policies.&lt;key&gt;`, like
+   *     rapid_cache_config.policies.[key].ingest_on_write.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagedFolder updateManagedFolder(
+      ManagedFolder managedFolder, FieldMask updateMask) {
+    UpdateManagedFolderRequest request =
+        UpdateManagedFolderRequest.newBuilder()
+            .setManagedFolder(managedFolder)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateManagedFolder(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a managed folder. Currently, this RPC only supports updating the `rapid_cache_config`
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   UpdateManagedFolderRequest request =
+   *       UpdateManagedFolderRequest.newBuilder()
+   *           .setManagedFolder(ManagedFolder.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIfMetagenerationMatch(1043427781)
+   *           .setIfMetagenerationNotMatch(1025430873)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ManagedFolder response = storageControlClient.updateManagedFolder(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagedFolder updateManagedFolder(UpdateManagedFolderRequest request) {
+    return updateManagedFolderCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a managed folder. Currently, this RPC only supports updating the `rapid_cache_config`
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   UpdateManagedFolderRequest request =
+   *       UpdateManagedFolderRequest.newBuilder()
+   *           .setManagedFolder(ManagedFolder.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIfMetagenerationMatch(1043427781)
+   *           .setIfMetagenerationNotMatch(1025430873)
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ManagedFolder> future =
+   *       storageControlClient.updateManagedFolderCallable().futureCall(request);
+   *   // Do something.
+   *   ManagedFolder response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateManagedFolderRequest, ManagedFolder>
+      updateManagedFolderCallable() {
+    return stub.updateManagedFolderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an Anywhere Cache instance.
    *
    * <p>Sample code:
@@ -2427,7 +2632,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AnywhereCache, CreateAnywhereCacheMetadata> createAnywhereCacheAsync(
-      BucketName parent, AnywhereCache anywhereCache) {
+      @Nullable BucketName parent, AnywhereCache anywhereCache) {
     CreateAnywhereCacheRequest request =
         CreateAnywhereCacheRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2722,7 +2927,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache disableAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache disableAnywhereCache(@Nullable AnywhereCacheName name) {
     DisableAnywhereCacheRequest request =
         DisableAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2845,7 +3050,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache pauseAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache pauseAnywhereCache(@Nullable AnywhereCacheName name) {
     PauseAnywhereCacheRequest request =
         PauseAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2962,7 +3167,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache resumeAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache resumeAnywhereCache(@Nullable AnywhereCacheName name) {
     ResumeAnywhereCacheRequest request =
         ResumeAnywhereCacheRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3079,7 +3284,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/anywhereCaches/{anywhere_cache}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnywhereCache getAnywhereCache(AnywhereCacheName name) {
+  public final AnywhereCache getAnywhereCache(@Nullable AnywhereCacheName name) {
     GetAnywhereCacheRequest request =
         GetAnywhereCacheRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAnywhereCache(request);
@@ -3193,7 +3398,7 @@ public class StorageControlClient implements BackgroundResource {
    * @param parent Required. The bucket to which this cache belongs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAnywhereCachesPagedResponse listAnywhereCaches(BucketName parent) {
+  public final ListAnywhereCachesPagedResponse listAnywhereCaches(@Nullable BucketName parent) {
     ListAnywhereCachesRequest request =
         ListAnywhereCachesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3341,6 +3546,576 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+   *   RapidCache rapidCache = RapidCache.newBuilder().build();
+   *   RapidCache response = storageControlClient.createRapidCacheAsync(parent, rapidCache).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The bucket to which this cache belongs. Format:
+   *     `projects/{project}/buckets/{bucket}`
+   * @param rapidCache Required. The RapidCache to create. Default values for ingest_on_write, ttl
+   *     and admission_policy will be applied if not specified in the request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, CreateRapidCacheMetadata> createRapidCacheAsync(
+      @Nullable BucketName parent, RapidCache rapidCache) {
+    CreateRapidCacheRequest request =
+        CreateRapidCacheRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRapidCache(rapidCache)
+            .build();
+    return createRapidCacheAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String parent = BucketName.of("[PROJECT]", "[BUCKET]").toString();
+   *   RapidCache rapidCache = RapidCache.newBuilder().build();
+   *   RapidCache response = storageControlClient.createRapidCacheAsync(parent, rapidCache).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The bucket to which this cache belongs. Format:
+   *     `projects/{project}/buckets/{bucket}`
+   * @param rapidCache Required. The RapidCache to create. Default values for ingest_on_write, ttl
+   *     and admission_policy will be applied if not specified in the request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, CreateRapidCacheMetadata> createRapidCacheAsync(
+      String parent, RapidCache rapidCache) {
+    CreateRapidCacheRequest request =
+        CreateRapidCacheRequest.newBuilder().setParent(parent).setRapidCache(rapidCache).build();
+    return createRapidCacheAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   CreateRapidCacheRequest request =
+   *       CreateRapidCacheRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RapidCache response = storageControlClient.createRapidCacheAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, CreateRapidCacheMetadata> createRapidCacheAsync(
+      CreateRapidCacheRequest request) {
+    return createRapidCacheOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   CreateRapidCacheRequest request =
+   *       CreateRapidCacheRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RapidCache, CreateRapidCacheMetadata> future =
+   *       storageControlClient.createRapidCacheOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RapidCache response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationCallable() {
+    return stub.createRapidCacheOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   CreateRapidCacheRequest request =
+   *       CreateRapidCacheRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageControlClient.createRapidCacheCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRapidCacheRequest, Operation> createRapidCacheCallable() {
+    return stub.createRapidCacheCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   RapidCache rapidCache = RapidCache.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   RapidCache response =
+   *       storageControlClient.updateRapidCacheAsync(rapidCache, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param rapidCache Required. The RapidCache to update.
+   * @param updateMask Required. List of fields to be updated. Mutable fields of RapidCache include
+   *     `ttl`, `admission_policy` and `ingest_on_write`.
+   *     <p>To specify ALL fields, specify a single field with the value `&#42;`. Note: We recommend
+   *     against doing this. If a new field is introduced at a later time, an older client updating
+   *     with the `&#42;` may accidentally reset the new field's value.
+   *     <p>Not specifying any fields is an error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, UpdateRapidCacheMetadata> updateRapidCacheAsync(
+      RapidCache rapidCache, FieldMask updateMask) {
+    UpdateRapidCacheRequest request =
+        UpdateRapidCacheRequest.newBuilder()
+            .setRapidCache(rapidCache)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateRapidCacheAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   UpdateRapidCacheRequest request =
+   *       UpdateRapidCacheRequest.newBuilder()
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RapidCache response = storageControlClient.updateRapidCacheAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, UpdateRapidCacheMetadata> updateRapidCacheAsync(
+      UpdateRapidCacheRequest request) {
+    return updateRapidCacheOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   UpdateRapidCacheRequest request =
+   *       UpdateRapidCacheRequest.newBuilder()
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RapidCache, UpdateRapidCacheMetadata> future =
+   *       storageControlClient.updateRapidCacheOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RapidCache response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationCallable() {
+    return stub.updateRapidCacheOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   UpdateRapidCacheRequest request =
+   *       UpdateRapidCacheRequest.newBuilder()
+   *           .setRapidCache(RapidCache.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageControlClient.updateRapidCacheCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
+    return stub.updateRapidCacheCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+   *   RapidCache response = storageControlClient.getRapidCache(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name field in the request should be:
+   *     `projects/{project}/buckets/{bucket}/rapidCaches/{rapid_cache}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RapidCache getRapidCache(@Nullable RapidCacheName name) {
+    GetRapidCacheRequest request =
+        GetRapidCacheRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRapidCache(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString();
+   *   RapidCache response = storageControlClient.getRapidCache(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name field in the request should be:
+   *     `projects/{project}/buckets/{bucket}/rapidCaches/{rapid_cache}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RapidCache getRapidCache(String name) {
+    GetRapidCacheRequest request = GetRapidCacheRequest.newBuilder().setName(name).build();
+    return getRapidCache(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetRapidCacheRequest request =
+   *       GetRapidCacheRequest.newBuilder()
+   *           .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RapidCache response = storageControlClient.getRapidCache(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RapidCache getRapidCache(GetRapidCacheRequest request) {
+    return getRapidCacheCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   GetRapidCacheRequest request =
+   *       GetRapidCacheRequest.newBuilder()
+   *           .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<RapidCache> future =
+   *       storageControlClient.getRapidCacheCallable().futureCall(request);
+   *   // Do something.
+   *   RapidCache response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {
+    return stub.getRapidCacheCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Rapid Cache instances for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+   *   for (RapidCache element : storageControlClient.listRapidCaches(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The bucket to which this cache belongs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRapidCachesPagedResponse listRapidCaches(@Nullable BucketName parent) {
+    ListRapidCachesRequest request =
+        ListRapidCachesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRapidCaches(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Rapid Cache instances for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String parent = BucketName.of("[PROJECT]", "[BUCKET]").toString();
+   *   for (RapidCache element : storageControlClient.listRapidCaches(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The bucket to which this cache belongs.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRapidCachesPagedResponse listRapidCaches(String parent) {
+    ListRapidCachesRequest request = ListRapidCachesRequest.newBuilder().setParent(parent).build();
+    return listRapidCaches(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Rapid Cache instances for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListRapidCachesRequest request =
+   *       ListRapidCachesRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   for (RapidCache element : storageControlClient.listRapidCaches(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRapidCachesPagedResponse listRapidCaches(ListRapidCachesRequest request) {
+    return listRapidCachesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Rapid Cache instances for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListRapidCachesRequest request =
+   *       ListRapidCachesRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<RapidCache> future =
+   *       storageControlClient.listRapidCachesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RapidCache element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRapidCachesRequest, ListRapidCachesPagedResponse>
+      listRapidCachesPagedCallable() {
+    return stub.listRapidCachesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Rapid Cache instances for a given bucket.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ListRapidCachesRequest request =
+   *       ListRapidCachesRequest.newBuilder()
+   *           .setParent(BucketName.of("[PROJECT]", "[BUCKET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   while (true) {
+   *     ListRapidCachesResponse response =
+   *         storageControlClient.listRapidCachesCallable().call(request);
+   *     for (RapidCache element : response.getRapidCachesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse>
+      listRapidCachesCallable() {
+    return stub.listRapidCachesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns the Project scoped singleton IntelligenceConfig resource.
    *
    * <p>Sample code:
@@ -3363,7 +4138,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `projects/{id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getProjectIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getProjectIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetProjectIntelligenceConfigRequest request =
         GetProjectIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3585,7 +4361,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `folders/{id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getFolderIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getFolderIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetFolderIntelligenceConfigRequest request =
         GetFolderIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3804,7 +4581,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `organizations/{org_id}/locations/global/intelligenceConfig`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceConfig getOrganizationIntelligenceConfig(IntelligenceConfigName name) {
+  public final IntelligenceConfig getOrganizationIntelligenceConfig(
+      @Nullable IntelligenceConfigName name) {
     GetOrganizationIntelligenceConfigRequest request =
         GetOrganizationIntelligenceConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4023,7 +4801,7 @@ public class StorageControlClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4149,7 +4927,7 @@ public class StorageControlClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4287,7 +5065,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4428,7 +5206,7 @@ public class StorageControlClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final IntelligenceFinding getIntelligenceFinding(IntelligenceFindingName name) {
+  public final IntelligenceFinding getIntelligenceFinding(@Nullable IntelligenceFindingName name) {
     GetIntelligenceFindingRequest request =
         GetIntelligenceFindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4530,7 +5308,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the `IntelligenceFinding` resources for the specified project.
+   * Lists the `IntelligenceFinding` resources for the specified the project.
    *
    * <p>Sample code:
    *
@@ -4553,7 +5331,8 @@ public class StorageControlClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(LocationName parent) {
+  public final ListIntelligenceFindingsPagedResponse listIntelligenceFindings(
+      @Nullable LocationName parent) {
     ListIntelligenceFindingsRequest request =
         ListIntelligenceFindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4563,7 +5342,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the `IntelligenceFinding` resources for the specified project.
+   * Lists the `IntelligenceFinding` resources for the specified the project.
    *
    * <p>Sample code:
    *
@@ -4594,7 +5373,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the `IntelligenceFinding` resources for the specified project.
+   * Lists the `IntelligenceFinding` resources for the specified the project.
    *
    * <p>Sample code:
    *
@@ -4629,7 +5408,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the `IntelligenceFinding` resources for the specified project.
+   * Lists the `IntelligenceFinding` resources for the specified the project.
    *
    * <p>Sample code:
    *
@@ -4663,7 +5442,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the `IntelligenceFinding` resources for the specified project.
+   * Lists the `IntelligenceFinding` resources for the specified the project.
    *
    * <p>Sample code:
    *
@@ -4704,7 +5483,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   * Summarizes the intelligence findings for the specified scope (organization, folder or project).
    *
    * <p>Sample code:
    *
@@ -4737,7 +5516,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   * Summarizes the intelligence findings for the specified scope (organization, folder or project).
    *
    * <p>Sample code:
    *
@@ -4772,7 +5551,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   * Summarizes the intelligence findings for the specified scope (organization, folder or project).
    *
    * <p>Sample code:
    *
@@ -4807,7 +5586,7 @@ public class StorageControlClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Summarize the intelligence findings for the specified scope(org, folder or project).
+   * Summarizes the intelligence findings for the specified scope (organization, folder or project).
    *
    * <p>Sample code:
    *
@@ -4873,7 +5652,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IntelligenceFindingRevision getIntelligenceFindingRevision(
-      IntelligenceFindingRevisionName name) {
+      @Nullable IntelligenceFindingRevisionName name) {
     GetIntelligenceFindingRevisionRequest request =
         GetIntelligenceFindingRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5005,7 +5784,7 @@ public class StorageControlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListIntelligenceFindingRevisionsPagedResponse listIntelligenceFindingRevisions(
-      IntelligenceFindingName parent) {
+      @Nullable IntelligenceFindingName parent) {
     ListIntelligenceFindingRevisionsRequest request =
         ListIntelligenceFindingRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5218,8 +5997,8 @@ public class StorageControlClient implements BackgroundResource {
       extends AbstractPage<ListFoldersRequest, ListFoldersResponse, Folder, ListFoldersPage> {
 
     private ListFoldersPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       super(context, response);
     }
 
@@ -5229,14 +6008,14 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListFoldersPage createPage(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
-        ListFoldersResponse response) {
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable ListFoldersResponse response) {
       return new ListFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFoldersPage> createPageAsync(
-        PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
+        @Nullable PageContext<ListFoldersRequest, ListFoldersResponse, Folder> context,
         ApiFuture<ListFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5250,7 +6029,8 @@ public class StorageControlClient implements BackgroundResource {
           ListFoldersPage,
           ListFoldersFixedSizeCollection> {
 
-    private ListFoldersFixedSizeCollection(List<ListFoldersPage> pages, int collectionSize) {
+    private ListFoldersFixedSizeCollection(
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5260,7 +6040,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListFoldersFixedSizeCollection createCollection(
-        List<ListFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListFoldersPage> pages, int collectionSize) {
       return new ListFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5297,8 +6077,9 @@ public class StorageControlClient implements BackgroundResource {
           ListManagedFoldersPage> {
 
     private ListManagedFoldersPage(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
-        ListManagedFoldersResponse response) {
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
+        @Nullable ListManagedFoldersResponse response) {
       super(context, response);
     }
 
@@ -5308,14 +6089,16 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListManagedFoldersPage createPage(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
-        ListManagedFoldersResponse response) {
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
+        @Nullable ListManagedFoldersResponse response) {
       return new ListManagedFoldersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagedFoldersPage> createPageAsync(
-        PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder> context,
+        @Nullable PageContext<ListManagedFoldersRequest, ListManagedFoldersResponse, ManagedFolder>
+            context,
         ApiFuture<ListManagedFoldersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5330,7 +6113,7 @@ public class StorageControlClient implements BackgroundResource {
           ListManagedFoldersFixedSizeCollection> {
 
     private ListManagedFoldersFixedSizeCollection(
-        List<ListManagedFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListManagedFoldersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5340,7 +6123,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListManagedFoldersFixedSizeCollection createCollection(
-        List<ListManagedFoldersPage> pages, int collectionSize) {
+        @Nullable List<ListManagedFoldersPage> pages, int collectionSize) {
       return new ListManagedFoldersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5377,8 +6160,9 @@ public class StorageControlClient implements BackgroundResource {
           ListAnywhereCachesPage> {
 
     private ListAnywhereCachesPage(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
-        ListAnywhereCachesResponse response) {
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
+        @Nullable ListAnywhereCachesResponse response) {
       super(context, response);
     }
 
@@ -5388,14 +6172,16 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListAnywhereCachesPage createPage(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
-        ListAnywhereCachesResponse response) {
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
+        @Nullable ListAnywhereCachesResponse response) {
       return new ListAnywhereCachesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAnywhereCachesPage> createPageAsync(
-        PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache> context,
+        @Nullable PageContext<ListAnywhereCachesRequest, ListAnywhereCachesResponse, AnywhereCache>
+            context,
         ApiFuture<ListAnywhereCachesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5410,7 +6196,7 @@ public class StorageControlClient implements BackgroundResource {
           ListAnywhereCachesFixedSizeCollection> {
 
     private ListAnywhereCachesFixedSizeCollection(
-        List<ListAnywhereCachesPage> pages, int collectionSize) {
+        @Nullable List<ListAnywhereCachesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5420,8 +6206,85 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListAnywhereCachesFixedSizeCollection createCollection(
-        List<ListAnywhereCachesPage> pages, int collectionSize) {
+        @Nullable List<ListAnywhereCachesPage> pages, int collectionSize) {
       return new ListAnywhereCachesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRapidCachesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRapidCachesRequest,
+          ListRapidCachesResponse,
+          RapidCache,
+          ListRapidCachesPage,
+          ListRapidCachesFixedSizeCollection> {
+
+    public static ApiFuture<ListRapidCachesPagedResponse> createAsync(
+        PageContext<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache> context,
+        ApiFuture<ListRapidCachesResponse> futureResponse) {
+      ApiFuture<ListRapidCachesPage> futurePage =
+          ListRapidCachesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRapidCachesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRapidCachesPagedResponse(ListRapidCachesPage page) {
+      super(page, ListRapidCachesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRapidCachesPage
+      extends AbstractPage<
+          ListRapidCachesRequest, ListRapidCachesResponse, RapidCache, ListRapidCachesPage> {
+
+    private ListRapidCachesPage(
+        @Nullable PageContext<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache> context,
+        @Nullable ListRapidCachesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRapidCachesPage createEmptyPage() {
+      return new ListRapidCachesPage(null, null);
+    }
+
+    @Override
+    protected ListRapidCachesPage createPage(
+        @Nullable PageContext<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache> context,
+        @Nullable ListRapidCachesResponse response) {
+      return new ListRapidCachesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRapidCachesPage> createPageAsync(
+        @Nullable PageContext<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache> context,
+        ApiFuture<ListRapidCachesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRapidCachesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRapidCachesRequest,
+          ListRapidCachesResponse,
+          RapidCache,
+          ListRapidCachesPage,
+          ListRapidCachesFixedSizeCollection> {
+
+    private ListRapidCachesFixedSizeCollection(
+        @Nullable List<ListRapidCachesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRapidCachesFixedSizeCollection createEmptyCollection() {
+      return new ListRapidCachesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRapidCachesFixedSizeCollection createCollection(
+        @Nullable List<ListRapidCachesPage> pages, int collectionSize) {
+      return new ListRapidCachesFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -5461,12 +6324,13 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingsPage> {
 
     private ListIntelligenceFindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
             context,
-        ListIntelligenceFindingsResponse response) {
+        @Nullable ListIntelligenceFindingsResponse response) {
       super(context, response);
     }
 
@@ -5476,18 +6340,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
             context,
-        ListIntelligenceFindingsResponse response) {
+        @Nullable ListIntelligenceFindingsResponse response) {
       return new ListIntelligenceFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntelligenceFindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingsRequest,
                 ListIntelligenceFindingsResponse,
                 IntelligenceFinding>
@@ -5506,7 +6372,7 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingsFixedSizeCollection> {
 
     private ListIntelligenceFindingsFixedSizeCollection(
-        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5516,7 +6382,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingsFixedSizeCollection createCollection(
-        List<ListIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingsPage> pages, int collectionSize) {
       return new ListIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5558,12 +6424,13 @@ public class StorageControlClient implements BackgroundResource {
           SummarizeIntelligenceFindingsPage> {
 
     private SummarizeIntelligenceFindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
             context,
-        SummarizeIntelligenceFindingsResponse response) {
+        @Nullable SummarizeIntelligenceFindingsResponse response) {
       super(context, response);
     }
 
@@ -5573,18 +6440,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected SummarizeIntelligenceFindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
             context,
-        SummarizeIntelligenceFindingsResponse response) {
+        @Nullable SummarizeIntelligenceFindingsResponse response) {
       return new SummarizeIntelligenceFindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SummarizeIntelligenceFindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SummarizeIntelligenceFindingsRequest,
                 SummarizeIntelligenceFindingsResponse,
                 FindingSummary>
@@ -5603,7 +6472,7 @@ public class StorageControlClient implements BackgroundResource {
           SummarizeIntelligenceFindingsFixedSizeCollection> {
 
     private SummarizeIntelligenceFindingsFixedSizeCollection(
-        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5613,7 +6482,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected SummarizeIntelligenceFindingsFixedSizeCollection createCollection(
-        List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
+        @Nullable List<SummarizeIntelligenceFindingsPage> pages, int collectionSize) {
       return new SummarizeIntelligenceFindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5656,12 +6525,13 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingRevisionsPage> {
 
     private ListIntelligenceFindingRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
             context,
-        ListIntelligenceFindingRevisionsResponse response) {
+        @Nullable ListIntelligenceFindingRevisionsResponse response) {
       super(context, response);
     }
 
@@ -5671,18 +6541,20 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
             context,
-        ListIntelligenceFindingRevisionsResponse response) {
+        @Nullable ListIntelligenceFindingRevisionsResponse response) {
       return new ListIntelligenceFindingRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIntelligenceFindingRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListIntelligenceFindingRevisionsRequest,
                 ListIntelligenceFindingRevisionsResponse,
                 IntelligenceFindingRevision>
@@ -5701,7 +6573,7 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingRevisionsFixedSizeCollection> {
 
     private ListIntelligenceFindingRevisionsFixedSizeCollection(
-        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5711,7 +6583,7 @@ public class StorageControlClient implements BackgroundResource {
 
     @Override
     protected ListIntelligenceFindingRevisionsFixedSizeCollection createCollection(
-        List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListIntelligenceFindingRevisionsPage> pages, int collectionSize) {
       return new ListIntelligenceFindingRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }

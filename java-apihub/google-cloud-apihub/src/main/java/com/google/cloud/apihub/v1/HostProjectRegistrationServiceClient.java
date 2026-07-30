@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -206,7 +207,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class HostProjectRegistrationServiceClient implements BackgroundResource {
-  private final HostProjectRegistrationServiceSettings settings;
+  private final @Nullable HostProjectRegistrationServiceSettings settings;
   private final HostProjectRegistrationServiceStub stub;
 
   /** Constructs an instance of HostProjectRegistrationServiceClient with default settings. */
@@ -251,7 +252,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
     this.stub = stub;
   }
 
-  public final HostProjectRegistrationServiceSettings getSettings() {
+  public final @Nullable HostProjectRegistrationServiceSettings getSettings() {
     return settings;
   }
 
@@ -295,7 +296,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HostProjectRegistration createHostProjectRegistration(
-      LocationName parent,
+      @Nullable LocationName parent,
       HostProjectRegistration hostProjectRegistration,
       String hostProjectRegistrationId) {
     CreateHostProjectRegistrationRequest request =
@@ -452,7 +453,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final HostProjectRegistration getHostProjectRegistration(
-      HostProjectRegistrationName name) {
+      @Nullable HostProjectRegistrationName name) {
     GetHostProjectRegistrationRequest request =
         GetHostProjectRegistrationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -588,7 +589,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListHostProjectRegistrationsPagedResponse listHostProjectRegistrations(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListHostProjectRegistrationsRequest request =
         ListHostProjectRegistrationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -981,12 +982,13 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
           ListHostProjectRegistrationsPage> {
 
     private ListHostProjectRegistrationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHostProjectRegistrationsRequest,
                 ListHostProjectRegistrationsResponse,
                 HostProjectRegistration>
             context,
-        ListHostProjectRegistrationsResponse response) {
+        @Nullable ListHostProjectRegistrationsResponse response) {
       super(context, response);
     }
 
@@ -996,18 +998,20 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
 
     @Override
     protected ListHostProjectRegistrationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHostProjectRegistrationsRequest,
                 ListHostProjectRegistrationsResponse,
                 HostProjectRegistration>
             context,
-        ListHostProjectRegistrationsResponse response) {
+        @Nullable ListHostProjectRegistrationsResponse response) {
       return new ListHostProjectRegistrationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHostProjectRegistrationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHostProjectRegistrationsRequest,
                 ListHostProjectRegistrationsResponse,
                 HostProjectRegistration>
@@ -1026,7 +1030,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
           ListHostProjectRegistrationsFixedSizeCollection> {
 
     private ListHostProjectRegistrationsFixedSizeCollection(
-        List<ListHostProjectRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListHostProjectRegistrationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1036,7 +1040,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
 
     @Override
     protected ListHostProjectRegistrationsFixedSizeCollection createCollection(
-        List<ListHostProjectRegistrationsPage> pages, int collectionSize) {
+        @Nullable List<ListHostProjectRegistrationsPage> pages, int collectionSize) {
       return new ListHostProjectRegistrationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1070,8 +1074,8 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1081,14 +1085,14 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1102,7 +1106,8 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1112,7 +1117,7 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -73,7 +74,7 @@ public class GoogleAdsLinkName implements ResourceName {
     return newBuilder().setProperty(property).setGoogleAdsLink(googleAdsLink).build().toString();
   }
 
-  public static GoogleAdsLinkName parse(String formattedString) {
+  public static @Nullable GoogleAdsLinkName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -91,7 +92,7 @@ public class GoogleAdsLinkName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<GoogleAdsLinkName> values) {
+  public static List<String> toStringList(List<@Nullable GoogleAdsLinkName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (GoogleAdsLinkName value : values) {
       if (value == null) {
@@ -137,7 +138,7 @@ public class GoogleAdsLinkName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

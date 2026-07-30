@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -158,7 +159,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BusinessIdentityServiceClient implements BackgroundResource {
-  private final BusinessIdentityServiceSettings settings;
+  private final @Nullable BusinessIdentityServiceSettings settings;
   private final BusinessIdentityServiceStub stub;
 
   /** Constructs an instance of BusinessIdentityServiceClient with default settings. */
@@ -199,7 +200,7 @@ public class BusinessIdentityServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BusinessIdentityServiceSettings getSettings() {
+  public final @Nullable BusinessIdentityServiceSettings getSettings() {
     return settings;
   }
 
@@ -230,7 +231,7 @@ public class BusinessIdentityServiceClient implements BackgroundResource {
    *     `accounts/{account}/businessIdentity`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BusinessIdentity getBusinessIdentity(BusinessIdentityName name) {
+  public final BusinessIdentity getBusinessIdentity(@Nullable BusinessIdentityName name) {
     GetBusinessIdentityRequest request =
         GetBusinessIdentityRequest.newBuilder()
             .setName(name == null ? null : name.toString())

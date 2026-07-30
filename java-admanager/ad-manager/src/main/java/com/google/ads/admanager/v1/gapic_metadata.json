@@ -47,6 +47,69 @@
         }
       }
     },
+    "AdRuleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdRuleServiceClient",
+          "rpcs": {
+            "BatchActivateAdRules": {
+              "methods": ["batchActivateAdRules", "batchActivateAdRules", "batchActivateAdRules", "batchActivateAdRulesCallable"]
+            },
+            "BatchCreateAdRules": {
+              "methods": ["batchCreateAdRules", "batchCreateAdRules", "batchCreateAdRules", "batchCreateAdRulesCallable"]
+            },
+            "BatchDeactivateAdRules": {
+              "methods": ["batchDeactivateAdRules", "batchDeactivateAdRules", "batchDeactivateAdRules", "batchDeactivateAdRulesCallable"]
+            },
+            "BatchDeleteAdRules": {
+              "methods": ["batchDeleteAdRules", "batchDeleteAdRules", "batchDeleteAdRules", "batchDeleteAdRulesCallable"]
+            },
+            "BatchUpdateAdRules": {
+              "methods": ["batchUpdateAdRules", "batchUpdateAdRules", "batchUpdateAdRules", "batchUpdateAdRulesCallable"]
+            },
+            "CreateAdRule": {
+              "methods": ["createAdRule", "createAdRule", "createAdRule", "createAdRuleCallable"]
+            },
+            "GetAdRule": {
+              "methods": ["getAdRule", "getAdRule", "getAdRule", "getAdRuleCallable"]
+            },
+            "ListAdRules": {
+              "methods": ["listAdRules", "listAdRules", "listAdRules", "listAdRulesPagedCallable", "listAdRulesCallable"]
+            },
+            "UpdateAdRule": {
+              "methods": ["updateAdRule", "updateAdRule", "updateAdRuleCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AdSpotService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AdSpotServiceClient",
+          "rpcs": {
+            "BatchCreateAdSpots": {
+              "methods": ["batchCreateAdSpots", "batchCreateAdSpots", "batchCreateAdSpots", "batchCreateAdSpotsCallable"]
+            },
+            "BatchUpdateAdSpots": {
+              "methods": ["batchUpdateAdSpots", "batchUpdateAdSpots", "batchUpdateAdSpots", "batchUpdateAdSpotsCallable"]
+            },
+            "CreateAdSpot": {
+              "methods": ["createAdSpot", "createAdSpot", "createAdSpot", "createAdSpotCallable"]
+            },
+            "GetAdSpot": {
+              "methods": ["getAdSpot", "getAdSpot", "getAdSpot", "getAdSpotCallable"]
+            },
+            "ListAdSpots": {
+              "methods": ["listAdSpots", "listAdSpots", "listAdSpots", "listAdSpotsPagedCallable", "listAdSpotsCallable"]
+            },
+            "UpdateAdSpot": {
+              "methods": ["updateAdSpot", "updateAdSpot", "updateAdSpotCallable"]
+            }
+          }
+        }
+      }
+    },
     "AdUnitService": {
       "clients": {
         "grpc": {
@@ -179,6 +242,39 @@
         }
       }
     },
+    "CdnConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CdnConfigServiceClient",
+          "rpcs": {
+            "BatchActivateCdnConfigs": {
+              "methods": ["batchActivateCdnConfigs", "batchActivateCdnConfigs", "batchActivateCdnConfigs", "batchActivateCdnConfigsCallable"]
+            },
+            "BatchArchiveCdnConfigs": {
+              "methods": ["batchArchiveCdnConfigs", "batchArchiveCdnConfigs", "batchArchiveCdnConfigs", "batchArchiveCdnConfigsCallable"]
+            },
+            "BatchCreateCdnConfigs": {
+              "methods": ["batchCreateCdnConfigs", "batchCreateCdnConfigs", "batchCreateCdnConfigs", "batchCreateCdnConfigsCallable"]
+            },
+            "BatchUpdateCdnConfigs": {
+              "methods": ["batchUpdateCdnConfigs", "batchUpdateCdnConfigs", "batchUpdateCdnConfigs", "batchUpdateCdnConfigsCallable"]
+            },
+            "CreateCdnConfig": {
+              "methods": ["createCdnConfig", "createCdnConfig", "createCdnConfig", "createCdnConfigCallable"]
+            },
+            "GetCdnConfig": {
+              "methods": ["getCdnConfig", "getCdnConfig", "getCdnConfig", "getCdnConfigCallable"]
+            },
+            "ListCdnConfigs": {
+              "methods": ["listCdnConfigs", "listCdnConfigs", "listCdnConfigs", "listCdnConfigsPagedCallable", "listCdnConfigsCallable"]
+            },
+            "UpdateCdnConfig": {
+              "methods": ["updateCdnConfig", "updateCdnConfig", "updateCdnConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "CmsMetadataKeyService": {
       "clients": {
         "grpc": {
@@ -268,6 +364,12 @@
         "grpc": {
           "libraryClient": "ContentBundleServiceClient",
           "rpcs": {
+            "BatchActivateContentBundles": {
+              "methods": ["batchActivateContentBundles", "batchActivateContentBundles", "batchActivateContentBundles", "batchActivateContentBundlesCallable"]
+            },
+            "BatchDeactivateContentBundles": {
+              "methods": ["batchDeactivateContentBundles", "batchDeactivateContentBundles", "batchDeactivateContentBundles", "batchDeactivateContentBundlesCallable"]
+            },
             "GetContentBundle": {
               "methods": ["getContentBundle", "getContentBundle", "getContentBundle", "getContentBundleCallable"]
             },
@@ -303,6 +405,27 @@
             },
             "ListContent": {
               "methods": ["listContent", "listContent", "listContent", "listContentPagedCallable", "listContentCallable"]
+            }
+          }
+        }
+      }
+    },
+    "CreativeSetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CreativeSetServiceClient",
+          "rpcs": {
+            "CreateCreativeSet": {
+              "methods": ["createCreativeSet", "createCreativeSet", "createCreativeSet", "createCreativeSetCallable"]
+            },
+            "GetCreativeSet": {
+              "methods": ["getCreativeSet", "getCreativeSet", "getCreativeSet", "getCreativeSetCallable"]
+            },
+            "ListCreativeSets": {
+              "methods": ["listCreativeSets", "listCreativeSets", "listCreativeSets", "listCreativeSetsPagedCallable", "listCreativeSetsCallable"]
+            },
+            "UpdateCreativeSet": {
+              "methods": ["updateCreativeSet", "updateCreativeSet", "updateCreativeSetCallable"]
             }
           }
         }
@@ -394,11 +517,29 @@
         "grpc": {
           "libraryClient": "CustomTargetingValueServiceClient",
           "rpcs": {
+            "BatchActivateCustomTargetingValues": {
+              "methods": ["batchActivateCustomTargetingValues", "batchActivateCustomTargetingValues", "batchActivateCustomTargetingValues", "batchActivateCustomTargetingValuesCallable"]
+            },
+            "BatchCreateCustomTargetingValues": {
+              "methods": ["batchCreateCustomTargetingValues", "batchCreateCustomTargetingValues", "batchCreateCustomTargetingValues", "batchCreateCustomTargetingValuesCallable"]
+            },
+            "BatchDeactivateCustomTargetingValues": {
+              "methods": ["batchDeactivateCustomTargetingValues", "batchDeactivateCustomTargetingValues", "batchDeactivateCustomTargetingValues", "batchDeactivateCustomTargetingValuesCallable"]
+            },
+            "BatchUpdateCustomTargetingValues": {
+              "methods": ["batchUpdateCustomTargetingValues", "batchUpdateCustomTargetingValues", "batchUpdateCustomTargetingValues", "batchUpdateCustomTargetingValuesCallable"]
+            },
+            "CreateCustomTargetingValue": {
+              "methods": ["createCustomTargetingValue", "createCustomTargetingValue", "createCustomTargetingValue", "createCustomTargetingValueCallable"]
+            },
             "GetCustomTargetingValue": {
               "methods": ["getCustomTargetingValue", "getCustomTargetingValue", "getCustomTargetingValue", "getCustomTargetingValueCallable"]
             },
             "ListCustomTargetingValues": {
               "methods": ["listCustomTargetingValues", "listCustomTargetingValues", "listCustomTargetingValues", "listCustomTargetingValuesPagedCallable", "listCustomTargetingValuesCallable"]
+            },
+            "UpdateCustomTargetingValue": {
+              "methods": ["updateCustomTargetingValue", "updateCustomTargetingValue", "updateCustomTargetingValueCallable"]
             }
           }
         }
@@ -554,6 +695,48 @@
         }
       }
     },
+    "LiveStreamService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LiveStreamServiceClient",
+          "rpcs": {
+            "BatchActivateLiveStreams": {
+              "methods": ["batchActivateLiveStreams", "batchActivateLiveStreams", "batchActivateLiveStreams", "batchActivateLiveStreamsCallable"]
+            },
+            "BatchArchiveLiveStreams": {
+              "methods": ["batchArchiveLiveStreams", "batchArchiveLiveStreams", "batchArchiveLiveStreams", "batchArchiveLiveStreamsCallable"]
+            },
+            "BatchCreateLiveStreams": {
+              "methods": ["batchCreateLiveStreams", "batchCreateLiveStreams", "batchCreateLiveStreams", "batchCreateLiveStreamsCallable"]
+            },
+            "BatchPauseAdsLiveStreams": {
+              "methods": ["batchPauseAdsLiveStreams", "batchPauseAdsLiveStreams", "batchPauseAdsLiveStreams", "batchPauseAdsLiveStreamsCallable"]
+            },
+            "BatchPauseLiveStreams": {
+              "methods": ["batchPauseLiveStreams", "batchPauseLiveStreams", "batchPauseLiveStreams", "batchPauseLiveStreamsCallable"]
+            },
+            "BatchRefreshMasterPlaylists": {
+              "methods": ["batchRefreshMasterPlaylists", "batchRefreshMasterPlaylists", "batchRefreshMasterPlaylists", "batchRefreshMasterPlaylistsCallable"]
+            },
+            "BatchUpdateLiveStreams": {
+              "methods": ["batchUpdateLiveStreams", "batchUpdateLiveStreams", "batchUpdateLiveStreams", "batchUpdateLiveStreamsCallable"]
+            },
+            "CreateLiveStream": {
+              "methods": ["createLiveStream", "createLiveStream", "createLiveStream", "createLiveStreamCallable"]
+            },
+            "GetLiveStream": {
+              "methods": ["getLiveStream", "getLiveStream", "getLiveStream", "getLiveStreamCallable"]
+            },
+            "ListLiveStreams": {
+              "methods": ["listLiveStreams", "listLiveStreams", "listLiveStreams", "listLiveStreamsPagedCallable", "listLiveStreamsCallable"]
+            },
+            "UpdateLiveStream": {
+              "methods": ["updateLiveStream", "updateLiveStream", "updateLiveStreamCallable"]
+            }
+          }
+        }
+      }
+    },
     "McmEarningsService": {
       "clients": {
         "grpc": {
@@ -661,6 +844,60 @@
         "grpc": {
           "libraryClient": "OrderServiceClient",
           "rpcs": {
+            "BatchApproveAndOverbookOrders": {
+              "methods": ["batchApproveAndOverbookOrders", "batchApproveAndOverbookOrders", "batchApproveAndOverbookOrders", "batchApproveAndOverbookOrdersCallable"]
+            },
+            "BatchApproveOrders": {
+              "methods": ["batchApproveOrders", "batchApproveOrders", "batchApproveOrders", "batchApproveOrdersCallable"]
+            },
+            "BatchApproveOrdersWithoutReservation": {
+              "methods": ["batchApproveOrdersWithoutReservation", "batchApproveOrdersWithoutReservation", "batchApproveOrdersWithoutReservation", "batchApproveOrdersWithoutReservationCallable"]
+            },
+            "BatchArchiveOrders": {
+              "methods": ["batchArchiveOrders", "batchArchiveOrders", "batchArchiveOrders", "batchArchiveOrdersCallable"]
+            },
+            "BatchCreateOrders": {
+              "methods": ["batchCreateOrders", "batchCreateOrders", "batchCreateOrders", "batchCreateOrdersCallable"]
+            },
+            "BatchDeleteOrders": {
+              "methods": ["batchDeleteOrders", "batchDeleteOrders", "batchDeleteOrders", "batchDeleteOrdersCallable"]
+            },
+            "BatchDisapproveOrders": {
+              "methods": ["batchDisapproveOrders", "batchDisapproveOrders", "batchDisapproveOrders", "batchDisapproveOrdersCallable"]
+            },
+            "BatchDisapproveOrdersWithoutReservationChanges": {
+              "methods": ["batchDisapproveOrdersWithoutReservationChanges", "batchDisapproveOrdersWithoutReservationChanges", "batchDisapproveOrdersWithoutReservationChanges", "batchDisapproveOrdersWithoutReservationChangesCallable"]
+            },
+            "BatchPauseOrders": {
+              "methods": ["batchPauseOrders", "batchPauseOrders", "batchPauseOrders", "batchPauseOrdersCallable"]
+            },
+            "BatchResumeAndOverbookOrders": {
+              "methods": ["batchResumeAndOverbookOrders", "batchResumeAndOverbookOrders", "batchResumeAndOverbookOrders", "batchResumeAndOverbookOrdersCallable"]
+            },
+            "BatchResumeOrders": {
+              "methods": ["batchResumeOrders", "batchResumeOrders", "batchResumeOrders", "batchResumeOrdersCallable"]
+            },
+            "BatchRetractOrders": {
+              "methods": ["batchRetractOrders", "batchRetractOrders", "batchRetractOrders", "batchRetractOrdersCallable"]
+            },
+            "BatchRetractOrdersWithoutReservationChanges": {
+              "methods": ["batchRetractOrdersWithoutReservationChanges", "batchRetractOrdersWithoutReservationChanges", "batchRetractOrdersWithoutReservationChanges", "batchRetractOrdersWithoutReservationChangesCallable"]
+            },
+            "BatchSubmitOrdersForApproval": {
+              "methods": ["batchSubmitOrdersForApproval", "batchSubmitOrdersForApproval", "batchSubmitOrdersForApproval", "batchSubmitOrdersForApprovalCallable"]
+            },
+            "BatchSubmitOrdersForApprovalAndOverbook": {
+              "methods": ["batchSubmitOrdersForApprovalAndOverbook", "batchSubmitOrdersForApprovalAndOverbook", "batchSubmitOrdersForApprovalAndOverbook", "batchSubmitOrdersForApprovalAndOverbookCallable"]
+            },
+            "BatchSubmitOrdersForApprovalWithoutReservationChanges": {
+              "methods": ["batchSubmitOrdersForApprovalWithoutReservationChanges", "batchSubmitOrdersForApprovalWithoutReservationChanges", "batchSubmitOrdersForApprovalWithoutReservationChanges", "batchSubmitOrdersForApprovalWithoutReservationChangesCallable"]
+            },
+            "BatchUnarchiveOrders": {
+              "methods": ["batchUnarchiveOrders", "batchUnarchiveOrders", "batchUnarchiveOrders", "batchUnarchiveOrdersCallable"]
+            },
+            "BatchUpdateOrders": {
+              "methods": ["batchUpdateOrders", "batchUpdateOrders", "batchUpdateOrders", "batchUpdateOrdersCallable"]
+            },
             "GetOrder": {
               "methods": ["getOrder", "getOrder", "getOrder", "getOrderCallable"]
             },
@@ -854,6 +1091,87 @@
         }
       }
     },
+    "SlateService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SlateServiceClient",
+          "rpcs": {
+            "BatchArchiveSlates": {
+              "methods": ["batchArchiveSlates", "batchArchiveSlates", "batchArchiveSlates", "batchArchiveSlatesCallable"]
+            },
+            "BatchCreateSlates": {
+              "methods": ["batchCreateSlates", "batchCreateSlates", "batchCreateSlates", "batchCreateSlatesCallable"]
+            },
+            "BatchUnarchiveSlates": {
+              "methods": ["batchUnarchiveSlates", "batchUnarchiveSlates", "batchUnarchiveSlates", "batchUnarchiveSlatesCallable"]
+            },
+            "BatchUpdateSlates": {
+              "methods": ["batchUpdateSlates", "batchUpdateSlates", "batchUpdateSlates", "batchUpdateSlatesCallable"]
+            },
+            "CreateSlate": {
+              "methods": ["createSlate", "createSlate", "createSlate", "createSlateCallable"]
+            },
+            "GetSlate": {
+              "methods": ["getSlate", "getSlate", "getSlate", "getSlateCallable"]
+            },
+            "ListSlates": {
+              "methods": ["listSlates", "listSlates", "listSlates", "listSlatesPagedCallable", "listSlatesCallable"]
+            },
+            "UpdateSlate": {
+              "methods": ["updateSlate", "updateSlate", "updateSlateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "SuggestedAdUnitService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SuggestedAdUnitServiceClient",
+          "rpcs": {
+            "BatchApproveSuggestedAdUnits": {
+              "methods": ["batchApproveSuggestedAdUnits", "batchApproveSuggestedAdUnits", "batchApproveSuggestedAdUnits", "batchApproveSuggestedAdUnitsCallable"]
+            },
+            "GetSuggestedAdUnit": {
+              "methods": ["getSuggestedAdUnit", "getSuggestedAdUnit", "getSuggestedAdUnit", "getSuggestedAdUnitCallable"]
+            },
+            "ListSuggestedAdUnits": {
+              "methods": ["listSuggestedAdUnits", "listSuggestedAdUnits", "listSuggestedAdUnits", "listSuggestedAdUnitsPagedCallable", "listSuggestedAdUnitsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "TargetingPresetService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TargetingPresetServiceClient",
+          "rpcs": {
+            "BatchCreateTargetingPresets": {
+              "methods": ["batchCreateTargetingPresets", "batchCreateTargetingPresets", "batchCreateTargetingPresets", "batchCreateTargetingPresetsCallable"]
+            },
+            "BatchDeactivateTargetingPresets": {
+              "methods": ["batchDeactivateTargetingPresets", "batchDeactivateTargetingPresets", "batchDeactivateTargetingPresets", "batchDeactivateTargetingPresetsCallable"]
+            },
+            "BatchUpdateTargetingPresets": {
+              "methods": ["batchUpdateTargetingPresets", "batchUpdateTargetingPresets", "batchUpdateTargetingPresets", "batchUpdateTargetingPresetsCallable"]
+            },
+            "CreateTargetingPreset": {
+              "methods": ["createTargetingPreset", "createTargetingPreset", "createTargetingPreset", "createTargetingPresetCallable"]
+            },
+            "GetTargetingPreset": {
+              "methods": ["getTargetingPreset", "getTargetingPreset", "getTargetingPreset", "getTargetingPresetCallable"]
+            },
+            "ListTargetingPresets": {
+              "methods": ["listTargetingPresets", "listTargetingPresets", "listTargetingPresets", "listTargetingPresetsPagedCallable", "listTargetingPresetsCallable"]
+            },
+            "UpdateTargetingPreset": {
+              "methods": ["updateTargetingPreset", "updateTargetingPreset", "updateTargetingPresetCallable"]
+            }
+          }
+        }
+      }
+    },
     "TaxonomyCategoryService": {
       "clients": {
         "grpc": {
@@ -897,6 +1215,21 @@
             },
             "UpdateTeam": {
               "methods": ["updateTeam", "updateTeam", "updateTeamCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ThirdPartyCompanyService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ThirdPartyCompanyServiceClient",
+          "rpcs": {
+            "GetThirdPartyCompany": {
+              "methods": ["getThirdPartyCompany", "getThirdPartyCompany", "getThirdPartyCompany", "getThirdPartyCompanyCallable"]
+            },
+            "ListThirdPartyCompanies": {
+              "methods": ["listThirdPartyCompanies", "listThirdPartyCompanies", "listThirdPartyCompanies", "listThirdPartyCompaniesPagedCallable", "listThirdPartyCompaniesCallable"]
             }
           }
         }

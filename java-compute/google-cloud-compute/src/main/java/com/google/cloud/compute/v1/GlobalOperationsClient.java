@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -206,7 +207,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class GlobalOperationsClient implements BackgroundResource {
-  private final GlobalOperationsSettings settings;
+  private final @Nullable GlobalOperationsSettings settings;
   private final GlobalOperationsStub stub;
 
   /** Constructs an instance of GlobalOperationsClient with default settings. */
@@ -246,7 +247,7 @@ public class GlobalOperationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GlobalOperationsSettings getSettings() {
+  public final @Nullable GlobalOperationsSettings getSettings() {
     return settings;
   }
 
@@ -916,12 +917,13 @@ public class GlobalOperationsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
                 Map.Entry<String, OperationsScopedList>>
             context,
-        OperationAggregatedList response) {
+        @Nullable OperationAggregatedList response) {
       super(context, response);
     }
 
@@ -931,18 +933,20 @@ public class GlobalOperationsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
                 Map.Entry<String, OperationsScopedList>>
             context,
-        OperationAggregatedList response) {
+        @Nullable OperationAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalOperationsRequest,
                 OperationAggregatedList,
                 Map.Entry<String, OperationsScopedList>>
@@ -960,7 +964,8 @@ public class GlobalOperationsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -970,7 +975,7 @@ public class GlobalOperationsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1001,8 +1006,8 @@ public class GlobalOperationsClient implements BackgroundResource {
       extends AbstractPage<ListGlobalOperationsRequest, OperationList, Operation, ListPage> {
 
     private ListPage(
-        PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
-        OperationList response) {
+        @Nullable PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
+        @Nullable OperationList response) {
       super(context, response);
     }
 
@@ -1012,14 +1017,14 @@ public class GlobalOperationsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
-        OperationList response) {
+        @Nullable PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
+        @Nullable OperationList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
+        @Nullable PageContext<ListGlobalOperationsRequest, OperationList, Operation> context,
         ApiFuture<OperationList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1033,7 +1038,7 @@ public class GlobalOperationsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1042,7 +1047,8 @@ public class GlobalOperationsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,7 +245,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudQuotasClient implements BackgroundResource {
-  private final CloudQuotasSettings settings;
+  private final @Nullable CloudQuotasSettings settings;
   private final CloudQuotasStub stub;
 
   /** Constructs an instance of CloudQuotasClient with default settings. */
@@ -283,7 +284,7 @@ public class CloudQuotasClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudQuotasSettings getSettings() {
+  public final @Nullable CloudQuotasSettings getSettings() {
     return settings;
   }
 
@@ -312,14 +313,14 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaInfo resources. Listing across different resource
-   *     containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaInfo resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>Example names: `projects/123/locations/global/services/compute.googleapis.com`
    *     `folders/234/locations/global/services/compute.googleapis.com`
    *     `organizations/345/locations/global/services/compute.googleapis.com`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQuotaInfosPagedResponse listQuotaInfos(ServiceName parent) {
+  public final ListQuotaInfosPagedResponse listQuotaInfos(@Nullable ServiceName parent) {
     ListQuotaInfosRequest request =
         ListQuotaInfosRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -349,8 +350,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaInfo resources. Listing across different resource
-   *     containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaInfo resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>Example names: `projects/123/locations/global/services/compute.googleapis.com`
    *     `folders/234/locations/global/services/compute.googleapis.com`
    *     `organizations/345/locations/global/services/compute.googleapis.com`
@@ -491,12 +492,12 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the quota info.
+   * @param name Required. Identifier. The resource name of the quota info.
    *     <p>An example name:
    *     `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QuotaInfo getQuotaInfo(QuotaInfoName name) {
+  public final QuotaInfo getQuotaInfo(@Nullable QuotaInfoName name) {
     GetQuotaInfoRequest request =
         GetQuotaInfoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQuotaInfo(request);
@@ -523,7 +524,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the quota info.
+   * @param name Required. Identifier. The resource name of the quota info.
    *     <p>An example name:
    *     `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -614,15 +615,16 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaPreference resources. Listing across different
-   *     resource containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaPreference resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>When the value starts with 'folders' or 'organizations', it lists the QuotaPreferences
    *     for org quotas in the container. It does not list the QuotaPreferences in the descendant
    *     projects of the container.
    *     <p>Example parents: `projects/123/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQuotaPreferencesPagedResponse listQuotaPreferences(LocationName parent) {
+  public final ListQuotaPreferencesPagedResponse listQuotaPreferences(
+      @Nullable LocationName parent) {
     ListQuotaPreferencesRequest request =
         ListQuotaPreferencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -650,8 +652,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaPreference resources. Listing across different
-   *     resource containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaPreference resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>When the value starts with 'folders' or 'organizations', it lists the QuotaPreferences
    *     for org quotas in the container. It does not list the QuotaPreferences in the descendant
    *     projects of the container.
@@ -796,11 +798,11 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Identifier. Name of the resource
    *     <p>Example name: `projects/123/locations/global/quota_preferences/my-config-for-us-east1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QuotaPreference getQuotaPreference(QuotaPreferenceName name) {
+  public final QuotaPreference getQuotaPreference(@Nullable QuotaPreferenceName name) {
     GetQuotaPreferenceRequest request =
         GetQuotaPreferenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -829,7 +831,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Identifier. Name of the resource
    *     <p>Example name: `projects/123/locations/global/quota_preferences/my-config-for-us-east1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -921,13 +923,13 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QuotaPreference createQuotaPreference(
-      LocationName parent, QuotaPreference quotaPreference) {
+      @Nullable LocationName parent, QuotaPreference quotaPreference) {
     CreateQuotaPreferenceRequest request =
         CreateQuotaPreferenceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -955,7 +957,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -991,7 +993,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @param quotaPreferenceId Optional. Id of the requesting object, must be unique under its
@@ -999,7 +1001,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final QuotaPreference createQuotaPreference(
-      LocationName parent, QuotaPreference quotaPreference, String quotaPreferenceId) {
+      @Nullable LocationName parent, QuotaPreference quotaPreference, String quotaPreferenceId) {
     CreateQuotaPreferenceRequest request =
         CreateQuotaPreferenceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1030,7 +1032,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @param quotaPreferenceId Optional. Id of the requesting object, must be unique under its
@@ -1275,8 +1277,8 @@ public class CloudQuotasClient implements BackgroundResource {
           ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo, ListQuotaInfosPage> {
 
     private ListQuotaInfosPage(
-        PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
-        ListQuotaInfosResponse response) {
+        @Nullable PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
+        @Nullable ListQuotaInfosResponse response) {
       super(context, response);
     }
 
@@ -1286,14 +1288,14 @@ public class CloudQuotasClient implements BackgroundResource {
 
     @Override
     protected ListQuotaInfosPage createPage(
-        PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
-        ListQuotaInfosResponse response) {
+        @Nullable PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
+        @Nullable ListQuotaInfosResponse response) {
       return new ListQuotaInfosPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQuotaInfosPage> createPageAsync(
-        PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
+        @Nullable PageContext<ListQuotaInfosRequest, ListQuotaInfosResponse, QuotaInfo> context,
         ApiFuture<ListQuotaInfosResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1307,7 +1309,8 @@ public class CloudQuotasClient implements BackgroundResource {
           ListQuotaInfosPage,
           ListQuotaInfosFixedSizeCollection> {
 
-    private ListQuotaInfosFixedSizeCollection(List<ListQuotaInfosPage> pages, int collectionSize) {
+    private ListQuotaInfosFixedSizeCollection(
+        @Nullable List<ListQuotaInfosPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1317,7 +1320,7 @@ public class CloudQuotasClient implements BackgroundResource {
 
     @Override
     protected ListQuotaInfosFixedSizeCollection createCollection(
-        List<ListQuotaInfosPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaInfosPage> pages, int collectionSize) {
       return new ListQuotaInfosFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1355,9 +1358,10 @@ public class CloudQuotasClient implements BackgroundResource {
           ListQuotaPreferencesPage> {
 
     private ListQuotaPreferencesPage(
-        PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
+        @Nullable
+            PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
             context,
-        ListQuotaPreferencesResponse response) {
+        @Nullable ListQuotaPreferencesResponse response) {
       super(context, response);
     }
 
@@ -1367,15 +1371,17 @@ public class CloudQuotasClient implements BackgroundResource {
 
     @Override
     protected ListQuotaPreferencesPage createPage(
-        PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
+        @Nullable
+            PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
             context,
-        ListQuotaPreferencesResponse response) {
+        @Nullable ListQuotaPreferencesResponse response) {
       return new ListQuotaPreferencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQuotaPreferencesPage> createPageAsync(
-        PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
+        @Nullable
+            PageContext<ListQuotaPreferencesRequest, ListQuotaPreferencesResponse, QuotaPreference>
             context,
         ApiFuture<ListQuotaPreferencesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1391,7 +1397,7 @@ public class CloudQuotasClient implements BackgroundResource {
           ListQuotaPreferencesFixedSizeCollection> {
 
     private ListQuotaPreferencesFixedSizeCollection(
-        List<ListQuotaPreferencesPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaPreferencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1401,7 +1407,7 @@ public class CloudQuotasClient implements BackgroundResource {
 
     @Override
     protected ListQuotaPreferencesFixedSizeCollection createCollection(
-        List<ListQuotaPreferencesPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaPreferencesPage> pages, int collectionSize) {
       return new ListQuotaPreferencesFixedSizeCollection(pages, collectionSize);
     }
   }

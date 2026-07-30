@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -292,7 +293,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DnsThreatDetectorServiceClient implements BackgroundResource {
-  private final DnsThreatDetectorServiceSettings settings;
+  private final @Nullable DnsThreatDetectorServiceSettings settings;
   private final DnsThreatDetectorServiceStub stub;
 
   /** Constructs an instance of DnsThreatDetectorServiceClient with default settings. */
@@ -334,7 +335,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DnsThreatDetectorServiceSettings getSettings() {
+  public final @Nullable DnsThreatDetectorServiceSettings getSettings() {
     return settings;
   }
 
@@ -367,7 +368,8 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
    * @param parent Required. The parent value for `ListDnsThreatDetectorsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDnsThreatDetectorsPagedResponse listDnsThreatDetectors(LocationName parent) {
+  public final ListDnsThreatDetectorsPagedResponse listDnsThreatDetectors(
+      @Nullable LocationName parent) {
     ListDnsThreatDetectorsRequest request =
         ListDnsThreatDetectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -539,7 +541,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
    * @param name Required. Name of the DnsThreatDetector resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DnsThreatDetector getDnsThreatDetector(DnsThreatDetectorName name) {
+  public final DnsThreatDetector getDnsThreatDetector(@Nullable DnsThreatDetectorName name) {
     GetDnsThreatDetectorRequest request =
         GetDnsThreatDetectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -669,7 +671,9 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DnsThreatDetector createDnsThreatDetector(
-      LocationName parent, DnsThreatDetector dnsThreatDetector, String dnsThreatDetectorId) {
+      @Nullable LocationName parent,
+      DnsThreatDetector dnsThreatDetector,
+      String dnsThreatDetectorId) {
     CreateDnsThreatDetectorRequest request =
         CreateDnsThreatDetectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -905,7 +909,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
    * @param name Required. Name of the DnsThreatDetector resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDnsThreatDetector(DnsThreatDetectorName name) {
+  public final void deleteDnsThreatDetector(@Nullable DnsThreatDetectorName name) {
     DeleteDnsThreatDetectorRequest request =
         DeleteDnsThreatDetectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1485,10 +1489,11 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
           ListDnsThreatDetectorsPage> {
 
     private ListDnsThreatDetectorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDnsThreatDetectorsRequest, ListDnsThreatDetectorsResponse, DnsThreatDetector>
             context,
-        ListDnsThreatDetectorsResponse response) {
+        @Nullable ListDnsThreatDetectorsResponse response) {
       super(context, response);
     }
 
@@ -1498,16 +1503,18 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
 
     @Override
     protected ListDnsThreatDetectorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDnsThreatDetectorsRequest, ListDnsThreatDetectorsResponse, DnsThreatDetector>
             context,
-        ListDnsThreatDetectorsResponse response) {
+        @Nullable ListDnsThreatDetectorsResponse response) {
       return new ListDnsThreatDetectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDnsThreatDetectorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDnsThreatDetectorsRequest, ListDnsThreatDetectorsResponse, DnsThreatDetector>
             context,
         ApiFuture<ListDnsThreatDetectorsResponse> futureResponse) {
@@ -1524,7 +1531,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
           ListDnsThreatDetectorsFixedSizeCollection> {
 
     private ListDnsThreatDetectorsFixedSizeCollection(
-        List<ListDnsThreatDetectorsPage> pages, int collectionSize) {
+        @Nullable List<ListDnsThreatDetectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1534,7 +1541,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
 
     @Override
     protected ListDnsThreatDetectorsFixedSizeCollection createCollection(
-        List<ListDnsThreatDetectorsPage> pages, int collectionSize) {
+        @Nullable List<ListDnsThreatDetectorsPage> pages, int collectionSize) {
       return new ListDnsThreatDetectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1568,8 +1575,8 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1579,14 +1586,14 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1600,7 +1607,8 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1610,7 +1618,7 @@ public class DnsThreatDetectorServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

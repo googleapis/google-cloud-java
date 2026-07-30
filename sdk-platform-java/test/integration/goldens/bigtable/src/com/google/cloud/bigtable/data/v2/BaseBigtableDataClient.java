@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -239,7 +240,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BaseBigtableDataClient implements BackgroundResource {
-  private final BaseBigtableDataSettings settings;
+  private final @Nullable BaseBigtableDataSettings settings;
   private final BigtableStub stub;
 
   /** Constructs an instance of BaseBigtableDataClient with default settings. */
@@ -279,7 +280,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BaseBigtableDataSettings getSettings() {
+  public final @Nullable BaseBigtableDataSettings getSettings() {
     return settings;
   }
 
@@ -387,7 +388,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MutateRowResponse mutateRow(
-      TableName tableName, ByteString rowKey, List<Mutation> mutations) {
+      @Nullable TableName tableName, ByteString rowKey, List<Mutation> mutations) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
             .setTableName(tableName == null ? null : tableName.toString())
@@ -473,7 +474,10 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MutateRowResponse mutateRow(
-      TableName tableName, ByteString rowKey, List<Mutation> mutations, String appProfileId) {
+      @Nullable TableName tableName,
+      ByteString rowKey,
+      List<Mutation> mutations,
+      String appProfileId) {
     MutateRowRequest request =
         MutateRowRequest.newBuilder()
             .setTableName(tableName == null ? null : tableName.toString())
@@ -668,7 +672,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckAndMutateRowResponse checkAndMutateRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       RowFilter predicateFilter,
       List<Mutation> trueMutations,
@@ -787,7 +791,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CheckAndMutateRowResponse checkAndMutateRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       RowFilter predicateFilter,
       List<Mutation> trueMutations,
@@ -958,7 +962,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *     respond. Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PingAndWarmResponse pingAndWarm(InstanceName name) {
+  public final PingAndWarmResponse pingAndWarm(@Nullable InstanceName name) {
     PingAndWarmRequest request =
         PingAndWarmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pingAndWarm(request);
@@ -1018,7 +1022,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    *     "default" application profile will be used.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PingAndWarmResponse pingAndWarm(InstanceName name, String appProfileId) {
+  public final PingAndWarmResponse pingAndWarm(@Nullable InstanceName name, String appProfileId) {
     PingAndWarmRequest request =
         PingAndWarmRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1154,7 +1158,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadModifyWriteRowResponse readModifyWriteRow(
-      TableName tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
+      @Nullable TableName tableName, ByteString rowKey, List<ReadModifyWriteRule> rules) {
     ReadModifyWriteRowRequest request =
         ReadModifyWriteRowRequest.newBuilder()
             .setTableName(tableName == null ? null : tableName.toString())
@@ -1247,7 +1251,7 @@ public class BaseBigtableDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadModifyWriteRowResponse readModifyWriteRow(
-      TableName tableName,
+      @Nullable TableName tableName,
       ByteString rowKey,
       List<ReadModifyWriteRule> rules,
       String appProfileId) {

@@ -94,6 +94,9 @@
             "DeleteSupportEventSubscription": {
               "methods": ["deleteSupportEventSubscription", "deleteSupportEventSubscription", "deleteSupportEventSubscription", "deleteSupportEventSubscriptionCallable"]
             },
+            "ExpungeSupportEventSubscription": {
+              "methods": ["expungeSupportEventSubscription", "expungeSupportEventSubscription", "expungeSupportEventSubscription", "expungeSupportEventSubscriptionCallable"]
+            },
             "GetSupportEventSubscription": {
               "methods": ["getSupportEventSubscription", "getSupportEventSubscription", "getSupportEventSubscription", "getSupportEventSubscriptionCallable"]
             },

@@ -35,6 +35,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -47,7 +48,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -55,10 +55,17 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class CallableTest {
 
-  @Mock private UnaryCallable<String, String> innerCallable;
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    innerServerStreamingCallable =
+        mock(ServerStreamingCallable.class, Mockito.withSettings().withoutAnnotations());
+  }
+
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
-  @Mock private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;
+  private ServerStreamingCallable<Object, Object> innerServerStreamingCallable;
 
   private RetrySettings retrySettings =
       RetrySettings.newBuilder()
@@ -180,9 +187,10 @@ class CallableTest {
     doReturn(callContext).when(callContext).withStreamIdleTimeoutDuration(eq(timeout));
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     ClientContext clientContext =
         ClientContext.newBuilder()
             .setStreamWatchdog(watchdog)

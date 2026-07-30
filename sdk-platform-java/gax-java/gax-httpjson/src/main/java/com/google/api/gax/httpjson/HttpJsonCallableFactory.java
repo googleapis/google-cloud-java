@@ -46,8 +46,10 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.TracedUnaryCallable;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create http/json-based direct callables. */
+@NullMarked
 public class HttpJsonCallableFactory {
 
   private HttpJsonCallableFactory() {}

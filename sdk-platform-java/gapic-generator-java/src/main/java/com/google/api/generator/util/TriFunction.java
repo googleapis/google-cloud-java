@@ -16,7 +16,9 @@ package com.google.api.generator.util;
 
 import java.util.Objects;
 import java.util.function.Function;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @FunctionalInterface
 public interface TriFunction<A, B, C, R> {
   R apply(A a, B b, C c);

@@ -11,6 +11,5 @@
   "repo_short": "java-cloudapiregistry",
   "distribution_name": "com.google.cloud:google-cloud-cloudapiregistry",
   "api_id": "cloudapiregistry.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

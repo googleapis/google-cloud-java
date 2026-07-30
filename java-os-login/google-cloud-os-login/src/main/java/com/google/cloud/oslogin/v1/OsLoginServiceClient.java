@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -257,7 +258,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OsLoginServiceClient implements BackgroundResource {
-  private final OsLoginServiceSettings settings;
+  private final @Nullable OsLoginServiceSettings settings;
   private final OsLoginServiceStub stub;
 
   /** Constructs an instance of OsLoginServiceClient with default settings. */
@@ -297,7 +298,7 @@ public class OsLoginServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OsLoginServiceSettings getSettings() {
+  public final @Nullable OsLoginServiceSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +331,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OsLoginProto.SshPublicKey createSshPublicKey(
-      UserName parent, OsLoginProto.SshPublicKey sshPublicKey) {
+      @Nullable UserName parent, OsLoginProto.SshPublicKey sshPublicKey) {
     CreateSshPublicKeyRequest request =
         CreateSshPublicKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -455,7 +456,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *     `users/{user}/projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deletePosixAccount(ProjectName name) {
+  public final void deletePosixAccount(@Nullable ProjectName name) {
     DeletePosixAccountRequest request =
         DeletePosixAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -571,7 +572,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSshPublicKey(FingerprintName name) {
+  public final void deleteSshPublicKey(@Nullable FingerprintName name) {
     DeleteSshPublicKeyRequest request =
         DeleteSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -686,7 +687,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @param name Required. The unique ID for the user in format `users/{user}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LoginProfile getLoginProfile(UserName name) {
+  public final LoginProfile getLoginProfile(@Nullable UserName name) {
     GetLoginProfileRequest request =
         GetLoginProfileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLoginProfile(request);
@@ -804,7 +805,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OsLoginProto.SshPublicKey getSshPublicKey(FingerprintName name) {
+  public final OsLoginProto.SshPublicKey getSshPublicKey(@Nullable FingerprintName name) {
     GetSshPublicKeyRequest request =
         GetSshPublicKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSshPublicKey(request);
@@ -921,7 +922,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
-      UserName parent, OsLoginProto.SshPublicKey sshPublicKey) {
+      @Nullable UserName parent, OsLoginProto.SshPublicKey sshPublicKey) {
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -993,7 +994,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ImportSshPublicKeyResponse importSshPublicKey(
-      UserName parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId) {
+      @Nullable UserName parent, OsLoginProto.SshPublicKey sshPublicKey, String projectId) {
     ImportSshPublicKeyRequest request =
         ImportSshPublicKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1134,7 +1135,7 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OsLoginProto.SshPublicKey updateSshPublicKey(
-      FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey) {
+      @Nullable FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey) {
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1207,7 +1208,9 @@ public class OsLoginServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OsLoginProto.SshPublicKey updateSshPublicKey(
-      FingerprintName name, OsLoginProto.SshPublicKey sshPublicKey, FieldMask updateMask) {
+      @Nullable FingerprintName name,
+      OsLoginProto.SshPublicKey sshPublicKey,
+      FieldMask updateMask) {
     UpdateSshPublicKeyRequest request =
         UpdateSshPublicKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())

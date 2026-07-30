@@ -49,6 +49,7 @@ import java.util.Map;
 import java.util.ServiceLoader;
 import java.util.Set;
 import javax.annotation.concurrent.ThreadSafe;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utilities to fetch the S2A (Secure Session Agent) address from the mTLS configuration.
@@ -58,6 +59,7 @@ import javax.annotation.concurrent.ThreadSafe;
  *
  * <p>This is an experimental utility.
  */
+@NullMarked
 @ThreadSafe
 public class SecureSessionAgent {
   static final String S2A_JSON_KEY = "s2a";

@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -301,7 +302,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SpecialistPoolServiceClient implements BackgroundResource {
-  private final SpecialistPoolServiceSettings settings;
+  private final @Nullable SpecialistPoolServiceSettings settings;
   private final SpecialistPoolServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -344,7 +345,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final SpecialistPoolServiceSettings getSettings() {
+  public final @Nullable SpecialistPoolServiceSettings getSettings() {
     return settings;
   }
 
@@ -387,7 +388,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<SpecialistPool, CreateSpecialistPoolOperationMetadata>
-      createSpecialistPoolAsync(LocationName parent, SpecialistPool specialistPool) {
+      createSpecialistPoolAsync(@Nullable LocationName parent, SpecialistPool specialistPool) {
     CreateSpecialistPoolRequest request =
         CreateSpecialistPoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -551,7 +552,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/specialistPools/{specialist_pool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpecialistPool getSpecialistPool(SpecialistPoolName name) {
+  public final SpecialistPool getSpecialistPool(@Nullable SpecialistPoolName name) {
     GetSpecialistPoolRequest request =
         GetSpecialistPoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -674,7 +675,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSpecialistPoolsPagedResponse listSpecialistPools(LocationName parent) {
+  public final ListSpecialistPoolsPagedResponse listSpecialistPools(@Nullable LocationName parent) {
     ListSpecialistPoolsRequest request =
         ListSpecialistPoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -852,7 +853,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSpecialistPoolAsync(
-      SpecialistPoolName name) {
+      @Nullable SpecialistPoolName name) {
     DeleteSpecialistPoolRequest request =
         DeleteSpecialistPoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1559,9 +1560,10 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
           ListSpecialistPoolsPage> {
 
     private ListSpecialistPoolsPage(
-        PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
+        @Nullable
+            PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
             context,
-        ListSpecialistPoolsResponse response) {
+        @Nullable ListSpecialistPoolsResponse response) {
       super(context, response);
     }
 
@@ -1571,15 +1573,17 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpecialistPoolsPage createPage(
-        PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
+        @Nullable
+            PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
             context,
-        ListSpecialistPoolsResponse response) {
+        @Nullable ListSpecialistPoolsResponse response) {
       return new ListSpecialistPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpecialistPoolsPage> createPageAsync(
-        PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
+        @Nullable
+            PageContext<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse, SpecialistPool>
             context,
         ApiFuture<ListSpecialistPoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1595,7 +1599,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
           ListSpecialistPoolsFixedSizeCollection> {
 
     private ListSpecialistPoolsFixedSizeCollection(
-        List<ListSpecialistPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListSpecialistPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1605,7 +1609,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpecialistPoolsFixedSizeCollection createCollection(
-        List<ListSpecialistPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListSpecialistPoolsPage> pages, int collectionSize) {
       return new ListSpecialistPoolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1639,8 +1643,8 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1650,14 +1654,14 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1671,7 +1675,8 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1681,7 +1686,7 @@ public class SpecialistPoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -326,7 +327,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataprocMetastoreFederationClient implements BackgroundResource {
-  private final DataprocMetastoreFederationSettings settings;
+  private final @Nullable DataprocMetastoreFederationSettings settings;
   private final DataprocMetastoreFederationStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -377,7 +378,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataprocMetastoreFederationSettings getSettings() {
+  public final @Nullable DataprocMetastoreFederationSettings getSettings() {
     return settings;
   }
 
@@ -428,7 +429,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
    *     list, in the following form: `projects/{project_number}/locations/{location_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFederationsPagedResponse listFederations(LocationName parent) {
+  public final ListFederationsPagedResponse listFederations(@Nullable LocationName parent) {
     ListFederationsRequest request =
         ListFederationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -606,7 +607,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
    *     <p>`projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Federation getFederation(FederationName name) {
+  public final Federation getFederation(@Nullable FederationName name) {
     GetFederationRequest request =
         GetFederationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFederation(request);
@@ -736,7 +737,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Federation, OperationMetadata> createFederationAsync(
-      LocationName parent, Federation federation, String federationId) {
+      @Nullable LocationName parent, Federation federation, String federationId) {
     CreateFederationRequest request =
         CreateFederationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1052,7 +1053,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteFederationAsync(
-      FederationName name) {
+      @Nullable FederationName name) {
     DeleteFederationRequest request =
         DeleteFederationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFederationAsync(request);
@@ -1607,8 +1608,8 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
           ListFederationsRequest, ListFederationsResponse, Federation, ListFederationsPage> {
 
     private ListFederationsPage(
-        PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
-        ListFederationsResponse response) {
+        @Nullable PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
+        @Nullable ListFederationsResponse response) {
       super(context, response);
     }
 
@@ -1618,14 +1619,14 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
 
     @Override
     protected ListFederationsPage createPage(
-        PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
-        ListFederationsResponse response) {
+        @Nullable PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
+        @Nullable ListFederationsResponse response) {
       return new ListFederationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFederationsPage> createPageAsync(
-        PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
+        @Nullable PageContext<ListFederationsRequest, ListFederationsResponse, Federation> context,
         ApiFuture<ListFederationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1640,7 +1641,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
           ListFederationsFixedSizeCollection> {
 
     private ListFederationsFixedSizeCollection(
-        List<ListFederationsPage> pages, int collectionSize) {
+        @Nullable List<ListFederationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1650,7 +1651,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
 
     @Override
     protected ListFederationsFixedSizeCollection createCollection(
-        List<ListFederationsPage> pages, int collectionSize) {
+        @Nullable List<ListFederationsPage> pages, int collectionSize) {
       return new ListFederationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1684,8 +1685,8 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1695,14 +1696,14 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1716,7 +1717,8 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1726,7 +1728,7 @@ public class DataprocMetastoreFederationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

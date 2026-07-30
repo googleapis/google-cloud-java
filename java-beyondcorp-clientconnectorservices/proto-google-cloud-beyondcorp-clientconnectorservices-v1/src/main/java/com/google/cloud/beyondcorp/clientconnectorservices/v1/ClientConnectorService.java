@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -42,7 +42,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "ClientConnectorService");
   }
@@ -167,7 +167,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
           /* minor= */ 33,
-          /* patch= */ 2,
+          /* patch= */ 6,
           /* suffix= */ "",
           "State");
     }
@@ -423,7 +423,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
           /* minor= */ 33,
-          /* patch= */ 2,
+          /* patch= */ 6,
           /* suffix= */ "",
           "Ingress");
     }
@@ -591,7 +591,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "Config");
       }
@@ -664,7 +664,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
               /* major= */ 4,
               /* minor= */ 33,
-              /* patch= */ 2,
+              /* patch= */ 6,
               /* suffix= */ "",
               "TransportProtocol");
         }
@@ -864,7 +864,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
               /* major= */ 4,
               /* minor= */ 33,
-              /* patch= */ 2,
+              /* patch= */ 6,
               /* suffix= */ "",
               "DestinationRoute");
         }
@@ -3901,7 +3901,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
           /* minor= */ 33,
-          /* patch= */ 2,
+          /* patch= */ 6,
           /* suffix= */ "",
           "Egress");
     }
@@ -3985,7 +3985,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "PeeredVpc");
       }

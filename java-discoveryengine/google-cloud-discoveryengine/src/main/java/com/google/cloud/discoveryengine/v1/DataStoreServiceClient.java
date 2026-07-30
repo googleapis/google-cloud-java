@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -231,7 +232,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DataStoreServiceClient implements BackgroundResource {
-  private final DataStoreServiceSettings settings;
+  private final @Nullable DataStoreServiceSettings settings;
   private final DataStoreServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -279,7 +280,7 @@ public class DataStoreServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataStoreServiceSettings getSettings() {
+  public final @Nullable DataStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -341,7 +342,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataStore, CreateDataStoreMetadata> createDataStoreAsync(
-      CollectionName parent, DataStore dataStore, String dataStoreId) {
+      @Nullable CollectionName parent, DataStore dataStore, String dataStoreId) {
     CreateDataStoreRequest request =
         CreateDataStoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -537,7 +538,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    *     a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataStore getDataStore(DataStoreName name) {
+  public final DataStore getDataStore(@Nullable DataStoreName name) {
     GetDataStoreRequest request =
         GetDataStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataStore(request);
@@ -668,7 +669,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    *     whether or not this data store exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataStoresPagedResponse listDataStores(CollectionName parent) {
+  public final ListDataStoresPagedResponse listDataStores(@Nullable CollectionName parent) {
     ListDataStoresRequest request =
         ListDataStoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -850,7 +851,7 @@ public class DataStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteDataStoreMetadata> deleteDataStoreAsync(
-      DataStoreName name) {
+      @Nullable DataStoreName name) {
     DeleteDataStoreRequest request =
         DeleteDataStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataStoreAsync(request);
@@ -1143,8 +1144,8 @@ public class DataStoreServiceClient implements BackgroundResource {
           ListDataStoresRequest, ListDataStoresResponse, DataStore, ListDataStoresPage> {
 
     private ListDataStoresPage(
-        PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
-        ListDataStoresResponse response) {
+        @Nullable PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
+        @Nullable ListDataStoresResponse response) {
       super(context, response);
     }
 
@@ -1154,14 +1155,14 @@ public class DataStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataStoresPage createPage(
-        PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
-        ListDataStoresResponse response) {
+        @Nullable PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
+        @Nullable ListDataStoresResponse response) {
       return new ListDataStoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataStoresPage> createPageAsync(
-        PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
+        @Nullable PageContext<ListDataStoresRequest, ListDataStoresResponse, DataStore> context,
         ApiFuture<ListDataStoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1175,7 +1176,8 @@ public class DataStoreServiceClient implements BackgroundResource {
           ListDataStoresPage,
           ListDataStoresFixedSizeCollection> {
 
-    private ListDataStoresFixedSizeCollection(List<ListDataStoresPage> pages, int collectionSize) {
+    private ListDataStoresFixedSizeCollection(
+        @Nullable List<ListDataStoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1185,7 +1187,7 @@ public class DataStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataStoresFixedSizeCollection createCollection(
-        List<ListDataStoresPage> pages, int collectionSize) {
+        @Nullable List<ListDataStoresPage> pages, int collectionSize) {
       return new ListDataStoresFixedSizeCollection(pages, collectionSize);
     }
   }

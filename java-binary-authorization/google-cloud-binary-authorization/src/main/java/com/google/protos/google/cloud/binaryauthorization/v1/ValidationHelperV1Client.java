@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -137,7 +138,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ValidationHelperV1Client implements BackgroundResource {
-  private final ValidationHelperV1Settings settings;
+  private final @Nullable ValidationHelperV1Settings settings;
   private final ValidationHelperV1Stub stub;
 
   /** Constructs an instance of ValidationHelperV1Client with default settings. */
@@ -177,7 +178,7 @@ public class ValidationHelperV1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ValidationHelperV1Settings getSettings() {
+  public final @Nullable ValidationHelperV1Settings getSettings() {
     return settings;
   }
 

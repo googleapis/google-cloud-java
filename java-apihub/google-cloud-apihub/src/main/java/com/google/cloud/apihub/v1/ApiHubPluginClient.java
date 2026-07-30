@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -424,7 +425,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ApiHubPluginClient implements BackgroundResource {
-  private final ApiHubPluginSettings settings;
+  private final @Nullable ApiHubPluginSettings settings;
   private final ApiHubPluginStub stub;
   private final OperationsClient httpJsonOperationsClient;
 
@@ -466,7 +467,7 @@ public class ApiHubPluginClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ApiHubPluginSettings getSettings() {
+  public final @Nullable ApiHubPluginSettings getSettings() {
     return settings;
   }
 
@@ -504,7 +505,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Plugin getPlugin(PluginName name) {
+  public final Plugin getPlugin(@Nullable PluginName name) {
     GetPluginRequest request =
         GetPluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPlugin(request);
@@ -614,7 +615,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Plugin enablePlugin(PluginName name) {
+  public final Plugin enablePlugin(@Nullable PluginName name) {
     EnablePluginRequest request =
         EnablePluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return enablePlugin(request);
@@ -724,7 +725,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Plugin disablePlugin(PluginName name) {
+  public final Plugin disablePlugin(@Nullable PluginName name) {
     DisablePluginRequest request =
         DisablePluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return disablePlugin(request);
@@ -848,7 +849,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Plugin createPlugin(LocationName parent, Plugin plugin, String pluginId) {
+  public final Plugin createPlugin(@Nullable LocationName parent, Plugin plugin, String pluginId) {
     CreatePluginRequest request =
         CreatePluginRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -989,7 +990,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPluginsPagedResponse listPlugins(LocationName parent) {
+  public final ListPluginsPagedResponse listPlugins(@Nullable LocationName parent) {
     ListPluginsRequest request =
         ListPluginsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1153,7 +1154,8 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deletePluginAsync(PluginName name) {
+  public final OperationFuture<Empty, OperationMetadata> deletePluginAsync(
+      @Nullable PluginName name) {
     DeletePluginRequest request =
         DeletePluginRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deletePluginAsync(request);
@@ -1308,7 +1310,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PluginInstance, OperationMetadata> createPluginInstanceAsync(
-      PluginName parent, PluginInstance pluginInstance, String pluginInstanceId) {
+      @Nullable PluginName parent, PluginInstance pluginInstance, String pluginInstanceId) {
     CreatePluginInstanceRequest request =
         CreatePluginInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1486,7 +1488,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    */
   public final OperationFuture<ExecutePluginInstanceActionResponse, OperationMetadata>
       executePluginInstanceActionAsync(
-          PluginInstanceName name, ActionExecutionDetail actionExecutionDetail) {
+          @Nullable PluginInstanceName name, ActionExecutionDetail actionExecutionDetail) {
     ExecutePluginInstanceActionRequest request =
         ExecutePluginInstanceActionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1654,7 +1656,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PluginInstance getPluginInstance(PluginInstanceName name) {
+  public final PluginInstance getPluginInstance(@Nullable PluginInstanceName name) {
     GetPluginInstanceRequest request =
         GetPluginInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1776,7 +1778,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    *     multiple plugins, use the - character instead of the plugin ID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPluginInstancesPagedResponse listPluginInstances(PluginName parent) {
+  public final ListPluginInstancesPagedResponse listPluginInstances(@Nullable PluginName parent) {
     ListPluginInstancesRequest request =
         ListPluginInstancesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1955,7 +1957,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EnablePluginInstanceActionResponse, OperationMetadata>
-      enablePluginInstanceActionAsync(PluginInstanceName name, String actionId) {
+      enablePluginInstanceActionAsync(@Nullable PluginInstanceName name, String actionId) {
     EnablePluginInstanceActionRequest request =
         EnablePluginInstanceActionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2122,7 +2124,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DisablePluginInstanceActionResponse, OperationMetadata>
-      disablePluginInstanceActionAsync(PluginInstanceName name, String actionId) {
+      disablePluginInstanceActionAsync(@Nullable PluginInstanceName name, String actionId) {
     DisablePluginInstanceActionRequest request =
         DisablePluginInstanceActionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2425,7 +2427,7 @@ public class ApiHubPluginClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePluginInstanceAsync(
-      PluginInstanceName name) {
+      @Nullable PluginInstanceName name) {
     DeletePluginInstanceRequest request =
         DeletePluginInstanceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2766,8 +2768,8 @@ public class ApiHubPluginClient implements BackgroundResource {
       extends AbstractPage<ListPluginsRequest, ListPluginsResponse, Plugin, ListPluginsPage> {
 
     private ListPluginsPage(
-        PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
-        ListPluginsResponse response) {
+        @Nullable PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
+        @Nullable ListPluginsResponse response) {
       super(context, response);
     }
 
@@ -2777,14 +2779,14 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListPluginsPage createPage(
-        PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
-        ListPluginsResponse response) {
+        @Nullable PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
+        @Nullable ListPluginsResponse response) {
       return new ListPluginsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPluginsPage> createPageAsync(
-        PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
+        @Nullable PageContext<ListPluginsRequest, ListPluginsResponse, Plugin> context,
         ApiFuture<ListPluginsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2798,7 +2800,8 @@ public class ApiHubPluginClient implements BackgroundResource {
           ListPluginsPage,
           ListPluginsFixedSizeCollection> {
 
-    private ListPluginsFixedSizeCollection(List<ListPluginsPage> pages, int collectionSize) {
+    private ListPluginsFixedSizeCollection(
+        @Nullable List<ListPluginsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2808,7 +2811,7 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListPluginsFixedSizeCollection createCollection(
-        List<ListPluginsPage> pages, int collectionSize) {
+        @Nullable List<ListPluginsPage> pages, int collectionSize) {
       return new ListPluginsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2846,9 +2849,10 @@ public class ApiHubPluginClient implements BackgroundResource {
           ListPluginInstancesPage> {
 
     private ListPluginInstancesPage(
-        PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
+        @Nullable
+            PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
             context,
-        ListPluginInstancesResponse response) {
+        @Nullable ListPluginInstancesResponse response) {
       super(context, response);
     }
 
@@ -2858,15 +2862,17 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListPluginInstancesPage createPage(
-        PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
+        @Nullable
+            PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
             context,
-        ListPluginInstancesResponse response) {
+        @Nullable ListPluginInstancesResponse response) {
       return new ListPluginInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPluginInstancesPage> createPageAsync(
-        PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
+        @Nullable
+            PageContext<ListPluginInstancesRequest, ListPluginInstancesResponse, PluginInstance>
             context,
         ApiFuture<ListPluginInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2882,7 +2888,7 @@ public class ApiHubPluginClient implements BackgroundResource {
           ListPluginInstancesFixedSizeCollection> {
 
     private ListPluginInstancesFixedSizeCollection(
-        List<ListPluginInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListPluginInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2892,7 +2898,7 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListPluginInstancesFixedSizeCollection createCollection(
-        List<ListPluginInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListPluginInstancesPage> pages, int collectionSize) {
       return new ListPluginInstancesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2926,8 +2932,8 @@ public class ApiHubPluginClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2937,14 +2943,14 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2958,7 +2964,8 @@ public class ApiHubPluginClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2968,7 +2975,7 @@ public class ApiHubPluginClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

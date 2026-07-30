@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -117,7 +118,7 @@ public class ContinuousTestResultName implements ResourceName {
         .toString();
   }
 
-  public static ContinuousTestResultName parse(String formattedString) {
+  public static @Nullable ContinuousTestResultName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -140,7 +141,7 @@ public class ContinuousTestResultName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ContinuousTestResultName> values) {
+  public static List<String> toStringList(List<@Nullable ContinuousTestResultName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ContinuousTestResultName value : values) {
       if (value == null) {
@@ -204,7 +205,7 @@ public class ContinuousTestResultName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

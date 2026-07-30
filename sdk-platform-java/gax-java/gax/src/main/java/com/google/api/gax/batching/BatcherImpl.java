@@ -65,7 +65,8 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Queues up the elements until {@link #flush()} is called; once batching is over, returned future
@@ -78,6 +79,7 @@ import javax.annotation.Nullable;
  * @param <RequestT> The type of the request that will contain the accumulated elements.
  * @param <ResponseT> The type of the response that will unpack into individual element results.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only")
 public class BatcherImpl<ElementT, ElementResultT, RequestT, ResponseT>
     implements Batcher<ElementT, ElementResultT> {

@@ -18,8 +18,10 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableMap;
 import java.util.Collections;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** Represents the LRO retry settings in a gapic.yaml file. */
+@NullMarked
 @AutoValue
 public abstract class GapicLanguageSettings {
   // The Java package mapping.

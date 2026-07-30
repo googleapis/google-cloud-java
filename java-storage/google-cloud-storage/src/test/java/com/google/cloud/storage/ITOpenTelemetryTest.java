@@ -41,6 +41,10 @@ import org.junit.runner.RunWith;
     transports = {Transport.HTTP, Transport.GRPC})
 public final class ITOpenTelemetryTest {
 
+  static {
+    OtelStorageDecorator.acoEnabled = true;
+  }
+
   @Inject public Storage storage;
 
   @Inject public BucketInfo bucket;
@@ -80,9 +84,178 @@ public final class ITOpenTelemetryTest {
   }
 
   @Test
+  public void testAcoSuccessFlow() throws Exception {
+    TestExporter exporter = new TestExporter();
+
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+    try (Storage storage = storageOptions.getService()) {
+      storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, bucket.getName());
+      storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+    }
+
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData span1 = exporter.getExportedSpans().get(0);
+    SpanData span2 = exporter.getExportedSpans().get(1);
+
+    assertAll(
+        () -> assertThat(getAttributeValue(span1, "gcp.client.service")).isEqualTo("Storage"),
+        () ->
+            assertThat(getAttributeValue(span1, "rpc.system"))
+                .isEqualTo(transport.name().toLowerCase()),
+        () -> assertThat(getAttributeValue(span2, "gcp.client.service")).isEqualTo("Storage"),
+        () ->
+            assertThat(getAttributeValue(span2, "gcp.resource.destination.id"))
+                .contains("buckets/" + bucket.getName()),
+        () ->
+            assertThat(getAttributeValue(span2, "gcp.resource.destination.location"))
+                .isNotEqualTo("global"));
+  }
+
+  @Test
+  public void testAcoNonExistentBucketNoAttributes() throws Exception {
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+    String nonExistentBucket = "non-existent-bucket-" + generator.randomBucketName();
+
+    try (Storage storage = storageOptions.getService()) {
+      storage.get(nonExistentBucket);
+      pollUntilMetadataEvicted((OtelStorageDecorator) storage, nonExistentBucket);
+      storage.get(nonExistentBucket);
+    }
+
+    // We should have at least 2 get spans
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData getSpan1 = exporter.getExportedSpans().get(0);
+    SpanData getSpan2 = exporter.getExportedSpans().get(1);
+
+    assertAll(
+        () -> assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.id")).isNull(),
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.location")).isNull());
+  }
+
+  @Test
+  public void testAcoForbiddenBucketFallbackAttributes() throws Exception {
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    StorageOptions storageOptions =
+        storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+
+    try (Storage storage = storageOptions.getService()) {
+      try {
+        storage.get("test");
+      } catch (StorageException e) {
+        // Expected 403 Forbidden
+      }
+      pollUntilMetadataResolved((OtelStorageDecorator) storage, "test");
+      try {
+        storage.get("test");
+      } catch (StorageException e) {
+        // Expected 403 Forbidden
+      }
+    }
+
+    assertThat(exporter.getExportedSpans().size()).isAtLeast(2);
+    SpanData getSpan1 = exporter.getExportedSpans().get(0);
+    SpanData getSpan2 = exporter.getExportedSpans().get(1);
+
+    assertAll(
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.id"))
+                .isEqualTo("projects/_/buckets/test"),
+        () ->
+            assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.location"))
+                .isEqualTo("global"));
+  }
+
+  @Test
   public void noOpDoesNothing() {
     assertThat(storage.getOptions().getOpenTelemetry()).isSameInstanceAs(OpenTelemetry.noop());
     storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+  }
+
+  private static void pollUntilMetadataResolved(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache cache = osd.acoContext.getCache();
+      BucketMetadataCache.BucketMetadata meta = cache != null ? cache.get(bucketName) : null;
+      if (meta != null && !meta.fetchPending) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to resolve for bucket: " + bucketName);
+  }
+
+  private static void pollUntilMetadataEvicted(OtelStorageDecorator osd, String bucketName)
+      throws Exception {
+    for (int i = 0; i < 100; i++) {
+      BucketMetadataCache cache = osd.acoContext.getCache();
+      if (cache == null || !cache.containsKey(bucketName)) {
+        return;
+      }
+      Thread.sleep(50);
+    }
+    throw new AssertionError(
+        "Timeout waiting for ACO metadata prefetch to evict for nonexistent bucket: " + bucketName);
+  }
+
+  @Test
+  public void testAcoDisabledRetainsStandardInstrumentation() throws Exception {
+    OtelStorageDecorator.acoEnabled = false;
+    try {
+      TestExporter exporter = new TestExporter();
+      OpenTelemetrySdk openTelemetrySdk =
+          OpenTelemetrySdk.builder()
+              .setTracerProvider(
+                  SdkTracerProvider.builder()
+                      .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                      .build())
+              .build();
+      StorageOptions storageOptions =
+          storage.getOptions().toBuilder().setOpenTelemetry(openTelemetrySdk).build();
+      try (Storage storage = storageOptions.getService()) {
+        storage.create(BlobInfo.newBuilder(bucket, generator.randomObjectName()).build());
+      }
+
+      assertThat(exporter.getExportedSpans().size()).isAtLeast(1);
+      SpanData spanData = exporter.getExportedSpans().get(0);
+      assertAll(
+          () -> assertThat(getAttributeValue(spanData, "gcp.client.service")).isEqualTo("Storage"),
+          () ->
+              assertThat(getAttributeValue(spanData, "rpc.system"))
+                  .isEqualTo(transport.name().toLowerCase()),
+          () -> assertThat(getAttributeValue(spanData, "gcp.resource.destination.id")).isNull(),
+          () ->
+              assertThat(getAttributeValue(spanData, "gcp.resource.destination.location"))
+                  .isNull());
+    } finally {
+      OtelStorageDecorator.acoEnabled = true;
+    }
   }
 
   private static String getAttributeValue(SpanData spanData, String key) {

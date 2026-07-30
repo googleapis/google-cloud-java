@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-contact-center-insights",
   "api_id": "contactcenterinsights.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/api-contact-center-insights"
 }

@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -330,7 +331,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AppConnectorsServiceClient implements BackgroundResource {
-  private final AppConnectorsServiceSettings settings;
+  private final @Nullable AppConnectorsServiceSettings settings;
   private final AppConnectorsServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -373,7 +374,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final AppConnectorsServiceSettings getSettings() {
+  public final @Nullable AppConnectorsServiceSettings getSettings() {
     return settings;
   }
 
@@ -415,7 +416,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAppConnectorsPagedResponse listAppConnectors(LocationName parent) {
+  public final ListAppConnectorsPagedResponse listAppConnectors(@Nullable LocationName parent) {
     ListAppConnectorsRequest request =
         ListAppConnectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -593,7 +594,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppConnector getAppConnector(AppConnectorName name) {
+  public final AppConnector getAppConnector(@Nullable AppConnectorName name) {
     GetAppConnectorRequest request =
         GetAppConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAppConnector(request);
@@ -718,7 +719,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AppConnector, AppConnectorOperationMetadata> createAppConnectorAsync(
-      LocationName parent, AppConnector appConnector, String appConnectorId) {
+      @Nullable LocationName parent, AppConnector appConnector, String appConnectorId) {
     CreateAppConnectorRequest request =
         CreateAppConnectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1039,7 +1040,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, AppConnectorOperationMetadata> deleteAppConnectorAsync(
-      AppConnectorName name) {
+      @Nullable AppConnectorName name) {
     DeleteAppConnectorRequest request =
         DeleteAppConnectorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1200,7 +1201,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AppConnector, AppConnectorOperationMetadata> reportStatusAsync(
-      AppConnectorName appConnector, ResourceInfo resourceInfo) {
+      @Nullable AppConnectorName appConnector, ResourceInfo resourceInfo) {
     ReportStatusRequest request =
         ReportStatusRequest.newBuilder()
             .setAppConnector(appConnector == null ? null : appConnector.toString())
@@ -1776,8 +1777,9 @@ public class AppConnectorsServiceClient implements BackgroundResource {
           ListAppConnectorsPage> {
 
     private ListAppConnectorsPage(
-        PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector> context,
-        ListAppConnectorsResponse response) {
+        @Nullable PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector>
+            context,
+        @Nullable ListAppConnectorsResponse response) {
       super(context, response);
     }
 
@@ -1787,14 +1789,16 @@ public class AppConnectorsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppConnectorsPage createPage(
-        PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector> context,
-        ListAppConnectorsResponse response) {
+        @Nullable PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector>
+            context,
+        @Nullable ListAppConnectorsResponse response) {
       return new ListAppConnectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAppConnectorsPage> createPageAsync(
-        PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector> context,
+        @Nullable PageContext<ListAppConnectorsRequest, ListAppConnectorsResponse, AppConnector>
+            context,
         ApiFuture<ListAppConnectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1809,7 +1813,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
           ListAppConnectorsFixedSizeCollection> {
 
     private ListAppConnectorsFixedSizeCollection(
-        List<ListAppConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListAppConnectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1819,7 +1823,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAppConnectorsFixedSizeCollection createCollection(
-        List<ListAppConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListAppConnectorsPage> pages, int collectionSize) {
       return new ListAppConnectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1853,8 +1857,8 @@ public class AppConnectorsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1864,14 +1868,14 @@ public class AppConnectorsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1885,7 +1889,8 @@ public class AppConnectorsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1895,7 +1900,7 @@ public class AppConnectorsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

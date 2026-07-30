@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -355,7 +356,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LibraryServiceClient implements BackgroundResource {
-  private final LibraryServiceSettings settings;
+  private final @Nullable LibraryServiceSettings settings;
   private final LibraryServiceStub stub;
 
   /** Constructs an instance of LibraryServiceClient with default settings. */
@@ -395,7 +396,7 @@ public class LibraryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LibraryServiceSettings getSettings() {
+  public final @Nullable LibraryServiceSettings getSettings() {
     return settings;
   }
 
@@ -501,7 +502,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the shelf to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf getShelf(ShelfName name) {
+  public final Shelf getShelf(@Nullable ShelfName name) {
     GetShelfRequest request =
         GetShelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getShelf(request);
@@ -707,7 +708,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the shelf to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteShelf(ShelfName name) {
+  public final void deleteShelf(@Nullable ShelfName name) {
     DeleteShelfRequest request =
         DeleteShelfRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteShelf(request);
@@ -818,7 +819,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(ShelfName name, ShelfName otherShelf) {
+  public final Shelf mergeShelves(@Nullable ShelfName name, @Nullable ShelfName otherShelf) {
     MergeShelvesRequest request =
         MergeShelvesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -855,7 +856,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(ShelfName name, String otherShelf) {
+  public final Shelf mergeShelves(@Nullable ShelfName name, String otherShelf) {
     MergeShelvesRequest request =
         MergeShelvesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -892,7 +893,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelf The name of the shelf we're removing books from and deleting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Shelf mergeShelves(String name, ShelfName otherShelf) {
+  public final Shelf mergeShelves(String name, @Nullable ShelfName otherShelf) {
     MergeShelvesRequest request =
         MergeShelvesRequest.newBuilder()
             .setName(name)
@@ -1025,7 +1026,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param book The book to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book createBook(ShelfName parent, Book book) {
+  public final Book createBook(@Nullable ShelfName parent, Book book) {
     CreateBookRequest request =
         CreateBookRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1141,7 +1142,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the book to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book getBook(BookName name) {
+  public final Book getBook(@Nullable BookName name) {
     GetBookRequest request =
         GetBookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBook(request);
@@ -1249,7 +1250,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param parent The name of the shelf whose books we'd like to list.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBooksPagedResponse listBooks(ShelfName parent) {
+  public final ListBooksPagedResponse listBooks(@Nullable ShelfName parent) {
     ListBooksRequest request =
         ListBooksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listBooks(request);
@@ -1413,7 +1414,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param name The name of the book to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBook(BookName name) {
+  public final void deleteBook(@Nullable BookName name) {
     DeleteBookRequest request =
         DeleteBookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBook(request);
@@ -1613,7 +1614,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(BookName name, ShelfName otherShelfName) {
+  public final Book moveBook(@Nullable BookName name, @Nullable ShelfName otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1646,7 +1647,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(BookName name, String otherShelfName) {
+  public final Book moveBook(@Nullable BookName name, String otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1679,7 +1680,7 @@ public class LibraryServiceClient implements BackgroundResource {
    * @param otherShelfName The name of the destination shelf.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Book moveBook(String name, ShelfName otherShelfName) {
+  public final Book moveBook(String name, @Nullable ShelfName otherShelfName) {
     MoveBookRequest request =
         MoveBookRequest.newBuilder()
             .setName(name)
@@ -1833,8 +1834,8 @@ public class LibraryServiceClient implements BackgroundResource {
       extends AbstractPage<ListShelvesRequest, ListShelvesResponse, Shelf, ListShelvesPage> {
 
     private ListShelvesPage(
-        PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
-        ListShelvesResponse response) {
+        @Nullable PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
+        @Nullable ListShelvesResponse response) {
       super(context, response);
     }
 
@@ -1844,14 +1845,14 @@ public class LibraryServiceClient implements BackgroundResource {
 
     @Override
     protected ListShelvesPage createPage(
-        PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
-        ListShelvesResponse response) {
+        @Nullable PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
+        @Nullable ListShelvesResponse response) {
       return new ListShelvesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListShelvesPage> createPageAsync(
-        PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
+        @Nullable PageContext<ListShelvesRequest, ListShelvesResponse, Shelf> context,
         ApiFuture<ListShelvesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1865,7 +1866,8 @@ public class LibraryServiceClient implements BackgroundResource {
           ListShelvesPage,
           ListShelvesFixedSizeCollection> {
 
-    private ListShelvesFixedSizeCollection(List<ListShelvesPage> pages, int collectionSize) {
+    private ListShelvesFixedSizeCollection(
+        @Nullable List<ListShelvesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1875,7 +1877,7 @@ public class LibraryServiceClient implements BackgroundResource {
 
     @Override
     protected ListShelvesFixedSizeCollection createCollection(
-        List<ListShelvesPage> pages, int collectionSize) {
+        @Nullable List<ListShelvesPage> pages, int collectionSize) {
       return new ListShelvesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1902,8 +1904,8 @@ public class LibraryServiceClient implements BackgroundResource {
       extends AbstractPage<ListBooksRequest, ListBooksResponse, Book, ListBooksPage> {
 
     private ListBooksPage(
-        PageContext<ListBooksRequest, ListBooksResponse, Book> context,
-        ListBooksResponse response) {
+        @Nullable PageContext<ListBooksRequest, ListBooksResponse, Book> context,
+        @Nullable ListBooksResponse response) {
       super(context, response);
     }
 
@@ -1913,14 +1915,14 @@ public class LibraryServiceClient implements BackgroundResource {
 
     @Override
     protected ListBooksPage createPage(
-        PageContext<ListBooksRequest, ListBooksResponse, Book> context,
-        ListBooksResponse response) {
+        @Nullable PageContext<ListBooksRequest, ListBooksResponse, Book> context,
+        @Nullable ListBooksResponse response) {
       return new ListBooksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBooksPage> createPageAsync(
-        PageContext<ListBooksRequest, ListBooksResponse, Book> context,
+        @Nullable PageContext<ListBooksRequest, ListBooksResponse, Book> context,
         ApiFuture<ListBooksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1930,7 +1932,7 @@ public class LibraryServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListBooksRequest, ListBooksResponse, Book, ListBooksPage, ListBooksFixedSizeCollection> {
 
-    private ListBooksFixedSizeCollection(List<ListBooksPage> pages, int collectionSize) {
+    private ListBooksFixedSizeCollection(@Nullable List<ListBooksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1940,7 +1942,7 @@ public class LibraryServiceClient implements BackgroundResource {
 
     @Override
     protected ListBooksFixedSizeCollection createCollection(
-        List<ListBooksPage> pages, int collectionSize) {
+        @Nullable List<ListBooksPage> pages, int collectionSize) {
       return new ListBooksFixedSizeCollection(pages, collectionSize);
     }
   }

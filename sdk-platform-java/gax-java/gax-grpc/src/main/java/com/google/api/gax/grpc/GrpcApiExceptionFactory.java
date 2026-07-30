@@ -41,6 +41,7 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Core logic for transforming GRPC exceptions into {@link ApiException}s. This logic is shared
@@ -48,6 +49,7 @@ import java.util.Set;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcApiExceptionFactory {
 
   @VisibleForTesting static final String ERROR_DETAIL_KEY = "grpc-status-details-bin";

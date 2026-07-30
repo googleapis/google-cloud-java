@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-deploy",
   "api_id": "clouddeploy.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes"
 }

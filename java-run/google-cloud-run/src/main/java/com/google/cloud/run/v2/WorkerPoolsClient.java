@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -272,7 +273,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class WorkerPoolsClient implements BackgroundResource {
-  private final WorkerPoolsSettings settings;
+  private final @Nullable WorkerPoolsSettings settings;
   private final WorkerPoolsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -319,7 +320,7 @@ public class WorkerPoolsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WorkerPoolsSettings getSettings() {
+  public final @Nullable WorkerPoolsSettings getSettings() {
     return settings;
   }
 
@@ -375,7 +376,7 @@ public class WorkerPoolsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<WorkerPool, WorkerPool> createWorkerPoolAsync(
-      LocationName parent, WorkerPool workerPool, String workerPoolId) {
+      @Nullable LocationName parent, WorkerPool workerPool, String workerPoolId) {
     CreateWorkerPoolRequest request =
         CreateWorkerPoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -544,7 +545,7 @@ public class WorkerPoolsClient implements BackgroundResource {
    *     be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final WorkerPool getWorkerPool(WorkerPoolName name) {
+  public final WorkerPool getWorkerPool(@Nullable WorkerPoolName name) {
     GetWorkerPoolRequest request =
         GetWorkerPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkerPool(request);
@@ -658,7 +659,7 @@ public class WorkerPoolsClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`, where `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkerPoolsPagedResponse listWorkerPools(LocationName parent) {
+  public final ListWorkerPoolsPagedResponse listWorkerPools(@Nullable LocationName parent) {
     ListWorkerPoolsRequest request =
         ListWorkerPoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -986,7 +987,8 @@ public class WorkerPoolsClient implements BackgroundResource {
    *     be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<WorkerPool, WorkerPool> deleteWorkerPoolAsync(WorkerPoolName name) {
+  public final OperationFuture<WorkerPool, WorkerPool> deleteWorkerPoolAsync(
+      @Nullable WorkerPoolName name) {
     DeleteWorkerPoolRequest request =
         DeleteWorkerPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteWorkerPoolAsync(request);
@@ -1360,8 +1362,8 @@ public class WorkerPoolsClient implements BackgroundResource {
           ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool, ListWorkerPoolsPage> {
 
     private ListWorkerPoolsPage(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
-        ListWorkerPoolsResponse response) {
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable ListWorkerPoolsResponse response) {
       super(context, response);
     }
 
@@ -1371,14 +1373,14 @@ public class WorkerPoolsClient implements BackgroundResource {
 
     @Override
     protected ListWorkerPoolsPage createPage(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
-        ListWorkerPoolsResponse response) {
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable ListWorkerPoolsResponse response) {
       return new ListWorkerPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkerPoolsPage> createPageAsync(
-        PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
+        @Nullable PageContext<ListWorkerPoolsRequest, ListWorkerPoolsResponse, WorkerPool> context,
         ApiFuture<ListWorkerPoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1393,7 +1395,7 @@ public class WorkerPoolsClient implements BackgroundResource {
           ListWorkerPoolsFixedSizeCollection> {
 
     private ListWorkerPoolsFixedSizeCollection(
-        List<ListWorkerPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkerPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1403,7 +1405,7 @@ public class WorkerPoolsClient implements BackgroundResource {
 
     @Override
     protected ListWorkerPoolsFixedSizeCollection createCollection(
-        List<ListWorkerPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkerPoolsPage> pages, int collectionSize) {
       return new ListWorkerPoolsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -31,8 +31,10 @@
 
 package com.google.auth.oauth2;
 
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.Logger;
 
+@NullMarked
 class LoggerProvider {
 
   private Logger logger;

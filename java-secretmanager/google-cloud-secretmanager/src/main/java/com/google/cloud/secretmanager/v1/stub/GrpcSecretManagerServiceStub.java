@@ -33,6 +33,7 @@ import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
 import com.google.cloud.secretmanager.v1.DestroySecretVersionRequest;
 import com.google.cloud.secretmanager.v1.DisableSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.EnableManagedRotationRequest;
 import com.google.cloud.secretmanager.v1.EnableSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.GetSecretRequest;
 import com.google.cloud.secretmanager.v1.GetSecretVersionRequest;
@@ -40,6 +41,7 @@ import com.google.cloud.secretmanager.v1.ListSecretVersionsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretVersionsResponse;
 import com.google.cloud.secretmanager.v1.ListSecretsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretsResponse;
+import com.google.cloud.secretmanager.v1.RotateSecretRequest;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
@@ -230,6 +232,28 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationMethodDescriptor =
+          MethodDescriptor.<EnableManagedRotationRequest, SecretVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.secretmanager.v1.SecretManagerService/EnableManagedRotation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableManagedRotationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RotateSecretRequest, SecretVersion>
+      rotateSecretMethodDescriptor =
+          MethodDescriptor.<RotateSecretRequest, SecretVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.secretmanager.v1.SecretManagerService/RotateSecret")
+              .setRequestMarshaller(ProtoUtils.marshaller(RotateSecretRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SecretVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable;
   private final UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse>
       listSecretsPagedCallable;
@@ -255,6 +279,9 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable;
+  private final UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -470,6 +497,29 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
+    GrpcCallSettings<EnableManagedRotationRequest, SecretVersion>
+        enableManagedRotationTransportSettings =
+            GrpcCallSettings.<EnableManagedRotationRequest, SecretVersion>newBuilder()
+                .setMethodDescriptor(enableManagedRotationMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<RotateSecretRequest, SecretVersion> rotateSecretTransportSettings =
+        GrpcCallSettings.<RotateSecretRequest, SecretVersion>newBuilder()
+            .setMethodDescriptor(rotateSecretMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
 
     this.listSecretsCallable =
         callableFactory.createUnaryCallable(
@@ -536,6 +586,14 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.enableManagedRotationCallable =
+        callableFactory.createUnaryCallable(
+            enableManagedRotationTransportSettings,
+            settings.enableManagedRotationSettings(),
+            clientContext);
+    this.rotateSecretCallable =
+        callableFactory.createUnaryCallable(
+            rotateSecretTransportSettings, settings.rotateSecretSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -632,6 +690,17 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable() {
+    return enableManagedRotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable() {
+    return rotateSecretCallable;
   }
 
   @Override

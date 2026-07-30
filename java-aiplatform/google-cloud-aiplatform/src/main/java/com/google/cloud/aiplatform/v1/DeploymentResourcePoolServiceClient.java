@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -317,7 +318,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DeploymentResourcePoolServiceClient implements BackgroundResource {
-  private final DeploymentResourcePoolServiceSettings settings;
+  private final @Nullable DeploymentResourcePoolServiceSettings settings;
   private final DeploymentResourcePoolServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -364,7 +365,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final DeploymentResourcePoolServiceSettings getSettings() {
+  public final @Nullable DeploymentResourcePoolServiceSettings getSettings() {
     return settings;
   }
 
@@ -417,7 +418,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
   public final OperationFuture<
           DeploymentResourcePool, CreateDeploymentResourcePoolOperationMetadata>
       createDeploymentResourcePoolAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           DeploymentResourcePool deploymentResourcePool,
           String deploymentResourcePoolId) {
     CreateDeploymentResourcePoolRequest request =
@@ -609,7 +610,8 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeploymentResourcePool getDeploymentResourcePool(DeploymentResourcePoolName name) {
+  public final DeploymentResourcePool getDeploymentResourcePool(
+      @Nullable DeploymentResourcePoolName name) {
     GetDeploymentResourcePoolRequest request =
         GetDeploymentResourcePoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -745,7 +747,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentResourcePoolsPagedResponse listDeploymentResourcePools(
-      ProjectName parent) {
+      @Nullable ProjectName parent) {
     ListDeploymentResourcePoolsRequest request =
         ListDeploymentResourcePoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1069,7 +1071,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteDeploymentResourcePoolAsync(
-      DeploymentResourcePoolName name) {
+      @Nullable DeploymentResourcePoolName name) {
     DeleteDeploymentResourcePoolRequest request =
         DeleteDeploymentResourcePoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1810,12 +1812,13 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListDeploymentResourcePoolsPage> {
 
     private ListDeploymentResourcePoolsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentResourcePoolsRequest,
                 ListDeploymentResourcePoolsResponse,
                 DeploymentResourcePool>
             context,
-        ListDeploymentResourcePoolsResponse response) {
+        @Nullable ListDeploymentResourcePoolsResponse response) {
       super(context, response);
     }
 
@@ -1825,18 +1828,20 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentResourcePoolsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentResourcePoolsRequest,
                 ListDeploymentResourcePoolsResponse,
                 DeploymentResourcePool>
             context,
-        ListDeploymentResourcePoolsResponse response) {
+        @Nullable ListDeploymentResourcePoolsResponse response) {
       return new ListDeploymentResourcePoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentResourcePoolsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentResourcePoolsRequest,
                 ListDeploymentResourcePoolsResponse,
                 DeploymentResourcePool>
@@ -1855,7 +1860,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListDeploymentResourcePoolsFixedSizeCollection> {
 
     private ListDeploymentResourcePoolsFixedSizeCollection(
-        List<ListDeploymentResourcePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentResourcePoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1865,7 +1870,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentResourcePoolsFixedSizeCollection createCollection(
-        List<ListDeploymentResourcePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentResourcePoolsPage> pages, int collectionSize) {
       return new ListDeploymentResourcePoolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1902,8 +1907,10 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           QueryDeployedModelsPage> {
 
     private QueryDeployedModelsPage(
-        PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel> context,
-        QueryDeployedModelsResponse response) {
+        @Nullable
+            PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel>
+            context,
+        @Nullable QueryDeployedModelsResponse response) {
       super(context, response);
     }
 
@@ -1913,14 +1920,18 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected QueryDeployedModelsPage createPage(
-        PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel> context,
-        QueryDeployedModelsResponse response) {
+        @Nullable
+            PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel>
+            context,
+        @Nullable QueryDeployedModelsResponse response) {
       return new QueryDeployedModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryDeployedModelsPage> createPageAsync(
-        PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel> context,
+        @Nullable
+            PageContext<QueryDeployedModelsRequest, QueryDeployedModelsResponse, DeployedModel>
+            context,
         ApiFuture<QueryDeployedModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1935,7 +1946,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           QueryDeployedModelsFixedSizeCollection> {
 
     private QueryDeployedModelsFixedSizeCollection(
-        List<QueryDeployedModelsPage> pages, int collectionSize) {
+        @Nullable List<QueryDeployedModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1945,7 +1956,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected QueryDeployedModelsFixedSizeCollection createCollection(
-        List<QueryDeployedModelsPage> pages, int collectionSize) {
+        @Nullable List<QueryDeployedModelsPage> pages, int collectionSize) {
       return new QueryDeployedModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1979,8 +1990,8 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1990,14 +2001,14 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2011,7 +2022,8 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2021,7 +2033,7 @@ public class DeploymentResourcePoolServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

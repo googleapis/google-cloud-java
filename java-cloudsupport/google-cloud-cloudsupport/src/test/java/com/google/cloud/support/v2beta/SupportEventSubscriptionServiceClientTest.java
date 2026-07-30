@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
@@ -569,6 +570,78 @@ public class SupportEventSubscriptionServiceClientTest {
                       .toString())
               .build();
       client.undeleteSupportEventSubscription(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSupportEventSubscriptionService.addResponse(expectedResponse);
+
+    SupportEventSubscriptionName name =
+        SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]");
+
+    client.expungeSupportEventSubscription(name);
+
+    List<AbstractMessage> actualRequests = mockSupportEventSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExpungeSupportEventSubscriptionRequest actualRequest =
+        ((ExpungeSupportEventSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSupportEventSubscriptionService.addException(exception);
+
+    try {
+      SupportEventSubscriptionName name =
+          SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]");
+      client.expungeSupportEventSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockSupportEventSubscriptionService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.expungeSupportEventSubscription(name);
+
+    List<AbstractMessage> actualRequests = mockSupportEventSubscriptionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExpungeSupportEventSubscriptionRequest actualRequest =
+        ((ExpungeSupportEventSubscriptionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSupportEventSubscriptionService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.expungeSupportEventSubscription(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

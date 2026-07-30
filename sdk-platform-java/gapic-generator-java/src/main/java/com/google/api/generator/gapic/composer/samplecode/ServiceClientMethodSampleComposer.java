@@ -41,7 +41,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientMethodSampleComposer {
   // Creates an example for an empty service (no API methods), which is a corner case but can
   // happen. Generated example will only show how to instantiate the client class but will not call

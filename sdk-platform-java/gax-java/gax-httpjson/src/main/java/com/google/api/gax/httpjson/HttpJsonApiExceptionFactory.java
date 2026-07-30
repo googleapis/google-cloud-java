@@ -39,7 +39,9 @@ import com.google.common.collect.ImmutableSet;
 import com.google.rpc.Status;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 class HttpJsonApiExceptionFactory {
   private final Set<Code> retryableCodes;
 

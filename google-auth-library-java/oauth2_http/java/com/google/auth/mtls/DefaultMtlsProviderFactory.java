@@ -32,7 +32,9 @@ package com.google.auth.mtls;
 
 import com.google.api.core.InternalApi;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @InternalApi
 public class DefaultMtlsProviderFactory {
 

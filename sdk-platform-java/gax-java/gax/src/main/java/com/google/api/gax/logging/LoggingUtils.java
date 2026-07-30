@@ -32,7 +32,9 @@ package com.google.api.gax.logging;
 
 import com.google.api.core.InternalApi;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @InternalApi
 public class LoggingUtils {
 

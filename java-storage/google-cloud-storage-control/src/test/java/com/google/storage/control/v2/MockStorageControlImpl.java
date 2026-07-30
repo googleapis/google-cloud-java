@@ -296,6 +296,27 @@ public class MockStorageControlImpl extends StorageControlImplBase {
   }
 
   @Override
+  public void updateManagedFolder(
+      UpdateManagedFolderRequest request, StreamObserver<ManagedFolder> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ManagedFolder) {
+      requests.add(request);
+      responseObserver.onNext(((ManagedFolder) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateManagedFolder, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ManagedFolder.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createAnywhereCache(
       CreateAnywhereCacheRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -440,6 +461,90 @@ public class MockStorageControlImpl extends StorageControlImplBase {
                   "Unrecognized response type %s for method ListAnywhereCaches, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAnywhereCachesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRapidCache(
+      CreateRapidCacheRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRapidCache, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateRapidCache(
+      UpdateRapidCacheRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateRapidCache, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRapidCache(
+      GetRapidCacheRequest request, StreamObserver<RapidCache> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RapidCache) {
+      requests.add(request);
+      responseObserver.onNext(((RapidCache) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRapidCache, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RapidCache.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRapidCaches(
+      ListRapidCachesRequest request, StreamObserver<ListRapidCachesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRapidCachesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRapidCachesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRapidCaches, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRapidCachesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

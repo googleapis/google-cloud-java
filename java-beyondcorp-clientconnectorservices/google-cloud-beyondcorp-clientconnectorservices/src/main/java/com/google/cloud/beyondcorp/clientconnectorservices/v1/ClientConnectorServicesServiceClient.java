@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -309,7 +310,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ClientConnectorServicesServiceClient implements BackgroundResource {
-  private final ClientConnectorServicesServiceSettings settings;
+  private final @Nullable ClientConnectorServicesServiceSettings settings;
   private final ClientConnectorServicesServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -357,7 +358,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ClientConnectorServicesServiceSettings getSettings() {
+  public final @Nullable ClientConnectorServicesServiceSettings getSettings() {
     return settings;
   }
 
@@ -399,7 +400,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClientConnectorServicesPagedResponse listClientConnectorServices(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListClientConnectorServicesRequest request =
         ListClientConnectorServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -584,7 +585,8 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ClientConnectorService getClientConnectorService(ClientConnectorServiceName name) {
+  public final ClientConnectorService getClientConnectorService(
+      @Nullable ClientConnectorServiceName name) {
     GetClientConnectorServiceRequest request =
         GetClientConnectorServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -727,7 +729,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
    */
   public final OperationFuture<ClientConnectorService, ClientConnectorServiceOperationMetadata>
       createClientConnectorServiceAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ClientConnectorService clientConnectorService,
           String clientConnectorServiceId) {
     CreateClientConnectorServiceRequest request =
@@ -1072,7 +1074,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, ClientConnectorServiceOperationMetadata>
-      deleteClientConnectorServiceAsync(ClientConnectorServiceName name) {
+      deleteClientConnectorServiceAsync(@Nullable ClientConnectorServiceName name) {
     DeleteClientConnectorServiceRequest request =
         DeleteClientConnectorServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1669,12 +1671,13 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
           ListClientConnectorServicesPage> {
 
     private ListClientConnectorServicesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListClientConnectorServicesRequest,
                 ListClientConnectorServicesResponse,
                 ClientConnectorService>
             context,
-        ListClientConnectorServicesResponse response) {
+        @Nullable ListClientConnectorServicesResponse response) {
       super(context, response);
     }
 
@@ -1684,18 +1687,20 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
 
     @Override
     protected ListClientConnectorServicesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListClientConnectorServicesRequest,
                 ListClientConnectorServicesResponse,
                 ClientConnectorService>
             context,
-        ListClientConnectorServicesResponse response) {
+        @Nullable ListClientConnectorServicesResponse response) {
       return new ListClientConnectorServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClientConnectorServicesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListClientConnectorServicesRequest,
                 ListClientConnectorServicesResponse,
                 ClientConnectorService>
@@ -1714,7 +1719,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
           ListClientConnectorServicesFixedSizeCollection> {
 
     private ListClientConnectorServicesFixedSizeCollection(
-        List<ListClientConnectorServicesPage> pages, int collectionSize) {
+        @Nullable List<ListClientConnectorServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1724,7 +1729,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
 
     @Override
     protected ListClientConnectorServicesFixedSizeCollection createCollection(
-        List<ListClientConnectorServicesPage> pages, int collectionSize) {
+        @Nullable List<ListClientConnectorServicesPage> pages, int collectionSize) {
       return new ListClientConnectorServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1758,8 +1763,8 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1769,14 +1774,14 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1790,7 +1795,8 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1800,7 +1806,7 @@ public class ClientConnectorServicesServiceClient implements BackgroundResource 
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -133,7 +133,7 @@ public class BigtableTableAdminClientV2Test {
 
     // 4. Mock the Stub's behavior (resuming the Optimize Op)
     OperationFuture<Empty, OptimizeRestoredTableMetadata> mockOptimizeOp =
-        Mockito.mock(OperationFuture.class);
+        Mockito.mock(OperationFuture.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(mockOptimizeOp.get()).thenReturn(Empty.getDefaultInstance());
     Mockito.doAnswer(
             invocation -> {

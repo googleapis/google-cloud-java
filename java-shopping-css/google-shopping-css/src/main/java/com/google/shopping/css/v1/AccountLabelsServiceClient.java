@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -203,7 +204,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AccountLabelsServiceClient implements BackgroundResource {
-  private final AccountLabelsServiceSettings settings;
+  private final @Nullable AccountLabelsServiceSettings settings;
   private final AccountLabelsServiceStub stub;
 
   /** Constructs an instance of AccountLabelsServiceClient with default settings. */
@@ -243,7 +244,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountLabelsServiceSettings getSettings() {
+  public final @Nullable AccountLabelsServiceSettings getSettings() {
     return settings;
   }
 
@@ -276,7 +277,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
    * @param parent Required. The parent account. Format: accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountLabelsPagedResponse listAccountLabels(AccountName parent) {
+  public final ListAccountLabelsPagedResponse listAccountLabels(@Nullable AccountName parent) {
     ListAccountLabelsRequest request =
         ListAccountLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -448,7 +449,8 @@ public class AccountLabelsServiceClient implements BackgroundResource {
    * @param accountLabel Required. The label to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountLabel createAccountLabel(AccountName parent, AccountLabel accountLabel) {
+  public final AccountLabel createAccountLabel(
+      @Nullable AccountName parent, AccountLabel accountLabel) {
     CreateAccountLabelRequest request =
         CreateAccountLabelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -659,7 +661,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
    *     accounts/{account}/labels/{label}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAccountLabel(AccountLabelName name) {
+  public final void deleteAccountLabel(@Nullable AccountLabelName name) {
     DeleteAccountLabelRequest request =
         DeleteAccountLabelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -816,8 +818,9 @@ public class AccountLabelsServiceClient implements BackgroundResource {
           ListAccountLabelsPage> {
 
     private ListAccountLabelsPage(
-        PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel> context,
-        ListAccountLabelsResponse response) {
+        @Nullable PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel>
+            context,
+        @Nullable ListAccountLabelsResponse response) {
       super(context, response);
     }
 
@@ -827,14 +830,16 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountLabelsPage createPage(
-        PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel> context,
-        ListAccountLabelsResponse response) {
+        @Nullable PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel>
+            context,
+        @Nullable ListAccountLabelsResponse response) {
       return new ListAccountLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountLabelsPage> createPageAsync(
-        PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel> context,
+        @Nullable PageContext<ListAccountLabelsRequest, ListAccountLabelsResponse, AccountLabel>
+            context,
         ApiFuture<ListAccountLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -849,7 +854,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
           ListAccountLabelsFixedSizeCollection> {
 
     private ListAccountLabelsFixedSizeCollection(
-        List<ListAccountLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -859,7 +864,7 @@ public class AccountLabelsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountLabelsFixedSizeCollection createCollection(
-        List<ListAccountLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountLabelsPage> pages, int collectionSize) {
       return new ListAccountLabelsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -152,7 +153,7 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
     return newProjectModuleBuilder().setProject(project).setModule(module).build().toString();
   }
 
-  public static EventThreatDetectionCustomModuleName parse(String formattedString) {
+  public static @Nullable EventThreatDetectionCustomModuleName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -179,7 +180,8 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<EventThreatDetectionCustomModuleName> values) {
+  public static List<String> toStringList(
+      List<@Nullable EventThreatDetectionCustomModuleName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EventThreatDetectionCustomModuleName value : values) {
       if (value == null) {
@@ -232,7 +234,7 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -30,12 +30,14 @@
 package com.google.api.gax.batching;
 
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Represent the resource used by a batch including element and byte. It can also be extended to
  * other things to determine if adding a new element needs to be flow controlled or if the current
  * batch needs to be flushed.
  */
+@NullMarked
 @InternalApi("For google-cloud-java client use only.")
 public interface BatchResource {
 

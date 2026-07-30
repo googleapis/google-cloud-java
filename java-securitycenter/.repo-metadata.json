@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-securitycenter",
   "api_id": "securitycenter.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": false,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559748",
   "rest_documentation": "https://cloud.google.com/security-command-center/docs/reference/rest"
 }

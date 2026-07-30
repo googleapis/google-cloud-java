@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -144,6 +145,12 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
   public UnaryCallSettings<GetRemoteTransportProfileRequest, RemoteTransportProfile>
       getRemoteTransportProfileSettings() {
     return ((TransportManagerStubSettings) getStubSettings()).getRemoteTransportProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to parseFromActivationKey. */
+  public UnaryCallSettings<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeySettings() {
+    return ((TransportManagerStubSettings) getStubSettings()).parseFromActivationKeySettings();
   }
 
   /** Returns the object with the settings used for calls to listTransports. */
@@ -267,7 +274,7 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -287,7 +294,7 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(TransportManagerStubSettings.newBuilder(clientContext));
     }
 
@@ -332,6 +339,12 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
     public UnaryCallSettings.Builder<GetRemoteTransportProfileRequest, RemoteTransportProfile>
         getRemoteTransportProfileSettings() {
       return getStubSettingsBuilder().getRemoteTransportProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to parseFromActivationKey. */
+    public UnaryCallSettings.Builder<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+        parseFromActivationKeySettings() {
+      return getStubSettingsBuilder().parseFromActivationKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to listTransports. */

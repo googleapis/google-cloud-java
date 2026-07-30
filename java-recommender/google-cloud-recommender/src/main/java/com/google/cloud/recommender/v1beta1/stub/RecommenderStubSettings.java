@@ -81,6 +81,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -579,7 +580,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -703,7 +704,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       listInsightsSettings = PagedCallSettings.newBuilder(LIST_INSIGHTS_PAGE_STR_FACT);

@@ -138,8 +138,10 @@ class BatcherImplTest {
   @Test
   void testSendOutstanding() {
     final AtomicInteger callableCounter = new AtomicInteger();
-    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
-    BatchingSettings mockBatchingSettings = mock(BatchingSettings.class);
+    ScheduledExecutorService mockExecutor =
+        Mockito.mock(ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
+    BatchingSettings mockBatchingSettings =
+        Mockito.mock(BatchingSettings.class, Mockito.withSettings().withoutAnnotations());
     java.time.Duration mockDelayThresholdDuration = java.time.Duration.ofSeconds(1000L);
     when(mockBatchingSettings.getDelayThresholdDuration()).thenReturn(mockDelayThresholdDuration);
     when(mockBatchingSettings.getRequestByteThreshold()).thenReturn(1000L);
@@ -151,7 +153,8 @@ class BatcherImplTest {
             eq(mockDelayThresholdDuration.toMillis()),
             eq(mockDelayThresholdDuration.toMillis()),
             any(TimeUnit.class)))
-        .thenReturn(mock(ScheduledFuture.class));
+        .thenReturn(
+            Mockito.mock(ScheduledFuture.class, Mockito.withSettings().withoutAnnotations()));
 
     underTest =
         new BatcherImpl<>(
@@ -948,7 +951,8 @@ class BatcherImplTest {
                 .build());
     ExecutorService executor = Executors.newFixedThreadPool(2);
 
-    ApiCallContext callContext = mock(ApiCallContext.class);
+    ApiCallContext callContext =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext.Key<Long>> key =
         ArgumentCaptor.forClass(ApiCallContext.Key.class);
     ArgumentCaptor<Long> value = ArgumentCaptor.forClass(Long.class);

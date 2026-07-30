@@ -19,7 +19,9 @@ import com.google.common.base.Strings;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class CommentFormatter {
 
   private CommentFormatter() {}

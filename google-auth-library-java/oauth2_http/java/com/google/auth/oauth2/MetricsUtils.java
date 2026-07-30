@@ -36,7 +36,9 @@ import com.google.auth.CredentialTypeForMetrics;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 class MetricsUtils {
   static final String API_CLIENT_HEADER = "x-goog-api-client";
   static final String CRED_TYPE = "cred-type";

@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -887,7 +888,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GDCHardwareManagementClient implements BackgroundResource {
-  private final GDCHardwareManagementSettings settings;
+  private final @Nullable GDCHardwareManagementSettings settings;
   private final GDCHardwareManagementStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -935,7 +936,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final GDCHardwareManagementSettings getSettings() {
+  public final @Nullable GDCHardwareManagementSettings getSettings() {
     return settings;
   }
 
@@ -987,7 +988,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOrdersPagedResponse listOrders(LocationName parent) {
+  public final ListOrdersPagedResponse listOrders(@Nullable LocationName parent) {
     ListOrdersRequest request =
         ListOrdersRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listOrders(request);
@@ -1159,7 +1160,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Order getOrder(OrderName name) {
+  public final Order getOrder(@Nullable OrderName name) {
     GetOrderRequest request =
         GetOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getOrder(request);
@@ -1281,7 +1282,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Order, OperationMetadata> createOrderAsync(
-      LocationName parent, Order order, String orderId) {
+      @Nullable LocationName parent, Order order, String orderId) {
     CreateOrderRequest request =
         CreateOrderRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1583,7 +1584,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteOrderAsync(OrderName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteOrderAsync(
+      @Nullable OrderName name) {
     DeleteOrderRequest request =
         DeleteOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteOrderAsync(request);
@@ -1735,7 +1737,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Order, OperationMetadata> submitOrderAsync(OrderName name) {
+  public final OperationFuture<Order, OperationMetadata> submitOrderAsync(
+      @Nullable OrderName name) {
     SubmitOrderRequest request =
         SubmitOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return submitOrderAsync(request);
@@ -1884,7 +1887,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Order, OperationMetadata> cancelOrderAsync(OrderName name) {
+  public final OperationFuture<Order, OperationMetadata> cancelOrderAsync(
+      @Nullable OrderName name) {
     CancelOrderRequest request =
         CancelOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelOrderAsync(request);
@@ -2037,7 +2041,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSitesPagedResponse listSites(LocationName parent) {
+  public final ListSitesPagedResponse listSites(@Nullable LocationName parent) {
     ListSitesRequest request =
         ListSitesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSites(request);
@@ -2209,7 +2213,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/sites/{site}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Site getSite(SiteName name) {
+  public final Site getSite(@Nullable SiteName name) {
     GetSiteRequest request =
         GetSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSite(request);
@@ -2332,7 +2336,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Site, OperationMetadata> createSiteAsync(
-      LocationName parent, Site site, String siteId) {
+      @Nullable LocationName parent, Site site, String siteId) {
     CreateSiteRequest request =
         CreateSiteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2628,7 +2632,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/sites/{site}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSiteAsync(SiteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSiteAsync(@Nullable SiteName name) {
     DeleteSiteRequest request =
         DeleteSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSiteAsync(request);
@@ -2780,7 +2784,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHardwareGroupsPagedResponse listHardwareGroups(OrderName parent) {
+  public final ListHardwareGroupsPagedResponse listHardwareGroups(@Nullable OrderName parent) {
     ListHardwareGroupsRequest request =
         ListHardwareGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2960,7 +2964,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}/hardwareGroups/{hardware_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HardwareGroup getHardwareGroup(HardwareGroupName name) {
+  public final HardwareGroup getHardwareGroup(@Nullable HardwareGroupName name) {
     GetHardwareGroupRequest request =
         GetHardwareGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHardwareGroup(request);
@@ -3093,7 +3097,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<HardwareGroup, OperationMetadata> createHardwareGroupAsync(
-      OrderName parent, HardwareGroup hardwareGroup, String hardwareGroupId) {
+      @Nullable OrderName parent, HardwareGroup hardwareGroup, String hardwareGroupId) {
     CreateHardwareGroupRequest request =
         CreateHardwareGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3405,7 +3409,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteHardwareGroupAsync(
-      HardwareGroupName name) {
+      @Nullable HardwareGroupName name) {
     DeleteHardwareGroupRequest request =
         DeleteHardwareGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3568,7 +3572,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHardwarePagedResponse listHardware(LocationName parent) {
+  public final ListHardwarePagedResponse listHardware(@Nullable LocationName parent) {
     ListHardwareRequest request =
         ListHardwareRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3744,7 +3748,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/hardware/{hardware}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Hardware getHardware(HardwareName name) {
+  public final Hardware getHardware(@Nullable HardwareName name) {
     GetHardwareRequest request =
         GetHardwareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHardware(request);
@@ -3869,7 +3873,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Hardware, OperationMetadata> createHardwareAsync(
-      LocationName parent, Hardware hardware, String hardwareId) {
+      @Nullable LocationName parent, Hardware hardware, String hardwareId) {
     CreateHardwareRequest request =
         CreateHardwareRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4170,7 +4174,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/hardware/{hardware}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteHardwareAsync(HardwareName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteHardwareAsync(
+      @Nullable HardwareName name) {
     DeleteHardwareRequest request =
         DeleteHardwareRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteHardwareAsync(request);
@@ -4321,7 +4326,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCommentsPagedResponse listComments(OrderName parent) {
+  public final ListCommentsPagedResponse listComments(@Nullable OrderName parent) {
     ListCommentsRequest request =
         ListCommentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4495,7 +4500,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}/comments/{comment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Comment getComment(CommentName name) {
+  public final Comment getComment(@Nullable CommentName name) {
     GetCommentRequest request =
         GetCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getComment(request);
@@ -4620,7 +4625,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Comment, OperationMetadata> createCommentAsync(
-      OrderName parent, Comment comment, String commentId) {
+      @Nullable OrderName parent, Comment comment, String commentId) {
     CreateCommentRequest request =
         CreateCommentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4801,7 +4806,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Comment recordActionOnComment(
-      CommentName name, RecordActionOnCommentRequest.ActionType actionType) {
+      @Nullable CommentName name, RecordActionOnCommentRequest.ActionType actionType) {
     RecordActionOnCommentRequest request =
         RecordActionOnCommentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4937,7 +4942,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChangeLogEntriesPagedResponse listChangeLogEntries(OrderName parent) {
+  public final ListChangeLogEntriesPagedResponse listChangeLogEntries(@Nullable OrderName parent) {
     ListChangeLogEntriesRequest request =
         ListChangeLogEntriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5117,7 +5122,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/orders/{order}/changeLogEntries/{change_log_entry}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ChangeLogEntry getChangeLogEntry(ChangeLogEntryName name) {
+  public final ChangeLogEntry getChangeLogEntry(@Nullable ChangeLogEntryName name) {
     GetChangeLogEntryRequest request =
         GetChangeLogEntryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5244,7 +5249,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSkusPagedResponse listSkus(LocationName parent) {
+  public final ListSkusPagedResponse listSkus(@Nullable LocationName parent) {
     ListSkusRequest request =
         ListSkusRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSkus(request);
@@ -5416,7 +5421,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/skus/{sku}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Sku getSku(SkuName name) {
+  public final Sku getSku(@Nullable SkuName name) {
     GetSkuRequest request =
         GetSkuRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSku(request);
@@ -5534,7 +5539,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     the location and check the unreachable field in the response message.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListZonesPagedResponse listZones(LocationName parent) {
+  public final ListZonesPagedResponse listZones(@Nullable LocationName parent) {
     ListZonesRequest request =
         ListZonesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listZones(request);
@@ -5706,7 +5711,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/zones/{zone}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Zone getZone(ZoneName name) {
+  public final Zone getZone(@Nullable ZoneName name) {
     GetZoneRequest request =
         GetZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getZone(request);
@@ -5829,7 +5834,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Zone, OperationMetadata> createZoneAsync(
-      LocationName parent, Zone zone, String zoneId) {
+      @Nullable LocationName parent, Zone zone, String zoneId) {
     CreateZoneRequest request =
         CreateZoneRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6125,7 +6130,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/zones/{zone}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteZoneAsync(ZoneName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteZoneAsync(@Nullable ZoneName name) {
     DeleteZoneRequest request =
         DeleteZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteZoneAsync(request);
@@ -6279,7 +6284,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Zone, OperationMetadata> signalZoneStateAsync(
-      ZoneName name, SignalZoneStateRequest.StateSignal stateSignal) {
+      @Nullable ZoneName name, SignalZoneStateRequest.StateSignal stateSignal) {
     SignalZoneStateRequest request =
         SignalZoneStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6448,7 +6453,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Order, OperationMetadata> requestOrderDateChangeAsync(
-      OrderName name, Date requestedDate) {
+      @Nullable OrderName name, Date requestedDate) {
     RequestOrderDateChangeRequest request =
         RequestOrderDateChangeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6805,8 +6810,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListOrdersRequest, ListOrdersResponse, Order, ListOrdersPage> {
 
     private ListOrdersPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       super(context, response);
     }
 
@@ -6816,14 +6821,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListOrdersPage createPage(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
-        ListOrdersResponse response) {
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable ListOrdersResponse response) {
       return new ListOrdersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrdersPage> createPageAsync(
-        PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
+        @Nullable PageContext<ListOrdersRequest, ListOrdersResponse, Order> context,
         ApiFuture<ListOrdersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6837,7 +6842,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListOrdersPage,
           ListOrdersFixedSizeCollection> {
 
-    private ListOrdersFixedSizeCollection(List<ListOrdersPage> pages, int collectionSize) {
+    private ListOrdersFixedSizeCollection(
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6847,7 +6853,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListOrdersFixedSizeCollection createCollection(
-        List<ListOrdersPage> pages, int collectionSize) {
+        @Nullable List<ListOrdersPage> pages, int collectionSize) {
       return new ListOrdersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6874,8 +6880,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListSitesRequest, ListSitesResponse, Site, ListSitesPage> {
 
     private ListSitesPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       super(context, response);
     }
 
@@ -6885,14 +6891,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListSitesPage createPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       return new ListSitesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSitesPage> createPageAsync(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
         ApiFuture<ListSitesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6902,7 +6908,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSitesRequest, ListSitesResponse, Site, ListSitesPage, ListSitesFixedSizeCollection> {
 
-    private ListSitesFixedSizeCollection(List<ListSitesPage> pages, int collectionSize) {
+    private ListSitesFixedSizeCollection(@Nullable List<ListSitesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6912,7 +6918,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListSitesFixedSizeCollection createCollection(
-        List<ListSitesPage> pages, int collectionSize) {
+        @Nullable List<ListSitesPage> pages, int collectionSize) {
       return new ListSitesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6949,8 +6955,9 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListHardwareGroupsPage> {
 
     private ListHardwareGroupsPage(
-        PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup> context,
-        ListHardwareGroupsResponse response) {
+        @Nullable PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup>
+            context,
+        @Nullable ListHardwareGroupsResponse response) {
       super(context, response);
     }
 
@@ -6960,14 +6967,16 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListHardwareGroupsPage createPage(
-        PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup> context,
-        ListHardwareGroupsResponse response) {
+        @Nullable PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup>
+            context,
+        @Nullable ListHardwareGroupsResponse response) {
       return new ListHardwareGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHardwareGroupsPage> createPageAsync(
-        PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup> context,
+        @Nullable PageContext<ListHardwareGroupsRequest, ListHardwareGroupsResponse, HardwareGroup>
+            context,
         ApiFuture<ListHardwareGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6982,7 +6991,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListHardwareGroupsFixedSizeCollection> {
 
     private ListHardwareGroupsFixedSizeCollection(
-        List<ListHardwareGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListHardwareGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6992,7 +7001,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListHardwareGroupsFixedSizeCollection createCollection(
-        List<ListHardwareGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListHardwareGroupsPage> pages, int collectionSize) {
       return new ListHardwareGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7025,8 +7034,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListHardwareRequest, ListHardwareResponse, Hardware, ListHardwarePage> {
 
     private ListHardwarePage(
-        PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
-        ListHardwareResponse response) {
+        @Nullable PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
+        @Nullable ListHardwareResponse response) {
       super(context, response);
     }
 
@@ -7036,14 +7045,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListHardwarePage createPage(
-        PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
-        ListHardwareResponse response) {
+        @Nullable PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
+        @Nullable ListHardwareResponse response) {
       return new ListHardwarePage(context, response);
     }
 
     @Override
     public ApiFuture<ListHardwarePage> createPageAsync(
-        PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
+        @Nullable PageContext<ListHardwareRequest, ListHardwareResponse, Hardware> context,
         ApiFuture<ListHardwareResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7057,7 +7066,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListHardwarePage,
           ListHardwareFixedSizeCollection> {
 
-    private ListHardwareFixedSizeCollection(List<ListHardwarePage> pages, int collectionSize) {
+    private ListHardwareFixedSizeCollection(
+        @Nullable List<ListHardwarePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7067,7 +7077,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListHardwareFixedSizeCollection createCollection(
-        List<ListHardwarePage> pages, int collectionSize) {
+        @Nullable List<ListHardwarePage> pages, int collectionSize) {
       return new ListHardwareFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7100,8 +7110,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListCommentsRequest, ListCommentsResponse, Comment, ListCommentsPage> {
 
     private ListCommentsPage(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
-        ListCommentsResponse response) {
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable ListCommentsResponse response) {
       super(context, response);
     }
 
@@ -7111,14 +7121,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListCommentsPage createPage(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
-        ListCommentsResponse response) {
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable ListCommentsResponse response) {
       return new ListCommentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCommentsPage> createPageAsync(
-        PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
+        @Nullable PageContext<ListCommentsRequest, ListCommentsResponse, Comment> context,
         ApiFuture<ListCommentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7132,7 +7142,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListCommentsPage,
           ListCommentsFixedSizeCollection> {
 
-    private ListCommentsFixedSizeCollection(List<ListCommentsPage> pages, int collectionSize) {
+    private ListCommentsFixedSizeCollection(
+        @Nullable List<ListCommentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7142,7 +7153,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListCommentsFixedSizeCollection createCollection(
-        List<ListCommentsPage> pages, int collectionSize) {
+        @Nullable List<ListCommentsPage> pages, int collectionSize) {
       return new ListCommentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7180,9 +7191,10 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListChangeLogEntriesPage> {
 
     private ListChangeLogEntriesPage(
-        PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
+        @Nullable
+            PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
             context,
-        ListChangeLogEntriesResponse response) {
+        @Nullable ListChangeLogEntriesResponse response) {
       super(context, response);
     }
 
@@ -7192,15 +7204,17 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListChangeLogEntriesPage createPage(
-        PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
+        @Nullable
+            PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
             context,
-        ListChangeLogEntriesResponse response) {
+        @Nullable ListChangeLogEntriesResponse response) {
       return new ListChangeLogEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChangeLogEntriesPage> createPageAsync(
-        PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
+        @Nullable
+            PageContext<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse, ChangeLogEntry>
             context,
         ApiFuture<ListChangeLogEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7216,7 +7230,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListChangeLogEntriesFixedSizeCollection> {
 
     private ListChangeLogEntriesFixedSizeCollection(
-        List<ListChangeLogEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListChangeLogEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7226,7 +7240,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListChangeLogEntriesFixedSizeCollection createCollection(
-        List<ListChangeLogEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListChangeLogEntriesPage> pages, int collectionSize) {
       return new ListChangeLogEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7253,7 +7267,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListSkusRequest, ListSkusResponse, Sku, ListSkusPage> {
 
     private ListSkusPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       super(context, response);
     }
 
@@ -7263,13 +7278,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListSkusPage createPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       return new ListSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSkusPage> createPageAsync(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
         ApiFuture<ListSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7279,7 +7295,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSkusRequest, ListSkusResponse, Sku, ListSkusPage, ListSkusFixedSizeCollection> {
 
-    private ListSkusFixedSizeCollection(List<ListSkusPage> pages, int collectionSize) {
+    private ListSkusFixedSizeCollection(@Nullable List<ListSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7289,7 +7305,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListSkusFixedSizeCollection createCollection(
-        List<ListSkusPage> pages, int collectionSize) {
+        @Nullable List<ListSkusPage> pages, int collectionSize) {
       return new ListSkusFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7316,8 +7332,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractPage<ListZonesRequest, ListZonesResponse, Zone, ListZonesPage> {
 
     private ListZonesPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       super(context, response);
     }
 
@@ -7327,14 +7343,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListZonesPage createPage(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
-        ListZonesResponse response) {
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable ListZonesResponse response) {
       return new ListZonesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListZonesPage> createPageAsync(
-        PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
+        @Nullable PageContext<ListZonesRequest, ListZonesResponse, Zone> context,
         ApiFuture<ListZonesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7344,7 +7360,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListZonesRequest, ListZonesResponse, Zone, ListZonesPage, ListZonesFixedSizeCollection> {
 
-    private ListZonesFixedSizeCollection(List<ListZonesPage> pages, int collectionSize) {
+    private ListZonesFixedSizeCollection(@Nullable List<ListZonesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7354,7 +7370,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListZonesFixedSizeCollection createCollection(
-        List<ListZonesPage> pages, int collectionSize) {
+        @Nullable List<ListZonesPage> pages, int collectionSize) {
       return new ListZonesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7388,8 +7404,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7399,14 +7415,14 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7420,7 +7436,8 @@ public class GDCHardwareManagementClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7430,7 +7447,7 @@ public class GDCHardwareManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

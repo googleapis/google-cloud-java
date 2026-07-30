@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -164,7 +165,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  private final AssetServiceSettings settings;
+  private final @Nullable AssetServiceSettings settings;
   private final AssetServiceStub stub;
 
   /** Constructs an instance of AssetServiceClient with default settings. */
@@ -203,7 +204,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AssetServiceSettings getSettings() {
+  public final @Nullable AssetServiceSettings getSettings() {
     return settings;
   }
 
@@ -625,9 +626,11 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllResourcesPage> {
 
     private SearchAllResourcesPage(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
+        @Nullable
+            PageContext<
+                SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
             context,
-        SearchAllResourcesResponse response) {
+        @Nullable SearchAllResourcesResponse response) {
       super(context, response);
     }
 
@@ -637,15 +640,19 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllResourcesPage createPage(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
+        @Nullable
+            PageContext<
+                SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
             context,
-        SearchAllResourcesResponse response) {
+        @Nullable SearchAllResourcesResponse response) {
       return new SearchAllResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAllResourcesPage> createPageAsync(
-        PageContext<SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
+        @Nullable
+            PageContext<
+                SearchAllResourcesRequest, SearchAllResourcesResponse, StandardResourceMetadata>
             context,
         ApiFuture<SearchAllResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -661,7 +668,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllResourcesFixedSizeCollection> {
 
     private SearchAllResourcesFixedSizeCollection(
-        List<SearchAllResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -671,7 +678,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllResourcesFixedSizeCollection createCollection(
-        List<SearchAllResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllResourcesPage> pages, int collectionSize) {
       return new SearchAllResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -710,10 +717,11 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllIamPoliciesPage> {
 
     private SearchAllIamPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
             context,
-        SearchAllIamPoliciesResponse response) {
+        @Nullable SearchAllIamPoliciesResponse response) {
       super(context, response);
     }
 
@@ -723,16 +731,18 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllIamPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
             context,
-        SearchAllIamPoliciesResponse response) {
+        @Nullable SearchAllIamPoliciesResponse response) {
       return new SearchAllIamPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAllIamPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse, IamPolicySearchResult>
             context,
         ApiFuture<SearchAllIamPoliciesResponse> futureResponse) {
@@ -749,7 +759,7 @@ public class AssetServiceClient implements BackgroundResource {
           SearchAllIamPoliciesFixedSizeCollection> {
 
     private SearchAllIamPoliciesFixedSizeCollection(
-        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllIamPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -759,7 +769,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAllIamPoliciesFixedSizeCollection createCollection(
-        List<SearchAllIamPoliciesPage> pages, int collectionSize) {
+        @Nullable List<SearchAllIamPoliciesPage> pages, int collectionSize) {
       return new SearchAllIamPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

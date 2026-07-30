@@ -34,12 +34,15 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.TypeRegistry;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * {@code HttpJsonDirectCallable} creates HTTP calls.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class HttpJsonDirectCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final ApiMethodDescriptor<RequestT, ResponseT> descriptor;
   private final TypeRegistry typeRegistry;
@@ -49,7 +52,7 @@ class HttpJsonDirectCallable<RequestT, ResponseT> extends UnaryCallable<RequestT
   }
 
   HttpJsonDirectCallable(
-      ApiMethodDescriptor<RequestT, ResponseT> descriptor, TypeRegistry typeRegistry) {
+      ApiMethodDescriptor<RequestT, ResponseT> descriptor, @Nullable TypeRegistry typeRegistry) {
     this.descriptor = descriptor;
     this.typeRegistry = typeRegistry;
   }
