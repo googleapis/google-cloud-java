@@ -68,7 +68,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   // Keep track of all entries to properly await their termination
   private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =
       new java.util.concurrent.ConcurrentLinkedQueue<>();
-  private final Object lock = new Object();
+  private final Object refreshLock = new Object();
   private volatile String activeCertFingerprint = "";
 
   public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {
@@ -117,7 +117,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public void refresh() {
-    synchronized (lock) {
+    synchronized (refreshLock) {
       String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
       if (certPath == null) {
         return;
@@ -127,7 +127,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
         return;
       }
 
-      // Double-check inside lock
+      // Double-check inside refreshLock
       if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {
         LOG.fine(
             "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh");
