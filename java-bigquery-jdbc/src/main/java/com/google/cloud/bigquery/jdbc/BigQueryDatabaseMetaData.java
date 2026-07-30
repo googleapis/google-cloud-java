@@ -4563,18 +4563,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Pattern routineRegex = compileSqlLikePattern(routineNamePattern);
     boolean isLiteralName = routineNamePattern != null && !hasWildcards;
 
-    if (targetDatasets.size() == 1 && isLiteralName) {
-      processSingleRoutine(
-          targetDatasets.get(0),
-          routineNamePattern,
-          null,
-          collectedResults,
-          resultSchemaFields,
-          processor,
-          options);
-      return;
-    }
-
     ExecutorService apiExecutor = connection.getMetadataExecutor();
     List<Future<?>> activeFutures = new ArrayList<>();
 
@@ -4689,25 +4677,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Pattern tableRegex = compileSqlLikePattern(tableNamePattern);
     boolean isLiteralName = tableNamePattern != null && !hasWildcards;
 
-    if (targetDatasets.size() == 1 && isLiteralName) {
-      processSingleTable(
-          targetDatasets.get(0),
-          tableNamePattern,
-          null, // always fetch for literal matches
-          requireBaseTable,
-          collectedResults,
-          resultSchemaFields,
-          processor,
-          options);
-      return;
-    }
-
     ExecutorService apiExecutor = connection.getMetadataExecutor();
     List<Future<?>> activeFutures = new ArrayList<>();
 
     try {
+      // Stage 1: Discover target tables across datasets.
       List<Callable<Void>> detailTasks = new ArrayList<>();
 
+      // For literal names, bypass listTables to avoid unnecessary API calls
       if (isLiteralName) {
         for (DatasetId datasetId : targetDatasets) {
           detailTasks.add(
@@ -4724,6 +4701,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 return null;
               });
         }
+        // For wildcards/nulls, list matching tables across target datasets.
       } else {
         List<Future<List<Callable<Void>>>> listFutures = new ArrayList<>();
         for (DatasetId datasetId : targetDatasets) {
@@ -4754,6 +4732,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                     && !tableRegex.matcher(tableName).matches()) {
                                   continue;
                                 }
+                                // Collect task in memory to be executed in Stage 2 after listing
+                                // completes.
                                 tasks.add(
                                     () -> {
                                       processSingleTable(
@@ -4784,12 +4764,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           activeFutures.add(future);
         }
 
+        // Wait for listing tasks to finish before submitting detail tasks to the pool.
         for (Future<List<Callable<Void>>> future : listFutures) {
           detailTasks.addAll(future.get());
         }
         activeFutures.clear(); // Clear so we don't hold references unnecessarily
       }
 
+      // Stage 2: Execute table metadata processing concurrently.
       for (Callable<Void> task : detailTasks) {
         activeFutures.add(apiExecutor.submit(Context.current().wrap(task)));
       }
