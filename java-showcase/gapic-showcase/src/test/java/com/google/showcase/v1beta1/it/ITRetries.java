@@ -110,7 +110,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
@@ -124,7 +123,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
@@ -138,7 +136,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
@@ -156,7 +153,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
@@ -174,7 +170,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
@@ -193,7 +188,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
@@ -212,7 +206,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
@@ -239,7 +232,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
@@ -266,7 +258,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
         RetrySettings.newBuilder()
@@ -307,7 +298,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
         RetrySettings.newBuilder()
@@ -348,7 +338,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testGrpc_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
         RetrySettings.newBuilder()
@@ -394,7 +383,6 @@ class ITRetries {
   }
 
   @Test
-  @SuppressWarnings("deprecation")
   void testHttpJson_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
         RetrySettings.newBuilder()
