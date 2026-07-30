@@ -22,6 +22,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.ImmutableSet;
+import com.google.protobuf.util.Durations;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.AttemptSequenceRequest;
@@ -45,42 +46,32 @@ class ITRetries {
       Sequence.newBuilder()
           .addResponses(
               Sequence.Response.newBuilder()
-                  .setStatus(
-                      Status.newBuilder()
-                          .setCode(com.google.rpc.Code.UNAVAILABLE.getNumber())
-                          .build())
+                  .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
                   .build())
           .addResponses(
               Sequence.Response.newBuilder()
-                  .setStatus(
-                      Status.newBuilder()
-                          .setCode(com.google.rpc.Code.UNAVAILABLE.getNumber())
-                          .build())
+                  .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
                   .build())
           .addResponses(
               Sequence.Response.newBuilder()
-                  .setStatus(
-                      Status.newBuilder()
-                          .setCode(com.google.rpc.Code.UNAVAILABLE.getNumber())
-                          .build())
+                  .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
                   .build())
           .addResponses(
               Sequence.Response.newBuilder()
-                  .setStatus(
-                      Status.newBuilder().setCode(com.google.rpc.Code.OK.getNumber()).build())
+                  .setStatus(Status.newBuilder().setCode(Code.OK.getNumber()).build())
                   .build())
           .build();
 
   @SuppressWarnings("deprecation")
   private static final RetrySettings STANDARD_RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100L))
+          .setInitialRetryDelayDuration(Duration.ofMillis(100L))
           .setRetryDelayMultiplier(2.0)
-          .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1000L))
-          .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(1000L))
+          .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
+          .setInitialRpcTimeoutDuration(Duration.ofMillis(1000L))
           .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(1000L))
-          .setTotalTimeoutDuration(java.time.Duration.ofMillis(5000L))
+          .setMaxRpcTimeoutDuration(Duration.ofMillis(1000L))
+          .setTotalTimeoutDuration(Duration.ofMillis(5000L))
           .setMaxAttempts(4)
           .setJittered(false)
           .build();
@@ -88,13 +79,13 @@ class ITRetries {
   @SuppressWarnings("deprecation")
   private static final RetrySettings NO_RETRY_SETTINGS =
       RetrySettings.newBuilder()
-          .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100L))
+          .setInitialRetryDelayDuration(Duration.ofMillis(100L))
           .setRetryDelayMultiplier(2.0)
-          .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1000L))
-          .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(1000L))
+          .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
+          .setInitialRpcTimeoutDuration(Duration.ofMillis(1000L))
           .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(1000L))
-          .setTotalTimeoutDuration(java.time.Duration.ofMillis(5000L))
+          .setMaxRpcTimeoutDuration(Duration.ofMillis(1000L))
+          .setTotalTimeoutDuration(Duration.ofMillis(5000L))
           .setMaxAttempts(1)
           .setJittered(false)
           .build();
@@ -279,13 +270,13 @@ class ITRetries {
   void testGrpc_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10L))
+            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
             .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(100L))
+            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(100L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(100L))
-            .setTotalTimeoutDuration(java.time.Duration.ofMillis(10000L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(100L))
+            .setTotalTimeoutDuration(Duration.ofMillis(10000L))
             .setMaxAttempts(10)
             .setJittered(false)
             .build();
@@ -299,7 +290,7 @@ class ITRetries {
         sequenceBuilder.addResponses(
             Sequence.Response.newBuilder()
                 .setStatus(Status.newBuilder().setCode(Code.OK.getNumber()).build())
-                .setDelay(com.google.protobuf.Duration.newBuilder().setNanos(200_000_000).build())
+                .setDelay(Durations.fromMillis(200L))
                 .build());
       }
 
@@ -320,13 +311,13 @@ class ITRetries {
   void testHttpJson_retryOnRpcTimeoutExceeded() throws Exception {
     RetrySettings timeoutRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10L))
+            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
             .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(100L))
+            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(100L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(100L))
-            .setTotalTimeoutDuration(java.time.Duration.ofMillis(10000L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(100L))
+            .setTotalTimeoutDuration(Duration.ofMillis(10000L))
             .setMaxAttempts(10)
             .setJittered(false)
             .build();
@@ -340,7 +331,7 @@ class ITRetries {
         sequenceBuilder.addResponses(
             Sequence.Response.newBuilder()
                 .setStatus(Status.newBuilder().setCode(Code.OK.getNumber()).build())
-                .setDelay(com.google.protobuf.Duration.newBuilder().setNanos(200_000_000).build())
+                .setDelay(Durations.fromMillis(200L))
                 .build());
       }
 
@@ -361,13 +352,13 @@ class ITRetries {
   void testGrpc_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100L))
+            .setInitialRetryDelayDuration(Duration.ofMillis(100L))
             .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(100L))
-            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(2000L))
+            .setMaxRetryDelayDuration(Duration.ofMillis(100L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(2000L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(2000L))
-            .setTotalTimeoutDuration(java.time.Duration.ofMillis(1500L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(2000L))
+            .setTotalTimeoutDuration(Duration.ofMillis(1500L))
             .setMaxAttempts(10)
             .setJittered(false)
             .build();
@@ -381,12 +372,12 @@ class ITRetries {
               .addResponses(
                   Sequence.Response.newBuilder()
                       .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(com.google.protobuf.Duration.newBuilder().setSeconds(1L).build())
+                      .setDelay(Durations.fromSeconds(1L))
                       .build())
               .addResponses(
                   Sequence.Response.newBuilder()
                       .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(com.google.protobuf.Duration.newBuilder().setSeconds(1L).build())
+                      .setDelay(Durations.fromSeconds(1L))
                       .build())
               .addResponses(
                   Sequence.Response.newBuilder()
@@ -407,13 +398,13 @@ class ITRetries {
   void testHttpJson_retryTotalTimeoutExceeded() throws Exception {
     RetrySettings totalTimeoutRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10L))
+            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
             .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(2000L))
+            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(2000L))
             .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(2000L))
-            .setTotalTimeoutDuration(java.time.Duration.ofMillis(1000L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(2000L))
+            .setTotalTimeoutDuration(Duration.ofMillis(1000L))
             .setMaxAttempts(10)
             .setJittered(false)
             .build();
@@ -427,13 +418,12 @@ class ITRetries {
               .addResponses(
                   Sequence.Response.newBuilder()
                       .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(
-                          com.google.protobuf.Duration.newBuilder().setNanos(200_000_000).build())
+                      .setDelay(Durations.fromMillis(200L))
                       .build())
               .addResponses(
                   Sequence.Response.newBuilder()
                       .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(com.google.protobuf.Duration.newBuilder().setSeconds(2L).build())
+                      .setDelay(Durations.fromSeconds(2L))
                       .build())
               .addResponses(
                   Sequence.Response.newBuilder()
