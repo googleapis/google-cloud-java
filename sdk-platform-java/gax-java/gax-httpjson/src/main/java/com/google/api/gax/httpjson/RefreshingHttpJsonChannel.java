@@ -76,9 +76,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     ChannelEntry initial = new ChannelEntry(channelFactory.get());
     this.activeEntry = new AtomicReference<>(initial);
     this.allEntries.add(initial);
-    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
+    String certPath = getWorkloadCertPath();
     if (certPath != null) {
-      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
+      this.activeCertFingerprint = getCertificateFingerprint(certPath);
     }
   }
 
@@ -96,15 +96,25 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
           && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
         return cached.fingerprint;
       }
-      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
+      String fingerprint = getCertificateFingerprint(certPath);
       lastDiskCheck = new DiskCheckResult(fingerprint, System.nanoTime());
       return fingerprint;
     }
   }
 
+  // Visible for testing
+  protected String getWorkloadCertPath() {
+    return WorkloadCertificateUtils.getWorkloadCertPath();
+  }
+
+  // Visible for testing
+  protected String getCertificateFingerprint(String certPath) {
+    return WorkloadCertificateUtils.getCertificateFingerprint(certPath);
+  }
+
   @Override
   public boolean shouldRefresh() {
-    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
+    String certPath = getWorkloadCertPath();
     if (certPath == null) {
       return false;
     }
@@ -118,7 +128,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   @Override
   public void refresh() {
     synchronized (refreshLock) {
-      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
+      String certPath = getWorkloadCertPath();
       if (certPath == null) {
         return;
       }
