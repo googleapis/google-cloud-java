@@ -2,20 +2,11 @@
 
 ## 1. The Quantum Threat & Why PQC is Critical
 
-### The Problem: Store-Now, Decrypt-Later (SNDL) Attacks
-Traditional Transport Layer Security (TLS) relies on classical asymmetric public-key cryptography—such as RSA, Elliptic Curve Diffie-Hellman (`ECDH`), and `X25519`—to establish secure encrypted connections. While these classical algorithms are computationally secure against present-day classical computers, they are vulnerable to **Shor's algorithm** running on a cryptographically relevant quantum computer (CRQC).
+Traditional TLS public-key encryption (such as RSA and ECDH) is vulnerable to future decryption by quantum computers.
 
-An adversary does not need to wait for a quantum computer to be built before attacking classical encryption:
-- **Harvest Now, Decrypt Later**: Threat actors can intercept and store encrypted TLS network traffic today.
-- **Future Decryption**: Once a sufficiently powerful quantum computer becomes operational, adversaries will be able to retroactively break the classical Diffie-Hellman key exchange and decrypt long-lived confidential data collected years earlier.
-
-### The Consequence of Not Using PQC
-Without Post-Quantum Cryptography (PQC), any sensitive data transmitted across networks today—including authentication credentials, financial records, proprietary algorithms, and customer data—remains vulnerable to retroactive decryption in the future.
-
-### The Solution: Hybrid PQC Key Exchange
-To mitigate this threat immediately without sacrificing present-day security, Google Cloud HTTP/JSON Java client libraries support **Hybrid PQC Key Exchange**.
-- A hybrid key exchange combines a classical ECDH algorithm (such as `X25519`) with a NIST-standardized Post-Quantum Key Encapsulation Mechanism (KEM), such as **ML-KEM-768** (FIPS 203), negotiated as `X25519MLKEM768`.
-- This ensures that your communications remain at least as secure as standard classical TLS 1.3 against present-day attacks, while simultaneously protecting encrypted sessions against future quantum decryption.
+- **The Risk ("Store-Now, Decrypt-Later")**: Adversaries can intercept and store encrypted network traffic today with the intent to decrypt it once cryptographically relevant quantum computers become available.
+- **The Consequence**: Without Post-Quantum Cryptography (PQC), sensitive data transmitted today—such as credentials, financial records, and customer data—is at risk of retroactive decryption in the future.
+- **The Solution (Hybrid PQC)**: Google Cloud HTTP/JSON Java client libraries support **Hybrid PQC Key Exchange** (such as `X25519MLKEM768`), combining a classical ECDH algorithm (like `X25519`) with a NIST-standardized Post-Quantum Key Encapsulation Mechanism (like `ML-KEM-768`, FIPS 203). This protects encrypted traffic against both present-day and future quantum threats without sacrificing existing security.
 
 ---
 
@@ -31,9 +22,9 @@ PQC support is **enabled by default** for **HTTP/JSON** (REST) transport in Goog
 
 ---
 
-## 3. How to Verify That You Are Using PQC
+## 3. How to Verify That You Are Using PQC in Google Cloud Java Client Libraries
 
-You can verify that your HTTP/JSON client library is actively negotiating Post-Quantum Cryptography through operational logs, debug logging, or network traffic analysis.
+You can verify that your Google Cloud HTTP/JSON Java client library is actively negotiating Post-Quantum Cryptography through operational logs, debug logging, or network traffic analysis.
 
 ### 1. Check Operational Log Messages
 When Conscrypt initializes successfully and configures PQC named groups, **no warning logs are emitted**.
@@ -57,45 +48,34 @@ To inspect the exact initialization status and any underlying native library loa
   ```
 
 ### 3. Packet & Handshake Inspection
-During a TLS 1.3 handshake with Google Front End (GFE) services, you can verify PQC negotiation using network analysis tools (such as Wireshark or OpenSSL `s_client`):
+During a TLS 1.3 handshake with Google Front End (GFE) services, you can verify PQC negotiation by inspecting the handshake packets:
 - **ClientHello**: Inspect the TLS `supported_groups` extension (Extension 10). When PQC is active, `X25519MLKEM768` (Group ID `0x4543` / `17731` or standardized IANA PQC identifier) is advertised in the ClientHello.
 - **ServerHello**: The GFE endpoint selects `X25519MLKEM768` in the `key_share` extension, confirming that hybrid post-quantum key agreement was established for the connection.
 
 ---
 
-## 4. HTTP/JSON Transport Implementation Details (`gax-httpjson` & `google-http-java-client`)
+## 4. Architecture & Minimum Required Versions
 
-PQC enablement for REST/HTTP transport relies on architecture enhancements in `google-http-java-client` and `gax-httpjson`:
+PQC enablement for HTTP/JSON transport requires compatible versions of `gax-httpjson` and `google-http-client`:
 
-1. **`NetHttpTransport.Builder` API Enhancements**:
-   - `NetHttpTransport.Builder` provides `.setSecurityProvider(Provider)` and `.setSslSocketConfigurator(SslSocketConfigurator)`.
-   - This allows GAX to inject an explicit cryptographic `Provider` and configure raw `SSLSocket` instances created by standard Java `HttpsURLConnection`.
-2. **GAX Conscrypt Registration (`HttpJsonConscryptUtils`)**:
-   - `InstantiatingHttpJsonChannelProvider` automatically invokes `HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder)`.
-   - This registers Conscrypt as the socket provider and attaches a socket configurator that enables BoringSSL engine sockets (`Conscrypt.setUseEngineSocket(socket, true)`).
+> [!TIP]
+> **Recommended BOM**:
+> We recommend importing Google Cloud Java libraries using **`libraries-bom` version `26.86.0+`**, which automatically manages compatible dependency versions across all Google Cloud client libraries, GAX, and the Google HTTP Client.
 
-### Default Algorithms & Multi-Algorithm Fallback Mechanism
+### Minimum Required Versions
 
-To maximize compatibility across diverse server endpoints and connect to as many algorithms as possible, `gax-httpjson` configures Conscrypt to advertise a comprehensive ordered list of **post-quantum hybrid groups, standalone PQC groups, and standard classical ECDH groups** by default:
+| Library | Minimum Required Version | Role |
+| :--- | :--- | :--- |
+| **`gax-httpjson`** | `2.83.0+` | Automatically registers Conscrypt as the TLS security provider and configures PQC named groups. |
+| **`google-http-client`** | `2.2.0+` | Provides security provider registration and socket configurators on `NetHttpTransport.Builder`. |
 
-- **PQC / Hybrid Groups Offered by Default**:
-  - `X25519MLKEM768`
-  - `SecP256r1MLKEM768`
-  - `X25519Kyber768Draft00`
-  - `MLKEM1024`
-- **Classical ECDH Groups Offered by Default**:
-  - `X25519`
-  - `SecP256r1`
-  - `SecP384r1`
-  - `SecP521r1`
+### How GAX and Google Cloud Servers Work Together
 
-#### Two-Tier Fallback Architecture for Maximum Interoperability
-1. **TLS 1.3 Handshake Negotiation (Algorithm Fallback)**:
-   - When a TLS 1.3 handshake begins, the client includes all default PQC and classical groups in its `supported_groups` ClientHello extension.
-   - **PQC-Enabled Endpoints**: If the server endpoint supports PQC (such as Google Cloud Front End endpoints), it selects `X25519MLKEM768` (or another mutually supported hybrid group), establishing an authenticated post-quantum session.
-   - **Non-PQC Endpoints**: If the server endpoint does not support post-quantum algorithms, it ignores the unknown PQC group identifiers and gracefully selects the highest-preference classical group (such as `X25519` or `SecP256r1`) without dropping the connection.
-2. **Runtime Platform Fallback (Provider Fallback)**:
-   - If the runtime platform itself cannot load native Conscrypt libraries, `gax-httpjson` safely catches the error, logs a concise warning, and falls back to standard JDK JSSE (`SunJSSE`), ensuring network connectivity is never broken.
+When you construct a Google Cloud HTTP/JSON service client, `gax-httpjson` automatically registers Conscrypt as the underlying cryptographic provider on the Google HTTP Client (`NetHttpTransport`).
+
+- **Negotiation with Google Cloud Servers**: During the TLS 1.3 handshake, `gax-httpjson` advertises Post-Quantum Cryptography named groups (`X25519MLKEM768`, etc.) in preference order alongside classical TLS groups. When connecting to Google Cloud Front End (GFE) endpoints, the server evaluates the client's list from top to bottom and **selects the first compatible algorithm from the list that it also supports**—in this case, `X25519MLKEM768` (#1 preference), establishing an authenticated post-quantum session.
+- **Transparent Endpoint Compatibility**: When connecting to endpoints that do not yet support PQC, the server skips the unknown post-quantum identifiers at the top of the list and selects **the first compatible algorithm from the client's list that it recognizes** (such as classical `X25519`), transparently negotiating standard TLS without dropping the connection.
+- **Platform Runtime Fallback**: If the runtime environment cannot load native Conscrypt libraries, `gax-httpjson` catches the error, logs a concise warning, and falls back to standard JDK JSSE (`SunJSSE`), ensuring network connectivity is never broken.
 
 ```
 +-------------------------------------------------------------------+
@@ -111,37 +91,29 @@ To maximize compatibility across diverse server endpoints and connect to as many
                  v                                 v
    google-http-client uses Conscrypt         Falls back to JDK JSSE
    Offers PQC Hybrid + Classical Groups      Offers Standard JDK Classical Groups
-   - Negotiates X25519MLKEM768 if server     - Negotiates Classical X25519 /
-     supports PQC                              SecP256r1 via JDK TLS
-   - Automatically falls back to classical
-     X25519 if server lacks PQC
+   - Server selects 1st compatible group     - Server negotiates Classical
+   - Negotiates X25519MLKEM768 on            - Negotiates Classical X25519 /
+     Google Cloud Front End (GFE)              secp256r1 via JDK TLS
+   - Automatically falls back to X25519
+     on older non-PQC servers
 ```
 
 ---
 
-## 5. Conscrypt Capabilities & Supported Algorithms
+## 5. Supported Key Exchange Groups
 
-Conscrypt provides high-performance TLS and cryptographic operations by wrapping BoringSSL via JNI native libraries.
+Google Cloud HTTP/JSON client libraries configure Conscrypt to advertise the following named groups in preference order:
 
-> [!NOTE]
-> For a full listing of named groups and capabilities supported across Conscrypt versions, refer to the official [Conscrypt Capabilities Documentation](https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md#supported-named-groups).
+1. `X25519MLKEM768`
+2. `SecP256r1MLKEM768`
+3. `MLKEM1024`
+4. `MLKEM768`
+5. `X25519Kyber768Draft00` *(deprecated draft group kept for backward compatibility)*
+6. `X25519`
+7. `secp256r1`
+8. `secp384r1`
 
-### Supported PQC & Hybrid Key Exchange Groups
-
-| Named Group Identifier | Description | Status in Conscrypt |
-| :--- | :--- | :--- |
-| **`X25519MLKEM768`** | Primary hybrid group combining X25519 ECDH with NIST FIPS 203 ML-KEM-768. | Recommended / Offered by Default |
-| **`SecP256r1MLKEM768`** | Hybrid group combining NIST P-256 (`secp256r1`) with ML-KEM-768. | Supported / Offered by Default |
-| **`X25519Kyber768Draft00`** | Pre-standardization draft hybrid group combining X25519 with Kyber-768. | Legacy / Offered for backward compatibility |
-| **`MLKEM1024`** | Standalone high-security post-quantum key encapsulation mechanism. | Supported / Offered by Default |
-
-### Supported Classical (Non-PQC) Groups
-
-For environments or endpoints where PQC key exchange is disabled or unsupported, Conscrypt falls back to standard classical named groups:
-- `X25519` (Curve25519 ECDH)
-- `SecP256r1` (NIST P-256 ECDH)
-- `SecP384r1` (NIST P-384 ECDH)
-- `SecP521r1` (NIST P-521 ECDH)
+For additional details on Conscrypt's cryptographic algorithms and capabilities, refer to the official [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md#supported-named-groups).
 
 ---
 
@@ -239,36 +211,31 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 }
 ```
 
-### Alternative 3: Configuring Custom Security Providers (Locally Scoped to `NetHttpTransport`)
+### Alternative 3: Configuring Custom Security Providers
 
-If your application requires a custom cryptographic provider (such as Bouncy Castle), you can configure it **locally on the specific `NetHttpTransport` instance without modifying the global JVM `Security` provider table**:
+If your application requires a custom cryptographic provider (such as Bouncy Castle), you can configure it on a specific `NetHttpTransport` instance using `NetHttpTransport.Builder.setSecurityProvider(...)` and `.setSslSocketConfigurator(...)`:
 
 ```java
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
 import com.google.cloud.secretmanager.v1.SecretManagerServiceSettings;
-import java.security.KeyStore;
 import java.security.Provider;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
 
-// Step 1: Instantiate custom security provider (without calling Security.addProvider globally)
+// Step 1: Instantiate custom security provider
 Provider customProvider = new org.bouncycastle.jce.provider.BouncyCastleProvider();
 
-// Step 2: Initialize TrustManagerFactory and SSLContext locally using customProvider
-TrustManagerFactory tmf = TrustManagerFactory.getInstance("PKIX", customProvider);
-tmf.init((KeyStore) null); // Loads standard JDK cacerts trust store
-
-SSLContext sslContext = SSLContext.getInstance("TLS", customProvider);
-sslContext.init(null, tmf.getTrustManagers(), null);
-
-// Step 3: Configure NetHttpTransport to use the locally scoped SSLSocketFactory
+// Step 2: Configure NetHttpTransport with custom security provider and SSLSocketConfigurator
 NetHttpTransport customTransport =
     new NetHttpTransport.Builder()
-        .setSslSocketFactory(sslContext.getSocketFactory())
+        .setSecurityProvider(customProvider)
+        .setSslSocketConfigurator(
+            socket -> {
+              // Configure custom SSLSocket options (e.g., cipher suites, protocols, or named groups)
+            })
         .build();
 
+// Step 3: Build transport provider and service client
 InstantiatingHttpJsonChannelProvider transportProvider =
     SecretManagerServiceSettings.defaultHttpJsonTransportProviderBuilder()
         .setHttpTransport(customTransport)
@@ -280,7 +247,7 @@ SecretManagerServiceSettings settings =
         .build();
 
 try (SecretManagerServiceClient client = SecretManagerServiceClient.create(settings)) {
-  // Client communicates using Bouncy Castle TLS scoped strictly to this transport
+  // Client communicates using custom security provider scoped strictly to this transport
 }
 ```
 
