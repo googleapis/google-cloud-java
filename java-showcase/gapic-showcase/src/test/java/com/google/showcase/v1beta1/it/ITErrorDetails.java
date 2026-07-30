@@ -174,6 +174,8 @@ class ITErrorDetails {
     // GAX HTTP/JSON parser limitation: Because the response contains a custom/unregistered type
     // (PoetryError) in the Any details list, HttpJsonErrorParser fails to parse the status payload,
     // resulting in empty ErrorDetails (where getErrorInfo() returns null).
+    // Note: Standard Google Cloud services follow AIP-193 error details (ErrorInfo, RetryInfo, etc.)
+    // and do not use custom error payload types like PoetryError.
     ErrorDetails errorDetails = exception.getErrorDetails();
     if (errorDetails != null) {
       assertThat(errorDetails.getErrorInfo()).isNull();
