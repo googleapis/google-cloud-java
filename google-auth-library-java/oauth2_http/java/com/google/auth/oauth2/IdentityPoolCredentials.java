@@ -123,6 +123,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } else {
       this.actorTokenSupplier = null;
     }
+
+    if (this.actorTokenSupplier != null
+        && (getTokenUrl() == null || !getTokenUrl().contains("mtls.googleapis.com"))) {
+      throw new IllegalArgumentException(
+          "Actor tokens are only supported for mTLS token URLs.");
+    }
   }
 
   @Override
