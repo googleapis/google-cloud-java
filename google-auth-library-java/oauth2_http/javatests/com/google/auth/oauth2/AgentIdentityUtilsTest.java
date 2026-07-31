@@ -48,6 +48,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.cert.CertificateException;
@@ -193,14 +194,20 @@ class AgentIdentityUtilsTest {
   public void testAgentIdentityCertInfoIsCachedAndReloadedWhenModified() throws IOException {
     URL certUrl = getClass().getClassLoader().getResource("x509_leaf_certificate.pem");
     assertNotNull(certUrl, "Test resource x509_leaf_certificate.pem not found");
-    String certPath = new File(certUrl.getFile()).getAbsolutePath();
+    File tempCertFile = tempDir.resolve("cached_test_cert.pem").toFile();
+    Files.copy(
+        Paths.get(new File(certUrl.getFile()).getAbsolutePath()),
+        tempCertFile.toPath(),
+        StandardCopyOption.REPLACE_EXISTING);
+    long originalMtime = tempCertFile.lastModified();
+
     File configFile = tempDir.resolve("config_cache.json").toFile();
     String configJson =
         "{"
             + " \"cert_configs\": {"
             + " \"workload\": {"
             + " \"cert_path\": \""
-            + certPath.replace("\\", "\\\\")
+            + tempCertFile.getAbsolutePath().replace("\\", "\\\\")
             + "\""
             + " }"
             + " }"
@@ -210,9 +217,21 @@ class AgentIdentityUtilsTest {
     }
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
     AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
-    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info1);
+
+    // Overwrite certificate contents with invalid garbage without changing mtime.
+    // If the file were read again, parsing would throw an exception.
+    Files.write(tempCertFile.toPath(), "INVALID GARBAGE PEM".getBytes(StandardCharsets.UTF_8));
+    tempCertFile.setLastModified(originalMtime);
+
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info2);
     assertSame(info1, info2);
+
+    // Now change mtime to simulate rotation; cache should invalidate and re-read,
+    // throwing an IOException on the invalid garbage PEM.
+    tempCertFile.setLastModified(originalMtime + 10000L);
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
   }
 
   @Test
