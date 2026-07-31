@@ -178,7 +178,7 @@ class AttemptCallableTest {
     assertThat(rethrown.isRetryable()).isTrue();
     assertThat(rethrown.getCause()).isEqualTo(originalEx);
     assertThat(rethrown.getStackTrace()).isEqualTo(originalEx.getStackTrace());
-    assertThat(rethrown.getSuppressed()).hasSize(1);
+    assertThat(rethrown.getSuppressed().length).isEqualTo(1);
     assertThat(rethrown.getSuppressed()[0]).isInstanceOf(RuntimeException.class);
   }
 }
