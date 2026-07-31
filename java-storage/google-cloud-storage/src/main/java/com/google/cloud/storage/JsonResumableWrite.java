@@ -22,13 +22,10 @@ import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.io.StringReader;
 import java.util.Map;
 import java.util.Objects;
 import org.checkerframework.checker.lock.qual.GuardedBy;
@@ -37,8 +34,6 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class JsonResumableWrite implements Serializable {
   private static final long serialVersionUID = 7934407897802252292L;
-  private static final Gson gson = new Gson();
-
   @MonotonicNonNull private transient StorageObject object;
   @MonotonicNonNull private transient Hasher hasher;
   @MonotonicNonNull private transient Crc32cValue<?> cumulativeCrc32c;
@@ -152,7 +147,7 @@ final class JsonResumableWrite implements Serializable {
     if (objectJson == null) {
       synchronized (this) {
         if (objectJson == null) {
-          objectJson = gson.toJson(object);
+          objectJson = JsonUtils.objectToJson(object);
           base64CumulativeCrc32c = Utils.crc32cCodec.encode(cumulativeCrc32c.getValue());
         }
       }
@@ -167,8 +162,7 @@ final class JsonResumableWrite implements Serializable {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    JsonReader jsonReader = gson.newJsonReader(new StringReader(this.objectJson));
-    this.object = gson.fromJson(jsonReader, StorageObject.class);
+    this.object = JsonUtils.jsonToObject(this.objectJson, StorageObject.class);
     if (base64CumulativeCrc32c != null) {
       Integer decode = Utils.crc32cCodec.decode(base64CumulativeCrc32c);
       if (decode == 0) {
