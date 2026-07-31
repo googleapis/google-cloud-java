@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nonnull;
-import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -55,7 +54,6 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>This is transport specific and each transport has an implementation with its own options.
  */
-@NullMarked
 @InternalExtensionOnly
 public interface ApiCallContext extends RetryingContext {
 

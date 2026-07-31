@@ -33,7 +33,6 @@ package com.google.api.gax.rpc.mtls;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import java.io.IOException;
-import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for handling certificate-based access configurations.
