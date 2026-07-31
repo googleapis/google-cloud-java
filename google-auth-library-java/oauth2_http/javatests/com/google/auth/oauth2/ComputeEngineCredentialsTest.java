@@ -59,10 +59,10 @@ import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -1277,6 +1277,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertTrue(isOnGce);
     assertEquals(1, transportFactory.transport.getRequestCount());
   }
+
   @Test
   void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
     envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
@@ -1312,10 +1313,11 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   private void setupCertAndKeyConfig() throws IOException {
     java.nio.file.Path certSource = null;
     try {
-      certSource = java.nio.file.Paths.get(
-          ComputeEngineCredentialsTest.class
-              .getResource("/agent/agent_spiffe_cert.pem")
-              .toURI());
+      certSource =
+          java.nio.file.Paths.get(
+              ComputeEngineCredentialsTest.class
+                  .getResource("/agent/agent_spiffe_cert.pem")
+                  .toURI());
     } catch (java.net.URISyntaxException e) {
       throw new IOException("Failed to load test resource", e);
     }
@@ -1324,10 +1326,11 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     java.nio.file.Path keySource = null;
     try {
-      keySource = java.nio.file.Paths.get(
-          ComputeEngineCredentialsTest.class
-              .getResource("/agent/agent_spiffe_key.pem")
-              .toURI());
+      keySource =
+          java.nio.file.Paths.get(
+              ComputeEngineCredentialsTest.class
+                  .getResource("/agent/agent_spiffe_key.pem")
+                  .toURI());
     } catch (java.net.URISyntaxException e) {
       throw new IOException("Failed to load test resource", e);
     }
