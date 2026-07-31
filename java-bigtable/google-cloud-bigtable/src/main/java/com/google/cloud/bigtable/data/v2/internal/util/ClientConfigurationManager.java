@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelPr
 import com.google.cloud.bigtable.data.v2.internal.api.Util;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.TextFormat;
@@ -52,6 +53,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -73,6 +75,17 @@ public class ClientConfigurationManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(ClientConfigurationManager.class.getName());
 
   public static final String OVERRIDE_SYS_PROP_KEY = "bigtable.internal.client-config-override";
+
+  /**
+   * Header carrying a UUID that uniquely identifies this session client instance. It is attached to
+   * every {@link GetClientConfigurationRequest} (both the initial fetch and all subsequent refresh
+   * polls) so the server can correlate requests originating from the same client.
+   */
+  private static final String CLIENT_UUID_HEADER = "bigtable-client-config-uuid";
+
+  @VisibleForTesting
+  static final Metadata.Key<String> CLIENT_UUID_KEY =
+      Metadata.Key.of(CLIENT_UUID_HEADER, Metadata.ASCII_STRING_MARSHALLER);
 
   public interface ConfigListener<T> {
     void onChange(T newValue);
@@ -117,6 +130,10 @@ public class ClientConfigurationManager implements AutoCloseable {
   private final Metadata metadata;
   private final GetClientConfigurationRequest request;
   private final ChannelProvider channelProvider;
+
+  // A UUID generated once when this session client is initialized. It is attached to the
+  // GetClientConfigurationRequest header for both the initial and all refresh requests.
+  private final String clientUuid;
 
   @GuardedBy("this")
   private ManagedChannel channel;
@@ -196,6 +213,13 @@ public class ClientConfigurationManager implements AutoCloseable {
             ImmutableMap.of(
                 "instance_name", clientInfo.getInstanceName().toString(),
                 "app_profile_id", clientInfo.getAppProfileId()));
+
+    // Generate a UUID that uniquely identifies this session client instance and attach it to the
+    // request metadata. Since the same metadata is reused for the initial fetch and every refresh
+    // poll, the header is sent on all GetClientConfigurationRequests.
+    this.clientUuid = UUID.randomUUID().toString();
+    this.metadata.put(CLIENT_UUID_KEY, clientUuid);
+
     this.request =
         GetClientConfigurationRequest.newBuilder()
             .setInstanceName(clientInfo.getInstanceName().toString())
@@ -260,6 +284,13 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   ClientConfiguration getDefaultConfig() {
     return defaultConfig;
+  }
+
+  /**
+   * Returns the UUID generated for this session client, attached to every config request header.
+   */
+  String getClientUuid() {
+    return clientUuid;
   }
 
   public synchronized <T> ListenerHandle addListener(

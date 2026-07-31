@@ -53,6 +53,9 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Server;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
@@ -97,6 +100,8 @@ class ClientConfigurationManagerTest {
   private ChannelProviders.ChannelProvider channelProvider;
   @Mock private ScheduledExecutorService mockExecutor;
   private final OutstandingRpcCounter outstandingRpcCounter = new OutstandingRpcCounter();
+  // Captures the bigtable-client-config-uuid header seen by the server on the most recent request.
+  private final AtomicReference<String> lastClientUuid = new AtomicReference<>();
   private ClientConfigurationManager manager;
   private final NoopMetrics.NoopDebugTracer noopDebugTracer = NoopMetrics.NoopDebugTracer.INSTANCE;
 
@@ -104,7 +109,17 @@ class ClientConfigurationManagerTest {
   void setUp() throws IOException {
     service = new FakeConfigService();
 
-    server = FakeServiceBuilder.create(service).start();
+    ServerInterceptor uuidCapturingInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> call, Metadata headers, ServerCallHandler<ReqT, RespT> next) {
+            lastClientUuid.set(headers.get(ClientConfigurationManager.CLIENT_UUID_KEY));
+            return next.startCall(call, headers);
+          }
+        };
+
+    server = FakeServiceBuilder.create(service).intercept(uuidCapturingInterceptor).start();
 
     channelProvider =
         new ForwardingChannelProvider(
@@ -143,6 +158,29 @@ class ClientConfigurationManagerTest {
   void tearDown() {
     manager.close();
     server.shutdown();
+  }
+
+  @Test
+  void clientUuidHeaderSentOnInitialAndRefreshRequests() throws Exception {
+    // The header name must be prefixed with "bigtable-".
+    assertThat(ClientConfigurationManager.CLIENT_UUID_KEY.name()).startsWith("bigtable-");
+
+    // Fetch the initial config and capture the header sent with it.
+    manager.start().get();
+    outstandingRpcCounter.waitUntilRpcsDone();
+
+    String initialUuid = lastClientUuid.get();
+    // The header must be present and match the manager's generated UUID.
+    assertThat(initialUuid).isNotNull();
+    assertThat(initialUuid).isEqualTo(manager.getClientUuid());
+
+    // Trigger a refresh poll and confirm the same UUID header rides along.
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+    runnableCaptor.getValue().run();
+    outstandingRpcCounter.waitUntilRpcsDone();
+
+    assertThat(lastClientUuid.get()).isEqualTo(manager.getClientUuid());
   }
 
   @Test
