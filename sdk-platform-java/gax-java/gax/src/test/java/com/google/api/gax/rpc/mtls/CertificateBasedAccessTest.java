@@ -242,6 +242,7 @@ class CertificateBasedAccessTest {
             .getMessage()
             .contains("points to certificate/key files that do not exist on disk"));
   }
+
   @Test
   void testUseMtlsClientCertificateConfigWindowsPaths() {
     TestEnv env = new TestEnv();
@@ -251,7 +252,10 @@ class CertificateBasedAccessTest {
     // In JSON, backslashes are escaped
     fs.setContent(
         "C:\\config.json",
-        "{\n  \"cert_path\": \"C:\\\\my\\\\cert.pem\",\n  \"key_path\": \"C:\\\\my\\\\key.pem\"\n}");
+        "{\n"
+            + "  \"cert_path\": \"C:\\\\my\\\\cert.pem\",\n"
+            + "  \"key_path\": \"C:\\\\my\\\\key.pem\"\n"
+            + "}");
     fs.setExists("C:\\my\\cert.pem", true);
     fs.setExists("C:\\my\\key.pem", true);
 

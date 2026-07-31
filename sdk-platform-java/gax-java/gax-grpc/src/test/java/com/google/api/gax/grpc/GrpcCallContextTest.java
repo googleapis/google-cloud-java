@@ -503,9 +503,12 @@ class GrpcCallContextTest {
     GrpcTransportChannel transportChannel1 = GrpcTransportChannel.create(managedChannel1);
     GrpcTransportChannel transportChannel2 = GrpcTransportChannel.create(managedChannel2);
 
-    GrpcCallContext context1 = GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
-    GrpcCallContext context2 = GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
-    GrpcCallContext context3 = GrpcCallContext.createDefault().withTransportChannel(transportChannel2);
+    GrpcCallContext context1 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
+    GrpcCallContext context2 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
+    GrpcCallContext context3 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel2);
 
     org.junit.jupiter.api.Assertions.assertEquals(context1, context2);
     org.junit.jupiter.api.Assertions.assertEquals(context1.hashCode(), context2.hashCode());

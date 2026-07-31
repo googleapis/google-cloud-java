@@ -34,6 +34,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
@@ -42,7 +43,6 @@ import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.api.gax.rpc.testing.FakeChannel;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.api.gax.rpc.testing.FakeTransportChannel;
-import com.google.api.core.ApiFuture;
 import com.google.api.gax.tracing.ApiTracer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -151,13 +151,13 @@ class AttemptCallableTest {
             new IllegalStateException("Root cause"),
             FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED),
             false);
-    originalEx.setStackTrace(new StackTraceElement[] {new StackTraceElement("foo", "bar", "Baz.java", 123)});
+    originalEx.setStackTrace(
+        new StackTraceElement[] {new StackTraceElement("foo", "bar", "Baz.java", 123)});
     originalEx.addSuppressed(new RuntimeException("Suppressed cause"));
 
     SettableApiFuture<String> failedFuture = SettableApiFuture.create();
     failedFuture.setException(originalEx);
-    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any()))
-        .thenReturn(failedFuture);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
 
     AttemptCallable<String, String> callable =
         new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);

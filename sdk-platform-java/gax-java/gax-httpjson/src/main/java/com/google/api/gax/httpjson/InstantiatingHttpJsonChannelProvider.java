@@ -225,7 +225,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
           }
         };
 
-    ManagedHttpJsonChannel channel = new RefreshingHttpJsonChannel(channelFactory, certificateBasedAccess.getWorkloadCertPath());
+    ManagedHttpJsonChannel channel =
+        new RefreshingHttpJsonChannel(channelFactory, certificateBasedAccess.getWorkloadCertPath());
 
     HttpJsonClientInterceptor headerInterceptor =
         new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
@@ -373,7 +374,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize."
+                    + " Falling back to non-mTLS channel.");
           }
         }
       }

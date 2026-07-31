@@ -111,7 +111,7 @@ class RefreshingHttpJsonChannelTest {
   @Test
   void testShouldRefreshFalseWhenUnchanged() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    
+
     Thread.sleep(1001); // Invalidate 1-second cache
     assertFalse(channel.shouldRefresh());
   }
@@ -138,14 +138,14 @@ class RefreshingHttpJsonChannelTest {
 
     // Change fingerprint
     testFingerprint = "fingerprint2";
-    
+
     // Act
     channel.refresh();
 
     // Verify a new channel was created and the old one retired
     assertEquals(2, channelFactoryCount.get());
     ManagedHttpJsonChannel secondChannel = lastCreatedChannel;
-    
+
     // The old channel should receive a shutdown request immediately since there are no active calls
     verify(firstChannel).shutdown();
     verify(secondChannel, never()).shutdown();
@@ -167,7 +167,7 @@ class RefreshingHttpJsonChannelTest {
 
     // Change fingerprint & refresh
     testFingerprint = "fingerprint2";
-    
+
     channel.refresh();
 
     // Verify a new channel was created
@@ -180,14 +180,14 @@ class RefreshingHttpJsonChannelTest {
     @SuppressWarnings("unchecked")
     ArgumentCaptor<HttpJsonClientCall.Listener<Object>> listenerCaptor =
         ArgumentCaptor.forClass(HttpJsonClientCall.Listener.class);
-    
+
     @SuppressWarnings("unchecked")
     HttpJsonClientCall.Listener<Object> mockListener = mock(HttpJsonClientCall.Listener.class);
-    
+
     activeCall.start(mockListener, null);
-    
+
     verify(mockCall).start(listenerCaptor.capture(), any());
-    
+
     // Fire onClose
     listenerCaptor.getValue().onClose(0, null);
 
@@ -210,7 +210,7 @@ class RefreshingHttpJsonChannelTest {
 
     // Change fingerprint
     testFingerprint = "fingerprint2";
-    
+
     // Act
     channel.refresh();
 

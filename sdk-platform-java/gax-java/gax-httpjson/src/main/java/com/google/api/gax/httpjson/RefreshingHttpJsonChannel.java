@@ -63,7 +63,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   }
 
   private volatile DiskCheckResult lastDiskCheck = null;
-  private final java.util.concurrent.locks.ReentrantLock diskCheckLock = new java.util.concurrent.locks.ReentrantLock();
+  private final java.util.concurrent.locks.ReentrantLock diskCheckLock =
+      new java.util.concurrent.locks.ReentrantLock();
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
   private final String workloadCertPath;
   private final AtomicReference<ChannelEntry> activeEntry;
@@ -149,7 +150,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       // Double-check inside refreshLock
       if (currentDiskFingerprint.equalsIgnoreCase(this.activeCertFingerprint)) {
         LOG.fine(
-            "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh");
+            "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate"
+                + " refresh");
         return;
       }
 

@@ -281,7 +281,9 @@ class ChannelPoolTest {
             ChannelPoolSettings.staticallySized(1).toBuilder()
                 .setPreemptiveRefreshEnabled(true)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     // 1 call during the creation
     Mockito.verify(mockChannelPrimer, Mockito.times(1))
         .primeChannel(Mockito.any(ManagedChannel.class));
@@ -436,7 +438,8 @@ class ChannelPoolTest {
   }
 
   @Test
-  void channelReactiveMTlsRefreshShouldConditionallySwapChannels() throws IOException, InterruptedException {
+  void channelReactiveMTlsRefreshShouldConditionallySwapChannels()
+      throws IOException, InterruptedException {
     ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel underlyingChannel2 = Mockito.mock(ManagedChannel.class);
 
@@ -446,8 +449,10 @@ class ChannelPoolTest {
     // Create a temp file to act as the cert
     tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
 
-    java.nio.file.Path clientCert = java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
-    java.nio.file.Files.copy(clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    java.nio.file.Path clientCert =
+        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
+    java.nio.file.Files.copy(
+        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
     ChannelPoolSettings channelPoolSettings =
         ChannelPoolSettings.builder().setInitialChannelCount(1).build();
@@ -470,7 +475,8 @@ class ChannelPoolTest {
     // The ChannelPool caches fingerprints for 1000ms, wait for it to expire
     Thread.sleep(1100);
 
-    java.nio.file.Path rootCert = java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
+    java.nio.file.Path rootCert =
+        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
     java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
     // Try a reactive refresh *with* a changed cert content (should swap channels)
@@ -504,7 +510,9 @@ class ChannelPoolTest {
             ChannelPoolSettings.staticallySized(1).toBuilder()
                 .setPreemptiveRefreshEnabled(true)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     Mockito.reset(underlyingChannel1);
 
     pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
@@ -539,7 +547,9 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Start the minimum number of
@@ -605,7 +615,9 @@ class ChannelPoolTest {
                 .setMaxRpcsPerChannel(2)
                 .setMaxResizeDelta(5)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Add 20 RPCs to push expansion
@@ -637,7 +649,9 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // With no outstanding RPCs, the pool should shrink
@@ -664,7 +678,9 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Start 2 RPCs
@@ -766,7 +782,9 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(1);
 
     FakeLogHandler logHandler = new FakeLogHandler();
@@ -817,7 +835,9 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(10);
 
     FakeLogHandler logHandler = new FakeLogHandler();
@@ -891,7 +911,8 @@ class ChannelPoolTest {
       // Ensure that the channel pool properly logged the double call and kept the refCount correct
       assertThat(logHandler.getAllMessages())
           .contains(
-              "Call is being closed more than once. Please make sure that onClose() is not being manually called.");
+              "Call is being closed more than once. Please make sure that onClose() is not being"
+                  + " manually called.");
       assertThat(pool.entries.get()).hasSize(1);
       ChannelPool.Entry entry = pool.entries.get().get(0);
       assertThat(entry.outstandingRpcs.get()).isEqualTo(0);
@@ -926,7 +947,9 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(5)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(1);
 
     // Add 20 RPCs, which would require 10 channels (20/2)
@@ -960,7 +983,9 @@ class ChannelPoolTest {
                 .setMinChannelCount(3)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory, provider, null);
+            channelFactory,
+            provider,
+            null);
     assertThat(pool.entries.get()).hasSize(5);
 
     // With no outstanding RPCs, the pool should want to shrink to 0

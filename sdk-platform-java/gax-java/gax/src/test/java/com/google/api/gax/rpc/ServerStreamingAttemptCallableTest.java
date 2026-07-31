@@ -267,7 +267,12 @@ class ServerStreamingAttemptCallableTest {
     MockServerStreamingCall<String, String> call = innerCallable.popLastCall();
 
     // Send initial error
-    UnauthenticatedException initialError = new UnauthenticatedException("test", null, com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED), false);
+    UnauthenticatedException initialError =
+        new UnauthenticatedException(
+            "test",
+            null,
+            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
+            false);
     call.getController().getObserver().onError(initialError);
 
     // Should notify the outer future

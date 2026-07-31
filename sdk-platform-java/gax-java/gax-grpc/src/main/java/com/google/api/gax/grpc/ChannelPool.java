@@ -73,7 +73,10 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class ChannelPool extends ManagedChannel {
   static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
-      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+ times). See https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md for more information about this behavior.";
+      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+"
+          + " times). See"
+          + " https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md"
+          + " for more information about this behavior.";
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
@@ -96,7 +99,8 @@ class ChannelPool extends ManagedChannel {
   }
 
   private volatile DiskCheckResult lastDiskCheck = null;
-  private final java.util.concurrent.locks.ReentrantLock diskCheckLock = new java.util.concurrent.locks.ReentrantLock();
+  private final java.util.concurrent.locks.ReentrantLock diskCheckLock =
+      new java.util.concurrent.locks.ReentrantLock();
   private final Object entryWriteLock = new Object();
   private volatile String activeCertFingerprint = "";
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
@@ -155,7 +159,8 @@ class ChannelPool extends ManagedChannel {
     authority = entries.get().get(0).channel.authority();
 
     if (workloadCertPath != null) {
-      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(workloadCertPath);
+      this.activeCertFingerprint =
+          WorkloadCertificateUtils.getCertificateFingerprint(workloadCertPath);
     }
 
     if (!settings.isStaticSize()) {
@@ -518,7 +523,8 @@ class ChannelPool extends ManagedChannel {
       // Double-check fingerprint inside the lock
       if (currentDiskFingerprint.equalsIgnoreCase(this.activeCertFingerprint)) {
         LOG.fine(
-            "Channel pool was already refreshed by a concurrent thread, skipping duplicate refresh");
+            "Channel pool was already refreshed by a concurrent thread, skipping duplicate"
+                + " refresh");
         return;
       }
 
@@ -746,7 +752,8 @@ class ChannelPool extends ManagedChannel {
                 if (!wasClosed.compareAndSet(false, true)) {
                   LOG.log(
                       Level.WARNING,
-                      "Call is being closed more than once. Please make sure that onClose() is not being manually called.");
+                      "Call is being closed more than once. Please make sure that onClose() is not"
+                          + " being manually called.");
                   return;
                 }
                 try {
@@ -757,7 +764,8 @@ class ChannelPool extends ManagedChannel {
                   } else {
                     LOG.log(
                         Level.WARNING,
-                        "Entry was released before the call is closed. This may be due to an exception on start of the call.");
+                        "Entry was released before the call is closed. This may be due to an"
+                            + " exception on start of the call.");
                   }
                 }
               }
@@ -770,7 +778,8 @@ class ChannelPool extends ManagedChannel {
         } else {
           LOG.log(
               Level.WARNING,
-              "The entry is already released. This indicates that onClose() has already been called previously");
+              "The entry is already released. This indicates that onClose() has already been called"
+                  + " previously");
         }
         throw e;
       }

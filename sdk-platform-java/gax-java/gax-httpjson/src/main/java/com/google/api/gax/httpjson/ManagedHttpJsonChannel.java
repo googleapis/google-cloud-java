@@ -253,11 +253,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
       }
 
       return new ManagedHttpJsonChannel(
-          executor,
-          usingDefaultExecutor,
-          endpoint,
-          httpTransport,
-          usingDefaultTransport);
+          executor, usingDefaultExecutor, endpoint, httpTransport, usingDefaultTransport);
     }
   }
 }
