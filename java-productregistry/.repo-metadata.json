@@ -1,0 +1,15 @@
+{
+  "api_shortname": "cloudproductregistry",
+  "name_pretty": "Cloud Product Registry",
+  "product_documentation": "https://docs.cloud.google.com/product-registry",
+  "api_description": "cloudproductregistry.googleapis.com API.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-productregistry/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-productregistry",
+  "distribution_name": "com.google.cloud:google-cloud-productregistry",
+  "api_id": "cloudproductregistry.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}

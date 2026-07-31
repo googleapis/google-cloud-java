@@ -27,11 +27,13 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,7 +70,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomTargetingValue</td>
- *      <td><p> API to retrieve a `CustomTargetingValue` object.</td>
+ *      <td><p> Retrieves a `CustomTargetingValue` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +89,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListCustomTargetingValues</td>
- *      <td><p> API to retrieve a list of `CustomTargetingValue` objects.</td>
+ *      <td><p> Lists `CustomTargetingValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -102,6 +104,107 @@ import org.jspecify.annotations.NullMarked;
  *      <ul>
  *           <li><p> listCustomTargetingValuesPagedCallable()
  *           <li><p> listCustomTargetingValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCustomTargetingValue</td>
+ *      <td><p> Creates a `CustomTargetingValue` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCustomTargetingValue(CreateCustomTargetingValueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCustomTargetingValue(NetworkName parent, CustomTargetingValue customTargetingValue)
+ *           <li><p> createCustomTargetingValue(String parent, CustomTargetingValue customTargetingValue)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCustomTargetingValueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateCustomTargetingValues</td>
+ *      <td><p> Creates `CustomTargetingValue` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateCustomTargetingValues(NetworkName parent, List&lt;CreateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchCreateCustomTargetingValues(String parent, List&lt;CreateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchCreateCustomTargetingValues(BatchCreateCustomTargetingValuesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateCustomTargetingValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCustomTargetingValue</td>
+ *      <td><p> Updates a `CustomTargetingValue` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCustomTargetingValue(UpdateCustomTargetingValueRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCustomTargetingValue(CustomTargetingValue customTargetingValue, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCustomTargetingValueCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateCustomTargetingValues</td>
+ *      <td><p> Batch updates `CustomTargetingValue` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCustomTargetingValues(NetworkName parent, List&lt;UpdateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchUpdateCustomTargetingValues(String parent, List&lt;UpdateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchUpdateCustomTargetingValues(BatchUpdateCustomTargetingValuesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCustomTargetingValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivateCustomTargetingValues</td>
+ *      <td><p> Batch activates `CustomTargetingValue` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivateCustomTargetingValues(NetworkName parent, List&lt;ActivateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchActivateCustomTargetingValues(String parent, List&lt;ActivateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchActivateCustomTargetingValues(BatchActivateCustomTargetingValuesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivateCustomTargetingValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivateCustomTargetingValues</td>
+ *      <td><p> Deactivates a list of `CustomTargetingValue` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateCustomTargetingValues(NetworkName parent, List&lt;DeactivateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchDeactivateCustomTargetingValues(String parent, List&lt;DeactivateCustomTargetingValueRequest&gt; requests)
+ *           <li><p> batchDeactivateCustomTargetingValues(BatchDeactivateCustomTargetingValuesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateCustomTargetingValuesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -151,7 +254,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CustomTargetingValueServiceClient implements BackgroundResource {
-  private final CustomTargetingValueServiceSettings settings;
+  private final @Nullable CustomTargetingValueServiceSettings settings;
   private final CustomTargetingValueServiceStub stub;
 
   /** Constructs an instance of CustomTargetingValueServiceClient with default settings. */
@@ -194,7 +297,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CustomTargetingValueServiceSettings getSettings() {
+  public final @Nullable CustomTargetingValueServiceSettings getSettings() {
     return settings;
   }
 
@@ -204,7 +307,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingValue` object.
+   * Retrieves a `CustomTargetingValue` object.
    *
    * <p>Sample code:
    *
@@ -227,7 +330,8 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    *     `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomTargetingValue getCustomTargetingValue(CustomTargetingValueName name) {
+  public final CustomTargetingValue getCustomTargetingValue(
+      @Nullable CustomTargetingValueName name) {
     GetCustomTargetingValueRequest request =
         GetCustomTargetingValueRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -237,7 +341,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingValue` object.
+   * Retrieves a `CustomTargetingValue` object.
    *
    * <p>Sample code:
    *
@@ -268,7 +372,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingValue` object.
+   * Retrieves a `CustomTargetingValue` object.
    *
    * <p>Sample code:
    *
@@ -301,7 +405,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingValue` object.
+   * Retrieves a `CustomTargetingValue` object.
    *
    * <p>Sample code:
    *
@@ -333,7 +437,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingValue` objects.
+   * Lists `CustomTargetingValue` objects.
    *
    * <p>Sample code:
    *
@@ -358,7 +462,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCustomTargetingValuesPagedResponse listCustomTargetingValues(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListCustomTargetingValuesRequest request =
         ListCustomTargetingValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -368,7 +472,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingValue` objects.
+   * Lists `CustomTargetingValue` objects.
    *
    * <p>Sample code:
    *
@@ -400,7 +504,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingValue` objects.
+   * Lists `CustomTargetingValue` objects.
    *
    * <p>Sample code:
    *
@@ -438,7 +542,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingValue` objects.
+   * Lists `CustomTargetingValue` objects.
    *
    * <p>Sample code:
    *
@@ -478,7 +582,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingValue` objects.
+   * Lists `CustomTargetingValue` objects.
    *
    * <p>Sample code:
    *
@@ -518,6 +622,806 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
   public final UnaryCallable<ListCustomTargetingValuesRequest, ListCustomTargetingValuesResponse>
       listCustomTargetingValuesCallable() {
     return stub.listCustomTargetingValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+   *   CustomTargetingValue response =
+   *       customTargetingValueServiceClient.createCustomTargetingValue(
+   *           parent, customTargetingValue);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param customTargetingValue Required. The `CustomTargetingValue` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetingValue createCustomTargetingValue(
+      @Nullable NetworkName parent, CustomTargetingValue customTargetingValue) {
+    CreateCustomTargetingValueRequest request =
+        CreateCustomTargetingValueRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCustomTargetingValue(customTargetingValue)
+            .build();
+    return createCustomTargetingValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+   *   CustomTargetingValue response =
+   *       customTargetingValueServiceClient.createCustomTargetingValue(
+   *           parent, customTargetingValue);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param customTargetingValue Required. The `CustomTargetingValue` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetingValue createCustomTargetingValue(
+      String parent, CustomTargetingValue customTargetingValue) {
+    CreateCustomTargetingValueRequest request =
+        CreateCustomTargetingValueRequest.newBuilder()
+            .setParent(parent)
+            .setCustomTargetingValue(customTargetingValue)
+            .build();
+    return createCustomTargetingValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   CreateCustomTargetingValueRequest request =
+   *       CreateCustomTargetingValueRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCustomTargetingValue(CustomTargetingValue.newBuilder().build())
+   *           .build();
+   *   CustomTargetingValue response =
+   *       customTargetingValueServiceClient.createCustomTargetingValue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetingValue createCustomTargetingValue(
+      CreateCustomTargetingValueRequest request) {
+    return createCustomTargetingValueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   CreateCustomTargetingValueRequest request =
+   *       CreateCustomTargetingValueRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCustomTargetingValue(CustomTargetingValue.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomTargetingValue> future =
+   *       customTargetingValueServiceClient
+   *           .createCustomTargetingValueCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CustomTargetingValue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueCallable() {
+    return stub.createCustomTargetingValueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchCreateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchCreateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to create. A maximum of 100
+   *     objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCustomTargetingValuesResponse batchCreateCustomTargetingValues(
+      @Nullable NetworkName parent, List<CreateCustomTargetingValueRequest> requests) {
+    BatchCreateCustomTargetingValuesRequest request =
+        BatchCreateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchCreateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchCreateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to create. A maximum of 100
+   *     objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCustomTargetingValuesResponse batchCreateCustomTargetingValues(
+      String parent, List<CreateCustomTargetingValueRequest> requests) {
+    BatchCreateCustomTargetingValuesRequest request =
+        BatchCreateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchCreateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchCreateCustomTargetingValuesRequest request =
+   *       BatchCreateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCustomTargetingValueRequest>())
+   *           .build();
+   *   BatchCreateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchCreateCustomTargetingValues(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCustomTargetingValuesResponse batchCreateCustomTargetingValues(
+      BatchCreateCustomTargetingValuesRequest request) {
+    return batchCreateCustomTargetingValuesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchCreateCustomTargetingValuesRequest request =
+   *       BatchCreateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCustomTargetingValueRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateCustomTargetingValuesResponse> future =
+   *       customTargetingValueServiceClient
+   *           .batchCreateCustomTargetingValuesCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchCreateCustomTargetingValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesCallable() {
+    return stub.batchCreateCustomTargetingValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CustomTargetingValue response =
+   *       customTargetingValueServiceClient.updateCustomTargetingValue(
+   *           customTargetingValue, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param customTargetingValue Required. The `CustomTargetingValue` to update.
+   *     <p>The `CustomTargetingValue`'s `name` is used to identify the `CustomTargetingValue` to
+   *     update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetingValue updateCustomTargetingValue(
+      CustomTargetingValue customTargetingValue, FieldMask updateMask) {
+    UpdateCustomTargetingValueRequest request =
+        UpdateCustomTargetingValueRequest.newBuilder()
+            .setCustomTargetingValue(customTargetingValue)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCustomTargetingValue(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   UpdateCustomTargetingValueRequest request =
+   *       UpdateCustomTargetingValueRequest.newBuilder()
+   *           .setCustomTargetingValue(CustomTargetingValue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CustomTargetingValue response =
+   *       customTargetingValueServiceClient.updateCustomTargetingValue(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CustomTargetingValue updateCustomTargetingValue(
+      UpdateCustomTargetingValueRequest request) {
+    return updateCustomTargetingValueCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `CustomTargetingValue` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   UpdateCustomTargetingValueRequest request =
+   *       UpdateCustomTargetingValueRequest.newBuilder()
+   *           .setCustomTargetingValue(CustomTargetingValue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CustomTargetingValue> future =
+   *       customTargetingValueServiceClient
+   *           .updateCustomTargetingValueCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CustomTargetingValue response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueCallable() {
+    return stub.updateCustomTargetingValueCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchUpdateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchUpdateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to update. A maximum of 100
+   *     objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCustomTargetingValuesResponse batchUpdateCustomTargetingValues(
+      @Nullable NetworkName parent, List<UpdateCustomTargetingValueRequest> requests) {
+    BatchUpdateCustomTargetingValuesRequest request =
+        BatchUpdateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchUpdateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchUpdateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to update. A maximum of 100
+   *     objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCustomTargetingValuesResponse batchUpdateCustomTargetingValues(
+      String parent, List<UpdateCustomTargetingValueRequest> requests) {
+    BatchUpdateCustomTargetingValuesRequest request =
+        BatchUpdateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchUpdateCustomTargetingValuesRequest request =
+   *       BatchUpdateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCustomTargetingValueRequest>())
+   *           .build();
+   *   BatchUpdateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchUpdateCustomTargetingValues(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCustomTargetingValuesResponse batchUpdateCustomTargetingValues(
+      BatchUpdateCustomTargetingValuesRequest request) {
+    return batchUpdateCustomTargetingValuesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchUpdateCustomTargetingValuesRequest request =
+   *       BatchUpdateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCustomTargetingValueRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateCustomTargetingValuesResponse> future =
+   *       customTargetingValueServiceClient
+   *           .batchUpdateCustomTargetingValuesCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchUpdateCustomTargetingValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesCallable() {
+    return stub.batchUpdateCustomTargetingValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch activates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchActivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchActivateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to activate. A maximum of 100
+   *     objects can be activated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCustomTargetingValuesResponse batchActivateCustomTargetingValues(
+      @Nullable NetworkName parent, List<ActivateCustomTargetingValueRequest> requests) {
+    BatchActivateCustomTargetingValuesRequest request =
+        BatchActivateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchActivateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch activates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchActivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchActivateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}`
+   * @param requests Required. The `CustomTargetingValue` objects to activate. A maximum of 100
+   *     objects can be activated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCustomTargetingValuesResponse batchActivateCustomTargetingValues(
+      String parent, List<ActivateCustomTargetingValueRequest> requests) {
+    BatchActivateCustomTargetingValuesRequest request =
+        BatchActivateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchActivateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch activates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchActivateCustomTargetingValuesRequest request =
+   *       BatchActivateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<ActivateCustomTargetingValueRequest>())
+   *           .build();
+   *   BatchActivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchActivateCustomTargetingValues(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateCustomTargetingValuesResponse batchActivateCustomTargetingValues(
+      BatchActivateCustomTargetingValuesRequest request) {
+    return batchActivateCustomTargetingValuesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch activates `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchActivateCustomTargetingValuesRequest request =
+   *       BatchActivateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<ActivateCustomTargetingValueRequest>())
+   *           .build();
+   *   ApiFuture<BatchActivateCustomTargetingValuesResponse> future =
+   *       customTargetingValueServiceClient
+   *           .batchActivateCustomTargetingValuesCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchActivateCustomTargetingValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesCallable() {
+    return stub.batchActivateCustomTargetingValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchDeactivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchDeactivateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}/`
+   * @param requests Required. The `CustomTargetingValue` objects to deactivate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCustomTargetingValuesResponse batchDeactivateCustomTargetingValues(
+      @Nullable NetworkName parent, List<DeactivateCustomTargetingValueRequest> requests) {
+    BatchDeactivateCustomTargetingValuesRequest request =
+        BatchDeactivateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchDeactivateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+   *   BatchDeactivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchDeactivateCustomTargetingValues(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of CustomTargetingValues.
+   *     Format: `networks/{network_code}/`
+   * @param requests Required. The `CustomTargetingValue` objects to deactivate.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCustomTargetingValuesResponse batchDeactivateCustomTargetingValues(
+      String parent, List<DeactivateCustomTargetingValueRequest> requests) {
+    BatchDeactivateCustomTargetingValuesRequest request =
+        BatchDeactivateCustomTargetingValuesRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchDeactivateCustomTargetingValues(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchDeactivateCustomTargetingValuesRequest request =
+   *       BatchDeactivateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<DeactivateCustomTargetingValueRequest>())
+   *           .build();
+   *   BatchDeactivateCustomTargetingValuesResponse response =
+   *       customTargetingValueServiceClient.batchDeactivateCustomTargetingValues(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateCustomTargetingValuesResponse batchDeactivateCustomTargetingValues(
+      BatchDeactivateCustomTargetingValuesRequest request) {
+    return batchDeactivateCustomTargetingValuesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `CustomTargetingValue` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CustomTargetingValueServiceClient customTargetingValueServiceClient =
+   *     CustomTargetingValueServiceClient.create()) {
+   *   BatchDeactivateCustomTargetingValuesRequest request =
+   *       BatchDeactivateCustomTargetingValuesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<DeactivateCustomTargetingValueRequest>())
+   *           .build();
+   *   ApiFuture<BatchDeactivateCustomTargetingValuesResponse> future =
+   *       customTargetingValueServiceClient
+   *           .batchDeactivateCustomTargetingValuesCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchDeactivateCustomTargetingValuesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesCallable() {
+    return stub.batchDeactivateCustomTargetingValuesCallable();
   }
 
   @Override
@@ -586,12 +1490,13 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
           ListCustomTargetingValuesPage> {
 
     private ListCustomTargetingValuesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
             context,
-        ListCustomTargetingValuesResponse response) {
+        @Nullable ListCustomTargetingValuesResponse response) {
       super(context, response);
     }
 
@@ -601,18 +1506,20 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingValuesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
             context,
-        ListCustomTargetingValuesResponse response) {
+        @Nullable ListCustomTargetingValuesResponse response) {
       return new ListCustomTargetingValuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomTargetingValuesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingValuesRequest,
                 ListCustomTargetingValuesResponse,
                 CustomTargetingValue>
@@ -631,7 +1538,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
           ListCustomTargetingValuesFixedSizeCollection> {
 
     private ListCustomTargetingValuesFixedSizeCollection(
-        List<ListCustomTargetingValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingValuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -641,7 +1548,7 @@ public class CustomTargetingValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingValuesFixedSizeCollection createCollection(
-        List<ListCustomTargetingValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingValuesPage> pages, int collectionSize) {
       return new ListCustomTargetingValuesFixedSizeCollection(pages, collectionSize);
     }
   }

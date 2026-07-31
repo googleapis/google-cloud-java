@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetCreativeTemplate</td>
- *      <td><p> API to retrieve a `CreativeTemplate` object.</td>
+ *      <td><p> Retrieves a `CreativeTemplate` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListCreativeTemplates</td>
- *      <td><p> API to retrieve a list of `CreativeTemplate` objects.</td>
+ *      <td><p> Lists `CreativeTemplate` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CreativeTemplateServiceClient implements BackgroundResource {
-  private final CreativeTemplateServiceSettings settings;
+  private final @Nullable CreativeTemplateServiceSettings settings;
   private final CreativeTemplateServiceStub stub;
 
   /** Constructs an instance of CreativeTemplateServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CreativeTemplateServiceSettings getSettings() {
+  public final @Nullable CreativeTemplateServiceSettings getSettings() {
     return settings;
   }
 
@@ -200,7 +201,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CreativeTemplate` object.
+   * Retrieves a `CreativeTemplate` object.
    *
    * <p>Sample code:
    *
@@ -221,7 +222,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
    *     `networks/{network_code}/creativeTemplates/{creative_template_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CreativeTemplate getCreativeTemplate(CreativeTemplateName name) {
+  public final CreativeTemplate getCreativeTemplate(@Nullable CreativeTemplateName name) {
     GetCreativeTemplateRequest request =
         GetCreativeTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -231,7 +232,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CreativeTemplate` object.
+   * Retrieves a `CreativeTemplate` object.
    *
    * <p>Sample code:
    *
@@ -260,7 +261,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CreativeTemplate` object.
+   * Retrieves a `CreativeTemplate` object.
    *
    * <p>Sample code:
    *
@@ -289,7 +290,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CreativeTemplate` object.
+   * Retrieves a `CreativeTemplate` object.
    *
    * <p>Sample code:
    *
@@ -319,7 +320,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CreativeTemplate` objects.
+   * Lists `CreativeTemplate` objects.
    *
    * <p>Sample code:
    *
@@ -343,7 +344,8 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCreativeTemplatesPagedResponse listCreativeTemplates(NetworkName parent) {
+  public final ListCreativeTemplatesPagedResponse listCreativeTemplates(
+      @Nullable NetworkName parent) {
     ListCreativeTemplatesRequest request =
         ListCreativeTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -353,7 +355,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CreativeTemplate` objects.
+   * Lists `CreativeTemplate` objects.
    *
    * <p>Sample code:
    *
@@ -385,7 +387,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CreativeTemplate` objects.
+   * Lists `CreativeTemplate` objects.
    *
    * <p>Sample code:
    *
@@ -423,7 +425,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CreativeTemplate` objects.
+   * Lists `CreativeTemplate` objects.
    *
    * <p>Sample code:
    *
@@ -460,7 +462,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CreativeTemplate` objects.
+   * Lists `CreativeTemplate` objects.
    *
    * <p>Sample code:
    *
@@ -565,9 +567,11 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
           ListCreativeTemplatesPage> {
 
     private ListCreativeTemplatesPage(
-        PageContext<ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
+        @Nullable
+            PageContext<
+                ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
             context,
-        ListCreativeTemplatesResponse response) {
+        @Nullable ListCreativeTemplatesResponse response) {
       super(context, response);
     }
 
@@ -577,15 +581,19 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
     @Override
     protected ListCreativeTemplatesPage createPage(
-        PageContext<ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
+        @Nullable
+            PageContext<
+                ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
             context,
-        ListCreativeTemplatesResponse response) {
+        @Nullable ListCreativeTemplatesResponse response) {
       return new ListCreativeTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCreativeTemplatesPage> createPageAsync(
-        PageContext<ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
+        @Nullable
+            PageContext<
+                ListCreativeTemplatesRequest, ListCreativeTemplatesResponse, CreativeTemplate>
             context,
         ApiFuture<ListCreativeTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -601,7 +609,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
           ListCreativeTemplatesFixedSizeCollection> {
 
     private ListCreativeTemplatesFixedSizeCollection(
-        List<ListCreativeTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListCreativeTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -611,7 +619,7 @@ public class CreativeTemplateServiceClient implements BackgroundResource {
 
     @Override
     protected ListCreativeTemplatesFixedSizeCollection createCollection(
-        List<ListCreativeTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListCreativeTemplatesPage> pages, int collectionSize) {
       return new ListCreativeTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }

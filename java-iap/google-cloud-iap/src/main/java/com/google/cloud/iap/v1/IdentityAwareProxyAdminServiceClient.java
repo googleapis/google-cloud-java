@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -317,7 +318,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IdentityAwareProxyAdminServiceClient implements BackgroundResource {
-  private final IdentityAwareProxyAdminServiceSettings settings;
+  private final @Nullable IdentityAwareProxyAdminServiceSettings settings;
   private final IdentityAwareProxyAdminServiceStub stub;
 
   /** Constructs an instance of IdentityAwareProxyAdminServiceClient with default settings. */
@@ -362,7 +363,7 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
     this.stub = stub;
   }
 
-  public final IdentityAwareProxyAdminServiceSettings getSettings() {
+  public final @Nullable IdentityAwareProxyAdminServiceSettings getSettings() {
     return settings;
   }
 
@@ -782,7 +783,8 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
    *     location to group across all locations.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTunnelDestGroupsPagedResponse listTunnelDestGroups(TunnelLocationName parent) {
+  public final ListTunnelDestGroupsPagedResponse listTunnelDestGroups(
+      @Nullable TunnelLocationName parent) {
     ListTunnelDestGroupsRequest request =
         ListTunnelDestGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -971,7 +973,9 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TunnelDestGroup createTunnelDestGroup(
-      TunnelLocationName parent, TunnelDestGroup tunnelDestGroup, String tunnelDestGroupId) {
+      @Nullable TunnelLocationName parent,
+      TunnelDestGroup tunnelDestGroup,
+      String tunnelDestGroupId) {
     CreateTunnelDestGroupRequest request =
         CreateTunnelDestGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1110,7 +1114,7 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
    *     `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TunnelDestGroup getTunnelDestGroup(TunnelDestGroupName name) {
+  public final TunnelDestGroup getTunnelDestGroup(@Nullable TunnelDestGroupName name) {
     GetTunnelDestGroupRequest request =
         GetTunnelDestGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1229,7 +1233,7 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
    *     `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTunnelDestGroup(TunnelDestGroupName name) {
+  public final void deleteTunnelDestGroup(@Nullable TunnelDestGroupName name) {
     DeleteTunnelDestGroupRequest request =
         DeleteTunnelDestGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1486,9 +1490,10 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
           ListTunnelDestGroupsPage> {
 
     private ListTunnelDestGroupsPage(
-        PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
+        @Nullable
+            PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
             context,
-        ListTunnelDestGroupsResponse response) {
+        @Nullable ListTunnelDestGroupsResponse response) {
       super(context, response);
     }
 
@@ -1498,15 +1503,17 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListTunnelDestGroupsPage createPage(
-        PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
+        @Nullable
+            PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
             context,
-        ListTunnelDestGroupsResponse response) {
+        @Nullable ListTunnelDestGroupsResponse response) {
       return new ListTunnelDestGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTunnelDestGroupsPage> createPageAsync(
-        PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
+        @Nullable
+            PageContext<ListTunnelDestGroupsRequest, ListTunnelDestGroupsResponse, TunnelDestGroup>
             context,
         ApiFuture<ListTunnelDestGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1522,7 +1529,7 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
           ListTunnelDestGroupsFixedSizeCollection> {
 
     private ListTunnelDestGroupsFixedSizeCollection(
-        List<ListTunnelDestGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListTunnelDestGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1532,7 +1539,7 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
 
     @Override
     protected ListTunnelDestGroupsFixedSizeCollection createCollection(
-        List<ListTunnelDestGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListTunnelDestGroupsPage> pages, int collectionSize) {
       return new ListTunnelDestGroupsFixedSizeCollection(pages, collectionSize);
     }
   }

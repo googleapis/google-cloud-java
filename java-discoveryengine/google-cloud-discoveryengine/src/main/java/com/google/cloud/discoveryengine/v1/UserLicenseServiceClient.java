@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -166,7 +167,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UserLicenseServiceClient implements BackgroundResource {
-  private final UserLicenseServiceSettings settings;
+  private final @Nullable UserLicenseServiceSettings settings;
   private final UserLicenseServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -214,7 +215,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final UserLicenseServiceSettings getSettings() {
+  public final @Nullable UserLicenseServiceSettings getSettings() {
     return settings;
   }
 
@@ -263,7 +264,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUserLicensesPagedResponse listUserLicenses(UserStoreName parent) {
+  public final ListUserLicensesPagedResponse listUserLicenses(@Nullable UserStoreName parent) {
     ListUserLicensesRequest request =
         ListUserLicensesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -562,8 +563,9 @@ public class UserLicenseServiceClient implements BackgroundResource {
           ListUserLicensesRequest, ListUserLicensesResponse, UserLicense, ListUserLicensesPage> {
 
     private ListUserLicensesPage(
-        PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense> context,
-        ListUserLicensesResponse response) {
+        @Nullable PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense>
+            context,
+        @Nullable ListUserLicensesResponse response) {
       super(context, response);
     }
 
@@ -573,14 +575,16 @@ public class UserLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserLicensesPage createPage(
-        PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense> context,
-        ListUserLicensesResponse response) {
+        @Nullable PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense>
+            context,
+        @Nullable ListUserLicensesResponse response) {
       return new ListUserLicensesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserLicensesPage> createPageAsync(
-        PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense> context,
+        @Nullable PageContext<ListUserLicensesRequest, ListUserLicensesResponse, UserLicense>
+            context,
         ApiFuture<ListUserLicensesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -595,7 +599,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
           ListUserLicensesFixedSizeCollection> {
 
     private ListUserLicensesFixedSizeCollection(
-        List<ListUserLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserLicensesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -605,7 +609,7 @@ public class UserLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserLicensesFixedSizeCollection createCollection(
-        List<ListUserLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserLicensesPage> pages, int collectionSize) {
       return new ListUserLicensesFixedSizeCollection(pages, collectionSize);
     }
   }

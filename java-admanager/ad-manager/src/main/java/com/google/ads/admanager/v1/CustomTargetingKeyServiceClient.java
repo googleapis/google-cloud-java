@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,7 +69,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomTargetingKey</td>
- *      <td><p> API to retrieve a `CustomTargetingKey` object.</td>
+ *      <td><p> Retrieves a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +88,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListCustomTargetingKeys</td>
- *      <td><p> API to retrieve a list of `CustomTargetingKey` objects.</td>
+ *      <td><p> Lists `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -107,7 +108,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCustomTargetingKey</td>
- *      <td><p> API to create a `CustomTargetingKey` object.</td>
+ *      <td><p> Creates a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -126,7 +127,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateCustomTargetingKeys</td>
- *      <td><p> API to batch create `CustomTargetingKey` objects.</td>
+ *      <td><p> Creates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -142,7 +143,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCustomTargetingKey</td>
- *      <td><p> API to update a `CustomTargetingKey` object.</td>
+ *      <td><p> Updates a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -160,7 +161,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateCustomTargetingKeys</td>
- *      <td><p> API to batch update `CustomTargetingKey` objects.</td>
+ *      <td><p> Batch updates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -176,7 +177,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCustomTargetingKeys</td>
- *      <td><p> API to batch activate `CustomTargetingKey` objects.</td>
+ *      <td><p> Batch activates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -258,7 +259,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CustomTargetingKeyServiceClient implements BackgroundResource {
-  private final CustomTargetingKeyServiceSettings settings;
+  private final @Nullable CustomTargetingKeyServiceSettings settings;
   private final CustomTargetingKeyServiceStub stub;
 
   /** Constructs an instance of CustomTargetingKeyServiceClient with default settings. */
@@ -300,7 +301,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CustomTargetingKeyServiceSettings getSettings() {
+  public final @Nullable CustomTargetingKeyServiceSettings getSettings() {
     return settings;
   }
 
@@ -310,7 +311,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -332,7 +333,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    *     `networks/{network_code}/customTargetingKeys/{custom_targeting_key_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomTargetingKey getCustomTargetingKey(CustomTargetingKeyName name) {
+  public final CustomTargetingKey getCustomTargetingKey(@Nullable CustomTargetingKeyName name) {
     GetCustomTargetingKeyRequest request =
         GetCustomTargetingKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -342,7 +343,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -372,7 +373,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -402,7 +403,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -433,7 +434,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -457,7 +458,8 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomTargetingKeysPagedResponse listCustomTargetingKeys(NetworkName parent) {
+  public final ListCustomTargetingKeysPagedResponse listCustomTargetingKeys(
+      @Nullable NetworkName parent) {
     ListCustomTargetingKeysRequest request =
         ListCustomTargetingKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -467,7 +469,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -499,7 +501,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -537,7 +539,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -576,7 +578,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -620,7 +622,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -645,7 +647,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CustomTargetingKey createCustomTargetingKey(
-      NetworkName parent, CustomTargetingKey customTargetingKey) {
+      @Nullable NetworkName parent, CustomTargetingKey customTargetingKey) {
     CreateCustomTargetingKeyRequest request =
         CreateCustomTargetingKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -656,7 +658,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -692,7 +694,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -724,7 +726,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -755,7 +757,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -782,7 +784,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateCustomTargetingKeysResponse batchCreateCustomTargetingKeys(
-      NetworkName parent, List<CreateCustomTargetingKeyRequest> requests) {
+      @Nullable NetworkName parent, List<CreateCustomTargetingKeyRequest> requests) {
     BatchCreateCustomTargetingKeysRequest request =
         BatchCreateCustomTargetingKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -793,7 +795,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -831,7 +833,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -863,7 +865,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -897,7 +899,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -934,7 +936,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -966,7 +968,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -997,7 +999,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1024,7 +1026,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateCustomTargetingKeysResponse batchUpdateCustomTargetingKeys(
-      NetworkName parent, List<UpdateCustomTargetingKeyRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateCustomTargetingKeyRequest> requests) {
     BatchUpdateCustomTargetingKeysRequest request =
         BatchUpdateCustomTargetingKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1035,7 +1037,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1073,7 +1075,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1105,7 +1107,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1139,7 +1141,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1164,7 +1166,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateCustomTargetingKeysResponse batchActivateCustomTargetingKeys(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateCustomTargetingKeysRequest request =
         BatchActivateCustomTargetingKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1175,7 +1177,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1211,7 +1213,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1243,7 +1245,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1302,7 +1304,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateCustomTargetingKeysResponse batchDeactivateCustomTargetingKeys(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateCustomTargetingKeysRequest request =
         BatchDeactivateCustomTargetingKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1477,10 +1479,11 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
           ListCustomTargetingKeysPage> {
 
     private ListCustomTargetingKeysPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse, CustomTargetingKey>
             context,
-        ListCustomTargetingKeysResponse response) {
+        @Nullable ListCustomTargetingKeysResponse response) {
       super(context, response);
     }
 
@@ -1490,16 +1493,18 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingKeysPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse, CustomTargetingKey>
             context,
-        ListCustomTargetingKeysResponse response) {
+        @Nullable ListCustomTargetingKeysResponse response) {
       return new ListCustomTargetingKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomTargetingKeysPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse, CustomTargetingKey>
             context,
         ApiFuture<ListCustomTargetingKeysResponse> futureResponse) {
@@ -1516,7 +1521,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
           ListCustomTargetingKeysFixedSizeCollection> {
 
     private ListCustomTargetingKeysFixedSizeCollection(
-        List<ListCustomTargetingKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1526,7 +1531,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomTargetingKeysFixedSizeCollection createCollection(
-        List<ListCustomTargetingKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCustomTargetingKeysPage> pages, int collectionSize) {
       return new ListCustomTargetingKeysFixedSizeCollection(pages, collectionSize);
     }
   }

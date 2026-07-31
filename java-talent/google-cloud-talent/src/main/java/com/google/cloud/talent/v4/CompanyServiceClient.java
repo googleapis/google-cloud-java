@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,7 +219,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CompanyServiceClient implements BackgroundResource {
-  private final CompanyServiceSettings settings;
+  private final @Nullable CompanyServiceSettings settings;
   private final CompanyServiceStub stub;
 
   /** Constructs an instance of CompanyServiceClient with default settings. */
@@ -258,7 +259,7 @@ public class CompanyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CompanyServiceSettings getSettings() {
+  public final @Nullable CompanyServiceSettings getSettings() {
     return settings;
   }
 
@@ -291,7 +292,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * @param company Required. The company to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Company createCompany(TenantName parent, Company company) {
+  public final Company createCompany(@Nullable TenantName parent, Company company) {
     CreateCompanyRequest request =
         CreateCompanyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -411,7 +412,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Company getCompany(CompanyName name) {
+  public final Company getCompany(@Nullable CompanyName name) {
     GetCompanyRequest request =
         GetCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCompany(request);
@@ -614,7 +615,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *     example, "projects/foo/tenants/bar/companies/baz".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCompany(CompanyName name) {
+  public final void deleteCompany(@Nullable CompanyName name) {
     DeleteCompanyRequest request =
         DeleteCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCompany(request);
@@ -728,7 +729,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *     "projects/foo/tenants/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCompaniesPagedResponse listCompanies(TenantName parent) {
+  public final ListCompaniesPagedResponse listCompanies(@Nullable TenantName parent) {
     ListCompaniesRequest request =
         ListCompaniesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -931,8 +932,8 @@ public class CompanyServiceClient implements BackgroundResource {
           ListCompaniesRequest, ListCompaniesResponse, Company, ListCompaniesPage> {
 
     private ListCompaniesPage(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
-        ListCompaniesResponse response) {
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable ListCompaniesResponse response) {
       super(context, response);
     }
 
@@ -942,14 +943,14 @@ public class CompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCompaniesPage createPage(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
-        ListCompaniesResponse response) {
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable ListCompaniesResponse response) {
       return new ListCompaniesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCompaniesPage> createPageAsync(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
         ApiFuture<ListCompaniesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -963,7 +964,8 @@ public class CompanyServiceClient implements BackgroundResource {
           ListCompaniesPage,
           ListCompaniesFixedSizeCollection> {
 
-    private ListCompaniesFixedSizeCollection(List<ListCompaniesPage> pages, int collectionSize) {
+    private ListCompaniesFixedSizeCollection(
+        @Nullable List<ListCompaniesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -973,7 +975,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCompaniesFixedSizeCollection createCollection(
-        List<ListCompaniesPage> pages, int collectionSize) {
+        @Nullable List<ListCompaniesPage> pages, int collectionSize) {
       return new ListCompaniesFixedSizeCollection(pages, collectionSize);
     }
   }

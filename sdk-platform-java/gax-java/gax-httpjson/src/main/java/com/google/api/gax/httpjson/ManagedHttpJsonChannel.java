@@ -41,9 +41,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Implementation of HttpJsonChannel which can issue http-json calls. */
+@NullMarked
 public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResource {
 
   private final Executor executor;
@@ -61,15 +63,25 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return endpoint;
   }
 
+  @VisibleForTesting
+  HttpTransport getHttpTransport() {
+    return httpTransport;
+  }
+
   private ManagedHttpJsonChannel(
-      Executor executor,
+      @Nullable Executor executor,
       boolean usingDefaultExecutor,
-      String endpoint,
+      @Nullable String endpoint,
       @Nullable HttpTransport httpTransport) {
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
-    this.httpTransport = httpTransport == null ? new NetHttpTransport() : httpTransport;
+    this.httpTransport =
+        httpTransport == null
+            ? HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+                    new NetHttpTransport.Builder())
+                .build()
+            : httpTransport;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -225,11 +237,14 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         usingDefaultExecutor = true;
       }
 
-      return new ManagedHttpJsonChannel(
-          executor,
-          usingDefaultExecutor,
-          endpoint,
-          httpTransport == null ? new NetHttpTransport() : httpTransport);
+      if (httpTransport == null) {
+        httpTransport =
+            HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+                    new NetHttpTransport.Builder())
+                .build();
+      }
+
+      return new ManagedHttpJsonChannel(executor, usingDefaultExecutor, endpoint, httpTransport);
     }
   }
 }

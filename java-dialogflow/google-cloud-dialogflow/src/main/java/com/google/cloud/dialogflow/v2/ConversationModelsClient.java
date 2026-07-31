@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -335,7 +336,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ConversationModelsClient implements BackgroundResource {
-  private final ConversationModelsSettings settings;
+  private final @Nullable ConversationModelsSettings settings;
   private final ConversationModelsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -383,7 +384,7 @@ public class ConversationModelsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConversationModelsSettings getSettings() {
+  public final @Nullable ConversationModelsSettings getSettings() {
     return settings;
   }
 
@@ -1426,7 +1427,8 @@ public class ConversationModelsClient implements BackgroundResource {
   public final OperationFuture<
           ConversationModelEvaluation, CreateConversationModelEvaluationOperationMetadata>
       createConversationModelEvaluationAsync(
-          ConversationModelName parent, ConversationModelEvaluation conversationModelEvaluation) {
+          @Nullable ConversationModelName parent,
+          ConversationModelEvaluation conversationModelEvaluation) {
     CreateConversationModelEvaluationRequest request =
         CreateConversationModelEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1843,10 +1845,11 @@ public class ConversationModelsClient implements BackgroundResource {
           ListConversationModelsPage> {
 
     private ListConversationModelsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelsRequest, ListConversationModelsResponse, ConversationModel>
             context,
-        ListConversationModelsResponse response) {
+        @Nullable ListConversationModelsResponse response) {
       super(context, response);
     }
 
@@ -1856,16 +1859,18 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListConversationModelsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelsRequest, ListConversationModelsResponse, ConversationModel>
             context,
-        ListConversationModelsResponse response) {
+        @Nullable ListConversationModelsResponse response) {
       return new ListConversationModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationModelsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelsRequest, ListConversationModelsResponse, ConversationModel>
             context,
         ApiFuture<ListConversationModelsResponse> futureResponse) {
@@ -1882,7 +1887,7 @@ public class ConversationModelsClient implements BackgroundResource {
           ListConversationModelsFixedSizeCollection> {
 
     private ListConversationModelsFixedSizeCollection(
-        List<ListConversationModelsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1892,7 +1897,7 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListConversationModelsFixedSizeCollection createCollection(
-        List<ListConversationModelsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationModelsPage> pages, int collectionSize) {
       return new ListConversationModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1935,12 +1940,13 @@ public class ConversationModelsClient implements BackgroundResource {
           ListConversationModelEvaluationsPage> {
 
     private ListConversationModelEvaluationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelEvaluationsRequest,
                 ListConversationModelEvaluationsResponse,
                 ConversationModelEvaluation>
             context,
-        ListConversationModelEvaluationsResponse response) {
+        @Nullable ListConversationModelEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -1950,18 +1956,20 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListConversationModelEvaluationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelEvaluationsRequest,
                 ListConversationModelEvaluationsResponse,
                 ConversationModelEvaluation>
             context,
-        ListConversationModelEvaluationsResponse response) {
+        @Nullable ListConversationModelEvaluationsResponse response) {
       return new ListConversationModelEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationModelEvaluationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConversationModelEvaluationsRequest,
                 ListConversationModelEvaluationsResponse,
                 ConversationModelEvaluation>
@@ -1980,7 +1988,7 @@ public class ConversationModelsClient implements BackgroundResource {
           ListConversationModelEvaluationsFixedSizeCollection> {
 
     private ListConversationModelEvaluationsFixedSizeCollection(
-        List<ListConversationModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationModelEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1990,7 +1998,7 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListConversationModelEvaluationsFixedSizeCollection createCollection(
-        List<ListConversationModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationModelEvaluationsPage> pages, int collectionSize) {
       return new ListConversationModelEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2024,8 +2032,8 @@ public class ConversationModelsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2035,14 +2043,14 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2056,7 +2064,8 @@ public class ConversationModelsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2066,7 +2075,7 @@ public class ConversationModelsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

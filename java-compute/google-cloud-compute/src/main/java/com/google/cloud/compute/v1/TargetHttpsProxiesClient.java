@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -322,7 +323,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TargetHttpsProxiesClient implements BackgroundResource {
-  private final TargetHttpsProxiesSettings settings;
+  private final @Nullable TargetHttpsProxiesSettings settings;
   private final TargetHttpsProxiesStub stub;
 
   /** Constructs an instance of TargetHttpsProxiesClient with default settings. */
@@ -362,7 +363,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TargetHttpsProxiesSettings getSettings() {
+  public final @Nullable TargetHttpsProxiesSettings getSettings() {
     return settings;
   }
 
@@ -1939,12 +1940,13 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetHttpsProxiesRequest,
                 TargetHttpsProxyAggregatedList,
                 Map.Entry<String, TargetHttpsProxiesScopedList>>
             context,
-        TargetHttpsProxyAggregatedList response) {
+        @Nullable TargetHttpsProxyAggregatedList response) {
       super(context, response);
     }
 
@@ -1954,18 +1956,20 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetHttpsProxiesRequest,
                 TargetHttpsProxyAggregatedList,
                 Map.Entry<String, TargetHttpsProxiesScopedList>>
             context,
-        TargetHttpsProxyAggregatedList response) {
+        @Nullable TargetHttpsProxyAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetHttpsProxiesRequest,
                 TargetHttpsProxyAggregatedList,
                 Map.Entry<String, TargetHttpsProxiesScopedList>>
@@ -1983,7 +1987,8 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1993,7 +1998,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2025,8 +2030,9 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
           ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy, ListPage> {
 
     private ListPage(
-        PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy> context,
-        TargetHttpsProxyList response) {
+        @Nullable PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+            context,
+        @Nullable TargetHttpsProxyList response) {
       super(context, response);
     }
 
@@ -2036,14 +2042,16 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy> context,
-        TargetHttpsProxyList response) {
+        @Nullable PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+            context,
+        @Nullable TargetHttpsProxyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy> context,
+        @Nullable PageContext<ListTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+            context,
         ApiFuture<TargetHttpsProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2057,7 +2065,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2066,7 +2074,8 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

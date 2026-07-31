@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -671,7 +672,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class StorageClient implements BackgroundResource {
-  private final StorageSettings settings;
+  private final @Nullable StorageSettings settings;
   private final StorageStub stub;
 
   /** Constructs an instance of StorageClient with default settings. */
@@ -709,7 +710,7 @@ public class StorageClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final StorageSettings getSettings() {
+  public final @Nullable StorageSettings getSettings() {
     return settings;
   }
 
@@ -738,7 +739,7 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBucket(BucketName name) {
+  public final void deleteBucket(@Nullable BucketName name) {
     DeleteBucketRequest request =
         DeleteBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBucket(request);
@@ -850,7 +851,7 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket getBucket(BucketName name) {
+  public final Bucket getBucket(@Nullable BucketName name) {
     GetBucketRequest request =
         GetBucketRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBucket(request);
@@ -972,7 +973,7 @@ public class StorageClient implements BackgroundResource {
    *     the name `projects/123456/buckets/foo`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket createBucket(ProjectName parent, Bucket bucket, String bucketId) {
+  public final Bucket createBucket(@Nullable ProjectName parent, Bucket bucket, String bucketId) {
     CreateBucketRequest request =
         CreateBucketRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1107,7 +1108,7 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. The project whose buckets we are listing.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBucketsPagedResponse listBuckets(ProjectName parent) {
+  public final ListBucketsPagedResponse listBuckets(@Nullable ProjectName parent) {
     ListBucketsRequest request =
         ListBucketsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1272,7 +1273,7 @@ public class StorageClient implements BackgroundResource {
    * @param bucket Required. Name of a bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Bucket lockBucketRetentionPolicy(BucketName bucket) {
+  public final Bucket lockBucketRetentionPolicy(@Nullable BucketName bucket) {
     LockBucketRetentionPolicyRequest request =
         LockBucketRetentionPolicyRequest.newBuilder()
             .setBucket(bucket == null ? null : bucket.toString())
@@ -1391,7 +1392,7 @@ public class StorageClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1523,7 +1524,7 @@ public class StorageClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1665,7 +1666,7 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1905,7 +1906,7 @@ public class StorageClient implements BackgroundResource {
    * @param name Required. The parent bucket of the notification.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteNotification(NotificationName name) {
+  public final void deleteNotification(@Nullable NotificationName name) {
     DeleteNotificationRequest request =
         DeleteNotificationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2017,7 +2018,7 @@ public class StorageClient implements BackgroundResource {
    *     `projects/{project}/buckets/{bucket}/notificationConfigs/{notification}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Notification getNotification(BucketName name) {
+  public final Notification getNotification(@Nullable BucketName name) {
     GetNotificationRequest request =
         GetNotificationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNotification(request);
@@ -2130,7 +2131,8 @@ public class StorageClient implements BackgroundResource {
    * @param notification Required. Properties of the notification to be inserted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Notification createNotification(ProjectName parent, Notification notification) {
+  public final Notification createNotification(
+      @Nullable ProjectName parent, Notification notification) {
     CreateNotificationRequest request =
         CreateNotificationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2258,7 +2260,7 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. Name of a Google Cloud Storage bucket.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNotificationsPagedResponse listNotifications(ProjectName parent) {
+  public final ListNotificationsPagedResponse listNotifications(@Nullable ProjectName parent) {
     ListNotificationsRequest request =
         ListNotificationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3086,7 +3088,7 @@ public class StorageClient implements BackgroundResource {
    * @param parent Required. Name of the bucket in which to look for objects.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListObjectsPagedResponse listObjects(ProjectName parent) {
+  public final ListObjectsPagedResponse listObjects(@Nullable ProjectName parent) {
     ListObjectsRequest request =
         ListObjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3550,7 +3552,7 @@ public class StorageClient implements BackgroundResource {
    *     &lt;projectIdentifier&gt; can be the project ID or project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceAccount getServiceAccount(ProjectName project) {
+  public final ServiceAccount getServiceAccount(@Nullable ProjectName project) {
     GetServiceAccountRequest request =
         GetServiceAccountRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -3668,7 +3670,7 @@ public class StorageClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CreateHmacKeyResponse createHmacKey(
-      ProjectName project, String serviceAccountEmail) {
+      @Nullable ProjectName project, String serviceAccountEmail) {
     CreateHmacKeyRequest request =
         CreateHmacKeyRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -3794,7 +3796,7 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteHmacKey(String accessId, ProjectName project) {
+  public final void deleteHmacKey(String accessId, @Nullable ProjectName project) {
     DeleteHmacKeyRequest request =
         DeleteHmacKeyRequest.newBuilder()
             .setAccessId(accessId)
@@ -3916,7 +3918,7 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HmacKeyMetadata getHmacKey(String accessId, ProjectName project) {
+  public final HmacKeyMetadata getHmacKey(String accessId, @Nullable ProjectName project) {
     GetHmacKeyRequest request =
         GetHmacKeyRequest.newBuilder()
             .setAccessId(accessId)
@@ -4038,7 +4040,7 @@ public class StorageClient implements BackgroundResource {
    *     project number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHmacKeysPagedResponse listHmacKeys(ProjectName project) {
+  public final ListHmacKeysPagedResponse listHmacKeys(@Nullable ProjectName project) {
     ListHmacKeysRequest request =
         ListHmacKeysRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -4330,8 +4332,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListBucketsRequest, ListBucketsResponse, Bucket, ListBucketsPage> {
 
     private ListBucketsPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       super(context, response);
     }
 
@@ -4341,14 +4343,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsPage createPage(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
-        ListBucketsResponse response) {
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable ListBucketsResponse response) {
       return new ListBucketsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBucketsPage> createPageAsync(
-        PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
+        @Nullable PageContext<ListBucketsRequest, ListBucketsResponse, Bucket> context,
         ApiFuture<ListBucketsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4362,7 +4364,8 @@ public class StorageClient implements BackgroundResource {
           ListBucketsPage,
           ListBucketsFixedSizeCollection> {
 
-    private ListBucketsFixedSizeCollection(List<ListBucketsPage> pages, int collectionSize) {
+    private ListBucketsFixedSizeCollection(
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4372,7 +4375,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListBucketsFixedSizeCollection createCollection(
-        List<ListBucketsPage> pages, int collectionSize) {
+        @Nullable List<ListBucketsPage> pages, int collectionSize) {
       return new ListBucketsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4409,8 +4412,9 @@ public class StorageClient implements BackgroundResource {
           ListNotificationsPage> {
 
     private ListNotificationsPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable ListNotificationsResponse response) {
       super(context, response);
     }
 
@@ -4420,14 +4424,16 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsPage createPage(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
-        ListNotificationsResponse response) {
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable ListNotificationsResponse response) {
       return new ListNotificationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNotificationsPage> createPageAsync(
-        PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
+        @Nullable
+            PageContext<ListNotificationsRequest, ListNotificationsResponse, Notification> context,
         ApiFuture<ListNotificationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4442,7 +4448,7 @@ public class StorageClient implements BackgroundResource {
           ListNotificationsFixedSizeCollection> {
 
     private ListNotificationsFixedSizeCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4452,7 +4458,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListNotificationsFixedSizeCollection createCollection(
-        List<ListNotificationsPage> pages, int collectionSize) {
+        @Nullable List<ListNotificationsPage> pages, int collectionSize) {
       return new ListNotificationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4483,8 +4489,8 @@ public class StorageClient implements BackgroundResource {
       extends AbstractPage<ListObjectsRequest, ListObjectsResponse, Object, ListObjectsPage> {
 
     private ListObjectsPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       super(context, response);
     }
 
@@ -4494,14 +4500,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsPage createPage(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
-        ListObjectsResponse response) {
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable ListObjectsResponse response) {
       return new ListObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListObjectsPage> createPageAsync(
-        PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
+        @Nullable PageContext<ListObjectsRequest, ListObjectsResponse, Object> context,
         ApiFuture<ListObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4515,7 +4521,8 @@ public class StorageClient implements BackgroundResource {
           ListObjectsPage,
           ListObjectsFixedSizeCollection> {
 
-    private ListObjectsFixedSizeCollection(List<ListObjectsPage> pages, int collectionSize) {
+    private ListObjectsFixedSizeCollection(
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4525,7 +4532,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListObjectsFixedSizeCollection createCollection(
-        List<ListObjectsPage> pages, int collectionSize) {
+        @Nullable List<ListObjectsPage> pages, int collectionSize) {
       return new ListObjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4559,8 +4566,8 @@ public class StorageClient implements BackgroundResource {
           ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata, ListHmacKeysPage> {
 
     private ListHmacKeysPage(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
-        ListHmacKeysResponse response) {
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable ListHmacKeysResponse response) {
       super(context, response);
     }
 
@@ -4570,14 +4577,14 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListHmacKeysPage createPage(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
-        ListHmacKeysResponse response) {
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable ListHmacKeysResponse response) {
       return new ListHmacKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHmacKeysPage> createPageAsync(
-        PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
+        @Nullable PageContext<ListHmacKeysRequest, ListHmacKeysResponse, HmacKeyMetadata> context,
         ApiFuture<ListHmacKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4591,7 +4598,8 @@ public class StorageClient implements BackgroundResource {
           ListHmacKeysPage,
           ListHmacKeysFixedSizeCollection> {
 
-    private ListHmacKeysFixedSizeCollection(List<ListHmacKeysPage> pages, int collectionSize) {
+    private ListHmacKeysFixedSizeCollection(
+        @Nullable List<ListHmacKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4601,7 +4609,7 @@ public class StorageClient implements BackgroundResource {
 
     @Override
     protected ListHmacKeysFixedSizeCollection createCollection(
-        List<ListHmacKeysPage> pages, int collectionSize) {
+        @Nullable List<ListHmacKeysPage> pages, int collectionSize) {
       return new ListHmacKeysFixedSizeCollection(pages, collectionSize);
     }
   }

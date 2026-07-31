@@ -255,7 +255,15 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final String CLIENT_LIBRARY_LANGUAGE = "spanner-java";
   public static final String DEFAULT_USER_AGENT =
       CLIENT_LIBRARY_LANGUAGE + "/" + GaxProperties.getLibraryVersion(GapicSpannerRpc.class);
-  public static boolean DIRECTPATH_CHANNEL_CREATED = false;
+
+  /**
+   * Whether the most recently initialized RPC created a DirectPath channel.
+   *
+   * <p>This process-wide volatile value may be updated during concurrent client construction and
+   * read from another thread when built-in metric attributes are created.
+   */
+  public static volatile boolean DIRECTPATH_CHANNEL_CREATED = false;
+
   private static final String API_FILE = "grpc-gcp-apiconfig.json";
 
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
@@ -768,7 +776,9 @@ public class GapicSpannerRpc implements SpannerRpc {
       defaultChannelProviderBuilder.setAttemptDirectPathXds();
     }
 
-    options.enablegRPCMetrics(defaultChannelProviderBuilder);
+    options.enablegRPCMetrics(
+        defaultChannelProviderBuilder,
+        isEmulatorEnabled(options, System.getenv("SPANNER_EMULATOR_HOST")));
 
     if (options.isUseVirtualThreads()) {
       ExecutorService executor =
@@ -917,8 +927,8 @@ public class GapicSpannerRpc implements SpannerRpc {
       CredentialsProvider credentialsProvider,
       String emulatorHost)
       throws IOException {
-    // Only do the check if the emulator environment variable has been set to localhost.
     if (isEmulatorEnabled(options, emulatorHost)) {
+      String resolvedEmulatorHost = emulatorHost != null ? emulatorHost : options.getEndpoint();
       // Do a quick check to see if the emulator is actually running.
       try {
         InstanceAdminStubSettings.Builder testEmulatorSettings =
@@ -940,22 +950,22 @@ public class GapicSpannerRpc implements SpannerRpc {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.UNAVAILABLE,
             String.format(
-                "The environment variable SPANNER_EMULATOR_HOST has been set to %s, but no running"
+                "The Spanner emulator host has been set to %s, but no running"
                     + " emulator could be found at that address.\n"
                     + "Did you forget to start the emulator, or to unset the environment"
-                    + " variable?",
-                emulatorHost));
+                    + " configuration?",
+                resolvedEmulatorHost));
       }
     }
   }
 
   private static boolean isEmulatorEnabled(SpannerOptions options, String emulatorHost) {
-    // Only do the check if the emulator environment variable has been set to localhost.
-    return options.getChannelProvider() == null
-        && emulatorHost != null
-        && options.getHost() != null
-        && options.getHost().startsWith("http://localhost")
-        && options.getHost().endsWith(emulatorHost);
+    return options.isEmulatorEnabled()
+        || (options.getChannelProvider() == null
+            && emulatorHost != null
+            && options.getHost() != null
+            && options.getHost().startsWith("http://localhost")
+            && options.getHost().endsWith(emulatorHost));
   }
 
   public static boolean isEnableAFEServerTiming() {

@@ -34,6 +34,7 @@ import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link MetricsTracer}.
@@ -43,6 +44,7 @@ import java.util.Map;
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class MetricsTracerFactory implements ApiTracerFactory {

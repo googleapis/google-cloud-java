@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1473,7 +1474,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class NetAppClient implements BackgroundResource {
-  private final NetAppSettings settings;
+  private final @Nullable NetAppSettings settings;
   private final NetAppStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1519,7 +1520,7 @@ public class NetAppClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final NetAppSettings getSettings() {
+  public final @Nullable NetAppSettings getSettings() {
     return settings;
   }
 
@@ -1567,7 +1568,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStoragePoolsPagedResponse listStoragePools(LocationName parent) {
+  public final ListStoragePoolsPagedResponse listStoragePools(@Nullable LocationName parent) {
     ListStoragePoolsRequest request =
         ListStoragePoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1743,7 +1744,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<StoragePool, OperationMetadata> createStoragePoolAsync(
-      LocationName parent, StoragePool storagePool, String storagePoolId) {
+      @Nullable LocationName parent, StoragePool storagePool, String storagePoolId) {
     CreateStoragePoolRequest request =
         CreateStoragePoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1904,7 +1905,7 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the storage pool
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StoragePool getStoragePool(StoragePoolName name) {
+  public final StoragePool getStoragePool(@Nullable StoragePoolName name) {
     GetStoragePoolRequest request =
         GetStoragePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStoragePool(request);
@@ -2137,7 +2138,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteStoragePoolAsync(
-      StoragePoolName name) {
+      @Nullable StoragePoolName name) {
     DeleteStoragePoolRequest request =
         DeleteStoragePoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2459,7 +2460,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value for ListVolumesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVolumesPagedResponse listVolumes(LocationName parent) {
+  public final ListVolumesPagedResponse listVolumes(@Nullable LocationName parent) {
     ListVolumesRequest request =
         ListVolumesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2624,7 +2625,7 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the volume
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Volume getVolume(VolumeName name) {
+  public final Volume getVolume(@Nullable VolumeName name) {
     GetVolumeRequest request =
         GetVolumeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVolume(request);
@@ -2739,7 +2740,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Volume, OperationMetadata> createVolumeAsync(
-      LocationName parent, Volume volume, String volumeId) {
+      @Nullable LocationName parent, Volume volume, String volumeId) {
     CreateVolumeRequest request =
         CreateVolumeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3020,7 +3021,8 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the volume
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteVolumeAsync(VolumeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteVolumeAsync(
+      @Nullable VolumeName name) {
     DeleteVolumeRequest request =
         DeleteVolumeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteVolumeAsync(request);
@@ -3357,7 +3359,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSnapshotsPagedResponse listSnapshots(VolumeName parent) {
+  public final ListSnapshotsPagedResponse listSnapshots(@Nullable VolumeName parent) {
     ListSnapshotsRequest request =
         ListSnapshotsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3524,7 +3526,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot getSnapshot(SnapshotName name) {
+  public final Snapshot getSnapshot(@Nullable SnapshotName name) {
     GetSnapshotRequest request =
         GetSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSnapshot(request);
@@ -3643,7 +3645,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Snapshot, OperationMetadata> createSnapshotAsync(
-      VolumeName parent, Snapshot snapshot, String snapshotId) {
+      @Nullable VolumeName parent, Snapshot snapshot, String snapshotId) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3805,7 +3807,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/volumes/&#42;/snapshots/{snapshot_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(SnapshotName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSnapshotAsync(
+      @Nullable SnapshotName name) {
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSnapshotAsync(request);
@@ -4068,7 +4071,8 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value for ListActiveDirectoriesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListActiveDirectoriesPagedResponse listActiveDirectories(LocationName parent) {
+  public final ListActiveDirectoriesPagedResponse listActiveDirectories(
+      @Nullable LocationName parent) {
     ListActiveDirectoriesRequest request =
         ListActiveDirectoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4239,7 +4243,7 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the active directory.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ActiveDirectory getActiveDirectory(ActiveDirectoryName name) {
+  public final ActiveDirectory getActiveDirectory(@Nullable ActiveDirectoryName name) {
     GetActiveDirectoryRequest request =
         GetActiveDirectoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4365,7 +4369,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ActiveDirectory, OperationMetadata> createActiveDirectoryAsync(
-      LocationName parent, ActiveDirectory activeDirectory, String activeDirectoryId) {
+      @Nullable LocationName parent, ActiveDirectory activeDirectory, String activeDirectoryId) {
     CreateActiveDirectoryRequest request =
         CreateActiveDirectoryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4657,7 +4661,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteActiveDirectoryAsync(
-      ActiveDirectoryName name) {
+      @Nullable ActiveDirectoryName name) {
     DeleteActiveDirectoryRequest request =
         DeleteActiveDirectoryRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4809,7 +4813,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKmsConfigsPagedResponse listKmsConfigs(LocationName parent) {
+  public final ListKmsConfigsPagedResponse listKmsConfigs(@Nullable LocationName parent) {
     ListKmsConfigsRequest request =
         ListKmsConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4982,7 +4986,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<KmsConfig, OperationMetadata> createKmsConfigAsync(
-      LocationName parent, KmsConfig kmsConfig, String kmsConfigId) {
+      @Nullable LocationName parent, KmsConfig kmsConfig, String kmsConfigId) {
     CreateKmsConfigRequest request =
         CreateKmsConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5142,7 +5146,7 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the KmsConfig
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final KmsConfig getKmsConfig(KmsConfigName name) {
+  public final KmsConfig getKmsConfig(@Nullable KmsConfigName name) {
     GetKmsConfigRequest request =
         GetKmsConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKmsConfig(request);
@@ -5519,7 +5523,8 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the KmsConfig.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteKmsConfigAsync(KmsConfigName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteKmsConfigAsync(
+      @Nullable KmsConfigName name) {
     DeleteKmsConfigRequest request =
         DeleteKmsConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteKmsConfigAsync(request);
@@ -5660,7 +5665,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReplicationsPagedResponse listReplications(VolumeName parent) {
+  public final ListReplicationsPagedResponse listReplications(@Nullable VolumeName parent) {
     ListReplicationsRequest request =
         ListReplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5831,7 +5836,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Replication getReplication(ReplicationName name) {
+  public final Replication getReplication(@Nullable ReplicationName name) {
     GetReplicationRequest request =
         GetReplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReplication(request);
@@ -5954,7 +5959,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Replication, OperationMetadata> createReplicationAsync(
-      VolumeName parent, Replication replication, String replicationId) {
+      @Nullable VolumeName parent, Replication replication, String replicationId) {
     CreateReplicationRequest request =
         CreateReplicationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6119,7 +6124,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteReplicationAsync(
-      ReplicationName name) {
+      @Nullable ReplicationName name) {
     DeleteReplicationRequest request =
         DeleteReplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6873,7 +6878,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
-      LocationName parent, BackupVault backupVault, String backupVaultId) {
+      @Nullable LocationName parent, BackupVault backupVault, String backupVaultId) {
     CreateBackupVaultRequest request =
         CreateBackupVaultRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7036,7 +7041,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupVault getBackupVault(BackupVaultName name) {
+  public final BackupVault getBackupVault(@Nullable BackupVaultName name) {
     GetBackupVaultRequest request =
         GetBackupVaultRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupVault(request);
@@ -7148,7 +7153,7 @@ public class NetAppClient implements BackgroundResource {
    *     format `projects/{project_id}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupVaultsPagedResponse listBackupVaults(LocationName parent) {
+  public final ListBackupVaultsPagedResponse listBackupVaults(@Nullable LocationName parent) {
     ListBackupVaultsRequest request =
         ListBackupVaultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7443,7 +7448,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupVaultAsync(
-      BackupVaultName name) {
+      @Nullable BackupVaultName name) {
     DeleteBackupVaultRequest request =
         DeleteBackupVaultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7594,7 +7599,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
-      BackupVaultName parent, Backup backup, String backupId) {
+      @Nullable BackupVaultName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7764,7 +7769,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -7883,7 +7888,7 @@ public class NetAppClient implements BackgroundResource {
    *     specify volume full name with the filter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(BackupVaultName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable BackupVaultName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8054,7 +8059,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -8327,7 +8333,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPolicy, OperationMetadata> createBackupPolicyAsync(
-      LocationName parent, BackupPolicy backupPolicy, String backupPolicyId) {
+      @Nullable LocationName parent, BackupPolicy backupPolicy, String backupPolicyId) {
     CreateBackupPolicyRequest request =
         CreateBackupPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8490,7 +8496,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPolicy getBackupPolicy(BackupPolicyName name) {
+  public final BackupPolicy getBackupPolicy(@Nullable BackupPolicyName name) {
     GetBackupPolicyRequest request =
         GetBackupPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupPolicy(request);
@@ -8601,7 +8607,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value for ListBackupPoliciesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupPoliciesPagedResponse listBackupPolicies(LocationName parent) {
+  public final ListBackupPoliciesPagedResponse listBackupPolicies(@Nullable LocationName parent) {
     ListBackupPoliciesRequest request =
         ListBackupPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8897,7 +8903,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPolicyAsync(
-      BackupPolicyName name) {
+      @Nullable BackupPolicyName name) {
     DeleteBackupPolicyRequest request =
         DeleteBackupPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9041,7 +9047,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value for ListQuotaRulesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQuotaRulesPagedResponse listQuotaRules(VolumeName parent) {
+  public final ListQuotaRulesPagedResponse listQuotaRules(@Nullable VolumeName parent) {
     ListQuotaRulesRequest request =
         ListQuotaRulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9207,7 +9213,7 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the quota rule
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final QuotaRule getQuotaRule(QuotaRuleName name) {
+  public final QuotaRule getQuotaRule(@Nullable QuotaRuleName name) {
     GetQuotaRuleRequest request =
         GetQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQuotaRule(request);
@@ -9328,7 +9334,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<QuotaRule, OperationMetadata> createQuotaRuleAsync(
-      VolumeName parent, QuotaRule quotaRule, String quotaRuleId) {
+      @Nullable VolumeName parent, QuotaRule quotaRule, String quotaRuleId) {
     CreateQuotaRuleRequest request =
         CreateQuotaRuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9613,7 +9619,8 @@ public class NetAppClient implements BackgroundResource {
    * @param name Required. Name of the quota rule.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(QuotaRuleName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteQuotaRuleAsync(
+      @Nullable QuotaRuleName name) {
     DeleteQuotaRuleRequest request =
         DeleteQuotaRuleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteQuotaRuleAsync(request);
@@ -9859,7 +9866,7 @@ public class NetAppClient implements BackgroundResource {
    * @param parent Required. Parent value for ListHostGroupsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHostGroupsPagedResponse listHostGroups(LocationName parent) {
+  public final ListHostGroupsPagedResponse listHostGroups(@Nullable LocationName parent) {
     ListHostGroupsRequest request =
         ListHostGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10030,7 +10037,7 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HostGroup getHostGroup(HostGroupName name) {
+  public final HostGroup getHostGroup(@Nullable HostGroupName name) {
     GetHostGroupRequest request =
         GetHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHostGroup(request);
@@ -10146,7 +10153,7 @@ public class NetAppClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<HostGroup, OperationMetadata> createHostGroupAsync(
-      LocationName parent, HostGroup hostGroup, String hostGroupId) {
+      @Nullable LocationName parent, HostGroup hostGroup, String hostGroupId) {
     CreateHostGroupRequest request =
         CreateHostGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10430,7 +10437,8 @@ public class NetAppClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/hostGroups/{host_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(HostGroupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteHostGroupAsync(
+      @Nullable HostGroupName name) {
     DeleteHostGroupRequest request =
         DeleteHostGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteHostGroupAsync(request);
@@ -11021,8 +11029,9 @@ public class NetAppClient implements BackgroundResource {
           ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool, ListStoragePoolsPage> {
 
     private ListStoragePoolsPage(
-        PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool> context,
-        ListStoragePoolsResponse response) {
+        @Nullable PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool>
+            context,
+        @Nullable ListStoragePoolsResponse response) {
       super(context, response);
     }
 
@@ -11032,14 +11041,16 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListStoragePoolsPage createPage(
-        PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool> context,
-        ListStoragePoolsResponse response) {
+        @Nullable PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool>
+            context,
+        @Nullable ListStoragePoolsResponse response) {
       return new ListStoragePoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStoragePoolsPage> createPageAsync(
-        PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool> context,
+        @Nullable PageContext<ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool>
+            context,
         ApiFuture<ListStoragePoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11054,7 +11065,7 @@ public class NetAppClient implements BackgroundResource {
           ListStoragePoolsFixedSizeCollection> {
 
     private ListStoragePoolsFixedSizeCollection(
-        List<ListStoragePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListStoragePoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11064,7 +11075,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListStoragePoolsFixedSizeCollection createCollection(
-        List<ListStoragePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListStoragePoolsPage> pages, int collectionSize) {
       return new ListStoragePoolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11095,8 +11106,8 @@ public class NetAppClient implements BackgroundResource {
       extends AbstractPage<ListVolumesRequest, ListVolumesResponse, Volume, ListVolumesPage> {
 
     private ListVolumesPage(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
-        ListVolumesResponse response) {
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable ListVolumesResponse response) {
       super(context, response);
     }
 
@@ -11106,14 +11117,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListVolumesPage createPage(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
-        ListVolumesResponse response) {
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable ListVolumesResponse response) {
       return new ListVolumesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVolumesPage> createPageAsync(
-        PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
+        @Nullable PageContext<ListVolumesRequest, ListVolumesResponse, Volume> context,
         ApiFuture<ListVolumesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11127,7 +11138,8 @@ public class NetAppClient implements BackgroundResource {
           ListVolumesPage,
           ListVolumesFixedSizeCollection> {
 
-    private ListVolumesFixedSizeCollection(List<ListVolumesPage> pages, int collectionSize) {
+    private ListVolumesFixedSizeCollection(
+        @Nullable List<ListVolumesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11137,7 +11149,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListVolumesFixedSizeCollection createCollection(
-        List<ListVolumesPage> pages, int collectionSize) {
+        @Nullable List<ListVolumesPage> pages, int collectionSize) {
       return new ListVolumesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11171,8 +11183,8 @@ public class NetAppClient implements BackgroundResource {
           ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
 
     private ListSnapshotsPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -11182,14 +11194,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsPage createPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       return new ListSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSnapshotsPage> createPageAsync(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
         ApiFuture<ListSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11203,7 +11215,8 @@ public class NetAppClient implements BackgroundResource {
           ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
-    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+    private ListSnapshotsFixedSizeCollection(
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11213,7 +11226,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsFixedSizeCollection createCollection(
-        List<ListSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11251,9 +11264,11 @@ public class NetAppClient implements BackgroundResource {
           ListActiveDirectoriesPage> {
 
     private ListActiveDirectoriesPage(
-        PageContext<ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
+        @Nullable
+            PageContext<
+                ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
             context,
-        ListActiveDirectoriesResponse response) {
+        @Nullable ListActiveDirectoriesResponse response) {
       super(context, response);
     }
 
@@ -11263,15 +11278,19 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListActiveDirectoriesPage createPage(
-        PageContext<ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
+        @Nullable
+            PageContext<
+                ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
             context,
-        ListActiveDirectoriesResponse response) {
+        @Nullable ListActiveDirectoriesResponse response) {
       return new ListActiveDirectoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListActiveDirectoriesPage> createPageAsync(
-        PageContext<ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
+        @Nullable
+            PageContext<
+                ListActiveDirectoriesRequest, ListActiveDirectoriesResponse, ActiveDirectory>
             context,
         ApiFuture<ListActiveDirectoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -11287,7 +11306,7 @@ public class NetAppClient implements BackgroundResource {
           ListActiveDirectoriesFixedSizeCollection> {
 
     private ListActiveDirectoriesFixedSizeCollection(
-        List<ListActiveDirectoriesPage> pages, int collectionSize) {
+        @Nullable List<ListActiveDirectoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11297,7 +11316,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListActiveDirectoriesFixedSizeCollection createCollection(
-        List<ListActiveDirectoriesPage> pages, int collectionSize) {
+        @Nullable List<ListActiveDirectoriesPage> pages, int collectionSize) {
       return new ListActiveDirectoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11331,8 +11350,8 @@ public class NetAppClient implements BackgroundResource {
           ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig, ListKmsConfigsPage> {
 
     private ListKmsConfigsPage(
-        PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
-        ListKmsConfigsResponse response) {
+        @Nullable PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
+        @Nullable ListKmsConfigsResponse response) {
       super(context, response);
     }
 
@@ -11342,14 +11361,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListKmsConfigsPage createPage(
-        PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
-        ListKmsConfigsResponse response) {
+        @Nullable PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
+        @Nullable ListKmsConfigsResponse response) {
       return new ListKmsConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKmsConfigsPage> createPageAsync(
-        PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
+        @Nullable PageContext<ListKmsConfigsRequest, ListKmsConfigsResponse, KmsConfig> context,
         ApiFuture<ListKmsConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11363,7 +11382,8 @@ public class NetAppClient implements BackgroundResource {
           ListKmsConfigsPage,
           ListKmsConfigsFixedSizeCollection> {
 
-    private ListKmsConfigsFixedSizeCollection(List<ListKmsConfigsPage> pages, int collectionSize) {
+    private ListKmsConfigsFixedSizeCollection(
+        @Nullable List<ListKmsConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11373,7 +11393,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListKmsConfigsFixedSizeCollection createCollection(
-        List<ListKmsConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListKmsConfigsPage> pages, int collectionSize) {
       return new ListKmsConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11407,8 +11427,9 @@ public class NetAppClient implements BackgroundResource {
           ListReplicationsRequest, ListReplicationsResponse, Replication, ListReplicationsPage> {
 
     private ListReplicationsPage(
-        PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication> context,
-        ListReplicationsResponse response) {
+        @Nullable PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication>
+            context,
+        @Nullable ListReplicationsResponse response) {
       super(context, response);
     }
 
@@ -11418,14 +11439,16 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListReplicationsPage createPage(
-        PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication> context,
-        ListReplicationsResponse response) {
+        @Nullable PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication>
+            context,
+        @Nullable ListReplicationsResponse response) {
       return new ListReplicationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReplicationsPage> createPageAsync(
-        PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication> context,
+        @Nullable PageContext<ListReplicationsRequest, ListReplicationsResponse, Replication>
+            context,
         ApiFuture<ListReplicationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11440,7 +11463,7 @@ public class NetAppClient implements BackgroundResource {
           ListReplicationsFixedSizeCollection> {
 
     private ListReplicationsFixedSizeCollection(
-        List<ListReplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListReplicationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11450,7 +11473,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListReplicationsFixedSizeCollection createCollection(
-        List<ListReplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListReplicationsPage> pages, int collectionSize) {
       return new ListReplicationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11484,8 +11507,9 @@ public class NetAppClient implements BackgroundResource {
           ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault, ListBackupVaultsPage> {
 
     private ListBackupVaultsPage(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
-        ListBackupVaultsResponse response) {
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
+        @Nullable ListBackupVaultsResponse response) {
       super(context, response);
     }
 
@@ -11495,14 +11519,16 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupVaultsPage createPage(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
-        ListBackupVaultsResponse response) {
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
+        @Nullable ListBackupVaultsResponse response) {
       return new ListBackupVaultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupVaultsPage> createPageAsync(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
         ApiFuture<ListBackupVaultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11517,7 +11543,7 @@ public class NetAppClient implements BackgroundResource {
           ListBackupVaultsFixedSizeCollection> {
 
     private ListBackupVaultsFixedSizeCollection(
-        List<ListBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupVaultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11527,7 +11553,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupVaultsFixedSizeCollection createCollection(
-        List<ListBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupVaultsPage> pages, int collectionSize) {
       return new ListBackupVaultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11558,8 +11584,8 @@ public class NetAppClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -11569,14 +11595,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11590,7 +11616,8 @@ public class NetAppClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11600,7 +11627,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11637,8 +11664,9 @@ public class NetAppClient implements BackgroundResource {
           ListBackupPoliciesPage> {
 
     private ListBackupPoliciesPage(
-        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
-        ListBackupPoliciesResponse response) {
+        @Nullable PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>
+            context,
+        @Nullable ListBackupPoliciesResponse response) {
       super(context, response);
     }
 
@@ -11648,14 +11676,16 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupPoliciesPage createPage(
-        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
-        ListBackupPoliciesResponse response) {
+        @Nullable PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>
+            context,
+        @Nullable ListBackupPoliciesResponse response) {
       return new ListBackupPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPoliciesPage> createPageAsync(
-        PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy> context,
+        @Nullable PageContext<ListBackupPoliciesRequest, ListBackupPoliciesResponse, BackupPolicy>
+            context,
         ApiFuture<ListBackupPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11670,7 +11700,7 @@ public class NetAppClient implements BackgroundResource {
           ListBackupPoliciesFixedSizeCollection> {
 
     private ListBackupPoliciesFixedSizeCollection(
-        List<ListBackupPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11680,7 +11710,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListBackupPoliciesFixedSizeCollection createCollection(
-        List<ListBackupPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPoliciesPage> pages, int collectionSize) {
       return new ListBackupPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11714,8 +11744,8 @@ public class NetAppClient implements BackgroundResource {
           ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule, ListQuotaRulesPage> {
 
     private ListQuotaRulesPage(
-        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
-        ListQuotaRulesResponse response) {
+        @Nullable PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        @Nullable ListQuotaRulesResponse response) {
       super(context, response);
     }
 
@@ -11725,14 +11755,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListQuotaRulesPage createPage(
-        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
-        ListQuotaRulesResponse response) {
+        @Nullable PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        @Nullable ListQuotaRulesResponse response) {
       return new ListQuotaRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQuotaRulesPage> createPageAsync(
-        PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
+        @Nullable PageContext<ListQuotaRulesRequest, ListQuotaRulesResponse, QuotaRule> context,
         ApiFuture<ListQuotaRulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11746,7 +11776,8 @@ public class NetAppClient implements BackgroundResource {
           ListQuotaRulesPage,
           ListQuotaRulesFixedSizeCollection> {
 
-    private ListQuotaRulesFixedSizeCollection(List<ListQuotaRulesPage> pages, int collectionSize) {
+    private ListQuotaRulesFixedSizeCollection(
+        @Nullable List<ListQuotaRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11756,7 +11787,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListQuotaRulesFixedSizeCollection createCollection(
-        List<ListQuotaRulesPage> pages, int collectionSize) {
+        @Nullable List<ListQuotaRulesPage> pages, int collectionSize) {
       return new ListQuotaRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11790,8 +11821,8 @@ public class NetAppClient implements BackgroundResource {
           ListHostGroupsRequest, ListHostGroupsResponse, HostGroup, ListHostGroupsPage> {
 
     private ListHostGroupsPage(
-        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
-        ListHostGroupsResponse response) {
+        @Nullable PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        @Nullable ListHostGroupsResponse response) {
       super(context, response);
     }
 
@@ -11801,14 +11832,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListHostGroupsPage createPage(
-        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
-        ListHostGroupsResponse response) {
+        @Nullable PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        @Nullable ListHostGroupsResponse response) {
       return new ListHostGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHostGroupsPage> createPageAsync(
-        PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
+        @Nullable PageContext<ListHostGroupsRequest, ListHostGroupsResponse, HostGroup> context,
         ApiFuture<ListHostGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11822,7 +11853,8 @@ public class NetAppClient implements BackgroundResource {
           ListHostGroupsPage,
           ListHostGroupsFixedSizeCollection> {
 
-    private ListHostGroupsFixedSizeCollection(List<ListHostGroupsPage> pages, int collectionSize) {
+    private ListHostGroupsFixedSizeCollection(
+        @Nullable List<ListHostGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11832,7 +11864,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListHostGroupsFixedSizeCollection createCollection(
-        List<ListHostGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListHostGroupsPage> pages, int collectionSize) {
       return new ListHostGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -11866,8 +11898,8 @@ public class NetAppClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -11877,14 +11909,14 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -11898,7 +11930,8 @@ public class NetAppClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -11908,7 +11941,7 @@ public class NetAppClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

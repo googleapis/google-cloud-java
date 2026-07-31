@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -247,7 +248,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class LicenseConfigServiceClient implements BackgroundResource {
-  private final LicenseConfigServiceSettings settings;
+  private final @Nullable LicenseConfigServiceSettings settings;
   private final LicenseConfigServiceStub stub;
 
   /** Constructs an instance of LicenseConfigServiceClient with default settings. */
@@ -287,7 +288,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LicenseConfigServiceSettings getSettings() {
+  public final @Nullable LicenseConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +331,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LicenseConfig createLicenseConfig(
-      LocationName parent, LicenseConfig licenseConfig, String licenseConfigId) {
+      @Nullable LocationName parent, LicenseConfig licenseConfig, String licenseConfigId) {
     CreateLicenseConfigRequest request =
         CreateLicenseConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -578,7 +579,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    *     not exist, a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LicenseConfig getLicenseConfig(LicenseConfigName name) {
+  public final LicenseConfig getLicenseConfig(@Nullable LicenseConfigName name) {
     GetLicenseConfigRequest request =
         GetLicenseConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLicenseConfig(request);
@@ -705,7 +706,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLicenseConfigsPagedResponse listLicenseConfigs(LocationName parent) {
+  public final ListLicenseConfigsPagedResponse listLicenseConfigs(@Nullable LocationName parent) {
     ListLicenseConfigsRequest request =
         ListLicenseConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -904,7 +905,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DistributeLicenseConfigResponse distributeLicenseConfig(
-      BillingAccountLicenseConfigName billingAccountLicenseConfig,
+      @Nullable BillingAccountLicenseConfigName billingAccountLicenseConfig,
       long projectNumber,
       String location,
       long licenseCount,
@@ -1100,8 +1101,8 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetractLicenseConfigResponse retractLicenseConfig(
-      BillingAccountLicenseConfigName billingAccountLicenseConfig,
-      LicenseConfigName licenseConfig,
+      @Nullable BillingAccountLicenseConfigName billingAccountLicenseConfig,
+      @Nullable LicenseConfigName licenseConfig,
       boolean fullRetract,
       long licenseCount) {
     RetractLicenseConfigRequest request =
@@ -1158,7 +1159,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RetractLicenseConfigResponse retractLicenseConfig(
-      BillingAccountLicenseConfigName billingAccountLicenseConfig,
+      @Nullable BillingAccountLicenseConfigName billingAccountLicenseConfig,
       String licenseConfig,
       boolean fullRetract,
       long licenseCount) {
@@ -1218,7 +1219,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
    */
   public final RetractLicenseConfigResponse retractLicenseConfig(
       String billingAccountLicenseConfig,
-      LicenseConfigName licenseConfig,
+      @Nullable LicenseConfigName licenseConfig,
       boolean fullRetract,
       long licenseCount) {
     RetractLicenseConfigRequest request =
@@ -1430,8 +1431,9 @@ public class LicenseConfigServiceClient implements BackgroundResource {
           ListLicenseConfigsPage> {
 
     private ListLicenseConfigsPage(
-        PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig> context,
-        ListLicenseConfigsResponse response) {
+        @Nullable PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig>
+            context,
+        @Nullable ListLicenseConfigsResponse response) {
       super(context, response);
     }
 
@@ -1441,14 +1443,16 @@ public class LicenseConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListLicenseConfigsPage createPage(
-        PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig> context,
-        ListLicenseConfigsResponse response) {
+        @Nullable PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig>
+            context,
+        @Nullable ListLicenseConfigsResponse response) {
       return new ListLicenseConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLicenseConfigsPage> createPageAsync(
-        PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig> context,
+        @Nullable PageContext<ListLicenseConfigsRequest, ListLicenseConfigsResponse, LicenseConfig>
+            context,
         ApiFuture<ListLicenseConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1463,7 +1467,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
           ListLicenseConfigsFixedSizeCollection> {
 
     private ListLicenseConfigsFixedSizeCollection(
-        List<ListLicenseConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListLicenseConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1473,7 +1477,7 @@ public class LicenseConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListLicenseConfigsFixedSizeCollection createCollection(
-        List<ListLicenseConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListLicenseConfigsPage> pages, int collectionSize) {
       return new ListLicenseConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

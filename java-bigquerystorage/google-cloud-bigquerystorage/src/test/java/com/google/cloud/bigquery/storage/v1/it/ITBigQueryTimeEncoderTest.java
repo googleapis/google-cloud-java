@@ -63,7 +63,7 @@ class ITBigQueryTimeEncoderTest {
 
   @BeforeAll
   static void beforeAll() throws IOException {
-    client = BigQueryWriteClient.create();
+    client = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryWriteClient();
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();

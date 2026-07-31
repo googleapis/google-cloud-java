@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -226,7 +227,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class EngineServiceClient implements BackgroundResource {
-  private final EngineServiceSettings settings;
+  private final @Nullable EngineServiceSettings settings;
   private final EngineServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -274,7 +275,7 @@ public class EngineServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EngineServiceSettings getSettings() {
+  public final @Nullable EngineServiceSettings getSettings() {
     return settings;
   }
 
@@ -330,7 +331,7 @@ public class EngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Engine, CreateEngineMetadata> createEngineAsync(
-      CollectionName parent, Engine engine, String engineId) {
+      @Nullable CollectionName parent, Engine engine, String engineId) {
     CreateEngineRequest request =
         CreateEngineRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -500,7 +501,8 @@ public class EngineServiceClient implements BackgroundResource {
    *     NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteEngineMetadata> deleteEngineAsync(EngineName name) {
+  public final OperationFuture<Empty, DeleteEngineMetadata> deleteEngineAsync(
+      @Nullable EngineName name) {
     DeleteEngineRequest request =
         DeleteEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEngineAsync(request);
@@ -743,7 +745,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Engine getEngine(EngineName name) {
+  public final Engine getEngine(@Nullable EngineName name) {
     GetEngineRequest request =
         GetEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEngine(request);
@@ -858,7 +860,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnginesPagedResponse listEngines(CollectionName parent) {
+  public final ListEnginesPagedResponse listEngines(@Nullable CollectionName parent) {
     ListEnginesRequest request =
         ListEnginesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1056,8 +1058,8 @@ public class EngineServiceClient implements BackgroundResource {
       extends AbstractPage<ListEnginesRequest, ListEnginesResponse, Engine, ListEnginesPage> {
 
     private ListEnginesPage(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
-        ListEnginesResponse response) {
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable ListEnginesResponse response) {
       super(context, response);
     }
 
@@ -1067,14 +1069,14 @@ public class EngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnginesPage createPage(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
-        ListEnginesResponse response) {
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable ListEnginesResponse response) {
       return new ListEnginesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnginesPage> createPageAsync(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
         ApiFuture<ListEnginesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1088,7 +1090,8 @@ public class EngineServiceClient implements BackgroundResource {
           ListEnginesPage,
           ListEnginesFixedSizeCollection> {
 
-    private ListEnginesFixedSizeCollection(List<ListEnginesPage> pages, int collectionSize) {
+    private ListEnginesFixedSizeCollection(
+        @Nullable List<ListEnginesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1098,7 +1101,7 @@ public class EngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnginesFixedSizeCollection createCollection(
-        List<ListEnginesPage> pages, int collectionSize) {
+        @Nullable List<ListEnginesPage> pages, int collectionSize) {
       return new ListEnginesFixedSizeCollection(pages, collectionSize);
     }
   }

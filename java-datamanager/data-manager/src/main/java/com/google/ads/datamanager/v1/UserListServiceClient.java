@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -251,7 +252,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UserListServiceClient implements BackgroundResource {
-  private final UserListServiceSettings settings;
+  private final @Nullable UserListServiceSettings settings;
   private final UserListServiceStub stub;
 
   /** Constructs an instance of UserListServiceClient with default settings. */
@@ -291,7 +292,7 @@ public class UserListServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserListServiceSettings getSettings() {
+  public final @Nullable UserListServiceSettings getSettings() {
     return settings;
   }
 
@@ -335,7 +336,7 @@ public class UserListServiceClient implements BackgroundResource {
    *     accountTypes/{account_type}/accounts/{account}/userLists/{user_list}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserList getUserList(UserListName name) {
+  public final UserList getUserList(@Nullable UserListName name) {
     GetUserListRequest request =
         GetUserListRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUserList(request);
@@ -503,7 +504,7 @@ public class UserListServiceClient implements BackgroundResource {
    *     accountTypes/{account_type}/accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUserListsPagedResponse listUserLists(AccountName parent) {
+  public final ListUserListsPagedResponse listUserLists(@Nullable AccountName parent) {
     ListUserListsRequest request =
         ListUserListsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -741,7 +742,7 @@ public class UserListServiceClient implements BackgroundResource {
    * @param userList Required. The user list to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserList createUserList(AccountName parent, UserList userList) {
+  public final UserList createUserList(@Nullable AccountName parent, UserList userList) {
     CreateUserListRequest request =
         CreateUserListRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1051,7 +1052,7 @@ public class UserListServiceClient implements BackgroundResource {
    *     accountTypes/{account_type}/accounts/{account}/userLists/{user_list}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUserList(UserListName name) {
+  public final void deleteUserList(@Nullable UserListName name) {
     DeleteUserListRequest request =
         DeleteUserListRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUserList(request);
@@ -1242,8 +1243,8 @@ public class UserListServiceClient implements BackgroundResource {
           ListUserListsRequest, ListUserListsResponse, UserList, ListUserListsPage> {
 
     private ListUserListsPage(
-        PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
-        ListUserListsResponse response) {
+        @Nullable PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
+        @Nullable ListUserListsResponse response) {
       super(context, response);
     }
 
@@ -1253,14 +1254,14 @@ public class UserListServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListsPage createPage(
-        PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
-        ListUserListsResponse response) {
+        @Nullable PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
+        @Nullable ListUserListsResponse response) {
       return new ListUserListsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserListsPage> createPageAsync(
-        PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
+        @Nullable PageContext<ListUserListsRequest, ListUserListsResponse, UserList> context,
         ApiFuture<ListUserListsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1274,7 +1275,8 @@ public class UserListServiceClient implements BackgroundResource {
           ListUserListsPage,
           ListUserListsFixedSizeCollection> {
 
-    private ListUserListsFixedSizeCollection(List<ListUserListsPage> pages, int collectionSize) {
+    private ListUserListsFixedSizeCollection(
+        @Nullable List<ListUserListsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1284,7 +1286,7 @@ public class UserListServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListsFixedSizeCollection createCollection(
-        List<ListUserListsPage> pages, int collectionSize) {
+        @Nullable List<ListUserListsPage> pages, int collectionSize) {
       return new ListUserListsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.paging;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A FixedSizeCollection object wraps multiple API list method responses into a single collection
  * with a fixed number of elements.
@@ -38,6 +40,7 @@ package com.google.api.gax.paging;
  * passed to expandPage(), unless the API has no more elements to return. The FixedSizeCollection
  * object also provides methods to retrieve additional FixedSizeCollections using the page token.
  */
+@NullMarked
 public interface FixedSizeCollection<ResourceT> {
 
   /**

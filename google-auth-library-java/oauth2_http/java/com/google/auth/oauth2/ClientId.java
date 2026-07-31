@@ -39,12 +39,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An OAuth2 user authorization Client ID and associated information.
  *
  * <p>Corresponds to the information in the json file downloadable for a Client ID.
  */
+@NullMarked
 public class ClientId {
 
   private static final String FIELD_TYPE_INSTALLED = "installed";

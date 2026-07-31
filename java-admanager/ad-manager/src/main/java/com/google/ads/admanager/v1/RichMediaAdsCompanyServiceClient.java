@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -67,7 +68,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetRichMediaAdsCompany</td>
- *      <td><p> API to retrieve a `RichMediaAdsCompany` object.</td>
+ *      <td><p> Retrieves a `RichMediaAdsCompany` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +87,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListRichMediaAdsCompanies</td>
- *      <td><p> API to retrieve a list of `RichMediaAdsCompany` objects.</td>
+ *      <td><p> Lists `RichMediaAdsCompany` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -150,7 +151,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
-  private final RichMediaAdsCompanyServiceSettings settings;
+  private final @Nullable RichMediaAdsCompanyServiceSettings settings;
   private final RichMediaAdsCompanyServiceStub stub;
 
   /** Constructs an instance of RichMediaAdsCompanyServiceClient with default settings. */
@@ -192,7 +193,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RichMediaAdsCompanyServiceSettings getSettings() {
+  public final @Nullable RichMediaAdsCompanyServiceSettings getSettings() {
     return settings;
   }
 
@@ -202,7 +203,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -224,7 +225,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
    *     `networks/{network_code}/richMediaAdsCompanies/{rich_media_ads_company_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RichMediaAdsCompany getRichMediaAdsCompany(RichMediaAdsCompanyName name) {
+  public final RichMediaAdsCompany getRichMediaAdsCompany(@Nullable RichMediaAdsCompanyName name) {
     GetRichMediaAdsCompanyRequest request =
         GetRichMediaAdsCompanyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -234,7 +235,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -264,7 +265,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -296,7 +297,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -328,7 +329,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -353,7 +354,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRichMediaAdsCompaniesPagedResponse listRichMediaAdsCompanies(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListRichMediaAdsCompaniesRequest request =
         ListRichMediaAdsCompaniesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -363,7 +364,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -395,7 +396,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -433,7 +434,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -473,7 +474,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -581,12 +582,13 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
           ListRichMediaAdsCompaniesPage> {
 
     private ListRichMediaAdsCompaniesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRichMediaAdsCompaniesRequest,
                 ListRichMediaAdsCompaniesResponse,
                 RichMediaAdsCompany>
             context,
-        ListRichMediaAdsCompaniesResponse response) {
+        @Nullable ListRichMediaAdsCompaniesResponse response) {
       super(context, response);
     }
 
@@ -596,18 +598,20 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListRichMediaAdsCompaniesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRichMediaAdsCompaniesRequest,
                 ListRichMediaAdsCompaniesResponse,
                 RichMediaAdsCompany>
             context,
-        ListRichMediaAdsCompaniesResponse response) {
+        @Nullable ListRichMediaAdsCompaniesResponse response) {
       return new ListRichMediaAdsCompaniesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRichMediaAdsCompaniesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRichMediaAdsCompaniesRequest,
                 ListRichMediaAdsCompaniesResponse,
                 RichMediaAdsCompany>
@@ -626,7 +630,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
           ListRichMediaAdsCompaniesFixedSizeCollection> {
 
     private ListRichMediaAdsCompaniesFixedSizeCollection(
-        List<ListRichMediaAdsCompaniesPage> pages, int collectionSize) {
+        @Nullable List<ListRichMediaAdsCompaniesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -636,7 +640,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListRichMediaAdsCompaniesFixedSizeCollection createCollection(
-        List<ListRichMediaAdsCompaniesPage> pages, int collectionSize) {
+        @Nullable List<ListRichMediaAdsCompaniesPage> pages, int collectionSize) {
       return new ListRichMediaAdsCompaniesFixedSizeCollection(pages, collectionSize);
     }
   }

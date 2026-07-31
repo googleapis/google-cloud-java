@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -157,7 +158,7 @@ public class QuotaAdjusterSettingsName implements ResourceName {
     return newFolderLocationBuilder().setFolder(folder).setLocation(location).build().toString();
   }
 
-  public static QuotaAdjusterSettingsName parse(String formattedString) {
+  public static @Nullable QuotaAdjusterSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -183,7 +184,7 @@ public class QuotaAdjusterSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<QuotaAdjusterSettingsName> values) {
+  public static List<String> toStringList(List<@Nullable QuotaAdjusterSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (QuotaAdjusterSettingsName value : values) {
       if (value == null) {
@@ -236,7 +237,7 @@ public class QuotaAdjusterSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -79,7 +80,7 @@ public class SaasName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setSaas(saas).build().toString();
   }
 
-  public static SaasName parse(String formattedString) {
+  public static @Nullable SaasName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -97,7 +98,7 @@ public class SaasName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SaasName> values) {
+  public static List<String> toStringList(List<@Nullable SaasName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SaasName value : values) {
       if (value == null) {
@@ -146,7 +147,7 @@ public class SaasName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

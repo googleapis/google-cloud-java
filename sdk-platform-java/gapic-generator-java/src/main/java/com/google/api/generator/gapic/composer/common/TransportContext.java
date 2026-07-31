@@ -20,8 +20,10 @@ import com.google.api.generator.gapic.composer.utils.ClassNames;
 import com.google.api.generator.gapic.model.Transport;
 import com.google.auto.value.AutoValue;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class TransportContext {
 
@@ -32,14 +34,11 @@ public abstract class TransportContext {
 
   public abstract List<String> transportNames();
 
-  @Nullable
-  public abstract Class<?> callSettingsClass();
+  public abstract @Nullable Class<?> callSettingsClass();
 
-  @Nullable
-  public abstract TypeNode stubCallableFactoryType();
+  public abstract @Nullable TypeNode stubCallableFactoryType();
 
-  @Nullable
-  public abstract Class<?> methodDescriptorClass();
+  public abstract @Nullable Class<?> methodDescriptorClass();
 
   public abstract List<TypeNode> transportOperationsStubTypes();
 
@@ -60,16 +59,13 @@ public abstract class TransportContext {
   public abstract List<String> transportGetterNames();
 
   // For AbstractServiceCallableFactoryClassComposer
-  @Nullable
-  public abstract TypeNode transportCallSettingsType();
+  public abstract @Nullable TypeNode transportCallSettingsType();
 
-  @Nullable
-  public abstract TypeNode transportCallableFactoryType();
+  public abstract @Nullable TypeNode transportCallableFactoryType();
 
   public abstract List<TypeNode> operationsStubTypes();
 
-  @Nullable
-  public abstract String transportCallSettingsName();
+  public abstract @Nullable String transportCallSettingsName();
 
   // For RetrySettingsComposer
   public abstract TypeNode operationResponseTransformerType();

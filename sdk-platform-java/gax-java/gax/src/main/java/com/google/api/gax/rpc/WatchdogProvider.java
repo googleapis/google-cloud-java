@@ -35,7 +35,9 @@ import com.google.api.core.ApiClock;
 import com.google.api.core.ObsoleteApi;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public interface WatchdogProvider {
   boolean needsClock();
 

@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -234,7 +235,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class UserListGlobalLicenseServiceClient implements BackgroundResource {
-  private final UserListGlobalLicenseServiceSettings settings;
+  private final @Nullable UserListGlobalLicenseServiceSettings settings;
   private final UserListGlobalLicenseServiceStub stub;
 
   /** Constructs an instance of UserListGlobalLicenseServiceClient with default settings. */
@@ -278,7 +279,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserListGlobalLicenseServiceSettings getSettings() {
+  public final @Nullable UserListGlobalLicenseServiceSettings getSettings() {
     return settings;
   }
 
@@ -316,7 +317,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserListGlobalLicense createUserListGlobalLicense(
-      AccountName parent, UserListGlobalLicense userListGlobalLicense) {
+      @Nullable AccountName parent, UserListGlobalLicense userListGlobalLicense) {
     CreateUserListGlobalLicenseRequest request =
         CreateUserListGlobalLicenseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -568,7 +569,8 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the user list global license.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserListGlobalLicense getUserListGlobalLicense(UserListGlobalLicenseName name) {
+  public final UserListGlobalLicense getUserListGlobalLicense(
+      @Nullable UserListGlobalLicenseName name) {
     GetUserListGlobalLicenseRequest request =
         GetUserListGlobalLicenseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -709,7 +711,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUserListGlobalLicensesPagedResponse listUserListGlobalLicenses(
-      AccountName parent) {
+      @Nullable AccountName parent) {
     ListUserListGlobalLicensesRequest request =
         ListUserListGlobalLicensesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -909,7 +911,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUserListGlobalLicenseCustomerInfosPagedResponse
-      listUserListGlobalLicenseCustomerInfos(UserListGlobalLicenseName parent) {
+      listUserListGlobalLicenseCustomerInfos(@Nullable UserListGlobalLicenseName parent) {
     ListUserListGlobalLicenseCustomerInfosRequest request =
         ListUserListGlobalLicenseCustomerInfosRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1166,12 +1168,13 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
           ListUserListGlobalLicensesPage> {
 
     private ListUserListGlobalLicensesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicensesRequest,
                 ListUserListGlobalLicensesResponse,
                 UserListGlobalLicense>
             context,
-        ListUserListGlobalLicensesResponse response) {
+        @Nullable ListUserListGlobalLicensesResponse response) {
       super(context, response);
     }
 
@@ -1181,18 +1184,20 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListGlobalLicensesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicensesRequest,
                 ListUserListGlobalLicensesResponse,
                 UserListGlobalLicense>
             context,
-        ListUserListGlobalLicensesResponse response) {
+        @Nullable ListUserListGlobalLicensesResponse response) {
       return new ListUserListGlobalLicensesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserListGlobalLicensesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicensesRequest,
                 ListUserListGlobalLicensesResponse,
                 UserListGlobalLicense>
@@ -1211,7 +1216,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
           ListUserListGlobalLicensesFixedSizeCollection> {
 
     private ListUserListGlobalLicensesFixedSizeCollection(
-        List<ListUserListGlobalLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserListGlobalLicensesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1221,7 +1226,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListGlobalLicensesFixedSizeCollection createCollection(
-        List<ListUserListGlobalLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserListGlobalLicensesPage> pages, int collectionSize) {
       return new ListUserListGlobalLicensesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1265,12 +1270,13 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
           ListUserListGlobalLicenseCustomerInfosPage> {
 
     private ListUserListGlobalLicenseCustomerInfosPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicenseCustomerInfosRequest,
                 ListUserListGlobalLicenseCustomerInfosResponse,
                 UserListGlobalLicenseCustomerInfo>
             context,
-        ListUserListGlobalLicenseCustomerInfosResponse response) {
+        @Nullable ListUserListGlobalLicenseCustomerInfosResponse response) {
       super(context, response);
     }
 
@@ -1280,18 +1286,20 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListGlobalLicenseCustomerInfosPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicenseCustomerInfosRequest,
                 ListUserListGlobalLicenseCustomerInfosResponse,
                 UserListGlobalLicenseCustomerInfo>
             context,
-        ListUserListGlobalLicenseCustomerInfosResponse response) {
+        @Nullable ListUserListGlobalLicenseCustomerInfosResponse response) {
       return new ListUserListGlobalLicenseCustomerInfosPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserListGlobalLicenseCustomerInfosPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListGlobalLicenseCustomerInfosRequest,
                 ListUserListGlobalLicenseCustomerInfosResponse,
                 UserListGlobalLicenseCustomerInfo>
@@ -1310,7 +1318,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
           ListUserListGlobalLicenseCustomerInfosFixedSizeCollection> {
 
     private ListUserListGlobalLicenseCustomerInfosFixedSizeCollection(
-        List<ListUserListGlobalLicenseCustomerInfosPage> pages, int collectionSize) {
+        @Nullable List<ListUserListGlobalLicenseCustomerInfosPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1321,7 +1329,7 @@ public class UserListGlobalLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListGlobalLicenseCustomerInfosFixedSizeCollection createCollection(
-        List<ListUserListGlobalLicenseCustomerInfosPage> pages, int collectionSize) {
+        @Nullable List<ListUserListGlobalLicenseCustomerInfosPage> pages, int collectionSize) {
       return new ListUserListGlobalLicenseCustomerInfosFixedSizeCollection(pages, collectionSize);
     }
   }

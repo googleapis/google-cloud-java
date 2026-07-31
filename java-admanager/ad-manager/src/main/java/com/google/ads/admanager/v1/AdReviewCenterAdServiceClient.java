@@ -36,6 +36,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -73,7 +74,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> SearchAdReviewCenterAds</td>
- *      <td><p> API to search for AdReviewCenterAds.</td>
+ *      <td><p> Searches for AdReviewCenterAds.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -93,7 +94,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchAllowAdReviewCenterAds</td>
- *      <td><p> API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
+ *      <td><p> Batch allows AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -113,7 +114,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchBlockAdReviewCenterAds</td>
- *      <td><p> API to batch block AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
+ *      <td><p> Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -177,7 +178,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AdReviewCenterAdServiceClient implements BackgroundResource {
-  private final AdReviewCenterAdServiceSettings settings;
+  private final @Nullable AdReviewCenterAdServiceSettings settings;
   private final AdReviewCenterAdServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
 
@@ -221,7 +222,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AdReviewCenterAdServiceSettings getSettings() {
+  public final @Nullable AdReviewCenterAdServiceSettings getSettings() {
     return settings;
   }
 
@@ -239,7 +240,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -271,7 +272,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchAdReviewCenterAdsPagedResponse searchAdReviewCenterAds(
-      WebPropertyName parent) {
+      @Nullable WebPropertyName parent) {
     SearchAdReviewCenterAdsRequest request =
         SearchAdReviewCenterAdsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -281,7 +282,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -320,7 +321,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -359,7 +360,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -397,7 +398,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -442,7 +443,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -475,7 +476,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           BatchAllowAdReviewCenterAdsResponse, BatchAdReviewCenterAdsOperationMetadata>
-      batchAllowAdReviewCenterAdsAsync(WebPropertyName parent) {
+      batchAllowAdReviewCenterAdsAsync(@Nullable WebPropertyName parent) {
     BatchAllowAdReviewCenterAdsRequest request =
         BatchAllowAdReviewCenterAdsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -485,7 +486,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -526,7 +527,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -561,7 +562,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -600,7 +601,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -633,7 +634,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -666,7 +667,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           BatchBlockAdReviewCenterAdsResponse, BatchAdReviewCenterAdsOperationMetadata>
-      batchBlockAdReviewCenterAdsAsync(WebPropertyName parent) {
+      batchBlockAdReviewCenterAdsAsync(@Nullable WebPropertyName parent) {
     BatchBlockAdReviewCenterAdsRequest request =
         BatchBlockAdReviewCenterAdsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -676,7 +677,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -717,7 +718,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -752,7 +753,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -791,7 +792,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -886,10 +887,11 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
           SearchAdReviewCenterAdsPage> {
 
     private SearchAdReviewCenterAdsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsResponse, AdReviewCenterAd>
             context,
-        SearchAdReviewCenterAdsResponse response) {
+        @Nullable SearchAdReviewCenterAdsResponse response) {
       super(context, response);
     }
 
@@ -899,16 +901,18 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAdReviewCenterAdsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsResponse, AdReviewCenterAd>
             context,
-        SearchAdReviewCenterAdsResponse response) {
+        @Nullable SearchAdReviewCenterAdsResponse response) {
       return new SearchAdReviewCenterAdsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchAdReviewCenterAdsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsResponse, AdReviewCenterAd>
             context,
         ApiFuture<SearchAdReviewCenterAdsResponse> futureResponse) {
@@ -925,7 +929,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
           SearchAdReviewCenterAdsFixedSizeCollection> {
 
     private SearchAdReviewCenterAdsFixedSizeCollection(
-        List<SearchAdReviewCenterAdsPage> pages, int collectionSize) {
+        @Nullable List<SearchAdReviewCenterAdsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -935,7 +939,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
     @Override
     protected SearchAdReviewCenterAdsFixedSizeCollection createCollection(
-        List<SearchAdReviewCenterAdsPage> pages, int collectionSize) {
+        @Nullable List<SearchAdReviewCenterAdsPage> pages, int collectionSize) {
       return new SearchAdReviewCenterAdsFixedSizeCollection(pages, collectionSize);
     }
   }

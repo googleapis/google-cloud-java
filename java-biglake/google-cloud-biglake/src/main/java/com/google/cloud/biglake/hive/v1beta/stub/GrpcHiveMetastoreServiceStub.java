@@ -40,6 +40,8 @@ import com.google.cloud.biglake.hive.v1beta.CreateHiveTableRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveTableRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse;
 import com.google.cloud.biglake.hive.v1beta.GetHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveTableRequest;
@@ -309,6 +311,19 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogMethodDescriptor =
+          MethodDescriptor.<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.biglake.hive.v1beta.HiveMetastoreService/FailoverHiveCatalog")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FailoverHiveCatalogRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FailoverHiveCatalogResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateHiveCatalogRequest, HiveCatalog> createHiveCatalogCallable;
   private final UnaryCallable<GetHiveCatalogRequest, HiveCatalog> getHiveCatalogCallable;
   private final UnaryCallable<ListHiveCatalogsRequest, ListHiveCatalogsResponse>
@@ -339,6 +354,8 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
       batchUpdatePartitionsCallable;
   private final ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable;
+  private final UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -600,6 +617,17 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogTransportSettings =
+            GrpcCallSettings.<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>newBuilder()
+                .setMethodDescriptor(failoverHiveCatalogMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createHiveCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -689,6 +717,11 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
     this.listPartitionsCallable =
         callableFactory.createServerStreamingCallable(
             listPartitionsTransportSettings, settings.listPartitionsSettings(), clientContext);
+    this.failoverHiveCatalogCallable =
+        callableFactory.createUnaryCallable(
+            failoverHiveCatalogTransportSettings,
+            settings.failoverHiveCatalogSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -814,6 +847,12 @@ public class GrpcHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
   public ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable() {
     return listPartitionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable() {
+    return failoverHiveCatalogCallable;
   }
 
   @Override

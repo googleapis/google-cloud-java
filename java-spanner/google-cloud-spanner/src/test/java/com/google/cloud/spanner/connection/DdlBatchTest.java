@@ -36,6 +36,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -91,7 +92,7 @@ public class DdlBatchTest {
       DdlClient ddlClient = mock(DdlClient.class);
       @SuppressWarnings("unchecked")
       final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
-          mock(OperationFuture.class);
+          mock(OperationFuture.class, withSettings().withoutAnnotations());
       if (waitForMillis > 0L) {
         when(operation.get())
             .thenAnswer(
@@ -440,7 +441,8 @@ public class DdlBatchTest {
             .build();
     ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadata);
     @SuppressWarnings("unchecked")
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture = mock(OperationFuture.class);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture =
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
     when(operationFuture.get()).thenReturn(null);
     when(operationFuture.getMetadata()).thenReturn(metadataFuture);
     when(client.executeDdl(argThat(isListOfStringsWithSize(2)), isNull()))
@@ -480,7 +482,8 @@ public class DdlBatchTest {
             .build();
     ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadata);
     @SuppressWarnings("unchecked")
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture = mock(OperationFuture.class);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture =
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
     when(operationFuture.get())
         .thenThrow(
             new ExecutionException(
@@ -533,7 +536,8 @@ public class DdlBatchTest {
             .build();
     ApiFuture<UpdateDatabaseDdlMetadata> metadataFuture = ApiFutures.immediateFuture(metadata);
     @SuppressWarnings("unchecked")
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture = mock(OperationFuture.class);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operationFuture =
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
     when(operationFuture.get())
         .thenThrow(
             new ExecutionException(

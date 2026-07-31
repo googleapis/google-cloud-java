@@ -626,9 +626,11 @@ public class RegionNetworkFirewallPoliciesClientTest {
             .setRuleName("ruleName763275175")
             .setRuleTupleCount(388342037)
             .setSecurityProfileGroup("securityProfileGroup-943388234")
+            .addAllTargetForwardingRules(new ArrayList<String>())
             .addAllTargetResources(new ArrayList<String>())
             .addAllTargetSecureTags(new ArrayList<FirewallPolicyRuleSecureTag>())
             .addAllTargetServiceAccounts(new ArrayList<String>())
+            .setTargetType("targetType486622315")
             .setTlsInspect(true)
             .build();
     mockService.addResponse(expectedResponse);

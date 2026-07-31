@@ -6,6 +6,10 @@ PACKAGE_DESTINATION=$(PWD)/drivers
 SRC="$(PWD)"
 skipSurefire ?= true
 skipShade ?= true
+excludedGroups ?=
+comma := ,
+empty :=
+space := $(empty) $(empty)
 JDBC_DRIVER_VERSION = $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 JDBC_JAR = $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
 
@@ -33,10 +37,12 @@ unittest: |
 		-Dclirr.skip=true \
 		-Denforcer.skip=true \
 		-Dtest=$(test) \
+		-DexcludedGroups="$(excludedGroups)" \
 		test
 
 # Important: By default, this command will skip unittests & uberjar build.
 # To include unit tests, run: make integration-test skipSurefire=false
+# To exclude test tags/groups, run: make integration-test excludedGroups="known_issues"
 integration-test:
 	mvn -B -ntp \
 		-Penable-integration-tests \
@@ -47,17 +53,18 @@ integration-test:
 		-Denforcer.skip=true \
 		-Dit.failIfNoSpecifiedTests=true \
 		-Dit.test=$(test) \
+		-DexcludedGroups="$(excludedGroups)" \
 		integration-test \
 		verify
 
 unit-test-coverage:
-	$(MAKE) unittest
+	$(MAKE) unittest excludedGroups="$(excludedGroups)"
 	mvn -B -ntp jacoco:report
 	BUILD_DIR=$$(mvn -B -ntp help:evaluate -Dexpression=project.build.directory -q -DforceStdout); \
 	cd $$BUILD_DIR/site && zip -r $$OLDPWD/jacoco-unittests.zip jacoco && cd $$OLDPWD
 
 full-coverage:
-	$(MAKE) integration-test skipSurefire=false test=ITBigQueryJDBCTest,ITNightlyBigQueryTest
+	$(MAKE) integration-test skipSurefire=false test=ITBigQueryJDBCTest,ITNightlyBigQueryTest excludedGroups="$(excludedGroups)"
 	mvn -B -ntp jacoco:report
 	BUILD_DIR=$$(mvn -B -ntp  help:evaluate -Dexpression=project.build.directory -q -DforceStdout); \
 	cd $$BUILD_DIR/site && zip -r $$OLDPWD/jacoco-full.zip jacoco && cd $$OLDPWD
@@ -70,21 +77,23 @@ package:
 	cp target/google-cloud-bigquery-jdbc-*-all.jar $(PACKAGE_DESTINATION)/
 
 build-it-standalone:
-	mvn -Dmaven.test.skip=true package -f pom-it.xml
+	mvn clean package -f pom-it.xml -Dmaven.test.skip=true -Dbigquery-jdbc.version=$(JDBC_DRIVER_VERSION)
 
 run-it-standalone:
-	java -cp $(JDBC_JAR):target-it/* org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests
+	java -cp "$(JDBC_JAR):target-it/*" org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests $(foreach tag,$(subst $(comma),$(space),$(excludedGroups)),--exclude-tag $(tag))
 
 
 # Commands for dockerized environments
 .docker-run: | 
-	docker run -it \
+	docker run \
+		$(DOCKER_INTERACTIVE_OPTS) \
 		--cap-add=NET_ADMIN \
 		-v $(GOOGLE_APPLICATION_CREDENTIALS):/auth/application_creds.json \
 		-v "$(GOOGLE_APPLICATION_CREDENTIALS).p12":/auth/application_creds.p12 \
 		-e "GOOGLE_APPLICATION_CREDENTIALS=/auth/application_creds.json" \
 		-v $(SRC):/src \
-		-e "SA_EMAIL=test_email" \
+		-e "SA_EMAIL=$(SA_EMAIL)" \
+		-e "KMS_RESOURCE_PATH=$(KMS_RESOURCE_PATH)" \
 		-e "SA_SECRET=/auth/application_creds.json" \
 		-e "SA_SECRET_P12=/auth/application_creds.p12" \
 		-e "BIGQUERY_BASE_URL=$(BIGQUERY_BASE_URL)" \
@@ -98,10 +107,10 @@ docker-proxy-build:
 	docker build --target proxy -t $(PROXY_CONTAINER_NAME) -f Dockerfile --build-arg BRANCH=${BUILD_BRANCH} $(SRC)
 
 docker-session:
-	$(MAKE) .docker-run args="bash"
+	$(MAKE) .docker-run args="bash" DOCKER_INTERACTIVE_OPTS="-it"
 
 docker-proxy-session:
-	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash"
+	$(MAKE) .docker-run CONTAINER_NAME=$(PROXY_CONTAINER_NAME) args="bash" DOCKER_INTERACTIVE_OPTS="-it"
 
 docker-package-all-dependencies: docker-build
 	mkdir -p $(PACKAGE_DESTINATION)
@@ -141,14 +150,14 @@ docker-package: docker-build
 			cp --no-preserve=ownership /mvn/test-target/google-cloud-bigquery-jdbc-*-all.jar /pkg "
 
 docker-unittest: |
-	$(MAKE) .docker-run args="make unittest test=$(test)"
+	$(MAKE) .docker-run args="make unittest test=$(test) excludedGroups='$(excludedGroups)'"
 
 docker-integration-test: .check-env
-	$(MAKE) .docker-run args="make integration-test test=$(test) skipSurefire=$(skipSurefire)"
+	$(MAKE) .docker-run args="make integration-test test=$(test) skipSurefire=$(skipSurefire) excludedGroups='$(excludedGroups)'"
 
 docker-proxy-integration-test: .check-env docker-proxy-build
 	$(MAKE) docker-integration-test CONTAINER_NAME=$(PROXY_CONTAINER_NAME) BIGQUERY_URL_FLAGS="ProxyHost=127.0.0.1;ProxyPort=3128;"
 
 docker-coverage: 
-	$(MAKE) .docker-run args="make unit-test-coverage"
-	$(MAKE) .docker-run args="make full-coverage"
+	$(MAKE) .docker-run args="make unit-test-coverage excludedGroups='$(excludedGroups)'"
+	$(MAKE) .docker-run args="make full-coverage excludedGroups='$(excludedGroups)'"

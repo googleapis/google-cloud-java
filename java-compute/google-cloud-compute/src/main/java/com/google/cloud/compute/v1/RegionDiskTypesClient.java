@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,7 +149,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionDiskTypesClient implements BackgroundResource {
-  private final RegionDiskTypesSettings settings;
+  private final @Nullable RegionDiskTypesSettings settings;
   private final RegionDiskTypesStub stub;
 
   /** Constructs an instance of RegionDiskTypesClient with default settings. */
@@ -188,7 +189,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionDiskTypesSettings getSettings() {
+  public final @Nullable RegionDiskTypesSettings getSettings() {
     return settings;
   }
 
@@ -490,8 +491,8 @@ public class RegionDiskTypesClient implements BackgroundResource {
       extends AbstractPage<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
-        RegionDiskTypeList response) {
+        @Nullable PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
+        @Nullable RegionDiskTypeList response) {
       super(context, response);
     }
 
@@ -501,14 +502,14 @@ public class RegionDiskTypesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
-        RegionDiskTypeList response) {
+        @Nullable PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
+        @Nullable RegionDiskTypeList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
+        @Nullable PageContext<ListRegionDiskTypesRequest, RegionDiskTypeList, DiskType> context,
         ApiFuture<RegionDiskTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -522,7 +523,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -531,7 +532,8 @@ public class RegionDiskTypesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

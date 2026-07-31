@@ -44,9 +44,11 @@ import java.nio.channels.UnresolvedAddressException;
 import java.security.GeneralSecurityException;
 import java.util.Set;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.net.ssl.SSLHandshakeException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ErrorTypeUtil {
 
   enum ErrorType {
@@ -163,8 +165,7 @@ public class ErrorTypeUtil {
    * Attempts to extract a specific error type (reason, code, or client error) but returns null if
    * it cannot be specifically classified.
    */
-  @Nullable
-  private static String extractKnownErrorType(Throwable error) {
+  private static @Nullable String extractKnownErrorType(Throwable error) {
     // 1. Extract error info reason
     if (error instanceof ApiException) {
       String reason = ((ApiException) error).getReason();
@@ -196,8 +197,7 @@ public class ErrorTypeUtil {
    * @param apiException The ApiException to extract the error code from.
    * @return A string representing the error code, or null if no specific code can be determined.
    */
-  @Nullable
-  private static String extractServerErrorCode(ApiException apiException) {
+  private static @Nullable String extractServerErrorCode(ApiException apiException) {
     if (apiException.getStatusCode() != null) {
       Object transportCode = apiException.getStatusCode().getTransportCode();
       if (transportCode != null) {
@@ -214,8 +214,7 @@ public class ErrorTypeUtil {
    * @param error The Throwable to analyze.
    * @return A string representing the client-side error type, or null if not matched.
    */
-  @Nullable
-  private static String getClientSideError(Throwable error) {
+  private static @Nullable String getClientSideError(Throwable error) {
     if (isClientTimeout(error)) {
       return ErrorType.CLIENT_TIMEOUT.toString();
     }

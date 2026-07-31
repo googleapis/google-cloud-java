@@ -48,7 +48,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implements the OAuth 2.0 token exchange based on <a
@@ -61,6 +62,7 @@ import javax.annotation.Nullable;
  * <p>Use the {@link #newBuilder(String, StsTokenExchangeRequest, HttpRequestFactory)} method to
  * create a new builder for constructing an instance of this class.
  */
+@NullMarked
 public final class StsRequestHandler {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(StsRequestHandler.class);

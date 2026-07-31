@@ -34,8 +34,11 @@ package com.google.auth.oauth2;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** The AWS credential source. Stores data required to retrieve the AWS credential. */
+@NullMarked
 public class AwsCredentialSource extends ExternalAccountCredentials.CredentialSource {
 
   static final String IMDSV2_SESSION_TOKEN_URL_FIELD_NAME = "imdsv2_session_token_url";
@@ -44,7 +47,7 @@ public class AwsCredentialSource extends ExternalAccountCredentials.CredentialSo
   final String regionUrl;
   final String url;
   final String regionalCredentialVerificationUrl;
-  final String imdsv2SessionTokenUrl;
+  final @Nullable String imdsv2SessionTokenUrl;
 
   /**
    * The source of the AWS credential. The credential source map must contain the

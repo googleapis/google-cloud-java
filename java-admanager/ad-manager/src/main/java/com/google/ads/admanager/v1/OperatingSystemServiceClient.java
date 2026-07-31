@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetOperatingSystem</td>
- *      <td><p> API to retrieve a `OperatingSystem` object.</td>
+ *      <td><p> Retrieves a `OperatingSystem` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListOperatingSystems</td>
- *      <td><p> API to retrieve a list of `OperatingSystem` objects.</td>
+ *      <td><p> Lists `OperatingSystem` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OperatingSystemServiceClient implements BackgroundResource {
-  private final OperatingSystemServiceSettings settings;
+  private final @Nullable OperatingSystemServiceSettings settings;
   private final OperatingSystemServiceStub stub;
 
   /** Constructs an instance of OperatingSystemServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OperatingSystemServiceSettings getSettings() {
+  public final @Nullable OperatingSystemServiceSettings getSettings() {
     return settings;
   }
 
@@ -200,7 +201,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -221,7 +222,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
    *     `networks/{network_code}/operatingSystems/{operating_system_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperatingSystem getOperatingSystem(OperatingSystemName name) {
+  public final OperatingSystem getOperatingSystem(@Nullable OperatingSystemName name) {
     GetOperatingSystemRequest request =
         GetOperatingSystemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -231,7 +232,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -260,7 +261,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -289,7 +290,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystem` object.
+   * Retrieves a `OperatingSystem` object.
    *
    * <p>Sample code:
    *
@@ -319,7 +320,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -343,7 +344,8 @@ public class OperatingSystemServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOperatingSystemsPagedResponse listOperatingSystems(NetworkName parent) {
+  public final ListOperatingSystemsPagedResponse listOperatingSystems(
+      @Nullable NetworkName parent) {
     ListOperatingSystemsRequest request =
         ListOperatingSystemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -353,7 +355,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -385,7 +387,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -423,7 +425,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -460,7 +462,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystem` objects.
+   * Lists `OperatingSystem` objects.
    *
    * <p>Sample code:
    *
@@ -565,9 +567,10 @@ public class OperatingSystemServiceClient implements BackgroundResource {
           ListOperatingSystemsPage> {
 
     private ListOperatingSystemsPage(
-        PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
+        @Nullable
+            PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
             context,
-        ListOperatingSystemsResponse response) {
+        @Nullable ListOperatingSystemsResponse response) {
       super(context, response);
     }
 
@@ -577,15 +580,17 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
     @Override
     protected ListOperatingSystemsPage createPage(
-        PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
+        @Nullable
+            PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
             context,
-        ListOperatingSystemsResponse response) {
+        @Nullable ListOperatingSystemsResponse response) {
       return new ListOperatingSystemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOperatingSystemsPage> createPageAsync(
-        PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
+        @Nullable
+            PageContext<ListOperatingSystemsRequest, ListOperatingSystemsResponse, OperatingSystem>
             context,
         ApiFuture<ListOperatingSystemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -601,7 +606,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
           ListOperatingSystemsFixedSizeCollection> {
 
     private ListOperatingSystemsFixedSizeCollection(
-        List<ListOperatingSystemsPage> pages, int collectionSize) {
+        @Nullable List<ListOperatingSystemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -611,7 +616,7 @@ public class OperatingSystemServiceClient implements BackgroundResource {
 
     @Override
     protected ListOperatingSystemsFixedSizeCollection createCollection(
-        List<ListOperatingSystemsPage> pages, int collectionSize) {
+        @Nullable List<ListOperatingSystemsPage> pages, int collectionSize) {
       return new ListOperatingSystemsFixedSizeCollection(pages, collectionSize);
     }
   }

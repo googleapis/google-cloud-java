@@ -789,10 +789,12 @@ public class ResourceNameHelperClassComposer {
               .setArguments(ofMethodArgExprs)
               .setReturnType(thisClassType)
               .build();
+      TypeNode nullableReturnType =
+          TypeNode.withReference(thisClassType.reference().copyAndSetNullable(true));
       return MethodDefinition.builder()
           .setScope(ScopeNode.PUBLIC)
           .setIsStatic(true)
-          .setReturnType(thisClassType)
+          .setReturnType(nullableReturnType)
           .setName("parse")
           .setArguments(formattedStringArgDeclList)
           .setBody(body)
@@ -884,10 +886,12 @@ public class ResourceNameHelperClassComposer {
                 .setType(FIXED_TYPESTORE.get("ValidationException"))
                 .setMessageExpr(exceptionMessageString)
                 .build()));
+    TypeNode nullableReturnType =
+        TypeNode.withReference(thisClassType.reference().copyAndSetNullable(true));
     return MethodDefinition.builder()
         .setScope(ScopeNode.PUBLIC)
         .setIsStatic(true)
-        .setReturnType(thisClassType)
+        .setReturnType(nullableReturnType)
         .setName("parse")
         .setArguments(formattedStringArgDeclList)
         .setBody(body)
@@ -970,7 +974,7 @@ public class ResourceNameHelperClassComposer {
         TypeNode.withReference(
             ConcreteReference.builder()
                 .setClazz(List.class)
-                .setGenerics(Arrays.asList(thisClassType.reference()))
+                .setGenerics(Arrays.asList(thisClassType.reference().copyAndSetNullable(true)))
                 .build());
     VariableExpr valuesVarExpr =
         VariableExpr.withVariable(
@@ -1305,7 +1309,7 @@ public class ResourceNameHelperClassComposer {
     // Create method definition variables.
     Variable oVariable =
         Variable.builder()
-            .setType(TypeNode.withReference(javaObjectReference))
+            .setType(TypeNode.withReference(javaObjectReference.copyAndSetNullable(true)))
             .setName("o")
             .build();
     VariableExpr argVarExpr =
@@ -1702,12 +1706,13 @@ public class ResourceNameHelperClassComposer {
             ImmutableMap.class,
             List.class,
             Map.class,
+            NullMarked.class,
+            Object.class,
             Objects.class,
             PathTemplate.class,
             Preconditions.class,
             com.google.api.resourcenames.ResourceName.class,
-            ValidationException.class,
-            NullMarked.class);
+            ValidationException.class);
     return new TypeStore(concreteClazzes);
   }
 

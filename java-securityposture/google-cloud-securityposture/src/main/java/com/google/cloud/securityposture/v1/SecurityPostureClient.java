@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -434,7 +435,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SecurityPostureClient implements BackgroundResource {
-  private final SecurityPostureSettings settings;
+  private final @Nullable SecurityPostureSettings settings;
   private final SecurityPostureStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -482,7 +483,7 @@ public class SecurityPostureClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SecurityPostureSettings getSettings() {
+  public final @Nullable SecurityPostureSettings getSettings() {
     return settings;
   }
 
@@ -534,7 +535,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param parent Required. Parent value for ListPosturesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPosturesPagedResponse listPostures(OrganizationName parent) {
+  public final ListPosturesPagedResponse listPostures(@Nullable OrganizationName parent) {
     ListPosturesRequest request =
         ListPosturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -819,7 +820,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Posture getPosture(PostureName name) {
+  public final Posture getPosture(@Nullable PostureName name) {
     GetPostureRequest request =
         GetPostureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPosture(request);
@@ -946,7 +947,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Posture, OperationMetadata> createPostureAsync(
-      OrganizationName parent, Posture posture, String postureId) {
+      @Nullable OrganizationName parent, Posture posture, String postureId) {
     CreatePostureRequest request =
         CreatePostureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1268,7 +1269,8 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deletePostureAsync(PostureName name) {
+  public final OperationFuture<Empty, OperationMetadata> deletePostureAsync(
+      @Nullable PostureName name) {
     DeletePostureRequest request =
         DeletePostureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deletePostureAsync(request);
@@ -1427,7 +1429,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Posture, OperationMetadata> extractPostureAsync(
-      OrganizationName parent, String postureId, String workload) {
+      @Nullable OrganizationName parent, String postureId, String workload) {
     ExtractPostureRequest request =
         ExtractPostureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1603,7 +1605,8 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param parent Required. Parent value for ListPostureDeploymentsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPostureDeploymentsPagedResponse listPostureDeployments(OrganizationName parent) {
+  public final ListPostureDeploymentsPagedResponse listPostureDeployments(
+      @Nullable OrganizationName parent) {
     ListPostureDeploymentsRequest request =
         ListPostureDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1773,7 +1776,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PostureDeployment getPostureDeployment(PostureDeploymentName name) {
+  public final PostureDeployment getPostureDeployment(@Nullable PostureDeploymentName name) {
     GetPostureDeploymentRequest request =
         GetPostureDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1901,7 +1904,9 @@ public class SecurityPostureClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PostureDeployment, OperationMetadata> createPostureDeploymentAsync(
-      OrganizationName parent, PostureDeployment postureDeployment, String postureDeploymentId) {
+      @Nullable OrganizationName parent,
+      PostureDeployment postureDeployment,
+      String postureDeploymentId) {
     CreatePostureDeploymentRequest request =
         CreatePostureDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2198,7 +2203,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePostureDeploymentAsync(
-      PostureDeploymentName name) {
+      @Nullable PostureDeploymentName name) {
     DeletePostureDeploymentRequest request =
         DeletePostureDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2355,7 +2360,8 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param parent Required. Parent value for ListPostureTemplatesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPostureTemplatesPagedResponse listPostureTemplates(OrganizationName parent) {
+  public final ListPostureTemplatesPagedResponse listPostureTemplates(
+      @Nullable OrganizationName parent) {
     ListPostureTemplatesRequest request =
         ListPostureTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2528,7 +2534,7 @@ public class SecurityPostureClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PostureTemplate getPostureTemplate(PostureTemplateName name) {
+  public final PostureTemplate getPostureTemplate(@Nullable PostureTemplateName name) {
     GetPostureTemplateRequest request =
         GetPostureTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2850,8 +2856,8 @@ public class SecurityPostureClient implements BackgroundResource {
       extends AbstractPage<ListPosturesRequest, ListPosturesResponse, Posture, ListPosturesPage> {
 
     private ListPosturesPage(
-        PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
-        ListPosturesResponse response) {
+        @Nullable PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
+        @Nullable ListPosturesResponse response) {
       super(context, response);
     }
 
@@ -2861,14 +2867,14 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPosturesPage createPage(
-        PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
-        ListPosturesResponse response) {
+        @Nullable PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
+        @Nullable ListPosturesResponse response) {
       return new ListPosturesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPosturesPage> createPageAsync(
-        PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
+        @Nullable PageContext<ListPosturesRequest, ListPosturesResponse, Posture> context,
         ApiFuture<ListPosturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2882,7 +2888,8 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPosturesPage,
           ListPosturesFixedSizeCollection> {
 
-    private ListPosturesFixedSizeCollection(List<ListPosturesPage> pages, int collectionSize) {
+    private ListPosturesFixedSizeCollection(
+        @Nullable List<ListPosturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2892,7 +2899,7 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPosturesFixedSizeCollection createCollection(
-        List<ListPosturesPage> pages, int collectionSize) {
+        @Nullable List<ListPosturesPage> pages, int collectionSize) {
       return new ListPosturesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2929,8 +2936,9 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureRevisionsPage> {
 
     private ListPostureRevisionsPage(
-        PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture> context,
-        ListPostureRevisionsResponse response) {
+        @Nullable PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture>
+            context,
+        @Nullable ListPostureRevisionsResponse response) {
       super(context, response);
     }
 
@@ -2940,14 +2948,16 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureRevisionsPage createPage(
-        PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture> context,
-        ListPostureRevisionsResponse response) {
+        @Nullable PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture>
+            context,
+        @Nullable ListPostureRevisionsResponse response) {
       return new ListPostureRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPostureRevisionsPage> createPageAsync(
-        PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture> context,
+        @Nullable PageContext<ListPostureRevisionsRequest, ListPostureRevisionsResponse, Posture>
+            context,
         ApiFuture<ListPostureRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2962,7 +2972,7 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureRevisionsFixedSizeCollection> {
 
     private ListPostureRevisionsFixedSizeCollection(
-        List<ListPostureRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListPostureRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2972,7 +2982,7 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureRevisionsFixedSizeCollection createCollection(
-        List<ListPostureRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListPostureRevisionsPage> pages, int collectionSize) {
       return new ListPostureRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3011,10 +3021,11 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureDeploymentsPage> {
 
     private ListPostureDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPostureDeploymentsRequest, ListPostureDeploymentsResponse, PostureDeployment>
             context,
-        ListPostureDeploymentsResponse response) {
+        @Nullable ListPostureDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -3024,16 +3035,18 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPostureDeploymentsRequest, ListPostureDeploymentsResponse, PostureDeployment>
             context,
-        ListPostureDeploymentsResponse response) {
+        @Nullable ListPostureDeploymentsResponse response) {
       return new ListPostureDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPostureDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPostureDeploymentsRequest, ListPostureDeploymentsResponse, PostureDeployment>
             context,
         ApiFuture<ListPostureDeploymentsResponse> futureResponse) {
@@ -3050,7 +3063,7 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureDeploymentsFixedSizeCollection> {
 
     private ListPostureDeploymentsFixedSizeCollection(
-        List<ListPostureDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListPostureDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3060,7 +3073,7 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureDeploymentsFixedSizeCollection createCollection(
-        List<ListPostureDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListPostureDeploymentsPage> pages, int collectionSize) {
       return new ListPostureDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3098,9 +3111,10 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureTemplatesPage> {
 
     private ListPostureTemplatesPage(
-        PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
+        @Nullable
+            PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
             context,
-        ListPostureTemplatesResponse response) {
+        @Nullable ListPostureTemplatesResponse response) {
       super(context, response);
     }
 
@@ -3110,15 +3124,17 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureTemplatesPage createPage(
-        PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
+        @Nullable
+            PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
             context,
-        ListPostureTemplatesResponse response) {
+        @Nullable ListPostureTemplatesResponse response) {
       return new ListPostureTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPostureTemplatesPage> createPageAsync(
-        PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
+        @Nullable
+            PageContext<ListPostureTemplatesRequest, ListPostureTemplatesResponse, PostureTemplate>
             context,
         ApiFuture<ListPostureTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3134,7 +3150,7 @@ public class SecurityPostureClient implements BackgroundResource {
           ListPostureTemplatesFixedSizeCollection> {
 
     private ListPostureTemplatesFixedSizeCollection(
-        List<ListPostureTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListPostureTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3144,7 +3160,7 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListPostureTemplatesFixedSizeCollection createCollection(
-        List<ListPostureTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListPostureTemplatesPage> pages, int collectionSize) {
       return new ListPostureTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3178,8 +3194,8 @@ public class SecurityPostureClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3189,14 +3205,14 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3210,7 +3226,8 @@ public class SecurityPostureClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3220,7 +3237,7 @@ public class SecurityPostureClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

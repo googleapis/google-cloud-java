@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -73,7 +74,7 @@ public class AzureServerConfigName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  public static AzureServerConfigName parse(String formattedString) {
+  public static @Nullable AzureServerConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -91,7 +92,7 @@ public class AzureServerConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AzureServerConfigName> values) {
+  public static List<String> toStringList(List<@Nullable AzureServerConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AzureServerConfigName value : values) {
       if (value == null) {
@@ -136,7 +137,7 @@ public class AzureServerConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

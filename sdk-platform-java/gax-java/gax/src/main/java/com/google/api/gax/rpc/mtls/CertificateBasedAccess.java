@@ -32,6 +32,7 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for handling certificate-based access configurations.
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.internal.EnvironmentProvider;
  * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE and
  * GOOGLE_API_USE_MTLS_ENDPOINT environment variables according to https://google.aip.dev/auth/4114
  */
+@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 

@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -86,7 +87,7 @@ public class InstanceOSPoliciesComplianceName implements ResourceName {
         .toString();
   }
 
-  public static InstanceOSPoliciesComplianceName parse(String formattedString) {
+  public static @Nullable InstanceOSPoliciesComplianceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -105,7 +106,7 @@ public class InstanceOSPoliciesComplianceName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<InstanceOSPoliciesComplianceName> values) {
+  public static List<String> toStringList(List<@Nullable InstanceOSPoliciesComplianceName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (InstanceOSPoliciesComplianceName value : values) {
       if (value == null) {
@@ -154,7 +155,7 @@ public class InstanceOSPoliciesComplianceName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

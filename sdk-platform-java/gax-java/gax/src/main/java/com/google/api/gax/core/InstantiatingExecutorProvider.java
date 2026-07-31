@@ -36,11 +36,13 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * InstantiatingChannelProvider is an ExecutorProvider which constructs a new
  * ScheduledExecutorService every time getExecutor() is called.
  */
+@NullMarked
 @AutoValue
 public abstract class InstantiatingExecutorProvider implements ExecutorProvider {
   private static final Logger LOGGER =

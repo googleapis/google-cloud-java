@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AccountIssueServiceClient implements BackgroundResource {
-  private final AccountIssueServiceSettings settings;
+  private final @Nullable AccountIssueServiceSettings settings;
   private final AccountIssueServiceStub stub;
 
   /** Constructs an instance of AccountIssueServiceClient with default settings. */
@@ -189,7 +190,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountIssueServiceSettings getSettings() {
+  public final @Nullable AccountIssueServiceSettings getSettings() {
     return settings;
   }
 
@@ -222,7 +223,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountIssuesPagedResponse listAccountIssues(AccountName parent) {
+  public final ListAccountIssuesPagedResponse listAccountIssues(@Nullable AccountName parent) {
     ListAccountIssuesRequest request =
         ListAccountIssuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -435,8 +436,9 @@ public class AccountIssueServiceClient implements BackgroundResource {
           ListAccountIssuesPage> {
 
     private ListAccountIssuesPage(
-        PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue> context,
-        ListAccountIssuesResponse response) {
+        @Nullable PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue>
+            context,
+        @Nullable ListAccountIssuesResponse response) {
       super(context, response);
     }
 
@@ -446,14 +448,16 @@ public class AccountIssueServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountIssuesPage createPage(
-        PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue> context,
-        ListAccountIssuesResponse response) {
+        @Nullable PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue>
+            context,
+        @Nullable ListAccountIssuesResponse response) {
       return new ListAccountIssuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountIssuesPage> createPageAsync(
-        PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue> context,
+        @Nullable PageContext<ListAccountIssuesRequest, ListAccountIssuesResponse, AccountIssue>
+            context,
         ApiFuture<ListAccountIssuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -468,7 +472,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
           ListAccountIssuesFixedSizeCollection> {
 
     private ListAccountIssuesFixedSizeCollection(
-        List<ListAccountIssuesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountIssuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -478,7 +482,7 @@ public class AccountIssueServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountIssuesFixedSizeCollection createCollection(
-        List<ListAccountIssuesPage> pages, int collectionSize) {
+        @Nullable List<ListAccountIssuesPage> pages, int collectionSize) {
       return new ListAccountIssuesFixedSizeCollection(pages, collectionSize);
     }
   }

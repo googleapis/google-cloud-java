@@ -21,14 +21,15 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class Service {
   public abstract String name();
 
-  @Nullable
-  public abstract String apiVersion();
+  public abstract @Nullable String apiVersion();
 
   public abstract String defaultHost();
 
@@ -48,8 +49,7 @@ public abstract class Service {
 
   public abstract ImmutableList<Method> methods();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   public boolean hasDescription() {
     return !Strings.isNullOrEmpty(description());
@@ -79,7 +79,7 @@ public abstract class Service {
     return "";
   }
 
-  public Method operationPollingMethod() {
+  public @Nullable Method operationPollingMethod() {
     for (Method method : methods()) {
       if (method.isOperationPollingMethod()) {
         return method;
@@ -88,7 +88,7 @@ public abstract class Service {
     return null;
   }
 
-  public TypeNode operationServiceStubType() {
+  public @Nullable TypeNode operationServiceStubType() {
     for (Method method : methods()) {
       if (method.hasLro() && method.lro().operationServiceStubType() != null) {
         // All methods within the same service must have the same operationServiceTypeName if
@@ -99,7 +99,7 @@ public abstract class Service {
     return null;
   }
 
-  public TypeNode operationType() {
+  public @Nullable TypeNode operationType() {
     for (Method method : methods()) {
       if (method.hasLro() && method.lro().operationServiceStubType() != null) {
         return method.outputType();

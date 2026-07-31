@@ -39,10 +39,12 @@ import com.google.protobuf.Message;
 import com.google.protobuf.util.JsonFormat;
 import java.util.Map;
 import java.util.function.Consumer;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.Logger;
 import org.slf4j.event.Level;
 
 /** Contains helper methods to log requests and responses */
+@NullMarked
 @InternalApi
 class Slf4jLoggingHelpers {
 

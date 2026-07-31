@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -132,7 +133,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CompletionClient implements BackgroundResource {
-  private final CompletionSettings settings;
+  private final @Nullable CompletionSettings settings;
   private final CompletionStub stub;
 
   /** Constructs an instance of CompletionClient with default settings. */
@@ -170,7 +171,7 @@ public class CompletionClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CompletionSettings getSettings() {
+  public final @Nullable CompletionSettings getSettings() {
     return settings;
   }
 

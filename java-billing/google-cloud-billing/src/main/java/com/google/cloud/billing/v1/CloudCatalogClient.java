@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -160,7 +161,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudCatalogClient implements BackgroundResource {
-  private final CloudCatalogSettings settings;
+  private final @Nullable CloudCatalogSettings settings;
   private final CloudCatalogStub stub;
 
   /** Constructs an instance of CloudCatalogClient with default settings. */
@@ -199,7 +200,7 @@ public class CloudCatalogClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudCatalogSettings getSettings() {
+  public final @Nullable CloudCatalogSettings getSettings() {
     return settings;
   }
 
@@ -357,7 +358,7 @@ public class CloudCatalogClient implements BackgroundResource {
    * @param parent Required. The name of the service. Example: "services/6F81-5844-456A"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSkusPagedResponse listSkus(ServiceName parent) {
+  public final ListSkusPagedResponse listSkus(@Nullable ServiceName parent) {
     ListSkusRequest request =
         ListSkusRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSkus(request);
@@ -559,8 +560,8 @@ public class CloudCatalogClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -570,14 +571,14 @@ public class CloudCatalogClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -591,7 +592,8 @@ public class CloudCatalogClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -601,7 +603,7 @@ public class CloudCatalogClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -628,7 +630,8 @@ public class CloudCatalogClient implements BackgroundResource {
       extends AbstractPage<ListSkusRequest, ListSkusResponse, Sku, ListSkusPage> {
 
     private ListSkusPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       super(context, response);
     }
 
@@ -638,13 +641,14 @@ public class CloudCatalogClient implements BackgroundResource {
 
     @Override
     protected ListSkusPage createPage(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context, ListSkusResponse response) {
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable ListSkusResponse response) {
       return new ListSkusPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSkusPage> createPageAsync(
-        PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
+        @Nullable PageContext<ListSkusRequest, ListSkusResponse, Sku> context,
         ApiFuture<ListSkusResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -654,7 +658,7 @@ public class CloudCatalogClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSkusRequest, ListSkusResponse, Sku, ListSkusPage, ListSkusFixedSizeCollection> {
 
-    private ListSkusFixedSizeCollection(List<ListSkusPage> pages, int collectionSize) {
+    private ListSkusFixedSizeCollection(@Nullable List<ListSkusPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -664,7 +668,7 @@ public class CloudCatalogClient implements BackgroundResource {
 
     @Override
     protected ListSkusFixedSizeCollection createCollection(
-        List<ListSkusPage> pages, int collectionSize) {
+        @Nullable List<ListSkusPage> pages, int collectionSize) {
       return new ListSkusFixedSizeCollection(pages, collectionSize);
     }
   }

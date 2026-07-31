@@ -92,6 +92,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -826,7 +827,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ClusterManagerClient implements BackgroundResource {
-  private final ClusterManagerSettings settings;
+  private final @Nullable ClusterManagerSettings settings;
   private final ClusterManagerStub stub;
 
   /** Constructs an instance of ClusterManagerClient with default settings. */
@@ -866,7 +867,7 @@ public class ClusterManagerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ClusterManagerSettings getSettings() {
+  public final @Nullable ClusterManagerSettings getSettings() {
     return settings;
   }
 
@@ -4751,9 +4752,11 @@ public class ClusterManagerClient implements BackgroundResource {
           ListUsableSubnetworksPage> {
 
     private ListUsableSubnetworksPage(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
-        ListUsableSubnetworksResponse response) {
+        @Nullable ListUsableSubnetworksResponse response) {
       super(context, response);
     }
 
@@ -4763,15 +4766,19 @@ public class ClusterManagerClient implements BackgroundResource {
 
     @Override
     protected ListUsableSubnetworksPage createPage(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
-        ListUsableSubnetworksResponse response) {
+        @Nullable ListUsableSubnetworksResponse response) {
       return new ListUsableSubnetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsableSubnetworksPage> createPageAsync(
-        PageContext<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
+        @Nullable
+            PageContext<
+                ListUsableSubnetworksRequest, ListUsableSubnetworksResponse, UsableSubnetwork>
             context,
         ApiFuture<ListUsableSubnetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4787,7 +4794,7 @@ public class ClusterManagerClient implements BackgroundResource {
           ListUsableSubnetworksFixedSizeCollection> {
 
     private ListUsableSubnetworksFixedSizeCollection(
-        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+        @Nullable List<ListUsableSubnetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4797,7 +4804,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
     @Override
     protected ListUsableSubnetworksFixedSizeCollection createCollection(
-        List<ListUsableSubnetworksPage> pages, int collectionSize) {
+        @Nullable List<ListUsableSubnetworksPage> pages, int collectionSize) {
       return new ListUsableSubnetworksFixedSizeCollection(pages, collectionSize);
     }
   }

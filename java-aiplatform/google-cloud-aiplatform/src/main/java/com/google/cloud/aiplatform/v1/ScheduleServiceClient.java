@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -337,7 +338,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ScheduleServiceClient implements BackgroundResource {
-  private final ScheduleServiceSettings settings;
+  private final @Nullable ScheduleServiceSettings settings;
   private final ScheduleServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -380,7 +381,7 @@ public class ScheduleServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ScheduleServiceSettings getSettings() {
+  public final @Nullable ScheduleServiceSettings getSettings() {
     return settings;
   }
 
@@ -420,7 +421,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    * @param schedule Required. The Schedule to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schedule createSchedule(LocationName parent, Schedule schedule) {
+  public final Schedule createSchedule(@Nullable LocationName parent, Schedule schedule) {
     CreateScheduleRequest request =
         CreateScheduleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -540,7 +541,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteScheduleAsync(
-      ScheduleName name) {
+      @Nullable ScheduleName name) {
     DeleteScheduleRequest request =
         DeleteScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteScheduleAsync(request);
@@ -681,7 +682,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/schedules/{schedule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schedule getSchedule(ScheduleName name) {
+  public final Schedule getSchedule(@Nullable ScheduleName name) {
     GetScheduleRequest request =
         GetScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSchedule(request);
@@ -793,7 +794,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchedulesPagedResponse listSchedules(LocationName parent) {
+  public final ListSchedulesPagedResponse listSchedules(@Nullable LocationName parent) {
     ListSchedulesRequest request =
         ListSchedulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -964,7 +965,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/schedules/{schedule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void pauseSchedule(ScheduleName name) {
+  public final void pauseSchedule(@Nullable ScheduleName name) {
     PauseScheduleRequest request =
         PauseScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     pauseSchedule(request);
@@ -1087,7 +1088,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/schedules/{schedule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void resumeSchedule(ScheduleName name) {
+  public final void resumeSchedule(@Nullable ScheduleName name) {
     ResumeScheduleRequest request =
         ResumeScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     resumeSchedule(request);
@@ -1161,7 +1162,7 @@ public class ScheduleServiceClient implements BackgroundResource {
    *     [Schedule.catch_up][google.cloud.aiplatform.v1.Schedule.catch_up] field. Default to false.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void resumeSchedule(ScheduleName name, boolean catchUp) {
+  public final void resumeSchedule(@Nullable ScheduleName name, boolean catchUp) {
     ResumeScheduleRequest request =
         ResumeScheduleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1811,8 +1812,8 @@ public class ScheduleServiceClient implements BackgroundResource {
           ListSchedulesRequest, ListSchedulesResponse, Schedule, ListSchedulesPage> {
 
     private ListSchedulesPage(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
-        ListSchedulesResponse response) {
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable ListSchedulesResponse response) {
       super(context, response);
     }
 
@@ -1822,14 +1823,14 @@ public class ScheduleServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchedulesPage createPage(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
-        ListSchedulesResponse response) {
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable ListSchedulesResponse response) {
       return new ListSchedulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSchedulesPage> createPageAsync(
-        PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
+        @Nullable PageContext<ListSchedulesRequest, ListSchedulesResponse, Schedule> context,
         ApiFuture<ListSchedulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1843,7 +1844,8 @@ public class ScheduleServiceClient implements BackgroundResource {
           ListSchedulesPage,
           ListSchedulesFixedSizeCollection> {
 
-    private ListSchedulesFixedSizeCollection(List<ListSchedulesPage> pages, int collectionSize) {
+    private ListSchedulesFixedSizeCollection(
+        @Nullable List<ListSchedulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1853,7 +1855,7 @@ public class ScheduleServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchedulesFixedSizeCollection createCollection(
-        List<ListSchedulesPage> pages, int collectionSize) {
+        @Nullable List<ListSchedulesPage> pages, int collectionSize) {
       return new ListSchedulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1887,8 +1889,8 @@ public class ScheduleServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1898,14 +1900,14 @@ public class ScheduleServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1919,7 +1921,8 @@ public class ScheduleServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1929,7 +1932,7 @@ public class ScheduleServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

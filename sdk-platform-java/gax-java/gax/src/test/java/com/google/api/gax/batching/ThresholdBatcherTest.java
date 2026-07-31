@@ -55,6 +55,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class ThresholdBatcherTest {
 
@@ -157,9 +158,10 @@ class ThresholdBatcherTest {
       createSimpleBatcherBuilderWithMockExecutor(long customThreshold) {
     AccumulatingBatchReceiver<SimpleBatch> receiver =
         new AccumulatingBatchReceiver<>(ApiFutures.<Void>immediateFuture(null));
-    ScheduledExecutorService executor = mock(ScheduledThreadPoolExecutor.class);
+    ScheduledExecutorService executor =
+        mock(ScheduledThreadPoolExecutor.class, Mockito.withSettings().withoutAnnotations());
     when(executor.schedule((Runnable) any(), anyLong(), any()))
-        .thenReturn(mock(ScheduledFuture.class));
+        .thenReturn(mock(ScheduledFuture.class, Mockito.withSettings().withoutAnnotations()));
     BatchingThreshold<SimpleBatch> threshold = new NumericThreshold<>(customThreshold, e -> 1);
 
     ThresholdBatcher.Builder builder =

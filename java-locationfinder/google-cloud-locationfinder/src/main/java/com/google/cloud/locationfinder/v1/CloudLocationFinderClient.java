@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -185,7 +186,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudLocationFinderClient implements BackgroundResource {
-  private final CloudLocationFinderSettings settings;
+  private final @Nullable CloudLocationFinderSettings settings;
   private final CloudLocationFinderStub stub;
 
   /** Constructs an instance of CloudLocationFinderClient with default settings. */
@@ -225,7 +226,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudLocationFinderSettings getSettings() {
+  public final @Nullable CloudLocationFinderSettings getSettings() {
     return settings;
   }
 
@@ -258,7 +259,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCloudLocationsPagedResponse listCloudLocations(LocationName parent) {
+  public final ListCloudLocationsPagedResponse listCloudLocations(@Nullable LocationName parent) {
     ListCloudLocationsRequest request =
         ListCloudLocationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -428,7 +429,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloudLocation getCloudLocation(CloudLocationName name) {
+  public final CloudLocation getCloudLocation(@Nullable CloudLocationName name) {
     GetCloudLocationRequest request =
         GetCloudLocationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCloudLocation(request);
@@ -553,7 +554,9 @@ public class CloudLocationFinderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchCloudLocationsPagedResponse searchCloudLocations(
-      LocationName parent, CloudLocationName sourceCloudLocation, String query) {
+      @Nullable LocationName parent,
+      @Nullable CloudLocationName sourceCloudLocation,
+      String query) {
     SearchCloudLocationsRequest request =
         SearchCloudLocationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -599,7 +602,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchCloudLocationsPagedResponse searchCloudLocations(
-      LocationName parent, String sourceCloudLocation, String query) {
+      @Nullable LocationName parent, String sourceCloudLocation, String query) {
     SearchCloudLocationsRequest request =
         SearchCloudLocationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -644,7 +647,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchCloudLocationsPagedResponse searchCloudLocations(
-      String parent, CloudLocationName sourceCloudLocation, String query) {
+      String parent, @Nullable CloudLocationName sourceCloudLocation, String query) {
     SearchCloudLocationsRequest request =
         SearchCloudLocationsRequest.newBuilder()
             .setParent(parent)
@@ -878,8 +881,9 @@ public class CloudLocationFinderClient implements BackgroundResource {
           ListCloudLocationsPage> {
 
     private ListCloudLocationsPage(
-        PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation> context,
-        ListCloudLocationsResponse response) {
+        @Nullable PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation>
+            context,
+        @Nullable ListCloudLocationsResponse response) {
       super(context, response);
     }
 
@@ -889,14 +893,16 @@ public class CloudLocationFinderClient implements BackgroundResource {
 
     @Override
     protected ListCloudLocationsPage createPage(
-        PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation> context,
-        ListCloudLocationsResponse response) {
+        @Nullable PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation>
+            context,
+        @Nullable ListCloudLocationsResponse response) {
       return new ListCloudLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloudLocationsPage> createPageAsync(
-        PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation> context,
+        @Nullable PageContext<ListCloudLocationsRequest, ListCloudLocationsResponse, CloudLocation>
+            context,
         ApiFuture<ListCloudLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -911,7 +917,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
           ListCloudLocationsFixedSizeCollection> {
 
     private ListCloudLocationsFixedSizeCollection(
-        List<ListCloudLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListCloudLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -921,7 +927,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
 
     @Override
     protected ListCloudLocationsFixedSizeCollection createCollection(
-        List<ListCloudLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListCloudLocationsPage> pages, int collectionSize) {
       return new ListCloudLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -959,9 +965,10 @@ public class CloudLocationFinderClient implements BackgroundResource {
           SearchCloudLocationsPage> {
 
     private SearchCloudLocationsPage(
-        PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
+        @Nullable
+            PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
             context,
-        SearchCloudLocationsResponse response) {
+        @Nullable SearchCloudLocationsResponse response) {
       super(context, response);
     }
 
@@ -971,15 +978,17 @@ public class CloudLocationFinderClient implements BackgroundResource {
 
     @Override
     protected SearchCloudLocationsPage createPage(
-        PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
+        @Nullable
+            PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
             context,
-        SearchCloudLocationsResponse response) {
+        @Nullable SearchCloudLocationsResponse response) {
       return new SearchCloudLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchCloudLocationsPage> createPageAsync(
-        PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
+        @Nullable
+            PageContext<SearchCloudLocationsRequest, SearchCloudLocationsResponse, CloudLocation>
             context,
         ApiFuture<SearchCloudLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -995,7 +1004,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
           SearchCloudLocationsFixedSizeCollection> {
 
     private SearchCloudLocationsFixedSizeCollection(
-        List<SearchCloudLocationsPage> pages, int collectionSize) {
+        @Nullable List<SearchCloudLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1005,7 +1014,7 @@ public class CloudLocationFinderClient implements BackgroundResource {
 
     @Override
     protected SearchCloudLocationsFixedSizeCollection createCollection(
-        List<SearchCloudLocationsPage> pages, int collectionSize) {
+        @Nullable List<SearchCloudLocationsPage> pages, int collectionSize) {
       return new SearchCloudLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

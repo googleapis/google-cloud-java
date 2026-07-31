@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -66,7 +67,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetPlacement</td>
- *      <td><p> API to retrieve a `Placement` object.</td>
+ *      <td><p> Retrieves a `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +86,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListPlacements</td>
- *      <td><p> API to retrieve a list of `Placement` objects.</td>
+ *      <td><p> Lists `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +106,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePlacement</td>
- *      <td><p> API to create an `Placement` object.</td>
+ *      <td><p> Creates an `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +125,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePlacement</td>
- *      <td><p> API to update an `Placement` object.</td>
+ *      <td><p> Updates an `Placement` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -142,7 +143,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreatePlacements</td>
- *      <td><p> API to batch create `Placement` objects.</td>
+ *      <td><p> Creates `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +159,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdatePlacements</td>
- *      <td><p> API to batch update `Placement` objects.</td>
+ *      <td><p> Batch updates `Placement` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -275,7 +276,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PlacementServiceClient implements BackgroundResource {
-  private final PlacementServiceSettings settings;
+  private final @Nullable PlacementServiceSettings settings;
   private final PlacementServiceStub stub;
 
   /** Constructs an instance of PlacementServiceClient with default settings. */
@@ -315,7 +316,7 @@ public class PlacementServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PlacementServiceSettings getSettings() {
+  public final @Nullable PlacementServiceSettings getSettings() {
     return settings;
   }
 
@@ -325,7 +326,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -345,7 +346,7 @@ public class PlacementServiceClient implements BackgroundResource {
    *     `networks/{network_code}/placements/{placement_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Placement getPlacement(PlacementName name) {
+  public final Placement getPlacement(@Nullable PlacementName name) {
     GetPlacementRequest request =
         GetPlacementRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPlacement(request);
@@ -353,7 +354,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -380,7 +381,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -408,7 +409,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Placement` object.
+   * Retrieves a `Placement` object.
    *
    * <p>Sample code:
    *
@@ -436,7 +437,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -458,7 +459,7 @@ public class PlacementServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPlacementsPagedResponse listPlacements(NetworkName parent) {
+  public final ListPlacementsPagedResponse listPlacements(@Nullable NetworkName parent) {
     ListPlacementsRequest request =
         ListPlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -468,7 +469,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -497,7 +498,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -532,7 +533,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -568,7 +569,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Placement` objects.
+   * Lists `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -611,7 +612,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -633,7 +634,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @param placement Required. The `Placement` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Placement createPlacement(NetworkName parent, Placement placement) {
+  public final Placement createPlacement(@Nullable NetworkName parent, Placement placement) {
     CreatePlacementRequest request =
         CreatePlacementRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -644,7 +645,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -674,7 +675,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -703,7 +704,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `Placement` object.
+   * Creates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -732,7 +733,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -766,7 +767,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -795,7 +796,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `Placement` object.
+   * Updates an `Placement` object.
    *
    * <p>Sample code:
    *
@@ -824,7 +825,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -850,7 +851,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreatePlacementsResponse batchCreatePlacements(
-      NetworkName parent, List<CreatePlacementRequest> requests) {
+      @Nullable NetworkName parent, List<CreatePlacementRequest> requests) {
     BatchCreatePlacementsRequest request =
         BatchCreatePlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -861,7 +862,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -898,7 +899,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -929,7 +930,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Placement` objects.
+   * Creates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -959,7 +960,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -985,7 +986,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdatePlacementsResponse batchUpdatePlacements(
-      NetworkName parent, List<UpdatePlacementRequest> requests) {
+      @Nullable NetworkName parent, List<UpdatePlacementRequest> requests) {
     BatchUpdatePlacementsRequest request =
         BatchUpdatePlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -996,7 +997,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -1033,7 +1034,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -1064,7 +1065,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Placement` objects.
+   * Batch updates `Placement` objects.
    *
    * <p>Sample code:
    *
@@ -1118,7 +1119,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivatePlacementsResponse batchActivatePlacements(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivatePlacementsRequest request =
         BatchActivatePlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1246,7 +1247,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivatePlacementsResponse batchDeactivatePlacements(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivatePlacementsRequest request =
         BatchDeactivatePlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1374,7 +1375,7 @@ public class PlacementServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchArchivePlacementsResponse batchArchivePlacements(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchArchivePlacementsRequest request =
         BatchArchivePlacementsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1535,8 +1536,8 @@ public class PlacementServiceClient implements BackgroundResource {
           ListPlacementsRequest, ListPlacementsResponse, Placement, ListPlacementsPage> {
 
     private ListPlacementsPage(
-        PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
-        ListPlacementsResponse response) {
+        @Nullable PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
+        @Nullable ListPlacementsResponse response) {
       super(context, response);
     }
 
@@ -1546,14 +1547,14 @@ public class PlacementServiceClient implements BackgroundResource {
 
     @Override
     protected ListPlacementsPage createPage(
-        PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
-        ListPlacementsResponse response) {
+        @Nullable PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
+        @Nullable ListPlacementsResponse response) {
       return new ListPlacementsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPlacementsPage> createPageAsync(
-        PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
+        @Nullable PageContext<ListPlacementsRequest, ListPlacementsResponse, Placement> context,
         ApiFuture<ListPlacementsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1567,7 +1568,8 @@ public class PlacementServiceClient implements BackgroundResource {
           ListPlacementsPage,
           ListPlacementsFixedSizeCollection> {
 
-    private ListPlacementsFixedSizeCollection(List<ListPlacementsPage> pages, int collectionSize) {
+    private ListPlacementsFixedSizeCollection(
+        @Nullable List<ListPlacementsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1577,7 +1579,7 @@ public class PlacementServiceClient implements BackgroundResource {
 
     @Override
     protected ListPlacementsFixedSizeCollection createCollection(
-        List<ListPlacementsPage> pages, int collectionSize) {
+        @Nullable List<ListPlacementsPage> pages, int collectionSize) {
       return new ListPlacementsFixedSizeCollection(pages, collectionSize);
     }
   }

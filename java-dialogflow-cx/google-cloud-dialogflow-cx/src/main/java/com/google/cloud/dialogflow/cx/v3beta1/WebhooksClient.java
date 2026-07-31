@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -253,7 +254,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class WebhooksClient implements BackgroundResource {
-  private final WebhooksSettings settings;
+  private final @Nullable WebhooksSettings settings;
   private final WebhooksStub stub;
 
   /** Constructs an instance of WebhooksClient with default settings. */
@@ -291,7 +292,7 @@ public class WebhooksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final WebhooksSettings getSettings() {
+  public final @Nullable WebhooksSettings getSettings() {
     return settings;
   }
 
@@ -323,7 +324,7 @@ public class WebhooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWebhooksPagedResponse listWebhooks(AgentName parent) {
+  public final ListWebhooksPagedResponse listWebhooks(@Nullable AgentName parent) {
     ListWebhooksRequest request =
         ListWebhooksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -484,7 +485,7 @@ public class WebhooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/webhooks/&lt;WebhookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Webhook getWebhook(WebhookName name) {
+  public final Webhook getWebhook(@Nullable WebhookName name) {
     GetWebhookRequest request =
         GetWebhookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWebhook(request);
@@ -596,7 +597,7 @@ public class WebhooksClient implements BackgroundResource {
    * @param webhook Required. The webhook to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Webhook createWebhook(AgentName parent, Webhook webhook) {
+  public final Webhook createWebhook(@Nullable AgentName parent, Webhook webhook) {
     CreateWebhookRequest request =
         CreateWebhookRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -801,7 +802,7 @@ public class WebhooksClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/webhooks/&lt;WebhookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteWebhook(WebhookName name) {
+  public final void deleteWebhook(@Nullable WebhookName name) {
     DeleteWebhookRequest request =
         DeleteWebhookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteWebhook(request);
@@ -1139,8 +1140,8 @@ public class WebhooksClient implements BackgroundResource {
       extends AbstractPage<ListWebhooksRequest, ListWebhooksResponse, Webhook, ListWebhooksPage> {
 
     private ListWebhooksPage(
-        PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
-        ListWebhooksResponse response) {
+        @Nullable PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
+        @Nullable ListWebhooksResponse response) {
       super(context, response);
     }
 
@@ -1150,14 +1151,14 @@ public class WebhooksClient implements BackgroundResource {
 
     @Override
     protected ListWebhooksPage createPage(
-        PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
-        ListWebhooksResponse response) {
+        @Nullable PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
+        @Nullable ListWebhooksResponse response) {
       return new ListWebhooksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWebhooksPage> createPageAsync(
-        PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
+        @Nullable PageContext<ListWebhooksRequest, ListWebhooksResponse, Webhook> context,
         ApiFuture<ListWebhooksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1171,7 +1172,8 @@ public class WebhooksClient implements BackgroundResource {
           ListWebhooksPage,
           ListWebhooksFixedSizeCollection> {
 
-    private ListWebhooksFixedSizeCollection(List<ListWebhooksPage> pages, int collectionSize) {
+    private ListWebhooksFixedSizeCollection(
+        @Nullable List<ListWebhooksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1181,7 +1183,7 @@ public class WebhooksClient implements BackgroundResource {
 
     @Override
     protected ListWebhooksFixedSizeCollection createCollection(
-        List<ListWebhooksPage> pages, int collectionSize) {
+        @Nullable List<ListWebhooksPage> pages, int collectionSize) {
       return new ListWebhooksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1215,8 +1217,8 @@ public class WebhooksClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1226,14 +1228,14 @@ public class WebhooksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1247,7 +1249,8 @@ public class WebhooksClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1257,7 +1260,7 @@ public class WebhooksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

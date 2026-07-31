@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -65,7 +66,7 @@ public class SequenceName implements ResourceName {
     return newBuilder().setSequence(sequence).build().toString();
   }
 
-  public static SequenceName parse(String formattedString) {
+  public static @Nullable SequenceName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -83,7 +84,7 @@ public class SequenceName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SequenceName> values) {
+  public static List<String> toStringList(List<@Nullable SequenceName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SequenceName value : values) {
       if (value == null) {
@@ -125,7 +126,7 @@ public class SequenceName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

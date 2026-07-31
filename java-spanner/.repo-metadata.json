@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-spanner",
   "api_id": "spanner.googleapis.com",
   "library_type": "GAPIC_COMBO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/spanner-team",
   "issue_tracker": "https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open",
   "recommended_package": "com.google.cloud.spanner",

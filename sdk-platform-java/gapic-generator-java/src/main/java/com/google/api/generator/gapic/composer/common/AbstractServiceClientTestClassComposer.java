@@ -75,6 +75,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -82,6 +83,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+@NullMarked
 public abstract class AbstractServiceClientTestClassComposer implements ClassComposer {
 
   protected static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
