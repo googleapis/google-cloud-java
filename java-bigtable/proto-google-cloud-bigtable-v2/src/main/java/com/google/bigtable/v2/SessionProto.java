@@ -122,6 +122,18 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_LoadBalancingOptions_Random_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_PerMethodSessionLoad_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_PerMethodSessionLoad_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_PerMethodSessionLoad_Entry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_PerMethodSessionLoad_Entry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_SessionDiversionConfiguration_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_SessionDiversionConfiguration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_SessionClientConfiguration_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_SessionClientConfiguration_fieldAccessorTable;
@@ -262,6 +274,14 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_SessionReadRowResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_SessionReadRowsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_SessionReadRowsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_SessionReadRowsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_SessionReadRowsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_SessionMutateRowRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_SessionMutateRowRequest_fieldAccessorTable;
@@ -269,6 +289,14 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_bigtable_v2_SessionMutateRowResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_v2_SessionMutateRowResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_SessionCheckAndMutateRowRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_SessionCheckAndMutateRowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_SessionCheckAndMutateRowResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_v2_SessionCheckAndMutateRowResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_SessionParametersResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -323,27 +351,37 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\010PeakEwma\022\032\n"
           + "\022random_subset_size\030\001 \001(\003\032\010\n"
           + "\006RandomB\031\n"
-          + "\027load_balancing_strategy\"\274\n\n"
-          + "\032SessionClientConfiguration\022\024\n"
-          + "\014session_load\030\001 \001(\002\022L\n"
-          + "\026load_balancing_options\030\002"
-          + " \001(\0132(.google.bigtable.v2.LoadBalancingOptionsB\002\030\001\022f\n"
-          + "\025channel_configuration\030\003 \001(\0132G.google.bigtable.v2.SessionClient"
-          + "Configuration.ChannelPoolConfiguration\022k\n"
-          + "\032session_pool_configuration\030\004 \001(\0132G.goo"
-          + "gle.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration\032\376\004\n"
+          + "\027load_balancing_strategy\"\213\001\n"
+          + "\024PerMethodSessionLoad\022?\n"
+          + "\007entries\030\001 \003(\0132..google.bigtable.v2.PerMethodSessionLoad.Entry\0322\n"
+          + "\005Entry\022\023\n"
+          + "\013method_name\030\001 \001(\t\022\024\n"
+          + "\014session_load\030\002 \001(\002\"\232\001\n"
+          + "\035SessionDiversionConfiguration\022\026\n"
+          + "\014session_load\030\001 \001(\002H\000\022K\n"
+          + "\027per_method_session_load\030\002 \001(\0132(.g"
+          + "oogle.bigtable.v2.PerMethodSessionLoadH\000B\024\n"
+          + "\022diversion_strategy\"\234\013\n"
+          + "\032SessionClientConfiguration\022\030\n"
+          + "\014session_load\030\001 \001(\002B\002\030\001\022Z\n"
+          + "\037session_diversion_configuration\030\005 \001(\013"
+          + "21.google.bigtable.v2.SessionDiversionConfiguration\022L\n"
+          + "\026load_balancing_options\030\002 "
+          + "\001(\0132(.google.bigtable.v2.LoadBalancingOptionsB\002\030\001\022f\n"
+          + "\025channel_configuration\030\003 \001(\013"
+          + "2G.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration\022k\n"
+          + "\032session_pool_configuration\030\004 \001(\0132G.google.b"
+          + "igtable.v2.SessionClientConfiguration.SessionPoolConfiguration\032\376\004\n"
           + "\030ChannelPoolConfiguration\022\030\n"
           + "\020min_server_count\030\001 \001(\005\022\030\n"
           + "\020max_server_count\030\002 \001(\005\022 \n"
           + "\030per_server_session_count\030\003 \001(\005\022\207\001\n"
-          + "\033direct_access_with_fallback\030\004 \001(\0132`.google.bigtable.v"
-          + "2.SessionClientConfiguration.ChannelPool"
-          + "Configuration.DirectAccessWithFallbackH\000\022v\n"
-          + "\022direct_access_only\030\005 \001(\0132X.google.bi"
-          + "gtable.v2.SessionClientConfiguration.Cha"
-          + "nnelPoolConfiguration.DirectAccessOnlyH\000\022p\n"
-          + "\017cloud_path_only\030\006 \001(\0132U.google.bigta"
-          + "ble.v2.SessionClientConfiguration.ChannelPoolConfiguration.CloudPathOnlyH\000\032k\n"
+          + "\033direct_access_with_fallback\030\004 \001(\0132`.google.bigtable.v2.Ses"
+          + "sionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallbackH\000\022v\n"
+          + "\022direct_access_only\030\005 \001(\0132X.google.bigtabl"
+          + "e.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnlyH\000\022p\n"
+          + "\017cloud_path_only\030\006 \001(\0132U.google.bigtable.v"
+          + "2.SessionClientConfiguration.ChannelPoolConfiguration.CloudPathOnlyH\000\032k\n"
           + "\030DirectAccessWithFallback\022\034\n"
           + "\024error_rate_threshold\030\001 \001(\002\0221\n"
           + "\016check_interval\030\002 \001(\0132\031.google.protobuf.Duration\032\022\n"
@@ -362,8 +400,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\026load_balancing_options\030\t"
           + " \001(\0132(.google.bigtable.v2.LoadBalancingOptions\"\255\001\n"
           + "\026TelemetryConfiguration\022I\n"
-          + "\017debug_tag_level\030\001 \001(\01620"
-          + ".google.bigtable.v2.TelemetryConfiguration.Level\"H\n"
+          + "\017debug_tag_level\030\001 \001(\01620.goog"
+          + "le.bigtable.v2.TelemetryConfiguration.Level\"H\n"
           + "\005Level\022\025\n"
           + "\021LEVEL_UNSPECIFIED\020\000\022\t\n"
           + "\005DEBUG\020\001\022\010\n"
@@ -376,10 +414,10 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\014stop_polling\030\003 \001(\010H\000\0229\n"
           + "\020polling_interval\030\004"
           + " \001(\0132\031.google.protobuf.DurationB\002\030\001H\000\022]\n"
-          + "\025polling_configuration\030\005 \001(\0132<.google.bigtable.v2"
-          + ".ClientConfiguration.PollingConfigurationH\000\022K\n"
-          + "\027telemetry_configuration\030\006 \001(\0132*.g"
-          + "oogle.bigtable.v2.TelemetryConfiguration\032\236\001\n"
+          + "\025polling_configuration\030\005 \001(\0132<.google.bigtable.v2.Clie"
+          + "ntConfiguration.PollingConfigurationH\000\022K\n"
+          + "\027telemetry_configuration\030\006"
+          + " \001(\0132*.google.bigtable.v2.TelemetryConfiguration\032\236\001\n"
           + "\024PollingConfiguration\0223\n"
           + "\020polling_interval\030\001 \001(\0132\031.google.protobuf.Duration\0224\n"
           + "\021validity_duration\030\002 \001(\0132\031.google.protobuf.Duration\022\033\n"
@@ -392,8 +430,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\013virtual_rpc\030\003 \001(\0132%.google.bigtable.v2.VirtualRpcRequestH\000B\t\n"
           + "\007payload\"\334\003\n"
           + "\017SessionResponse\022?\n"
-          + "\014open_session\030\001 \001(\0132\'.g"
-          + "oogle.bigtable.v2.OpenSessionResponseH\000\022=\n"
+          + "\014open_session\030\001"
+          + " \001(\0132\'.google.bigtable.v2.OpenSessionResponseH\000\022=\n"
           + "\013virtual_rpc\030\002 \001(\0132&.google.bigtable.v2.VirtualRpcResponseH\000\0222\n"
           + "\005error\030\003 \001(\0132!.google.bigtable.v2.ErrorResponseH\000\022K\n"
           + "\022session_parameters\030\004"
@@ -417,8 +455,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\007backend\030\002 \001(\0132%.google.bigtable.v2.BackendIdentifier\022\017\n"
           + "\007payload\030\001 \001(\014\"\333\002\n"
           + "\023CloseSessionRequest\022J\n"
-          + "\006reason\030\001 \001(\0162:.goog"
-          + "le.bigtable.v2.CloseSessionRequest.CloseSessionReason\022\023\n"
+          + "\006reason\030\001 \001(\0162:.google.bi"
+          + "gtable.v2.CloseSessionRequest.CloseSessionReason\022\023\n"
           + "\013description\030\002 \001(\t\"\342\001\n"
           + "\022CloseSessionReason\022\036\n"
           + "\032CLOSE_SESSION_REASON_UNSET\020\000\022\037\n"
@@ -430,8 +468,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\020OpenTableRequest\022\022\n\n"
           + "table_name\030\001 \001(\t\022\026\n"
           + "\016app_profile_id\030\002 \001(\t\022C\n\n"
-          + "permission\030\003 \001(\0162/.google.bigtable.v2.OpenTableRequest.Permission\"h\n"
-          + "\n"
+          + "permission\030\003 \001(\0162/.google.bigtable.v2.OpenTableRequest.Permission\"h\n\n"
           + "Permission\022\024\n"
           + "\020PERMISSION_UNSET\020\000\022\023\n"
           + "\017PERMISSION_READ\020\001\022\024\n"
@@ -441,8 +478,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\031OpenAuthorizedViewRequest\022\034\n"
           + "\024authorized_view_name\030\001 \001(\t\022\026\n"
           + "\016app_profile_id\030\002 \001(\t\022L\n\n"
-          + "permission\030\003"
-          + " \001(\01628.google.bigtable.v2.OpenAuthorizedViewRequest.Permission\"h\n\n"
+          + "permission\030\003 \001(\0162"
+          + "8.google.bigtable.v2.OpenAuthorizedViewRequest.Permission\"h\n\n"
           + "Permission\022\024\n"
           + "\020PERMISSION_UNSET\020\000\022\023\n"
           + "\017PERMISSION_READ\020\001\022\024\n"
@@ -452,8 +489,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\033OpenMaterializedViewRequest\022\036\n"
           + "\026materialized_view_name\030\001 \001(\t\022\026\n"
           + "\016app_profile_id\030\002 \001(\t\022N\n\n"
-          + "permission\030\003 \001"
-          + "(\0162:.google.bigtable.v2.OpenMaterializedViewRequest.Permission\"7\n\n"
+          + "permission\030\003 \001(\0162:."
+          + "google.bigtable.v2.OpenMaterializedViewRequest.Permission\"7\n\n"
           + "Permission\022\024\n"
           + "\020PERMISSION_UNSET\020\000\022\023\n"
           + "\017PERMISSION_READ\020\001:\006\320\302\355\221\004\003\"&\n"
@@ -482,52 +519,78 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\006rpc_id\030\001 \001(\003\022<\n"
           + "\014cluster_info\030\002 \001(\0132&.google.bigtable.v2.ClusterInformation\022\"\n"
           + "\006status\030\003 \001(\0132\022.google.rpc.Status\022)\n\n"
-          + "retry_info\030\004 \001(\0132\025.google.rpc.RetryInfo\"\244\001\n"
+          + "retry_info\030\004 \001(\0132\025.google.rpc.RetryInfo\"\272\002\n"
           + "\014TableRequest\022=\n"
-          + "\010read_row\030\001 \001(\0132"
-          + ").google.bigtable.v2.SessionReadRowRequestH\000\022A\n\n"
-          + "mutate_row\030\002 \001(\0132+.google.bigtab"
-          + "le.v2.SessionMutateRowRequestH\000:\007\252\355\355\221\004\001\001B\t\n"
-          + "\007payload\"\247\001\n\r"
+          + "\010read_row\030\001 \001(\0132).goo"
+          + "gle.bigtable.v2.SessionReadRowRequestH\000\022A\n\n"
+          + "mutate_row\030\002 \001(\0132+.google.bigtable.v2.SessionMutateRowRequestH\000\022?\n"
+          + "\tread_rows\030\003 \001(\0132*.google.bigtable.v2.SessionReadRowsRequestH\000\022S\n"
+          + "\024check_and_mutate_row\030\004 \001("
+          + "\01323.google.bigtable.v2.SessionCheckAndMutateRowRequestH\000:\007\252\355\355\221\004\001\001B"
+          + "\t\n"
+          + "\007payload\"\277\002\n"
+          + "\r"
           + "TableResponse\022>\n"
+          + "\010read_row\030\001 \001(\0132*.googl"
+          + "e.bigtable.v2.SessionReadRowResponseH\000\022B\n\n"
+          + "mutate_row\030\002 \001(\0132,.google.bigtable.v2.SessionMutateRowResponseH\000\022@\n"
+          + "\tread_rows\030\003 \001(\0132+.google.bigtable.v2.SessionReadRowsResponseH\000\022T\n"
+          + "\024check_and_mutate_row\030\004 \001"
+          + "(\01324.google.bigtable.v2.SessionCheckAndMutateRowResponseH\000:\007\252\355\355\221\004\001\001B"
+          + "\t\n"
+          + "\007payload\"\303\002\n"
+          + "\025AuthorizedViewRequest\022=\n"
+          + "\010read_row\030\001 \001"
+          + "(\0132).google.bigtable.v2.SessionReadRowRequestH\000\022A\n\n"
+          + "mutate_row\030\002 \001(\0132+.google.bigtable.v2.SessionMutateRowRequestH\000\022?\n"
+          + "\tread_rows\030\003 \001(\0132*.google.bigtable.v2.SessionReadRowsRequestH\000\022S\n"
+          + "\024check_and_mutate_row\030\004"
+          + " \001(\01323.google.bigtable.v2.SessionCheckAndMutateRowRequestH\000:\007\252\355\355\221\004\001\002B"
+          + "\t\n"
+          + "\007payload\"\310\002\n"
+          + "\026AuthorizedViewResponse\022>\n"
           + "\010read_row\030\001"
           + " \001(\0132*.google.bigtable.v2.SessionReadRowResponseH\000\022B\n\n"
-          + "mutate_row\030\002 \001(\0132,.goog"
-          + "le.bigtable.v2.SessionMutateRowResponseH\000:\007\252\355\355\221\004\001\001B\t\n"
-          + "\007payload\"\255\001\n"
-          + "\025AuthorizedViewRequest\022=\n"
-          + "\010read_row\030\001"
-          + " \001(\0132).google.bigtable.v2.SessionReadRowRequestH\000\022A\n\n"
-          + "mutate_row\030\002"
-          + " \001(\0132+.google.bigtable.v2.SessionMutateRowRequestH\000:\007\252\355\355\221\004\001\002B"
-          + "\t\n"
-          + "\007payload\"\260\001\n"
-          + "\026AuthorizedViewResponse\022>\n"
-          + "\010read_row\030\001 \001"
-          + "(\0132*.google.bigtable.v2.SessionReadRowResponseH\000\022B\n\n"
-          + "mutate_row\030\002 \001(\0132,.google.bi"
-          + "gtable.v2.SessionMutateRowResponseH\000:\007\252\355\355\221\004\001\002B\t\n"
+          + "mutate_row\030\002 \001(\0132,.google.bigtable.v2.SessionMutateRowResponseH\000\022@\n"
+          + "\tread_rows\030\003 \001(\0132+.google.bigtable.v2.SessionReadRowsResponseH\000\022T\n"
+          + "\024check_and_mutate_row\030\004 \001(\01324.google.bigtable.v2"
+          + ".SessionCheckAndMutateRowResponseH\000:\007\252\355\355\221\004\001\002B\t\n"
           + "\007payload\"l\n"
           + "\027MaterializedViewRequest\022=\n"
           + "\010read_row\030\001"
           + " \001(\0132).google.bigtable.v2.SessionReadRowRequestH\000:\007\252\355\355\221\004\001\003B"
           + "\t\n"
-          + "\007payload\"n\n"
+          + "\007payload\"\260\001\n"
           + "\030MaterializedViewResponse\022>\n"
-          + "\010read_row\030\001"
-          + " \001(\0132*.google.bigtable.v2.SessionReadRowResponseH\000:\007\252\355\355\221\004\001\003B"
-          + "\t\n"
+          + "\010read_row\030\001 \001(\0132*.google.bigtable.v2.SessionReadRowResponseH\000\022@\n"
+          + "\tread_rows\030\002 \001(\0132+."
+          + "google.bigtable.v2.SessionReadRowsResponseH\000:\007\252\355\355\221\004\001\003B\t\n"
           + "\007payload\"S\n"
           + "\025SessionReadRowRequest\022\013\n"
           + "\003key\030\001 \001(\014\022-\n"
           + "\006filter\030\002 \001(\0132\035.google.bigtable.v2.RowFilter\"o\n"
           + "\026SessionReadRowResponse\022$\n"
           + "\003row\030\001 \001(\0132\027.google.bigtable.v2.Row\022/\n"
+          + "\005stats\030\002 \001(\0132 .google.bigtable.v2.RequestStats\"\227\001\n"
+          + "\026SessionReadRowsRequest\022(\n"
+          + "\004rows\030\001 \001(\0132\032.google.bigtable.v2.RowSet\022-\n"
+          + "\006filter\030\002 \001(\0132\035.google.bigtable.v2.RowFilter\022\022\n\n"
+          + "rows_limit\030\003 \001(\003\022\020\n"
+          + "\010reversed\030\004 \001(\010\"p\n"
+          + "\027SessionReadRowsResponse\022$\n"
+          + "\003row\030\001 \003(\0132\027.google.bigtable.v2.Row\022/\n"
           + "\005stats\030\002 \001(\0132 .google.bigtable.v2.RequestStats\"W\n"
           + "\027SessionMutateRowRequest\022\013\n"
           + "\003key\030\001 \001(\014\022/\n"
           + "\tmutations\030\002 \003(\0132\034.google.bigtable.v2.Mutation\"\032\n"
-          + "\030SessionMutateRowResponse\"J\n"
+          + "\030SessionMutateRowResponse\"\324\001\n"
+          + "\037SessionCheckAndMutateRowRequest\022\013\n"
+          + "\003key\030\001 \001(\014\0227\n"
+          + "\020predicate_filter\030\002 \001(\0132\035.google.bigtable.v2.RowFilter\0224\n"
+          + "\016true_mutations\030\003 \003(\0132\034.google.bigtable.v2.Mutation\0225\n"
+          + "\017false_mutations\030\004 \003(\0132\034.google.bigtable.v2.Mutation\"=\n"
+          + " SessionCheckAndMutateRowResponse\022\031\n"
+          + "\021predicate_matched\030\001 \001(\010\"J\n"
           + "\031SessionParametersResponse\022-\n\n"
           + "keep_alive\030\001 \001(\0132\031.google.protobuf.Duration\"\023\n"
           + "\021HeartbeatResponse\"S\n"
@@ -538,8 +601,8 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "\024SessionRefreshConfig\022F\n"
           + "\026optimized_open_request\030\001"
           + " \001(\0132&.google.bigtable.v2.OpenSessionRequest\022H\n"
-          + "\010metadata\030\002"
-          + " \003(\01321.google.bigtable.v2.SessionRefreshConfig.MetadataB\003\340A\003\0320\n"
+          + "\010metadata\030\002 \003(\01321.google.bigtable"
+          + ".v2.SessionRefreshConfig.MetadataB\003\340A\003\0320\n"
           + "\010Metadata\022\020\n"
           + "\003key\030\001 \001(\tB\003\340A\003\022\022\n"
           + "\005value\030\002 \001(\014B\003\340A\003*\233\001\n"
@@ -555,10 +618,10 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + " \003(\0162\037.google.bigtable.v2.SessionType:\\\n"
           + "\020rpc_session_type\022\036.google.protobuf.MethodOptions\030\204\332\344A"
           + " \001(\0162\037.google.bigtable.v2.SessionTypeB\266\001\n"
-          + "\026com.google.bigtable.v2B\014SessionProtoP\001Z8cloud.google.com/go/bigtable/apiv2/"
-          + "bigtablepb;bigtablepb\252\002\030Google.Cloud.Big"
-          + "table.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Go"
-          + "ogle::Cloud::Bigtable::V2b\006proto3"
+          + "\026com.google.bigtable.v2B\014SessionProtoP\001Z8cloud.google.com/go/big"
+          + "table/apiv2/bigtablepb;bigtablepb\252\002\030Goog"
+          + "le.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\Bigt"
+          + "able\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -613,13 +676,38 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_LoadBalancingOptions_Random_descriptor,
             new java.lang.String[] {});
-    internal_static_google_bigtable_v2_SessionClientConfiguration_descriptor =
+    internal_static_google_bigtable_v2_PerMethodSessionLoad_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_bigtable_v2_PerMethodSessionLoad_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_PerMethodSessionLoad_descriptor,
+            new java.lang.String[] {
+              "Entries",
+            });
+    internal_static_google_bigtable_v2_PerMethodSessionLoad_Entry_descriptor =
+        internal_static_google_bigtable_v2_PerMethodSessionLoad_descriptor.getNestedType(0);
+    internal_static_google_bigtable_v2_PerMethodSessionLoad_Entry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_PerMethodSessionLoad_Entry_descriptor,
+            new java.lang.String[] {
+              "MethodName", "SessionLoad",
+            });
+    internal_static_google_bigtable_v2_SessionDiversionConfiguration_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_bigtable_v2_SessionDiversionConfiguration_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_SessionDiversionConfiguration_descriptor,
+            new java.lang.String[] {
+              "SessionLoad", "PerMethodSessionLoad", "DiversionStrategy",
+            });
+    internal_static_google_bigtable_v2_SessionClientConfiguration_descriptor =
+        getDescriptor().getMessageType(4);
     internal_static_google_bigtable_v2_SessionClientConfiguration_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionClientConfiguration_descriptor,
             new java.lang.String[] {
               "SessionLoad",
+              "SessionDiversionConfiguration",
               "LoadBalancingOptions",
               "ChannelConfiguration",
               "SessionPoolConfiguration",
@@ -677,7 +765,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "LoadBalancingOptions",
             });
     internal_static_google_bigtable_v2_TelemetryConfiguration_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_bigtable_v2_TelemetryConfiguration_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_TelemetryConfiguration_descriptor,
@@ -685,7 +773,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "DebugTagLevel",
             });
     internal_static_google_bigtable_v2_ClientConfiguration_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_bigtable_v2_ClientConfiguration_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ClientConfiguration_descriptor,
@@ -706,7 +794,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "PollingInterval", "ValidityDuration", "MaxRpcRetryCount",
             });
     internal_static_google_bigtable_v2_SessionRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_bigtable_v2_SessionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionRequest_descriptor,
@@ -714,7 +802,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "OpenSession", "CloseSession", "VirtualRpc", "Payload",
             });
     internal_static_google_bigtable_v2_SessionResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_bigtable_v2_SessionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionResponse_descriptor,
@@ -729,7 +817,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Payload",
             });
     internal_static_google_bigtable_v2_OpenSessionRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_bigtable_v2_OpenSessionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenSessionRequest_descriptor,
@@ -741,7 +829,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Payload",
             });
     internal_static_google_bigtable_v2_BackendIdentifier_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_bigtable_v2_BackendIdentifier_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_BackendIdentifier_descriptor,
@@ -749,7 +837,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "GoogleFrontendId", "ApplicationFrontendId", "ApplicationFrontendZone",
             });
     internal_static_google_bigtable_v2_OpenSessionResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_bigtable_v2_OpenSessionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenSessionResponse_descriptor,
@@ -757,7 +845,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Backend", "Payload",
             });
     internal_static_google_bigtable_v2_CloseSessionRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_bigtable_v2_CloseSessionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_CloseSessionRequest_descriptor,
@@ -765,7 +853,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Reason", "Description",
             });
     internal_static_google_bigtable_v2_OpenTableRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_bigtable_v2_OpenTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenTableRequest_descriptor,
@@ -773,13 +861,13 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "TableName", "AppProfileId", "Permission",
             });
     internal_static_google_bigtable_v2_OpenTableResponse_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_bigtable_v2_OpenTableResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenTableResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_OpenAuthorizedViewRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_bigtable_v2_OpenAuthorizedViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenAuthorizedViewRequest_descriptor,
@@ -787,13 +875,13 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "AuthorizedViewName", "AppProfileId", "Permission",
             });
     internal_static_google_bigtable_v2_OpenAuthorizedViewResponse_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_bigtable_v2_OpenAuthorizedViewResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenAuthorizedViewResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_OpenMaterializedViewRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_bigtable_v2_OpenMaterializedViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenMaterializedViewRequest_descriptor,
@@ -801,13 +889,13 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "MaterializedViewName", "AppProfileId", "Permission",
             });
     internal_static_google_bigtable_v2_OpenMaterializedViewResponse_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_bigtable_v2_OpenMaterializedViewResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_OpenMaterializedViewResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_VirtualRpcRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_bigtable_v2_VirtualRpcRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_VirtualRpcRequest_descriptor,
@@ -823,7 +911,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "AttemptNumber", "AttemptStart", "Traceparent",
             });
     internal_static_google_bigtable_v2_ClusterInformation_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_bigtable_v2_ClusterInformation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ClusterInformation_descriptor,
@@ -831,7 +919,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "ClusterId", "ZoneId",
             });
     internal_static_google_bigtable_v2_SessionRequestStats_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_bigtable_v2_SessionRequestStats_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionRequestStats_descriptor,
@@ -839,7 +927,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "BackendLatency",
             });
     internal_static_google_bigtable_v2_VirtualRpcResponse_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_bigtable_v2_VirtualRpcResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_VirtualRpcResponse_descriptor,
@@ -847,46 +935,46 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "RpcId", "ClusterInfo", "Stats", "Payload",
             });
     internal_static_google_bigtable_v2_ErrorResponse_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(23);
     internal_static_google_bigtable_v2_ErrorResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_ErrorResponse_descriptor,
             new java.lang.String[] {
               "RpcId", "ClusterInfo", "Status", "RetryInfo",
             });
-    internal_static_google_bigtable_v2_TableRequest_descriptor = getDescriptor().getMessageType(22);
+    internal_static_google_bigtable_v2_TableRequest_descriptor = getDescriptor().getMessageType(24);
     internal_static_google_bigtable_v2_TableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_TableRequest_descriptor,
             new java.lang.String[] {
-              "ReadRow", "MutateRow", "Payload",
+              "ReadRow", "MutateRow", "ReadRows", "CheckAndMutateRow", "Payload",
             });
     internal_static_google_bigtable_v2_TableResponse_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(25);
     internal_static_google_bigtable_v2_TableResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_TableResponse_descriptor,
             new java.lang.String[] {
-              "ReadRow", "MutateRow", "Payload",
+              "ReadRow", "MutateRow", "ReadRows", "CheckAndMutateRow", "Payload",
             });
     internal_static_google_bigtable_v2_AuthorizedViewRequest_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(26);
     internal_static_google_bigtable_v2_AuthorizedViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_AuthorizedViewRequest_descriptor,
             new java.lang.String[] {
-              "ReadRow", "MutateRow", "Payload",
+              "ReadRow", "MutateRow", "ReadRows", "CheckAndMutateRow", "Payload",
             });
     internal_static_google_bigtable_v2_AuthorizedViewResponse_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(27);
     internal_static_google_bigtable_v2_AuthorizedViewResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_AuthorizedViewResponse_descriptor,
             new java.lang.String[] {
-              "ReadRow", "MutateRow", "Payload",
+              "ReadRow", "MutateRow", "ReadRows", "CheckAndMutateRow", "Payload",
             });
     internal_static_google_bigtable_v2_MaterializedViewRequest_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(28);
     internal_static_google_bigtable_v2_MaterializedViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_MaterializedViewRequest_descriptor,
@@ -894,15 +982,15 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "ReadRow", "Payload",
             });
     internal_static_google_bigtable_v2_MaterializedViewResponse_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(29);
     internal_static_google_bigtable_v2_MaterializedViewResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_MaterializedViewResponse_descriptor,
             new java.lang.String[] {
-              "ReadRow", "Payload",
+              "ReadRow", "ReadRows", "Payload",
             });
     internal_static_google_bigtable_v2_SessionReadRowRequest_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(30);
     internal_static_google_bigtable_v2_SessionReadRowRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionReadRowRequest_descriptor,
@@ -910,15 +998,31 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Key", "Filter",
             });
     internal_static_google_bigtable_v2_SessionReadRowResponse_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(31);
     internal_static_google_bigtable_v2_SessionReadRowResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionReadRowResponse_descriptor,
             new java.lang.String[] {
               "Row", "Stats",
             });
+    internal_static_google_bigtable_v2_SessionReadRowsRequest_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_bigtable_v2_SessionReadRowsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_SessionReadRowsRequest_descriptor,
+            new java.lang.String[] {
+              "Rows", "Filter", "RowsLimit", "Reversed",
+            });
+    internal_static_google_bigtable_v2_SessionReadRowsResponse_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_bigtable_v2_SessionReadRowsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_SessionReadRowsResponse_descriptor,
+            new java.lang.String[] {
+              "Row", "Stats",
+            });
     internal_static_google_bigtable_v2_SessionMutateRowRequest_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(34);
     internal_static_google_bigtable_v2_SessionMutateRowRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionMutateRowRequest_descriptor,
@@ -926,13 +1030,29 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Key", "Mutations",
             });
     internal_static_google_bigtable_v2_SessionMutateRowResponse_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(35);
     internal_static_google_bigtable_v2_SessionMutateRowResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionMutateRowResponse_descriptor,
             new java.lang.String[] {});
+    internal_static_google_bigtable_v2_SessionCheckAndMutateRowRequest_descriptor =
+        getDescriptor().getMessageType(36);
+    internal_static_google_bigtable_v2_SessionCheckAndMutateRowRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_SessionCheckAndMutateRowRequest_descriptor,
+            new java.lang.String[] {
+              "Key", "PredicateFilter", "TrueMutations", "FalseMutations",
+            });
+    internal_static_google_bigtable_v2_SessionCheckAndMutateRowResponse_descriptor =
+        getDescriptor().getMessageType(37);
+    internal_static_google_bigtable_v2_SessionCheckAndMutateRowResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_v2_SessionCheckAndMutateRowResponse_descriptor,
+            new java.lang.String[] {
+              "PredicateMatched",
+            });
     internal_static_google_bigtable_v2_SessionParametersResponse_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(38);
     internal_static_google_bigtable_v2_SessionParametersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionParametersResponse_descriptor,
@@ -940,13 +1060,13 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "KeepAlive",
             });
     internal_static_google_bigtable_v2_HeartbeatResponse_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(39);
     internal_static_google_bigtable_v2_HeartbeatResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_HeartbeatResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_GoAwayResponse_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(40);
     internal_static_google_bigtable_v2_GoAwayResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_GoAwayResponse_descriptor,
@@ -954,7 +1074,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "Reason", "Description", "LastRpcIdAdmitted",
             });
     internal_static_google_bigtable_v2_SessionRefreshConfig_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(41);
     internal_static_google_bigtable_v2_SessionRefreshConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_v2_SessionRefreshConfig_descriptor,

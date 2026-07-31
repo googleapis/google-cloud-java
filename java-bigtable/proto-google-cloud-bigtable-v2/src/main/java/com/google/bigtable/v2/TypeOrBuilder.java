@@ -544,5 +544,79 @@ public interface TypeOrBuilder
    */
   com.google.bigtable.v2.Type.EnumOrBuilder getEnumTypeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Geography
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Geography geography_type = 15;</code>
+   *
+   * @return Whether the geographyType field is set.
+   */
+  boolean hasGeographyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geography
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Geography geography_type = 15;</code>
+   *
+   * @return The geographyType.
+   */
+  com.google.bigtable.v2.Type.Geography getGeographyType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Geography
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Geography geography_type = 15;</code>
+   */
+  com.google.bigtable.v2.Type.GeographyOrBuilder getGeographyTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Int32
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Int32 int32_type = 16;</code>
+   *
+   * @return Whether the int32Type field is set.
+   */
+  boolean hasInt32Type();
+
+  /**
+   *
+   *
+   * <pre>
+   * Int32
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Int32 int32_type = 16;</code>
+   *
+   * @return The int32Type.
+   */
+  com.google.bigtable.v2.Type.Int32 getInt32Type();
+
+  /**
+   *
+   *
+   * <pre>
+   * Int32
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Type.Int32 int32_type = 16;</code>
+   */
+  com.google.bigtable.v2.Type.Int32OrBuilder getInt32TypeOrBuilder();
+
   com.google.bigtable.v2.Type.KindCase getKindCase();
 }

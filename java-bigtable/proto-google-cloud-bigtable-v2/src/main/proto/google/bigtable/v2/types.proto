@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ message Type {
         bool escape_nulls = 1;
       }
 
-      // Which encoding to use.
+      // Specifies which encoding to use.
       oneof encoding {
         // Use `Raw` encoding.
         Raw raw = 1;
@@ -116,7 +116,7 @@ message Type {
         string null_escape_char = 1;
       }
 
-      // Which encoding to use.
+      // Specifies which encoding to use.
       oneof encoding {
         // Deprecated: if set, converts to an empty `utf8_bytes`.
         Utf8Raw utf8_raw = 1 [deprecated = true];
@@ -159,7 +159,47 @@ message Type {
       // Distinct mode: all values are supported.
       message OrderedCodeBytes {}
 
-      // Which encoding to use.
+      // Specifies which encoding to use.
+      oneof encoding {
+        // Use `BigEndianBytes` encoding.
+        BigEndianBytes big_endian_bytes = 1;
+
+        // Use `OrderedCodeBytes` encoding.
+        OrderedCodeBytes ordered_code_bytes = 2;
+      }
+    }
+
+    // The encoding to use when converting to or from lower level types.
+    Encoding encoding = 1;
+  }
+
+  // Int32
+  // Values of type `Int32` are stored in `Value.int_value`.
+  message Int32 {
+    // Rules used to convert to or from lower level types.
+    message Encoding {
+      // Encodes the value as a 4-byte big-endian two's complement value.
+      //
+      // Sorted mode: non-negative values are supported.
+      //
+      // Distinct mode: all values are supported.
+      //
+      // Compatible with:
+      //
+      //  - BigQuery `BINARY` encoding
+      //  - HBase `Bytes.toBytes`
+      //  - Java `ByteBuffer.putInt()` with `ByteOrder.BIG_ENDIAN`
+      message BigEndianBytes {}
+
+      // Encodes the value in a variable length binary format of up to 5 bytes.
+      // Values that are closer to zero use fewer bytes.
+      //
+      // Sorted mode: all values are supported.
+      //
+      // Distinct mode: all values are supported.
+      message OrderedCodeBytes {}
+
+      // Specifies which encoding to use.
       oneof encoding {
         // Use `BigEndianBytes` encoding.
         BigEndianBytes big_endian_bytes = 1;
@@ -175,7 +215,14 @@ message Type {
 
   // bool
   // Values of type `Bool` are stored in `Value.bool_value`.
-  message Bool {}
+  message Bool {
+    // Defines rules used to convert to or from lower level types.
+    message Encoding {}
+
+    // Specifies the encoding to use when converting to or from lower level
+    // types.
+    Encoding encoding = 1;
+  }
 
   // Float32
   // Values of type `Float32` are stored in `Value.float_value`.
@@ -190,7 +237,7 @@ message Type {
   message Timestamp {
     // Rules used to convert to or from lower level types.
     message Encoding {
-      // Which encoding to use.
+      // Specifies which encoding to use.
       oneof encoding {
         // Encodes the number of microseconds since the Unix epoch using the
         // given `Int64` encoding. Values must be microsecond-aligned.
@@ -229,6 +276,7 @@ message Type {
     message Encoding {
       // Uses the encoding of `fields[0].type` as-is.
       // Only valid if `fields.size == 1`.
+      // This encoding does not support `DESC` field ordering.
       message Singleton {}
 
       // Fields are encoded independently and concatenated with a configurable
@@ -242,6 +290,7 @@ message Type {
       //  - Encoded field values must not contain any bytes <= `delimiter[0]`
       //  - Element-wise order is preserved: `A < B` if `A[0] < B[0]`, or if
       //    `A[0] == B[0] && A[1] < B[1]`, etc. Strict prefixes sort first.
+      //  - This encoding does not support `DESC` field ordering.
       //
       // Distinct mode:
       //
@@ -253,20 +302,19 @@ message Type {
         bytes delimiter = 1;
       }
 
-      // Fields are encoded independently and concatenated with the fixed byte
-      // pair `{0x00, 0x01}` in between.
-      //
-      // Any null `(0x00)` byte in an encoded field is replaced by the fixed
-      // byte pair `{0x00, 0xFF}`.
-      //
-      // Fields that encode to the empty string "" have special handling:
-      //
-      //  - If *every* field encodes to "", or if the STRUCT has no fields
-      //    defined, then the STRUCT is encoded as the fixed byte pair
-      //    `{0x00, 0x00}`.
-      //  - Otherwise, the STRUCT only encodes until the last non-empty field,
-      //    omitting any trailing empty fields. Any empty fields that aren't
-      //    omitted are replaced with the fixed byte pair `{0x00, 0x00}`.
+      // Fields are encoded independently, then escaped and delimited by
+      // appling the following rules in order:
+      //  - While the last remaining field is `ASC` or `UNSPECIFIED`, and
+      //    encodes to the empty string "", remove it.
+      //  - In each remaining field, replace all null bytes `0x00` with the
+      //    fixed byte pair `{0x00, 0xFF}`.
+      //  - If any remaining field encodes to the empty string "", replace it
+      //    with the fixed byte pair `{0x00, 0x00}`.
+      //  - Append the fixed byte pair `{0x00, 0x01}` to each remaining field,
+      //    except for the last remaining field if it is `ASC`.
+      //  - Bitwise negate all `DESC` fields.
+      //  - Concatenate the results, or emit the fixed byte pair `{0x00, 0x00}`
+      //    if there are no remaining fields to concatenate.
       //
       // Examples:
       //
@@ -280,6 +328,16 @@ message Type {
       //  - STRUCT("A", "", "C") -> "A" + "\00\01" + "\00\00" + "\00\01" + "C"
       // ```
       //
+      // Examples for struct with `DESC` fields:
+      // ```
+      //  - STRUCT("" DESC)          -> "\xFF\xFF" + "\xFF\xFE"
+      //  - STRUCT("" DESC, "")      -> "\xFF\xFF" + "\xFF\xFE"
+      //  - STRUCT("" DESC, "", "")  -> "\xFF\xFF" + "\xFF\xFE"
+      //  - STRUCT("" DESC, "A")     -> "\xFF\xFF" + "\xFF\xFE" + "A"
+      //  - STRUCT("A", "" DESC, "") -> "A" + "\00\01" + "\xFF\xFF" + "\xFF\xFE"
+      //  - STRUCT("", "A" DESC)     -> "\x00\x00" + "\x00\x01" + "\xBE" +
+      //                                "\xFF\xFE"
+      // ```
       //
       // Since null bytes are always escaped, this encoding can cause size
       // blowup for encodings like `Int64.BigEndianBytes` that are likely to
@@ -288,7 +346,8 @@ message Type {
       // Sorted mode:
       //
       //  - Fields are encoded in sorted mode.
-      //  - All values supported by the field encodings are allowed
+      //  - All values supported by the field encodings are allowed.
+      //  - Fields with unset or `UNSPECIFIED` order are treated as `ASC`.
       //  - Element-wise order is preserved: `A < B` if `A[0] < B[0]`, or if
       //    `A[0] == B[0] && A[1] < B[1]`, etc. Strict prefixes sort first.
       //
@@ -298,7 +357,7 @@ message Type {
       //  - All values supported by the field encodings are allowed.
       message OrderedCodeBytes {}
 
-      // Which encoding to use.
+      // Specifies which encoding to use.
       oneof encoding {
         // Use `Singleton` encoding.
         Singleton singleton = 1;
@@ -339,6 +398,11 @@ message Type {
     // In the format of "foo.bar.EnumMessage".
     string enum_name = 2;
   }
+
+  // A geography type, representing a point or region on Earth.
+  // The value is stored in `Value.bytes_value` as Well-Known Binary (WKB)
+  // bytes.
+  message Geography {}
 
   // An ordered list of elements of a given type.
   // Values of type `Array` are stored in `Value.array_value`.
@@ -461,5 +525,11 @@ message Type {
 
     // Enum
     Enum enum_type = 14;
+
+    // Geography
+    Geography geography_type = 15;
+
+    // Int32
+    Int32 int32_type = 16;
   }
 }

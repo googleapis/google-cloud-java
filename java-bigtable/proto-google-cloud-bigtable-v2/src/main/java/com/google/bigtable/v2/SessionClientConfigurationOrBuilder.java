@@ -30,22 +30,67 @@ public interface SessionClientConfigurationOrBuilder
    *
    *
    * <pre>
-   * What share of requests should operate on a session, [0, 1]. The rest
-   * should operate on the old-style API.
+   * What share of requests should operate on a session, [0, 1]. The rest should
+   * operate on the old-style API. If provided, this should apply to all
+   * methods.
    * </pre>
    *
-   * <code>float session_load = 1;</code>
+   * <code>float session_load = 1 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.SessionClientConfiguration.session_load is deprecated. See
+   *     google/bigtable/v2/session.proto;l=247
    * @return The sessionLoad.
    */
+  @java.lang.Deprecated
   float getSessionLoad();
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   *
+   * @return Whether the sessionDiversionConfiguration field is set.
+   */
+  boolean hasSessionDiversionConfiguration();
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   *
+   * @return The sessionDiversionConfiguration.
+   */
+  com.google.bigtable.v2.SessionDiversionConfiguration getSessionDiversionConfiguration();
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   */
+  com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder
+      getSessionDiversionConfigurationOrBuilder();
 
   /**
    * <code>.google.bigtable.v2.LoadBalancingOptions load_balancing_options = 2 [deprecated = true];
    * </code>
    *
    * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is deprecated.
-   *     See google/bigtable/v2/session.proto;l=220
+   *     See google/bigtable/v2/session.proto;l=252
    * @return Whether the loadBalancingOptions field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +101,7 @@ public interface SessionClientConfigurationOrBuilder
    * </code>
    *
    * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is deprecated.
-   *     See google/bigtable/v2/session.proto;l=220
+   *     See google/bigtable/v2/session.proto;l=252
    * @return The loadBalancingOptions.
    */
   @java.lang.Deprecated
