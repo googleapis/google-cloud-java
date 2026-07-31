@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.internal.session;
 import com.google.bigtable.v2.AuthorizedViewRequest;
 import com.google.bigtable.v2.AuthorizedViewResponse;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.MaterializedViewRequest;
 import com.google.bigtable.v2.MaterializedViewResponse;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -27,6 +28,8 @@ import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowSet;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
@@ -146,6 +149,28 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .build());
 
   public static final VRpcDescriptor<
+          OpenTableRequest, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+      CHECK_AND_MUTATE_ROW =
+          new VRpcDescriptor<>(
+              TABLE_SESSION,
+              MethodInfo.of("Bigtable.CheckAndMutateRow", false),
+              createTableEncoder(TableRequest.Builder::setCheckAndMutateRow),
+              createTableDecoder(TableResponse::getCheckAndMutateRow),
+              (name, appProfileId, req) -> {
+                CheckAndMutateRowRequest.Builder builder =
+                    CheckAndMutateRowRequest.newBuilder()
+                        .setTableName(name)
+                        .setAppProfileId(appProfileId)
+                        .setRowKey(req.getKey())
+                        .addAllTrueMutations(req.getTrueMutationsList())
+                        .addAllFalseMutations(req.getFalseMutationsList());
+                if (req.hasPredicateFilter()) {
+                  builder.setPredicateFilter(req.getPredicateFilter());
+                }
+                return builder.build();
+              });
+
+  public static final VRpcDescriptor<
           OpenAuthorizedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
       READ_ROW_AUTH_VIEW =
           new VRpcDescriptor<>(
@@ -177,6 +202,30 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .setRowKey(req.getKey())
                       .addAllMutations(req.getMutationsList())
                       .build());
+
+  public static final VRpcDescriptor<
+          OpenAuthorizedViewRequest,
+          SessionCheckAndMutateRowRequest,
+          SessionCheckAndMutateRowResponse>
+      CHECK_AND_MUTATE_ROW_AUTH_VIEW =
+          new VRpcDescriptor<>(
+              AUTHORIZED_VIEW_SESSION,
+              MethodInfo.of("Bigtable.CheckAndMutateRow", false),
+              createAuthViewEncoder(AuthorizedViewRequest.Builder::setCheckAndMutateRow),
+              createAuthViewDecoder(AuthorizedViewResponse::getCheckAndMutateRow),
+              (name, appProfileId, req) -> {
+                CheckAndMutateRowRequest.Builder builder =
+                    CheckAndMutateRowRequest.newBuilder()
+                        .setAuthorizedViewName(name)
+                        .setAppProfileId(appProfileId)
+                        .setRowKey(req.getKey())
+                        .addAllTrueMutations(req.getTrueMutationsList())
+                        .addAllFalseMutations(req.getFalseMutationsList());
+                if (req.hasPredicateFilter()) {
+                  builder.setPredicateFilter(req.getPredicateFilter());
+                }
+                return builder.build();
+              });
 
   public static final VRpcDescriptor<
           OpenMaterializedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
