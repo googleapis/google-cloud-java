@@ -672,13 +672,11 @@ public class OpenTelemetryTest {
     tracer.startPublisherSpan(messageWrapper);
 
     // Original Attempt 0
-    Span publishRpcSpan1 =
-        tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers, 0);
+    Span publishRpcSpan1 = tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers, 0);
     tracer.endPublishRpcSpan(publishRpcSpan1);
 
     // Hedged Attempt 1
-    Span publishRpcSpan2 =
-        tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers, 1);
+    Span publishRpcSpan2 = tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers, 1);
     tracer.endPublishRpcSpan(publishRpcSpan2);
 
     // End Publisher span

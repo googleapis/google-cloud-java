@@ -48,7 +48,6 @@ import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
@@ -733,8 +732,7 @@ public class Publisher implements PublisherInterface {
     ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
     coordinator.addAttempt(0, firstAttemptFuture);
     long delayMs = hedgeSettings.getHedgeDelay().toMillis();
-    HedgedRequest item =
-        new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
+    HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
     hedgingQueue.add(item);
     coordinator.isInQueue.set(true);
     scheduleQueueProcessing();
