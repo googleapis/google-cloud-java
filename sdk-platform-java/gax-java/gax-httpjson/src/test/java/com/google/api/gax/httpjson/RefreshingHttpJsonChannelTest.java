@@ -180,6 +180,7 @@ class RefreshingHttpJsonChannelTest {
 
     // By default, Mockito returns false for boolean.
     // Let's simulate that the channel pool is shut down.
+    channel.shutdown();
     when(firstChannel.isShutdown()).thenReturn(true);
 
     Thread.sleep(1001); // Invalidate 1-second cache
