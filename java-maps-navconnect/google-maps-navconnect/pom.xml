@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-navconnect</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-maps-navconnect:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-navconnect:current} -->
   <packaging>jar</packaging>
   <name>Google Navigation Connect</name>
   <description>Navigation Connect Navigation Connect API.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-navconnect-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-maps-navconnect:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-navconnect:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-navconnect</site.installationModule>

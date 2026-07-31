@@ -24,7 +24,7 @@ class BuiltInMetricsView {
 
   private BuiltInMetricsView() {}
 
-  /** Register built-in metrics on the {@link SdkMeterProviderBuilder} with credentials. */
+  /** Registers Cloud Monitoring built-in metrics views and exporter on the builder. */
   static void registerBuiltinMetrics(
       MetricExporter metricExporter, SdkMeterProviderBuilder builder) {
     BuiltInMetricsConstant.getAllViews().forEach(builder::registerView);

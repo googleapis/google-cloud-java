@@ -155,7 +155,7 @@ Cloud Spanner client supports [client-side metrics](https://cloud.google.com/spa
 Client-side metrics are measured from the time a request leaves your application to the time your application receives the response. 
 In contrast, server-side metrics are measured from the time Spanner receives a request until the last byte of data is sent to the client.
 
-These metrics are enabled by default. You can opt out of using client-side metrics with the following code:
+The default Cloud Monitoring export for these metrics is enabled by default. You can opt out of the default Cloud Monitoring export with the following code:
 
 ```
 SpannerOptions options = SpannerOptions.newBuilder()
@@ -163,9 +163,49 @@ SpannerOptions options = SpannerOptions.newBuilder()
   .build();
 ```
 
-You can also disable these metrics by setting `SPANNER_DISABLE_BUILTIN_METRICS` to `true`.
+You can also disable the default Cloud Monitoring export by setting `SPANNER_DISABLE_BUILTIN_METRICS` to `true`. These controls affect only the Cloud Monitoring export. They do not affect a caller-owned client-metrics export configured with `CustomOpenTelemetryMetricsProvider`.
 
-> Note: Client-side metrics needs `monitoring.timeSeries.create` IAM permission to export metrics data. Ask your administrator to grant your service account the [Monitoring Metric Writer](https://cloud.google.com/iam/docs/roles-permissions/monitoring#monitoring.metricWriter) (roles/monitoring.metricWriter) IAM role on the project.
+> Note: Client-side metrics needs `monitoring.timeSeries.create` IAM permission to export metrics data to Cloud Monitoring. Ask your administrator to grant your service account the [Monitoring Metric Writer](https://cloud.google.com/iam/docs/roles-permissions/monitoring#monitoring.metricWriter) (roles/monitoring.metricWriter) IAM role on the project.
+
+#### Exporting client metrics to OpenTelemetry
+
+Client metrics export to a caller-owned OpenTelemetry destination is controlled by a `MetricsProvider`,
+set with `SpannerOptions.Builder.setClientMetricsProvider(MetricsProvider)`. The available
+providers are:
+
+* `DefaultMetricsProvider` (the default): no caller-owned client-metrics destination is configured.
+  The built-in Cloud Monitoring export follows `setBuiltInMetricsEnabled` and the
+  `SPANNER_DISABLE_BUILTIN_METRICS` environment variable. On Spanner Omni, where the Cloud Monitoring
+  export is not available, the default provider results in no client-metrics export.
+* `NoopMetricsProvider`: caller-owned client metrics are explicitly disabled. The Cloud Monitoring
+  export is controlled separately.
+* `CustomOpenTelemetryMetricsProvider`: the same Spanner client instruments are additionally recorded
+  on an `OpenTelemetry` instance that you provide. You own the metrics pipeline (readers, exporters
+  and resource). This custom destination is independent of the built-in Cloud Monitoring export on all
+  instance types, including Spanner Omni (`InstanceType.OMNI`), for which Cloud Monitoring export is
+  not available.
+
+Client metrics are not recorded when the client runs against the Spanner emulator, regardless of the
+configured `MetricsProvider`. gRPC-layer metrics are recorded on a custom destination only when the
+provided `OpenTelemetry` instance is an `OpenTelemetrySdk`.
+
+When using `CustomOpenTelemetryMetricsProvider`, it is recommended to register the Spanner
+client-metrics views on a dedicated `SdkMeterProviderBuilder` with
+`SpannerMetrics.configureMeterProviderBuilder(SdkMeterProviderBuilder)` before creating the
+`OpenTelemetry` instance. The views rename the raw instruments, apply the Spanner latency
+histogram buckets and restrict the recorded attributes to the supported client-metric labels.
+
+```java
+SdkMeterProviderBuilder meterProviderBuilder =
+    SdkMeterProvider.builder().registerMetricReader(PeriodicMetricReader.create(myExporter));
+SpannerMetrics.configureMeterProviderBuilder(meterProviderBuilder);
+OpenTelemetry openTelemetry =
+    OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
+SpannerOptions options =
+    SpannerOptions.newBuilder()
+        .setClientMetricsProvider(CustomOpenTelemetryMetricsProvider.create(openTelemetry))
+        .build();
+```
 
 ## Traces
 Cloud Spanner client supports OpenTelemetry Traces, which gives insight into the client internals and aids in debugging/troubleshooting production issues. 
