@@ -789,7 +789,8 @@ public final class GrpcCallContext implements ApiCallContext {
         options,
         retrySettings,
         retryableCodes,
-        endpointContext);
+        endpointContext,
+        transportChannel);
   }
 
   @Override
@@ -813,7 +814,8 @@ public final class GrpcCallContext implements ApiCallContext {
         && Objects.equals(options, that.options)
         && Objects.equals(retrySettings, that.retrySettings)
         && Objects.equals(retryableCodes, that.retryableCodes)
-        && Objects.equals(endpointContext, that.endpointContext);
+        && Objects.equals(endpointContext, that.endpointContext)
+        && Objects.equals(transportChannel, that.transportChannel);
   }
 
   Metadata getMetadata() {
