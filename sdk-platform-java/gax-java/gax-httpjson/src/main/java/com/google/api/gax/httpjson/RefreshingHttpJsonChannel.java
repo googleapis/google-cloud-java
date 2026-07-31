@@ -63,7 +63,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   }
 
   private volatile DiskCheckResult lastDiskCheck = null;
-  private final Object diskCheckLock = new Object();
+  private final java.util.concurrent.locks.ReentrantLock diskCheckLock = new java.util.concurrent.locks.ReentrantLock();
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
   private final String workloadCertPath;
   private final AtomicReference<ChannelEntry> activeEntry;
@@ -93,7 +93,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       return cached.fingerprint;
     }
 
-    synchronized (diskCheckLock) {
+    diskCheckLock.lock();
+    try {
       cached = lastDiskCheck;
       if (cached != null
           && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
@@ -102,6 +103,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       String fingerprint = getCertificateFingerprint(certPath);
       lastDiskCheck = new DiskCheckResult(fingerprint, System.nanoTime());
       return fingerprint;
+    } finally {
+      diskCheckLock.unlock();
     }
   }
 

@@ -94,7 +94,7 @@ class ChannelPool extends ManagedChannel {
   }
 
   private volatile DiskCheckResult lastDiskCheck = null;
-  private final Object diskCheckLock = new Object();
+  private final java.util.concurrent.locks.ReentrantLock diskCheckLock = new java.util.concurrent.locks.ReentrantLock();
   private final Object entryWriteLock = new Object();
   private volatile String activeCertFingerprint = "";
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
@@ -463,7 +463,8 @@ class ChannelPool extends ManagedChannel {
       return cached.fingerprint;
     }
 
-    synchronized (diskCheckLock) {
+    diskCheckLock.lock();
+    try {
       cached = lastDiskCheck;
       if (cached != null
           && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
@@ -472,6 +473,8 @@ class ChannelPool extends ManagedChannel {
       String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
       lastDiskCheck = new DiskCheckResult(fingerprint, System.nanoTime());
       return fingerprint;
+    } finally {
+      diskCheckLock.unlock();
     }
   }
 
