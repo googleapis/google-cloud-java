@@ -148,7 +148,6 @@ public class Publisher implements PublisherInterface {
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private final HedgeSettings hedgeSettings;
-  private final Map<String, List<String>> hedgingMetadata;
   private final Set<StatusCode.Code> retryableCodes;
 
   /**
@@ -281,7 +280,6 @@ public class Publisher implements PublisherInterface {
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
-    this.hedgingMetadata = ImmutableMap.of("x-goog-pubsub-hedged", ImmutableList.of("true"));
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
@@ -552,7 +550,7 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
-    return publishCall(outstandingBatch, 1);
+    return publishCall(outstandingBatch, 0);
   }
 
   private ApiFuture<PublishResponse> publishCall(
@@ -561,11 +559,15 @@ public class Publisher implements PublisherInterface {
     if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
       context = publishContextWithCompression;
     }
-    if (attemptNumber > 1) {
+    if (attemptNumber > 0) {
       logger.log(Level.FINER, "Publishing hedged attempt {0}", attemptNumber);
+      Map<String, List<String>> attemptMetadata =
+          ImmutableMap.of(
+              "x-goog-pubsub-hedged-count",
+              Collections.singletonList(Integer.toString(attemptNumber)));
       context =
           context
-              .withExtraHeaders(hedgingMetadata)
+              .withExtraHeaders(attemptMetadata)
               .withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
 
@@ -729,9 +731,10 @@ public class Publisher implements PublisherInterface {
     }
 
     ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
-    coordinator.addAttempt(1, firstAttemptFuture);
+    coordinator.addAttempt(0, firstAttemptFuture);
     long delayMs = hedgeSettings.getHedgeDelay().toMillis();
-    HedgedRequest item = new HedgedRequest(coordinator, 2, clock.millisTime() + delayMs);
+    HedgedRequest item =
+        new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
     hedgingQueue.add(item);
     coordinator.isInQueue.set(true);
     scheduleQueueProcessing();

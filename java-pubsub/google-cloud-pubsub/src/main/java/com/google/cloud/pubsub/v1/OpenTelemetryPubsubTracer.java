@@ -178,8 +178,9 @@ public class OpenTelemetryPubsubTracer {
    * Creates, starts, and returns a publish RPC span for the given message batch. Bi-directional
    * links with the publisher parent span are created for sampled messages in the batch.
    */
-  Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages) {
-    return startPublishRpcSpan(topicName, messages, 1);
+  Span startPublishRpcSpan(
+      TopicName topicName, List<PubsubMessageWrapper> messages) {
+    return startPublishRpcSpan(topicName, messages, 0);
   }
 
   Span startPublishRpcSpan(

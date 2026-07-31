@@ -184,7 +184,7 @@ public class PubsubMessageWrapper {
 
   /** Creates a publish start event that is tied to the publish RPC span time. */
   void addPublishStartEvent() {
-    addPublishStartEvent(1);
+    addPublishStartEvent(0);
   }
 
   /**
@@ -193,7 +193,7 @@ public class PubsubMessageWrapper {
    */
   void addPublishStartEvent(int attemptNumber) {
     if (publisherSpan != null) {
-      if (attemptNumber > 1) {
+      if (attemptNumber > 0) {
         publisherSpan.addEvent(HEDGED_PUBLISH_START_EVENT);
       } else {
         publisherSpan.addEvent(PUBLISH_START_EVENT);

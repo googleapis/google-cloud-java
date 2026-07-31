@@ -1533,11 +1533,12 @@ public class PublisherImplTest {
     List<Metadata> capturedHeaders = testPublisherServiceImpl.getCapturedHeaders();
     assertThat(capturedHeaders).hasSize(2);
     Metadata.Key<String> hedgedHeaderKey =
-        Metadata.Key.of("x-goog-pubsub-hedged", Metadata.ASCII_STRING_MARSHALLER);
+        Metadata.Key.of(
+            "x-goog-pubsub-hedged-count", Metadata.ASCII_STRING_MARSHALLER);
     // Original request should NOT have the header
     assertThat(capturedHeaders.get(0).get(hedgedHeaderKey)).isNull();
-    // Hedged request SHOULD have the header set to "true"
-    assertThat(capturedHeaders.get(1).get(hedgedHeaderKey)).isEqualTo("true");
+    // First hedged request should have value "1"
+    assertThat(capturedHeaders.get(1).get(hedgedHeaderKey)).isEqualTo("1");
 
     shutdownTestPublisher(publisher);
   }
@@ -1572,6 +1573,15 @@ public class PublisherImplTest {
     // Advance to complete
     fakeExecutor.advanceTime(Duration.ofMillis(200));
     assertEquals("1", future.get(5, TimeUnit.SECONDS));
+
+    List<Metadata> capturedHeaders = testPublisherServiceImpl.getCapturedHeaders();
+    assertThat(capturedHeaders).hasSize(3);
+    Metadata.Key<String> hedgedHeaderKey =
+        Metadata.Key.of(
+            "x-goog-pubsub-hedged-count", Metadata.ASCII_STRING_MARSHALLER);
+    assertThat(capturedHeaders.get(0).get(hedgedHeaderKey)).isNull();
+    assertThat(capturedHeaders.get(1).get(hedgedHeaderKey)).isEqualTo("1");
+    assertThat(capturedHeaders.get(2).get(hedgedHeaderKey)).isEqualTo("2");
 
     shutdownTestPublisher(publisher);
   }
