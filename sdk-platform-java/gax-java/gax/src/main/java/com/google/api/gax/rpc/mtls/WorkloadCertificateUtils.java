@@ -43,34 +43,7 @@ public class WorkloadCertificateUtils {
 
   private static final Logger LOG = Logger.getLogger(WorkloadCertificateUtils.class.getName());
 
-  // Statically evaluated on startup to avoid checking disk locations or environment repeatedly
-  // if they don't exist.
-  private static final String WORKLOAD_CERT_PATH = evaluateWorkloadCertPath();
-
-  private static String evaluateWorkloadCertPath() {
-    String configPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    if (configPath != null && !configPath.isEmpty()) {
-      java.io.File configFile = new java.io.File(configPath);
-      if (configFile.exists() && !configFile.isDirectory()) {
-        return configFile.getAbsolutePath();
-      }
-    }
-    java.io.File bundleFile =
-        new java.io.File("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem");
-    if (bundleFile.exists()) {
-      return bundleFile.getAbsolutePath();
-    }
-    java.io.File certsFile =
-        new java.io.File("/var/run/secrets/workload-spiffe-credentials/certificates.pem");
-    if (certsFile.exists()) {
-      return certsFile.getAbsolutePath();
-    }
-    return null;
-  }
-
-  public static String getWorkloadCertPath() {
-    return WORKLOAD_CERT_PATH;
-  }
+  private WorkloadCertificateUtils() {}
 
   public static String getCertificateFingerprint(String certPath) {
     if (certPath == null) {

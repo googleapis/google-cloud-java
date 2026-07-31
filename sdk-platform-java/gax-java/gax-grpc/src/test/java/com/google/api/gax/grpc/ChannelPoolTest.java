@@ -100,6 +100,7 @@ class ChannelPoolTest {
         ChannelPool.create(
             ChannelPoolSettings.staticallySized(2),
             new FakeChannelFactory(Arrays.asList(sub1, sub2)),
+            null,
             null);
     assertThat(pool.authority()).isEqualTo("myAuth");
   }
@@ -116,6 +117,7 @@ class ChannelPoolTest {
         ChannelPool.create(
             ChannelPoolSettings.staticallySized(channels.size()),
             new FakeChannelFactory(channels),
+            null,
             null);
 
     verifyTargetChannel(pool, channels, sub1);
@@ -194,6 +196,7 @@ class ChannelPoolTest {
         ChannelPool.create(
             ChannelPoolSettings.staticallySized(numChannels),
             new FakeChannelFactory(Arrays.asList(channels)),
+            null,
             null);
 
     int numThreads = 20;
@@ -231,6 +234,7 @@ class ChannelPoolTest {
                 .setPreemptiveRefreshEnabled(true)
                 .build(),
             new FakeChannelFactory(Arrays.asList(channel1, channel2), mockChannelPrimer),
+            null,
             null);
     Mockito.verify(mockChannelPrimer, Mockito.times(2))
         .primeChannel(Mockito.any(ManagedChannel.class));
@@ -269,8 +273,7 @@ class ChannelPoolTest {
             ChannelPoolSettings.staticallySized(1).toBuilder()
                 .setPreemptiveRefreshEnabled(true)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     // 1 call during the creation
     Mockito.verify(mockChannelPrimer, Mockito.times(1))
         .primeChannel(Mockito.any(ManagedChannel.class));
@@ -294,7 +297,7 @@ class ChannelPoolTest {
     ManagedChannel replacementChannel = Mockito.mock(ManagedChannel.class);
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
-    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null);
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
 
     // create a mock call when new call comes to the underlying channel
     MockClientCall<String, Integer> mockClientCall = new MockClientCall<>(1, Status.OK);
@@ -343,7 +346,7 @@ class ChannelPoolTest {
 
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
-    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null);
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
 
     // create a mock call when new call comes to the underlying channel
     MockClientCall<String, Integer> mockClientCall = new MockClientCall<>(1, Status.OK);
@@ -388,7 +391,7 @@ class ChannelPoolTest {
 
     FakeChannelFactory channelFactory =
         new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
-    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null);
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
 
     // create a mock call when new call comes to the underlying channel
     MockClientCall<String, Integer> mockClientCall = new MockClientCall<>(1, Status.OK);
@@ -446,8 +449,7 @@ class ChannelPoolTest {
             ChannelPoolSettings.staticallySized(1).toBuilder()
                 .setPreemptiveRefreshEnabled(true)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     Mockito.reset(underlyingChannel1);
 
     pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
@@ -481,8 +483,7 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Start the minimum number of
@@ -547,8 +548,7 @@ class ChannelPoolTest {
                 .setMaxRpcsPerChannel(2)
                 .setMaxResizeDelta(5)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Add 20 RPCs to push expansion
@@ -579,8 +579,7 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // With no outstanding RPCs, the pool should shrink
@@ -606,8 +605,7 @@ class ChannelPoolTest {
                 .setMinRpcsPerChannel(1)
                 .setMaxRpcsPerChannel(2)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(2);
 
     // Start 2 RPCs
@@ -645,7 +643,7 @@ class ChannelPoolTest {
     Mockito.when(fakeChannel.newCall(Mockito.any(), Mockito.any())).thenReturn(mockClientCall);
     ChannelPoolSettings channelPoolSettings = ChannelPoolSettings.staticallySized(1);
     ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));
-    pool = ChannelPool.create(channelPoolSettings, factory, null);
+    pool = ChannelPool.create(channelPoolSettings, factory, null, null);
 
     EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
     Mockito.doNothing()
@@ -707,8 +705,7 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(1);
 
     FakeLogHandler logHandler = new FakeLogHandler();
@@ -758,8 +755,7 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(10);
 
     FakeLogHandler logHandler = new FakeLogHandler();
@@ -795,7 +791,7 @@ class ChannelPoolTest {
       ChannelPoolSettings channelPoolSettings = ChannelPoolSettings.staticallySized(1);
       ChannelFactory factory = new FakeChannelFactory(ImmutableList.of(fakeChannel));
 
-      pool = ChannelPool.create(channelPoolSettings, factory, null);
+      pool = ChannelPool.create(channelPoolSettings, factory, null, null);
 
       EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
       Mockito.doNothing()
@@ -866,8 +862,7 @@ class ChannelPoolTest {
                 .setMinChannelCount(1)
                 .setMaxChannelCount(5)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(1);
 
     // Add 20 RPCs, which would require 10 channels (20/2)
@@ -900,8 +895,7 @@ class ChannelPoolTest {
                 .setMinChannelCount(3)
                 .setMaxChannelCount(10)
                 .build(),
-            channelFactory,
-            provider);
+            channelFactory, provider, null);
     assertThat(pool.entries.get()).hasSize(5);
 
     // With no outstanding RPCs, the pool should want to shrink to 0

@@ -78,6 +78,7 @@ class ChannelPool extends ManagedChannel {
   private final ChannelPoolSettings settings;
   private final ChannelFactory channelFactory;
   private final FixedExecutorProvider backgroundExecutorProvider;
+  private final String workloadCertPath;
 
   private ScheduledFuture<?> refreshFuture = null;
   private ScheduledFuture<?> resizeFuture = null;
@@ -112,14 +113,15 @@ class ChannelPool extends ManagedChannel {
   static ChannelPool create(
       ChannelPoolSettings settings,
       ChannelFactory channelFactory,
-      @Nullable ScheduledExecutorService backgroundExecutor)
+      @Nullable ScheduledExecutorService backgroundExecutor,
+      @Nullable String workloadCertPath)
       throws IOException {
 
     FixedExecutorProvider executorProvider =
         backgroundExecutor == null
             ? FixedExecutorProvider.create(Executors.newSingleThreadScheduledExecutor(), true)
             : FixedExecutorProvider.create(backgroundExecutor, false);
-    return new ChannelPool(settings, channelFactory, executorProvider);
+    return new ChannelPool(settings, channelFactory, executorProvider, workloadCertPath);
   }
 
   /**
@@ -133,11 +135,13 @@ class ChannelPool extends ManagedChannel {
   ChannelPool(
       ChannelPoolSettings settings,
       ChannelFactory channelFactory,
-      FixedExecutorProvider executorProvider)
+      FixedExecutorProvider executorProvider,
+      @Nullable String workloadCertPath)
       throws IOException {
     this.settings = settings;
     this.channelFactory = channelFactory;
     this.backgroundExecutorProvider = executorProvider;
+    this.workloadCertPath = workloadCertPath;
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
@@ -148,9 +152,8 @@ class ChannelPool extends ManagedChannel {
     entries.set(initialListBuilder.build());
     authority = entries.get().get(0).channel.authority();
 
-    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
-    if (certPath != null) {
-      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
+    if (workloadCertPath != null) {
+      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(workloadCertPath);
     }
 
     if (!settings.isStaticSize()) {
@@ -465,11 +468,10 @@ class ChannelPool extends ManagedChannel {
   }
 
   boolean shouldRefresh() {
-    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
-    if (certPath == null) {
+    if (workloadCertPath == null) {
       return false;
     }
-    String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
+    String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
     if (currentDiskFingerprint.isEmpty()) {
       return false;
     }
@@ -492,11 +494,10 @@ class ChannelPool extends ManagedChannel {
     // - then thread2 will shut down channel that thread1 will put back into circulation (after it
     //   replaces the list)
     synchronized (entryWriteLock) {
-      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
-      if (certPath == null) {
+      if (workloadCertPath == null) {
         return;
       }
-      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
+      String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
       if (currentDiskFingerprint.isEmpty()) {
         return;
       }

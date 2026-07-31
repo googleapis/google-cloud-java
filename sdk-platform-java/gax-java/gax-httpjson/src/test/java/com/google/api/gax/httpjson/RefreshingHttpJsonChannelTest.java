@@ -65,7 +65,7 @@ class RefreshingHttpJsonChannelTest {
   }
 
   private RefreshingHttpJsonChannel createTestChannel() {
-    return new RefreshingHttpJsonChannel(channelFactory) {
+    return new RefreshingHttpJsonChannel(channelFactory, "fake/cert/path.json") {
       @Override
       protected String getWorkloadCertPath() {
         return testCertPath;

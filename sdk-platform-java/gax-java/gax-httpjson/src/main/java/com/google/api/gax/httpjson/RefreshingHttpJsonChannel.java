@@ -65,6 +65,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private volatile DiskCheckResult lastDiskCheck = null;
   private final Object diskCheckLock = new Object();
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
+  private final String workloadCertPath;
   private final AtomicReference<ChannelEntry> activeEntry;
   // Keep track of all entries to properly await their termination
   private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =
@@ -72,14 +73,15 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private final Object refreshLock = new Object();
   private volatile String activeCertFingerprint = "";
 
-  public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {
+  public RefreshingHttpJsonChannel(
+      Supplier<ManagedHttpJsonChannel> channelFactory, String workloadCertPath) {
     this.channelFactory = channelFactory;
+    this.workloadCertPath = workloadCertPath;
     ChannelEntry initial = new ChannelEntry(channelFactory.get());
     this.activeEntry = new AtomicReference<>(initial);
     this.allEntries.add(initial);
-    String certPath = getWorkloadCertPath();
-    if (certPath != null) {
-      this.activeCertFingerprint = getCertificateFingerprint(certPath);
+    if (workloadCertPath != null) {
+      this.activeCertFingerprint = getCertificateFingerprint(workloadCertPath);
     }
   }
 
@@ -105,7 +107,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   // Visible for testing
   protected String getWorkloadCertPath() {
-    return WorkloadCertificateUtils.getWorkloadCertPath();
+    return workloadCertPath;
   }
 
   // Visible for testing

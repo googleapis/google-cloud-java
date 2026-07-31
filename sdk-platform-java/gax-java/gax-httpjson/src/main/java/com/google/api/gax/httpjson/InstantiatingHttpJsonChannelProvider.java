@@ -217,7 +217,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
           }
         };
 
-    ManagedHttpJsonChannel channel = new RefreshingHttpJsonChannel(channelFactory);
+    ManagedHttpJsonChannel channel = new RefreshingHttpJsonChannel(channelFactory, certificateBasedAccess.getWorkloadCertPath());
 
     HttpJsonClientInterceptor headerInterceptor =
         new HttpJsonHeaderInterceptor(headerProvider.getHeaders());

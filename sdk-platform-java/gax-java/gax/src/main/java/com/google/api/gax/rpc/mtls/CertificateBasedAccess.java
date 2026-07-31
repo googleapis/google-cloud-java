@@ -202,4 +202,44 @@ public class CertificateBasedAccess {
     }
     return MtlsEndpointUsagePolicy.AUTO;
   }
+
+  /**
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
+   */
+  public String getWorkloadCertPath() {
+    if (!useMtlsClientCertificate()) {
+      return null;
+    }
+
+    String certConfigPath = envProvider.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
+    if (certConfigPath != null && !certConfigPath.isEmpty()) {
+      try {
+        CertificateConfig config = parseCertificateConfig(certConfigPath);
+        return config.certPath;
+      } catch (Exception e) {
+        // Fallback to null if JSON parsing fails, similar to validation logic
+        return null;
+      }
+    }
+
+    String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials";
+
+    // Check for atomic bundle containing both cert and key
+    if (fileExistenceProvider.exists(
+        java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString())) {
+      return java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString();
+    }
+
+    // Check for separate certificate and private key files
+    if (fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString())
+        && fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "private_key.pem").toString())) {
+      return java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString();
+    }
+
+    // Default to null if no well-known configuration is found
+    return null;
+  }
 }
