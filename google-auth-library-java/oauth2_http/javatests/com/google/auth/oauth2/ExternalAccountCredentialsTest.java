@@ -212,7 +212,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     formatMap.put("subject_token_field_name", "subject_token");
     credentialSource.put("format", formatMap);
 
-    java.security.KeyStore ks = java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    java.security.KeyStore ks =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
     ks.load(null, null);
     com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
         new com.google.auth.mtls.MtlsHttpTransportFactory(ks);
