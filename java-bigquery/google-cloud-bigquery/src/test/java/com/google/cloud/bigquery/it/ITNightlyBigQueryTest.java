@@ -69,6 +69,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -507,6 +508,8 @@ public class ITNightlyBigQueryTest {
   // table-not-found exception. Ref: b/241134681 . This exception has been seen while reading data
   // in bulk
   void testForTableNotFound() throws SQLException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     int recordCnt = 50000000; // 5Mil
     String query =
         String.format(
