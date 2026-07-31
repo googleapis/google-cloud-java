@@ -166,7 +166,7 @@ class AttemptCallableTest {
     callable.call();
 
     ArgumentCaptor<ApiFuture> futureCaptor = ArgumentCaptor.forClass(ApiFuture.class);
-    Mockito.verify(mockExternalFuture).setAttemptFuture(futureCaptor.capture());
+    Mockito.verify(mockExternalFuture, Mockito.times(2)).setAttemptFuture(futureCaptor.capture());
 
     Throwable thrown = null;
     try {
