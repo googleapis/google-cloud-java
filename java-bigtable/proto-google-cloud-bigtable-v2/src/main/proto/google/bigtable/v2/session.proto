@@ -336,6 +336,10 @@ message SessionRequest {
     CloseSessionRequest close_session = 2;
 
     VirtualRpcRequest virtual_rpc = 3;
+
+    ContinueVirtualRpcRequest continue_virtual_rpc = 4;
+
+    CancelVirtualRpcRequest cancel_virtual_rpc = 5;
   }
 }
 
@@ -554,6 +558,16 @@ message VirtualRpcRequest {
   bytes payload = 4;
 }
 
+// Internal usage only.
+message ContinueVirtualRpcRequest {
+  int64 rpc_id = 1;
+}
+
+// Internal usage only.
+message CancelVirtualRpcRequest {
+  int64 rpc_id = 1;
+}
+
 // Information on which Cluster served a vRPC, e.g. for Client-Side metrics.
 // Internal usage only.
 message ClusterInformation {
@@ -579,6 +593,9 @@ message VirtualRpcResponse {
 
   // Could be TableResponse (or in post-V1, SqlResponse)
   bytes payload = 3;
+
+  // If there are more responses for this rpc_id coming.
+  bool has_more = 5;
 }
 
 // Internal usage only.
