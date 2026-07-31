@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-commerceproducer</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-commerceproducer:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-commerceproducer:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Commerce Producer</name>
   <description>Cloud Commerce Producer Partner API for the Cloud Commerce Producer API Early Access.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-commerceproducer-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-commerceproducer:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-commerceproducer:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-commerceproducer</site.installationModule>
