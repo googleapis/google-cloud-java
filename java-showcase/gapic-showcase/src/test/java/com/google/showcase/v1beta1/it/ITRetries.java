@@ -101,7 +101,8 @@ class ITRetries {
   private static final RetrySettings FOUR_ATTEMPTS_RETRY_SETTINGS =
       baseRetrySettingsBuilder().setMaxAttempts(4).build();
 
-  // Configures maxAttempts = 1 so retries are not used and the client fails immediately on the first
+  // Configures maxAttempts = 1 so retries are not used and the client fails immediately on the
+  // first
   // attempt. Note that baseline retry delay values from baseRetrySettingsBuilder() are required by
   // AutoValue to build the object but are ignored.
   private static final RetrySettings SINGLE_ATTEMPT_RETRY_SETTINGS =
@@ -309,8 +310,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 1);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
@@ -345,8 +345,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 1);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
@@ -476,8 +475,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 7);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
@@ -523,8 +521,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 7);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
@@ -561,8 +558,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 2);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
@@ -600,8 +596,7 @@ class ITRetries {
                           .build()));
 
       // Assert
-      assertThat(exception.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 2);
       List<SequenceReport.Attempt> attempts = report.getAttemptsList();
