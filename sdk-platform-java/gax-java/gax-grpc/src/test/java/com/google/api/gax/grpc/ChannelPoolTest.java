@@ -428,6 +428,54 @@ class ChannelPoolTest {
   }
 
   @Test
+  void channelReactiveMTlsRefreshShouldConditionallySwapChannels() throws IOException, InterruptedException {
+    ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel underlyingChannel2 = Mockito.mock(ManagedChannel.class);
+
+    FakeChannelFactory channelFactory =
+        new FakeChannelFactory(ImmutableList.of(underlyingChannel1, underlyingChannel2));
+
+    // Create a temp file to act as the cert
+    java.nio.file.Path tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
+    tempCert.toFile().deleteOnExit();
+
+    java.nio.file.Path clientCert = java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
+    java.nio.file.Files.copy(clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    ChannelPoolSettings channelPoolSettings =
+        ChannelPoolSettings.builder().setInitialChannelCount(1).build();
+
+    pool = ChannelPool.create(channelPoolSettings, channelFactory, null, tempCert.toString());
+
+    // Initially uses channel1
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(underlyingChannel1, Mockito.times(1))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+
+    // Try a reactive refresh *without* changing the cert content (should no-op)
+    pool.refresh();
+
+    // Verify it's STILL channel1
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(underlyingChannel1, Mockito.times(2))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+
+    // The ChannelPool caches fingerprints for 1000ms, wait for it to expire
+    Thread.sleep(1100);
+
+    java.nio.file.Path rootCert = java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
+    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    // Try a reactive refresh *with* a changed cert content (should swap channels)
+    pool.refresh();
+
+    // Verify it is NOW channel2
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(underlyingChannel2, Mockito.times(1))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+  }
+
+  @Test
   void channelRefreshShouldSwapChannels() throws IOException {
     ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel underlyingChannel2 = Mockito.mock(ManagedChannel.class);
