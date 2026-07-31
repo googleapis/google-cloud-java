@@ -41,7 +41,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>6.119.0</version>
+  <version>6.120.0</version>
 </dependency>
 ```
 
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-spanner'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-spanner:6.119.0'
+implementation 'com.google.cloud:google-cloud-spanner:6.120.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "6.119.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-spanner" % "6.120.0"
 ```
 
 ## Authentication
@@ -152,7 +152,7 @@ the Cloud Spanner Java client.
 
 Cloud Spanner client supports [client-side metrics](https://cloud.google.com/spanner/docs/view-manage-client-side-metrics) that you can use along with server-side metrics to optimize performance and troubleshoot performance issues if they occur.
 
-Client-side metrics are measured from the time a request leaves your application to the time your application receives the response. 
+Client-side metrics are measured from the time a request leaves your application to the time your application receives the response.
 In contrast, server-side metrics are measured from the time Spanner receives a request until the last byte of data is sent to the client.
 
 The default Cloud Monitoring export for these metrics is enabled by default. You can opt out of the default Cloud Monitoring export with the following code:
@@ -208,7 +208,7 @@ SpannerOptions options =
 ```
 
 ## Traces
-Cloud Spanner client supports OpenTelemetry Traces, which gives insight into the client internals and aids in debugging/troubleshooting production issues. 
+Cloud Spanner client supports OpenTelemetry Traces, which gives insight into the client internals and aids in debugging/troubleshooting production issues.
 
 By default, the functionality is disabled. You need to add OpenTelemetry dependencies, enable OpenTelemetry traces and must configure the OpenTelemetry with appropriate exporters at the startup of your application.
 
@@ -287,21 +287,21 @@ This option can also be enabled by setting the environment variable
 #### OpenTelemetry API Tracing
 You can enable tracing of each API call that the Spanner client executes with the `enableApiTracing`
 option. These traces also include any retry attempts for an API call:
-  
+
 ```
 SpannerOptions options = SpannerOptions.newBuilder()
 .setOpenTelemetry(openTelemetry)
 .setEnableApiTracing(true)
 .build();
 ```
-  
+
 This option can also be enabled by setting the environment variable
 `SPANNER_ENABLE_API_TRACING=true`.
 
 > Note: The attribute keys that are used for additional information about retry attempts and the number of requests might change in a future release.
 
-#### End-to-end Tracing 
-            
+#### End-to-end Tracing
+
 In addition to client-side tracing, you can opt in for [end-to-end tracing](https://cloud.google.com/spanner/docs/tracing-overview#end-to-end-side-tracing). End-to-end tracing helps you understand and debug latency issues that are specific to Spanner such as the following:
 * Identify whether the latency is due to network latency between your application and Spanner, or if the latency is occurring within Spanner.
 * Identify the Google Cloud regions that your application requests are being routed through and if there is a cross-region request. A cross-region request usually means higher latencies between your application and Spanner.
@@ -352,7 +352,8 @@ Remove any OpenCensus-related code and dependencies from your codebase if all yo
 
 Update your dashboards and alerts to reflect below changes
 * **Metrics name** : `cloud.google.com/java` prefix has been removed from OpenTelemery metrics and instead has been added as Instrumenation Scope.
-* **Metrics namespace** : OpenTelmetry exporters uses `workload.googleapis.com` namespace opposed to `custom.googleapis.com` with OpenCensus. 
+* **Metrics namespace** : OpenTelmetry exporters uses `workload.googleapis.com` namespace opposed to `custom.googleapis.com` with OpenCensus.
+
 
 
 
@@ -588,7 +589,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-spanner/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-spanner.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-spanner/6.119.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-spanner/6.120.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
