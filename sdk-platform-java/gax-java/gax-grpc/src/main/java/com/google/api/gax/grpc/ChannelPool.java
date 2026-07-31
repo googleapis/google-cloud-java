@@ -441,9 +441,15 @@ class ChannelPool extends ManagedChannel {
 
   private void refreshSafely() {
     try {
-      refresh();
+      if (workloadCertPath != null) {
+        String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
+        if (!currentDiskFingerprint.isEmpty()) {
+          this.activeCertFingerprint = currentDiskFingerprint;
+        }
+      }
+      refreshAll();
     } catch (Exception e) {
-      LOG.log(Level.WARNING, "Failed to pre-emptively refresh channnels", e);
+      LOG.log(Level.WARNING, "Failed to pre-emptively refresh channels", e);
     }
   }
 
@@ -510,8 +516,18 @@ class ChannelPool extends ManagedChannel {
       }
 
       this.activeCertFingerprint = currentDiskFingerprint;
+      refreshAll();
+    }
+  }
+
+  @InternalApi("Visible for testing")
+  void refreshAll() {
+    synchronized (entryWriteLock) {
       LOG.fine(
-          "Refreshing all channels with new certificate fingerprint: " + activeCertFingerprint);
+          "Refreshing all channels"
+              + (activeCertFingerprint == null
+                  ? ""
+                  : " with certificate fingerprint: " + activeCertFingerprint));
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
 
       for (int i = 0; i < newEntries.size(); i++) {

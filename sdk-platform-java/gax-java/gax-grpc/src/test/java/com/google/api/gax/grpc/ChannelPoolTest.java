@@ -322,7 +322,7 @@ class ChannelPoolTest {
     ClientCall<String, Integer> call =
         pool.newCall(FakeMethodDescriptor.create(), CallOptions.DEFAULT);
 
-    pool.refresh();
+    pool.refreshAll();
     // shutdown is not called because there is still an outstanding call, even if it hasn't started
     Mockito.verify(underlyingChannel, Mockito.after(200).never()).shutdown();
 
@@ -373,7 +373,7 @@ class ChannelPoolTest {
 
     // start clientCall
     call.start(listener, new Metadata());
-    pool.refresh();
+    pool.refreshAll();
 
     // shutdown is not called because there is still an outstanding call
     Mockito.verify(underlyingChannel, Mockito.after(200).never()).shutdown();
@@ -422,7 +422,7 @@ class ChannelPoolTest {
     call.sendMessage("message");
     // shutdown is not called because it has not been shutdown yet
     Mockito.verify(underlyingChannel, Mockito.after(200).never()).shutdown();
-    pool.refresh();
+    pool.refreshAll();
     // shutdown is called because the outstanding call has completed
     Mockito.verify(underlyingChannel, Mockito.atLeastOnce()).shutdown();
   }
@@ -458,7 +458,7 @@ class ChannelPoolTest {
         .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
 
     // swap channel
-    pool.refresh();
+    pool.refreshAll();
 
     pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
 
