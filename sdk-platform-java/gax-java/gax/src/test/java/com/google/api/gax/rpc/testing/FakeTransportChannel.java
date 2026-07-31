@@ -41,6 +41,27 @@ public class FakeTransportChannel implements TransportChannel {
   private volatile boolean isShutdown = false;
   private volatile Map<String, String> headers;
   private volatile Executor executor;
+  private volatile boolean shouldRefresh = false;
+  private volatile int refreshCount = 0;
+
+  public FakeTransportChannel setShouldRefresh(boolean shouldRefresh) {
+    this.shouldRefresh = shouldRefresh;
+    return this;
+  }
+
+  @Override
+  public boolean shouldRefresh() {
+    return shouldRefresh;
+  }
+
+  @Override
+  public void refresh() {
+    refreshCount++;
+  }
+
+  public int getRefreshCount() {
+    return refreshCount;
+  }
 
   private FakeTransportChannel(FakeChannel channel) {
     this.channel = channel;

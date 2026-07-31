@@ -39,7 +39,9 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
+import com.google.api.gax.rpc.testing.FakeChannel;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.gax.rpc.testing.FakeTransportChannel;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.tracing.ApiTracer;
 import org.junit.jupiter.api.BeforeEach;
@@ -138,8 +140,8 @@ class AttemptCallableTest {
 
   @Test
   void testUnauthenticatedExceptionReThrowPreservesContext() {
-    TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
-    when(transportChannel.shouldRefresh()).thenReturn(true);
+    FakeTransportChannel transportChannel =
+        FakeTransportChannel.create(new FakeChannel()).setShouldRefresh(true);
     ApiCallContext callContext =
         FakeCallContext.createDefault().withTransportChannel(transportChannel);
 
