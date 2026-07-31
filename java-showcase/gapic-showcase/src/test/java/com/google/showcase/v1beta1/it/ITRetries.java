@@ -17,6 +17,7 @@
 package com.google.showcase.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
@@ -46,19 +47,34 @@ import org.junit.jupiter.api.Test;
  */
 class ITRetries {
 
-  private static final Sequence STANDARD_SEQUENCE =
+  // Test sequence consisting of 4 attempts: 3 consecutive UNAVAILABLE failures followed by 1 OK.
+  private static final Sequence FOUR_ATTEMPTS_SEQUENCE =
+      buildSequence(Code.UNAVAILABLE, Code.UNAVAILABLE, Code.UNAVAILABLE, Code.OK);
+
+  // Test sequence consisting of 1 UNAVAILABLE failure followed by 1 OK.
+  private static final Sequence SINGLE_FAIL_SEQUENCE = buildSequence(Code.UNAVAILABLE, Code.OK);
+
+  // Test sequence consisting of 1 non-retryable INVALID_ARGUMENT failure followed by 1 OK.
+  private static final Sequence NON_RETRYABLE_SEQUENCE =
+      buildSequence(Code.INVALID_ARGUMENT, Code.OK);
+
+  // Test sequence consisting of different status codes: UNAVAILABLE -> RESOURCE_EXHAUSTED ->
+  // DEADLINE_EXCEEDED -> OK.
+  private static final Sequence MULTIPLE_STATUS_SEQUENCE =
+      buildSequence(Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED, Code.DEADLINE_EXCEEDED, Code.OK);
+
+  // Test sequence with cumulative delays (200ms and 2s) to trigger totalTimeout exhaustion.
+  private static final Sequence TOTAL_TIMEOUT_SEQUENCE =
       Sequence.newBuilder()
           .addResponses(
               Sequence.Response.newBuilder()
                   .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
+                  .setDelay(Durations.fromMillis(200L))
                   .build())
           .addResponses(
               Sequence.Response.newBuilder()
                   .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                  .build())
-          .addResponses(
-              Sequence.Response.newBuilder()
-                  .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
+                  .setDelay(Durations.fromSeconds(2L))
                   .build())
           .addResponses(
               Sequence.Response.newBuilder()
@@ -66,32 +82,46 @@ class ITRetries {
                   .build())
           .build();
 
-  @SuppressWarnings("deprecation")
-  private static final RetrySettings STANDARD_RETRY_SETTINGS =
-      RetrySettings.newBuilder()
-          .setInitialRetryDelayDuration(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(2.0)
-          .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
-          .setInitialRpcTimeoutDuration(Duration.ofMillis(1000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeoutDuration(Duration.ofMillis(1000L))
-          .setTotalTimeoutDuration(Duration.ofMillis(5000L))
-          .setMaxAttempts(4)
-          .setJittered(false)
+  // Baseline RetrySettings builder defining shared initial delays, backoff multipliers, timeout
+  // limits, and disabled jitter to prevent code duplication across test configuration instances.
+  private static RetrySettings.Builder baseRetrySettingsBuilder() {
+    return RetrySettings.newBuilder()
+        .setInitialRetryDelayDuration(Duration.ofMillis(100L))
+        .setRetryDelayMultiplier(2.0)
+        .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
+        .setInitialRpcTimeoutDuration(Duration.ofMillis(1000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeoutDuration(Duration.ofMillis(1000L))
+        .setTotalTimeoutDuration(Duration.ofMillis(5000L))
+        .setJittered(false);
+  }
+
+  // Configures 4 attempts total (1 initial + 3 retries) with exponential backoff and disabled
+  // jitter, matching FOUR_ATTEMPTS_SEQUENCE.
+  private static final RetrySettings FOUR_ATTEMPTS_RETRY_SETTINGS =
+      baseRetrySettingsBuilder().setMaxAttempts(4).build();
+
+  // Configures maxAttempts = 1 so retries are not used and the client fails immediately on the first
+  // attempt. Note that baseline retry delay values from baseRetrySettingsBuilder() are required by
+  // AutoValue to build the object but are ignored.
+  private static final RetrySettings SINGLE_ATTEMPT_RETRY_SETTINGS =
+      baseRetrySettingsBuilder().setMaxAttempts(1).build();
+
+  // Configures rpcTimeout = 100ms so that server delay (200ms) in attempt calls exceeds the
+  // per-attempt RPC timeout.
+  private static final RetrySettings RPC_TIMEOUT_RETRY_SETTINGS =
+      baseRetrySettingsBuilder()
+          .setInitialRpcTimeoutDuration(Duration.ofMillis(100L))
+          .setMaxRpcTimeoutDuration(Duration.ofMillis(100L))
+          .setMaxAttempts(10)
           .build();
 
-  @SuppressWarnings("deprecation")
-  private static final RetrySettings NO_RETRY_SETTINGS =
-      RetrySettings.newBuilder()
-          .setInitialRetryDelayDuration(Duration.ofMillis(100L))
-          .setRetryDelayMultiplier(2.0)
-          .setMaxRetryDelayDuration(Duration.ofMillis(1000L))
-          .setInitialRpcTimeoutDuration(Duration.ofMillis(1000L))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeoutDuration(Duration.ofMillis(1000L))
-          .setTotalTimeoutDuration(Duration.ofMillis(5000L))
-          .setMaxAttempts(1)
-          .setJittered(false)
+  // Configures totalTimeout = 1000ms so that cumulative delay in TOTAL_TIMEOUT_SEQUENCE (200ms +
+  // 2s = 2.2s) exceeds the total operation deadline on attempt 2.
+  private static final RetrySettings TOTAL_TIMEOUT_RETRY_SETTINGS =
+      baseRetrySettingsBuilder()
+          .setTotalTimeoutDuration(Duration.ofMillis(1000L))
+          .setMaxAttempts(10)
           .build();
 
   private static SequenceServiceClient grpcClient;
@@ -114,190 +144,314 @@ class ITRetries {
   }
 
   // Tests that the client retries on UNAVAILABLE errors up to maxAttempts (4) and succeeds when
-  // receiving OK.
+  // receiving OK over gRPC.
   @Test
   void testGrpc_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            FOUR_ATTEMPTS_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      TestResult result = runAttempt(grpcClient, retryClient, STANDARD_SEQUENCE, 4);
+      // Arrange
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(FOUR_ATTEMPTS_SEQUENCE).build());
 
-      assertThat(result.exception).isNull();
-      verifySequenceReport(result.report);
+      // Act
+      retryClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
+
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
+
+      // Assert
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(4);
+
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
+      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+
+      assertThat(attempts.get(2).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
+
+      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
+      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
   // Tests that the client retries on UNAVAILABLE errors up to maxAttempts (4) and succeeds when
-  // receiving OK.
+  // receiving OK over HTTP/JSON.
   @Test
   void testHttpJson_retryExponentialBackoff() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            FOUR_ATTEMPTS_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, STANDARD_SEQUENCE, 4);
+      // Arrange
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(FOUR_ATTEMPTS_SEQUENCE).build());
 
-      assertThat(result.exception).isNull();
-      verifySequenceReport(result.report);
+      // Act
+      retryClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
+
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
+
+      // Assert
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(4);
+
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
+      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+
+      assertThat(attempts.get(2).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
+
+      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
+      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
   // Tests that configuring maxAttempts = 1 causes the client to fail immediately on the first error
-  // without retrying.
+  // without retrying over gRPC.
   @Test
   void testGrpc_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            NO_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            SINGLE_ATTEMPT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence = buildSequence(Code.UNAVAILABLE, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(SINGLE_FAIL_SEQUENCE).build());
 
-      TestResult result = runAttempt(grpcClient, retryClient, sequence, 1);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
-      assertThat(result.report.getAttempts(0).getStatus().getCode())
-          .isEqualTo(Code.UNAVAILABLE.getNumber());
+      // Assert
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
+
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 1);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(1);
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
     }
   }
 
   // Tests that configuring maxAttempts = 1 causes the client to fail immediately on the first error
-  // without retrying.
+  // without retrying over HTTP/JSON.
   @Test
   void testHttpJson_noRetry() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            NO_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            SINGLE_ATTEMPT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence = buildSequence(Code.UNAVAILABLE, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(SINGLE_FAIL_SEQUENCE).build());
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, sequence, 1);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
-      assertThat(result.report.getAttempts(0).getStatus().getCode())
-          .isEqualTo(Code.UNAVAILABLE.getNumber());
+      // Assert
+      assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
+
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 1);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(1);
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
     }
   }
 
   // Tests that encountering a non-retryable error (INVALID_ARGUMENT) stops retries immediately,
-  // even if maxAttempts > 1.
+  // even if maxAttempts > 1 over gRPC.
   @Test
   void testGrpc_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            FOUR_ATTEMPTS_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence = buildSequence(Code.INVALID_ARGUMENT, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(NON_RETRYABLE_SEQUENCE).build());
 
-      TestResult result = runAttempt(grpcClient, retryClient, sequence, 1);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
-      assertThat(result.report.getAttempts(0).getStatus().getCode())
+
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 1);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(1);
+      assertThat(attempts.get(0).getStatus().getCode())
           .isEqualTo(Code.INVALID_ARGUMENT.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
     }
   }
 
   // Tests that encountering a non-retryable error (INVALID_ARGUMENT) stops retries immediately,
-  // even if maxAttempts > 1.
+  // even if maxAttempts > 1 over HTTP/JSON.
   @Test
   void testHttpJson_nonRetryableError() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            FOUR_ATTEMPTS_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence = buildSequence(Code.INVALID_ARGUMENT, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(NON_RETRYABLE_SEQUENCE).build());
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, sequence, 1);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
-      assertThat(result.report.getAttempts(0).getStatus().getCode())
+
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 1);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(1);
+      assertThat(attempts.get(0).getStatus().getCode())
           .isEqualTo(Code.INVALID_ARGUMENT.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
     }
   }
 
   // Tests that the client retries through a sequence of different retryable status codes
-  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED).
+  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED) over gRPC.
   @Test
   void testGrpc_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS,
+            FOUR_ATTEMPTS_RETRY_SETTINGS,
             ImmutableSet.of(
                 StatusCode.Code.UNAVAILABLE,
                 StatusCode.Code.RESOURCE_EXHAUSTED,
                 StatusCode.Code.DEADLINE_EXCEEDED))) {
 
-      Sequence sequence =
-          buildSequence(Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED, Code.DEADLINE_EXCEEDED, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(MULTIPLE_STATUS_SEQUENCE).build());
 
-      TestResult result = runAttempt(grpcClient, retryClient, sequence, 4);
+      // Act
+      retryClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      assertThat(result.exception).isNull();
-      List<SequenceReport.Attempt> attempts = result.report.getAttemptsList();
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
+
+      // Assert
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(4);
+
       assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
       assertThat(attempts.get(1).getStatus().getCode())
           .isEqualTo(Code.RESOURCE_EXHAUSTED.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+
       assertThat(attempts.get(2).getStatus().getCode())
           .isEqualTo(Code.DEADLINE_EXCEEDED.getNumber());
+      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
+
       assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
+      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
   // Tests that the client retries through a sequence of different retryable status codes
-  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED).
+  // (UNAVAILABLE -> RESOURCE_EXHAUSTED -> DEADLINE_EXCEEDED) over HTTP/JSON.
   @Test
   void testHttpJson_retryMultipleStatus() throws Exception {
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            STANDARD_RETRY_SETTINGS,
+            FOUR_ATTEMPTS_RETRY_SETTINGS,
             ImmutableSet.of(
                 StatusCode.Code.UNAVAILABLE,
                 StatusCode.Code.RESOURCE_EXHAUSTED,
                 StatusCode.Code.DEADLINE_EXCEEDED))) {
 
-      Sequence sequence =
-          buildSequence(Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED, Code.DEADLINE_EXCEEDED, Code.OK);
+      // Arrange
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(MULTIPLE_STATUS_SEQUENCE).build());
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, sequence, 4);
+      // Act
+      retryClient.attemptSequence(
+          AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      assertThat(result.exception).isNull();
-      List<SequenceReport.Attempt> attempts = result.report.getAttemptsList();
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
+
+      // Assert
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(4);
+
       assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
       assertThat(attempts.get(1).getStatus().getCode())
           .isEqualTo(Code.RESOURCE_EXHAUSTED.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+
       assertThat(attempts.get(2).getStatus().getCode())
           .isEqualTo(Code.DEADLINE_EXCEEDED.getNumber());
+      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
+
       assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
+      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
   // Tests that individual attempt timeouts (rpcTimeout) trigger a retry when the server response
-  // delay exceeds the timeout.
+  // delay exceeds the timeout over gRPC.
   @Test
   void testGrpc_retryOnRpcTimeoutExceeded() throws Exception {
-    RetrySettings timeoutRetrySettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
-            .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(100L))
-            .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(100L))
-            .setTotalTimeoutDuration(Duration.ofMillis(10000L))
-            .setMaxAttempts(10)
-            .setJittered(false)
-            .build();
-
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            timeoutRetrySettings, ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED))) {
+            RPC_TIMEOUT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED))) {
 
+      // Arrange
       Sequence.Builder sequenceBuilder = Sequence.newBuilder();
       for (int i = 0; i < 10; i++) {
         sequenceBuilder.addResponses(
@@ -307,39 +461,44 @@ class ITRetries {
                 .build());
       }
 
-      TestResult result = runAttempt(grpcClient, retryClient, sequenceBuilder.build(), 10);
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(sequenceBuilder.build()).build());
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
+
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
-      for (int i = 0; i < 10; i++) {
-        assertThat(result.report.getAttempts(i).getStatus().getCode())
+
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 7);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts.size()).isAtLeast(1);
+
+      for (int i = 0; i < attempts.size(); i++) {
+        assertThat(attempts.get(i).getStatus().getCode())
             .isIn(ImmutableSet.of(Code.OK.getNumber(), Code.DEADLINE_EXCEEDED.getNumber()));
       }
     }
   }
 
   // Tests that individual attempt timeouts (rpcTimeout) trigger a retry when the server response
-  // delay exceeds the timeout.
+  // delay exceeds the timeout over HTTP/JSON.
   @Test
   void testHttpJson_retryOnRpcTimeoutExceeded() throws Exception {
-    RetrySettings timeoutRetrySettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
-            .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(100L))
-            .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(100L))
-            .setTotalTimeoutDuration(Duration.ofMillis(10000L))
-            .setMaxAttempts(10)
-            .setJittered(false)
-            .build();
-
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            timeoutRetrySettings, ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED))) {
+            RPC_TIMEOUT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED))) {
 
+      // Arrange
       Sequence.Builder sequenceBuilder = Sequence.newBuilder();
       for (int i = 0; i < 10; i++) {
         sequenceBuilder.addResponses(
@@ -349,124 +508,114 @@ class ITRetries {
                 .build());
       }
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, sequenceBuilder.build(), 10);
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(sequenceBuilder.build()).build());
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
+
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
-      for (int i = 0; i < 10; i++) {
-        assertThat(result.report.getAttempts(i).getStatus().getCode())
+
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 7);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts.size()).isAtLeast(1);
+
+      for (int i = 0; i < attempts.size(); i++) {
+        assertThat(attempts.get(i).getStatus().getCode())
             .isIn(ImmutableSet.of(Code.OK.getNumber(), Code.DEADLINE_EXCEEDED.getNumber()));
       }
     }
   }
 
   // Tests that the operation deadline (totalTimeout) halts the retry loop when cumulative delay
-  // exceeds totalTimeout.
+  // exceeds totalTimeout over gRPC.
   @Test
   void testGrpc_retryTotalTimeoutExceeded() throws Exception {
-    RetrySettings totalTimeoutRetrySettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(Duration.ofMillis(100L))
-            .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(Duration.ofMillis(100L))
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(2000L))
-            .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(2000L))
-            .setTotalTimeoutDuration(Duration.ofMillis(1500L))
-            .setMaxAttempts(10)
-            .setJittered(false)
-            .build();
-
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createGrpcSequenceClientWithRetrySettings(
-            totalTimeoutRetrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            TOTAL_TIMEOUT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence =
-          Sequence.newBuilder()
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(Durations.fromSeconds(1L))
-                      .build())
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(Durations.fromSeconds(1L))
-                      .build())
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.OK.getNumber()).build())
-                      .build())
-              .build();
+      // Arrange
+      Sequence createdSequence =
+          grpcClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(TOTAL_TIMEOUT_SEQUENCE).build());
 
-      TestResult result = runAttempt(grpcClient, retryClient, sequence, 2);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 2);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(2);
+
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
+      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
   // Tests that the operation deadline (totalTimeout) halts the retry loop when cumulative delay
-  // exceeds totalTimeout.
+  // exceeds totalTimeout over HTTP/JSON.
   @Test
   void testHttpJson_retryTotalTimeoutExceeded() throws Exception {
-    RetrySettings totalTimeoutRetrySettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(Duration.ofMillis(10L))
-            .setRetryDelayMultiplier(1.0)
-            .setMaxRetryDelayDuration(Duration.ofMillis(10L))
-            .setInitialRpcTimeoutDuration(Duration.ofMillis(2000L))
-            .setRpcTimeoutMultiplier(1.0)
-            .setMaxRpcTimeoutDuration(Duration.ofMillis(2000L))
-            .setTotalTimeoutDuration(Duration.ofMillis(1000L))
-            .setMaxAttempts(10)
-            .setJittered(false)
-            .build();
-
     try (SequenceServiceClient retryClient =
         TestClientInitializer.createHttpJsonSequenceClientWithRetrySettings(
-            totalTimeoutRetrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
+            TOTAL_TIMEOUT_RETRY_SETTINGS, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
 
-      Sequence sequence =
-          Sequence.newBuilder()
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(Durations.fromMillis(200L))
-                      .build())
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.UNAVAILABLE.getNumber()).build())
-                      .setDelay(Durations.fromSeconds(2L))
-                      .build())
-              .addResponses(
-                  Sequence.Response.newBuilder()
-                      .setStatus(Status.newBuilder().setCode(Code.OK.getNumber()).build())
-                      .build())
-              .build();
+      // Arrange
+      Sequence createdSequence =
+          httpjsonClient.createSequence(
+              CreateSequenceRequest.newBuilder().setSequence(TOTAL_TIMEOUT_SEQUENCE).build());
 
-      TestResult result = runAttempt(httpjsonClient, retryClient, sequence, 2);
+      // Act
+      ApiException exception =
+          assertThrows(
+              ApiException.class,
+              () ->
+                  retryClient.attemptSequence(
+                      AttemptSequenceRequest.newBuilder()
+                          .setName(createdSequence.getName())
+                          .build()));
 
-      assertThat(result.exception).isNotNull();
-      assertThat(result.exception.getStatusCode().getCode())
+      // Assert
+      assertThat(exception.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 2);
+      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+      assertThat(attempts).hasSize(2);
+
+      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+
+      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
+      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
     }
   }
 
-  private void verifySequenceReport(SequenceReport report) {
-    List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-    assertThat(attempts).hasSize(4);
-
-    // Verify the status of each attempt
-    assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-    assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-    assertThat(attempts.get(2).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-    assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
-  }
-
-  private Sequence buildSequence(Code... codes) {
+  private static Sequence buildSequence(Code... codes) {
     Sequence.Builder builder = Sequence.newBuilder();
     for (Code code : codes) {
       builder.addResponses(
@@ -477,50 +626,15 @@ class ITRetries {
     return builder.build();
   }
 
-  private static class TestResult {
-    private final SequenceReport report;
-    private final ApiException exception;
-
-    private TestResult(SequenceReport report, ApiException exception) {
-      this.report = report;
-      this.exception = exception;
-    }
-  }
-
-  private TestResult runAttempt(
-      SequenceServiceClient client,
-      SequenceServiceClient retryClient,
-      Sequence sequence,
-      int expectedAttempts) {
-    Sequence createdSequence =
-        client.createSequence(CreateSequenceRequest.newBuilder().setSequence(sequence).build());
-
-    ApiException exception = null;
-    try {
-      retryClient.attemptSequence(
-          AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
-    } catch (ApiException e) {
-      exception = e;
-    }
-
-    Awaitility.await()
+  private SequenceReport getSequenceReport(
+      SequenceServiceClient client, String sequenceName, int expectedAttempts) {
+    String reportName = sequenceName + "/sequenceReport";
+    return Awaitility.await()
         .atMost(Duration.ofSeconds(3))
-        .untilAsserted(
-            () -> {
-              SequenceReport report =
-                  client.getSequenceReport(
-                      GetSequenceReportRequest.newBuilder()
-                          .setName(createdSequence.getName() + "/sequenceReport")
-                          .build());
-              assertThat(report.getAttemptsCount()).isEqualTo(expectedAttempts);
-            });
-
-    SequenceReport finalReport =
-        client.getSequenceReport(
-            GetSequenceReportRequest.newBuilder()
-                .setName(createdSequence.getName() + "/sequenceReport")
-                .build());
-
-    return new TestResult(finalReport, exception);
+        .until(
+            () ->
+                client.getSequenceReport(
+                    GetSequenceReportRequest.newBuilder().setName(reportName).build()),
+            report -> report.getAttemptsCount() >= expectedAttempts);
   }
 }
