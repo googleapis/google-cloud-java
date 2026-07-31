@@ -147,7 +147,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       }
 
       // Double-check inside refreshLock
-      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {
+      if (currentDiskFingerprint.equalsIgnoreCase(this.activeCertFingerprint)) {
         LOG.fine(
             "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh");
         return;

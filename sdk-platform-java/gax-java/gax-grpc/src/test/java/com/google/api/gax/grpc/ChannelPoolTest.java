@@ -81,12 +81,17 @@ import org.mockito.stubbing.Answer;
 class ChannelPoolTest {
   private static final int DEFAULT_AWAIT_TERMINATION_SEC = 10;
   private ChannelPool pool;
+  private java.nio.file.Path tempCert;
 
   @AfterEach
-  void cleanup() throws InterruptedException {
+  void cleanup() throws InterruptedException, IOException {
     if (pool != null) {
       pool.shutdown();
       pool.awaitTermination(DEFAULT_AWAIT_TERMINATION_SEC, TimeUnit.SECONDS);
+    }
+    if (tempCert != null) {
+      java.nio.file.Files.deleteIfExists(tempCert);
+      tempCert = null;
     }
   }
 
@@ -439,8 +444,7 @@ class ChannelPoolTest {
         new FakeChannelFactory(ImmutableList.of(underlyingChannel1, underlyingChannel2));
 
     // Create a temp file to act as the cert
-    java.nio.file.Path tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
-    tempCert.toFile().deleteOnExit();
+    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
 
     java.nio.file.Path clientCert = java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
     java.nio.file.Files.copy(clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);

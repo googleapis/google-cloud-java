@@ -93,6 +93,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @BeforeEach
   void setUp() throws IOException {
+    AgentIdentityUtils.clearCertInfoCache();
     envProvider = new TestEnvironmentProvider();
     // Inject our test environment reader into AgentIdentityUtils
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
@@ -117,10 +118,17 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @AfterEach
-  void tearDown() {
+  void tearDown() throws IOException {
     // Reset the mocks
+    AgentIdentityUtils.clearCertInfoCache();
     AgentIdentityUtils.resetTimeService();
     AgentIdentityUtils.setEnvReader(System::getenv);
+    if (tempDir != null) {
+      Files.walk(tempDir)
+          .sorted(java.util.Comparator.reverseOrder())
+          .map(Path::toFile)
+          .forEach(File::delete);
+    }
   }
 
   private static final String TOKEN_URL =

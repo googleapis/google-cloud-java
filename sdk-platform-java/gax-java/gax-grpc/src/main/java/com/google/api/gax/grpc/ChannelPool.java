@@ -516,7 +516,7 @@ class ChannelPool extends ManagedChannel {
       }
 
       // Double-check fingerprint inside the lock
-      if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {
+      if (currentDiskFingerprint.equalsIgnoreCase(this.activeCertFingerprint)) {
         LOG.fine(
             "Channel pool was already refreshed by a concurrent thread, skipping duplicate refresh");
         return;

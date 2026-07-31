@@ -198,6 +198,16 @@ class CertificateBasedAccessTest {
   }
 
   @Test
+  void testUseMtlsClientCertificateEnvTrueOverride() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
   void testUseMtlsClientCertificateConfigMalformedJson() {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");

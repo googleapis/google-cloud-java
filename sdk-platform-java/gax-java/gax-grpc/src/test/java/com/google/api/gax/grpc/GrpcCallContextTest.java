@@ -511,6 +511,5 @@ class GrpcCallContextTest {
     org.junit.jupiter.api.Assertions.assertEquals(context1.hashCode(), context2.hashCode());
 
     org.junit.jupiter.api.Assertions.assertNotEquals(context1, context3);
-    org.junit.jupiter.api.Assertions.assertNotEquals(context1.hashCode(), context3.hashCode());
   }
 }

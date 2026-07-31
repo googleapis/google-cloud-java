@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.core.AbstractApiFuture;
@@ -270,14 +271,11 @@ class ServerStreamingAttemptCallableTest {
     call.getController().getObserver().onError(initialError);
 
     // Should notify the outer future
-    Throwable outerError = null;
-    try {
-      fakeRetryingFuture.getAttemptResult().get(1, TimeUnit.SECONDS);
-    } catch (ExecutionException e) {
-      outerError = e.getCause();
-    } catch (Throwable e) {
-      outerError = e;
-    }
+    ExecutionException ee =
+        assertThrows(
+            ExecutionException.class,
+            () -> fakeRetryingFuture.getAttemptResult().get(1, TimeUnit.SECONDS));
+    Throwable outerError = ee.getCause();
     Mockito.verify(transportChannel).refresh();
     Truth.assertThat(outerError).isInstanceOf(ServerStreamingAttemptException.class);
     Truth.assertThat(((ServerStreamingAttemptException) outerError).hasSeenResponses()).isFalse();
