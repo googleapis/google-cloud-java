@@ -57,6 +57,27 @@ interface Hasher {
     }
   }
 
+  final class ReadInstanceHolder {
+    private static final Logger LOGGER = Logger.getLogger(Hasher.class.getName());
+    private static final String PROPERTY_NAME = "com.google.cloud.storage.Hasher.read";
+    private static final String PROPERTY_VALUE =
+        System.getProperty(PROPERTY_NAME, DefaultInstanceHolder.PROPERTY_VALUE);
+    static final Hasher READ_HASHER;
+
+    static {
+      LOGGER.fine(String.format(Locale.US, "-D%s=%s", PROPERTY_NAME, PROPERTY_VALUE));
+      if ("disabled".equalsIgnoreCase(PROPERTY_VALUE)) {
+        READ_HASHER = noop();
+      } else {
+        READ_HASHER = enabled();
+      }
+    }
+  }
+
+  static Hasher readHasher() {
+    return ReadInstanceHolder.READ_HASHER;
+  }
+
   @Nullable
   default Crc32cLengthKnown hash(Supplier<ByteBuffer> b) {
     return hash(b.get());
@@ -72,6 +93,8 @@ interface Hasher {
 
   void validateUnchecked(Crc32cValue<?> expected, ByteString byteString)
       throws UncheckedChecksumMismatchException;
+
+  void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual) throws ChecksumMismatchException;
 
   @Nullable <C extends Crc32cValue<?>> C nullSafeConcat(
       @Nullable C r1, @Nullable Crc32cLengthKnown r2);
@@ -121,6 +144,9 @@ interface Hasher {
 
     @Override
     public void validateUnchecked(Crc32cValue<?> expected, ByteString byteString) {}
+
+    @Override
+    public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual) {}
 
     @Override
     public <C extends Crc32cValue<?>> @Nullable C nullSafeConcat(
@@ -189,6 +215,14 @@ interface Hasher {
       }
     }
 
+    @Override
+    public void validate(Crc32cValue<?> expected, Crc32cLengthKnown actual)
+        throws ChecksumMismatchException {
+      if (!actual.eqValue(expected)) {
+        throw new ChecksumMismatchException(expected, actual);
+      }
+    }
+
     @SuppressWarnings("unchecked")
     @Override
     public <C extends Crc32cValue<?>> @Nullable C nullSafeConcat(
@@ -212,7 +246,7 @@ interface Hasher {
     private final Crc32cValue<?> expected;
     private final Crc32cLengthKnown actual;
 
-    private ChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
+    ChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
       super(
           String.format(
               Locale.US,
@@ -237,7 +271,7 @@ interface Hasher {
     private final Crc32cValue<?> expected;
     private final Crc32cLengthKnown actual;
 
-    private UncheckedChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
+    UncheckedChecksumMismatchException(Crc32cValue<?> expected, Crc32cLengthKnown actual) {
       super(
           String.format(
               "Mismatch checksum value. Expected %s actual %s",

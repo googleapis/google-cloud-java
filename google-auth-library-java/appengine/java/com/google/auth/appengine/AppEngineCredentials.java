@@ -48,6 +48,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing the built-in service account for Google App Engine. You should
@@ -55,6 +57,7 @@ import java.util.Objects;
  *
  * <p>Fetches access tokens from the App Identity service.
  */
+@NullMarked
 public class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSigner {
 
   private static final long serialVersionUID = -2627708355455064660L;
@@ -122,7 +125,7 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof AppEngineCredentials)) {
       return false;
     }

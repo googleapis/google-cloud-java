@@ -20,6 +20,7 @@ import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.protobuf.Message;
 import io.grpc.Metadata;
+import java.time.Duration;
 
 public interface SessionPool<OpenReqT extends Message> {
   void start(OpenReqT openReq, Metadata md);
@@ -28,6 +29,12 @@ public interface SessionPool<OpenReqT extends Message> {
       VRpcDescriptor<?, ReqT, RespT> desc);
 
   void close(CloseSessionRequest req);
+
+  /**
+   * Blocks until all sessions in this pool have terminated, or the timeout elapses. Must be called
+   * after {@link #close} to be meaningful. Returns true if drained, false on timeout.
+   */
+  boolean awaitTerminated(Duration timeout) throws InterruptedException;
 
   SessionPoolInfo getInfo();
 

@@ -31,6 +31,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineOperationMetadata;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1.QueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1.StreamQueryReasoningEngineRequest;
@@ -50,6 +52,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -57,6 +60,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExecutionServiceStub {
   private static final MethodDescriptor<QueryReasoningEngineRequest, QueryReasoningEngineResponse>
@@ -93,6 +97,24 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AsyncQueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor
+              .<CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.ReasoningEngineExecutionService/CancelAsyncQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CancelAsyncQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      CancelAsyncQueryReasoningEngineResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -158,6 +180,9 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           AsyncQueryReasoningEngineResponse,
           AsyncQueryReasoningEngineOperationMetadata>
       asyncQueryReasoningEngineOperationCallable;
+  private final UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -250,6 +275,21 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineTransportSettings =
+            GrpcCallSettings
+                .<CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+                    newBuilder()
+                .setMethodDescriptor(cancelAsyncQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -326,6 +366,11 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
             settings.asyncQueryReasoningEngineOperationSettings(),
             clientContext,
             operationsStub);
+    this.cancelAsyncQueryReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            cancelAsyncQueryReasoningEngineTransportSettings,
+            settings.cancelAsyncQueryReasoningEngineSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -380,6 +425,13 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           AsyncQueryReasoningEngineOperationMetadata>
       asyncQueryReasoningEngineOperationCallable() {
     return asyncQueryReasoningEngineOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    return cancelAsyncQueryReasoningEngineCallable;
   }
 
   @Override

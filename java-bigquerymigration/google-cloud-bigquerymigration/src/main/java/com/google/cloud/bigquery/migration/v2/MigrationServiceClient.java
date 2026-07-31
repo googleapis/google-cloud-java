@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -258,9 +260,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MigrationServiceClient implements BackgroundResource {
-  private final MigrationServiceSettings settings;
+  private final @Nullable MigrationServiceSettings settings;
   private final MigrationServiceStub stub;
 
   /** Constructs an instance of MigrationServiceClient with default settings. */
@@ -300,7 +303,7 @@ public class MigrationServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MigrationServiceSettings getSettings() {
+  public final @Nullable MigrationServiceSettings getSettings() {
     return settings;
   }
 
@@ -334,7 +337,7 @@ public class MigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MigrationWorkflow createMigrationWorkflow(
-      LocationName parent, MigrationWorkflow migrationWorkflow) {
+      @Nullable LocationName parent, MigrationWorkflow migrationWorkflow) {
     CreateMigrationWorkflowRequest request =
         CreateMigrationWorkflowRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -460,7 +463,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *     `projects/123/locations/us/workflows/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MigrationWorkflow getMigrationWorkflow(MigrationWorkflowName name) {
+  public final MigrationWorkflow getMigrationWorkflow(@Nullable MigrationWorkflowName name) {
     GetMigrationWorkflowRequest request =
         GetMigrationWorkflowRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -580,7 +583,8 @@ public class MigrationServiceClient implements BackgroundResource {
    *     `projects/123/locations/us`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMigrationWorkflowsPagedResponse listMigrationWorkflows(LocationName parent) {
+  public final ListMigrationWorkflowsPagedResponse listMigrationWorkflows(
+      @Nullable LocationName parent) {
     ListMigrationWorkflowsRequest request =
         ListMigrationWorkflowsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -752,7 +756,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *     `projects/123/locations/us/workflows/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMigrationWorkflow(MigrationWorkflowName name) {
+  public final void deleteMigrationWorkflow(@Nullable MigrationWorkflowName name) {
     DeleteMigrationWorkflowRequest request =
         DeleteMigrationWorkflowRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -870,7 +874,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *     `projects/123/locations/us/workflows/1234`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void startMigrationWorkflow(MigrationWorkflowName name) {
+  public final void startMigrationWorkflow(@Nullable MigrationWorkflowName name) {
     StartMigrationWorkflowRequest request =
         StartMigrationWorkflowRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -992,7 +996,7 @@ public class MigrationServiceClient implements BackgroundResource {
    *     `projects/123/locations/us/workflows/1234/subtasks/543`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MigrationSubtask getMigrationSubtask(MigrationSubtaskName name) {
+  public final MigrationSubtask getMigrationSubtask(@Nullable MigrationSubtaskName name) {
     GetMigrationSubtaskRequest request =
         GetMigrationSubtaskRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1119,7 +1123,7 @@ public class MigrationServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMigrationSubtasksPagedResponse listMigrationSubtasks(
-      MigrationWorkflowName parent) {
+      @Nullable MigrationWorkflowName parent) {
     ListMigrationSubtasksRequest request =
         ListMigrationSubtasksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1338,10 +1342,11 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationWorkflowsPage> {
 
     private ListMigrationWorkflowsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse, MigrationWorkflow>
             context,
-        ListMigrationWorkflowsResponse response) {
+        @Nullable ListMigrationWorkflowsResponse response) {
       super(context, response);
     }
 
@@ -1351,16 +1356,18 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationWorkflowsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse, MigrationWorkflow>
             context,
-        ListMigrationWorkflowsResponse response) {
+        @Nullable ListMigrationWorkflowsResponse response) {
       return new ListMigrationWorkflowsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMigrationWorkflowsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse, MigrationWorkflow>
             context,
         ApiFuture<ListMigrationWorkflowsResponse> futureResponse) {
@@ -1377,7 +1384,7 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationWorkflowsFixedSizeCollection> {
 
     private ListMigrationWorkflowsFixedSizeCollection(
-        List<ListMigrationWorkflowsPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationWorkflowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1387,7 +1394,7 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationWorkflowsFixedSizeCollection createCollection(
-        List<ListMigrationWorkflowsPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationWorkflowsPage> pages, int collectionSize) {
       return new ListMigrationWorkflowsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1425,9 +1432,11 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationSubtasksPage> {
 
     private ListMigrationSubtasksPage(
-        PageContext<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
+        @Nullable
+            PageContext<
+                ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
             context,
-        ListMigrationSubtasksResponse response) {
+        @Nullable ListMigrationSubtasksResponse response) {
       super(context, response);
     }
 
@@ -1437,15 +1446,19 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationSubtasksPage createPage(
-        PageContext<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
+        @Nullable
+            PageContext<
+                ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
             context,
-        ListMigrationSubtasksResponse response) {
+        @Nullable ListMigrationSubtasksResponse response) {
       return new ListMigrationSubtasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMigrationSubtasksPage> createPageAsync(
-        PageContext<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
+        @Nullable
+            PageContext<
+                ListMigrationSubtasksRequest, ListMigrationSubtasksResponse, MigrationSubtask>
             context,
         ApiFuture<ListMigrationSubtasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1461,7 +1474,7 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationSubtasksFixedSizeCollection> {
 
     private ListMigrationSubtasksFixedSizeCollection(
-        List<ListMigrationSubtasksPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationSubtasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1471,7 +1484,7 @@ public class MigrationServiceClient implements BackgroundResource {
 
     @Override
     protected ListMigrationSubtasksFixedSizeCollection createCollection(
-        List<ListMigrationSubtasksPage> pages, int collectionSize) {
+        @Nullable List<ListMigrationSubtasksPage> pages, int collectionSize) {
       return new ListMigrationSubtasksFixedSizeCollection(pages, collectionSize);
     }
   }

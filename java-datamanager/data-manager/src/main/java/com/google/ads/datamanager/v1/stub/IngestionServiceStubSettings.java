@@ -16,6 +16,8 @@
 
 package com.google.ads.datamanager.v1.stub;
 
+import com.google.ads.datamanager.v1.IngestAdEventsRequest;
+import com.google.ads.datamanager.v1.IngestAdEventsResponse;
 import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
@@ -51,6 +53,8 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -102,6 +106,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class IngestionServiceStubSettings extends StubSettings<IngestionServiceStubSettings> {
@@ -114,6 +119,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   private final UnaryCallSettings<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersSettings;
   private final UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings;
+  private final UnaryCallSettings<IngestAdEventsRequest, IngestAdEventsResponse>
+      ingestAdEventsSettings;
   private final UnaryCallSettings<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
       retrieveRequestStatusSettings;
 
@@ -132,6 +139,11 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   /** Returns the object with the settings used for calls to ingestEvents. */
   public UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings() {
     return ingestEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to ingestAdEvents. */
+  public UnaryCallSettings<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsSettings() {
+    return ingestAdEventsSettings;
   }
 
   /** Returns the object with the settings used for calls to retrieveRequestStatus. */
@@ -239,7 +251,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -254,6 +266,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
     ingestAudienceMembersSettings = settingsBuilder.ingestAudienceMembersSettings().build();
     removeAudienceMembersSettings = settingsBuilder.removeAudienceMembersSettings().build();
     ingestEventsSettings = settingsBuilder.ingestEventsSettings().build();
+    ingestAdEventsSettings = settingsBuilder.ingestAdEventsSettings().build();
     retrieveRequestStatusSettings = settingsBuilder.retrieveRequestStatusSettings().build();
   }
 
@@ -277,6 +290,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
         removeAudienceMembersSettings;
     private final UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings;
+    private final UnaryCallSettings.Builder<IngestAdEventsRequest, IngestAdEventsResponse>
+        ingestAdEventsSettings;
     private final UnaryCallSettings.Builder<
             RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
         retrieveRequestStatusSettings;
@@ -304,12 +319,13 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       ingestAudienceMembersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeAudienceMembersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       ingestEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      ingestAdEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       retrieveRequestStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -317,6 +333,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
               ingestAudienceMembersSettings,
               removeAudienceMembersSettings,
               ingestEventsSettings,
+              ingestAdEventsSettings,
               retrieveRequestStatusSettings);
       initDefaults(this);
     }
@@ -327,6 +344,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
       ingestAudienceMembersSettings = settings.ingestAudienceMembersSettings.toBuilder();
       removeAudienceMembersSettings = settings.removeAudienceMembersSettings.toBuilder();
       ingestEventsSettings = settings.ingestEventsSettings.toBuilder();
+      ingestAdEventsSettings = settings.ingestAdEventsSettings.toBuilder();
       retrieveRequestStatusSettings = settings.retrieveRequestStatusSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -334,6 +352,7 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
               ingestAudienceMembersSettings,
               removeAudienceMembersSettings,
               ingestEventsSettings,
+              ingestAdEventsSettings,
               retrieveRequestStatusSettings);
     }
 
@@ -378,6 +397,11 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .ingestAdEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .retrieveRequestStatusSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -416,6 +440,12 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
     public UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings() {
       return ingestEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to ingestAdEvents. */
+    public UnaryCallSettings.Builder<IngestAdEventsRequest, IngestAdEventsResponse>
+        ingestAdEventsSettings() {
+      return ingestAdEventsSettings;
     }
 
     /** Returns the builder for the settings used for calls to retrieveRequestStatus. */

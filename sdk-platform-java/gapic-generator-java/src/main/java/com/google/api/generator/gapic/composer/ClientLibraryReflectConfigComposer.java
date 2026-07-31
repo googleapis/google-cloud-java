@@ -23,7 +23,9 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ClientLibraryReflectConfigComposer {
   private ClientLibraryReflectConfigComposer() {} // Disallow instance creation
 

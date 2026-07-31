@@ -48,6 +48,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -125,6 +127,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataScanServiceSettings extends ClientSettings<DataScanServiceSettings> {
 
@@ -187,6 +190,12 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
           ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
       listDataScanJobsSettings() {
     return ((DataScanServiceStubSettings) getStubSettings()).listDataScanJobsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelDataScanJob. */
+  public UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings() {
+    return ((DataScanServiceStubSettings) getStubSettings()).cancelDataScanJobSettings();
   }
 
   /** Returns the object with the settings used for calls to generateDataQualityRules. */
@@ -278,7 +287,7 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -298,7 +307,7 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(DataScanServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -395,6 +404,12 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings() {
       return getStubSettingsBuilder().listDataScanJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDataScanJob. */
+    public UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings() {
+      return getStubSettingsBuilder().cancelDataScanJobSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateDataQualityRules. */

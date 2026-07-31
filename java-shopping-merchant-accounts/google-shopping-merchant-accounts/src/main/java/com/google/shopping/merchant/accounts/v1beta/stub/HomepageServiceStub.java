@@ -25,6 +25,7 @@ import com.google.shopping.merchant.accounts.v1beta.Homepage;
 import com.google.shopping.merchant.accounts.v1beta.UnclaimHomepageRequest;
 import com.google.shopping.merchant.accounts.v1beta.UpdateHomepageRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +33,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class HomepageServiceStub implements BackgroundResource {

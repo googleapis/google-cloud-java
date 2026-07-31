@@ -40,6 +40,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -237,9 +239,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AuditClient implements BackgroundResource {
-  private final AuditSettings settings;
+  private final @Nullable AuditSettings settings;
   private final AuditStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -285,7 +288,7 @@ public class AuditClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AuditSettings getSettings() {
+  public final @Nullable AuditSettings getSettings() {
     return settings;
   }
 
@@ -456,7 +459,7 @@ public class AuditClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FrameworkAudit, OperationMetadata> createFrameworkAuditAsync(
-      LocationName parent, FrameworkAudit frameworkAudit, String frameworkAuditId) {
+      @Nullable LocationName parent, FrameworkAudit frameworkAudit, String frameworkAuditId) {
     CreateFrameworkAuditRequest request =
         CreateFrameworkAuditRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -502,7 +505,9 @@ public class AuditClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FrameworkAudit, OperationMetadata> createFrameworkAuditAsync(
-      OrganizationLocationName parent, FrameworkAudit frameworkAudit, String frameworkAuditId) {
+      @Nullable OrganizationLocationName parent,
+      FrameworkAudit frameworkAudit,
+      String frameworkAuditId) {
     CreateFrameworkAuditRequest request =
         CreateFrameworkAuditRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -680,7 +685,7 @@ public class AuditClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFrameworkAuditsPagedResponse listFrameworkAudits(LocationName parent) {
+  public final ListFrameworkAuditsPagedResponse listFrameworkAudits(@Nullable LocationName parent) {
     ListFrameworkAuditsRequest request =
         ListFrameworkAuditsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -719,7 +724,7 @@ public class AuditClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkAuditsPagedResponse listFrameworkAudits(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListFrameworkAuditsRequest request =
         ListFrameworkAuditsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -902,7 +907,7 @@ public class AuditClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FrameworkAudit getFrameworkAudit(FrameworkAuditName name) {
+  public final FrameworkAudit getFrameworkAudit(@Nullable FrameworkAuditName name) {
     GetFrameworkAuditRequest request =
         GetFrameworkAuditRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1261,9 +1266,10 @@ public class AuditClient implements BackgroundResource {
           ListFrameworkAuditsPage> {
 
     private ListFrameworkAuditsPage(
-        PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
+        @Nullable
+            PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
             context,
-        ListFrameworkAuditsResponse response) {
+        @Nullable ListFrameworkAuditsResponse response) {
       super(context, response);
     }
 
@@ -1273,15 +1279,17 @@ public class AuditClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkAuditsPage createPage(
-        PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
+        @Nullable
+            PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
             context,
-        ListFrameworkAuditsResponse response) {
+        @Nullable ListFrameworkAuditsResponse response) {
       return new ListFrameworkAuditsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFrameworkAuditsPage> createPageAsync(
-        PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
+        @Nullable
+            PageContext<ListFrameworkAuditsRequest, ListFrameworkAuditsResponse, FrameworkAudit>
             context,
         ApiFuture<ListFrameworkAuditsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1297,7 +1305,7 @@ public class AuditClient implements BackgroundResource {
           ListFrameworkAuditsFixedSizeCollection> {
 
     private ListFrameworkAuditsFixedSizeCollection(
-        List<ListFrameworkAuditsPage> pages, int collectionSize) {
+        @Nullable List<ListFrameworkAuditsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1307,7 +1315,7 @@ public class AuditClient implements BackgroundResource {
 
     @Override
     protected ListFrameworkAuditsFixedSizeCollection createCollection(
-        List<ListFrameworkAuditsPage> pages, int collectionSize) {
+        @Nullable List<ListFrameworkAuditsPage> pages, int collectionSize) {
       return new ListFrameworkAuditsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1341,8 +1349,8 @@ public class AuditClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1352,14 +1360,14 @@ public class AuditClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1373,7 +1381,8 @@ public class AuditClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1383,7 +1392,7 @@ public class AuditClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

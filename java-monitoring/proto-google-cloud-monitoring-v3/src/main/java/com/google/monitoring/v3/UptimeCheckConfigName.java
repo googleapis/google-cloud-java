@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class UptimeCheckConfigName implements ResourceName {
   private static final PathTemplate PROJECT_UPTIME_CHECK_CONFIG =
@@ -174,7 +177,7 @@ public class UptimeCheckConfigName implements ResourceName {
         .toString();
   }
 
-  public static UptimeCheckConfigName parse(String formattedString) {
+  public static @Nullable UptimeCheckConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -203,7 +206,7 @@ public class UptimeCheckConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<UptimeCheckConfigName> values) {
+  public static List<String> toStringList(List<@Nullable UptimeCheckConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (UptimeCheckConfigName value : values) {
       if (value == null) {
@@ -256,7 +259,7 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

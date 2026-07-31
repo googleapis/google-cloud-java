@@ -100,7 +100,8 @@ public class ITComputeGoldenSignals extends BaseTest {
   private static final String SERVICE_NAME_PREFIX = "compute-golden-signals-test-";
   // Test run ID used to isolate metrics in parallel CI runs.
   private static final String METRIC_FILTER_TEMPLATE =
-      "metric.type=\"prometheus.googleapis.com/%s/histogram\" AND resource.type=\"prometheus_target\" AND resource.labels.job=\""
+      "metric.type=\"prometheus.googleapis.com/%s/histogram\" AND"
+          + " resource.type=\"prometheus_target\" AND resource.labels.job=\""
           + SERVICE_NAME_PREFIX
           + "%s\"";
 

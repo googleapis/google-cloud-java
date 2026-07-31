@@ -80,6 +80,7 @@ import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
 import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.storage.HttpStorageRpcHasherHelper;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;
@@ -860,9 +861,14 @@ public class HttpStorageRpc implements StorageRpc {
       if (Option.RETURN_RAW_INPUT_STREAM.getBoolean(options) != null) {
         getRequest.setReturnRawInputStream(Option.RETURN_RAW_INPUT_STREAM.getBoolean(options));
       }
+      HttpResponse response = getRequest.executeMedia();
       ByteArrayOutputStream out = new ByteArrayOutputStream();
-      getRequest.executeMedia().download(out);
-      return out.toByteArray();
+      boolean shouldValidate = HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response);
+      OutputStream activeStream = HttpStorageRpcHasherHelper.INSTANCE.wrap(out, shouldValidate);
+      response.download(activeStream);
+      byte[] content = out.toByteArray();
+      HttpStorageRpcHasherHelper.INSTANCE.validate(response, activeStream);
+      return content;
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       throw translate(ex);
@@ -919,7 +925,15 @@ public class HttpStorageRpc implements StorageRpc {
       }
       MediaHttpDownloader mediaHttpDownloader = req.getMediaHttpDownloader();
       mediaHttpDownloader.setDirectDownloadEnabled(true);
-      req.executeMedia().download(outputStream);
+
+      HttpResponse response = req.executeMedia();
+      boolean shouldValidate = HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response);
+      OutputStream activeStream =
+          HttpStorageRpcHasherHelper.INSTANCE.wrap(outputStream, shouldValidate);
+      response.download(activeStream);
+      // Validate checksum
+      HttpStorageRpcHasherHelper.INSTANCE.validate(response, activeStream);
+
       return mediaHttpDownloader.getNumBytesDownloaded();
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));

@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataKeyServiceClient.ListCmsMetadataKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataKeysResponse;
 import com.google.ads.admanager.v1.CmsMetadataKey;
 import com.google.ads.admanager.v1.GetCmsMetadataKeyRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataKeysRequest;
@@ -25,6 +29,7 @@ import com.google.ads.admanager.v1.ListCmsMetadataKeysResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CmsMetadataKeyServiceStub implements BackgroundResource {
 
@@ -47,6 +53,19 @@ public abstract class CmsMetadataKeyServiceStub implements BackgroundResource {
   public UnaryCallable<ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse>
       listCmsMetadataKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: listCmsMetadataKeysCallable()");
+  }
+
+  public UnaryCallable<BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCmsMetadataKeysCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCmsMetadataKeysCallable()");
   }
 
   @Override

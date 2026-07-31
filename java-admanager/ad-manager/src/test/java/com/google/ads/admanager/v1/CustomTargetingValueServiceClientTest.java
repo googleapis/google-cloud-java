@@ -29,7 +29,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -273,6 +275,551 @@ public class CustomTargetingValueServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listCustomTargetingValues(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomTargetingValueTest() throws Exception {
+    CustomTargetingValue expectedResponse =
+        CustomTargetingValue.newBuilder()
+            .setName(
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
+                    .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+            .setAdTagName("adTagName-926580830")
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+
+    CustomTargetingValue actualResponse =
+        client.createCustomTargetingValue(parent, customTargetingValue);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomTargetingValueExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+      client.createCustomTargetingValue(parent, customTargetingValue);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCustomTargetingValueTest2() throws Exception {
+    CustomTargetingValue expectedResponse =
+        CustomTargetingValue.newBuilder()
+            .setName(
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
+                    .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+            .setAdTagName("adTagName-926580830")
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+
+    CustomTargetingValue actualResponse =
+        client.createCustomTargetingValue(parent, customTargetingValue);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCustomTargetingValueExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      CustomTargetingValue customTargetingValue = CustomTargetingValue.newBuilder().build();
+      client.createCustomTargetingValue(parent, customTargetingValue);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCustomTargetingValuesTest() throws Exception {
+    BatchCreateCustomTargetingValuesResponse expectedResponse =
+        BatchCreateCustomTargetingValuesResponse.newBuilder()
+            .addAllCustomTargetingValues(new ArrayList<CustomTargetingValue>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchCreateCustomTargetingValuesResponse actualResponse =
+        client.batchCreateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCustomTargetingValuesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchCreateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCustomTargetingValuesTest2() throws Exception {
+    BatchCreateCustomTargetingValuesResponse expectedResponse =
+        BatchCreateCustomTargetingValuesResponse.newBuilder()
+            .addAllCustomTargetingValues(new ArrayList<CustomTargetingValue>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchCreateCustomTargetingValuesResponse actualResponse =
+        client.batchCreateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCustomTargetingValuesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchCreateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCustomTargetingValueTest() throws Exception {
+    CustomTargetingValue expectedResponse =
+        CustomTargetingValue.newBuilder()
+            .setName(
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
+                    .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+            .setAdTagName("adTagName-926580830")
+            .setDisplayName("displayName1714148973")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomTargetingValue customTargetingValue =
+        CustomTargetingValue.newBuilder()
+            .setName(
+                CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
+                    .toString())
+            .setCustomTargetingKey(
+                CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+            .setAdTagName("adTagName-926580830")
+            .setDisplayName("displayName1714148973")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CustomTargetingValue actualResponse =
+        client.updateCustomTargetingValue(customTargetingValue, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCustomTargetingValueExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomTargetingValue customTargetingValue =
+          CustomTargetingValue.newBuilder()
+              .setName(
+                  CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]")
+                      .toString())
+              .setCustomTargetingKey(
+                  CustomTargetingKeyName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_KEY]").toString())
+              .setAdTagName("adTagName-926580830")
+              .setDisplayName("displayName1714148973")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCustomTargetingValue(customTargetingValue, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCustomTargetingValuesTest() throws Exception {
+    BatchUpdateCustomTargetingValuesResponse expectedResponse =
+        BatchUpdateCustomTargetingValuesResponse.newBuilder()
+            .addAllCustomTargetingValues(new ArrayList<CustomTargetingValue>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchUpdateCustomTargetingValuesResponse actualResponse =
+        client.batchUpdateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCustomTargetingValuesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchUpdateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCustomTargetingValuesTest2() throws Exception {
+    BatchUpdateCustomTargetingValuesResponse expectedResponse =
+        BatchUpdateCustomTargetingValuesResponse.newBuilder()
+            .addAllCustomTargetingValues(new ArrayList<CustomTargetingValue>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchUpdateCustomTargetingValuesResponse actualResponse =
+        client.batchUpdateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCustomTargetingValuesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchUpdateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCustomTargetingValuesTest() throws Exception {
+    BatchActivateCustomTargetingValuesResponse expectedResponse =
+        BatchActivateCustomTargetingValuesResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchActivateCustomTargetingValuesResponse actualResponse =
+        client.batchActivateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCustomTargetingValuesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchActivateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateCustomTargetingValuesTest2() throws Exception {
+    BatchActivateCustomTargetingValuesResponse expectedResponse =
+        BatchActivateCustomTargetingValuesResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchActivateCustomTargetingValuesResponse actualResponse =
+        client.batchActivateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateCustomTargetingValuesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<ActivateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchActivateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCustomTargetingValuesTest() throws Exception {
+    BatchDeactivateCustomTargetingValuesResponse expectedResponse =
+        BatchDeactivateCustomTargetingValuesResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchDeactivateCustomTargetingValuesResponse actualResponse =
+        client.batchDeactivateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCustomTargetingValuesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchDeactivateCustomTargetingValues(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateCustomTargetingValuesTest2() throws Exception {
+    BatchDeactivateCustomTargetingValuesResponse expectedResponse =
+        BatchDeactivateCustomTargetingValuesResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+
+    BatchDeactivateCustomTargetingValuesResponse actualResponse =
+        client.batchDeactivateCustomTargetingValues(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateCustomTargetingValuesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<DeactivateCustomTargetingValueRequest> requests = new ArrayList<>();
+      client.batchDeactivateCustomTargetingValues(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

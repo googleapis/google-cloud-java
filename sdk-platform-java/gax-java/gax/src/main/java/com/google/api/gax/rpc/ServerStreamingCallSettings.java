@@ -44,6 +44,7 @@ import com.google.common.collect.Sets;
 import java.time.Duration;
 import java.util.Set;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure a {@link ServerStreamingCallable}.
@@ -77,6 +78,7 @@ import javax.annotation.Nonnull;
  *   <li>totalTimeout still applies to the entire stream.
  * </ul>
  */
+@NullMarked
 public final class ServerStreamingCallSettings<RequestT, ResponseT>
     extends StreamingCallSettings<RequestT, ResponseT> {
 

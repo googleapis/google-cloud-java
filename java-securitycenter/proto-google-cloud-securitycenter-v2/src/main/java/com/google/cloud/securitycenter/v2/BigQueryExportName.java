@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BigQueryExportName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_EXPORT =
@@ -198,7 +201,7 @@ public class BigQueryExportName implements ResourceName {
         .toString();
   }
 
-  public static BigQueryExportName parse(String formattedString) {
+  public static @Nullable BigQueryExportName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -226,7 +229,7 @@ public class BigQueryExportName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BigQueryExportName> values) {
+  public static List<String> toStringList(List<@Nullable BigQueryExportName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BigQueryExportName value : values) {
       if (value == null) {
@@ -282,7 +285,7 @@ public class BigQueryExportName implements ResourceName {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }

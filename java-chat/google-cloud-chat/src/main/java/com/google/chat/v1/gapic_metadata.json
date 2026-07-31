@@ -58,6 +58,9 @@
             "GetAttachment": {
               "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
             },
+            "GetAvailability": {
+              "methods": ["getAvailability", "getAvailability", "getAvailability", "getAvailabilityCallable"]
+            },
             "GetCustomEmoji": {
               "methods": ["getCustomEmoji", "getCustomEmoji", "getCustomEmoji", "getCustomEmojiCallable"]
             },
@@ -106,6 +109,15 @@
             "ListSpaces": {
               "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
             },
+            "MarkAsActive": {
+              "methods": ["markAsActive", "markAsActiveCallable"]
+            },
+            "MarkAsAway": {
+              "methods": ["markAsAway", "markAsAwayCallable"]
+            },
+            "MarkAsDoNotDisturb": {
+              "methods": ["markAsDoNotDisturb", "markAsDoNotDisturbCallable"]
+            },
             "MoveSectionItem": {
               "methods": ["moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItemCallable"]
             },
@@ -117,6 +129,9 @@
             },
             "SetUpSpace": {
               "methods": ["setUpSpace", "setUpSpaceCallable"]
+            },
+            "UpdateAvailability": {
+              "methods": ["updateAvailability", "updateAvailability", "updateAvailabilityCallable"]
             },
             "UpdateMembership": {
               "methods": ["updateMembership", "updateMembership", "updateMembershipCallable"]

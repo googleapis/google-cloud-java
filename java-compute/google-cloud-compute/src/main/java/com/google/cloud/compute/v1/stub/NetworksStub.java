@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
+import com.google.cloud.compute.v1.CancelRequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsNetworkRequest;
@@ -40,6 +41,7 @@ import com.google.cloud.compute.v1.RequestRemovePeeringNetworkRequest;
 import com.google.cloud.compute.v1.SwitchToCustomModeNetworkRequest;
 import com.google.cloud.compute.v1.UpdatePeeringNetworkRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -47,6 +49,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class NetworksStub implements BackgroundResource {
 
@@ -57,6 +60,18 @@ public abstract class NetworksStub implements BackgroundResource {
 
   public UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     throw new UnsupportedOperationException("Not implemented: addPeeringCallable()");
+  }
+
+  public OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringOperationCallable()");
+  }
+
+  public UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelRequestRemovePeeringCallable()");
   }
 
   public OperationCallable<DeleteNetworkRequest, Operation, Operation> deleteOperationCallable() {

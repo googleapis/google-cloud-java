@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1085,9 +1087,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MigrationCenterClient implements BackgroundResource {
-  private final MigrationCenterSettings settings;
+  private final @Nullable MigrationCenterSettings settings;
   private final MigrationCenterStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1135,7 +1138,7 @@ public class MigrationCenterClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final MigrationCenterSettings getSettings() {
+  public final @Nullable MigrationCenterSettings getSettings() {
     return settings;
   }
 
@@ -1183,7 +1186,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListAssetsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(LocationName parent) {
+  public final ListAssetsPagedResponse listAssets(@Nullable LocationName parent) {
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
@@ -1348,7 +1351,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Asset getAsset(AssetName name) {
+  public final Asset getAsset(@Nullable AssetName name) {
     GetAssetRequest request =
         GetAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAsset(request);
@@ -1554,7 +1557,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateAssetsResponse batchUpdateAssets(
-      LocationName parent, List<UpdateAssetRequest> requests) {
+      @Nullable LocationName parent, List<UpdateAssetRequest> requests) {
     BatchUpdateAssetsRequest request =
         BatchUpdateAssetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1675,7 +1678,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAsset(AssetName name) {
+  public final void deleteAsset(@Nullable AssetName name) {
     DeleteAssetRequest request =
         DeleteAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAsset(request);
@@ -1788,7 +1791,7 @@ public class MigrationCenterClient implements BackgroundResource {
    *     in a batch. Format: projects/{project}/locations/{location}/assets/{name}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeleteAssets(LocationName parent, List<String> names) {
+  public final void batchDeleteAssets(@Nullable LocationName parent, List<String> names) {
     BatchDeleteAssetsRequest request =
         BatchDeleteAssetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2037,7 +2040,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportJob, OperationMetadata> createImportJobAsync(
-      LocationName parent, ImportJob importJob, String importJobId) {
+      @Nullable LocationName parent, ImportJob importJob, String importJobId) {
     CreateImportJobRequest request =
         CreateImportJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2202,7 +2205,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListImportJobsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListImportJobsPagedResponse listImportJobs(LocationName parent) {
+  public final ListImportJobsPagedResponse listImportJobs(@Nullable LocationName parent) {
     ListImportJobsRequest request =
         ListImportJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2373,7 +2376,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImportJob getImportJob(ImportJobName name) {
+  public final ImportJob getImportJob(@Nullable ImportJobName name) {
     GetImportJobRequest request =
         GetImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getImportJob(request);
@@ -2484,7 +2487,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteImportJobAsync(ImportJobName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteImportJobAsync(
+      @Nullable ImportJobName name) {
     DeleteImportJobRequest request =
         DeleteImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteImportJobAsync(request);
@@ -2758,7 +2762,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> validateImportJobAsync(
-      ImportJobName name) {
+      @Nullable ImportJobName name) {
     ValidateImportJobRequest request =
         ValidateImportJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2902,7 +2906,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. The name of the import job to run.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> runImportJobAsync(ImportJobName name) {
+  public final OperationFuture<Empty, OperationMetadata> runImportJobAsync(
+      @Nullable ImportJobName name) {
     RunImportJobRequest request =
         RunImportJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runImportJobAsync(request);
@@ -3045,7 +3050,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the ImportDataFile.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ImportDataFile getImportDataFile(ImportDataFileName name) {
+  public final ImportDataFile getImportDataFile(@Nullable ImportDataFileName name) {
     GetImportDataFileRequest request =
         GetImportDataFileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3167,7 +3172,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Name of the parent of the `ImportDataFiles` resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListImportDataFilesPagedResponse listImportDataFiles(ImportJobName parent) {
+  public final ListImportDataFilesPagedResponse listImportDataFiles(
+      @Nullable ImportJobName parent) {
     ListImportDataFilesRequest request =
         ListImportDataFilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3347,7 +3353,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ImportDataFile, OperationMetadata> createImportDataFileAsync(
-      ImportJobName parent, ImportDataFile importDataFile, String importDataFileId) {
+      @Nullable ImportJobName parent, ImportDataFile importDataFile, String importDataFileId) {
     CreateImportDataFileRequest request =
         CreateImportDataFileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3515,7 +3521,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteImportDataFileAsync(
-      ImportDataFileName name) {
+      @Nullable ImportDataFileName name) {
     DeleteImportDataFileRequest request =
         DeleteImportDataFileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3674,7 +3680,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListGroupsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGroupsPagedResponse listGroups(LocationName parent) {
+  public final ListGroupsPagedResponse listGroups(@Nullable LocationName parent) {
     ListGroupsRequest request =
         ListGroupsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listGroups(request);
@@ -3836,7 +3842,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Group getGroup(GroupName name) {
+  public final Group getGroup(@Nullable GroupName name) {
     GetGroupRequest request =
         GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGroup(request);
@@ -3952,7 +3958,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Group, OperationMetadata> createGroupAsync(
-      LocationName parent, Group group, String groupId) {
+      @Nullable LocationName parent, Group group, String groupId) {
     CreateGroupRequest request =
         CreateGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4240,7 +4246,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the group resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteGroupAsync(GroupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteGroupAsync(
+      @Nullable GroupName name) {
     DeleteGroupRequest request =
         DeleteGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteGroupAsync(request);
@@ -4381,7 +4388,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param group Required. Group reference.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Group, OperationMetadata> addAssetsToGroupAsync(GroupName group) {
+  public final OperationFuture<Group, OperationMetadata> addAssetsToGroupAsync(
+      @Nullable GroupName group) {
     AddAssetsToGroupRequest request =
         AddAssetsToGroupRequest.newBuilder()
             .setGroup(group == null ? null : group.toString())
@@ -4532,7 +4540,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Group, OperationMetadata> removeAssetsFromGroupAsync(
-      GroupName group) {
+      @Nullable GroupName group) {
     RemoveAssetsFromGroupRequest request =
         RemoveAssetsFromGroupRequest.newBuilder()
             .setGroup(group == null ? null : group.toString())
@@ -4686,7 +4694,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value (the source) for `ListErrorFramesRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListErrorFramesPagedResponse listErrorFrames(SourceName parent) {
+  public final ListErrorFramesPagedResponse listErrorFrames(@Nullable SourceName parent) {
     ListErrorFramesRequest request =
         ListErrorFramesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4853,7 +4861,7 @@ public class MigrationCenterClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/sources/{source}/errorFrames/{error_frame}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ErrorFrame getErrorFrame(ErrorFrameName name) {
+  public final ErrorFrame getErrorFrame(@Nullable ErrorFrameName name) {
     GetErrorFrameRequest request =
         GetErrorFrameRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getErrorFrame(request);
@@ -4972,7 +4980,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListSourcesRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSourcesPagedResponse listSources(LocationName parent) {
+  public final ListSourcesPagedResponse listSources(@Nullable LocationName parent) {
     ListSourcesRequest request =
         ListSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5138,7 +5146,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Source getSource(SourceName name) {
+  public final Source getSource(@Nullable SourceName name) {
     GetSourceRequest request =
         GetSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSource(request);
@@ -5254,7 +5262,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Source, OperationMetadata> createSourceAsync(
-      LocationName parent, Source source, String sourceId) {
+      @Nullable LocationName parent, Source source, String sourceId) {
     CreateSourceRequest request =
         CreateSourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5544,7 +5552,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSourceAsync(SourceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSourceAsync(
+      @Nullable SourceName name) {
     DeleteSourceRequest request =
         DeleteSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSourceAsync(request);
@@ -5688,7 +5697,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListPreferenceSetsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPreferenceSetsPagedResponse listPreferenceSets(LocationName parent) {
+  public final ListPreferenceSetsPagedResponse listPreferenceSets(@Nullable LocationName parent) {
     ListPreferenceSetsRequest request =
         ListPreferenceSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5855,7 +5864,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PreferenceSet getPreferenceSet(PreferenceSetName name) {
+  public final PreferenceSet getPreferenceSet(@Nullable PreferenceSetName name) {
     GetPreferenceSetRequest request =
         GetPreferenceSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPreferenceSet(request);
@@ -5977,7 +5986,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PreferenceSet, OperationMetadata> createPreferenceSetAsync(
-      LocationName parent, PreferenceSet preferenceSet, String preferenceSetId) {
+      @Nullable LocationName parent, PreferenceSet preferenceSet, String preferenceSetId) {
     CreatePreferenceSetRequest request =
         CreatePreferenceSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6275,7 +6284,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePreferenceSetAsync(
-      PreferenceSetName name) {
+      @Nullable PreferenceSetName name) {
     DeletePreferenceSetRequest request =
         DeletePreferenceSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6423,7 +6432,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Settings getSettings(SettingsName name) {
+  public final Settings getSettings(@Nullable SettingsName name) {
     GetSettingsRequest request =
         GetSettingsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSettings(request);
@@ -6665,7 +6674,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReportConfig, OperationMetadata> createReportConfigAsync(
-      LocationName parent, ReportConfig reportConfig, String reportConfigId) {
+      @Nullable LocationName parent, ReportConfig reportConfig, String reportConfigId) {
     CreateReportConfigRequest request =
         CreateReportConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6831,7 +6840,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportConfig getReportConfig(ReportConfigName name) {
+  public final ReportConfig getReportConfig(@Nullable ReportConfigName name) {
     GetReportConfigRequest request =
         GetReportConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReportConfig(request);
@@ -6942,7 +6951,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListReportConfigsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportConfigsPagedResponse listReportConfigs(LocationName parent) {
+  public final ListReportConfigsPagedResponse listReportConfigs(@Nullable LocationName parent) {
     ListReportConfigsRequest request =
         ListReportConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7112,7 +7121,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteReportConfigAsync(
-      ReportConfigName name) {
+      @Nullable ReportConfigName name) {
     DeleteReportConfigRequest request =
         DeleteReportConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7268,7 +7277,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Report, OperationMetadata> createReportAsync(
-      ReportConfigName parent, Report report, String reportId) {
+      @Nullable ReportConfigName parent, Report report, String reportId) {
     CreateReportRequest request =
         CreateReportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7436,7 +7445,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Report getReport(ReportName name) {
+  public final Report getReport(@Nullable ReportName name) {
     GetReportRequest request =
         GetReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReport(request);
@@ -7553,7 +7562,7 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param parent Required. Parent value for `ListReportsRequest`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportsPagedResponse listReports(ReportConfigName parent) {
+  public final ListReportsPagedResponse listReports(@Nullable ReportConfigName parent) {
     ListReportsRequest request =
         ListReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7725,7 +7734,8 @@ public class MigrationCenterClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteReportAsync(ReportName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteReportAsync(
+      @Nullable ReportName name) {
     DeleteReportRequest request =
         DeleteReportRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteReportAsync(request);
@@ -8065,8 +8075,8 @@ public class MigrationCenterClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -8076,14 +8086,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8097,7 +8107,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8107,7 +8118,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8141,8 +8152,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListImportJobsRequest, ListImportJobsResponse, ImportJob, ListImportJobsPage> {
 
     private ListImportJobsPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable ListImportJobsResponse response) {
       super(context, response);
     }
 
@@ -8152,14 +8163,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListImportJobsPage createPage(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
-        ListImportJobsResponse response) {
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable ListImportJobsResponse response) {
       return new ListImportJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImportJobsPage> createPageAsync(
-        PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
+        @Nullable PageContext<ListImportJobsRequest, ListImportJobsResponse, ImportJob> context,
         ApiFuture<ListImportJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8173,7 +8184,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListImportJobsPage,
           ListImportJobsFixedSizeCollection> {
 
-    private ListImportJobsFixedSizeCollection(List<ListImportJobsPage> pages, int collectionSize) {
+    private ListImportJobsFixedSizeCollection(
+        @Nullable List<ListImportJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8183,7 +8195,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListImportJobsFixedSizeCollection createCollection(
-        List<ListImportJobsPage> pages, int collectionSize) {
+        @Nullable List<ListImportJobsPage> pages, int collectionSize) {
       return new ListImportJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8221,9 +8233,10 @@ public class MigrationCenterClient implements BackgroundResource {
           ListImportDataFilesPage> {
 
     private ListImportDataFilesPage(
-        PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
+        @Nullable
+            PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
             context,
-        ListImportDataFilesResponse response) {
+        @Nullable ListImportDataFilesResponse response) {
       super(context, response);
     }
 
@@ -8233,15 +8246,17 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListImportDataFilesPage createPage(
-        PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
+        @Nullable
+            PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
             context,
-        ListImportDataFilesResponse response) {
+        @Nullable ListImportDataFilesResponse response) {
       return new ListImportDataFilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListImportDataFilesPage> createPageAsync(
-        PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
+        @Nullable
+            PageContext<ListImportDataFilesRequest, ListImportDataFilesResponse, ImportDataFile>
             context,
         ApiFuture<ListImportDataFilesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -8257,7 +8272,7 @@ public class MigrationCenterClient implements BackgroundResource {
           ListImportDataFilesFixedSizeCollection> {
 
     private ListImportDataFilesFixedSizeCollection(
-        List<ListImportDataFilesPage> pages, int collectionSize) {
+        @Nullable List<ListImportDataFilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8267,7 +8282,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListImportDataFilesFixedSizeCollection createCollection(
-        List<ListImportDataFilesPage> pages, int collectionSize) {
+        @Nullable List<ListImportDataFilesPage> pages, int collectionSize) {
       return new ListImportDataFilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8298,8 +8313,8 @@ public class MigrationCenterClient implements BackgroundResource {
       extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
 
     private ListGroupsPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       super(context, response);
     }
 
@@ -8309,14 +8324,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListGroupsPage createPage(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
-        ListGroupsResponse response) {
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable ListGroupsResponse response) {
       return new ListGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGroupsPage> createPageAsync(
-        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        @Nullable PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
         ApiFuture<ListGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8330,7 +8345,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
-    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+    private ListGroupsFixedSizeCollection(
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8340,7 +8356,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListGroupsFixedSizeCollection createCollection(
-        List<ListGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListGroupsPage> pages, int collectionSize) {
       return new ListGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8374,8 +8390,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame, ListErrorFramesPage> {
 
     private ListErrorFramesPage(
-        PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
-        ListErrorFramesResponse response) {
+        @Nullable PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
+        @Nullable ListErrorFramesResponse response) {
       super(context, response);
     }
 
@@ -8385,14 +8401,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListErrorFramesPage createPage(
-        PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
-        ListErrorFramesResponse response) {
+        @Nullable PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
+        @Nullable ListErrorFramesResponse response) {
       return new ListErrorFramesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListErrorFramesPage> createPageAsync(
-        PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
+        @Nullable PageContext<ListErrorFramesRequest, ListErrorFramesResponse, ErrorFrame> context,
         ApiFuture<ListErrorFramesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8407,7 +8423,7 @@ public class MigrationCenterClient implements BackgroundResource {
           ListErrorFramesFixedSizeCollection> {
 
     private ListErrorFramesFixedSizeCollection(
-        List<ListErrorFramesPage> pages, int collectionSize) {
+        @Nullable List<ListErrorFramesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8417,7 +8433,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListErrorFramesFixedSizeCollection createCollection(
-        List<ListErrorFramesPage> pages, int collectionSize) {
+        @Nullable List<ListErrorFramesPage> pages, int collectionSize) {
       return new ListErrorFramesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8448,8 +8464,8 @@ public class MigrationCenterClient implements BackgroundResource {
       extends AbstractPage<ListSourcesRequest, ListSourcesResponse, Source, ListSourcesPage> {
 
     private ListSourcesPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       super(context, response);
     }
 
@@ -8459,14 +8475,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesPage createPage(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
-        ListSourcesResponse response) {
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable ListSourcesResponse response) {
       return new ListSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSourcesPage> createPageAsync(
-        PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
+        @Nullable PageContext<ListSourcesRequest, ListSourcesResponse, Source> context,
         ApiFuture<ListSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8480,7 +8496,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListSourcesPage,
           ListSourcesFixedSizeCollection> {
 
-    private ListSourcesFixedSizeCollection(List<ListSourcesPage> pages, int collectionSize) {
+    private ListSourcesFixedSizeCollection(
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8490,7 +8507,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListSourcesFixedSizeCollection createCollection(
-        List<ListSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListSourcesPage> pages, int collectionSize) {
       return new ListSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8527,8 +8544,9 @@ public class MigrationCenterClient implements BackgroundResource {
           ListPreferenceSetsPage> {
 
     private ListPreferenceSetsPage(
-        PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet> context,
-        ListPreferenceSetsResponse response) {
+        @Nullable PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet>
+            context,
+        @Nullable ListPreferenceSetsResponse response) {
       super(context, response);
     }
 
@@ -8538,14 +8556,16 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListPreferenceSetsPage createPage(
-        PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet> context,
-        ListPreferenceSetsResponse response) {
+        @Nullable PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet>
+            context,
+        @Nullable ListPreferenceSetsResponse response) {
       return new ListPreferenceSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPreferenceSetsPage> createPageAsync(
-        PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet> context,
+        @Nullable PageContext<ListPreferenceSetsRequest, ListPreferenceSetsResponse, PreferenceSet>
+            context,
         ApiFuture<ListPreferenceSetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8560,7 +8580,7 @@ public class MigrationCenterClient implements BackgroundResource {
           ListPreferenceSetsFixedSizeCollection> {
 
     private ListPreferenceSetsFixedSizeCollection(
-        List<ListPreferenceSetsPage> pages, int collectionSize) {
+        @Nullable List<ListPreferenceSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8570,7 +8590,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListPreferenceSetsFixedSizeCollection createCollection(
-        List<ListPreferenceSetsPage> pages, int collectionSize) {
+        @Nullable List<ListPreferenceSetsPage> pages, int collectionSize) {
       return new ListPreferenceSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8607,8 +8627,9 @@ public class MigrationCenterClient implements BackgroundResource {
           ListReportConfigsPage> {
 
     private ListReportConfigsPage(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
-        ListReportConfigsResponse response) {
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
+        @Nullable ListReportConfigsResponse response) {
       super(context, response);
     }
 
@@ -8618,14 +8639,16 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListReportConfigsPage createPage(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
-        ListReportConfigsResponse response) {
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
+        @Nullable ListReportConfigsResponse response) {
       return new ListReportConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportConfigsPage> createPageAsync(
-        PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig> context,
+        @Nullable PageContext<ListReportConfigsRequest, ListReportConfigsResponse, ReportConfig>
+            context,
         ApiFuture<ListReportConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8640,7 +8663,7 @@ public class MigrationCenterClient implements BackgroundResource {
           ListReportConfigsFixedSizeCollection> {
 
     private ListReportConfigsFixedSizeCollection(
-        List<ListReportConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReportConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8650,7 +8673,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListReportConfigsFixedSizeCollection createCollection(
-        List<ListReportConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListReportConfigsPage> pages, int collectionSize) {
       return new ListReportConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8681,8 +8704,8 @@ public class MigrationCenterClient implements BackgroundResource {
       extends AbstractPage<ListReportsRequest, ListReportsResponse, Report, ListReportsPage> {
 
     private ListReportsPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       super(context, response);
     }
 
@@ -8692,14 +8715,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListReportsPage createPage(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
-        ListReportsResponse response) {
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable ListReportsResponse response) {
       return new ListReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportsPage> createPageAsync(
-        PageContext<ListReportsRequest, ListReportsResponse, Report> context,
+        @Nullable PageContext<ListReportsRequest, ListReportsResponse, Report> context,
         ApiFuture<ListReportsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8713,7 +8736,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListReportsPage,
           ListReportsFixedSizeCollection> {
 
-    private ListReportsFixedSizeCollection(List<ListReportsPage> pages, int collectionSize) {
+    private ListReportsFixedSizeCollection(
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8723,7 +8747,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListReportsFixedSizeCollection createCollection(
-        List<ListReportsPage> pages, int collectionSize) {
+        @Nullable List<ListReportsPage> pages, int collectionSize) {
       return new ListReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8757,8 +8781,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -8768,14 +8792,14 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8789,7 +8813,8 @@ public class MigrationCenterClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8799,7 +8824,7 @@ public class MigrationCenterClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

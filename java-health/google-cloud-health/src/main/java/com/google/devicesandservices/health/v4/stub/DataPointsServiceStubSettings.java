@@ -81,6 +81,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -159,6 +161,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class DataPointsServiceStubSettings extends StubSettings<DataPointsServiceStubSettings> {
@@ -546,7 +549,7 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -625,7 +628,6 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -639,8 +641,6 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -667,7 +667,7 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getDataPointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -755,8 +755,8 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     private static Builder initDefaults(Builder builder) {
       builder
           .getDataPointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listDataPointsSettings()

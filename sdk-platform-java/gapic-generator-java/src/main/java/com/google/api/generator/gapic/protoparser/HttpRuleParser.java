@@ -40,13 +40,16 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class HttpRuleParser {
   private static final String ASTERISK = "*";
   private static final Pattern TEMPLATE_VALS_PATTERN =
       Pattern.compile("\\{(?<var>[\\w.]*)=(?<template>[^}]+)}");
 
-  public static HttpBindings parse(
+  public static @Nullable HttpBindings parse(
       MethodDescriptor protoMethod, Message inputMessage, Map<String, Message> messageTypes) {
     MethodOptions methodOptions = protoMethod.getOptions();
     if (!methodOptions.hasExtension(AnnotationsProto.http)) {
@@ -133,7 +136,7 @@ public class HttpRuleParser {
       Set<String> paramNames,
       Message inputMessage,
       Map<String, Message> messageTypes,
-      Map<String, String> patternSampleValues) {
+      @Nullable Map<String, String> patternSampleValues) {
     ImmutableSortedSet.Builder<HttpBinding> httpBindings = ImmutableSortedSet.naturalOrder();
 
     for (String paramName : paramNames) {

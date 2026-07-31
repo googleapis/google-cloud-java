@@ -147,11 +147,11 @@ public class JdbcDriver implements Driver {
   private static final String JDBC_URL_FORMAT =
       "jdbc:" + ConnectionOptions.Builder.SPANNER_URI_FORMAT;
   private static final Pattern URL_PATTERN = Pattern.compile(JDBC_URL_FORMAT);
-  private static final String JDBC_EXTERNAL_HOST_FORMAT =
-      "jdbc:" + ConnectionOptions.Builder.EXTERNAL_HOST_FORMAT;
+  private static final String JDBC_SPANNER_OMNI_FORMAT =
+      "jdbc:" + ConnectionOptions.Builder.SPANNER_OMNI_FORMAT;
 
   @VisibleForTesting
-  static final Pattern EXTERNAL_HOST_URL_PATTERN = Pattern.compile(JDBC_EXTERNAL_HOST_FORMAT);
+  static final Pattern SPANNER_OMNI_URL_PATTERN = Pattern.compile(JDBC_SPANNER_OMNI_FORMAT);
 
   @InternalApi
   public static String getClientLibToken() {
@@ -222,8 +222,8 @@ public class JdbcDriver implements Driver {
     if (url != null && (url.startsWith("jdbc:cloudspanner") || url.startsWith("jdbc:spanner"))) {
       try {
         Matcher matcher = URL_PATTERN.matcher(url);
-        Matcher matcherExternalHost = EXTERNAL_HOST_URL_PATTERN.matcher(url);
-        if (matcher.matches() || matcherExternalHost.matches()) {
+        Matcher matcherSpannerOmni = SPANNER_OMNI_URL_PATTERN.matcher(url);
+        if (matcher.matches() || matcherSpannerOmni.matches()) {
           // strip 'jdbc:' from the URL, add any extra properties and pass on to the generic
           // Connection API. Also set the user-agent if we detect that the connection
           // comes from known framework like Hibernate, and there is no other user-agent set.
@@ -320,7 +320,7 @@ public class JdbcDriver implements Driver {
 
   @Override
   public boolean acceptsURL(String url) {
-    return URL_PATTERN.matcher(url).matches() || EXTERNAL_HOST_URL_PATTERN.matcher(url).matches();
+    return URL_PATTERN.matcher(url).matches() || SPANNER_OMNI_URL_PATTERN.matcher(url).matches();
   }
 
   @Override

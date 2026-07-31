@@ -89,6 +89,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -139,6 +141,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
@@ -527,7 +530,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -609,7 +612,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_4_codes",
+          "retry_policy_5_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.RESOURCE_EXHAUSTED,
@@ -629,9 +632,14 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_2_codes",
+          ImmutableSet.copyOf(
+              Lists.<StatusCode.Code>newArrayList(
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.INTERNAL)));
+      definitions.put(
+          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.RESOURCE_EXHAUSTED,
@@ -639,7 +647,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
-          "retry_policy_5_codes",
+          "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.RESOURCE_EXHAUSTED,
@@ -663,7 +671,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_4_params", settings);
+      definitions.put("retry_policy_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -688,12 +696,23 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("retry_policy_2_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRpcTimeoutDuration(Duration.ofMillis(86400000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeoutDuration(Duration.ofMillis(86400000L))
               .setTotalTimeoutDuration(Duration.ofMillis(86400000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_4_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -704,7 +723,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(86400000L))
               .setTotalTimeoutDuration(Duration.ofMillis(86400000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_3_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -715,7 +734,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
               .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_5_params", settings);
+      definitions.put("retry_policy_6_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -723,7 +742,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -823,13 +842,13 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .getDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .listDocumentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .updateDocumentSettings()
@@ -838,8 +857,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
       builder
           .deleteDocumentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .batchGetDocumentsSettings()
@@ -848,8 +867,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
       builder
           .beginTransactionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .commitSettings()
@@ -858,8 +877,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
       builder
           .rollbackSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .runQuerySettings()
@@ -868,8 +887,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
       builder
           .executePipelineSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
 
       builder
           .runAggregationQuerySettings()
@@ -883,13 +902,13 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
       builder
           .listCollectionIdsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
 
       builder
           .batchWriteSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
 
       builder
           .createDocumentSettings()

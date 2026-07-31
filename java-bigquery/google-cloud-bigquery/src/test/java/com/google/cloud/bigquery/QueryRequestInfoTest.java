@@ -159,21 +159,34 @@ public class QueryRequestInfoTest {
   QueryRequestInfo REQUEST_INFO_SUPPORTED =
       new QueryRequestInfo(
           QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_WITH_TIMEOUT =
+      QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder().setJobTimeoutMs(TIMEOUT).build();
+  QueryRequestInfo REQUEST_INFO_WITH_TIMEOUT =
+      new QueryRequestInfo(
+          QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build());
+
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED =
+      QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder()
+          .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
+          .build();
+  QueryRequestInfo REQUEST_INFO_REQUIRED_SUPPORTED =
+      new QueryRequestInfo(
+          QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build());
 
   @Test
   public void testIsFastQuerySupported() {
-    JobId jobIdSupported = JobId.newBuilder().build();
-    JobId jobIdNotSupported = JobId.newBuilder().setJob("random-job-id").build();
-    assertEquals(false, REQUEST_INFO.isFastQuerySupported(jobIdSupported));
-    assertEquals(true, REQUEST_INFO_SUPPORTED.isFastQuerySupported(jobIdSupported));
-    assertEquals(false, REQUEST_INFO.isFastQuerySupported(jobIdNotSupported));
-    assertEquals(false, REQUEST_INFO_SUPPORTED.isFastQuerySupported(jobIdNotSupported));
+    assertFalse(REQUEST_INFO.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_SUPPORTED.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_WITH_TIMEOUT.isFastQuerySupported());
+    assertTrue(REQUEST_INFO_REQUIRED_SUPPORTED.isFastQuerySupported());
   }
 
   @Test
   public void testToPb() {
     QueryRequest requestPb = REQUEST_INFO.toPb();
     assertEquals(requestPb, REQUEST_INFO.toPb());
+    QueryRequest requestWithTimeoutPb = REQUEST_INFO_WITH_TIMEOUT.toPb();
+    assertEquals(TIMEOUT, requestWithTimeoutPb.getJobTimeoutMs());
   }
 
   @Test
@@ -185,6 +198,14 @@ public class QueryRequestInfoTest {
     compareQueryRequestInfo(
         new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build()),
         REQUEST_INFO);
+    compareQueryRequestInfo(
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build()),
+        REQUEST_INFO_WITH_TIMEOUT);
+    compareQueryRequestInfo(
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build()),
+        REQUEST_INFO_REQUIRED_SUPPORTED);
   }
 
   @Test
@@ -228,5 +249,6 @@ public class QueryRequestInfoTest {
     assertEquals(expectedQueryReq.get("jobCreationMode"), actualQueryReq.get("jobCreationMode"));
     assertEquals(expectedQueryReq.getFormatOptions(), actualQueryReq.getFormatOptions());
     assertEquals(expectedQueryReq.getReservation(), actualQueryReq.getReservation());
+    assertEquals(expectedQueryReq.getJobTimeoutMs(), actualQueryReq.getJobTimeoutMs());
   }
 }

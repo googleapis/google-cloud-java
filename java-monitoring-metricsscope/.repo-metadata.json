@@ -11,6 +11,5 @@
   "repo_short": "java-monitoring-metricsscope",
   "distribution_name": "com.google.cloud:google-cloud-monitoring-metricsscope",
   "api_id": "monitoring.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

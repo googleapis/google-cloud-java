@@ -33,6 +33,7 @@ package com.google.auth.mtls;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.SecurityUtils;
+import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import java.io.FileInputStream;
@@ -43,12 +44,11 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class implements {@link MtlsProvider} for the Google Auth library transport layer via {@link
- * ContextAwareMetadataJson}. This is only meant to be used internally by Google Cloud libraries,
- * and the public facing methods may be changed without notice, and have no guarantee of backwards
- * compatibility.
+ * ContextAwareMetadataJson}.
  *
  * <p>Note: This implementation is derived from the existing "MtlsProvider" found in the Gax
  * library, with two notable differences: 1) All logic associated with parsing environment variables
@@ -60,6 +60,8 @@ import java.util.concurrent.TimeUnit;
  * <p>Additionally, this implementation will replace the existing "MtlsProvider" in the Gax library.
  * The Gax library version of MtlsProvider will be marked as deprecated.
  */
+@NullMarked
+@InternalApi
 public class SecureConnectProvider implements MtlsProvider {
   interface ProcessProvider {
     public Process createProcess(InputStream metadata) throws IOException;

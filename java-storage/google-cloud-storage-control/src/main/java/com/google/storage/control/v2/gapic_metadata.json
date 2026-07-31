@@ -43,6 +43,12 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetIntelligenceFinding": {
+              "methods": ["getIntelligenceFinding", "getIntelligenceFinding", "getIntelligenceFinding", "getIntelligenceFindingCallable"]
+            },
+            "GetIntelligenceFindingRevision": {
+              "methods": ["getIntelligenceFindingRevision", "getIntelligenceFindingRevision", "getIntelligenceFindingRevision", "getIntelligenceFindingRevisionCallable"]
+            },
             "GetManagedFolder": {
               "methods": ["getManagedFolder", "getManagedFolder", "getManagedFolder", "getManagedFolderCallable"]
             },
@@ -61,6 +67,12 @@
             "ListFolders": {
               "methods": ["listFolders", "listFolders", "listFolders", "listFoldersPagedCallable", "listFoldersCallable"]
             },
+            "ListIntelligenceFindingRevisions": {
+              "methods": ["listIntelligenceFindingRevisions", "listIntelligenceFindingRevisions", "listIntelligenceFindingRevisions", "listIntelligenceFindingRevisionsPagedCallable", "listIntelligenceFindingRevisionsCallable"]
+            },
+            "ListIntelligenceFindings": {
+              "methods": ["listIntelligenceFindings", "listIntelligenceFindings", "listIntelligenceFindings", "listIntelligenceFindingsPagedCallable", "listIntelligenceFindingsCallable"]
+            },
             "ListManagedFolders": {
               "methods": ["listManagedFolders", "listManagedFolders", "listManagedFolders", "listManagedFoldersPagedCallable", "listManagedFoldersCallable"]
             },
@@ -75,6 +87,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SummarizeIntelligenceFindings": {
+              "methods": ["summarizeIntelligenceFindings", "summarizeIntelligenceFindings", "summarizeIntelligenceFindingsPagedCallable", "summarizeIntelligenceFindingsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]

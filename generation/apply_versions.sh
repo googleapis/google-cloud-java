@@ -31,15 +31,17 @@ elif [[ "$column_name" != "current" ]]; then
 fi
 
 
-SED_OPTIONS=""
+SED_SCRIPT_FILE=$(mktemp) || exit 1
+trap 'rm -f "$SED_SCRIPT_FILE"' EXIT
 
 # The second column is 
 for KV in $(cut -f1,"${column_index}" -d: $versions_file |grep -v "#"); do
   K=${KV%:*}; V=${KV#*:}
   echo Key:$K, Value:$V;
-  SED_OPTIONS="$SED_OPTIONS -e /x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}"
+  echo "/x-version-update:$K:current/{s|<version>.*<\/version>|<version>$V<\/version>|;}" >> "$SED_SCRIPT_FILE"
 done
 
 echo "Running sed command. It may take few minutes."
-find . -maxdepth 3 -name pom.xml |sort --dictionary-order |xargs sed -i.bak $SED_OPTIONS
+find . -maxdepth 3 -name pom.xml |sort --dictionary-order |xargs sed -i.bak -f "$SED_SCRIPT_FILE"
 find . -maxdepth 3 -name pom.xml.bak |xargs rm
+

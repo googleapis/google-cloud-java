@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStub;
 import com.google.cloud.datacatalog.lineage.v1.stub.LineageStubSettings;
@@ -39,6 +40,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -394,6 +397,26 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> SearchLineageStreaming</td>
+ *      <td><p> Retrieves a streaming response of lineage links connected to the requested assets by performing a breadth-first search in the given direction. Links represent the data flow between &#42;&#42;source&#42;&#42; (upstream) and &#42;&#42;target&#42;&#42; (downstream) assets in transformation pipelines. Links are stored in the same project as the Lineage Events that create them. This method retrieves links from all valid locations provided in the request. This method supports Column-Level Lineage (CLL) along with wildcard support to retrieve all CLL for an Entity FQN.
+ * <p>  Following permissions are required to retrieve links:
+ * <ul>
+ * <li>  `datalineage.events.get` permission for the project where the link is stored for entity-level lineage.
+ * <li>  `datalineage.events.getFields` permission for the project where the link is stored for column-level lineage.
+ * </ul>
+ * <p>  This method also returns processes that created the links if explicitly requested by setting [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link) is non-zero and full process details are requested via `links.processes.process` in the [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+ * <p>  Permission required to retrieve processes:
+ * <ul>
+ * <li>  `datalineage.processes.get` permission for the project where the process is stored.
+ * </ul></td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchLineageStreamingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -447,9 +470,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LineageClient implements BackgroundResource {
-  private final LineageSettings settings;
+  private final @Nullable LineageSettings settings;
   private final LineageStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -495,7 +519,7 @@ public class LineageClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final LineageSettings getSettings() {
+  public final @Nullable LineageSettings getSettings() {
     return settings;
   }
 
@@ -648,7 +672,7 @@ public class LineageClient implements BackgroundResource {
    * @param process Required. The process to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Process createProcess(LocationName parent, Process process) {
+  public final Process createProcess(@Nullable LocationName parent, Process process) {
     CreateProcessRequest request =
         CreateProcessRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -766,8 +790,8 @@ public class LineageClient implements BackgroundResource {
    *
    * @param process Required. The lineage process to update.
    *     <p>The process's `name` field is used to identify the process to update.
-   * @param updateMask The list of fields to update. Currently not used. The whole message is
-   *     updated.
+   * @param updateMask Optional. The list of fields to update. Currently not used. The whole message
+   *     is updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Process updateProcess(Process process, FieldMask updateMask) {
@@ -794,6 +818,7 @@ public class LineageClient implements BackgroundResource {
    *           .setProcess(Process.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   Process response = lineageClient.updateProcess(request);
    * }
@@ -824,6 +849,7 @@ public class LineageClient implements BackgroundResource {
    *           .setProcess(Process.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
    *           .setAllowMissing(true)
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Process> future = lineageClient.updateProcessCallable().futureCall(request);
    *   // Do something.
@@ -856,7 +882,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the process to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Process getProcess(ProcessName name) {
+  public final Process getProcess(@Nullable ProcessName name) {
     GetProcessRequest request =
         GetProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProcess(request);
@@ -967,7 +993,7 @@ public class LineageClient implements BackgroundResource {
    *     processes.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProcessesPagedResponse listProcesses(LocationName parent) {
+  public final ListProcessesPagedResponse listProcesses(@Nullable LocationName parent) {
     ListProcessesRequest request =
         ListProcessesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1127,7 +1153,8 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the process to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(ProcessName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteProcessAsync(
+      @Nullable ProcessName name) {
     DeleteProcessRequest request =
         DeleteProcessRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProcessAsync(request);
@@ -1270,7 +1297,7 @@ public class LineageClient implements BackgroundResource {
    * @param run Required. The run to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Run createRun(ProcessName parent, Run run) {
+  public final Run createRun(@Nullable ProcessName parent, Run run) {
     CreateRunRequest request =
         CreateRunRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1388,8 +1415,8 @@ public class LineageClient implements BackgroundResource {
    * @param run Required. The lineage run to update.
    *     <p>The run's `name` field is used to identify the run to update.
    *     <p>Format: `projects/{project}/locations/{location}/processes/{process}/runs/{run}`.
-   * @param updateMask The list of fields to update. Currently not used. The whole message is
-   *     updated.
+   * @param updateMask Optional. The list of fields to update. Currently not used. The whole message
+   *     is updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Run updateRun(Run run, FieldMask updateMask) {
@@ -1478,7 +1505,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the run to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Run getRun(RunName name) {
+  public final Run getRun(@Nullable RunName name) {
     GetRunRequest request =
         GetRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRun(request);
@@ -1588,7 +1615,7 @@ public class LineageClient implements BackgroundResource {
    * @param parent Required. The name of process that owns this collection of runs.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRunsPagedResponse listRuns(ProcessName parent) {
+  public final ListRunsPagedResponse listRuns(@Nullable ProcessName parent) {
     ListRunsRequest request =
         ListRunsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRuns(request);
@@ -1744,7 +1771,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the run to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRunAsync(RunName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRunAsync(@Nullable RunName name) {
     DeleteRunRequest request =
         DeleteRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRunAsync(request);
@@ -1886,7 +1913,8 @@ public class LineageClient implements BackgroundResource {
    * @param lineageEvent Required. The lineage event to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageEvent createLineageEvent(RunName parent, LineageEvent lineageEvent) {
+  public final LineageEvent createLineageEvent(
+      @Nullable RunName parent, LineageEvent lineageEvent) {
     CreateLineageEventRequest request =
         CreateLineageEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2009,7 +2037,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the lineage event to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineageEvent getLineageEvent(LineageEventName name) {
+  public final LineageEvent getLineageEvent(@Nullable LineageEventName name) {
     GetLineageEventRequest request =
         GetLineageEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLineageEvent(request);
@@ -2127,7 +2155,7 @@ public class LineageClient implements BackgroundResource {
    * @param parent Required. The name of the run that owns the collection of lineage events to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLineageEventsPagedResponse listLineageEvents(RunName parent) {
+  public final ListLineageEventsPagedResponse listLineageEvents(@Nullable RunName parent) {
     ListLineageEventsRequest request =
         ListLineageEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2291,7 +2319,7 @@ public class LineageClient implements BackgroundResource {
    * @param name Required. The name of the lineage event to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteLineageEvent(LineageEventName name) {
+  public final void deleteLineageEvent(@Nullable LineageEventName name) {
     DeleteLineageEventRequest request =
         DeleteLineageEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2653,6 +2681,67 @@ public class LineageClient implements BackgroundResource {
     return stub.batchSearchLinkProcessesCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves a streaming response of lineage links connected to the requested assets by performing
+   * a breadth-first search in the given direction. Links represent the data flow between
+   * &#42;&#42;source&#42;&#42; (upstream) and &#42;&#42;target&#42;&#42; (downstream) assets in
+   * transformation pipelines. Links are stored in the same project as the Lineage Events that
+   * create them. This method retrieves links from all valid locations provided in the request. This
+   * method supports Column-Level Lineage (CLL) along with wildcard support to retrieve all CLL for
+   * an Entity FQN.
+   *
+   * <p>Following permissions are required to retrieve links:
+   *
+   * <ul>
+   *   <li>`datalineage.events.get` permission for the project where the link is stored for
+   *       entity-level lineage.
+   *   <li>`datalineage.events.getFields` permission for the project where the link is stored for
+   *       column-level lineage.
+   * </ul>
+   *
+   * <p>This method also returns processes that created the links if explicitly requested by setting
+   * [max_process_per_link](google.cloud.datacatalog.lineage.v1.SearchLineageStreamingRequest.limits.max_process_per_link)
+   * is non-zero and full process details are requested via `links.processes.process` in the
+   * [FieldMask](https://developers.google.com/workspace/docs/api/how-tos/field-masks#read_with_a_field_mask).
+   *
+   * <p>Permission required to retrieve processes:
+   *
+   * <ul>
+   *   <li>`datalineage.processes.get` permission for the project where the process is stored.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LineageClient lineageClient = LineageClient.create()) {
+   *   SearchLineageStreamingRequest request =
+   *       SearchLineageStreamingRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setRootCriteria(SearchLineageStreamingRequest.RootCriteria.newBuilder().build())
+   *           .setFilters(SearchLineageStreamingRequest.SearchFilters.newBuilder().build())
+   *           .setLimits(SearchLineageStreamingRequest.SearchLimits.newBuilder().build())
+   *           .build();
+   *   ServerStream<SearchLineageStreamingResponse> stream =
+   *       lineageClient.searchLineageStreamingCallable().call(request);
+   *   for (SearchLineageStreamingResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<
+          SearchLineageStreamingRequest, SearchLineageStreamingResponse>
+      searchLineageStreamingCallable() {
+    return stub.searchLineageStreamingCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2712,8 +2801,8 @@ public class LineageClient implements BackgroundResource {
           ListProcessesRequest, ListProcessesResponse, Process, ListProcessesPage> {
 
     private ListProcessesPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       super(context, response);
     }
 
@@ -2723,14 +2812,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListProcessesPage createPage(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
-        ListProcessesResponse response) {
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable ListProcessesResponse response) {
       return new ListProcessesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProcessesPage> createPageAsync(
-        PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
+        @Nullable PageContext<ListProcessesRequest, ListProcessesResponse, Process> context,
         ApiFuture<ListProcessesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2744,7 +2833,8 @@ public class LineageClient implements BackgroundResource {
           ListProcessesPage,
           ListProcessesFixedSizeCollection> {
 
-    private ListProcessesFixedSizeCollection(List<ListProcessesPage> pages, int collectionSize) {
+    private ListProcessesFixedSizeCollection(
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2754,7 +2844,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListProcessesFixedSizeCollection createCollection(
-        List<ListProcessesPage> pages, int collectionSize) {
+        @Nullable List<ListProcessesPage> pages, int collectionSize) {
       return new ListProcessesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2781,7 +2871,8 @@ public class LineageClient implements BackgroundResource {
       extends AbstractPage<ListRunsRequest, ListRunsResponse, Run, ListRunsPage> {
 
     private ListRunsPage(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context, ListRunsResponse response) {
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable ListRunsResponse response) {
       super(context, response);
     }
 
@@ -2791,13 +2882,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListRunsPage createPage(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context, ListRunsResponse response) {
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable ListRunsResponse response) {
       return new ListRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRunsPage> createPageAsync(
-        PageContext<ListRunsRequest, ListRunsResponse, Run> context,
+        @Nullable PageContext<ListRunsRequest, ListRunsResponse, Run> context,
         ApiFuture<ListRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2807,7 +2899,7 @@ public class LineageClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRunsRequest, ListRunsResponse, Run, ListRunsPage, ListRunsFixedSizeCollection> {
 
-    private ListRunsFixedSizeCollection(List<ListRunsPage> pages, int collectionSize) {
+    private ListRunsFixedSizeCollection(@Nullable List<ListRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2817,7 +2909,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListRunsFixedSizeCollection createCollection(
-        List<ListRunsPage> pages, int collectionSize) {
+        @Nullable List<ListRunsPage> pages, int collectionSize) {
       return new ListRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2854,8 +2946,9 @@ public class LineageClient implements BackgroundResource {
           ListLineageEventsPage> {
 
     private ListLineageEventsPage(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
-        ListLineageEventsResponse response) {
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
+        @Nullable ListLineageEventsResponse response) {
       super(context, response);
     }
 
@@ -2865,14 +2958,16 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListLineageEventsPage createPage(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
-        ListLineageEventsResponse response) {
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
+        @Nullable ListLineageEventsResponse response) {
       return new ListLineageEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLineageEventsPage> createPageAsync(
-        PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent> context,
+        @Nullable PageContext<ListLineageEventsRequest, ListLineageEventsResponse, LineageEvent>
+            context,
         ApiFuture<ListLineageEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2887,7 +2982,7 @@ public class LineageClient implements BackgroundResource {
           ListLineageEventsFixedSizeCollection> {
 
     private ListLineageEventsFixedSizeCollection(
-        List<ListLineageEventsPage> pages, int collectionSize) {
+        @Nullable List<ListLineageEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2897,7 +2992,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected ListLineageEventsFixedSizeCollection createCollection(
-        List<ListLineageEventsPage> pages, int collectionSize) {
+        @Nullable List<ListLineageEventsPage> pages, int collectionSize) {
       return new ListLineageEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2928,8 +3023,8 @@ public class LineageClient implements BackgroundResource {
       extends AbstractPage<SearchLinksRequest, SearchLinksResponse, Link, SearchLinksPage> {
 
     private SearchLinksPage(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
-        SearchLinksResponse response) {
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable SearchLinksResponse response) {
       super(context, response);
     }
 
@@ -2939,14 +3034,14 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected SearchLinksPage createPage(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
-        SearchLinksResponse response) {
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable SearchLinksResponse response) {
       return new SearchLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchLinksPage> createPageAsync(
-        PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
+        @Nullable PageContext<SearchLinksRequest, SearchLinksResponse, Link> context,
         ApiFuture<SearchLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2960,7 +3055,8 @@ public class LineageClient implements BackgroundResource {
           SearchLinksPage,
           SearchLinksFixedSizeCollection> {
 
-    private SearchLinksFixedSizeCollection(List<SearchLinksPage> pages, int collectionSize) {
+    private SearchLinksFixedSizeCollection(
+        @Nullable List<SearchLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2970,7 +3066,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected SearchLinksFixedSizeCollection createCollection(
-        List<SearchLinksPage> pages, int collectionSize) {
+        @Nullable List<SearchLinksPage> pages, int collectionSize) {
       return new SearchLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3008,9 +3104,11 @@ public class LineageClient implements BackgroundResource {
           BatchSearchLinkProcessesPage> {
 
     private BatchSearchLinkProcessesPage(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
-        BatchSearchLinkProcessesResponse response) {
+        @Nullable BatchSearchLinkProcessesResponse response) {
       super(context, response);
     }
 
@@ -3020,15 +3118,19 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected BatchSearchLinkProcessesPage createPage(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
-        BatchSearchLinkProcessesResponse response) {
+        @Nullable BatchSearchLinkProcessesResponse response) {
       return new BatchSearchLinkProcessesPage(context, response);
     }
 
     @Override
     public ApiFuture<BatchSearchLinkProcessesPage> createPageAsync(
-        PageContext<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
+        @Nullable
+            PageContext<
+                BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse, ProcessLinks>
             context,
         ApiFuture<BatchSearchLinkProcessesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3044,7 +3146,7 @@ public class LineageClient implements BackgroundResource {
           BatchSearchLinkProcessesFixedSizeCollection> {
 
     private BatchSearchLinkProcessesFixedSizeCollection(
-        List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
+        @Nullable List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3054,7 +3156,7 @@ public class LineageClient implements BackgroundResource {
 
     @Override
     protected BatchSearchLinkProcessesFixedSizeCollection createCollection(
-        List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
+        @Nullable List<BatchSearchLinkProcessesPage> pages, int collectionSize) {
       return new BatchSearchLinkProcessesFixedSizeCollection(pages, collectionSize);
     }
   }

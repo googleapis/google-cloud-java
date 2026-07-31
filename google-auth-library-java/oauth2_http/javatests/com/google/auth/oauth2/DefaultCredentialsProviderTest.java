@@ -67,10 +67,30 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link DefaultCredentialsProvider}. */
 class DefaultCredentialsProviderTest {
+
+  @BeforeEach
+  void setUp() {
+    // Isolate tests and opt out of bound tokens by default to avoid polling delays
+    AgentIdentityUtils.setEnvReader(
+        name -> {
+          if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
+            return "false"; // Triggers isTokenBindingEnabled() = false
+          }
+          return null;
+        });
+  }
+
+  @AfterEach
+  void tearDown() {
+    // Reset to default behavior.
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   private static final String USER_CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";
   private static final String USER_CLIENT_ID = "ya29.1.AADtN_UtlxN3PuGAxrN2XQnZTVRvDyVWnYq4I6dws";
@@ -113,6 +133,20 @@ class DefaultCredentialsProviderTest {
         assertThrows(IOException.class, () -> testProvider.getDefaultCredentials(transportFactory));
     String message = e.getMessage();
     assertEquals(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS, message);
+  }
+
+  @Test
+  void getDefaultCredentials_windowsMissingAppData_throws() {
+    // When APPDATA is unset on Windows, the ADC resolution should fail gracefully
+    // with a structured missing credentials exception, rather than crashing with an NPE.
+    MockHttpTransportFactory transportFactory = new MockHttpTransportFactory();
+    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
+    testProvider.setProperty("os.name", "windows");
+    testProvider.setEnv("APPDATA", null);
+
+    IOException e =
+        assertThrows(IOException.class, () -> testProvider.getDefaultCredentials(transportFactory));
+    assertEquals(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS, e.getMessage());
   }
 
   @Test
@@ -387,6 +421,7 @@ class DefaultCredentialsProviderTest {
     assertNotNull(((GdchCredentials) defaultCredentials).getApiAudience());
   }
 
+  @Test
   void getDefaultCredentials_quota_project() throws IOException {
     InputStream userStream =
         UserCredentialsTest.writeUserStream(

@@ -251,4 +251,29 @@ public class SpannerExceptionFactoryTest {
 
     return trailers;
   }
+
+  @Test
+  public void resourceExhaustedWithGrpcStatusDetails() {
+    Status status =
+        Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())
+            .withDescription("Memory pushback");
+    Metadata trailers = new Metadata();
+    Metadata.Key<byte[]> key =
+        Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
+    RetryInfo retryInfo =
+        RetryInfo.newBuilder()
+            .setRetryDelay(Duration.newBuilder().setNanos(1000000).setSeconds(1L))
+            .build();
+    com.google.rpc.Status rpcStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.RESOURCE_EXHAUSTED_VALUE)
+            .setMessage("Memory pushback")
+            .addDetails(com.google.protobuf.Any.pack(retryInfo))
+            .build();
+    trailers.put(key, rpcStatus.toByteArray());
+    SpannerException e =
+        SpannerExceptionFactory.newSpannerException(new StatusRuntimeException(status, trailers));
+    assertThat(e.isRetryable()).isTrue();
+    assertThat(e.getRetryDelayInMillis()).isEqualTo(1001);
+  }
 }

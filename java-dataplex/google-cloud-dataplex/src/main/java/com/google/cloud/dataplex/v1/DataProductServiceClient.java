@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -178,6 +180,19 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RequestDataProductAccess</td>
+ *      <td><p> Requests access to a data product. This will trigger an access approval workflow, and the requester will need to wait for the approval to be granted before they will be able to access the data product assets.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> requestDataProductAccess(DataProductName parent, ChangeRequest changeRequest)
+ *           <li><p> requestDataProductAccess(String parent, ChangeRequest changeRequest)
+ *           <li><p> requestDataProductAccess(RequestDataProductAccessRequest request)
+ *           <li><p> requestDataProductAccessCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateDataAsset</td>
  *      <td><p> Creates a data asset.</td>
  *      <td>
@@ -277,8 +292,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -407,9 +423,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataProductServiceClient implements BackgroundResource {
-  private final DataProductServiceSettings settings;
+  private final @Nullable DataProductServiceSettings settings;
   private final DataProductServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -457,7 +474,7 @@ public class DataProductServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataProductServiceSettings getSettings() {
+  public final @Nullable DataProductServiceSettings getSettings() {
     return settings;
   }
 
@@ -514,7 +531,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataProduct, OperationMetadata> createDataProductAsync(
-      LocationName parent, DataProduct dataProduct, String dataProductId) {
+      @Nullable LocationName parent, DataProduct dataProduct, String dataProductId) {
     CreateDataProductRequest request =
         CreateDataProductRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -685,7 +702,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataProductAsync(
-      DataProductName name) {
+      @Nullable DataProductName name) {
     DeleteDataProductRequest request =
         DeleteDataProductRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -838,7 +855,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataProduct getDataProduct(DataProductName name) {
+  public final DataProduct getDataProduct(@Nullable DataProductName name) {
     GetDataProductRequest request =
         GetDataProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataProduct(request);
@@ -953,7 +970,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataProductsPagedResponse listDataProducts(LocationName parent) {
+  public final ListDataProductsPagedResponse listDataProducts(@Nullable LocationName parent) {
     ListDataProductsRequest request =
         ListDataProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1234,6 +1251,147 @@ public class DataProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Requests access to a data product. This will trigger an access approval workflow, and the
+   * requester will need to wait for the approval to be granted before they will be able to access
+   * the data product assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataProductServiceClient dataProductServiceClient = DataProductServiceClient.create()) {
+   *   DataProductName parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+   *   ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+   *   RequestDataProductAccessResponse response =
+   *       dataProductServiceClient.requestDataProductAccess(parent, changeRequest);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the data product. Format:
+   *     projects/{project_number}/locations/{location_id}/dataProducts/{data_product_id}
+   * @param changeRequest Required. The change request for the data product access request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RequestDataProductAccessResponse requestDataProductAccess(
+      @Nullable DataProductName parent, ChangeRequest changeRequest) {
+    RequestDataProductAccessRequest request =
+        RequestDataProductAccessRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setChangeRequest(changeRequest)
+            .build();
+    return requestDataProductAccess(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests access to a data product. This will trigger an access approval workflow, and the
+   * requester will need to wait for the approval to be granted before they will be able to access
+   * the data product assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataProductServiceClient dataProductServiceClient = DataProductServiceClient.create()) {
+   *   String parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]").toString();
+   *   ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+   *   RequestDataProductAccessResponse response =
+   *       dataProductServiceClient.requestDataProductAccess(parent, changeRequest);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the data product. Format:
+   *     projects/{project_number}/locations/{location_id}/dataProducts/{data_product_id}
+   * @param changeRequest Required. The change request for the data product access request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RequestDataProductAccessResponse requestDataProductAccess(
+      String parent, ChangeRequest changeRequest) {
+    RequestDataProductAccessRequest request =
+        RequestDataProductAccessRequest.newBuilder()
+            .setParent(parent)
+            .setChangeRequest(changeRequest)
+            .build();
+    return requestDataProductAccess(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests access to a data product. This will trigger an access approval workflow, and the
+   * requester will need to wait for the approval to be granted before they will be able to access
+   * the data product assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataProductServiceClient dataProductServiceClient = DataProductServiceClient.create()) {
+   *   RequestDataProductAccessRequest request =
+   *       RequestDataProductAccessRequest.newBuilder()
+   *           .setParent(DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]").toString())
+   *           .setChangeRequest(ChangeRequest.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RequestDataProductAccessResponse response =
+   *       dataProductServiceClient.requestDataProductAccess(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RequestDataProductAccessResponse requestDataProductAccess(
+      RequestDataProductAccessRequest request) {
+    return requestDataProductAccessCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Requests access to a data product. This will trigger an access approval workflow, and the
+   * requester will need to wait for the approval to be granted before they will be able to access
+   * the data product assets.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataProductServiceClient dataProductServiceClient = DataProductServiceClient.create()) {
+   *   RequestDataProductAccessRequest request =
+   *       RequestDataProductAccessRequest.newBuilder()
+   *           .setParent(DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]").toString())
+   *           .setChangeRequest(ChangeRequest.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RequestDataProductAccessResponse> future =
+   *       dataProductServiceClient.requestDataProductAccessCallable().futureCall(request);
+   *   // Do something.
+   *   RequestDataProductAccessResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RequestDataProductAccessRequest, RequestDataProductAccessResponse>
+      requestDataProductAccessCallable() {
+    return stub.requestDataProductAccessCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a data asset.
    *
    * <p>Sample code:
@@ -1264,7 +1422,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataAsset, OperationMetadata> createDataAssetAsync(
-      DataProductName parent, DataAsset dataAsset, String dataAssetId) {
+      @Nullable DataProductName parent, DataAsset dataAsset, String dataAssetId) {
     CreateDataAssetRequest request =
         CreateDataAssetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1562,7 +1720,8 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}/dataAssets/{data_asset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDataAssetAsync(DataAssetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDataAssetAsync(
+      @Nullable DataAssetName name) {
     DeleteDataAssetRequest request =
         DeleteDataAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataAssetAsync(request);
@@ -1717,7 +1876,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}/dataAssets/{data_asset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataAsset getDataAsset(DataAssetName name) {
+  public final DataAsset getDataAsset(@Nullable DataAssetName name) {
     GetDataAssetRequest request =
         GetDataAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataAsset(request);
@@ -1835,7 +1994,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataAssetsPagedResponse listDataAssets(DataProductName parent) {
+  public final ListDataAssetsPagedResponse listDataAssets(@Nullable DataProductName parent) {
     ListDataAssetsRequest request =
         ListDataAssetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1985,13 +2144,19 @@ public class DataProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2024,13 +2189,19 @@ public class DataProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2064,13 +2235,19 @@ public class DataProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2410,8 +2587,9 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataProductsRequest, ListDataProductsResponse, DataProduct, ListDataProductsPage> {
 
     private ListDataProductsPage(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
-        ListDataProductsResponse response) {
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
+        @Nullable ListDataProductsResponse response) {
       super(context, response);
     }
 
@@ -2421,14 +2599,16 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataProductsPage createPage(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
-        ListDataProductsResponse response) {
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
+        @Nullable ListDataProductsResponse response) {
       return new ListDataProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataProductsPage> createPageAsync(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
         ApiFuture<ListDataProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2443,7 +2623,7 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataProductsFixedSizeCollection> {
 
     private ListDataProductsFixedSizeCollection(
-        List<ListDataProductsPage> pages, int collectionSize) {
+        @Nullable List<ListDataProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2453,7 +2633,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataProductsFixedSizeCollection createCollection(
-        List<ListDataProductsPage> pages, int collectionSize) {
+        @Nullable List<ListDataProductsPage> pages, int collectionSize) {
       return new ListDataProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2487,8 +2667,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataAssetsRequest, ListDataAssetsResponse, DataAsset, ListDataAssetsPage> {
 
     private ListDataAssetsPage(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
-        ListDataAssetsResponse response) {
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable ListDataAssetsResponse response) {
       super(context, response);
     }
 
@@ -2498,14 +2678,14 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAssetsPage createPage(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
-        ListDataAssetsResponse response) {
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable ListDataAssetsResponse response) {
       return new ListDataAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAssetsPage> createPageAsync(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
         ApiFuture<ListDataAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2519,7 +2699,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataAssetsPage,
           ListDataAssetsFixedSizeCollection> {
 
-    private ListDataAssetsFixedSizeCollection(List<ListDataAssetsPage> pages, int collectionSize) {
+    private ListDataAssetsFixedSizeCollection(
+        @Nullable List<ListDataAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2529,7 +2710,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAssetsFixedSizeCollection createCollection(
-        List<ListDataAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAssetsPage> pages, int collectionSize) {
       return new ListDataAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2563,8 +2744,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2574,14 +2755,14 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2595,7 +2776,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2605,7 +2787,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

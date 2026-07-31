@@ -30,6 +30,7 @@
 package com.google.api.gax.batching;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -44,6 +45,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.common.collect.ImmutableList;
+import java.time.Duration;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,6 +55,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class ThresholdBatcherTest {
 
@@ -155,9 +158,10 @@ class ThresholdBatcherTest {
       createSimpleBatcherBuilderWithMockExecutor(long customThreshold) {
     AccumulatingBatchReceiver<SimpleBatch> receiver =
         new AccumulatingBatchReceiver<>(ApiFutures.<Void>immediateFuture(null));
-    ScheduledExecutorService executor = mock(ScheduledThreadPoolExecutor.class);
+    ScheduledExecutorService executor =
+        mock(ScheduledThreadPoolExecutor.class, Mockito.withSettings().withoutAnnotations());
     when(executor.schedule((Runnable) any(), anyLong(), any()))
-        .thenReturn(mock(ScheduledFuture.class));
+        .thenReturn(mock(ScheduledFuture.class, Mockito.withSettings().withoutAnnotations()));
     BatchingThreshold<SimpleBatch> threshold = new NumericThreshold<>(customThreshold, e -> 1);
 
     ThresholdBatcher.Builder builder =
@@ -194,14 +198,16 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the executor to push the batch
-    Thread.sleep(100);
-    assertThat(receiver.getBatches()).hasSize(1);
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(7));
     batcher.add(SimpleBatch.fromInteger(9));
     // Give time for the executor to push the batch
-    Thread.sleep(100);
-    assertThat(receiver.getBatches()).hasSize(2);
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(2));
 
     batcher.add(SimpleBatch.fromInteger(11));
 
@@ -228,8 +234,9 @@ class ThresholdBatcherTest {
     batcher.add(SimpleBatch.fromInteger(3));
     batcher.add(SimpleBatch.fromInteger(5));
     // Give time for the delay to trigger and push the batch
-    Thread.sleep(500);
-    assertThat(receiver.getBatches()).hasSize(1);
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .untilAsserted(() -> assertThat(receiver.getBatches()).hasSize(1));
 
     batcher.add(SimpleBatch.fromInteger(11));
 

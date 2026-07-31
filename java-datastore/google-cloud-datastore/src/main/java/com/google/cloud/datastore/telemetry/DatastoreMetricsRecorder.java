@@ -103,7 +103,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     // When using a local emulator, there is no need to configure a built-in Otel instance
     if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring()) {
       try {
-        if (builtInOtel != null) {
+        if (builtInOtel != null && builtInOtel != OpenTelemetry.noop()) {
           recorders.add(
               new OpenTelemetryDatastoreMetricsRecorder(
                   builtInOtel, TelemetryConstants.METRIC_PREFIX));

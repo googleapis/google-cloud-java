@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReplayName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_REPLAY =
@@ -190,7 +193,7 @@ public class ReplayName implements ResourceName {
         .toString();
   }
 
-  public static ReplayName parse(String formattedString) {
+  public static @Nullable ReplayName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -218,7 +221,7 @@ public class ReplayName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ReplayName> values) {
+  public static List<String> toStringList(List<@Nullable ReplayName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ReplayName value : values) {
       if (value == null) {
@@ -274,7 +277,7 @@ public class ReplayName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

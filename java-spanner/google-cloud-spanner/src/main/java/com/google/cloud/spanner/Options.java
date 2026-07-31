@@ -79,6 +79,22 @@ public final class Options implements Serializable {
     }
   }
 
+  /** Controls how a multi-use read-only transaction is started. */
+  public enum BeginTransactionOption {
+    /** Execute a separate BeginTransaction RPC before any reads or queries. */
+    EXPLICIT,
+
+    /**
+     * Include BeginTransaction on the first read or query. This saves one round trip when the first
+     * operation is not slow and the transaction starts serially. It can be less performant than
+     * {@link #EXPLICIT} when multiple reads or queries are started concurrently, because only one
+     * operation can carry the BeginTransaction option and the others must wait until that operation
+     * returns transaction metadata. {@link ReadOnlyTransaction#getReadTimestamp()} is also not
+     * available until the first operation has returned transaction metadata.
+     */
+    INLINE
+  }
+
   public enum RpcLockHint {
     UNSPECIFIED(LockHint.LOCK_HINT_UNSPECIFIED),
     SHARED(LockHint.LOCK_HINT_SHARED),
@@ -135,6 +151,9 @@ public final class Options implements Serializable {
 
   /** Marker interface to mark options applicable to write operations */
   public interface TransactionOption {}
+
+  /** Marker interface to mark options applicable to multi-use read-only transactions. */
+  public interface ReadOnlyTransactionOption {}
 
   /** Marker interface to mark options applicable to update operation. */
   public interface UpdateOption {}
@@ -295,6 +314,14 @@ public final class Options implements Serializable {
       builder.setClientContext(clientContext());
     }
     return builder.build();
+  }
+
+  /**
+   * Specifies how a multi-use read-only transaction should be started. The default is {@link
+   * BeginTransactionOption#EXPLICIT}.
+   */
+  public static ReadOnlyTransactionOption beginTransactionOption(BeginTransactionOption option) {
+    return new BeginTransactionOptionOption(Preconditions.checkNotNull(option));
   }
 
   public static TransactionOption maxCommitDelay(Duration maxCommitDelay) {
@@ -633,6 +660,7 @@ public final class Options implements Serializable {
   private IsolationLevel isolationLevel;
   private XGoogSpannerRequestId reqId;
   private ReadLockMode readLockMode;
+  private BeginTransactionOption beginTransactionOption;
 
   // Construction is via factory methods below.
   private Options() {}
@@ -803,6 +831,12 @@ public final class Options implements Serializable {
 
   ReadLockMode readLockMode() {
     return readLockMode;
+  }
+
+  BeginTransactionOption beginTransactionOption() {
+    return beginTransactionOption == null
+        ? BeginTransactionOption.EXPLICIT
+        : beginTransactionOption;
   }
 
   @Override
@@ -1038,6 +1072,16 @@ public final class Options implements Serializable {
     return transactionOptions;
   }
 
+  static Options fromReadOnlyTransactionOptions(ReadOnlyTransactionOption... options) {
+    Options transactionOptions = new Options();
+    for (ReadOnlyTransactionOption option : options) {
+      if (option instanceof InternalOption) {
+        ((InternalOption) option).appendToOptions(transactionOptions);
+      }
+    }
+    return transactionOptions;
+  }
+
   static Options fromListOptions(ListOption... options) {
     Options listOptions = new Options();
     for (ListOption option : options) {
@@ -1060,6 +1104,20 @@ public final class Options implements Serializable {
 
   private abstract static class InternalOption {
     abstract void appendToOptions(Options options);
+  }
+
+  static final class BeginTransactionOptionOption extends InternalOption
+      implements ReadOnlyTransactionOption {
+    private final BeginTransactionOption beginTransactionOption;
+
+    BeginTransactionOptionOption(BeginTransactionOption beginTransactionOption) {
+      this.beginTransactionOption = beginTransactionOption;
+    }
+
+    @Override
+    void appendToOptions(Options options) {
+      options.beginTransactionOption = beginTransactionOption;
+    }
   }
 
   static class LimitOption extends InternalOption implements ReadOption {

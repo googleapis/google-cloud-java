@@ -21,6 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.NanoClock;
@@ -61,10 +62,10 @@ import org.mockito.MockitoAnnotations;
 public class SpannerImplTest {
   @Mock private SpannerRpc rpc;
   @Mock private SpannerOptions spannerOptions;
-  @Mock private DatabaseAdminStubSettings databaseAdminStubSettings;
-  @Mock private DatabaseAdminStub databaseAdminStub;
-  @Mock private InstanceAdminStubSettings instanceAdminStubSettings;
-  @Mock private InstanceAdminStub instanceAdminStub;
+  private DatabaseAdminStubSettings databaseAdminStubSettings;
+  private DatabaseAdminStub databaseAdminStub;
+  private InstanceAdminStubSettings instanceAdminStubSettings;
+  private InstanceAdminStub instanceAdminStub;
   private SpannerImpl impl;
 
   @Captor ArgumentCaptor<Map<SpannerRpc.Option, Object>> options;
@@ -77,6 +78,15 @@ public class SpannerImplTest {
 
   @Before
   public void setUp() {
+    databaseAdminStubSettings =
+        Mockito.mock(DatabaseAdminStubSettings.class, Mockito.withSettings().withoutAnnotations());
+    databaseAdminStub =
+        Mockito.mock(DatabaseAdminStub.class, Mockito.withSettings().withoutAnnotations());
+    instanceAdminStubSettings =
+        Mockito.mock(InstanceAdminStubSettings.class, Mockito.withSettings().withoutAnnotations());
+    instanceAdminStub =
+        Mockito.mock(InstanceAdminStub.class, Mockito.withSettings().withoutAnnotations());
+
     MockitoAnnotations.initMocks(this);
     when(spannerOptions.getNumChannels()).thenReturn(4);
     when(spannerOptions.getDatabaseRole()).thenReturn("role");
@@ -113,6 +123,7 @@ public class SpannerImplTest {
     DatabaseClient databaseClient1 = impl.getDatabaseClient(db);
 
     assertThat(databaseClient1).isSameInstanceAs(databaseClient);
+    verify(spannerOptions).initializeBuiltInMetrics(db);
   }
 
   @Test

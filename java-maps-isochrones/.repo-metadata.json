@@ -1,0 +1,15 @@
+{
+  "api_shortname": "isochrones",
+  "name_pretty": "Isochrones",
+  "product_documentation": "https://developers.google.com/maps/documentation/isochrones/overview",
+  "api_description": "isochrones.googleapis.com API.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-isochrones/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-maps-isochrones",
+  "distribution_name": "com.google.maps:google-maps-isochrones",
+  "api_id": "isochrones.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}

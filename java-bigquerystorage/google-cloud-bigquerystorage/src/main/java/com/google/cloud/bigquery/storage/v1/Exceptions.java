@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -23,6 +24,8 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.StatusProto;
 import java.time.Duration;
+import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -428,17 +431,46 @@ public final class Exceptions {
     private final Duration callbackWaitTime;
     private final String writerId;
     private final Duration callbackWaitTimeLimit;
+    private final Instant requestReceivedTime;
+    private final Instant placedInWaitingQueueTime;
+    private final Instant placedInInflightQueueTime;
+    private final ImmutableList<Instant> dispatchTimes;
 
+    @Deprecated
     public MaximumRequestCallbackWaitTimeExceededException(
         Duration callbackWaitTime, String writerId, Duration callbackWaitTimeLimit) {
+      this(callbackWaitTime, writerId, callbackWaitTimeLimit, null, null, null, ImmutableList.of());
+    }
+
+    public MaximumRequestCallbackWaitTimeExceededException(
+        Duration callbackWaitTime,
+        String writerId,
+        Duration callbackWaitTimeLimit,
+        @Nullable Instant requestReceivedTime,
+        @Nullable Instant placedInWaitingQueueTime,
+        @Nullable Instant placedInInflightQueueTime,
+        @Nullable List<Instant> dispatchTimes) {
       super(
           String.format(
               "Request has waited in inflight queue for %sms for writer %s, "
-                  + "which is over maximum wait time %s",
-              callbackWaitTime, writerId, callbackWaitTimeLimit.toString()));
+                  + "which is over maximum wait time %s. "
+                  + "requestReceivedTime: %s, placedInWaitingQueueTime: %s, "
+                  + "placedInInflightQueueTime: %s, dispatchTimes: %s",
+              callbackWaitTime,
+              writerId,
+              callbackWaitTimeLimit.toString(),
+              requestReceivedTime,
+              placedInWaitingQueueTime,
+              placedInInflightQueueTime,
+              dispatchTimes));
       this.callbackWaitTime = callbackWaitTime;
       this.writerId = writerId;
       this.callbackWaitTimeLimit = callbackWaitTimeLimit;
+      this.requestReceivedTime = requestReceivedTime;
+      this.placedInWaitingQueueTime = placedInWaitingQueueTime;
+      this.placedInInflightQueueTime = placedInInflightQueueTime;
+      this.dispatchTimes =
+          dispatchTimes == null ? ImmutableList.of() : ImmutableList.copyOf(dispatchTimes);
     }
 
     public Duration getCallbackWaitTime() {
@@ -451,6 +483,25 @@ public final class Exceptions {
 
     public Duration getCallbackWaitTimeLimit() {
       return callbackWaitTimeLimit;
+    }
+
+    @Nullable
+    public Instant getRequestReceivedTime() {
+      return requestReceivedTime;
+    }
+
+    @Nullable
+    public Instant getPlacedInWaitingQueueTime() {
+      return placedInWaitingQueueTime;
+    }
+
+    @Nullable
+    public Instant getPlacedInInflightQueueTime() {
+      return placedInInflightQueueTime;
+    }
+
+    public ImmutableList<Instant> getDispatchTimes() {
+      return dispatchTimes;
     }
   }
 

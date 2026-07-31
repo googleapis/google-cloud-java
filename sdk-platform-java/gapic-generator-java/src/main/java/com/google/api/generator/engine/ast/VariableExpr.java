@@ -22,17 +22,17 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class VariableExpr implements Expr {
   public abstract Variable variable();
 
-  @Nullable
-  public abstract Expr exprReferenceExpr();
+  public abstract @Nullable Expr exprReferenceExpr();
 
-  @Nullable
-  public abstract TypeNode staticReferenceType();
+  public abstract @Nullable TypeNode staticReferenceType();
 
   /** Variable declaration fields. */
   public abstract boolean isDecl();

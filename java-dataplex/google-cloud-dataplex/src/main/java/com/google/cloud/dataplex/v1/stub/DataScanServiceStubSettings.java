@@ -51,6 +51,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -86,6 +88,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -163,12 +167,18 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .add("https://www.googleapis.com/auth/dataplex.read-write")
+          .add("https://www.googleapis.com/auth/dataplex.readonly")
+          .build();
 
   private final UnaryCallSettings<CreateDataScanRequest, Operation> createDataScanSettings;
   private final OperationCallSettings<CreateDataScanRequest, DataScan, OperationMetadata>
@@ -188,6 +198,8 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   private final PagedCallSettings<
           ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
       listDataScanJobsSettings;
+  private final UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings;
   private final UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesSettings;
   private final PagedCallSettings<
@@ -419,6 +431,12 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     return listDataScanJobsSettings;
   }
 
+  /** Returns the object with the settings used for calls to cancelDataScanJob. */
+  public UnaryCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobSettings() {
+    return cancelDataScanJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateDataQualityRules. */
   public UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesSettings() {
@@ -551,7 +569,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -574,6 +592,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     runDataScanSettings = settingsBuilder.runDataScanSettings().build();
     getDataScanJobSettings = settingsBuilder.getDataScanJobSettings().build();
     listDataScanJobsSettings = settingsBuilder.listDataScanJobsSettings().build();
+    cancelDataScanJobSettings = settingsBuilder.cancelDataScanJobSettings().build();
     generateDataQualityRulesSettings = settingsBuilder.generateDataQualityRulesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -617,6 +636,8 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     private final PagedCallSettings.Builder<
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings;
+    private final UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings;
     private final UnaryCallSettings.Builder<
             GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesSettings;
@@ -652,7 +673,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createDataScanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -666,6 +687,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDataScanJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDataScanJobsSettings = PagedCallSettings.newBuilder(LIST_DATA_SCAN_JOBS_PAGE_STR_FACT);
+      cancelDataScanJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateDataQualityRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -683,6 +705,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              cancelDataScanJobSettings,
               generateDataQualityRulesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -706,6 +729,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = settings.runDataScanSettings.toBuilder();
       getDataScanJobSettings = settings.getDataScanJobSettings.toBuilder();
       listDataScanJobsSettings = settings.listDataScanJobsSettings.toBuilder();
+      cancelDataScanJobSettings = settings.cancelDataScanJobSettings.toBuilder();
       generateDataQualityRulesSettings = settings.generateDataQualityRulesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -723,6 +747,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              cancelDataScanJobSettings,
               generateDataQualityRulesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -793,6 +818,11 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
       builder
           .listDataScanJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .cancelDataScanJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -977,6 +1007,12 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings() {
       return listDataScanJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDataScanJob. */
+    public UnaryCallSettings.Builder<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobSettings() {
+      return cancelDataScanJobSettings;
     }
 
     /** Returns the builder for the settings used for calls to generateDataQualityRules. */

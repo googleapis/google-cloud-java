@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -183,10 +185,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class BudgetServiceClient implements BackgroundResource {
-  private final BudgetServiceSettings settings;
+  private final @Nullable BudgetServiceSettings settings;
   private final BudgetServiceStub stub;
 
   /** Constructs an instance of BudgetServiceClient with default settings. */
@@ -226,7 +229,7 @@ public class BudgetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BudgetServiceSettings getSettings() {
+  public final @Nullable BudgetServiceSettings getSettings() {
     return settings;
   }
 
@@ -647,8 +650,8 @@ public class BudgetServiceClient implements BackgroundResource {
       extends AbstractPage<ListBudgetsRequest, ListBudgetsResponse, Budget, ListBudgetsPage> {
 
     private ListBudgetsPage(
-        PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
-        ListBudgetsResponse response) {
+        @Nullable PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
+        @Nullable ListBudgetsResponse response) {
       super(context, response);
     }
 
@@ -658,14 +661,14 @@ public class BudgetServiceClient implements BackgroundResource {
 
     @Override
     protected ListBudgetsPage createPage(
-        PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
-        ListBudgetsResponse response) {
+        @Nullable PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
+        @Nullable ListBudgetsResponse response) {
       return new ListBudgetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBudgetsPage> createPageAsync(
-        PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
+        @Nullable PageContext<ListBudgetsRequest, ListBudgetsResponse, Budget> context,
         ApiFuture<ListBudgetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -679,7 +682,8 @@ public class BudgetServiceClient implements BackgroundResource {
           ListBudgetsPage,
           ListBudgetsFixedSizeCollection> {
 
-    private ListBudgetsFixedSizeCollection(List<ListBudgetsPage> pages, int collectionSize) {
+    private ListBudgetsFixedSizeCollection(
+        @Nullable List<ListBudgetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -689,7 +693,7 @@ public class BudgetServiceClient implements BackgroundResource {
 
     @Override
     protected ListBudgetsFixedSizeCollection createCollection(
-        List<ListBudgetsPage> pages, int collectionSize) {
+        @Nullable List<ListBudgetsPage> pages, int collectionSize) {
       return new ListBudgetsFixedSizeCollection(pages, collectionSize);
     }
   }

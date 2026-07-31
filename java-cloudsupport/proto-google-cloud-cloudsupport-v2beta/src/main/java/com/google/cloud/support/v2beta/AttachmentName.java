@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AttachmentName implements ResourceName {
   private static final PathTemplate ORGANIZATION_CASE_ATTACHMENT_ID =
@@ -155,7 +158,7 @@ public class AttachmentName implements ResourceName {
         .toString();
   }
 
-  public static AttachmentName parse(String formattedString) {
+  public static @Nullable AttachmentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -179,7 +182,7 @@ public class AttachmentName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AttachmentName> values) {
+  public static List<String> toStringList(List<@Nullable AttachmentName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AttachmentName value : values) {
       if (value == null) {
@@ -231,7 +234,7 @@ public class AttachmentName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

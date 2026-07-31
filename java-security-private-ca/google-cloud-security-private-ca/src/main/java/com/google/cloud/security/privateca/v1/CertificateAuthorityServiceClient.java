@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -651,7 +653,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -780,9 +784,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CertificateAuthorityServiceClient implements BackgroundResource {
-  private final CertificateAuthorityServiceSettings settings;
+  private final @Nullable CertificateAuthorityServiceSettings settings;
   private final CertificateAuthorityServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -833,7 +838,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CertificateAuthorityServiceSettings getSettings() {
+  public final @Nullable CertificateAuthorityServiceSettings getSettings() {
     return settings;
   }
 
@@ -896,7 +901,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Certificate createCertificate(
-      CaPoolName parent, Certificate certificate, String certificateId) {
+      @Nullable CaPoolName parent, Certificate certificate, String certificateId) {
     CreateCertificateRequest request =
         CreateCertificateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1048,7 +1053,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [Certificate][google.cloud.security.privateca.v1.Certificate] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Certificate getCertificate(CertificateName name) {
+  public final Certificate getCertificate(@Nullable CertificateName name) {
     GetCertificateRequest request =
         GetCertificateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCertificate(request);
@@ -1167,12 +1172,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the location associated with the
+   * @param parent Required. The resource name of the parent associated with the
    *     [Certificates][google.cloud.security.privateca.v1.Certificate], in the format
-   *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`. The parent resource name can be in one of
+   *     two forms:
+   *     <p>1. &#42;&#42;Specific CA Pool:&#42;&#42; To list certificates within a single CA Pool:
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`
+   *     <p>2. &#42;&#42;All CA Pools in a Location:&#42;&#42; To list certificates across
+   *     &#42;all&#42; CA Pools in a given project and location, use the wildcard character (`-`) in
+   *     place of the CA Pool ID. Example: `projects/&#42;/locations/&#42;/caPools/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCertificatesPagedResponse listCertificates(CaPoolName parent) {
+  public final ListCertificatesPagedResponse listCertificates(@Nullable CaPoolName parent) {
     ListCertificatesRequest request =
         ListCertificatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1202,9 +1213,15 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the location associated with the
+   * @param parent Required. The resource name of the parent associated with the
    *     [Certificates][google.cloud.security.privateca.v1.Certificate], in the format
-   *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`. The parent resource name can be in one of
+   *     two forms:
+   *     <p>1. &#42;&#42;Specific CA Pool:&#42;&#42; To list certificates within a single CA Pool:
+   *     `projects/&#42;/locations/&#42;/caPools/&#42;`
+   *     <p>2. &#42;&#42;All CA Pools in a Location:&#42;&#42; To list certificates across
+   *     &#42;all&#42; CA Pools in a given project and location, use the wildcard character (`-`) in
+   *     place of the CA Pool ID. Example: `projects/&#42;/locations/&#42;/caPools/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCertificatesPagedResponse listCertificates(String parent) {
@@ -1353,7 +1370,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/caPools/&#42;/certificates/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Certificate revokeCertificate(CertificateName name) {
+  public final Certificate revokeCertificate(@Nullable CertificateName name) {
     RevokeCertificateRequest request =
         RevokeCertificateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1595,7 +1612,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
-      activateCertificateAuthorityAsync(CertificateAuthorityName name) {
+      activateCertificateAuthorityAsync(@Nullable CertificateAuthorityName name) {
     ActivateCertificateAuthorityRequest request =
         ActivateCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1818,7 +1835,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
       createCertificateAuthorityAsync(
-          CaPoolName parent,
+          @Nullable CaPoolName parent,
           CertificateAuthority certificateAuthority,
           String certificateAuthorityId) {
     CreateCertificateAuthorityRequest request =
@@ -2014,7 +2031,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
-      disableCertificateAuthorityAsync(CertificateAuthorityName name) {
+      disableCertificateAuthorityAsync(@Nullable CertificateAuthorityName name) {
     DisableCertificateAuthorityRequest request =
         DisableCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2196,7 +2213,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
-      enableCertificateAuthorityAsync(CertificateAuthorityName name) {
+      enableCertificateAuthorityAsync(@Nullable CertificateAuthorityName name) {
     EnableCertificateAuthorityRequest request =
         EnableCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2384,7 +2401,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchCertificateAuthorityCsrResponse fetchCertificateAuthorityCsr(
-      CertificateAuthorityName name) {
+      @Nullable CertificateAuthorityName name) {
     FetchCertificateAuthorityCsrRequest request =
         FetchCertificateAuthorityCsrRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2550,7 +2567,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CertificateAuthority getCertificateAuthority(CertificateAuthorityName name) {
+  public final CertificateAuthority getCertificateAuthority(
+      @Nullable CertificateAuthorityName name) {
     GetCertificateAuthorityRequest request =
         GetCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2688,7 +2706,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCertificateAuthoritiesPagedResponse listCertificateAuthorities(
-      CaPoolName parent) {
+      @Nullable CaPoolName parent) {
     ListCertificateAuthoritiesRequest request =
         ListCertificateAuthoritiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2878,7 +2896,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
-      undeleteCertificateAuthorityAsync(CertificateAuthorityName name) {
+      undeleteCertificateAuthorityAsync(@Nullable CertificateAuthorityName name) {
     UndeleteCertificateAuthorityRequest request =
         UndeleteCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3061,7 +3079,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CertificateAuthority, OperationMetadata>
-      deleteCertificateAuthorityAsync(CertificateAuthorityName name) {
+      deleteCertificateAuthorityAsync(@Nullable CertificateAuthorityName name) {
     DeleteCertificateAuthorityRequest request =
         DeleteCertificateAuthorityRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3395,7 +3413,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CaPool, OperationMetadata> createCaPoolAsync(
-      LocationName parent, CaPool caPool, String caPoolId) {
+      @Nullable LocationName parent, CaPool caPool, String caPoolId) {
     CreateCaPoolRequest request =
         CreateCaPoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3696,7 +3714,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     [CaPool][google.cloud.security.privateca.v1.CaPool] to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CaPool getCaPool(CaPoolName name) {
+  public final CaPool getCaPool(@Nullable CaPoolName name) {
     GetCaPoolRequest request =
         GetCaPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCaPool(request);
@@ -3814,7 +3832,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCaPoolsPagedResponse listCaPools(LocationName parent) {
+  public final ListCaPoolsPagedResponse listCaPools(@Nullable LocationName parent) {
     ListCaPoolsRequest request =
         ListCaPoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3990,7 +4008,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteCaPoolAsync(CaPoolName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteCaPoolAsync(
+      @Nullable CaPoolName name) {
     DeleteCaPoolRequest request =
         DeleteCaPoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCaPoolAsync(request);
@@ -4146,7 +4165,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/caPools/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchCaCertsResponse fetchCaCerts(CaPoolName caPool) {
+  public final FetchCaCertsResponse fetchCaCerts(@Nullable CaPoolName caPool) {
     FetchCaCertsRequest request =
         FetchCaCertsRequest.newBuilder()
             .setCaPool(caPool == null ? null : caPool.toString())
@@ -4283,7 +4302,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CertificateRevocationList getCertificateRevocationList(
-      CertificateRevocationListName name) {
+      @Nullable CertificateRevocationListName name) {
     GetCertificateRevocationListRequest request =
         GetCertificateRevocationListRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4441,7 +4460,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCertificateRevocationListsPagedResponse listCertificateRevocationLists(
-      CertificateAuthorityName parent) {
+      @Nullable CertificateAuthorityName parent) {
     ListCertificateRevocationListsRequest request =
         ListCertificateRevocationListsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4805,7 +4824,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    */
   public final OperationFuture<CertificateTemplate, OperationMetadata>
       createCertificateTemplateAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           CertificateTemplate certificateTemplate,
           String certificateTemplateId) {
     CreateCertificateTemplateRequest request =
@@ -4997,7 +5016,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteCertificateTemplateAsync(
-      CertificateTemplateName name) {
+      @Nullable CertificateTemplateName name) {
     DeleteCertificateTemplateRequest request =
         DeleteCertificateTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5168,7 +5187,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CertificateTemplate getCertificateTemplate(CertificateTemplateName name) {
+  public final CertificateTemplate getCertificateTemplate(@Nullable CertificateTemplateName name) {
     GetCertificateTemplateRequest request =
         GetCertificateTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5299,7 +5318,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *     format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCertificateTemplatesPagedResponse listCertificateTemplates(LocationName parent) {
+  public final ListCertificateTemplatesPagedResponse listCertificateTemplates(
+      @Nullable LocationName parent) {
     ListCertificateTemplatesRequest request =
         ListCertificateTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5602,6 +5622,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5637,6 +5669,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5671,6 +5715,18 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -6020,8 +6076,9 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificatesRequest, ListCertificatesResponse, Certificate, ListCertificatesPage> {
 
     private ListCertificatesPage(
-        PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate> context,
-        ListCertificatesResponse response) {
+        @Nullable PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate>
+            context,
+        @Nullable ListCertificatesResponse response) {
       super(context, response);
     }
 
@@ -6031,14 +6088,16 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificatesPage createPage(
-        PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate> context,
-        ListCertificatesResponse response) {
+        @Nullable PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate>
+            context,
+        @Nullable ListCertificatesResponse response) {
       return new ListCertificatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCertificatesPage> createPageAsync(
-        PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate> context,
+        @Nullable PageContext<ListCertificatesRequest, ListCertificatesResponse, Certificate>
+            context,
         ApiFuture<ListCertificatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6053,7 +6112,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificatesFixedSizeCollection> {
 
     private ListCertificatesFixedSizeCollection(
-        List<ListCertificatesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6063,7 +6122,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificatesFixedSizeCollection createCollection(
-        List<ListCertificatesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificatesPage> pages, int collectionSize) {
       return new ListCertificatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6104,12 +6163,13 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateAuthoritiesPage> {
 
     private ListCertificateAuthoritiesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
-        ListCertificateAuthoritiesResponse response) {
+        @Nullable ListCertificateAuthoritiesResponse response) {
       super(context, response);
     }
 
@@ -6119,18 +6179,20 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateAuthoritiesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
             context,
-        ListCertificateAuthoritiesResponse response) {
+        @Nullable ListCertificateAuthoritiesResponse response) {
       return new ListCertificateAuthoritiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCertificateAuthoritiesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateAuthoritiesRequest,
                 ListCertificateAuthoritiesResponse,
                 CertificateAuthority>
@@ -6149,7 +6211,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateAuthoritiesFixedSizeCollection> {
 
     private ListCertificateAuthoritiesFixedSizeCollection(
-        List<ListCertificateAuthoritiesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateAuthoritiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6159,7 +6221,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateAuthoritiesFixedSizeCollection createCollection(
-        List<ListCertificateAuthoritiesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateAuthoritiesPage> pages, int collectionSize) {
       return new ListCertificateAuthoritiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6190,8 +6252,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
       extends AbstractPage<ListCaPoolsRequest, ListCaPoolsResponse, CaPool, ListCaPoolsPage> {
 
     private ListCaPoolsPage(
-        PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
-        ListCaPoolsResponse response) {
+        @Nullable PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
+        @Nullable ListCaPoolsResponse response) {
       super(context, response);
     }
 
@@ -6201,14 +6263,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCaPoolsPage createPage(
-        PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
-        ListCaPoolsResponse response) {
+        @Nullable PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
+        @Nullable ListCaPoolsResponse response) {
       return new ListCaPoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCaPoolsPage> createPageAsync(
-        PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
+        @Nullable PageContext<ListCaPoolsRequest, ListCaPoolsResponse, CaPool> context,
         ApiFuture<ListCaPoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6222,7 +6284,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCaPoolsPage,
           ListCaPoolsFixedSizeCollection> {
 
-    private ListCaPoolsFixedSizeCollection(List<ListCaPoolsPage> pages, int collectionSize) {
+    private ListCaPoolsFixedSizeCollection(
+        @Nullable List<ListCaPoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6232,7 +6295,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCaPoolsFixedSizeCollection createCollection(
-        List<ListCaPoolsPage> pages, int collectionSize) {
+        @Nullable List<ListCaPoolsPage> pages, int collectionSize) {
       return new ListCaPoolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6274,12 +6337,13 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateRevocationListsPage> {
 
     private ListCertificateRevocationListsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateRevocationListsRequest,
                 ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
-        ListCertificateRevocationListsResponse response) {
+        @Nullable ListCertificateRevocationListsResponse response) {
       super(context, response);
     }
 
@@ -6289,18 +6353,20 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateRevocationListsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateRevocationListsRequest,
                 ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
             context,
-        ListCertificateRevocationListsResponse response) {
+        @Nullable ListCertificateRevocationListsResponse response) {
       return new ListCertificateRevocationListsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCertificateRevocationListsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateRevocationListsRequest,
                 ListCertificateRevocationListsResponse,
                 CertificateRevocationList>
@@ -6319,7 +6385,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateRevocationListsFixedSizeCollection> {
 
     private ListCertificateRevocationListsFixedSizeCollection(
-        List<ListCertificateRevocationListsPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateRevocationListsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6329,7 +6395,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateRevocationListsFixedSizeCollection createCollection(
-        List<ListCertificateRevocationListsPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateRevocationListsPage> pages, int collectionSize) {
       return new ListCertificateRevocationListsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6370,12 +6436,13 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateTemplatesPage> {
 
     private ListCertificateTemplatesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateTemplatesRequest,
                 ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
-        ListCertificateTemplatesResponse response) {
+        @Nullable ListCertificateTemplatesResponse response) {
       super(context, response);
     }
 
@@ -6385,18 +6452,20 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateTemplatesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateTemplatesRequest,
                 ListCertificateTemplatesResponse,
                 CertificateTemplate>
             context,
-        ListCertificateTemplatesResponse response) {
+        @Nullable ListCertificateTemplatesResponse response) {
       return new ListCertificateTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCertificateTemplatesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListCertificateTemplatesRequest,
                 ListCertificateTemplatesResponse,
                 CertificateTemplate>
@@ -6415,7 +6484,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateTemplatesFixedSizeCollection> {
 
     private ListCertificateTemplatesFixedSizeCollection(
-        List<ListCertificateTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6425,7 +6494,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListCertificateTemplatesFixedSizeCollection createCollection(
-        List<ListCertificateTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListCertificateTemplatesPage> pages, int collectionSize) {
       return new ListCertificateTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6459,8 +6528,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6470,14 +6539,14 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6491,7 +6560,8 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6501,7 +6571,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.Comment;
 import com.google.cloud.support.v2.CreateCommentRequest;
+import com.google.cloud.support.v2.GetCommentRequest;
 import com.google.cloud.support.v2.ListCommentsRequest;
 import com.google.cloud.support.v2.ListCommentsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -42,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -49,6 +51,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonCommentServiceStub extends CommentServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -128,10 +131,44 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetCommentRequest, Comment> getCommentMethodDescriptor =
+      ApiMethodDescriptor.<GetCommentRequest, Comment>newBuilder()
+          .setFullMethodName("google.cloud.support.v2.CommentService/GetComment")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetCommentRequest>newBuilder()
+                  .setPath(
+                      "/v2/{name=*/*/cases/*/comments/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetCommentRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetCommentRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Comment>newBuilder()
+                  .setDefaultInstance(Comment.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private final UnaryCallable<ListCommentsRequest, ListCommentsResponse> listCommentsCallable;
   private final UnaryCallable<ListCommentsRequest, ListCommentsPagedResponse>
       listCommentsPagedCallable;
   private final UnaryCallable<CreateCommentRequest, Comment> createCommentCallable;
+  private final UnaryCallable<GetCommentRequest, Comment> getCommentCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -199,6 +236,18 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<GetCommentRequest, Comment> getCommentTransportSettings =
+        HttpJsonCallSettings.<GetCommentRequest, Comment>newBuilder()
+            .setMethodDescriptor(getCommentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.listCommentsCallable =
         callableFactory.createUnaryCallable(
@@ -209,6 +258,9 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
     this.createCommentCallable =
         callableFactory.createUnaryCallable(
             createCommentTransportSettings, settings.createCommentSettings(), clientContext);
+    this.getCommentCallable =
+        callableFactory.createUnaryCallable(
+            getCommentTransportSettings, settings.getCommentSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -219,6 +271,7 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listCommentsMethodDescriptor);
     methodDescriptors.add(createCommentMethodDescriptor);
+    methodDescriptors.add(getCommentMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -235,6 +288,11 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
   @Override
   public UnaryCallable<CreateCommentRequest, Comment> createCommentCallable() {
     return createCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCommentRequest, Comment> getCommentCallable() {
+    return getCommentCallable;
   }
 
   @Override

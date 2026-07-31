@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -209,9 +211,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GenerativeQuestionServiceClient implements BackgroundResource {
-  private final GenerativeQuestionServiceSettings settings;
+  private final @Nullable GenerativeQuestionServiceSettings settings;
   private final GenerativeQuestionServiceStub stub;
 
   /** Constructs an instance of GenerativeQuestionServiceClient with default settings. */
@@ -253,7 +256,7 @@ public class GenerativeQuestionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GenerativeQuestionServiceSettings getSettings() {
+  public final @Nullable GenerativeQuestionServiceSettings getSettings() {
     return settings;
   }
 
@@ -393,7 +396,7 @@ public class GenerativeQuestionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerativeQuestionsFeatureConfig getGenerativeQuestionsFeatureConfig(
-      CatalogName catalog) {
+      @Nullable CatalogName catalog) {
     GetGenerativeQuestionsFeatureConfigRequest request =
         GetGenerativeQuestionsFeatureConfigRequest.newBuilder()
             .setCatalog(catalog == null ? null : catalog.toString())
@@ -521,7 +524,7 @@ public class GenerativeQuestionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGenerativeQuestionConfigsResponse listGenerativeQuestionConfigs(
-      CatalogName parent) {
+      @Nullable CatalogName parent) {
     ListGenerativeQuestionConfigsRequest request =
         ListGenerativeQuestionConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -758,7 +761,7 @@ public class GenerativeQuestionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateGenerativeQuestionConfigsResponse batchUpdateGenerativeQuestionConfigs(
-      CatalogName parent, List<UpdateGenerativeQuestionConfigRequest> requests) {
+      @Nullable CatalogName parent, List<UpdateGenerativeQuestionConfigRequest> requests) {
     BatchUpdateGenerativeQuestionConfigsRequest request =
         BatchUpdateGenerativeQuestionConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

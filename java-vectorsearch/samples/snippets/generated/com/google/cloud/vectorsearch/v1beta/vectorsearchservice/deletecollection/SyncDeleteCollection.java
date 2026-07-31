@@ -39,6 +39,7 @@ public class SyncDeleteCollection {
           DeleteCollectionRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       vectorSearchServiceClient.deleteCollectionAsync(request).get();
     }

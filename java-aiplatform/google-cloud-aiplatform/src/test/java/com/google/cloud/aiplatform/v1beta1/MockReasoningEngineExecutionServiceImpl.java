@@ -127,4 +127,27 @@ public class MockReasoningEngineExecutionServiceImpl
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void cancelAsyncQueryReasoningEngine(
+      CancelAsyncQueryReasoningEngineRequest request,
+      StreamObserver<CancelAsyncQueryReasoningEngineResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CancelAsyncQueryReasoningEngineResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CancelAsyncQueryReasoningEngineResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelAsyncQueryReasoningEngine,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CancelAsyncQueryReasoningEngineResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

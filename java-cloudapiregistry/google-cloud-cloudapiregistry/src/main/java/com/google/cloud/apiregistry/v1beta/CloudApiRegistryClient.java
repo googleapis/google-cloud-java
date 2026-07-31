@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -234,10 +236,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudApiRegistryClient implements BackgroundResource {
-  private final CloudApiRegistrySettings settings;
+  private final @Nullable CloudApiRegistrySettings settings;
   private final CloudApiRegistryStub stub;
 
   /** Constructs an instance of CloudApiRegistryClient with default settings. */
@@ -277,7 +280,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudApiRegistrySettings getSettings() {
+  public final @Nullable CloudApiRegistrySettings getSettings() {
     return settings;
   }
 
@@ -307,7 +310,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final McpServer getMcpServer(McpServerName name) {
+  public final McpServer getMcpServer(@Nullable McpServerName name) {
     GetMcpServerRequest request =
         GetMcpServerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMcpServer(request);
@@ -427,7 +430,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListMcpServersRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMcpServersPagedResponse listMcpServers(LocationName parent) {
+  public final ListMcpServersPagedResponse listMcpServers(@Nullable LocationName parent) {
     ListMcpServersRequest request =
         ListMcpServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -597,7 +600,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final McpTool getMcpTool(McpToolName name) {
+  public final McpTool getMcpTool(@Nullable McpToolName name) {
     GetMcpToolRequest request =
         GetMcpToolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMcpTool(request);
@@ -717,7 +720,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListMcpToolsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMcpToolsPagedResponse listMcpTools(McpServerName parent) {
+  public final ListMcpToolsPagedResponse listMcpTools(@Nullable McpServerName parent) {
     ListMcpToolsRequest request =
         ListMcpToolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1089,8 +1092,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
           ListMcpServersRequest, ListMcpServersResponse, McpServer, ListMcpServersPage> {
 
     private ListMcpServersPage(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
-        ListMcpServersResponse response) {
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable ListMcpServersResponse response) {
       super(context, response);
     }
 
@@ -1100,14 +1103,14 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpServersPage createPage(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
-        ListMcpServersResponse response) {
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable ListMcpServersResponse response) {
       return new ListMcpServersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMcpServersPage> createPageAsync(
-        PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
+        @Nullable PageContext<ListMcpServersRequest, ListMcpServersResponse, McpServer> context,
         ApiFuture<ListMcpServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1121,7 +1124,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
           ListMcpServersPage,
           ListMcpServersFixedSizeCollection> {
 
-    private ListMcpServersFixedSizeCollection(List<ListMcpServersPage> pages, int collectionSize) {
+    private ListMcpServersFixedSizeCollection(
+        @Nullable List<ListMcpServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1131,7 +1135,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpServersFixedSizeCollection createCollection(
-        List<ListMcpServersPage> pages, int collectionSize) {
+        @Nullable List<ListMcpServersPage> pages, int collectionSize) {
       return new ListMcpServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1164,8 +1168,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
       extends AbstractPage<ListMcpToolsRequest, ListMcpToolsResponse, McpTool, ListMcpToolsPage> {
 
     private ListMcpToolsPage(
-        PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
-        ListMcpToolsResponse response) {
+        @Nullable PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
+        @Nullable ListMcpToolsResponse response) {
       super(context, response);
     }
 
@@ -1175,14 +1179,14 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpToolsPage createPage(
-        PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
-        ListMcpToolsResponse response) {
+        @Nullable PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
+        @Nullable ListMcpToolsResponse response) {
       return new ListMcpToolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMcpToolsPage> createPageAsync(
-        PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
+        @Nullable PageContext<ListMcpToolsRequest, ListMcpToolsResponse, McpTool> context,
         ApiFuture<ListMcpToolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1196,7 +1200,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
           ListMcpToolsPage,
           ListMcpToolsFixedSizeCollection> {
 
-    private ListMcpToolsFixedSizeCollection(List<ListMcpToolsPage> pages, int collectionSize) {
+    private ListMcpToolsFixedSizeCollection(
+        @Nullable List<ListMcpToolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1206,7 +1211,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListMcpToolsFixedSizeCollection createCollection(
-        List<ListMcpToolsPage> pages, int collectionSize) {
+        @Nullable List<ListMcpToolsPage> pages, int collectionSize) {
       return new ListMcpToolsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1240,8 +1245,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1251,14 +1256,14 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1272,7 +1277,8 @@ public class CloudApiRegistryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1282,7 +1288,7 @@ public class CloudApiRegistryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

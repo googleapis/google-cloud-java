@@ -37,8 +37,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents an abstract authorized identity instance. */
+@NullMarked
 public abstract class Credentials implements Serializable {
 
   private static final long serialVersionUID = 808575179767517313L;
@@ -161,7 +164,8 @@ public abstract class Credentials implements Serializable {
    *     implement {@link Retryable} and {@code isRetryable()} will return true if the operation may
    *     be retried.
    */
-  public abstract Map<String, List<String>> getRequestMetadata(URI uri) throws IOException;
+  public abstract Map<String, List<String>> getRequestMetadata(@Nullable URI uri)
+      throws IOException;
 
   /**
    * Whether the credentials have metadata entries that should be added to each request.

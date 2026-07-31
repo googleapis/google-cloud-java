@@ -30,6 +30,7 @@
 package com.google.api.gax.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 
 import com.google.api.gax.retrying.RetrySettings;
@@ -66,6 +67,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TimeoutTest {
+
   private static final String CALL_OPTIONS_AUTHORITY = "RETRYING_TEST";
   private static final int DEADLINE_IN_DAYS = 7;
   private static final int DEADLINE_IN_MINUTES = 10;
@@ -82,12 +84,19 @@ class TimeoutTest {
   private static GrpcCallContext defaultCallContext;
 
   @Mock private Marshaller<String> stringMarshaller;
-  @Mock private RequestParamsExtractor<String> paramsExtractor;
+  private RequestParamsExtractor<String> paramsExtractor;
   @Mock private ManagedChannel managedChannel;
+
+  @org.junit.jupiter.api.BeforeEach
+  void initParamsExtractor() {
+    paramsExtractor =
+        Mockito.mock(RequestParamsExtractor.class, Mockito.withSettings().withoutAnnotations());
+  }
 
   @BeforeAll
   public static void setUp() throws IOException {
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -336,7 +345,7 @@ class TimeoutTest {
             .build();
 
     @SuppressWarnings("unchecked")
-    ClientCall<String, String> clientCall = Mockito.mock(ClientCall.class);
+    ClientCall<String, String> clientCall = mock(ClientCall.class);
     Mockito.doReturn(clientCall)
         .when(managedChannel)
         .newCall(ArgumentMatchers.eq(methodDescriptor), ArgumentMatchers.any(CallOptions.class));
@@ -397,7 +406,7 @@ class TimeoutTest {
             .build();
 
     @SuppressWarnings("unchecked")
-    ClientCall<String, String> clientCall = Mockito.mock(ClientCall.class);
+    ClientCall<String, String> clientCall = mock(ClientCall.class);
     Mockito.doReturn(clientCall)
         .when(managedChannel)
         .newCall(ArgumentMatchers.eq(methodDescriptor), ArgumentMatchers.any(CallOptions.class));

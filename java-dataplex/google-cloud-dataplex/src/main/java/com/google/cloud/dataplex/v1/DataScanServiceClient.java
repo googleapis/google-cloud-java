@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -237,6 +239,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CancelDataScanJob</td>
+ *      <td><p> Cancels a running/pending DataScan job.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(CancelDataScanJobRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJob(DataScanJobName name)
+ *           <li><p> cancelDataScanJob(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelDataScanJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GenerateDataQualityRules</td>
  *      <td><p> Generates recommended data quality rules based on the results of a data profiling scan.
  * <p>  Use the recommendations to build rules for a data quality scan.</td>
@@ -257,8 +278,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -387,9 +409,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataScanServiceClient implements BackgroundResource {
-  private final DataScanServiceSettings settings;
+  private final @Nullable DataScanServiceSettings settings;
   private final DataScanServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -437,7 +460,7 @@ public class DataScanServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataScanServiceSettings getSettings() {
+  public final @Nullable DataScanServiceSettings getSettings() {
     return settings;
   }
 
@@ -488,7 +511,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
    *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -500,7 +524,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataScan, OperationMetadata> createDataScanAsync(
-      LocationName parent, DataScan dataScan, String dataScanId) {
+      @Nullable LocationName parent, DataScan dataScan, String dataScanId) {
     CreateDataScanRequest request =
         CreateDataScanRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -536,7 +560,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
    *     region.
    * @param dataScan Required. DataScan resource.
-   * @param dataScanId Required. DataScan identifier.
+   * @param dataScanId Optional. DataScan identifier. If not provided, a unique ID will be generated
+   *     with the prefix "data-scan-".
    *     <ul>
    *       <li>Must contain only lowercase letters, numbers and hyphens.
    *       <li>Must start with a letter.
@@ -800,7 +825,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(DataScanName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(
+      @Nullable DataScanName name) {
     DeleteDataScanRequest request =
         DeleteDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataScanAsync(request);
@@ -948,7 +974,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataScan getDataScan(DataScanName name) {
+  public final DataScan getDataScan(@Nullable DataScanName name) {
     GetDataScanRequest request =
         GetDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataScan(request);
@@ -1064,7 +1090,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataScansPagedResponse listDataScans(LocationName parent) {
+  public final ListDataScansPagedResponse listDataScans(@Nullable LocationName parent) {
     ListDataScansRequest request =
         ListDataScansRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1238,7 +1264,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RunDataScanResponse runDataScan(DataScanName name) {
+  public final RunDataScanResponse runDataScan(@Nullable DataScanName name) {
     RunDataScanRequest request =
         RunDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runDataScan(request);
@@ -1354,7 +1380,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataScanJob getDataScanJob(DataScanJobName name) {
+  public final DataScanJob getDataScanJob(@Nullable DataScanJobName name) {
     GetDataScanJobRequest request =
         GetDataScanJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataScanJob(request);
@@ -1473,7 +1499,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataScanJobsPagedResponse listDataScanJobs(DataScanName parent) {
+  public final ListDataScanJobsPagedResponse listDataScanJobs(@Nullable DataScanName parent) {
     ListDataScanJobsRequest request =
         ListDataScanJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1623,6 +1649,126 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(@Nullable DataScanJobName name) {
+    CancelDataScanJobRequest request =
+        CancelDataScanJobRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   String name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the DataScanJob:
+   *     `projects/{project_id_or_number}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
+   *     where `project_id_or_number` refers to a &#42;project_id&#42; or &#42;project_number&#42;
+   *     and `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(String name) {
+    CancelDataScanJobRequest request = CancelDataScanJobRequest.newBuilder().setName(name).build();
+    return cancelDataScanJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   CancelDataScanJobResponse response = dataScanServiceClient.cancelDataScanJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelDataScanJobResponse cancelDataScanJob(CancelDataScanJobRequest request) {
+    return cancelDataScanJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a running/pending DataScan job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   CancelDataScanJobRequest request =
+   *       CancelDataScanJobRequest.newBuilder()
+   *           .setName(
+   *               DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<CancelDataScanJobResponse> future =
+   *       dataScanServiceClient.cancelDataScanJobCallable().futureCall(request);
+   *   // Do something.
+   *   CancelDataScanJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return stub.cancelDataScanJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Generates recommended data quality rules based on the results of a data profiling scan.
    *
    * <p>Use the recommendations to build rules for a data quality scan.
@@ -1718,13 +1864,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1757,13 +1909,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1797,13 +1955,19 @@ public class DataScanServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2140,8 +2304,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScansRequest, ListDataScansResponse, DataScan, ListDataScansPage> {
 
     private ListDataScansPage(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
-        ListDataScansResponse response) {
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable ListDataScansResponse response) {
       super(context, response);
     }
 
@@ -2151,14 +2315,14 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScansPage createPage(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
-        ListDataScansResponse response) {
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable ListDataScansResponse response) {
       return new ListDataScansPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataScansPage> createPageAsync(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
         ApiFuture<ListDataScansResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2172,7 +2336,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScansPage,
           ListDataScansFixedSizeCollection> {
 
-    private ListDataScansFixedSizeCollection(List<ListDataScansPage> pages, int collectionSize) {
+    private ListDataScansFixedSizeCollection(
+        @Nullable List<ListDataScansPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2182,7 +2347,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScansFixedSizeCollection createCollection(
-        List<ListDataScansPage> pages, int collectionSize) {
+        @Nullable List<ListDataScansPage> pages, int collectionSize) {
       return new ListDataScansFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2216,8 +2381,9 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob, ListDataScanJobsPage> {
 
     private ListDataScanJobsPage(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
-        ListDataScanJobsResponse response) {
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
+        @Nullable ListDataScanJobsResponse response) {
       super(context, response);
     }
 
@@ -2227,14 +2393,16 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScanJobsPage createPage(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
-        ListDataScanJobsResponse response) {
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
+        @Nullable ListDataScanJobsResponse response) {
       return new ListDataScanJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataScanJobsPage> createPageAsync(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
         ApiFuture<ListDataScanJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2249,7 +2417,7 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScanJobsFixedSizeCollection> {
 
     private ListDataScanJobsFixedSizeCollection(
-        List<ListDataScanJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDataScanJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2259,7 +2427,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScanJobsFixedSizeCollection createCollection(
-        List<ListDataScanJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDataScanJobsPage> pages, int collectionSize) {
       return new ListDataScanJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2293,8 +2461,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2304,14 +2472,14 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2325,7 +2493,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2335,7 +2504,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

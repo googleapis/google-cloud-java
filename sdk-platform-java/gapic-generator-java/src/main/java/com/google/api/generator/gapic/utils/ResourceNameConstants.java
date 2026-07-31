@@ -14,6 +14,9 @@
 
 package com.google.api.generator.gapic.utils;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public class ResourceNameConstants {
   public static final String DELETED_TOPIC_LITERAL = "_deleted-topic_";
   public static final String NAME_FIELD_NAME = "name";

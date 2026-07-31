@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.commerceproducer.v1beta",
+  "libraryPackage": "com.google.cloud.commerceproducer.v1beta",
+  "services": {
+    "CommerceTransaction": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CommerceTransactionClient",
+          "rpcs": {
+            "CancelPrivateOffer": {
+              "methods": ["cancelPrivateOffer", "cancelPrivateOffer", "cancelPrivateOffer", "cancelPrivateOfferCallable"]
+            },
+            "CreatePrivateOffer": {
+              "methods": ["createPrivateOffer", "createPrivateOfferCallable"]
+            },
+            "CreatePrivateOfferDocument": {
+              "methods": ["createPrivateOfferDocument", "createPrivateOfferDocumentCallable"]
+            },
+            "DeletePrivateOffer": {
+              "methods": ["deletePrivateOffer", "deletePrivateOffer", "deletePrivateOffer", "deletePrivateOfferCallable"]
+            },
+            "DeletePrivateOfferDocument": {
+              "methods": ["deletePrivateOfferDocument", "deletePrivateOfferDocument", "deletePrivateOfferDocument", "deletePrivateOfferDocumentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPrivateOffer": {
+              "methods": ["getPrivateOffer", "getPrivateOffer", "getPrivateOffer", "getPrivateOfferCallable"]
+            },
+            "GetPrivateOfferDocument": {
+              "methods": ["getPrivateOfferDocument", "getPrivateOfferDocument", "getPrivateOfferDocument", "getPrivateOfferDocumentCallable"]
+            },
+            "GetService": {
+              "methods": ["getService", "getService", "getService", "getServiceCallable"]
+            },
+            "GetSku": {
+              "methods": ["getSku", "getSku", "getSku", "getSkuCallable"]
+            },
+            "GetSkuGroup": {
+              "methods": ["getSkuGroup", "getSkuGroup", "getSkuGroup", "getSkuGroupCallable"]
+            },
+            "GetStandardOffer": {
+              "methods": ["getStandardOffer", "getStandardOffer", "getStandardOffer", "getStandardOfferCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPrivateOfferDocuments": {
+              "methods": ["listPrivateOfferDocuments", "listPrivateOfferDocuments", "listPrivateOfferDocuments", "listPrivateOfferDocumentsPagedCallable", "listPrivateOfferDocumentsCallable"]
+            },
+            "ListPrivateOffers": {
+              "methods": ["listPrivateOffers", "listPrivateOffers", "listPrivateOffers", "listPrivateOffersPagedCallable", "listPrivateOffersCallable"]
+            },
+            "ListServices": {
+              "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "ListSkuGroups": {
+              "methods": ["listSkuGroups", "listSkuGroups", "listSkuGroups", "listSkuGroupsPagedCallable", "listSkuGroupsCallable"]
+            },
+            "ListSkus": {
+              "methods": ["listSkus", "listSkus", "listSkus", "listSkusPagedCallable", "listSkusCallable"]
+            },
+            "ListStandardOffers": {
+              "methods": ["listStandardOffers", "listStandardOffers", "listStandardOffers", "listStandardOffersPagedCallable", "listStandardOffersCallable"]
+            },
+            "PublishPrivateOffer": {
+              "methods": ["publishPrivateOffer", "publishPrivateOffer", "publishPrivateOffer", "publishPrivateOfferCallable"]
+            },
+            "UpdatePrivateOffer": {
+              "methods": ["updatePrivateOffer", "updatePrivateOffer", "updatePrivateOfferCallable"]
+            },
+            "UpdatePrivateOfferDocument": {
+              "methods": ["updatePrivateOfferDocument", "updatePrivateOfferDocument", "updatePrivateOfferDocumentCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

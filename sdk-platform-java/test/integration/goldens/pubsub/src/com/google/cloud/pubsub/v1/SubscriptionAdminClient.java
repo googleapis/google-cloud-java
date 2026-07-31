@@ -65,6 +65,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -480,9 +482,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SubscriptionAdminClient implements BackgroundResource {
-  private final SubscriptionAdminSettings settings;
+  private final @Nullable SubscriptionAdminSettings settings;
   private final SubscriberStub stub;
 
   /** Constructs an instance of SubscriptionAdminClient with default settings. */
@@ -522,7 +525,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SubscriptionAdminSettings getSettings() {
+  public final @Nullable SubscriptionAdminSettings getSettings() {
     return settings;
   }
 
@@ -590,7 +593,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      SubscriptionName name, TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+      @Nullable SubscriptionName name,
+      @Nullable TopicName topic,
+      PushConfig pushConfig,
+      int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -661,7 +667,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      SubscriptionName name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+      @Nullable SubscriptionName name,
+      String topic,
+      PushConfig pushConfig,
+      int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -732,7 +741,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      String name, TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+      String name, @Nullable TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
     Subscription request =
         Subscription.newBuilder()
             .setName(name)
@@ -940,7 +949,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Subscription getSubscription(SubscriptionName subscription) {
+  public final Subscription getSubscription(@Nullable SubscriptionName subscription) {
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1116,7 +1125,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubscriptionsPagedResponse listSubscriptions(ProjectName project) {
+  public final ListSubscriptionsPagedResponse listSubscriptions(@Nullable ProjectName project) {
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -1284,7 +1293,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSubscription(SubscriptionName subscription) {
+  public final void deleteSubscription(@Nullable SubscriptionName subscription) {
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1421,7 +1430,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void modifyAckDeadline(
-      SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
+      @Nullable SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1572,7 +1581,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     returned by the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
+  public final void acknowledge(@Nullable SubscriptionName subscription, List<String> ackIds) {
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1707,7 +1716,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     a positive integer. The Pub/Sub system may return fewer than the number specified.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PullResponse pull(SubscriptionName subscription, int maxMessages) {
+  public final PullResponse pull(@Nullable SubscriptionName subscription, int maxMessages) {
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1783,7 +1792,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PullResponse pull(
-      SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
+      @Nullable SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -1973,7 +1982,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     pausing the subscription if `Pull` or `StreamingPull` is not called.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void modifyPushConfig(SubscriptionName subscription, PushConfig pushConfig) {
+  public final void modifyPushConfig(
+      @Nullable SubscriptionName subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
             .setSubscription(subscription == null ? null : subscription.toString())
@@ -2116,7 +2126,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot getSnapshot(SnapshotName snapshot) {
+  public final Snapshot getSnapshot(@Nullable SnapshotName snapshot) {
     GetSnapshotRequest request =
         GetSnapshotRequest.newBuilder()
             .setSnapshot(snapshot == null ? null : snapshot.toString())
@@ -2243,7 +2253,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSnapshotsPagedResponse listSnapshots(ProjectName project) {
+  public final ListSnapshotsPagedResponse listSnapshots(@Nullable ProjectName project) {
     ListSnapshotsRequest request =
         ListSnapshotsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -2440,7 +2450,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot createSnapshot(SnapshotName name, SubscriptionName subscription) {
+  public final Snapshot createSnapshot(
+      @Nullable SnapshotName name, @Nullable SubscriptionName subscription) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2493,7 +2504,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot createSnapshot(SnapshotName name, String subscription) {
+  public final Snapshot createSnapshot(@Nullable SnapshotName name, String subscription) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2546,7 +2557,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Snapshot createSnapshot(String name, SubscriptionName subscription) {
+  public final Snapshot createSnapshot(String name, @Nullable SubscriptionName subscription) {
     CreateSnapshotRequest request =
         CreateSnapshotRequest.newBuilder()
             .setName(name)
@@ -2779,7 +2790,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *     `projects/{project}/snapshots/{snap}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSnapshot(SnapshotName snapshot) {
+  public final void deleteSnapshot(@Nullable SnapshotName snapshot) {
     DeleteSnapshotRequest request =
         DeleteSnapshotRequest.newBuilder()
             .setSnapshot(snapshot == null ? null : snapshot.toString())
@@ -3207,8 +3218,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSubscriptionsPage> {
 
     private ListSubscriptionsPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable ListSubscriptionsResponse response) {
       super(context, response);
     }
 
@@ -3218,14 +3230,16 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsPage createPage(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
-        ListSubscriptionsResponse response) {
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable ListSubscriptionsResponse response) {
       return new ListSubscriptionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubscriptionsPage> createPageAsync(
-        PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
+        @Nullable
+            PageContext<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> context,
         ApiFuture<ListSubscriptionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3240,7 +3254,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSubscriptionsFixedSizeCollection> {
 
     private ListSubscriptionsFixedSizeCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3250,7 +3264,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSubscriptionsFixedSizeCollection createCollection(
-        List<ListSubscriptionsPage> pages, int collectionSize) {
+        @Nullable List<ListSubscriptionsPage> pages, int collectionSize) {
       return new ListSubscriptionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3284,8 +3298,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSnapshotsRequest, ListSnapshotsResponse, Snapshot, ListSnapshotsPage> {
 
     private ListSnapshotsPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       super(context, response);
     }
 
@@ -3295,14 +3309,14 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsPage createPage(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
-        ListSnapshotsResponse response) {
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable ListSnapshotsResponse response) {
       return new ListSnapshotsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSnapshotsPage> createPageAsync(
-        PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
+        @Nullable PageContext<ListSnapshotsRequest, ListSnapshotsResponse, Snapshot> context,
         ApiFuture<ListSnapshotsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3316,7 +3330,8 @@ public class SubscriptionAdminClient implements BackgroundResource {
           ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
-    private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {
+    private ListSnapshotsFixedSizeCollection(
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3326,7 +3341,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
 
     @Override
     protected ListSnapshotsFixedSizeCollection createCollection(
-        List<ListSnapshotsPage> pages, int collectionSize) {
+        @Nullable List<ListSnapshotsPage> pages, int collectionSize) {
       return new ListSnapshotsFixedSizeCollection(pages, collectionSize);
     }
   }

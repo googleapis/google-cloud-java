@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Allows the implementer of {@link ResponseObserver} to control the flow of responses.
@@ -39,6 +40,7 @@ import java.util.concurrent.CancellationException;
  * flow control. The receiver can also save a reference to the instance and terminate the stream
  * early using {@code cancel()}.
  */
+@NullMarked
 public interface StreamController {
   /**
    * Cancel the stream early.

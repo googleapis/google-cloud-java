@@ -211,6 +211,53 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest,
+          com.google.longrunning.Operation>
+      getDeleteTeamFolderTreeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTeamFolderTree",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest,
+          com.google.longrunning.Operation>
+      getDeleteTeamFolderTreeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest,
+            com.google.longrunning.Operation>
+        getDeleteTeamFolderTreeMethod;
+    if ((getDeleteTeamFolderTreeMethod = DataformGrpc.getDeleteTeamFolderTreeMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteTeamFolderTreeMethod = DataformGrpc.getDeleteTeamFolderTreeMethod) == null) {
+          DataformGrpc.getDeleteTeamFolderTreeMethod =
+              getDeleteTeamFolderTreeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTeamFolderTree"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("DeleteTeamFolderTree"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTeamFolderTreeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1beta1.QueryTeamFolderContentsRequest,
           com.google.cloud.dataform.v1beta1.QueryTeamFolderContentsResponse>
       getQueryTeamFolderContentsMethod;
@@ -482,6 +529,51 @@ public final class DataformGrpc {
       }
     }
     return getDeleteFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest,
+          com.google.longrunning.Operation>
+      getDeleteFolderTreeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteFolderTree",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest,
+          com.google.longrunning.Operation>
+      getDeleteFolderTreeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest,
+            com.google.longrunning.Operation>
+        getDeleteFolderTreeMethod;
+    if ((getDeleteFolderTreeMethod = DataformGrpc.getDeleteFolderTreeMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteFolderTreeMethod = DataformGrpc.getDeleteFolderTreeMethod) == null) {
+          DataformGrpc.getDeleteFolderTreeMethod =
+              getDeleteFolderTreeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteFolderTree"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataformMethodDescriptorSupplier("DeleteFolderTree"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteFolderTreeMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -844,6 +936,56 @@ public final class DataformGrpc {
       }
     }
     return getDeleteRepositoryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest,
+          com.google.longrunning.Operation>
+      getDeleteRepositoryLongRunningMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteRepositoryLongRunning",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest,
+          com.google.longrunning.Operation>
+      getDeleteRepositoryLongRunningMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest,
+            com.google.longrunning.Operation>
+        getDeleteRepositoryLongRunningMethod;
+    if ((getDeleteRepositoryLongRunningMethod = DataformGrpc.getDeleteRepositoryLongRunningMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteRepositoryLongRunningMethod =
+                DataformGrpc.getDeleteRepositoryLongRunningMethod)
+            == null) {
+          DataformGrpc.getDeleteRepositoryLongRunningMethod =
+              getDeleteRepositoryLongRunningMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteRepositoryLongRunning"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("DeleteRepositoryLongRunning"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteRepositoryLongRunningMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -3468,6 +3610,21 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    default void deleteTeamFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTeamFolderTreeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the contents of a given TeamFolder.
      * </pre>
      */
@@ -3549,6 +3706,21 @@ public final class DataformGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteFolderMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Folder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    default void deleteFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteFolderTreeMethod(), responseObserver);
     }
 
     /**
@@ -3674,6 +3846,20 @@ public final class DataformGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteRepositoryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository asynchronously.
+     * </pre>
+     */
+    default void deleteRepositoryLongRunning(
+        com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteRepositoryLongRunningMethod(), responseObserver);
     }
 
     /**
@@ -4598,6 +4784,23 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public void deleteTeamFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTeamFolderTreeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the contents of a given TeamFolder.
      * </pre>
      */
@@ -4688,6 +4891,23 @@ public final class DataformGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteFolderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Folder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public void deleteFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteFolderTreeMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -4828,6 +5048,22 @@ public final class DataformGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository asynchronously.
+     * </pre>
+     */
+    public void deleteRepositoryLongRunning(
+        com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteRepositoryLongRunningMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5830,6 +6066,21 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTeamFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTeamFolderTreeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the contents of a given TeamFolder.
      * </pre>
      */
@@ -5909,6 +6160,21 @@ public final class DataformGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Folder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteFolderTreeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6029,6 +6295,20 @@ public final class DataformGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRepositoryLongRunning(
+        com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteRepositoryLongRunningMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6875,6 +7155,20 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTeamFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTeamFolderTreeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the contents of a given TeamFolder.
      * </pre>
      */
@@ -6949,6 +7243,20 @@ public final class DataformGrpc {
         com.google.cloud.dataform.v1beta1.DeleteFolderRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Folder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteFolderTree(
+        com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteFolderTreeMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7061,6 +7369,19 @@ public final class DataformGrpc {
         com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRepositoryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository asynchronously.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRepositoryLongRunning(
+        com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRepositoryLongRunningMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7862,6 +8183,21 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTeamFolderTree(
+            com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTeamFolderTreeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns the contents of a given TeamFolder.
      * </pre>
      */
@@ -7941,6 +8277,20 @@ public final class DataformGrpc {
         deleteFolder(com.google.cloud.dataform.v1beta1.DeleteFolderRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Folder with its contents (Folders, Repositories, Workspaces,
+     * ReleaseConfigs, and WorkflowConfigs).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteFolderTree(com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteFolderTreeMethod(), getCallOptions()), request);
     }
 
     /**
@@ -8060,6 +8410,20 @@ public final class DataformGrpc {
         deleteRepository(com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteRepositoryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single repository asynchronously.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteRepositoryLongRunning(
+            com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteRepositoryLongRunningMethod(), getCallOptions()), request);
     }
 
     /**
@@ -8853,73 +9217,76 @@ public final class DataformGrpc {
   private static final int METHODID_CREATE_TEAM_FOLDER = 1;
   private static final int METHODID_UPDATE_TEAM_FOLDER = 2;
   private static final int METHODID_DELETE_TEAM_FOLDER = 3;
-  private static final int METHODID_QUERY_TEAM_FOLDER_CONTENTS = 4;
-  private static final int METHODID_SEARCH_TEAM_FOLDERS = 5;
-  private static final int METHODID_GET_FOLDER = 6;
-  private static final int METHODID_CREATE_FOLDER = 7;
-  private static final int METHODID_UPDATE_FOLDER = 8;
-  private static final int METHODID_DELETE_FOLDER = 9;
-  private static final int METHODID_QUERY_FOLDER_CONTENTS = 10;
-  private static final int METHODID_QUERY_USER_ROOT_CONTENTS = 11;
-  private static final int METHODID_MOVE_FOLDER = 12;
-  private static final int METHODID_LIST_REPOSITORIES = 13;
-  private static final int METHODID_GET_REPOSITORY = 14;
-  private static final int METHODID_CREATE_REPOSITORY = 15;
-  private static final int METHODID_UPDATE_REPOSITORY = 16;
-  private static final int METHODID_DELETE_REPOSITORY = 17;
-  private static final int METHODID_MOVE_REPOSITORY = 18;
-  private static final int METHODID_COMMIT_REPOSITORY_CHANGES = 19;
-  private static final int METHODID_READ_REPOSITORY_FILE = 20;
-  private static final int METHODID_QUERY_REPOSITORY_DIRECTORY_CONTENTS = 21;
-  private static final int METHODID_FETCH_REPOSITORY_HISTORY = 22;
-  private static final int METHODID_COMPUTE_REPOSITORY_ACCESS_TOKEN_STATUS = 23;
-  private static final int METHODID_FETCH_REMOTE_BRANCHES = 24;
-  private static final int METHODID_LIST_WORKSPACES = 25;
-  private static final int METHODID_GET_WORKSPACE = 26;
-  private static final int METHODID_CREATE_WORKSPACE = 27;
-  private static final int METHODID_DELETE_WORKSPACE = 28;
-  private static final int METHODID_INSTALL_NPM_PACKAGES = 29;
-  private static final int METHODID_PULL_GIT_COMMITS = 30;
-  private static final int METHODID_PUSH_GIT_COMMITS = 31;
-  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 32;
-  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 33;
-  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 34;
-  private static final int METHODID_RESET_WORKSPACE_CHANGES = 35;
-  private static final int METHODID_FETCH_FILE_DIFF = 36;
-  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 37;
-  private static final int METHODID_SEARCH_FILES = 38;
-  private static final int METHODID_MAKE_DIRECTORY = 39;
-  private static final int METHODID_REMOVE_DIRECTORY = 40;
-  private static final int METHODID_MOVE_DIRECTORY = 41;
-  private static final int METHODID_READ_FILE = 42;
-  private static final int METHODID_REMOVE_FILE = 43;
-  private static final int METHODID_MOVE_FILE = 44;
-  private static final int METHODID_WRITE_FILE = 45;
-  private static final int METHODID_LIST_RELEASE_CONFIGS = 46;
-  private static final int METHODID_GET_RELEASE_CONFIG = 47;
-  private static final int METHODID_CREATE_RELEASE_CONFIG = 48;
-  private static final int METHODID_UPDATE_RELEASE_CONFIG = 49;
-  private static final int METHODID_DELETE_RELEASE_CONFIG = 50;
-  private static final int METHODID_LIST_COMPILATION_RESULTS = 51;
-  private static final int METHODID_GET_COMPILATION_RESULT = 52;
-  private static final int METHODID_CREATE_COMPILATION_RESULT = 53;
-  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 54;
-  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 55;
-  private static final int METHODID_GET_WORKFLOW_CONFIG = 56;
-  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 57;
-  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 58;
-  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 59;
-  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 60;
-  private static final int METHODID_GET_WORKFLOW_INVOCATION = 61;
-  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 62;
-  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 63;
-  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 64;
-  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 65;
-  private static final int METHODID_GET_CONFIG = 66;
-  private static final int METHODID_UPDATE_CONFIG = 67;
-  private static final int METHODID_GET_IAM_POLICY = 68;
-  private static final int METHODID_SET_IAM_POLICY = 69;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 70;
+  private static final int METHODID_DELETE_TEAM_FOLDER_TREE = 4;
+  private static final int METHODID_QUERY_TEAM_FOLDER_CONTENTS = 5;
+  private static final int METHODID_SEARCH_TEAM_FOLDERS = 6;
+  private static final int METHODID_GET_FOLDER = 7;
+  private static final int METHODID_CREATE_FOLDER = 8;
+  private static final int METHODID_UPDATE_FOLDER = 9;
+  private static final int METHODID_DELETE_FOLDER = 10;
+  private static final int METHODID_DELETE_FOLDER_TREE = 11;
+  private static final int METHODID_QUERY_FOLDER_CONTENTS = 12;
+  private static final int METHODID_QUERY_USER_ROOT_CONTENTS = 13;
+  private static final int METHODID_MOVE_FOLDER = 14;
+  private static final int METHODID_LIST_REPOSITORIES = 15;
+  private static final int METHODID_GET_REPOSITORY = 16;
+  private static final int METHODID_CREATE_REPOSITORY = 17;
+  private static final int METHODID_UPDATE_REPOSITORY = 18;
+  private static final int METHODID_DELETE_REPOSITORY = 19;
+  private static final int METHODID_DELETE_REPOSITORY_LONG_RUNNING = 20;
+  private static final int METHODID_MOVE_REPOSITORY = 21;
+  private static final int METHODID_COMMIT_REPOSITORY_CHANGES = 22;
+  private static final int METHODID_READ_REPOSITORY_FILE = 23;
+  private static final int METHODID_QUERY_REPOSITORY_DIRECTORY_CONTENTS = 24;
+  private static final int METHODID_FETCH_REPOSITORY_HISTORY = 25;
+  private static final int METHODID_COMPUTE_REPOSITORY_ACCESS_TOKEN_STATUS = 26;
+  private static final int METHODID_FETCH_REMOTE_BRANCHES = 27;
+  private static final int METHODID_LIST_WORKSPACES = 28;
+  private static final int METHODID_GET_WORKSPACE = 29;
+  private static final int METHODID_CREATE_WORKSPACE = 30;
+  private static final int METHODID_DELETE_WORKSPACE = 31;
+  private static final int METHODID_INSTALL_NPM_PACKAGES = 32;
+  private static final int METHODID_PULL_GIT_COMMITS = 33;
+  private static final int METHODID_PUSH_GIT_COMMITS = 34;
+  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 35;
+  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 36;
+  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 37;
+  private static final int METHODID_RESET_WORKSPACE_CHANGES = 38;
+  private static final int METHODID_FETCH_FILE_DIFF = 39;
+  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 40;
+  private static final int METHODID_SEARCH_FILES = 41;
+  private static final int METHODID_MAKE_DIRECTORY = 42;
+  private static final int METHODID_REMOVE_DIRECTORY = 43;
+  private static final int METHODID_MOVE_DIRECTORY = 44;
+  private static final int METHODID_READ_FILE = 45;
+  private static final int METHODID_REMOVE_FILE = 46;
+  private static final int METHODID_MOVE_FILE = 47;
+  private static final int METHODID_WRITE_FILE = 48;
+  private static final int METHODID_LIST_RELEASE_CONFIGS = 49;
+  private static final int METHODID_GET_RELEASE_CONFIG = 50;
+  private static final int METHODID_CREATE_RELEASE_CONFIG = 51;
+  private static final int METHODID_UPDATE_RELEASE_CONFIG = 52;
+  private static final int METHODID_DELETE_RELEASE_CONFIG = 53;
+  private static final int METHODID_LIST_COMPILATION_RESULTS = 54;
+  private static final int METHODID_GET_COMPILATION_RESULT = 55;
+  private static final int METHODID_CREATE_COMPILATION_RESULT = 56;
+  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 57;
+  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 58;
+  private static final int METHODID_GET_WORKFLOW_CONFIG = 59;
+  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 60;
+  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 61;
+  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 62;
+  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 63;
+  private static final int METHODID_GET_WORKFLOW_INVOCATION = 64;
+  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 65;
+  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 66;
+  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 67;
+  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 68;
+  private static final int METHODID_GET_CONFIG = 69;
+  private static final int METHODID_UPDATE_CONFIG = 70;
+  private static final int METHODID_GET_IAM_POLICY = 71;
+  private static final int METHODID_SET_IAM_POLICY = 72;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 73;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8961,6 +9328,11 @@ public final class DataformGrpc {
               (com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_DELETE_TEAM_FOLDER_TREE:
+          serviceImpl.deleteTeamFolderTree(
+              (com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_QUERY_TEAM_FOLDER_CONTENTS:
           serviceImpl.queryTeamFolderContents(
               (com.google.cloud.dataform.v1beta1.QueryTeamFolderContentsRequest) request,
@@ -8997,6 +9369,11 @@ public final class DataformGrpc {
           serviceImpl.deleteFolder(
               (com.google.cloud.dataform.v1beta1.DeleteFolderRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DELETE_FOLDER_TREE:
+          serviceImpl.deleteFolderTree(
+              (com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_QUERY_FOLDER_CONTENTS:
           serviceImpl.queryFolderContents(
@@ -9046,6 +9423,11 @@ public final class DataformGrpc {
           serviceImpl.deleteRepository(
               (com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DELETE_REPOSITORY_LONG_RUNNING:
+          serviceImpl.deleteRepositoryLongRunning(
+              (com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_MOVE_REPOSITORY:
           serviceImpl.moveRepository(
@@ -9427,6 +9809,12 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_TEAM_FOLDER)))
         .addMethod(
+            getDeleteTeamFolderTreeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TEAM_FOLDER_TREE)))
+        .addMethod(
             getQueryTeamFolderContentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -9464,6 +9852,12 @@ public final class DataformGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataform.v1beta1.DeleteFolderRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_FOLDER)))
+        .addMethod(
+            getDeleteFolderTreeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FOLDER_TREE)))
         .addMethod(
             getQueryFolderContentsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -9518,6 +9912,13 @@ public final class DataformGrpc {
                 new MethodHandlers<
                     com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_REPOSITORY)))
+        .addMethod(
+            getDeleteRepositoryLongRunningMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_REPOSITORY_LONG_RUNNING)))
         .addMethod(
             getMoveRepositoryMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -9930,12 +10331,14 @@ public final class DataformGrpc {
                       .addMethod(getCreateTeamFolderMethod())
                       .addMethod(getUpdateTeamFolderMethod())
                       .addMethod(getDeleteTeamFolderMethod())
+                      .addMethod(getDeleteTeamFolderTreeMethod())
                       .addMethod(getQueryTeamFolderContentsMethod())
                       .addMethod(getSearchTeamFoldersMethod())
                       .addMethod(getGetFolderMethod())
                       .addMethod(getCreateFolderMethod())
                       .addMethod(getUpdateFolderMethod())
                       .addMethod(getDeleteFolderMethod())
+                      .addMethod(getDeleteFolderTreeMethod())
                       .addMethod(getQueryFolderContentsMethod())
                       .addMethod(getQueryUserRootContentsMethod())
                       .addMethod(getMoveFolderMethod())
@@ -9944,6 +10347,7 @@ public final class DataformGrpc {
                       .addMethod(getCreateRepositoryMethod())
                       .addMethod(getUpdateRepositoryMethod())
                       .addMethod(getDeleteRepositoryMethod())
+                      .addMethod(getDeleteRepositoryLongRunningMethod())
                       .addMethod(getMoveRepositoryMethod())
                       .addMethod(getCommitRepositoryChangesMethod())
                       .addMethod(getReadRepositoryFileMethod())

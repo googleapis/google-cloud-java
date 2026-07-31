@@ -162,6 +162,27 @@ public class MockRuleServiceImpl extends RuleServiceImplBase {
   }
 
   @Override
+  public void verifyRuleText(
+      VerifyRuleTextRequest request, StreamObserver<VerifyRuleTextResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof VerifyRuleTextResponse) {
+      requests.add(request);
+      responseObserver.onNext(((VerifyRuleTextResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifyRuleText, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  VerifyRuleTextResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listRuleRevisions(
       ListRuleRevisionsRequest request,
       StreamObserver<ListRuleRevisionsResponse> responseObserver) {

@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
@@ -352,6 +353,33 @@ public interface DatabaseClient {
   ReadOnlyTransaction readOnlyTransaction();
 
   /**
+   * Returns a read-only transaction context in which multiple reads and/or queries can be performed
+   * using {@link TimestampBound#strong()} concurrency and the given read-only transaction options.
+   *
+   * <p>Options can include:
+   *
+   * <ul>
+   *   <li>{@link Options#beginTransactionOption(Options.BeginTransactionOption)}: Controls whether
+   *       the transaction is started by an explicit BeginTransaction RPC or by inlining
+   *       BeginTransaction on the first read/query. Inlining can avoid one round trip for
+   *       latency-sensitive transactions that start with a small or fast read/query. The default
+   *       explicit BeginTransaction RPC can be preferable when the first read/query is expected to
+   *       be large or slow. Avoid inlining when starting multiple reads/queries concurrently in the
+   *       same transaction, as statements that do not include the inlined BeginTransaction must
+   *       wait for the first statement to return the transaction id and can time out if that
+   *       statement is slow. Also note that {@link ReadOnlyTransaction#getReadTimestamp()} is not
+   *       available for an inlined transaction until the first read/query has returned transaction
+   *       metadata, which normally happens when the first result is returned or the stream
+   *       completes.
+   * </ul>
+   *
+   * @param options options for starting the read-only transaction
+   */
+  default ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
+  }
+
+  /**
    * Returns a read-only transaction context in which a multiple reads and/or queries can be
    * performed at the given timestamp bound. All reads/queries will use the same timestamp, and the
    * timestamp can be inspected after any read/query has returned data or finished successfully.
@@ -383,6 +411,41 @@ public interface DatabaseClient {
    * @param bound the timestamp bound at which to perform the read
    */
   ReadOnlyTransaction readOnlyTransaction(TimestampBound bound);
+
+  /**
+   * Returns a read-only transaction context in which multiple reads and/or queries can be performed
+   * at the given timestamp bound and with the given read-only transaction options.
+   *
+   * <p>Options can include:
+   *
+   * <ul>
+   *   <li>{@link Options#beginTransactionOption(Options.BeginTransactionOption)}: Controls whether
+   *       the transaction is started by an explicit BeginTransaction RPC or by inlining
+   *       BeginTransaction on the first read/query. Inlining can avoid one round trip for
+   *       latency-sensitive transactions that start with a small or fast read/query. The default
+   *       explicit BeginTransaction RPC can be preferable when the first read/query is expected to
+   *       be large or slow. Avoid inlining when starting multiple reads/queries concurrently in the
+   *       same transaction, as statements that do not include the inlined BeginTransaction must
+   *       wait for the first statement to return the transaction id and can time out if that
+   *       statement is slow. Also note that {@link ReadOnlyTransaction#getReadTimestamp()} is not
+   *       available for an inlined transaction until the first read/query has returned transaction
+   *       metadata, which normally happens when the first result is returned or the stream
+   *       completes.
+   * </ul>
+   *
+   * @param bound the timestamp bound at which to perform the read
+   * @param options options for starting the read-only transaction
+   */
+  default ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
+    Options readOnlyTransactionOptions = Options.fromReadOnlyTransactionOptions(options);
+    if (readOnlyTransactionOptions.beginTransactionOption()
+        == Options.BeginTransactionOption.EXPLICIT) {
+      return readOnlyTransaction(bound);
+    }
+    throw new UnsupportedOperationException(
+        "This DatabaseClient implementation does not support read-only transaction options");
+  }
 
   /**
    * Returns a transaction runner for executing a single logical transaction with retries. The

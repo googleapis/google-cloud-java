@@ -5652,6 +5652,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

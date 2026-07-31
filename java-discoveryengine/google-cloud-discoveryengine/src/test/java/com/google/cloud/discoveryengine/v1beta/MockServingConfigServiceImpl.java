@@ -19,6 +19,7 @@ package com.google.cloud.discoveryengine.v1beta;
 import com.google.api.core.BetaApi;
 import com.google.cloud.discoveryengine.v1beta.ServingConfigServiceGrpc.ServingConfigServiceImplBase;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -56,6 +57,48 @@ public class MockServingConfigServiceImpl extends ServingConfigServiceImplBase {
   public void reset() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
+  }
+
+  @Override
+  public void createServingConfig(
+      CreateServingConfigRequest request, StreamObserver<ServingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ServingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ServingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ServingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteServingConfig(
+      DeleteServingConfigRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteServingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
   }
 
   @Override

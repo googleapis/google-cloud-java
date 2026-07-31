@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -298,9 +300,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class JobControllerClient implements BackgroundResource {
-  private final JobControllerSettings settings;
+  private final @Nullable JobControllerSettings settings;
   private final JobControllerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -348,7 +351,7 @@ public class JobControllerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final JobControllerSettings getSettings() {
+  public final @Nullable JobControllerSettings getSettings() {
     return settings;
   }
 
@@ -744,12 +747,15 @@ public class JobControllerClient implements BackgroundResource {
    * @param filter Optional. A filter constraining the jobs to list. Filters are case-sensitive and
    *     have the following syntax:
    *     <p>[field = value] AND [field [= value]] ...
-   *     <p>where &#42;&#42;field&#42;&#42; is `status.state` or `labels.[KEY]`, and `[KEY]` is a
-   *     label key. &#42;&#42;value&#42;&#42; can be `&#42;` to match all values. `status.state` can
-   *     be either `ACTIVE` or `NON_ACTIVE`. Only the logical `AND` operator is supported;
-   *     space-separated items are treated as having an implicit `AND` operator.
+   *     <p>where &#42;&#42;field&#42;&#42; is `status.state` or `insertTime`, or `labels.[KEY]`,
+   *     and `[KEY]` is a label key. &#42;&#42;value&#42;&#42; can be `&#42;` to match all values.
+   *     `status.state` can be either `ACTIVE` or `NON_ACTIVE`. Allows `insertTime` to be a
+   *     timestamp in RFC 3339 format in double quotes, such as `2025-01-01T00:00:00Z`. Only the
+   *     logical `AND` operator is supported; space-separated items are treated as having an
+   *     implicit `AND` operator.
    *     <p>Example filter:
-   *     <p>status.state = ACTIVE AND labels.env = staging AND labels.starred = &#42;
+   *     <p>status.state = ACTIVE AND labels.env = staging AND labels.starred = &#42; AND insertTime
+   *     &lt;= "2025-01-01T00:00:00Z"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String projectId, String region, String filter) {
@@ -1396,7 +1402,8 @@ public class JobControllerClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1406,13 +1413,14 @@ public class JobControllerClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1422,7 +1430,7 @@ public class JobControllerClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1432,7 +1440,7 @@ public class JobControllerClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }

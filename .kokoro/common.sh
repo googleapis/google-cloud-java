@@ -21,6 +21,7 @@ excluded_modules=(
   'java-vertexai'
   'java-logging'
   'java-bigquery'
+  'java-bigquery-jdbc'
   'java-bigquerystorage'
   'java-datastore'
   'java-logging-logback'
@@ -36,9 +37,13 @@ excluded_modules=(
   'google-auth-library-java/oauth2_http'
   'java-storage'
   'java-storage-nio'
+  'java-cloud-bom'
+  'java-shared-config'
   'java-firestore'
   'java-bigtable'
   'java-pubsub'
+  'java-common-protos'
+  'java-iam'
 )
 
 function retry_with_backoff {
@@ -402,6 +407,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
@@ -428,6 +435,7 @@ function install_modules() {
       'java-iam/proto-google-iam-v2beta'
       'java-iam/proto-google-iam-v3'
       'java-iam/proto-google-iam-v3beta'
+      'gapic-libraries-bom'
       'sdk-platform-java/java-shared-dependencies'
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
@@ -469,6 +477,8 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
       -T 1C
   fi
 }

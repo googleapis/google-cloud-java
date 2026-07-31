@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CertificateAuthorityName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CERTIFICATE_AUTHORITY =
@@ -88,7 +91,7 @@ public class CertificateAuthorityName implements ResourceName {
         .toString();
   }
 
-  public static CertificateAuthorityName parse(String formattedString) {
+  public static @Nullable CertificateAuthorityName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -107,7 +110,7 @@ public class CertificateAuthorityName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CertificateAuthorityName> values) {
+  public static List<String> toStringList(List<@Nullable CertificateAuthorityName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CertificateAuthorityName value : values) {
       if (value == null) {
@@ -156,7 +159,7 @@ public class CertificateAuthorityName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

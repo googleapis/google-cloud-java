@@ -212,6 +212,7 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
     private final MessageDigest digest;
     private ByteBuffer buffer;
     private ByteBuffer float64Buffer;
+    private CharsetEncoder encoder;
 
     ChecksumCalculator() {
       try {
@@ -329,7 +330,8 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
       if (buffer == null || (buffer.capacity() < MAX_BUFFER_SIZE && buffer.capacity() < length)) {
         // Create a ByteBuffer with a maximum buffer size.
         // This buffer is re-used for all string values in the result set.
-        buffer = ByteBuffer.allocate(Math.min(MAX_BUFFER_SIZE, length));
+        // UTF-8 can require 4 bytes to represent, so we need at least that size buffer.
+        buffer = ByteBuffer.allocate(Math.max(4, Math.min(MAX_BUFFER_SIZE, length)));
       } else {
         buffer.clear();
       }
@@ -338,7 +340,11 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
       // creating a new copy of (a part of) the string. E.g. using something like substring(..)
       // would create a copy of that part of the string, using CharBuffer.wrap(..) does not.
       CharBuffer source = CharBuffer.wrap(stringValue);
-      CharsetEncoder encoder = StandardCharsets.UTF_8.newEncoder();
+      if (encoder == null) {
+        encoder = StandardCharsets.UTF_8.newEncoder();
+      } else {
+        encoder.reset();
+      }
       // source.hasRemaining() returns false when all the characters in the string have been
       // processed.
       while (source.hasRemaining()) {
@@ -349,8 +355,8 @@ class ChecksumResultSet extends ReplaceableForwardingResultSet implements Retria
         buffer.flip();
         // Put the bytes from the buffer into the digest.
         digest.update(buffer);
-        // Flip the buffer again, so we can repeat and write to the start of the buffer again.
-        buffer.flip();
+        // Clear the buffer, so we can repeat and write to the start of the buffer again.
+        buffer.clear();
       }
     }
   }

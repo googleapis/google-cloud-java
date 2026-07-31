@@ -49,10 +49,28 @@ public class ListBackupSchedulesSampleIT extends SampleTestBaseV2 {
                     projectId, instanceId, databaseId, backupScheduleId2);
                 ListBackupSchedulesSample.listBackupSchedules(projectId, instanceId, databaseId);
               } finally {
-                DeleteBackupScheduleSample.deleteBackupSchedule(
-                    projectId, instanceId, databaseId, backupScheduleId1);
-                DeleteBackupScheduleSample.deleteBackupSchedule(
-                    projectId, instanceId, databaseId, backupScheduleId2);
+                try {
+                  DeleteBackupScheduleSample.deleteBackupSchedule(
+                      projectId, instanceId, databaseId, backupScheduleId1);
+                } catch (Exception e) {
+                  System.out.println(
+                      "Failed to delete backup schedule "
+                          + backupScheduleId1
+                          + " due to "
+                          + e.getMessage()
+                          + ", skipping...");
+                }
+                try {
+                  DeleteBackupScheduleSample.deleteBackupSchedule(
+                      projectId, instanceId, databaseId, backupScheduleId2);
+                } catch (Exception e) {
+                  System.out.println(
+                      "Failed to delete backup schedule "
+                          + backupScheduleId2
+                          + " due to "
+                          + e.getMessage()
+                          + ", skipping...");
+                }
               }
             });
     assertThat(out).contains(String.format("Backup schedule: %s", backupScheduleName1));

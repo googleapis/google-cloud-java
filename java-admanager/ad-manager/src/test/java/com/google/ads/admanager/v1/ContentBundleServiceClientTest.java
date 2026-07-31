@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -81,6 +82,7 @@ public class ContentBundleServiceClientTest {
         ContentBundle.newBuilder()
             .setName(ContentBundleName.of("[NETWORK_CODE]", "[CONTENT_BUNDLE]").toString())
             .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -126,6 +128,7 @@ public class ContentBundleServiceClientTest {
         ContentBundle.newBuilder()
             .setName(ContentBundleName.of("[NETWORK_CODE]", "[CONTENT_BUNDLE]").toString())
             .setDisplayName("displayName1714148973")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

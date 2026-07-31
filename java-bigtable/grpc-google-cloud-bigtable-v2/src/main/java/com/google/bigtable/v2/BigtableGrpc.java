@@ -772,6 +772,8 @@ public final class BigtableGrpc {
      * delimit contiguous sections of the table of approximately equal size,
      * which can be used to break up the data for distributed tasks like
      * mapreduces.
+     * If a `row_range` is provided in the request, the returned samples will be
+     * restricted to the specified range.
      * </pre>
      */
     default void sampleRowKeys(
@@ -1045,6 +1047,8 @@ public final class BigtableGrpc {
      * delimit contiguous sections of the table of approximately equal size,
      * which can be used to break up the data for distributed tasks like
      * mapreduces.
+     * If a `row_range` is provided in the request, the returned samples will be
+     * restricted to the specified range.
      * </pre>
      */
     public void sampleRowKeys(
@@ -1326,6 +1330,8 @@ public final class BigtableGrpc {
      * delimit contiguous sections of the table of approximately equal size,
      * which can be used to break up the data for distributed tasks like
      * mapreduces.
+     * If a `row_range` is provided in the request, the returned samples will be
+     * restricted to the specified range.
      * </pre>
      */
     @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
@@ -1586,6 +1592,8 @@ public final class BigtableGrpc {
      * delimit contiguous sections of the table of approximately equal size,
      * which can be used to break up the data for distributed tasks like
      * mapreduces.
+     * If a `row_range` is provided in the request, the returned samples will be
+     * restricted to the specified range.
      * </pre>
      */
     public java.util.Iterator<com.google.bigtable.v2.SampleRowKeysResponse> sampleRowKeys(

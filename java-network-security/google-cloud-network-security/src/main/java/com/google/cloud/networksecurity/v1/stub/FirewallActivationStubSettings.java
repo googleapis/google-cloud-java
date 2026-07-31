@@ -19,6 +19,7 @@ package com.google.cloud.networksecurity.v1.stub;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointAssociationsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListFirewallEndpointsPagedResponse;
 import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListLocationsPagedResponse;
+import static com.google.cloud.networksecurity.v1.FirewallActivationClient.ListProjectFirewallEndpointsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -81,6 +82,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -160,6 +163,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class FirewallActivationStubSettings extends StubSettings<FirewallActivationStubSettings> {
@@ -172,22 +176,43 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
           ListFirewallEndpointsResponse,
           ListFirewallEndpointsPagedResponse>
       listFirewallEndpointsSettings;
+  private final PagedCallSettings<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsSettings;
   private final UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointSettings;
+  private final UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointSettings;
   private final UnaryCallSettings<CreateFirewallEndpointRequest, Operation>
       createFirewallEndpointSettings;
   private final OperationCallSettings<
           CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       createFirewallEndpointOperationSettings;
+  private final UnaryCallSettings<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointSettings;
+  private final OperationCallSettings<
+          CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationSettings;
   private final UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
       deleteFirewallEndpointSettings;
   private final OperationCallSettings<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
       deleteFirewallEndpointOperationSettings;
+  private final UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointSettings;
+  private final OperationCallSettings<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationSettings;
   private final UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointSettings;
   private final OperationCallSettings<
           UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       updateFirewallEndpointOperationSettings;
+  private final UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointSettings;
+  private final OperationCallSettings<
+          UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationSettings;
   private final PagedCallSettings<
           ListFirewallEndpointAssociationsRequest,
           ListFirewallEndpointAssociationsResponse,
@@ -223,6 +248,45 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
   private static final PagedListDescriptor<
           ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
       LIST_FIREWALL_ENDPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFirewallEndpointsRequest injectToken(
+                ListFirewallEndpointsRequest payload, String token) {
+              return ListFirewallEndpointsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFirewallEndpointsRequest injectPageSize(
+                ListFirewallEndpointsRequest payload, int pageSize) {
+              return ListFirewallEndpointsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFirewallEndpointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFirewallEndpointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FirewallEndpoint> extractResources(
+                ListFirewallEndpointsResponse payload) {
+              return payload.getFirewallEndpointsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+      LIST_PROJECT_FIREWALL_ENDPOINTS_PAGE_STR_DESC =
           new PagedListDescriptor<
               ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>() {
             @Override
@@ -365,6 +429,34 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
           };
 
   private static final PagedListResponseFactory<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          ListProjectFirewallEndpointsPagedResponse>
+      LIST_PROJECT_FIREWALL_ENDPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFirewallEndpointsRequest,
+              ListFirewallEndpointsResponse,
+              ListProjectFirewallEndpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListProjectFirewallEndpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse> callable,
+                ListFirewallEndpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFirewallEndpointsResponse> futureResponse) {
+              PageContext<
+                      ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_PROJECT_FIREWALL_ENDPOINTS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListProjectFirewallEndpointsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListFirewallEndpointAssociationsRequest,
           ListFirewallEndpointAssociationsResponse,
           ListFirewallEndpointAssociationsPagedResponse>
@@ -423,10 +515,25 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
     return listFirewallEndpointsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listProjectFirewallEndpoints. */
+  public PagedCallSettings<
+          ListFirewallEndpointsRequest,
+          ListFirewallEndpointsResponse,
+          ListProjectFirewallEndpointsPagedResponse>
+      listProjectFirewallEndpointsSettings() {
+    return listProjectFirewallEndpointsSettings;
+  }
+
   /** Returns the object with the settings used for calls to getFirewallEndpoint. */
   public UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
       getFirewallEndpointSettings() {
     return getFirewallEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getProjectFirewallEndpoint. */
+  public UnaryCallSettings<GetFirewallEndpointRequest, FirewallEndpoint>
+      getProjectFirewallEndpointSettings() {
+    return getProjectFirewallEndpointSettings;
   }
 
   /** Returns the object with the settings used for calls to createFirewallEndpoint. */
@@ -441,6 +548,18 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
     return createFirewallEndpointOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createProjectFirewallEndpoint. */
+  public UnaryCallSettings<CreateFirewallEndpointRequest, Operation>
+      createProjectFirewallEndpointSettings() {
+    return createProjectFirewallEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createProjectFirewallEndpoint. */
+  public OperationCallSettings<CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      createProjectFirewallEndpointOperationSettings() {
+    return createProjectFirewallEndpointOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteFirewallEndpoint. */
   public UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
       deleteFirewallEndpointSettings() {
@@ -453,6 +572,18 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
     return deleteFirewallEndpointOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteProjectFirewallEndpoint. */
+  public UnaryCallSettings<DeleteFirewallEndpointRequest, Operation>
+      deleteProjectFirewallEndpointSettings() {
+    return deleteProjectFirewallEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteProjectFirewallEndpoint. */
+  public OperationCallSettings<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+      deleteProjectFirewallEndpointOperationSettings() {
+    return deleteProjectFirewallEndpointOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateFirewallEndpoint. */
   public UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
       updateFirewallEndpointSettings() {
@@ -463,6 +594,18 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
   public OperationCallSettings<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
       updateFirewallEndpointOperationSettings() {
     return updateFirewallEndpointOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectFirewallEndpoint. */
+  public UnaryCallSettings<UpdateFirewallEndpointRequest, Operation>
+      updateProjectFirewallEndpointSettings() {
+    return updateProjectFirewallEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateProjectFirewallEndpoint. */
+  public OperationCallSettings<UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+      updateProjectFirewallEndpointOperationSettings() {
+    return updateProjectFirewallEndpointOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listFirewallEndpointAssociations. */
@@ -614,7 +757,7 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -627,16 +770,32 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
     super(settingsBuilder);
 
     listFirewallEndpointsSettings = settingsBuilder.listFirewallEndpointsSettings().build();
+    listProjectFirewallEndpointsSettings =
+        settingsBuilder.listProjectFirewallEndpointsSettings().build();
     getFirewallEndpointSettings = settingsBuilder.getFirewallEndpointSettings().build();
+    getProjectFirewallEndpointSettings =
+        settingsBuilder.getProjectFirewallEndpointSettings().build();
     createFirewallEndpointSettings = settingsBuilder.createFirewallEndpointSettings().build();
     createFirewallEndpointOperationSettings =
         settingsBuilder.createFirewallEndpointOperationSettings().build();
+    createProjectFirewallEndpointSettings =
+        settingsBuilder.createProjectFirewallEndpointSettings().build();
+    createProjectFirewallEndpointOperationSettings =
+        settingsBuilder.createProjectFirewallEndpointOperationSettings().build();
     deleteFirewallEndpointSettings = settingsBuilder.deleteFirewallEndpointSettings().build();
     deleteFirewallEndpointOperationSettings =
         settingsBuilder.deleteFirewallEndpointOperationSettings().build();
+    deleteProjectFirewallEndpointSettings =
+        settingsBuilder.deleteProjectFirewallEndpointSettings().build();
+    deleteProjectFirewallEndpointOperationSettings =
+        settingsBuilder.deleteProjectFirewallEndpointOperationSettings().build();
     updateFirewallEndpointSettings = settingsBuilder.updateFirewallEndpointSettings().build();
     updateFirewallEndpointOperationSettings =
         settingsBuilder.updateFirewallEndpointOperationSettings().build();
+    updateProjectFirewallEndpointSettings =
+        settingsBuilder.updateProjectFirewallEndpointSettings().build();
+    updateProjectFirewallEndpointOperationSettings =
+        settingsBuilder.updateProjectFirewallEndpointOperationSettings().build();
     listFirewallEndpointAssociationsSettings =
         settingsBuilder.listFirewallEndpointAssociationsSettings().build();
     getFirewallEndpointAssociationSettings =
@@ -678,23 +837,45 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
             ListFirewallEndpointsResponse,
             ListFirewallEndpointsPagedResponse>
         listFirewallEndpointsSettings;
+    private final PagedCallSettings.Builder<
+            ListFirewallEndpointsRequest,
+            ListFirewallEndpointsResponse,
+            ListProjectFirewallEndpointsPagedResponse>
+        listProjectFirewallEndpointsSettings;
     private final UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
         getFirewallEndpointSettings;
+    private final UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
+        getProjectFirewallEndpointSettings;
     private final UnaryCallSettings.Builder<CreateFirewallEndpointRequest, Operation>
         createFirewallEndpointSettings;
     private final OperationCallSettings.Builder<
             CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
         createFirewallEndpointOperationSettings;
+    private final UnaryCallSettings.Builder<CreateFirewallEndpointRequest, Operation>
+        createProjectFirewallEndpointSettings;
+    private final OperationCallSettings.Builder<
+            CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        createProjectFirewallEndpointOperationSettings;
     private final UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
         deleteFirewallEndpointSettings;
     private final OperationCallSettings.Builder<
             DeleteFirewallEndpointRequest, Empty, OperationMetadata>
         deleteFirewallEndpointOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
+        deleteProjectFirewallEndpointSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+        deleteProjectFirewallEndpointOperationSettings;
     private final UnaryCallSettings.Builder<UpdateFirewallEndpointRequest, Operation>
         updateFirewallEndpointSettings;
     private final OperationCallSettings.Builder<
             UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
         updateFirewallEndpointOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateFirewallEndpointRequest, Operation>
+        updateProjectFirewallEndpointSettings;
+    private final OperationCallSettings.Builder<
+            UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        updateProjectFirewallEndpointOperationSettings;
     private final PagedCallSettings.Builder<
             ListFirewallEndpointAssociationsRequest,
             ListFirewallEndpointAssociationsResponse,
@@ -754,18 +935,27 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       listFirewallEndpointsSettings =
           PagedCallSettings.newBuilder(LIST_FIREWALL_ENDPOINTS_PAGE_STR_FACT);
+      listProjectFirewallEndpointsSettings =
+          PagedCallSettings.newBuilder(LIST_PROJECT_FIREWALL_ENDPOINTS_PAGE_STR_FACT);
       getFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getProjectFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
+      createProjectFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createProjectFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
       deleteFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
+      deleteProjectFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteProjectFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
       updateFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
+      updateProjectFirewallEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateProjectFirewallEndpointOperationSettings = OperationCallSettings.newBuilder();
       listFirewallEndpointAssociationsSettings =
           PagedCallSettings.newBuilder(LIST_FIREWALL_ENDPOINT_ASSOCIATIONS_PAGE_STR_FACT);
       getFirewallEndpointAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -784,10 +974,15 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listFirewallEndpointsSettings,
+              listProjectFirewallEndpointsSettings,
               getFirewallEndpointSettings,
+              getProjectFirewallEndpointSettings,
               createFirewallEndpointSettings,
+              createProjectFirewallEndpointSettings,
               deleteFirewallEndpointSettings,
+              deleteProjectFirewallEndpointSettings,
               updateFirewallEndpointSettings,
+              updateProjectFirewallEndpointSettings,
               listFirewallEndpointAssociationsSettings,
               getFirewallEndpointAssociationSettings,
               createFirewallEndpointAssociationSettings,
@@ -805,16 +1000,31 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       super(settings);
 
       listFirewallEndpointsSettings = settings.listFirewallEndpointsSettings.toBuilder();
+      listProjectFirewallEndpointsSettings =
+          settings.listProjectFirewallEndpointsSettings.toBuilder();
       getFirewallEndpointSettings = settings.getFirewallEndpointSettings.toBuilder();
+      getProjectFirewallEndpointSettings = settings.getProjectFirewallEndpointSettings.toBuilder();
       createFirewallEndpointSettings = settings.createFirewallEndpointSettings.toBuilder();
       createFirewallEndpointOperationSettings =
           settings.createFirewallEndpointOperationSettings.toBuilder();
+      createProjectFirewallEndpointSettings =
+          settings.createProjectFirewallEndpointSettings.toBuilder();
+      createProjectFirewallEndpointOperationSettings =
+          settings.createProjectFirewallEndpointOperationSettings.toBuilder();
       deleteFirewallEndpointSettings = settings.deleteFirewallEndpointSettings.toBuilder();
       deleteFirewallEndpointOperationSettings =
           settings.deleteFirewallEndpointOperationSettings.toBuilder();
+      deleteProjectFirewallEndpointSettings =
+          settings.deleteProjectFirewallEndpointSettings.toBuilder();
+      deleteProjectFirewallEndpointOperationSettings =
+          settings.deleteProjectFirewallEndpointOperationSettings.toBuilder();
       updateFirewallEndpointSettings = settings.updateFirewallEndpointSettings.toBuilder();
       updateFirewallEndpointOperationSettings =
           settings.updateFirewallEndpointOperationSettings.toBuilder();
+      updateProjectFirewallEndpointSettings =
+          settings.updateProjectFirewallEndpointSettings.toBuilder();
+      updateProjectFirewallEndpointOperationSettings =
+          settings.updateProjectFirewallEndpointOperationSettings.toBuilder();
       listFirewallEndpointAssociationsSettings =
           settings.listFirewallEndpointAssociationsSettings.toBuilder();
       getFirewallEndpointAssociationSettings =
@@ -840,10 +1050,15 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listFirewallEndpointsSettings,
+              listProjectFirewallEndpointsSettings,
               getFirewallEndpointSettings,
+              getProjectFirewallEndpointSettings,
               createFirewallEndpointSettings,
+              createProjectFirewallEndpointSettings,
               deleteFirewallEndpointSettings,
+              deleteProjectFirewallEndpointSettings,
               updateFirewallEndpointSettings,
+              updateProjectFirewallEndpointSettings,
               listFirewallEndpointAssociationsSettings,
               getFirewallEndpointAssociationSettings,
               createFirewallEndpointAssociationSettings,
@@ -875,7 +1090,17 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .listProjectFirewallEndpointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .getFirewallEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getProjectFirewallEndpointSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -885,12 +1110,27 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createProjectFirewallEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteFirewallEndpointSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deleteProjectFirewallEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateFirewallEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateProjectFirewallEndpointSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -969,6 +1209,30 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
                       .build()));
 
       builder
+          .createProjectFirewallEndpointOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateFirewallEndpointRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(FirewallEndpoint.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteFirewallEndpointOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -993,7 +1257,55 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
                       .build()));
 
       builder
+          .deleteProjectFirewallEndpointOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFirewallEndpointRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .updateFirewallEndpointOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateFirewallEndpointRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(FirewallEndpoint.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateProjectFirewallEndpointOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateFirewallEndpointRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -1120,10 +1432,25 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       return listFirewallEndpointsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listProjectFirewallEndpoints. */
+    public PagedCallSettings.Builder<
+            ListFirewallEndpointsRequest,
+            ListFirewallEndpointsResponse,
+            ListProjectFirewallEndpointsPagedResponse>
+        listProjectFirewallEndpointsSettings() {
+      return listProjectFirewallEndpointsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getFirewallEndpoint. */
     public UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
         getFirewallEndpointSettings() {
       return getFirewallEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<GetFirewallEndpointRequest, FirewallEndpoint>
+        getProjectFirewallEndpointSettings() {
+      return getProjectFirewallEndpointSettings;
     }
 
     /** Returns the builder for the settings used for calls to createFirewallEndpoint. */
@@ -1139,6 +1466,19 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
       return createFirewallEndpointOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<CreateFirewallEndpointRequest, Operation>
+        createProjectFirewallEndpointSettings() {
+      return createProjectFirewallEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<
+            CreateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        createProjectFirewallEndpointOperationSettings() {
+      return createProjectFirewallEndpointOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteFirewallEndpoint. */
     public UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
         deleteFirewallEndpointSettings() {
@@ -1149,6 +1489,18 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
     public OperationCallSettings.Builder<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
         deleteFirewallEndpointOperationSettings() {
       return deleteFirewallEndpointOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<DeleteFirewallEndpointRequest, Operation>
+        deleteProjectFirewallEndpointSettings() {
+      return deleteProjectFirewallEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<DeleteFirewallEndpointRequest, Empty, OperationMetadata>
+        deleteProjectFirewallEndpointOperationSettings() {
+      return deleteProjectFirewallEndpointOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateFirewallEndpoint. */
@@ -1162,6 +1514,19 @@ public class FirewallActivationStubSettings extends StubSettings<FirewallActivat
             UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
         updateFirewallEndpointOperationSettings() {
       return updateFirewallEndpointOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectFirewallEndpoint. */
+    public UnaryCallSettings.Builder<UpdateFirewallEndpointRequest, Operation>
+        updateProjectFirewallEndpointSettings() {
+      return updateProjectFirewallEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateProjectFirewallEndpoint. */
+    public OperationCallSettings.Builder<
+            UpdateFirewallEndpointRequest, FirewallEndpoint, OperationMetadata>
+        updateProjectFirewallEndpointOperationSettings() {
+      return updateProjectFirewallEndpointOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listFirewallEndpointAssociations. */

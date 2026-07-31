@@ -28,6 +28,7 @@ import com.google.cloud.locationfinder.v1.ListCloudLocationsResponse;
 import com.google.cloud.locationfinder.v1.SearchCloudLocationsRequest;
 import com.google.cloud.locationfinder.v1.SearchCloudLocationsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -35,6 +36,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CloudLocationFinderStub implements BackgroundResource {
 

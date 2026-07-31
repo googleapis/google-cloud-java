@@ -1775,6 +1775,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -1833,6 +1834,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -1892,6 +1894,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =
@@ -1959,6 +1962,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =
@@ -2026,6 +2030,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     Operation resultOperation =
@@ -2051,6 +2056,7 @@ public class DepServiceClientHttpJsonTest {
             .setFailOpen(true)
             .setMetadata(Struct.newBuilder().build())
             .addAllForwardHeaders(new ArrayList<String>())
+            .addAllForwardAttributes(new ArrayList<String>())
             .setWireFormat(WireFormat.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2097,6 +2103,7 @@ public class DepServiceClientHttpJsonTest {
               .setFailOpen(true)
               .setMetadata(Struct.newBuilder().build())
               .addAllForwardHeaders(new ArrayList<String>())
+              .addAllForwardAttributes(new ArrayList<String>())
               .setWireFormat(WireFormat.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

@@ -42,13 +42,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
 import java.security.KeyStore;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class implements {@link MtlsProvider} for the Google Auth library transport layer via {@link
- * WorkloadCertificateConfiguration}. This is only meant to be used internally by Google Cloud
- * libraries, and the public facing methods may be changed without notice, and have no guarantee of
- * backwards compatibility.
+ * WorkloadCertificateConfiguration}.
  */
+@NullMarked
 @InternalApi
 public class X509Provider implements MtlsProvider {
   private final EnvironmentProvider envProvider;
@@ -79,7 +80,7 @@ public class X509Provider implements MtlsProvider {
    *
    * @param certConfigPathOverride the path to read the certificate configuration from.
    */
-  public X509Provider(String certConfigPathOverride) {
+  public X509Provider(@Nullable String certConfigPathOverride) {
     this(
         SystemEnvironmentProvider.getInstance(),
         SystemPropertyProvider.getInstance(),

@@ -23,10 +23,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
+import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.AbstractReadContext.SingleReadContext;
 import com.google.cloud.spanner.AbstractReadContext.SingleUseReadOnlyTransaction;
 import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionOption;
@@ -51,7 +53,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nullable;
 
 /**
@@ -332,8 +333,7 @@ class SessionImpl implements Session {
     if (!spanner.getOptions().isGrpcGcpExtensionEnabled()) {
       return getOptions();
     }
-    return optionMap(
-        SessionOption.channelHint(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)));
+    return optionMap(SessionOption.channelAffinityRef(new ChannelAffinityRef()));
   }
 
   @Override
@@ -419,11 +419,24 @@ class SessionImpl implements Session {
   }
 
   @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
+  }
+
+  @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
+    return readOnlyTransaction(bound, new ReadOnlyTransactionOption[0]);
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
+    Options readOnlyTransactionOptions = Options.fromReadOnlyTransactionOptions(options);
     return setActive(
         MultiUseReadOnlyTransaction.newBuilder()
             .setSession(this)
             .setTimestampBound(bound)
+            .setBeginTransactionOption(readOnlyTransactionOptions.beginTransactionOption())
             .setRpc(spanner.getRpc())
             .setDefaultQueryOptions(spanner.getDefaultQueryOptions(getDatabaseId()))
             .setDefaultPrefetchChunks(spanner.getDefaultPrefetchChunks())

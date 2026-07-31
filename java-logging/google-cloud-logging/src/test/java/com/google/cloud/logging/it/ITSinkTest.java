@@ -16,6 +16,7 @@
 
 package com.google.cloud.logging.it;
 
+import static com.google.cloud.logging.testing.RemoteLoggingHelper.TEST_SINK_PREFIX;
 import static com.google.cloud.logging.testing.RemoteLoggingHelper.formatForTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -34,7 +35,6 @@ import com.google.common.collect.Sets;
 import java.util.Iterator;
 import java.util.Set;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSinkTest extends BaseSystemTest {
@@ -47,6 +47,9 @@ public class ITSinkTest extends BaseSystemTest {
     Iterator<Sink> iterator = sinkPage.iterateAll().iterator();
     while (iterator.hasNext()) {
       Sink sink = iterator.next();
+      if (!sink.getName().startsWith(TEST_SINK_PREFIX)) {
+        continue;
+      }
       try {
         sink.delete();
       } catch (Exception ex) {
@@ -56,33 +59,36 @@ public class ITSinkTest extends BaseSystemTest {
   }
 
   @Test
-  @Ignore
   public void testCreateGetUpdateAndDeleteSink() {
-    String name = formatForTest("test-create-get-update-sink");
+    String name = formatForTest("create-get-update-sink");
     SinkInfo sinkInfo =
         SinkInfo.newBuilder(name, SinkInfo.Destination.DatasetDestination.of("dataset"))
             .setFilter("severity>=ERROR")
             .setVersionFormat(SinkInfo.VersionFormat.V2)
             .build();
     Sink sink = logging.create(sinkInfo);
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity>=ERROR", sink.getFilter());
-    SinkInfo.Destination.DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging.getOptions().getProjectId(), datasetDestination.getProject());
-    assertEquals("dataset", datasetDestination.getDataset());
-    assertEquals(sink, logging.getSink(name));
-    sink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
-    assertEquals(name, sink.getName());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
-    assertEquals("severity<=ERROR", sink.getFilter());
-    assertTrue(sink.delete());
-    assertFalse(sink.delete());
+    try {
+      assertEquals(name, sink.getName());
+      assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+      assertEquals("severity>=ERROR", sink.getFilter());
+      SinkInfo.Destination.DatasetDestination datasetDestination = sink.getDestination();
+      assertEquals(logging.getOptions().getProjectId(), datasetDestination.getProject());
+      assertEquals("dataset", datasetDestination.getDataset());
+      assertEquals(sink, logging.getSink(name));
+      sink = sink.toBuilder().setFilter("severity<=ERROR").build().update();
+      assertEquals(name, sink.getName());
+      assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+      assertEquals("severity<=ERROR", sink.getFilter());
+      assertTrue(sink.delete());
+      assertFalse(sink.delete());
+    } finally {
+      logging.deleteSink(name);
+    }
   }
 
   @Test
   public void testUpdateNonExistingSink() {
-    String name = formatForTest("test-update-non-existing-sink");
+    String name = formatForTest("update-non-existing-sink");
     SinkInfo sinkInfo =
         SinkInfo.newBuilder(name, SinkInfo.Destination.DatasetDestination.of("dataset"))
             .setFilter("severity>=ERROR")
@@ -99,8 +105,8 @@ public class ITSinkTest extends BaseSystemTest {
 
   @Test
   public void testListSinks() throws InterruptedException {
-    String firstName = formatForTest("test-list-sinks-1");
-    String secondName = formatForTest("test-list-sinks-2");
+    String firstName = formatForTest("list-sinks-1");
+    String secondName = formatForTest("list-sinks-2");
     Sink firstSink =
         logging.create(
             SinkInfo.of(firstName, SinkInfo.Destination.DatasetDestination.of("dataset")));

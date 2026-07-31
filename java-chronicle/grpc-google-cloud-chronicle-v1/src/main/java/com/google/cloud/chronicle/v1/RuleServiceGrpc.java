@@ -240,6 +240,53 @@ public final class RuleServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.chronicle.v1.VerifyRuleTextRequest,
+          com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+      getVerifyRuleTextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyRuleText",
+      requestType = com.google.cloud.chronicle.v1.VerifyRuleTextRequest.class,
+      responseType = com.google.cloud.chronicle.v1.VerifyRuleTextResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.chronicle.v1.VerifyRuleTextRequest,
+          com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+      getVerifyRuleTextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.chronicle.v1.VerifyRuleTextRequest,
+            com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+        getVerifyRuleTextMethod;
+    if ((getVerifyRuleTextMethod = RuleServiceGrpc.getVerifyRuleTextMethod) == null) {
+      synchronized (RuleServiceGrpc.class) {
+        if ((getVerifyRuleTextMethod = RuleServiceGrpc.getVerifyRuleTextMethod) == null) {
+          RuleServiceGrpc.getVerifyRuleTextMethod =
+              getVerifyRuleTextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.chronicle.v1.VerifyRuleTextRequest,
+                          com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "VerifyRuleText"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.chronicle.v1.VerifyRuleTextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.chronicle.v1.VerifyRuleTextResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RuleServiceMethodDescriptorSupplier("VerifyRuleText"))
+                      .build();
+        }
+      }
+    }
+    return getVerifyRuleTextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.chronicle.v1.ListRuleRevisionsRequest,
           com.google.cloud.chronicle.v1.ListRuleRevisionsResponse>
       getListRuleRevisionsMethod;
@@ -695,6 +742,21 @@ public final class RuleServiceGrpc {
      *
      *
      * <pre>
+     * Verifies the given rule text.
+     * </pre>
+     */
+    default void verifyRuleText(
+        com.google.cloud.chronicle.v1.VerifyRuleTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getVerifyRuleTextMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all revisions of the rule.
      * </pre>
      */
@@ -907,6 +969,23 @@ public final class RuleServiceGrpc {
      *
      *
      * <pre>
+     * Verifies the given rule text.
+     * </pre>
+     */
+    public void verifyRuleText(
+        com.google.cloud.chronicle.v1.VerifyRuleTextRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyRuleTextMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all revisions of the rule.
      * </pre>
      */
@@ -1112,6 +1191,20 @@ public final class RuleServiceGrpc {
      *
      *
      * <pre>
+     * Verifies the given rule text.
+     * </pre>
+     */
+    public com.google.cloud.chronicle.v1.VerifyRuleTextResponse verifyRuleText(
+        com.google.cloud.chronicle.v1.VerifyRuleTextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getVerifyRuleTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all revisions of the rule.
      * </pre>
      */
@@ -1291,6 +1384,19 @@ public final class RuleServiceGrpc {
         com.google.cloud.chronicle.v1.DeleteRuleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Verifies the given rule text.
+     * </pre>
+     */
+    public com.google.cloud.chronicle.v1.VerifyRuleTextResponse verifyRuleText(
+        com.google.cloud.chronicle.v1.VerifyRuleTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyRuleTextMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1477,6 +1583,20 @@ public final class RuleServiceGrpc {
      *
      *
      * <pre>
+     * Verifies the given rule text.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.chronicle.v1.VerifyRuleTextResponse>
+        verifyRuleText(com.google.cloud.chronicle.v1.VerifyRuleTextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyRuleTextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all revisions of the rule.
      * </pre>
      */
@@ -1579,13 +1699,14 @@ public final class RuleServiceGrpc {
   private static final int METHODID_LIST_RULES = 2;
   private static final int METHODID_UPDATE_RULE = 3;
   private static final int METHODID_DELETE_RULE = 4;
-  private static final int METHODID_LIST_RULE_REVISIONS = 5;
-  private static final int METHODID_CREATE_RETROHUNT = 6;
-  private static final int METHODID_GET_RETROHUNT = 7;
-  private static final int METHODID_LIST_RETROHUNTS = 8;
-  private static final int METHODID_GET_RULE_DEPLOYMENT = 9;
-  private static final int METHODID_LIST_RULE_DEPLOYMENTS = 10;
-  private static final int METHODID_UPDATE_RULE_DEPLOYMENT = 11;
+  private static final int METHODID_VERIFY_RULE_TEXT = 5;
+  private static final int METHODID_LIST_RULE_REVISIONS = 6;
+  private static final int METHODID_CREATE_RETROHUNT = 7;
+  private static final int METHODID_GET_RETROHUNT = 8;
+  private static final int METHODID_LIST_RETROHUNTS = 9;
+  private static final int METHODID_GET_RULE_DEPLOYMENT = 10;
+  private static final int METHODID_LIST_RULE_DEPLOYMENTS = 11;
+  private static final int METHODID_UPDATE_RULE_DEPLOYMENT = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1629,6 +1750,12 @@ public final class RuleServiceGrpc {
           serviceImpl.deleteRule(
               (com.google.cloud.chronicle.v1.DeleteRuleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_VERIFY_RULE_TEXT:
+          serviceImpl.verifyRuleText(
+              (com.google.cloud.chronicle.v1.VerifyRuleTextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.VerifyRuleTextResponse>)
+                  responseObserver);
           break;
         case METHODID_LIST_RULE_REVISIONS:
           serviceImpl.listRuleRevisions(
@@ -1720,6 +1847,13 @@ public final class RuleServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.chronicle.v1.DeleteRuleRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_RULE)))
+        .addMethod(
+            getVerifyRuleTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.chronicle.v1.VerifyRuleTextRequest,
+                    com.google.cloud.chronicle.v1.VerifyRuleTextResponse>(
+                    service, METHODID_VERIFY_RULE_TEXT)))
         .addMethod(
             getListRuleRevisionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1823,6 +1957,7 @@ public final class RuleServiceGrpc {
                       .addMethod(getListRulesMethod())
                       .addMethod(getUpdateRuleMethod())
                       .addMethod(getDeleteRuleMethod())
+                      .addMethod(getVerifyRuleTextMethod())
                       .addMethod(getListRuleRevisionsMethod())
                       .addMethod(getCreateRetrohuntMethod())
                       .addMethod(getGetRetrohuntMethod())

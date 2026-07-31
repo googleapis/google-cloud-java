@@ -1,0 +1,63 @@
+permissions:
+  contents: read
+
+name: java-cloud-bom Update README with libraries-bom table
+# Run this workflow upon published release
+
+on:
+  workflow_dispatch:
+  release:
+    types:
+    - published
+
+env:
+  BUILD_SUBDIR: java-cloud-bom
+jobs:
+  update-readme:
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/') }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: java-cloud-bom
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      with:
+        # Explicitly persist credentials so subsequent git push steps can authenticate with origin
+        persist-credentials: true
+
+    - name: Set up Python
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+      with:
+        python-version: '3.9'
+
+    - name: Delete existing 'update-readme-bot' branch
+      run: |
+        git push --delete origin update-readme-bot || echo "Branch doesn't exist, continuing..."
+        git branch -D update-readme-bot || echo "Branch doesn't exist, continuing..."
+
+    - name: Install dependencies
+      run: pip install pyyaml
+
+    - name: Update table of artifacts
+      run: |
+        echo "Updating README.md with table of artifacts associated with the latest libraries-bom..."
+        python libraries-bom-table-generation/updateREADMETable.py
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Cloud Java Bot"
+        git config --global user.email "cloud-java-bot@google.com"
+        git add README.md
+        git commit -m "chore: update README with release table"
+        git checkout -b update-readme-bot
+        git push origin update-readme-bot
+
+    - name: Create Pull Request
+      run: |
+        gh pr create --base main --head update-readme-bot --title "chore: Update README with release table" --body "Updating README with the table of artifacts associated with the latest libraries-bom release"
+      env:
+        GITHUB_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}

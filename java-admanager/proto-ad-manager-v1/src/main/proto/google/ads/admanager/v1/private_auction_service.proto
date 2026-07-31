@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service PrivateAuctionService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve a `PrivateAuction` object.
+  // Retrieves a `PrivateAuction` object.
   rpc GetPrivateAuction(GetPrivateAuctionRequest) returns (PrivateAuction) {
     option (google.api.http) = {
       get: "/v1/{name=networks/*/privateAuctions/*}"
@@ -45,7 +46,7 @@ service PrivateAuctionService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of `PrivateAuction` objects.
+  // Lists `PrivateAuction` objects.
   rpc ListPrivateAuctions(ListPrivateAuctionsRequest)
       returns (ListPrivateAuctionsResponse) {
     option (google.api.http) = {
@@ -54,7 +55,7 @@ service PrivateAuctionService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create a `PrivateAuction` object.
+  // Creates a `PrivateAuction` object.
   rpc CreatePrivateAuction(CreatePrivateAuctionRequest)
       returns (PrivateAuction) {
     option (google.api.http) = {
@@ -64,7 +65,7 @@ service PrivateAuctionService {
     option (google.api.method_signature) = "parent,private_auction";
   }
 
-  // API to update a `PrivateAuction` object.
+  // Updates a `PrivateAuction` object.
   rpc UpdatePrivateAuction(UpdatePrivateAuctionRequest)
       returns (PrivateAuction) {
     option (google.api.http) = {
@@ -174,7 +175,7 @@ message UpdatePrivateAuctionRequest {
   // `PrivateAuction` to update.
   PrivateAuction private_auction = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }

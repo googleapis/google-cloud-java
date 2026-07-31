@@ -392,6 +392,53 @@ public final class DataScanServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelDataScanJobRequest,
+          com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+      getCancelDataScanJobMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelDataScanJob",
+      requestType = com.google.cloud.dataplex.v1.CancelDataScanJobRequest.class,
+      responseType = com.google.cloud.dataplex.v1.CancelDataScanJobResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.CancelDataScanJobRequest,
+          com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+      getCancelDataScanJobMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.CancelDataScanJobRequest,
+            com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+        getCancelDataScanJobMethod;
+    if ((getCancelDataScanJobMethod = DataScanServiceGrpc.getCancelDataScanJobMethod) == null) {
+      synchronized (DataScanServiceGrpc.class) {
+        if ((getCancelDataScanJobMethod = DataScanServiceGrpc.getCancelDataScanJobMethod) == null) {
+          DataScanServiceGrpc.getCancelDataScanJobMethod =
+              getCancelDataScanJobMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.CancelDataScanJobRequest,
+                          com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelDataScanJob"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CancelDataScanJobRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.CancelDataScanJobResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataScanServiceMethodDescriptorSupplier("CancelDataScanJob"))
+                      .build();
+        }
+      }
+    }
+    return getCancelDataScanJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
           com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
       getGenerateDataQualityRulesMethod;
@@ -626,6 +673,21 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
+     * Cancels a running/pending DataScan job.
+     * </pre>
+     */
+    default void cancelDataScanJob(
+        com.google.cloud.dataplex.v1.CancelDataScanJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelDataScanJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates recommended data quality rules based on the results of a data
      * profiling scan.
      * Use the recommendations to build rules for a data quality scan.
@@ -813,6 +875,23 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
+     * Cancels a running/pending DataScan job.
+     * </pre>
+     */
+    public void cancelDataScanJob(
+        com.google.cloud.dataplex.v1.CancelDataScanJobRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelDataScanJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates recommended data quality rules based on the results of a data
      * profiling scan.
      * Use the recommendations to build rules for a data quality scan.
@@ -960,6 +1039,20 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
+     * Cancels a running/pending DataScan job.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.CancelDataScanJobResponse cancelDataScanJob(
+        com.google.cloud.dataplex.v1.CancelDataScanJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelDataScanJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates recommended data quality rules based on the results of a data
      * profiling scan.
      * Use the recommendations to build rules for a data quality scan.
@@ -1096,6 +1189,19 @@ public final class DataScanServiceGrpc {
         com.google.cloud.dataplex.v1.ListDataScanJobsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDataScanJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a running/pending DataScan job.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.CancelDataScanJobResponse cancelDataScanJob(
+        com.google.cloud.dataplex.v1.CancelDataScanJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelDataScanJobMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1247,6 +1353,20 @@ public final class DataScanServiceGrpc {
      *
      *
      * <pre>
+     * Cancels a running/pending DataScan job.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.CancelDataScanJobResponse>
+        cancelDataScanJob(com.google.cloud.dataplex.v1.CancelDataScanJobRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelDataScanJobMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generates recommended data quality rules based on the results of a data
      * profiling scan.
      * Use the recommendations to build rules for a data quality scan.
@@ -1269,7 +1389,8 @@ public final class DataScanServiceGrpc {
   private static final int METHODID_RUN_DATA_SCAN = 5;
   private static final int METHODID_GET_DATA_SCAN_JOB = 6;
   private static final int METHODID_LIST_DATA_SCAN_JOBS = 7;
-  private static final int METHODID_GENERATE_DATA_QUALITY_RULES = 8;
+  private static final int METHODID_CANCEL_DATA_SCAN_JOB = 8;
+  private static final int METHODID_GENERATE_DATA_QUALITY_RULES = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1331,6 +1452,12 @@ public final class DataScanServiceGrpc {
           serviceImpl.listDataScanJobs(
               (com.google.cloud.dataplex.v1.ListDataScanJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataScanJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_DATA_SCAN_JOB:
+          serviceImpl.cancelDataScanJob(
+              (com.google.cloud.dataplex.v1.CancelDataScanJobRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.CancelDataScanJobResponse>)
                   responseObserver);
           break;
         case METHODID_GENERATE_DATA_QUALITY_RULES:
@@ -1410,6 +1537,13 @@ public final class DataScanServiceGrpc {
                     com.google.cloud.dataplex.v1.ListDataScanJobsResponse>(
                     service, METHODID_LIST_DATA_SCAN_JOBS)))
         .addMethod(
+            getCancelDataScanJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CancelDataScanJobRequest,
+                    com.google.cloud.dataplex.v1.CancelDataScanJobResponse>(
+                    service, METHODID_CANCEL_DATA_SCAN_JOB)))
+        .addMethod(
             getGenerateDataQualityRulesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1475,6 +1609,7 @@ public final class DataScanServiceGrpc {
                       .addMethod(getRunDataScanMethod())
                       .addMethod(getGetDataScanJobMethod())
                       .addMethod(getListDataScanJobsMethod())
+                      .addMethod(getCancelDataScanJobMethod())
                       .addMethod(getGenerateDataQualityRulesMethod())
                       .build();
         }

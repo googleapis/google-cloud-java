@@ -17,14 +17,18 @@
 package com.example.bigtable.deletes;
 
 // [START bigtable_delete_table]
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import java.io.IOException;
 
 public class DeleteTableExample {
   public void deleteTable(String projectId, String instanceId, String tableId) throws IOException {
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      tableAdminClient.deleteTable(tableId);
+    BaseBigtableTableAdminSettings adminSettings =
+        BaseBigtableTableAdminSettings.newBuilder().build();
+    try (BigtableTableAdminClientV2 tableAdminClient =
+        BigtableTableAdminClientV2.create(adminSettings)) {
+      tableAdminClient.deleteTable(
+          "projects/" + projectId + "/instances/" + instanceId + "/tables/" + tableId);
     }
   }
 }

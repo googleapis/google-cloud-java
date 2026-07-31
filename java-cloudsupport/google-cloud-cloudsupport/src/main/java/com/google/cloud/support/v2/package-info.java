@@ -33,10 +33,10 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (CaseAttachmentServiceClient caseAttachmentServiceClient =
  *     CaseAttachmentServiceClient.create()) {
- *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
- *   for (Attachment element : caseAttachmentServiceClient.listAttachments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   AttachmentName name =
+ *       AttachmentName.ofOrganizationCaseAttachmentIdName(
+ *           "[ORGANIZATION]", "[CASE]", "[ATTACHMENT_ID]");
+ *   Attachment response = caseAttachmentServiceClient.getAttachment(name);
  * }
  * }</pre>
  *
@@ -74,6 +74,29 @@
  *   CaseName parent = CaseName.ofProjectCaseName("[PROJECT]", "[CASE]");
  *   Comment comment = Comment.newBuilder().build();
  *   Comment response = commentServiceClient.createComment(parent, comment);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SupportEventSubscriptionServiceClient =======================
+ *
+ * <p>Service Description: Service for managing customer support event subscriptions.
+ *
+ * <p>Sample for SupportEventSubscriptionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SupportEventSubscriptionServiceClient supportEventSubscriptionServiceClient =
+ *     SupportEventSubscriptionServiceClient.create()) {
+ *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+ *   SupportEventSubscription supportEventSubscription =
+ *       SupportEventSubscription.newBuilder().build();
+ *   SupportEventSubscription response =
+ *       supportEventSubscriptionServiceClient.createSupportEventSubscription(
+ *           parent, supportEventSubscription);
  * }
  * }</pre>
  */

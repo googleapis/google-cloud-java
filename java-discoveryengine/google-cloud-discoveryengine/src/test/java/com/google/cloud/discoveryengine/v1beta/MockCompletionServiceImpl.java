@@ -190,4 +190,25 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void removeSuggestion(
+      RemoveSuggestionRequest request, StreamObserver<RemoveSuggestionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveSuggestionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveSuggestionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveSuggestion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveSuggestionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

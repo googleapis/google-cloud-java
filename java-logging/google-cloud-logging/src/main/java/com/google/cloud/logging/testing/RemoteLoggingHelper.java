@@ -37,6 +37,7 @@ import java.util.logging.Logger;
 public class RemoteLoggingHelper {
 
   private static final Logger log = Logger.getLogger(RemoteLoggingHelper.class.getName());
+  public static final String TEST_SINK_PREFIX = "test-";
   private final LoggingOptions options;
 
   private RemoteLoggingHelper(LoggingOptions options) {
@@ -96,7 +97,8 @@ public class RemoteLoggingHelper {
    * name.
    */
   public static String formatForTest(String name) {
-    return name + "-" + UUID.randomUUID();
+    String prefix = name.startsWith(TEST_SINK_PREFIX) ? "" : TEST_SINK_PREFIX;
+    return prefix + name + "-" + UUID.randomUUID();
   }
 
   private static RetrySettings retrySettings() {

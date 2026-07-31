@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InterconnectLocationsClient implements BackgroundResource {
-  private final InterconnectLocationsSettings settings;
+  private final @Nullable InterconnectLocationsSettings settings;
   private final InterconnectLocationsStub stub;
 
   /** Constructs an instance of InterconnectLocationsClient with default settings. */
@@ -187,7 +190,7 @@ public class InterconnectLocationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InterconnectLocationsSettings getSettings() {
+  public final @Nullable InterconnectLocationsSettings getSettings() {
     return settings;
   }
 
@@ -501,10 +504,11 @@ public class InterconnectLocationsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectLocationsRequest, InterconnectLocationList, InterconnectLocation>
             context,
-        InterconnectLocationList response) {
+        @Nullable InterconnectLocationList response) {
       super(context, response);
     }
 
@@ -514,16 +518,18 @@ public class InterconnectLocationsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectLocationsRequest, InterconnectLocationList, InterconnectLocation>
             context,
-        InterconnectLocationList response) {
+        @Nullable InterconnectLocationList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListInterconnectLocationsRequest, InterconnectLocationList, InterconnectLocation>
             context,
         ApiFuture<InterconnectLocationList> futureResponse) {
@@ -539,7 +545,7 @@ public class InterconnectLocationsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -548,7 +554,8 @@ public class InterconnectLocationsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

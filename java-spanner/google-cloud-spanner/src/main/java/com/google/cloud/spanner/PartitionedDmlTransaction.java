@@ -67,7 +67,9 @@ public class PartitionedDmlTransaction implements SessionImpl.SessionTransaction
     this.isRetryableInternalErrorPredicate = new IsRetryableInternalError();
     this.channelHintOptions =
         getChannelHintOptions(
-            session.getOptions(), ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
+            session.getOptions(),
+            ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
+            session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
   }
 
   /**

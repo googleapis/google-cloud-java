@@ -33,48 +33,44 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Settings for dynamic flow control */
+@NullMarked
 @AutoValue
 @InternalApi("For google-cloud-java client use only")
 public abstract class DynamicFlowControlSettings {
 
   /** Number of outstanding elements that {@link FlowController} allows when it's initiated. */
-  @Nullable
-  public abstract Long getInitialOutstandingElementCount();
+  public abstract @Nullable Long getInitialOutstandingElementCount();
 
   /** Number of outstanding bytes that {@link FlowController} allows when it's initiated. */
-  @Nullable
-  public abstract Long getInitialOutstandingRequestBytes();
+  public abstract @Nullable Long getInitialOutstandingRequestBytes();
 
   /**
    * Maximum number of outstanding elements {@link FlowController} allows before enforcing flow
    * control.
    */
-  @Nullable
-  public abstract Long getMaxOutstandingElementCount();
+  public abstract @Nullable Long getMaxOutstandingElementCount();
 
   /**
    * Maximum number of outstanding bytes {@link FlowController} allows before enforcing flow
    * control.
    */
-  @Nullable
-  public abstract Long getMaxOutstandingRequestBytes();
+  public abstract @Nullable Long getMaxOutstandingRequestBytes();
 
   /**
    * Minimum number of outstanding elements {@link FlowController} allows before enforcing flow
    * control.
    */
-  @Nullable
-  public abstract Long getMinOutstandingElementCount();
+  public abstract @Nullable Long getMinOutstandingElementCount();
 
   /**
    * Minimum number of outstanding bytes {@link FlowController} allows before enforcing flow
    * control.
    */
-  @Nullable
-  public abstract Long getMinOutstandingRequestBytes();
+  public abstract @Nullable Long getMinOutstandingRequestBytes();
 
   /**
    * @see FlowControlSettings#getLimitExceededBehavior()

@@ -46,7 +46,7 @@ public final class ReadAsFutureByteString
     extends BaseConfig<ApiFuture<DisposableByteString>, AccumulatingRead<DisposableByteString>> {
 
   static final ReadAsFutureByteString INSTANCE =
-      new ReadAsFutureByteString(RangeSpec.all(), Hasher.enabled());
+      new ReadAsFutureByteString(RangeSpec.all(), Hasher.readHasher());
 
   private final RangeSpec range;
   private final Hasher hasher;

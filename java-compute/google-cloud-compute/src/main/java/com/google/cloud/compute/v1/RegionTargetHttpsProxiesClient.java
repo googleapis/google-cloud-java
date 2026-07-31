@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -243,9 +245,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionTargetHttpsProxiesClient implements BackgroundResource {
-  private final RegionTargetHttpsProxiesSettings settings;
+  private final @Nullable RegionTargetHttpsProxiesSettings settings;
   private final RegionTargetHttpsProxiesStub stub;
 
   /** Constructs an instance of RegionTargetHttpsProxiesClient with default settings. */
@@ -287,7 +290,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionTargetHttpsProxiesSettings getSettings() {
+  public final @Nullable RegionTargetHttpsProxiesSettings getSettings() {
     return settings;
   }
 
@@ -1350,9 +1353,10 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
           ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+        @Nullable
+            PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
             context,
-        TargetHttpsProxyList response) {
+        @Nullable TargetHttpsProxyList response) {
       super(context, response);
     }
 
@@ -1362,15 +1366,17 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+        @Nullable
+            PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
             context,
-        TargetHttpsProxyList response) {
+        @Nullable TargetHttpsProxyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
+        @Nullable
+            PageContext<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList, TargetHttpsProxy>
             context,
         ApiFuture<TargetHttpsProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1385,7 +1391,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1394,7 +1400,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

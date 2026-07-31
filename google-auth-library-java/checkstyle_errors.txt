@@ -1,0 +1,398 @@
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[1] (javadoc) JavadocPackage: Missing package-info.java file.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[46,8] (imports) UnusedImports: Unused import - com.google.auth.Retryable.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[77] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[81] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[83,1] (design) FinalClass: Class ComputeEngineCredentials should be declared as final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[86,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[89] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[90] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[91] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[93,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[94] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[94,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[94,69] (coding) MagicNumber: '3' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[96] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[96,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[97,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[100] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[100,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[102] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[110,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[111,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[113,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[114,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[115,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[116,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[118] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[118,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[119] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[119,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[122,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[124,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[126,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[127,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[129,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[131,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[132,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[137] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[139] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[141] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[149,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[151,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[153,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[155,5] (modifier) RedundantModifier: Redundant 'private' modifier.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[155,33] (misc) FinalParameters: Parameter label should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[155,40] (coding) HiddenField: 'label' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[159,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[167] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[169] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[171] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[180,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[182,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[184,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[186,5] (modifier) RedundantModifier: Redundant 'private' modifier.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[186,32] (misc) FinalParameters: Parameter label should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[186,39] (coding) HiddenField: 'label' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[190,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[195] (javadoc) JavadocStyle: First sentence should end with a period.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[201,36] (misc) FinalParameters: Parameter builder should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[206] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[222] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[232,41] (misc) FinalParameters: Parameter newScopes should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[236] (sizes) LineLength: Line is longer than 80 characters (found 88).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[239,7] (misc) FinalParameters: Parameter newScopes should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[239,37] (misc) FinalParameters: Parameter newDefaultScopes should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[257,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[262] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[263] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[264] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[286] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[288] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[295] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[296] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[312,12] (coding) HiddenField: 'universeDomainFromMetadata' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[321] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[331] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[337] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[345] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[347] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[348] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[351] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[352] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[355] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[369] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[370] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[381] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[390] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[402] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[420] (javadoc) JavadocStyle: First sentence should end with a period.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[434] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[436] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[443] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[444] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[445] (sizes) LineLength: Line is longer than 80 characters (found 113).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[455] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[460] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[468] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[470] (sizes) LineLength: Line is longer than 80 characters (found 82).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[471] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[471,81] (coding) MagicNumber: '1000' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[476] (javadoc) JavadocStyle: First sentence should end with a period.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[480] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[481] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[482] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[486] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[491] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[491,38] (misc) FinalParameters: Parameter targetAudience should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[491,61] (misc) FinalParameters: Parameter options should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[515] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[519] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[526] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[533] (sizes) LineLength: Line is longer than 80 characters (found 103).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[544] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[549,7] (misc) FinalParameters: Parameter url should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[550,7] (misc) FinalParameters: Parameter method should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[551,7] (misc) FinalParameters: Parameter jsonContent should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[552,7] (misc) FinalParameters: Parameter requestType should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[553,7] (misc) FinalParameters: Parameter shouldSendMetricsHeader should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[562] (sizes) LineLength: Line is longer than 80 characters (found 82).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[565] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[567] (sizes) LineLength: Line is longer than 80 characters (found 93).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[569] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[570] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[579] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[594] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[594,11] (misc) TodoComment: Comment matches to-do format 'TODO:'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[596] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[597] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[609,37] (coding) MagicNumber: '503' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[618] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[619] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[621] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[624] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[627] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[635] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[636] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[637] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[638] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[640] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[641] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[641,7] (misc) FinalParameters: Parameter transportFactory should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[641,28] (javadoc) JavadocMethod: Expected @param tag for 'transportFactory'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[641,46] (misc) FinalParameters: Parameter provider should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[641,73] (javadoc) JavadocMethod: Expected @param tag for 'provider'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[642] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[643] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[654] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[661] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[661,42] (misc) FinalParameters: Parameter reader should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[667,42] (misc) FinalParameters: Parameter provider should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[674] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[677,11] (misc) TodoComment: Comment matches to-do format 'TODO:'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[681] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[689,21] (misc) FinalParameters: Parameter projectId should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[689,28] (coding) HiddenField: 'projectId' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[694] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[694,7] (misc) FinalParameters: Parameter transportFactory should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[694,46] (misc) FinalParameters: Parameter provider should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[696] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[697] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[698] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[699] (sizes) LineLength: Line is longer than 80 characters (found 88).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[703] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[704] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[712] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[715] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[718] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[723] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[727,29] (coding) MagicNumber: '400' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[727,49] (coding) MagicNumber: '500' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[734] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[741] (sizes) LineLength: Line is longer than 80 characters (found 82).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[741,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[741,45] (misc) FinalParameters: Parameter provider should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[750,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[754] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[754,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[754,49] (misc) FinalParameters: Parameter provider should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[759,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[763,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[768,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[773] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[774] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[779,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[784,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[805,25] (misc) FinalParameters: Parameter obj should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[813] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[815] (sizes) LineLength: Line is longer than 80 characters (found 93).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[818] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[818,27] (misc) FinalParameters: Parameter input should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[828,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[851] (sizes) LineLength: Line is longer than 80 characters (found 88).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[853] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[854] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[860] (sizes) LineLength: Line is longer than 80 characters (found 113).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[864,22] (misc) FinalParameters: Parameter toSign should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[879] (sizes) LineLength: Line is longer than 80 characters (found 88).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[886] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[892] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[905] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[913,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[914,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[915,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[917,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[918,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[925,23] (misc) FinalParameters: Parameter credentials should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[931,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'setHttpTransportFactory' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'setHttpTransportFactory' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[931,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[932] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[932,44] (misc) FinalParameters: Parameter transportFactory should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[932,65] (coding) HiddenField: 'transportFactory' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[937,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'setScopes' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'setScopes' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[937,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[938,30] (misc) FinalParameters: Parameter scopes should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[938,49] (coding) HiddenField: 'scopes' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[943,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'setDefaultScopes' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'setDefaultScopes' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[943,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[944,37] (misc) FinalParameters: Parameter defaultScopes should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[944,56] (coding) HiddenField: 'defaultScopes' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[949,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'setUniverseDomain' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'setUniverseDomain' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[949,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[950,38] (misc) FinalParameters: Parameter universeDomain should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[955,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'setQuotaProjectId' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'setQuotaProjectId' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[955,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[956,38] (misc) FinalParameters: Parameter quotaProjectId should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[964] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[966] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[967,43] (misc) FinalParameters: Parameter transport should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[967,63] (coding) HiddenField: 'transport' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[977] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[978] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[978,42] (misc) FinalParameters: Parameter bindingEnforcement should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[978,61] (coding) HiddenField: 'bindingEnforcement' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[983,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'getHttpTransportFactory' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'getHttpTransportFactory' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[983,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[987,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'getScopes' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'getScopes' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[987,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[991,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'getDefaultScopes' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'getDefaultScopes' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[991,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/ComputeEngineCredentials.java[1013,5] (design) DesignForExtension: Class 'Builder' looks like designed for extension (can be subclassed), but the method 'build' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Builder' final or making the method 'build' static/final/abstract/empty, or adding allowed annotation for the method.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[63] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[63,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[66] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[66,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[67,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[70,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[73] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[75,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[76,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[78] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[78,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[81,31] (misc) FinalParameters: Parameter dir should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[86,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[87,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[89,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[90,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[91,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[92,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[93,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[100] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[109,5] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[112,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[121,3] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[129,27] (misc) FinalParameters: Parameter millis should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[134,32] (whitespace) WhitespaceAround: '{' is not followed by whitespace.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[134,33] (whitespace) WhitespaceAround: '}' is not preceded with whitespace.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[137,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[137,27] (design) VisibilityModifier: Variable 'certificate' must be private and have accessor methods.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[138,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[138,18] (design) VisibilityModifier: Variable 'certContent' must be private and have accessor methods.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[140,14] (misc) FinalParameters: Parameter certificate should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[140,30] (coding) HiddenField: 'certificate' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[140,43] (misc) FinalParameters: Parameter certContent should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[140,50] (coding) HiddenField: 'certContent' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[147,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[147,18] (design) VisibilityModifier: Variable 'certPath' must be private and have accessor methods.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[148,5] (javadoc) JavadocVariable: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[148,18] (design) VisibilityModifier: Variable 'keyPath' must be private and have accessor methods.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[150,29] (misc) FinalParameters: Parameter certPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[150,36] (coding) HiddenField: 'certPath' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[150,46] (misc) FinalParameters: Parameter keyPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[150,53] (coding) HiddenField: 'keyPath' hides a field.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[159] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[160] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[163] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[164] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[166] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[167] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[169] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[178] (sizes) LineLength: Line is longer than 80 characters (found 90).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[191] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[194] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[194] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[194,57] (misc) FinalParameters: Parameter certConfigPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[194,64] (javadoc) JavadocMethod: Expected @param tag for 'certConfigPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[201] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[204] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[205] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[206] (sizes) LineLength: Line is longer than 80 characters (found 82).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[216] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[231] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233,44] (misc) FinalParameters: Parameter certPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233,51] (javadoc) JavadocMethod: Expected @param tag for 'certPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233,61] (misc) FinalParameters: Parameter keyPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[233,68] (javadoc) JavadocMethod: Expected @param tag for 'keyPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[249] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[261] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[270] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[273] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[281] (sizes) LineLength: Line is longer than 80 characters (found 104).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[294] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[302] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[303] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[303,52] (misc) FinalParameters: Parameter path should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[303,71] (javadoc) JavadocMethod: Expected @param tag for 'path'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[306] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[315] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[316] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[317] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[322] (sizes) LineLength: Line is longer than 80 characters (found 93).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[325] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[325] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[325,70] (misc) FinalParameters: Parameter certConfigPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[325,77] (javadoc) JavadocMethod: Expected @param tag for 'certConfigPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[331] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[343] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[354] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[356] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[356,83] (coding) MagicNumber: '1000' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[364] (sizes) LineLength: Line is longer than 80 characters (found 92).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[370] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[371] (sizes) LineLength: Line is longer than 80 characters (found 93).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[378] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[378] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[379] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[380] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[396] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[407] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[408,50] (coding) MagicNumber: '1000' is a magic number.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[415] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[419] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[424] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[424,38] (misc) FinalParameters: Parameter certPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[424,45] (javadoc) JavadocMethod: Expected @param tag for 'certPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[425] (sizes) LineLength: Line is longer than 80 characters (found 87).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[429] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[432] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[432,32] (misc) FinalParameters: Parameter cert should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[432,48] (javadoc) JavadocMethod: Expected @param tag for 'cert'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[432,54] (misc) FinalParameters: Parameter privateKey should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[432,65] (javadoc) JavadocMethod: Expected @param tag for 'privateKey'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[443] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463,36] (misc) FinalParameters: Parameter keyPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463,43] (javadoc) JavadocMethod: Expected @param tag for 'keyPath'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463,52] (misc) FinalParameters: Parameter algorithm should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[463,59] (javadoc) JavadocMethod: Expected @param tag for 'algorithm'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[464] (sizes) LineLength: Line is longer than 80 characters (found 95).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[466] (sizes) LineLength: Line is longer than 80 characters (found 96).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[471] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473] (sizes) LineLength: Line is longer than 80 characters (found 98).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473,35] (misc) FinalParameters: Parameter certsPresent should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473,43] (javadoc) JavadocMethod: Expected @param tag for 'certsPresent'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473,57] (misc) FinalParameters: Parameter configExists should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[473,65] (javadoc) JavadocMethod: Expected @param tag for 'configExists'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[474] (sizes) LineLength: Line is longer than 80 characters (found 81).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[485] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[489,5] (blocks) RightCurly: '}' at column 5 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[493] (sizes) LineLength: Line is longer than 80 characters (found 85).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[498] (sizes) LineLength: Line is longer than 80 characters (found 91).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[503,5] (blocks) RightCurly: '}' at column 5 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[513] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[521] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[530] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[530,3] (javadoc) InvalidJavadocPosition: Javadoc comment is placed in the wrong location.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[531] (sizes) LineLength: Line is longer than 80 characters (found 86).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[531,65] (misc) FinalParameters: Parameter certConfigPath should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[535] (sizes) LineLength: Line is longer than 80 characters (found 99).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[562] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[562] (sizes) LineLength: Line is longer than 80 characters (found 97).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[562,58] (misc) FinalParameters: Parameter certContent should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[562,65] (javadoc) JavadocMethod: Expected @param tag for 'certContent'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[564] (sizes) LineLength: Line is longer than 80 characters (found 89).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[569] (sizes) LineLength: Line is longer than 80 characters (found 84).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[574] (sizes) LineLength: Line is longer than 80 characters (found 100).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[577] (javadoc) JavadocMethod: @return tag should be present and have description.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[577,42] (misc) FinalParameters: Parameter cert should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[577,58] (javadoc) JavadocMethod: Expected @param tag for 'cert'.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[594] (sizes) LineLength: Line is longer than 80 characters (found 82).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[598] (sizes) LineLength: Line is longer than 80 characters (found 94).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[610] (sizes) LineLength: Line is longer than 80 characters (found 83).
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[615,3] (javadoc) MissingJavadocMethod: Missing a Javadoc comment.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[616,35] (misc) FinalParameters: Parameter reader should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[621,30] (misc) FinalParameters: Parameter service should be final.
+[[1;31mERROR[m] java/com/google/auth/oauth2/AgentIdentityUtils.java[635,29] (misc) FinalParameters: Parameter millis should be final.

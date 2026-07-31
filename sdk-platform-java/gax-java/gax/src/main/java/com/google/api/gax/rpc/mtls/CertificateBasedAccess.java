@@ -33,6 +33,7 @@ package com.google.api.gax.rpc.mtls;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for handling certificate-based access configurations.
@@ -40,6 +41,7 @@ import java.io.IOException;
  * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE,
  * GOOGLE_API_CERTIFICATE_CONFIG, and GOOGLE_API_USE_MTLS_ENDPOINT configurations.
  */
+@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 

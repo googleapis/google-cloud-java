@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.base.Preconditions.checkState;
 import static org.junit.Assume.assumeFalse;
 
@@ -132,8 +132,8 @@ public class IntegrationTestEnv extends ExternalResource {
     this.initializeConfig();
     assumeFalse(alwaysCreateNewInstance && isCloudDevel());
     assumeFalse(
-        "Creating instances is not supported in experimental host",
-        alwaysCreateNewInstance && isExperimentalHost());
+        "Creating instances is not supported in Spanner Omni",
+        alwaysCreateNewInstance && isSpannerOmni());
 
     this.config.setUp();
     SpannerOptions options = config.spannerOptions();
@@ -346,7 +346,7 @@ public class IntegrationTestEnv extends ExternalResource {
       if (isOwnedInstance) {
         // Delete the instance, which implicitly drops all databases in it.
         try {
-          if (!EmulatorSpannerHelper.isUsingEmulator() && !isExperimentalHost()) {
+          if (!EmulatorSpannerHelper.isUsingEmulator() && !isSpannerOmni()) {
             // Backups must be explicitly deleted before the instance may be deleted.
             logger.log(
                 Level.FINE, "Deleting backups on test instance {0}", testHelper.getInstanceId());

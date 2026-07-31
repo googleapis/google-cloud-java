@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A request mutator takes a {@code request} message, applies some Function to it, and then returns
@@ -40,6 +41,7 @@ import com.google.api.core.InternalApi;
  *
  * @param <RequestT> request message type
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 @FunctionalInterface
 public interface RequestMutator<RequestT> {

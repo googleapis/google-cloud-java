@@ -44,6 +44,12 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationResultsResponse;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsOperationMetadata;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationRunsResponse;
 import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
@@ -73,6 +79,9 @@ import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsOperationMetadata;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsRequest;
+import com.google.cloud.ces.v1beta.RunEvaluationResultMetricsResponse;
 import com.google.cloud.ces.v1beta.ScheduledEvaluationRun;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceRequest;
 import com.google.cloud.ces.v1beta.TestPersonaVoiceResponse;
@@ -90,6 +99,8 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -97,15 +108,17 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class EvaluationServiceStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -327,6 +340,48 @@ public abstract class EvaluationServiceStub implements BackgroundResource {
 
   public UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
     throw new UnsupportedOperationException("Not implemented: exportEvaluationsCallable()");
+  }
+
+  public OperationCallable<
+          ExportEvaluationRunsRequest,
+          ExportEvaluationRunsResponse,
+          ExportEvaluationRunsOperationMetadata>
+      exportEvaluationRunsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportEvaluationRunsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluationRunsRequest, Operation> exportEvaluationRunsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluationRunsCallable()");
+  }
+
+  public OperationCallable<
+          ExportEvaluationResultsRequest,
+          ExportEvaluationResultsResponse,
+          ExportEvaluationResultsOperationMetadata>
+      exportEvaluationResultsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportEvaluationResultsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportEvaluationResultsRequest, Operation>
+      exportEvaluationResultsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportEvaluationResultsCallable()");
+  }
+
+  public OperationCallable<
+          RunEvaluationResultMetricsRequest,
+          RunEvaluationResultMetricsResponse,
+          RunEvaluationResultMetricsOperationMetadata>
+      runEvaluationResultMetricsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: runEvaluationResultMetricsOperationCallable()");
+  }
+
+  public UnaryCallable<RunEvaluationResultMetricsRequest, Operation>
+      runEvaluationResultMetricsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: runEvaluationResultMetricsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

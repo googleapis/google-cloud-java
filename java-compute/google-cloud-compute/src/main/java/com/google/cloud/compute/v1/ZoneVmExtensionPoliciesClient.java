@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -70,7 +72,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Delete</td>
- *      <td><p> Deletes a specified zone VM extension policy.</td>
+ *      <td><p> Deletes a specified zone VM extension policy within a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +91,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Retrieves details of a specific zone VM extension policy.</td>
+ *      <td><p> Retrieves details of a specific zone VM extension policy within a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -145,7 +147,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Modifies an existing zone VM extension policy.</td>
+ *      <td><p> Modifies an existing zone VM extension policy within a project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -205,9 +207,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
-  private final ZoneVmExtensionPoliciesSettings settings;
+  private final @Nullable ZoneVmExtensionPoliciesSettings settings;
   private final ZoneVmExtensionPoliciesStub stub;
 
   /** Constructs an instance of ZoneVmExtensionPoliciesClient with default settings. */
@@ -248,7 +251,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ZoneVmExtensionPoliciesSettings getSettings() {
+  public final @Nullable ZoneVmExtensionPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -258,7 +261,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a specified zone VM extension policy.
+   * Deletes a specified zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -296,7 +299,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a specified zone VM extension policy.
+   * Deletes a specified zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -329,7 +332,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a specified zone VM extension policy.
+   * Deletes a specified zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -362,7 +365,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a specified zone VM extension policy.
+   * Deletes a specified zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -394,7 +397,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves details of a specific zone VM extension policy.
+   * Retrieves details of a specific zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -431,7 +434,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves details of a specific zone VM extension policy.
+   * Retrieves details of a specific zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -462,7 +465,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves details of a specific zone VM extension policy.
+   * Retrieves details of a specific zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -781,7 +784,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies an existing zone VM extension policy.
+   * Modifies an existing zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -827,7 +830,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies an existing zone VM extension policy.
+   * Modifies an existing zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -861,7 +864,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies an existing zone VM extension policy.
+   * Modifies an existing zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -895,7 +898,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Modifies an existing zone VM extension policy.
+   * Modifies an existing zone VM extension policy within a project.
    *
    * <p>Sample code:
    *
@@ -984,9 +987,11 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
           ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
+        @Nullable
+            PageContext<
+                ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
             context,
-        VmExtensionPolicyList response) {
+        @Nullable VmExtensionPolicyList response) {
       super(context, response);
     }
 
@@ -996,15 +1001,19 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
+        @Nullable
+            PageContext<
+                ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
             context,
-        VmExtensionPolicyList response) {
+        @Nullable VmExtensionPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
+        @Nullable
+            PageContext<
+                ListZoneVmExtensionPoliciesRequest, VmExtensionPolicyList, VmExtensionPolicy>
             context,
         ApiFuture<VmExtensionPolicyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1019,7 +1028,7 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1028,7 +1037,8 @@ public class ZoneVmExtensionPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

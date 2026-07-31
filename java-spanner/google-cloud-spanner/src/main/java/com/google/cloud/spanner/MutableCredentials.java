@@ -58,7 +58,9 @@ public class MutableCredentials extends Credentials {
       throw new IllegalArgumentException("Scopes must not be empty");
     }
     this.scopes = new java.util.HashSet<>(scopes);
-    delegate = (ServiceAccountCredentials) credentials.createScoped(this.scopes);
+    delegate =
+        ((ServiceAccountCredentials) credentials.createScoped(this.scopes))
+            .createWithUseJwtAccessWithScope(true);
   }
 
   /**
@@ -74,7 +76,9 @@ public class MutableCredentials extends Credentials {
    */
   public void updateCredentials(@Nonnull ServiceAccountCredentials credentials) {
     Objects.requireNonNull(credentials, "credentials must not be null");
-    delegate = (ServiceAccountCredentials) credentials.createScoped(scopes);
+    delegate =
+        ((ServiceAccountCredentials) credentials.createScoped(scopes))
+            .createWithUseJwtAccessWithScope(true);
   }
 
   @Override

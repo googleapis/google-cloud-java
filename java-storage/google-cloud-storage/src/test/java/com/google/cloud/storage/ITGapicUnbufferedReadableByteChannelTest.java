@@ -330,6 +330,75 @@ public final class ITGapicUnbufferedReadableByteChannelTest {
     }
   }
 
+  @Test
+  public void logsWarning_whenReceivingMoreBytesThanRequested()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    ReadObjectRequest reqWithLimit =
+        ReadObjectRequest.newBuilder()
+            .setObject(objectName)
+            .setReadOffset(0)
+            .setReadLimit(10)
+            .build();
+
+    StorageGrpc.StorageImplBase fakeStorage =
+        new StorageGrpc.StorageImplBase() {
+          @Override
+          public void readObject(
+              ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+            responseObserver.onNext(resp1); // sends 10 bytes
+            responseObserver.onNext(resp2); // sends another 10 bytes (total 20 > limit 10)
+            responseObserver.onCompleted();
+          }
+        };
+
+    java.util.logging.Logger logger =
+        java.util.logging.Logger.getLogger(GapicUnbufferedReadableByteChannel.class.getName());
+    java.util.List<java.util.logging.LogRecord> records = new java.util.ArrayList<>();
+    java.util.logging.Handler handler =
+        new java.util.logging.Handler() {
+          @Override
+          public void publish(java.util.logging.LogRecord record) {
+            records.add(record);
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() throws SecurityException {}
+        };
+    logger.addHandler(handler);
+
+    try (FakeServer server = FakeServer.of(fakeStorage);
+        StorageClient storageClient = StorageClient.create(server.storageSettings())) {
+      Retrier retrier = TestUtils.retrierFromStorageOptions(server.getGrpcStorageOptions());
+
+      UnbufferedReadableByteChannelSession<Object> session =
+          new UnbufferedReadSession<>(
+              ApiFutures.immediateFuture(reqWithLimit),
+              (start, resultFuture) ->
+                  new GapicUnbufferedReadableByteChannel(
+                      resultFuture,
+                      new ZeroCopyServerStreamingCallable<>(
+                          storageClient.readObjectCallable(),
+                          ResponseContentLifecycleManager.noop()),
+                      start,
+                      Hasher.noop(),
+                      retrier,
+                      retryOnly(DataLossException.class)));
+      byte[] actualBytes = new byte[15];
+      try (UnbufferedReadableByteChannel c = session.open()) {
+        c.read(ByteBuffer.wrap(actualBytes));
+      }
+
+      boolean warningLogged =
+          records.stream().anyMatch(r -> r.getMessage().contains("more bytes than requested"));
+      assertThat(warningLogged).isTrue();
+    } finally {
+      logger.removeHandler(handler);
+    }
+  }
+
   private static <E extends ApiException> ResultRetryAlgorithm<?> retryOnly(Class<E> c) {
     return new BasicResultRetryAlgorithm<java.lang.Object>() {
       @Override

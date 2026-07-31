@@ -42,6 +42,8 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_GR
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENCODED_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIME;
+import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_KEEPALIVE_TIMEOUT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionProperties.LENIENT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.MAX_COMMIT_DELAY;
@@ -58,6 +60,7 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ROUTE_TO_
 import static com.google.cloud.spanner.connection.ConnectionProperties.TRACING_PREFIX;
 import static com.google.cloud.spanner.connection.ConnectionProperties.TRACK_CONNECTION_LEAKS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.TRACK_SESSION_LEAKS;
+import static com.google.cloud.spanner.connection.ConnectionProperties.TYPE;
 import static com.google.cloud.spanner.connection.ConnectionProperties.UNIVERSE_DOMAIN;
 import static com.google.cloud.spanner.connection.ConnectionProperties.USER_AGENT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.USE_AUTO_SAVEPOINTS_FOR_EMULATOR;
@@ -67,6 +70,7 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.USE_VIRTU
 import static com.google.cloud.spanner.connection.ConnectionPropertyValue.cast;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -87,12 +91,14 @@ import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
@@ -151,6 +157,9 @@ public class ConnectionOptions {
       new LocalConnectionChecker();
   static final boolean DEFAULT_USE_PLAIN_TEXT = false;
   static final boolean DEFAULT_IS_EXPERIMENTAL_HOST = false;
+  static final SpannerOptions.InstanceType DEFAULT_TYPE = SpannerOptions.InstanceType.CLOUD;
+  static final String DEFAULT_USERNAME = "";
+  static final String DEFAULT_PASSWORD = "";
   static final boolean DEFAULT_AUTOCOMMIT = true;
   static final boolean DEFAULT_READONLY = false;
   static final boolean DEFAULT_RETRY_ABORTS_INTERNALLY = true;
@@ -199,8 +208,6 @@ public class ConnectionOptions {
   static final long DEFAULT_AUTO_BATCH_DML_UPDATE_COUNT = 1L;
   static final long DEFAULT_BATCH_DML_UPDATE_COUNT = -1L;
   static final boolean DEFAULT_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION = true;
-  private static final String EXPERIMENTAL_HOST_PROJECT_ID = "default";
-  private static final String DEFAULT_EXPERIMENTAL_HOST_INSTANCE_ID = "default";
 
   private static final String PLAIN_TEXT_PROTOCOL = "http:";
   private static final String HOST_PROTOCOL = "https:";
@@ -211,8 +218,23 @@ public class ConnectionOptions {
   /** Use plain text is only for local testing purposes. */
   static final String USE_PLAIN_TEXT_PROPERTY_NAME = "usePlainText";
 
-  /** Connect to a Experimental Host * */
+  /**
+   * Connect to a Experimental Host
+   *
+   * @deprecated Use {@link #TYPE_PROPERTY_NAME} with value "omni" instead.
+   */
+  @ObsoleteApi("Use TYPE_PROPERTY_NAME with value \"omni\" instead")
+  @Deprecated
   static final String IS_EXPERIMENTAL_HOST_PROPERTY_NAME = "isExperimentalHost";
+
+  /** The type of Spanner instance to connect to (cloud, omni, or emulator). */
+  public static final String TYPE_PROPERTY_NAME = "type";
+
+  /** Username for OPAQUE login */
+  public static final String USERNAME_PROPERTY_NAME = "username";
+
+  /** Password for OPAQUE login */
+  public static final String PASSWORD_PROPERTY_NAME = "password";
 
   /** Client certificate path to establish mTLS */
   static final String CLIENT_CERTIFICATE_PROPERTY_NAME = "clientCertificate";
@@ -258,6 +280,12 @@ public class ConnectionOptions {
    * OAuth token to use for authentication. Cannot be used in combination with a credentials file.
    */
   public static final String OAUTH_TOKEN_PROPERTY_NAME = "oauthToken";
+
+  /** Name of the 'grpcKeepAliveTime' connection property. */
+  public static final String GRPC_KEEPALIVE_TIME_PROPERTY_NAME = "grpcKeepAliveTime";
+
+  /** Name of the 'grpcKeepAliveTimeout' connection property. */
+  public static final String GRPC_KEEPALIVE_TIMEOUT_PROPERTY_NAME = "grpcKeepAliveTimeout";
 
   /** Name of the 'minSessions' connection property. */
   public static final String MIN_SESSIONS_PROPERTY_NAME = "minSessions";
@@ -449,13 +477,16 @@ public class ConnectionOptions {
 
     public static final String EXTERNAL_HOST_FORMAT =
         "(?:(?:spanner|cloudspanner):)(?<HOSTGROUP>//[\\w.-]+(?::\\d+)?)(/instances/(?<INSTANCEGROUP>[a-z0-9-]+))?(/databases/(?<DATABASEGROUP>[a-z0-9_-]+))(?:[?;].*)?";
+
+    public static final String SPANNER_OMNI_FORMAT = EXTERNAL_HOST_FORMAT;
+
     private static final String SPANNER_URI_REGEX = "(?is)^" + SPANNER_URI_FORMAT + "$";
 
     @VisibleForTesting
     static final Pattern SPANNER_URI_PATTERN = Pattern.compile(SPANNER_URI_REGEX);
 
     @VisibleForTesting
-    static final Pattern EXTERNAL_HOST_PATTERN = Pattern.compile(EXTERNAL_HOST_FORMAT);
+    static final Pattern SPANNER_OMNI_PATTERN = Pattern.compile(SPANNER_OMNI_FORMAT);
 
     private static final String HOST_GROUP = "HOSTGROUP";
     private static final String PROJECT_GROUP = "PROJECTGROUP";
@@ -467,8 +498,8 @@ public class ConnectionOptions {
       return SPANNER_URI_PATTERN.matcher(uri).matches();
     }
 
-    private boolean isValidExperimentalHostUri(String uri) {
-      return EXTERNAL_HOST_PATTERN.matcher(uri).matches();
+    private boolean isValidSpannerOmniUri(String uri) {
+      return SPANNER_OMNI_PATTERN.matcher(uri).matches();
     }
 
     /**
@@ -528,7 +559,7 @@ public class ConnectionOptions {
      * @return this builder
      */
     public Builder setUri(String uri) {
-      if (!isValidExperimentalHostUri(uri)) {
+      if (!isValidSpannerOmniUri(uri)) {
         Preconditions.checkArgument(
             isValidUri(uri),
             "The specified URI is not a valid Cloud Spanner connection URI. Please specify a URI in"
@@ -637,6 +668,15 @@ public class ConnectionOptions {
     }
 
     /**
+     * Specifies the type of Spanner instance to connect to (cloud or omni). Setting it to omni is
+     * mandatory when connecting to a Spanner Omni instance.
+     */
+    public Builder setType(SpannerOptions.InstanceType instanceType) {
+      setConnectionPropertyValue(TYPE, instanceType);
+      return this;
+    }
+
+    /**
      * @return the {@link ConnectionOptions}
      */
     public ConnectionOptions build() {
@@ -657,6 +697,7 @@ public class ConnectionOptions {
 
   private final ConnectionState initialConnectionState;
   private final String uri;
+  private final boolean typeExplicitlySet;
   private final String warnings;
   private final Credentials fixedCredentials;
 
@@ -675,10 +716,10 @@ public class ConnectionOptions {
 
   private ConnectionOptions(Builder builder) {
     Matcher matcher;
-    boolean isExperimentalHostPattern = false;
-    if (builder.isValidExperimentalHostUri(builder.uri)) {
-      matcher = Builder.EXTERNAL_HOST_PATTERN.matcher(builder.uri);
-      isExperimentalHostPattern = true;
+    boolean isSpannerOmniPattern = false;
+    if (builder.isValidSpannerOmniUri(builder.uri)) {
+      matcher = Builder.SPANNER_OMNI_PATTERN.matcher(builder.uri);
+      isSpannerOmniPattern = true;
     } else {
       matcher = Builder.SPANNER_URI_PATTERN.matcher(builder.uri);
     }
@@ -691,6 +732,9 @@ public class ConnectionOptions {
             .putAll(builder.connectionPropertyValues)
             .buildKeepingLast();
     this.uri = builder.uri;
+    this.typeExplicitlySet =
+        ConnectionProperties.parseValues(builder.uri).containsKey(TYPE_PROPERTY_NAME)
+            || builder.connectionPropertyValues.containsKey(TYPE.getKey());
     ConnectionPropertyValue<Boolean> value = cast(connectionPropertyValues.get(LENIENT.getKey()));
     this.warnings = checkValidProperties(value != null && value.getValue(), uri);
     this.fixedCredentials = builder.credentials;
@@ -747,8 +791,10 @@ public class ConnectionOptions {
             getInitialConnectionPropertyValue(AUTO_CONFIG_EMULATOR),
             usePlainText,
             System.getenv());
-    GoogleCredentials defaultExperimentalHostCredentials =
-        SpannerOptions.getDefaultExperimentalCredentialsFromSysEnv();
+    GoogleCredentials defaultSpannerOmniCredentials =
+        SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
+    String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
+    String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
@@ -757,15 +803,29 @@ public class ConnectionOptions {
         && getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) == null
         && getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
         && getInitialConnectionPropertyValue(OAUTH_TOKEN) == null
+        && Strings.isNullOrEmpty(getInitialConnectionPropertyValue(ConnectionProperties.USERNAME))
         && usePlainText) {
       this.credentials = NoCredentials.getInstance();
     } else if (getInitialConnectionPropertyValue(OAUTH_TOKEN) != null) {
       this.credentials =
           new GoogleCredentials(
               new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
-    } else if ((isExperimentalHostPattern || isExperimentalHost())
-        && defaultExperimentalHostCredentials != null) {
-      this.credentials = defaultExperimentalHostCredentials;
+    } else if (isSpannerOmniPattern || isSpannerOmni()) {
+      if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
+        SecretBytes secretBytes =
+            SpannerOmniCredentials.convertToSecretBytes(password.toCharArray());
+        this.credentials = new SpannerOmniCredentials(username, secretBytes, this.host);
+        // Clear the password from the initial connection state to allow it to be GC'd.
+        this.initialConnectionState.setValue(
+            ConnectionProperties.PASSWORD,
+            DEFAULT_PASSWORD,
+            ConnectionProperty.Context.STARTUP,
+            /* inTransaction= */ false);
+      } else if (defaultSpannerOmniCredentials != null) {
+        this.credentials = defaultSpannerOmniCredentials;
+      } else {
+        this.credentials = NoCredentials.getInstance();
+      }
     } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {
       try {
         this.credentials = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getCredentials();
@@ -806,19 +866,19 @@ public class ConnectionOptions {
       this.sessionPoolOptions = sessionPoolOptionsBuilder.build();
     } else if (builder.sessionPoolOptions != null) {
       this.sessionPoolOptions = builder.sessionPoolOptions;
-    } else if (isExperimentalHostPattern || isExperimentalHost()) {
+    } else if (isSpannerOmniPattern || isSpannerOmni()) {
       this.sessionPoolOptions =
           SessionPoolOptions.newBuilder().setExperimentalHost().setAutoDetectDialect(true).build();
     } else {
       this.sessionPoolOptions = SessionPoolOptions.newBuilder().setAutoDetectDialect(true).build();
     }
 
-    String projectId = EXPERIMENTAL_HOST_PROJECT_ID;
+    String projectId = SpannerOptions.SPANNER_OMNI_PROJECT_ID;
     String instanceId = matcher.group(Builder.INSTANCE_GROUP);
-    if (!isExperimentalHost() && !isExperimentalHostPattern) {
+    if (!isSpannerOmni() && !isSpannerOmniPattern) {
       projectId = matcher.group(Builder.PROJECT_GROUP);
-    } else if (instanceId == null && isExperimentalHost()) {
-      instanceId = DEFAULT_EXPERIMENTAL_HOST_INSTANCE_ID;
+    } else if (instanceId == null && isSpannerOmni()) {
+      instanceId = SpannerOptions.DEFAULT_SPANNER_OMNI_INSTANCE_ID;
     }
     if (Builder.DEFAULT_PROJECT_ID_PLACEHOLDER.equalsIgnoreCase(projectId)) {
       projectId = getDefaultProjectId(this.credentials);
@@ -851,8 +911,7 @@ public class ConnectionOptions {
       // The leading '//' is already included in the regex for the connection URL, so we don't need
       // to add the leading '//' to the host name here.
       host = matcher.group(Builder.HOST_GROUP);
-      if (Builder.EXTERNAL_HOST_FORMAT.equals(matcher.pattern().pattern())
-          && !host.matches(".*:\\d+$")) {
+      if (Builder.SPANNER_OMNI_PATTERN.equals(matcher.pattern()) && !host.matches(".*:\\d+$")) {
         host = String.format("%s:15000", host);
       }
     }
@@ -1032,6 +1091,16 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(NUM_CHANNELS);
   }
 
+  /** The gRPC keepalive time for this connection. */
+  public Duration getGrpcKeepAliveTime() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIME);
+  }
+
+  /** The gRPC keepalive timeout for this connection. */
+  public Duration getGrpcKeepAliveTimeout() {
+    return getInitialConnectionPropertyValue(GRPC_KEEPALIVE_TIMEOUT);
+  }
+
   /** Whether dynamic channel pooling is enabled for this connection. */
   public Boolean isEnableDynamicChannelPool() {
     return getInitialConnectionPropertyValue(ENABLE_DYNAMIC_CHANNEL_POOL);
@@ -1202,8 +1271,17 @@ public class ConnectionOptions {
         || getInitialConnectionPropertyValue(USE_PLAIN_TEXT);
   }
 
-  boolean isExperimentalHost() {
-    return getInitialConnectionPropertyValue(IS_EXPERIMENTAL_HOST);
+  boolean isSpannerOmni() {
+    return getInitialConnectionPropertyValue(IS_EXPERIMENTAL_HOST)
+        || (typeExplicitlySet
+            && getInitialConnectionPropertyValue(TYPE) == SpannerOptions.InstanceType.OMNI);
+  }
+
+  SpannerOptions.InstanceType getInstanceType() {
+    if (!typeExplicitlySet && getInitialConnectionPropertyValue(IS_EXPERIMENTAL_HOST)) {
+      return SpannerOptions.InstanceType.OMNI;
+    }
+    return getInitialConnectionPropertyValue(TYPE);
   }
 
   Boolean isEnableDirectAccess() {

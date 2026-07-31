@@ -5,12 +5,11 @@
   "api_description": "is a distributed tracing system that collects latency data from your applications and displays it in the Google Cloud Platform Console. You can track how requests propagate through your application and receive detailed near real-time performance insights.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-trace/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-trace",
   "distribution_name": "com.google.cloud:google-cloud-trace",
   "api_id": "cloudtrace.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": false
+  "library_type": "GAPIC_AUTO"
 }

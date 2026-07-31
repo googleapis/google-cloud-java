@@ -83,6 +83,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -90,6 +91,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonWorkstationsStub extends WorkstationsStub {
   private static final TypeRegistry typeRegistry =
@@ -159,6 +161,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationClustersRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -369,6 +372,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationConfigsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -617,6 +621,7 @@ public class HttpJsonWorkstationsStub extends WorkstationsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListWorkstationsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");

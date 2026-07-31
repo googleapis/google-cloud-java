@@ -1,4 +1,0 @@
-proto_library_with_info(
-  deps = [
-  ]
-)

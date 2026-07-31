@@ -28,6 +28,7 @@ import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
 import com.google.cloud.secretmanager.v1.DestroySecretVersionRequest;
 import com.google.cloud.secretmanager.v1.DisableSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.EnableManagedRotationRequest;
 import com.google.cloud.secretmanager.v1.EnableSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.GetSecretRequest;
 import com.google.cloud.secretmanager.v1.GetSecretVersionRequest;
@@ -35,6 +36,7 @@ import com.google.cloud.secretmanager.v1.ListSecretVersionsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretVersionsResponse;
 import com.google.cloud.secretmanager.v1.ListSecretsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretsResponse;
+import com.google.cloud.secretmanager.v1.RotateSecretRequest;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
@@ -45,6 +47,7 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -52,6 +55,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SecretManagerServiceStub implements BackgroundResource {
 
@@ -125,6 +129,15 @@ public abstract class SecretManagerServiceStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable() {
+    throw new UnsupportedOperationException("Not implemented: enableManagedRotationCallable()");
+  }
+
+  public UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable() {
+    throw new UnsupportedOperationException("Not implemented: rotateSecretCallable()");
   }
 
   @Override

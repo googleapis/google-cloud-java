@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SecurityHealthAnalyticsSettingsName implements ResourceName {
   private static final PathTemplate ORGANIZATION =
@@ -136,7 +139,7 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     return newProjectBuilder().setProject(project).build().toString();
   }
 
-  public static SecurityHealthAnalyticsSettingsName parse(String formattedString) {
+  public static @Nullable SecurityHealthAnalyticsSettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -162,7 +165,8 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SecurityHealthAnalyticsSettingsName> values) {
+  public static List<String> toStringList(
+      List<@Nullable SecurityHealthAnalyticsSettingsName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SecurityHealthAnalyticsSettingsName value : values) {
       if (value == null) {
@@ -212,7 +216,7 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -184,9 +186,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstancesClient implements BackgroundResource {
-  private final InstancesSettings settings;
+  private final @Nullable InstancesSettings settings;
   private final InstancesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -232,7 +235,7 @@ public class InstancesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final InstancesSettings getSettings() {
+  public final @Nullable InstancesSettings getSettings() {
     return settings;
   }
 
@@ -694,8 +697,8 @@ public class InstancesClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -705,14 +708,14 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -726,7 +729,8 @@ public class InstancesClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -736,7 +740,7 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }

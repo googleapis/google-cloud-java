@@ -82,8 +82,12 @@ class DatastoreCloudMonitoringExporterUtils {
       List<MetricData> collection, Map<String, String> clientAttributes) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
-    // Metrics should already been filtered for Gax and Datastore related ones
+    // Only convert metrics that belong to Datastore/GAX (starting with METRIC_PREFIX)
+    // to filter out OpenTelemetry internal diagnostic metrics.
     for (MetricData metricData : collection) {
+      if (!metricData.getName().startsWith(TelemetryConstants.METRIC_PREFIX)) {
+        continue;
+      }
       // TODO(b/405457573): The monitored resource is currently written to `global` because the
       // Firestore namespace in Cloud Monitoring has not been deployed yet. Once the namespace
       // is available, database_id and location labels should be added here using

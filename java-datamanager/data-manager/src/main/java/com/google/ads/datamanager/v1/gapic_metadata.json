@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "IngestionServiceClient",
           "rpcs": {
+            "IngestAdEvents": {
+              "methods": ["ingestAdEvents", "ingestAdEventsCallable"]
+            },
             "IngestAudienceMembers": {
               "methods": ["ingestAudienceMembers", "ingestAudienceMembersCallable"]
             },

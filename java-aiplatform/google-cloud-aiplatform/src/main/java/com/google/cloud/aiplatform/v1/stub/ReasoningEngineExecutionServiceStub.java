@@ -26,6 +26,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineOperationMetadata;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1.AsyncQueryReasoningEngineResponse;
+import com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1.CancelAsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1.QueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1.StreamQueryReasoningEngineRequest;
@@ -41,6 +43,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -48,10 +52,11 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ReasoningEngineExecutionServiceStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
@@ -78,6 +83,13 @@ public abstract class ReasoningEngineExecutionServiceStub implements BackgroundR
   public UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
       asyncQueryReasoningEngineCallable() {
     throw new UnsupportedOperationException("Not implemented: asyncQueryReasoningEngineCallable()");
+  }
+
+  public UnaryCallable<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelAsyncQueryReasoningEngineCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

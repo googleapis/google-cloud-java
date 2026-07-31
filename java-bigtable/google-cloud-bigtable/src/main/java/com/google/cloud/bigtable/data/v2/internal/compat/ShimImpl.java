@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat;
 
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.StubSettings;
@@ -32,6 +33,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelPr
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
+import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
@@ -45,8 +47,10 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
@@ -54,6 +58,9 @@ import io.grpc.stub.MetadataUtils;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Optional;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -72,6 +79,7 @@ public class ShimImpl implements Shim {
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
 
   private final ClientConfigurationManager configManager;
+  private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
 
   private final ReadRowShimInner readRowShimInner;
@@ -160,24 +168,107 @@ public class ShimImpl implements Shim {
       featureFlags = featureFlags.toBuilder().setSessionsRequired(true).build();
     }
 
+    Resource<Executor> userCallbackExecutor =
+        selectUserCallbackExecutor(
+            stubSettings.getTransportChannelProvider(), stubSettings.getExecutorProvider());
+
     Client client =
         new Client(
             clientChannelProvider.updateFeatureFlags(featureFlags),
             clientInfo,
-            clientChannelProvider,
             Resource.createShared(metrics),
             Resource.createShared(configManager),
-            Resource.createShared(bgExecutor));
+            Resource.createShared(bgExecutor),
+            userCallbackExecutor,
+            clientChannelProvider);
 
-    return new ShimImpl(configManager, client);
+    return new ShimImpl(Resource.createOwned(configManager, configManager::close), client);
   }
 
-  public ShimImpl(ClientConfigurationManager configManager, Client client) {
-    this.configManager = configManager;
+  public ShimImpl(Resource<ClientConfigurationManager> configManagerResource, Client client) {
+    this.configManagerResource = configManagerResource;
+    this.configManager = configManagerResource.get();
     this.client = client;
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
+  }
+
+  /**
+   * Creates a lightweight child shim for factory mode. Reuses the factory's already-started, shared
+   * channel pool and config manager. The pool and manager are not closed when this shim is closed —
+   * only the child's own session pools are cleaned up.
+   */
+  public static Shim createForFactoryChild(
+      ClientInfo clientInfo,
+      Metrics metrics,
+      ScheduledExecutorService bgExecutor,
+      Executor userCallbackExecutor,
+      ChannelPool sharedChannelPool,
+      ClientConfigurationManager sharedConfigManager,
+      FeatureFlags parentFeatureFlags) {
+    // Inherit the parent's fully-computed feature flags (which include channel-provider flags like
+    // trafficDirectorEnabled/directAccessRequested in addition to sessionsRequired).
+    FeatureFlags featureFlags = parentFeatureFlags;
+
+    Client client =
+        new Client(
+            featureFlags,
+            clientInfo,
+            Resource.createShared(metrics),
+            Resource.createShared(sharedConfigManager),
+            Resource.createShared(bgExecutor),
+            Resource.createShared(userCallbackExecutor),
+            Resource.createShared(sharedChannelPool));
+
+    return new ShimImpl(Resource.createShared(sharedConfigManager), client);
+  }
+
+  /** Returns the raw config manager (e.g. for sharing with factory children). */
+  public ClientConfigurationManager getConfigManager() {
+    return configManager;
+  }
+
+  /** Returns the channel pool (e.g. for sharing with factory children). */
+  public ChannelPool getChannelPool() {
+    return client.getChannelPool();
+  }
+
+  /** Returns the feature flags (e.g. for sharing with factory children). */
+  public FeatureFlags getFeatureFlags() {
+    return client.getFeatureFlags();
+  }
+
+  public Executor getUserCallbackExecutor() {
+    return client.getUserCallbackExecutor();
+  }
+
+  // If the user configured an executor — either via InstantiatingGrpcChannelProvider#setExecutor
+  // or the legacy StubSettings#setExecutorProvider — reuse it for user-callback dispatch so the
+  // transport pool and callback pool are the same. Ownership: transport-set is borrowed by
+  // convention; legacy provider honors shouldAutoClose(). Otherwise allocate a dedicated cached
+  // pool that this Client owns.
+  @VisibleForTesting
+  static Resource<Executor> selectUserCallbackExecutor(
+      TransportChannelProvider transportProvider, @Nullable ExecutorProvider executorProvider) {
+    Executor transportExecutor = transportProvider.getExecutor();
+    if (transportExecutor != null) {
+      return Resource.createShared(transportExecutor);
+    }
+    if (executorProvider != null) {
+      ScheduledExecutorService executor = executorProvider.getExecutor();
+      if (executorProvider.shouldAutoClose()) {
+        return Resource.createOwned(executor, () -> Client.shutdownAndAwait(executor));
+      }
+      return Resource.createShared(executor);
+    }
+    ExecutorService owned =
+        Executors.newCachedThreadPool(
+            new ThreadFactoryBuilder()
+                .setNameFormat("bigtable-callback-shim-%d")
+                .setDaemon(true)
+                .build());
+    return Resource.createOwned(owned, () -> Client.shutdownAndAwait(owned));
   }
 
   private static ChannelProvider configureChannelProvider(
@@ -252,7 +343,7 @@ public class ShimImpl implements Shim {
   @Override
   public void close() {
     client.close();
-    configManager.close();
+    configManagerResource.close();
   }
 
   @Override

@@ -23,7 +23,9 @@ import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.Service;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HttpJsonServiceClientTestClassComposer extends ServiceClientTestClassComposer {
   private static final HttpJsonServiceClientTestClassComposer INSTANCE =
       new HttpJsonServiceClientTestClassComposer();

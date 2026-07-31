@@ -43,7 +43,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Credentials representing an AWS third-party identity for calling Google APIs. AWS security
@@ -52,6 +53,7 @@ import javax.annotation.Nullable;
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
  */
+@NullMarked
 public class AwsCredentials extends ExternalAccountCredentials {
 
   static final String DEFAULT_REGIONAL_CREDENTIAL_VERIFICATION_URL =

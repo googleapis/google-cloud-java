@@ -5,12 +5,11 @@
   "api_description": "Cloud API Registry lets you discover, govern, use, and monitor Model Context Protocol (MCP) servers and tools provided by Google, or by your organization through Apigee API hub.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-cloudapiregistry/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-cloudapiregistry",
   "distribution_name": "com.google.cloud:google-cloud-cloudapiregistry",
   "api_id": "cloudapiregistry.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

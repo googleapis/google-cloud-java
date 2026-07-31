@@ -49,6 +49,7 @@ public class AsyncStartWorkstationLRO {
                       .toString())
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setBoostConfig("boostConfig1345260741")
               .build();
       OperationFuture<Workstation, OperationMetadata> future =
           workstationsClient.startWorkstationOperationCallable().futureCall(request);

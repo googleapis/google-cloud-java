@@ -19,7 +19,9 @@ import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public final class SampleBodyJavaFormatter {
   private SampleBodyJavaFormatter() {}
 

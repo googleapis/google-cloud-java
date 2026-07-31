@@ -48,6 +48,7 @@ public class AsyncStartWorkstation {
                       .toString())
               .setValidateOnly(true)
               .setEtag("etag3123477")
+              .setBoostConfig("boostConfig1345260741")
               .build();
       ApiFuture<Operation> future =
           workstationsClient.startWorkstationCallable().futureCall(request);

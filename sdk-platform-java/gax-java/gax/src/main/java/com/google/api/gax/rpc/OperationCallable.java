@@ -31,6 +31,8 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.longrunning.OperationFuture;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An OperationCallable is an immutable object which is capable of initiating RPC calls to
@@ -41,6 +43,7 @@ import com.google.api.gax.longrunning.OperationFuture;
  * class is intended to be created by a generated client class, and configured by instances of
  * OperationCallSettings.Builder which are exposed through the client settings class.
  */
+@NullMarked
 public abstract class OperationCallable<RequestT, ResponseT, MetadataT> {
 
   protected OperationCallable() {}
@@ -53,7 +56,7 @@ public abstract class OperationCallable<RequestT, ResponseT, MetadataT> {
    * @return {@link OperationFuture} for the call result
    */
   public abstract OperationFuture<ResponseT, MetadataT> futureCall(
-      RequestT request, ApiCallContext context);
+      RequestT request, @Nullable ApiCallContext context);
 
   /**
    * Same as {@link #futureCall(Object, ApiCallContext)}, with a null context.
@@ -100,7 +103,7 @@ public abstract class OperationCallable<RequestT, ResponseT, MetadataT> {
    * @return {@link OperationFuture} for the call result.
    */
   public abstract OperationFuture<ResponseT, MetadataT> resumeFutureCall(
-      String operationName, ApiCallContext context);
+      String operationName, @Nullable ApiCallContext context);
 
   /**
    * Creates a new {@link OperationFuture} to watch an operation that has been initiated previously.
@@ -121,7 +124,7 @@ public abstract class OperationCallable<RequestT, ResponseT, MetadataT> {
    * @param context {@link ApiCallContext} to make the call with
    * @return the future which completes once the operation is canceled on the server side.
    */
-  public abstract ApiFuture<Void> cancel(String operationName, ApiCallContext context);
+  public abstract ApiFuture<Void> cancel(String operationName, @Nullable ApiCallContext context);
 
   /**
    * Sends a cancellation request to the server for the operation with name {@code operationName}.

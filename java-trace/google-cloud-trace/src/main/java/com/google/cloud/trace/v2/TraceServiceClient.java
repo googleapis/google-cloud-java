@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -152,9 +154,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TraceServiceClient implements BackgroundResource {
-  private final TraceServiceSettings settings;
+  private final @Nullable TraceServiceSettings settings;
   private final TraceServiceStub stub;
 
   /** Constructs an instance of TraceServiceClient with default settings. */
@@ -193,7 +196,7 @@ public class TraceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TraceServiceSettings getSettings() {
+  public final @Nullable TraceServiceSettings getSettings() {
     return settings;
   }
 
@@ -226,7 +229,7 @@ public class TraceServiceClient implements BackgroundResource {
    *     otherwise the results are undefined.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchWriteSpans(ProjectName name, List<Span> spans) {
+  public final void batchWriteSpans(@Nullable ProjectName name, List<Span> spans) {
     BatchWriteSpansRequest request =
         BatchWriteSpansRequest.newBuilder()
             .setName(name == null ? null : name.toString())

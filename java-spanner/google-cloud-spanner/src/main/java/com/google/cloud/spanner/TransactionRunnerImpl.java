@@ -49,6 +49,7 @@ import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.MultiplexedSessionPrecommitToken;
 import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.ResultSet;
+import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Transaction;
@@ -198,6 +199,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     private boolean aborted;
 
     private final Options options;
+    private volatile String cachedTransactionTag;
 
     /** Default to -1 to indicate not available. */
     @GuardedBy("lock")
@@ -741,7 +743,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     @Override
     public void onTransactionMetadata(Transaction transaction, boolean shouldIncludeId) {
       Preconditions.checkNotNull(transaction);
-      if (transaction.getId() != ByteString.EMPTY) {
+      if (!transaction.getId().isEmpty()) {
         // A transaction has been returned by a statement that was executed. Set the id of the
         // transaction on this instance and release the lock to allow other statements to proceed.
         if ((transactionIdFuture == null || !this.transactionIdFuture.isDone())
@@ -753,6 +755,18 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // The statement should have returned a transaction.
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.FAILED_PRECONDITION, AbstractReadContext.NO_TRANSACTION_RETURNED_MSG);
+      }
+    }
+
+    private boolean hasNonEmptyTransactionId(ResultSetMetadata metadata) {
+      return metadata.hasTransaction() && !metadata.getTransaction().getId().isEmpty();
+    }
+
+    private void throwIfBeginDidNotReturnTransaction(
+        TransactionSelector transactionSelector, boolean sawNonEmptyTransactionId) {
+      if (transactionSelector.hasBegin() && !sawNonEmptyTransactionId) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION, NO_TRANSACTION_RETURNED_MSG);
       }
     }
 
@@ -779,6 +793,15 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     String getTransactionTag() {
       if (this.options.hasTag()) {
         return this.options.tag();
+      }
+      if (session.getSpanner().getOptions().isAutoTaggingEnabled()) {
+        if (this.cachedTransactionTag == null) {
+          this.cachedTransactionTag = AutoTagHelper.getAutoTag(session.getSpanner().getOptions());
+          if (this.cachedTransactionTag == null) {
+            this.cachedTransactionTag = "";
+          }
+        }
+        return this.cachedTransactionTag;
       }
       return null;
     }
@@ -970,7 +993,8 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         com.google.spanner.v1.ResultSet resultSet =
             rpc.executeQuery(builder.build(), getTransactionChannelHint(), isRouteToLeader());
         session.markUsed(clock.instant());
-        if (resultSet.getMetadata().hasTransaction()) {
+        boolean sawNonEmptyTransactionId = hasNonEmptyTransactionId(resultSet.getMetadata());
+        if (sawNonEmptyTransactionId) {
           onTransactionMetadata(
               resultSet.getMetadata().getTransaction(), builder.getTransaction().hasBegin());
         }
@@ -978,6 +1002,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
           throw new IllegalArgumentException(
               "DML response missing stats possibly due to non-DML statement as input");
         }
+        throwIfBeginDidNotReturnTransaction(builder.getTransaction(), sawNonEmptyTransactionId);
         if (resultSet.hasPrecommitToken()) {
           onPrecommitToken(resultSet.getPrecommitToken());
         }
@@ -1027,12 +1052,8 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                         ErrorCode.INVALID_ARGUMENT,
                         "DML response missing stats possibly due to non-DML statement as input");
                   }
-                  if (builder.getTransaction().hasBegin()
-                      && !(input.getMetadata().hasTransaction()
-                          && input.getMetadata().getTransaction().getId() != ByteString.EMPTY)) {
-                    throw SpannerExceptionFactory.newSpannerException(
-                        ErrorCode.FAILED_PRECONDITION, NO_TRANSACTION_RETURNED_MSG);
-                  }
+                  throwIfBeginDidNotReturnTransaction(
+                      builder.getTransaction(), hasNonEmptyTransactionId(input.getMetadata()));
                   // For standard DML, using the exact row count.
                   return input.getStats().getRowCountExact();
                 },
@@ -1106,9 +1127,11 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
               rpc.executeBatchDml(builder.build(), getTransactionChannelHint());
           session.markUsed(clock.instant());
           long[] results = new long[response.getResultSetsCount()];
+          boolean sawNonEmptyTransactionId = false;
           for (int i = 0; i < response.getResultSetsCount(); ++i) {
             results[i] = response.getResultSets(i).getStats().getRowCountExact();
-            if (response.getResultSets(i).getMetadata().hasTransaction()) {
+            if (hasNonEmptyTransactionId(response.getResultSets(i).getMetadata())) {
+              sawNonEmptyTransactionId = true;
               onTransactionMetadata(
                   response.getResultSets(i).getMetadata().getTransaction(),
                   builder.getTransaction().hasBegin());
@@ -1129,6 +1152,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 response.getStatus().getMessage(),
                 results);
           }
+          throwIfBeginDidNotReturnTransaction(builder.getTransaction(), sawNonEmptyTransactionId);
           return results;
         } catch (Throwable e) {
           throw onError(
@@ -1177,9 +1201,11 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 response,
                 batchDmlResponse -> {
                   long[] results = new long[batchDmlResponse.getResultSetsCount()];
+                  boolean sawNonEmptyTransactionId = false;
                   for (int i = 0; i < batchDmlResponse.getResultSetsCount(); ++i) {
                     results[i] = batchDmlResponse.getResultSets(i).getStats().getRowCountExact();
-                    if (batchDmlResponse.getResultSets(i).getMetadata().hasTransaction()) {
+                    if (hasNonEmptyTransactionId(batchDmlResponse.getResultSets(i).getMetadata())) {
+                      sawNonEmptyTransactionId = true;
                       onTransactionMetadata(
                           batchDmlResponse.getResultSets(i).getMetadata().getTransaction(),
                           builder.getTransaction().hasBegin());
@@ -1198,6 +1224,8 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                         batchDmlResponse.getStatus().getMessage(),
                         results);
                   }
+                  throwIfBeginDidNotReturnTransaction(
+                      builder.getTransaction(), sawNonEmptyTransactionId);
                   return results;
                 },
                 MoreExecutors.directExecutor());

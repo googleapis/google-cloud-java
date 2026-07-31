@@ -318,10 +318,39 @@ public final class Query implements Serializable {
     return targetId;
   }
 
+  /**
+   * Returns true if this query identifies a single row that can be served by a point read. Supports
+   * two shapes: exactly one row key and no row ranges, or exactly one closed-closed row range whose
+   * start key equals its end key.
+   */
+  @InternalApi
+  public boolean isSinglePointQuery() {
+    RowSet rows = this.builder.getRows();
+    int keyCount = rows.getRowKeysCount();
+    int rangeCount = rows.getRowRangesCount();
+    if (keyCount == 1 && rangeCount == 0) {
+      return true;
+    }
+    if (keyCount == 0 && rangeCount == 1) {
+      RowRange range = rows.getRowRanges(0);
+      return range.hasStartKeyClosed()
+          && range.hasEndKeyClosed()
+          && range.getStartKeyClosed().equals(range.getEndKeyClosed());
+    }
+    return false;
+  }
+
   @InternalApi
   public SessionReadRowRequest toSessionPointProto() {
+    Preconditions.checkState(
+        isSinglePointQuery(),
+        "Query must be a single-point read (one row key, or one closed-closed row range whose"
+            + " start equals its end)");
+    RowSet rows = this.builder.getRows();
+    ByteString key =
+        rows.getRowKeysCount() > 0 ? rows.getRowKeys(0) : rows.getRowRanges(0).getStartKeyClosed();
     return SessionReadRowRequest.newBuilder()
-        .setKey(this.builder.getRows().getRowKeysList().get(0))
+        .setKey(key)
         .setFilter(this.builder.getFilter())
         .build();
   }

@@ -20,6 +20,7 @@ import static com.google.common.truth.extensions.proto.ProtoTruth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -56,13 +57,17 @@ import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -70,8 +75,15 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
+// Backstop against a wedged blocking call (e.g. manager.start().get()) hanging the CI runner
+// indefinitely. If any test exceeds this, fail fast with a diagnosable timeout instead.
+@Timeout(value = 60, unit = TimeUnit.SECONDS)
 class ClientConfigurationManagerTest {
   private static final FeatureFlags FEATURE_FLAGS = FeatureFlags.getDefaultInstance();
+
+  // Retries of a failed fetch are scheduled with sub-second delays, while the next poll is
+  // scheduled minutes out. Anything below this threshold is treated as a retry and run inline.
+  private static final long POLL_VS_RETRY_THRESHOLD_MS = 1_000;
 
   private static final ClientInfo CLIENT_INFO =
       ClientInfo.builder()
@@ -103,6 +115,25 @@ class ClientConfigurationManagerTest {
           }
         };
 
+    // The manager schedules two kinds of tasks on this executor: short-delay retries of a failed
+    // fetch, and the long-delay next poll. Run retries inline so a transient failure of the initial
+    // fetch (e.g. a flaky loopback connection) recovers instead of wedging a caller blocked on
+    // start().get() forever — a plain mock executor would otherwise silently drop the retry.
+    // Long-delay polls are left for tests to trigger manually via the captured Runnable.
+    lenient()
+        .when(mockExecutor.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
+        .thenAnswer(
+            invocation -> {
+              long delayMs =
+                  invocation
+                      .getArgument(2, TimeUnit.class)
+                      .toMillis(invocation.getArgument(1, Long.class));
+              if (delayMs < POLL_VS_RETRY_THRESHOLD_MS) {
+                invocation.getArgument(0, Runnable.class).run();
+              }
+              return Mockito.mock(ScheduledFuture.class);
+            });
+
     manager =
         new ClientConfigurationManager(
             FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
@@ -129,6 +160,19 @@ class ClientConfigurationManagerTest {
         .isEqualTo(
             Durations.toMillis(
                 service.config.get().getPollingConfiguration().getPollingInterval()));
+  }
+
+  @Test
+  void initialFetchRetriesAndRecovers() throws Exception {
+    // The first request is answered without a config message; for a unary RPC gRPC surfaces this to
+    // the client as a non-OK status, which drives the retry path. start().get() must recover via a
+    // retry instead of wedging forever. Under a plain mock executor the scheduled retry would be
+    // silently dropped and this would hang (caught by the class @Timeout).
+    service.emptyResponses.set(1);
+
+    ClientConfiguration initialConfig = manager.start().get();
+
+    assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
   @Test
@@ -193,6 +237,40 @@ class ClientConfigurationManagerTest {
         .isEqualToDefaultInstance();
     assertThat(resolvedConfig.getSessionConfiguration().getChannelConfiguration())
         .isEqualToDefaultInstance();
+  }
+
+  @Test
+  void testDisabledSessionsOverriddenBySysProp()
+      throws ExecutionException, InterruptedException, IOException {
+    // Server returns session_load=0 (sessions disabled from the server's perspective)…
+    ClientConfiguration.Builder disabledBuilder = manager.getDefaultConfig().toBuilder();
+    disabledBuilder.getSessionConfigurationBuilder().setSessionLoad(0);
+    service.config.set(disabledBuilder.build());
+
+    // …but a sys-prop override forces session_load>0 to opt this client into sessions.
+    manager.close();
+    String clientConfigOverrides =
+        TextFormat.printer()
+            .printToString(
+                ClientConfiguration.newBuilder()
+                    .setSessionConfiguration(
+                        SessionClientConfiguration.newBuilder().setSessionLoad(0.75f))
+                    .build());
+    Properties sysProps = new Properties();
+    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+    manager =
+        new ClientConfigurationManager(
+            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
+
+    ClientConfiguration resolvedConfig = manager.start().get();
+
+    // The override must be honoured: session_load and the default SessionPoolConfiguration must
+    // survive normalization instead of being cleared as if sessions were disabled.
+    assertThat(resolvedConfig.getSessionConfiguration().getSessionLoad()).isEqualTo(0.75f);
+    assertThat(resolvedConfig.getSessionConfiguration().getSessionPoolConfiguration())
+        .isEqualTo(
+            manager.getDefaultConfig().getSessionConfiguration().getSessionPoolConfiguration());
+    assertThat(manager.areSessionsRequired()).isTrue();
   }
 
   @Deprecated
@@ -300,8 +378,97 @@ class ClientConfigurationManagerTest {
     assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
+  @Test
+  void testDeadlockPrevention() throws Exception {
+    // Initialize the manager and fetch the initial config to schedule polling.
+    manager.start().get();
+
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+    Runnable triggerPollRunnable = runnableCaptor.getValue();
+
+    // Define the "alien" lock object.
+    final Object alienLock = new Object();
+
+    // Latches to coordinate the deadlock scenario deterministically.
+    final CountDownLatch alienLockAcquiredLatch = new CountDownLatch(1);
+    final CountDownLatch startGetterLatch = new CountDownLatch(1);
+
+    // Register a listener that acts as the "alien" callback.
+    manager.addListener(
+        ClientConfiguration::getSessionConfiguration,
+        new ConfigListener<SessionClientConfiguration>() {
+          @Override
+          public void onChange(SessionClientConfiguration newValue) {
+            // Signal that we have entered the listener callback (released the manager monitor lock)
+            startGetterLatch.countDown();
+
+            // Try to acquire the alien lock. If we still hold the manager monitor lock,
+            // this will cause a deadlock with the other thread calling getClientConfiguration().
+            synchronized (alienLock) {
+              // Do nothing
+            }
+          }
+        });
+
+    // Start Thread B which will hold the alienLock and call getClientConfiguration()
+    final AtomicReference<ClientConfiguration> retrievedConfig = new AtomicReference<>();
+    final AtomicReference<Throwable> threadBError = new AtomicReference<>();
+
+    Thread threadB =
+        new Thread(
+            () -> {
+              synchronized (alienLock) {
+                // Signal that we hold the alien lock
+                alienLockAcquiredLatch.countDown();
+                try {
+                  // Wait until Thread A enters the onChange callback
+                  if (startGetterLatch.await(5, TimeUnit.SECONDS)) {
+                    // Call getClientConfiguration() which requires the synchronized lock on
+                    // ClientConfigurationManager
+                    retrievedConfig.set(manager.getClientConfiguration());
+                  } else {
+                    threadBError.set(
+                        new RuntimeException("Timeout waiting for listener onChange to start"));
+                  }
+                } catch (InterruptedException e) {
+                  threadBError.set(e);
+                }
+              }
+            });
+    threadB.setDaemon(true);
+    threadB.start();
+
+    // Wait for Thread B to acquire the alien lock
+    assertThat(alienLockAcquiredLatch.await(5, TimeUnit.SECONDS)).isTrue();
+
+    // Thread A (current thread): Trigger config change to invoke listener
+    ClientConfiguration.Builder builder = service.config.get().toBuilder();
+    builder
+        .getSessionConfigurationBuilder()
+        .getSessionPoolConfigurationBuilder()
+        .setLoadBalancingOptions(
+            LoadBalancingOptions.newBuilder()
+                .setLeastInFlight(LeastInFlight.newBuilder().setRandomSubsetSize(20)));
+    service.config.set(builder.build());
+
+    // Trigger the poll (which calls setClientConfiguration -> notifyListeners)
+    triggerPollRunnable.run();
+    outstandingRpcCounter.waitUntilRpcsDone();
+
+    // Wait for Thread B to finish
+    threadB.join(5000);
+    assertThat(threadB.isAlive()).isFalse();
+    assertThat(threadBError.get()).isNull();
+    assertThat(retrievedConfig.get()).isNotNull();
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
+
+    // Number of leading requests to answer with a clean (OK) close that delivers no message,
+    // simulating the server closing the stream without ever returning a configuration.
+    private final AtomicInteger emptyResponses = new AtomicInteger(0);
 
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
@@ -313,6 +480,11 @@ class ClientConfigurationManagerTest {
     public void getClientConfiguration(
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
+      if (emptyResponses.getAndDecrement() > 0) {
+        // Close cleanly without sending a message.
+        responseObserver.onCompleted();
+        return;
+      }
       responseObserver.onNext(config.get());
       responseObserver.onCompleted();
     }

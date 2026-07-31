@@ -5,12 +5,11 @@
   "api_description": "lets you analyze the performance and cost-efficiency of your inference workloads, and make data-driven decisions about resource allocation and model deployment strategies.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-gkerecommender/latest/overview",
   "release_level": "preview",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-gkerecommender",
   "distribution_name": "com.google.cloud:google-cloud-gkerecommender",
   "api_id": "gkerecommender.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

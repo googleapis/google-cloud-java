@@ -565,7 +565,10 @@ public class FirestoreClientTest {
             .build();
     mockFirestore.addResponse(expectedResponse);
     ExecutePipelineRequest request =
-        ExecutePipelineRequest.newBuilder().setDatabase("database1789464955").build();
+        ExecutePipelineRequest.newBuilder()
+            .setDatabase("database1789464955")
+            .setAutoCommitTransaction(true)
+            .build();
 
     MockStreamObserver<ExecutePipelineResponse> responseObserver = new MockStreamObserver<>();
 
@@ -583,7 +586,10 @@ public class FirestoreClientTest {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockFirestore.addException(exception);
     ExecutePipelineRequest request =
-        ExecutePipelineRequest.newBuilder().setDatabase("database1789464955").build();
+        ExecutePipelineRequest.newBuilder()
+            .setDatabase("database1789464955")
+            .setAutoCommitTransaction(true)
+            .build();
 
     MockStreamObserver<ExecutePipelineResponse> responseObserver = new MockStreamObserver<>();
 

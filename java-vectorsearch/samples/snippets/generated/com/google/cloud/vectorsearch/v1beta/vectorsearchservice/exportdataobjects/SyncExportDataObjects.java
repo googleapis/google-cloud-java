@@ -38,6 +38,7 @@ public class SyncExportDataObjects {
       ExportDataObjectsRequest request =
           ExportDataObjectsRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
               .build();
       ExportDataObjectsResponse response =
           vectorSearchServiceClient.exportDataObjectsAsync(request).get();

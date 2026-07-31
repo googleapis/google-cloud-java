@@ -45,6 +45,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse;
@@ -54,9 +56,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -76,7 +81,7 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of updateServingConfig:
+ * of createServingConfig:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -87,10 +92,10 @@ import javax.annotation.Generated;
  * ServingConfigServiceStubSettings.Builder servingConfigServiceSettingsBuilder =
  *     ServingConfigServiceStubSettings.newBuilder();
  * servingConfigServiceSettingsBuilder
- *     .updateServingConfigSettings()
+ *     .createServingConfigSettings()
  *     .setRetrySettings(
  *         servingConfigServiceSettingsBuilder
- *             .updateServingConfigSettings()
+ *             .createServingConfigSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -110,6 +115,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -117,8 +123,15 @@ public class ServingConfigServiceStubSettings
     extends StubSettings<ServingConfigServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
+  private final UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings;
+  private final UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings;
   private final UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigSettings;
   private final UnaryCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigSettings;
@@ -184,6 +197,17 @@ public class ServingConfigServiceStubSettings
               return ListServingConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to createServingConfig. */
+  public UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings() {
+    return createServingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteServingConfig. */
+  public UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings() {
+    return deleteServingConfigSettings;
+  }
 
   /** Returns the object with the settings used for calls to updateServingConfig. */
   public UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
@@ -302,7 +326,7 @@ public class ServingConfigServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -314,6 +338,8 @@ public class ServingConfigServiceStubSettings
   protected ServingConfigServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    createServingConfigSettings = settingsBuilder.createServingConfigSettings().build();
+    deleteServingConfigSettings = settingsBuilder.deleteServingConfigSettings().build();
     updateServingConfigSettings = settingsBuilder.updateServingConfigSettings().build();
     getServingConfigSettings = settingsBuilder.getServingConfigSettings().build();
     listServingConfigsSettings = settingsBuilder.listServingConfigsSettings().build();
@@ -332,6 +358,10 @@ public class ServingConfigServiceStubSettings
   public static class Builder
       extends StubSettings.Builder<ServingConfigServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings;
     private final UnaryCallSettings.Builder<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigSettings;
     private final UnaryCallSettings.Builder<GetServingConfigRequest, ServingConfig>
@@ -363,29 +393,41 @@ public class ServingConfigServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
+      createServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listServingConfigsSettings = PagedCallSettings.newBuilder(LIST_SERVING_CONFIGS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateServingConfigSettings, getServingConfigSettings, listServingConfigsSettings);
+              createServingConfigSettings,
+              deleteServingConfigSettings,
+              updateServingConfigSettings,
+              getServingConfigSettings,
+              listServingConfigsSettings);
       initDefaults(this);
     }
 
     protected Builder(ServingConfigServiceStubSettings settings) {
       super(settings);
 
+      createServingConfigSettings = settings.createServingConfigSettings.toBuilder();
+      deleteServingConfigSettings = settings.deleteServingConfigSettings.toBuilder();
       updateServingConfigSettings = settings.updateServingConfigSettings.toBuilder();
       getServingConfigSettings = settings.getServingConfigSettings.toBuilder();
       listServingConfigsSettings = settings.listServingConfigsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateServingConfigSettings, getServingConfigSettings, listServingConfigsSettings);
+              createServingConfigSettings,
+              deleteServingConfigSettings,
+              updateServingConfigSettings,
+              getServingConfigSettings,
+              listServingConfigsSettings);
     }
 
     private static Builder createDefault() {
@@ -413,6 +455,16 @@ public class ServingConfigServiceStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .createServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       builder
           .updateServingConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
@@ -444,6 +496,18 @@ public class ServingConfigServiceStubSettings
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to createServingConfig. */
+    public UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings() {
+      return createServingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServingConfig. */
+    public UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings() {
+      return deleteServingConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateServingConfig. */

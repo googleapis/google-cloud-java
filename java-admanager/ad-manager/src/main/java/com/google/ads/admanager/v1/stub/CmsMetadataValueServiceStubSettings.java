@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CmsMetadataValueServiceClient.ListCmsMetadataValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCmsMetadataValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCmsMetadataValuesResponse;
 import com.google.ads.admanager.v1.CmsMetadataValue;
 import com.google.ads.admanager.v1.GetCmsMetadataValueRequest;
 import com.google.ads.admanager.v1.ListCmsMetadataValuesRequest;
@@ -52,6 +56,8 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -104,13 +110,17 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class CmsMetadataValueServiceStubSettings
     extends StubSettings<CmsMetadataValueServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetCmsMetadataValueRequest, CmsMetadataValue>
       getCmsMetadataValueSettings;
@@ -119,6 +129,12 @@ public class CmsMetadataValueServiceStubSettings
           ListCmsMetadataValuesResponse,
           ListCmsMetadataValuesPagedResponse>
       listCmsMetadataValuesSettings;
+  private final UnaryCallSettings<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesSettings;
 
   private static final PagedListDescriptor<
           ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
@@ -198,6 +214,20 @@ public class CmsMetadataValueServiceStubSettings
     return listCmsMetadataValuesSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+      batchActivateCmsMetadataValuesSettings() {
+    return batchActivateCmsMetadataValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataValues. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+      batchDeactivateCmsMetadataValuesSettings() {
+    return batchDeactivateCmsMetadataValuesSettings;
+  }
+
   public CmsMetadataValueServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -268,7 +298,7 @@ public class CmsMetadataValueServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -282,6 +312,10 @@ public class CmsMetadataValueServiceStubSettings
 
     getCmsMetadataValueSettings = settingsBuilder.getCmsMetadataValueSettings().build();
     listCmsMetadataValuesSettings = settingsBuilder.listCmsMetadataValuesSettings().build();
+    batchActivateCmsMetadataValuesSettings =
+        settingsBuilder.batchActivateCmsMetadataValuesSettings().build();
+    batchDeactivateCmsMetadataValuesSettings =
+        settingsBuilder.batchDeactivateCmsMetadataValuesSettings().build();
   }
 
   @Override
@@ -304,6 +338,12 @@ public class CmsMetadataValueServiceStubSettings
             ListCmsMetadataValuesResponse,
             ListCmsMetadataValuesPagedResponse>
         listCmsMetadataValuesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+        batchActivateCmsMetadataValuesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+        batchDeactivateCmsMetadataValuesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -328,16 +368,21 @@ public class CmsMetadataValueServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getCmsMetadataValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCmsMetadataValuesSettings =
           PagedCallSettings.newBuilder(LIST_CMS_METADATA_VALUES_PAGE_STR_FACT);
+      batchActivateCmsMetadataValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateCmsMetadataValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCmsMetadataValueSettings, listCmsMetadataValuesSettings);
+              getCmsMetadataValueSettings,
+              listCmsMetadataValuesSettings,
+              batchActivateCmsMetadataValuesSettings,
+              batchDeactivateCmsMetadataValuesSettings);
       initDefaults(this);
     }
 
@@ -346,10 +391,17 @@ public class CmsMetadataValueServiceStubSettings
 
       getCmsMetadataValueSettings = settings.getCmsMetadataValueSettings.toBuilder();
       listCmsMetadataValuesSettings = settings.listCmsMetadataValuesSettings.toBuilder();
+      batchActivateCmsMetadataValuesSettings =
+          settings.batchActivateCmsMetadataValuesSettings.toBuilder();
+      batchDeactivateCmsMetadataValuesSettings =
+          settings.batchDeactivateCmsMetadataValuesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCmsMetadataValueSettings, listCmsMetadataValuesSettings);
+              getCmsMetadataValueSettings,
+              listCmsMetadataValuesSettings,
+              batchActivateCmsMetadataValuesSettings,
+              batchDeactivateCmsMetadataValuesSettings);
     }
 
     private static Builder createDefault() {
@@ -372,6 +424,16 @@ public class CmsMetadataValueServiceStubSettings
 
       builder
           .listCmsMetadataValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateCmsMetadataValuesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateCmsMetadataValuesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -406,6 +468,20 @@ public class CmsMetadataValueServiceStubSettings
             ListCmsMetadataValuesPagedResponse>
         listCmsMetadataValuesSettings() {
       return listCmsMetadataValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataValuesRequest, BatchActivateCmsMetadataValuesResponse>
+        batchActivateCmsMetadataValuesSettings() {
+      return batchActivateCmsMetadataValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataValues. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataValuesRequest, BatchDeactivateCmsMetadataValuesResponse>
+        batchDeactivateCmsMetadataValuesSettings() {
+      return batchDeactivateCmsMetadataValuesSettings;
     }
 
     @Override

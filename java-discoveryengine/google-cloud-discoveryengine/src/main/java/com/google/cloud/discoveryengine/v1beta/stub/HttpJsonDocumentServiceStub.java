@@ -61,6 +61,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,6 +69,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
@@ -517,6 +519,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -543,6 +550,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -617,6 +629,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

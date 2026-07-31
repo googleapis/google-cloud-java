@@ -2201,7 +2201,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Fetch upgrade information of a specific nodepool.
+     * Fetch upgrade information of a specific node pool.
      * </pre>
      */
     default void fetchNodePoolUpgradeInfo(
@@ -2841,7 +2841,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Fetch upgrade information of a specific nodepool.
+     * Fetch upgrade information of a specific node pool.
      * </pre>
      */
     public void fetchNodePoolUpgradeInfo(
@@ -3370,7 +3370,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Fetch upgrade information of a specific nodepool.
+     * Fetch upgrade information of a specific node pool.
      * </pre>
      */
     public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
@@ -3888,7 +3888,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Fetch upgrade information of a specific nodepool.
+     * Fetch upgrade information of a specific node pool.
      * </pre>
      */
     public com.google.container.v1.NodePoolUpgradeInfo fetchNodePoolUpgradeInfo(
@@ -4413,7 +4413,7 @@ public final class ClusterManagerGrpc {
      *
      *
      * <pre>
-     * Fetch upgrade information of a specific nodepool.
+     * Fetch upgrade information of a specific node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

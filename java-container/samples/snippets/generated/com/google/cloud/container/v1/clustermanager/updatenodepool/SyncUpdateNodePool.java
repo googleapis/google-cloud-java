@@ -35,6 +35,7 @@ import com.google.container.v1.NodeTaints;
 import com.google.container.v1.Operation;
 import com.google.container.v1.ResourceLabels;
 import com.google.container.v1.ResourceManagerTags;
+import com.google.container.v1.TaintConfig;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.container.v1.VirtualNIC;
 import com.google.container.v1.WindowsNodeConfig;
@@ -64,6 +65,8 @@ public class SyncUpdateNodePool {
               .setNodeVersion("nodeVersion1155309686")
               .setImageType("imageType-878147787")
               .setName("name3373707")
+              .setImage("image100313435")
+              .setImageProject("imageProject288951614")
               .addAllLocations(new ArrayList<String>())
               .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
               .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
@@ -94,6 +97,7 @@ public class SyncUpdateNodePool {
               .setBootDisk(BootDisk.newBuilder().build())
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
+              .setTaintConfig(TaintConfig.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

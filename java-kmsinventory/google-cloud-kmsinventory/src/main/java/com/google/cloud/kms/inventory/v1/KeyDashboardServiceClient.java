@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -143,9 +145,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class KeyDashboardServiceClient implements BackgroundResource {
-  private final KeyDashboardServiceSettings settings;
+  private final @Nullable KeyDashboardServiceSettings settings;
   private final KeyDashboardServiceStub stub;
 
   /** Constructs an instance of KeyDashboardServiceClient with default settings. */
@@ -185,7 +188,7 @@ public class KeyDashboardServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final KeyDashboardServiceSettings getSettings() {
+  public final @Nullable KeyDashboardServiceSettings getSettings() {
     return settings;
   }
 
@@ -219,7 +222,7 @@ public class KeyDashboardServiceClient implements BackgroundResource {
    *     format `projects/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCryptoKeysPagedResponse listCryptoKeys(ProjectName parent) {
+  public final ListCryptoKeysPagedResponse listCryptoKeys(@Nullable ProjectName parent) {
     ListCryptoKeysRequest request =
         ListCryptoKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -428,8 +431,8 @@ public class KeyDashboardServiceClient implements BackgroundResource {
           ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey, ListCryptoKeysPage> {
 
     private ListCryptoKeysPage(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
-        ListCryptoKeysResponse response) {
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable ListCryptoKeysResponse response) {
       super(context, response);
     }
 
@@ -439,14 +442,14 @@ public class KeyDashboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeysPage createPage(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
-        ListCryptoKeysResponse response) {
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable ListCryptoKeysResponse response) {
       return new ListCryptoKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCryptoKeysPage> createPageAsync(
-        PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
+        @Nullable PageContext<ListCryptoKeysRequest, ListCryptoKeysResponse, CryptoKey> context,
         ApiFuture<ListCryptoKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -460,7 +463,8 @@ public class KeyDashboardServiceClient implements BackgroundResource {
           ListCryptoKeysPage,
           ListCryptoKeysFixedSizeCollection> {
 
-    private ListCryptoKeysFixedSizeCollection(List<ListCryptoKeysPage> pages, int collectionSize) {
+    private ListCryptoKeysFixedSizeCollection(
+        @Nullable List<ListCryptoKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -470,7 +474,7 @@ public class KeyDashboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListCryptoKeysFixedSizeCollection createCollection(
-        List<ListCryptoKeysPage> pages, int collectionSize) {
+        @Nullable List<ListCryptoKeysPage> pages, int collectionSize) {
       return new ListCryptoKeysFixedSizeCollection(pages, collectionSize);
     }
   }

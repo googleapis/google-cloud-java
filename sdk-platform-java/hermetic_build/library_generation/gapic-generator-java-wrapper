@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -e
-wrapper_dir=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
-source "${wrapper_dir}/utils/utilities.sh"
-
-# Wrap gapic-generator-java.jar because protoc requires the plugin to be executable.
-exec java -classpath "$(get_gapic_generator_location)" com.google.api.generator.Main

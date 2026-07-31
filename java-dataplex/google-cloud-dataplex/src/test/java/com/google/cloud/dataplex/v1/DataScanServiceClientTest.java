@@ -123,6 +123,7 @@ public class DataScanServiceClientTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -186,6 +187,7 @@ public class DataScanServiceClientTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -249,6 +251,7 @@ public class DataScanServiceClientTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -393,6 +396,7 @@ public class DataScanServiceClientTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockDataScanService.addResponse(expectedResponse);
 
@@ -442,6 +446,7 @@ public class DataScanServiceClientTest {
             .setExecutionSpec(DataScan.ExecutionSpec.newBuilder().build())
             .setExecutionStatus(DataScan.ExecutionStatus.newBuilder().build())
             .setType(DataScanType.forNumber(0))
+            .setExecutionIdentity(ExecutionIdentity.newBuilder().build())
             .build();
     mockDataScanService.addResponse(expectedResponse);
 
@@ -643,6 +648,7 @@ public class DataScanServiceClientTest {
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -688,6 +694,7 @@ public class DataScanServiceClientTest {
                 DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]").toString())
             .setUid("uid115792")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setPartialFailureMessage("partialFailureMessage-1000286466")
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setMessage("message954925063")
@@ -807,6 +814,76 @@ public class DataScanServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listDataScanJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockDataScanService.addResponse(expectedResponse);
+
+    DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataScanService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelDataScanJobRequest actualRequest = ((CancelDataScanJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataScanService.addException(exception);
+
+    try {
+      DataScanJobName name = DataScanJobName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]", "[JOB]");
+      client.cancelDataScanJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelDataScanJobTest2() throws Exception {
+    CancelDataScanJobResponse expectedResponse = CancelDataScanJobResponse.newBuilder().build();
+    mockDataScanService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CancelDataScanJobResponse actualResponse = client.cancelDataScanJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataScanService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelDataScanJobRequest actualRequest = ((CancelDataScanJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelDataScanJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataScanService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelDataScanJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

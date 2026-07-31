@@ -87,6 +87,7 @@ import javax.annotation.concurrent.GuardedBy;
 public class MetricsImpl implements Metrics, Closeable {
 
   public static final String CUSTOM_METRIC = "bigtable.internal.enable-custom-metric";
+  public static final String CUSTOM_METRIC_PREFIX = "bigtable.custom";
 
   private static final boolean enableCustomMetric =
       Optional.ofNullable(System.getProperty(CUSTOM_METRIC))
@@ -319,7 +320,13 @@ public class MetricsImpl implements Metrics, Closeable {
         new BigtablePeriodicReader(
             new BigtableFilteringExporter(
                 exporter,
-                input -> input.getName().startsWith("bigtable.googleapis.com/internal/client")),
+                input -> {
+                  // filter out custom metrics and keep everything else that's registered on metric
+                  // registry
+                  String name = input.getName();
+                  return metricRegistry.getMetric(name) != null
+                      && !name.startsWith(CUSTOM_METRIC_PREFIX);
+                }),
             executor));
 
     if (enableCustomMetric) {
@@ -333,7 +340,7 @@ public class MetricsImpl implements Metrics, Closeable {
           PeriodicMetricReader.builder(
                   new BigtableFilteringExporter(
                       GoogleCloudMetricExporter.createWithConfiguration(metricConfig),
-                      input -> input.getName().startsWith("bigtable.custom")))
+                      input -> input.getName().startsWith(CUSTOM_METRIC_PREFIX)))
               .setInterval(Duration.ofMinutes(1))
               .build());
     }
