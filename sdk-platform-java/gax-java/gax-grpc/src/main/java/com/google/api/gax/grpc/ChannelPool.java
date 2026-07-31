@@ -712,7 +712,13 @@ class ChannelPool extends ManagedChannel {
     }
   }
 
-  /** ClientCall wrapper that makes sure to decrement the outstanding RPC count on completion. */
+  /**
+   * ClientCall wrapper that makes sure to decrement the outstanding RPC count on completion.
+   *
+   * <p>Contract: Exactly one call to {@link #start(Listener, Metadata)} or explicit release via
+   * {@link #cancel(String, Throwable)} is required to balance reference counts. Early cancellation
+   * before {@code start()} safely decrements the reference count via atomic compare-and-set.
+   */
   static class ReleasingClientCall<ReqT, RespT> extends SimpleForwardingClientCall<ReqT, RespT> {
     private @Nullable CancellationException cancellationException;
     final Entry entry;

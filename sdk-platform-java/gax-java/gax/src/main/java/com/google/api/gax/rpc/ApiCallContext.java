@@ -66,6 +66,10 @@ public interface ApiCallContext extends RetryingContext {
   /**
    * Returns the {@link TransportChannel} associated with this call context, or {@code null} if none
    * is set.
+   *
+   * <p>Note: By default, this method returns {@code null}. If an implementation does not override
+   * this method, automatic mTLS certificate rotation and channel refreshing in retrying callables
+   * will be disabled.
    */
   default TransportChannel getTransportChannel() {
     return null;

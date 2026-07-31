@@ -95,12 +95,18 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
                 TransportChannel transportChannel = finalContext.getTransportChannel();
                 if (transportChannel != null && transportChannel.shouldRefresh()) {
                   transportChannel.refresh();
-                  throw new UnauthenticatedException(
-                      unauthenticatedException.getMessage(),
-                      unauthenticatedException.getCause(),
-                      unauthenticatedException.getStatusCode(),
-                      true, // isRetryable = true
-                      unauthenticatedException.getErrorDetails());
+                  UnauthenticatedException newEx =
+                      new UnauthenticatedException(
+                          unauthenticatedException.getMessage(),
+                          unauthenticatedException,
+                          unauthenticatedException.getStatusCode(),
+                          true, // isRetryable = true
+                          unauthenticatedException.getErrorDetails());
+                  newEx.setStackTrace(unauthenticatedException.getStackTrace());
+                  for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
+                    newEx.addSuppressed(suppressed);
+                  }
+                  throw newEx;
                 }
                 throw unauthenticatedException;
               },

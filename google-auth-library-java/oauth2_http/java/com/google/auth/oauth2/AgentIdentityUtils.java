@@ -52,6 +52,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -234,7 +235,78 @@ public final class AgentIdentityUtils {
       return null;
     }
 
-    return loadAndVerifyCredentials(paths.getCertPath(), paths.getKeyPath());
+    return getCachedOrLoadCredentials(paths.getCertPath(), paths.getKeyPath());
+  }
+
+  private static final Object certInfoCacheLock = new Object();
+  private static volatile CachedCertInfo cachedCertInfo = null;
+
+  static void clearCertInfoCache() {
+    synchronized (certInfoCacheLock) {
+      cachedCertInfo = null;
+    }
+  }
+
+  private static CertInfo getCachedOrLoadCredentials(String certPath, String keyPath)
+      throws IOException {
+    CachedCertInfo currentCache = cachedCertInfo;
+    if (currentCache != null && isCacheValid(currentCache, certPath, keyPath)) {
+      return currentCache.certInfo;
+    }
+    synchronized (certInfoCacheLock) {
+      if (cachedCertInfo != null && isCacheValid(cachedCertInfo, certPath, keyPath)) {
+        return cachedCertInfo.certInfo;
+      }
+      CertInfo info = loadAndVerifyCredentials(certPath, keyPath);
+      long certMtime = getFileMtime(certPath);
+      long keyMtime = getFileMtime(keyPath);
+      cachedCertInfo = new CachedCertInfo(certPath, keyPath, certMtime, keyMtime, info);
+      return info;
+    }
+  }
+
+  private static boolean isCacheValid(CachedCertInfo cache, String certPath, String keyPath) {
+    if (!Objects.equals(cache.certPath, certPath) || !Objects.equals(cache.keyPath, keyPath)) {
+      return false;
+    }
+    return cache.certLastModifiedTime == getFileMtime(certPath)
+        && cache.keyLastModifiedTime == getFileMtime(keyPath);
+  }
+
+  private static long getFileMtime(String path) {
+    if (path == null) {
+      return -1;
+    }
+    try {
+      java.nio.file.Path p = Paths.get(path);
+      if (Files.exists(p)) {
+        return Files.getLastModifiedTime(p).toMillis();
+      }
+    } catch (IOException e) {
+      // Ignore exception and return -1
+    }
+    return -1;
+  }
+
+  private static class CachedCertInfo {
+    final String certPath;
+    final String keyPath;
+    final long certLastModifiedTime;
+    final long keyLastModifiedTime;
+    final CertInfo certInfo;
+
+    CachedCertInfo(
+        String certPath,
+        String keyPath,
+        long certLastModifiedTime,
+        long keyLastModifiedTime,
+        CertInfo certInfo) {
+      this.certPath = certPath;
+      this.keyPath = keyPath;
+      this.certLastModifiedTime = certLastModifiedTime;
+      this.keyLastModifiedTime = keyLastModifiedTime;
+      this.certInfo = certInfo;
+    }
   }
 
   /**

@@ -31,15 +31,21 @@ package com.google.api.gax.httpjson;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -49,9 +55,14 @@ class RefreshingHttpJsonChannelTest {
   private ManagedHttpJsonChannel lastCreatedChannel;
   private String testCertPath = "/fake/path";
   private String testFingerprint = "fingerprint1";
+  private boolean shouldThrowOnFactory = false;
+  private List<RefreshingHttpJsonChannel> createdChannels;
 
   private Supplier<ManagedHttpJsonChannel> channelFactory =
       () -> {
+        if (shouldThrowOnFactory) {
+          throw new RuntimeException("Simulated factory failure");
+        }
         channelFactoryCount.incrementAndGet();
         lastCreatedChannel = mock(ManagedHttpJsonChannel.class);
         return lastCreatedChannel;
@@ -62,20 +73,32 @@ class RefreshingHttpJsonChannelTest {
     channelFactoryCount = new AtomicInteger(0);
     testCertPath = "/fake/path";
     testFingerprint = "fingerprint1";
+    shouldThrowOnFactory = false;
+    createdChannels = new ArrayList<>();
+  }
+
+  @AfterEach
+  void tearDown() {
+    for (RefreshingHttpJsonChannel channel : createdChannels) {
+      channel.shutdownNow();
+    }
   }
 
   private RefreshingHttpJsonChannel createTestChannel() {
-    return new RefreshingHttpJsonChannel(channelFactory, "fake/cert/path.json") {
-      @Override
-      protected String getWorkloadCertPath() {
-        return testCertPath;
-      }
+    RefreshingHttpJsonChannel ch =
+        new RefreshingHttpJsonChannel(channelFactory, "fake/cert/path.json") {
+          @Override
+          protected String getWorkloadCertPath() {
+            return testCertPath;
+          }
 
-      @Override
-      protected String getCertificateFingerprint(String certPath) {
-        return testFingerprint;
-      }
-    };
+          @Override
+          protected String getCertificateFingerprint(String certPath) {
+            return testFingerprint;
+          }
+        };
+    createdChannels.add(ch);
+    return ch;
   }
 
   @Test
@@ -193,5 +216,47 @@ class RefreshingHttpJsonChannelTest {
 
     // Verify no new channel was spawned
     assertEquals(1, channelFactoryCount.get());
+  }
+
+  @Test
+  void testRefreshFactoryExceptionDoesNotWedgeFingerprint() throws InterruptedException {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    assertEquals(1, channelFactoryCount.get());
+
+    shouldThrowOnFactory = true;
+    Thread.sleep(1001); // Invalidate 1-second cache
+    testFingerprint = "fingerprint2";
+
+    assertThrows(RuntimeException.class, channel::refresh);
+
+    // Because factory threw, activeCertFingerprint should NOT be updated to fingerprint2
+    // Therefore shouldRefresh() should still return true
+    assertTrue(channel.shouldRefresh());
+
+    shouldThrowOnFactory = false;
+    channel.refresh();
+    assertEquals(2, channelFactoryCount.get());
+    assertFalse(channel.shouldRefresh());
+  }
+
+  @Test
+  void testShutdownNowSetsIsShutdown() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    assertFalse(channel.isShutdown());
+
+    channel.shutdownNow();
+
+    assertTrue(channel.isShutdown());
+  }
+
+  @Test
+  void testAwaitTerminationZeroTimeoutOnTerminatedChannelReturnsTrue() throws InterruptedException {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    when(firstChannel.isTerminated()).thenReturn(true);
+    when(firstChannel.awaitTermination(anyLong(), any())).thenReturn(true);
+
+    channel.shutdown();
+    assertTrue(channel.awaitTermination(0, TimeUnit.MILLISECONDS));
   }
 }

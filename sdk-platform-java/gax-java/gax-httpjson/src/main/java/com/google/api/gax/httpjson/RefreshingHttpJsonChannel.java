@@ -153,7 +153,6 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
         return;
       }
 
-      this.activeCertFingerprint = currentDiskFingerprint;
       LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
 
       // Prune terminated entries to prevent memory leak
@@ -162,6 +161,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       ChannelEntry newEntry = new ChannelEntry(channelFactory.get());
       allEntries.add(newEntry);
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
+      this.activeCertFingerprint = currentDiskFingerprint;
 
       if (oldEntry != null) {
         oldEntry.requestShutdown();
@@ -234,8 +234,12 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public void shutdownNow() {
-    for (ChannelEntry entry : allEntries) {
-      entry.channel.shutdownNow();
+    synchronized (refreshLock) {
+      isShuttingDown = true;
+      for (ChannelEntry entry : allEntries) {
+        entry.requestShutdown();
+        entry.channel.shutdownNow();
+      }
     }
   }
 
@@ -243,6 +247,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     long endNanos = System.nanoTime() + unit.toNanos(duration);
     for (ChannelEntry entry : allEntries) {
+      if (entry.channel.isTerminated()) {
+        continue;
+      }
       long remainingNanos = endNanos - System.nanoTime();
       if (remainingNanos <= 0) {
         return false;

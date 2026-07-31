@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -75,6 +76,7 @@ class AgentIdentityUtilsTest {
 
   @BeforeEach
   void setUp() throws IOException {
+    AgentIdentityUtils.clearCertInfoCache();
     envProvider = new TestEnvironmentProvider();
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
     tempDir = Files.createTempDirectory("agent_identity_test");
@@ -82,6 +84,7 @@ class AgentIdentityUtilsTest {
 
   @AfterEach
   void tearDown() throws IOException {
+    AgentIdentityUtils.clearCertInfoCache();
     AgentIdentityUtils.resetTimeService();
     AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
     AgentIdentityUtils.setEnvReader(System::getenv);
@@ -184,6 +187,32 @@ class AgentIdentityUtilsTest {
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
     assertTrue(info.getCertificate().getIssuerDN().getName().contains("unit-tests"));
+  }
+
+  @Test
+  public void testAgentIdentityCertInfoIsCachedAndReloadedWhenModified() throws IOException {
+    URL certUrl = getClass().getClassLoader().getResource("x509_leaf_certificate.pem");
+    assertNotNull(certUrl, "Test resource x509_leaf_certificate.pem not found");
+    String certPath = new File(certUrl.getFile()).getAbsolutePath();
+    File configFile = tempDir.resolve("config_cache.json").toFile();
+    String configJson =
+        "{"
+            + " \"cert_configs\": {"
+            + " \"workload\": {"
+            + " \"cert_path\": \""
+            + certPath.replace("\\", "\\\\")
+            + "\""
+            + " }"
+            + " }"
+            + "}";
+    try (FileOutputStream fos = new FileOutputStream(configFile)) {
+      fos.write(configJson.getBytes(StandardCharsets.UTF_8));
+    }
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+    assertSame(info1, info2);
   }
 
   @Test

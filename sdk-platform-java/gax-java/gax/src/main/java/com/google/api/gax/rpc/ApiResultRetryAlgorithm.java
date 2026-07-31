@@ -52,6 +52,8 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   @Override
   public boolean shouldRetry(
       RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+    // Check UnauthenticatedException retryability first to ensure mTLS certificate
+    // rotation retries take precedence over static method retry codes.
     if (previousThrowable instanceof UnauthenticatedException
         && ((UnauthenticatedException) previousThrowable).isRetryable()) {
       return true;
