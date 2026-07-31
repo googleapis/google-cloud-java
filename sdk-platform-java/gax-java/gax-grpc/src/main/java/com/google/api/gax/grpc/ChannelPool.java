@@ -441,13 +441,15 @@ class ChannelPool extends ManagedChannel {
 
   private void refreshSafely() {
     try {
-      if (workloadCertPath != null) {
-        String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
-        if (!currentDiskFingerprint.isEmpty()) {
-          this.activeCertFingerprint = currentDiskFingerprint;
+      synchronized (entryWriteLock) {
+        if (workloadCertPath != null) {
+          String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
+          if (!currentDiskFingerprint.isEmpty()) {
+            this.activeCertFingerprint = currentDiskFingerprint;
+          }
         }
+        refreshAll();
       }
-      refreshAll();
     } catch (Exception e) {
       LOG.log(Level.WARNING, "Failed to pre-emptively refresh channels", e);
     }
@@ -720,6 +722,9 @@ class ChannelPool extends ManagedChannel {
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
       if (cancellationException != null) {
+        if (wasReleased.compareAndSet(false, true)) {
+          entry.release();
+        }
         throw new IllegalStateException("Call is already cancelled", cancellationException);
       }
       try {

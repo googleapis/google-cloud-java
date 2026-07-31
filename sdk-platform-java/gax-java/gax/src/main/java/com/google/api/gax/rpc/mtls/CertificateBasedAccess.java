@@ -218,8 +218,7 @@ public class CertificateBasedAccess {
         CertificateConfig config = parseCertificateConfig(certConfigPath);
         return config.certPath;
       } catch (Exception e) {
-        // Fallback to null if JSON parsing fails, similar to validation logic
-        return null;
+        throw new IllegalStateException("Failed to parse GOOGLE_API_CERTIFICATE_CONFIG", e);
       }
     }
 

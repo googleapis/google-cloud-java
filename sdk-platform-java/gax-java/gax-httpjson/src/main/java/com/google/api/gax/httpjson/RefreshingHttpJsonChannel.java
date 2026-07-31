@@ -202,21 +202,21 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     return activeEntry.get().channel;
   }
 
+  private volatile boolean isShuttingDown = false;
+
   @Override
   public void shutdown() {
-    for (ChannelEntry entry : allEntries) {
-      entry.requestShutdown();
+    synchronized (refreshLock) {
+      isShuttingDown = true;
+      for (ChannelEntry entry : allEntries) {
+        entry.requestShutdown();
+      }
     }
   }
 
   @Override
   public boolean isShutdown() {
-    for (ChannelEntry entry : allEntries) {
-      if (!entry.channel.isShutdown()) {
-        return false;
-      }
-    }
-    return true;
+    return isShuttingDown;
   }
 
   @Override

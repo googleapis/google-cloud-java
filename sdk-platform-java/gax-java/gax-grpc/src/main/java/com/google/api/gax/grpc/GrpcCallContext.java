@@ -282,7 +282,7 @@ public final class GrpcCallContext implements ApiCallContext {
     }
 
     // Prevent expanding timeouts
-    if (timeout != null && this.timeout != null && this.timeout.compareTo(timeout) <= 0) {
+    if (this.timeout != null && (timeout == null || this.timeout.compareTo(timeout) <= 0)) {
       return this;
     }
 
@@ -563,6 +563,11 @@ public final class GrpcCallContext implements ApiCallContext {
       newCallOptions = newCallOptions.withOption(TRACER_KEY, newTracer);
     }
 
+    TransportChannel newTransportChannel = grpcCallContext.transportChannel;
+    if (newTransportChannel == null) {
+      newTransportChannel = transportChannel;
+    }
+
     // The EndpointContext is not updated as there should be no reason for a user
     // to update this.
     return new GrpcCallContext(
@@ -579,7 +584,7 @@ public final class GrpcCallContext implements ApiCallContext {
         newRetryableCodes,
         endpointContext,
         newIsDirectPath,
-        transportChannel);
+        newTransportChannel);
   }
 
   /** The {@link Channel} set on this context. */

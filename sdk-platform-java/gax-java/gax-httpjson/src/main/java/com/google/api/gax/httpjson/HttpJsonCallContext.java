@@ -223,6 +223,11 @@ public final class HttpJsonCallContext implements ApiCallContext {
       newRetryableCodes = this.retryableCodes;
     }
 
+    TransportChannel newTransportChannel = httpJsonCallContext.transportChannel;
+    if (newTransportChannel == null) {
+      newTransportChannel = this.transportChannel;
+    }
+
     // The EndpointContext is not updated as there should be no reason for a user
     // to update this.
     return new HttpJsonCallContext(
@@ -237,7 +242,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
         newRetrySettings,
         newRetryableCodes,
         endpointContext,
-        this.transportChannel);
+        newTransportChannel);
   }
 
   @Override
@@ -308,7 +313,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
     }
 
     // Prevent expanding deadlines
-    if (timeout != null && this.timeout != null && this.timeout.compareTo(timeout) <= 0) {
+    if (this.timeout != null && (timeout == null || this.timeout.compareTo(timeout) <= 0)) {
       return this;
     }
 
