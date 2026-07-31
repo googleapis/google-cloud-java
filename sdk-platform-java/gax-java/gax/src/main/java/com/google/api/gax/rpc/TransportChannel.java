@@ -34,7 +34,6 @@ import com.google.api.gax.core.BackgroundResource;
 import org.jspecify.annotations.NullMarked;
 
 /** Class whose instances can issue RPCs on a particular transport. */
-@NullMarked
 @InternalExtensionOnly
 public interface TransportChannel extends BackgroundResource {
 

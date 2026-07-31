@@ -41,7 +41,6 @@ import org.jspecify.annotations.NullMarked;
  * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE,
  * GOOGLE_API_CERTIFICATE_CONFIG, and GOOGLE_API_USE_MTLS_ENDPOINT configurations.
  */
-@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 
