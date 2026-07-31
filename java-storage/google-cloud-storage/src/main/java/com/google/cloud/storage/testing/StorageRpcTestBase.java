@@ -37,7 +37,7 @@ import java.util.Map;
 
 /**
  * A stub implementation of {@link StorageRpc} which can be used outside of the Storage module for
- * testing purposes. All the methods throw an {@code UnsupportedOperationException}.
+ * testing purposes. All the methods throw an {@code UnsupportedOperationException}. 
  */
 public class StorageRpcTestBase implements StorageRpc {
 
