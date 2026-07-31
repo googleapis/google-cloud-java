@@ -34,6 +34,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.Configure
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
@@ -44,6 +45,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
 import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
@@ -86,6 +88,7 @@ public class ShimImpl implements Shim {
 
   private final ReadRowShimInner readRowShimInner;
   private final MutateRowShim mutateRowShim;
+  private final CheckAndMutateRowShim checkAndMutateRowShim;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -201,6 +204,7 @@ public class ShimImpl implements Shim {
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
   }
 
   /**
@@ -374,5 +378,12 @@ public class ShimImpl implements Shim {
       UnaryCallable<RowMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
         configManager, classic, mutateRowShim, Util.extractTimeout(settings), debugTagTracer);
+  }
+
+  @Override
+  public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
+      UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
+    return new DivertingUnaryCallable<>(
+        configManager, classic, checkAndMutateRowShim, Util.extractTimeout(settings));
   }
 }
