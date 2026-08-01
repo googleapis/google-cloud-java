@@ -48,6 +48,7 @@ import java.time.format.TextStyle;
 import java.time.temporal.ChronoField;
 import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -624,6 +625,9 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
         if (val instanceof ByteString) {
           protoMsg.setField(fieldDescriptor, ((ByteString) val).toByteArray());
           return;
+        } else if (val instanceof byte[]) {
+          protoMsg.setField(fieldDescriptor, val);
+          return;
         } else if (val instanceof JSONArray) {
           byte[] bytes = new byte[((JSONArray) val).length()];
           for (int j = 0; j < ((JSONArray) val).length(); j++) {
@@ -635,6 +639,11 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
             }
           }
           protoMsg.setField(fieldDescriptor, bytes);
+          return;
+        } else if (val instanceof String
+            && fieldSchema != null
+            && fieldSchema.getType() == TableFieldSchema.Type.BYTES) {
+          protoMsg.setField(fieldDescriptor, parseBase64(currentScope, (String) val));
           return;
         }
         break;
@@ -901,6 +910,11 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
                             + index
                             + "] could not be converted to byte[]."));
               }
+            } else if (val instanceof String
+                && fieldSchema != null
+                && fieldSchema.getType() == TableFieldSchema.Type.BYTES) {
+              protoMsg.addRepeatedField(
+                  fieldDescriptor, parseBase64(currentScope + "[" + index + "]", (String) val));
             } else {
               throwWrongFieldType(fieldDescriptor, currentScope, index);
             }
@@ -1103,6 +1117,29 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
         String.format(
             "JSONObject does not have a %s field at %s[%d].",
             FIELD_TYPE_TO_DEBUG_MESSAGE.get(fieldDescriptor.getType()), currentScope, index));
+  }
+
+  /**
+   * Decodes a base64 string into bytes, the encoding protobuf's canonical JSON mapping defines for
+   * the {@code bytes} type. Standard and URL-safe alphabets are both accepted, with or without
+   * padding, as that mapping requires; the two alphabets are mutually exclusive on {@code +/}
+   * versus {@code -_}, so the fallback is what makes both work.
+   *
+   * @throws IllegalArgumentException if the value decodes under neither alphabet
+   */
+  private static byte[] parseBase64(String currentScope, String value) {
+    try {
+      return Base64.getDecoder().decode(value);
+    } catch (IllegalArgumentException standardAlphabetFailed) {
+      try {
+        return Base64.getUrlDecoder().decode(value);
+      } catch (IllegalArgumentException urlSafeAlphabetFailed) {
+        throw new IllegalArgumentException(
+            "Error: "
+                + currentScope
+                + " could not be converted to byte[]: not a valid base64 string.");
+      }
+    }
   }
 
   /**
