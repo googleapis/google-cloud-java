@@ -17,7 +17,9 @@ package com.google.api.generator.gapic.protoparser;
 import com.google.api.generator.gapic.model.ResourceName;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ResourceParserHelpers {
   public static Map<String, ResourceName> createPatternResourceNameMap(
       Map<String, ResourceName> resourceNames) {

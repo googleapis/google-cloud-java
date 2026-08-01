@@ -46,6 +46,7 @@ import org.jspecify.annotations.Nullable;
  *       SqlOperationsGetRequest.newBuilder()
  *           .setOperation("operation1662702951")
  *           .setProject("project-309310695")
+ *           .setLocation("location1901043637")
  *           .build();
  *   Operation response = sqlOperationsServiceClient.get(request);
  * }
@@ -231,6 +232,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *       SqlOperationsGetRequest.newBuilder()
    *           .setOperation("operation1662702951")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   Operation response = sqlOperationsServiceClient.get(request);
    * }
@@ -261,6 +263,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *       SqlOperationsGetRequest.newBuilder()
    *           .setOperation("operation1662702951")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   ApiFuture<Operation> future = sqlOperationsServiceClient.getCallable().futureCall(request);
    *   // Do something.
@@ -293,6 +296,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *           .setMaxResults(1128457243)
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   OperationsListResponse response = sqlOperationsServiceClient.list(request);
    * }
@@ -326,6 +330,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *           .setMaxResults(1128457243)
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   ApiFuture<OperationsListResponse> future =
    *       sqlOperationsServiceClient.listCallable().futureCall(request);
@@ -356,6 +361,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *       SqlOperationsCancelRequest.newBuilder()
    *           .setOperation("operation1662702951")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   sqlOperationsServiceClient.cancel(request);
    * }
@@ -386,6 +392,7 @@ public class SqlOperationsServiceClient implements BackgroundResource {
    *       SqlOperationsCancelRequest.newBuilder()
    *           .setOperation("operation1662702951")
    *           .setProject("project-309310695")
+   *           .setLocation("location1901043637")
    *           .build();
    *   ApiFuture<Empty> future = sqlOperationsServiceClient.cancelCallable().futureCall(request);
    *   // Do something.

@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetRole</td>
- *      <td><p> API to retrieve a `Role` object.</td>
+ *      <td><p> Retrieves a `Role` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListRoles</td>
- *      <td><p> API to retrieve a list of `Role` objects.</td>
+ *      <td><p> Lists `Role` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -195,7 +195,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -223,7 +223,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -250,7 +250,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -278,7 +278,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Role` object.
+   * Retrieves a `Role` object.
    *
    * <p>Sample code:
    *
@@ -305,7 +305,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -335,7 +335,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -364,7 +364,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -399,7 +399,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *
@@ -433,7 +433,7 @@ public class RoleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Role` objects.
+   * Lists `Role` objects.
    *
    * <p>Sample code:
    *

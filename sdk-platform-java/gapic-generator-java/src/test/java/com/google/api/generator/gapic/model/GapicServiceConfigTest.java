@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 
 class GapicServiceConfigTest {
@@ -249,7 +250,7 @@ class GapicServiceConfigTest {
     return services.get(0);
   }
 
-  private static Method findMethod(Service service, String methodName) {
+  private static @Nullable Method findMethod(Service service, String methodName) {
     for (Method m : service.methods()) {
       if (m.name().equals(methodName)) {
         return m;

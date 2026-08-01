@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.support.v2beta.stub.SupportEventSubscriptionServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -137,6 +138,13 @@ public class SupportEventSubscriptionServiceSettings
       undeleteSupportEventSubscriptionSettings() {
     return ((SupportEventSubscriptionServiceStubSettings) getStubSettings())
         .undeleteSupportEventSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to expungeSupportEventSubscription. */
+  public UnaryCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionSettings() {
+    return ((SupportEventSubscriptionServiceStubSettings) getStubSettings())
+        .expungeSupportEventSubscriptionSettings();
   }
 
   public static final SupportEventSubscriptionServiceSettings create(
@@ -293,6 +301,12 @@ public class SupportEventSubscriptionServiceSettings
             UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
         undeleteSupportEventSubscriptionSettings() {
       return getStubSettingsBuilder().undeleteSupportEventSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to expungeSupportEventSubscription. */
+    public UnaryCallSettings.Builder<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionSettings() {
+      return getStubSettingsBuilder().expungeSupportEventSubscriptionSettings();
     }
 
     @Override

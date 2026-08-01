@@ -18,8 +18,10 @@ import com.google.api.generator.gapic.model.Service;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides Gapic class names. */
+@NullMarked
 public class ClassNames {
   // Using constants since many of these class names are used often.
   private static final String MOCK_SERVICE_CLASS_NAME_PATTERN = "Mock%s";

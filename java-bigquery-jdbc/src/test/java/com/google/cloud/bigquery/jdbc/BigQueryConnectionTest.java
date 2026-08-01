@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -23,7 +24,14 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -33,6 +41,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Project;
@@ -40,6 +49,12 @@ import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.logging.Logging;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -52,10 +67,15 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.MockedStatic;
 
 public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
+
+  @RegisterExtension
+  static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -478,6 +498,27 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testConnect_withCustomOpenTelemetry_usesCustomInstance() throws Exception {
+    DataSource ds = DataSource.fromUrl(BASE_URL);
+    ds.setCustomOpenTelemetry(otelTesting.getOpenTelemetry());
+
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL, ds)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      Tracer tracer = connection.getTracer();
+      assertNotNull(tracer);
+
+      Span span = tracer.spanBuilder("custom-otel-span").startSpan();
+      span.end();
+
+      List<SpanData> spans = otelTesting.getSpans();
+      assertEquals(1, spans.size());
+      assertEquals("custom-otel-span", spans.get(0).getName());
+    }
+  }
+
+  @Test
   public void testConnectionPropertiesLoggingAndMasking() throws IOException, SQLException {
     Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
     Level originalLevel = rootLogger.getLevel();
@@ -506,6 +547,136 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertFalse(logMessage.contains("secretAccessToken"));
     } finally {
       rootLogger.setLevel(originalLevel);
+    }
+  }
+
+  @ParameterizedTest(
+      name =
+          "Case {index}: custom={0}, global={1}, trace={2}, log={3} -> expectTrace={4}, expectLog={5}")
+  @CsvSource({
+    // hasCustom, useGlobal, enableTrace, enableLog, expectTrace,     expectLog
+    "true,        true,      true,       true,      CUSTOM,         CUSTOM",
+    "true,        false,     true,       true,      CUSTOM,         CUSTOM",
+    "false,       true,      true,       true,      GLOBAL,         GLOBAL",
+    "false,       true,      false,      false,     GLOBAL,         GLOBAL",
+    "false,       false,     true,       false,     DRIVER_MANAGED, NONE",
+    "false,       false,     false,      true,      NONE,           DRIVER_MANAGED",
+    "false,       false,     true,       true,      DRIVER_MANAGED, DRIVER_MANAGED",
+    "false,       false,     false,      false,     NONE,           NONE"
+  })
+  public void testOpenTelemetryPrecedenceHierarchy(
+      boolean hasCustom,
+      boolean useGlobal,
+      boolean enableTrace,
+      boolean enableLog,
+      String expectTrace,
+      String expectLog)
+      throws Exception {
+
+    DataSource ds = DataSource.fromUrl(BASE_URL);
+    ds.setUseGlobalOpenTelemetry(useGlobal);
+    ds.setEnableGcpTraceExporter(enableTrace);
+    ds.setEnableGcpLogExporter(enableLog);
+
+    OpenTelemetry mockCustomOtel = mock(OpenTelemetry.class);
+    OpenTelemetry mockGlobalOtel = mock(OpenTelemetry.class);
+    OpenTelemetry mockDriverManagedOtel = mock(OpenTelemetry.class);
+    Logging mockLogging = mock(Logging.class);
+    when(mockCustomOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    when(mockGlobalOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+    when(mockDriverManagedOtel.getTracer(anyString())).thenReturn(mock(Tracer.class));
+
+    if (hasCustom) {
+      ds.setCustomOpenTelemetry(mockCustomOtel);
+    }
+
+    try (MockedStatic<BigQueryJdbcOpenTelemetry> mockedOtel =
+            mockStatic(BigQueryJdbcOpenTelemetry.class);
+        MockedStatic<BigQueryJdbcOAuthUtility> mockedAuth =
+            mockStatic(BigQueryJdbcOAuthUtility.class);
+        MockedStatic<GoogleCredentials> mockedCreds = mockStatic(GoogleCredentials.class)) {
+
+      mockedCreds
+          .when(GoogleCredentials::getApplicationDefault)
+          .thenReturn(mock(GoogleCredentials.class));
+
+      // Mock parseOAuthProperties to always return ADC type to bypass validation
+      mockedAuth
+          .when(() -> BigQueryJdbcOAuthUtility.parseOAuthProperties(any(), anyString()))
+          .thenAnswer(
+              invocation -> {
+                java.util.Map<String, String> props = new java.util.HashMap<>();
+                props.put(
+                    BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
+                    "APPLICATION_DEFAULT_CREDENTIALS");
+                return props;
+              });
+
+      mockedAuth
+          .when(() -> BigQueryJdbcOAuthUtility.getCredentials(any(), any(), any(), any(), any()))
+          .thenReturn(mock(GoogleCredentials.class));
+
+      mockedOtel
+          .when(
+              () ->
+                  BigQueryJdbcOpenTelemetry.createLoggingClient(
+                      anyBoolean(), any(), any(), any(), any()))
+          .thenReturn(mockLogging);
+
+      // Stub getOpenTelemetry to return the expected mock based on inputs
+      mockedOtel
+          .when(
+              () ->
+                  BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+                      eq(useGlobal),
+                      eq(enableTrace),
+                      eq(enableLog),
+                      hasCustom ? eq(mockCustomOtel) : isNull(),
+                      any(),
+                      any(),
+                      any()))
+          .thenAnswer(
+              invocation -> {
+                if (hasCustom) return mockCustomOtel;
+                if (useGlobal) return mockGlobalOtel;
+                if (enableTrace || enableLog) return mockDriverManagedOtel;
+                return OpenTelemetry.noop();
+              });
+
+      try (BigQueryConnection connection = new BigQueryConnection(BASE_URL, ds)) {
+
+        boolean shouldBeRegistered = enableLog || hasCustom || useGlobal;
+
+        if (!shouldBeRegistered) {
+          mockedOtel.verify(
+              () ->
+                  BigQueryJdbcOpenTelemetry.registerConnection(
+                      anyString(), any(), any(), anyBoolean()),
+              never());
+        } else {
+          final OpenTelemetry expectedOtelInstance;
+          if ("CUSTOM".equals(expectTrace) || "CUSTOM".equals(expectLog)) {
+            expectedOtelInstance = mockCustomOtel;
+          } else if ("GLOBAL".equals(expectTrace) || "GLOBAL".equals(expectLog)) {
+            expectedOtelInstance = mockGlobalOtel;
+          } else if ("DRIVER_MANAGED".equals(expectTrace) || "DRIVER_MANAGED".equals(expectLog)) {
+            expectedOtelInstance = mockDriverManagedOtel;
+          } else {
+            expectedOtelInstance = OpenTelemetry.noop();
+          }
+
+          boolean expectUseDirectGcp = "DRIVER_MANAGED".equals(expectLog);
+          Logging expectedLogClient = expectUseDirectGcp ? mockLogging : null;
+
+          mockedOtel.verify(
+              () ->
+                  BigQueryJdbcOpenTelemetry.registerConnection(
+                      anyString(),
+                      eq(expectedOtelInstance),
+                      eq(expectedLogClient),
+                      eq(expectUseDirectGcp)));
+        }
+      }
     }
   }
 

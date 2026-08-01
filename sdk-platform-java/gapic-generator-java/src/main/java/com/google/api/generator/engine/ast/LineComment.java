@@ -16,7 +16,9 @@ package com.google.api.generator.engine.ast;
 
 import com.google.api.generator.engine.escaper.MetacharEscaper;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class LineComment implements Comment {
   @Override

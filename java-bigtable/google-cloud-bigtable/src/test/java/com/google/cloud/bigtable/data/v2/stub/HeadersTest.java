@@ -45,6 +45,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -136,10 +137,26 @@ public class HeadersTest {
   }
 
   @Test
+  public void readRowsMaterializedViewTest() {
+    // Materialized views are instance-scoped, so routing happens on the instance name.
+    client.readRows(Query.create(MaterializedViewId.of("fake-materialized-view")));
+    verifyHeaderSent(true);
+  }
+
+  @Test
   public void sampleRowKeysTest() {
     @SuppressWarnings("UnusedVariable")
     ApiFuture<List<KeyOffset>> ignored = client.sampleRowKeysAsync(TABLE_ID);
     verifyHeaderSent();
+  }
+
+  @Test
+  public void sampleRowKeysMaterializedViewTest() {
+    // Materialized views are instance-scoped, so routing happens on the instance name.
+    @SuppressWarnings("UnusedVariable")
+    ApiFuture<List<KeyOffset>> ignored =
+        client.sampleRowKeysAsync(MaterializedViewId.of("fake-materialized-view"));
+    verifyHeaderSent(true);
   }
 
   @Test

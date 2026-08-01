@@ -37,6 +37,7 @@ import com.google.auth.http.HttpTransportFactory;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
@@ -46,6 +47,7 @@ import java.util.Objects;
  * <p><b>Warning:</b> This class is considered internal and is not intended for direct use by
  * library consumers. Its API and behavior may change without notice.
  */
+@NullMarked
 @InternalApi
 public class MtlsHttpTransportFactory implements HttpTransportFactory {
   private final KeyStore mtlsKeyStore;

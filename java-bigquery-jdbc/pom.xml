@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>1.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -32,6 +32,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-jdbc</site.installationModule>
     <skipShade>false</skipShade>
+    <preferIpv4.test.argLine>-Djava.net.preferIPv4Stack=true</preferIpv4.test.argLine>
   </properties>
 
   <build>
@@ -47,6 +48,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.5.2</version>
         <configuration>
+          <argLine>@{argLine} ${preferIpv4.test.argLine}</argLine>
           <skip>${skipSurefire}</skip>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
@@ -57,6 +59,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
+          <argLine>@{argLine} ${preferIpv4.test.argLine}</argLine>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
           </systemPropertyVariables>
@@ -84,6 +87,13 @@
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies combine.children="append">
+                <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
+            </ignoredUnusedDeclaredDependencies>
+            <ignoredDependencies>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-logs</ignoredDependency>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-common</ignoredDependency>
+            </ignoredDependencies>
         </configuration>
       </plugin>
       <plugin>
@@ -173,6 +183,17 @@
                     <relocation>
                       <pattern>io.opentelemetry</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io.opentelemetry</shadedPattern>
+                      <excludes>
+                        <!-- 
+                          OpenTelemetry API and Context must remain unshaded to ensure interoperability.
+                          Shading these would prevent the driver from participating in the application's 
+                          existing tracing context. We are aware that unshaded dependencies can lead to 
+                          version mismatches, but this is a necessary trade-off for the OpenTelemetry 
+                          integration to function correctly across different applications.
+                        -->
+                        <exclude>io.opentelemetry.api.**</exclude>
+                        <exclude>io.opentelemetry.context.**</exclude>
+                      </excludes>
                     </relocation>
                     <relocation>
                       <pattern>io.perfmark</pattern>
@@ -208,7 +229,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.89.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -216,12 +237,17 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>2.69.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+      <version>2.70.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-logging</artifactId>
+      <version>3.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -254,7 +280,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.31.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>
@@ -310,6 +336,16 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-opentelemetry</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>io.opentelemetry</groupId>
+          <artifactId>opentelemetry-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.arrow</groupId>
@@ -326,6 +362,41 @@
     <dependency>
       <groupId>org.apache.httpcomponents.core5</groupId>
       <artifactId>httpcore5</artifactId>
+    </dependency>
+
+    <!-- OpenTelemetry APIs (unshaded) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+    </dependency>
+    <!-- OpenTelemetry SDK and Exporters (will be shaded via existing 'io' relocation) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-trace</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-otlp</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-logs</artifactId>
     </dependency>
 
     <!--  Test Dependencies  -->
@@ -377,6 +448,17 @@
       <artifactId>junit-platform-suite-engine</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-trace</artifactId>
+      <version>2.96.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <profiles>
@@ -398,14 +480,14 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <argLine>@{argLine} ${preferIpv4.test.argLine} --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <argLine>@{argLine} ${preferIpv4.test.argLine} --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
         </plugins>
