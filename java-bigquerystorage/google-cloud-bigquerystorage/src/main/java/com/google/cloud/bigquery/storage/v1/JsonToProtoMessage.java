@@ -1120,25 +1120,23 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
   }
 
   /**
-   * Decodes a base64 string into bytes, the encoding protobuf's canonical JSON mapping defines for
-   * the {@code bytes} type. Standard and URL-safe alphabets are both accepted, with or without
-   * padding, as that mapping requires; the two alphabets are mutually exclusive on {@code +/}
-   * versus {@code -_}, so the fallback is what makes both work.
+   * Decodes a base64 string, the encoding protobuf's canonical JSON mapping defines for {@code
+   * bytes}. Both the standard and URL-safe alphabets are accepted, with or without padding.
    *
-   * @throws IllegalArgumentException if the value decodes under neither alphabet
+   * @throws IllegalArgumentException if the value is not valid base64
    */
   private static byte[] parseBase64(String currentScope, String value) {
     try {
-      return Base64.getDecoder().decode(value);
-    } catch (IllegalArgumentException standardAlphabetFailed) {
-      try {
+      if (value.indexOf('-') >= 0 || value.indexOf('_') >= 0) {
         return Base64.getUrlDecoder().decode(value);
-      } catch (IllegalArgumentException urlSafeAlphabetFailed) {
-        throw new IllegalArgumentException(
-            "Error: "
-                + currentScope
-                + " could not be converted to byte[]: not a valid base64 string.");
       }
+      return Base64.getDecoder().decode(value);
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException(
+          "Error: "
+              + currentScope
+              + " could not be converted to byte[]: not a valid base64 string.",
+          e);
     }
   }
 

@@ -1123,8 +1123,6 @@ class JsonToProtoMessageTest {
     TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
     BytesType expectedProto =
         BytesType.newBuilder().setTestFieldType(ByteString.copyFromUtf8("hi")).build();
-    // Base64 for "hi". Padding is optional in protobuf's canonical JSON mapping, and "hi" encodes
-    // to characters the standard and URL-safe alphabets share.
     for (String encoded : ImmutableList.of("aGk=", "aGk")) {
       JSONObject json = new JSONObject();
       json.put("test_field_type", encoded);
@@ -1140,8 +1138,7 @@ class JsonToProtoMessageTest {
     TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
     BytesType expectedProto =
         BytesType.newBuilder().setTestFieldType(ByteString.copyFrom(new byte[] {-5, -1})).build();
-    // 0xFB 0xFF is "+/8" in the standard alphabet and "-_8" in the URL-safe one — the only place
-    // the two differ. Protobuf's mapping accepts both, with or without padding.
+    // 0xFB 0xFF is "+/8" in the standard alphabet and "-_8" in the URL-safe one.
     for (String encoded : ImmutableList.of("+/8=", "-_8=", "+/8", "-_8")) {
       JSONObject json = new JSONObject();
       json.put("test_field_type", encoded);
@@ -1185,8 +1182,7 @@ class JsonToProtoMessageTest {
 
   @Test
   void testBytesFromBase64NeedsTableSchema() throws Exception {
-    // Without a TableSchema the converter cannot tell BYTES from NUMERIC and BIGNUMERIC, which
-    // share the same proto type, so a string stays an error rather than being decoded.
+    // Without a TableSchema, BYTES is indistinguishable from NUMERIC and BIGNUMERIC.
     JSONObject json = new JSONObject();
     json.put("test_field_type", "aGk=");
     IllegalArgumentException e =
