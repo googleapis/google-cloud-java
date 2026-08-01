@@ -34,11 +34,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +48,51 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
 class RefreshingHttpJsonChannelTest {
+  private static class FakeManagedHttpJsonChannel extends ManagedHttpJsonChannel {
+    private volatile boolean isShutdown = false;
+    private volatile boolean isTerminated = false;
+    private HttpJsonClientCall<?, ?> nextCall = null;
+
+    @Override
+    public void shutdown() {
+      isShutdown = true;
+    }
+
+    @Override
+    public void shutdownNow() {
+      isShutdown = true;
+      isTerminated = true;
+    }
+
+    @Override
+    public boolean isShutdown() {
+      return isShutdown;
+    }
+
+    @Override
+    public boolean isTerminated() {
+      return isTerminated;
+    }
+
+    @Override
+    public boolean awaitTermination(long duration, TimeUnit unit) {
+      return isTerminated;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
+        ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,
+        HttpJsonCallOptions callOptions) {
+      if (nextCall != null) {
+        return (HttpJsonClientCall<RequestT, ResponseT>) nextCall;
+      }
+      return mock(HttpJsonClientCall.class);
+    }
+  }
+
   private AtomicInteger channelFactoryCount;
-  private ManagedHttpJsonChannel lastCreatedChannel;
+  private FakeManagedHttpJsonChannel lastCreatedChannel;
   private String testCertPath = "/fake/path";
   private String testFingerprint = "fingerprint1";
   private boolean shouldThrowOnFactory = false;
@@ -64,7 +104,7 @@ class RefreshingHttpJsonChannelTest {
           throw new RuntimeException("Simulated factory failure");
         }
         channelFactoryCount.incrementAndGet();
-        lastCreatedChannel = mock(ManagedHttpJsonChannel.class);
+        lastCreatedChannel = new FakeManagedHttpJsonChannel();
         return lastCreatedChannel;
       };
 
@@ -131,7 +171,7 @@ class RefreshingHttpJsonChannelTest {
   @Test
   void testRefreshSwapsChannel() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
     assertEquals(1, channelFactoryCount.get());
 
     Thread.sleep(1001); // Invalidate 1-second cache
@@ -144,22 +184,22 @@ class RefreshingHttpJsonChannelTest {
 
     // Verify a new channel was created and the old one retired
     assertEquals(2, channelFactoryCount.get());
-    ManagedHttpJsonChannel secondChannel = lastCreatedChannel;
+    FakeManagedHttpJsonChannel secondChannel = lastCreatedChannel;
 
     // The old channel should receive a shutdown request immediately since there are no active calls
-    verify(firstChannel).shutdown();
-    verify(secondChannel, never()).shutdown();
+    assertTrue(firstChannel.isShutdown());
+    assertFalse(secondChannel.isShutdown());
   }
 
   @Test
   void testRefreshKeepsInFlightChannelsAlive() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
 
     // Simulate an in-flight API call
     @SuppressWarnings("unchecked")
     HttpJsonClientCall<Object, Object> mockCall = mock(HttpJsonClientCall.class);
-    when(firstChannel.newCall(any(), any())).thenReturn(mockCall);
+    firstChannel.nextCall = mockCall;
 
     HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
 
@@ -174,7 +214,7 @@ class RefreshingHttpJsonChannelTest {
     assertEquals(2, channelFactoryCount.get());
 
     // IMPORTANT: The first channel should NOT be shut down yet because of the active call!
-    verify(firstChannel, never()).shutdown();
+    assertFalse(firstChannel.isShutdown());
 
     // Now complete the call successfully
     @SuppressWarnings("unchecked")
@@ -192,19 +232,18 @@ class RefreshingHttpJsonChannelTest {
     listenerCaptor.getValue().onClose(0, null);
 
     // FIRST CHANNEL SHOULD BE SHUT DOWN NOW!
-    verify(firstChannel).shutdown();
+    assertTrue(firstChannel.isShutdown());
   }
 
   @Test
   void testRefreshDoesNotSpawnChannelWhenShutdown() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
     assertEquals(1, channelFactoryCount.get());
 
-    // By default, Mockito returns false for boolean.
-    // Let's simulate that the channel pool is shut down.
+    // Simulate that the channel pool is shut down.
     channel.shutdown();
-    when(firstChannel.isShutdown()).thenReturn(true);
+    firstChannel.shutdown();
 
     Thread.sleep(1001); // Invalidate 1-second cache
 
@@ -252,9 +291,8 @@ class RefreshingHttpJsonChannelTest {
   @Test
   void testAwaitTerminationZeroTimeoutOnTerminatedChannelReturnsTrue() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    ManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    when(firstChannel.isTerminated()).thenReturn(true);
-    when(firstChannel.awaitTermination(anyLong(), any())).thenReturn(true);
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    firstChannel.isTerminated = true;
 
     channel.shutdown();
     assertTrue(channel.awaitTermination(0, TimeUnit.MILLISECONDS));
