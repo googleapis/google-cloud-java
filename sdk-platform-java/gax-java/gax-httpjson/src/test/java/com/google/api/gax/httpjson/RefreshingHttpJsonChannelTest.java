@@ -31,23 +31,43 @@ package com.google.api.gax.httpjson;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
+import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 
 class RefreshingHttpJsonChannelTest {
+  private static class FakeHttpJsonClientCall<RequestT, ResponseT>
+      extends HttpJsonClientCall<RequestT, ResponseT> {
+    private Listener<ResponseT> listener;
+
+    @Override
+    public void start(Listener<ResponseT> responseListener, HttpJsonMetadata requestHeaders) {
+      this.listener = responseListener;
+    }
+
+    @Override
+    public void request(int numMessages) {}
+
+    @Override
+    public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+    @Override
+    public void sendMessage(RequestT message) {}
+
+    @Override
+    public void halfClose() {}
+  }
+
   private static class FakeManagedHttpJsonChannel extends ManagedHttpJsonChannel {
     private volatile boolean isShutdown = false;
     private volatile boolean isTerminated = false;
@@ -87,7 +107,7 @@ class RefreshingHttpJsonChannelTest {
       if (nextCall != null) {
         return (HttpJsonClientCall<RequestT, ResponseT>) nextCall;
       }
-      return mock(HttpJsonClientCall.class);
+      return new FakeHttpJsonClientCall<>();
     }
   }
 
@@ -197,9 +217,8 @@ class RefreshingHttpJsonChannelTest {
     FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
 
     // Simulate an in-flight API call
-    @SuppressWarnings("unchecked")
-    HttpJsonClientCall<Object, Object> mockCall = mock(HttpJsonClientCall.class);
-    firstChannel.nextCall = mockCall;
+    FakeHttpJsonClientCall<Object, Object> fakeCall = new FakeHttpJsonClientCall<>();
+    firstChannel.nextCall = fakeCall;
 
     HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
 
@@ -216,20 +235,13 @@ class RefreshingHttpJsonChannelTest {
     // IMPORTANT: The first channel should NOT be shut down yet because of the active call!
     assertFalse(firstChannel.isShutdown());
 
-    // Now complete the call successfully
-    @SuppressWarnings("unchecked")
-    ArgumentCaptor<HttpJsonClientCall.Listener<Object>> listenerCaptor =
-        ArgumentCaptor.forClass(HttpJsonClientCall.Listener.class);
+    // Now start the call
+    activeCall.start(new HttpJsonClientCall.Listener<Object>() {}, null);
 
-    @SuppressWarnings("unchecked")
-    HttpJsonClientCall.Listener<Object> mockListener = mock(HttpJsonClientCall.Listener.class);
-
-    activeCall.start(mockListener, null);
-
-    verify(mockCall).start(listenerCaptor.capture(), any());
+    assertNotNull(fakeCall.listener);
 
     // Fire onClose
-    listenerCaptor.getValue().onClose(0, null);
+    fakeCall.listener.onClose(0, null);
 
     // FIRST CHANNEL SHOULD BE SHUT DOWN NOW!
     assertTrue(firstChannel.isShutdown());
