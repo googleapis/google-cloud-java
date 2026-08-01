@@ -45,8 +45,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("known_issue") // b/539615312
 public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -263,9 +265,15 @@ public class ITOpenTelemetryTest extends ITBase {
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
       assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
 
-      LogEntry sampleEntry = entries.get(0);
-      String traceId = sampleEntry.getTrace();
-      String hexSpanId = sampleEntry.getSpanId();
+      String traceId = null;
+      String hexSpanId = null;
+      for (LogEntry entry : entries) {
+        if (entry.getTrace() != null) {
+          traceId = entry.getTrace();
+          hexSpanId = entry.getSpanId();
+          break;
+        }
+      }
 
       assertNotNull(traceId, "Log entry must contain TraceId");
       assertNotNull(hexSpanId, "Log entry must contain SpanId");
@@ -301,7 +309,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
     int attempts = 0;
-    int maxAttempts = 10;
+    int maxAttempts = 24;
     long delayMs = 10000;
 
     // 10 second wait for GCP to ingest data

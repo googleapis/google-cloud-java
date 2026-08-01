@@ -504,7 +504,7 @@ class ITBigQueryStorageReadClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException, DescriptorValidationException, InterruptedException {
-    readClient = BigQueryReadClient.create();
+    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
     projectName = ServiceOptions.getDefaultProjectId();
     parentProjectId = String.format("projects/%s", projectName);
 
@@ -1598,7 +1598,7 @@ class ITBigQueryStorageReadClientTest {
   @Test
   void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
     BigQueryReadSettings bigQueryReadSettings =
-        BigQueryReadSettings.newBuilder()
+        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
             .setBackgroundExecutorProvider(
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
             .build();
@@ -1761,7 +1761,7 @@ class ITBigQueryStorageReadClientTest {
     OpenTelemetry otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
 
     BigQueryReadSettings otelSettings =
-        BigQueryReadSettings.newBuilder()
+        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracerProvider(tracerProvider)
             .build();

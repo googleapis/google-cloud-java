@@ -68,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> FetchMcmEarnings</td>
- *      <td><p> API to retrieve a list of `McmEarnings` objects.</td>
+ *      <td><p> Lists `McmEarnings` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -182,7 +182,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -214,7 +214,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -244,7 +244,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -280,7 +280,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
@@ -317,7 +317,7 @@ public class McmEarningsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `McmEarnings` objects.
+   * Lists `McmEarnings` objects.
    *
    * <p>Sample code:
    *
