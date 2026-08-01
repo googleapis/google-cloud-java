@@ -32,4 +32,24 @@ package com.google.api.gax.rpc.testing;
 import com.google.api.core.InternalApi;
 
 @InternalApi("for testing")
-public class FakeChannel {}
+public class FakeChannel {
+  private volatile boolean shouldRefresh = false;
+  private volatile int refreshCount = 0;
+
+  public FakeChannel setShouldRefresh(boolean shouldRefresh) {
+    this.shouldRefresh = shouldRefresh;
+    return this;
+  }
+
+  public boolean shouldRefresh() {
+    return shouldRefresh;
+  }
+
+  public void refresh() {
+    refreshCount++;
+  }
+
+  public int getRefreshCount() {
+    return refreshCount;
+  }
+}

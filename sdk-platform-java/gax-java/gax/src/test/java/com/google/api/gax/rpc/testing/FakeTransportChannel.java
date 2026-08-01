@@ -45,22 +45,28 @@ public class FakeTransportChannel implements TransportChannel {
   private volatile int refreshCount = 0;
 
   public FakeTransportChannel setShouldRefresh(boolean shouldRefresh) {
+    if (channel != null) {
+      channel.setShouldRefresh(shouldRefresh);
+    }
     this.shouldRefresh = shouldRefresh;
     return this;
   }
 
   @Override
   public boolean shouldRefresh() {
-    return shouldRefresh;
+    return channel != null ? channel.shouldRefresh() : shouldRefresh;
   }
 
   @Override
   public void refresh() {
+    if (channel != null) {
+      channel.refresh();
+    }
     refreshCount++;
   }
 
   public int getRefreshCount() {
-    return refreshCount;
+    return channel != null ? channel.getRefreshCount() : refreshCount;
   }
 
   private FakeTransportChannel(FakeChannel channel) {
