@@ -53,6 +53,10 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAudienceMembersStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_fieldAccessorTable;
@@ -105,6 +109,22 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_fieldAccessorTable;
@@ -122,7 +142,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
           + "amanager.v1\032+google/ads/datamanager/v1/d"
           + "estination.proto\032*google/ads/datamanager"
           + "/v1/match_rate.proto\0321google/ads/dataman"
-          + "ager/v1/processing_errors.proto\"\352\034\n\033Requ"
+          + "ager/v1/processing_errors.proto\"\236%\n\033Requ"
           + "estStatusPerDestination\022;\n\013destination\030\001"
           + " \001(\0132&.google.ads.datamanager.v1.Destina"
           + "tion\022\\\n\016request_status\030\002 \001(\0162D.google.ad"
@@ -139,44 +159,62 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
           + "estEventsStatusH\000\022}\n\037audience_members_re"
           + "moval_status\030\006 \001(\0132R.google.ads.datamana"
           + "ger.v1.RequestStatusPerDestination.Remov"
-          + "eAudienceMembersStatusH\000\032\354\005\n\033IngestAudie"
-          + "nceMembersStatus\022q\n\032user_data_ingestion_"
-          + "status\030\001 \001(\0132K.google.ads.datamanager.v1"
-          + ".RequestStatusPerDestination.IngestUserD"
-          + "ataStatusH\000\022u\n\034mobile_data_ingestion_sta"
-          + "tus\030\002 \001(\0132M.google.ads.datamanager.v1.Re"
-          + "questStatusPerDestination.IngestMobileDa"
-          + "taStatusH\000\022q\n\032pair_data_ingestion_status"
-          + "\030\003 \001(\0132K.google.ads.datamanager.v1.Reque"
-          + "stStatusPerDestination.IngestPairDataSta"
-          + "tusH\000\022v\n\035user_id_data_ingestion_status\030\004"
-          + " \001(\0132M.google.ads.datamanager.v1.Request"
-          + "StatusPerDestination.IngestUserIdDataSta"
-          + "tusH\000\022q\n\032ppid_data_ingestion_status\030\005 \001("
-          + "\0132K.google.ads.datamanager.v1.RequestSta"
-          + "tusPerDestination.IngestPpidDataStatusH\000"
-          + "\022{\n\037composite_data_ingestion_status\030\006 \001("
-          + "\0132P.google.ads.datamanager.v1.RequestSta"
-          + "tusPerDestination.IngestCompositeDataSta"
-          + "tusH\000B\010\n\006status\032\340\005\n\033RemoveAudienceMember"
-          + "sStatus\022o\n\030user_data_removal_status\030\001 \001("
-          + "\0132K.google.ads.datamanager.v1.RequestSta"
-          + "tusPerDestination.RemoveUserDataStatusH\000"
-          + "\022s\n\032mobile_data_removal_status\030\002 \001(\0132M.g"
-          + "oogle.ads.datamanager.v1.RequestStatusPe"
-          + "rDestination.RemoveMobileDataStatusH\000\022o\n"
-          + "\030pair_data_removal_status\030\003 \001(\0132K.google"
-          + ".ads.datamanager.v1.RequestStatusPerDest"
-          + "ination.RemovePairDataStatusH\000\022t\n\033user_i"
-          + "d_data_removal_status\030\004 \001(\0132M.google.ads"
-          + ".datamanager.v1.RequestStatusPerDestinat"
-          + "ion.RemoveUserIdDataStatusH\000\022o\n\030ppid_dat"
-          + "a_removal_status\030\005 \001(\0132K.google.ads.data"
-          + "manager.v1.RequestStatusPerDestination.R"
-          + "emovePpidDataStatusH\000\022y\n\035composite_data_"
-          + "removal_status\030\006 \001(\0132P.google.ads.datama"
-          + "nager.v1.RequestStatusPerDestination.Rem"
-          + "oveCompositeDataStatusH\000B\010\n\006status\032*\n\022In"
+          + "eAudienceMembersStatusH\000\022\203\001\n\"remove_all_"
+          + "audience_members_status\030\010 \001(\0132U.google.a"
+          + "ds.datamanager.v1.RequestStatusPerDestin"
+          + "ation.RemoveAllAudienceMembersStatusH\000\032\202"
+          + "\010\n\033IngestAudienceMembersStatus\022q\n\032user_d"
+          + "ata_ingestion_status\030\001 \001(\0132K.google.ads."
+          + "datamanager.v1.RequestStatusPerDestinati"
+          + "on.IngestUserDataStatusH\000\022u\n\034mobile_data"
+          + "_ingestion_status\030\002 \001(\0132M.google.ads.dat"
+          + "amanager.v1.RequestStatusPerDestination."
+          + "IngestMobileDataStatusH\000\022q\n\032pair_data_in"
+          + "gestion_status\030\003 \001(\0132K.google.ads.datama"
+          + "nager.v1.RequestStatusPerDestination.Ing"
+          + "estPairDataStatusH\000\022v\n\035user_id_data_inge"
+          + "stion_status\030\004 \001(\0132M.google.ads.datamana"
+          + "ger.v1.RequestStatusPerDestination.Inges"
+          + "tUserIdDataStatusH\000\022q\n\032ppid_data_ingesti"
+          + "on_status\030\005 \001(\0132K.google.ads.datamanager"
+          + ".v1.RequestStatusPerDestination.IngestPp"
+          + "idDataStatusH\000\022{\n\037composite_data_ingesti"
+          + "on_status\030\006 \001(\0132P.google.ads.datamanager"
+          + ".v1.RequestStatusPerDestination.IngestCo"
+          + "mpositeDataStatusH\000\022\203\001\n$google_user_id_d"
+          + "ata_ingestion_status\030\007 \001(\0132S.google.ads."
+          + "datamanager.v1.RequestStatusPerDestinati"
+          + "on.IngestGoogleUserIdDataStatusH\000\022\215\001\n)pa"
+          + "rtner_provided_id_data_ingestion_status\030"
+          + "\010 \001(\0132X.google.ads.datamanager.v1.Reques"
+          + "tStatusPerDestination.IngestPartnerProvi"
+          + "dedIdDataStatusH\000B\010\n\006status\032\362\007\n\033RemoveAu"
+          + "dienceMembersStatus\022o\n\030user_data_removal"
+          + "_status\030\001 \001(\0132K.google.ads.datamanager.v"
+          + "1.RequestStatusPerDestination.RemoveUser"
+          + "DataStatusH\000\022s\n\032mobile_data_removal_stat"
+          + "us\030\002 \001(\0132M.google.ads.datamanager.v1.Req"
+          + "uestStatusPerDestination.RemoveMobileDat"
+          + "aStatusH\000\022o\n\030pair_data_removal_status\030\003 "
+          + "\001(\0132K.google.ads.datamanager.v1.RequestS"
+          + "tatusPerDestination.RemovePairDataStatus"
+          + "H\000\022t\n\033user_id_data_removal_status\030\004 \001(\0132"
+          + "M.google.ads.datamanager.v1.RequestStatu"
+          + "sPerDestination.RemoveUserIdDataStatusH\000"
+          + "\022o\n\030ppid_data_removal_status\030\005 \001(\0132K.goo"
+          + "gle.ads.datamanager.v1.RequestStatusPerD"
+          + "estination.RemovePpidDataStatusH\000\022y\n\035com"
+          + "posite_data_removal_status\030\006 \001(\0132P.googl"
+          + "e.ads.datamanager.v1.RequestStatusPerDes"
+          + "tination.RemoveCompositeDataStatusH\000\022\201\001\n"
+          + "\"google_user_id_data_removal_status\030\007 \001("
+          + "\0132S.google.ads.datamanager.v1.RequestSta"
+          + "tusPerDestination.RemoveGoogleUserIdData"
+          + "StatusH\000\022\213\001\n\'partner_provided_id_data_re"
+          + "moval_status\030\010 \001(\0132X.google.ads.datamana"
+          + "ger.v1.RequestStatusPerDestination.Remov"
+          + "ePartnerProvidedIdDataStatusH\000B\010\n\006status"
+          + "\032 \n\036RemoveAllAudienceMembersStatus\032*\n\022In"
           + "gestEventsStatus\022\024\n\014record_count\030\001 \001(\003\032\227"
           + "\001\n\024IngestUserDataStatus\022\024\n\014record_count\030"
           + "\001 \001(\003\022\035\n\025user_identifier_count\030\002 \001(\003\022J\n\027"
@@ -207,20 +245,29 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
           + "s\022\024\n\014record_count\030\001 \001(\003\022^\n\020data_type_cou"
           + "nts\030\002 \003(\0132D.google.ads.datamanager.v1.Re"
           + "questStatusPerDestination.DataTypeCount\032"
-          + "m\n\rDataTypeCount\022M\n\004type\030\001 \001(\0162?.google."
-          + "ads.datamanager.v1.RequestStatusPerDesti"
-          + "nation.DataType\022\r\n\005count\030\002 \001(\003\"i\n\rReques"
-          + "tStatus\022\032\n\026REQUEST_STATUS_UNKNOWN\020\000\022\013\n\007S"
-          + "UCCESS\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006FAILED\020\003\022\023\n\017"
-          + "PARTIAL_SUCCESS\020\004\"_\n\010DataType\022\031\n\025DATA_TY"
-          + "PE_UNSPECIFIED\020\000\022\t\n\005EMAIL\020\001\022\020\n\014PHONE_NUM"
-          + "BER\020\002\022\013\n\007ADDRESS\020\003\022\016\n\nIP_ADDRESS\020\004B\010\n\006st"
-          + "atusB\335\001\n\035com.google.ads.datamanager.v1B "
-          + "RequestStatusPerDestinationProtoP\001ZAclou"
-          + "d.google.com/go/datamanager/apiv1/datama"
-          + "nagerpb;datamanagerpb\252\002\031Google.Ads.DataM"
-          + "anager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034"
-          + "Google::Ads::DataManager::V1b\006proto3"
+          + "R\n\034IngestGoogleUserIdDataStatus\022\024\n\014recor"
+          + "d_count\030\001 \001(\003\022\034\n\024google_user_id_count\030\002 "
+          + "\001(\003\032R\n\034RemoveGoogleUserIdDataStatus\022\024\n\014r"
+          + "ecord_count\030\001 \001(\003\022\034\n\024google_user_id_coun"
+          + "t\030\002 \001(\003\032\\\n!IngestPartnerProvidedIdDataSt"
+          + "atus\022\024\n\014record_count\030\001 \001(\003\022!\n\031partner_pr"
+          + "ovided_id_count\030\002 \001(\003\032\\\n!RemovePartnerPr"
+          + "ovidedIdDataStatus\022\024\n\014record_count\030\001 \001(\003"
+          + "\022!\n\031partner_provided_id_count\030\002 \001(\003\032m\n\rD"
+          + "ataTypeCount\022M\n\004type\030\001 \001(\0162?.google.ads."
+          + "datamanager.v1.RequestStatusPerDestinati"
+          + "on.DataType\022\r\n\005count\030\002 \001(\003\"i\n\rRequestSta"
+          + "tus\022\032\n\026REQUEST_STATUS_UNKNOWN\020\000\022\013\n\007SUCCE"
+          + "SS\020\001\022\016\n\nPROCESSING\020\002\022\n\n\006FAILED\020\003\022\023\n\017PART"
+          + "IAL_SUCCESS\020\004\"_\n\010DataType\022\031\n\025DATA_TYPE_U"
+          + "NSPECIFIED\020\000\022\t\n\005EMAIL\020\001\022\020\n\014PHONE_NUMBER\020"
+          + "\002\022\013\n\007ADDRESS\020\003\022\016\n\nIP_ADDRESS\020\004B\010\n\006status"
+          + "B\335\001\n\035com.google.ads.datamanager.v1B Requ"
+          + "estStatusPerDestinationProtoP\001ZAcloud.go"
+          + "ogle.com/go/datamanager/apiv1/datamanage"
+          + "rpb;datamanagerpb\252\002\031Google.Ads.DataManag"
+          + "er.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Goog"
+          + "le::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -243,6 +290,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
               "AudienceMembersIngestionStatus",
               "EventsIngestionStatus",
               "AudienceMembersRemovalStatus",
+              "RemoveAllAudienceMembersStatus",
               "Status",
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestAudienceMembersStatus_descriptor =
@@ -258,6 +306,8 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
               "UserIdDataIngestionStatus",
               "PpidDataIngestionStatus",
               "CompositeDataIngestionStatus",
+              "GoogleUserIdDataIngestionStatus",
+              "PartnerProvidedIdDataIngestionStatus",
               "Status",
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAudienceMembersStatus_descriptor =
@@ -273,11 +323,20 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
               "UserIdDataRemovalStatus",
               "PpidDataRemovalStatus",
               "CompositeDataRemovalStatus",
+              "GoogleUserIdDataRemovalStatus",
+              "PartnerProvidedIdDataRemovalStatus",
               "Status",
             });
-    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_descriptor =
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
             .getNestedType(2);
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_descriptor =
+        internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
+            .getNestedType(3);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestEventsStatus_descriptor,
@@ -286,7 +345,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(3);
+            .getNestedType(4);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserDataStatus_descriptor,
@@ -295,7 +354,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(4);
+            .getNestedType(5);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserDataStatus_descriptor,
@@ -304,7 +363,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestMobileDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(5);
+            .getNestedType(6);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestMobileDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestMobileDataStatus_descriptor,
@@ -313,7 +372,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveMobileDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(6);
+            .getNestedType(7);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveMobileDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveMobileDataStatus_descriptor,
@@ -322,7 +381,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPairDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(7);
+            .getNestedType(8);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPairDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPairDataStatus_descriptor,
@@ -331,7 +390,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePairDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(8);
+            .getNestedType(9);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePairDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePairDataStatus_descriptor,
@@ -340,7 +399,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserIdDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(9);
+            .getNestedType(10);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserIdDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestUserIdDataStatus_descriptor,
@@ -349,7 +408,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserIdDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(10);
+            .getNestedType(11);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserIdDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveUserIdDataStatus_descriptor,
@@ -358,7 +417,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPpidDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(11);
+            .getNestedType(12);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPpidDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPpidDataStatus_descriptor,
@@ -367,7 +426,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePpidDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(12);
+            .getNestedType(13);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePpidDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePpidDataStatus_descriptor,
@@ -376,7 +435,7 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(13);
+            .getNestedType(14);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestCompositeDataStatus_descriptor,
@@ -385,16 +444,52 @@ public final class RequestStatusPerDestinationProto extends com.google.protobuf.
             });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(14);
+            .getNestedType(15);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveCompositeDataStatus_descriptor,
             new java.lang.String[] {
               "RecordCount", "DataTypeCounts",
             });
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor =
+        internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
+            .getNestedType(16);
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor,
+            new java.lang.String[] {
+              "RecordCount", "GoogleUserIdCount",
+            });
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor =
+        internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
+            .getNestedType(17);
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor,
+            new java.lang.String[] {
+              "RecordCount", "GoogleUserIdCount",
+            });
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor =
+        internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
+            .getNestedType(18);
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor,
+            new java.lang.String[] {
+              "RecordCount", "PartnerProvidedIdCount",
+            });
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor =
+        internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
+            .getNestedType(19);
+    internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor,
+            new java.lang.String[] {
+              "RecordCount", "PartnerProvidedIdCount",
+            });
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor =
         internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_descriptor
-            .getNestedType(15);
+            .getNestedType(20);
     internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_DataTypeCount_descriptor,
